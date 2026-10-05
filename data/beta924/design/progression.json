@@ -1,0 +1,131 @@
+{
+  "status": "stage83e installed in REDkit workspace; Wcc83h and three UI builds passed; new runtime acceptance pending",
+  "stage": 83,
+  "runtimeEnabled": true,
+  "runtimeVerified": false,
+  "collectionCopyCaps": {
+    "bronze": 3,
+    "silver": 1,
+    "gold": 1,
+    "leader": 1
+  },
+  "starters": {
+    "presetIds": [
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "cardsPerDeck": 25,
+    "sharedNeutrals": false,
+    "containsGold": true,
+    "leaders": 5,
+    "revision": 2,
+    "goldPerDeck": 4,
+    "silverPerDeck": 6,
+    "source": "data/beta924/design/starter_decks.json",
+    "existingSaveMigration": "Add missing owned copies once; preserve prior cards, slots and rewards; defer while a paid choice is pending."
+  },
+  "merchant": {
+    "location": "Crow's Perch / Baron castle",
+    "entityResolved": true,
+    "entity": "gameplay/community/shops_and_craftsmen/no_mans_land/barons_keep/baron_quartermaster_01.w2ent",
+    "loot": "_store__Barons_Quartermaster",
+    "savedStockRefreshAcceptancePending": true
+  },
+  "shopCards": {
+    "legacySkuMappings": 197,
+    "tiersSold": [
+      "bronze",
+      "silver"
+    ],
+    "purchaseUpdatesBetaCollection": true,
+    "nativePricingRetained": true
+  },
+  "keg": {
+    "priceCrowns": 150,
+    "automaticCards": 4,
+    "automaticTier": "bronze",
+    "automaticTierInterpretation": "Four ordinary cards interpreted as bronze for the initial design",
+    "chosenCards": 1,
+    "choiceTiers": [
+      "silver",
+      "gold",
+      "leader"
+    ],
+    "choiceOfferSize": 3,
+    "choiceOfferSizeStatus": "approved; reduce only if fewer distinct eligible cards remain",
+    "silverGoldWeights": {
+      "silver": 50,
+      "goldOrLeader": 50
+    },
+    "silverGoldWeightsStatus": "approved; draw per offer with fallback to nonempty group",
+    "duplicatePolicy": "Exclude cards at their collection copy cap; reserve each automatic drop before the next draw. Choice offers have distinct template IDs.",
+    "purchasePolicy": "Bulk inventory purchase at 150 crowns each, bounded by remaining rare pool minus unopened kegs and one pending opening.",
+    "fullCollectionPolicy": "Do not sell a keg if no eligible rare card/leader remains. Exhausted bronze does not prevent buying the remaining rares. No excess copies or scraps.",
+    "grantPolicy": "Consume one inventory keg only at opening, then grant zero to four bronze copies and persist the rare choice. Resume consumes no additional item.",
+    "randomPolicy": "Progression RNG separated from battle and presentation RNG.",
+    "automaticCardsPolicy": "Up to four eligible bronze copies. If fewer remain, grant them all; if none remain, grant only the rare choice. Price stays150 crowns, approved by user.",
+    "inventory": true,
+    "stockPerRestock": 50,
+    "openingAction": "Native inventory Use; each opening consumes one keg.",
+    "exhaustedAfterPurchase": "Return 150 crowns when attempting to open a previously purchased closed keg after other rewards exhausted the rare pool."
+  },
+  "npcRewards": {
+    "retainExistingRewardEvents": true,
+    "preserveQuestCompletion": "original minigame result signalling retained; Beta collection completion and tournament-admission hooks implemented; runtime acceptance pending",
+    "vanillaToBetaRewardMappingImplemented": true,
+    "assignedQuestCharacters": 33,
+    "questGoldPolicy": "One distinct assigned gold per character; other gold only from kegs. Assigned gold can also occur in kegs.",
+    "atCapRewardFallback": "300 crowns instead of the assigned gold already owned",
+    "ordinaryPolicy": "random eligible bronze/silver only on first win over actual NPC GUID hash",
+    "ordinaryCopyCaps": {
+      "bronze": 3,
+      "silver": 1
+    },
+    "bloodAndWineTournamentAssignmentsPending": false,
+    "bloodAndWineActualRequests": [
+      "NMLTournament2",
+      "NilfTournament2",
+      "SkelTournament2",
+      "ScoiaTournament2"
+    ],
+    "namedDeckPolicy": "33 fixed distinct legal lists. Roche has a dedicated Blue Stripes composition; others retain base archetypes with an assigned gold and a fixed bronze variation. Advanced strategies deferred.",
+    "tournamentAdmission": "Valid owned Beta starter deck; Toussaint requires Skellige. Native entry fees/results retained; runtime acceptance pending.",
+    "nativeTutorial": "Bypassed on Beta NPC requests because it teaches original TW3 rules. Runtime acceptance pending."
+  },
+  "collectionQuest": {
+    "completionRule": "One copy of each available collectible Beta card and leader; additional bronze copies do not count.",
+    "completionRuleApproved": true,
+    "templates": 479,
+    "leaders": 21,
+    "book": "Native Gwent Almanac now reports Beta collection totals and missing faction counts.",
+    "nativeCompletion": "Sets gwint_all_cards_collected and EA_GwintCollector only at the full Beta total; legacy achievement tag scan suppressed during native item additions, original tags restored.",
+    "existingCompletedQuestPolicy": "Do not reset already completed quests or earned achievements.",
+    "runtimeVerified": false
+  },
+  "catalog": {
+    "showUnownedCards": true,
+    "acquisitionText": "assigned starter/keg/ordinary merchant or explicit quest character, with runtime owned counts",
+    "plannedSources": [
+      "starter deck",
+      "keg at Baron castle merchant",
+      "NPC win",
+      "quest reward"
+    ]
+  },
+  "persistence": {
+    "ownedCopies": "new versioned saved player fields",
+    "pendingKeg": "new versioned saved player fields",
+    "claimedNpcRewards": "saved ordinary NPC GUID hashes and saved named quest deck keys",
+    "deckSlots": "retain current eight saved deck slots and preferred deck",
+    "migrationAndNewGamePlus": "valid existing DEV decks receive required owned copies once on collection initialization; save/reload and NG+ runtime acceptance pending"
+  },
+  "releaseOrder": [
+    "starter decks and bulk inventory kegs",
+    "controller support and animation refinement",
+    "test release with existing audio and AI",
+    "full licensed Wwise bank and AI archetypes"
+  ]
+}

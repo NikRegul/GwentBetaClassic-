@@ -1,0 +1,20 @@
+[
+  {"id":"targets/all-dead","kind":"targetApply","valid":0,"max":3,"selected":0,"finished":false,"expectedMin":0,"expectedMax":0,"expectedFinished":true},
+  {"id":"targets/two-survive","kind":"targetApply","valid":2,"max":4,"selected":0,"finished":false,"expectedMin":2,"expectedMax":2,"expectedFinished":false},
+  {"id":"targets/max-smaller-than-pool","kind":"targetApply","valid":5,"max":2,"selected":0,"finished":false,"expectedMin":2,"expectedMax":2,"expectedFinished":false},
+  {"id":"targets/selected-at-max","kind":"targetApply","valid":3,"max":2,"selected":2,"finished":false,"expectedMin":2,"expectedMax":2,"expectedFinished":true},
+  {"id":"targets/sticky-finished","kind":"targetApply","valid":3,"max":2,"selected":0,"finished":true,"expectedMin":2,"expectedMax":2,"expectedFinished":true},
+  {"id":"targets/zero-max","kind":"targetApply","valid":4,"max":0,"selected":0,"finished":false,"expectedMin":0,"expectedMax":0,"expectedFinished":true},
+  {"id":"target-finish/below-min","kind":"targetFinish","min":2,"max":2,"selected":1,"finished":false,"expectedFinished":false},
+  {"id":"target-finish/at-min","kind":"targetFinish","min":1,"max":2,"selected":1,"finished":false,"expectedFinished":true},
+  {"id":"target-finish/above-max","kind":"targetFinish","min":1,"max":2,"selected":3,"finished":false,"expectedFinished":false},
+  {"id":"target-finish/empty-allowed","kind":"targetFinish","min":0,"max":2,"selected":0,"finished":false,"expectedFinished":true},
+  {"id":"target-finish/sticky","kind":"targetFinish","min":1,"max":2,"selected":0,"finished":true,"expectedFinished":true},
+  {"id":"choice-finish/below-min","kind":"choiceFinish","min":1,"max":2,"selected":0,"finished":false,"expectedFinished":false,"expectedReturn":false},
+  {"id":"choice-finish/at-min","kind":"choiceFinish","min":1,"max":2,"selected":1,"finished":false,"expectedFinished":true,"expectedReturn":true},
+  {"id":"choice-finish/at-max","kind":"choiceFinish","min":1,"max":2,"selected":2,"finished":false,"expectedFinished":true,"expectedReturn":true},
+  {"id":"choice-finish/above-max","kind":"choiceFinish","min":1,"max":2,"selected":3,"finished":false,"expectedFinished":false,"expectedReturn":false},
+  {"id":"choice-finish/min-exceeds-max","kind":"choiceFinish","min":3,"max":2,"selected":2,"finished":false,"expectedFinished":false,"expectedReturn":false},
+  {"id":"choice-finish/empty-allowed","kind":"choiceFinish","min":0,"max":2,"selected":0,"finished":false,"expectedFinished":true,"expectedReturn":true},
+  {"id":"choice-finish/sticky-outside-range","kind":"choiceFinish","min":1,"max":2,"selected":0,"finished":true,"expectedFinished":true,"expectedReturn":false}
+]

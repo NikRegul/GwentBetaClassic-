@@ -1,0 +1,237 @@
+// Archetype layer: own hand/deck only; enemy board/graves are public.
+// Bounded combo forecasts are ordering preferences, never extra catch-up points.
+function BetaGwentAIComboPriority(weight : int, heldPayoffs : int, activeSetups : int,
+    heldSetups : int, playingSetup : bool, horizon : int) : int
+{
+    if(horizon<2)return 0;
+    if(playingSetup)return Min(8,weight*heldPayoffs)*Min(3,horizon)/3;
+    if(activeSetups==0 && heldSetups>0)return -Min(6,weight*heldSetups);
+    return 0;
+}
+function BetaGwentAIKeyReserve(finisher : bool, round : int, enemyPassed : bool) : int
+{
+    if(!finisher || round>=3 || enemyPassed)return 0;
+    if(round==1)return 6;
+    return 3;
+}
+function BetaGwentAIImperaDeployGain(publicSpies : int) : int
+{return Max(0,publicSpies)*2;}
+class CBetaGwentArchetypeAI extends IScriptable
+{
+    private var game : CBetaGwentDuelSession;
+    private var profile : int;
+    private var family : int;
+    private var pairs : array<SBetaGwentAICombo>;
+    private var hand, board : array<CBetaGwentDuelCard>;
+    private var situation : SBetaGwentMatchSnapshot;
+    public function Initialize(owner : CBetaGwentDuelSession, deck : array<int>, preset : int, leader : int)
+    {
+        var profiles, candidate : array<int>;var i,j,k,score,bestScore : int;
+        game=owner;BetaGwentAICombos(pairs);profile=BetaGwentAIPresetProfile(preset);
+        if(profile!=0){family=BetaGwentAIProfileFamily(profile);return;}
+        BetaGwentAIProfileIds(profiles);bestScore=-1;
+        // Only the AI's actual starting list. Multiset overlap prevents a single
+        // shared gold from deciding which strategy a named NPC should follow.
+        for(i=0;i<profiles.Size();i+=1)
+        {
+            if(BetaGwentAIProfileLeader(profiles[i])!=leader)continue;
+            BetaGwentAIProfileDeck(profiles[i],candidate);score=0;
+            for(j=0;j<deck.Size();j+=1)for(k=0;k<candidate.Size();k+=1)
+                if(deck[j]==candidate[k]){score+=1;candidate.Erase(k);break;}
+            if(score>bestScore){bestScore=score;profile=profiles[i];}
+        }
+        family=BetaGwentAIProfileFamily(profile);
+    }
+    public function Title() : string {return BetaGwentAIProfileTitle(profile);}
+    public function ProfileId() : int {return profile;}
+    public function PreferDecidingRound() : bool
+    {
+        // These profiles need time for their own engines; no unconditional bleed.
+        return family!=0 && family!=BetaGwentAIProfileFamily(31) && family!=BetaGwentAIProfileFamily(27);
+    }
+    public function DryPass() : bool
+    {
+        if(!PreferDecidingRound() || situation.roundNumber!=2 || situation.playerTwo.crowns!=1 || situation.playerOne.crowns!=0)return false;
+        return game.Score(1)==0 && game.Score(2)==0 && game.CountLocation(2,8)>=game.CountLocation(1,8);
+    }
+    public function Refresh()
+    {
+        var row,i : int;var part : array<CBetaGwentDuelCard>;
+        situation=game.Snapshot();game.GetZoneCards(2,8,hand);board.Clear();
+        for(row=1;row<=4;row*=2){game.GetZoneCards(2,row,part);for(i=0;i<part.Size();i+=1)board.PushBack(part[i]);}
+    }
+    private function Horizon() : int
+    {
+        if(situation.playerOne.hasPassed)return 0;
+        return Min(3,Min(game.CountLocation(2,8),game.CountLocation(1,8)+1));
+    }
+    private function Count(cards : array<CBetaGwentDuelCard>, id : int, active : bool) : int
+    {
+        var i,total : int;var s : SBetaGwentCardSnapshot;
+        for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();if(cards[i].TemplateId()==id && !s.isWaitingToDie && (!active || (s.tokenMask&12)==0))total+=1;}
+        return total;
+    }
+    public function Priority(d : SBetaGwentDuelDefinition) : int
+    {
+        var i,value,id,horizon,held,active : int;id=d.header.templateId;horizon=Horizon();
+        for(i=0;i<pairs.Size();i+=1)
+        {
+            if(id==pairs[i].setup)value+=BetaGwentAIComboPriority(pairs[i].weight,Count(hand,pairs[i].payoff,false),0,0,true,horizon);
+            if(id==pairs[i].payoff){active=Count(board,pairs[i].setup,true);held=Count(hand,pairs[i].setup,false);
+                value+=BetaGwentAIComboPriority(pairs[i].weight,0,active,held,false,horizon);}
+        }
+        // Save returners for discard rather than spending a hand card on them.
+        if(id==152209 || id==152316){if(Count(hand,152103,false)+Count(hand,152213,false)+Count(hand,200036,false)>0)value-=7;}
+        // Queensguards multiply through resurrection; keep one seed to be killed.
+        if(id==152307 && game.CountLocation(2,32)>0)value+=Min(12,QueensguardExtra(0));
+        if(id==152205 && game.CountLocation(2,32)==0)value-=8;
+        if(BetaGwentAIResurrector(id) && PileGain(d)<=0)value-=10;
+        // Army strengthening benefits the whole deck before bodies are deployed.
+        if(id==200046 && situation.roundNumber==1 && horizon>=2)value+=5;
+        return Max(-18,Min(18,value));
+    }
+    public function Reserve(d : SBetaGwentDuelDefinition) : int
+    {return BetaGwentAIKeyReserve(BetaGwentAIFinisher(d.header.templateId),situation.roundNumber,situation.playerOne.hasPassed);}
+    public function PublicDeployGain(d : SBetaGwentDuelDefinition) : int
+    {
+        var row,i,spies : int;var cards : array<CBetaGwentDuelCard>;var s : SBetaGwentCardSnapshot;
+        if(d.header.templateId!=162307)return 0;
+        for(row=1;row<=4;row*=2){game.GetZoneCards(1,row,cards);
+            for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();if(!s.isWaitingToDie && (s.tokenMask&8)==0 && (s.tokenMask&128)!=0 && s.runtimeTemplate.typeMask==4)spies+=1;}}
+        return BetaGwentAIImperaDeployGain(spies);
+    }
+    public function EngineThreat(s : SBetaGwentCardSnapshot, horizon : int) : int
+    {
+        if((s.tokenMask&12)!=0 || s.isWaitingToDie)return 0;
+        return Min(12,BetaGwentAIEngine(s.runtimeTemplate.templateId)*horizon);
+    }
+    private function ZoneCopies(zone : int, id : int) : int
+    {var cards : array<CBetaGwentDuelCard>;game.GetZoneCards(2,zone,cards);return Count(cards,id,false);}
+    private function QueensguardExtra(exclude : int) : int
+    {
+        var cards : array<CBetaGwentDuelCard>;var i,total : int;var s : SBetaGwentCardSnapshot;
+        game.GetZoneCards(2,32,cards);
+        for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();if(cards[i].TemplateId()==152307 && s.instanceId!=exclude && !s.isWaitingToDie)total+=s.power.currentPower;}
+        return total;
+    }
+    public function Mulligan(card : CBetaGwentDuelCard) : int
+    {
+        var id : int;var d : SBetaGwentDuelDefinition;id=card.TemplateId();d=card.Definition();
+        // Do not exchange the same instance again after it has returned to hand.
+        if(id==113302 && Count(hand,132402,false)>0 && ZoneCopies(16,113302)>0)return 30;
+        if((id==132407 || id==132301 || id==142313) && ZoneCopies(16,id)>0)return 24;
+        if(id==152307 && Count(hand,id,false)>1)return 20;
+        if((id==152209 || id==152316) && game.LeaderAvailable(2) && game.LeaderTemplateId(2)==200159)return 23;
+        if(situation.roundNumber==1 && BetaGwentAIResurrector(id) && PileGain(d)==0)return 16;
+        if(id==152205 && game.CountLocation(2,32)==0)return 15;
+        return 0;
+    }
+    private function EligiblePile(source : int, t : SBetaGwentCardSnapshot) : bool
+    {
+        var id : int;id=t.runtimeTemplate.templateId;
+        if(t.isWaitingToDie || t.runtimeTemplate.typeMask!=4 || (t.runtimeTierMask&6)==0)return false;
+        if(source==152310)return t.runtimeTierMask==2 && BetaGwentSkelligeCategory(id,4);
+        if(source==152211)return BetaGwentSkelligeCategory(id,1);
+        if(source==200145)return t.runtimeTierMask==2 && BetaGwentSkelligeCategory(id,5);
+        if(source==153201)return t.runtimeTemplate.factionMask==32;
+        if(source==201619)return t.runtimeTierMask==2 && t.power.currentPower<=5;
+        if(source==162304)return t.runtimeTierMask==2;
+        if(source==201696)return t.runtimeTierMask==2 && BetaGwentNilfDwarf(id) && !BetaGwentNilfSupport(id);
+        if(source==200520)return t.runtimeTemplate.factionMask==16 && t.power.currentPower<=3;
+        return false;
+    }
+    // Concrete resurrection choices. No forecast calls for unknown card effects.
+    public function PileGain(d : SBetaGwentDuelDefinition) : int
+    {
+        var cards : array<CBetaGwentDuelCard>;var i,value,best,zoneSide,id : int;var s : SBetaGwentCardSnapshot;
+        id=d.header.templateId;zoneSide=2;if(id==162304)zoneSide=1;
+        if(id!=152310 && id!=152211 && id!=200145 && id!=153201 && id!=201619 && id!=162304 && id!=201696 && id!=200520)return 0;
+        game.GetZoneCards(zoneSide,32,cards);
+        for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();if(!EligiblePile(id,s))continue;
+            value=s.power.currentPower;if(id==153201)value+=8-s.power.basePower;
+            if(s.runtimeTemplate.templateId==152307)value+=QueensguardExtra(s.instanceId);
+            value+=Min(6,BetaGwentAIEngine(s.runtimeTemplate.templateId)*Horizon());best=Max(best,value);}
+        return best;
+    }
+    public function IsDiscard(source : CBetaGwentDuelCard) : bool
+    {
+        var id : int;id=source.TemplateId();
+        if(id==200159 || id==152103 || id==152213 || id==200036)return true;
+        return false;
+    }
+    public function DiscardValue(target : CBetaGwentDuelCard) : int
+    {
+        var d : SBetaGwentDuelDefinition;d=target.Definition();
+        if(d.header.templateId==152209 || d.header.templateId==152316)return 100+d.header.power;
+        if(d.header.templateId==152307)return 70;
+        if(d.header.templateId==200177)return 60;
+        return -d.header.power-Reserve(d)*4-BetaGwentAIEngine(d.header.templateId)*3;
+    }
+    public function ChoiceBonus(d : SBetaGwentDuelDefinition) : int
+    {return Priority(d)-Reserve(d);}
+    public function CopyValue(allCopies : bool, target : CBetaGwentDuelCard, optional forecast : bool) : int
+    {
+        var cards : array<CBetaGwentDuelCard>;var i,total,count : int;var s : SBetaGwentCardSnapshot;
+        var d : SBetaGwentDuelDefinition;game.GetZoneCards(2,16,cards);
+        for(i=0;i<cards.Size();i+=1)if(cards[i].TemplateId()==target.TemplateId()){
+            s=cards[i].Snapshot();d=cards[i].Definition();total+=s.power.currentPower;count+=1;
+            if(forecast && (d.specialMode==102 || d.effect==1))total+=Min(6,d.amount);
+            if(!allCopies)break;
+        }
+        if(count==0)return -20;
+        if(forecast)return total+Priority(target.Definition());return total;
+    }
+    public function LeaderGain(d : SBetaGwentDuelDefinition) : int
+    {
+        var i,best,value : int;var s : SBetaGwentCardSnapshot;
+        if(d.header.templateId==200168){
+            for(i=0;i<board.Size();i+=1){s=board[i].Snapshot();if(!s.isWaitingToDie && (s.tokenMask&8)==0)best+=1;}
+            return best;
+        }
+        if(d.header.templateId==200170){
+            for(i=0;i<board.Size();i+=1){s=board[i].Snapshot();if(s.runtimeTierMask!=2 || s.isWaitingToDie || (s.tokenMask&8)!=0)continue;
+                if(!BetaGwentNorthernCategory(s.runtimeTemplate.templateId,5) || (s.tokenMask&256)!=0)continue;
+                value=CopyValue(true,board[i]);best=Max(best,value);}
+        }
+        return best;
+    }
+    public function LeaderPriority(d : SBetaGwentDuelDefinition) : int
+    {
+        var i,units : int;var held : SBetaGwentDuelDefinition;
+        if(situation.playerOne.hasPassed || situation.roundNumber>=3)return 0;
+        if(d.header.templateId==200168){
+            for(i=0;i<hand.Size();i+=1){held=hand[i].Definition();if(held.header.typeMask==4 && !BetaGwentDuelSpying(hand[i].TemplateId()))units+=1;}
+            if(situation.roundNumber==1)return Min(18,units*3);
+            return Min(8,units);
+        }
+        return 0;
+    }
+    public function PlacementAnchor(d : SBetaGwentDuelDefinition) : int
+    {
+        var i,id : int;var s : SBetaGwentCardSnapshot;id=d.header.templateId;
+        if(d.header.typeMask!=4 || BetaGwentDuelSpying(id))return 0;
+        for(i=0;i<board.Size();i+=1){s=board[i].Snapshot();if(s.isWaitingToDie || (s.tokenMask&12)!=0 || game.CountLocation(2,s.locationMask)>=9)continue;
+            if((id==152309 || id==152109) && board[i].TemplateId()==200040)return s.instanceId;
+            if(BetaGwentNorthernCategory(id,1) && (BetaGwentNorthernCategory(board[i].TemplateId(),3) || board[i].northernCrew))return s.instanceId;
+        }
+        return 0;
+    }
+    public function Row(d : SBetaGwentDuelDefinition, original : int) : int
+    {
+        var row,i,value,best,maximum,highest,total : int;var cards : array<CBetaGwentDuelCard>;var s : SBetaGwentCardSnapshot;
+        var id : int;id=d.header.templateId;best=original;maximum=-2147483647;
+        // Effects with row-specific spawns/targets retain the existing evaluator.
+        if(d.header.typeMask!=4 || BetaGwentDuelSpying(id) || d.deploySummonTemplate>0 || d.deploySpawnCount>0 || d.deathwishDamage>0 || d.deathwishSpawnCount>0)return original;
+        for(row=1;row<=4;row*=2)
+        {
+            if(game.CountLocation(2,row)>=9)continue;game.GetZoneCards(2,row,cards);
+            total=0;highest=0;for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();if((s.tokenMask&8)!=0)continue;total+=s.power.currentPower;highest=Max(highest,s.power.currentPower);}
+            value=-game.WeatherDamage(2,row)*Max(1,Horizon())-cards.Size();
+            if(row==original)value+=1;
+            if(!situation.playerOne.hasPassed && total+d.header.power>=25)value-=5;
+            if(id==152309){for(i=0;i<cards.Size();i+=1)if(cards[i].TemplateId()==200040)value+=8;}
+            if(value>maximum){maximum=value;best=row;}
+        }
+        return best;
+    }
+}

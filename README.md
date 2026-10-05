@@ -11,6 +11,8 @@ five factions, saved deck builder, collection, NPC rewards, kegs and controller.
 - [Контроллер](BetaGwent/release/CONTROLS_RU.md) / [Controls](BetaGwent/release/CONTROLS_EN.md)
 - [Изменения 0.2.0](BetaGwent/release/CHANGELOG_RU.md) / [Changes](BetaGwent/release/CHANGELOG_EN.md)
 
+**You must back up your saves before installing the mod and before every update. Bugs can still occur; use a separate test save for your first matches.**
+
 Install **one** full RU or EN package under Mods/modBetaGwent0924. Source
 checkout alone is not an installable mod. See Releases for packaged downloads
 once uploaded. Players do not need REDkit or Wwise.

@@ -1,0 +1,248 @@
+{
+  "catalogSha256": "022539802636cb45e92123a630c3788a0674c39b538fa1f69a64761a6b3ddbd3",
+  "cards": [
+    {
+      "templateId": 142101,
+      "fields": {
+        "specialMode": 500,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 1,
+        "specialCount": 1
+      },
+      "abilityRecordKey": "ability/170",
+      "originalVariables": {
+        "MaxTargets": 1,
+        "Boost": 1,
+        "Damage": 1
+      }
+    },
+    {
+      "templateId": 142102,
+      "fields": {
+        "specialMode": 501,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1
+      },
+      "abilityRecordKey": "ability/171",
+      "originalVariables": {
+        "MaxChoices": 1
+      }
+    },
+    {
+      "templateId": 142103,
+      "fields": {
+        "specialMode": 502,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 8,
+        "specialCount": 1
+      },
+      "abilityRecordKey": "ability/172",
+      "originalVariables": {
+        "Damage": 8,
+        "Boost": 1
+      }
+    },
+    {
+      "templateId": 142104,
+      "fields": {
+        "specialMode": 503,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1
+      },
+      "abilityRecordKey": "ability/173",
+      "originalVariables": {
+        "Boost": 3
+      }
+    },
+    {
+      "templateId": 142105,
+      "fields": {
+        "specialMode": 504,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 2,
+        "specialCount": 3
+      },
+      "abilityRecordKey": "ability/174",
+      "originalVariables": {
+        "MaxTargets": 3,
+        "Strengthen": 2,
+        "Damage": 2
+      }
+    },
+    {
+      "templateId": 142106,
+      "fields": {
+        "specialMode": 505,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1
+      },
+      "abilityRecordKey": "ability/175",
+      "originalVariables": {
+        "MaxTargets": 1
+      }
+    },
+    {
+      "templateId": 142107,
+      "fields": {
+        "specialMode": 506,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1
+      },
+      "abilityRecordKey": "ability/176",
+      "originalVariables": {
+        "MaxTargets": 1
+      }
+    },
+    {
+      "templateId": 142108,
+      "fields": {
+        "specialMode": 507,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1
+      },
+      "abilityRecordKey": "ability/177",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 142203,
+      "fields": {
+        "specialMode": 508,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1
+      },
+      "abilityRecordKey": "ability/180",
+      "originalVariables": {
+        "MaxTargets": 1
+      }
+    },
+    {
+      "templateId": 200080,
+      "fields": {
+        "specialMode": 509,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1
+      },
+      "abilityRecordKey": "ability/335",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 200209,
+      "fields": {
+        "specialMode": 510,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 2
+      },
+      "abilityRecordKey": "ability/388",
+      "originalVariables": {
+        "MaxTargets": 2,
+        "Picked": 0
+      }
+    },
+    {
+      "templateId": 201611,
+      "fields": {
+        "specialMode": 511,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 2
+      },
+      "abilityRecordKey": "ability/452",
+      "originalVariables": {
+        "Damage": 0,
+        "MaxTargets": 2
+      }
+    },
+    {
+      "templateId": 201615,
+      "fields": {
+        "specialMode": 512,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1
+      },
+      "abilityRecordKey": "ability/455",
+      "originalVariables": {
+        "MaxTargets": 1
+      }
+    },
+    {
+      "templateId": 201779,
+      "fields": {
+        "specialMode": 513,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1
+      },
+      "abilityRecordKey": "ability/563",
+      "originalVariables": {}
+    }
+  ],
+  "views": {
+    "201715": 201615,
+    "201716": 201615
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "catalogSha256": "022539802636cb45e92123a630c3788a0674c39b538fa1f69a64761a6b3ddbd3",
+  "policy": "Concrete original special consumers. mode/request/count/radius are runtime routing; original amount, masks, minimum and descriptions come from pinned graphs. No DIY rules.",
+  "cards": [
+    {
+      "templateId": 113101,
+      "mode": 14,
+      "request": 0,
+      "token": 32
+    },
+    {
+      "templateId": 200018,
+      "mode": 14,
+      "request": 0,
+      "token": 16
+    },
+    {
+      "templateId": 113306,
+      "mode": 16,
+      "request": 1
+    },
+    {
+      "templateId": 113202,
+      "mode": 9,
+      "request": 2
+    },
+    {
+      "templateId": 113205,
+      "mode": 10,
+      "request": 2
+    },
+    {
+      "templateId": 113309,
+      "mode": 6,
+      "request": 0
+    },
+    {
+      "templateId": 113207,
+      "mode": 7,
+      "request": 1,
+      "radius": 2
+    },
+    {
+      "templateId": 113203,
+      "mode": 15,
+      "request": 2,
+      "side": 2,
+      "token": 64
+    },
+    {
+      "templateId": 113206,
+      "mode": 15,
+      "request": 2,
+      "side": 2,
+      "token": 1,
+      "rowMask": 3,
+      "count": 2
+    },
+    {
+      "templateId": 201634,
+      "mode": 3,
+      "request": 0,
+      "side": 2,
+      "count": 10
+    },
+    {
+      "templateId": 201657,
+      "mode": 12,
+      "request": 1
+    },
+    {
+      "templateId": 113204,
+      "mode": 1,
+      "request": 0,
+      "side": 2
+    },
+    {
+      "templateId": 113307,
+      "mode": 11,
+      "request": 1
+    },
+    {
+      "templateId": 200008,
+      "mode": 2,
+      "request": 0,
+      "side": 1,
+      "count": 6
+    },
+    {
+      "templateId": 200009,
+      "mode": 3,
+      "request": 0,
+      "side": 2,
+      "count": 6
+    },
+    {
+      "templateId": 200023,
+      "mode": 8,
+      "request": 1,
+      "radius": 1
+    },
+    {
+      "templateId": 200519,
+      "mode": 4,
+      "request": 0,
+      "side": 1
+    },
+    {
+      "templateId": 200224,
+      "mode": 5,
+      "request": 0,
+      "side": 2
+    },
+    {
+      "templateId": 201744,
+      "mode": 13,
+      "request": 2
+    },
+    {
+      "templateId": 201749,
+      "mode": 15,
+      "request": 2,
+      "side": 1,
+      "token": 128
+    },
+    {
+      "templateId": 163101,
+      "mode": 17,
+      "request": 1,
+      "side": 2,
+      "count": 2
+    },
+    {
+      "templateId": 200078,
+      "mode": 18,
+      "request": 1
+    },
+    {
+      "templateId": 113315,
+      "mode": 19,
+      "request": 0
+    },
+    {
+      "templateId": 200530,
+      "mode": 5,
+      "request": 0,
+      "side": 2
+    },
+    {
+      "templateId": 201643,
+      "mode": 16,
+      "request": 1,
+      "excludedTraits": 2
+    },
+    {
+      "templateId": 201645,
+      "mode": 20,
+      "request": 2,
+      "side": 2
+    },
+    {
+      "templateId": 201659,
+      "mode": 21,
+      "request": 0,
+      "side": 1
+    },
+    {
+      "templateId": 133301,
+      "mode": 22,
+      "request": 1
+    },
+    {
+      "templateId": 201656,
+      "mode": 23,
+      "request": 1
+    },
+    {
+      "templateId": 113316,
+      "effect": 29,
+      "mode": 0,
+      "request": 3,
+      "pileLocation": 32,
+      "pilePickMode": 0,
+      "pileCandidateLimit": 0,
+      "pileShuffle": 0,
+      "pileTraitMask": 0
+    },
+    {
+      "templateId": 200154,
+      "effect": 29,
+      "mode": 0,
+      "request": 3,
+      "pileLocation": 16,
+      "pilePickMode": 0,
+      "pileCandidateLimit": 0,
+      "pileShuffle": 1,
+      "pileTraitMask": 0
+    },
+    {
+      "templateId": 113209,
+      "effect": 29,
+      "mode": 0,
+      "request": 3,
+      "pileLocation": 16,
+      "pilePickMode": 1,
+      "pileCandidateLimit": 1,
+      "pileShuffle": 0,
+      "pileTraitMask": 0
+    },
+    {
+      "templateId": 200019,
+      "effect": 29,
+      "mode": 0,
+      "request": 3,
+      "pileLocation": 16,
+      "pilePickMode": 2,
+      "pileCandidateLimit": 1,
+      "pileShuffle": 0,
+      "pileTraitMask": 0
+    },
+    {
+      "templateId": 113102,
+      "effect": 29,
+      "mode": 0,
+      "request": 3,
+      "pileLocation": 16,
+      "pilePickMode": 0,
+      "pileCandidateLimit": 2,
+      "pileShuffle": 1,
+      "pileTraitMask": 0
+    },
+    {
+      "templateId": 201704,
+      "effect": 29,
+      "mode": 0,
+      "request": 3,
+      "pileLocation": 16,
+      "pilePickMode": 0,
+      "pileCandidateLimit": 2,
+      "pileShuffle": 1,
+      "pileTraitMask": 0
+    },
+    {
+      "templateId": 143201,
+      "effect": 29,
+      "mode": 0,
+      "request": 3,
+      "pileLocation": 16,
+      "pilePickMode": 0,
+      "pileCandidateLimit": 0,
+      "pileShuffle": 1,
+      "pileTraitMask": 0
+    },
+    {
+      "templateId": 123201,
+      "effect": 29,
+      "mode": 0,
+      "request": 3,
+      "pileLocation": 16,
+      "pilePickMode": 0,
+      "pileCandidateLimit": 0,
+      "pileShuffle": 1,
+      "pileTraitMask": 8
+    },
+    {
+      "templateId": 201699,
+      "effect": 29,
+      "mode": 0,
+      "request": 3,
+      "pileLocation": 16,
+      "pilePickMode": 0,
+      "pileCandidateLimit": 0,
+      "pileShuffle": 1,
+      "pileTraitMask": 16
+    },
+    {
+      "templateId": 201635,
+      "mode": 24,
+      "request": 0,
+      "playTemplateId": 132209,
+      "spawnTemplate": 113306
+    },
+    {
+      "templateId": 200021,
+      "mode": 25,
+      "request": 1,
+      "side": 1,
+      "playTemplateId": 152406
+    },
+    {
+      "templateId": 201753,
+      "mode": 26,
+      "request": 2,
+      "side": 1,
+      "spawnTemplate": 201677,
+      "spawnCount": 3
+    },
+    {
+      "templateId": 201633,
+      "mode": 27,
+      "request": 1,
+      "spawnTemplate": 201758,
+      "spawnCount": 1
+    },
+    {
+      "templateId": 201647,
+      "mode": 28,
+      "request": 1,
+      "side": 2
+    },
+    {
+      "templateId": 200225,
+      "mode": 29,
+      "request": 1,
+      "side": 2,
+      "maxPower": 8
+    },
+    {
+      "templateId": 113201,
+      "mode": 30,
+      "request": 1,
+      "side": 1
+    },
+    {
+      "templateId": 201619,
+      "effect": 29,
+      "mode": 0,
+      "request": 3,
+      "pileLocation": 32,
+      "pilePickMode": 0,
+      "pileCandidateLimit": 0,
+      "pileShuffle": 0,
+      "pileTraitMask": 0,
+      "maxPower": 5
+    },
+    {
+      "templateId": 200228,
+      "mode": 37,
+      "request": 2,
+      "side": 2,
+      "token": 512
+    },
+    {
+      "templateId": 201637,
+      "mode": 37,
+      "request": 2,
+      "side": 2,
+      "token": 1024
+    }
+  ]
+}

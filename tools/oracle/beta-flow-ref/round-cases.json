@@ -1,0 +1,12 @@
+[
+  {"id":"p1-wins-first", "initialCrowns":[0,0], "rounds":[{"scores":[15,11], "roundWinner":1,"crowns":[1,0],"matchWinner":0}]},
+  {"id":"p2-wins-first", "initialCrowns":[0,0], "rounds":[{"scores":[11,15], "roundWinner":2,"crowns":[0,1],"matchWinner":0}]},
+  {"id":"zero-zero-tie", "initialCrowns":[0,0], "rounds":[{"scores":[0,0], "roundWinner":3,"crowns":[1,1],"matchWinner":0}]},
+  {"id":"nonzero-tie", "initialCrowns":[0,0], "rounds":[{"scores":[27,27], "roundWinner":3,"crowns":[1,1],"matchWinner":0}]},
+  {"id":"tie-after-p1-win", "initialCrowns":[1,0], "rounds":[{"scores":[0,0], "roundWinner":3,"crowns":[2,1],"matchWinner":1}]},
+  {"id":"tie-after-p2-win", "initialCrowns":[0,1], "rounds":[{"scores":[14,14], "roundWinner":3,"crowns":[1,2],"matchWinner":2}]},
+  {"id":"both-reach-two", "initialCrowns":[1,1], "rounds":[{"scores":[14,14], "roundWinner":3,"crowns":[2,2],"matchWinner":3}]},
+  {"id":"p1-two-straight", "initialCrowns":[0,0], "rounds":[{"scores":[20,10], "roundWinner":1,"crowns":[1,0],"matchWinner":0},{"scores":[6,0],"roundWinner":1,"crowns":[2,0],"matchWinner":1}]},
+  {"id":"split-then-p2", "initialCrowns":[0,0], "rounds":[{"scores":[20,10],"roundWinner":1,"crowns":[1,0],"matchWinner":0},{"scores":[5,6],"roundWinner":2,"crowns":[1,1],"matchWinner":0},{"scores":[0,1],"roundWinner":2,"crowns":[1,2],"matchWinner":2}]},
+  {"id":"two-ties-draw", "initialCrowns":[0,0], "rounds":[{"scores":[0,0],"roundWinner":3,"crowns":[1,1],"matchWinner":0},{"scores":[11,11],"roundWinner":3,"crowns":[2,2],"matchWinner":3}]}
+]

@@ -1,0 +1,28 @@
+# Local game/tool/asset inputs and build outputs
+BetaGwent/build/
+BetaGwent/ui/build/
+BetaGwent/ui/assets/
+BetaGwent/audio/
+BetaGwent/release/*.zip*
+data/beta924/normalized/
+data/beta924/raw/
+GwentB/
+depot/
+Gwent 0.9.24.3.432/
+LegacyGwent*/
+tools/vendor/
+__pycache__/
+bin/
+obj/
+*.wproj
+*.wwu
+*.bnk
+*.wem
+*.wav
+*.redswf
+*.rsblob
+*.db
+*.log
+*.sav
+.env
+.codex/

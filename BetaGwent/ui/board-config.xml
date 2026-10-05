@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flex-config xmlns="http://www.adobe.com/2006/flex-config">
+  <target-player>11.1</target-player><swf-version>14</swf-version>
+  <compiler>
+    <debug>false</debug><compress>false</compress><optimize>true</optimize><strict>true</strict>
+    <external-library-path><path-element>../../tools/vendor/royale-player-api-0.9.12/royale-typedefs-playerglobal-0.9.12-swf.swc</path-element></external-library-path>
+    <source-path><path-element>src</path-element></source-path><theme/>
+  </compiler>
+</flex-config>

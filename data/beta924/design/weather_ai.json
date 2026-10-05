@@ -1,0 +1,25 @@
+{
+  "stage": 80,
+  "presetId": 15,
+  "key": "eredin-frost-control",
+  "leader": 131101,
+  "status": "first deterministic tactical profile; runtime pending",
+  "detectOwnDeck": {
+    "minHounds": 2,
+    "minRiders": 2,
+    "minDrakkars": 2
+  },
+  "userProvidedStrategy": "docs/ai_weather80.md",
+  "sourceVersion": "0.9.24.3.432",
+  "hiddenOpponentCardIdentitiesRead": false,
+  "evaluationConsumesMatchRng": false,
+  "longSearchImplemented": false,
+  "plannedMaxSearchSeconds": 30,
+  "remaining": [
+    "multi-step simulation",
+    "round2 bleed",
+    "counterplay probabilities",
+    "remaining archetypes",
+    "unique NPC deck assignments"
+  ]
+}

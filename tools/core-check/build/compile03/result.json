@@ -1,0 +1,24 @@
+{
+  "command": [
+    "D:\\GOG Galaxy\\Games\\The Witcher 3 REDkit\\bin\\x64_RedKit\\wcc_lite.exe",
+    "compilescripts",
+    "D:\\GOG Galaxy\\Games\\The Witcher 3 REDkit\\r4data\\scripts",
+    "-out=D:\\w3mod\\tools\\core-check\\build\\compile03\\compiled",
+    "-wcclog=D:\\w3mod\\tools\\core-check\\build\\compile03\\wcc.log",
+    "-patch=D:\\w3mod\\tools\\core-check\\patch",
+    "-agreetoterms"
+  ],
+  "workingDirectory": "D:\\GOG Galaxy\\Games\\The Witcher 3 REDkit\\bin\\x64_RedKit",
+  "exitCode": 0,
+  "timedOut": false,
+  "humanReportedPriorLicenseAcceptance": true,
+  "elapsedSeconds": 29.15,
+  "artifacts": [
+    {
+      "path": "D:\\w3mod\\tools\\core-check\\build\\compile03\\compiled\\blob.rsblob",
+      "bytes": 16315,
+      "sha256": "11F988C6AEAD58727EF44AFD9BE2FB507316F911C9BDAC337BF2CBA443F74D53"
+    }
+  ],
+  "note": "An artifact/exit code alone is not confirmation of runtime or save round-trip."
+}

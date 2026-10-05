@@ -1,0 +1,12 @@
+{
+  "command": [
+    "D:\\GOG Galaxy\\Games\\The Witcher 3 REDkit\\bin\\x64_RedKit\\wcc_lite.exe",
+    "swfimport",
+    "-help",
+    "-agreetoterms",
+    "-wcclog=D:\\w3mod\\tools\\ui\\build\\swfimport-usage\\wcc.log"
+  ],
+  "exitCode": 0,
+  "timedOut": false,
+  "humanPriorWccLicenseAcceptance": true
+}

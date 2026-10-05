@@ -1,0 +1,43 @@
+{
+  "catalogSha256": "022539802636cb45e92123a630c3788a0674c39b538fa1f69a64761a6b3ddbd3",
+  "policy": "Concrete one-target original unit graphs; no proxy effects for arbitrary abilities.",
+  "cards": [
+    {
+      "templateId": 112214,
+      "effect": 31,
+      "side": 0
+    },
+    {
+      "templateId": 113313,
+      "effect": 32,
+      "side": 1
+    },
+    {
+      "templateId": 142317,
+      "effect": 2,
+      "side": 1
+    },
+    {
+      "templateId": 152304,
+      "effect": 1,
+      "side": 0
+    },
+    {
+      "templateId": 200299,
+      "effect": 2,
+      "side": 1
+    },
+    {
+      "templateId": 200540,
+      "effect": 1,
+      "side": 2
+    }
+  ],
+  "generatedPlainUnitIds": [
+    132403,
+    152406,
+    200457,
+    201677,
+    201758
+  ]
+}

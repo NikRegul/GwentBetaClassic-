@@ -1,0 +1,709 @@
+0|Waiting for WitcherScript...
+1|↑↓←→ select · 
+2| confirm · 
+3| back · 
+4| card
+5|↑↓←→ card · 
+6| select · 
+7| details · L3 board · 
+8| hold: pass · Start actions
+9|↑↓←→ board card · 
+10| details · L3 / 
+11| return to hand
+12|←→ insertion position · LB/RB row · 
+13| place · 
+14| cancel · 
+15| details
+16|↑↓←→ highlighted target · 
+17| apply · 
+18| details · 
+19|LB/RB Frost without moving
+20|Start choice actions
+21|↑↓ row, including empty rows · 
+22| back
+23| add/remove · LT − RT + · 
+24| card · 
+25| list · LB/RB pages · 
+26| search · Start save
+27| letter · 
+28| delete · 
+29| space · LB/RB RU/EN · Start accept · 
+30| cancel
+31|Right stick / LB/RB: description · 
+32| close
+33| · LB/RB pages
+34|: skip action playback
+35|Your 
+36|Enemy 
+37|melee
+38|ranged
+39|siege
+40| row · position 
+41|ACTIONS
+42|Continue
+43|Pass
+44|Leader ability
+45|View your deck
+46|Your graveyard
+47|Opponent's graveyard
+48|Return to game / end Gwent
+49|View — deck · LT / RT — graveyards\nR3 — leader · X — card details\nHold Y / △ to pass quickly.
+50|Confirm — remove a copy. 
+51|Confirm — add a copy. 
+52|Left trigger − · right trigger + · inspect card.\n
+53|The ability has already been played. Select a target or finish the choice.
+54|Select a row with ↑ ↓ and Enter, or press 1 / 2 / 3 for your rows.
+55|BETA GWENT · PAID KEG
+56|Continue later
+57|Bronze cards added: 
+58| / 4. Choose one rare card; these options are saved with your game.
+59|All bronze copies collected. No excess copies awarded. Keg price: 150 crowns.
+60|Gold
+61|Silver
+62|Bronze · received
+63|Choose · 
+64|Choice: 50% silver / 50% gold or leader. No excess copies. Closing does not change the contents.
+65|BETA GWENT 0.9.24 · YOUR DECKS
+66|BETA GWENT 0.9.24 · PRE-MATCH DECK
+67|Create deck
+68|Edit
+69|Copy deck
+70|All cards
+71|Resume keg choice
+72|Open keg · 
+73|Select your deck. Opponent's deck is hidden: 
+74|Create or edit a deck. Changes are stored in your game save.
+75|Select your deck and the opponent's deck. Lists are shown below.
+76|Decks 
+77| cards · leader: 
+78| units · 
+79| specials\n
+80| gold · 
+81| silver
+82|Your deck
+83|Select for yourself
+84|Opponent's deck
+85|Select for opponent
+86|Your leader: 
+87|Opponent's leader: 
+88| · power 
+89|View yours
+90|View opponent's
+91|Loading deck lists...
+92|Your deck: 
+93|Opponent: 
+94| · deck list · 
+95| · special
+96|Bronze
+97|Back
+98|Next
+99|Hover over a card for larger artwork, tags and the full ability description.
+100|Start match
+101|Saved 
+102|Leaving the match counts as a defeat.
+103| versus 
+104|Decline match
+105|Close
+106|Artwork unavailable
+107|Special card
+108|Power: 
+109|Implemented
+110|Implementation pending
+111|Acquisition: unassigned
+112|Found: 
+113| · page 
+114|Select a card on the left to read its description and acquisition source.
+115|Gold
+116|Silver
+117|Bronze
+118|Neutral
+119|Northern Realms
+120|Unit
+121|Playable in this version
+122|Not playable yet
+123|Tags: 
+124|No description in the original localization.
+125|Owned: 
+126|Practice allows all cards.
+127|The editor only allows owned copies.
+128|BETA GWENT 0.9.24 · ALL CARDS
+129|Back to decks
+130|Collection: 
+131| · remaining 
+132| · one copy of every card and leader required
+133|All
+134|Neutral
+135|Northern Realms
+136|Leaders
+137|Units
+138|Specials
+139|Implemented
+140|Queued
+141|Deck name
+142|Find cards
+143|DECK NAME
+144| / 48 · Enter — accept · Esc — cancel
+145|Enter a deck name.
+147|A → a
+148|a → A
+149|Space
+150|← Delete
+151|Accept
+152|Cancel
+153|Type with your keyboard or select letters with the mouse / controller.\nAccept updates the draft; then select Save deck.
+154|No cards match these filters.
+155| cards · page 
+156|BETA GWENT 0.9.24 · DECK BUILDER
+157|Scoia'tael
+158| · slot 
+159|Rename
+160|All rarities
+161|F
+162|F+N
+163|Search: name, ability or tag (e.g. Alchemy) · F+N: faction and neutrals
+164| / 25–40 cards
+165|Clear
+166|Gold 
+167| / 4 · silver 
+168| specials
+169|Add collection cards with +.\nBronze: up to 3 copies; silver and gold: 1 each.
+170|Deck list: 
+171|Save deck
+172|Cancel
+173|Click a collection card to add a copy, or a deck card to remove one. Hover to read its ability.
+174|Speed: 
+175|Effects: reduced
+176|Effects: full
+177|Melee row
+178|Ranged row
+179|Siege row
+180| · position 
+181| · select to place
+182|CARANTHIR FROST · opposite row
+183|Resume choice
+184|Kegs · 
+185|Opening deck builder…
+186|Duel · Beta 0.9.24 cards · DIY board
+187|Round 
+188|Choose mode
+189|Choose ability card
+190|Choose a card to play
+191|Choose power from hand
+192|Consume from graveyard
+193|Mulligan
+194|Your turn
+195|Opponent's turn
+196|Waiting
+197|MATCH
+198|Frost affects the row opposite Caranthir. Move a highlighted unit or confirm the row without moving one. LB / RB — select row.
+199|RECENT ACTIONS
+200|Skip animation
+201|Frost without moving
+202|Choose an option
+203|No selection
+204|Do not play
+205|Choose a unit
+206|Do not Consume
+207|Start round
+208|No target
+209|Selection required
+210|Next round starts automatically
+211|Next round
+212|Hover over a card.\nI or Shift + click — full description.
+213|Rematch
+214|Concede
+215|Select decks
+216|Board 1
+217|Board 2
+218|Opponent plays automatically.\nWin two rounds to win the match.
+219|Sound: on
+220|Sound: off
+221|Voices: bank not loaded
+222|Voices: awaiting bank
+223|Voices: on
+224|Voices: off
+225|← → target · ↑ ↓ row · Enter — select\nF — finish · Esc — cancel\nP — pass · L — leader · Space — skip
+226|Choose an ability card
+227|Choose a card to play
+228| — cannot skip
+229|Choose one ability option
+230|Choose a highlighted card in hand
+231|Choose a card in the graveyard
+232|Replace cards or select Start round
+233|Place the unit: your row, or an ally to insert before
+234|Choose a highlighted row for the ability
+235|Select 
+236|an enemy unit
+237|an allied unit
+238|an eligible unit
+239| — bright outlines mark valid targets
+240|\nTags: 
+241|\nPower: 
+242| · armor: 
+243|\nSpecial card
+244|\nLocked
+245|\nCounter: 
+246| cards
+247|Cards are grouped by color and shuffled for viewing. This does not reveal draw order.
+248|View cards in the graveyard. Hover to read their abilities.
+249|Close · Esc
+250|Deck is empty.
+251|Graveyard is empty.
+252|No cards in this group.
+253|Select a card to inspect.
+254|Page 
+255|Viewing does not spend your turn. Opponent's deck is hidden.
+256|Geralt
+257|Opponent
+258|Score: 
+259|Rounds: 
+260|Graveyard: 
+261| · PASSED
+262|Deck: 
+263| · hidden
+264|Leader used
+265|FROST
+266|FOG
+267|DROUGHT
+268|RAGH NAR ROOG
+269|STORM
+270|GOLDEN FROTH
+271|FULL MOON
+272|BLOOD MOON
+273|PITFALL TRAP
+274|DRAGON'S DREAM
+275|RAIN
+276| · contact −
+277| · explosion −
+278|FROST · without moving
+279|SELECT ROW
+280|melee row
+281|ranged row
+282|siege row
+283|Place the Spy in an enemy row.\nSelect a unit to insert before it, or empty space to append.
+284|Select an ally to insert before it.\nSelect empty space in your row to append.
+285|Hover over a row: the translucent card previews the insertion position.\nClick to confirm. Spies are placed on the opponent's side.
+286|A 
+287|From deck
+288|AMBUSH
+289|REVEALED
+290|A
+291|Select an ally to insert before it. Select empty space in your row to append.
+292|Select your highlighted row for the leader.
+293|Select any highlighted row.
+294|Select a highlighted card to use the ability.
+295|Select or drag a card from hand. Insert to the left of an ally.
+296|Select your unit to insert before it, or empty row space to append.
+297|Select an eligible unit or drag the special card directly onto it.
+298|Select an eligible row or drag the special card directly onto it.
+299|Select your row for this card
+300|ROUND 
+301|Wins: 
+302|  ·  change 
+303|DRAW
+304|YOU WIN
+305|OPPONENT WINS
+306|ROUND DRAW
+307|YOU WIN THE ROUND
+308|OPPONENT WINS THE ROUND
+309|Match finished
+310| finished · next round starts automatically
+311|Enemy Ambush: card and condition hidden until revealed.
+312|Waits for the opponent to pass. Then boosts up to two neighbors on each side by 2.
+313|Waits for an enemy unit to be played. Then deals 7 damage to it.
+314|Waits for an enemy bronze or silver special. Cancels its ability.
+315|Reveals at the start of your turn when its counter ends.
+316|AMBUSH SET\n
+317|\nIts power is not included in the row score while face down.
+318| · spawned copy
+319|Base power: 
+320| · current: 
+321|Ambush already revealed; its power counts towards the score.\n\n
+322|\n\nResilience: stays on the board next round.
+323| · stopped by Lock
+324| · decreases before your turn
+325|\nLocked: passive abilities and Deathwish disabled.
+326|Wheel — scroll description · Esc or I — close
+327|Return to game
+328|Return
+329|I / Shift + click — open and scroll
+330|Random\nbronze unit
+331|Ability · no eligible cards
+332|Choose an ability option
+333|Dagon · choose weather
+334|First Light · choose option
+335|Choose a unit in hand
+336|Consume · choose a graveyard unit
+337|Mulligan · remaining 
+338|Hover over an option to read its effect. Valid targets appear after selection.
+339|Spawn Impenetrable Fog or Torrential Rain. Then select an enemy row.
+340|Clear Skies: remove weather. Rally: play a random bronze unit from your deck.
+341|The chosen card will be played from deck or graveyard. Then choose a row position for a unit.
+342|The chosen unit's base power determines the effect. The unit remains in hand.
+343|Choose a bronze or silver unit. Its power boosts the Ghoul; the card is removed from the graveyard.
+344|Select a card to replace it immediately, or keep your hand and start the round.
+345|Rally · random unit
+346|Card back
+347|Choose an option for this play.
+348|Choose a weather card, then an enemy row.
+349|Select an option, then your row if a unit is played.
+350|Choose an ability card.   ·   Page 
+351|Selection required — choose a card.   ·   Page 
+352|Choose a card to play.   ·   Page 
+353|Play required — choose a card.   ·   Page 
+354|Choose one card.   ·   Page 
+355|You may finish without Consuming.   ·   Page 
+356|Replaced: 
+357|   ·   Page 
+358|Do not Consume
+359|Choose card
+360|System keyboard text entry
+361|Hold 
+362| to pass… 
+363|Keg from the merchant at Crow's Perch.
+364|Keg
+366|Oliver
+368|Animal rights activist
+372|Innkeeper at the Crossroads
+375|Starter set
+377|Stjepan
+380|Keg / random merchant
+383|First opponent in the Toussaint tournament
+387|Halflings at the wedding
+389|Old sage
+391|Second opponent in the Toussaint tournament
+393|Sasha
+403|Scoia'tael merchant
+405|Vimme Vivaldi
+407|Marquise Serenity
+409|Traveling circus merchant
+412|Toussaint tournament finalist
+417|Collection unavailable: unknown save schema.
+418|This player's quest reward has already been received.
+419|New gold card: 
+420|Gold card already owned. Reward: 300 crowns.
+421|Could not identify the character for a reward.
+422|All four rewards from this player have been received.
+423|All bronze and silver cards are already collected.
+424|Reward already received.
+425|New card: 
+426|) · Reward 
+427|Beta collection unavailable: unknown save schema.
+428|<b>Beta Gwent 0.9.24 Collection</b><br>Collected: 
+429|. Remaining: 
+430|Collect 'Em All requires one copy of every card and leader. Three bronze copies are only needed for decks.<br><br>Missing by faction:<br>
+431|Neutral: 
+432|Monsters: 
+433|Northern Realms: 
+434|Nilfgaard: 
+435|Scoia'tael: 
+436|Skellige: 
+437|Missing cards are available from kegs at the Crow's Perch quartermaster. Bronze and silver cards are also rewarded for the first four wins against ordinary players; some are sold by merchants.<br>See the full catalog in the deck menu for assigned quest gold cards and characters.
+438|<br><br><b>Collection complete!</b>
+439|Choose a leader from your faction.
+440|A deck can contain at most 40 cards.
+441|This card cannot be included in a deck.
+442|Card belongs to another faction.
+443|Leaders and spawned cards are not part of the deck.
+444|Copy limit exceeded: 
+445|Select up to 4 gold cards.
+446|Select up to 6 silver cards.
+447|Add 
+448| more cards. Minimum 25, maximum 40.
+449|Deck is ready to play.
+450|Not enough owned copies for this deck.
+451|My deck 
+452|Queue: 
+453|, errors: 
+454|Apply: 
+455|Board: 
+456|Snapshot refreshed after a stale action.
+457|All rare cards collected. Refunded 150 crowns.
+458|No unopened kegs in inventory.
+459|Card added to collection.
+460|Custom deck · slot 
+461|Card, rarity or deck size limit reached.
+462|Choose an available leader.
+463|This leader is not owned yet. See the catalog for its source.
+464|This quest requires the specified faction.
+465|Could not save the deck. Check its contents and name.
+466|Duel · shuffled decks and 3/1/1 mulligan
+467|Select row
+468|Hidden enemy Ambush.
+469|Placement rejected: check turn, card and row.
+470|Special card: invalid target. Select an eligible unit.
+471|Special card: invalid row.
+472|No room before the selected unit.
+473|Placement rejected: select a living ally in a row with space.
+474|Pass rejected.
+475|DEV leader unavailable.
+476|Opponent step rejected.
+477|Next round transition rejected.
+478|Request action rejected; snapshot refreshed.
+479|Played card awaits a target. Select Restart for a new match.
+480|Select a test unit and your row. Effects disabled.
+481|DEV leader
+482|Test unit placed. Power from fixture; no effects.
+483|DEV leader disabled; ability not executed.
+484|Player 
+485| passed.
+486|Round recorded: 
+487|New fixture round. Hand refilled for board checks.
+488|Handler: 
+489|Power/armor: 
+490|/55, errors: 
+491|Card IDs: 
+492|/22, errors: 
+493|Requests: 
+494|Choose 1–2 cards. Enemy hand hidden. Choice test without an effect.
+495|Choose two highlighted cards on the board or in your hand. Target test without an effect.
+496|Choice test complete: cards 
+497|. Board and score preserved.
+498|Test request canceled. Board and score preserved.
+499|Hidden card
+500|Target
+501|UI choice: 
+502|General strategy
+503|Mixed
+504|Consume, Deathwish and weather. Combos and responses to the opponent.
+505|Wild Hunt and weather
+506|Hounds pull Frost; Riders increase its damage. Warriors deal damage and receive Frost bonuses.
+507|Consume
+508|Harpies provide eggs for Vrans and Kayran. Arachas summon deck copies; Nekkers grow with Consume.
+509|Crones and summons
+510|Crones summon their sisters. Arachas and Harpies fill the board; Vrans and Kayran use Deathwish.
+511|Frost and control
+512|Hounds pull Frost. Imlerith and Warriors hit frozen targets harder; Crones provide tempo, Adda counters other factions.
+513|Northern Realms · Machines
+514|Crew, armor and machines. Foltest, Roche, Keira and Seltkirk.
+515|Nilfgaard · Reveal
+516|Reveal, Fire Scorpions, Mangonels and Imperial Golems.
+517|Nilfgaard · Spies
+518|Spies, Impera Enforcers and consecutive plays from deck.
+519|Scoia'tael · Dwarves
+520|Starter build for strict Beta 0.9.24; not claimed to be an exact historical deck.
+521|Scoia'tael · Elves and swaps
+522|Scoia'tael · Ambushes and spells
+523|Skellige · Resurrection
+524|Starter build for strict Beta 0.9.24; not claimed to be an exact historical deck.
+525|Skellige · Discard
+526|Skellige · Wounds and ships
+527|Monsters · Eredin Frost
+528|User deck adapted to strict Beta 0.9.24: ships, Frost through Hounds, Riders and control. Dedicated AI profile.
+529|Starter · Monsters · Wild Hunt
+530|Player-selected starter: 25 cards, four gold, six silver. Missing copies are added to the collection.
+531|Starter · Northern Realms · Blue Stripes
+532|Starter · Nilfgaard · Spies
+533|Starter · Scoia'tael · Dwarves
+534|Starter · Skellige · Discard
+535|Roche's Blue Stripes
+536|Vernon Roche's fixed deck. Blue Stripes, scouts and Temerian units.
+537|Boatwright of Oreton
+538|Haddy
+539|Sjusta
+540|Bernard Tulle
+541|Finneas
+542|Count Tybalt
+543|Purist leader after the Toussaint tournament
+612|Strengthen all your other Relicts in hand, deck and on the board by 2.
+613|Play a bronze or silver Relict from your deck and strengthen it by 2.
+614|Card revealed
+615|Card hidden
+616|Could not finish the effect and passive reaction queue.
+617|Passive event limit exceeded.
+618|Unknown passive event ordering.
+619|Unknown turn-start event ordering.
+620|Unknown Consume reaction ordering.
+621|Unknown Northern Realms event ordering.
+622|Unknown Monsters passive ability ordering.
+623|Ambush revealed: 
+624|Neutral card not connected.
+625|Ability not connected: 
+626|Unknown Usurper dependency.
+627|Unknown Northern Realms ability.
+628|Morenn: special ability canceled
+629|Unknown Scoia'tael card.
+630|, armor 
+631|Match error: 
+632|Card moved
+633|Card swapped
+634|Repeated ability nesting too deep.
+635|Returned from graveyard
+636|Could not create a base copy.
+637|Base copy ID already in use.
+638|Base copy created
+639|Unit healed
+640|Card drawn
+641|Card to bottom of deck
+642|Card removed
+643|Too many Nilfgaard reactions.
+644|Could not queue Monsters ability.
+645|Could not change base power.
+646|: select a highlighted target.
+647|: choose a spawned card or ability option.
+648|: select a card from the offered list.
+649|: choose an enemy row.
+650|: select a highlighted unit for the ability.\n
+651|: select an enemy unit to damage.\n
+652|: you must choose a card to play. Then place a unit in a row.
+653| Selected 
+654|. You may finish the choice.
+655|: no eligible bronze or silver Soldier in the enemy graveyard. Select Continue.
+656|: choose the played unit's position.
+657|Unit drawn
+658|Invalid Nekker Warrior copy.
+659|Could not create a copy in the deck.
+660|Copies added to the bottom of the deck: 
+661|Could not summon a unit from the deck.
+662|Could not resurrect a Draugir.
+663|Draugir resurrected
+664|Could not start a unit Duel.
+665|Could not queue a counter change.
+666|: counter 
+667|Could not queue a power change.
+668|Could not queue Lock.
+669|Could not queue power multiplication.
+670|Unlocked: 
+671|Locked: 
+672|Could not queue transformation.
+673|Transformed: 
+674|Could not queue setting power.
+675|Could not queue Reset.
+676|Could not queue Resilience.
+677|Resilience removed: 
+678|Resilience: 
+679|Could not queue armor.
+680|Could not queue destruction.
+681|Could not queue Consume.
+682|Consumed: 
+683|Banished: 
+684|Could not queue a passive boost.
+685|Could not queue a summon from deck.
+686|Could not queue copies for summoning.
+687|Summoned from deck: 
+688|Unknown summoned token.
+689|Could not allocate a token ID.
+690|Could not queue a summon.
+691|Could not register a token.
+692|Spawned 
+693|: power 
+694|You drew a card
+695|Opponent drew a card
+696|Mulligan: remaining 
+697|. Select a card to replace or start the round with this hand.
+698|Round started
+699|Mulligan finished. Select a card in hand and a row on the board.
+700|Could not place the unit.
+701|You: 
+702|Choose the leader's position: select an ally to insert before it, or empty space in your row. You can cancel before placement.
+703|Could not place the leader.
+704|: leader enters the board
+705|Nested play depth exceeded.
+706|Invalid nested play ordering.
+707|Nested card is missing from its deck or graveyard.
+708|Repeated play of the same card in the stack.
+709|No room for the nested unit.
+710|Could not place the nested unit.
+711|From graveyard → 
+712|Spawned → 
+713|Replayed → 
+714|From deck → 
+715|: no eligible cards.
+716|: choose a card to play. Then choose a position in your row for a unit.
+717|No room for the selected unit.
+718|Choose a position for 
+719|: an ally to insert before, or empty space in your row.
+720|Could not spawn the card to play.
+721|Spawned card not found.
+722|Choose the spawned unit's position: 
+723|Could not queue healing.
+724|Could not queue a base power change.
+725|Could not queue Banish.
+726|Replay: choose a new position for 
+727|Could not queue movement.
+728|Moved: 
+729|: no Frost in the deck.
+730|: choose a bronze or silver unit from your graveyard, or finish without Consuming.
+731|: choose a mode, then a valid target.
+732|Dagon: spawn Impenetrable Fog or Torrential Rain, then choose an enemy row.
+733|: effect applied.
+734|: own row cleared.
+735|Unknown played card ability.
+736|First Light: choose Clear Skies or a random bronze unit from deck.
+737|: choose a highlighted row.
+738| You may finish without a target.
+739| You may play without a target.
+740|Lacerate: choose any row to deal all units in it 
+741| damage.
+742|: choose a highlighted unit.
+743| Drain: up to 
+744| power, bypassing armor. You may finish without a target.
+745| Consume: power no higher than 
+746|. You may finish without a target.
+747|Invalid play completion ordering.
+748|Unknown parent ability continuation.
+749|Hidden enemy card
+750|Leader selection canceled. Play a card or select the leader again.
+751|Could not weaken base power.
+752|Invalid Drain target.
+753|Invalid Consume target.
+754|Invalid card to Consume from graveyard.
+755|Invalid Lock target.
+756|Invalid transformation target.
+757|: no selected target.
+758|: choose the second hit target.
+759|: select a bronze or silver unit in your hand. The card remains in hand.
+760|: effect applied to row.
+761|: weather applied to enemy row.
+762|: row hit
+763|: row received 
+764|Invalid special card mode.
+765|Selected mode: 
+766|Could not allocate Dagon weather ID.
+767|Could not spawn Dagon weather.
+768|Spawned weather not found.
+769|Dagon → 
+770|Clear Skies: weather removed; damaged allies under weather boosted by 
+771|Unknown First Light option.
+772|First Light: no bronze unit in deck.
+773|No room for the First Light unit.
+774|First Light → 
+775|: select an ally to insert before, or empty space in your row.
+776|Epidemic: all weakest units destroyed (
+777|Event source not found.
+778|Unknown passive ability.
+779|Unknown Deathwish ability.
+780|Unknown Consume reaction.
+781|Unknown event type.
+782|: consuming unit boosted by 
+783| when Consuming
+784|: end-of-turn boost
+785|: Deathwish
+786|: base power depleted
+787|: vanished
+788|: to graveyard
+789|Chain death limit exceeded.
+790|You passed.
+791|Opponent passed.
+792|Round: 
+793|You win! Round score 
+794|Opponent wins. Round score 
+795|Draw.
+796|Next round · Resilient units remain
+797|Skellige card not connected.
+798|Row effect applied
+799|Archgriffin: own row cleared
+800|Boon removed
+801|Dragon's Dream: explosion
+802|Clear Skies: weather removed
+803|Finish the paid keg choice in the deck menu first.
+804|Cannot buy more kegs than remaining rare cards. Purchased kegs are included.
+805|Not enough crowns. A keg costs 150 crowns.
+806|Kegs added to inventory. Select a keg and Use to open one.
+807|Copy limit reached for this card.
+808|Not enough crowns.
+809|Card added to collection: 
+810|Not enough crowns, or all rare cards already owned / reserved by purchased kegs.
+811|Open kegs outside combat.
+812|All rare cards collected. Refunded 150 crowns for the keg.
+813|Could not open the keg. It remains in inventory.

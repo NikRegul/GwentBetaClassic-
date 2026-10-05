@@ -1,0 +1,448 @@
+{
+  "revision": 2,
+  "approved": true,
+  "source": "User supplied compositions; names resolved against strict local Beta 0.9.24 catalog; Jutta confirmed as Skellige card 25.",
+  "migration": "Add missing copies on existing saves, retain previous cards and saved decks; defer while a paid rare choice is pending.",
+  "decks": [
+    {
+      "id": 16,
+      "faction": 2,
+      "leader": 131101,
+      "leaderTitle": "Эредин Бреакк Глас",
+      "title": "Чудовища · Дикая Охота",
+      "cards": [
+        {
+          "templateId": 132102,
+          "title": "Имлерих",
+          "copies": 1
+        },
+        {
+          "templateId": 132104,
+          "title": "Карантир",
+          "copies": 1
+        },
+        {
+          "templateId": 131102,
+          "title": "Ге'эльс",
+          "copies": 1
+        },
+        {
+          "templateId": 201776,
+          "title": "Лютик: поэт",
+          "copies": 1
+        },
+        {
+          "templateId": 132204,
+          "title": "Пугач",
+          "copies": 1
+        },
+        {
+          "templateId": 200218,
+          "title": "Йотун",
+          "copies": 1
+        },
+        {
+          "templateId": 132214,
+          "title": "Нитраль",
+          "copies": 1
+        },
+        {
+          "templateId": 132205,
+          "title": "Морвудд",
+          "copies": 1
+        },
+        {
+          "templateId": 112210,
+          "title": "Плотва",
+          "copies": 1
+        },
+        {
+          "templateId": 113206,
+          "title": "Белый Хлад",
+          "copies": 1
+        },
+        {
+          "templateId": 113302,
+          "title": "Трескучий мороз",
+          "copies": 3
+        },
+        {
+          "templateId": 132402,
+          "title": "Гончая Дикой Охоты",
+          "copies": 3
+        },
+        {
+          "templateId": 132310,
+          "title": "Всадник Дикой Охоты",
+          "copies": 3
+        },
+        {
+          "templateId": 132309,
+          "title": "Воин Дикой Охоты",
+          "copies": 3
+        },
+        {
+          "templateId": 200026,
+          "title": "Чародей Дикой Охоты",
+          "copies": 1
+        },
+        {
+          "templateId": 200301,
+          "title": "Драккар Дикой Охоты",
+          "copies": 2
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "faction": 8,
+      "leader": 200168,
+      "leaderTitle": "Король Фольтест",
+      "title": "Север · Синие Полоски",
+      "cards": [
+        {
+          "templateId": 201618,
+          "title": "Зельткирк из Гулеты",
+          "copies": 1
+        },
+        {
+          "templateId": 122108,
+          "title": "Кейра Мец",
+          "copies": 1
+        },
+        {
+          "templateId": 122105,
+          "title": "Сигизмунд Дийкстра",
+          "copies": 1
+        },
+        {
+          "templateId": 122102,
+          "title": "Вернон Роше",
+          "copies": 1
+        },
+        {
+          "templateId": 122211,
+          "title": "Маргарита Ло-Антиль",
+          "copies": 1
+        },
+        {
+          "templateId": 113208,
+          "title": "Ведермакар",
+          "copies": 1
+        },
+        {
+          "templateId": 122207,
+          "title": "Детмольд",
+          "copies": 1
+        },
+        {
+          "templateId": 122208,
+          "title": "Принц Стеннис",
+          "copies": 1
+        },
+        {
+          "templateId": 123201,
+          "title": "Подкрепление",
+          "copies": 1
+        },
+        {
+          "templateId": 200019,
+          "title": "Приказ о выступлении",
+          "copies": 1
+        },
+        {
+          "templateId": 122317,
+          "title": "Реданская элита",
+          "copies": 2
+        },
+        {
+          "templateId": 123301,
+          "title": "Реданский оруженосец",
+          "copies": 3
+        },
+        {
+          "templateId": 122311,
+          "title": "Полоски: боец",
+          "copies": 3
+        },
+        {
+          "templateId": 122310,
+          "title": "Полоски: разведчик",
+          "copies": 3
+        },
+        {
+          "templateId": 122316,
+          "title": "Темерская пехота",
+          "copies": 3
+        },
+        {
+          "templateId": 122307,
+          "title": "Разведчик Рубайл",
+          "copies": 1
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "faction": 4,
+      "leader": 200162,
+      "leaderTitle": "Эмгыр вар Эмрейс",
+      "title": "Нильфгаард · Шпионы",
+      "cards": [
+        {
+          "templateId": 162102,
+          "title": "Мэнно Коегоорн",
+          "copies": 1
+        },
+        {
+          "templateId": 201780,
+          "title": "Йеннифэр: некромант",
+          "copies": 1
+        },
+        {
+          "templateId": 200032,
+          "title": "Раинфарн из Аттре",
+          "copies": 1
+        },
+        {
+          "templateId": 162107,
+          "title": "Тибор Эггебрахт",
+          "copies": 1
+        },
+        {
+          "templateId": 162210,
+          "title": "Кантарелла",
+          "copies": 1
+        },
+        {
+          "templateId": 162206,
+          "title": "Свирс",
+          "copies": 1
+        },
+        {
+          "templateId": 162204,
+          "title": "Петер Саар Гвинлеве",
+          "copies": 1
+        },
+        {
+          "templateId": 162211,
+          "title": "Иоахим де Ветт",
+          "copies": 1
+        },
+        {
+          "templateId": 162213,
+          "title": "Кеаллах аэп Груффыд",
+          "copies": 1
+        },
+        {
+          "templateId": 162205,
+          "title": "Фрингилья Виго",
+          "copies": 1
+        },
+        {
+          "templateId": 162308,
+          "title": "Боец \"Импера\"",
+          "copies": 3
+        },
+        {
+          "templateId": 162307,
+          "title": "Бригада \"Импера\"",
+          "copies": 3
+        },
+        {
+          "templateId": 162315,
+          "title": "Посол",
+          "copies": 3
+        },
+        {
+          "templateId": 162314,
+          "title": "Эмиссар",
+          "copies": 3
+        },
+        {
+          "templateId": 201617,
+          "title": "Рекрут",
+          "copies": 3
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "faction": 16,
+      "leader": 200166,
+      "leaderTitle": "Эитнэ",
+      "title": "Скоя’таэли · Краснолюды",
+      "cards": [
+        {
+          "templateId": 142101,
+          "title": "Саэсентессис",
+          "copies": 1
+        },
+        {
+          "templateId": 142106,
+          "title": "Аглайиса",
+          "copies": 1
+        },
+        {
+          "templateId": 142102,
+          "title": "Изенгрим",
+          "copies": 1
+        },
+        {
+          "templateId": 201611,
+          "title": "Иорвет: медитация",
+          "copies": 1
+        },
+        {
+          "templateId": 142203,
+          "title": "Яевинн",
+          "copies": 1
+        },
+        {
+          "templateId": 142211,
+          "title": "Аэлирэнн",
+          "copies": 1
+        },
+        {
+          "templateId": 200520,
+          "title": "Эйвар Хаттори",
+          "copies": 1
+        },
+        {
+          "templateId": 142207,
+          "title": "Барклай Эльс",
+          "copies": 1
+        },
+        {
+          "templateId": 113209,
+          "title": "Альзур: Двойной крест",
+          "copies": 1
+        },
+        {
+          "templateId": 113309,
+          "title": "Казнь",
+          "copies": 1
+        },
+        {
+          "templateId": 142310,
+          "title": "Дол Блатанна: лучник",
+          "copies": 3
+        },
+        {
+          "templateId": 142305,
+          "title": "Краснолюд-поединщик",
+          "copies": 2
+        },
+        {
+          "templateId": 201636,
+          "title": "Охотник-полуэльф",
+          "copies": 3
+        },
+        {
+          "templateId": 200293,
+          "title": "Агитатор краснолюдов",
+          "copies": 1
+        },
+        {
+          "templateId": 142308,
+          "title": "Эльфский наемник",
+          "copies": 2
+        },
+        {
+          "templateId": 113319,
+          "title": "Двимеритовые кандалы",
+          "copies": 1
+        },
+        {
+          "templateId": 201704,
+          "title": "Разведка",
+          "copies": 3
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "faction": 32,
+      "leader": 200159,
+      "leaderTitle": "Бран Тиршах",
+      "title": "Скеллиге · Сброс",
+      "cards": [
+        {
+          "templateId": 200103,
+          "title": "Олаф",
+          "copies": 1
+        },
+        {
+          "templateId": 152103,
+          "title": "Мышовур",
+          "copies": 1
+        },
+        {
+          "templateId": 152106,
+          "title": "Лугос Безумный",
+          "copies": 1
+        },
+        {
+          "templateId": 200104,
+          "title": "Ульфхединн",
+          "copies": 1
+        },
+        {
+          "templateId": 152214,
+          "title": "Удальрик",
+          "copies": 1
+        },
+        {
+          "templateId": 152209,
+          "title": "Моркварг",
+          "copies": 1
+        },
+        {
+          "templateId": 152213,
+          "title": "Сванриге Тиршах",
+          "copies": 1
+        },
+        {
+          "templateId": 200043,
+          "title": "Безумный Харальд",
+          "copies": 1
+        },
+        {
+          "templateId": 152205,
+          "title": "Драйг Бон-Ду",
+          "copies": 1
+        },
+        {
+          "templateId": 152208,
+          "title": "Ютта ан Димун",
+          "copies": 1
+        },
+        {
+          "templateId": 152303,
+          "title": "Ан Крайт: воин",
+          "copies": 3
+        },
+        {
+          "templateId": 200036,
+          "title": "Друммонд: мародер",
+          "copies": 3
+        },
+        {
+          "templateId": 152314,
+          "title": "Ан Крайт: драккар",
+          "copies": 3
+        },
+        {
+          "templateId": 152316,
+          "title": "Ан Крайт: налетчик",
+          "copies": 3
+        },
+        {
+          "templateId": 152305,
+          "title": "Димун: пират",
+          "copies": 3
+        }
+      ]
+    }
+  ]
+}

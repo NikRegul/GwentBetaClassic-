@@ -1,0 +1,3009 @@
+Стратегии для обучения ИИ в Gwent beta 0.9.24 (DIY Meta)
+
+Ниже представлены общая стратегия поведения ИИ и подробные стратегии для каждой колоды из актуального тир-листа. Материал адаптирован под бета-версию 0.9.24 с учётом дополнений DIY-сервера. ИИ не должен знать скрытую руку и порядок колоды противника — только фракцию, лидера и уже показанные карты.
+ОБЩАЯ СТРАТЕГИЯ ПОВЕДЕНИЯ ИИ
+1. Фундаментальные принципы
+
+    Оценка темпа и карт-преимущества. ИИ должен постоянно считать разницу в темпе (очки на столе + потенциальные очки в руке) и картах. Цель — выиграть два раунда из трёх, желательно с преимуществом по картам в последнем раунде.
+
+    Красная/синяя монета. При красной монете (ход вторым) ИИ стремится выиграть раунд с минимальными затратами или заставить противника потратить больше карт. При синей монете (ход первым) — навязать темп и вынудить противника пасовать первым.
+
+    Контроль и движки. Приоритет целей: ключевые движки противника (генераторы очков) → карты, усиливающие других → карты с высоким темпом. Если у противника нет движков, ИИ копит ресурсы для финального раунда.
+
+    Погода. Если колода использует погоду, ИИ должен максимизировать урон от неё, выставляя свои отряды в защищённые ряды или усиливая их. Против погоды — искать очищение или играть в ряды, не затронутые погодой.
+
+    Роя и зачистка. Против роя (много мелких юнитов) ИИ использует карты массового урона (Cadaverine, Lacerate, Igni, Scorch). Свой рой — беречь от зачисток, не выставлять всё в один ряд.
+
+    Пас. Если ИИ впереди и у противника меньше карт, пасовать выгодно, чтобы вынудить его потратить ещё. Если отстаёт — пасовать только при возможности догнать одной картой или если ресурсы исчерпаны. После паса противника сначала оценить, можно ли догнать одной картой; тратить несколько карт только при явной необходимости.
+
+    Муллиган. Всегда менять дубликаты ключевых карт, если они не нужны в первом раунде. Оставлять одну копию зачистки/погоды, если ожидается соответствующий архетип. Не оставлять дорогие финальные карты, если план на первый раунд не требует их.
+
+2. Фазы игры
+
+    Первый раунд: разыграть базовые связки, проредить колоду, оценить силу противника. Если план на длинный раунд — не тратить ключевые финальные карты. Если план на короткий — можно потратить больше.
+
+    Второй раунд (после победы): если выиграли первый, можно либо продолжить давление (если рука сильная), либо спасовать, заставив противника потратить карты. Если проиграли первый — нужно выиграть второй любой ценой, часто с полной отдачей.
+
+    Третий раунд: сохранить 1–2 сильные карты и комбо. Идеально — иметь преимущество по картам (на 1–2 больше). Разыгрывать финальные связки в правильном порядке, учитывая возможные контрмеры.
+
+3. Взаимодействие с архетипами противника
+
+    Против погоды: убрать свои ключевые отряды из-под погоды, использовать очищение, не давать усиливать мороз.
+
+    Против роя: массовый урон, не позволять разрастаться.
+
+    Против контроля: не выставлять все движки сразу, bait removal.
+
+    Против большого темпа: играть в длинный раунд, сохранять ответы на финальные карты.
+
+ПОДРОБНЫЕ СТРАТЕГИИ ДЛЯ КАЖДОЙ КОЛОДЫ
+TIER 1
+SPIES (Calveit Spies)
+
+Архетип: Spies
+Лидер: Jan Calveit
+Состав колоды с количеством копий:
+
+    6 Detlaff: Higher Vampire
+
+    5 Rainfarn of Attre
+
+    1 Cahir Dyffryn
+
+    Lady of the Lake: Advent
+
+    13 Cantarella
+
+    11 Assire var Anahid
+
+    10 Count Caldwell
+
+    9 Azar Javed
+
+    5 Joachim de Wett
+
+    8 Rot Tosser
+
+    6 Impera Brigade x3
+
+    6 Impera Enforcers x3
+
+    2 Ambassador
+
+    2 Emissary
+
+    1 Assassin
+
+    1 Vicovaro Medic x3
+
+Основной план:
+Набрать максимальное количество очков в длинном раунде за счёт связки Azar + Caldwell, а также массового шпионажа. Calveit обеспечивает доступ к нужным картам. Ключевые карты — Azar Javed, Count Caldwell, Joachim de Wett. Беречь их от контроля.
+Муллиган:
+Оставлять: Azar, Caldwell, Joachim, Cantarella, Impera Brigade. Менять дубликаты Enforcers, если нет возможности их усилить. Оставлять одну копию Vicovaro Medic против Скеллиге.
+Первый раунд:
+Начинать с дешёвых шпионов (Emissary, Ambassador), чтобы проредить колоду и найти ключевые карты. Если есть Azar+Caldwell — можно разыграть, но следить за погодой. Не тратить Joachim без защиты.
+Второй раунд:
+После победы — можно пасовать, если рука позволяет выиграть третий. После поражения — выиграть любой ценой, используя все ресурсы.
+Последний раунд:
+Сохранить Calveit, Cantarella, Assire, Detlaff. Идеально — иметь 2–3 карты преимущества.
+Связки:
+
+    Azar Javed → Count Caldwell → Joachim de Wett (усиление и добор).
+
+    Impera Brigade → Impera Enforcers (если есть шпионы на столе).
+
+    Assire var Anahid → возврат ключевых карт.
+    Если части нет — использовать Эмиссаров для поиска.
+    Выбор целей:
+    Убивать движки противника (например, Greatswords, Arachas). Блокировать ключевых юнитов. Не тратить контроль на мелких шпионов.
+    Пас:
+    Если впереди и противник потратил больше карт — пасовать. Если отстаём — догнать одной картой, иначе продолжать.
+    Противодействие:
+    Бояться погоды (уязвимы к ней), Alchemy, Dwarf-Elf-Scorch, WH Frost, Arachas Swarm.
+    Типичные ошибки:
+    Слишком ранний Azar+Caldwell без защиты; трата Joachim в коротком раунде; отсутствие плана на случай, если комбо не собрано.
+
+VAMPIRES (Drain)
+
+Архетип: Vampires (Drain)
+Лидер: Unseen Elder
+Состав колоды с количеством копий:
+
+    8 Orianna
+
+    5 Woodland Spirit
+
+    2 Detlaff: Crimson Curse
+
+    Royal Decree
+
+    8 Colossal Ifrit
+
+    5 Katakan
+
+    4 Gael
+
+    4 Abaya
+
+    4 Roach
+
+    Alzur’s Double-Cross
+
+    7 Protofleder
+
+    6 Cockatrice
+
+    5 Ekimmara x3
+
+    5 Fleder x3
+
+    5 Garkain x3
+
+    4 Foglet
+
+    2 Plumard x3
+
+Основной план:
+Длинный раунд с накоплением Drain-эффектов (Alp, Garkain, Ekimmara, Feast of Blood, Plumard). Orianna может дать до 50 очков. Fleder/Protofleder сильны против роя. Беречь Orianna и ключевых вампиров.
+Муллиган:
+Оставлять: Orianna, Woodland Spirit, Detlaff: Crimson Curse, Fleder, Ekimmara. Менять дубликаты Garkain, если нет вампиров. Оставлять одну копию зачистки.
+Первый раунд:
+Играть вампиров, накапливать Drain. Если противник контроль — не выставлять всех вампиров сразу. Стараться выиграть раунд или заставить противника потратить много карт.
+Второй раунд:
+После победы — можно пасовать, если рука сильна. После поражения — выиграть, используя Orianna и Fleder.
+Последний раунд:
+Сохранить Orianna, Protofleder, Detlaff. Идеально — 6+ карт в руке.
+Связки:
+
+    Orianna + много вампиров → массовый Drain.
+
+    Fleder + Protofleder → усиление против роя.
+
+    Woodland Spirit → туман + волки.
+    Если нет Orianna — играть через Fleder и Ekimmara.
+    Выбор целей:
+    Убивать движки, блокировать ключевых юнитов. Не тратить контроль на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к контролю, Machines, коротким раундам.
+    Типичные ошибки:
+    Играть в короткий раунд; не защищать Orianna; тратить Fleder без цели.
+
+ARACHAS SWARM
+
+Архетип: Arachas Swarm
+Лидер: Whispering Hillock
+Состав колоды с количеством копий:
+
+    8 Yennefer
+
+    6 Triss: Telekinesis
+
+    6 Whispess: Tribute
+
+    Royal Decree
+
+    8 Ruehin
+
+    4 Roach
+
+    Commander’s Horn
+
+    Monster Nest
+
+    Alzur’s Double-Cross
+
+    Decoy
+
+    9 Nekker Warrior x3
+
+    6 Kikimore Worker x3
+
+    6 Barbegazi
+
+    3 Arachas Drone x3
+
+    Natural Selection x3
+
+    Scout x2
+
+Основной план:
+Размножить Arachas Drone через Nekker Warrior, затем усилить их. Сохранить дронов и скопировать в нужный момент. Whispering Hillock даёт дополнительный Monster Nest для контроля.
+Муллиган:
+Оставлять: Nekker Warrior, Arachas Drone, Whispering Hillock, Ruehin. Менять дубликаты Barbegazi, если нет дронов.
+Первый раунд:
+Разыграть дронов, скопировать их Nekker Warrior. Защищать дронов от зачисток.
+Второй раунд:
+После победы — можно пасовать. После поражения — выиграть, используя усиленных дронов.
+Последний раунд:
+Сохранить Nekker Warrior, Monster Nest, Commander’s Horn.
+Связки:
+
+    Arachas Drone → Nekker Warrior → усиление.
+
+    Whispering Hillock → Monster Nest → дополнительный рой.
+    Если нет Nekker Warrior — использовать Natural Selection для поиска.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Lyrian Machines, Svalblod Rain, WH Frost.
+    Типичные ошибки:
+    Не защищать дронов; тратить Nekker Warrior без дронов.
+
+HIGH TIER 2
+MACHINES HENSELT
+
+Архетип: Machines Henselt
+Лидер: King Henselt
+Состав колоды с количеством копий:
+
+    9 Bloody Baron
+
+    8 Seltkirk of Gulet
+
+    6 John Natalis
+
+    4 Shani
+
+    13 Thaler
+
+    11 Ronvid the Incessant
+
+    10 Foltest’s Pride
+
+    Reinforcements
+
+    Marching Orders
+
+    Scorch
+
+    9 Kaedweni Sergeant
+
+    7 Reinforced Ballista
+
+    6 Battering Ram x3
+
+    6 Siege Master x3
+
+    6 Ballista x3
+
+    1 Reaver Scout
+
+    1 Scout
+
+    1 Winch
+
+Основной план:
+Контроль через машины и Scorch, набор очков через Bloody Baron и Foltest’s Pride. Henselt создаёт дополнительную машину.
+Муллиган:
+Оставлять: Bloody Baron, Seltkirk, John Natalis, Battering Ram, Ballista. Менять дубликаты Siege Master, если нет машин.
+Первый раунд:
+Разыграть машины, контролировать стол. Если противник рой — использовать Scorch.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Baron.
+Последний раунд:
+Сохранить Bloody Baron, Seltkirk, Scorch.
+Связки:
+
+    Bloody Baron → машины убивают → усиление.
+
+    Henselt → дополнительная машина.
+
+    John Natalis → поиск машины.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Spies, Vampires, Queensguards.
+    Типичные ошибки:
+    Не защищать Baron; тратить Scorch на мелких.
+
+ADDA CURSED
+
+Архетип: Adda Cursed
+Лидер: Princess Adda
+Состав колоды с количеством копий:
+
+    8 Seltkirk of Gulet
+
+    6 John Natalis
+
+    3 Priscilla
+
+    4 Roach
+
+    6 Sabrina Glevissig
+
+    3 Margarita of Aretuza
+
+    4 Dethmold
+
+    4 Vandermar
+
+    3 Prince Stennis
+
+    Reinforcements
+
+    Marching Orders
+
+    11 Imperial Cavalry x2
+
+    8 Cursed Knight x3
+
+    4 Damned Sorceress x3
+
+    2 Tormented Mage x3
+
+    1 Reaver Scout
+
+    1 Bloody Flail
+
+Основной план:
+Контроль через проклятых, накопление урона через Sabrina Glevissig и Damned Sorceress. Priscilla и Natalis дают карты.
+Муллиган:
+Оставлять: Sabrina, Priscilla, Natalis, Cursed Knight. Менять дубликаты Damned Sorceress, если нет проклятых.
+Первый раунд:
+Разыграть проклятых, контролировать стол.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Sabrina.
+Последний раунд:
+Сохранить Sabrina, Priscilla, Natalis.
+Связки:
+
+    Sabrina → урон по всем.
+
+    Cursed Knight → усиление.
+
+    Priscilla → добор.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Swap, Arachas Swarm, Slave Infantry.
+    Типичные ошибки:
+    Не защищать Sabrina; тратить контроль на мелких.
+
+TEMPO CALVEIT
+
+Архетип: Tempo Calveit
+Лидер: Jan Calveit
+Состав колоды с количеством копий:
+
+    8 Yennefer
+
+    6 Triss: Telekinesis
+
+    6 Whispess: Tribute
+
+    Royal Decree
+
+    8 Ruehin
+
+    4 Roach
+
+    Commander’s Horn
+
+    Monster Nest
+
+    Alzur’s Double-Cross
+
+    Decoy
+
+    9 Nekker Warrior x3
+
+    6 Kikimore Worker x3
+
+    6 Barbegazi
+
+    3 Arachas Drone x3
+
+    Natural Selection x3
+
+    Scout x2
+
+Основной план:
+Темпо-игра через reveal-пакет (Mangonel, Fire Scorpion, Daerlan Soldier). Lady of the Lake даёт финишер. Calveit обеспечивает стабильность.
+Муллиган:
+Оставлять: Mangonel, Fire Scorpion, Daerlan Soldier, Lady of the Lake. Менять дубликаты, если нет reveal.
+Первый раунд:
+Разыграть reveal-карты, набрать темп.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Lady of the Lake.
+Последний раунд:
+Сохранить Lady of the Lake, Mangonel, Fire Scorpion.
+Связки:
+
+    Mangonel → reveal → урон.
+
+    Fire Scorpion → reveal → урон.
+
+    Lady of the Lake → финишер.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Lyrian Machines, Vampires, Arachas Swarm.
+    Типичные ошибки:
+    Не использовать reveal для контроля; тратить Lady of the Lake рано.
+
+WILD HUNT FROST
+
+Архетип: Wild Hunt Frost
+Лидер: Eredin Breacc Glas
+Состав колоды с количеством копий:
+
+    3 Мороза (Biting Frost)
+
+    3 Гончих (Wild Hunt Hound)
+
+    1 Навигатор (Чародей Дикой Охоты)
+
+    3 Драккара (Wild Hunt Drakkar)
+
+    3 Всадника (Wild Hunt Rider)
+
+    2 Война Дикой Охоты (Wild Hunt Warrior)
+
+    Имлерих
+
+    Карантир
+
+    Геральт: Игни
+
+    Гэ’эльс
+
+    Пугач
+
+    Йотун
+
+    Морвуд
+
+    Оззрел
+
+    Ирис фон Эверек
+
+    Нитраль
+
+    Мороз Эредина (25-я карта)
+
+Основной план:
+Длинный раунд с погодой. Мороз через Гончих, Драккары усиливают Дикую Охоту, Всадники сами призываются. Контроль через Имлериха, Морвуда, Игни. Беречь ключевые карты контроля для финала.
+Муллиган:
+Оставлять: Мороз, Гончих, Драккары, Всадников. Менять дубликаты Мороза, если нет Гончих. Оставлять одну копию Игни против роя.
+Первый раунд:
+Разыграть Мороз через Гончих. Ставить Всадников в ряд под Морозом. Драккарами усиливать Дикую Охоту. Не тратить Имлериха без цели.
+Второй раунд:
+После победы — можно пасовать, если рука сильна. После поражения — выиграть, используя Мороз и Всадников.
+Последний раунд:
+Сохранить Имлериха, Игни, Карантира, Йотуна, Нитраль.
+Связки:
+
+    Мороз → Гончие → Всадники → Драккары.
+
+    Имлерих → убийство под Морозом.
+
+    Карантир/Йотун → перемещение врагов под Мороз.
+
+    Ирис → под Мороз, чтобы сработало завещание.
+
+    Пугач → добор карты.
+
+    Оззрел → кража из сброса.
+    Если нет Гончих — использовать Чародея для поиска.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить Игни на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Alchemy, Dwarf-Elf-Scorch, Scorch Ambush, Ice Trolls, Tempo Calveit, Morvran Reveal, Eggs Consume.
+    Типичные ошибки:
+    Менять Мороз на муллигане; тратить перемещения без цели; не защищать Ирис.
+
+EGGS CONSUME
+
+Архетип: Eggs Consume
+Лидер: Arachas Queen
+Состав колоды с количеством копий:
+
+    6 Whispess: Tribute
+
+    5 Dandelion: Poet
+
+    1 Ge’els
+
+    1 Brewess: Ritual
+
+    4 Maerolorn
+
+    Alzur’s Double-Cross
+
+    Marching Orders
+
+    Summoning Circle
+
+    Mandrake
+
+    9 Nekker Warrior x3
+
+    8 Forktail x3
+
+    6 Uran Warrior x3
+
+    4 Nekker x3
+
+    2 Slyzard x3
+
+Основной план:
+Размножить Nekker, пожирать всё, усиливать Nekker, затем пожирать их и переигрывать по очкам. Сильнейший короткий раунд. Беречь Nekker Warrior и Forktail.
+Муллиган:
+Оставлять: Nekker Warrior, Forktail, Uran Warrior, Nekker. Менять дубликаты Slyzard, если нет цели.
+Первый раунд:
+Разыграть Nekker, скопировать их Nekker Warrior. Пожирать мелких.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть, используя усиленных Nekker.
+Последний раунд:
+Сохранить Nekker Warrior, Forktail, Mandrake.
+Связки:
+
+    Nekker → Nekker Warrior → усиление.
+
+    Forktail → пожирание → усиление.
+
+    Slyzard → поиск Nekker.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Ice Trolls, Alchemy, Fanatics, Scorch Ambush, Sweers.
+    Типичные ошибки:
+    Не защищать Nekker; тратить Forktail без цели.
+
+SCORCH AMBUSH
+
+Архетип: Scorch Ambush
+Лидер: Eithne
+Состав колоды с количеством копий:
+
+    7 Isengrim: Faoiltiarna
+
+    5 Geralt: Igni
+
+    4 Schirru
+
+    Royal Decree
+
+    13 Yaevinn
+
+    6 Aelirenn
+
+    4 Roach
+
+    4 Ida Emean aep Sivney
+
+    Mandrake
+
+    Feign Death
+
+    12 Urihedo Sappers x3
+
+    9 Urihedo Brigade x3
+
+    8 Urihedo Dragoon x3
+
+    7 Hawker Smuggler
+
+    7 Dol Blathanna Archer x3
+
+    6 Half-Elf Hunter x3
+
+    5 Elven Swordmaster x3
+
+    3 Trapper x3
+
+Основной план:
+Контроль через Scorch, Schirru, Igni. Ambush-карты (Sappers, Brigade) дают темп и прореживание. Isengrim усиливает амбашей.
+Муллиган:
+Оставлять: Isengrim, Schirru, Igni, Sappers, Brigade. Менять дубликаты Trapper, если нет амбашей.
+Первый раунд:
+Разыграть амбашей, контролировать стол.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Scorch.
+Последний раунд:
+Сохранить Isengrim, Schirru, Igni, Mandrake.
+Связки:
+
+    Sappers → Brigade → усиление.
+
+    Schirru → Scorch.
+
+    Isengrim → усиление амбашей.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Veterans, Machines Henselt, Dwarf Elf Scorch.
+    Типичные ошибки:
+    Не защищать Schirru; тратить Scorch на мелких.
+
+(Продолжение следует для остальных колод: AreTuza, Alchemy, Anna Spalla Soldiers, Bloodmoon Wraiths, Veterans, Dwarf-Elf-Scorch, Nekker Consume, Greatswords, Lyrian Machines, Queensguards, Temerians, Morvran Reveal, Ointment Spallas, Deathwish, Discard, Swap, Lyrian Deck Buff, Ice Trolls, Eithne Handbuff, Frost Wraiths, Francesca Handbuff, Brouver Shupe, 40 Foltest, Fanatics, Dwarf Miner/Xavier, Tall Ogres, Armor, Slave Infantry, NG Handbuff, Cursed Ships, Brouver Handbuff, Spell'teal Decoctons, Cintrians, Svalblod Rain, Calanthe Deckbuff, Axemen, Dryads.)
+
+Из-за ограничения объёма ответа я могу продолжить по запросу. Если нужны стратегии для конкретных колод из списка — уточните, и я допишу.
+давай следующую пачку колод
+ПРОДОЛЖЕНИЕ: СТРАТЕГИИ ДЛЯ ОСТАЛЬНЫХ КОЛОД
+HIGH TIER 2 (продолжение)
+ARETUZA
+
+Архетип: AreTuza (контрольный маг-архетип)
+Лидер: Королева Мэва (или другой лидер под контр-магов, в зависимости от билда)
+Состав колоды:
+
+    Sile de Tansarville
+
+    Triss: Telekinesis
+
+    Yennefer
+
+    Keira Metz
+
+    Margarita of Aretuza
+
+    Sabrina Glevissig
+
+    Роач
+
+    Alzur’s Double-Cross
+
+    Scorch
+
+    Очищение (в зависимости от меты)
+
+    Ban Ard Tutor x3
+
+    Aretuza Adept x3
+
+    Kaedweni Sergeant x2
+
+    Blue Stripe Scout x2
+
+    Reaver Scout
+
+    Прочие контрольные серебра/бронза
+
+Основной план:
+Контроль через магов, накопление урона от Sabrina Glevissig, защита ключевых юнитов. Победа за счёт изматывания противника и добивания Scorch’ем. Беречь Sile de Tansarville (движок), Sabrina, Keira Metz.
+Муллиган:
+Оставлять: Sile, Triss, Keira, Sabrina. Менять дубликаты Aretuza Adept, если нет магов. Оставлять одну копию Scorch против роя.
+Первый раунд:
+Разыграть магов, накопить урон. Если противник рой — использовать Scorch.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Sabrina + Scorch.
+Последний раунд:
+Сохранить Sabrina, Scorch, Sile.
+Связки:
+
+    Sabrina → урон по всем → Scorch.
+
+    Sile → дополнительный маг.
+
+    Triss: Telekinesis → поиск зачистки.
+    Если нет Sabrina — играть через контроль и Scorch.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить Scorch на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к большому темпу, рою, погоде.
+    Типичные ошибки:
+    Не защищать Sabrina; тратить Scorch рано.
+
+ALCHEMY
+
+Архетип: Alchemy
+Лидер: Морвран Воорхис (или другой под алхимию)
+Состав колоды:
+
+    Vattier de Rideaux
+
+    Yennefer: Enchantress
+
+    Dandelion: Poet
+
+    Lady of the Lake: Advent
+
+    Cantarella
+
+    Henry var Attre
+
+    Urygheff
+
+    Scorch
+
+    The Last Wish
+
+    Alzur’s Double-Cross
+
+    Alchemist x3
+
+    Mangonel x3
+
+    Fire Scorpion x3
+
+    Daerlan Soldier x3
+
+    Imperial Golem x3
+
+Основной план:
+Генерация очков через алхимические карты, массовый урон через Viper Witchers (Cadaverine). Уничтожение движков и роя. Беречь Vattier, Yennefer: Enchantress.
+Муллиган:
+Оставлять: Vattier, Yennefer, Mangonel, Fire Scorpion. Менять дубликаты Alchemist, если нет алхимии.
+Первый раунд:
+Разыграть алхимию, контролировать стол.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Cadaverine.
+Последний раунд:
+Сохранить Vattier, Yennefer, Scorch.
+Связки:
+
+    Alchemist → алхимия → урон.
+
+    Mangonel → reveal → урон.
+
+    Yennefer: Enchantress → контроль.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Deathwish, Temerians, AreTuza, 40 Foltest, WH Frost, Svalblod Rain.
+    Типичные ошибки:
+    Не использовать Cadaverine против роя; тратить Scorch на мелких.
+
+ANNA SPALLA SOLDIERS
+
+Архетип: Anna Spalla Soldiers
+Лидер: Anna Henrietta
+Состав колоды с количеством копий:
+
+    12 Nilfgaardian Knight x3
+
+    8 Standard Bearer x3
+
+    8 Sentry x3
+
+    7 Alba Armored Cavalry x3
+
+    3 Slave Infantry x3
+
+    2 Emissary x2
+
+    1 Vicovaro Medic x2
+
+    1 Recruit x2
+
+    Highwaymen x3
+
+    Battle Preparation x3
+
+Основной план:
+Темпо-игра через солдат, набор очков через Sentry и Standard Bearer. Anna Henrietta обеспечивает стабильность. Беречь Sentry и Standard Bearer.
+Муллиган:
+Оставлять: Sentry, Standard Bearer, Alba Armored Cavalry. Менять дубликаты Slave Infantry, если нет солдат.
+Первый раунд:
+Разыграть солдат, набрать темп.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Sentry.
+Последний раунд:
+Сохранить Sentry, Standard Bearer, Highwaymen.
+Связки:
+
+    Sentry → усиление солдат.
+
+    Standard Bearer → усиление.
+
+    Alba Armored Cavalry → темп.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Alchemy, Cursed NR, Spies.
+    Типичные ошибки:
+    Не защищать Sentry; тратить Battle Preparation рано.
+
+BLOODMOON WRAITHS
+
+Архетип: Bloodmoon Wraiths
+Лидер: Whispering Hillock
+Состав колоды:
+
+    Caranthir Ar-Feiniel
+
+    Triss: Telekinesis
+
+    Detlaff: Crimson Curse
+
+    Ge’els
+
+    Frightener
+
+    Operator
+
+    Jotunn
+
+    Katakan
+
+    Roach
+
+    Abaya
+
+    Noonwraith x3
+
+    Protofleder x3
+
+    Fleder x3
+
+    Siren x2
+
+    Scout x2
+
+    Moonlight x2
+
+Основной план:
+Использование погоды (Bloodmoon/Frost) для генерации очков через врайтов. Врайты дают ценность, когда у противника больше токенов. Беречь вампиров для выживания и капитализации погоды.
+Муллиган:
+Оставлять: Noonwraith, Protofleder, Fleder, Moonlight. Менять дубликаты Siren, если нет погоды.
+Первый раунд:
+Разыграть погоду, затем врайтов.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через врайтов.
+Последний раунд:
+Сохранить Noonwraith, Protofleder, Moonlight.
+Связки:
+
+    Moonlight → Bloodmoon → Noonwraith.
+
+    Fleder → Protofleder → усиление.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Machines Henselt, WH Frost, Axemen, Alchemy.
+    Типичные ошибки:
+    Не защищать врайтов; тратить погоду рано.
+
+VETERANS
+
+Архетип: Veterans
+Лидер: Eist Tuirseach
+Состав колоды с количеством копий:
+
+    6 Birna Bran
+
+    6 Triss: Telekinesis
+
+    6 Detlaff: Higher Vampire
+
+    5 Hammond
+
+    4 Knickers
+
+    4 Roach
+
+    3 Sigrdrifa
+
+    Alzur’s Double-Cross
+
+    Decoy
+
+    Restore
+
+    7 Tuirseach Veteran x3
+
+    6 Tuirseach Hunter x3
+
+    2 Heymaey Spearmaiden x2
+
+    1 Tuirseach Bearmaster x3
+
+    1 Priestess of Freya x2
+
+    Scout x2
+
+Основной план:
+Многократно разыгрывать Tuirseach Veteran, усиливая клановых членов. Бронза на 16–18 очков. Eist даёт дополнительного ветерана.
+Муллиган:
+Оставлять: Tuirseach Veteran, Tuirseach Hunter, Birna Bran. Менять дубликаты Priestess of Freya, если нет целей.
+Первый раунд:
+Разыграть ветеранов, усилить клан.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через ветеранов.
+Последний раунд:
+Сохранить Tuirseach Veteran, Restore, Decoy.
+Связки:
+
+    Tuirseach Veteran → усиление клана.
+
+    Restore → возврат ветерана.
+
+    Decoy → повторное использование.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Spies, Vampires, Nekker Consume, Greatswords.
+    Типичные ошибки:
+    Не защищать ветеранов; тратить Restore рано.
+
+DWARF-ELF-SCORCH
+
+Архетип: Dwarf-Elf-Scorch
+Лидер: Eithne
+Состав колоды:
+
+    Saesenthessis
+
+    Aglais
+
+    Coen of Povis
+
+    Isengrim: Outlaw
+
+    Yaevinn
+
+    Aelirenn
+
+    Eibhear Hattori
+
+    Barclay Els
+
+    Scorch
+
+    Feign Death
+
+    Dol Blathanna Archer x3
+
+    Half-Elf Hunter x3
+
+    Dwarven Skirmisher x2
+
+    Dwarven Agitator
+
+    Elven Mercenary x2
+
+    Scout x3
+
+    Dimeritium Shackles
+
+Основной план:
+Генерация ценности через высокие золотые/серебряные карты, контроль через Scorch. Dol Blathanna Archer — универсальный инструмент. Беречь Scorch и Feign Death.
+Муллиган:
+Оставлять: Saesenthessis, Aglais, Scorch, Dol Blathanna Archer. Менять дубликаты Dwarven Skirmisher, если нет гномов.
+Первый раунд:
+Разыграть лучников, контролировать стол.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Scorch.
+Последний раунд:
+Сохранить Scorch, Feign Death, Saesenthessis.
+Связки:
+
+    Dol Blathanna Archer → урон.
+
+    Scorch → массовый урон.
+
+    Feign Death → защита.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Machines Henselt, Lyrian Machines, WH Frost.
+    Типичные ошибки:
+    Не защищать лучников; тратить Scorch рано.
+
+NEKKER CONSUME
+
+Архетип: Nekker Consume
+Лидер: Arachas Queen
+Состав колоды с количеством копий:
+
+    6 Whispess: Tribute
+
+    5 Dandelion: Poet
+
+    1 Ge’els
+
+    1 Brewess: Ritual
+
+    4 Maerolorn
+
+    Alzur’s Double-Cross
+
+    Marching Orders
+
+    Summoning Circle
+
+    Mandrake
+
+    9 Nekker Warrior x3
+
+    8 Forktail x3
+
+    6 Uran Warrior x3
+
+    4 Nekker x3
+
+    2 Slyzard x3
+
+Основной план:
+Размножить Nekker, пожирать всё, усиливать Nekker, затем пожирать их и переигрывать по очкам. Сильнейший короткий раунд. Беречь Nekker Warrior и Forktail.
+Муллиган:
+Оставлять: Nekker Warrior, Forktail, Uran Warrior, Nekker. Менять дубликаты Slyzard, если нет цели.
+Первый раунд:
+Разыграть Nekker, скопировать их Nekker Warrior. Пожирать мелких.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть, используя усиленных Nekker.
+Последний раунд:
+Сохранить Nekker Warrior, Forktail, Mandrake.
+Связки:
+
+    Nekker → Nekker Warrior → усиление.
+
+    Forktail → пожирание → усиление.
+
+    Slyzard → поиск Nekker.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Ice Trolls, Alchemy, Fanatics, Scorch Ambush, Sweers.
+    Типичные ошибки:
+    Не защищать Nekker; тратить Forktail без цели.
+
+GREATSWORDS
+
+Архетип: Greatswords
+Лидер: Crach an Craite
+Состав колоды с количеством копий:
+
+    5 Geralt: Igni
+
+    5 Dandelion: Poet
+
+    5 Coral
+
+    3 Hym
+
+    13 Udalryk
+
+    10 Djenge Frett
+
+    6 Harald Houndsnout
+
+    5 Skjall
+
+    3 Sigrdrifa
+
+    Restore
+
+    8 An Craite Greatsword x3
+
+    7 Dimun Light Longship x3
+
+    2 Heymaey Spearmaiden
+
+    1 Dimun Pirate Captain x2
+
+    1 Dimun Corsair x3
+
+    1 Priestess of Freya x3
+
+Основной план:
+Постоянные движки: Greatsword + Longship. Генерация огромного количества очков за ход, устойчивость через усиление и воскрешение. Беречь Greatsword и Longship.
+Муллиган:
+Оставлять: Greatsword, Longship, Coral, Hym. Менять дубликаты Priestess of Freya, если нет целей.
+Первый раунд:
+Разыграть Greatsword и Longship, набрать темп.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через движки.
+Последний раунд:
+Сохранить Greatsword, Longship, Restore.
+Связки:
+
+    Greatsword → Longship → усиление.
+
+    Restore → возврат Greatsword.
+
+    Coral → урон.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Vampires, Alchemy, Adda Cursed, Ogroids, Morvran Reveal.
+    Типичные ошибки:
+    Не защищать Greatsword; тратить Restore рано.
+
+LYRIAN MACHINES
+
+Архетип: Lyrian Machines
+Лидер: King Foltest
+Состав колоды:
+
+    Bloody Baron
+
+    Lyrian Cavalry
+
+    Meve
+
+    Dandelion
+
+    Foltest’s Pride
+
+    Seltkirk of Gulet
+
+    John Natalis
+
+    Shani
+
+    Reinforcements
+
+    Marching Orders
+
+    Battering Ram x3
+
+    Siege Master x3
+
+    Ballista x3
+
+    Kaedweni Sergeant x2
+
+    Reaver Scout
+
+    Scout
+
+Основной план:
+Уничтожение юнитов машинами, усиление Bloody Baron, копирование усиления через Lyrian Cavalry. Meve и Dandelion дают дополнительную ценность. Беречь Bloody Baron и Foltest’s Pride.
+Муллиган:
+Оставлять: Bloody Baron, Lyrian Cavalry, Foltest’s Pride, Battering Ram. Менять дубликаты Siege Master, если нет машин.
+Первый раунд:
+Разыграть машины, контролировать стол.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Baron.
+Последний раунд:
+Сохранить Bloody Baron, Lyrian Cavalry, Foltest’s Pride.
+Связки:
+
+    Bloody Baron → машины убивают → усиление.
+
+    Lyrian Cavalry → копирование усиления.
+
+    Foltest’s Pride → контроль.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к NG Handbuff, Ogroids, Alchemy.
+    Типичные ошибки:
+    Не защищать Baron; тратить Foltest’s Pride рано.
+
+QUEENSGUARDS
+
+Архетип: Queensguards
+Лидер: Bran Tuirseach
+Состав колоды с количеством копий:
+
+    10 Ermion
+
+    6 Cerys an Craite
+
+    5 Madman Lugos
+
+    5 Coral
+
+    11 Svanrige Tuirseach
+
+    9 Morkvarg
+
+    4 Knut the Callous
+
+    3 Sigrdrifa
+
+    Alzur’s Double-Cross
+
+    Decoy
+
+    9 Drummond Warmonger x3
+
+    6 Drummond Pillager x3
+
+    4 An Craite Raider x2
+
+    4 Drummond Queensguard x3
+
+    1 Priestess of Freya
+
+    Terror Crew x3
+
+Основной план:
+Финишер через Queensguards, усиленных Cerys An Craite (30–40 очков). Воскрешение через Priestess of Freya. Беречь Queensguards и Cerys.
+Муллиган:
+Оставлять: Queensguard, Cerys, Ermion, Coral. Менять дубликаты Drummond Pillager, если нет целей.
+Первый раунд:
+Разыграть Queensguards, усилить их.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Cerys.
+Последний раунд:
+Сохранить Queensguard, Cerys, Decoy.
+Связки:
+
+    Queensguard → Cerys → усиление.
+
+    Priestess of Freya → возврат Queensguard.
+
+    Decoy → повторное использование.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Spies, Alchemy, Assire decks.
+    Типичные ошибки:
+    Не защищать Queensguard; тратить Cerys рано.
+
+LOW TIER 2
+TEMERIANS
+
+Архетип: Temerians
+Лидер: King Foltest
+Состав колоды с количеством копий:
+
+    8 Seltkirk of Gulet
+
+    6 Keira Metz
+
+    4 Sigismund Dijkstra
+
+    3 Vernon Roche
+
+    6 Margarita of Aretuza
+
+    4 Dethmold
+
+    4 Vandermar
+
+    3 Prince Stennis
+
+    Reinforcements
+
+    Marching Orders
+
+    8 Cintrian Royal Guard x2
+
+    7 Redanian Knight-Elect x3
+
+    3 Blue Stripe Scout x3
+
+    3 Temerian Infantry x3
+
+    3 Blue Stripe Commando x3
+
+    1 Reaver Scout
+
+Основной план:
+Темпо через Blue Stripes, финишер через Infantryman и Dijkstra. Длинный раунд через Redanian Knight-Elect и двойную погоду. Беречь Dijkstra и Infantryman.
+Муллиган:
+Оставлять: Blue Stripe Scout, Blue Stripe Commando, Redanian Knight-Elect. Менять дубликаты Temerian Infantry, если нет синергии.
+Первый раунд:
+Разыграть Blue Stripes, набрать темп.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Dijkstra.
+Последний раунд:
+Сохранить Dijkstra, Infantryman, Redanian Knight-Elect.
+Связки:
+
+    Blue Stripe Scout → Commando → темп.
+
+    Redanian Knight-Elect → погода → усиление.
+
+    Dijkstra → финишер.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Arachas Swarm, Slave Infantry, Eggs Consume.
+    Типичные ошибки:
+    Не защищать Blue Stripes; тратить Dijkstra рано.
+
+MORVRAN REVEAL
+
+Архетип: Morvran Reveal
+Лидер: Morvran Voorhis
+Состав колоды с количеством копий:
+
+    11 Vattier de Rideaux
+
+    5 Yennefer: Enchantress
+
+    5 Dandelion: Poet
+
+    Lady of the Lake: Advent
+
+    13 Cantarella
+
+    9 Henry var Attre
+
+    5 Urygheff
+
+    Scorch
+
+    The Last Wish
+
+    Alzur’s Double-Cross
+
+    9 Alchemist x3
+
+    7 Mangonel x3
+
+    5 Fire Scorpion x3
+
+    4 Daerlan Soldier x3
+
+    3 Imperial Golem x3
+
+Основной план:
+Сильный первый раунд через reveal. Lady of the Lake даёт финишер. Контроль через Scorch и Yennefer: Enchantress. Беречь Mangonel и Fire Scorpion.
+Муллиган:
+Оставлять: Mangonel, Fire Scorpion, Daerlan Soldier, Lady of the Lake. Менять дубликаты Alchemist, если нет reveal.
+Первый раунд:
+Разыграть reveal-карты, набрать темп.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Lady of the Lake.
+Последний раунд:
+Сохранить Lady of the Lake, Mangonel, Fire Scorpion.
+Связки:
+
+    Mangonel → reveal → урон.
+
+    Fire Scorpion → reveal → урон.
+
+    Lady of the Lake → финишер.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Eggs Consume, Deathwish, Spies.
+    Типичные ошибки:
+    Не использовать reveal для контроля; тратить Lady of the Lake рано.
+
+OINTMENT SPALLAS
+
+Архетип: Ointment Spallas
+Лидер: Jan Calveit
+Состав колоды с количеством копий:
+
+    8 Standard Bearer x3
+
+    8 Sentry x3
+
+    7 Alba Armored Cavalry x3
+
+    3 Slave Infantry x3
+
+    2 Vicovaro Novice x3
+
+    1 Recruit x3
+
+    1 Vicovaro Medic
+
+    Ointment x3
+
+    Dimeritium Shackles
+
+    Highwaymen x3
+
+Основной план:
+Массовое разыгрывание солдат (10 карт — 60 очков). Ointment воскрешает Recruit, запуская цепочку Novice → Ointment → Recruit. Беречь Ointment и Recruit.
+Муллиган:
+Оставлять: Ointment, Recruit, Standard Bearer, Sentry. Менять дубликаты Slave Infantry, если нет солдат.
+Первый раунд:
+Разыграть солдат, набрать темп.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Ointment.
+Последний раунд:
+Сохранить Ointment, Recruit, Highwaymen.
+Связки:
+
+    Ointment → Recruit → цепочка.
+
+    Novice → Ointment → Recruit.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Dwarf-Elves, контролю, рою.
+    Типичные ошибки:
+    Тянуть комбо в первом раунде; не защищать Recruit.
+
+DEATHWISH
+
+Архетип: Deathwish
+Лидер: Whispering Hillock
+Состав колоды:
+
+    Endrega Eggs
+
+    Griffins
+
+    Fog
+
+    She-Troll
+
+    Dao
+
+    Прочие Deathwish-карты
+
+Основной план:
+Темпо через грифонов, длинный раунд через туман и She-Troll. Контроль через Deathwish-эффекты. Беречь Endrega Eggs и Dao.
+Муллиган:
+Оставлять: Endrega Eggs, Griffins, She-Troll. Менять дубликаты Fog, если нет синергии.
+Первый раунд:
+Разыграть Eggs, контролировать стол.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Deathwish.
+Последний раунд:
+Сохранить She-Troll, Dao, Griffins.
+Связки:
+
+    Endrega Eggs → Deathwish → темп.
+
+    She-Troll → туман → усиление.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Nekker Consume, Greatswords, Spies, Arachas Swarm.
+    Типичные ошибки:
+    Не защищать Eggs; тратить Deathwish рано.
+
+DISCARD
+
+Архетип: Discard
+Лидер: Bran Tuirseach
+Состав колоды:
+
+    Ermion
+
+    Madman Lugos
+
+    Coral
+
+    Wolfsbane
+
+    Udalryk
+
+    Olgierd von Everec
+
+    Morkvarg
+
+    Sukrus
+
+    Gremist
+
+    Sigrdrifa
+
+    Dimun Pirate x3
+
+    Drummond Warmonger x3
+
+    An Craite Warlord x3
+
+    An Craite Raider x3
+
+    Terror Crew x3
+
+Основной план:
+Прореживание колоды через сброс, давление через carryover. Финишер — 20+ An Craite Warlord. Беречь An Craite Warlord и Ermion.
+Муллиган:
+Оставлять: An Craite Warlord, Ermion, Madman Lugos. Менять дубликаты Dimun Pirate, если нет сброса.
+Первый раунд:
+Разыграть сброс, проредить колоду.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Warlords.
+Последний раунд:
+Сохранить An Craite Warlord, Ermion, Wolfsbane.
+Связки:
+
+    Сброс → прореживание → Warlords.
+
+    Ermion → дополнительный сброс.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Nekker Consume, Greatswords, Spies, Arachas Swarm.
+    Типичные ошибки:
+    Не прореживать колоду; тратить Warlords рано.
+
+SWAP
+
+Архетип: Swap
+Лидер: Francesca Findabair
+Состав колоды:
+
+    Saskia
+
+    Avallac’h
+
+    Vernossiel
+
+    Lady of the Lake: Advent
+
+    Sarah
+
+    Aelirenn
+
+    Ida Emean aep Sivney
+
+    Roach
+
+    Alzur’s Double-Cross
+
+    Feign Death
+
+    Elven Scout x3
+
+    Vernossiel’s Commando x3
+
+    Urihedo Vanguard x2
+
+    Half-Elf Hunter
+
+    Urihedo Officer x3
+
+    Wardancer x3
+
+Основной план:
+Линейная игра, обгон по темпу для получения преимущества по картам. Массивные очки через Elven Scout и Vernossiel’s Commando. Беречь Saskia и Vernossiel.
+Муллиган:
+Оставлять: Saskia, Vernossiel, Elven Scout, Vernossiel’s Commando. Менять дубликаты Wardancer, если нет синергии.
+Первый раунд:
+Разыграть Elven Scout, набрать темп.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Vernossiel.
+Последний раунд:
+Сохранить Saskia, Vernossiel, Feign Death.
+Связки:
+
+    Elven Scout → Vernossiel’s Commando → темп.
+
+    Saskia → усиление.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Armor, Machines Henselt, Nekker Consume, Assire decks.
+    Типичные ошибки:
+    Не использовать темп; тратить Saskia рано.
+
+LYRIAN DECKBUFF
+
+Архетип: Lyrian Deckbuff
+Лидер: King Foltest
+Состав колоды:
+
+    Lyrian Cavalry
+
+    Vissgerd
+
+    Reavers
+
+    Tutors
+
+    Машины
+
+Основной план:
+Накопление deckbuff на Vissgerd, разыгрывание Lyrian Cavalry на ~17 очков. Финишер через Alzur’s Double-Cross или Reinforcements. Беречь Vissgerd и Lyrian Cavalry.
+Муллиган:
+Оставлять: Vissgerd, Lyrian Cavalry, Reavers. Менять дубликаты машин, если нет синергии.
+Первый раунд:
+Разыграть Reavers, проредить колоду.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Lyrian Cavalry.
+Последний раунд:
+Сохранить Vissgerd, Lyrian Cavalry, Alzur’s Double-Cross.
+Связки:
+
+    Reavers → прореживание → Vissgerd.
+
+    Lyrian Cavalry → deckbuff → финишер.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Ogroids, Armor, Spies, Tempo Calveit, Vampires, Arachas Swarm, Scorch Ambush.
+    Типичные ошибки:
+    Не прореживать колоду; тратить Vissgerd рано.
+
+ICE TROLLS
+
+Архетип: Ice Trolls
+Лидер: Whispering Hillock
+Состав колоды с количеством копий:
+
+    12 Old Speartip: Asleep
+
+    9 Caranthir Ar-Feiniel
+
+    9 Cloud Giant
+
+    1 Ge’els
+
+    13 Frightener
+
+    10 Golyat
+
+    6 Jotunn
+
+    6 Morvudd
+
+    5 Ozzrel
+
+    White Frost
+
+    9 Cave Troll x2
+
+    7 Drowner x2
+
+    7 Ice Giant
+
+    5 Ice Troll x3
+
+    3 Red Rider x3
+
+    2 Nekker Swarm x3
+
+    Quen
+
+Основной план:
+Тщательное использование обеих сторон монеты. Cloud Giant даёт доступ к туману. На красной монете — проредить Nekker Swarm, применить Queen на Ice Trolls, пасовать и защищаться от bleed. Ice Trolls могут дать 32 очка в дуэли. Беречь Ice Trolls и Cloud Giant.
+Муллиган:
+Оставлять: Ice Troll, Cloud Giant, Old Speartip, Caranthir. Менять дубликаты Nekker Swarm, если нет синергии.
+Первый раунд:
+Разыграть Ice Trolls, использовать погоду.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Ice Trolls.
+Последний раунд:
+Сохранить Ice Troll, Old Speartip, Caranthir.
+Связки:
+
+    Cloud Giant → туман → Ice Troll.
+
+    Old Speartip → усиление.
+
+    Caranthir → копирование.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Arachas Swarm, Machines, Svalblod Rain, Vampires.
+    Типичные ошибки:
+    Не защищать Ice Trolls; тратить погоду рано.
+
+EITHNE HANDBUFF
+
+Архетип: Eithne Handbuff
+Лидер: Eithne
+Состав колоды:
+
+    Iorveth
+
+    Aglais
+
+    Isengrim: Outlaw
+
+    Royal Decree
+
+    13 Yaevinn
+
+    6 Aelirenn
+
+    4 Ida Emean aep Sivney
+
+    Feign Death
+
+    Marching Orders
+
+    Artefact Compression
+
+    8 Urihedo Dragoon x3
+
+    8 Farseer x3
+
+    5 Elven Swordmaster x3
+
+    1 Elven Mercenary x3
+
+    Scout x3
+
+Основной план:
+Усиление руки через драгунов, carryover через Farseer. Драконы дают движки до 6 очков за ход. Feign Death дважды. Беречь Dragoon и Farseer.
+Муллиган:
+Оставлять: Urihedo Dragoon, Farseer, Elven Swordmaster. Менять дубликаты Scout, если нет синергии.
+Первый раунд:
+Разыграть Dragoon, усилить руку.
+Второй раунд:
+После победы — пасовать. После поражения — выиграть через Farseer.
+Последний раунд:
+Сохранить Dragoon, Farseer, Feign Death.
+Связки:
+
+    Dragoon → усиление руки → Swordmaster.
+
+    Farseer → движок.
+
+    Feign Death → защита.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше.
+    Противодействие:
+    Слабость к Swap, Greatswords, Lyrian Deckbuff, Discard, Spies, Arachas Swarm, Vampires, Alchemy, Adda Cursed.
+    Типичные ошибки:
+    Не защищать Dragoon; тратить Feign Death рано.
+
+(Продолжение следует: Frost Wraiths, Francesca Handbuff, Brouver Shupe, 40 Foltest, Fanatics, Dwarf Miner/Xavier, Tall Ogres, Armor, Slave Infantry, NG Handbuff, Cursed Ships, Brouver Handbuff, Spell'teal Decoctons, Cintrians, Svalblod Rain, Calanthe Deckbuff, Axemen, Dryads.)
+
+Если нужны стратегии для конкретных колод из оставшегося списка — уточните, и я допишу.
+дальше
+ПРОДОЛЖЕНИЕ: СТРАТЕГИИ ДЛЯ ОСТАЛЬНЫХ КОЛОД (часть 3)
+LOW TIER 2 (продолжение)
+FROST WRAITHS
+
+Архетип: Frost Wraiths
+Лидер: Eredin Breacc Glas (или Bran Tuirseach, в зависимости от билда)
+Состав колоды:
+
+    Caranthir Ar-Feiniel
+
+    Imlerith
+
+    Triss: Telekinesis
+
+    Royal Decree
+
+    13 Frightener
+
+    8 Colossal Ifrit
+
+    6 Jotunn
+
+    5 Katakan
+
+    4 Abaya
+
+    2 The Apiarian Phantom
+
+    8 Noonwraith x3
+
+    7 Protofleder
+
+    5 Fleder x3
+
+    4 Wild Hunt Hound x2
+
+    3 Red Rider x3
+
+    Lacerate
+
+    Biting Frost x2
+
+Основной план:
+Похожа на Bloodmoon Wraiths, но с Frost. Убийство врайтов противника и превращение их в движки. Лёгкий призыв Red Rider, настройка Fleder через тикающий мороз. Caranthir помогает против высоких колод. Беречь Noonwraith, Protofleder, Caranthir.
+Муллиган:
+Оставлять: Noonwraith, Protofleder, Fleder, Biting Frost. Менять дубликаты Wild Hunt Hound, если нет мороза. Оставлять Lacerate против роя.
+Первый раунд:
+Разыграть мороз, затем врайтов. Red Rider призываются сами.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через врайтов.
+Последний раунд:
+Сохранить Noonwraith, Protofleder, Caranthir, Lacerate.
+Связки:
+
+    Biting Frost → Wild Hunt Hound → Red Rider.
+
+    Noonwraith → смерть под морозом → движок.
+
+    Protofleder → Fleder → усиление.
+
+    Caranthir → копирование ключевого юнита.
+    Если нет мороза — использовать Triss: Telekinesis для поиска.
+    Выбор целей:
+    Убивать движки противника, блокировать ключевых. Не тратить Lacerate на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Machines, WH Frost (зеркало), weather clear.
+    Типичные ошибки:
+    Не защищать врайтов; тратить мороз без синергии; игнорировать очищение погоды у противника.
+
+FRANCESCA HANDBUFF
+
+Архетип: Francesca Handbuff
+Лидер: Francesca Findabair
+Состав колоды с количеством копий:
+
+    8 Aglais
+
+    6 Triss: Telekinesis
+
+    5 Dandelion: Poet
+
+    2 Ithlinne Aegli
+
+    13 Yaevinn
+
+    9 Ciaran aep Easnillen
+
+    6 Aelirenn
+
+    4 Roach
+
+    4 Ida Emean aep Sivney
+
+    Feign Death
+
+    10 Urihedo Neophyte x3
+
+    8 Urihedo Dragoon x3
+
+    6 Half-Elf Hunter
+
+    5 Elven Swordmaster x3
+
+    1 Elven Mercenary x2
+
+    Scout x2
+
+    Quen
+
+Основной план:
+Francesca гарантирует Ithlinne → Quen, защищая драгунов и Swordmaster'ов с самого начала. Усиление руки через драгунов, защита медленного старта темпом, финиш через огромных Swordmaster'ов. Беречь Urihedo Dragoon, Ithlinne, Quen.
+Муллиган:
+Оставлять: Ithlinne, Quen, Urihedo Dragoon, Elven Swordmaster. Менять дубликаты Scout, если нет синергии.
+Первый раунд:
+Ithlinne → Quen → защита драгунов. Разыграть драгунов, усилить руку.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Swordmaster'ов.
+Последний раунд:
+Сохранить Elven Swordmaster, Feign Death, Ithlinne.
+Связки:
+
+    Ithlinne → Quen → защита.
+
+    Urihedo Dragoon → усиление руки → Swordmaster.
+
+    Feign Death → защита ключевого юнита.
+    Если нет Ithlinne — использовать Triss: Telekinesis для поиска.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить Quen на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Spies, Arachas Swarm, рою.
+    Типичные ошибки:
+    Не защищать драгунов; тратить Quen рано; игнорировать зачистки.
+
+BROUVER SHUPE
+
+Архетип: Brouver Shupe
+Лидер: Brouver Hoog
+Состав колоды с количеством копий:
+
+    8 Aglais
+
+    7 Isengrim Faoiltiarna
+
+    4 Schirru
+
+    Shupe’s Bizarre Adventure
+
+    13 Yaevinn
+
+    6 Toruviel
+
+    4 Ida Emean aep Sivney
+
+    3 Eibhear Hattori
+
+    2 Barclay Els
+
+    Scorch
+
+    12 Urihedo Sappers
+
+    10 Urihedo Neophyte
+
+    9 Urihedo Brigade
+
+    8 Dwarven Mercenary
+
+    7 Dol Blathanna Archer
+
+    6 Dwarven Skirmisher
+
+    6 Half-Elf Hunter
+
+    4 Mahakam Guard
+
+    4 Panther
+
+    3 Trapper
+
+    2 Sage
+
+    1 Elven Mercenary
+
+    Alzur’s Thunder
+
+    Lacerate
+
+    Scout
+
+Основной план:
+Универсальная колода с Brouver Hoog: темп через Barclay/Hattori, контроль через Scorch, Lacerate, Alzur’s Thunder. Shupe даёт случайную мощную способность. Беречь Brouver, Shupe, Scorch.
+Муллиган:
+Оставлять: Brouver, Shupe, Barclay, Hattori, Scorch. Менять дубликаты Urihedo Neophyte, если нет синергии.
+Первый раунд:
+Разыграть темп-карты (Barclay, Hattori), контролировать стол.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Shupe или Scorch.
+Последний раунд:
+Сохранить Shupe, Scorch, Lacerate, Alzur’s Thunder.
+Связки:
+
+    Barclay Els → Hattori → темп.
+
+    Shupe → случайная мощная способность.
+
+    Scorch → массовый урон.
+    Если нет Shupe — играть через контроль и темп.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить Scorch на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Arachas Swarm, Veterans, Tempo Calveit.
+    Типичные ошибки:
+    Полагаться только на Shupe; не защищать Brouver; тратить Lacerate рано.
+
+40 FOLTEST
+
+Архетип: 40 Foltest
+Лидер: King Foltest
+Состав колоды:
+
+    40 карт, включая:
+
+    Bloody Baron
+
+    Roche
+
+    Mystics
+
+    Temerian Magus
+
+    Машины
+
+    Погода (дождь, мороз)
+
+    Temerian Infantry
+
+    Blue Stripe Scout/Commando
+
+    Redanian Knight-Elect
+
+    Прочие темерские карты
+
+Основной план:
+Огромная колода с высокой вариативностью. Мощные карты, но высокий риск плохого дрова. Roche Mystics помогают найти нужные темерские карты. Машины усиливают Baron, Temerian Magus добавляет погоду для зачистки мелких. Беречь Baron, Roche, ключевые машины.
+Муллиган:
+Оставлять: Roche, Baron, ключевые машины, погоду. Менять дубликаты, если нет синергии.
+Первый раунд:
+Разыграть темп-карты, проредить колоду.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Baron.
+Последний раунд:
+Сохранить Baron, Roche, погоду.
+Связки:
+
+    Roche → Mystics → поиск карт.
+
+    Машины → Baron → усиление.
+
+    Temerian Magus → погода → зачистка.
+    Если нет Baron — играть через темп и погоду.
+    Выбор целей:
+    Убивать движки, блокировать ключевых.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Tempo Calveit, Discard, Reveal.
+    Типичные ошибки:
+    Плохой дров; не защищать Baron; тратить погоду рано.
+
+FANATICS
+
+Архетип: Fanatics
+Лидер: Svalblod
+Состав колоды:
+
+    Svalblod Fanatic x3
+
+    An Craite Blacksmith x2
+
+    An Craite Armorsmith x2
+
+    Drummond Shieldmaiden x3
+
+    Heymaey Protector
+
+    Dimeritium Shackles
+
+    Scout x2
+
+    Bone Talisman x2
+
+    Udalryk
+
+    Skjall
+
+    Artis
+
+    Sigrdrifa
+
+    Restore
+
+    Triss: Telekinesis
+
+    Hym
+
+    Sigvald
+
+    Harald Houndsnout
+
+Основной план:
+Fanatics с Svalblod — сильнейший выбор для лидера, усиление через воскрешение. Эффективны против 3-очковых юнитов, хороший матчап против роя. Усиление фанатиков через Arts, Mandrake, Blacksmith. Armorsmith возвращает фанатиков для массового темпа. Беречь Fanatics, Armorsmith, Mandrake.
+Муллиган:
+Оставлять: Svalblod Fanatic, An Craite Armorsmith, An Craite Blacksmith, Mandrake. Менять дубликаты Drummond Shieldmaiden, если нет синергии.
+Первый раунд:
+Разыграть фанатиков, усилить их.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Armorsmith.
+Последний раунд:
+Сохранить Fanatics, Armorsmith, Mandrake.
+Связки:
+
+    Svalblod Fanatic → An Craite Armorsmith → возврат.
+
+    Arts → усиление фанатиков.
+
+    Mandrake → усиление ключевого юнита.
+    Если нет Armorsmith — использовать Restore для возврата фанатиков.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить Mandrake на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Adda Cursed, Alchemy, Dwarf-Elf-Scorch, Eggs Consume.
+    Типичные ошибки:
+    Не защищать фанатиков; тратить Armorsmith рано; игнорировать контроль противника.
+
+DWARF MINER/XAVIER
+
+Архетип: Dwarf Miner/Xavier
+Лидер: Brouver Hoog
+Состав колоды с количеством копий:
+
+    10 Xavier Moran
+
+    10 Ale of the Ancestors
+
+    8 Zoltan Chivay
+
+    Zoltan’s Company
+
+    8 Dennis Cranmer
+
+    8 Yarpen Zigrin
+
+    3 Paulie Dahlberg
+
+    3 Eibhear Hattori
+
+    2 Barclay Els
+
+    Decoy
+
+    8 Dwarven Mercenary x3
+
+    6 Dwarf Miner x3
+
+    6 Dwarven Skirmisher x3
+
+    3 Mahakam Volunteers x3
+
+    1 Dwarven Agitator x3
+
+Основной план:
+Многократное разыгрывание Miner через Zoltan’s Company, Paulie или Syanna. 40+ очков от Adventure. Сильна в длинном раунде, но страдает от недостатка контроля и нестабильности из-за отсутствия прореживания. Беречь Miner, Xavier, Zoltan’s Company.
+Муллиган:
+Оставлять: Dwarf Miner, Xavier Moran, Zoltan’s Company, Paulie. Менять дубликаты Dwarven Skirmisher, если нет синергии.
+Первый раунд:
+Разыграть гномов, подготовить Miner.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Miner.
+Последний раунд:
+Сохранить Miner, Xavier, Zoltan’s Company, Decoy.
+Связки:
+
+    Dwarf Miner → Zoltan’s Company → повтор.
+
+    Paulie → возврат Miner.
+
+    Xavier → усиление.
+    Если нет Zoltan’s Company — использовать Decoy для возврата Miner.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Alchemy, Spies, Vampires, Fanatics.
+    Типичные ошибки:
+    Не защищать Miner; тратить Zoltan’s Company рано; игнорировать зачистки.
+
+TALL OGRES
+
+Архетип: Tall Ogres
+Лидер: Whispering Hillock
+Состав колоды с количеством копий:
+
+    12 Old Speartip: Asleep
+
+    9 Cloud Giant
+
+    6 Whispess: Tribute
+
+    Royal Decree
+
+    13 Frightener
+
+    6 Toad Prince
+
+    6 Morvudd
+
+    Giant’s Belt
+
+    Mandrake
+
+    Monster Nest
+
+    13 Ogre Warrior x2
+
+    11 Cyclops x3
+
+    9 Nekker Warrior
+
+    9 Cave Troll x2
+
+    4 Ghoul x2
+
+    2 Nekker Swarm x3
+
+    Scout x2
+
+Основной план:
+Длинный раунд: юнит с наибольшим количеством очков — огр. Управление кладбищем и очками противника через Cyclops. Постоянный приток очков через Nekker Swarm. Беречь Ogre Warrior, Cyclops, Old Speartip.
+Муллиган:
+Оставлять: Ogre Warrior, Cyclops, Old Speartip, Cloud Giant. Менять дубликаты Nekker Swarm, если нет синергии.
+Первый раунд:
+Разыграть огров, контролировать стол.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через огров.
+Последний раунд:
+Сохранить Ogre Warrior, Cyclops, Old Speartip.
+Связки:
+
+    Ogre Warrior → Cyclops → управление.
+
+    Nekker Swarm → приток очков.
+
+    Cloud Giant → туман.
+    Если нет Cyclops — использовать Cave Troll для защиты.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить Mandrake на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Scorch Ambush, Elf Dwarf Scorch, Brouver Shupe.
+    Типичные ошибки:
+    Не защищать огров; тратить Mandrake рано; игнорировать кладбище противника.
+
+ARMOR
+
+Архетип: Armor
+Лидер: King Foltest (или Mэва)
+Состав колоды с количеством копий:
+
+    8 Seltkirk of Gulet
+
+    6 John Natalis
+
+    4 Shani
+
+    4 Sigismund Dijkstra
+
+    10 Trollololo
+
+    6 Margarita of Aretuza
+
+    3 Prince Stennis
+
+    Marching Orders
+
+    Reinforcements
+
+    Alzur’s Double-Cross
+
+    8 Kaedweni Knight x2
+
+    8 Kaedweni Cavalry x2
+
+    7 Redanian Knight-Elect x3
+
+    2 Tormented Mage x2
+
+    1 Reaver Scout
+
+    Thunderbolt x2
+
+    Scout x2
+
+Основной план:
+Броня и контроль через Trollololo, Kaedweni Knight, Redanian Knight-Elect. Хорошая синергия с погодой. Гибкая колода, но страдает от сложности эффективной игры из-за дрова. Беречь Trollololo, Seltkirk, Dijkstra.
+Муллиган:
+Оставлять: Trollololo, Seltkirk, Dijkstra, Kaedweni Knight. Менять дубликаты Tormented Mage, если нет синергии.
+Первый раунд:
+Разыграть бронированных юнитов, контролировать стол.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Dijkstra.
+Последний раунд:
+Сохранить Trollololo, Seltkirk, Dijkstra.
+Связки:
+
+    Trollololo → броня → усиление.
+
+    Redanian Knight-Elect → погода → усиление.
+
+    Dijkstra → финишер.
+    Если нет Trollololo — использовать Kaedweni Knight для защиты.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Ice Trolls, Alchemy, Handbuff, Spies, Ambush Scorch.
+    Типичные ошибки:
+    Не защищать Trollololo; тратить Dijkstra рано; игнорировать погоду.
+
+SLAVE INFANTRY
+
+Архетип: Slave Infantry
+Лидер: Jan Calveit
+Состав колоды с количеством копий:
+
+    9 Vilgefortz
+
+    6 Triss: Telekinesis
+
+    5 Rainfarn of Attre
+
+    3 Palmerin de Launfal
+
+    13 Cantarella
+
+    11 Assire var Anahid
+
+    5 Joachim de Wett
+
+    4 Vahnemar
+
+    Decoy
+
+    Summoning Circle
+
+    8 Sentry x3
+
+    3 Slave Infantry x3
+
+    2 Vicovaro Novice x3
+
+    1 Recruit x3
+
+    1 Vicovaro Medic
+
+    Scout x3
+
+    Ointment x3
+
+    Mardroeme
+
+Основной план:
+Массовое разыгрывание Slave Infantry, усиление через Palmerin (солдат-тьютор, усиливающий всех солдат). Контроль через Vilgefortz, Joachim. Беречь Slave Infantry, Palmerin, Sentry.
+Муллиган:
+Оставлять: Slave Infantry, Palmerin, Sentry, Ointment. Менять дубликаты Vicovaro Novice, если нет солдат.
+Первый раунд:
+Разыграть солдат, усилить их.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Palmerin.
+Последний раунд:
+Сохранить Slave Infantry, Palmerin, Ointment.
+Связки:
+
+    Slave Infantry → Palmerin → усиление.
+
+    Ointment → Recruit → цепочка.
+
+    Sentry → усиление.
+    Если нет Palmerin — использовать Sentry для усиления.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить Vilgefortz на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Machines, Morvran Reveal, WH Frost, Axemen, Discard.
+    Типичные ошибки:
+    Не защищать Slave Infantry; тратить Ointment рано; игнорировать зачистки.
+
+NG HANDBUFF
+
+Архетип: NG Handbuff
+Лидер: Emhyr var Emreis
+Состав колоды с количеством копий:
+
+    7 Leo Bonhart
+
+    6 Vesemir: Mentor
+
+    6 Triss: Telekinesis
+
+    Royal Decree
+
+    13 Cantarella
+
+    11 Assire var Anahid
+
+    6 Peter Saar Gwynleve
+
+    4 Roach
+
+    2 Dorregaray of Vole
+
+    Mandrake
+
+    12 Nilfgaardian Knight x3
+
+    10 Spotter x3
+
+    3 Magne Division x3
+
+    Scout x3
+
+    Wyvern Scale Shield x3
+
+Основной план:
+Развитие крупного юнита в руке, усиление через Wyvern Scale Shield и Spotter. Nilfgaardian Knight → Mandrake → Emhyr → Bonhart → Spotter. Беречь Nilfgaardian Knight, Mandrake, Bonhart.
+Муллиган:
+Оставлять: Nilfgaardian Knight, Mandrake, Bonhart, Spotter. Менять дубликаты Magne Division, если нет синергии.
+Первый раунд:
+Разыграть Nilfgaardian Knight, усилить его.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Spotter.
+Последний раунд:
+Сохранить Nilfgaardian Knight, Mandrake, Bonhart.
+Связки:
+
+    Nilfgaardian Knight → Mandrake → Emhyr → Bonhart → Spotter.
+
+    Wyvern Scale Shield → усиление.
+    Если нет Mandrake — использовать Vesemir: Mentor для поиска.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить Mandrake на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Ice Trolls, Alchemy, Handbuff, Ambush Scorch.
+    Типичные ошибки:
+    Не защищать Nilfgaardian Knight; тратить Mandrake рано; игнорировать контроль противника.
+
+CURSED SHIPS
+
+Архетип: Cursed Ships
+Лидер: Bran Tuirseach
+Состав колоды с количеством копий:
+
+    6 Triss: Telekinesis
+
+    6 Cerys an Craite
+
+    3 Hym
+
+    1 Sigvald
+
+    13 Udalryk
+
+    9 Morkvarg
+
+    5 Skjall
+
+    4 Gremist
+
+    3 Sigrdrifa
+
+    Restore
+
+    9 An Craite Blacksmith x3
+
+    8 Svalblod Ravager x3
+
+    7 Dimun Light Longship x3
+
+    1 Dimun Pirate Captain x2
+
+    1 Dimun Corsair x3
+
+    Scout x2
+
+    Bone Talisman x2
+
+Основной план:
+Возвращение классической колоды с изменениями: меньше кораблей, больше синергии с Sigvald и Cerys. Длинный раунд через Longship, carryover через Blacksmith, досягаемость через Ravager. Беречь Longship, Sigvald, Cerys.
+Муллиган:
+Оставлять: Dimun Light Longship, Sigvald, Cerys, An Craite Blacksmith. Менять дубликаты Dimun Corsair, если нет синергии.
+Первый раунд:
+Разыграть Longship, набрать темп.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Cerys.
+Последний раунд:
+Сохранить Longship, Sigvald, Cerys.
+Связки:
+
+    Dimun Light Longship → длинный раунд.
+
+    An Craite Blacksmith → carryover.
+
+    Sigvald → Cerys → финишер.
+    Если нет Longship — использовать Ravager для досягаемости.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Alchemy, Adda Cursed, Spies.
+    Типичные ошибки:
+    Не защищать Longship; тратить Sigvald рано; игнорировать зачистки.
+
+BROUVER HANDBUFF
+
+Архетип: Brouver Handbuff
+Лидер: Brouver Hoog
+Состав колоды с количеством копий:
+
+    8 Aglais
+
+    6 Iorveth
+
+    2 Ithlinne Aegli
+
+    Royal Decree
+
+    13 Yaevinn
+
+    7 Carlo Varese
+
+    6 Aelirenn
+
+    4 Roach
+
+    2 Barclay Els
+
+    Feign Death
+
+    10 Urihedo Neophyte x2
+
+    8 Urihedo Dragoon x3
+
+    5 Elven Swordmaster x3
+
+    1 Elven Mercenary x3
+
+    Scout x3
+
+    Quen
+
+Основной план:
+Brouver Handbuff был силён в бете, но потерял универсальность после нерфа CA-спая. Хорош как engine-hate, но в мете по очкам не дотягивает. Без драгунов теряет значительную часть ценности финишеров. Беречь Urihedo Dragoon, Quen, Ithlinne.
+Муллиган:
+Оставлять: Urihedo Dragoon, Quen, Ithlinne, Elven Swordmaster. Менять дубликаты Scout, если нет синергии.
+Первый раунд:
+Разыграть драгунов, усилить руку.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Swordmaster'ов.
+Последний раунд:
+Сохранить Elven Swordmaster, Feign Death, Quen.
+Связки:
+
+    Urihedo Dragoon → усиление руки → Swordmaster.
+
+    Ithlinne → Quen → защита.
+
+    Feign Death → защита.
+    Если нет драгунов — использовать Ithlinne для поиска.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить Quen на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Spies, Arachas Swarm, Vampires, Alchemy.
+    Типичные ошибки:
+    Не защищать драгунов; тратить Quen рано; игнорировать зачистки.
+
+TIER 3
+SPELL'TEAL DECOCTIONS
+
+Архетип: Spell'teal Decotions
+Лидер: Eithne
+Состав колоды с количеством копий:
+
+    6 Triss: Telekinesis
+
+    2 Isengrim: Outlaw
+
+    Magic Lamp
+
+    Lady of the Lake: Advent
+
+    7 Operator
+
+    4 Ida Emean aep Sivney
+
+    Alzur’s Double-Cross
+
+    Marching Orders
+
+    Nature’s Gift
+
+    Artefact Compression
+
+    2 Dol Blathanna Sentry x3
+
+    2 Urihedo Saboteur x3
+
+    1 Elven Mercenary x3
+
+    White Raffard’s Decoction x3
+
+    Giga Scorpion Decoction x3
+
+    Scout x2
+
+Основной план:
+Сила Dol Blathanna Sentry, усиление за каждую специальную карту. Версия с декокциями — самая надёжная. Супер-консистентная, финальный ход обычно 20+ очков. Низкий начальный темп — уязвима к темп-пушу с красной монеты. Беречь Sentry, Lady of the Lake, Triss: Telekinesis.
+Муллиган:
+Оставлять: Dol Blathanna Sentry, White Raffard’s Decoction, Giga Scorpion Decoction, Lady of the Lake. Менять дубликаты Scout, если нет синергии.
+Первый раунд:
+Разыграть Sentry, накопить специальные карты.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Sentry.
+Последний раунд:
+Сохранить Sentry, Lady of the Lake, Triss: Telekinesis.
+Связки:
+
+    Dol Blathanna Sentry → специальные карты → усиление.
+
+    White Raffard’s Decoction → Giga Scorpion Decoction → усиление.
+
+    Lady of the Lake → финишер.
+    Если нет Sentry — использовать Triss: Telekinesis для поиска.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Ice Trolls, Tempo Calveit, Arachas Swarm, Spies.
+    Типичные ошибки:
+    Не защищать Sentry; тратить Lady of the Lake рано; игнорировать темп-пуш.
+
+CINTRIANS
+
+Архетип: Cintrians
+Лидер: Queen Calanthe
+Состав колоды с количеством копий:
+
+    4 Shani
+
+    3 Queen Adalia
+
+    3 Philippa: Mistress of the Lodge
+
+    Royal Decree
+
+    13 Thaler
+
+    10 Nenneke
+
+    7 Operator
+
+    4 Sile de Tansarville
+
+    Reinforcements
+
+    Marching Orders
+
+    8 Cintrian Royal Guard x2
+
+    7 Cintrian Knight x3
+
+    5 Cintrian Enchantress x3
+
+    3 Cintrian Envoy x3
+
+    2 Tormented Mage
+
+    1 Reaver Scout
+
+    Scout
+
+    Quen
+
+Основной план:
+Размножение Cintrian Knight, защита через Quen, генерация ценности через Envoy. Огромное количество очков, но полностью зависит от выживания рыцарей. Беречь Cintrian Knight, Quen, Calanthe.
+Муллиган:
+Оставлять: Cintrian Knight, Quen, Calanthe, Cintrian Envoy. Менять дубликаты Cintrian Enchantress, если нет синергии.
+Первый раунд:
+Разыграть Cintrian Knight, защитить Quen.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Envoy.
+Последний раунд:
+Сохранить Cintrian Knight, Quen, Cintrian Envoy.
+Связки:
+
+    Cintrian Knight → Quen → защита.
+
+    Cintrian Envoy → shuffle → ценность.
+
+    Operator → копирование Knight.
+    Если нет Quen — использовать Shani для защиты.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить Quen на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Spies, Morvran Reveal, Machines.
+    Типичные ошибки:
+    Не защищать Cintrian Knight; тратить Quen рано; игнорировать зачистки.
+
+SVALBLOD RAIN
+
+Архетип: Svalblod Rain
+Лидер: Svalblod
+Состав колоды с количеством копий:
+
+    5 Hammond
+
+    3 Hym
+
+    1 Sigvald
+
+    Tempest
+
+    13 Udalryk
+
+    8 Draig Bon-Dhu
+
+    5 Skjall
+
+    4 Gremist
+
+    3 Sigrdrifa
+
+    Restore
+
+    10 Corrupted Flaminica x2
+
+    7 Svalblod Brawler
+
+    7 An Craite Armorsmith x3
+
+    7 Berserker Marauder x3
+
+    2 Deafening Siren x3
+
+    Primal Savagery
+
+    Torrential Rain
+
+    Bone Talisman
+
+Основной план:
+Устойчивая колода против роя, основанная на дожде и шторме. Усиление сирен для сильного короткого раунда. Svalblod автоматически отправляет сирен в кладбище, Drag Bon-Dhu усиливает их повторно. Armorsmith восстанавливает очки, потерянные от погоды. Sigvald — приманка для Mandrake. Беречь Corrupted Flaminica, Deafening Siren, Sigvald.
+Муллиган:
+Оставлять: Corrupted Flaminica, Deafening Siren, Sigvald, Torrential Rain. Менять дубликаты Berserker Marauder, если нет синергии.
+Первый раунд:
+Разыграть дождь, затем сирен.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Flaminica.
+Последний раунд:
+Сохранить Corrupted Flaminica, Deafening Siren, Sigvald.
+Связки:
+
+    Torrential Rain → Deafening Siren → усиление.
+
+    Corrupted Flaminica → дождь → ценность.
+
+    Sigvald → приманка для Mandrake.
+    Если нет дождя — использовать Primal Savagery для поиска.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить Mandrake на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Fanatics, Greatswords, Nekker Consume, Assire decks.
+    Типичные ошибки:
+    Не защищать сирен; тратить Sigvald рано; игнорировать очищение погоды.
+
+CALANTHE DECKBUFF
+
+Архетип: Calanthe Deckbuff
+Лидер: Queen Calanthe
+Состав колоды:
+
+    Lonely Champion
+
+    Lyrian Cavalry
+
+    Buff-карты
+
+    Прочие
+
+Основной план:
+Простейшая колода, punish opponents without control. Один юнит (Lonely Champion) усиливается всем, затем возвращается в колоду через Calanthe. Lyrian Cavalry позволяет разыгрывать бронзу на 50+ очков. Беречь Lonely Champion, Calanthe, Lyrian Cavalry.
+Муллиган:
+Оставлять: Lonely Champion, Calanthe, Lyrian Cavalry, buff-карты. Менять дубликаты, если нет синергии.
+Первый раунд:
+Разыграть Lonely Champion, усилить его.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Lyrian Cavalry.
+Последний раунд:
+Сохранить Lonely Champion, Calanthe, Lyrian Cavalry.
+Связки:
+
+    Lonely Champion → buff → Calanthe → shuffle.
+
+    Lyrian Cavalry → разыгрывание бронзы.
+    Если нет Calanthe — использовать другие способы возврата.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к любой колоде с контролем.
+    Типичные ошибки:
+    Не защищать Lonely Champion; тратить Calanthe рано; игнорировать контроль противника.
+
+AXEMEN
+
+Архетип: Axemen
+Лидер: Harald the Cripple
+Состав колоды с количеством копий:
+
+    6 Birna Bran
+
+    3 Hym
+
+    Ragh Nar Roog
+
+    Korathi Heatwave
+
+    13 Udalryk
+
+    6 Derran
+
+    5 Skjall
+
+    3 Sigrdrifa
+
+    Restore
+
+    Skellige Storm
+
+    8 An Craite Whaler x3
+
+    7 Dimun Warship x3
+
+    6 Tuirseach Axeman x3
+
+    2 Heymaey Spearmaiden
+
+    1 Dimun Pirate Captain x3
+
+    1 Dimun Corsair x3
+
+Основной план:
+Сильнейший длинный раунд в игре, слабейший короткий (после нерфа Corsair). Погодная колода, Axemen для жадных матчапов без removal. Беречь Tuirseach Axeman, An Craite Whaler, Dimun Warship.
+Муллиган:
+Оставлять: Tuirseach Axeman, An Craite Whaler, Dimun Warship, Skellige Storm. Менять дубликаты Dimun Corsair, если нет синергии.
+Первый раунд:
+Разыграть погоду, затем Axemen.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Axemen.
+Последний раунд:
+Сохранить Tuirseach Axeman, An Craite Whaler, Restore.
+Связки:
+
+    Skellige Storm → Tuirseach Axeman → усиление.
+
+    An Craite Whaler → Dimun Warship → погода.
+
+    Restore → возврат Axeman.
+    Если нет погоды — использовать Ragh Nar Roog.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Greatswords, Armor, любой колоде с более чем одним очищением погоды.
+    Типичные ошибки:
+    Не защищать Axemen; тратить Restore рано; игнорировать очищение погоды.
+
+DRYADS
+
+Архетип: Dryads
+Лидер: Eithne (или другой лидер под дриад)
+Состав колоды:
+
+    Dryad Grovekeeper
+
+    Germant
+
+    Peasant Militia
+
+    Ozak
+
+    Vryhedd Officer
+
+    Branen
+
+    Frexienet
+
+    Etienne
+
+    Прочие дриады
+
+Основной план:
+Использование роя для генерации очков через Dryad Grovekeeper. Germant и Peasant Militia помогают создавать рой. Ozak возвращает большого Grovekeeper (17 очков Vryhedd Officer). Финишер — Dryads + Etienne. Branen → Frexienet для огромной ценности после роя. Отличный длинный раунд, страдает от коротких. Беречь Dryad Grovekeeper, Ozak, Etienne.
+Муллиган:
+Оставлять: Dryad Grovekeeper, Ozak, Etienne, Branen. Менять дубликаты Peasant Militia, если нет синергии.
+Первый раунд:
+Разыграть дриад, создать рой.
+Второй раунд:
+После победы — пасовать, если рука сильна. После поражения — выиграть через Grovekeeper.
+Последний раунд:
+Сохранить Dryad Grovekeeper, Ozak, Etienne.
+Связки:
+
+    Dryad Grovekeeper → рой → усиление.
+
+    Ozak → возврат Grovekeeper.
+
+    Branen → Frexienet → ценность.
+
+    Etienne → повтор дриад.
+    Если нет Grovekeeper — использовать Peasant Militia для роя.
+    Выбор целей:
+    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.
+    Пас:
+    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.
+    Противодействие:
+    Слабость к Axemen, Machines, Spies, коротким раундам.
+    Типичные ошибки:
+    Не защищать Grovekeeper; тратить Ozak рано; игнорировать зачистки.
+
+TIER 4+ (The Rest)
+
+Для колод из категории TIER 4+ (Calanthe Deckbuff, Axemen, Dryads, "The Rest") стратегии аналогичны описанным выше, но с ещё большим акцентом на мемность и неожиданность. Основные принципы:
+
+    Максимальная синергия: даже если колода слабая, ИИ должен пытаться собрать комбо.
+
+    Неожиданные ходы: использовать карты, которые противник не ожидает.
+
+    Пас и экономия: не тратить ключевые карты впустую, если победа маловероятна.
+
+    Адаптация: если противник показывает контроль, менять план на месте.
+
+ОБЩИЕ РЕКОМЕНДАЦИИ ДЛЯ ИИ ПО ВСЕМ КОЛОДАМ
+
+    Анализ фракции противника:
+
+        Скеллиге → ожидать погоду, Axemen, Greatswords, Queensguards.
+
+        Нильфгаард → ожидать Spies, Alchemy, Reveal, Handbuff.
+
+        Север → ожидать Machines, Armor, Temerians, Cursed.
+
+        Скоя'таэль → ожидать Handbuff, Scorch, Dryads, Spell'teal.
+
+        Монстры → ожидать Vampires, Arachas, Frost, Ogroids, Deathwish.
+
+    Учёт показанных карт:
+    Если противник уже показал ключевую карту (например, Scorch), ИИ должен избегать выставления всех юнитов в один ряд.
+
+    Управление ресурсами:
+    Не тратить все сильные карты в первом раунде, если план на длинный раунд. Но и не экономить слишком много, если можно выиграть раунд с преимуществом.
+
+    Пас-логика:
+
+        Если ИИ впереди на 20+ очков и у противника меньше карт — пасовать.
+
+        Если ИИ отстаёт на 10–15 очков и имеет одну сильную карту — догнать и пасовать.
+
+        Если ИИ отстаёт на 30+ очков — либо потратить несколько карт для догона, либо смириться с поражением в раунде и сохранить ресурсы.
+
+    Противодействие погоде:
+
+        Если противник использует погоду, ИИ должен либо очистить её, либо играть в незатронутых рядах, либо усилить свои юниты, чтобы компенсировать урон.
+
+    Противодействие рою:
+
+        Использовать массовый урон (Cadaverine, Lacerate, Scorch, Igni) в правильный момент.
+
+        Не позволять рою разрастаться бесконтрольно.
+
+    Противодействие контролю:
+
+        Не выставлять все движки сразу.
+
+        Использовать bait-карты, чтобы выманить removal.
+
+        Защищать ключевые юниты (Quen, Feign Death, Mandrake).
+
+    Типичные ошибки ИИ:
+
+        Слишком ранний пас при преимуществе.
+
+        Трата ключевых карт без защиты.
+
+        Игнорирование показанных карт противника.
+
+        Неправильный муллиган (оставление дубликатов, ненужных карт).
+
+        Неиспользование погоды/контроля в нужный момент.

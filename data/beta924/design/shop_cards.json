@@ -1,0 +1,1588 @@
+{
+  "stage": 83,
+  "mappings": [
+    {
+      "legacyItem": "gwint_card_emhyr_platinium",
+      "betaItem": "betagwent_shop_emhyr_platinium",
+      "templateId": 162204,
+      "title": "Петер Саар Гвинлеве",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 70
+    },
+    {
+      "legacyItem": "gwint_card_emhyr_gold",
+      "betaItem": "betagwent_shop_emhyr_gold",
+      "templateId": 162204,
+      "title": "Петер Саар Гвинлеве",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 60
+    },
+    {
+      "legacyItem": "gwint_card_emhyr_silver",
+      "betaItem": "betagwent_shop_emhyr_silver",
+      "templateId": 162204,
+      "title": "Петер Саар Гвинлеве",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 55
+    },
+    {
+      "legacyItem": "gwint_card_emhyr_bronze",
+      "betaItem": "betagwent_shop_emhyr_bronze",
+      "templateId": 162204,
+      "title": "Петер Саар Гвинлеве",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_foltest_platinium",
+      "betaItem": "betagwent_shop_foltest_platinium",
+      "templateId": 122211,
+      "title": "Маргарита Ло-Антиль",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 70
+    },
+    {
+      "legacyItem": "gwint_card_foltest_gold",
+      "betaItem": "betagwent_shop_foltest_gold",
+      "templateId": 122211,
+      "title": "Маргарита Ло-Антиль",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 60
+    },
+    {
+      "legacyItem": "gwint_card_foltest_silver",
+      "betaItem": "betagwent_shop_foltest_silver",
+      "templateId": 201748,
+      "title": "Гордость Фольтеста",
+      "reason": "name equivalent",
+      "price": 55
+    },
+    {
+      "legacyItem": "gwint_card_foltest_bronze",
+      "betaItem": "betagwent_shop_foltest_bronze",
+      "templateId": 122211,
+      "title": "Маргарита Ло-Антиль",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_francesca_platinium",
+      "betaItem": "betagwent_shop_francesca_platinium",
+      "templateId": 142204,
+      "title": "Торувьель",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 70
+    },
+    {
+      "legacyItem": "gwint_card_francesca_gold",
+      "betaItem": "betagwent_shop_francesca_gold",
+      "templateId": 142204,
+      "title": "Торувьель",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 60
+    },
+    {
+      "legacyItem": "gwint_card_francesca_silver",
+      "betaItem": "betagwent_shop_francesca_silver",
+      "templateId": 142204,
+      "title": "Торувьель",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 55
+    },
+    {
+      "legacyItem": "gwint_card_francesca_bronze",
+      "betaItem": "betagwent_shop_francesca_bronze",
+      "templateId": 142204,
+      "title": "Торувьель",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_eredin_platinium",
+      "betaItem": "betagwent_shop_eredin_platinium",
+      "templateId": 132205,
+      "title": "Морвудд",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 60
+    },
+    {
+      "legacyItem": "gwint_card_eredin_gold",
+      "betaItem": "betagwent_shop_eredin_gold",
+      "templateId": 132205,
+      "title": "Морвудд",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 60
+    },
+    {
+      "legacyItem": "gwint_card_eredin_silver",
+      "betaItem": "betagwent_shop_eredin_silver",
+      "templateId": 132205,
+      "title": "Морвудд",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 55
+    },
+    {
+      "legacyItem": "gwint_card_eredin_bronze",
+      "betaItem": "betagwent_shop_eredin_bronze",
+      "templateId": 132205,
+      "title": "Морвудд",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_king_bran_bronze",
+      "betaItem": "betagwent_shop_king_bran_bronze",
+      "templateId": 152205,
+      "title": "Драйг Бон-Ду",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_impera_brigade",
+      "betaItem": "betagwent_shop_impera_brigade",
+      "templateId": 162307,
+      "title": "Бригада \"Импера\"",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_impera_brigade2",
+      "betaItem": "betagwent_shop_impera_brigade2",
+      "templateId": 162307,
+      "title": "Бригада \"Импера\"",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_impera_brigade3",
+      "betaItem": "betagwent_shop_impera_brigade3",
+      "templateId": 162307,
+      "title": "Бригада \"Импера\"",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_impera_brigade4",
+      "betaItem": "betagwent_shop_impera_brigade4",
+      "templateId": 162307,
+      "title": "Бригада \"Импера\"",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_cynthia",
+      "betaItem": "betagwent_shop_cynthia",
+      "templateId": 162203,
+      "title": "Цинтия",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_letho",
+      "betaItem": "betagwent_shop_letho",
+      "templateId": 162201,
+      "title": "Альбрых",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_archer_support",
+      "betaItem": "betagwent_shop_archer_support",
+      "templateId": 162310,
+      "title": "Бригада \"Наузикаа\"",
+      "reason": "explicit equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_archer_support2",
+      "betaItem": "betagwent_shop_archer_support2",
+      "templateId": 162310,
+      "title": "Бригада \"Наузикаа\"",
+      "reason": "explicit equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_assire",
+      "betaItem": "betagwent_shop_assire",
+      "templateId": 162202,
+      "title": "Ассирэ вар Анагыд",
+      "reason": "name equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_fringilla",
+      "betaItem": "betagwent_shop_fringilla",
+      "templateId": 162205,
+      "title": "Фрингилья Виго",
+      "reason": "name equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_nausicaa",
+      "betaItem": "betagwent_shop_nausicaa",
+      "templateId": 162309,
+      "title": "Сержант \"Наузикаа\"",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_nausicaa2",
+      "betaItem": "betagwent_shop_nausicaa2",
+      "templateId": 162309,
+      "title": "Сержант \"Наузикаа\"",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_nausicaa3",
+      "betaItem": "betagwent_shop_nausicaa3",
+      "templateId": 162309,
+      "title": "Сержант \"Наузикаа\"",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_stefan",
+      "betaItem": "betagwent_shop_stefan",
+      "templateId": 162206,
+      "title": "Свирс",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_black_archer",
+      "betaItem": "betagwent_shop_black_archer",
+      "templateId": 162312,
+      "title": "Копейщик \"Альба\"",
+      "reason": "explicit equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_siege_support",
+      "betaItem": "betagwent_shop_siege_support",
+      "templateId": 122309,
+      "title": "Осадный инженер",
+      "reason": "name equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_menno",
+      "betaItem": "betagwent_shop_menno",
+      "templateId": 162201,
+      "title": "Альбрых",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_moorvran",
+      "betaItem": "betagwent_shop_moorvran",
+      "templateId": 162201,
+      "title": "Альбрых",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_tibor",
+      "betaItem": "betagwent_shop_tibor",
+      "templateId": 162201,
+      "title": "Альбрых",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_albrich",
+      "betaItem": "betagwent_shop_albrich",
+      "templateId": 162201,
+      "title": "Альбрых",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_morteisen",
+      "betaItem": "betagwent_shop_morteisen",
+      "templateId": 132407,
+      "title": "Имперский голем",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_rainfarn",
+      "betaItem": "betagwent_shop_rainfarn",
+      "templateId": 162207,
+      "title": "Вангемар",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_renuald",
+      "betaItem": "betagwent_shop_renuald",
+      "templateId": 162203,
+      "title": "Цинтия",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_rotten",
+      "betaItem": "betagwent_shop_rotten",
+      "templateId": 132407,
+      "title": "Имперский голем",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_shilard",
+      "betaItem": "betagwent_shop_shilard",
+      "templateId": 162208,
+      "title": "Эган",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_sweers",
+      "betaItem": "betagwent_shop_sweers",
+      "templateId": 162206,
+      "title": "Свирс",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_vanhemar",
+      "betaItem": "betagwent_shop_vanhemar",
+      "templateId": 162207,
+      "title": "Вангемар",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_vattier",
+      "betaItem": "betagwent_shop_vattier",
+      "templateId": 162207,
+      "title": "Вангемар",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_vreemde",
+      "betaItem": "betagwent_shop_vreemde",
+      "templateId": 200050,
+      "title": "Вреемде",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_cahir",
+      "betaItem": "betagwent_shop_cahir",
+      "templateId": 162204,
+      "title": "Петер Саар Гвинлеве",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_puttkammer",
+      "betaItem": "betagwent_shop_puttkammer",
+      "templateId": 132407,
+      "title": "Имперский голем",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_black_archer2",
+      "betaItem": "betagwent_shop_black_archer2",
+      "templateId": 162312,
+      "title": "Копейщик \"Альба\"",
+      "reason": "explicit equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_heavy_zerri",
+      "betaItem": "betagwent_shop_heavy_zerri",
+      "templateId": 162201,
+      "title": "Альбрых",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_zerri",
+      "betaItem": "betagwent_shop_zerri",
+      "templateId": 162203,
+      "title": "Цинтия",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_combat_engineer",
+      "betaItem": "betagwent_shop_combat_engineer",
+      "templateId": 162315,
+      "title": "Посол",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_young_emissary",
+      "betaItem": "betagwent_shop_young_emissary",
+      "templateId": 162314,
+      "title": "Эмиссар",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_young_emissary2",
+      "betaItem": "betagwent_shop_young_emissary2",
+      "templateId": 162314,
+      "title": "Эмиссар",
+      "reason": "explicit equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_natalis",
+      "betaItem": "betagwent_shop_natalis",
+      "templateId": 200089,
+      "title": "Нивеллен",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_esterad",
+      "betaItem": "betagwent_shop_esterad",
+      "templateId": 200089,
+      "title": "Нивеллен",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_catapult",
+      "betaItem": "betagwent_shop_catapult",
+      "templateId": 122315,
+      "title": "Усиленный требушет",
+      "reason": "explicit equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_catapult2",
+      "betaItem": "betagwent_shop_catapult2",
+      "templateId": 122315,
+      "title": "Усиленный требушет",
+      "reason": "explicit equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_siege_tower",
+      "betaItem": "betagwent_shop_siege_tower",
+      "templateId": 122304,
+      "title": "Осадная башня",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_blue_stripes",
+      "betaItem": "betagwent_shop_blue_stripes",
+      "templateId": 122311,
+      "title": "Полоски: боец",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_crinfrid",
+      "betaItem": "betagwent_shop_crinfrid",
+      "templateId": 122306,
+      "title": "Охотник из Кринфрида",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_crinfrid2",
+      "betaItem": "betagwent_shop_crinfrid2",
+      "templateId": 122306,
+      "title": "Охотник из Кринфрида",
+      "reason": "explicit equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_crinfrid3",
+      "betaItem": "betagwent_shop_crinfrid3",
+      "templateId": 122306,
+      "title": "Охотник из Кринфрида",
+      "reason": "explicit equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_philippa",
+      "betaItem": "betagwent_shop_philippa",
+      "templateId": 200089,
+      "title": "Нивеллен",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_vernon",
+      "betaItem": "betagwent_shop_vernon",
+      "templateId": 200089,
+      "title": "Нивеллен",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_thaler",
+      "betaItem": "betagwent_shop_thaler",
+      "templateId": 122203,
+      "title": "Талер",
+      "reason": "name equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_dijkstra",
+      "betaItem": "betagwent_shop_dijkstra",
+      "templateId": 112210,
+      "title": "Плотва",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_eithne",
+      "betaItem": "betagwent_shop_eithne",
+      "templateId": 142214,
+      "title": "Элеас",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_iorveth",
+      "betaItem": "betagwent_shop_iorveth",
+      "templateId": 142214,
+      "title": "Элеас",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_barclay",
+      "betaItem": "betagwent_shop_barclay",
+      "templateId": 142207,
+      "title": "Барклай Эльс",
+      "reason": "name equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_dennis",
+      "betaItem": "betagwent_shop_dennis",
+      "templateId": 122208,
+      "title": "Принц Стеннис",
+      "reason": "name equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_milva",
+      "betaItem": "betagwent_shop_milva",
+      "templateId": 142214,
+      "title": "Элеас",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_ida",
+      "betaItem": "betagwent_shop_ida",
+      "templateId": 142204,
+      "title": "Торувьель",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_filavandrel",
+      "betaItem": "betagwent_shop_filavandrel",
+      "templateId": 142204,
+      "title": "Торувьель",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_yaevinn",
+      "betaItem": "betagwent_shop_yaevinn",
+      "templateId": 142203,
+      "title": "Яевинн",
+      "reason": "name equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_toruviel",
+      "betaItem": "betagwent_shop_toruviel",
+      "templateId": 142204,
+      "title": "Торувьель",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_riordain",
+      "betaItem": "betagwent_shop_riordain",
+      "templateId": 142308,
+      "title": "Эльфский наемник",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_ciaran",
+      "betaItem": "betagwent_shop_ciaran",
+      "templateId": 142206,
+      "title": "Киаран аэп Эасниллен",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_mahakam",
+      "betaItem": "betagwent_shop_mahakam",
+      "templateId": 142306,
+      "title": "Защитник Махакама",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_mahakam2",
+      "betaItem": "betagwent_shop_mahakam2",
+      "templateId": 142306,
+      "title": "Защитник Махакама",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_mahakam3",
+      "betaItem": "betagwent_shop_mahakam3",
+      "templateId": 142306,
+      "title": "Защитник Махакама",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_mahakam4",
+      "betaItem": "betagwent_shop_mahakam4",
+      "templateId": 142306,
+      "title": "Защитник Махакама",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_mahakam5",
+      "betaItem": "betagwent_shop_mahakam5",
+      "templateId": 142306,
+      "title": "Защитник Махакама",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_vrihedd_brigade",
+      "betaItem": "betagwent_shop_vrihedd_brigade",
+      "templateId": 142302,
+      "title": "Бригада \"Врихедд\"",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_vrihedd_brigade2",
+      "betaItem": "betagwent_shop_vrihedd_brigade2",
+      "templateId": 142302,
+      "title": "Бригада \"Врихедд\"",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_havekar_support",
+      "betaItem": "betagwent_shop_havekar_support",
+      "templateId": 142312,
+      "title": "Гавенкарская подмога",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_havekar_support2",
+      "betaItem": "betagwent_shop_havekar_support2",
+      "templateId": 142312,
+      "title": "Гавенкарская подмога",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_havekar_support3",
+      "betaItem": "betagwent_shop_havekar_support3",
+      "templateId": 142312,
+      "title": "Гавенкарская подмога",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_dol_infantry",
+      "betaItem": "betagwent_shop_dol_infantry",
+      "templateId": 142304,
+      "title": "Дол Блатанна: ловчий",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_dol_infantry2",
+      "betaItem": "betagwent_shop_dol_infantry2",
+      "templateId": 142304,
+      "title": "Дол Блатанна: ловчий",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_dol_infantry3",
+      "betaItem": "betagwent_shop_dol_infantry3",
+      "templateId": 142304,
+      "title": "Дол Блатанна: ловчий",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_dol_dwarf",
+      "betaItem": "betagwent_shop_dol_dwarf",
+      "templateId": 142305,
+      "title": "Краснолюд-поединщик",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_dol_dwarf2",
+      "betaItem": "betagwent_shop_dol_dwarf2",
+      "templateId": 142305,
+      "title": "Краснолюд-поединщик",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_dol_dwarf3",
+      "betaItem": "betagwent_shop_dol_dwarf3",
+      "templateId": 142305,
+      "title": "Краснолюд-поединщик",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_elf_skirmisher",
+      "betaItem": "betagwent_shop_elf_skirmisher",
+      "templateId": 142316,
+      "title": "Эльфские диверсанты",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_elf_skirmisher2",
+      "betaItem": "betagwent_shop_elf_skirmisher2",
+      "templateId": 142316,
+      "title": "Эльфские диверсанты",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_elf_skirmisher3",
+      "betaItem": "betagwent_shop_elf_skirmisher3",
+      "templateId": 142316,
+      "title": "Эльфские диверсанты",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_vrihedd_cadet",
+      "betaItem": "betagwent_shop_vrihedd_cadet",
+      "templateId": 142309,
+      "title": "Авангард \"Врихедд\"",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_dol_archer",
+      "betaItem": "betagwent_shop_dol_archer",
+      "templateId": 142310,
+      "title": "Дол Блатанна: лучник",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_havekar_nurse",
+      "betaItem": "betagwent_shop_havekar_nurse",
+      "templateId": 142301,
+      "title": "Медик-гавенкар",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_havekar_nurse2",
+      "betaItem": "betagwent_shop_havekar_nurse2",
+      "templateId": 142301,
+      "title": "Медик-гавенкар",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_havekar_nurse3",
+      "betaItem": "betagwent_shop_havekar_nurse3",
+      "templateId": 142301,
+      "title": "Медик-гавенкар",
+      "reason": "explicit equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_saskia",
+      "betaItem": "betagwent_shop_saskia",
+      "templateId": 142214,
+      "title": "Элеас",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_isengrim",
+      "betaItem": "betagwent_shop_isengrim",
+      "templateId": 142214,
+      "title": "Элеас",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_schirru",
+      "betaItem": "betagwent_shop_schirru",
+      "templateId": 142201,
+      "title": "Деннис Кранмер",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_draug",
+      "betaItem": "betagwent_shop_draug",
+      "templateId": 200089,
+      "title": "Нивеллен",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_kayran",
+      "betaItem": "betagwent_shop_kayran",
+      "templateId": 112206,
+      "title": "Оквист",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_imlerith",
+      "betaItem": "betagwent_shop_imlerith",
+      "templateId": 200089,
+      "title": "Нивеллен",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_leshen",
+      "betaItem": "betagwent_shop_leshen",
+      "templateId": 200089,
+      "title": "Нивеллен",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_forktail",
+      "betaItem": "betagwent_shop_forktail",
+      "templateId": 201606,
+      "title": "Вилохвост",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_earth_elemental",
+      "betaItem": "betagwent_shop_earth_elemental",
+      "templateId": 132213,
+      "title": "Д'ао",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_fiend",
+      "betaItem": "betagwent_shop_fiend",
+      "templateId": 112405,
+      "title": "Бес",
+      "reason": "name equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_griffin",
+      "betaItem": "betagwent_shop_griffin",
+      "templateId": 132312,
+      "title": "Грифон",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_plague_maiden",
+      "betaItem": "betagwent_shop_plague_maiden",
+      "templateId": 132202,
+      "title": "Жальница",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_werewolf",
+      "betaItem": "betagwent_shop_werewolf",
+      "templateId": 201600,
+      "title": "Волколак",
+      "reason": "name equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_botchling",
+      "betaItem": "betagwent_shop_botchling",
+      "templateId": 122401,
+      "title": "Игоша",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_frightener",
+      "betaItem": "betagwent_shop_frightener",
+      "templateId": 132204,
+      "title": "Пугач",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_ice_giant",
+      "betaItem": "betagwent_shop_ice_giant",
+      "templateId": 132212,
+      "title": "Ледяной Великан",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_endrega",
+      "betaItem": "betagwent_shop_endrega",
+      "templateId": 112201,
+      "title": "Дуду",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_harpy",
+      "betaItem": "betagwent_shop_harpy",
+      "templateId": 132315,
+      "title": "Гарпия",
+      "reason": "name equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_gargoyle",
+      "betaItem": "betagwent_shop_gargoyle",
+      "templateId": 132213,
+      "title": "Д'ао",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_celaeno_harpy",
+      "betaItem": "betagwent_shop_celaeno_harpy",
+      "templateId": 132217,
+      "title": "Гарпия келено",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_fire_elemental",
+      "betaItem": "betagwent_shop_fire_elemental",
+      "templateId": 132210,
+      "title": "Ифрит",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_arachas_behemoth",
+      "betaItem": "betagwent_shop_arachas_behemoth",
+      "templateId": 132201,
+      "title": "Огромный главоглаз",
+      "reason": "name equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_nekker",
+      "betaItem": "betagwent_shop_nekker",
+      "templateId": 132305,
+      "title": "Накер",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_nekker2",
+      "betaItem": "betagwent_shop_nekker2",
+      "templateId": 132305,
+      "title": "Накер",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_nekker3",
+      "betaItem": "betagwent_shop_nekker3",
+      "templateId": 132305,
+      "title": "Накер",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_ekkima",
+      "betaItem": "betagwent_shop_ekkima",
+      "templateId": 132313,
+      "title": "Экимма",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_crone_whispess",
+      "betaItem": "betagwent_shop_crone_whispess",
+      "templateId": 132206,
+      "title": "Шептуха",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_crone_weavess",
+      "betaItem": "betagwent_shop_crone_weavess",
+      "templateId": 132208,
+      "title": "Пряха",
+      "reason": "explicit equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_katakan",
+      "betaItem": "betagwent_shop_katakan",
+      "templateId": 112204,
+      "title": "Ламберт",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_bruxa",
+      "betaItem": "betagwent_shop_bruxa",
+      "templateId": 112210,
+      "title": "Плотва",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_grave_hag",
+      "betaItem": "betagwent_shop_grave_hag",
+      "templateId": 112204,
+      "title": "Ламберт",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_garkain",
+      "betaItem": "betagwent_shop_garkain",
+      "templateId": 112210,
+      "title": "Плотва",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_fleder",
+      "betaItem": "betagwent_shop_fleder",
+      "templateId": 112210,
+      "title": "Плотва",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_arachas",
+      "betaItem": "betagwent_shop_arachas",
+      "templateId": 132304,
+      "title": "Трутень главоглаза",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_arachas2",
+      "betaItem": "betagwent_shop_arachas2",
+      "templateId": 132304,
+      "title": "Трутень главоглаза",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_arachas3",
+      "betaItem": "betagwent_shop_arachas3",
+      "templateId": 132304,
+      "title": "Трутень главоглаза",
+      "reason": "explicit equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_fogling",
+      "betaItem": "betagwent_shop_fogling",
+      "templateId": 132301,
+      "title": "Туманник",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_wyvern",
+      "betaItem": "betagwent_shop_wyvern",
+      "templateId": 132303,
+      "title": "Виверна",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_ghoul",
+      "betaItem": "betagwent_shop_ghoul",
+      "templateId": 132306,
+      "title": "Гуль",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_ghoul2",
+      "betaItem": "betagwent_shop_ghoul2",
+      "templateId": 132306,
+      "title": "Гуль",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_ghoul3",
+      "betaItem": "betagwent_shop_ghoul3",
+      "templateId": 132306,
+      "title": "Гуль",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_crone_brewess",
+      "betaItem": "betagwent_shop_crone_brewess",
+      "templateId": 132207,
+      "title": "Кухарка",
+      "reason": "explicit equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_cockatrice",
+      "betaItem": "betagwent_shop_cockatrice",
+      "templateId": 200233,
+      "title": "Куролиск",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_toad",
+      "betaItem": "betagwent_shop_toad",
+      "templateId": 132216,
+      "title": "Принц-жаба",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_hjalmar",
+      "betaItem": "betagwent_shop_hjalmar",
+      "templateId": 152203,
+      "title": "Джанго Фретт",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_cerys",
+      "betaItem": "betagwent_shop_cerys",
+      "templateId": 152203,
+      "title": "Джанго Фретт",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_ermion",
+      "betaItem": "betagwent_shop_ermion",
+      "templateId": 200523,
+      "title": "Микель из Лисьих Ям",
+      "reason": "name equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_draig",
+      "betaItem": "betagwent_shop_draig",
+      "templateId": 152205,
+      "title": "Драйг Бон-Ду",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_holger_blackhand",
+      "betaItem": "betagwent_shop_holger_blackhand",
+      "templateId": 152207,
+      "title": "Хольгер Чернорукий",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_madman_lugos",
+      "betaItem": "betagwent_shop_madman_lugos",
+      "templateId": 152205,
+      "title": "Драйг Бон-Ду",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_donar_an_hindar",
+      "betaItem": "betagwent_shop_donar_an_hindar",
+      "templateId": 152204,
+      "title": "Донар ан Хиндар",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_udalryk",
+      "betaItem": "betagwent_shop_udalryk",
+      "templateId": 152214,
+      "title": "Удальрик",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_birna_bran",
+      "betaItem": "betagwent_shop_birna_bran",
+      "templateId": 200149,
+      "title": "Хэймэй: защитник",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_blueboy_lugos",
+      "betaItem": "betagwent_shop_blueboy_lugos",
+      "templateId": 152203,
+      "title": "Джанго Фретт",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_svanrige",
+      "betaItem": "betagwent_shop_svanrige",
+      "templateId": 152213,
+      "title": "Сванриге Тиршах",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_olaf",
+      "betaItem": "betagwent_shop_olaf",
+      "templateId": 152303,
+      "title": "Ан Крайт: воин",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_berserker",
+      "betaItem": "betagwent_shop_berserker",
+      "templateId": 152306,
+      "title": "Димун: капитан",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_young_berserker",
+      "betaItem": "betagwent_shop_young_berserker",
+      "templateId": 152306,
+      "title": "Димун: капитан",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_clan_an_craite_warrior",
+      "betaItem": "betagwent_shop_clan_an_craite_warrior",
+      "templateId": 152311,
+      "title": "Ан Крайт: оружейник",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_clan_tordarroch_armorsmith",
+      "betaItem": "betagwent_shop_clan_tordarroch_armorsmith",
+      "templateId": 152302,
+      "title": "Берсерк-мародер",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_clan_heymaey_skald",
+      "betaItem": "betagwent_shop_clan_heymaey_skald",
+      "templateId": 152313,
+      "title": "Тиршах: поединщик",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_light_drakkar",
+      "betaItem": "betagwent_shop_light_drakkar",
+      "templateId": 152309,
+      "title": "Димун: легкий драккар",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_war_drakkar",
+      "betaItem": "betagwent_shop_war_drakkar",
+      "templateId": 200105,
+      "title": "Димун: боевой корабль",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_clan_brokvar_archer",
+      "betaItem": "betagwent_shop_clan_brokvar_archer",
+      "templateId": 152304,
+      "title": "Тиршах: ловчий",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_clan_drummond_shieldmaiden",
+      "betaItem": "betagwent_shop_clan_drummond_shieldmaiden",
+      "templateId": 152307,
+      "title": "Друммонд: стража",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_clan_drummond_shieldmaiden2",
+      "betaItem": "betagwent_shop_clan_drummond_shieldmaiden2",
+      "templateId": 152307,
+      "title": "Друммонд: стража",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_clan_drummond_shieldmaiden3",
+      "betaItem": "betagwent_shop_clan_drummond_shieldmaiden3",
+      "templateId": 152307,
+      "title": "Друммонд: стража",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_clan_dimun_pirate",
+      "betaItem": "betagwent_shop_clan_dimun_pirate",
+      "templateId": 152303,
+      "title": "Ан Крайт: воин",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_cock",
+      "betaItem": "betagwent_shop_cock",
+      "templateId": 152306,
+      "title": "Димун: капитан",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_geralt",
+      "betaItem": "betagwent_shop_geralt",
+      "templateId": 112212,
+      "title": "Сара",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_gog_geralt",
+      "betaItem": "betagwent_shop_gog_geralt",
+      "templateId": 112212,
+      "title": "Сара",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_yennefer",
+      "betaItem": "betagwent_shop_yennefer",
+      "templateId": 112203,
+      "title": "Весемир",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_vesemir",
+      "betaItem": "betagwent_shop_vesemir",
+      "templateId": 112203,
+      "title": "Весемир",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_ciri",
+      "betaItem": "betagwent_shop_ciri",
+      "templateId": 112212,
+      "title": "Сара",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_gog_ciri",
+      "betaItem": "betagwent_shop_gog_ciri",
+      "templateId": 112212,
+      "title": "Сара",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_triss",
+      "betaItem": "betagwent_shop_triss",
+      "templateId": 112203,
+      "title": "Весемир",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_dandelion",
+      "betaItem": "betagwent_shop_dandelion",
+      "templateId": 112201,
+      "title": "Дуду",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_zoltan",
+      "betaItem": "betagwent_shop_zoltan",
+      "templateId": 112204,
+      "title": "Ламберт",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_emiel",
+      "betaItem": "betagwent_shop_emiel",
+      "templateId": 112204,
+      "title": "Ламберт",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_villen",
+      "betaItem": "betagwent_shop_villen",
+      "templateId": 112203,
+      "title": "Весемир",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_avallach",
+      "betaItem": "betagwent_shop_avallach",
+      "templateId": 112201,
+      "title": "Дуду",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_olgierd",
+      "betaItem": "betagwent_shop_olgierd",
+      "templateId": 112207,
+      "title": "Ольгерд фон Эверек",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_mrmirror",
+      "betaItem": "betagwent_shop_mrmirror",
+      "templateId": 112201,
+      "title": "Дуду",
+      "reason": "comparable unit of original faction; original hero/leader not sold as Beta gold",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_mrmirror_foglet",
+      "betaItem": "betagwent_shop_mrmirror_foglet",
+      "templateId": 132302,
+      "title": "Древний туманник",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_cow",
+      "betaItem": "betagwent_shop_cow",
+      "templateId": 112209,
+      "title": "Корова-призерка",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_roach",
+      "betaItem": "betagwent_shop_roach",
+      "templateId": 112210,
+      "title": "Плотва",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_scorch",
+      "betaItem": "betagwent_shop_scorch",
+      "templateId": 113309,
+      "title": "Казнь",
+      "reason": "explicit equivalent",
+      "price": 50
+    },
+    {
+      "legacyItem": "gwint_card_horn",
+      "betaItem": "betagwent_shop_horn",
+      "templateId": 113207,
+      "title": "Командирский рог",
+      "reason": "explicit equivalent",
+      "price": 10
+    },
+    {
+      "legacyItem": "gwint_card_dummy",
+      "betaItem": "betagwent_shop_dummy",
+      "templateId": 113201,
+      "title": "Чучело",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_frost",
+      "betaItem": "betagwent_shop_frost",
+      "templateId": 113302,
+      "title": "Трескучий мороз",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_fog",
+      "betaItem": "betagwent_shop_fog",
+      "templateId": 113305,
+      "title": "Густой туман",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_rain",
+      "betaItem": "betagwent_shop_rain",
+      "templateId": 113312,
+      "title": "Проливной дождь",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_clear_sky",
+      "betaItem": "betagwent_shop_clear_sky",
+      "templateId": 113303,
+      "title": "Рассвет",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_mushroom",
+      "betaItem": "betagwent_shop_mushroom",
+      "templateId": 113320,
+      "title": "Мардрём",
+      "reason": "explicit equivalent",
+      "price": 20
+    },
+    {
+      "legacyItem": "gwint_card_skellige_storm",
+      "betaItem": "betagwent_shop_skellige_storm",
+      "templateId": 113203,
+      "title": "Шторм Скеллиге",
+      "reason": "explicit equivalent",
+      "price": 20
+    }
+  ],
+  "nativeSourcesUnchanged": {
+    "D:\\GOG Galaxy\\Games\\The Witcher 3 REDkit\\r4data\\gameplay\\items\\def_loot_shops.xml": "d2abd1f2f786bbfff76b27997f519046011fd0affec030c7f37c6f63c49517b0",
+    "D:\\GOG Galaxy\\Games\\The Witcher 3 REDkit\\r4data\\gameplay\\items_plus\\def_loot_shops.xml": "d2abd1f2f786bbfff76b27997f519046011fd0affec030c7f37c6f63c49517b0"
+  },
+  "localizationCount": 396,
+  "merchant": "Baron quartermaster, via original loot definition; existing inventories need restock",
+  "runtimeVerified": false
+}

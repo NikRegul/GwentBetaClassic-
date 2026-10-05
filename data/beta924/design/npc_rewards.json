@@ -1,0 +1,273 @@
+{
+  "stage": 83,
+  "source": "D:\\GOG Galaxy\\Games\\The Witcher 3 REDkit\\r4data\\gameplay\\items\\def_gwint_decks.xml",
+  "assignments": [
+    {
+      "deckName": "Baron",
+      "character": "Кровавый Барон",
+      "goldTemplateId": 122101,
+      "goldTitle": "Кровавый Барон",
+      "preset": 22,
+      "basePreset": 6
+    },
+    {
+      "deckName": "Roche",
+      "character": "Вернон Роше",
+      "goldTemplateId": 122102,
+      "goldTitle": "Вернон Роше",
+      "preset": 21,
+      "basePreset": 21
+    },
+    {
+      "deckName": "Dijkstra",
+      "character": "Сигизмунд Дийкстра",
+      "goldTemplateId": 122105,
+      "goldTitle": "Сигизмунд Дийкстра",
+      "preset": 23,
+      "basePreset": 6
+    },
+    {
+      "deckName": "Zoltan",
+      "character": "Золтан Хивай",
+      "goldTemplateId": 142105,
+      "goldTitle": "Золтан Хивай",
+      "preset": 24,
+      "basePreset": 9
+    },
+    {
+      "deckName": "Lambert",
+      "character": "Ламберт",
+      "goldTemplateId": 200235,
+      "goldTitle": "Ламберт: мечник",
+      "preset": 25,
+      "basePreset": 6
+    },
+    {
+      "deckName": "Thaler",
+      "character": "Талер",
+      "goldTemplateId": 112103,
+      "goldTitle": "Геральт из Ривии",
+      "preset": 26,
+      "basePreset": 8
+    },
+    {
+      "deckName": "VimmeVivaldi",
+      "character": "Вимме Вивальди",
+      "goldTemplateId": 200080,
+      "goldTitle": "Ксавьер Моран",
+      "preset": 27,
+      "basePreset": 9
+    },
+    {
+      "deckName": "ScoiaTrader",
+      "character": "Торговец скоя’таэлей",
+      "goldTemplateId": 142103,
+      "goldTitle": "Иорвет",
+      "preset": 28,
+      "basePreset": 10
+    },
+    {
+      "deckName": "Stjepan",
+      "character": "Степан",
+      "goldTemplateId": 112106,
+      "goldTitle": "Трисс Меригольд",
+      "preset": 29,
+      "basePreset": 8
+    },
+    {
+      "deckName": "CrossroadsInnkeeper",
+      "character": "Корчмарь на распутье",
+      "goldTemplateId": 112108,
+      "goldTitle": "Йеннифэр",
+      "preset": 30,
+      "basePreset": 1
+    },
+    {
+      "deckName": "Olivier",
+      "character": "Оливер",
+      "goldTemplateId": 112112,
+      "goldTitle": "Аваллак'х: Знающий",
+      "preset": 31,
+      "basePreset": 8
+    },
+    {
+      "deckName": "BoatBuilder",
+      "character": "Лодочник из Рудника",
+      "goldTemplateId": 132102,
+      "goldTitle": "Имлерих",
+      "preset": 32,
+      "basePreset": 1
+    },
+    {
+      "deckName": "CardProdigy",
+      "character": "Хадко",
+      "goldTemplateId": 131102,
+      "goldTitle": "Ге'эльс",
+      "preset": 33,
+      "basePreset": 15
+    },
+    {
+      "deckName": "Hermit",
+      "character": "Старый мудрец",
+      "goldTemplateId": 132103,
+      "goldTitle": "Леший",
+      "preset": 34,
+      "basePreset": 2
+    },
+    {
+      "deckName": "Sjusta",
+      "character": "Сьюста",
+      "goldTemplateId": 142101,
+      "goldTitle": "Саэсентессис",
+      "preset": 35,
+      "basePreset": 10
+    },
+    {
+      "deckName": "Gremista",
+      "character": "Гремист",
+      "goldTemplateId": 152107,
+      "goldTitle": "Коралл",
+      "preset": 36,
+      "basePreset": 12
+    },
+    {
+      "deckName": "Crach",
+      "character": "Крах ан Крайт",
+      "goldTemplateId": 152101,
+      "goldTitle": "Хьялмар ан Крайт",
+      "preset": 37,
+      "basePreset": 14
+    },
+    {
+      "deckName": "LugosTheMad",
+      "character": "Лугос Безумный",
+      "goldTemplateId": 152106,
+      "goldTitle": "Лугос Безумный",
+      "preset": 38,
+      "basePreset": 13
+    },
+    {
+      "deckName": "Mousesack",
+      "character": "Мышовур",
+      "goldTemplateId": 152103,
+      "goldTitle": "Мышовур",
+      "preset": 39,
+      "basePreset": 12
+    },
+    {
+      "deckName": "MarkizaSerenity",
+      "character": "Маркиза Серенити",
+      "goldTemplateId": 142104,
+      "goldTitle": "Мильва",
+      "preset": 40,
+      "basePreset": 10
+    },
+    {
+      "deckName": "Shani",
+      "character": "Шани",
+      "goldTemplateId": 122106,
+      "goldTitle": "Шани",
+      "preset": 41,
+      "basePreset": 6
+    },
+    {
+      "deckName": "Olgierd",
+      "character": "Ольгерд фон Эверек",
+      "goldTemplateId": 132215,
+      "goldTitle": "Гюнтер о'Дим",
+      "preset": 42,
+      "basePreset": 1
+    },
+    {
+      "deckName": "Gambler",
+      "character": "Борец за права животных",
+      "goldTemplateId": 112107,
+      "goldTitle": "Виллентретенмерт",
+      "preset": 43,
+      "basePreset": 1
+    },
+    {
+      "deckName": "Halflings",
+      "character": "Низушки на свадьбе",
+      "goldTemplateId": 132107,
+      "goldTitle": "Кейран",
+      "preset": 44,
+      "basePreset": 1
+    },
+    {
+      "deckName": "CircusGwentAddict",
+      "character": "Торговец бродячего цирка",
+      "goldTemplateId": 200209,
+      "goldTitle": "Саския",
+      "preset": 45,
+      "basePreset": 10
+    },
+    {
+      "deckName": "NKTournament",
+      "character": "Бернард Тулле",
+      "goldTemplateId": 201618,
+      "goldTitle": "Зельткирк из Гулеты",
+      "preset": 46,
+      "basePreset": 6
+    },
+    {
+      "deckName": "NilfTournament",
+      "character": "Саша",
+      "goldTemplateId": 162104,
+      "goldTitle": "Кагыр аэп Кеаллах",
+      "preset": 47,
+      "basePreset": 8
+    },
+    {
+      "deckName": "ScoiaTournament",
+      "character": "Финнеас",
+      "goldTemplateId": 142102,
+      "goldTitle": "Изенгрим",
+      "preset": 48,
+      "basePreset": 11
+    },
+    {
+      "deckName": "NMLTournament",
+      "character": "Граф Тибальт",
+      "goldTemplateId": 132104,
+      "goldTitle": "Карантир",
+      "preset": 49,
+      "basePreset": 15
+    },
+    {
+      "deckName": "NMLTournament2",
+      "character": "Первый соперник турнира в Туссенте",
+      "goldTemplateId": 132101,
+      "goldTitle": "Драуг",
+      "preset": 50,
+      "basePreset": 15
+    },
+    {
+      "deckName": "NilfTournament2",
+      "character": "Второй соперник турнира в Туссенте",
+      "goldTemplateId": 162103,
+      "goldTitle": "Ваттье де Ридо",
+      "preset": 51,
+      "basePreset": 8
+    },
+    {
+      "deckName": "SkelTournament2",
+      "character": "Финалист турнира в Туссенте",
+      "goldTemplateId": 152104,
+      "goldTitle": "Камби",
+      "preset": 52,
+      "basePreset": 14
+    },
+    {
+      "deckName": "ScoiaTournament2",
+      "character": "Главарь пуристов после турнира в Туссенте",
+      "goldTemplateId": 142106,
+      "goldTitle": "Аглайиса",
+      "preset": 53,
+      "basePreset": 11
+    }
+  ],
+  "ordinaryReward": "One random collectible bronze or silver below its owned-copy cap on the first victory over each actual NPC.",
+  "questReward": "Assigned gold, or300 crowns if already owned.",
+  "note": "Designed Beta rewards and fixed unique lists. Four actual Tournament2 requests confirmed by native-tournament83.json; NKTournament2 exists in definitions but is not requested by this quest. Character roles identify the precise tournament stages; actor personal names not inferred. Advanced AI for variations deferred."
+}

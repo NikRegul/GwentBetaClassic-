@@ -1,0 +1,1305 @@
+{
+  "catalogSha256": "022539802636cb45e92123a630c3788a0674c39b538fa1f69a64761a6b3ddbd3",
+  "cards": [
+    {
+      "templateId": 122101,
+      "fields": {
+        "specialMode": 101,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 1,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/74",
+      "originalVariables": {
+        "Boost": 1
+      }
+    },
+    {
+      "templateId": 122102,
+      "fields": {
+        "specialMode": 102,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 7,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/75",
+      "originalVariables": {
+        "Damage": 7
+      }
+    },
+    {
+      "templateId": 122103,
+      "fields": {
+        "specialMode": 103,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/76",
+      "originalVariables": {
+        "MaxTargets": 1
+      }
+    },
+    {
+      "templateId": 122104,
+      "fields": {
+        "specialMode": 102,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 5,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/77",
+      "originalVariables": {
+        "NumOfTargets": 1,
+        "Damage": 5,
+        "Damage2": 4,
+        "Damage3": 3,
+        "Damage4": 2,
+        "Damage5": 1
+      }
+    },
+    {
+      "templateId": 122105,
+      "fields": {
+        "specialMode": 104,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 2,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/78",
+      "originalVariables": {
+        "MaxTargets": 2
+      }
+    },
+    {
+      "templateId": 122108,
+      "fields": {
+        "specialMode": 105,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/81",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 122201,
+      "fields": {
+        "specialMode": 106,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 2,
+        "specialCount": 3,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/82",
+      "originalVariables": {
+        "Boost": 2,
+        "MaxTargets": 3
+      }
+    },
+    {
+      "templateId": 122202,
+      "fields": {
+        "specialMode": 107,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 3,
+        "specialCount": 5,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/83",
+      "originalVariables": {
+        "Boost": 3,
+        "MaxTargets": 5
+      }
+    },
+    {
+      "templateId": 122203,
+      "fields": {
+        "specialMode": 108,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 2,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/84",
+      "originalVariables": {
+        "MaxTargets": 2
+      }
+    },
+    {
+      "templateId": 122204,
+      "fields": {
+        "specialMode": 109,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 2,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/85",
+      "originalVariables": {
+        "DeckSize": 0,
+        "HandSize": 0,
+        "MaxTargets": 2,
+        "Picked": 0
+      }
+    },
+    {
+      "templateId": 122205,
+      "fields": {
+        "specialMode": 110,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/86",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 122206,
+      "fields": {
+        "specialMode": 111,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/87",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 122207,
+      "fields": {
+        "specialMode": 105,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/88",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 122208,
+      "fields": {
+        "specialMode": 112,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 5,
+        "header.armor": 3
+      },
+      "abilityRecordKey": "ability/89",
+      "originalVariables": {
+        "Armor": 5,
+        "Armor2": 3
+      }
+    },
+    {
+      "templateId": 122209,
+      "fields": {
+        "specialMode": 101,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 9,
+        "header.armor": 9
+      },
+      "abilityRecordKey": "ability/90",
+      "originalVariables": {
+        "Armor": 9
+      }
+    },
+    {
+      "templateId": 122210,
+      "fields": {
+        "specialMode": 113,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/91",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 122211,
+      "fields": {
+        "specialMode": 114,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/92",
+      "originalVariables": {
+        "Num of Targets": 1
+      }
+    },
+    {
+      "templateId": 122212,
+      "fields": {
+        "specialMode": 115,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 3,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/93",
+      "originalVariables": {
+        "MaxTargets": 3,
+        "Size": 0
+      }
+    },
+    {
+      "templateId": 122213,
+      "fields": {
+        "specialMode": 101,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 1,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/94",
+      "originalVariables": {
+        "Boost": 1
+      }
+    },
+    {
+      "templateId": 122214,
+      "fields": {
+        "specialMode": 116,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 3,
+        "header.armor": 3
+      },
+      "abilityRecordKey": "ability/95",
+      "originalVariables": {
+        "MaxTargets": 1,
+        "Armor": 3
+      }
+    },
+    {
+      "templateId": 122301,
+      "fields": {
+        "specialMode": 117,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 1,
+        "specialCount": 4,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/97",
+      "originalVariables": {
+        "Crew": 0,
+        "Damage": 1,
+        "MaxTargets": 4
+      }
+    },
+    {
+      "templateId": 122302,
+      "fields": {
+        "specialMode": 118,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 2,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/98",
+      "originalVariables": {
+        "Crew": 0,
+        "Damage": 2
+      }
+    },
+    {
+      "templateId": 122303,
+      "fields": {
+        "specialMode": 119,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 1,
+        "specialCount": 3,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/99",
+      "originalVariables": {
+        "Damage": 1,
+        "MaxTargets": 3
+      }
+    },
+    {
+      "templateId": 122304,
+      "fields": {
+        "specialMode": 120,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 2,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/100",
+      "originalVariables": {
+        "Crew": 0,
+        "Boost": 2
+      }
+    },
+    {
+      "templateId": 122306,
+      "fields": {
+        "specialMode": 121,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 1,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/101",
+      "originalVariables": {
+        "Boost": 1
+      }
+    },
+    {
+      "templateId": 122307,
+      "fields": {
+        "specialMode": 122,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/102",
+      "originalVariables": {
+        "MaxTargets": 1
+      }
+    },
+    {
+      "templateId": 122308,
+      "fields": {
+        "specialMode": 101,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 2,
+        "specialCount": 1,
+        "addedArmor": 2
+      },
+      "abilityRecordKey": "ability/103",
+      "originalVariables": {
+        "Boost": 2,
+        "Armor": 2
+      }
+    },
+    {
+      "templateId": 122309,
+      "fields": {
+        "specialMode": 101,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 1,
+        "specialCount": 1,
+        "addedArmor": 1
+      },
+      "abilityRecordKey": "ability/104",
+      "originalVariables": {
+        "Boost": 1,
+        "Armor": 1
+      }
+    },
+    {
+      "templateId": 122310,
+      "fields": {
+        "specialMode": 123,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 1,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/105",
+      "originalVariables": {
+        "Boost": 1
+      }
+    },
+    {
+      "templateId": 122311,
+      "fields": {
+        "specialMode": 101,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/106",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 122312,
+      "fields": {
+        "specialMode": 124,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 1,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/107",
+      "originalVariables": {
+        "Boost": 1
+      }
+    },
+    {
+      "templateId": 122313,
+      "fields": {
+        "specialMode": 101,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/108",
+      "originalVariables": {
+        "Power": 25
+      }
+    },
+    {
+      "templateId": 122314,
+      "fields": {
+        "specialMode": 125,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/109",
+      "originalVariables": {
+        "MaxTargets": 1,
+        "Armor": 0
+      }
+    },
+    {
+      "templateId": 122315,
+      "fields": {
+        "specialMode": 101,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 1,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/110",
+      "originalVariables": {
+        "Damage": 1
+      }
+    },
+    {
+      "templateId": 122316,
+      "fields": {
+        "specialMode": 127,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/111",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 122317,
+      "fields": {
+        "specialMode": 101,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 5,
+        "specialCount": 1,
+        "addedArmor": 4,
+        "header.armor": 4
+      },
+      "abilityRecordKey": "ability/112",
+      "originalVariables": {
+        "Boost": 5,
+        "Armor": 4
+      }
+    },
+    {
+      "templateId": 122318,
+      "fields": {
+        "specialMode": 126,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/113",
+      "originalVariables": {
+        "MaxTargets": 1
+      }
+    },
+    {
+      "templateId": 122401,
+      "fields": {
+        "specialMode": 127,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/114",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 122402,
+      "fields": {
+        "specialMode": 127,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/115",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 123301,
+      "fields": {
+        "specialMode": 101,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 1,
+        "specialCount": 1,
+        "addedArmor": 2,
+        "header.armor": 2
+      },
+      "abilityRecordKey": "ability/118",
+      "originalVariables": {
+        "Boost": 1,
+        "Armor": 2
+      }
+    },
+    {
+      "templateId": 200033,
+      "fields": {
+        "specialMode": 103,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/310",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 200048,
+      "fields": {
+        "specialMode": 128,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/321",
+      "originalVariables": {
+        "DeckSize": 0,
+        "MaxTargets": 1
+      }
+    },
+    {
+      "templateId": 200049,
+      "fields": {
+        "specialMode": 129,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 3,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/322",
+      "originalVariables": {
+        "Damage": 3,
+        "Damage2": 3,
+        "Damage3": 1
+      }
+    },
+    {
+      "templateId": 200088,
+      "fields": {
+        "specialMode": 130,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/339",
+      "originalVariables": {
+        "Power": 0
+      }
+    },
+    {
+      "templateId": 200098,
+      "fields": {
+        "specialMode": 131,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 150,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/342",
+      "originalVariables": {
+        "Boost": 150,
+        "Armor": 0,
+        "Set": 0
+      }
+    },
+    {
+      "templateId": 200132,
+      "fields": {
+        "specialMode": 132,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/352",
+      "originalVariables": {
+        "MaxTargets": 1
+      }
+    },
+    {
+      "templateId": 200168,
+      "fields": {
+        "specialMode": 133,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 1,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/373",
+      "originalVariables": {
+        "Boost": 1
+      }
+    },
+    {
+      "templateId": 200169,
+      "fields": {
+        "specialMode": 134,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 4,
+        "specialCount": 2,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/374",
+      "originalVariables": {
+        "MaxTargets": 2,
+        "Damage": 4
+      }
+    },
+    {
+      "templateId": 200170,
+      "fields": {
+        "specialMode": 135,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/375",
+      "originalVariables": {
+        "MaxTargets": 1
+      }
+    },
+    {
+      "templateId": 200171,
+      "fields": {
+        "specialMode": 101,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 4,
+        "header.armor": 4
+      },
+      "abilityRecordKey": "ability/376",
+      "originalVariables": {
+        "Armor": 4
+      }
+    },
+    {
+      "templateId": 200529,
+      "fields": {
+        "specialMode": 101,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/418",
+      "originalVariables": {
+        "Set": 1
+      }
+    },
+    {
+      "templateId": 201582,
+      "fields": {
+        "specialMode": 105,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/436",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 201595,
+      "fields": {
+        "specialMode": 105,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/442",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 201618,
+      "fields": {
+        "specialMode": 137,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 3,
+        "header.armor": 3
+      },
+      "abilityRecordKey": "ability/458",
+      "originalVariables": {
+        "Damage": 0,
+        "Armor": 3
+      }
+    },
+    {
+      "templateId": 201620,
+      "fields": {
+        "specialMode": 138,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 1,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/460",
+      "originalVariables": {
+        "Damage": 1
+      }
+    },
+    {
+      "templateId": 201621,
+      "fields": {
+        "specialMode": 139,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/461",
+      "originalVariables": {
+        "MaxTargets": 1
+      }
+    },
+    {
+      "templateId": 201622,
+      "fields": {
+        "specialMode": 140,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 5,
+        "specialCount": 1,
+        "addedArmor": 2,
+        "header.armor": 2
+      },
+      "abilityRecordKey": "ability/462",
+      "originalVariables": {
+        "Boost": 5,
+        "Armor": 2
+      }
+    },
+    {
+      "templateId": 201624,
+      "fields": {
+        "specialMode": 101,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 1,
+        "header.armor": 1
+      },
+      "abilityRecordKey": "ability/464",
+      "originalVariables": {
+        "Armor": 1,
+        "Timer": 1
+      }
+    },
+    {
+      "templateId": 201625,
+      "fields": {
+        "specialMode": 141,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 2,
+        "header.armor": 2
+      },
+      "abilityRecordKey": "ability/465",
+      "originalVariables": {
+        "Armor": 2
+      }
+    },
+    {
+      "templateId": 201628,
+      "fields": {
+        "specialMode": 142,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 2,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/468",
+      "originalVariables": {
+        "Size": 1,
+        "MaxTargets": 2
+      }
+    },
+    {
+      "templateId": 201630,
+      "fields": {
+        "specialMode": 143,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 7,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/469",
+      "originalVariables": {
+        "Damage": 7
+      }
+    },
+    {
+      "templateId": 201748,
+      "fields": {
+        "specialMode": 144,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 2,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/547",
+      "originalVariables": {
+        "Damage": 2,
+        "Crew": 0
+      }
+    },
+    {
+      "templateId": 201777,
+      "fields": {
+        "specialMode": 145,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/561",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 201650,
+      "fields": {
+        "specialMode": 136,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/486",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 112207,
+      "fields": {
+        "specialMode": 146,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 0,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/31",
+      "originalVariables": {}
+    },
+    {
+      "templateId": 112215,
+      "fields": {
+        "specialMode": 147,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 5,
+        "specialCount": 5,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/39",
+      "originalVariables": {
+        "Boost": 5,
+        "MaxTargets": 5
+      }
+    },
+    {
+      "templateId": 200089,
+      "fields": {
+        "specialMode": 148,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 1,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/340",
+      "originalVariables": {
+        "Damage": 1
+      }
+    },
+    {
+      "templateId": 201697,
+      "fields": {
+        "specialMode": 149,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "amount": 2,
+        "specialCount": 1,
+        "addedArmor": 0
+      },
+      "abilityRecordKey": "ability/516",
+      "originalVariables": {
+        "MaxTargets": 1,
+        "Boost": 2
+      }
+    }
+  ],
+  "categories": {
+    "1": [
+      2199023255552,
+      0,
+      0
+    ],
+    "2": [
+      67108864,
+      0,
+      0
+    ],
+    "3": [
+      35184372088832,
+      0,
+      0
+    ],
+    "4": [
+      32,
+      0,
+      0
+    ],
+    "5": [
+      2199157473280,
+      0,
+      0
+    ],
+    "6": [
+      16384,
+      0
+    ],
+    "7": [
+      33554432,
+      0,
+      0
+    ],
+    "8": [
+      2048,
+      0,
+      0
+    ],
+    "9": [
+      18014398510530560,
+      0,
+      0
+    ],
+    "10": [
+      36028797018963968,
+      0
+    ],
+    "11": [
+      8589934592,
+      0,
+      0
+    ],
+    "12": [
+      18014398509481984,
+      0,
+      0
+    ]
+  }
+}

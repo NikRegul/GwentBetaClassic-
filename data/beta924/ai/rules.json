@@ -1,0 +1,4092 @@
+{
+  "stage": 88,
+  "source": "deck_rules.txt",
+  "sourceSha256": "80e9b42a5f24c9e7d020450fedf38ed20e938bb3a3a547e05893c459ca8b8945",
+  "families": {
+    "spies": 1,
+    "drain": 2,
+    "swarm": 3,
+    "machines": 4,
+    "cursed": 5,
+    "reveal": 6,
+    "weather": 7,
+    "consume": 8,
+    "ambush": 9,
+    "alchemy": 10,
+    "moonlight": 11,
+    "veterans": 12,
+    "dwarves": 13,
+    "greatswords": 14,
+    "queensguard": 15,
+    "temerians": 16,
+    "soldiers": 17,
+    "deathwish": 18,
+    "discard": 19,
+    "swap": 20,
+    "tall": 21,
+    "handbuff": 22,
+    "singleton": 23,
+    "armor": 24,
+    "ng-handbuff": 25,
+    "spells": 26,
+    "axemen": 27,
+    "dryads": 28
+  },
+  "profiles": [
+    {
+      "id": 1,
+      "title": "Spies",
+      "requestedLeader": "Jan Calveit",
+      "sourceText": "Spies\r\nЛидер: Jan Calveit\r\nСостав колоды с количеством копий:\r\n\r\n    6 Detlaff: Higher Vampire\r\n\r\n    5 Rainfarn of Attre\r\n\r\n    1 Cahir Dyffryn\r\n\r\n    Lady of the Lake: Advent\r\n\r\n    13 Cantarella\r\n\r\n    11 Assire var Anahid\r\n\r\n    10 Count Caldwell\r\n\r\n    9 Azar Javed\r\n\r\n    5 Joachim de Wett\r\n\r\n    8 Rot Tosser\r\n\r\n    6 Impera Brigade x3\r\n\r\n    6 Impera Enforcers x3\r\n\r\n    2 Ambassador\r\n\r\n    2 Emissary\r\n\r\n    1 Assassin\r\n\r\n    1 Vicovaro Medic x3\r\n\r\nОсновной план:\r\nНабрать максимальное количество очков в длинном раунде за счёт связки Azar + Caldwell, а также массового шпионажа. Calveit обеспечивает доступ к нужным картам. Ключевые карты — Azar Javed, Count Caldwell, Joachim de Wett. Беречь их от контроля.\r\nМуллиган:\r\nОставлять: Azar, Caldwell, Joachim, Cantarella, Impera Brigade. Менять дубликаты Enforcers, если нет возможности их усилить. Оставлять одну копию Vicovaro Medic против Скеллиге.\r\nПервый раунд:\r\nНачинать с дешёвых шпионов (Emissary, Ambassador), чтобы проредить колоду и найти ключевые карты. Если есть Azar+Caldwell — можно разыграть, но следить за погодой. Не тратить Joachim без защиты.\r\nВторой раунд:\r\nПосле победы — можно пасовать, если рука позволяет выиграть третий. После поражения — выиграть любой ценой, используя все ресурсы.\r\nПоследний раунд:\r\nСохранить Calveit, Cantarella, Assire, Detlaff. Идеально — иметь 2–3 карты преимущества.\r\nСвязки:\r\n\r\n    Azar Javed → Count Caldwell → Joachim de Wett (усиление и добор).\r\n\r\n    Impera Brigade → Impera Enforcers (если есть шпионы на столе).\r\n\r\n    Assire var Anahid → возврат ключевых карт.\r\n    Если части нет — использовать Эмиссаров для поиска.\r\n    Выбор целей:\r\n    Убивать движки противника (например, Greatswords, Arachas). Блокировать ключевых юнитов. Не тратить контроль на мелких шпионов.\r\n    Пас:\r\n    Если впереди и противник потратил больше карт — пасовать. Если отстаём — догнать одной картой, иначе продолжать.\r\n    Противодействие:\r\n    Бояться погоды (уязвимы к ней), Alchemy, Dwarf-Elf-Scorch, WH Frost, Arachas Swarm.\r\n    Типичные ошибки:\r\n    Слишком ранний Azar+Caldwell без защиты; трата Joachim в коротком раунде; отсутствие плана на случай, если комбо не собрано.\r\n\r\nVAMPIRES (Drain)",
+      "family": "spies",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "6 Detlaff: Higher Vampire",
+          "resolvedId": 112105,
+          "method": "role-substitution",
+          "resolvedName": "Regis: Higher Vampire"
+        },
+        {
+          "requested": "Lady of the Lake: Advent",
+          "resolvedId": 112112,
+          "method": "role-substitution",
+          "resolvedName": "Avallac'h: Sage"
+        },
+        {
+          "requested": "10 Count Caldwell",
+          "resolvedId": 162212,
+          "method": "role-substitution",
+          "resolvedName": "False Ciri"
+        },
+        {
+          "requested": "9 Azar Javed",
+          "resolvedId": 162102,
+          "method": "role-substitution",
+          "resolvedName": "Menno Coehoorn"
+        },
+        {
+          "requested": "Menno Coehoorn",
+          "resolvedId": 162102,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 162213,
+          "resolvedName": "Ceallach Dyffryn",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 162205,
+          "resolvedName": "Fringilla Vigo",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 162314,
+          "resolvedName": "Emissary",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 162314,
+          "resolvedName": "Emissary",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 200164,
+      "faction": 4,
+      "familyId": 1,
+      "presetId": 54,
+      "templateIds": [
+        112105,
+        200032,
+        162104,
+        112112,
+        162210,
+        162202,
+        162212,
+        162211,
+        162302,
+        162307,
+        162307,
+        162307,
+        162308,
+        162308,
+        162308,
+        162315,
+        162314,
+        200115,
+        162304,
+        162304,
+        162304,
+        162213,
+        162205,
+        162314,
+        162314
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Vampires (Drain)",
+      "requestedLeader": "Unseen Elder",
+      "sourceText": "Vampires (Drain)\r\nЛидер: Unseen Elder\r\nСостав колоды с количеством копий:\r\n\r\n    8 Orianna\r\n\r\n    5 Woodland Spirit\r\n\r\n    2 Detlaff: Crimson Curse\r\n\r\n    Royal Decree\r\n\r\n    8 Colossal Ifrit\r\n\r\n    5 Katakan\r\n\r\n    4 Gael\r\n\r\n    4 Abaya\r\n\r\n    4 Roach\r\n\r\n    Alzur’s Double-Cross\r\n\r\n    7 Protofleder\r\n\r\n    6 Cockatrice\r\n\r\n    5 Ekimmara x3\r\n\r\n    5 Fleder x3\r\n\r\n    5 Garkain x3\r\n\r\n    4 Foglet\r\n\r\n    2 Plumard x3\r\n\r\nОсновной план:\r\nДлинный раунд с накоплением Drain-эффектов (Alp, Garkain, Ekimmara, Feast of Blood, Plumard). Orianna может дать до 50 очков. Fleder/Protofleder сильны против роя. Беречь Orianna и ключевых вампиров.\r\nМуллиган:\r\nОставлять: Orianna, Woodland Spirit, Detlaff: Crimson Curse, Fleder, Ekimmara. Менять дубликаты Garkain, если нет вампиров. Оставлять одну копию зачистки.\r\nПервый раунд:\r\nИграть вампиров, накапливать Drain. Если противник контроль — не выставлять всех вампиров сразу. Стараться выиграть раунд или заставить противника потратить много карт.\r\nВторой раунд:\r\nПосле победы — можно пасовать, если рука сильна. После поражения — выиграть, используя Orianna и Fleder.\r\nПоследний раунд:\r\nСохранить Orianna, Protofleder, Detlaff. Идеально — 6+ карт в руке.\r\nСвязки:\r\n\r\n    Orianna + много вампиров → массовый Drain.\r\n\r\n    Fleder + Protofleder → усиление против роя.\r\n\r\n    Woodland Spirit → туман + волки.\r\n    Если нет Orianna — играть через Fleder и Ekimmara.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых юнитов. Не тратить контроль на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к контролю, Machines, коротким раундам.\r\n    Типичные ошибки:\r\n    Играть в короткий раунд; не защищать Orianna; тратить Fleder без цели.\r\n\r\nARACHAS SWARM",
+      "family": "drain",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "8 Orianna",
+          "resolvedId": 201781,
+          "method": "role-substitution",
+          "resolvedName": "Imlerith: Sabbath"
+        },
+        {
+          "requested": "2 Detlaff: Crimson Curse",
+          "resolvedId": 113101,
+          "method": "role-substitution",
+          "resolvedName": "Ragh Nar Roog"
+        },
+        {
+          "requested": "8 Colossal Ifrit",
+          "resolvedId": 132210,
+          "method": "role-substitution",
+          "resolvedName": "Ifrit"
+        },
+        {
+          "requested": "5 Katakan",
+          "resolvedId": 132220,
+          "method": "role-substitution",
+          "resolvedName": "Nekurat"
+        },
+        {
+          "requested": "4 Gael",
+          "resolvedId": 132220,
+          "method": "role-substitution",
+          "resolvedName": "Nekurat"
+        },
+        {
+          "requested": "7 Protofleder",
+          "resolvedId": 132303,
+          "method": "role-substitution",
+          "resolvedName": "Wyvern"
+        },
+        {
+          "requested": "5 Fleder x3",
+          "resolvedId": 132313,
+          "method": "role-substitution",
+          "resolvedName": "Ekimmara"
+        },
+        {
+          "requested": "5 Garkain x3",
+          "resolvedId": 132302,
+          "method": "role-substitution",
+          "resolvedName": "Ancient Foglet"
+        },
+        {
+          "requested": "2 Plumard x3",
+          "resolvedId": 132409,
+          "method": "role-substitution",
+          "resolvedName": "Lamia"
+        },
+        {
+          "requested": "Nekurat",
+          "resolvedId": 132220,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Ekimmara",
+          "resolvedId": 132313,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Ekimmara",
+          "resolvedId": 132313,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Ekimmara",
+          "resolvedId": 132313,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132205,
+          "resolvedName": "Morvudd",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132305,
+          "resolvedName": "Nekker",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132305,
+          "resolvedName": "Nekker",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132305,
+          "resolvedName": "Nekker",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 200055,
+      "faction": 2,
+      "familyId": 2,
+      "presetId": 55,
+      "templateIds": [
+        201781,
+        132103,
+        113101,
+        200154,
+        132210,
+        132220,
+        132203,
+        112210,
+        113209,
+        132303,
+        200233,
+        132313,
+        132313,
+        132313,
+        132302,
+        132302,
+        132302,
+        132301,
+        132409,
+        132409,
+        132409,
+        132205,
+        132305,
+        132305,
+        132305
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Arachas Swarm",
+      "requestedLeader": "Whispering Hillock",
+      "sourceText": "Arachas Swarm\r\nЛидер: Whispering Hillock\r\nСостав колоды с количеством копий:\r\n\r\n    8 Yennefer\r\n\r\n    6 Triss: Telekinesis\r\n\r\n    6 Whispess: Tribute\r\n\r\n    Royal Decree\r\n\r\n    8 Ruehin\r\n\r\n    4 Roach\r\n\r\n    Commander’s Horn\r\n\r\n    Monster Nest\r\n\r\n    Alzur’s Double-Cross\r\n\r\n    Decoy\r\n\r\n    9 Nekker Warrior x3\r\n\r\n    6 Kikimore Worker x3\r\n\r\n    6 Barbegazi\r\n\r\n    3 Arachas Drone x3\r\n\r\n    Natural Selection x3\r\n\r\n    Scout x2\r\n\r\nОсновной план:\r\nРазмножить Arachas Drone через Nekker Warrior, затем усилить их. Сохранить дронов и скопировать в нужный момент. Whispering Hillock даёт дополнительный Monster Nest для контроля.\r\nМуллиган:\r\nОставлять: Nekker Warrior, Arachas Drone, Whispering Hillock, Ruehin. Менять дубликаты Barbegazi, если нет дронов.\r\nПервый раунд:\r\nРазыграть дронов, скопировать их Nekker Warrior. Защищать дронов от зачисток.\r\nВторой раунд:\r\nПосле победы — можно пасовать. После поражения — выиграть, используя усиленных дронов.\r\nПоследний раунд:\r\nСохранить Nekker Warrior, Monster Nest, Commander’s Horn.\r\nСвязки:\r\n\r\n    Arachas Drone → Nekker Warrior → усиление.\r\n\r\n    Whispering Hillock → Monster Nest → дополнительный рой.\r\n    Если нет Nekker Warrior — использовать Natural Selection для поиска.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Lyrian Machines, Svalblod Rain, WH Frost.\r\n    Типичные ошибки:\r\n    Не защищать дронов; тратить Nekker Warrior без дронов.\r\n\r\nHIGH TIER 2\r\nMACHINES HENSELT",
+      "family": "swarm",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "6 Kikimore Worker x3",
+          "resolvedId": 132201,
+          "method": "role-substitution",
+          "resolvedName": "Arachas Behemoth"
+        },
+        {
+          "requested": "Natural Selection x3",
+          "resolvedId": 200023,
+          "method": "role-substitution",
+          "resolvedName": "Arachas Venom"
+        },
+        {
+          "requested": "Scout x2",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        }
+      ],
+      "active": true,
+      "leader": 201587,
+      "faction": 2,
+      "familyId": 3,
+      "presetId": 56,
+      "templateIds": [
+        112108,
+        201773,
+        200220,
+        200154,
+        201660,
+        112210,
+        113207,
+        133302,
+        113209,
+        113201,
+        132211,
+        132211,
+        132211,
+        132201,
+        132201,
+        132201,
+        201701,
+        132304,
+        132304,
+        132304,
+        200023,
+        200023,
+        200023,
+        201704,
+        201704
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Machines Henselt",
+      "requestedLeader": "King Henselt",
+      "sourceText": "Machines Henselt\r\nЛидер: King Henselt\r\nСостав колоды с количеством копий:\r\n\r\n    9 Bloody Baron\r\n\r\n    8 Seltkirk of Gulet\r\n\r\n    6 John Natalis\r\n\r\n    4 Shani\r\n\r\n    13 Thaler\r\n\r\n    11 Ronvid the Incessant\r\n\r\n    10 Foltest’s Pride\r\n\r\n    Reinforcements\r\n\r\n    Marching Orders\r\n\r\n    Scorch\r\n\r\n    9 Kaedweni Sergeant\r\n\r\n    7 Reinforced Ballista\r\n\r\n    6 Battering Ram x3\r\n\r\n    6 Siege Master x3\r\n\r\n    6 Ballista x3\r\n\r\n    1 Reaver Scout\r\n\r\n    1 Scout\r\n\r\n    1 Winch\r\n\r\nОсновной план:\r\nКонтроль через машины и Scorch, набор очков через Bloody Baron и Foltest’s Pride. Henselt создаёт дополнительную машину.\r\nМуллиган:\r\nОставлять: Bloody Baron, Seltkirk, John Natalis, Battering Ram, Ballista. Менять дубликаты Siege Master, если нет машин.\r\nПервый раунд:\r\nРазыграть машины, контролировать стол. Если противник рой — использовать Scorch.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Baron.\r\nПоследний раунд:\r\nСохранить Bloody Baron, Seltkirk, Scorch.\r\nСвязки:\r\n\r\n    Bloody Baron → машины убивают → усиление.\r\n\r\n    Henselt → дополнительная машина.\r\n\r\n    John Natalis → поиск машины.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Spies, Vampires, Queensguards.\r\n    Типичные ошибки:\r\n    Не защищать Baron; тратить Scorch на мелких.\r\n\r\nADDA CURSED",
+      "family": "machines",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "1 Scout",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122302,
+          "resolvedName": "Reinforced Ballista",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 200170,
+      "faction": 8,
+      "familyId": 4,
+      "presetId": 57,
+      "templateIds": [
+        122101,
+        201618,
+        122103,
+        122106,
+        122203,
+        200529,
+        201748,
+        123201,
+        200019,
+        113309,
+        122214,
+        122302,
+        200049,
+        200049,
+        200049,
+        122318,
+        122318,
+        122318,
+        122301,
+        122301,
+        122301,
+        122307,
+        201704,
+        201659,
+        122302
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Adda Cursed",
+      "requestedLeader": "Princess Adda",
+      "sourceText": "Adda Cursed\r\nЛидер: Princess Adda\r\nСостав колоды с количеством копий:\r\n\r\n    8 Seltkirk of Gulet\r\n\r\n    6 John Natalis\r\n\r\n    3 Priscilla\r\n\r\n    4 Roach\r\n\r\n    6 Sabrina Glevissig\r\n\r\n    3 Margarita of Aretuza\r\n\r\n    4 Dethmold\r\n\r\n    4 Vandermar\r\n\r\n    3 Prince Stennis\r\n\r\n    Reinforcements\r\n\r\n    Marching Orders\r\n\r\n    11 Imperial Cavalry x2\r\n\r\n    8 Cursed Knight x3\r\n\r\n    4 Damned Sorceress x3\r\n\r\n    2 Tormented Mage x3\r\n\r\n    1 Reaver Scout\r\n\r\n    1 Bloody Flail\r\n\r\nОсновной план:\r\nКонтроль через проклятых, накопление урона через Sabrina Glevissig и Damned Sorceress. Priscilla и Natalis дают карты.\r\nМуллиган:\r\nОставлять: Sabrina, Priscilla, Natalis, Cursed Knight. Менять дубликаты Damned Sorceress, если нет проклятых.\r\nПервый раунд:\r\nРазыграть проклятых, контролировать стол.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Sabrina.\r\nПоследний раунд:\r\nСохранить Sabrina, Priscilla, Natalis.\r\nСвязки:\r\n\r\n    Sabrina → урон по всем.\r\n\r\n    Cursed Knight → усиление.\r\n\r\n    Priscilla → добор.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Swap, Arachas Swarm, Slave Infantry.\r\n    Типичные ошибки:\r\n    Не защищать Sabrina; тратить контроль на мелких.\r\n\r\nTEMPO CALVEIT",
+      "family": "cursed",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "4 Vandermar",
+          "resolvedId": 113208,
+          "method": "alias",
+          "resolvedName": "Vaedermakar"
+        },
+        {
+          "requested": "11 Imperial Cavalry x2",
+          "resolvedId": 122314,
+          "method": "role-substitution",
+          "resolvedName": "Kaedweni Cavalry"
+        },
+        {
+          "requested": "Reinforcements",
+          "resolvedId": 123201,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Marching Orders",
+          "resolvedId": 200019,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122102,
+          "resolvedName": "Vernon Roche",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122302,
+          "resolvedName": "Reinforced Ballista",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122302,
+          "resolvedName": "Reinforced Ballista",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 201595,
+      "faction": 8,
+      "familyId": 5,
+      "presetId": 58,
+      "templateIds": [
+        201618,
+        122103,
+        122202,
+        112210,
+        122206,
+        122211,
+        122207,
+        113208,
+        122208,
+        122314,
+        122314,
+        201625,
+        201625,
+        201625,
+        201630,
+        201630,
+        201630,
+        201628,
+        201628,
+        201628,
+        122307,
+        201633,
+        122102,
+        122302,
+        122302
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Tempo Calveit",
+      "requestedLeader": "Jan Calveit",
+      "sourceText": "Tempo Calveit\r\nЛидер: Jan Calveit\r\nСостав колоды с количеством копий:\r\n\r\n    8 Yennefer\r\n\r\n    6 Triss: Telekinesis\r\n\r\n    6 Whispess: Tribute\r\n\r\n    Royal Decree\r\n\r\n    8 Ruehin\r\n\r\n    4 Roach\r\n\r\n    Commander’s Horn\r\n\r\n    Monster Nest\r\n\r\n    Alzur’s Double-Cross\r\n\r\n    Decoy\r\n\r\n    9 Nekker Warrior x3\r\n\r\n    6 Kikimore Worker x3\r\n\r\n    6 Barbegazi\r\n\r\n    3 Arachas Drone x3\r\n\r\n    Natural Selection x3\r\n\r\n    Scout x2\r\n\r\nОсновной план:\r\nТемпо-игра через reveal-пакет (Mangonel, Fire Scorpion, Daerlan Soldier). Lady of the Lake даёт финишер. Calveit обеспечивает стабильность.\r\nМуллиган:\r\nОставлять: Mangonel, Fire Scorpion, Daerlan Soldier, Lady of the Lake. Менять дубликаты, если нет reveal.\r\nПервый раунд:\r\nРазыграть reveal-карты, набрать темп.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Lady of the Lake.\r\nПоследний раунд:\r\nСохранить Lady of the Lake, Mangonel, Fire Scorpion.\r\nСвязки:\r\n\r\n    Mangonel → reveal → урон.\r\n\r\n    Fire Scorpion → reveal → урон.\r\n\r\n    Lady of the Lake → финишер.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Lyrian Machines, Vampires, Arachas Swarm.\r\n    Типичные ошибки:\r\n    Не использовать reveal для контроля; тратить Lady of the Lake рано.\r\n\r\nWILD HUNT FROST",
+      "family": "reveal",
+      "notes": [
+        "Use validated Beta base list: requested roster has foreign-faction cards or DIY-only frost mechanics."
+      ],
+      "changes": [
+        {
+          "requested": "6 Whispess: Tribute",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": 200220
+        },
+        {
+          "requested": "8 Ruehin",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": 201660
+        },
+        {
+          "requested": "Monster Nest",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": 133302
+        },
+        {
+          "requested": "9 Nekker Warrior x3",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": 132211
+        },
+        {
+          "requested": "6 Kikimore Worker x3",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": 132201
+        },
+        {
+          "requested": "6 Barbegazi",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": 201701
+        },
+        {
+          "requested": "3 Arachas Drone x3",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": 132304
+        },
+        {
+          "requested": "Natural Selection x3",
+          "resolvedId": 200023,
+          "method": "role-substitution",
+          "resolvedName": "Arachas Venom"
+        },
+        {
+          "requested": "Scout x2",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        }
+      ],
+      "active": true,
+      "leader": 200164,
+      "faction": 4,
+      "familyId": 6,
+      "presetId": 59,
+      "templateIds": [
+        162103,
+        200031,
+        162106,
+        162107,
+        162203,
+        162202,
+        162212,
+        162209,
+        162210,
+        200227,
+        162306,
+        162306,
+        162306,
+        132407,
+        132407,
+        132407,
+        162318,
+        162318,
+        162318,
+        162316,
+        162316,
+        162316,
+        162317,
+        162317,
+        162317
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Wild Hunt Frost",
+      "requestedLeader": "Eredin Breacc Glas",
+      "sourceText": "Wild Hunt Frost\r\nЛидер: Eredin Breacc Glas\r\nСостав колоды с количеством копий:\r\n\r\n    3 Мороза (Biting Frost)\r\n\r\n    3 Гончих (Wild Hunt Hound)\r\n\r\n    1 Навигатор (Чародей Дикой Охоты)\r\n\r\n    3 Драккара (Wild Hunt Drakkar)\r\n\r\n    3 Всадника (Wild Hunt Rider)\r\n\r\n    2 Война Дикой Охоты (Wild Hunt Warrior)\r\n\r\n    Имлерих\r\n\r\n    Карантир\r\n\r\n    Геральт: Игни\r\n\r\n    Гэ’эльс\r\n\r\n    Пугач\r\n\r\n    Йотун\r\n\r\n    Морвуд\r\n\r\n    Оззрел\r\n\r\n    Ирис фон Эверек\r\n\r\n    Нитраль\r\n\r\n    Мороз Эредина (25-я карта)\r\n\r\nОсновной план:\r\nДлинный раунд с погодой. Мороз через Гончих, Драккары усиливают Дикую Охоту, Всадники сами призываются. Контроль через Имлериха, Морвуда, Игни. Беречь ключевые карты контроля для финала.\r\nМуллиган:\r\nОставлять: Мороз, Гончих, Драккары, Всадников. Менять дубликаты Мороза, если нет Гончих. Оставлять одну копию Игни против роя.\r\nПервый раунд:\r\nРазыграть Мороз через Гончих. Ставить Всадников в ряд под Морозом. Драккарами усиливать Дикую Охоту. Не тратить Имлериха без цели.\r\nВторой раунд:\r\nПосле победы — можно пасовать, если рука сильна. После поражения — выиграть, используя Мороз и Всадников.\r\nПоследний раунд:\r\nСохранить Имлериха, Игни, Карантира, Йотуна, Нитраль.\r\nСвязки:\r\n\r\n    Мороз → Гончие → Всадники → Драккары.\r\n\r\n    Имлерих → убийство под Морозом.\r\n\r\n    Карантир/Йотун → перемещение врагов под Мороз.\r\n\r\n    Ирис → под Мороз, чтобы сработало завещание.\r\n\r\n    Пугач → добор карты.\r\n\r\n    Оззрел → кража из сброса.\r\n    Если нет Гончих — использовать Чародея для поиска.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить Игни на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Alchemy, Dwarf-Elf-Scorch, Scorch Ambush, Ice Trolls, Tempo Calveit, Morvran Reveal, Eggs Consume.\r\n    Типичные ошибки:\r\n    Менять Мороз на муллигане; тратить перемещения без цели; не защищать Ирис.\r\n\r\nEGGS CONSUME",
+      "family": "weather",
+      "notes": [
+        "Use validated Beta base list: requested roster has foreign-faction cards or DIY-only frost mechanics."
+      ],
+      "changes": [
+        {
+          "requested": "3 Мороза (Biting Frost)",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "3 Гончих (Wild Hunt Hound)",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "1 Навигатор (Чародей Дикой Охоты)",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "3 Драккара (Wild Hunt Drakkar)",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "3 Всадника (Wild Hunt Rider)",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "2 Война Дикой Охоты (Wild Hunt Warrior)",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "Гэ’эльс",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "Морвуд",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "Мороз Эредина (25-я карта)",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        }
+      ],
+      "active": true,
+      "leader": 131101,
+      "faction": 2,
+      "familyId": 7,
+      "presetId": 60,
+      "templateIds": [
+        132102,
+        132104,
+        112102,
+        131102,
+        132204,
+        200218,
+        132205,
+        201698,
+        112215,
+        132214,
+        113302,
+        113302,
+        113302,
+        132402,
+        132402,
+        132402,
+        200026,
+        200301,
+        200301,
+        200301,
+        132310,
+        132310,
+        132310,
+        132309,
+        132309
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Eggs Consume",
+      "requestedLeader": "Arachas Queen",
+      "sourceText": "Eggs Consume\r\nЛидер: Arachas Queen\r\nСостав колоды с количеством копий:\r\n\r\n    6 Whispess: Tribute\r\n\r\n    5 Dandelion: Poet\r\n\r\n    1 Ge’els\r\n\r\n    1 Brewess: Ritual\r\n\r\n    4 Maerolorn\r\n\r\n    Alzur’s Double-Cross\r\n\r\n    Marching Orders\r\n\r\n    Summoning Circle\r\n\r\n    Mandrake\r\n\r\n    9 Nekker Warrior x3\r\n\r\n    8 Forktail x3\r\n\r\n    6 Uran Warrior x3\r\n\r\n    4 Nekker x3\r\n\r\n    2 Slyzard x3\r\n\r\nОсновной план:\r\nРазмножить Nekker, пожирать всё, усиливать Nekker, затем пожирать их и переигрывать по очкам. Сильнейший короткий раунд. Беречь Nekker Warrior и Forktail.\r\nМуллиган:\r\nОставлять: Nekker Warrior, Forktail, Uran Warrior, Nekker. Менять дубликаты Slyzard, если нет цели.\r\nПервый раунд:\r\nРазыграть Nekker, скопировать их Nekker Warrior. Пожирать мелких.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть, используя усиленных Nekker.\r\nПоследний раунд:\r\nСохранить Nekker Warrior, Forktail, Mandrake.\r\nСвязки:\r\n\r\n    Nekker → Nekker Warrior → усиление.\r\n\r\n    Forktail → пожирание → усиление.\r\n\r\n    Slyzard → поиск Nekker.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Ice Trolls, Alchemy, Fanatics, Scorch Ambush, Sweers.\r\n    Типичные ошибки:\r\n    Не защищать Nekker; тратить Forktail без цели.\r\n\r\nSCORCH AMBUSH",
+      "family": "consume",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "6 Uran Warrior x3",
+          "resolvedId": 132308,
+          "method": "alias",
+          "resolvedName": "Vran Warrior"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132205,
+          "resolvedName": "Morvudd",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 201743,
+      "faction": 2,
+      "familyId": 8,
+      "presetId": 61,
+      "templateIds": [
+        200220,
+        201776,
+        131102,
+        200221,
+        132406,
+        113209,
+        200019,
+        200022,
+        200223,
+        132211,
+        132211,
+        132211,
+        201606,
+        201606,
+        201606,
+        132308,
+        132308,
+        132308,
+        132305,
+        132305,
+        132305,
+        200539,
+        200539,
+        200539,
+        132205
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Scorch Ambush",
+      "requestedLeader": "Eithne",
+      "sourceText": "Scorch Ambush\r\nЛидер: Eithne\r\nСостав колоды с количеством копий:\r\n\r\n    7 Isengrim: Faoiltiarna\r\n\r\n    5 Geralt: Igni\r\n\r\n    4 Schirru\r\n\r\n    Royal Decree\r\n\r\n    13 Yaevinn\r\n\r\n    6 Aelirenn\r\n\r\n    4 Roach\r\n\r\n    4 Ida Emean aep Sivney\r\n\r\n    Mandrake\r\n\r\n    Feign Death\r\n\r\n    12 Urihedo Sappers x3\r\n\r\n    9 Urihedo Brigade x3\r\n\r\n    8 Urihedo Dragoon x3\r\n\r\n    7 Hawker Smuggler\r\n\r\n    7 Dol Blathanna Archer x3\r\n\r\n    6 Half-Elf Hunter x3\r\n\r\n    5 Elven Swordmaster x3\r\n\r\n    3 Trapper x3\r\n\r\nОсновной план:\r\nКонтроль через Scorch, Schirru, Igni. Ambush-карты (Sappers, Brigade) дают темп и прореживание. Isengrim усиливает амбашей.\r\nМуллиган:\r\nОставлять: Isengrim, Schirru, Igni, Sappers, Brigade. Менять дубликаты Trapper, если нет амбашей.\r\nПервый раунд:\r\nРазыграть амбашей, контролировать стол.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Scorch.\r\nПоследний раунд:\r\nСохранить Isengrim, Schirru, Igni, Mandrake.\r\nСвязки:\r\n\r\n    Sappers → Brigade → усиление.\r\n\r\n    Schirru → Scorch.\r\n\r\n    Isengrim → усиление амбашей.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Veterans, Machines Henselt, Dwarf Elf Scorch.\r\n    Типичные ошибки:\r\n    Не защищать Schirru; тратить Scorch на мелких.\r\n\r\n(Продолжение следует для остальных колод: AreTuza, Alchemy, Anna Spalla Soldiers, Bloodmoon Wraiths, Veterans, Dwarf-Elf-Scorch, Nekker Consume, Greatswords, Lyrian Machines, Queensguards, Temerians, Morvran Reveal, Ointment Spallas, Deathwish, Discard, Swap, Lyrian Deck Buff, Ice Trolls, Eithne Handbuff, Frost Wraiths, Francesca Handbuff, Brouver Shupe, 40 Foltest, Fanatics, Dwarf Miner/Xavier, Tall Ogres, Armor, Slave Infantry, NG Handbuff, Cursed Ships, Brouver Handbuff, Spell'teal Decoctons, Cintrians, Svalblod Rain, Calanthe Deckbuff, Axemen, Dryads.)\r\n\r\nИз-за ограничения объёма ответа я могу продолжить по запросу. Если нужны стратегии для конкретных колод из списка — уточните, и я допишу.\r\nдавай следующую пачку колод\r\nПРОДОЛЖЕНИЕ: СТРАТЕГИИ ДЛЯ ОСТАЛЬНЫХ КОЛОД\r\nHIGH TIER 2 (продолжение)\r\nARETUZA",
+      "family": "ambush",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Feign Death",
+          "resolvedId": 113201,
+          "method": "role-substitution",
+          "resolvedName": "Decoy"
+        },
+        {
+          "requested": "12 Urihedo Sappers x3",
+          "resolvedId": 142307,
+          "method": "alias",
+          "resolvedName": "Vrihedd Sappers"
+        },
+        {
+          "requested": "9 Urihedo Brigade x3",
+          "resolvedId": 142302,
+          "method": "alias",
+          "resolvedName": "Vrihedd Brigade"
+        },
+        {
+          "requested": "8 Urihedo Dragoon x3",
+          "resolvedId": 142205,
+          "method": "alias",
+          "resolvedName": "Vrihedd Dragoon"
+        },
+        {
+          "requested": "3 Trapper x3",
+          "resolvedId": 142304,
+          "method": "alias",
+          "resolvedName": "Dol Blathanna Bomber"
+        },
+        {
+          "requested": "Half-Elf Hunter",
+          "resolvedId": 201636,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Elven Swordmaster",
+          "resolvedId": 200535,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Elven Swordmaster",
+          "resolvedId": 200535,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Elven Swordmaster",
+          "resolvedId": 200535,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Dol Blathanna Bomber",
+          "resolvedId": 142304,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Dol Blathanna Bomber",
+          "resolvedId": 142304,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Dol Blathanna Bomber",
+          "resolvedId": 142304,
+          "method": "excluded-copy-tier-or-deck-limit"
+        }
+      ],
+      "active": true,
+      "leader": 200166,
+      "faction": 16,
+      "familyId": 9,
+      "presetId": 62,
+      "templateIds": [
+        142102,
+        112102,
+        142108,
+        200154,
+        142203,
+        142211,
+        112210,
+        142202,
+        200223,
+        113201,
+        142307,
+        142307,
+        142307,
+        142302,
+        142302,
+        142302,
+        142205,
+        142205,
+        142205,
+        142315,
+        142310,
+        142310,
+        142310,
+        201636,
+        201636
+      ]
+    },
+    {
+      "id": 10,
+      "title": "AreTuza (контрольный маг-архетип)",
+      "requestedLeader": "Королева Мэва (или другой лидер под контр-магов, в зависимости от билда)",
+      "sourceText": "AreTuza (контрольный маг-архетип)\r\nЛидер: Королева Мэва (или другой лидер под контр-магов, в зависимости от билда)\r\nСостав колоды:\r\n\r\n    Sile de Tansarville\r\n\r\n    Triss: Telekinesis\r\n\r\n    Yennefer\r\n\r\n    Keira Metz\r\n\r\n    Margarita of Aretuza\r\n\r\n    Sabrina Glevissig\r\n\r\n    Роач\r\n\r\n    Alzur’s Double-Cross\r\n\r\n    Scorch\r\n\r\n    Очищение (в зависимости от меты)\r\n\r\n    Ban Ard Tutor x3\r\n\r\n    Aretuza Adept x3\r\n\r\n    Kaedweni Sergeant x2\r\n\r\n    Blue Stripe Scout x2\r\n\r\n    Reaver Scout\r\n\r\n    Прочие контрольные серебра/бронза\r\n\r\nОсновной план:\r\nКонтроль через магов, накопление урона от Sabrina Glevissig, защита ключевых юнитов. Победа за счёт изматывания противника и добивания Scorch’ем. Беречь Sile de Tansarville (движок), Sabrina, Keira Metz.\r\nМуллиган:\r\nОставлять: Sile, Triss, Keira, Sabrina. Менять дубликаты Aretuza Adept, если нет магов. Оставлять одну копию Scorch против роя.\r\nПервый раунд:\r\nРазыграть магов, накопить урон. Если противник рой — использовать Scorch.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Sabrina + Scorch.\r\nПоследний раунд:\r\nСохранить Sabrina, Scorch, Sile.\r\nСвязки:\r\n\r\n    Sabrina → урон по всем → Scorch.\r\n\r\n    Sile → дополнительный маг.\r\n\r\n    Triss: Telekinesis → поиск зачистки.\r\n    Если нет Sabrina — играть через контроль и Scorch.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить Scorch на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к большому темпу, рою, погоде.\r\n    Типичные ошибки:\r\n    Не защищать Sabrina; тратить Scorch рано.\r\n\r\nALCHEMY",
+      "family": "skip",
+      "notes": [],
+      "changes": [],
+      "active": false,
+      "reason": "Primary leader is absent from strict Beta 0.9.24"
+    },
+    {
+      "id": 11,
+      "title": "Alchemy",
+      "requestedLeader": "Морвран Воорхис (или другой под алхимию)",
+      "sourceText": "Alchemy\r\nЛидер: Морвран Воорхис (или другой под алхимию)\r\nСостав колоды:\r\n\r\n    Vattier de Rideaux\r\n\r\n    Yennefer: Enchantress\r\n\r\n    Dandelion: Poet\r\n\r\n    Lady of the Lake: Advent\r\n\r\n    Cantarella\r\n\r\n    Henry var Attre\r\n\r\n    Urygheff\r\n\r\n    Scorch\r\n\r\n    The Last Wish\r\n\r\n    Alzur’s Double-Cross\r\n\r\n    Alchemist x3\r\n\r\n    Mangonel x3\r\n\r\n    Fire Scorpion x3\r\n\r\n    Daerlan Soldier x3\r\n\r\n    Imperial Golem x3\r\n\r\nОсновной план:\r\nГенерация очков через алхимические карты, массовый урон через Viper Witchers (Cadaverine). Уничтожение движков и роя. Беречь Vattier, Yennefer: Enchantress.\r\nМуллиган:\r\nОставлять: Vattier, Yennefer, Mangonel, Fire Scorpion. Менять дубликаты Alchemist, если нет алхимии.\r\nПервый раунд:\r\nРазыграть алхимию, контролировать стол.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Cadaverine.\r\nПоследний раунд:\r\nСохранить Vattier, Yennefer, Scorch.\r\nСвязки:\r\n\r\n    Alchemist → алхимия → урон.\r\n\r\n    Mangonel → reveal → урон.\r\n\r\n    Yennefer: Enchantress → контроль.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Deathwish, Temerians, AreTuza, 40 Foltest, WH Frost, Svalblod Rain.\r\n    Типичные ошибки:\r\n    Не использовать Cadaverine против роя; тратить Scorch на мелких.\r\n\r\nANNA SPALLA SOLDIERS",
+      "family": "alchemy",
+      "notes": [
+        "Alchemy prose takes precedence over copied Reveal roster; Alzur Thunder is control, not an alchemy card."
+      ],
+      "changes": [
+        {
+          "requested": "Lady of the Lake: Advent",
+          "resolvedId": 112112,
+          "method": "role-substitution",
+          "resolvedName": "Avallac'h: Sage"
+        },
+        {
+          "requested": "Urygheff",
+          "resolvedId": 201664,
+          "method": "alias",
+          "resolvedName": "Vrygheff"
+        }
+      ],
+      "active": true,
+      "leader": 200163,
+      "faction": 4,
+      "familyId": 10,
+      "presetId": 63,
+      "templateIds": [
+        200237,
+        201773,
+        201601,
+        200154,
+        162210,
+        162202,
+        162204,
+        113209,
+        200223,
+        113102,
+        200124,
+        200124,
+        200124,
+        122403,
+        122403,
+        122403,
+        201619,
+        201619,
+        201619,
+        113310,
+        113310,
+        113310,
+        113301,
+        113301,
+        113301
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Anna Spalla Soldiers",
+      "requestedLeader": "Anna Henrietta",
+      "sourceText": "Anna Spalla Soldiers\r\nЛидер: Anna Henrietta\r\nСостав колоды с количеством копий:\r\n\r\n    12 Nilfgaardian Knight x3\r\n\r\n    8 Standard Bearer x3\r\n\r\n    8 Sentry x3\r\n\r\n    7 Alba Armored Cavalry x3\r\n\r\n    3 Slave Infantry x3\r\n\r\n    2 Emissary x2\r\n\r\n    1 Vicovaro Medic x2\r\n\r\n    1 Recruit x2\r\n\r\n    Highwaymen x3\r\n\r\n    Battle Preparation x3\r\n\r\nОсновной план:\r\nТемпо-игра через солдат, набор очков через Sentry и Standard Bearer. Anna Henrietta обеспечивает стабильность. Беречь Sentry и Standard Bearer.\r\nМуллиган:\r\nОставлять: Sentry, Standard Bearer, Alba Armored Cavalry. Менять дубликаты Slave Infantry, если нет солдат.\r\nПервый раунд:\r\nРазыграть солдат, набрать темп.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Sentry.\r\nПоследний раунд:\r\nСохранить Sentry, Standard Bearer, Highwaymen.\r\nСвязки:\r\n\r\n    Sentry → усиление солдат.\r\n\r\n    Standard Bearer → усиление.\r\n\r\n    Alba Armored Cavalry → темп.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Alchemy, Cursed NR, Spies.\r\n    Типичные ошибки:\r\n    Не защищать Sentry; тратить Battle Preparation рано.\r\n\r\nBLOODMOON WRAITHS",
+      "family": "skip",
+      "notes": [],
+      "changes": [],
+      "active": false,
+      "reason": "Primary leader is absent from strict Beta 0.9.24"
+    },
+    {
+      "id": 13,
+      "title": "Bloodmoon Wraiths",
+      "requestedLeader": "Whispering Hillock",
+      "sourceText": "Bloodmoon Wraiths\r\nЛидер: Whispering Hillock\r\nСостав колоды:\r\n\r\n    Caranthir Ar-Feiniel\r\n\r\n    Triss: Telekinesis\r\n\r\n    Detlaff: Crimson Curse\r\n\r\n    Ge’els\r\n\r\n    Frightener\r\n\r\n    Operator\r\n\r\n    Jotunn\r\n\r\n    Katakan\r\n\r\n    Roach\r\n\r\n    Abaya\r\n\r\n    Noonwraith x3\r\n\r\n    Protofleder x3\r\n\r\n    Fleder x3\r\n\r\n    Siren x2\r\n\r\n    Scout x2\r\n\r\n    Moonlight x2\r\n\r\nОсновной план:\r\nИспользование погоды (Bloodmoon/Frost) для генерации очков через врайтов. Врайты дают ценность, когда у противника больше токенов. Беречь вампиров для выживания и капитализации погоды.\r\nМуллиган:\r\nОставлять: Noonwraith, Protofleder, Fleder, Moonlight. Менять дубликаты Siren, если нет погоды.\r\nПервый раунд:\r\nРазыграть погоду, затем врайтов.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через врайтов.\r\nПоследний раунд:\r\nСохранить Noonwraith, Protofleder, Moonlight.\r\nСвязки:\r\n\r\n    Moonlight → Bloodmoon → Noonwraith.\r\n\r\n    Fleder → Protofleder → усиление.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Machines Henselt, WH Frost, Axemen, Alchemy.\r\n    Типичные ошибки:\r\n    Не защищать врайтов; тратить погоду рано.\r\n\r\nVETERANS",
+      "family": "moonlight",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Detlaff: Crimson Curse",
+          "resolvedId": 113101,
+          "method": "role-substitution",
+          "resolvedName": "Ragh Nar Roog"
+        },
+        {
+          "requested": "Katakan",
+          "resolvedId": 132220,
+          "method": "role-substitution",
+          "resolvedName": "Nekurat"
+        },
+        {
+          "requested": "Noonwraith x3",
+          "resolvedId": 200295,
+          "method": "role-substitution",
+          "resolvedName": "Rotfiend"
+        },
+        {
+          "requested": "Protofleder x3",
+          "resolvedId": 132303,
+          "method": "role-substitution",
+          "resolvedName": "Wyvern"
+        },
+        {
+          "requested": "Fleder x3",
+          "resolvedId": 132313,
+          "method": "role-substitution",
+          "resolvedName": "Ekimmara"
+        },
+        {
+          "requested": "Scout x2",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        }
+      ],
+      "active": true,
+      "leader": 201587,
+      "faction": 2,
+      "familyId": 11,
+      "presetId": 64,
+      "templateIds": [
+        132104,
+        201773,
+        113101,
+        131102,
+        132204,
+        112208,
+        200218,
+        132220,
+        112210,
+        132203,
+        200295,
+        200295,
+        200295,
+        132303,
+        132303,
+        132303,
+        132313,
+        132313,
+        132313,
+        200112,
+        200112,
+        201704,
+        201704,
+        200067,
+        200067
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Veterans",
+      "requestedLeader": "Eist Tuirseach",
+      "sourceText": "Veterans\r\nЛидер: Eist Tuirseach\r\nСостав колоды с количеством копий:\r\n\r\n    6 Birna Bran\r\n\r\n    6 Triss: Telekinesis\r\n\r\n    6 Detlaff: Higher Vampire\r\n\r\n    5 Hammond\r\n\r\n    4 Knickers\r\n\r\n    4 Roach\r\n\r\n    3 Sigrdrifa\r\n\r\n    Alzur’s Double-Cross\r\n\r\n    Decoy\r\n\r\n    Restore\r\n\r\n    7 Tuirseach Veteran x3\r\n\r\n    6 Tuirseach Hunter x3\r\n\r\n    2 Heymaey Spearmaiden x2\r\n\r\n    1 Tuirseach Bearmaster x3\r\n\r\n    1 Priestess of Freya x2\r\n\r\n    Scout x2\r\n\r\nОсновной план:\r\nМногократно разыгрывать Tuirseach Veteran, усиливая клановых членов. Бронза на 16–18 очков. Eist даёт дополнительного ветерана.\r\nМуллиган:\r\nОставлять: Tuirseach Veteran, Tuirseach Hunter, Birna Bran. Менять дубликаты Priestess of Freya, если нет целей.\r\nПервый раунд:\r\nРазыграть ветеранов, усилить клан.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через ветеранов.\r\nПоследний раунд:\r\nСохранить Tuirseach Veteran, Restore, Decoy.\r\nСвязки:\r\n\r\n    Tuirseach Veteran → усиление клана.\r\n\r\n    Restore → возврат ветерана.\r\n\r\n    Decoy → повторное использование.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Spies, Vampires, Nekker Consume, Greatswords.\r\n    Типичные ошибки:\r\n    Не защищать ветеранов; тратить Restore рано.\r\n\r\nDWARF-ELF-SCORCH",
+      "family": "veterans",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "6 Detlaff: Higher Vampire",
+          "resolvedId": 112105,
+          "method": "role-substitution",
+          "resolvedName": "Regis: Higher Vampire"
+        },
+        {
+          "requested": "5 Hammond",
+          "resolvedId": 152101,
+          "method": "role-substitution",
+          "resolvedName": "Hjalmar an Craite"
+        },
+        {
+          "requested": "4 Knickers",
+          "resolvedId": 112210,
+          "method": "role-substitution",
+          "resolvedName": "Roach"
+        },
+        {
+          "requested": "Scout x2",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        },
+        {
+          "requested": "Roach",
+          "resolvedId": 112210,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 152205,
+          "resolvedName": "Draig Bon-Dhu",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 201597,
+      "faction": 32,
+      "familyId": 12,
+      "presetId": 65,
+      "templateIds": [
+        152105,
+        201773,
+        112105,
+        152101,
+        112210,
+        152211,
+        113209,
+        113201,
+        153201,
+        200046,
+        200046,
+        200046,
+        152304,
+        152304,
+        152304,
+        200528,
+        200528,
+        200144,
+        200144,
+        200144,
+        152310,
+        152310,
+        201704,
+        201704,
+        152205
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Dwarf-Elf-Scorch",
+      "requestedLeader": "Eithne",
+      "sourceText": "Dwarf-Elf-Scorch\r\nЛидер: Eithne\r\nСостав колоды:\r\n\r\n    Saesenthessis\r\n\r\n    Aglais\r\n\r\n    Coen of Povis\r\n\r\n    Isengrim: Outlaw\r\n\r\n    Yaevinn\r\n\r\n    Aelirenn\r\n\r\n    Eibhear Hattori\r\n\r\n    Barclay Els\r\n\r\n    Scorch\r\n\r\n    Feign Death\r\n\r\n    Dol Blathanna Archer x3\r\n\r\n    Half-Elf Hunter x3\r\n\r\n    Dwarven Skirmisher x2\r\n\r\n    Dwarven Agitator\r\n\r\n    Elven Mercenary x2\r\n\r\n    Scout x3\r\n\r\n    Dimeritium Shackles\r\n\r\nОсновной план:\r\nГенерация ценности через высокие золотые/серебряные карты, контроль через Scorch. Dol Blathanna Archer — универсальный инструмент. Беречь Scorch и Feign Death.\r\nМуллиган:\r\nОставлять: Saesenthessis, Aglais, Scorch, Dol Blathanna Archer. Менять дубликаты Dwarven Skirmisher, если нет гномов.\r\nПервый раунд:\r\nРазыграть лучников, контролировать стол.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Scorch.\r\nПоследний раунд:\r\nСохранить Scorch, Feign Death, Saesenthessis.\r\nСвязки:\r\n\r\n    Dol Blathanna Archer → урон.\r\n\r\n    Scorch → массовый урон.\r\n\r\n    Feign Death → защита.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Machines Henselt, Lyrian Machines, WH Frost.\r\n    Типичные ошибки:\r\n    Не защищать лучников; тратить Scorch рано.\r\n\r\nNEKKER CONSUME",
+      "family": "dwarves",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Coen of Povis",
+          "resolvedId": 142103,
+          "method": "role-substitution",
+          "resolvedName": "Iorveth"
+        },
+        {
+          "requested": "Feign Death",
+          "resolvedId": 113201,
+          "method": "role-substitution",
+          "resolvedName": "Decoy"
+        },
+        {
+          "requested": "Scout x3",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        }
+      ],
+      "active": true,
+      "leader": 200166,
+      "faction": 16,
+      "familyId": 13,
+      "presetId": 66,
+      "templateIds": [
+        142101,
+        142106,
+        142103,
+        201615,
+        142203,
+        142211,
+        200520,
+        142207,
+        113309,
+        113201,
+        142310,
+        142310,
+        142310,
+        201636,
+        201636,
+        201636,
+        142305,
+        142305,
+        200293,
+        142308,
+        142308,
+        201704,
+        201704,
+        201704,
+        113319
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Nekker Consume",
+      "requestedLeader": "Arachas Queen",
+      "sourceText": "Nekker Consume\r\nЛидер: Arachas Queen\r\nСостав колоды с количеством копий:\r\n\r\n    6 Whispess: Tribute\r\n\r\n    5 Dandelion: Poet\r\n\r\n    1 Ge’els\r\n\r\n    1 Brewess: Ritual\r\n\r\n    4 Maerolorn\r\n\r\n    Alzur’s Double-Cross\r\n\r\n    Marching Orders\r\n\r\n    Summoning Circle\r\n\r\n    Mandrake\r\n\r\n    9 Nekker Warrior x3\r\n\r\n    8 Forktail x3\r\n\r\n    6 Uran Warrior x3\r\n\r\n    4 Nekker x3\r\n\r\n    2 Slyzard x3\r\n\r\nОсновной план:\r\nРазмножить Nekker, пожирать всё, усиливать Nekker, затем пожирать их и переигрывать по очкам. Сильнейший короткий раунд. Беречь Nekker Warrior и Forktail.\r\nМуллиган:\r\nОставлять: Nekker Warrior, Forktail, Uran Warrior, Nekker. Менять дубликаты Slyzard, если нет цели.\r\nПервый раунд:\r\nРазыграть Nekker, скопировать их Nekker Warrior. Пожирать мелких.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть, используя усиленных Nekker.\r\nПоследний раунд:\r\nСохранить Nekker Warrior, Forktail, Mandrake.\r\nСвязки:\r\n\r\n    Nekker → Nekker Warrior → усиление.\r\n\r\n    Forktail → пожирание → усиление.\r\n\r\n    Slyzard → поиск Nekker.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Ice Trolls, Alchemy, Fanatics, Scorch Ambush, Sweers.\r\n    Типичные ошибки:\r\n    Не защищать Nekker; тратить Forktail без цели.\r\n\r\nGREATSWORDS",
+      "family": "consume",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "6 Uran Warrior x3",
+          "resolvedId": 132308,
+          "method": "alias",
+          "resolvedName": "Vran Warrior"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132205,
+          "resolvedName": "Morvudd",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 201743,
+      "faction": 2,
+      "familyId": 8,
+      "presetId": 67,
+      "templateIds": [
+        200220,
+        201776,
+        131102,
+        200221,
+        132406,
+        113209,
+        200019,
+        200022,
+        200223,
+        132211,
+        132211,
+        132211,
+        201606,
+        201606,
+        201606,
+        132308,
+        132308,
+        132308,
+        132305,
+        132305,
+        132305,
+        200539,
+        200539,
+        200539,
+        132205
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Greatswords",
+      "requestedLeader": "Crach an Craite",
+      "sourceText": "Greatswords\r\nЛидер: Crach an Craite\r\nСостав колоды с количеством копий:\r\n\r\n    5 Geralt: Igni\r\n\r\n    5 Dandelion: Poet\r\n\r\n    5 Coral\r\n\r\n    3 Hym\r\n\r\n    13 Udalryk\r\n\r\n    10 Djenge Frett\r\n\r\n    6 Harald Houndsnout\r\n\r\n    5 Skjall\r\n\r\n    3 Sigrdrifa\r\n\r\n    Restore\r\n\r\n    8 An Craite Greatsword x3\r\n\r\n    7 Dimun Light Longship x3\r\n\r\n    2 Heymaey Spearmaiden\r\n\r\n    1 Dimun Pirate Captain x2\r\n\r\n    1 Dimun Corsair x3\r\n\r\n    1 Priestess of Freya x3\r\n\r\nОсновной план:\r\nПостоянные движки: Greatsword + Longship. Генерация огромного количества очков за ход, устойчивость через усиление и воскрешение. Беречь Greatsword и Longship.\r\nМуллиган:\r\nОставлять: Greatsword, Longship, Coral, Hym. Менять дубликаты Priestess of Freya, если нет целей.\r\nПервый раунд:\r\nРазыграть Greatsword и Longship, набрать темп.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через движки.\r\nПоследний раунд:\r\nСохранить Greatsword, Longship, Restore.\r\nСвязки:\r\n\r\n    Greatsword → Longship → усиление.\r\n\r\n    Restore → возврат Greatsword.\r\n\r\n    Coral → урон.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Vampires, Alchemy, Adda Cursed, Ogroids, Morvran Reveal.\r\n    Типичные ошибки:\r\n    Не защищать Greatsword; тратить Restore рано.\r\n\r\nLYRIAN MACHINES",
+      "family": "greatswords",
+      "notes": [],
+      "changes": [],
+      "active": true,
+      "leader": 200160,
+      "faction": 32,
+      "familyId": 14,
+      "presetId": 68,
+      "templateIds": [
+        112102,
+        201776,
+        152107,
+        200102,
+        152214,
+        152203,
+        200043,
+        200212,
+        152211,
+        153201,
+        200040,
+        200040,
+        200040,
+        152309,
+        152309,
+        152309,
+        200528,
+        152306,
+        152306,
+        200145,
+        200145,
+        200145,
+        152310,
+        152310,
+        152310
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Lyrian Machines",
+      "requestedLeader": "King Foltest",
+      "sourceText": "Lyrian Machines\r\nЛидер: King Foltest\r\nСостав колоды:\r\n\r\n    Bloody Baron\r\n\r\n    Lyrian Cavalry\r\n\r\n    Meve\r\n\r\n    Dandelion\r\n\r\n    Foltest’s Pride\r\n\r\n    Seltkirk of Gulet\r\n\r\n    John Natalis\r\n\r\n    Shani\r\n\r\n    Reinforcements\r\n\r\n    Marching Orders\r\n\r\n    Battering Ram x3\r\n\r\n    Siege Master x3\r\n\r\n    Ballista x3\r\n\r\n    Kaedweni Sergeant x2\r\n\r\n    Reaver Scout\r\n\r\n    Scout\r\n\r\nОсновной план:\r\nУничтожение юнитов машинами, усиление Bloody Baron, копирование усиления через Lyrian Cavalry. Meve и Dandelion дают дополнительную ценность. Беречь Bloody Baron и Foltest’s Pride.\r\nМуллиган:\r\nОставлять: Bloody Baron, Lyrian Cavalry, Foltest’s Pride, Battering Ram. Менять дубликаты Siege Master, если нет машин.\r\nПервый раунд:\r\nРазыграть машины, контролировать стол.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Baron.\r\nПоследний раунд:\r\nСохранить Bloody Baron, Lyrian Cavalry, Foltest’s Pride.\r\nСвязки:\r\n\r\n    Bloody Baron → машины убивают → усиление.\r\n\r\n    Lyrian Cavalry → копирование усиления.\r\n\r\n    Foltest’s Pride → контроль.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к NG Handbuff, Ogroids, Alchemy.\r\n    Типичные ошибки:\r\n    Не защищать Baron; тратить Foltest’s Pride рано.\r\n\r\nQUEENSGUARDS",
+      "family": "machines",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Lyrian Cavalry",
+          "resolvedId": 122314,
+          "method": "role-substitution",
+          "resolvedName": "Kaedweni Cavalry"
+        },
+        {
+          "requested": "Meve",
+          "resolvedId": 122108,
+          "method": "role-substitution",
+          "resolvedName": "Keira Metz"
+        },
+        {
+          "requested": "Scout",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        },
+        {
+          "requested": "John Natalis",
+          "resolvedId": 122103,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Shani",
+          "resolvedId": 122106,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122212,
+          "resolvedName": "Nenneke",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122211,
+          "resolvedName": "Margarita of Aretuza",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122208,
+          "resolvedName": "Prince Stennis",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122302,
+          "resolvedName": "Reinforced Ballista",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 200168,
+      "faction": 8,
+      "familyId": 4,
+      "presetId": 69,
+      "templateIds": [
+        122101,
+        122108,
+        122201,
+        201618,
+        201748,
+        123201,
+        200019,
+        122314,
+        200049,
+        200049,
+        200049,
+        122318,
+        122318,
+        122318,
+        122301,
+        122301,
+        122301,
+        122214,
+        122214,
+        122307,
+        201704,
+        122212,
+        122211,
+        122208,
+        122302
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Queensguards",
+      "requestedLeader": "Bran Tuirseach",
+      "sourceText": "Queensguards\r\nЛидер: Bran Tuirseach\r\nСостав колоды с количеством копий:\r\n\r\n    10 Ermion\r\n\r\n    6 Cerys an Craite\r\n\r\n    5 Madman Lugos\r\n\r\n    5 Coral\r\n\r\n    11 Svanrige Tuirseach\r\n\r\n    9 Morkvarg\r\n\r\n    4 Knut the Callous\r\n\r\n    3 Sigrdrifa\r\n\r\n    Alzur’s Double-Cross\r\n\r\n    Decoy\r\n\r\n    9 Drummond Warmonger x3\r\n\r\n    6 Drummond Pillager x3\r\n\r\n    4 An Craite Raider x2\r\n\r\n    4 Drummond Queensguard x3\r\n\r\n    1 Priestess of Freya\r\n\r\n    Terror Crew x3\r\n\r\nОсновной план:\r\nФинишер через Queensguards, усиленных Cerys An Craite (30–40 очков). Воскрешение через Priestess of Freya. Беречь Queensguards и Cerys.\r\nМуллиган:\r\nОставлять: Queensguard, Cerys, Ermion, Coral. Менять дубликаты Drummond Pillager, если нет целей.\r\nПервый раунд:\r\nРазыграть Queensguards, усилить их.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Cerys.\r\nПоследний раунд:\r\nСохранить Queensguard, Cerys, Decoy.\r\nСвязки:\r\n\r\n    Queensguard → Cerys → усиление.\r\n\r\n    Priestess of Freya → возврат Queensguard.\r\n\r\n    Decoy → повторное использование.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Spies, Alchemy, Assire decks.\r\n    Типичные ошибки:\r\n    Не защищать Queensguard; тратить Cerys рано.\r\n\r\nLOW TIER 2\r\nTEMERIANS",
+      "family": "queensguard",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "4 Knut the Callous",
+          "resolvedId": 152203,
+          "method": "role-substitution",
+          "resolvedName": "Djenge Frett"
+        },
+        {
+          "requested": "6 Drummond Pillager x3",
+          "resolvedId": 200036,
+          "method": "role-substitution",
+          "resolvedName": "Drummond Warmonger"
+        },
+        {
+          "requested": "Terror Crew x3",
+          "resolvedId": 152303,
+          "method": "role-substitution",
+          "resolvedName": "An Craite Warrior"
+        },
+        {
+          "requested": "Drummond Warmonger",
+          "resolvedId": 200036,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Drummond Warmonger",
+          "resolvedId": 200036,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Drummond Warmonger",
+          "resolvedId": 200036,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 152305,
+          "resolvedName": "Dimun Pirate",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 152305,
+          "resolvedName": "Dimun Pirate",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 152305,
+          "resolvedName": "Dimun Pirate",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 200159,
+      "faction": 32,
+      "familyId": 15,
+      "presetId": 70,
+      "templateIds": [
+        152103,
+        200177,
+        152106,
+        152107,
+        152213,
+        152209,
+        152203,
+        152211,
+        113209,
+        113201,
+        200036,
+        200036,
+        200036,
+        152316,
+        152316,
+        152307,
+        152307,
+        152307,
+        152310,
+        152303,
+        152303,
+        152303,
+        152305,
+        152305,
+        152305
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Temerians",
+      "requestedLeader": "King Foltest",
+      "sourceText": "Temerians\r\nЛидер: King Foltest\r\nСостав колоды с количеством копий:\r\n\r\n    8 Seltkirk of Gulet\r\n\r\n    6 Keira Metz\r\n\r\n    4 Sigismund Dijkstra\r\n\r\n    3 Vernon Roche\r\n\r\n    6 Margarita of Aretuza\r\n\r\n    4 Dethmold\r\n\r\n    4 Vandermar\r\n\r\n    3 Prince Stennis\r\n\r\n    Reinforcements\r\n\r\n    Marching Orders\r\n\r\n    8 Cintrian Royal Guard x2\r\n\r\n    7 Redanian Knight-Elect x3\r\n\r\n    3 Blue Stripe Scout x3\r\n\r\n    3 Temerian Infantry x3\r\n\r\n    3 Blue Stripe Commando x3\r\n\r\n    1 Reaver Scout\r\n\r\nОсновной план:\r\nТемпо через Blue Stripes, финишер через Infantryman и Dijkstra. Длинный раунд через Redanian Knight-Elect и двойную погоду. Беречь Dijkstra и Infantryman.\r\nМуллиган:\r\nОставлять: Blue Stripe Scout, Blue Stripe Commando, Redanian Knight-Elect. Менять дубликаты Temerian Infantry, если нет синергии.\r\nПервый раунд:\r\nРазыграть Blue Stripes, набрать темп.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Dijkstra.\r\nПоследний раунд:\r\nСохранить Dijkstra, Infantryman, Redanian Knight-Elect.\r\nСвязки:\r\n\r\n    Blue Stripe Scout → Commando → темп.\r\n\r\n    Redanian Knight-Elect → погода → усиление.\r\n\r\n    Dijkstra → финишер.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Arachas Swarm, Slave Infantry, Eggs Consume.\r\n    Типичные ошибки:\r\n    Не защищать Blue Stripes; тратить Dijkstra рано.\r\n\r\nMORVRAN REVEAL",
+      "family": "temerians",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "4 Vandermar",
+          "resolvedId": 113208,
+          "method": "alias",
+          "resolvedName": "Vaedermakar"
+        },
+        {
+          "requested": "8 Cintrian Royal Guard x2",
+          "resolvedId": 201622,
+          "method": "role-substitution",
+          "resolvedName": "Kaedweni Knight"
+        }
+      ],
+      "active": true,
+      "leader": 200168,
+      "faction": 8,
+      "familyId": 16,
+      "presetId": 71,
+      "templateIds": [
+        201618,
+        122108,
+        122105,
+        122102,
+        122211,
+        122207,
+        113208,
+        122208,
+        123201,
+        200019,
+        201622,
+        201622,
+        123301,
+        123301,
+        123301,
+        122310,
+        122310,
+        122310,
+        122316,
+        122316,
+        122316,
+        122311,
+        122311,
+        122311,
+        122307
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Morvran Reveal",
+      "requestedLeader": "Morvran Voorhis",
+      "sourceText": "Morvran Reveal\r\nЛидер: Morvran Voorhis\r\nСостав колоды с количеством копий:\r\n\r\n    11 Vattier de Rideaux\r\n\r\n    5 Yennefer: Enchantress\r\n\r\n    5 Dandelion: Poet\r\n\r\n    Lady of the Lake: Advent\r\n\r\n    13 Cantarella\r\n\r\n    9 Henry var Attre\r\n\r\n    5 Urygheff\r\n\r\n    Scorch\r\n\r\n    The Last Wish\r\n\r\n    Alzur’s Double-Cross\r\n\r\n    9 Alchemist x3\r\n\r\n    7 Mangonel x3\r\n\r\n    5 Fire Scorpion x3\r\n\r\n    4 Daerlan Soldier x3\r\n\r\n    3 Imperial Golem x3\r\n\r\nОсновной план:\r\nСильный первый раунд через reveal. Lady of the Lake даёт финишер. Контроль через Scorch и Yennefer: Enchantress. Беречь Mangonel и Fire Scorpion.\r\nМуллиган:\r\nОставлять: Mangonel, Fire Scorpion, Daerlan Soldier, Lady of the Lake. Менять дубликаты Alchemist, если нет reveal.\r\nПервый раунд:\r\nРазыграть reveal-карты, набрать темп.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Lady of the Lake.\r\nПоследний раунд:\r\nСохранить Lady of the Lake, Mangonel, Fire Scorpion.\r\nСвязки:\r\n\r\n    Mangonel → reveal → урон.\r\n\r\n    Fire Scorpion → reveal → урон.\r\n\r\n    Lady of the Lake → финишер.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Eggs Consume, Deathwish, Spies.\r\n    Типичные ошибки:\r\n    Не использовать reveal для контроля; тратить Lady of the Lake рано.\r\n\r\nOINTMENT SPALLAS",
+      "family": "reveal",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Lady of the Lake: Advent",
+          "resolvedId": 112112,
+          "method": "role-substitution",
+          "resolvedName": "Avallac'h: Sage"
+        },
+        {
+          "requested": "5 Urygheff",
+          "resolvedId": 201664,
+          "method": "alias",
+          "resolvedName": "Vrygheff"
+        }
+      ],
+      "active": true,
+      "leader": 200163,
+      "faction": 4,
+      "familyId": 6,
+      "presetId": 72,
+      "templateIds": [
+        162103,
+        201601,
+        201776,
+        112112,
+        162210,
+        200227,
+        201664,
+        113309,
+        113102,
+        113209,
+        162316,
+        162316,
+        162316,
+        162317,
+        162317,
+        162317,
+        162306,
+        162306,
+        162306,
+        162301,
+        162301,
+        162301,
+        132407,
+        132407,
+        132407
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Ointment Spallas",
+      "requestedLeader": "Jan Calveit",
+      "sourceText": "Ointment Spallas\r\nЛидер: Jan Calveit\r\nСостав колоды с количеством копий:\r\n\r\n    8 Standard Bearer x3\r\n\r\n    8 Sentry x3\r\n\r\n    7 Alba Armored Cavalry x3\r\n\r\n    3 Slave Infantry x3\r\n\r\n    2 Vicovaro Novice x3\r\n\r\n    1 Recruit x3\r\n\r\n    1 Vicovaro Medic\r\n\r\n    Ointment x3\r\n\r\n    Dimeritium Shackles\r\n\r\n    Highwaymen x3\r\n\r\nОсновной план:\r\nМассовое разыгрывание солдат (10 карт — 60 очков). Ointment воскрешает Recruit, запуская цепочку Novice → Ointment → Recruit. Беречь Ointment и Recruit.\r\nМуллиган:\r\nОставлять: Ointment, Recruit, Standard Bearer, Sentry. Менять дубликаты Slave Infantry, если нет солдат.\r\nПервый раунд:\r\nРазыграть солдат, набрать темп.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Ointment.\r\nПоследний раунд:\r\nСохранить Ointment, Recruit, Highwaymen.\r\nСвязки:\r\n\r\n    Ointment → Recruit → цепочка.\r\n\r\n    Novice → Ointment → Recruit.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Dwarf-Elves, контролю, рою.\r\n    Типичные ошибки:\r\n    Тянуть комбо в первом раунде; не защищать Recruit.\r\n\r\nDEATHWISH",
+      "family": "soldiers",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Highwaymen x3",
+          "resolvedId": 162311,
+          "method": "role-substitution",
+          "resolvedName": "Alba Pikeman"
+        },
+        {
+          "requested": "Alba Pikeman",
+          "resolvedId": 162311,
+          "method": "excluded-copy-tier-or-deck-limit"
+        }
+      ],
+      "active": true,
+      "leader": 200164,
+      "faction": 4,
+      "familyId": 17,
+      "presetId": 73,
+      "templateIds": [
+        200294,
+        200294,
+        200294,
+        201661,
+        201661,
+        201661,
+        200296,
+        200296,
+        200296,
+        201610,
+        201610,
+        201610,
+        122403,
+        122403,
+        122403,
+        201617,
+        201617,
+        201617,
+        162304,
+        201619,
+        201619,
+        201619,
+        113319,
+        162311,
+        162311
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Deathwish",
+      "requestedLeader": "Whispering Hillock",
+      "sourceText": "Deathwish\r\nЛидер: Whispering Hillock\r\nСостав колоды:\r\n\r\n    Endrega Eggs\r\n\r\n    Griffins\r\n\r\n    Fog\r\n\r\n    She-Troll\r\n\r\n    Dao\r\n\r\n    Прочие Deathwish-карты\r\n\r\nОсновной план:\r\nТемпо через грифонов, длинный раунд через туман и She-Troll. Контроль через Deathwish-эффекты. Беречь Endrega Eggs и Dao.\r\nМуллиган:\r\nОставлять: Endrega Eggs, Griffins, She-Troll. Менять дубликаты Fog, если нет синергии.\r\nПервый раунд:\r\nРазыграть Eggs, контролировать стол.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Deathwish.\r\nПоследний раунд:\r\nСохранить She-Troll, Dao, Griffins.\r\nСвязки:\r\n\r\n    Endrega Eggs → Deathwish → темп.\r\n\r\n    She-Troll → туман → усиление.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Nekker Consume, Greatswords, Spies, Arachas Swarm.\r\n    Типичные ошибки:\r\n    Не защищать Eggs; тратить Deathwish рано.\r\n\r\nDISCARD",
+      "family": "deathwish",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Endrega Eggs",
+          "resolvedId": 132217,
+          "method": "role-substitution",
+          "resolvedName": "Celaeno Harpy"
+        },
+        {
+          "requested": "Griffins",
+          "resolvedId": 132312,
+          "method": "alias",
+          "resolvedName": "Griffin"
+        },
+        {
+          "requested": "Fog",
+          "resolvedId": 113305,
+          "method": "alias",
+          "resolvedName": "Impenetrable Fog"
+        },
+        {
+          "requested": "She-Troll",
+          "resolvedId": 200534,
+          "method": "alias",
+          "resolvedName": "She-Troll of Vergen"
+        },
+        {
+          "requested": "Прочие Deathwish-карты",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132107,
+          "resolvedName": "Kayran",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 112103,
+          "resolvedName": "Geralt of Rivia",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 112106,
+          "resolvedName": "Triss Merigold",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132205,
+          "resolvedName": "Morvudd",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 200053,
+          "resolvedName": "Artefact Compression",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132209,
+          "resolvedName": "Imperial Manticore",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132305,
+          "resolvedName": "Nekker",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132305,
+          "resolvedName": "Nekker",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132305,
+          "resolvedName": "Nekker",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132217,
+          "resolvedName": "Celaeno Harpy",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132217,
+          "resolvedName": "Celaeno Harpy",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132308,
+          "resolvedName": "Vran Warrior",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132308,
+          "resolvedName": "Vran Warrior",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132308,
+          "resolvedName": "Vran Warrior",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132306,
+          "resolvedName": "Ghoul",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132306,
+          "resolvedName": "Ghoul",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132306,
+          "resolvedName": "Ghoul",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 200295,
+          "resolvedName": "Rotfiend",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132313,
+          "resolvedName": "Ekimmara",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 113303,
+          "resolvedName": "First Light",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 201587,
+      "faction": 2,
+      "familyId": 18,
+      "presetId": 74,
+      "templateIds": [
+        200534,
+        132217,
+        132312,
+        113305,
+        132213,
+        132107,
+        112103,
+        112106,
+        132205,
+        200053,
+        132209,
+        132305,
+        132305,
+        132305,
+        132217,
+        132217,
+        132308,
+        132308,
+        132308,
+        132306,
+        132306,
+        132306,
+        200295,
+        132313,
+        113303
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Discard",
+      "requestedLeader": "Bran Tuirseach",
+      "sourceText": "Discard\r\nЛидер: Bran Tuirseach\r\nСостав колоды:\r\n\r\n    Ermion\r\n\r\n    Madman Lugos\r\n\r\n    Coral\r\n\r\n    Wolfsbane\r\n\r\n    Udalryk\r\n\r\n    Olgierd von Everec\r\n\r\n    Morkvarg\r\n\r\n    Sukrus\r\n\r\n    Gremist\r\n\r\n    Sigrdrifa\r\n\r\n    Dimun Pirate x3\r\n\r\n    Drummond Warmonger x3\r\n\r\n    An Craite Warlord x3\r\n\r\n    An Craite Raider x3\r\n\r\n    Terror Crew x3\r\n\r\nОсновной план:\r\nПрореживание колоды через сброс, давление через carryover. Финишер — 20+ An Craite Warlord. Беречь An Craite Warlord и Ermion.\r\nМуллиган:\r\nОставлять: An Craite Warlord, Ermion, Madman Lugos. Менять дубликаты Dimun Pirate, если нет сброса.\r\nПервый раунд:\r\nРазыграть сброс, проредить колоду.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Warlords.\r\nПоследний раунд:\r\nСохранить An Craite Warlord, Ermion, Wolfsbane.\r\nСвязки:\r\n\r\n    Сброс → прореживание → Warlords.\r\n\r\n    Ermion → дополнительный сброс.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Nekker Consume, Greatswords, Spies, Arachas Swarm.\r\n    Типичные ошибки:\r\n    Не прореживать колоду; тратить Warlords рано.\r\n\r\nSWAP",
+      "family": "discard",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Sukrus",
+          "resolvedId": 152207,
+          "method": "role-substitution",
+          "resolvedName": "Holger Blackhand"
+        },
+        {
+          "requested": "An Craite Warlord x3",
+          "resolvedId": 152303,
+          "method": "role-substitution",
+          "resolvedName": "An Craite Warrior"
+        },
+        {
+          "requested": "Terror Crew x3",
+          "resolvedId": 152303,
+          "method": "role-substitution",
+          "resolvedName": "An Craite Warrior"
+        },
+        {
+          "requested": "An Craite Warrior",
+          "resolvedId": 152303,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "An Craite Warrior",
+          "resolvedId": 152303,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "An Craite Warrior",
+          "resolvedId": 152303,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 152314,
+          "resolvedName": "An Craite Longship",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 152314,
+          "resolvedName": "An Craite Longship",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 152314,
+          "resolvedName": "An Craite Longship",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 200159,
+      "faction": 32,
+      "familyId": 19,
+      "presetId": 75,
+      "templateIds": [
+        152103,
+        152106,
+        152107,
+        200226,
+        152214,
+        112207,
+        152209,
+        152207,
+        152206,
+        152211,
+        152305,
+        152305,
+        152305,
+        200036,
+        200036,
+        200036,
+        152303,
+        152303,
+        152303,
+        152316,
+        152316,
+        152316,
+        152314,
+        152314,
+        152314
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Swap",
+      "requestedLeader": "Francesca Findabair",
+      "sourceText": "Swap\r\nЛидер: Francesca Findabair\r\nСостав колоды:\r\n\r\n    Saskia\r\n\r\n    Avallac’h\r\n\r\n    Vernossiel\r\n\r\n    Lady of the Lake: Advent\r\n\r\n    Sarah\r\n\r\n    Aelirenn\r\n\r\n    Ida Emean aep Sivney\r\n\r\n    Roach\r\n\r\n    Alzur’s Double-Cross\r\n\r\n    Feign Death\r\n\r\n    Elven Scout x3\r\n\r\n    Vernossiel’s Commando x3\r\n\r\n    Urihedo Vanguard x2\r\n\r\n    Half-Elf Hunter\r\n\r\n    Urihedo Officer x3\r\n\r\n    Wardancer x3\r\n\r\nОсновной план:\r\nЛинейная игра, обгон по темпу для получения преимущества по картам. Массивные очки через Elven Scout и Vernossiel’s Commando. Беречь Saskia и Vernossiel.\r\nМуллиган:\r\nОставлять: Saskia, Vernossiel, Elven Scout, Vernossiel’s Commando. Менять дубликаты Wardancer, если нет синергии.\r\nПервый раунд:\r\nРазыграть Elven Scout, набрать темп.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Vernossiel.\r\nПоследний раунд:\r\nСохранить Saskia, Vernossiel, Feign Death.\r\nСвязки:\r\n\r\n    Elven Scout → Vernossiel’s Commando → темп.\r\n\r\n    Saskia → усиление.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Armor, Machines Henselt, Nekker Consume, Assire decks.\r\n    Типичные ошибки:\r\n    Не использовать темп; тратить Saskia рано.\r\n\r\nLYRIAN DECKBUFF",
+      "family": "swap",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Vernossiel",
+          "resolvedId": 142103,
+          "method": "role-substitution",
+          "resolvedName": "Iorveth"
+        },
+        {
+          "requested": "Lady of the Lake: Advent",
+          "resolvedId": 112112,
+          "method": "role-substitution",
+          "resolvedName": "Avallac'h: Sage"
+        },
+        {
+          "requested": "Feign Death",
+          "resolvedId": 113201,
+          "method": "role-substitution",
+          "resolvedName": "Decoy"
+        },
+        {
+          "requested": "Vernossiel’s Commando x3",
+          "resolvedId": 142302,
+          "method": "role-substitution",
+          "resolvedName": "Vrihedd Brigade"
+        },
+        {
+          "requested": "Urihedo Vanguard x2",
+          "resolvedId": 142309,
+          "method": "alias",
+          "resolvedName": "Vrihedd Vanguard"
+        },
+        {
+          "requested": "Urihedo Officer x3",
+          "resolvedId": 142303,
+          "method": "alias",
+          "resolvedName": "Vrihedd Officer"
+        }
+      ],
+      "active": true,
+      "leader": 200165,
+      "faction": 16,
+      "familyId": 20,
+      "presetId": 76,
+      "templateIds": [
+        200209,
+        132105,
+        142103,
+        112112,
+        112212,
+        142211,
+        142202,
+        112210,
+        113209,
+        113201,
+        201638,
+        201638,
+        201638,
+        142302,
+        142302,
+        142302,
+        142309,
+        142309,
+        201636,
+        142303,
+        142303,
+        142303,
+        142313,
+        142313,
+        142313
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Lyrian Deckbuff",
+      "requestedLeader": "King Foltest",
+      "sourceText": "Lyrian Deckbuff\r\nЛидер: King Foltest\r\nСостав колоды:\r\n\r\n    Lyrian Cavalry\r\n\r\n    Vissgerd\r\n\r\n    Reavers\r\n\r\n    Tutors\r\n\r\n    Машины\r\n\r\nОсновной план:\r\nНакопление deckbuff на Vissgerd, разыгрывание Lyrian Cavalry на ~17 очков. Финишер через Alzur’s Double-Cross или Reinforcements. Беречь Vissgerd и Lyrian Cavalry.\r\nМуллиган:\r\nОставлять: Vissgerd, Lyrian Cavalry, Reavers. Менять дубликаты машин, если нет синергии.\r\nПервый раунд:\r\nРазыграть Reavers, проредить колоду.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Lyrian Cavalry.\r\nПоследний раунд:\r\nСохранить Vissgerd, Lyrian Cavalry, Alzur’s Double-Cross.\r\nСвязки:\r\n\r\n    Reavers → прореживание → Vissgerd.\r\n\r\n    Lyrian Cavalry → deckbuff → финишер.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Ogroids, Armor, Spies, Tempo Calveit, Vampires, Arachas Swarm, Scorch Ambush.\r\n    Типичные ошибки:\r\n    Не прореживать колоду; тратить Vissgerd рано.\r\n\r\nICE TROLLS",
+      "family": "temerians",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Lyrian Cavalry",
+          "resolvedId": 122314,
+          "method": "role-substitution",
+          "resolvedName": "Kaedweni Cavalry"
+        },
+        {
+          "requested": "Vissgerd",
+          "resolvedId": 122102,
+          "method": "role-substitution",
+          "resolvedName": "Vernon Roche"
+        },
+        {
+          "requested": "Reavers",
+          "resolvedId": 122306,
+          "method": "role-substitution",
+          "resolvedName": "Reaver Hunter"
+        },
+        {
+          "requested": "Tutors",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "Машины",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 201618,
+          "resolvedName": "Seltkirk of Gulet",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122108,
+          "resolvedName": "Keira Metz",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122105,
+          "resolvedName": "Sigismund Dijkstra",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122211,
+          "resolvedName": "Margarita of Aretuza",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 113208,
+          "resolvedName": "Vaedermakar",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122207,
+          "resolvedName": "Dethmold",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122208,
+          "resolvedName": "Prince Stennis",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 123201,
+          "resolvedName": "Reinforcements",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 200019,
+          "resolvedName": "Marching Orders",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122317,
+          "resolvedName": "Redanian Elite",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122317,
+          "resolvedName": "Redanian Elite",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 123301,
+          "resolvedName": "Redanian Knight-Elect",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 123301,
+          "resolvedName": "Redanian Knight-Elect",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 123301,
+          "resolvedName": "Redanian Knight-Elect",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122311,
+          "resolvedName": "Blue Stripe Commando",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122311,
+          "resolvedName": "Blue Stripe Commando",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122311,
+          "resolvedName": "Blue Stripe Commando",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122310,
+          "resolvedName": "Blue Stripe Scout",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122310,
+          "resolvedName": "Blue Stripe Scout",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122310,
+          "resolvedName": "Blue Stripe Scout",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122316,
+          "resolvedName": "Temerian Infantry",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122316,
+          "resolvedName": "Temerian Infantry",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 200168,
+      "faction": 8,
+      "familyId": 16,
+      "presetId": 77,
+      "templateIds": [
+        122102,
+        122314,
+        122306,
+        201618,
+        122108,
+        122105,
+        122211,
+        113208,
+        122207,
+        122208,
+        123201,
+        200019,
+        122317,
+        122317,
+        123301,
+        123301,
+        123301,
+        122311,
+        122311,
+        122311,
+        122310,
+        122310,
+        122310,
+        122316,
+        122316
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Ice Trolls",
+      "requestedLeader": "Whispering Hillock",
+      "sourceText": "Ice Trolls\r\nЛидер: Whispering Hillock\r\nСостав колоды с количеством копий:\r\n\r\n    12 Old Speartip: Asleep\r\n\r\n    9 Caranthir Ar-Feiniel\r\n\r\n    9 Cloud Giant\r\n\r\n    1 Ge’els\r\n\r\n    13 Frightener\r\n\r\n    10 Golyat\r\n\r\n    6 Jotunn\r\n\r\n    6 Morvudd\r\n\r\n    5 Ozzrel\r\n\r\n    White Frost\r\n\r\n    9 Cave Troll x2\r\n\r\n    7 Drowner x2\r\n\r\n    7 Ice Giant\r\n\r\n    5 Ice Troll x3\r\n\r\n    3 Red Rider x3\r\n\r\n    2 Nekker Swarm x3\r\n\r\n    Quen\r\n\r\nОсновной план:\r\nТщательное использование обеих сторон монеты. Cloud Giant даёт доступ к туману. На красной монете — проредить Nekker Swarm, применить Queen на Ice Trolls, пасовать и защищаться от bleed. Ice Trolls могут дать 32 очка в дуэли. Беречь Ice Trolls и Cloud Giant.\r\nМуллиган:\r\nОставлять: Ice Troll, Cloud Giant, Old Speartip, Caranthir. Менять дубликаты Nekker Swarm, если нет синергии.\r\nПервый раунд:\r\nРазыграть Ice Trolls, использовать погоду.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Ice Trolls.\r\nПоследний раунд:\r\nСохранить Ice Troll, Old Speartip, Caranthir.\r\nСвязки:\r\n\r\n    Cloud Giant → туман → Ice Troll.\r\n\r\n    Old Speartip → усиление.\r\n\r\n    Caranthir → копирование.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Arachas Swarm, Machines, Svalblod Rain, Vampires.\r\n    Типичные ошибки:\r\n    Не защищать Ice Trolls; тратить погоду рано.\r\n\r\nEITHNE HANDBUFF",
+      "family": "tall",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "9 Cloud Giant",
+          "resolvedId": 132212,
+          "method": "role-substitution",
+          "resolvedName": "Ice Giant"
+        },
+        {
+          "requested": "9 Cave Troll x2",
+          "resolvedId": 200502,
+          "method": "role-substitution",
+          "resolvedName": "Ice Troll"
+        },
+        {
+          "requested": "3 Red Rider x3",
+          "resolvedId": 132310,
+          "method": "role-substitution",
+          "resolvedName": "Wild Hunt Rider"
+        },
+        {
+          "requested": "2 Nekker Swarm x3",
+          "resolvedId": 132305,
+          "method": "role-substitution",
+          "resolvedName": "Nekker"
+        },
+        {
+          "requested": "Quen",
+          "resolvedId": 113311,
+          "method": "role-substitution",
+          "resolvedName": "Thunderbolt"
+        },
+        {
+          "requested": "Ice Troll",
+          "resolvedId": 200502,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Ice Troll",
+          "resolvedId": 200502,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132102,
+          "resolvedName": "Imlerith",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132309,
+          "resolvedName": "Wild Hunt Warrior",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 201587,
+      "faction": 2,
+      "familyId": 21,
+      "presetId": 78,
+      "templateIds": [
+        132218,
+        132104,
+        131102,
+        132204,
+        200052,
+        200218,
+        132205,
+        201698,
+        113206,
+        132212,
+        200502,
+        200502,
+        132314,
+        132314,
+        132212,
+        200502,
+        132310,
+        132310,
+        132310,
+        132305,
+        132305,
+        132305,
+        113311,
+        132102,
+        132309
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Eithne Handbuff",
+      "requestedLeader": "Eithne",
+      "sourceText": "Eithne Handbuff\r\nЛидер: Eithne\r\nСостав колоды:\r\n\r\n    Iorveth\r\n\r\n    Aglais\r\n\r\n    Isengrim: Outlaw\r\n\r\n    Royal Decree\r\n\r\n    13 Yaevinn\r\n\r\n    6 Aelirenn\r\n\r\n    4 Ida Emean aep Sivney\r\n\r\n    Feign Death\r\n\r\n    Marching Orders\r\n\r\n    Artefact Compression\r\n\r\n    8 Urihedo Dragoon x3\r\n\r\n    8 Farseer x3\r\n\r\n    5 Elven Swordmaster x3\r\n\r\n    1 Elven Mercenary x3\r\n\r\n    Scout x3\r\n\r\nОсновной план:\r\nУсиление руки через драгунов, carryover через Farseer. Драконы дают движки до 6 очков за ход. Feign Death дважды. Беречь Dragoon и Farseer.\r\nМуллиган:\r\nОставлять: Urihedo Dragoon, Farseer, Elven Swordmaster. Менять дубликаты Scout, если нет синергии.\r\nПервый раунд:\r\nРазыграть Dragoon, усилить руку.\r\nВторой раунд:\r\nПосле победы — пасовать. После поражения — выиграть через Farseer.\r\nПоследний раунд:\r\nСохранить Dragoon, Farseer, Feign Death.\r\nСвязки:\r\n\r\n    Dragoon → усиление руки → Swordmaster.\r\n\r\n    Farseer → движок.\r\n\r\n    Feign Death → защита.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше.\r\n    Противодействие:\r\n    Слабость к Swap, Greatswords, Lyrian Deckbuff, Discard, Spies, Arachas Swarm, Vampires, Alchemy, Adda Cursed.\r\n    Типичные ошибки:\r\n    Не защищать Dragoon; тратить Feign Death рано.\r\n\r\n(Продолжение следует: Frost Wraiths, Francesca Handbuff, Brouver Shupe, 40 Foltest, Fanatics, Dwarf Miner/Xavier, Tall Ogres, Armor, Slave Infantry, NG Handbuff, Cursed Ships, Brouver Handbuff, Spell'teal Decoctons, Cintrians, Svalblod Rain, Calanthe Deckbuff, Axemen, Dryads.)\r\n\r\nЕсли нужны стратегии для конкретных колод из оставшегося списка — уточните, и я допишу.\r\nдальше\r\nПРОДОЛЖЕНИЕ: СТРАТЕГИИ ДЛЯ ОСТАЛЬНЫХ КОЛОД (часть 3)\r\nLOW TIER 2 (продолжение)\r\nFROST WRAITHS",
+      "family": "handbuff",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Feign Death",
+          "resolvedId": 113201,
+          "method": "role-substitution",
+          "resolvedName": "Decoy"
+        },
+        {
+          "requested": "8 Urihedo Dragoon x3",
+          "resolvedId": 142205,
+          "method": "alias",
+          "resolvedName": "Vrihedd Dragoon"
+        },
+        {
+          "requested": "Scout x3",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        }
+      ],
+      "active": true,
+      "leader": 200166,
+      "faction": 16,
+      "familyId": 22,
+      "presetId": 79,
+      "templateIds": [
+        142103,
+        142106,
+        201615,
+        200154,
+        142203,
+        142211,
+        142202,
+        113201,
+        200019,
+        200053,
+        142205,
+        142205,
+        142205,
+        200136,
+        200136,
+        200136,
+        200535,
+        200535,
+        200535,
+        142308,
+        142308,
+        142308,
+        201704,
+        201704,
+        201704
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Frost Wraiths",
+      "requestedLeader": "Eredin Breacc Glas (или Bran Tuirseach, в зависимости от билда)",
+      "sourceText": "Frost Wraiths\r\nЛидер: Eredin Breacc Glas (или Bran Tuirseach, в зависимости от билда)\r\nСостав колоды:\r\n\r\n    Caranthir Ar-Feiniel\r\n\r\n    Imlerith\r\n\r\n    Triss: Telekinesis\r\n\r\n    Royal Decree\r\n\r\n    13 Frightener\r\n\r\n    8 Colossal Ifrit\r\n\r\n    6 Jotunn\r\n\r\n    5 Katakan\r\n\r\n    4 Abaya\r\n\r\n    2 The Apiarian Phantom\r\n\r\n    8 Noonwraith x3\r\n\r\n    7 Protofleder\r\n\r\n    5 Fleder x3\r\n\r\n    4 Wild Hunt Hound x2\r\n\r\n    3 Red Rider x3\r\n\r\n    Lacerate\r\n\r\n    Biting Frost x2\r\n\r\nОсновной план:\r\nПохожа на Bloodmoon Wraiths, но с Frost. Убийство врайтов противника и превращение их в движки. Лёгкий призыв Red Rider, настройка Fleder через тикающий мороз. Caranthir помогает против высоких колод. Беречь Noonwraith, Protofleder, Caranthir.\r\nМуллиган:\r\nОставлять: Noonwraith, Protofleder, Fleder, Biting Frost. Менять дубликаты Wild Hunt Hound, если нет мороза. Оставлять Lacerate против роя.\r\nПервый раунд:\r\nРазыграть мороз, затем врайтов. Red Rider призываются сами.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через врайтов.\r\nПоследний раунд:\r\nСохранить Noonwraith, Protofleder, Caranthir, Lacerate.\r\nСвязки:\r\n\r\n    Biting Frost → Wild Hunt Hound → Red Rider.\r\n\r\n    Noonwraith → смерть под морозом → движок.\r\n\r\n    Protofleder → Fleder → усиление.\r\n\r\n    Caranthir → копирование ключевого юнита.\r\n    Если нет мороза — использовать Triss: Telekinesis для поиска.\r\n    Выбор целей:\r\n    Убивать движки противника, блокировать ключевых. Не тратить Lacerate на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Machines, WH Frost (зеркало), weather clear.\r\n    Типичные ошибки:\r\n    Не защищать врайтов; тратить мороз без синергии; игнорировать очищение погоды у противника.\r\n\r\nFRANCESCA HANDBUFF",
+      "family": "weather",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "8 Colossal Ifrit",
+          "resolvedId": 132210,
+          "method": "role-substitution",
+          "resolvedName": "Ifrit"
+        },
+        {
+          "requested": "5 Katakan",
+          "resolvedId": 132220,
+          "method": "role-substitution",
+          "resolvedName": "Nekurat"
+        },
+        {
+          "requested": "2 The Apiarian Phantom",
+          "resolvedId": 132214,
+          "method": "role-substitution",
+          "resolvedName": "Nithral"
+        },
+        {
+          "requested": "8 Noonwraith x3",
+          "resolvedId": 200295,
+          "method": "role-substitution",
+          "resolvedName": "Rotfiend"
+        },
+        {
+          "requested": "7 Protofleder",
+          "resolvedId": 132303,
+          "method": "role-substitution",
+          "resolvedName": "Wyvern"
+        },
+        {
+          "requested": "5 Fleder x3",
+          "resolvedId": 132313,
+          "method": "role-substitution",
+          "resolvedName": "Ekimmara"
+        },
+        {
+          "requested": "3 Red Rider x3",
+          "resolvedId": 132310,
+          "method": "role-substitution",
+          "resolvedName": "Wild Hunt Rider"
+        }
+      ],
+      "active": true,
+      "leader": 131101,
+      "faction": 2,
+      "familyId": 7,
+      "presetId": 80,
+      "templateIds": [
+        132104,
+        132102,
+        201773,
+        200154,
+        132204,
+        132210,
+        200218,
+        132220,
+        132203,
+        132214,
+        200295,
+        200295,
+        200295,
+        132303,
+        132313,
+        132313,
+        132313,
+        132402,
+        132402,
+        132310,
+        132310,
+        132310,
+        153301,
+        113302,
+        113302
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Francesca Handbuff",
+      "requestedLeader": "Francesca Findabair",
+      "sourceText": "Francesca Handbuff\r\nЛидер: Francesca Findabair\r\nСостав колоды с количеством копий:\r\n\r\n    8 Aglais\r\n\r\n    6 Triss: Telekinesis\r\n\r\n    5 Dandelion: Poet\r\n\r\n    2 Ithlinne Aegli\r\n\r\n    13 Yaevinn\r\n\r\n    9 Ciaran aep Easnillen\r\n\r\n    6 Aelirenn\r\n\r\n    4 Roach\r\n\r\n    4 Ida Emean aep Sivney\r\n\r\n    Feign Death\r\n\r\n    10 Urihedo Neophyte x3\r\n\r\n    8 Urihedo Dragoon x3\r\n\r\n    6 Half-Elf Hunter\r\n\r\n    5 Elven Swordmaster x3\r\n\r\n    1 Elven Mercenary x2\r\n\r\n    Scout x2\r\n\r\n    Quen\r\n\r\nОсновной план:\r\nFrancesca гарантирует Ithlinne → Quen, защищая драгунов и Swordmaster'ов с самого начала. Усиление руки через драгунов, защита медленного старта темпом, финиш через огромных Swordmaster'ов. Беречь Urihedo Dragoon, Ithlinne, Quen.\r\nМуллиган:\r\nОставлять: Ithlinne, Quen, Urihedo Dragoon, Elven Swordmaster. Менять дубликаты Scout, если нет синергии.\r\nПервый раунд:\r\nIthlinne → Quen → защита драгунов. Разыграть драгунов, усилить руку.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Swordmaster'ов.\r\nПоследний раунд:\r\nСохранить Elven Swordmaster, Feign Death, Ithlinne.\r\nСвязки:\r\n\r\n    Ithlinne → Quen → защита.\r\n\r\n    Urihedo Dragoon → усиление руки → Swordmaster.\r\n\r\n    Feign Death → защита ключевого юнита.\r\n    Если нет Ithlinne — использовать Triss: Telekinesis для поиска.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить Quen на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Spies, Arachas Swarm, рою.\r\n    Типичные ошибки:\r\n    Не защищать драгунов; тратить Quen рано; игнорировать зачистки.\r\n\r\nBROUVER SHUPE",
+      "family": "handbuff",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Feign Death",
+          "resolvedId": 113201,
+          "method": "role-substitution",
+          "resolvedName": "Decoy"
+        },
+        {
+          "requested": "10 Urihedo Neophyte x3",
+          "resolvedId": 142401,
+          "method": "alias",
+          "resolvedName": "Vrihedd Neophyte"
+        },
+        {
+          "requested": "8 Urihedo Dragoon x3",
+          "resolvedId": 142205,
+          "method": "alias",
+          "resolvedName": "Vrihedd Dragoon"
+        },
+        {
+          "requested": "Scout x2",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        },
+        {
+          "requested": "Quen",
+          "resolvedId": 113311,
+          "method": "role-substitution",
+          "resolvedName": "Thunderbolt"
+        }
+      ],
+      "active": true,
+      "leader": 200165,
+      "faction": 16,
+      "familyId": 22,
+      "presetId": 81,
+      "templateIds": [
+        142106,
+        201773,
+        201776,
+        142107,
+        142203,
+        142206,
+        142211,
+        112210,
+        142202,
+        113201,
+        142401,
+        142401,
+        142401,
+        142205,
+        142205,
+        142205,
+        201636,
+        200535,
+        200535,
+        200535,
+        142308,
+        142308,
+        201704,
+        201704,
+        113311
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Brouver Shupe",
+      "requestedLeader": "Brouver Hoog",
+      "sourceText": "Brouver Shupe\r\nЛидер: Brouver Hoog\r\nСостав колоды с количеством копий:\r\n\r\n    8 Aglais\r\n\r\n    7 Isengrim Faoiltiarna\r\n\r\n    4 Schirru\r\n\r\n    Shupe’s Bizarre Adventure\r\n\r\n    13 Yaevinn\r\n\r\n    6 Toruviel\r\n\r\n    4 Ida Emean aep Sivney\r\n\r\n    3 Eibhear Hattori\r\n\r\n    2 Barclay Els\r\n\r\n    Scorch\r\n\r\n    12 Urihedo Sappers\r\n\r\n    10 Urihedo Neophyte\r\n\r\n    9 Urihedo Brigade\r\n\r\n    8 Dwarven Mercenary\r\n\r\n    7 Dol Blathanna Archer\r\n\r\n    6 Dwarven Skirmisher\r\n\r\n    6 Half-Elf Hunter\r\n\r\n    4 Mahakam Guard\r\n\r\n    4 Panther\r\n\r\n    3 Trapper\r\n\r\n    2 Sage\r\n\r\n    1 Elven Mercenary\r\n\r\n    Alzur’s Thunder\r\n\r\n    Lacerate\r\n\r\n    Scout\r\n\r\nОсновной план:\r\nУниверсальная колода с Brouver Hoog: темп через Barclay/Hattori, контроль через Scorch, Lacerate, Alzur’s Thunder. Shupe даёт случайную мощную способность. Беречь Brouver, Shupe, Scorch.\r\nМуллиган:\r\nОставлять: Brouver, Shupe, Barclay, Hattori, Scorch. Менять дубликаты Urihedo Neophyte, если нет синергии.\r\nПервый раунд:\r\nРазыграть темп-карты (Barclay, Hattori), контролировать стол.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Shupe или Scorch.\r\nПоследний раунд:\r\nСохранить Shupe, Scorch, Lacerate, Alzur’s Thunder.\r\nСвязки:\r\n\r\n    Barclay Els → Hattori → темп.\r\n\r\n    Shupe → случайная мощная способность.\r\n\r\n    Scorch → массовый урон.\r\n    Если нет Shupe — играть через контроль и темп.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить Scorch на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Arachas Swarm, Veterans, Tempo Calveit.\r\n    Типичные ошибки:\r\n    Полагаться только на Shupe; не защищать Brouver; тратить Lacerate рано.\r\n\r\n40 FOLTEST",
+      "family": "singleton",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Shupe’s Bizarre Adventure",
+          "resolvedId": 201627,
+          "method": "role-substitution",
+          "resolvedName": "Shupe's Day Off"
+        },
+        {
+          "requested": "12 Urihedo Sappers",
+          "resolvedId": 142307,
+          "method": "alias",
+          "resolvedName": "Vrihedd Sappers"
+        },
+        {
+          "requested": "10 Urihedo Neophyte",
+          "resolvedId": 142401,
+          "method": "alias",
+          "resolvedName": "Vrihedd Neophyte"
+        },
+        {
+          "requested": "9 Urihedo Brigade",
+          "resolvedId": 142302,
+          "method": "alias",
+          "resolvedName": "Vrihedd Brigade"
+        },
+        {
+          "requested": "3 Trapper",
+          "resolvedId": 142304,
+          "method": "alias",
+          "resolvedName": "Dol Blathanna Bomber"
+        },
+        {
+          "requested": "Scout",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        }
+      ],
+      "active": true,
+      "leader": 200167,
+      "faction": 16,
+      "familyId": 23,
+      "presetId": 82,
+      "templateIds": [
+        142106,
+        142102,
+        142108,
+        201627,
+        142203,
+        142204,
+        142202,
+        200520,
+        142207,
+        113309,
+        142307,
+        142401,
+        142302,
+        142311,
+        142310,
+        142305,
+        201636,
+        142317,
+        200139,
+        142304,
+        200138,
+        142308,
+        113301,
+        153301,
+        201704
+      ]
+    },
+    {
+      "id": 32,
+      "title": "40 Foltest",
+      "requestedLeader": "King Foltest",
+      "sourceText": "40 Foltest\r\nЛидер: King Foltest\r\nСостав колоды:\r\n\r\n    40 карт, включая:\r\n\r\n    Bloody Baron\r\n\r\n    Roche\r\n\r\n    Mystics\r\n\r\n    Temerian Magus\r\n\r\n    Машины\r\n\r\n    Погода (дождь, мороз)\r\n\r\n    Temerian Infantry\r\n\r\n    Blue Stripe Scout/Commando\r\n\r\n    Redanian Knight-Elect\r\n\r\n    Прочие темерские карты\r\n\r\nОсновной план:\r\nОгромная колода с высокой вариативностью. Мощные карты, но высокий риск плохого дрова. Roche Mystics помогают найти нужные темерские карты. Машины усиливают Baron, Temerian Magus добавляет погоду для зачистки мелких. Беречь Baron, Roche, ключевые машины.\r\nМуллиган:\r\nОставлять: Roche, Baron, ключевые машины, погоду. Менять дубликаты, если нет синергии.\r\nПервый раунд:\r\nРазыграть темп-карты, проредить колоду.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Baron.\r\nПоследний раунд:\r\nСохранить Baron, Roche, погоду.\r\nСвязки:\r\n\r\n    Roche → Mystics → поиск карт.\r\n\r\n    Машины → Baron → усиление.\r\n\r\n    Temerian Magus → погода → зачистка.\r\n    Если нет Baron — играть через темп и погоду.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Tempo Calveit, Discard, Reveal.\r\n    Типичные ошибки:\r\n    Плохой дров; не защищать Baron; тратить погоду рано.\r\n\r\nFANATICS",
+      "family": "temerians",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "40 карт, включая:",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "Roche",
+          "resolvedId": 122102,
+          "method": "alias",
+          "resolvedName": "Vernon Roche"
+        },
+        {
+          "requested": "Mystics",
+          "resolvedId": 200033,
+          "method": "role-substitution",
+          "resolvedName": "Aretuza Adept"
+        },
+        {
+          "requested": "Temerian Magus",
+          "resolvedId": 201628,
+          "method": "role-substitution",
+          "resolvedName": "Tormented Mage"
+        },
+        {
+          "requested": "Машины",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "Погода (дождь, мороз)",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "Blue Stripe Scout/Commando",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "Прочие темерские карты",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 201618,
+          "resolvedName": "Seltkirk of Gulet",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122108,
+          "resolvedName": "Keira Metz",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122211,
+          "resolvedName": "Margarita of Aretuza",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 113208,
+          "resolvedName": "Vaedermakar",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122207,
+          "resolvedName": "Dethmold",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122208,
+          "resolvedName": "Prince Stennis",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 123201,
+          "resolvedName": "Reinforcements",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 200019,
+          "resolvedName": "Marching Orders",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122317,
+          "resolvedName": "Redanian Elite",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122317,
+          "resolvedName": "Redanian Elite",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 123301,
+          "resolvedName": "Redanian Knight-Elect",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 123301,
+          "resolvedName": "Redanian Knight-Elect",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122311,
+          "resolvedName": "Blue Stripe Commando",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122311,
+          "resolvedName": "Blue Stripe Commando",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122311,
+          "resolvedName": "Blue Stripe Commando",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122310,
+          "resolvedName": "Blue Stripe Scout",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122310,
+          "resolvedName": "Blue Stripe Scout",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122310,
+          "resolvedName": "Blue Stripe Scout",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122316,
+          "resolvedName": "Temerian Infantry",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122316,
+          "resolvedName": "Temerian Infantry",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122307,
+          "resolvedName": "Reaver Scout",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 200033,
+          "resolvedName": "Aretuza Adept",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122301,
+          "resolvedName": "Ballista",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122313,
+          "resolvedName": "Dun Banner",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 201628,
+          "resolvedName": "Tormented Mage",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122314,
+          "resolvedName": "Kaedweni Cavalry",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 201624,
+          "resolvedName": "Kaedweni Revenant",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 201622,
+          "resolvedName": "Kaedweni Knight",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122214,
+          "resolvedName": "Kaedweni Sergeant",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 200540,
+          "resolvedName": "Aedirnian Mauler",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122304,
+          "resolvedName": "Siege Tower",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122309,
+          "resolvedName": "Siege Support",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122318,
+          "resolvedName": "Siege Master",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 200132,
+          "resolvedName": "Witch Hunter",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 200168,
+      "faction": 8,
+      "familyId": 16,
+      "presetId": 83,
+      "templateIds": [
+        122101,
+        122102,
+        200033,
+        201628,
+        122316,
+        123301,
+        201618,
+        122108,
+        122211,
+        113208,
+        122207,
+        122208,
+        123201,
+        200019,
+        122317,
+        122317,
+        123301,
+        123301,
+        122311,
+        122311,
+        122311,
+        122310,
+        122310,
+        122310,
+        122316,
+        122316,
+        122307,
+        200033,
+        122301,
+        122313,
+        201628,
+        122314,
+        201624,
+        201622,
+        122214,
+        200540,
+        122304,
+        122309,
+        122318,
+        200132
+      ]
+    },
+    {
+      "id": 33,
+      "title": "Fanatics",
+      "requestedLeader": "Svalblod",
+      "sourceText": "Fanatics\r\nЛидер: Svalblod\r\nСостав колоды:\r\n\r\n    Svalblod Fanatic x3\r\n\r\n    An Craite Blacksmith x2\r\n\r\n    An Craite Armorsmith x2\r\n\r\n    Drummond Shieldmaiden x3\r\n\r\n    Heymaey Protector\r\n\r\n    Dimeritium Shackles\r\n\r\n    Scout x2\r\n\r\n    Bone Talisman x2\r\n\r\n    Udalryk\r\n\r\n    Skjall\r\n\r\n    Artis\r\n\r\n    Sigrdrifa\r\n\r\n    Restore\r\n\r\n    Triss: Telekinesis\r\n\r\n    Hym\r\n\r\n    Sigvald\r\n\r\n    Harald Houndsnout\r\n\r\nОсновной план:\r\nFanatics с Svalblod — сильнейший выбор для лидера, усиление через воскрешение. Эффективны против 3-очковых юнитов, хороший матчап против роя. Усиление фанатиков через Arts, Mandrake, Blacksmith. Armorsmith возвращает фанатиков для массового темпа. Беречь Fanatics, Armorsmith, Mandrake.\r\nМуллиган:\r\nОставлять: Svalblod Fanatic, An Craite Armorsmith, An Craite Blacksmith, Mandrake. Менять дубликаты Drummond Shieldmaiden, если нет синергии.\r\nПервый раунд:\r\nРазыграть фанатиков, усилить их.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Armorsmith.\r\nПоследний раунд:\r\nСохранить Fanatics, Armorsmith, Mandrake.\r\nСвязки:\r\n\r\n    Svalblod Fanatic → An Craite Armorsmith → возврат.\r\n\r\n    Arts → усиление фанатиков.\r\n\r\n    Mandrake → усиление ключевого юнита.\r\n    Если нет Armorsmith — использовать Restore для возврата фанатиков.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить Mandrake на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Adda Cursed, Alchemy, Dwarf-Elf-Scorch, Eggs Consume.\r\n    Типичные ошибки:\r\n    Не защищать фанатиков; тратить Armorsmith рано; игнорировать контроль противника.\r\n\r\nDWARF MINER/XAVIER",
+      "family": "skip",
+      "notes": [],
+      "changes": [],
+      "active": false,
+      "reason": "Primary leader is absent from strict Beta 0.9.24"
+    },
+    {
+      "id": 34,
+      "title": "Dwarf Miner/Xavier",
+      "requestedLeader": "Brouver Hoog",
+      "sourceText": "Dwarf Miner/Xavier\r\nЛидер: Brouver Hoog\r\nСостав колоды с количеством копий:\r\n\r\n    10 Xavier Moran\r\n\r\n    10 Ale of the Ancestors\r\n\r\n    8 Zoltan Chivay\r\n\r\n    Zoltan’s Company\r\n\r\n    8 Dennis Cranmer\r\n\r\n    8 Yarpen Zigrin\r\n\r\n    3 Paulie Dahlberg\r\n\r\n    3 Eibhear Hattori\r\n\r\n    2 Barclay Els\r\n\r\n    Decoy\r\n\r\n    8 Dwarven Mercenary x3\r\n\r\n    6 Dwarf Miner x3\r\n\r\n    6 Dwarven Skirmisher x3\r\n\r\n    3 Mahakam Volunteers x3\r\n\r\n    1 Dwarven Agitator x3\r\n\r\nОсновной план:\r\nМногократное разыгрывание Miner через Zoltan’s Company, Paulie или Syanna. 40+ очков от Adventure. Сильна в длинном раунде, но страдает от недостатка контроля и нестабильности из-за отсутствия прореживания. Беречь Miner, Xavier, Zoltan’s Company.\r\nМуллиган:\r\nОставлять: Dwarf Miner, Xavier Moran, Zoltan’s Company, Paulie. Менять дубликаты Dwarven Skirmisher, если нет синергии.\r\nПервый раунд:\r\nРазыграть гномов, подготовить Miner.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Miner.\r\nПоследний раунд:\r\nСохранить Miner, Xavier, Zoltan’s Company, Decoy.\r\nСвязки:\r\n\r\n    Dwarf Miner → Zoltan’s Company → повтор.\r\n\r\n    Paulie → возврат Miner.\r\n\r\n    Xavier → усиление.\r\n    Если нет Zoltan’s Company — использовать Decoy для возврата Miner.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Alchemy, Spies, Vampires, Fanatics.\r\n    Типичные ошибки:\r\n    Не защищать Miner; тратить Zoltan’s Company рано; игнорировать зачистки.\r\n\r\nTALL OGRES",
+      "family": "dwarves",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Zoltan’s Company",
+          "resolvedId": 112109,
+          "method": "role-substitution",
+          "resolvedName": "Zoltan: Scoundrel"
+        },
+        {
+          "requested": "6 Dwarf Miner x3",
+          "resolvedId": 142317,
+          "method": "role-substitution",
+          "resolvedName": "Mahakam Guard"
+        }
+      ],
+      "active": true,
+      "leader": 200167,
+      "faction": 16,
+      "familyId": 13,
+      "presetId": 84,
+      "templateIds": [
+        200080,
+        200532,
+        142105,
+        112109,
+        142201,
+        142213,
+        201696,
+        200520,
+        142207,
+        113201,
+        142311,
+        142311,
+        142311,
+        142317,
+        142317,
+        142317,
+        142305,
+        142305,
+        142305,
+        201559,
+        201559,
+        201559,
+        200293,
+        200293,
+        200293
+      ]
+    },
+    {
+      "id": 35,
+      "title": "Tall Ogres",
+      "requestedLeader": "Whispering Hillock",
+      "sourceText": "Tall Ogres\r\nЛидер: Whispering Hillock\r\nСостав колоды с количеством копий:\r\n\r\n    12 Old Speartip: Asleep\r\n\r\n    9 Cloud Giant\r\n\r\n    6 Whispess: Tribute\r\n\r\n    Royal Decree\r\n\r\n    13 Frightener\r\n\r\n    6 Toad Prince\r\n\r\n    6 Morvudd\r\n\r\n    Giant’s Belt\r\n\r\n    Mandrake\r\n\r\n    Monster Nest\r\n\r\n    13 Ogre Warrior x2\r\n\r\n    11 Cyclops x3\r\n\r\n    9 Nekker Warrior\r\n\r\n    9 Cave Troll x2\r\n\r\n    4 Ghoul x2\r\n\r\n    2 Nekker Swarm x3\r\n\r\n    Scout x2\r\n\r\nОсновной план:\r\nДлинный раунд: юнит с наибольшим количеством очков — огр. Управление кладбищем и очками противника через Cyclops. Постоянный приток очков через Nekker Swarm. Беречь Ogre Warrior, Cyclops, Old Speartip.\r\nМуллиган:\r\nОставлять: Ogre Warrior, Cyclops, Old Speartip, Cloud Giant. Менять дубликаты Nekker Swarm, если нет синергии.\r\nПервый раунд:\r\nРазыграть огров, контролировать стол.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через огров.\r\nПоследний раунд:\r\nСохранить Ogre Warrior, Cyclops, Old Speartip.\r\nСвязки:\r\n\r\n    Ogre Warrior → Cyclops → управление.\r\n\r\n    Nekker Swarm → приток очков.\r\n\r\n    Cloud Giant → туман.\r\n    Если нет Cyclops — использовать Cave Troll для защиты.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить Mandrake на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Scorch Ambush, Elf Dwarf Scorch, Brouver Shupe.\r\n    Типичные ошибки:\r\n    Не защищать огров; тратить Mandrake рано; игнорировать кладбище противника.\r\n\r\nARMOR",
+      "family": "tall",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "9 Cloud Giant",
+          "resolvedId": 132212,
+          "method": "role-substitution",
+          "resolvedName": "Ice Giant"
+        },
+        {
+          "requested": "Giant’s Belt",
+          "resolvedId": 200223,
+          "method": "role-substitution",
+          "resolvedName": "Mandrake"
+        },
+        {
+          "requested": "13 Ogre Warrior x2",
+          "resolvedId": 112405,
+          "method": "role-substitution",
+          "resolvedName": "Fiend"
+        },
+        {
+          "requested": "9 Cave Troll x2",
+          "resolvedId": 200502,
+          "method": "role-substitution",
+          "resolvedName": "Ice Troll"
+        },
+        {
+          "requested": "2 Nekker Swarm x3",
+          "resolvedId": 132305,
+          "method": "role-substitution",
+          "resolvedName": "Nekker"
+        },
+        {
+          "requested": "Scout x2",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        },
+        {
+          "requested": "Mandrake",
+          "resolvedId": 200223,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 132107,
+          "resolvedName": "Kayran",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 201587,
+      "faction": 2,
+      "familyId": 21,
+      "presetId": 85,
+      "templateIds": [
+        132218,
+        200220,
+        200154,
+        132204,
+        132216,
+        132205,
+        200223,
+        133302,
+        132212,
+        112405,
+        112405,
+        200037,
+        200037,
+        200037,
+        132211,
+        200502,
+        200502,
+        132306,
+        132306,
+        132305,
+        132305,
+        132305,
+        201704,
+        201704,
+        132107
+      ]
+    },
+    {
+      "id": 36,
+      "title": "Armor",
+      "requestedLeader": "King Foltest (или Mэва)",
+      "sourceText": "Armor\r\nЛидер: King Foltest (или Mэва)\r\nСостав колоды с количеством копий:\r\n\r\n    8 Seltkirk of Gulet\r\n\r\n    6 John Natalis\r\n\r\n    4 Shani\r\n\r\n    4 Sigismund Dijkstra\r\n\r\n    10 Trollololo\r\n\r\n    6 Margarita of Aretuza\r\n\r\n    3 Prince Stennis\r\n\r\n    Marching Orders\r\n\r\n    Reinforcements\r\n\r\n    Alzur’s Double-Cross\r\n\r\n    8 Kaedweni Knight x2\r\n\r\n    8 Kaedweni Cavalry x2\r\n\r\n    7 Redanian Knight-Elect x3\r\n\r\n    2 Tormented Mage x2\r\n\r\n    1 Reaver Scout\r\n\r\n    Thunderbolt x2\r\n\r\n    Scout x2\r\n\r\nОсновной план:\r\nБроня и контроль через Trollololo, Kaedweni Knight, Redanian Knight-Elect. Хорошая синергия с погодой. Гибкая колода, но страдает от сложности эффективной игры из-за дрова. Беречь Trollololo, Seltkirk, Dijkstra.\r\nМуллиган:\r\nОставлять: Trollololo, Seltkirk, Dijkstra, Kaedweni Knight. Менять дубликаты Tormented Mage, если нет синергии.\r\nПервый раунд:\r\nРазыграть бронированных юнитов, контролировать стол.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Dijkstra.\r\nПоследний раунд:\r\nСохранить Trollololo, Seltkirk, Dijkstra.\r\nСвязки:\r\n\r\n    Trollololo → броня → усиление.\r\n\r\n    Redanian Knight-Elect → погода → усиление.\r\n\r\n    Dijkstra → финишер.\r\n    Если нет Trollololo — использовать Kaedweni Knight для защиты.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Ice Trolls, Alchemy, Handbuff, Spies, Ambush Scorch.\r\n    Типичные ошибки:\r\n    Не защищать Trollololo; тратить Dijkstra рано; игнорировать погоду.\r\n\r\nSLAVE INFANTRY",
+      "family": "armor",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Scout x2",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 122302,
+          "resolvedName": "Reinforced Ballista",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 200168,
+      "faction": 8,
+      "familyId": 24,
+      "presetId": 86,
+      "templateIds": [
+        201618,
+        122103,
+        122106,
+        122105,
+        122209,
+        122211,
+        122208,
+        200019,
+        123201,
+        113209,
+        201622,
+        201622,
+        122314,
+        122314,
+        123301,
+        123301,
+        123301,
+        201628,
+        201628,
+        122307,
+        113311,
+        113311,
+        201704,
+        201704,
+        122302
+      ]
+    },
+    {
+      "id": 37,
+      "title": "Slave Infantry",
+      "requestedLeader": "Jan Calveit",
+      "sourceText": "Slave Infantry\r\nЛидер: Jan Calveit\r\nСостав колоды с количеством копий:\r\n\r\n    9 Vilgefortz\r\n\r\n    6 Triss: Telekinesis\r\n\r\n    5 Rainfarn of Attre\r\n\r\n    3 Palmerin de Launfal\r\n\r\n    13 Cantarella\r\n\r\n    11 Assire var Anahid\r\n\r\n    5 Joachim de Wett\r\n\r\n    4 Vahnemar\r\n\r\n    Decoy\r\n\r\n    Summoning Circle\r\n\r\n    8 Sentry x3\r\n\r\n    3 Slave Infantry x3\r\n\r\n    2 Vicovaro Novice x3\r\n\r\n    1 Recruit x3\r\n\r\n    1 Vicovaro Medic\r\n\r\n    Scout x3\r\n\r\n    Ointment x3\r\n\r\n    Mardroeme\r\n\r\nОсновной план:\r\nМассовое разыгрывание Slave Infantry, усиление через Palmerin (солдат-тьютор, усиливающий всех солдат). Контроль через Vilgefortz, Joachim. Беречь Slave Infantry, Palmerin, Sentry.\r\nМуллиган:\r\nОставлять: Slave Infantry, Palmerin, Sentry, Ointment. Менять дубликаты Vicovaro Novice, если нет солдат.\r\nПервый раунд:\r\nРазыграть солдат, усилить их.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Palmerin.\r\nПоследний раунд:\r\nСохранить Slave Infantry, Palmerin, Ointment.\r\nСвязки:\r\n\r\n    Slave Infantry → Palmerin → усиление.\r\n\r\n    Ointment → Recruit → цепочка.\r\n\r\n    Sentry → усиление.\r\n    Если нет Palmerin — использовать Sentry для усиления.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить Vilgefortz на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Machines, Morvran Reveal, WH Frost, Axemen, Discard.\r\n    Типичные ошибки:\r\n    Не защищать Slave Infantry; тратить Ointment рано; игнорировать зачистки.\r\n\r\nNG HANDBUFF",
+      "family": "soldiers",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "3 Palmerin de Launfal",
+          "resolvedId": 200050,
+          "method": "role-substitution",
+          "resolvedName": "Vreemde"
+        },
+        {
+          "requested": "4 Vahnemar",
+          "resolvedId": 162207,
+          "method": "alias",
+          "resolvedName": "Vanhemar"
+        },
+        {
+          "requested": "Scout x3",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        },
+        {
+          "requested": "Summoning Circle",
+          "resolvedId": 200022,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Ointment",
+          "resolvedId": 201619,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Ointment",
+          "resolvedId": 201619,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Ointment",
+          "resolvedId": 201619,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Mardroeme",
+          "resolvedId": 113320,
+          "method": "excluded-copy-tier-or-deck-limit"
+        }
+      ],
+      "active": true,
+      "leader": 200164,
+      "faction": 4,
+      "familyId": 17,
+      "presetId": 87,
+      "templateIds": [
+        162105,
+        201773,
+        200032,
+        200050,
+        162210,
+        162202,
+        162211,
+        162207,
+        113201,
+        201661,
+        201661,
+        201661,
+        201610,
+        201610,
+        201610,
+        122403,
+        122403,
+        122403,
+        201617,
+        201617,
+        201617,
+        162304,
+        201704,
+        201704,
+        201704
+      ]
+    },
+    {
+      "id": 38,
+      "title": "NG Handbuff",
+      "requestedLeader": "Emhyr var Emreis",
+      "sourceText": "NG Handbuff\r\nЛидер: Emhyr var Emreis\r\nСостав колоды с количеством копий:\r\n\r\n    7 Leo Bonhart\r\n\r\n    6 Vesemir: Mentor\r\n\r\n    6 Triss: Telekinesis\r\n\r\n    Royal Decree\r\n\r\n    13 Cantarella\r\n\r\n    11 Assire var Anahid\r\n\r\n    6 Peter Saar Gwynleve\r\n\r\n    4 Roach\r\n\r\n    2 Dorregaray of Vole\r\n\r\n    Mandrake\r\n\r\n    12 Nilfgaardian Knight x3\r\n\r\n    10 Spotter x3\r\n\r\n    3 Magne Division x3\r\n\r\n    Scout x3\r\n\r\n    Wyvern Scale Shield x3\r\n\r\nОсновной план:\r\nРазвитие крупного юнита в руке, усиление через Wyvern Scale Shield и Spotter. Nilfgaardian Knight → Mandrake → Emhyr → Bonhart → Spotter. Беречь Nilfgaardian Knight, Mandrake, Bonhart.\r\nМуллиган:\r\nОставлять: Nilfgaardian Knight, Mandrake, Bonhart, Spotter. Менять дубликаты Magne Division, если нет синергии.\r\nПервый раунд:\r\nРазыграть Nilfgaardian Knight, усилить его.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Spotter.\r\nПоследний раунд:\r\nСохранить Nilfgaardian Knight, Mandrake, Bonhart.\r\nСвязки:\r\n\r\n    Nilfgaardian Knight → Mandrake → Emhyr → Bonhart → Spotter.\r\n\r\n    Wyvern Scale Shield → усиление.\r\n    Если нет Mandrake — использовать Vesemir: Mentor для поиска.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить Mandrake на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Ice Trolls, Alchemy, Handbuff, Ambush Scorch.\r\n    Типичные ошибки:\r\n    Не защищать Nilfgaardian Knight; тратить Mandrake рано; игнорировать контроль противника.\r\n\r\nCURSED SHIPS",
+      "family": "ng-handbuff",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Scout x3",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        }
+      ],
+      "active": true,
+      "leader": 200162,
+      "faction": 4,
+      "familyId": 25,
+      "presetId": 88,
+      "templateIds": [
+        200031,
+        200237,
+        201773,
+        200154,
+        162210,
+        162202,
+        162204,
+        112210,
+        200087,
+        200223,
+        162318,
+        162318,
+        162318,
+        162303,
+        162303,
+        162303,
+        200044,
+        200044,
+        200044,
+        201704,
+        201704,
+        201704,
+        133301,
+        133301,
+        133301
+      ]
+    },
+    {
+      "id": 39,
+      "title": "Cursed Ships",
+      "requestedLeader": "Bran Tuirseach",
+      "sourceText": "Cursed Ships\r\nЛидер: Bran Tuirseach\r\nСостав колоды с количеством копий:\r\n\r\n    6 Triss: Telekinesis\r\n\r\n    6 Cerys an Craite\r\n\r\n    3 Hym\r\n\r\n    1 Sigvald\r\n\r\n    13 Udalryk\r\n\r\n    9 Morkvarg\r\n\r\n    5 Skjall\r\n\r\n    4 Gremist\r\n\r\n    3 Sigrdrifa\r\n\r\n    Restore\r\n\r\n    9 An Craite Blacksmith x3\r\n\r\n    8 Svalblod Ravager x3\r\n\r\n    7 Dimun Light Longship x3\r\n\r\n    1 Dimun Pirate Captain x2\r\n\r\n    1 Dimun Corsair x3\r\n\r\n    Scout x2\r\n\r\n    Bone Talisman x2\r\n\r\nОсновной план:\r\nВозвращение классической колоды с изменениями: меньше кораблей, больше синергии с Sigvald и Cerys. Длинный раунд через Longship, carryover через Blacksmith, досягаемость через Ravager. Беречь Longship, Sigvald, Cerys.\r\nМуллиган:\r\nОставлять: Dimun Light Longship, Sigvald, Cerys, An Craite Blacksmith. Менять дубликаты Dimun Corsair, если нет синергии.\r\nПервый раунд:\r\nРазыграть Longship, набрать темп.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Cerys.\r\nПоследний раунд:\r\nСохранить Longship, Sigvald, Cerys.\r\nСвязки:\r\n\r\n    Dimun Light Longship → длинный раунд.\r\n\r\n    An Craite Blacksmith → carryover.\r\n\r\n    Sigvald → Cerys → финишер.\r\n    Если нет Longship — использовать Ravager для досягаемости.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Alchemy, Adda Cursed, Spies.\r\n    Типичные ошибки:\r\n    Не защищать Longship; тратить Sigvald рано; игнорировать зачистки.\r\n\r\nBROUVER HANDBUFF",
+      "family": "greatswords",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "1 Sigvald",
+          "resolvedId": 152201,
+          "method": "role-substitution",
+          "resolvedName": "Blueboy Lugos"
+        },
+        {
+          "requested": "8 Svalblod Ravager x3",
+          "resolvedId": 152302,
+          "method": "role-substitution",
+          "resolvedName": "Berserker Marauder"
+        },
+        {
+          "requested": "Scout x2",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        },
+        {
+          "requested": "Restore",
+          "resolvedId": 153201,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Bone Talisman",
+          "resolvedId": 201598,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Bone Talisman",
+          "resolvedId": 201598,
+          "method": "excluded-copy-tier-or-deck-limit"
+        }
+      ],
+      "active": true,
+      "leader": 200159,
+      "faction": 32,
+      "familyId": 14,
+      "presetId": 89,
+      "templateIds": [
+        201773,
+        200177,
+        200102,
+        152201,
+        152214,
+        152209,
+        200212,
+        152206,
+        152211,
+        152311,
+        152311,
+        152311,
+        152302,
+        152302,
+        152302,
+        152309,
+        152309,
+        152309,
+        152306,
+        152306,
+        200145,
+        200145,
+        200145,
+        201704,
+        201704
+      ]
+    },
+    {
+      "id": 40,
+      "title": "Brouver Handbuff",
+      "requestedLeader": "Brouver Hoog",
+      "sourceText": "Brouver Handbuff\r\nЛидер: Brouver Hoog\r\nСостав колоды с количеством копий:\r\n\r\n    8 Aglais\r\n\r\n    6 Iorveth\r\n\r\n    2 Ithlinne Aegli\r\n\r\n    Royal Decree\r\n\r\n    13 Yaevinn\r\n\r\n    7 Carlo Varese\r\n\r\n    6 Aelirenn\r\n\r\n    4 Roach\r\n\r\n    2 Barclay Els\r\n\r\n    Feign Death\r\n\r\n    10 Urihedo Neophyte x2\r\n\r\n    8 Urihedo Dragoon x3\r\n\r\n    5 Elven Swordmaster x3\r\n\r\n    1 Elven Mercenary x3\r\n\r\n    Scout x3\r\n\r\n    Quen\r\n\r\nОсновной план:\r\nBrouver Handbuff был силён в бете, но потерял универсальность после нерфа CA-спая. Хорош как engine-hate, но в мете по очкам не дотягивает. Без драгунов теряет значительную часть ценности финишеров. Беречь Urihedo Dragoon, Quen, Ithlinne.\r\nМуллиган:\r\nОставлять: Urihedo Dragoon, Quen, Ithlinne, Elven Swordmaster. Менять дубликаты Scout, если нет синергии.\r\nПервый раунд:\r\nРазыграть драгунов, усилить руку.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Swordmaster'ов.\r\nПоследний раунд:\r\nСохранить Elven Swordmaster, Feign Death, Quen.\r\nСвязки:\r\n\r\n    Urihedo Dragoon → усиление руки → Swordmaster.\r\n\r\n    Ithlinne → Quen → защита.\r\n\r\n    Feign Death → защита.\r\n    Если нет драгунов — использовать Ithlinne для поиска.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить Quen на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Spies, Arachas Swarm, Vampires, Alchemy.\r\n    Типичные ошибки:\r\n    Не защищать драгунов; тратить Quen рано; игнорировать зачистки.\r\n\r\nTIER 3\r\nSPELL'TEAL DECOCTIONS",
+      "family": "handbuff",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "7 Carlo Varese",
+          "resolvedId": 142212,
+          "method": "role-substitution",
+          "resolvedName": "Sheldon Skaggs"
+        },
+        {
+          "requested": "Feign Death",
+          "resolvedId": 113201,
+          "method": "role-substitution",
+          "resolvedName": "Decoy"
+        },
+        {
+          "requested": "10 Urihedo Neophyte x2",
+          "resolvedId": 142401,
+          "method": "alias",
+          "resolvedName": "Vrihedd Neophyte"
+        },
+        {
+          "requested": "8 Urihedo Dragoon x3",
+          "resolvedId": 142205,
+          "method": "alias",
+          "resolvedName": "Vrihedd Dragoon"
+        },
+        {
+          "requested": "Scout x3",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        },
+        {
+          "requested": "Quen",
+          "resolvedId": 113311,
+          "method": "role-substitution",
+          "resolvedName": "Thunderbolt"
+        }
+      ],
+      "active": true,
+      "leader": 200167,
+      "faction": 16,
+      "familyId": 22,
+      "presetId": 90,
+      "templateIds": [
+        142106,
+        142103,
+        142107,
+        200154,
+        142203,
+        142212,
+        142211,
+        112210,
+        142207,
+        113201,
+        142401,
+        142401,
+        142205,
+        142205,
+        142205,
+        200535,
+        200535,
+        200535,
+        142308,
+        142308,
+        142308,
+        201704,
+        201704,
+        201704,
+        113311
+      ]
+    },
+    {
+      "id": 41,
+      "title": "Spell'teal Decotions",
+      "requestedLeader": "Eithne",
+      "sourceText": "Spell'teal Decotions\r\nЛидер: Eithne\r\nСостав колоды с количеством копий:\r\n\r\n    6 Triss: Telekinesis\r\n\r\n    2 Isengrim: Outlaw\r\n\r\n    Magic Lamp\r\n\r\n    Lady of the Lake: Advent\r\n\r\n    7 Operator\r\n\r\n    4 Ida Emean aep Sivney\r\n\r\n    Alzur’s Double-Cross\r\n\r\n    Marching Orders\r\n\r\n    Nature’s Gift\r\n\r\n    Artefact Compression\r\n\r\n    2 Dol Blathanna Sentry x3\r\n\r\n    2 Urihedo Saboteur x3\r\n\r\n    1 Elven Mercenary x3\r\n\r\n    White Raffard’s Decoction x3\r\n\r\n    Giga Scorpion Decoction x3\r\n\r\n    Scout x2\r\n\r\nОсновной план:\r\nСила Dol Blathanna Sentry, усиление за каждую специальную карту. Версия с декокциями — самая надёжная. Супер-консистентная, финальный ход обычно 20+ очков. Низкий начальный темп — уязвима к темп-пушу с красной монеты. Беречь Sentry, Lady of the Lake, Triss: Telekinesis.\r\nМуллиган:\r\nОставлять: Dol Blathanna Sentry, White Raffard’s Decoction, Giga Scorpion Decoction, Lady of the Lake. Менять дубликаты Scout, если нет синергии.\r\nПервый раунд:\r\nРазыграть Sentry, накопить специальные карты.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Sentry.\r\nПоследний раунд:\r\nСохранить Sentry, Lady of the Lake, Triss: Telekinesis.\r\nСвязки:\r\n\r\n    Dol Blathanna Sentry → специальные карты → усиление.\r\n\r\n    White Raffard’s Decoction → Giga Scorpion Decoction → усиление.\r\n\r\n    Lady of the Lake → финишер.\r\n    Если нет Sentry — использовать Triss: Telekinesis для поиска.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Ice Trolls, Tempo Calveit, Arachas Swarm, Spies.\r\n    Типичные ошибки:\r\n    Не защищать Sentry; тратить Lady of the Lake рано; игнорировать темп-пуш.\r\n\r\nCINTRIANS",
+      "family": "spells",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Magic Lamp",
+          "resolvedId": 200058,
+          "method": "role-substitution",
+          "resolvedName": "Uma's Curse"
+        },
+        {
+          "requested": "Lady of the Lake: Advent",
+          "resolvedId": 112112,
+          "method": "role-substitution",
+          "resolvedName": "Avallac'h: Sage"
+        },
+        {
+          "requested": "2 Urihedo Saboteur x3",
+          "resolvedId": 200039,
+          "method": "role-substitution",
+          "resolvedName": "Dol Blathanna Sentry"
+        },
+        {
+          "requested": "White Raffard’s Decoction x3",
+          "resolvedId": 113310,
+          "method": "role-substitution",
+          "resolvedName": "Swallow"
+        },
+        {
+          "requested": "Giga Scorpion Decoction x3",
+          "resolvedId": 113301,
+          "method": "role-substitution",
+          "resolvedName": "Alzur's Thunder"
+        },
+        {
+          "requested": "Scout x2",
+          "resolvedId": 201704,
+          "method": "alias",
+          "resolvedName": "Reconnaissance"
+        },
+        {
+          "requested": "Dol Blathanna Sentry",
+          "resolvedId": 200039,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Dol Blathanna Sentry",
+          "resolvedId": 200039,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Dol Blathanna Sentry",
+          "resolvedId": 200039,
+          "method": "excluded-copy-tier-or-deck-limit"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 142303,
+          "resolvedName": "Vrihedd Officer",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 200166,
+      "faction": 16,
+      "familyId": 26,
+      "presetId": 91,
+      "templateIds": [
+        201773,
+        201615,
+        200058,
+        112112,
+        112208,
+        142202,
+        113209,
+        200019,
+        143201,
+        200053,
+        200039,
+        200039,
+        200039,
+        142308,
+        142308,
+        142308,
+        113310,
+        113310,
+        113310,
+        113301,
+        113301,
+        113301,
+        201704,
+        201704,
+        142303
+      ]
+    },
+    {
+      "id": 42,
+      "title": "Cintrians",
+      "requestedLeader": "Queen Calanthe",
+      "sourceText": "Cintrians\r\nЛидер: Queen Calanthe\r\nСостав колоды с количеством копий:\r\n\r\n    4 Shani\r\n\r\n    3 Queen Adalia\r\n\r\n    3 Philippa: Mistress of the Lodge\r\n\r\n    Royal Decree\r\n\r\n    13 Thaler\r\n\r\n    10 Nenneke\r\n\r\n    7 Operator\r\n\r\n    4 Sile de Tansarville\r\n\r\n    Reinforcements\r\n\r\n    Marching Orders\r\n\r\n    8 Cintrian Royal Guard x2\r\n\r\n    7 Cintrian Knight x3\r\n\r\n    5 Cintrian Enchantress x3\r\n\r\n    3 Cintrian Envoy x3\r\n\r\n    2 Tormented Mage\r\n\r\n    1 Reaver Scout\r\n\r\n    Scout\r\n\r\n    Quen\r\n\r\nОсновной план:\r\nРазмножение Cintrian Knight, защита через Quen, генерация ценности через Envoy. Огромное количество очков, но полностью зависит от выживания рыцарей. Беречь Cintrian Knight, Quen, Calanthe.\r\nМуллиган:\r\nОставлять: Cintrian Knight, Quen, Calanthe, Cintrian Envoy. Менять дубликаты Cintrian Enchantress, если нет синергии.\r\nПервый раунд:\r\nРазыграть Cintrian Knight, защитить Quen.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Envoy.\r\nПоследний раунд:\r\nСохранить Cintrian Knight, Quen, Cintrian Envoy.\r\nСвязки:\r\n\r\n    Cintrian Knight → Quen → защита.\r\n\r\n    Cintrian Envoy → shuffle → ценность.\r\n\r\n    Operator → копирование Knight.\r\n    Если нет Quen — использовать Shani для защиты.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить Quen на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Spies, Morvran Reveal, Machines.\r\n    Типичные ошибки:\r\n    Не защищать Cintrian Knight; тратить Quen рано; игнорировать зачистки.\r\n\r\nSVALBLOD RAIN",
+      "family": "skip",
+      "notes": [],
+      "changes": [],
+      "active": false,
+      "reason": "Primary leader is absent from strict Beta 0.9.24"
+    },
+    {
+      "id": 43,
+      "title": "Svalblod Rain",
+      "requestedLeader": "Svalblod",
+      "sourceText": "Svalblod Rain\r\nЛидер: Svalblod\r\nСостав колоды с количеством копий:\r\n\r\n    5 Hammond\r\n\r\n    3 Hym\r\n\r\n    1 Sigvald\r\n\r\n    Tempest\r\n\r\n    13 Udalryk\r\n\r\n    8 Draig Bon-Dhu\r\n\r\n    5 Skjall\r\n\r\n    4 Gremist\r\n\r\n    3 Sigrdrifa\r\n\r\n    Restore\r\n\r\n    10 Corrupted Flaminica x2\r\n\r\n    7 Svalblod Brawler\r\n\r\n    7 An Craite Armorsmith x3\r\n\r\n    7 Berserker Marauder x3\r\n\r\n    2 Deafening Siren x3\r\n\r\n    Primal Savagery\r\n\r\n    Torrential Rain\r\n\r\n    Bone Talisman\r\n\r\nОсновной план:\r\nУстойчивая колода против роя, основанная на дожде и шторме. Усиление сирен для сильного короткого раунда. Svalblod автоматически отправляет сирен в кладбище, Drag Bon-Dhu усиливает их повторно. Armorsmith восстанавливает очки, потерянные от погоды. Sigvald — приманка для Mandrake. Беречь Corrupted Flaminica, Deafening Siren, Sigvald.\r\nМуллиган:\r\nОставлять: Corrupted Flaminica, Deafening Siren, Sigvald, Torrential Rain. Менять дубликаты Berserker Marauder, если нет синергии.\r\nПервый раунд:\r\nРазыграть дождь, затем сирен.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Flaminica.\r\nПоследний раунд:\r\nСохранить Corrupted Flaminica, Deafening Siren, Sigvald.\r\nСвязки:\r\n\r\n    Torrential Rain → Deafening Siren → усиление.\r\n\r\n    Corrupted Flaminica → дождь → ценность.\r\n\r\n    Sigvald → приманка для Mandrake.\r\n    Если нет дождя — использовать Primal Savagery для поиска.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить Mandrake на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Fanatics, Greatswords, Nekker Consume, Assire decks.\r\n    Типичные ошибки:\r\n    Не защищать сирен; тратить Sigvald рано; игнорировать очищение погоды.\r\n\r\nCALANTHE DECKBUFF",
+      "family": "skip",
+      "notes": [],
+      "changes": [],
+      "active": false,
+      "reason": "Primary leader is absent from strict Beta 0.9.24"
+    },
+    {
+      "id": 44,
+      "title": "Calanthe Deckbuff",
+      "requestedLeader": "Queen Calanthe",
+      "sourceText": "Calanthe Deckbuff\r\nЛидер: Queen Calanthe\r\nСостав колоды:\r\n\r\n    Lonely Champion\r\n\r\n    Lyrian Cavalry\r\n\r\n    Buff-карты\r\n\r\n    Прочие\r\n\r\nОсновной план:\r\nПростейшая колода, punish opponents without control. Один юнит (Lonely Champion) усиливается всем, затем возвращается в колоду через Calanthe. Lyrian Cavalry позволяет разыгрывать бронзу на 50+ очков. Беречь Lonely Champion, Calanthe, Lyrian Cavalry.\r\nМуллиган:\r\nОставлять: Lonely Champion, Calanthe, Lyrian Cavalry, buff-карты. Менять дубликаты, если нет синергии.\r\nПервый раунд:\r\nРазыграть Lonely Champion, усилить его.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Lyrian Cavalry.\r\nПоследний раунд:\r\nСохранить Lonely Champion, Calanthe, Lyrian Cavalry.\r\nСвязки:\r\n\r\n    Lonely Champion → buff → Calanthe → shuffle.\r\n\r\n    Lyrian Cavalry → разыгрывание бронзы.\r\n    Если нет Calanthe — использовать другие способы возврата.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к любой колоде с контролем.\r\n    Типичные ошибки:\r\n    Не защищать Lonely Champion; тратить Calanthe рано; игнорировать контроль противника.\r\n\r\nAXEMEN",
+      "family": "skip",
+      "notes": [],
+      "changes": [],
+      "active": false,
+      "reason": "Primary leader is absent from strict Beta 0.9.24"
+    },
+    {
+      "id": 45,
+      "title": "Axemen",
+      "requestedLeader": "Harald the Cripple",
+      "sourceText": "Axemen\r\nЛидер: Harald the Cripple\r\nСостав колоды с количеством копий:\r\n\r\n    6 Birna Bran\r\n\r\n    3 Hym\r\n\r\n    Ragh Nar Roog\r\n\r\n    Korathi Heatwave\r\n\r\n    13 Udalryk\r\n\r\n    6 Derran\r\n\r\n    5 Skjall\r\n\r\n    3 Sigrdrifa\r\n\r\n    Restore\r\n\r\n    Skellige Storm\r\n\r\n    8 An Craite Whaler x3\r\n\r\n    7 Dimun Warship x3\r\n\r\n    6 Tuirseach Axeman x3\r\n\r\n    2 Heymaey Spearmaiden\r\n\r\n    1 Dimun Pirate Captain x3\r\n\r\n    1 Dimun Corsair x3\r\n\r\nОсновной план:\r\nСильнейший длинный раунд в игре, слабейший короткий (после нерфа Corsair). Погодная колода, Axemen для жадных матчапов без removal. Беречь Tuirseach Axeman, An Craite Whaler, Dimun Warship.\r\nМуллиган:\r\nОставлять: Tuirseach Axeman, An Craite Whaler, Dimun Warship, Skellige Storm. Менять дубликаты Dimun Corsair, если нет синергии.\r\nПервый раунд:\r\nРазыграть погоду, затем Axemen.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Axemen.\r\nПоследний раунд:\r\nСохранить Tuirseach Axeman, An Craite Whaler, Restore.\r\nСвязки:\r\n\r\n    Skellige Storm → Tuirseach Axeman → усиление.\r\n\r\n    An Craite Whaler → Dimun Warship → погода.\r\n\r\n    Restore → возврат Axeman.\r\n    Если нет погоды — использовать Ragh Nar Roog.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Greatswords, Armor, любой колоде с более чем одним очищением погоды.\r\n    Типичные ошибки:\r\n    Не защищать Axemen; тратить Restore рано; игнорировать очищение погоды.\r\n\r\nDRYADS",
+      "family": "axemen",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Dimun Corsair",
+          "resolvedId": 200145,
+          "method": "excluded-copy-tier-or-deck-limit"
+        }
+      ],
+      "active": true,
+      "leader": 200161,
+      "faction": 32,
+      "familyId": 27,
+      "presetId": 92,
+      "templateIds": [
+        152105,
+        200102,
+        113101,
+        200018,
+        152214,
+        201646,
+        200212,
+        152211,
+        153201,
+        113203,
+        200300,
+        200300,
+        200300,
+        200105,
+        200105,
+        200105,
+        152312,
+        152312,
+        152312,
+        200528,
+        152306,
+        152306,
+        152306,
+        200145,
+        200145
+      ]
+    },
+    {
+      "id": 46,
+      "title": "Dryads",
+      "requestedLeader": "Eithne (или другой лидер под дриад)",
+      "sourceText": "Dryads\r\nЛидер: Eithne (или другой лидер под дриад)\r\nСостав колоды:\r\n\r\n    Dryad Grovekeeper\r\n\r\n    Germant\r\n\r\n    Peasant Militia\r\n\r\n    Ozak\r\n\r\n    Vryhedd Officer\r\n\r\n    Branen\r\n\r\n    Frexienet\r\n\r\n    Etienne\r\n\r\n    Прочие дриады\r\n\r\nОсновной план:\r\nИспользование роя для генерации очков через Dryad Grovekeeper. Germant и Peasant Militia помогают создавать рой. Ozak возвращает большого Grovekeeper (17 очков Vryhedd Officer). Финишер — Dryads + Etienne. Branen → Frexienet для огромной ценности после роя. Отличный длинный раунд, страдает от коротких. Беречь Dryad Grovekeeper, Ozak, Etienne.\r\nМуллиган:\r\nОставлять: Dryad Grovekeeper, Ozak, Etienne, Branen. Менять дубликаты Peasant Militia, если нет синергии.\r\nПервый раунд:\r\nРазыграть дриад, создать рой.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Grovekeeper.\r\nПоследний раунд:\r\nСохранить Dryad Grovekeeper, Ozak, Etienne.\r\nСвязки:\r\n\r\n    Dryad Grovekeeper → рой → усиление.\r\n\r\n    Ozak → возврат Grovekeeper.\r\n\r\n    Branen → Frexienet → ценность.\r\n\r\n    Etienne → повтор дриад.\r\n    Если нет Grovekeeper — использовать Peasant Militia для роя.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Axemen, Machines, Spies, коротким раундам.\r\n    Типичные ошибки:\r\n    Не защищать Grovekeeper; тратить Ozak рано; игнорировать зачистки.\r\n\r\nTIER 4+ (The Rest)\r\n\r\nДля колод из категории TIER 4+ (Calanthe Deckbuff, Axemen, Dryads, \"The Rest\") стратегии аналогичны описанным выше, но с ещё большим акцентом на мемность и неожиданность. Основные принципы:\r\n\r\n    Максимальная синергия: даже если колода слабая, ИИ должен пытаться собрать комбо.\r\n\r\n    Неожиданные ходы: использовать карты, которые противник не ожидает.\r\n\r\n    Пас и экономия: не тратить ключевые карты впустую, если победа маловероятна.\r\n\r\n    Адаптация: если противник показывает контроль, менять план на месте.\r\n\r\nОБЩИЕ РЕКОМЕНДАЦИИ ДЛЯ ИИ ПО ВСЕМ КОЛОДАМ\r\n\r\n    Анализ фракции противника:\r\n\r\n        Скеллиге → ожидать погоду, Axemen, Greatswords, Queensguards.\r\n\r\n        Нильфгаард → ожидать Spies, Alchemy, Reveal, Handbuff.\r\n\r\n        Север → ожидать Machines, Armor, Temerians, Cursed.\r\n\r\n        Скоя'таэль → ожидать Handbuff, Scorch, Dryads, Spell'teal.\r\n\r\n        Монстры → ожидать Vampires, Arachas, Frost, Ogroids, Deathwish.\r\n\r\n    Учёт показанных карт:\r\n    Если противник уже показал ключевую карту (например, Scorch), ИИ должен избегать выставления всех юнитов в один ряд.\r\n\r\n    Управление ресурсами:\r\n    Не тратить все сильные карты в первом раунде, если план на длинный раунд. Но и не экономить слишком много, если можно выиграть раунд с преимуществом.\r\n\r\n    Пас-логика:\r\n\r\n        Если ИИ впереди на 20+ очков и у противника меньше карт — пасовать.\r\n\r\n        Если ИИ отстаёт на 10–15 очков и имеет одну сильную карту — догнать и пасовать.\r\n\r\n        Если ИИ отстаёт на 30+ очков — либо потратить несколько карт для догона, либо смириться с поражением в раунде и сохранить ресурсы.\r\n\r\n    Противодействие погоде:\r\n\r\n        Если противник использует погоду, ИИ должен либо очистить её, либо играть в незатронутых рядах, либо усилить свои юниты, чтобы компенсировать урон.\r\n\r\n    Противодействие рою:\r\n\r\n        Использовать массовый урон (Cadaverine, Lacerate, Scorch, Igni) в правильный момент.\r\n\r\n        Не позволять рою разрастаться бесконтрольно.\r\n\r\n    Противодействие контролю:\r\n\r\n        Не выставлять все движки сразу.\r\n\r\n        Использовать bait-карты, чтобы выманить removal.\r\n\r\n        Защищать ключевые юниты (Quen, Feign Death, Mandrake).\r\n\r\n    Типичные ошибки ИИ:\r\n\r\n        Слишком ранний пас при преимуществе.\r\n\r\n        Трата ключевых карт без защиты.\r\n\r\n        Игнорирование показанных карт противника.\r\n\r\n        Неправильный муллиган (оставление дубликатов, ненужных карт).\r\n\r\n        Неиспользование погоды/контроля в нужный момент.",
+      "family": "dryads",
+      "notes": [],
+      "changes": [
+        {
+          "requested": "Dryad Grovekeeper",
+          "resolvedId": 142301,
+          "method": "role-substitution",
+          "resolvedName": "Hawker Healer"
+        },
+        {
+          "requested": "Germant",
+          "resolvedId": 200523,
+          "method": "alias",
+          "resolvedName": "Germain Piquant"
+        },
+        {
+          "requested": "Ozak",
+          "resolvedId": 200520,
+          "method": "role-substitution",
+          "resolvedName": "Éibhear Hattori"
+        },
+        {
+          "requested": "Vryhedd Officer",
+          "resolvedId": 142303,
+          "method": "alias",
+          "resolvedName": "Vrihedd Officer"
+        },
+        {
+          "requested": "Branen",
+          "resolvedId": 142209,
+          "method": "alias",
+          "resolvedName": "Braenn"
+        },
+        {
+          "requested": "Frexienet",
+          "resolvedId": 142102,
+          "method": "role-substitution",
+          "resolvedName": "Isengrim Faoiltiarna"
+        },
+        {
+          "requested": "Etienne",
+          "resolvedId": 142106,
+          "method": "role-substitution",
+          "resolvedName": "Aglaïs"
+        },
+        {
+          "requested": "Прочие дриады",
+          "resolvedId": null,
+          "method": "fill-from-archetype",
+          "rejectedResolvedId": null
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 142107,
+          "resolvedName": "Ithlinne Aegli",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 201779,
+          "resolvedName": "Morenn: Forest Child",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 142204,
+          "resolvedName": "Toruviel",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 142208,
+          "resolvedName": "Morenn",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 142210,
+          "resolvedName": "Malena",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 142316,
+          "resolvedName": "Blue Mountain Elite",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 142316,
+          "resolvedName": "Blue Mountain Elite",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 142316,
+          "resolvedName": "Blue Mountain Elite",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 142308,
+          "resolvedName": "Elven Mercenary",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 142308,
+          "resolvedName": "Elven Mercenary",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 142308,
+          "resolvedName": "Elven Mercenary",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 200138,
+          "resolvedName": "Sage",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 200138,
+          "resolvedName": "Sage",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 200138,
+          "resolvedName": "Sage",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 113301,
+          "resolvedName": "Alzur's Thunder",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 113301,
+          "resolvedName": "Alzur's Thunder",
+          "method": "archetype-fill"
+        },
+        {
+          "requested": "Unfilled roster slot",
+          "resolvedId": 113301,
+          "resolvedName": "Alzur's Thunder",
+          "method": "archetype-fill"
+        }
+      ],
+      "active": true,
+      "leader": 200166,
+      "faction": 16,
+      "familyId": 28,
+      "presetId": 93,
+      "templateIds": [
+        142102,
+        142106,
+        200523,
+        200520,
+        142209,
+        142301,
+        201753,
+        142303,
+        142107,
+        201779,
+        142204,
+        142208,
+        142210,
+        142316,
+        142316,
+        142316,
+        142308,
+        142308,
+        142308,
+        200138,
+        200138,
+        200138,
+        113301,
+        113301,
+        113301
+      ]
+    }
+  ],
+  "combos": [
+    {
+      "setup": 162307,
+      "payoff": 162315,
+      "weight": 3
+    },
+    {
+      "setup": 162307,
+      "payoff": 162314,
+      "weight": 3
+    },
+    {
+      "setup": 162307,
+      "payoff": 162210,
+      "weight": 3
+    },
+    {
+      "setup": 162307,
+      "payoff": 162211,
+      "weight": 3
+    },
+    {
+      "setup": 162307,
+      "payoff": 200115,
+      "weight": 3
+    },
+    {
+      "setup": 162308,
+      "payoff": 162315,
+      "weight": 3
+    },
+    {
+      "setup": 162308,
+      "payoff": 162314,
+      "weight": 3
+    },
+    {
+      "setup": 162308,
+      "payoff": 162211,
+      "weight": 3
+    },
+    {
+      "setup": 162308,
+      "payoff": 200115,
+      "weight": 3
+    },
+    {
+      "setup": 162317,
+      "payoff": 162316,
+      "weight": 3
+    },
+    {
+      "setup": 162317,
+      "payoff": 162103,
+      "weight": 3
+    },
+    {
+      "setup": 162317,
+      "payoff": 162318,
+      "weight": 3
+    },
+    {
+      "setup": 200294,
+      "payoff": 201610,
+      "weight": 3
+    },
+    {
+      "setup": 200294,
+      "payoff": 201617,
+      "weight": 3
+    },
+    {
+      "setup": 200294,
+      "payoff": 200296,
+      "weight": 3
+    },
+    {
+      "setup": 200296,
+      "payoff": 201610,
+      "weight": 2
+    },
+    {
+      "setup": 200296,
+      "payoff": 201617,
+      "weight": 2
+    },
+    {
+      "setup": 200296,
+      "payoff": 162314,
+      "weight": 2
+    },
+    {
+      "setup": 122309,
+      "payoff": 122301,
+      "weight": 2
+    },
+    {
+      "setup": 122309,
+      "payoff": 122302,
+      "weight": 2
+    },
+    {
+      "setup": 122309,
+      "payoff": 200049,
+      "weight": 2
+    },
+    {
+      "setup": 122309,
+      "payoff": 122304,
+      "weight": 2
+    },
+    {
+      "setup": 122309,
+      "payoff": 122303,
+      "weight": 2
+    },
+    {
+      "setup": 122301,
+      "payoff": 122318,
+      "weight": 3
+    },
+    {
+      "setup": 122302,
+      "payoff": 122318,
+      "weight": 3
+    },
+    {
+      "setup": 200049,
+      "payoff": 122318,
+      "weight": 3
+    },
+    {
+      "setup": 201625,
+      "payoff": 201630,
+      "weight": 3
+    },
+    {
+      "setup": 201624,
+      "payoff": 201628,
+      "weight": 2
+    },
+    {
+      "setup": 201624,
+      "payoff": 201633,
+      "weight": 2
+    },
+    {
+      "setup": 142205,
+      "payoff": 200535,
+      "weight": 3
+    },
+    {
+      "setup": 142205,
+      "payoff": 142401,
+      "weight": 3
+    },
+    {
+      "setup": 142315,
+      "payoff": 142310,
+      "weight": 2
+    },
+    {
+      "setup": 142315,
+      "payoff": 201636,
+      "weight": 2
+    },
+    {
+      "setup": 200136,
+      "payoff": 142312,
+      "weight": 2
+    },
+    {
+      "setup": 200136,
+      "payoff": 142301,
+      "weight": 2
+    },
+    {
+      "setup": 200136,
+      "payoff": 142401,
+      "weight": 2
+    },
+    {
+      "setup": 200039,
+      "payoff": 142308,
+      "weight": 2
+    },
+    {
+      "setup": 200039,
+      "payoff": 201704,
+      "weight": 2
+    },
+    {
+      "setup": 200039,
+      "payoff": 113310,
+      "weight": 2
+    },
+    {
+      "setup": 200039,
+      "payoff": 113301,
+      "weight": 2
+    },
+    {
+      "setup": 142213,
+      "payoff": 200293,
+      "weight": 2
+    },
+    {
+      "setup": 142213,
+      "payoff": 201559,
+      "weight": 2
+    },
+    {
+      "setup": 142213,
+      "payoff": 142311,
+      "weight": 2
+    },
+    {
+      "setup": 200046,
+      "payoff": 152304,
+      "weight": 3
+    },
+    {
+      "setup": 200046,
+      "payoff": 200144,
+      "weight": 3
+    },
+    {
+      "setup": 200046,
+      "payoff": 152313,
+      "weight": 3
+    },
+    {
+      "setup": 200040,
+      "payoff": 152309,
+      "weight": 3
+    },
+    {
+      "setup": 152312,
+      "payoff": 200105,
+      "weight": 3
+    },
+    {
+      "setup": 152312,
+      "payoff": 200300,
+      "weight": 3
+    },
+    {
+      "setup": 152312,
+      "payoff": 152105,
+      "weight": 3
+    },
+    {
+      "setup": 152314,
+      "payoff": 200036,
+      "weight": 3
+    },
+    {
+      "setup": 152314,
+      "payoff": 152103,
+      "weight": 3
+    },
+    {
+      "setup": 152314,
+      "payoff": 152213,
+      "weight": 3
+    },
+    {
+      "setup": 132305,
+      "payoff": 201606,
+      "weight": 3
+    },
+    {
+      "setup": 132305,
+      "payoff": 132308,
+      "weight": 3
+    },
+    {
+      "setup": 132305,
+      "payoff": 132107,
+      "weight": 3
+    },
+    {
+      "setup": 132201,
+      "payoff": 201606,
+      "weight": 3
+    },
+    {
+      "setup": 132201,
+      "payoff": 132308,
+      "weight": 3
+    },
+    {
+      "setup": 132201,
+      "payoff": 132107,
+      "weight": 3
+    },
+    {
+      "setup": 132217,
+      "payoff": 132308,
+      "weight": 3
+    },
+    {
+      "setup": 132217,
+      "payoff": 201606,
+      "weight": 3
+    },
+    {
+      "setup": 132217,
+      "payoff": 200037,
+      "weight": 3
+    },
+    {
+      "setup": 132213,
+      "payoff": 132312,
+      "weight": 3
+    },
+    {
+      "setup": 132213,
+      "payoff": 200037,
+      "weight": 3
+    },
+    {
+      "setup": 200295,
+      "payoff": 132312,
+      "weight": 2
+    },
+    {
+      "setup": 200295,
+      "payoff": 200037,
+      "weight": 2
+    },
+    {
+      "setup": 200301,
+      "payoff": 132402,
+      "weight": 2
+    },
+    {
+      "setup": 200301,
+      "payoff": 132310,
+      "weight": 2
+    },
+    {
+      "setup": 200301,
+      "payoff": 132309,
+      "weight": 2
+    },
+    {
+      "setup": 200301,
+      "payoff": 200026,
+      "weight": 2
+    }
+  ],
+  "engineWeights": {
+    "162307": 2,
+    "162308": 2,
+    "162317": 2,
+    "200294": 2,
+    "200296": 1,
+    "122309": 2,
+    "123301": 2,
+    "122315": 1,
+    "142205": 1,
+    "142315": 1,
+    "200136": 2,
+    "142213": 1,
+    "200040": 2,
+    "152309": 2,
+    "152314": 2,
+    "152312": 2,
+    "152210": 1,
+    "201646": 1,
+    "132305": 1,
+    "132201": 2,
+    "132308": 2,
+    "200301": 1,
+    "201781": 4,
+    "132302": 1,
+    "122306": 2
+  },
+  "finishers": [
+    112102,
+    113309,
+    142108,
+    122105,
+    132202,
+    132408,
+    142101,
+    152107,
+    112105,
+    200177
+  ],
+  "resurrectors": [
+    152310,
+    152211,
+    153201,
+    200145,
+    162304,
+    201619,
+    201696,
+    200520
+  ],
+  "limitation": "Role substitutions retain original Beta abilities; strategic advice is adapted, not a faithful implementation of unavailable DIY cards."
+}

@@ -1,0 +1,723 @@
+{
+  "catalogSha256": "022539802636cb45e92123a630c3788a0674c39b538fa1f69a64761a6b3ddbd3",
+  "policy": "Full Monsters faction from pinned Beta 0.9.24 source graphs, including five leaders and all generated dependencies.",
+  "cards": [
+    {
+      "templateId": 132103,
+      "fields": {
+        "specialMode": 1,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "deploySpawnTemplate": 132403,
+        "deploySpawnCount": "Counter"
+      },
+      "abilityRecordKey": "ability/123"
+    },
+    {
+      "templateId": 132210,
+      "fields": {
+        "specialMode": 2,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "deploySpawnTemplate": 132404,
+        "deploySpawnCount": "Counter"
+      },
+      "abilityRecordKey": "ability/137"
+    },
+    {
+      "templateId": 132218,
+      "fields": {
+        "specialMode": 3,
+        "amount": "Strengthen",
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 0,
+        "pileTraitMask": 512,
+        "pileLocation": 31
+      },
+      "abilityRecordKey": "ability/145"
+    },
+    {
+      "templateId": 201660,
+      "fields": {
+        "specialMode": 3,
+        "amount": "Strengthen",
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 8,
+        "pileTraitMask": 2176,
+        "pileLocation": 543
+      },
+      "abilityRecordKey": "ability/491"
+    },
+    {
+      "templateId": 132408,
+      "fields": {
+        "specialMode": 4,
+        "amount": "Damage",
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 8,
+        "specialCount": "MaxTargets"
+      },
+      "abilityRecordKey": "ability/166"
+    },
+    {
+      "templateId": 132214,
+      "fields": {
+        "specialMode": 5,
+        "amount": "Damage",
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "conditionalDamage": "Damage2"
+      },
+      "abilityRecordKey": "ability/141"
+    },
+    {
+      "templateId": 132409,
+      "fields": {
+        "specialMode": 6,
+        "amount": "Damage",
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "conditionalDamage": "Damage2"
+      },
+      "abilityRecordKey": "ability/167"
+    },
+    {
+      "templateId": 201599,
+      "fields": {
+        "specialMode": 7,
+        "amount": "Damage",
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "conditionalDamage": "Damage2"
+      },
+      "abilityRecordKey": "ability/445"
+    },
+    {
+      "templateId": 200233,
+      "fields": {
+        "specialMode": 8,
+        "amount": 0,
+        "targetMinimum": 1,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264
+      },
+      "abilityRecordKey": "ability/400"
+    },
+    {
+      "templateId": 132211,
+      "fields": {
+        "specialMode": 9,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 1,
+        "targetTypes": 4,
+        "targetTiers": 2,
+        "targetIgnore": 264,
+        "specialCount": "Counter"
+      },
+      "abilityRecordKey": "ability/138"
+    },
+    {
+      "templateId": 132312,
+      "fields": {
+        "specialMode": 10,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 1,
+        "targetTypes": 4,
+        "targetTiers": 2,
+        "targetIgnore": 264,
+        "pileTraitMask": 32768
+      },
+      "abilityRecordKey": "ability/157"
+    },
+    {
+      "templateId": 201701,
+      "fields": {
+        "specialMode": 11,
+        "amount": 0,
+        "targetMinimum": 1,
+        "targetSide": 1,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "specialCount": 1
+      },
+      "abilityRecordKey": "ability/520"
+    },
+    {
+      "templateId": 201606,
+      "fields": {
+        "specialMode": 11,
+        "amount": 0,
+        "targetMinimum": 1,
+        "targetSide": 1,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "specialCount": "Counter"
+      },
+      "abilityRecordKey": "ability/449"
+    },
+    {
+      "templateId": 201743,
+      "fields": {
+        "specialMode": 11,
+        "amount": 0,
+        "targetMinimum": 1,
+        "targetSide": 1,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "specialCount": "Counter"
+      },
+      "abilityRecordKey": "ability/542"
+    },
+    {
+      "templateId": 132220,
+      "fields": {
+        "specialMode": 12,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "playTemplateId": 200067
+      },
+      "abilityRecordKey": "ability/146"
+    },
+    {
+      "templateId": 132203,
+      "fields": {
+        "specialMode": 14,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264
+      },
+      "abilityRecordKey": "ability/131"
+    },
+    {
+      "templateId": 133302,
+      "fields": {
+        "specialMode": 14,
+        "amount": "Boost",
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264
+      },
+      "abilityRecordKey": "ability/169"
+    },
+    {
+      "templateId": 132404,
+      "fields": {
+        "specialMode": 13,
+        "amount": "Damage",
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 8
+      },
+      "abilityRecordKey": "ability/163"
+    },
+    {
+      "templateId": 132104,
+      "fields": {
+        "specialMode": 16,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264
+      },
+      "abilityRecordKey": "ability/124"
+    },
+    {
+      "templateId": 132314,
+      "fields": {
+        "specialMode": 17,
+        "amount": "Damage",
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "conditionalDamage": "Damage2"
+      },
+      "abilityRecordKey": "ability/159"
+    },
+    {
+      "templateId": 200218,
+      "fields": {
+        "specialMode": 18,
+        "amount": "Damage",
+        "targetMinimum": 0,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "conditionalDamage": "Damage2",
+        "specialCount": "MaxTargets"
+      },
+      "abilityRecordKey": "ability/390"
+    },
+    {
+      "templateId": 132202,
+      "fields": {
+        "specialMode": 19,
+        "amount": "Boost",
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 6,
+        "targetIgnore": 0
+      },
+      "abilityRecordKey": "ability/130"
+    },
+    {
+      "templateId": 132216,
+      "fields": {
+        "specialMode": 20,
+        "amount": 0,
+        "targetMinimum": 1,
+        "targetSide": 1,
+        "targetTypes": 4,
+        "targetTiers": 14,
+        "targetIgnore": 0
+      },
+      "abilityRecordKey": "ability/143"
+    },
+    {
+      "templateId": 201698,
+      "fields": {
+        "specialMode": 21,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 6,
+        "targetIgnore": 0
+      },
+      "abilityRecordKey": "ability/517"
+    },
+    {
+      "templateId": 200037,
+      "fields": {
+        "specialMode": 22,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 1,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264
+      },
+      "abilityRecordKey": "ability/312"
+    },
+    {
+      "templateId": 200026,
+      "fields": {
+        "specialMode": 23,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 1,
+        "targetTypes": 4,
+        "targetTiers": 2,
+        "targetIgnore": 264,
+        "pileTraitMask": 4096
+      },
+      "abilityRecordKey": "ability/305"
+    },
+    {
+      "templateId": 200539,
+      "fields": {
+        "specialMode": 24,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 1,
+        "targetTypes": 4,
+        "targetTiers": 2,
+        "targetIgnore": 0
+      },
+      "abilityRecordKey": "ability/423"
+    },
+    {
+      "templateId": 132406,
+      "fields": {
+        "specialMode": 25,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 1,
+        "targetTypes": 4,
+        "targetTiers": 2,
+        "targetIgnore": 0,
+        "pileLocation": 16,
+        "pileTraitMask": 32768
+      },
+      "abilityRecordKey": "ability/164"
+    },
+    {
+      "templateId": 200534,
+      "fields": {
+        "specialMode": 25,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 1,
+        "targetTypes": 4,
+        "targetTiers": 2,
+        "targetIgnore": 0,
+        "pileLocation": 16,
+        "pileTraitMask": 32768
+      },
+      "abilityRecordKey": "ability/421"
+    },
+    {
+      "templateId": 200220,
+      "fields": {
+        "specialMode": 25,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 1,
+        "targetTypes": 14,
+        "targetTiers": 6,
+        "targetIgnore": 0,
+        "pileLocation": 16,
+        "pileTraitMask": 16384
+      },
+      "abilityRecordKey": "ability/391"
+    },
+    {
+      "templateId": 200112,
+      "fields": {
+        "specialMode": 26,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "playTemplateId": 200067
+      },
+      "abilityRecordKey": "ability/347"
+    },
+    {
+      "templateId": 200222,
+      "fields": {
+        "specialMode": 27,
+        "amount": "Strengthen",
+        "targetMinimum": 1,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "conditionalDamage": "Strengthen2"
+      },
+      "abilityRecordKey": "ability/393"
+    },
+    {
+      "templateId": 132101,
+      "fields": {
+        "specialMode": 28,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "transformTemplate": 200457
+      },
+      "abilityRecordKey": "ability/121"
+    },
+    {
+      "templateId": 131102,
+      "fields": {
+        "specialMode": 29,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "pileLocation": 16
+      },
+      "abilityRecordKey": "ability/120"
+    },
+    {
+      "templateId": 200301,
+      "fields": {
+        "specialMode": 30,
+        "amount": "Boost",
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "pileTraitMask": 4096
+      },
+      "abilityRecordKey": "ability/411"
+    },
+    {
+      "templateId": 200502,
+      "fields": {
+        "specialMode": 31,
+        "amount": 0,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264
+      },
+      "abilityRecordKey": "ability/412"
+    },
+    {
+      "templateId": 132204,
+      "fields": {
+        "specialMode": 32,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 1,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264
+      },
+      "abilityRecordKey": "ability/132"
+    },
+    {
+      "templateId": 201584,
+      "fields": {
+        "specialMode": 33,
+        "amount": 0,
+        "targetMinimum": 1,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264
+      },
+      "abilityRecordKey": "ability/438"
+    },
+    {
+      "templateId": 201587,
+      "fields": {
+        "specialMode": 34,
+        "amount": 0,
+        "targetMinimum": 1,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264
+      },
+      "abilityRecordKey": "ability/440"
+    },
+    {
+      "templateId": 131101,
+      "fields": {
+        "specialMode": 35,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264
+      },
+      "abilityRecordKey": "ability/119"
+    },
+    {
+      "templateId": 200174,
+      "fields": {
+        "specialMode": 36,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "deploySummonTemplate": 132304
+      },
+      "abilityRecordKey": "ability/377"
+    },
+    {
+      "templateId": 200052,
+      "fields": {
+        "specialMode": 37,
+        "amount": "Boost",
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "conditionalDamage": "Damage"
+      },
+      "abilityRecordKey": "ability/324"
+    },
+    {
+      "templateId": 132108,
+      "fields": {
+        "specialMode": 15,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "timerPeriod": "Counter"
+      },
+      "abilityRecordKey": "ability/128"
+    },
+    {
+      "templateId": 132201,
+      "fields": {
+        "specialMode": 15,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "specialCount": "Counter",
+        "deploySpawnTemplate": 200174
+      },
+      "abilityRecordKey": "ability/129"
+    },
+    {
+      "templateId": 132212,
+      "fields": {
+        "specialMode": 15,
+        "amount": "Boost",
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264
+      },
+      "abilityRecordKey": "ability/139"
+    },
+    {
+      "templateId": 132301,
+      "fields": {
+        "specialMode": 15,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264
+      },
+      "abilityRecordKey": "ability/147"
+    },
+    {
+      "templateId": 132315,
+      "fields": {
+        "specialMode": 15,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264
+      },
+      "abilityRecordKey": "ability/160"
+    },
+    {
+      "templateId": 200038,
+      "fields": {
+        "specialMode": 15,
+        "amount": "Damage",
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "conditionalDamage": "Damage2"
+      },
+      "abilityRecordKey": "ability/313"
+    },
+    {
+      "templateId": 200114,
+      "fields": {
+        "specialMode": 15,
+        "amount": 0,
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "deploySpawnTemplate": 132403
+      },
+      "abilityRecordKey": "ability/348"
+    },
+    {
+      "templateId": 201600,
+      "fields": {
+        "specialMode": 15,
+        "amount": "Boost",
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264
+      },
+      "abilityRecordKey": "ability/446"
+    },
+    {
+      "templateId": 201781,
+      "fields": {
+        "specialMode": 15,
+        "amount": "Heal",
+        "targetMinimum": 0,
+        "targetSide": 0,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264,
+        "addedArmor": "Armor"
+      },
+      "abilityRecordKey": "ability/565"
+    },
+    {
+      "templateId": 201700,
+      "fields": {
+        "specialMode": 38,
+        "amount": 0,
+        "targetMinimum": 1,
+        "targetSide": 2,
+        "targetTypes": 4,
+        "targetTiers": 15,
+        "targetIgnore": 264
+      },
+      "abilityRecordKey": "ability/519"
+    }
+  ]
+}

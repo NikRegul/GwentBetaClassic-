@@ -1,0 +1,160 @@
+{
+  "catalogSha256": "022539802636cb45e92123a630c3788a0674c39b538fa1f69a64761a6b3ddbd3",
+  "policy": "Original template choices select branches on the requesting card; display templates are not separately played or counted as implemented cards.",
+  "cards": [
+    {
+      "templateId": 113320,
+      "choices": [
+        {
+          "templateId": 113403,
+          "route": "reset_base",
+          "amount": 3,
+          "minimum": 0,
+          "side": 0,
+          "tiers": 15,
+          "ignore": 264
+        },
+        {
+          "templateId": 113404,
+          "route": "reset_base",
+          "amount": -3,
+          "minimum": 0,
+          "side": 0,
+          "tiers": 15,
+          "ignore": 264
+        }
+      ]
+    },
+    {
+      "templateId": 200223,
+      "choices": [
+        {
+          "templateId": 201562,
+          "route": "heal_base",
+          "healReset": true,
+          "amount": 6,
+          "minimum": 0,
+          "side": 0,
+          "tiers": 15,
+          "ignore": 264
+        },
+        {
+          "templateId": 201563,
+          "route": "reset_base",
+          "amount": -6,
+          "minimum": 0,
+          "side": 0,
+          "tiers": 15,
+          "ignore": 264
+        }
+      ]
+    },
+    {
+      "templateId": 201598,
+      "choices": [
+        {
+          "templateId": 201702,
+          "route": "pile",
+          "location": 32,
+          "minimum": 1,
+          "side": 1,
+          "tiers": 2,
+          "ignore": 0,
+          "traits": 96
+        },
+        {
+          "templateId": 201703,
+          "route": "heal_base",
+          "amount": 3,
+          "minimum": 1,
+          "side": 1,
+          "tiers": 15,
+          "ignore": 264
+        }
+      ]
+    },
+    {
+      "templateId": 201632,
+      "choices": [
+        {
+          "templateId": 201709,
+          "route": "parity",
+          "parity": 1,
+          "amount": 3,
+          "minimum": 0,
+          "side": 2,
+          "tiers": 15,
+          "ignore": 8
+        },
+        {
+          "templateId": 201710,
+          "route": "parity",
+          "parity": 0,
+          "amount": 3,
+          "minimum": 0,
+          "side": 2,
+          "tiers": 15,
+          "ignore": 8
+        },
+        {
+          "templateId": 201768,
+          "route": "pile_random",
+          "location": 16,
+          "minimum": 1,
+          "side": 1,
+          "tiers": 6,
+          "ignore": 0,
+          "traits": 0
+        }
+      ]
+    },
+    {
+      "templateId": 201648,
+      "choices": [
+        {
+          "templateId": 201711,
+          "route": "destroy",
+          "minimum": 1,
+          "side": 0,
+          "tiers": 6,
+          "ignore": 264,
+          "traits": 128
+        },
+        {
+          "templateId": 201712,
+          "route": "damage_banish",
+          "amount": 9,
+          "minimum": 1,
+          "side": 0,
+          "tiers": 15,
+          "ignore": 264
+        }
+      ]
+    },
+    {
+      "templateId": 200067,
+      "choices": [
+        {
+          "templateId": 201746,
+          "route": "row_token",
+          "token": 256,
+          "amount": 2,
+          "minimum": 1,
+          "side": 1,
+          "tiers": 15,
+          "ignore": 8
+        },
+        {
+          "templateId": 201747,
+          "route": "row_token",
+          "token": 2048,
+          "amount": 2,
+          "minimum": 1,
+          "side": 2,
+          "tiers": 15,
+          "ignore": 8
+        }
+      ]
+    }
+  ]
+}
