@@ -207,7 +207,7 @@ def main():
         for entry in refs['vfx']:
             add_effect(entry['eventId'])
             if entry['hideEventId']: add_effect(entry['hideEventId'])
-        cue_bindings = {3:add_effect(vfx['DestroyDestroyBlood']), 5:add_effect(ui('GameIntroSoundHandler','/FadeOutSfx/Events/0')),
+        cue_bindings = {3:add_effect(vfx['PowerDirectPhysical']), 5:add_effect(ui('GameIntroSoundHandler','/FadeOutSfx/Events/0')),
             6:add_effect(ui('MessageRendererSoundHandler','/LocalHalfCrown')), 7:add_effect(ui('GameIntroSoundHandler','/VsSfx/Events/0')),
             32:add_effect(vfx['CardTimerVFX']), 9:add_effect(vfx['LockToken']), 10:add_effect(vfx['NatureTransform']),
             11:add_effect(vfx['DestroyDestroyBlood']), 12:add_effect(vfx['BanishCardEffect']),

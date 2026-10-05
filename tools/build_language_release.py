@@ -5,8 +5,13 @@ ROOT=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('step',choices=['prepare','cook','strings','audio','dependencies','pack','metadata','archive'])
 parser.add_argument('--language',choices=['ru','en'],required=True)
-a=parser.parse_args();LANG=a.language;VERSION='0.2.0'
-BASE=ROOT/('BetaGwent/build/release89/'+LANG)
+parser.add_argument('--stage',type=int,default=89)
+parser.add_argument('--version',default='0.2.0')
+parser.add_argument('--compiled',type=Path,help='Verified script compilation for this package')
+a=parser.parse_args();LANG=a.language;VERSION=a.version;STAGE=a.stage
+if STAGE!=89 and VERSION=='0.2.0':raise SystemExit('New stages must use a new version; first-release archives are immutable')
+if not re.fullmatch(r'[0-9A-Za-z.\-]+',VERSION):raise SystemExit('Invalid version')
+BASE=ROOT/('BetaGwent/build/release'+str(STAGE)+'/'+LANG)
 PROJECT=BASE/'project/BetaGwent0924';WORK=PROJECT/'workspace'
 COOKED=BASE/'cooked';PACKAGE=BASE/'package';CONTENT=PACKAGE/'Mods/modBetaGwent0924/content'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -24,8 +29,12 @@ if a.step=='prepare':
     for rel in ('workspace/betagwent','workspace/gameplay/gui_new','workspace/gameplay/items','workspace/gameplay/globals'):
         if (current/rel).exists():shutil.copytree(current/rel,PROJECT/rel,dirs_exist_ok=True)
     shutil.copyfile(current/'LocalEditorStringDataBaseW3_UTF8_mod.db',PROJECT/'LocalEditorStringDataBaseW3_UTF8_mod.db')
-    code=ROOT/'BetaGwent/build/board-patch/game/betagwent' if LANG=='ru' else ROOT/'BetaGwent/build/release89/en-source/scripts/game/betagwent'
+    code=ROOT/'BetaGwent/build/board-patch/game/betagwent' if LANG=='ru' else ROOT/('BetaGwent/build/release89/en-source/scripts/game/betagwent' if STAGE==89 else 'BetaGwent/build/stage'+str(STAGE)+'/en/en-source/scripts/game/betagwent')
     shutil.copytree(code,WORK/'scripts/game/betagwent',dirs_exist_ok=True)
+    if STAGE!=89:
+        visuals=ROOT/f'BetaGwent/build/stage{STAGE}/{LANG}/resources'
+        for name in ('betagwent_board.redswf','betagwent_npc00.redswf','betagwent_decks.redswf'):
+            shutil.copyfile(visuals/name,WORK/'betagwent'/name)
     if LANG=='en':
         sys.path.insert(0,str(ROOT/'tools'));from localization89 import strings
         lookup=strings();con=sqlite3.connect(PROJECT/'LocalEditorStringDataBaseW3_UTF8_mod.db')
@@ -49,7 +58,7 @@ if a.step=='prepare':
         if p.suffix in ('.menu','.guiconfig','.redswf'):
             target=BASE/'cook-roots'/p.relative_to(WORK);target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,target)
     files=[dict(path=p.relative_to(PROJECT).as_posix(),sha256=sha(p)) for p in sorted(PROJECT.rglob('*')) if p.is_file()]
-    (BASE/'frozen.json').write_text(json.dumps(dict(stage=89,language=LANG,files=files),indent=2),'utf8')
+    (BASE/'frozen.json').write_text(json.dumps(dict(stage=STAGE,language=LANG,files=files),indent=2),'utf8')
     print('Frozen '+LANG+' project',flush=True)
 else:
     checked();CONTENT.mkdir(parents=True,exist_ok=True)
@@ -76,9 +85,11 @@ else:
         job('pack',['pack','-dir='+str(clean)+'\\','-outdir='+str(CONTENT)+'\\','-compression=LZ4HC'])
     elif a.step=='metadata':job('metadata',['metadatastore','-path='+str(CONTENT)+'\\','-out='+str(CONTENT/'metadata.store')])
     elif a.step=='archive':
-        compilation=ROOT/('BetaGwent/build/board-compile89a' if LANG=='ru' else 'BetaGwent/build/board-compile89enc')
+        compilation=a.compiled or ROOT/('BetaGwent/build/board-compile89a' if LANG=='ru' else 'BetaGwent/build/board-compile89enc')
         r=json.loads((compilation/'result.json').read_text('utf8'));log=(compilation/'stdout.txt').read_text('utf8',errors='replace')
         assert r['exitCode']==0 and not r['timedOut'] and 'Success! Patch scripts blob saved' in log and '[Script]: Error [' not in log
+        for source in r['patchSourcesBefore']:
+            assert sha(WORK/'scripts'/source['path'])==source['sha256'],'Compilation source mismatch: '+source['path']
         shutil.copyfile(compilation/'compiled/blob.rsblob',CONTENT/'precompiled.rsblob')
         for f in ('blob0.bundle','dep.cache','metadata.store','ru.w3strings','en.w3strings','soundspc.cache','precompiled.rsblob'):assert (CONTENT/f).stat().st_size>0
         info=json.loads((PROJECT/'myproject1.w3edit').read_text('utf8'))
@@ -88,9 +99,13 @@ else:
             shutil.copyfile(ROOT/'BetaGwent/build/public-source89/GwentBetaClassic'/name,PACKAGE/name)
         (PACKAGE/'SOURCE.txt').write_text('Source code (GPL-3.0-only): https://github.com/NikRegul/GwentBetaClassic-\n','ascii')
         files=[dict(path=p.relative_to(PACKAGE).as_posix(),bytes=p.stat().st_size,sha256=sha(p)) for p in sorted(PACKAGE.rglob('*')) if p.is_file() and p.name!='manifest.json']
-        report=dict(version=VERSION,stage=89,language=LANG,mediaCount=1418,files=files,licenseIncluded=False,runtimeVerified=False,baseVersionUserAccepted=True)
+        preview=ROOT/f'docs/PRESENTATION{STAGE}_{LANG.upper()}.md'
+        if STAGE!=89 and preview.exists():shutil.copyfile(preview,PACKAGE/('PREVIEW.md' if 'preview' in VERSION else 'UPDATE.md'))
+        files=[dict(path=p.relative_to(PACKAGE).as_posix(),bytes=p.stat().st_size,sha256=sha(p)) for p in sorted(PACKAGE.rglob('*')) if p.is_file() and p.name!='manifest.json']
+        report=dict(version=VERSION,stage=STAGE,language=LANG,mediaCount=1418,files=files,licenseIncluded=False,runtimeVerified=False,baseVersionUserAccepted=True)
         (PACKAGE/'manifest.json').write_text(json.dumps(report,indent=2)+'\n','utf8')
         dest=ROOT/('BetaGwent/release/GwentBetaClassic-'+VERSION+'-'+LANG.upper()+'.zip')
+        if dest.exists():raise SystemExit('Archive already exists; choose a new version instead of overwriting: '+str(dest))
         with zipfile.ZipFile(dest,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
             for p in sorted(PACKAGE.rglob('*')):
                 if p.is_file():z.write(p,p.relative_to(PACKAGE).as_posix())
@@ -99,5 +114,5 @@ else:
             for f in files:assert hashlib.sha256(z.read(f['path'])).hexdigest()==f['sha256']
         report.update(archive=str(dest),archiveBytes=dest.stat().st_size,archiveSha256=sha(dest),archiveVerified=True)
         dest.with_suffix('.zip.sha256').write_text(report['archiveSha256']+'  '+dest.name+'\n','ascii')
-        (ROOT/('docs/evidence/stage89-release-'+LANG+'.json')).write_text(json.dumps(report,indent=2)+'\n','utf8')
+        (ROOT/('docs/evidence/stage'+str(STAGE)+'-release-'+LANG+'.json')).write_text(json.dumps(report,indent=2)+'\n','utf8')
         print('Verified '+LANG+' archive: '+str(dest),flush=True)

@@ -258,6 +258,20 @@ package
             if(getTimer()-movementAt<60)return;movementAt=getTimer();
             var n:Object=getFocus();if(!n)return;
             var options:Array=candidates();var origin:Rectangle=n.rect;
+            var mode:String=state().mode;
+            // The match controls stay behind Start. Stick/D-pad navigation
+            // follows cards -> placement -> targets, without jumping to a
+            // graveyard/menu button merely because it is spatially closer.
+            if(mode=="battle" && n.tag=="hand" && dir==38){invoke("board");dirty=true;return;}
+            if(mode=="inspect" && n.tag=="card" && dir==40 && origin.y>=790){invoke("board");dirty=true;return;}
+            if(n.tag!="control" && (mode=="battle"||mode=="inspect"||mode=="placement"||mode=="target"||mode=="rows"||mode=="choice"||mode=="keg")){
+                var filtered:Array=[];
+                for each(var candidate:Object in options){
+                    var keep:Boolean=mode=="battle"?candidate.tag=="hand":mode=="inspect"?candidate.tag=="card":mode=="placement"?candidate.tag=="position":mode=="rows"?candidate.tag=="row":mode=="target"?(candidate.tag=="target"||candidate.tag=="row"):candidate.tag=="target";
+                    if(keep)filtered.push(candidate);
+                }
+                options=filtered;
+            }
             var cx:Number=origin.x+origin.width/2,cy:Number=origin.y+origin.height/2;
             var best:Object=null;var score:Number=Number.MAX_VALUE;
             for each(var other:Object in options) {
@@ -294,17 +308,26 @@ package
             index=direction==0?0:index<0?(direction>0?0:options.length-1):(index+direction+options.length)%options.length;
             select(options[index]);
         }
-        public function focusPane(right:Boolean):void
+        public function focusPane(right:Boolean,split:Number=1254,cardsOnly:Boolean=false):void
         {
             var options:Array=candidates();var pick:Object=null;var current:Object=getFocus();
-            if(current)panes[current.rect.x>=1254?"right":"left"]=current.key;
-            var remembered:String=panes[right?"right":"left"]||"";
-            for each(var old:Object in options)if(old.key==remembered){select(old);return;}
-            for each(var n:Object in options)if((n.rect.x>=1254)==right){
+            if(current)panes[split+":"+(current.rect.x>=split?"right":"left")]=current.key;
+            var remembered:String=panes[split+":"+(right?"right":"left")]||"";
+            for each(var old:Object in options)if(old.key==remembered&&(old.rect.x>=split)==right&&(!cardsOnly||old.tag=="card")){select(old);return;}
+            for each(var n:Object in options)if((n.rect.x>=split)==right&&(!cardsOnly||n.tag=="card")){
                 if(!pick)pick=n;
                 if(n.tag=="card"){pick=n;break;}
             }
             if(pick)select(pick);
+        }
+        public function focusNearestCard(tag:String,x:Number,y:Number):void
+        {
+            var best:Object=null;var distance:Number=Number.MAX_VALUE;
+            for each(var n:Object in candidates())if(n.tag==tag){
+                var dx:Number=n.rect.x+n.rect.width/2-x,dy:Number=n.rect.y+n.rect.height/2-y;
+                var d:Number=dx*dx+dy*dy;if(d<distance){distance=d;best=n;}
+            }
+            getFocus();if(best)select(best);
         }
         public function focusPlacementRow(direction:int):void
         {

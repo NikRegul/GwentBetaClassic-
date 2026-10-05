@@ -1,4 +1,4 @@
-// Original special graphs, concrete consumers. No substitute generated-unit abilities.
+﻿// Original special graphs, concrete consumers. No substitute generated-unit abilities.
 class CBetaGwentDuelSpecials extends IScriptable
 {
     private var game : CBetaGwentDuelSession;
@@ -200,7 +200,9 @@ class CBetaGwentDuelSpecials extends IScriptable
     {
         var d : SBetaGwentDuelDefinition; var cards : array<CBetaGwentDuelCard>;
         var i : int; var s : SBetaGwentCardSnapshot; d = source.Definition();
-        game.RecordRowVisual(side, row, d.title);
+        // Applying a token records its own row animation. White Frost must
+        // show each adjacent row once, not a generic hit plus a second frost.
+        if (d.specialMode != 15 && d.specialMode != 37) game.RecordRowVisual(side, row, d.title);
         if (d.specialMode == 20)
         {
             // Query physical ends first, filter Ambush afterwards. A lone unit is hit once.

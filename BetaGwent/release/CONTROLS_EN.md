@@ -1,5 +1,7 @@
 # Controls
 
+Before placement, RMB cancels the selected hand card or leader. During an ability already in progress, RMB opens full card inspection without confirming a target; RMB again closes inspection. I and Shift + click also open the description.
+
 Xbox labels below; PlayStation equivalents: A=×, B=○, X=□, Y=△,
 LB/RB=L1/R1, LT/RT=L2/R2, View=Touchpad. The game's swapped confirm/back
 preference is respected. Follow the contextual hint bar for the active screen.
@@ -36,3 +38,5 @@ I, or Shift-click opens full card details.
 
 Keyboard: arrows navigate targets/rows, Enter confirms, F finishes an optional
 choice, Esc backs out, P passes, L uses the leader, Space skips playback.
+
+0.2.1: ←→ hand, ↑ nearest field unit, ↓ from your bottom row returns to the hand. Placement: ↑↓ or LB/RB row. Start opens actions; target navigation does not drift into the side panel.

@@ -1,7 +1,7 @@
 """Replace only the ABC in the already-imported development board resource.
 
-Limited to the observed CR2W v164 layout: one CSwfResource, four or six inline
-CSwfTexture chunks, no imports/buffers/embedded resources. The native GFx
+Limited to the observed CR2W v164 layout: one CSwfResource and a bounded
+array of inline CSwfTexture chunks, no imports/buffers/embedded resources. The native GFx
 image tags, texture chunks, properties and source import identity are kept.
 The new raw SWF must differ from the stored raw SWF only in its single ABC.
 Default: build and verify a candidate. --apply: backup and atomically install.
@@ -46,7 +46,7 @@ def validate_resource(path):
     require(struct.unpack_from('<II', data, 24) == (len(data), len(data)), 'Unexpected file/buffer extent')
     require(header_crc(data) == struct.unpack_from('<I', data, 32)[0], 'Invalid header CRC')
     texture_count = len(resource.exports) - 1
-    require(texture_count in (4, 6) and [item['class'] for item in resource.exports] == ['CSwfResource'] + ['CSwfTexture'] * texture_count,
+    require(1 <= texture_count <= 32 and [item['class'] for item in resource.exports] == ['CSwfResource'] + ['CSwfTexture'] * texture_count,
             'Unexpected resource chunks')
     root_props, _ = resource.properties_at(resource.exports[0]['data'])
     require(root_props['textures'] == ('array:2,0,handle:CSwfTexture',

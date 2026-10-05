@@ -1,4 +1,4 @@
-// Concrete row abilities: Frost, Fog, Rain, Drought, RaghNarRoog, SkelligeStorm, GoldenFroth.
+﻿// Concrete row abilities: Frost, Fog, Rain, Drought, RaghNarRoog, SkelligeStorm, GoldenFroth.
 // One row token: original Add/Set both replace the existing row token.
 class CBetaGwentDuelWeather extends IScriptable
 {
@@ -215,7 +215,7 @@ class CBetaGwentDuelWeather extends IScriptable
         for (i = 0; i < damaged.Size(); i += 1) game.QueuePower(damaged[i], boost, false);
         LogChannel('BetaGwent', "DUEL_WEATHER_CLEAR side=" + side + " boosted=" + damaged.Size() + " boost=" + boost);
     }
-    public function ClearValue(side : int, boost : int) : int
+    public function ClearValue(side : int, boost : int, optional immediate : bool) : int
     {
         var row, i, total, targets : int; var cards : array<CBetaGwentDuelCard>; var s : SBetaGwentCardSnapshot;
         for (row = 1; row <= 4; row *= 2)
@@ -223,10 +223,10 @@ class CBetaGwentDuelWeather extends IScriptable
             if (Token(side, row) == 0 || (Token(side, row) & 384) != 0) continue;
             game.GetZoneCards(side, row, cards); targets = Min(1, cards.Size());
             if (Token(side, row) == 4) targets = Min(2, cards.Size());
-            if (Token(side, row) == 64) { total += (Min(3, cards.Size()) + Min(1, cards.Size())) * 2; targets = 0; }
-            total += Damage(side, row) * targets * 2;
+            if (Token(side, row) == 64) { if(!immediate)total += (Min(3, cards.Size()) + Min(1, cards.Size())) * 2; targets = 0; }
+            if(!immediate)total += Damage(side, row) * targets * 2;
             for (i = 0; i < cards.Size(); i += 1)
-            { s = cards[i].Snapshot(); if (s.power.currentPower < s.power.basePower + s.power.permanentPower) total += boost; }
+            { s = cards[i].Snapshot(); if (!s.isWaitingToDie && s.power.currentPower < s.power.basePower + s.power.permanentPower) total += boost; }
         }
         return total;
     }

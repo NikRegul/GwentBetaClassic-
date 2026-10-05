@@ -62,3 +62,6 @@ These are not exhaustive gameplay validation.
 A useful report contains deck, round, score, hand sizes, public board, recent
 actions and the expected decision. Concrete cases are more useful than blanket
 weight increases. BUILD_EN.md contains the full packaging sequence.
+
+
+0.2.1 / stage94: see [BUILD_POLISH94.md](BUILD_POLISH94.md), [Russian changes](PRESENTATION94_RU.md) and [English changes](PRESENTATION94_EN.md).

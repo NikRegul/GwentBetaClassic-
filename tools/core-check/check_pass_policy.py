@@ -15,14 +15,15 @@ BUILD=ROOT/'BetaGwent/build/pass-policy85'
 BUILD.mkdir(parents=True,exist_ok=True)
 raw=SOURCE.read_bytes();source=raw.decode('utf-8-sig')
 methods=[]
-for name in ('BetaGwentAIChasePassReason','BetaGwentAIEarlyPass','BetaGwentAIConcedeOptionalRound'):
+for name in ('BetaGwentAIChasePassReason','BetaGwentAIEarlyPass','BetaGwentAIConcedeOptionalRound','BetaGwentAIDuelSwing'):
     match=re.search(r'function '+name+r'\((.*?)\)\s*:\s*(int|bool)\s*\{',source,re.S)
     pos=match.end();start=pos;depth=1
     while depth:
         depth+=(source[pos]=='{')-(source[pos]=='}');pos+=1
     body=source[start:pos-1]
-    body=re.sub(r'var (\w+) : (int|bool);',r'\2 \1;',body)
+    body=re.sub(r'var ([\w, ]+) : (int|bool);',lambda m:m[2]+' '+', '.join(n.strip()+' = 0' for n in m[1].split(','))+';',body)
     body=re.sub(r'\bMax\(', 'Math.Max(',body)
+    body=re.sub(r'\bMin\(', 'Math.Min(',body)
     params=', '.join(t.strip()+' '+n.strip() for n,t in (p.split(':') for p in match[1].split(',')))
     methods.append('static '+match[2]+' '+name+'('+params+') {'+body+'}')
 cases=[
@@ -42,7 +43,12 @@ cases=[
     ('keep a realistic catch-up', 'BetaGwentAIConcedeOptionalRound(12,15,4,4,0,0)',False),
     ('unreachable round', 'BetaGwentAIChasePassReason(false,3,0,5,6,0,0)',1),
     ('leader without hand loss', 'BetaGwentAIChasePassReason(true,0,0,6,6,0,0)',0),
-    ('force two replies', 'BetaGwentAIEarlyPass(28,25,0,5,6,0)',True),
+    ('force two replies with retained advantage', 'BetaGwentAIEarlyPass(40,25,0,6,6,0)',True),
+    ('do not gamble with just one retained card', 'BetaGwentAIEarlyPass(28,25,0,5,6,0)',False),
+    ('low observed bronze tempo is no safety guarantee', 'BetaGwentAIEarlyPass(18,5,0,6,6,0)',False),
+    ('Seltkirk clean first strike', 'BetaGwentAIDuelSwing(8,3,8,0)',8),
+    ('Seltkirk defeats protected target', 'BetaGwentAIDuelSwing(8,3,10,3)',8),
+    ('Seltkirk cannot profit from huge target', 'BetaGwentAIDuelSwing(8,3,30,0)',0),
     ('public leader can close gap', 'BetaGwentAIEarlyPass(28,25,25,5,6,0)',False),
     ('do not risk match on early pass', 'BetaGwentAIEarlyPass(60,25,0,6,5,1)',False),
     ('avoid optimistic division', 'BetaGwentAIEarlyPass(24,25,0,5,6,0)',False),

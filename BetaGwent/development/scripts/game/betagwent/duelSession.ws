@@ -1,4 +1,4 @@
-// Closed Beta-card preview with seeded shuffle and mulligan. General scheduler is separate.
+﻿// Closed Beta-card preview with seeded shuffle and mulligan. General scheduler is separate.
 class CBetaGwentDuelSession extends IScriptable
 {
     private var events : CBetaGwentDuelEvents;
@@ -9,6 +9,7 @@ class CBetaGwentDuelSession extends IScriptable
     private var registry : CBetaGwentDuelRegistry;
     private var live : array<CBetaGwentDuelCard>;
     private var dying : array<CBetaGwentDuelCard>;
+    private var pendingConsumeVisuals : array<int>;
     private var message : string;
     private var waiting, fatal : bool;
     private var pendingCard : CBetaGwentDuelCard;
@@ -81,7 +82,7 @@ class CBetaGwentDuelSession extends IScriptable
         archetypeAI=new CBetaGwentArchetypeAI in this;archetypeAI.Initialize(this,enemyCards,enemyPreset,enemyLeader);
         LogChannel('BetaGwent',"DUEL_AI_ARCHETYPE id="+archetypeAI.ProfileId()+" title="+archetypeAI.Title()+" policy=rules88");
         LogChannel('BetaGwent',"DUEL_AI_PROFILE weather="+weatherProfile+" enemyPreset="+enemyPreset+" privatePlayerCardsRead=false");
-        recordVisuals = false; visualFrames.Clear(); visualOverflow = false;
+        recordVisuals = false; visualFrames.Clear(); visualOverflow = false; pendingConsumeVisuals.Clear();
         SetVisualSource(0, 0, 0, 0);
         match = new CBetaGwentMatchState in this; match.Initialize();
         registry = new CBetaGwentDuelRegistry in this; registry.Initialize();
@@ -614,6 +615,7 @@ class CBetaGwentDuelSession extends IScriptable
     public function RecordConsume(source : CBetaGwentDuelCard, target : CBetaGwentDuelCard)
     {
         var a, t : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition; a = source.Snapshot(); t = target.Snapshot(); d = target.Definition();
+        pendingConsumeVisuals.PushBack(t.instanceId);
         RecordVisual(11, t.instanceId, "Поглощение: " + d.title, 460);
         LogChannel('BetaGwent', "DUEL_CONSUME source=" + a.instanceId + " target=" + t.instanceId + " removalType=1");
     }
@@ -624,7 +626,7 @@ class CBetaGwentDuelSession extends IScriptable
         if ((s.locationMask & 7) == 0 || s.isWaitingToDie || (t.locationMask != 32 && t.locationMask != 8) || t.isWaitingToDie) return false;
         // CardBanishAttack calls Banish, not Kill: no second Killed/deathwish batch.
         target.Move(t.positionPlayerId, 512, 0); target.SetPlayable(false); Reindex(t.positionPlayerId, t.locationMask);
-        RecordVisual(12, t.instanceId, "Поглощение: " + d.title, 460);
+        RecordVisual(11, t.instanceId, "Поглощение: " + d.title, 460);
         LogChannel('BetaGwent', "DUEL_BANISH_CONSUME source=" + s.instanceId + " target=" + t.instanceId
             + " template=" + d.header.templateId + " from=" + t.locationMask + " to=512 removalType=1 deathwish=false");
         return true;
@@ -2046,9 +2048,10 @@ class CBetaGwentDuelSession extends IScriptable
         }
         return value;
     }
-    private function RallyValue(side : int) : int
+    private function RallyValue(side : int, optional immediate : bool) : int
     {
-        var cards : array<CBetaGwentDuelCard>; var i, total, count, value : int; var s : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition;
+        var cards : array<CBetaGwentDuelCard>; var i, total, count, value, lowest : int; var s : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition;
+        lowest=2147483647;
         if (BestOwnRow(side) == 0) return 0; LocationCards(side, 16, cards);
         for (i = 0; i < cards.Size(); i += 1)
         {
@@ -2056,19 +2059,20 @@ class CBetaGwentDuelSession extends IScriptable
             if (s.runtimeTemplate.typeMask == 4 && s.runtimeTierMask == 2)
             {
                 d = cards[i].Definition(); value = s.power.currentPower;
-                if (d.effect == 1 || d.effect == 17) value += Max(0, BestEffectValue(side, d.effect, d.amount, d.targetSide, d.header.templateId));
-                if (d.effect == 14 && HasDeckTemplate(side, d.playTemplateId)) value += WeatherValue(side, BestWeatherRow(side, 1), 1);
-                if (d.effect == 15) value += weather.Damage(side, BestDeployRow(side, d.effect)) * 3;
+                if(BetaGwentDuelSpying(d.header.templateId))value=-value;
+                if (d.effect == 1 || d.effect == 17) value += Max(0, BestEffectValue(side, d.effect, d.amount, d.targetSide, d.header.templateId, immediate));
+                if (!immediate && d.effect == 14 && HasDeckTemplate(side, d.playTemplateId)) value += WeatherValue(side, BestWeatherRow(side, 1), 1);
+                if (!immediate && d.effect == 15) value += weather.Damage(side, BestDeployRow(side, d.effect)) * 3;
                 if (d.deploySummonTemplate > 0) value += DeckCopiesValue(side, d.deploySummonTemplate, BestCardRow(side, d), s.instanceId, d.deploySummonOtherTemplate, d.deploySummonIgnore, d.deploySummonLinked);
-                if (d.effect == 25 || d.effect == 27) value += Max(0, BestEffectValue(side, d.effect, d.amount, d.targetSide, d.header.templateId));
-                if (d.timerPeriod > 0) value += 2;
-                if (d.passiveBoost != 0 && HasWeather(d.passiveWeatherToken)) value += d.passiveBoost * 3;
-                if (d.deathwishDamage != 0) value += Max(0, RowEffectValue(side, BetaGwentOpponentId(side), BestCardRow(side, d), d.deathwishDamage)) / 2;
-                if (d.deathwishSummonTemplate > 0) value += DeckSummonValue(side, d.deathwishSummonTemplate, s.instanceId) / 2;
-                total += value; count += 1;
+                if (d.effect == 25 || d.effect == 27) value += Max(0, BestEffectValue(side, d.effect, d.amount, d.targetSide, d.header.templateId, immediate));
+                if (!immediate && d.timerPeriod > 0) value += 2;
+                if (!immediate && d.passiveBoost != 0 && HasWeather(d.passiveWeatherToken)) value += d.passiveBoost * 3;
+                if (!immediate && d.deathwishDamage != 0) value += Max(0, RowEffectValue(side, BetaGwentOpponentId(side), BestCardRow(side, d), d.deathwishDamage)) / 2;
+                if (!immediate && d.deathwishSummonTemplate > 0) value += DeckSummonValue(side, d.deathwishSummonTemplate, s.instanceId) / 2;
+                lowest=Min(lowest,value);total += value; count += 1;
             }
         }
-        if (count == 0) return 0; return total / count;
+        if (count == 0) return 0; if(immediate)return lowest; return total / count;
     }
     private function DeckCopiesValue(side : int, templateId : int, row : int, excludedId : int, optional otherTemplate : int, optional ignore : int, optional linked : int) : int
     {
@@ -2085,8 +2089,8 @@ class CBetaGwentDuelSession extends IScriptable
     }
     private function ChooseFirstLight(side : int) : int
     {
-        var d : SBetaGwentDuelDefinition; d = BetaGwentDuelDefinition(113303);
-        if (weather.ClearValue(side, d.amount) >= RallyValue(side)) return 113401;
+        var d : SBetaGwentDuelDefinition;var immediate : bool; d = BetaGwentDuelDefinition(113303);immediate=AiHorizon(side)==0;
+        if (weather.ClearValue(side, d.amount, immediate) >= RallyValue(side,immediate)) return 113401;
         return 113402;
     }
     private function AiHorizon(side : int) : int
@@ -2315,10 +2319,17 @@ class CBetaGwentDuelSession extends IScriptable
         }
         dying.Insert(i, card);
     }
+    private function TakeConsumeVisual(id : int) : bool
+    {
+        var i : int;
+        for(i=pendingConsumeVisuals.Size()-1;i>=0;i-=1)
+        { if(pendingConsumeVisuals[i]==id){pendingConsumeVisuals.Erase(i);return true;} }
+        return false;
+    }
     private function DrainDeaths(optional suppressAbilities : bool)
     {
         var batch : array<CBetaGwentDuelCard>; var fromPositions, killedPositions : array<SBetaGwentCardSnapshot>;
-        var i, wave : int; var s : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition;
+        var i, wave : int; var s : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition; var consumed : bool;
         if (drainingDeaths || fatal) return; drainingDeaths = true;
         while (dying.Size() > 0 && !fatal && wave < 64)
         {
@@ -2329,13 +2340,14 @@ class CBetaGwentDuelSession extends IScriptable
             for (i = 0; i < batch.Size(); i += 1)
             {
                 s = fromPositions[i];
+                consumed = TakeConsumeVisual(s.instanceId);
                 d = batch[i].Definition();
                 if (s.runtimeTemplate.typeMask != 2 && s.power.basePower + s.power.permanentPower <= 0)
                 {
                     // Original KillWaitingToDie banishes zero effective-base units instead of Kill.
                     batch[i].Move(s.positionPlayerId, 512, 0); batch[i].SetPlayable(false); batch[i].SetWaiting(false);
                     Reindex(s.positionPlayerId, s.locationMask);
-                    if (!suppressAbilities) RecordVisual(12, s.instanceId, d.title + ": изначальная сила исчерпана", 380);
+                    if (!suppressAbilities && !consumed) RecordVisual(12, s.instanceId, d.title + ": изначальная сила исчерпана", 380);
                     LogChannel('BetaGwent', "DUEL_BANISH_WEAKENED card=" + s.instanceId + " removalType=0 killed=false");
                     continue;
                 }
@@ -2345,13 +2357,13 @@ class CBetaGwentDuelSession extends IScriptable
                     // Void512, not SpawningPool128. Keep a non-reusable visual tombstone.
                     batch[i].Move(s.positionPlayerId, 512, 0); batch[i].SetPlayable(false);
                     Reindex(s.positionPlayerId, s.locationMask);
-                    if (!suppressAbilities) RecordVisual(3, s.instanceId, d.title + ": исчез", 320);
+                    if (!suppressAbilities && !consumed) RecordVisual(3, s.instanceId, d.title + ": исчез", 320);
                     LogChannel('BetaGwent', "DUEL_TOKEN_REMOVED card=" + s.instanceId + " location=512 grave=false");
                 }
                 else if (s.locationMask != 32)
                 {
                     batch[i].Move(s.positionPlayerId, 32, CountLocation(s.positionPlayerId, 32)); batch[i].ResetInGraveyard();
-                    Reindex(s.positionPlayerId, s.locationMask); if (!suppressAbilities) RecordVisual(3, s.instanceId, d.title + ": в сброс", 320);
+                    Reindex(s.positionPlayerId, s.locationMask); if (!suppressAbilities && !consumed) RecordVisual(3, s.instanceId, d.title + ": в сброс", 320);
                 }
                 batch[i].SetWaiting(false); LogChannel('BetaGwent', "DUEL_DEATH card=" + s.instanceId + " wave=" + wave);
             }
@@ -2425,17 +2437,43 @@ class CBetaGwentDuelSession extends IScriptable
         var token : SBetaGwentDuelDefinition;token=BetaGwentDuelDefinition(d.deploySpawnTemplate);
         return Min(d.deploySpawnCount,Max(0,8-CountLocation(side,row)))*token.header.power;
     }
-    private function AiManagedDeployValue(d : SBetaGwentDuelDefinition, side : int) : int
+    private function AiDuelTarget(source : CBetaGwentDuelCard, target : SBetaGwentCardSnapshot, immediate : bool) : int
+    {
+        var own : SBetaGwentCardSnapshot; var value : int; own=source.Snapshot();
+        value=BetaGwentAIDuelSwing(own.power.currentPower,own.power.armor,target.power.currentPower,target.power.armor);
+        if(!immediate && own.power.currentPower>=target.power.currentPower+target.power.armor)
+            value+=AiEngineValue(target,own.positionPlayerId);
+        return value;
+    }
+    private function AiDuelGain(source : CBetaGwentDuelCard, immediate : bool) : int
+    {
+        var i,best : int;var own,t : SBetaGwentCardSnapshot;own=source.Snapshot();best=-2147483647;
+        for(i=0;i<live.Size();i+=1){t=live[i].Snapshot();
+            if(t.positionPlayerId==own.positionPlayerId || (t.locationMask&7)==0 || t.isWaitingToDie || (t.tokenMask&264)!=0 || t.runtimeTemplate.typeMask!=4)continue;
+            best=Max(best,AiDuelTarget(source,t,immediate));}
+        if(best==-2147483647)return 0;return Max(0,best);
+    }
+    private function AiTimingReserve(card : CBetaGwentDuelCard, gain : int) : int
+    {
+        var d : SBetaGwentDuelDefinition;var s : SBetaGwentCardSnapshot;var useful : int;
+        d=card.Definition();s=card.Snapshot();useful=gain-s.power.currentPower;
+        // A reactive gold's body alone is not a reason to spend its ability.
+        if(d.effect==34 && (d.specialMode==137 || d.specialMode==114 || d.specialMode==125 || d.specialMode==132))
+            return Max(0,8-useful)*2;
+        if(d.header.tierMask==8 && d.effect==1)return Max(0,d.amount-useful);
+        return 0;
+    }
+    private function AiManagedDeployValue(d : SBetaGwentDuelDefinition, side : int, optional immediate : bool) : int
     {
         var id,amount,enemy,value,i,count : int;var cards : array<CBetaGwentDuelCard>;var s : SBetaGwentCardSnapshot;
         id=d.header.templateId;enemy=BetaGwentOpponentId(side);
         if(d.effect!=34)return 0;
-        if(d.specialMode==102)return Max(0,BestEffectValue(side,1,d.amount,2,d.header.templateId));
+        if(d.specialMode==102)return Max(0,BestEffectValue(side,1,d.amount,2,d.header.templateId,immediate));
         if(id==162315 || id==162313){amount=5;if(id==162315)amount=12;return Max(0,BestEffectValue(side,2,amount,1));}
         if(id==162306)amount=5;else if(id==162308)amount=2;else if(id==152304)amount=3;
         else if(id==162209 || id==162310)amount=7;else if(id==152207)amount=6;else if(id==142103)amount=8;
         else if(id==200124)amount=NilfAlchemy(side);
-        if(amount>0)return Max(0,BestEffectValue(side,1,amount,2));
+        if(amount>0)return Max(0,BestEffectValue(side,1,amount,2,0,immediate));
         if(id==200159){
             LocationCards(side,16,cards);
             for(i=0;i<cards.Size() && count<3;i+=1){s=cards[i].Snapshot();
@@ -2463,13 +2501,13 @@ class CBetaGwentDuelSession extends IScriptable
         if(s.runtimeTemplate.templateId==162307 || s.runtimeTemplate.templateId==200040)value+=horizon*2;
         value=Max(value,archetypeAI.EngineThreat(s,horizon));return Min(12,value);
     }
-    private function AiDamageChoice(s : SBetaGwentCardSnapshot, side : int, amount : int) : int
+    private function AiDamageChoice(s : SBetaGwentCardSnapshot, side : int, amount : int, optional immediate : bool) : int
     {
         var value,deathwish : int;var d,token : SBetaGwentDuelDefinition;
         value=DamageValue(s,side,amount);
         if(s.positionPlayerId==side || s.power.currentPower>Max(0,amount-s.power.armor))return value;
         d=BetaGwentDuelDefinition(s.runtimeTemplate.templateId);
-        value+=AiEngineValue(s,side);
+        if(!immediate)value+=AiEngineValue(s,side);
         if((s.tokenMask&4)==0){
             if(d.deathwishSummonTemplate>0)deathwish+=DeckSummonValue(s.positionPlayerId,d.deathwishSummonTemplate);
             if(d.deathwishSpawnCount>0){token=BetaGwentDuelDefinition(d.deathwishSpawnTemplate);deathwish+=d.deathwishSpawnCount*token.header.power;}
@@ -2499,6 +2537,7 @@ class CBetaGwentDuelSession extends IScriptable
             return value+AiSetupBonus(td);
         }
         if((t.locationMask&7)==0)return value;
+        if(d.effect==34 && d.specialMode==137)return AiDuelTarget(source,t,false);
         // Northern targeted damage and repeat shots.
         if(d.specialMode==102 || d.specialMode==117 || d.specialMode==118 || d.specialMode==143 || d.specialMode==144)
             return AiDamageChoice(t,side,d.amount);
@@ -2550,7 +2589,7 @@ class CBetaGwentDuelSession extends IScriptable
         if ((cardState.tokenMask & 4) != 0) value = -value;
         return value;
     }
-    private function TargetValue(cardState : SBetaGwentCardSnapshot, side : int, effect : int, amount : int) : int
+    private function TargetValue(cardState : SBetaGwentCardSnapshot, side : int, effect : int, amount : int, optional immediate : bool) : int
     {
         var i, value, offset : int; var other : SBetaGwentCardSnapshot; var d, tokenDefinition : SBetaGwentDuelDefinition;
         if (effect == 25)
@@ -2558,17 +2597,17 @@ class CBetaGwentDuelSession extends IScriptable
             value = DamageValue(cardState, side, amount); d = BetaGwentDuelDefinition(132309);
             if (cardState.power.currentPower <= Max(0, amount - cardState.power.armor)
                 || weather.Token(cardState.positionPlayerId, cardState.locationMask) == d.conditionalWeatherToken) value += d.conditionalBoost;
-            if(weatherProfile && side==2)value+=weatherAI.KillBonus(cardState,amount);
+            if(!immediate && weatherProfile && side==2)value+=weatherAI.KillBonus(cardState,amount);
             return value;
         }
         if (effect == 27)
         {
             d = BetaGwentDuelDefinition(132102);
             if ((weather.Token(cardState.positionPlayerId, cardState.locationMask) & d.conditionalWeatherToken) != 0) amount = d.conditionalDamage;
-            if(weatherProfile && side==2)return DamageValue(cardState,side,amount)+weatherAI.KillBonus(cardState,amount);
+            if(!immediate && weatherProfile && side==2)return DamageValue(cardState,side,amount)+weatherAI.KillBonus(cardState,amount);
             return DamageValue(cardState, side, amount);
         }
-        if (effect == 1 || effect == 6) return AiDamageChoice(cardState, side, amount);
+        if (effect == 1 || effect == 6) return AiDamageChoice(cardState, side, amount, immediate);
         if (effect == 31)
         { value = Min(Max(0, amount - cardState.power.armor), Max(0, cardState.power.basePower + cardState.power.permanentPower));
           if (cardState.positionPlayerId == side) return -value; return value; }
@@ -2582,12 +2621,12 @@ class CBetaGwentDuelSession extends IScriptable
             tokenDefinition = BetaGwentDuelDefinition(d.transformTemplate);
             value = cardState.power.currentPower - tokenDefinition.header.power;
             if (cardState.positionPlayerId == side) value = -value;
-            if ((cardState.tokenMask & 4) == 0) value += LockToggleValue(cardState, side);
+            if (!immediate && (cardState.tokenMask & 4) == 0) value += LockToggleValue(cardState, side);
             return value;
         }
         if (effect == 18 || effect == 19)
         {
-            value = LockToggleValue(cardState, side);
+            value = 0; if(!immediate)value = LockToggleValue(cardState, side);
             if (cardState.positionPlayerId != side)
             {
                 if (effect == 18) value += cardState.power.currentPower - FloorF((float)cardState.power.currentPower * 0.5f);
@@ -2681,7 +2720,7 @@ class CBetaGwentDuelSession extends IScriptable
         if (effect == 28 && pendingCard) { d = pendingCard.Definition(); if (d.targetMinimum == 0 && maximum <= 0) return 0; }
         return best;
     }
-    private function BestEffectValue(side : int, effect : int, amount : int, optional targetSide : int, optional definitionId : int) : int
+    private function BestEffectValue(side : int, effect : int, amount : int, optional targetSide : int, optional definitionId : int, optional immediate : bool) : int
     {
         var i, value, maximum : int; var cardState : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition;
         maximum = -2147483647; if (effect == 17) d = BetaGwentDuelDefinition(132306);
@@ -2702,7 +2741,7 @@ class CBetaGwentDuelSession extends IScriptable
             }
             if (targetSide == 2 && cardState.positionPlayerId != BetaGwentOpponentId(side)) continue;
             if (targetSide == 1 && cardState.positionPlayerId != side) continue;
-            value = TargetValue(cardState, side, effect, amount); if (value > maximum) maximum = value;
+            value = TargetValue(cardState, side, effect, amount, immediate); if (value > maximum) maximum = value;
         }
         return maximum;
     }
@@ -2734,9 +2773,63 @@ class CBetaGwentDuelSession extends IScriptable
         }
         return best;
     }
+    // Tempo is the immediate score swing; forecasts only rank normal turns.
+    // This reads snapshots and own/public zones, never executes a play or RNG.
+    private function AiCardTempo(card : CBetaGwentDuelCard, immediate : bool, vranAnchor : int, clearRisk : int) : int
+    {
+        var s,vranTarget : SBetaGwentCardSnapshot;var m : SBetaGwentMatchSnapshot;
+        var d : SBetaGwentDuelDefinition;var value,effectValue,row : int;
+        s=card.Snapshot();m=match.Snapshot();
+        d = card.Definition(); value = s.power.currentPower;
+        if(BetaGwentDuelSpying(d.header.templateId))value=-value;
+        value+=AiManagedDeployValue(d,2,immediate);
+        if(d.effect==34 && d.specialMode==137)value+=AiDuelGain(card,immediate);
+        value+=archetypeAI.PileGain(d,immediate);
+        value+=archetypeAI.PublicDeployGain(d);
+        if (d.effect == 1 || d.effect == 2 || d.effect == 3 || d.effect == 6 || d.effect == 16 || d.effect == 17 || d.effect == 18 || d.effect == 19 || d.effect == 20 || d.effect == 22 || d.effect == 25 || d.effect == 27)
+        {
+            effectValue = d.amount; if (d.effect == 16) effectValue = d.consumeMaximum;
+            if (d.effect == 6) effectValue = CountLocation(2, 8) - 1;
+            effectValue = BestEffectValue(2, d.effect, effectValue, d.targetSide, d.header.templateId, immediate);
+            if (effectValue == -2147483647)
+            {
+                if (d.effect == 1 && d.header.typeMask == 4 && d.targetSide == 0 && d.targetExcludedFaction == 0) effectValue = -d.amount;
+                else effectValue = 0;
+            }
+            if ((d.effect == 3 || d.effect == 6 || d.effect == 16 || d.effect == 17 || d.effect == 18) && effectValue < 0) effectValue = 0;
+            value += effectValue;
+        }
+        if (d.deploySpawnCount > 0)
+        {
+            row = BestCardRow(2, d);
+            value += AiSpawnValue(d,2,row);
+        }
+        if (d.deploySummonTemplate > 0) value += DeckCopiesValue(2, d.deploySummonTemplate, BestCardRow(2, d), s.instanceId, d.deploySummonOtherTemplate, d.deploySummonIgnore, d.deploySummonLinked);
+        if (d.effect == 28) value += specials.Value(card);
+        if (d.effect == 33) value += ModeValue(d, BestModeChoice(d, 2), 2);
+        if (d.effect == 4) value += RowEffectValue(2, 1, BestEnemyRow(2), d.amount);
+        if (d.effect == 5) value += EpidemicValue(2);
+        if (!immediate && d.weatherToken != 0) value += WeatherValue(2, BestWeatherRow(2, d.weatherToken), d.weatherToken) * (100 - clearRisk / 2) / 100;
+        if (d.effect == 9) {
+            if(immediate){if(ChooseFirstLight(2)==113401)value+=weather.ClearValue(2,d.amount,true);else value+=RallyValue(2,true);}
+            else value+=Max(weather.ClearValue(2,d.amount),RallyValue(2));
+        }
+        if (!immediate && d.effect == 14 && HasDeckTemplate(2, d.playTemplateId)) value += WeatherValue(2, BestWeatherRow(2, 1), 1);
+        if (!immediate && d.effect == 15) value += weather.Damage(2, BestDeployRow(2, d.effect)) * AiHorizon(2);
+        if (!immediate && d.timerPeriod > 0 && !m.playerOne.hasPassed)
+        {
+            value += 2;
+            if (vranAnchor != 0) { vranTarget = FindCard(vranAnchor).Snapshot(); value += Max(0, TargetValue(vranTarget, 2, 16, 2147483647)); }
+        }
+        if (!immediate && d.passiveBoost != 0 && HasWeather(d.passiveWeatherToken)) value += d.passiveBoost * AiHorizon(2);
+        if (!immediate && d.deathwishDamage != 0 && !m.playerOne.hasPassed) value += Max(0, RowEffectValue(2, 1, BestCardRow(2, d), d.deathwishDamage)) / 2;
+        if (!immediate && d.deathwishSummonTemplate > 0 && !m.playerOne.hasPassed) value += DeckSummonValue(2, d.deathwishSummonTemplate) / 2;
+        if(weatherProfile)value=weatherAI.Gain(d,s.power.currentPower,false,s.locationMask==8,immediate);
+        return value;
+    }
     public function OpponentStep() : bool
     {
-        var i, best, value, maximum, row, effectValue, vranAnchor, reserve, deficit, catchBest, catchCost, cost, bestGain, clearRisk : int;
+        var i, best, value, maximum, row, effectValue, vranAnchor, reserve, deficit, catchBest, catchCost, cost, bestGain, bestUtility, tempo, clearRisk : int;
         var s, vranTarget : SBetaGwentCardSnapshot; var m : SBetaGwentMatchSnapshot; var d : SBetaGwentDuelDefinition;
         var leaderCard : CBetaGwentDuelCard;
         var actions : array<SBetaGwentAIChaseAction>;var action : SBetaGwentAIChaseAction;
@@ -2778,60 +2871,22 @@ class CBetaGwentDuelSession extends IScriptable
         for (i = 0; i < live.Size(); i += 1)
         {
             s = live[i].Snapshot(); if (s.positionPlayerId != 2 || s.locationMask != 8 || !s.canBePlayed) continue;
-            d = live[i].Definition(); value = s.power.currentPower;
-            if(BetaGwentDuelSpying(d.header.templateId))value=-value;
-            value+=AiManagedDeployValue(d,2);
-            value+=archetypeAI.PileGain(d);
-            value+=archetypeAI.PublicDeployGain(d);
-            if (d.header.typeMask == 4 && BestCardRow(2,d) == 0) continue;
-            if (d.effect == 1 || d.effect == 2 || d.effect == 3 || d.effect == 6 || d.effect == 16 || d.effect == 17 || d.effect == 18 || d.effect == 19 || d.effect == 20 || d.effect == 22 || d.effect == 25 || d.effect == 27)
-            {
-                effectValue = d.amount; if (d.effect == 16) effectValue = d.consumeMaximum;
-                if (d.effect == 6) effectValue = CountLocation(2, 8) - 1;
-                effectValue = BestEffectValue(2, d.effect, effectValue, d.targetSide, d.header.templateId);
-                if (effectValue == -2147483647)
-                {
-                    if (d.effect == 1 && d.header.typeMask == 4 && d.targetSide == 0 && d.targetExcludedFaction == 0) effectValue = -d.amount;
-                    else effectValue = 0;
-                }
-                if ((d.effect == 3 || d.effect == 6 || d.effect == 16 || d.effect == 17 || d.effect == 18) && effectValue < 0) effectValue = 0;
-                value += effectValue;
-            }
-            if (d.deploySpawnCount > 0)
-            {
-                row = BestCardRow(2, d);
-                value += AiSpawnValue(d,2,row);
-            }
-            if (d.deploySummonTemplate > 0) value += DeckCopiesValue(2, d.deploySummonTemplate, BestCardRow(2, d), s.instanceId, d.deploySummonOtherTemplate, d.deploySummonIgnore, d.deploySummonLinked);
-            if (d.effect == 28) value += specials.Value(live[i]);
-            if (d.effect == 33) value += ModeValue(d, BestModeChoice(d, 2), 2);
-            if (d.effect == 4) value += RowEffectValue(2, 1, BestEnemyRow(2), d.amount);
-            if (d.effect == 5) value += EpidemicValue(2);
-            if (d.weatherToken != 0) value += WeatherValue(2, BestWeatherRow(2, d.weatherToken), d.weatherToken) * (100 - clearRisk / 2) / 100;
-            if (d.effect == 9) value += Max(weather.ClearValue(2, d.amount), RallyValue(2));
-            if (d.effect == 14 && HasDeckTemplate(2, d.playTemplateId)) value += WeatherValue(2, BestWeatherRow(2, 1), 1);
-            if (d.effect == 15) value += weather.Damage(2, BestDeployRow(2, d.effect)) * AiHorizon(2);
-            if (d.timerPeriod > 0 && !m.playerOne.hasPassed)
-            {
-                value += 2;
-                if (vranAnchor != 0) { vranTarget = FindCard(vranAnchor).Snapshot(); value += Max(0, TargetValue(vranTarget, 2, 16, 2147483647)); }
-            }
-            if (d.passiveBoost != 0 && HasWeather(d.passiveWeatherToken)) value += d.passiveBoost * AiHorizon(2);
-            if (d.deathwishDamage != 0 && !m.playerOne.hasPassed) value += Max(0, RowEffectValue(2, 1, BestCardRow(2, d), d.deathwishDamage)) / 2;
-            if (d.deathwishSummonTemplate > 0 && !m.playerOne.hasPassed) value += DeckSummonValue(2, d.deathwishSummonTemplate) / 2;
-            if(weatherProfile)value=weatherAI.Gain(d,s.power.currentPower,false,true);
-            reserve = AiReserveCost(d);
+            d=live[i].Definition();
+            if(d.header.typeMask==4 && BestCardRow(2,d)==0)continue;
+            value=AiCardTempo(live[i],false,vranAnchor,clearRisk);
+            tempo=AiCardTempo(live[i],true,vranAnchor,clearRisk);
+            reserve = AiReserveCost(d)+AiTimingReserve(live[i],value);
             if(weatherProfile && (d.header.templateId==112102 || d.header.templateId==200218 || d.header.templateId==132104) && value<=s.power.currentPower+3 && m.roundNumber<3)reserve+=6;
-            action.id=s.instanceId;action.gain=value;action.cards=1;action.reserve=reserve;actions.PushBack(action);
-            if (m.playerOne.hasPassed && value >= deficit)
+            action.id=s.instanceId;action.gain=tempo;action.cards=1;action.reserve=reserve;actions.PushBack(action);
+            if (m.playerOne.hasPassed && tempo >= deficit)
             {
-                cost = reserve * 10 + Max(0, value - deficit);
+                cost = reserve * 10 + Max(0, tempo - deficit);
                 if (cost < catchCost) { catchCost = cost; catchBest = s.instanceId; }
             }
             effectValue = (value+AiDrawUtility(d,2)) * 10 + AiSetupBonus(d) * 10 - reserve * 4;
             effectValue+=archetypeAI.Priority(d)*10;
             if(weatherProfile)effectValue+=weatherAI.Setup(d)*10;
-            if (effectValue > maximum) { maximum = effectValue; bestGain = value+AiDrawUtility(d,2); best = s.instanceId; }
+            if (effectValue > maximum) { maximum = effectValue; bestGain = tempo; bestUtility=value+AiDrawUtility(d,2); best = s.instanceId; }
         }
         if (catchBest != 0)
         {
@@ -2844,14 +2899,18 @@ class CBetaGwentDuelSession extends IScriptable
         if (leaderCard && BestOwnRow(2) != 0)
         {
             d = leaderCard.Definition();
-            s = leaderCard.Snapshot(); value = s.power.currentPower;
-            value+=AiManagedDeployValue(d,2);
+            s = leaderCard.Snapshot(); value = AiCardTempo(leaderCard,false,vranAnchor,clearRisk);
             value+=archetypeAI.LeaderGain(d);
             if(weatherProfile)value=weatherAI.Gain(d,s.power.currentPower);
             if (d.effect == 24) value += Max(WeatherValue(2, BestWeatherRow(2, 2), 2), WeatherValue(2, BestWeatherRow(2, 4), 4));
             cost = 10; if (m.roundNumber >= 3) cost = 0;
-            if (catchBest == 0 && value * 10 - 20 + archetypeAI.LeaderPriority(d)*10 > maximum && value > 0 && !m.playerOne.hasPassed) {LogChannel('BetaGwent',"DUEL_AI_LEADER gain="+value+" setup="+archetypeAI.LeaderPriority(d));return UseLeader(2);}
-            action.id=-1;action.gain=value;action.cards=0;action.reserve=cost;actions.PushBack(action);
+            // Preserve a once-per-match leader unless its actual ability has
+            // useful targets, it sets up the deck, or no hand play is left.
+            reserve=cost+AiTimingReserve(leaderCard,value);
+            if(m.roundNumber<3 && value<=s.power.currentPower+2 && archetypeAI.LeaderPriority(d)<=0 && ownHand>0)reserve+=12;
+            if (catchBest == 0 && value * 10 - reserve * 10 + archetypeAI.LeaderPriority(d)*10 > maximum && value > 0 && !m.playerOne.hasPassed) {LogChannel('BetaGwent',"DUEL_AI_LEADER gain="+value+" setup="+archetypeAI.LeaderPriority(d));return UseLeader(2);}
+            tempo=AiCardTempo(leaderCard,true,vranAnchor,clearRisk)+archetypeAI.LeaderGain(d);
+            action.id=-1;action.gain=tempo;action.cards=0;action.reserve=cost;actions.PushBack(action);
         }
         if(m.playerOne.hasPassed)
         {
@@ -2863,17 +2922,22 @@ class CBetaGwentDuelSession extends IScriptable
             best=plan.firstId;catchBest=best;
             for(i=0;i<actions.Size();i+=1)if(actions[i].id==best)bestGain=actions[i].gain;
         }
-        if (best != 0 && (catchBest != 0 || (maximum > 0 && bestGain > 0)))
+        // A low ordering score is a reason to save a gold, not to pass away a
+        // mandatory round. If every remaining card is reactive, still play
+        // the least wasteful legal body rather than concede by score cutoff.
+        if (best != 0)
         {
             d = registry.Find(best).Definition();
             LogChannel('BetaGwent', "DUEL_AI_TACTIC card=" + best + " gain=" + bestGain + " evaluation=" + maximum
-                + " horizon=" + AiHorizon(2) + " publicClearRisk=" + clearRisk + " weather="+weatherProfile+" profile="+archetypeAI.ProfileId()+" order="+archetypeAI.Priority(d)+" planner=rules88");
+                + " horizon=" + AiHorizon(2) + " publicClearRisk=" + clearRisk + " weather="+weatherProfile+" profile="+archetypeAI.ProfileId()+" order="+archetypeAI.Priority(d)+" planner=tempo94");
             if (d.effect == 23 && vranAnchor != 0) return PlayBefore(2, best, vranAnchor);
             vranAnchor=archetypeAI.PlacementAnchor(d);if(vranAnchor!=0)return PlayBefore(2,best,vranAnchor);
             row = BestCardRow(2, d);
             if (row == 0) row = 1; return Play(2, best, row);
         }
-        if (!m.playerOne.hasPassed && LeaderAvailable(2) && BestOwnRow(2) != 0) return UseLeader(2);
+        // Only use the emergency leader when there is no legal hand play.
+        if (!m.playerOne.hasPassed && best==0 && LeaderAvailable(2) && BestOwnRow(2) != 0) return UseLeader(2);
+        LogChannel('BetaGwent',"DUEL_AI_PASS reason=no_legal_hand_or_useful_chase hand="+ownHand);
         return Pass(2);
     }
     public function PumpOpponent()

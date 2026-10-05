@@ -1,4 +1,4 @@
-// Archetype layer: own hand/deck only; enemy board/graves are public.
+﻿// Archetype layer: own hand/deck only; enemy board/graves are public.
 // Bounded combo forecasts are ordering preferences, never extra catch-up points.
 function BetaGwentAIComboPriority(weight : int, heldPayoffs : int, activeSetups : int,
     heldSetups : int, playingSetup : bool, horizon : int) : int
@@ -141,7 +141,7 @@ class CBetaGwentArchetypeAI extends IScriptable
         return false;
     }
     // Concrete resurrection choices. No forecast calls for unknown card effects.
-    public function PileGain(d : SBetaGwentDuelDefinition) : int
+    public function PileGain(d : SBetaGwentDuelDefinition, optional immediate : bool) : int
     {
         var cards : array<CBetaGwentDuelCard>;var i,value,best,zoneSide,id : int;var s : SBetaGwentCardSnapshot;
         id=d.header.templateId;zoneSide=2;if(id==162304)zoneSide=1;
@@ -150,7 +150,7 @@ class CBetaGwentArchetypeAI extends IScriptable
         for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();if(!EligiblePile(id,s))continue;
             value=s.power.currentPower;if(id==153201)value+=8-s.power.basePower;
             if(s.runtimeTemplate.templateId==152307)value+=QueensguardExtra(s.instanceId);
-            value+=Min(6,BetaGwentAIEngine(s.runtimeTemplate.templateId)*Horizon());best=Max(best,value);}
+            if(!immediate)value+=Min(6,BetaGwentAIEngine(s.runtimeTemplate.templateId)*Horizon());best=Max(best,value);}
         return best;
     }
     public function IsDiscard(source : CBetaGwentDuelCard) : bool

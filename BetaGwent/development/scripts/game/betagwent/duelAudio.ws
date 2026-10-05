@@ -1,4 +1,4 @@
-// Presentation only. Never consumes match RNG, executes rules or republishes UI.
+﻿// Presentation only. Never consumes match RNG, executes rules or republishes UI.
 class CBetaGwentDuelAudio extends IScriptable
 {
     private var enabled, voices, ownsBank : bool;
@@ -60,6 +60,13 @@ class CBetaGwentDuelAudio extends IScriptable
         cueKind = kind;
         if (BetaReady())
         {
+            // DestroyBlood is the Beta consume sound. Ordinary deaths use a
+            // physical impact; Scorch/Igni retain the original fire destruction.
+            if (kind == 3)
+            {
+                eventName = "bg79_fx_1339391495";
+                if (templateId == 113309 || templateId == 112102) eventName = "bg79_fx_1019252451";
+            }
             if (kind == 1) eventName = BetaGwentAudioEffect(templateId);
             else if (kind == 24) eventName = BetaGwentAudioRevealEffect(templateId);
             else if (kind == 25) eventName = BetaGwentAudioTransformEffect(templateId);

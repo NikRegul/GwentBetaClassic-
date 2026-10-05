@@ -22,13 +22,13 @@ def value(literal):
     try:return json.loads(literal)
     except ValueError:return literal[1:-1]
 def main():
-    p=argparse.ArgumentParser();p.add_argument('action',choices=['inventory','sources']);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('action',choices=['inventory','sources']);p.add_argument('--output-dir',type=Path);a=p.parse_args()
     lookup=strings();unknown={}
     for f in sources():
         for m in PAT.finditer(f.read_text('utf-8-sig')):
             v=value(m.group())
             if CYR.search(v) and v not in lookup:unknown.setdefault(v,[]).append(f.name)
-    dest=ROOT/'BetaGwent/build/release89';dest.mkdir(parents=True,exist_ok=True)
+    dest=a.output_dir or ROOT/'BetaGwent/build/release89';dest.mkdir(parents=True,exist_ok=True)
     (dest/'untranslated.json').write_text(json.dumps(unknown,ensure_ascii=False,indent=2),'utf8')
     print('Untranslated unique literals:',len(unknown))
     if a.action=='inventory':return

@@ -52,7 +52,12 @@ if updating_atlas: validate_image_linkages(r)
 art_manifest=json.loads((ROOT/'docs/evidence/card-art-build.json').read_text(encoding='utf-8'))
 atlas_width,atlas_height=art_manifest.get('atlasSize',[768,360])
 require(128 <= atlas_width <= 4096 and atlas_width % 128 == 0 and 360 <= atlas_height <= 4096 and atlas_height % 180 == 0,'Unsupported atlas extent')
-board_indices=(1,2,4,5) if updating_atlas else (1,2,3,4)
+board_indices=[]
+for i in range(1,len(r.exports)):
+    props,_=r.properties_at(r.exports[i]['data'])
+    dimensions=(struct.unpack('<I',props['width'][1])[0],struct.unpack('<I',props['height'][1])[0])
+    if dimensions in ((4096,1820),(3804,1820)):board_indices.append(i)
+require(len(board_indices)==4,'Expected exactly four original board chunks')
 metadata,old_gfx,old_swf=unpack_root(r)
 old_prefix,old_tags,_=movie_parts(old_swf)
 native_prefix,native_tags,native_tail=movie_parts(old_gfx)
@@ -81,11 +86,13 @@ if args.entry!='BetaGwentBoard':
     require(len(movie_name)==len(old_stem)+4,'Unexpected native identity length')
     board_dims={dims:(name.replace(old_stem,movie_name[:-4],1),chunk) for dims,(name,chunk) in board_dims.items()}
 atlas_name=movie_name[:-4]+b'_i6.dds'
+image_dimensions=[]
 for code,p,raw in new_tags:
     if code!=35:continue
     cid,jpeg_length=struct.unpack_from('<HI',p)
     with Image.open(io.BytesIO(p[6:6+jpeg_length])) as im: width,height=im.size
     physical=((width+3)//4*4,(height+3)//4*4)
+    image_dimensions.append(physical)
     if physical==(atlas_width,atlas_height):filename=atlas_name;atlas_ids.append(cid)
     else:
         require(sha(p[2:]) in old_images,'Board image changed')
@@ -121,11 +128,13 @@ texture_props,_=r.properties_at(r.exports[1]['data'])
 texture_props['width']=('Uint32',struct.pack('<I',atlas_width));texture_props['height']=('Uint32',struct.pack('<I',atlas_height))
 texture_props['linkageName']=('String',string(atlas_name.decode()))
 atlas_chunk=properties(r,texture_props)+struct.pack('<6I',0,1,atlas_width,atlas_height,atlas_width*4,len(dds)-128)+dds[128:]+struct.pack('<I',0)
-# Match ImageInfo order, including the duplicate embed bindings. Original board
-# chunks remain byte-identical and in their original relative order.
+# Match actual ImageInfo order, including duplicate embeds. Royale can change
+# the first pair's order when constructor dependencies or language change.
+# Preserve every original board chunk; never infer atlas positions by index.
 original_boards=[r.exports[i]['data'] for i in board_indices]
 boards=[chunk.replace(old_stem,movie_name[:-4],1) for chunk in original_boards]
-chunks=[root_chunk,boards[0],boards[1],atlas_chunk,boards[2],boards[3],atlas_chunk]
+board_chunks={dimensions:chunk.replace(old_stem,movie_name[:-4],1) for dimensions,(_,chunk) in board_dims.items()}
+chunks=[root_chunk]+[atlas_chunk if dimensions==(atlas_width,atlas_height) else board_chunks[dimensions] for dimensions in image_dimensions]
 table_offset=r.tables[4][0];count=len(chunks);data_offset=table_offset+count*24
 out=bytearray(r.data[:table_offset])+bytearray(count*24)
 for i,chunk in enumerate(chunks):
@@ -140,7 +149,8 @@ candidate=BUILD/(entry_stem+'.redswf');candidate.write_bytes(out)
 checked,_=validate_resource(candidate);check_meta,check_gfx,check_swf=unpack_root(checked)
 validate_image_linkages(checked)
 require(check_swf==new_swf and check_gfx==new_gfx,'Movie round trip failed')
-require([checked.exports[i]['data'] for i in (1,2,4,5)]==boards,'Original board texture data changed')
+new_boards=[chunk for chunk,dimensions in zip(chunks[1:],image_dimensions) if dimensions!=(atlas_width,atlas_height)]
+require(sorted(map(sha,new_boards))==sorted(map(sha,boards)),'Original board texture data changed')
 require(symbols(movie_parts(check_gfx)[1])==names,'Native/source symbols differ')
 backup=None
 if args.apply:

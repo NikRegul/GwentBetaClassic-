@@ -103,3 +103,6 @@ For focused AI checks, use check_ai_rules.py and check_pass_policy.py under
 tools/core-check. Installed-game acceptance is still needed for UI, quest
 integration, rewards, controller behavior and save/reload. Compilation and
 isolated policy tests do not establish every card interaction.
+
+
+0.2.1 / stage94: see [BUILD_POLISH94.md](BUILD_POLISH94.md), [Russian changes](PRESENTATION94_RU.md) and [English changes](PRESENTATION94_EN.md).

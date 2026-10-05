@@ -1,4 +1,4 @@
-# Gwent Beta Classic 0.2.0
+# Gwent Beta Classic 0.2.1
 
 **You must back up your saves before installing the mod and before every update. Bugs can still occur; use a separate test save for your first matches.**
 
@@ -61,3 +61,6 @@ card forecasts; music and optional announcer cosmetics. Broader tournament,
 quest, old-save/NG+, mod-compatibility and controller-layout coverage is still
 needed. Implemented does not mean every possible card combination has been
 exhaustively verified.
+
+
+For 0.2.1 changes and acceptance checks, see UPDATE.md in the archive and docs/PRESENTATION94_EN.md in the source repository.

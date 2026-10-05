@@ -32,7 +32,7 @@ for stale in DDS_BUILD.glob('*.dds'):
 EXPORTER = Path(r'D:\GOG Galaxy\Games\The Witcher 3 REDkit\bin\tools\GFx4\gfxexport_mult4fix.exe')
 if not args.reuse_assets:
     subprocess.run([sys.executable, str(ROOT / 'tools/build_full_catalog.py')],cwd=ROOT,check=True,timeout=60)
-    subprocess.run([sys.executable, str(ROOT / 'tools/ui/build_card_art.py')],cwd=ROOT,check=True,timeout=120)
+    subprocess.run([sys.executable, str(ROOT / 'tools/ui/build_card_art.py')],cwd=ROOT,check=True,timeout=300)
     subprocess.run([sys.executable, str(ROOT / 'tools/build_full_catalog.py')],cwd=ROOT,check=True,timeout=60)
 commands = [
     [shutil.which('java'), '-Duser.language=en', '-Duser.country=US', '-jar',
@@ -49,7 +49,7 @@ commands = [
 runs = []
 for index, command in enumerate(commands):
     result = subprocess.run(command, cwd=UI, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                            creationflags=subprocess.CREATE_NO_WINDOW, timeout=90)
+                            creationflags=subprocess.CREATE_NO_WINDOW, timeout=240)
     log = result.stdout.decode('utf-8', errors='replace')
     log_path = BUILD / (stem+'-'+['compile.log', 'export.log', 'export-dds.log'][index])
     log_path.write_text(log, encoding='utf-8')

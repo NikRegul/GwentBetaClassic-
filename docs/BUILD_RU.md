@@ -151,3 +151,6 @@ tools/core-check/check_ai_rules.py и check_pass_policy.py. Затем одна 
 установленная партия, обязательный выбор, управление контроллером, сохранение/
 полная перезагрузка. Сборка не подтверждает прохождение квестов или всех
 комбинаций карт. Исходники не требуют постоянного запуска большого набора тестов.
+
+
+0.2.1 / stage94: see [BUILD_POLISH94.md](BUILD_POLISH94.md), [Russian changes](PRESENTATION94_RU.md) and [English changes](PRESENTATION94_EN.md).

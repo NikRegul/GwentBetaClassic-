@@ -5,6 +5,9 @@ import json
 from PIL import Image, ImageOps, ImageChops
 from card_art_sources import resolve
 from native_weather_sources import extract as extract_weather
+from beta_visual_sources import extract as extract_beta_visuals
+from beta_board_sources import extract as extract_beta_boards
+from beta_editor_sources import extract as extract_beta_editor
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / 'LegacyGwent-diy(1)/LegacyGwent-diy/src/Cynthia.Card.Unity/src/Cynthia.Unity.Card/Assets/Addressables/Cards'
@@ -26,8 +29,13 @@ if runtime_ids.intersection(missing):raise RuntimeError('Implemented artwork mis
 IDS=sorted(all_ids-set(missing))
 WIDTH, HEIGHT, COLS = 128, 180, 32
 weather = extract_weather()
-ROWS = (len(IDS)+len(weather)+COLS-1)//COLS
+beta_visuals = extract_beta_visuals()
+beta_boards = extract_beta_boards()
+beta_editor = extract_beta_editor()
+extras = weather + beta_visuals + beta_boards + beta_editor
+ROWS = (len(IDS)+len(extras)+COLS-1)//COLS
 ATLAS_WIDTH, ATLAS_HEIGHT = COLS*WIDTH, ROWS*HEIGHT
+assert ATLAS_HEIGHT <= 4096, 'Native GFx atlas height exceeded'
 entries = []
 preview = Image.new('RGB', (COLS * 152, ROWS * 220), '#16191e')
 for ordinal, template in enumerate(IDS):
@@ -55,7 +63,7 @@ atlas=Image.new('RGBA',(ATLAS_WIDTH,ATLAS_HEIGHT),(0,0,0,255))
 for ordinal, template in enumerate(IDS):
     thumb=Image.open(UI/'assets/cards'/(str(template)+'.png')).convert('RGBA')
     atlas.paste(thumb,((ordinal%COLS)*WIDTH,(ordinal//COLS)*HEIGHT))
-for ordinal, item in enumerate(weather, len(IDS)):
+for ordinal, item in enumerate(extras, len(IDS)):
     # Paste RGBA verbatim: compositing onto black would destroy weather alpha.
     atlas.paste(Image.open(item['thumbnail']).convert('RGBA'), ((ordinal%COLS)*WIDTH,(ordinal//COLS)*HEIGHT))
 atlas.save(UI/'assets/card_atlas.png')
@@ -110,13 +118,15 @@ runtime = """package
         { seen={};successes=0;failures=0;lastError=\"\"; }
     }
 }
-""".replace('IDS_LIST',','.join(map(str,IDS+[item['atlasId'] for item in weather]))).replace('slot%6',f'slot%{COLS}').replace('slot/6',f'slot/{COLS}').replace('bitmap.width<768',f'bitmap.width<{ATLAS_WIDTH}').replace('bitmap.height<360',f'bitmap.height<{ATLAS_HEIGHT}')
+""".replace('IDS_LIST',','.join(map(str,IDS+[item['atlasId'] for item in extras]))).replace('slot%6',f'slot%{COLS}').replace('slot/6',f'slot/{COLS}').replace('bitmap.width<768',f'bitmap.width<{ATLAS_WIDTH}').replace('bitmap.height<360',f'bitmap.height<{ATLAS_HEIGHT}')
 (UI/'src/BetaGwentCardArt.as').write_text(runtime,encoding='utf-8')
 preview.save(UI/'build/card-art-contact-sheet.png')
 (ROOT/'docs/evidence/card-art-build.json').write_text(json.dumps(dict(cards=entries,
-    atlasSize=[ATLAS_WIDTH,ATLAS_HEIGHT],missingTemplateIds=missing,weatherSprites=weather,
+    atlasSize=[ATLAS_WIDTH,ATLAS_HEIGHT],missingTemplateIds=missing,weatherSprites=weather,betaVisuals=beta_visuals,betaBoards=beta_boards,betaEditor=beta_editor,
     encoding='Native embedded DXT5 atlas; Shared immutable BitmapData; constant-time atlas slots; Sprite.scrollRect tiles128x180; no pixel writes',
-    sourcePolicy='DIY artwork only; rules/description remain canonical Beta. Originals unchanged.',
+    sourcePolicy='DIY cards; TW3 weather; original Beta boards, selection, particles and deckbuilder sprites. Originals unchanged.',
     nativeRuntimeVerified=False,
     pipeline='Royale Embed -> GFxExport DDS -> CSwfTexture/SubImage resource; original board texture chunks retained'),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(f'Packed{len(IDS)} DIY illustration bindings in native atlas{ATLAS_WIDTH}x{ATLAS_HEIGHT}/DXT5; runtime pending.')
+import subprocess,sys
+subprocess.run([sys.executable,'-X','utf8',str(ROOT/'tools/ui/build_hd_art94.py')],cwd=ROOT,check=True)

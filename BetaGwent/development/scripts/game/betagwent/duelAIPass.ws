@@ -1,4 +1,4 @@
-// Shared round economy for every archetype. Gains are heuristic estimates of
+﻿// Shared round economy for every archetype. Gains are heuristic estimates of
 // immediate tempo, not a simulation of hidden cards or future weather ticks.
 struct SBetaGwentAIChaseAction
 {
@@ -44,8 +44,25 @@ function BetaGwentAIEarlyPass(lead : int, burst : int, leaderBurst : int,
 {
     var needed : int;
     if (enemyCrowns >= 1 || lead <= 0 || burst <= 0 || ownHand < 3) return false;
+    // A small lead is vulnerable to an unseen tutor/control gold. Never infer
+    // a safe two-card tax from just a low observed opening bronze.
+    burst = Max(25, burst);
     needed = (Max(0, lead + 1 - leaderBurst) + burst - 1) / burst;
-    return needed >= 2 && enemyHand >= needed && ownHand - (enemyHand - needed) >= 1;
+    return lead >= 26 && needed >= 2 && enemyHand >= needed && ownHand - (enemyHand - needed) >= 2;
+}
+// Bounded estimate of the actual alternating duel: live power, armor and
+// first strike. No state mutation, random choice or enemy-hand information.
+function BetaGwentAIDuelSwing(ownPower : int, ownArmor : int, enemyPower : int, enemyArmor : int) : int
+{
+    var ownStart, enemyStart, strike, armorHit, turn : int;
+    ownStart=ownPower;enemyStart=enemyPower;
+    while(ownPower>0 && enemyPower>0 && turn<32)
+    {
+        if(turn%2==0){strike=ownPower;armorHit=Min(enemyArmor,strike);enemyArmor-=armorHit;enemyPower=Max(0,enemyPower-strike+armorHit);}
+        else {strike=enemyPower;armorHit=Min(ownArmor,strike);ownArmor-=armorHit;ownPower=Max(0,ownPower-strike+armorHit);}
+        turn+=1;
+    }
+    return enemyStart-enemyPower-(ownStart-ownPower);
 }
 class CBetaGwentAIChasePlanner extends IScriptable
 {

@@ -1,4 +1,4 @@
-// Remaining Scoiatael graphs; the other fifty consumers are existing concrete dependencies.
+﻿// Remaining Scoiatael graphs; the other fifty consumers are existing concrete dependencies.
 class CBetaGwentDuelScoia extends IScriptable
 {
     private var game : CBetaGwentDuelSession;
@@ -99,7 +99,16 @@ class CBetaGwentDuelScoia extends IScriptable
             LogChannel('BetaGwent',"DUEL_DECK_PICK source="+s.instanceId+" target="+selected+" template="+t.runtimeTemplate.templateId+" location=16 created="+target.createdCopy);
             game.MonsterPlayExisting(source,target);return;
         }
-        if(id==142106){target.AddTokens(512);game.NorthMoveInactive(target,side,32,false);game.MonsterPlayExisting(source,target);return;}
+        if(id==142106){
+            if(t.locationMask!=32 || t.positionPlayerId!=enemy || t.runtimeTemplate.typeMask!=2
+                || (t.runtimeTierMask&6)==0 || t.isWaitingToDie || (t.tokenMask&512)!=0)
+            {LogChannel('BetaGwent',"DUEL_AGLAIS_PICK_REJECTED target="+selected+" zone="+t.locationMask);Played(source);return;}
+            // Transfer the grave card before adding Doomed. Move(to Graveyard)
+            // removes a Doomed card immediately, before its nested play begins.
+            game.NorthMoveInactive(target,side,32,false);target.AddTokens(512);
+            LogChannel('BetaGwent',"DUEL_AGLAIS_REPLAY target="+selected+" side="+side+" banishAfterPlay=true");
+            game.MonsterPlayExisting(source,target);return;
+        }
         if(id==142107){source.monsterStored=t.runtimeTemplate.templateId;source.monsterStage=1;game.MonsterPlayExisting(source,target);return;}
         if(id==142101)game.MonsterPower(source,target,-source.monsterStored);
         else if(id==142103)
