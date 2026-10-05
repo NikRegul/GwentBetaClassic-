@@ -6,7 +6,7 @@ package
     import flash.geom.Rectangle;
     public class BetaGwentCardArt
     {
-        [Embed(source="../assets/card_atlas.png",compression="true",quality="100")]
+        [Embed(source="../assets/legacy_weather95.png",compression="true",quality="100")]
         private static var NativeAtlas:Class;
         private static var seen:Object={};
         private static var sharedAtlas:BitmapData;
@@ -37,11 +37,11 @@ package
                     // Keep the proven native Bitmap path if this GFx build exposes no BitmapData.
                     if(bitmap)sharedAtlas=bitmap.bitmapData;
                 }
-                if(!bitmap || bitmap.width<2048 || bitmap.height<720)throw new Error("Native atlas missing or invalid extent");
+                if(!bitmap || bitmap.width<1024 || bitmap.height<180)throw new Error("Native atlas missing or invalid extent");
                 var result:Sprite=new Sprite();
                 result.mouseEnabled=false;result.mouseChildren=false;
                 result.scrollRect=new Rectangle(0,0,128,180);
-                bitmap.x=-(slot%16)*128;bitmap.y=-int(slot/16)*180;
+                bitmap.x=-(slot%8)*128;bitmap.y=-int(slot/8)*180;
                 bitmap.smoothing=true;result.addChild(bitmap);
                 result.scaleX=w/128;result.scaleY=h/180;
                 if(!seen.hasOwnProperty(id)){seen[id]=true;successes++;}
@@ -51,7 +51,7 @@ package
                 seen[id]=false;lastError=id+": "+error.toString();return null;
             }
         }
-        private static var IDS:Array=[-1,-2,-3,-4,-5,-6,-7,-8,-101,-102,-103,-104,-105,-106,-107,-108,-201,-202,-203,-210,-211,-212,-213,-214,-215,-216,-217,-218,-219,-220,-221,-222,-223,-224,-225,-226,-227,-228,-229,-230,-231,-232,-233,-234,-235,-236,-237,-238,-239,-240,-241,-242,-243,-250,-251,-252,-253];
+        private static var IDS:Array=[-1,-2,-3,-4,-5,-6,-7,-8];
         public static function release():void
         { BetaGwentHDArt.release();seen={};successes=0;failures=0;lastError=""; }
     }

@@ -1,0 +1,9 @@
+{
+  "leaderReserveByRound": [12, 8, 0],
+  "leaderMinimumAbilityGain": 3,
+  "leaderMinimumAbilityGainByTemplate": {"200164": 8},
+  "leaderOpeningMinimumAbilityGain": 10,
+  "leaderOpeningHandSize": 8,
+  "ordinaryPool": "active_archetypes",
+  "description": "Leader gain is real card tempo. Reserve and setup affect ordering only; they are never catch-up points. Ordinary NPCs use every active adapted archetype once per shuffled cycle."
+}

@@ -17,6 +17,11 @@ COOKED=BASE/'cooked';PACKAGE=BASE/'package';CONTENT=PACKAGE/'Mods/modBetaGwent09
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def job(name,args):
     subprocess.run([sys.executable,str(ROOT/'tools/recon/run_wcc_job.py'),'--out',str(BASE/'jobs'/name),'--timeout','300','--',*args,'-uncookDir',str(ROOT/'depot')+'\\','-workspaceDir',str(PROJECT)+'\\'],cwd=ROOT,check=True)
+    log=(BASE/'jobs'/name/'stdout.txt').read_text('utf8',errors='replace')
+    # Wcc can return zero after failed writer assertions. Exit status alone
+    # must never authorize a corrupt resource to enter the shipping bundle.
+    fatal=('Internal cooking buffer is to small','!!! FATAL WRITING ERROR !!!','[Error][Assertion]','Cooking error for resource')
+    if any(marker in log for marker in fatal):raise RuntimeError('Wcc resource failure in '+name+'; inspect '+str(BASE/'jobs'/name/'stdout.txt'))
 def checked():
     report=json.loads((BASE/'frozen.json').read_text('utf8'))
     for f in report['files']:
@@ -35,6 +40,21 @@ if a.step=='prepare':
         visuals=ROOT/f'BetaGwent/build/stage{STAGE}/{LANG}/resources'
         for name in ('betagwent_board.redswf','betagwent_npc00.redswf','betagwent_decks.redswf'):
             shutil.copyfile(visuals/name,WORK/'betagwent'/name)
+    if STAGE==96:
+        sys.path.insert(0,str(ROOT/'tools/ui'))
+        from externalize_gui96 import externalize
+        preparation={}
+        for name in ('betagwent_board.redswf','betagwent_npc00.redswf','betagwent_decks.redswf'):
+            preparation[name]=externalize(WORK/'betagwent'/name,WORK/'betagwent'/name,WORK)
+        (BASE/'menu-input.json').write_text(json.dumps(preparation,indent=2)+'\n','utf8')
+    elif STAGE>=95:
+        sys.path.insert(0,str(ROOT/'tools/ui'))
+        from prepare_cooked_menu95 import strip_authoring
+        preparation={}
+        for name in ('betagwent_board.redswf','betagwent_npc00.redswf','betagwent_decks.redswf'):
+            preparation[name]=strip_authoring(WORK/'betagwent'/name)
+            if preparation[name]['after']>=100*1024*1024:raise RuntimeError('Menu exceeds verified Wcc writer budget: '+name)
+        (BASE/'menu-input.json').write_text(json.dumps(preparation,indent=2)+'\n','utf8')
     if LANG=='en':
         sys.path.insert(0,str(ROOT/'tools'));from localization89 import strings
         lookup=strings();con=sqlite3.connect(PROJECT/'LocalEditorStringDataBaseW3_UTF8_mod.db')
@@ -55,7 +75,7 @@ if a.step=='prepare':
     metadata.update(version=VERSION,description='Gwent Beta Classic 0.9.24 — '+LANG.upper()+', 479 cards, five factions, collection, decks and controller support.',excludedDlc=[])
     (PROJECT/'myproject1.w3edit').write_text(json.dumps(metadata,indent=2)+'\n','utf8')
     for p in WORK.rglob('*'):
-        if p.suffix in ('.menu','.guiconfig','.redswf'):
+        if p.suffix in ('.menu','.guiconfig','.redswf','.redswfx'):
             target=BASE/'cook-roots'/p.relative_to(WORK);target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,target)
     files=[dict(path=p.relative_to(PROJECT).as_posix(),sha256=sha(p)) for p in sorted(PROJECT.rglob('*')) if p.is_file()]
     (BASE/'frozen.json').write_text(json.dumps(dict(stage=STAGE,language=LANG,files=files),indent=2),'utf8')
@@ -64,6 +84,18 @@ else:
     checked();CONTENT.mkdir(parents=True,exist_ok=True)
     if a.step=='cook':
         job('cook',['cook','-platform=pc','-mod='+str(BASE/'cook-roots')+'\\','-outdir='+str(COOKED)+'\\'])
+        if STAGE==96:
+            sys.path.insert(0,str(ROOT/'tools/ui'))
+            from verify_external_gui96 import verify
+            menus={name:verify(WORK/'betagwent'/name,COOKED/'betagwent'/name,WORK,COOKED)
+                   for name in ('betagwent_board.redswf','betagwent_npc00.redswf','betagwent_decks.redswf')}
+            (BASE/'cooked-menus-verified.json').write_text(json.dumps(menus,indent=2)+'\n','utf8')
+        elif STAGE>=95:
+            sys.path.insert(0,str(ROOT/'tools/ui'))
+            from verify_cooked_menu95 import verify
+            menus={name:verify(WORK/'betagwent'/name,COOKED/'betagwent'/name)
+                   for name in ('betagwent_board.redswf','betagwent_npc00.redswf','betagwent_decks.redswf')}
+            (BASE/'cooked-menus-verified.json').write_text(json.dumps(menus,indent=2)+'\n','utf8')
         for p in WORK.rglob('*'):
             if p.suffix in ('.xml','.csv'):
                 target=COOKED/p.relative_to(WORK);target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,target)
@@ -82,7 +114,12 @@ else:
         for p in COOKED.rglob('*'):
             if p.is_file() and p.name!='cook.db':
                 target=clean/p.relative_to(COOKED);target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,target)
-        job('pack',['pack','-dir='+str(clean)+'\\','-outdir='+str(CONTENT)+'\\','-compression=LZ4HC'])
+        job('pack',['pack','-dir='+str(clean)+'\\','-outdir='+str(CONTENT)+'\\','-compression='+('None' if STAGE>=97 else 'LZ4HC')])
+        if STAGE>=96:
+            sys.path.insert(0,str(ROOT/'tools/ui'))
+            from verify_bundle96 import verify
+            report=verify(CONTENT/'blob0.bundle',clean,require_uncompressed_gui=STAGE>=97)
+            (BASE/'packed-resources-verified.json').write_text(json.dumps(report,indent=2)+'\n','utf8')
     elif a.step=='metadata':job('metadata',['metadatastore','-path='+str(CONTENT)+'\\','-out='+str(CONTENT/'metadata.store')])
     elif a.step=='archive':
         compilation=a.compiled or ROOT/('BetaGwent/build/board-compile89a' if LANG=='ru' else 'BetaGwent/build/board-compile89enc')

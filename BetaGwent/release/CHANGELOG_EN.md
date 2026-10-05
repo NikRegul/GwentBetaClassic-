@@ -1,3 +1,23 @@
+# Gwent Beta Classic 0.2.4
+
+**Back up saves before every update.**
+
+- Fixed Roar creating its Bear; audited neighboring nested-play transitions.
+- Refreshed stale deck/graveyard choices; excluded active play ancestors.
+- Free-row fallback and spy-side handling for nested units.
+- Row validation agrees with allied/enemy/any-side highlighting.
+- Balanced cursor ownership and input-context restoration.
+- Restored inline HD textures; native bundle is stored uncompressed.
+- Matching RU/EN code, fresh script blobs and build/AI documentation.
+
+Installed-game rendering and input acceptance of this revision remain pending.
+0.2.3 opened menus but did not render external textures. Replace the whole
+Mods/modBetaGwent0924 folder; do not mix package versions. See UPDATE.md.
+
+## 0.2.2
+
+Improve shipping-GFx startup compatibility: remove the early MouseEvent.RIGHT_CLICK lookup and detect native RMB without an additional SDK class. Installed-game acceptance of the blank-editor/NPC-loading fix is pending.
+
 # Gwent Beta Classic 0.2.1
 
 **Back up your saves before installation and every update. Bugs can still occur.

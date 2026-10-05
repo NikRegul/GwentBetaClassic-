@@ -14,8 +14,10 @@ SOURCE=ROOT/'BetaGwent/development/scripts/game/betagwent/duelAIPass.ws'
 BUILD=ROOT/'BetaGwent/build/pass-policy85'
 BUILD.mkdir(parents=True,exist_ok=True)
 raw=SOURCE.read_bytes();source=raw.decode('utf-8-sig')
+tuning=ROOT/'BetaGwent/development/scripts/game/betagwent/duelAITuning.ws'
+source+='\n'+tuning.read_text('utf-8-sig')
 methods=[]
-for name in ('BetaGwentAIChasePassReason','BetaGwentAIEarlyPass','BetaGwentAIConcedeOptionalRound','BetaGwentAIDuelSwing'):
+for name in ('BetaGwentAIChasePassReason','BetaGwentAIEarlyPass','BetaGwentAIConcedeOptionalRound','BetaGwentAIDuelSwing','BetaGwentAILeaderReserve','BetaGwentAILeaderAbilityMinimum','BetaGwentAILeaderUseful'):
     match=re.search(r'function '+name+r'\((.*?)\)\s*:\s*(int|bool)\s*\{',source,re.S)
     pos=match.end();start=pos;depth=1
     while depth:
@@ -27,6 +29,15 @@ for name in ('BetaGwentAIChasePassReason','BetaGwentAIEarlyPass','BetaGwentAICon
     params=', '.join(t.strip()+' '+n.strip() for n,t in (p.split(':') for p in match[1].split(',')))
     methods.append('static '+match[2]+' '+name+'('+params+') {'+body+'}')
 cases=[
+    ('do not spend a leader for its body', 'BetaGwentAILeaderUseful(200164,1,8,6,6,0,false,1)',False),
+    ('Calveit weak top three stay reserved', 'BetaGwentAILeaderUseful(200164,1,8,6,11,0,false,1)',False),
+    ('Calveit valuable actual top three', 'BetaGwentAILeaderUseful(200164,1,8,6,22,0,false,1)',True),
+    ('free leader closes a passed score gap', 'BetaGwentAILeaderUseful(200164,1,6,6,6,0,true,5)',True),
+    ('body cannot close the passed score gap', 'BetaGwentAILeaderUseful(200164,1,6,6,6,0,true,10)',False),
+    ('empty hand allows a useful last leader', 'BetaGwentAILeaderUseful(200164,1,0,6,6,0,false,10)',True),
+    ('zero-gain leader is never useful', 'BetaGwentAILeaderUseful(200164,3,0,0,0,0,false,10)',False),
+    ('deciding round spends useful leader', 'BetaGwentAILeaderUseful(200164,3,3,6,6,0,false,10)',True),
+    ('opening reserve', 'BetaGwentAILeaderReserve(1)',12),
     ('optional two-card chase', 'BetaGwentAIChasePassReason(true,2,0,7,7,0,0)',2),
     ('cheap one-card answer', 'BetaGwentAIChasePassReason(true,1,0,6,6,0,0)',0),
     ('large retained advantage', 'BetaGwentAIChasePassReason(true,2,0,9,5,0,0)',0),
@@ -62,7 +73,7 @@ program='using System; class Program {'+'\n'.join(methods)+'static void Main(){'
 (BUILD/'policy.csproj').write_text('<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net7.0</TargetFramework><CheckEolTargetFramework>false</CheckEolTargetFramework></PropertyGroup></Project>',encoding='utf8')
 offline=BUILD/'empty-feed';offline.mkdir(exist_ok=True)
 run=subprocess.run(['dotnet','run','--project',str(BUILD/'policy.csproj'),'--property:RestoreSources='+str(offline)],cwd=BUILD,capture_output=True,text=True,timeout=60,creationflags=subprocess.CREATE_NO_WINDOW)
-report=dict(source=str(SOURCE),sha256=hashlib.sha256(raw).hexdigest(),cases=[dict(name=n,expected=e) for n,_,e in cases],passed=run.returncode==0,stdout=run.stdout,stderr=run.stderr,nativeRuntimeVerified=False)
+report=dict(source=str(SOURCE),sha256=hashlib.sha256(raw).hexdigest(),tuningSha256=hashlib.sha256(tuning.read_bytes()).hexdigest(),cases=[dict(name=n,expected=e) for n,_,e in cases],passed=run.returncode==0,stdout=run.stdout,stderr=run.stderr,nativeRuntimeVerified=False)
 (ROOT/'docs/evidence/pass-policy85.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 print(run.stdout);print(run.stderr)
 raise SystemExit(run.returncode)

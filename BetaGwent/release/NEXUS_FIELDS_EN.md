@@ -6,7 +6,7 @@ Gwent Beta Classic recreates the cards and rules of standalone Gwent Beta
 0.9.24 inside The Witcher 3. It replaces vanilla Gwent while keeping NPC
 matches, quests, merchants and card collecting connected to the Witcher's world.
 The current release includes playable cards, deck building and progression;
-closer reproduction of the original board and animations is the next stage.
+HD Beta boards and deck-builder skins are included; rendering and input in the installed game are being checked for this update.
 
 Installation instructions
 
@@ -49,3 +49,8 @@ Short summary
 
 Gwent Beta 0.9.24 inside The Witcher 3: five factions, 479 cards, saved decks,
 new rewards and kegs, controller support, and separate Russian/English packages.
+
+
+Update 0.2.4 fixes Roar/Bear creation, nested play, row selection and cursor requests. Inline HD textures return. Installed-game acceptance of this build is pending. Replace the whole previous Mods/modBetaGwent0924 folder and back up saves first.
+
+Bug reports: version/language and retail game or REDkit, round/scores/hands, card names and preceding actions, screenshot and log if available. Exclude keys and personal data. Next: archetype strategy tuning from actual matches, more accurate combo forecasts, animation/weather polish and broader quest, tournament, old-save and controller coverage.

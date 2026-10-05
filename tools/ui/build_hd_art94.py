@@ -179,18 +179,20 @@ def main():
 '''+marker)
   code=code.replace('{ seen={};successes=0;failures=0;lastError=""; }','{ BetaGwentHDArt.release();seen={};successes=0;failures=0;lastError=""; }')
  # Only particles/weather stay in the small atlas. Cards and interface use HD.
- extras=manifest['weatherSprites']+manifest['betaVisuals'];cols=16
+ extras=manifest['weatherSprites'];cols=8
+ assert len(extras)==8
  height=((len(extras)+cols-1)//cols)*180
- small=Image.new('RGBA',(2048,height))
+ small=Image.new('RGBA',(1024,height))
  for i,t in enumerate(extras):small.paste(Image.open(t['thumbnail']).convert('RGBA'),(i%cols*128,i//cols*180))
- small.save(UI/'assets/card_atlas.png')
+ small.save(UI/'assets/legacy_weather95.png')
+ code=code.replace('../assets/card_atlas.png','../assets/legacy_weather95.png')
  import re
  code=re.sub(r'private static var IDS:Array=\[[^\]]*\];','private static var IDS:Array=['+','.join(str(t['atlasId']) for t in extras)+'];',code)
  code=re.sub(r'slot%\d+',f'slot%{cols}',code);code=re.sub(r'slot/\d+',f'slot/{cols}',code)
- code=re.sub(r'bitmap.width<\d+',f'bitmap.width<2048',code)
+ code=re.sub(r'bitmap.width<\d+',f'bitmap.width<1024',code)
  code=re.sub(r'bitmap.height<\d+',f'bitmap.height<{height}',code)
  path.write_text(code,'utf8')
- manifest['atlasSize']=[2048,height];manifest['hdManifest']='docs/evidence/hd-art94.json'
+ manifest['atlasSize']=[1024,height];manifest['hdManifest']='docs/evidence/hd-art94.json'
  manifest['encoding']='HD cards/interface pages plus small particle/weather atlas; native DXT5; shared immutable bitmaps'
  (ROOT/'docs/evidence/card-art-build.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n','utf8')
  assert all(sha(Path(path))==digest for path,digest in sources.items())

@@ -222,9 +222,7 @@ lines+=['function BetaGwentAIProfileIds(out ids : array<int>) {','    ids.Clear(
 lines+=['function BetaGwentAIProfileDeck(id : int, out ids : array<int>) : bool {','    switch(id) {']
 lines += [f'    case {p["id"]}: return BetaGwentDuelPresetDeck({p["presetId"]},ids);' for p in active]
 lines += ['    default: ids.Clear();return false;','    }','}']
-lines+=['function BetaGwentAIRandomPreset() : int {','    switch(RandRange('+str(len(active)+15)+')) {']
-lines += [f'    case {i}: return {p};' for i,p in enumerate(list(range(1,16))+[p['presetId'] for p in active])]
-lines += ['    default: return 15;','    }','}']
+lines+=['function BetaGwentAIRandomPreset() : int {', '    return BetaGwentAIChooseOrdinaryPreset();', '}']
 (ROOT/'BetaGwent/development/scripts/game/betagwent/duelAICatalog.ws').write_text('\n'.join(bounded_helpers(lines))+'\n',encoding='utf-8-sig')
 md=['# Адаптация deck_rules: этап88','',f'Источник: SHA-256 `{report["sourceSha256"]}`.',
     '',f'Активны {len(active)} из {len(profiles)} профилей. Лидеры отсутствующих шести пропущены.',
@@ -237,3 +235,6 @@ for p in active:
     for x in p['changes']:md.append('- '+x['requested']+' → '+x.get('resolvedName',english.get(x.get('resolvedId'),'дополнение базовым архетипом'))+' ('+x['method']+').')
 (ROOT/'docs/ai_rules88_adaptation.md').write_text('\n'.join(md)+'\n',encoding='utf-8')
 print(f'Imported46 profiles, active{len(active)}, presets{len(base)}, combos{len(combos)}. Source retained in data/beta924/ai/rules.json.')
+
+from build_ai_tuning95 import main as build_tuning
+build_tuning()

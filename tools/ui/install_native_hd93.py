@@ -27,6 +27,48 @@ def symbols(tags):
    cid=struct.unpack_from('<H',p,pos)[0];pos+=2;end=p.index(0,pos);out[cid]=p[pos:end];pos=end+1
  return out
 
+def resource_prefix(r):
+ # Copy the engine's existing CName hash rather than guessing its algorithm.
+ # Adding a name keeps all existing property/class indices stable.
+ from read_gui_resource import GuiResource
+ exemplar=GuiResource(r'D:\GOG Galaxy\Games\The Witcher 3 REDkit\r4data\gameplay\gui_new\swf\glossary\panel_glossary_bestiary.redswf')
+ strings=bytearray(r.strings)
+ no,count,_=r.tables[1];names=bytearray(r.data[no:no+count*8])
+ for name in ('TCM_DXTNoAlpha','GUIWithoutAlpha'):
+  if name not in r.names:
+   index=exemplar.names.index(name)
+   name_hash=exemplar.unpack('<II',exemplar.tables[1][0]+index*8)[1]
+   names+=struct.pack('<II',len(strings),name_hash)
+   strings+=name.encode()+b'\0';r.names.append(name)
+ po,pc,_=r.tables[3];props=r.data[po:po+pc*16]
+ out=bytearray(r.data[:160])
+ for i,data,entries in [(0,strings,len(strings)),(1,names,len(r.names)),(3,props,pc)]:
+  struct.pack_into('<III',out,40+i*12,len(out),entries,zlib.crc32(data));out+=data
+ return out
+
+def card_dds(export_name, exported_dds):
+ import re
+ import numpy as np
+ match=re.match(rb'cards-(\d+)_png',export_name)
+ if not match and not export_name.startswith((b'board_classic_png',b'board_wide_png')):return None
+ digest=sha(exported_dds+b'bc3-to-bc1-v1');cache=ROOT/'BetaGwent/build/card-bc1';cache.mkdir(exist_ok=True)
+ target=cache/(digest+'.dds')
+ if not target.exists():
+  # Every visible card rectangle is opaque. Unused cells are never sampled.
+  # BC1 retains the full 384x540 illustration and halves GPU/storage bytes.
+  # BC3 uses the same four-colour blocks as BC1. Discard only the opaque
+  # alpha blocks; reverse endpoint/index order where BC1 would use transparency.
+  require(exported_dds[84:88]==b'DXT5','Expected original BC3 card page')
+  blocks=np.frombuffer(exported_dds[128:],dtype='<u4').reshape(-1,4)[:,2:].copy()
+  endpoints=blocks[:,0];first=endpoints&65535;second=endpoints>>16
+  swap=first<second;equal=first==second
+  blocks[swap,0]=(first[swap]<<16)|second[swap]
+  blocks[swap,1]^=np.uint32(0x55555555);blocks[equal,1]=0
+  header=bytearray(exported_dds[:128]);header[84:88]=b'DXT1'
+  struct.pack_into('<I',header,20,blocks.nbytes)
+  target.write_bytes(header+blocks.tobytes())
+ return target.read_bytes()
+
 def main():
  parser=argparse.ArgumentParser(description=__doc__)
  parser.add_argument('--apply',action='store_true')
@@ -56,7 +98,14 @@ def main():
  root_props,_=r.properties_at(r.exports[0]['data']);old_name=root_props['linkageName'][1][1:]
  movie_name=stem.replace('_','-',1).encode()+old_name[15:]
  require(len(movie_name)==len(old_name) and movie_name.endswith(b'.gfx'),'Movie identity changed length')
- template,_=r.properties_at(r.exports[1]['data'])
+ template,_=r.properties_at(r.exports[1]['data']);metadata=resource_prefix(r)
+ card_pages={}
+ for c,p,_ in tags:
+  if c!=35:continue
+  cid=struct.unpack_from('<H',p)[0];export_name=names.get(cid,b'')
+  if export_name.startswith((b'cards-',b'board_classic_png',b'board_wide_png')):
+   filename=exported_images[subimages.get(cid,cid)]
+   card_pages[sha((dds_dir/filename).read_bytes())]=export_name
  unique={};textures=[];infos=[];replacements={};bindings=[]
  for c,p,_ in tags:
   if c!=35:continue
@@ -64,22 +113,25 @@ def main():
   with Image.open(io.BytesIO(p[6:6+jpeg_size])) as image:width,height=image.size
   filename=exported_images.get(subimages.get(cid,cid));require(filename is not None,'Exporter image ID missing')
   require(Path(filename).name==filename,'Unexpected DDS path')
-  path=dds_dir/filename;dds=path.read_bytes();dims=((width+3)//4*4,(height+3)//4*4)
+  path=dds_dir/filename;original_dds=path.read_bytes();dds=card_dds(card_pages.get(sha(original_dds),b''),original_dds) or original_dds;dims=((width+3)//4*4,(height+3)//4*4)
   require(dds[:4]==b'DDS ' and struct.unpack_from('<II',dds,12)==(dims[1],dims[0]),'DDS extent mismatch')
-  require(dds[84:88]==b'DXT5' and len(dds)==128+dims[0]*dims[1],'Unsupported DDS format/payload')
+  opaque=dds[84:88]==b'DXT1'
+  require(dds[84:88] in (b'DXT1',b'DXT5') and len(dds)==128+dims[0]*dims[1]//(2 if opaque else 1),'Unsupported DDS format/payload')
   digest=sha(dds)
   if digest not in unique:
    image_id=len(textures);unique[digest]=image_id
    linkage=movie_name[:-4]+('_i'+str(image_id+1)+'.dds').encode()
    props=dict(template);props['width']=('Uint32',struct.pack('<I',dims[0]));props['height']=('Uint32',struct.pack('<I',dims[1]))
+   props['compression']=('ETextureCompression',struct.pack('<H',r.names.index('TCM_DXTNoAlpha' if opaque else 'TCM_DXTAlpha')))
+   props['textureGroup']=('CName',struct.pack('<H',r.names.index('GUIWithoutAlpha' if opaque else 'GUIWithAlpha')))
    props['linkageName']=('String',string(linkage.decode()))
-   chunk=properties(r,props)+struct.pack('<6I',0,1,dims[0],dims[1],dims[0]*4,len(dds)-128)+dds[128:]+struct.pack('<I',0)
+   chunk=properties(r,props)+struct.pack('<6I',0,1,dims[0],dims[1],dims[0]*(2 if opaque else 4),len(dds)-128)+dds[128:]+struct.pack('<I',0)
    textures.append(chunk)
    export=names.get(cid,b'');require(len(export)<256 and len(linkage)<256,'DDS ImageInfo string overflow')
    infos.append(tag(1009,struct.pack('<5H',image_id,9,14,*dims)+bytes([len(export)])+export+bytes([len(linkage)])+linkage))
   image_id=unique[digest]
   replacements[cid]=tag(1008,struct.pack('<6H',cid,image_id,0,0,width,height))
-  bindings.append(dict(cid=cid,imageId=image_id,source=str(path),sha256=digest,size=list(dims)))
+  bindings.append(dict(cid=cid,imageId=image_id,source=str(path),sha256=digest,size=list(dims),format=dds[84:88].decode()))
  require(1<=len(textures)<=32 and len(replacements)==len(exported_images),'Unexpected native image coverage')
  body=prefix+old_import+b''.join(infos)
  for c,p,raw in tags:
@@ -90,8 +142,11 @@ def main():
  props['textures']=('array:2,0,handle:CSwfTexture',struct.pack('<I',count)+b''.join(struct.pack('<I',i+2) for i in range(count)))
  props['linkageName']=('String',string(movie_name.decode()))
  require(all(props[k]==root_props[k] for k in props if k not in ('textures','linkageName')),'Root property changed')
- root=properties(r,props)+struct.pack('<I',len(gfx))+gfx+struct.pack('<I',len(swf))+swf
- chunks=[root]+textures;offset=r.tables[4][0];out=bytearray(r.data[:offset])+bytearray(len(chunks)*24);cursor=len(out)
+ # Wcc's intermediate writer also serializes the authoring SWF before stripping
+ # it. Store standard CWS, keeping its bytecode/pixels, below that buffer limit.
+ stored_swf=b'CWS'+swf[3:8]+zlib.compress(swf[8:],6)
+ root=properties(r,props)+struct.pack('<I',len(gfx))+gfx+struct.pack('<I',len(stored_swf))+stored_swf
+ chunks=[root]+textures;offset=len(metadata);out=metadata+bytearray(len(chunks)*24);cursor=len(out)
  for i,chunk in enumerate(chunks):
   record=list(records[0] if i==0 else records[1]);record[3]=len(chunk);record[4]=cursor;record[6]=zlib.crc32(chunk)
   struct.pack_into('<HHIIIII',out,offset+i*24,*record);out+=chunk;cursor+=len(chunk)
@@ -102,7 +157,8 @@ def main():
  candidate=build/(stem+'.redswf');candidate.write_bytes(out)
  checked,_=validate_resource(candidate);validate_image_linkages(checked)
  _,check_gfx,check_swf=unpack_root(checked)
- require(check_swf==swf and check_gfx==gfx,'Native movie round trip failed')
+ require(check_swf==stored_swf and check_gfx==gfx,'Native movie round trip failed')
+ require(b'FWS'+check_swf[3:8]+zlib.decompress(check_swf[8:])==swf,'Compressed authoring SWF differs')
  require(symbols(movie_parts(gfx)[1])==names,'Native image/root symbols differ')
  raw_abc=next(p for c,p,_ in tags if c==82)
  require(next(p for c,p,_ in movie_parts(gfx)[1] if c==82)==raw_abc,'Native/source ABC mismatch')

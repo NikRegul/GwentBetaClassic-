@@ -1,4 +1,4 @@
-// Keep native minigame/quest signalling; replace only the project GUI resources.
+﻿// Keep native minigame/quest signalling; replace only the project GUI resources.
 @addField(CR4GwintManager)
 public var betaNpcPending : bool;
 @addField(CR4GwintManager)
@@ -7,6 +7,10 @@ public var betaEnemyDeckName : name;
 public var betaTalkNpcId : int;
 @addField(CR4GwintManager)
 public var betaMatchNpcId : int;
+@addField(CR4GwintManager)
+public var betaOrdinaryDeckBag : array<int>;
+@addField(CR4GwintManager)
+public var betaOrdinaryLastPreset : int;
 @addField(CR4Player)
 public var betaPracticeRequested : bool;
 

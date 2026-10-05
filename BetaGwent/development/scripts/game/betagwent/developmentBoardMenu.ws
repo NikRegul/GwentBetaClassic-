@@ -1,4 +1,4 @@
-// Separate development menu; requires BetaGwentBoard CMenuResource registration.
+﻿// Separate development menu; requires BetaGwentBoard CMenuResource registration.
 class CR4BetaGwentBoardMenu extends CR4Menu
 {
     private var session : CBetaGwentDuelSession;
@@ -13,6 +13,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     private var pushRequestCard : CScriptedFlashFunction;
     private var revision : int;
     private var configured : bool;
+    private var mouseCursorOwned : bool;
     private var setHeader : CScriptedFlashFunction;
     private var setCounts : CScriptedFlashFunction;
     private var pushCard : CScriptedFlashFunction;
@@ -133,13 +134,13 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         audio = new CBetaGwentDuelAudio in this; audio.Initialize();
         if (setAudioStatus) setAudioStatus.InvokeSelfTwoArgs(FlashArgBool(BetaGwentAudioBankInstalled()), FlashArgBool(audio.IsBankReady()));
         theInput.StoreContext('EMPTY_CONTEXT');
-        theGame.GetGuiManager().RequestMouseCursor(true);
         RefreshControllerDevice(theInput.LastUsedGamepad());
         LogChannel('BetaGwent', "BOARD_CONFIGURED schema=1 fixture=false previewDuel=true");
         LogChannel('BetaGwent', "BOARD_ENTRY name="+GetMenuName()+" editorOnly="+libraryOnly+" npc="+npcMatch+" pending="+pendingBefore+" requested="+requestedBefore+" lifecycle=81d");
         PublishCollection();Publish(session.GetMessage());
         if(((W3PlayerWitcher)thePlayer).BetaGwentKegPending())OnBetaGwentKegOpen(revision);
-        else if(libraryOnly)OnBetaGwentDeckEditorOpen(revision,ownPreset);
+        // The pause-menu entry starts at the saved-deck library. Editing and
+        // creating a draft are explicit player actions, never automatic.
         // CR4GwintBaseMenu does this after its menu setup. Our replacement does
         // not inherit that class: release the native story-scene start fade.
         if(GetMenuName() == 'DeckBuilder' || GetMenuName() == 'GwintGame')
@@ -421,7 +422,15 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         config=(CInGameConfigWrapper)theGame.GetInGameConfigWrapper();
         if(config)swapped=config.GetVarValue('Controls','SwapAcceptCancel');
         setControllerDevice.InvokeSelfThreeArgs(FlashArgUInt(theInput.GetLastUsedGamepadType()),FlashArgBool(active),FlashArgBool(swapped));
-        theGame.GetGuiManager().RequestMouseCursor(!active);
+        // RequestMouseCursor is a reference count, not a visibility setter.
+        // Device refreshes and keyboard returns must not accumulate requests.
+        SetOwnedMouseCursor(!active);
+    }
+    private function SetOwnedMouseCursor(visible : bool)
+    {
+        if(mouseCursorOwned==visible)return;
+        theGame.GetGuiManager().RequestMouseCursor(visible);
+        mouseCursorOwned=visible;
     }
     event OnBetaGwentControllerDevice(active : bool)
     { RefreshControllerDevice(active || theInput.LastUsedGamepad());return true; }
@@ -881,6 +890,12 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if (!AcceptRevision(value)) return false;
         duel.SelectRow(requestId, side, row); Publish(session.GetMessage());
     }
+    event OnCloseMenu()
+    {
+        var safeBack : CScriptedFlashFunction;
+        safeBack=GetMenuFlash().GetMemberFlashFunction("requestCloseFromGame");
+        if(safeBack)safeBack.InvokeSelfOneArg(FlashArgInt(0));
+    }
     event OnBetaGwentBoardClose() { CloseMenu(); }
     event OnClosingMenu()
     {
@@ -900,13 +915,13 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if (configured)
         {
             deckDraft = NULL; requestFlow.Close();
-            theInput.RestoreContext('EMPTY_CONTEXT', npcMatch);
-            theGame.GetGuiManager().RequestMouseCursor(false);
+            theInput.RestoreContext('EMPTY_CONTEXT', true);
+            SetOwnedMouseCursor(false);
             configured = false;
         }
         if(kegOnly) {
             inventoryParent=(CR4InventoryMenu)GetParent();
-            if(inventoryParent) {inventoryParent.UpdateAllItemData();theGame.GetGuiManager().RequestMouseCursor(true);}
+            if(inventoryParent) inventoryParent.UpdateAllItemData();
             ((W3PlayerWitcher)thePlayer).BetaGwentEnsureCollection();
         }
         LogChannel('BetaGwent', "BOARD_CLOSED revision=" + revision);

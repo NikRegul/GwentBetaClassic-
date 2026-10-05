@@ -1,4 +1,4 @@
-// Generated from deck_rules.txt by tools/build_ai_rules.py. No player private zones.
+﻿// Generated from deck_rules.txt by tools/build_ai_rules.py. No player private zones.
 struct SBetaGwentAICombo { var setup, payoff, weight : int; }
 function BetaGwentAICombos(out pairs : array<SBetaGwentAICombo>) {
     var p : SBetaGwentAICombo; pairs.Clear();
@@ -400,62 +400,5 @@ function BetaGwentAIProfileDeck(id : int, out ids : array<int>) : bool {
     }
 }
 function BetaGwentAIRandomPreset() : int {
-    switch(RandRange(55)) {
-    case 0: return 1;
-    case 1: return 2;
-    case 2: return 3;
-    case 3: return 4;
-    case 4: return 5;
-    case 5: return 6;
-    case 6: return 7;
-    case 7: return 8;
-    case 8: return 9;
-    case 9: return 10;
-    case 10: return 11;
-    case 11: return 12;
-    case 12: return 13;
-    case 13: return 14;
-    case 14: return 15;
-    case 15: return 54;
-    case 16: return 55;
-    case 17: return 56;
-    case 18: return 57;
-    case 19: return 58;
-    case 20: return 59;
-    case 21: return 60;
-    case 22: return 61;
-    case 23: return 62;
-    case 24: return 63;
-    case 25: return 64;
-    case 26: return 65;
-    case 27: return 66;
-    case 28: return 67;
-    case 29: return 68;
-    case 30: return 69;
-    case 31: return 70;
-    case 32: return 71;
-    case 33: return 72;
-    case 34: return 73;
-    case 35: return 74;
-    case 36: return 75;
-    case 37: return 76;
-    case 38: return 77;
-    case 39: return 78;
-    case 40: return 79;
-    case 41: return 80;
-    case 42: return 81;
-    case 43: return 82;
-    case 44: return 83;
-    case 45: return 84;
-    case 46: return 85;
-    case 47: return 86;
-    case 48: return 87;
-    case 49: return 88;
-    case 50: return 89;
-    case 51: return 90;
-    case 52: return 91;
-    case 53: return 92;
-    case 54: return 93;
-    default: return 15;
-    }
+    return BetaGwentAIChooseOrdinaryPreset();
 }

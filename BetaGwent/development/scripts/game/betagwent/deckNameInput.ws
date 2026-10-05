@@ -1,4 +1,4 @@
-// Same native keyboard API used by REDkit's modMenu/popupMenu. No typing into
+﻿// Same native keyboard API used by REDkit's modMenu/popupMenu. No typing into
 // gameplay controls; returned text remains a draft until Save is pressed.
 statemachine class CBetaGwentDeckNameInput extends CR4MenuBase
 {
@@ -34,7 +34,6 @@ state Typing in CBetaGwentDeckNameInput
         Sleep(0.1);
         while(theInput.IsVirtualKeyboardActive()) Sleep(0.1);
         theGame.GetGuiManager().ForceHideMouseCursor(false);
-        theGame.GetGuiManager().RequestMouseCursor(!theInput.LastUsedGamepad());
         parent.Finish(title);
     }
 }

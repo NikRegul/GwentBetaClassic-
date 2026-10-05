@@ -1,4 +1,4 @@
-# Gwent Beta Classic 0.2.1
+# Gwent Beta Classic 0.2.4
 
 **You must back up your saves before installing the mod and before every update. Bugs can still occur; use a separate test save for your first matches.**
 
@@ -63,4 +63,4 @@ needed. Implemented does not mean every possible card combination has been
 exhaustively verified.
 
 
-For 0.2.1 changes and acceptance checks, see UPDATE.md in the archive and docs/PRESENTATION94_EN.md in the source repository.
+For 0.2.4 changes and acceptance checks, see UPDATE.md in the archive and docs/PRESENTATION97_EN.md in the source repository.

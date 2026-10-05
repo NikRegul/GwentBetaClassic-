@@ -16,18 +16,23 @@ def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--language',choices=['ru','en'],help='Build one language; default: both')
+    parser.add_argument('--stage',type=int,default=94)
+    parser.add_argument('--version',default=VERSION)
+    parser.add_argument('--compiled',type=Path,help='Explicit fresh compilation for a single language')
     args=parser.parse_args()
-    completed=json.loads((ROOT/'docs/evidence/stage94-completion.json').read_text('utf8'))
-    assert len(completed['menus'])==6
+    completed=json.loads((ROOT/f'docs/evidence/stage{args.stage}-completion.json').read_text('utf8'))
+    assert len(completed['menus']) in (3,6)
     for item in completed['menus']:assert sha(Path(item['resource']))==item['sha256']
     for language in ((args.language,) if args.language else ('ru','en')):
-        base=ROOT/f'BetaGwent/build/release94/{language}'
+        assert len([m for m in completed['menus'] if m['language']==language])==3
+        base=ROOT/f'BetaGwent/build/release{args.stage}/{language}'
         logs=base/'preview-logs';logs.mkdir(parents=True,exist_ok=True)
+        compilation=args.compiled or ROOT/f'BetaGwent/build/board-compile{args.stage}{language}'
         def step(name):
             print('Package',language.upper(),name,flush=True)
             command=[sys.executable,'-X','utf8',str(ROOT/'tools/build_language_release.py'),name,
-                     '--stage','94','--version',VERSION,'--language',language,
-                     '--compiled',str(ROOT/f'BetaGwent/build/board-compile94{language}')]
+                     '--stage',str(args.stage),'--version',args.version,'--language',language,
+                     '--compiled',str(compilation)]
             with (logs/(name+'.txt')).open('w',encoding='utf8') as out:
                 result=subprocess.run(command,cwd=ROOT,stdout=out,stderr=subprocess.STDOUT,creationflags=subprocess.CREATE_NO_WINDOW)
             if result.returncode:
@@ -35,7 +40,7 @@ def main():
         if not (base/'frozen.json').exists():step('prepare')
         # Gameplay changed: require the fresh stage94 script compilation.
         # Match every package source byte for byte before native cooking.
-        compile_report=json.loads((ROOT/f'BetaGwent/build/board-compile94{language}/result.json').read_text('utf8'))
+        compile_report=json.loads((compilation/'result.json').read_text('utf8'))
         for item in compile_report['patchSourcesBefore']:
             assert sha(base/'project/BetaGwent0924/workspace/scripts'/item['path'])==item['sha256']
         step('cook')
@@ -53,6 +58,6 @@ def main():
             assert sha(old/relative)==records[relative]['sha256']
             shutil.copyfile(old/relative,content/name)
         for name in ('dependencies','pack','metadata','archive'):step(name)
-    print('Requested 0.2.1 archives ready; originals unchanged.',flush=True)
+    print('Requested '+args.version+' archives ready; originals unchanged.',flush=True)
 
 if __name__=='__main__':main()

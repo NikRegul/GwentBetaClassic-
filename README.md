@@ -1,39 +1,25 @@
-# Gwent Beta Classic
+# Gwent Beta Classic 0.2.4
 
-The Witcher 3 Gwent replacement based on Gwent Beta **0.9.24**.
-Russian and English packages, 479 collectible cards including 21 leaders,
-five factions, saved deck builder, collection, NPC rewards, kegs and controller.
+Gwent Beta 0.9.24 inside The Witcher 3, with 479 collectible cards, 21 leaders,
+five factions, saved decks, NPC rewards, kegs and controller support.
 
-- [Русское описание и установка](BetaGwent/release/README_RU.md)
-- [English description and installation](BetaGwent/release/README_EN.md)
-- [Сборка](docs/BUILD_RU.md) / [Build guide](docs/BUILD_EN.md)
-- [Устройство ИИ](docs/ARCHITECTURE_AI_RU.md) / [AI architecture](docs/ARCHITECTURE_AI_EN.md)
-- [Контроллер](BetaGwent/release/CONTROLS_RU.md) / [Controls](BetaGwent/release/CONTROLS_EN.md)
-- [Изменения 0.2.1](BetaGwent/release/CHANGELOG_RU.md) / [Changes](BetaGwent/release/CHANGELOG_EN.md)
+**Back up saves before installation and every update. Bugs can still occur.**
 
-**You must back up your saves before installing the mod and before every update. Bugs can still occur; use a separate test save for your first matches.**
+0.2.4 repairs Bloodcurdling Roar/Bear creation, stale pile choices, cyclic
+resurrection candidates, full preferred rows, row-side validation and cursor
+request ownership. Native menus use inline HD textures and an uncompressed
+bundle. 0.2.3 opened in the installed game but did not render external textures;
+installed-game acceptance of this new packaging hypothesis remains pending.
 
-Install **one** full RU or EN package under Mods/modBetaGwent0924. Source
-checkout alone is not an installable mod. See Releases for packaged downloads
-once uploaded. Players do not need REDkit or Wwise.
+Fresh RU/EN script compilation, six menu builds and focused source checks are
+separate from native battle/rendering acceptance. Original assets and Wwise
+keys are excluded from this source repository; original code is GPL-3.0-only.
 
-## 0.2.1
-
-HD Beta boards and deck-builder skins, 384x540 artwork, source-resolution
-weather/hit frames, separate death/consume effects, White Frost presentation
-fix, conservative leader/pass ordering and armor-aware Seltkirk estimates,
-controller hand/placement/target navigation, transparent HD target highlights,
-native RMB inspection/cancel routing and Aglais replay/banish ordering.
-Save schema and deck IDs preserved.
-
-Fresh RU/EN script compilation, six native menu builds, DDS/ABC/bridge checks,
-25 policy cases,10 Aglais sequencing cases and package integrity checks passed.
-Installed-game visual,
-controller and battle acceptance of this revision remains pending.
-
-- [Changes and acceptance: Russian](docs/PRESENTATION94_RU.md)
-- [Changes and acceptance: English](docs/PRESENTATION94_EN.md)
-- [Current build sequence and AI details](docs/BUILD_POLISH94.md)
+- [Current build sequence](docs/BUILD97.md)
+- [Acceptance / Russian](docs/PRESENTATION97_RU.md)
+- [Acceptance / English](docs/PRESENTATION97_EN.md)
+- [Manual AI editing / Russian](docs/AI_MANUAL95_RU.md)
+- [Nexus and Steam preparation](docs/PUBLISH97_RU.md)
 
 ## Contributing
 

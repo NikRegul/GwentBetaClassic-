@@ -5,7 +5,6 @@ package
     import flash.display.Stage;
     import flash.events.Event;
     import flash.events.MouseEvent;
-    import scaleform.gfx.MouseEventEx;
     import flash.events.KeyboardEvent;
     import flash.events.TextEvent;
     import flash.external.ExternalInterface;
@@ -19,6 +18,9 @@ package
     [SWF(width="1920", height="1080", frameRate="30", backgroundColor="#101113")]
     public class BetaGwentBoard extends Sprite
     {
+        // Some shipping GFx builds omit MouseEvent.RIGHT_CLICK. Resolving
+        // that static property before registerMenu aborts the entire menu.
+        private static const RIGHT_CLICK_EVENT:String="rightClick";
         [Embed(source="../assets/board_classic.png", compression="true", quality="100")] private static var ClassicBoard:Class;
         [Embed(source="../assets/board_wide.png", compression="true", quality="100")] private static var WideBoard:Class;
         public var _NATIVE_callGameEvent:Function;
@@ -328,6 +330,25 @@ package
         }
         private function closeControllerMenu():void
         {controllerMenuOpen=false;while(controllerMenuLayer.numChildren)controllerMenuLayer.removeChildAt(0);}
+        private function requestBoardClose():void
+        {
+            if(entryMode==1||(selectingDecks&&entryMode!=2)||(flags>>4)!=0){send("OnBetaGwentBoardClose",[]);return;}
+            closeControllerMenu();clearPlacementGhost();controllerMenuOpen=true;
+            panel(controllerMenuLayer,0,0,1920,1080,0x080C10,.8);
+            var box:Sprite=betaFrame(controllerMenuLayer,500,330,920,390,-1413);
+            text(box,"Завершить партию?",34,30,850,32,0xF5D77F);
+            text(box,"Текущая партия будет завершена. Выход из боя с NPC считается поражением.",34,100,850,24).height=110;
+            editorSmallButton(box,"Продолжить партию",34,270,410,58,true,closeControllerMenu);
+            editorSmallButton(box,"Сдаться и выйти",476,270,410,58,true,function():void{send("OnBetaGwentBoardClose",[]);});
+            controller.focusTag("control");
+        }
+        public function requestCloseFromGame(ignored:int):void
+        {
+            // Native CloseMenu input must follow the same safe back navigation.
+            if(nameOpen){closeNameInput();return;}
+            if(detailOpen||controllerMenuOpen||pileOpen||browsingCatalog||kegOpen||editingDeck||selectingDecks||selected>0){controllerCommand("back");return;}
+            openControllerMenu();
+        }
         private function controllerMenuAction(name:String):Function
         {return function():void{closeControllerMenu();controllerCommand(name);};}
         private function openControllerMenu():void
@@ -344,7 +365,7 @@ package
             editorSmallButton(box,"Посмотреть свою колоду",28,282,584,58,canInspectPile(),controllerMenuAction("deck"));
             editorSmallButton(box,"Ваш сброс",28,350,584,58,canInspectPile(),controllerMenuAction("ownGrave"));
             editorSmallButton(box,"Сброс соперника",28,418,584,58,canInspectPile(),controllerMenuAction("enemyGrave"));
-            editorSmallButton(box,"Вернуться в игру / завершить гвинт",28,486,584,58,true,function():void{closeControllerMenu();send("OnBetaGwentBoardClose",[]);});
+            editorSmallButton(box,"Завершить партию…",28,486,584,58,true,requestBoardClose);
             text(box,"View — колода · LT / RT — сбросы\nR3 — лидер · X — подробности карты\nДля быстрого паса удерживайте Y / △.",28,572,584,22,0xB9B4A9).height=104;
             text(box,"НАСТРОЙКИ",660,18,560,30,0xF5D77F);
             tempoLabel=button("Темп: "+animationTempo+"×",660,78,268,true,cycleTempo,box);
@@ -420,7 +441,7 @@ package
             if(name=="back"){
                 if(detailOpen){closeCardDetail();return;}if(controllerMenuOpen){closeControllerMenu();return;}if(pileOpen){closePileView();return;}
                 if(browsingCatalog){closeCatalog();return;}if(kegOpen){send("OnBetaGwentBoardClose",[]);return;}
-                if(editingDeck){editorAction("OnBetaGwentDeckEditorCancel")();return;}if(selectingDecks){send("OnBetaGwentBoardClose",[]);return;}
+                if(editingDeck){editorAction("OnBetaGwentDeckEditorCancel")();return;}if(selectingDecks){requestBoardClose();return;}
                 if(requestId>0){if(canFinishRequest())sendRequest("OnBetaGwentRequestFinish");return;}
                 if(controllerInspectBoard){controllerInspectBoard=false;render();controller.focusTag("hand");return;}
                 if(selected>0){selected=0;render();controller.focusTag("hand");return;}openControllerMenu();return;
@@ -448,7 +469,7 @@ package
             keyboardStage.addEventListener(MouseEvent.MOUSE_MOVE,onDragMove);
             keyboardStage.addEventListener(MouseEvent.MOUSE_UP,onDragEnd);
             keyboardStage.addEventListener(MouseEvent.CLICK,onStageClick,true);
-            keyboardStage.addEventListener(MouseEvent.RIGHT_CLICK,onStageClick,true);
+            keyboardStage.addEventListener(RIGHT_CLICK_EVENT,onStageClick,true);
             keyboardStage.addEventListener(MouseEvent.MOUSE_DOWN,onStageMouseDown,true,200);
             if(ExternalInterface.available) ExternalInterface.call("registerMenu",registrationName(),this);
             addEventListener(Event.ENTER_FRAME,waitForBridge);
@@ -471,7 +492,7 @@ package
                 keyboardStage.removeEventListener(MouseEvent.MOUSE_MOVE,onDragMove);
                 keyboardStage.removeEventListener(MouseEvent.MOUSE_UP,onDragEnd);
                 keyboardStage.removeEventListener(MouseEvent.CLICK,onStageClick,true);
-                keyboardStage.removeEventListener(MouseEvent.RIGHT_CLICK,onStageClick,true);
+                keyboardStage.removeEventListener(RIGHT_CLICK_EVENT,onStageClick,true);
                 keyboardStage.removeEventListener(MouseEvent.MOUSE_DOWN,onStageMouseDown,true);
             }
             clearDrag();keyboardStage=null;
@@ -488,6 +509,8 @@ package
         private function onKey(e:KeyboardEvent):void
         {
             var key:int=e.keyCode;
+            if(key==27){e.preventDefault();e.stopImmediatePropagation();}
+            if(controllerMenuOpen){if(key==27)closeControllerMenu();return;}
             if(nameOpen){
                 if(key>=136)return;
                 if(key==37||key==39||key==36||key==35)return;
@@ -551,7 +574,8 @@ package
                     else if(inspection)inspection.text="Способность уже разыграна. Выберите цель или используйте кнопку завершения выбора.";
                     return;
                 }
-                if(connected)send("OnBetaGwentBoardClose",[]);return;
+                if(selectingDecks){requestBoardClose();return;}
+                openControllerMenu();return;
             }
             if(playing){if(key==32||key==13)skipReplay();return;}
             if(!ready)return;
@@ -862,14 +886,14 @@ package
         private function drawDeckSelection():void
         {
             paintArt(content,-1310,1920,1080,0,0);betaWindow(content,64,24,1792,1032);
-            text(content,entryMode==1?"BETA GWENT 0.9.24 · ВАШИ КОЛОДЫ":"BETA GWENT 0.9.24 · КОЛОДА ПЕРЕД БОЕМ",96,44,1400,32,0xE8D3A6);
+            text(content,entryMode==1?"BETA GWENT 0.9.24 · ВАШИ КОЛОДЫ":"BETA GWENT 0.9.24 · КОЛОДА ПЕРЕД БОЕМ",96,44,1080,28,0xE8D3A6);
             var savedCount:int=0;for each(var saved:Object in deckOptions)if(saved.id>=1001)savedCount++;
             var viewId:int=deckViewSide==1?ownPreset:enemyPreset;
             button("Создать колоду",1200,44,270,ready&&savedCount<8,openEditorAction(0));
             button(viewId>=1001?"Редактировать":"Скопировать состав",1486,44,338,ready&&(viewId>=1001||savedCount<8),openEditorAction(viewId));
             editorSmallButton(content,"Все карты",96,94,226,38,ready,function():void{browsingCatalog=true;catalogPage=0;render();});
-            if(pendingKeg||entryMode==1&&unopenedKegs>0)editorSmallButton(content,pendingKeg?"Продолжить выбор бочки":"Открыть бочку · "+unopenedKegs,1420,94,404,38,ready,function():void{send("OnBetaGwentKegOpen",[revision]);});
-            text(content,entryMode==2?"Выберите свою колоду. Состав соперника скрыт: "+npcDeckLabel:entryMode==1?"Создайте или отредактируйте колоду. Изменения сохранятся с игровым сейвом.":"Выберите свою колоду и колоду соперника. Состав — ниже.",340,99,1030,22);
+            if(entryMode==1&&(pendingKeg||unopenedKegs>0))editorSmallButton(content,pendingKeg?"Продолжить выбор бочки":"Открыть бочку · "+unopenedKegs,96,990,420,48,ready,function():void{send("OnBetaGwentKegOpen",[revision]);});
+            text(content,entryMode==2?"Выберите свою колоду. Состав соперника скрыт: "+npcDeckLabel:entryMode==1?"Выберите сохранённую колоду для просмотра или редактирования.":"Выберите свою колоду и колоду соперника. Состав — ниже.",340,99,1000,20);
             var presetPages:int=Math.max(1,Math.ceil(deckOptions.length/4));presetPage=Math.min(presetPage,presetPages-1);
             if(presetPages>1){
                 text(content,"Колоды "+(presetPage+1)+" / "+presetPages,1390,103,164,18,0xE8D3A6);
@@ -923,11 +947,11 @@ package
             button("Вперёд",274,900,164,ready&&deckPage+1<pages,function():void{deckPage++;render();});
             inspection=text(content,"Наведите на карту: иллюстрация крупнее, теги и полное описание способности.",468,900,1356,18,0xD8D0BB);inspection.height=84;
             var first:Object=deckOption(ownPreset);var second:Object=deckOption(enemyPreset);
-            button("Начать партию",96,990,420,entryMode!=1&&ready&&first!=null&&(entryMode==2||second!=null),function():void{
+            if(entryMode!=1)button("Начать партию",96,990,420,ready&&first!=null&&(entryMode==2||second!=null),function():void{
                 if(!ready||!selectingDecks)return;var expected:int=revision;ready=false;send("OnBetaGwentDeckStart",[expected]);
             });
             text(content,"Сохранено "+savedCount+" / 8 · "+(entryMode==2?"Выход из боя считается поражением.":(first?first.title:"")+(entryMode==0&&second?" против "+second.title:"")),546,1002,960,19,0xE8D3A6);
-            button(entryMode==2?"Отказаться от боя":"Закрыть",1574,990,250,connected,function():void{send("OnBetaGwentBoardClose",[]);});
+            button(entryMode==2?"Отказаться от боя":"Закрыть",1574,990,250,connected,requestBoardClose);
         }
         // Collection snapshots are authoritative; inputs and filters stay local to this editor.
         public function beginDeckEditor(rev:int,slot:int,faction:int,leader:int,title:String,total:int,golds:int,silvers:int,valid:Boolean):void
@@ -1311,7 +1335,7 @@ package
             panel(content,1448,96,420,914,0x090A0A,.5);
             for(var post:int=0;post<3;post++){paintArt(content,-1211,38,294,426,88+post*294);paintArt(content,-1211,38,294,1398,88+post*294);}
             paintArt(content,-1420-editorFactionIndex(editorState.faction),388,122,44,210);
-            text(content,"BETA GWENT · СОЗДАНИЕ КОЛОДЫ",52,26,1200,30,0xE8D3A6).height=45;
+            text(content,"РЕДАКТОР КОЛОДЫ",52,26,1200,30,0xE8D3A6).height=45;
             text(content,"Слот "+editorState.slot+" / 8",52,83,348,18,0xE8D3A6).height=30;
             var nameInput:TextField=editorInput(editorName,56,112,364,48);
             nameInput.addEventListener(Event.CHANGE,function(e:Event):void{editorName=nameInput.text;});
@@ -1793,10 +1817,6 @@ package
             if(selectingDecks){drawDeckSelection();return;}
             if(entryMode==1){text(content,"Открытие редактора колод…",96,88,1720,30,0xE8D3A6);return;}
             if(skin==3)drawFactionBoards();
-            betaNine(content,-1400,1888,54,16,12);
-            text(content,"BETA GWENT 0.9.24",36,24,440,28);
-            var ownDeck:Object=deckOption(ownPreset);var enemyDeck:Object=deckOption(enemyPreset);
-            text(content,ownDeck&&enemyDeck?ownDeck.title+"  /  "+enemyDeck.title:skin==3?"Дуэль · карты Beta 0.9.24 · поле Beta":"Дуэль · карты Beta 0.9.24 · поле DIY",460,28,820,22,0xCFB176);
             text(content,"Раунд "+round+"  ·  "+(templateChoice?(rowMode==13?"Выбор режима":rowMode==7?"Дагон":"Рассвет"):pileChoice?(rowMode==14?"Выбор карты для способности":"Выбор карты для розыгрыша"):handPowerChoice?"Выбор силы из руки":graveyardChoice?"Поглощение из сброса":requestKind==1?"Замена карт":current==1?"Ваш ход":current==2?"Ход соперника":"Ожидание"),1320,26,560,24);
             profile(2,96,226,0x532723);profile(1,96,588,0x193E53);
             drawRows(); drawCards(); drawPendingPlacement();
@@ -1817,7 +1837,7 @@ package
             else button("Пас",1532,790,312,canAct(),function():void{submitBoard("OnBetaGwentBoardPass",[revision]);});
             button("Меню партии",1532,850,312,true,openControllerMenu);
             button("Повторить",1532,912,150,ready&&entryMode!=2,function():void{submitBoard("OnBetaGwentBoardRematch",[serverRevision]);});
-            button(entryMode==2&&(flags>>4)==0?"Сдаться":"Закрыть",1694,912,150,connected,function():void{send("OnBetaGwentBoardClose",[]);});
+            button(entryMode==2&&(flags>>4)==0?"Сдаться":"Закрыть",1694,912,150,connected,requestBoardClose);
             text(content,"P — пас · L — лидер · D — колода\nG / H — сброс · ПКМ / X — карта",1532,978,312,17,0xB9B4A9).height=54;
             if(!playing&&requestId>0 && requestKind==1) drawChoices();
             updateFocusedInspection();
@@ -2175,7 +2195,7 @@ package
                 var isHand:Boolean=c.zone==8;
                 if(consumedVisualIds[c.id]&&!(activeCue&&activeCue.kind==11&&activeCue.target==c.id))continue;
                 var handAngle:Number=isHand?Math.max(-5,Math.min(5,(c.index-(handCount-1)/2)*.85)):0;
-                var g:Object=isHand?{x:484+c.index*step,y:(selected==c.id?906:926)-Math.abs(handAngle)*1.5,h:140}:rowGeometry(c.side,c.zone);
+                var g:Object=isHand?{x:484+c.index*step,y:(selected==c.id?900:920)-Math.abs(handAngle)*1.5,h:140}:rowGeometry(c.side,c.zone);
                 var layout:Object=isHand?null:rowLayout(c.side,c.zone);
                 var x:Number=isHand?g.x:layout.x+c.index*layout.step;
                 var cardWidth:Number=isHand?handWidth:layout.w;var cardHeight:Number=isHand?140:g.h-8;
@@ -2894,8 +2914,9 @@ package
         }
         private function isInspectMouse(e:MouseEvent):Boolean
         {
-            var native:MouseEventEx=e as MouseEventEx;
-            return e.type==MouseEvent.RIGHT_CLICK || native!=null&&native.buttonIdx==MouseEventEx.RIGHT_BUTTON;
+            // GFx emits CLICK with buttonIdx=1; plain Flash events lack the
+            // extension. Read it structurally without another SDK class load.
+            return e.type==RIGHT_CLICK_EVENT || ("buttonIdx" in Object(e))&&int(Object(e)["buttonIdx"])==1;
         }
         private function attachInspect(p:Sprite,c:Object,detail:Object,bodyWidth:Number=0,bodyHeight:Number=0):void
         {
@@ -2925,7 +2946,7 @@ package
             // spend a card or confirm an outstanding ability choice.
             p.addEventListener(MouseEvent.MOUSE_DOWN,function(e:MouseEvent):void{if(e.shiftKey||isInspectMouse(e)){e.stopImmediatePropagation();e.preventDefault();}},false,100);
             p.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{if(e.shiftKey||isInspectMouse(e)){e.stopImmediatePropagation();e.preventDefault();if(!detailOpen)openCardDetail(c,detail);}},false,100);
-            p.addEventListener(MouseEvent.RIGHT_CLICK,function(e:MouseEvent):void{e.stopImmediatePropagation();e.preventDefault();if(!detailOpen)openCardDetail(c,detail);},false,100);
+            p.addEventListener(RIGHT_CLICK_EVENT,function(e:MouseEvent):void{e.stopImmediatePropagation();e.preventDefault();if(!detailOpen)openCardDetail(c,detail);},false,100);
         }
         private function showHoverPreview():void
         {

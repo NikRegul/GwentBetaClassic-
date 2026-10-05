@@ -1,4 +1,4 @@
-// Concrete closed-duel coordinator: managed ApplyAction and nested passive FIFOs.
+﻿// Concrete closed-duel coordinator: managed ApplyAction and nested passive FIFOs.
 // Original full controller/graph/request/network lifecycle remains separate.
 struct SBetaGwentDuelCueContext
 { var id, templateId, side, row : int; }
@@ -325,15 +325,8 @@ class CBetaGwentDuelCreatedCardAction extends CBetaGwentManagedAction
     { runtime = owner; game = session; source = creator; templateId = requestedTemplate; instanceId = id; SetStateChanging(true); return Prepare(context); }
     public function IsValid() : bool
     {
-        var s : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition;
         if (!source || !game || !runtime || instanceId == 0 || game.FindCard(instanceId)) return false;
-        s = source.Snapshot(); d = source.Definition();
-        if (s.isWaitingToDie) return false;
-        if (d.effect == 24) return (s.locationMask & 7) != 0 && (templateId == 113305 || templateId == 113312);
-        if (d.effect == 28 && d.specialMode == 24) return s.locationMask == 256 && (templateId == d.playTemplateId || templateId == d.deploySpawnTemplate);
-        if (d.effect == 28 && d.specialMode == 25) return s.locationMask == 256 && templateId == d.playTemplateId;
-        if (d.effect == 34) return ((s.locationMask & 7) != 0 || s.locationMask == 256) && game.MonsterCreationAllowed(source, templateId);
-        return false;
+        return game.CreationAllowed(source,templateId);
     }
     protected function BeforeApplyImpl() { runtime.RecordBefore(); }
     protected function ApplyImpl() : bool

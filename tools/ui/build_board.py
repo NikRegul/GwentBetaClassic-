@@ -16,6 +16,7 @@ BUILD.mkdir(exist_ok=True)
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--entry', choices=['BetaGwentBoard','DeckBuilder','GwintGame'], default='BetaGwentBoard')
 parser.add_argument('--reuse-assets', action='store_true')
+parser.add_argument('--native-only',action='store_true',help='Export DDS/GFx only; skip unused TGA previews')
 parser.add_argument('--source-dir',type=Path,help='Isolated localized source directory; requires --reuse-assets')
 args = parser.parse_args()
 SOURCE_DIR=args.source_dir.resolve() if args.source_dir else UI/'src'
@@ -48,6 +49,7 @@ commands = [
 ]
 runs = []
 for index, command in enumerate(commands):
+    if args.native_only and index==1:continue
     result = subprocess.run(command, cwd=UI, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                             creationflags=subprocess.CREATE_NO_WINDOW, timeout=240)
     log = result.stdout.decode('utf-8', errors='replace')
@@ -57,6 +59,8 @@ for index, command in enumerate(commands):
     if result.returncode or 'Error:' in log or 'Failed to' in log:
         print(log)
         raise SystemExit(result.returncode or 1)
+if args.native_only:
+    shutil.copyfile(DDS_BUILD/(stem+'.gfx'),BUILD/(stem+'.gfx'))
 
 def inspect(path):
     data = path.read_bytes()

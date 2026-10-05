@@ -70,6 +70,8 @@ def main():
             r'getlex\s+_NATIVE_callGameEvent\s+\d+\s+getlocal0\s+\d+\s+getlocal1\s+\d+\s+getlocal2\s+\d+\s+callpropvoid', send)),
         noGlobalReceiver=all('getglobalscope' not in method for method in methods.values()),
         controllerLinked=bool(re.search(r'public class BetaGwentController extends flash.display::Sprite',dump)),
+        shippingMouseCompatibility=('public final class scaleform.gfx::MouseEventEx' not in dump
+                                    and not re.search(r'getproperty[^\n]*\bRIGHT_CLICK\b',dump)),
         scaleformInputTypesLinked=all(re.search(r'public final class scaleform.gfx::'+name+r' extends ',dump)
                                     for name in ('Extensions','GamePad','GamePadAnalogEvent','KeyboardEventEx')),
     )

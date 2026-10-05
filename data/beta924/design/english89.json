@@ -2198,5 +2198,12 @@
   "Меню партии": "Match menu",
   "P — пас · L — лидер · D — колода\nG / H — сброс · ПКМ / X — карта": "P: pass · L: leader · D: deck\nG / H: graveyards · RMB / X: inspect",
   "←→ рука · ↑ поле · ": "←→ hand · ↑ board · ",
-  "←→ место вставки · ↑↓ / LB/RB ряд · ": "←→ insertion · ↑↓ / LB/RB row · "
+  "←→ место вставки · ↑↓ / LB/RB ряд · ": "←→ insertion · ↑↓ / LB/RB row · ",
+  "Завершить партию?": "End this match?",
+  "Текущая партия будет завершена. Выход из боя с NPC считается поражением.": "This match will end. Leaving an NPC match counts as a defeat.",
+  "Продолжить партию": "Continue match",
+  "Сдаться и выйти": "Forfeit and leave",
+  "Завершить партию…": "End match…",
+  "Выберите сохранённую колоду для просмотра или редактирования.": "Select a saved deck to view or edit.",
+  "РЕДАКТОР КОЛОДЫ": "DECK BUILDER"
 }

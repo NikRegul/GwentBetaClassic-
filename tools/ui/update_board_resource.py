@@ -69,8 +69,8 @@ def validate_resource(path):
 
 
 def movie_parts(movie):
-    require(movie[:3] in (b'FWS', b'CFX'), 'Expected raw SWF or native CFX')
-    body = zlib.decompress(movie[8:]) if movie[:3] == b'CFX' else movie[8:]
+    require(movie[:3] in (b'FWS', b'CWS', b'CFX'), 'Expected SWF or native CFX')
+    body = zlib.decompress(movie[8:]) if movie[:3] in (b'CWS',b'CFX') else movie[8:]
     declared = struct.unpack_from('<I', movie, 4)[0]
     require(8 <= declared <= len(body) + 8, 'Invalid movie extent')
     prefix_size = (5 + 4 * (body[0] >> 3) + 7) // 8 + 4
