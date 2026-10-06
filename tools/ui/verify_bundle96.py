@@ -8,7 +8,7 @@ from pathlib import Path
 import hashlib,struct,zlib,sys
 from update_board_resource import require
 
-def verify(bundle,input_directory,require_uncompressed_gui=False):
+def verify(bundle,input_directory,require_uncompressed_gui=False,gui_limit_mib=100):
     data=Path(bundle).read_bytes();root=Path(input_directory)
     require(data[:8]==b'POTATO70','Unexpected bundle magic')
     table_bytes=struct.unpack_from('<I',data,16)[0]
@@ -36,7 +36,7 @@ def verify(bundle,input_directory,require_uncompressed_gui=False):
         require(payload==(root/relative).read_bytes(),'Packed payload differs from cooked source: '+name)
         if relative.suffix in ('.redswf','.redswfx'):
             if require_uncompressed_gui:
-                require(compression==0 and size==zsize and size<100*1024*1024,'Inline GUI must use raw bundle storage under 100 MiB')
+                require(compression==0 and size==zsize and size<gui_limit_mib*1024*1024,'Inline GUI exceeds its raw loading target')
             else:
                 require(size<25*1024*1024 and zsize<25*1024*1024,'GUI streaming budget exceeded in bundle')
         rows.append(dict(path=name,size=size,packedSize=zsize,compression=compression,sha256=hashlib.sha256(payload).hexdigest()))
@@ -45,7 +45,7 @@ def verify(bundle,input_directory,require_uncompressed_gui=False):
         require(start>=previous,'Overlapping bundle entry: '+name);previous=end
     expected={p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file()}
     require({n.replace('\\','/') for n in names}==expected,'Missing/unexpected bundle entries')
-    return dict(bundle=str(bundle),entries=rows,packedPayloadsVerified=True,guiStoredUncompressed=require_uncompressed_gui,nativeRuntimeVerified=False)
+    return dict(bundle=str(bundle),entries=rows,packedPayloadsVerified=True,guiStoredUncompressed=require_uncompressed_gui,guiLimitMiB=gui_limit_mib if require_uncompressed_gui else 25,nativeRuntimeVerified=False)
 
 if __name__=='__main__':
     import json

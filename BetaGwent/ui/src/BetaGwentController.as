@@ -7,6 +7,7 @@ package
     import flash.events.KeyboardEvent;
     import flash.events.MouseEvent;
     import flash.geom.Rectangle;
+    import flash.geom.Point;
     import flash.text.TextField;
     import flash.text.TextFormat;
     import flash.utils.getTimer;
@@ -192,7 +193,7 @@ package
                 else if(Math.max(Math.abs(x),Math.abs(y))<.3)release(trigger);
             }
         }
-        public function registerControl(sprite:DisplayObject,label:String,callback:Function=null,card:Object=null,detail:Object=null,tag:String="control",placement:Object=null):void
+        public function registerControl(sprite:DisplayObject,label:String,callback:Function=null,card:Object=null,detail:Object=null,tag:String="control",placement:Object=null,body:Rectangle=null):void
         {
             prune();var n:Object=null;
             for each(var old:Object in nodes)if(old.sprite==sprite){n=old;break;}
@@ -203,13 +204,29 @@ package
             }
             if(label.length)n.label=label;
             if(tag.length)n.tag=tag;
+            if(body!=null)n.body=body.clone();
             if(placement!=null)n.placement=placement;
             if(placement!=null&&placement.rowOnly){n.row=placement;n.placement=null;}
             if(callback!=null)n.action=callback;
             if(card!=null){n.card=card;n.detail=detail;}
-            var rect:Rectangle=sprite.getBounds(owner);
+            var rect:Rectangle=bodyBounds(n);
             n.key=n.scope+":"+int(rect.x)+":"+int(rect.y)+":"+(card!=null?"card"+(card.id>0?card.id:card.templateId):tag);
             dirty=true;
+        }
+        private function bodyCorners(n:Object):Array
+        {
+            var b:Rectangle=n.body;
+            var result:Array=[];
+            for each(var point:Point in [new Point(b.left,b.top),new Point(b.right,b.top),new Point(b.right,b.bottom),new Point(b.left,b.bottom)])
+                result.push(owner.globalToLocal(n.sprite.localToGlobal(point)));
+            return result;
+        }
+        private function bodyBounds(n:Object):Rectangle
+        {
+            if(!n.body)return n.sprite.getBounds(owner);
+            var points:Array=bodyCorners(n);var left:Number=points[0].x,top:Number=points[0].y,right:Number=left,bottom:Number=top;
+            for each(var p:Point in points){left=Math.min(left,p.x);right=Math.max(right,p.x);top=Math.min(top,p.y);bottom=Math.max(bottom,p.y);}
+            return new Rectangle(left,top,right-left,bottom-top);
         }
         private function prune():void
         {for(var i:int=nodes.length-1;i>=0;i--)if(!owner.contains(nodes[i].sprite))nodes.splice(i,1);}
@@ -224,7 +241,7 @@ package
                 if(s.mode=="battle"&&n.tag=="card")continue;
                 if(s.mode=="inspect"&&n.tag=="hand")continue;
                 if(s.mode=="editor"&&(n.label=="+"||n.label=="−"))continue;
-                var r:Rectangle=n.sprite.getBounds(owner);
+                var r:Rectangle=bodyBounds(n);
                 if(r.width<2||r.height<2||r.right<0||r.x>1920||r.bottom<0||r.y>1080)continue;
                 if(s.mode=="choice"&&(r.x+r.width/2<450||r.x+r.width/2>1450||r.y+r.height/2<215||r.y+r.height/2>815))continue;
                 n.rect=r;result.push(n);
@@ -360,7 +377,7 @@ package
             if(!s.typing&&axis>0&&now>=axisNext){axisNext=now+160;navigate(axis);}
             if(yStarted>0&&yCanPass&&!yCommitted&&!s.typing&&now-yStarted>=650&&s.pass) {yCommitted=true;invoke("pass");dirty=true;}
             // Redraw only on changes; animations still move the selected card.
-            var n:Object=getFocus();var r:Rectangle=n?n.sprite.getBounds(owner):null;
+            var n:Object=getFocus();var r:Rectangle=n?bodyBounds(n):null;
             var line:String=s.typing?"Ввод текста в системной клавиатуре":s.hint+(n?"   ·   "+n.label:"");
             if(yStarted>0&&yCanPass&&s.pass&&!yCommitted)line="Удерживайте "+(device==1||device==6?"△":"Y")+" для паса… "+int(Math.min(100,100*(now-yStarted)/650))+"%";
             if(line!=lastHint){lastHint=line;hint.text=line;dirty=true;}
@@ -369,8 +386,12 @@ package
             graphics.beginFill(0x10191F,.95);graphics.drawRoundRect(24,s.hintY-2,1872,31,6,6);graphics.endFill();
             if(n&&!s.typing){
                 lastRect=r.clone();lastKey=n.key;
-                graphics.lineStyle(5,0xF5E6A7,1);graphics.drawRoundRect(r.x-3,r.y-3,r.width+6,r.height+6,6,6);
-                graphics.lineStyle(1,0x131A20,1);graphics.drawRoundRect(r.x-6,r.y-6,r.width+12,r.height+12,8,8);
+                graphics.lineStyle(3,0xF5E6A7,1);
+                if(n.body){
+                    var corners:Array=bodyCorners(n);graphics.moveTo(corners[0].x,corners[0].y);
+                    for(var i:int=1;i<4;i++)graphics.lineTo(corners[i].x,corners[i].y);
+                    graphics.lineTo(corners[0].x,corners[0].y);
+                }else graphics.drawRoundRect(r.x,r.y,r.width,r.height,4,4);
             }
         }
     }

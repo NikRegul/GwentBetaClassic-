@@ -1,4 +1,4 @@
-# Gwent Beta Classic 0.2.4
+# Gwent Beta Classic 0.2.6
 
 **You must back up your saves before installing the mod and before every update. Bugs can still occur; use a separate test save for your first matches.**
 
@@ -63,4 +63,6 @@ needed. Implemented does not mean every possible card combination has been
 exhaustively verified.
 
 
-For 0.2.4 changes and acceptance checks, see UPDATE.md in the archive and docs/PRESENTATION97_EN.md in the source repository.
+For 0.2.6 changes and acceptance checks, see UPDATE.md in the archive and docs/PRESENTATION99_EN.md in the source repository.
+
+Update 0.2.6 fixes card borders and controller focus bounds and changes atlas sampling to reduce flicker. Compact resolution remains: cards 288×405, board halves 1536×531. Russian 0.2.5 startup was confirmed in the installed game; new visual changes and English startup still need testing. Back up saves and replace the whole Mods/modBetaGwent0924 folder.

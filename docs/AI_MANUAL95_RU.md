@@ -104,8 +104,8 @@ Set-Location D:\w3mod
 python -X utf8 tools/build_ai_tuning95.py
 python -X utf8 tools/ui/prepare_board_scripts.py
 python -X utf8 tools/recon/run_redkit_compile.py --out BetaGwent/build/manual-ai-001 --patch BetaGwent/build/board-patch --timeout 120 --terms-already-accepted
-python -X utf8 tools/build_presentation94.py --stage 98 --language ru
-python -X utf8 tools/package_presentation94.py --stage 98 --version 0.2.4-ai.1 --language ru --compiled BetaGwent/build/manual-ai-001
+python -X utf8 tools/build_presentation94.py --stage 100 --language ru
+python -X utf8 tools/package_presentation94.py --stage 100 --version 0.2.6-ai.1 --language ru --compiled BetaGwent/build/manual-ai-001
 ```
 
 `--terms-already-accepted` применим здесь потому, что ты уже лично принял

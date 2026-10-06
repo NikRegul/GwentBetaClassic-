@@ -21,8 +21,8 @@ package
         // Some shipping GFx builds omit MouseEvent.RIGHT_CLICK. Resolving
         // that static property before registerMenu aborts the entire menu.
         private static const RIGHT_CLICK_EVENT:String="rightClick";
-        [Embed(source="../assets/board_classic.png", compression="true", quality="100")] private static var ClassicBoard:Class;
-        [Embed(source="../assets/board_wide.png", compression="true", quality="100")] private static var WideBoard:Class;
+        [Embed(source="../assets/compact98/board_classic.png", compression="true", quality="100")] private static var ClassicBoard:Class;
+        [Embed(source="../assets/compact98/board_wide.png", compression="true", quality="100")] private static var WideBoard:Class;
         public var _NATIVE_callGameEvent:Function;
         public var _NATIVE_registerDataBinding:Function;
         public var _NATIVE_unregisterDataBinding:Function;
@@ -941,7 +941,7 @@ package
                 text(card,"×"+c.copies+(c.typeMask==4?" · сила "+c.power:" · особая"),82,58,144,17,0xE8D3A6);
                 text(card,c.tier==8?"Золото":c.tier==4?"Серебро":"Бронза",82,84,144,16,0xB9B4A9);
                 var ability:TextField=text(card,c.description,8,106,214,14,0xD8D0BB);ability.height=38;
-                attachInspect(card,c,{description:c.description});
+                attachInspect(card,c,{description:c.description},230,150);
             }
             button("Назад",96,900,164,ready&&deckPage>0,function():void{deckPage--;render();});
             button("Вперёд",274,900,164,ready&&deckPage+1<pages,function():void{deckPage++;render();});
@@ -1245,7 +1245,7 @@ package
             label.multiline=false;label.wordWrap=false;label.height=h-label.y-3;
             if(label.textWidth>w-24)label.setTextFormat(new TextFormat("$NormalFont",Math.max(12,Math.floor(18*(w-24)/label.textWidth)),chosen?0xFFE6A0:0xE3D6BE));
             if(enabled){
-                controller.registerControl(p,title,callback);
+                controller.registerControl(p,title,callback,null,null,"control",null,new Rectangle(0,0,w,h));
                 p.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{e.stopPropagation();uiSound();callback();});
                 p.addEventListener(MouseEvent.ROLL_OVER,function(e:MouseEvent):void{hover.alpha=1;});
                 p.addEventListener(MouseEvent.ROLL_OUT,function(e:MouseEvent):void{hover.alpha=0;});
@@ -1875,7 +1875,7 @@ package
             var frame:Sprite=betaVisual(-101,w+4,h+4,tint);
             if(frame){frame.x=w/2;frame.y=h/2;mark.addChild(frame);}
             paintBetaCorners(mark,w,h,tint);
-            mark.graphics.lineStyle(focused?4:2,tint,1);mark.graphics.drawRect(-2,-2,w+4,h+4);
+            mark.graphics.lineStyle(focused?4:2,tint,1);mark.graphics.drawRect(focused?2:1,focused?2:1,w-(focused?4:2),h-(focused?4:2));
             mark.graphics.lineStyle(2,0x101315,1);mark.graphics.drawRect(3,3,w-6,h-6);
             mark.graphics.beginFill(tint,1);mark.graphics.moveTo(w/2-9,-12);
             mark.graphics.lineTo(w/2+9,-12);mark.graphics.lineTo(w/2,-3);mark.graphics.endFill();
@@ -2130,7 +2130,7 @@ package
                     var rowTarget:Sprite=betaFrame(content,hit.x+hit.width-184,hit.y+hit.height-31,176,28,-1401);
                     rowTarget.mouseEnabled=false;rowTarget.mouseChildren=false;
                     text(rowTarget,isCaranthirChoice()?"МОРОЗ · без движения":"ВЫБРАТЬ РЯД",8,3,160,12,0xD5F6FF).height=25;
-                    controller.registerControl(rowTarget,(side==1?"Ваш ":"Вражеский ")+(zone==1?"ближний ряд":zone==2?"дальний ряд":"осадный ряд"),action,null,null,"row",{rowOnly:true,side:side,zone:zone});
+                    controller.registerControl(rowTarget,(side==1?"Ваш ":"Вражеский ")+(zone==1?"ближний ряд":zone==2?"дальний ряд":"осадный ряд"),action,null,null,"row",{rowOnly:true,side:side,zone:zone},new Rectangle(0,0,176,28));
                 }
             }
             hit.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{
@@ -2264,9 +2264,9 @@ package
                     p.x=originX;p.y=originY;p.alpha=0;
                 }
                 var detail:Object=cardDetails[c.id];
-                if(detail){p.graphics.lineStyle(2,detail.tier==8?0xD9B557:detail.tier==4?0xCBD1D8:0x99735D);p.graphics.drawRect(0,0,cardWidth,cardHeight);}
-                if(selected==c.id){p.graphics.lineStyle(3,0x80CBD5);p.graphics.drawRect(0,0,handWidth,140);paintBetaCorners(p,cardWidth,cardHeight,0xC7FFF5);}
-                else if(keyboardFocusId==c.id){p.graphics.lineStyle(4,0xF5E6A7);p.graphics.drawRect(-2,-2,cardWidth+4,cardHeight+4);}
+                if(detail){p.graphics.lineStyle(2,detail.tier==8?0xD9B557:detail.tier==4?0xCBD1D8:0x99735D);p.graphics.drawRect(1,1,cardWidth-2,cardHeight-2);}
+                if(selected==c.id){p.graphics.lineStyle(3,0x80CBD5);p.graphics.drawRect(1.5,1.5,cardWidth-3,cardHeight-3);paintBetaCorners(p,cardWidth,cardHeight,0xC7FFF5);}
+                else if(keyboardFocusId==c.id){p.graphics.lineStyle(4,0xF5E6A7);p.graphics.drawRect(2,2,cardWidth-4,cardHeight-4);}
                 if(isHand){var band:Sprite=panel(p,3,cardHeight-36,cardWidth-6,33,0x101315,.84);band.mouseEnabled=false;}
                 var badge:Sprite=panel(p,3,3,34,34,0x101315,.85);badge.mouseEnabled=false;
                 var powerValue:String=concealed?"?":c.power>0||!isHand?String(c.power):"★";
@@ -2920,7 +2920,9 @@ package
         }
         private function attachInspect(p:Sprite,c:Object,detail:Object,bodyWidth:Number=0,bodyHeight:Number=0):void
         {
-            controller.registerControl(p,c.title,null,c,detail,c.zone==8&&c.side==1?"hand":"card");
+            // Stable card body bounds exclude text fields, halos and transient effects.
+            var body:Rectangle=new Rectangle(0,0,bodyWidth>0?bodyWidth:p.width/p.scaleX,bodyHeight>0?bodyHeight:p.height/p.scaleY);
+            controller.registerControl(p,c.title,null,c,detail,c.zone==8&&c.side==1?"hand":"card",null,body);
             var glow:Sprite=new Sprite();glow.mouseEnabled=false;glow.mouseChildren=false;
             glow.graphics.lineStyle(2,0xD6E8E6,.8);
             glow.graphics.drawRect(1,1,(bodyWidth>0?bodyWidth:p.width/p.scaleX)-2,(bodyHeight>0?bodyHeight:p.height/p.scaleY)-2);
@@ -3050,9 +3052,9 @@ package
                     if(int(c.timer)>=0)paintTimer(p,4,30,int(c.timer),(int(c.tokens)&4)!=0);
                     if((int(c.tokens)&4)!=0)paintLock(p,113,30);
                     if((int(c.tokens)&1)!=0)text(p,"∞",112,52,22,20,0xC8ED96);
-                    attachInspect(p,c,cardDetails[c.id]);
+                    attachInspect(p,c,cardDetails[c.id],140,198);
                 }
-                if(c.selected||keyboardFocusId==c.id){p.graphics.lineStyle(4,keyboardFocusId==c.id?0xF5E6A7:0xE9C46A);p.graphics.drawRect(0,0,140,198);}
+                if(c.selected||keyboardFocusId==c.id){p.graphics.lineStyle(4,keyboardFocusId==c.id?0xF5E6A7:0xE9C46A);p.graphics.drawRect(2,2,136,194);}
                 attachRequestCard(p,c.id);
             }
             text(modal,templateChoice?(rowMode==13?"Вариант выбирается для этого розыгрыша.":rowMode==7?"Выберите одну карту погоды, затем ряд противника.":"Нажмите вариант; затем выберите свой ряд, если разыгрывается отряд."):pileChoice?(rowMode==14?(requestFinish?"Выберите карту для способности.   ·   Страница ":"Выбор обязателен — укажите карту.   ·   Страница "):(requestFinish?"Выберите карту для розыгрыша.   ·   Страница ":"Розыгрыш обязателен — выберите карту.   ·   Страница "))+(choicePage+1)+" / "+pages:handPowerChoice?"Выберите одну карту.   ·   Страница "+(choicePage+1)+" / "+pages:graveyardChoice?"Можно завершить без поглощения.   ·   Страница "+(choicePage+1)+" / "+pages:"Заменено: "+requestCount+" / "+requestMax+"   ·   Страница "+(choicePage+1)+" / "+pages,24,548,900,18);

@@ -1,3 +1,15 @@
+# Gwent Beta Classic 0.2.6
+
+**Back up saves before updating.**
+
+- Selected units use battlefield card dimensions for their borders.
+- Controller focus excludes text/effect extents and follows hand-card rotation.
+- Fixed button, row and choice-card body bounds.
+- Half-texel atlas sampling and a conservative native Bitmap fallback.
+- Compact resolution and the 55 MiB GUI limit retained. RU/EN share gameplay.
+
+Update 0.2.6 fixes card borders and controller focus bounds and changes atlas sampling to reduce flicker. Compact resolution remains: cards 288×405, board halves 1536×531. Russian 0.2.5 startup was confirmed in the installed game; new visual changes and English startup still need testing. Back up saves and replace the whole Mods/modBetaGwent0924 folder.
+
 # Gwent Beta Classic 0.2.4
 
 **Back up saves before every update.**

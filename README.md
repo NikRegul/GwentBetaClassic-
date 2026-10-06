@@ -1,25 +1,27 @@
-# Gwent Beta Classic 0.2.4
+# Gwent Beta Classic 0.2.6
 
-Gwent Beta 0.9.24 inside The Witcher 3, with 479 collectible cards, 21 leaders,
+Gwent Beta 0.9.24 inside The Witcher 3: 479 collectible cards, 21 leaders,
 five factions, saved decks, NPC rewards, kegs and controller support.
 
 **Back up saves before installation and every update. Bugs can still occur.**
 
-0.2.4 repairs Bloodcurdling Roar/Bear creation, stale pile choices, cyclic
-resurrection candidates, full preferred rows, row-side validation and cursor
-request ownership. Native menus use inline HD textures and an uncompressed
-bundle. 0.2.3 opened in the installed game but did not render external textures;
-installed-game acceptance of this new packaging hypothesis remains pending.
+Russian 0.2.5 editor/NPC startup was accepted in the installed game. Compact
+native menus remain below 55 MiB; cards are 288×405 and faction board halves
+1536×531. Game memory settings are unchanged. 0.2.6 changes atlas sampling,
+the native Bitmap fallback, card selection borders and controller body bounds.
+Visual flicker/border acceptance and English acceptance still need testing.
 
-Fresh RU/EN script compilation, six menu builds and focused source checks are
-separate from native battle/rendering acceptance. Original assets and Wwise
-keys are excluded from this source repository; original code is GPL-3.0-only.
+Both packages retain the nested-play/cursor fixes from 0.2.4. Card rules and AI
+are unchanged. RU sources match the reused stage97 compilation; EN voice durations
+are synchronized with the English bank and freshly compiled in stage99. Six
+native menus are rebuilt. Package checks do not replace native battle tests.
+Original images, audio and Wwise keys are excluded. Original code is GPL-3.0-only.
 
-- [Current build sequence](docs/BUILD97.md)
-- [Acceptance / Russian](docs/PRESENTATION97_RU.md)
-- [Acceptance / English](docs/PRESENTATION97_EN.md)
+- [Current build sequence](docs/BUILD99.md)
+- [Russian acceptance notes](docs/PRESENTATION99_RU.md)
+- [English acceptance notes](docs/PRESENTATION99_EN.md)
 - [Manual AI editing / Russian](docs/AI_MANUAL95_RU.md)
-- [Nexus and Steam preparation](docs/PUBLISH97_RU.md)
+- [Nexus and Steam preparation](docs/PUBLISH99_RU.md)
 
 ## Contributing
 

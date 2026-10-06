@@ -54,6 +54,7 @@ if a.step=='prepare':
         for name in ('betagwent_board.redswf','betagwent_npc00.redswf','betagwent_decks.redswf'):
             preparation[name]=strip_authoring(WORK/'betagwent'/name)
             if preparation[name]['after']>=100*1024*1024:raise RuntimeError('Menu exceeds verified Wcc writer budget: '+name)
+            if STAGE>=98 and preparation[name]['after']>=55*1024*1024:raise RuntimeError('Compact GUI exceeds 55 MiB loading target: '+name)
         (BASE/'menu-input.json').write_text(json.dumps(preparation,indent=2)+'\n','utf8')
     if LANG=='en':
         sys.path.insert(0,str(ROOT/'tools'));from localization89 import strings
@@ -118,7 +119,7 @@ else:
         if STAGE>=96:
             sys.path.insert(0,str(ROOT/'tools/ui'))
             from verify_bundle96 import verify
-            report=verify(CONTENT/'blob0.bundle',clean,require_uncompressed_gui=STAGE>=97)
+            report=verify(CONTENT/'blob0.bundle',clean,require_uncompressed_gui=STAGE>=97,gui_limit_mib=55 if STAGE>=98 else 100)
             (BASE/'packed-resources-verified.json').write_text(json.dumps(report,indent=2)+'\n','utf8')
     elif a.step=='metadata':job('metadata',['metadatastore','-path='+str(CONTENT)+'\\','-out='+str(CONTENT/'metadata.store')])
     elif a.step=='archive':

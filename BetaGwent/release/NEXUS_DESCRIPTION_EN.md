@@ -72,6 +72,6 @@ LegacyGwent DIY for board asset inputs and the Beta community for preserved
 data and archetype ideas.
 
 
-Update 0.2.4 fixes Roar/Bear creation, nested play, row selection and cursor requests. Inline HD textures return. Installed-game acceptance of this build is pending. Replace the whole previous Mods/modBetaGwent0924 folder and back up saves first.
+Update 0.2.6 fixes card borders and controller focus bounds and changes atlas sampling to reduce flicker. Compact resolution remains: cards 288×405, board halves 1536×531. Russian 0.2.5 startup was confirmed in the installed game; new visual changes and English startup still need testing. Back up saves and replace the whole Mods/modBetaGwent0924 folder.
 
 Bug reports: version/language and retail game or REDkit, round/scores/hands, card names and preceding actions, screenshot and log if available. Exclude keys and personal data. Next: archetype strategy tuning from actual matches, more accurate combo forecasts, animation/weather polish and broader quest, tournament, old-save and controller coverage.
