@@ -1,4 +1,4 @@
-// Development capability probe. No Beta gameplay or vanilla collection changes.
+﻿// Development capability probe. No Beta gameplay or vanilla collection changes.
 // Seed/increment only run through explicit debug commands.
 @addField(W3PlayerWitcher)
 private saved var betaGwentProbeSchema : int;

@@ -50,7 +50,7 @@ def card_dds(export_name, exported_dds):
  import re
  import numpy as np
  match=re.match(rb'cards-(\d+)_png',export_name)
- if not match and not export_name.startswith((b'board_classic_png',b'board_wide_png')):return None
+ if not match and not export_name.startswith((b'board_classic_png',b'board_wide_png',b'cardslots104_png',b'covers107_png')):return None
  digest=sha(exported_dds+b'bc3-to-bc1-v1');cache=ROOT/'BetaGwent/build/card-bc1';cache.mkdir(exist_ok=True)
  target=cache/(digest+'.dds')
  if not target.exists():
@@ -103,7 +103,7 @@ def main():
  for c,p,_ in tags:
   if c!=35:continue
   cid=struct.unpack_from('<H',p)[0];export_name=names.get(cid,b'')
-  if export_name.startswith((b'cards-',b'board_classic_png',b'board_wide_png')):
+  if export_name.startswith((b'cards-',b'board_classic_png',b'board_wide_png',b'cardslots104_png',b'covers107_png')):
    filename=exported_images[subimages.get(cid,cid)]
    card_pages[sha((dds_dir/filename).read_bytes())]=export_name
  unique={};textures=[];infos=[];replacements={};bindings=[]
@@ -169,6 +169,13 @@ def main():
   backups=ROOT/'BetaGwent/build/resource-backups';backups.mkdir(exist_ok=True)
   backup=backups/(sha(r.data)+'.redswf')
   if not backup.exists():backup.write_bytes(r.data)
+  # Stage 105: every build adds a ~150 MB backup (232 files / 33 GB by 07.10.2026).
+  # Keep only the newest 12 originals; the current one is always among them.
+  old=sorted(backups.glob('*.redswf'),key=lambda p:p.stat().st_mtime,reverse=True)[12:]
+  for stale in old:
+   if stale!=backup:
+    try:stale.unlink()
+    except OSError:pass
   require(backup.read_bytes()==r.data and target.read_bytes()==r.data,'Original/backup resource changed')
   pending=target.with_suffix('.redswf.pending')
   with pending.open('xb') as f:f.write(out);f.flush();os.fsync(f.fileno())

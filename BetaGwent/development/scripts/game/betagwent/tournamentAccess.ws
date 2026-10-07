@@ -1,4 +1,4 @@
-// The native quests used weighted legacy-card tags. Beta admission uses a
+﻿// The native quests used weighted legacy-card tags. Beta admission uses a
 // valid owned25-card deck. Stakes, scripted rounds and quest outputs stay native.
 function BetaGwentSetAdmissionFact(fact : string, enabled : bool)
 {

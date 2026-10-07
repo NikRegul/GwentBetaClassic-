@@ -1,6 +1,8 @@
-// Immutable presentation snapshot. Capturing it never executes rules or RNG.
+﻿// Immutable presentation snapshot. Capturing it never executes rules or RNG.
 class CBetaGwentDuelVisualFrame extends IScriptable
 {
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
     public var matchState : SBetaGwentMatchSnapshot;
     public var cards : array<SBetaGwentDevelopmentCard>;
     public var weatherTokens, weatherDamage : array<int>;
@@ -15,4 +17,6 @@ class CBetaGwentDuelVisualFrame extends IScriptable
     public var kind, sourceId, targetId, side, row, templateId, duration : int;
     public var targetTemplateId, targetPower, targetSide, targetZone : int;
     public var audioKind : int;
+    // Original Beta ACardAttack grouping: one attack, attackCount targets (presentation only).
+    public var attackId, attackCount : int;
 }

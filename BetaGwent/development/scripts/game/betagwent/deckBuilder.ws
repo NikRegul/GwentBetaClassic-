@@ -1,4 +1,4 @@
-// Original DefaultDeckValidatorRuleSet:25-40 non-leader cards,4 gold,6 silver,
+﻿// Original DefaultDeckValidatorRuleSet:25-40 non-leader cards,4 gold,6 silver,
 // bronze copies3, silver/gold copies1, one non-neutral faction; no unit minimum.
 struct SBetaGwentDeckValidation
 {
@@ -34,7 +34,7 @@ function BetaGwentValidateDeck(ids : array<int>, faction : int, leaderId : int) 
     }
     if (result.gold > 4) { result.message = "Можно выбрать до4 золотых карт."; return result; }
     if (result.silver > 6) { result.message = "Можно выбрать до6 серебряных карт."; return result; }
-    if (ids.Size() < 25) { result.message = "Добавьте ещё " + (25 - ids.Size()) + " карт. Минимум25, максимум40."; return result; }
+    if (ids.Size() < 25) { result.message = "Добавьте ещё " + (25 - ids.Size()) + " карт. Минимум 25, максимум 40."; return result; }
     result.valid = true; result.message = "Колода готова к игре."; return result;
 }
 

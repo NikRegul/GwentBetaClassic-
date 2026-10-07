@@ -1,8 +1,10 @@
 ﻿// Original special graphs, concrete consumers. No substitute generated-unit abilities.
 class CBetaGwentDuelSpecials extends IScriptable
 {
-    private var game : CBetaGwentDuelSession;
-    private var weather : CBetaGwentDuelWeather;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var game : CBetaGwentDuelSession;
+    public var weather : CBetaGwentDuelWeather;
     public function Initialize(owner : CBetaGwentDuelSession, rows : CBetaGwentDuelWeather)
     { game = owner; weather = rows; }
     private function Eligible(s : SBetaGwentCardSnapshot, d : SBetaGwentDuelDefinition, optional shape : bool) : bool

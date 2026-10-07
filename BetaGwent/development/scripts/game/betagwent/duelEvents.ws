@@ -1,7 +1,9 @@
-// Concrete AfterTurn/Killed graph consumers for the closed duel.
+﻿// Concrete AfterTurn/Killed graph consumers for the closed duel.
 // This is not the full original AbilityManager/ActionManager coordinator.
 class CBetaGwentDuelEvent extends IScriptable
 {
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
     public var kind, batchSerial : int;
     public var source, cause : SBetaGwentCardSnapshot;
     public var rowToken : int;
@@ -11,9 +13,11 @@ class CBetaGwentDuelEvent extends IScriptable
 
 class CBetaGwentDuelEvents extends IScriptable
 {
-    private var game : CBetaGwentDuelSession;
-    private var pending : array<CBetaGwentDuelEvent>;
-    private var batchSerial : int;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var game : CBetaGwentDuelSession;
+    public var pending : array<CBetaGwentDuelEvent>;
+    public var batchSerial : int;
     public function Count() : int { return pending.Size(); }
     public function NextBatchSerial() : int { if (pending.Size() == 0) return 0; return pending[0].batchSerial; }
     public function Pop() : CBetaGwentDuelEvent

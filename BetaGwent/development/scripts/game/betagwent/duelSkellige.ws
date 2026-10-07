@@ -1,8 +1,10 @@
-// Concrete original Skellige graphs, including inactive and resurrection reactions.
+﻿// Concrete original Skellige graphs, including inactive and resurrection reactions.
 class CBetaGwentDuelSkellige extends IScriptable
 {
-    private var game : CBetaGwentDuelSession;
-    private var beastsOne, beastsTwo : int;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var game : CBetaGwentDuelSession;
+    public var beastsOne, beastsTwo : int;
     public function Initialize(owner : CBetaGwentDuelSession) {game=owner;beastsOne=0;beastsTwo=0;}
     private function Side(source : CBetaGwentDuelCard) : int {return game.NorthActingSide(source);}
     public function History(card : CBetaGwentDuelCard)
@@ -28,7 +30,7 @@ class CBetaGwentDuelSkellige extends IScriptable
     {
         var id,side,enemy,i,count : int;var s,t,pos : SBetaGwentCardSnapshot;var ids,valid : array<int>;
         id=source.TemplateId();side=Side(source);enemy=BetaGwentOpponentId(side);s=source.Snapshot();source.monsterStage=0;source.monsterIds.Clear();source.monsterRemaining=1;
-        LogChannel('BetaGwent',"DUEL_SKELLIGE_PLAY template="+id+" side="+side);
+        BetaGwentLog("DUEL_SKELLIGE_PLAY template="+id+" side="+side);
         if(id==152101 || id==152201){pos=s;pos.positionPlayerId=enemy;pos.locationIndex=-3;game.QueueSpawn(pos,BetaGwentNorthPick(id==152101,152401,152403),1);}
         else if(id==200040){game.QueueTimer(source,2,2);}
         else if(id==152103 || id==152213){game.NilfDraw(side,14,false);if(id==152103)game.NilfDraw(side,14,false);source.monsterRemaining=BetaGwentNorthPick(id==152103,2,1);Request(source,side,8,14,14,0,1);return;}
@@ -127,10 +129,10 @@ class CBetaGwentDuelSkellige extends IScriptable
                      game.MonsterOperation(source,source,13,t.power.basePower+t.power.permanentPower-t.power.currentPower,7);
                      game.MonsterOperation(source,source,12,2,7);
                  }
-                 LogChannel('BetaGwent',"DUEL_SWORDSMAN_CYCLE card="+s.instanceId+" reset=2 damaged="+(t.power.currentPower<t.power.basePower+t.power.permanentPower));
+                 BetaGwentLog("DUEL_SWORDSMAN_CYCLE card="+s.instanceId+" reset=2 damaged="+(t.power.currentPower<t.power.basePower+t.power.permanentPower));
              }
          }
-         if(kind==6 && cause.positionPlayerId==s.positionPlayerId){if(id==152109){left=Adjacent(source,-1);right=Adjacent(source,1);if(left)game.MonsterOperation(source,left,12,1,7);if(right)game.MonsterPower(source,right,-1);}if(id==152309){right=Adjacent(source,1);if(right)game.MonsterPower(source,right,-1);game.MonsterPower(source,source,2);}if(id==152403){ids.Clear();for(row=1;row<=4;row*=2)if(game.CountLocation(s.positionPlayerId,row)<9 || row==s.locationMask)ids.PushBack(row);if(ids.Size()>0){row=ids[game.RandomIndex(ids.Size())];game.QueueRelocation(source,s.positionPlayerId,row,false);game.FlushEffects();Query(s.positionPlayerId,row,15,4,0,8,NULL,ids);for(j=0;j<ids.Size();j+=1)if(ids[j]!=s.instanceId)game.MonsterPower(source,game.FindCard(ids[j]),-1);}}}
+         if(kind==6 && cause.positionPlayerId==s.positionPlayerId){if(id==152109){left=Adjacent(source,-1);right=Adjacent(source,1);if(left)game.MonsterOperation(source,left,12,1,7);if(right)game.MonsterPower(source,right,-1);}if(id==152309){right=Adjacent(source,1);if(right){game.MonsterPower(source,right,-1);game.MonsterPower(source,source,2);}}if(id==152403){ids.Clear();for(row=1;row<=4;row*=2)if(game.CountLocation(s.positionPlayerId,row)<9 || row==s.locationMask)ids.PushBack(row);if(ids.Size()>0){row=ids[game.RandomIndex(ids.Size())];game.QueueRelocation(source,s.positionPlayerId,row,false);game.FlushEffects();Query(s.positionPlayerId,row,15,4,0,8,NULL,ids);for(j=0;j<ids.Size();j+=1)if(ids[j]!=s.instanceId)game.MonsterPower(source,game.FindCard(ids[j]),-1);}}}
         }
     }
 }

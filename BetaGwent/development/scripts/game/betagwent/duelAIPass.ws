@@ -32,6 +32,57 @@ function BetaGwentAIChasePassReason(reachable : bool, cards : int, spent : int,
     if (spent + cards <= 2 && ownHand - cards >= 4 && ownHand - cards - enemyHand >= 2) return 0;
     return 2;
 }
+// Round economy (AI generation 2). Called only while the opponent has not passed.
+// Tunables are fixed here; self-play hosts may override BetaGwentAITune for search.
+function BetaGwentAITune(index : int) : int
+{
+    switch(index)
+    {
+    case 0: return 6;   // R1: extra lead over one enemy card before passing ahead
+    case 1: return 0;   // R1: concede when one card cannot take the lead (0=off, else extra deficit)
+    case 2: return 0;   // R2 with a crown: dry pass (0=off, 1=on)
+    case 3: return 0;   // R2 with a crown: concede when behind (0=off, 1=on)
+    case 4: return 1;   // R1: pass ahead also with more cards than the opponent
+    case 5: return 10;  // Generation 3: cards simulated per decision
+    case 6: return 3;   // Generation 3 mulligan: required gain of the average deck card
+    case 7: return 6;   // Generation 4: follow-up cards checked after each candidate
+    case 8: return 5;   // Generation 4: weight of the follow-up uplift (tenths)
+    case 9: return 4;   // Generation 4: candidates checked for follow-up uplift
+    }
+    return 0;
+}
+// Average public value of an opponent card this round, with a prior of 10.
+function BetaGwentAICardValue(points : int, played : int) : int
+{ return (Max(0,points)+20)/(Max(0,played)+2); }
+// 0 = keep playing; 1 = pass while ahead (opponent must overspend); 2 = concede
+// the round to keep cards; 3 = dry pass with the round lead in crowns.
+function BetaGwentAIRoundDecision(round : int, ownCrowns : int, enemyCrowns : int, lead : int,
+    ownHand : int, enemyHand : int, bestTempo : int, enemyValue : int, enemyLeader : bool) : int
+{
+    var margin : int;
+    if(ownHand==0)return 0;
+    margin=enemyValue+BetaGwentAITune(0);if(enemyLeader)margin+=3;
+    // Deciding round, or the opponent already holds a crown: every round must be won.
+    if(enemyCrowns>=1)return 0;
+    if(ownCrowns>=1)
+    {
+        // We won a round. Make the opponent spend cards for this one.
+        if(BetaGwentAITune(2)!=0 && lead>=0 && ownHand+1>=enemyHand)return 3;
+        if(BetaGwentAITune(3)!=0 && lead<0 && ownHand>=enemyHand)return 2;
+        return 0;
+    }
+    // First round: win it without falling behind in cards.
+    if(lead>0)
+    {
+        if(ownHand>=enemyHand && lead>=margin)return 1;
+        if(BetaGwentAITune(4)!=0 && ownHand>enemyHand && lead>=enemyValue/2+BetaGwentAITune(0)/2)return 1;
+        return 0;
+    }
+    if(bestTempo+lead>0)return 0;
+    // One card cannot take the lead: the opponent's last plays outvalue ours.
+    if(BetaGwentAITune(1)>0 && ownHand<=enemyHand+1 && -lead>bestTempo+BetaGwentAITune(1) && ownHand>=3)return 2;
+    return 0;
+}
 function BetaGwentAIConcedeOptionalRound(deficit : int, bestTempo : int,
     ownHand : int, enemyHand : int, ownCrowns : int, enemyCrowns : int) : bool
 {
@@ -66,6 +117,8 @@ function BetaGwentAIDuelSwing(ownPower : int, ownArmor : int, enemyPower : int, 
 }
 class CBetaGwentAIChasePlanner extends IScriptable
 {
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
     private function Better(candidate : SBetaGwentAIChasePlan, best : SBetaGwentAIChasePlan) : bool
     {
         if (!best.reachable) return true;

@@ -1,4 +1,4 @@
-// Fixtures expose reconstruction seams, not original Register/Unregister.
+﻿// Fixtures expose reconstruction seams, not original Register/Unregister.
 class CBetaGwentRegistryIdCheckFixture extends CBetaGwentRegistryIdStore
 {
     public function State(value : int, capacity : int) : bool { return ReconstructIdState(value, capacity); }

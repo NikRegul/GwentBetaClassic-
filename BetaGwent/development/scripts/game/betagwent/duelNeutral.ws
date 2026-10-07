@@ -1,7 +1,9 @@
-// Explicit consumers for every remaining neutral graph; generated choices are views only.
+﻿// Explicit consumers for every remaining neutral graph; generated choices are views only.
 class CBetaGwentDuelNeutral extends IScriptable
 {
-    private var game : CBetaGwentDuelSession;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var game : CBetaGwentDuelSession;
     public function Initialize(owner : CBetaGwentDuelSession){game=owner;}
     private function Side(source : CBetaGwentDuelCard) : int{return game.NorthActingSide(source);}
     private function Query(side : int, zone : int, tier : int, types : int, ignore : int, out ids : array<int>)
@@ -26,7 +28,7 @@ class CBetaGwentDuelNeutral extends IScriptable
     {
         var id,side,enemy,i,j,count,power : int;var ids,valid,other : array<int>;var s,t,pos : SBetaGwentCardSnapshot;var d : SBetaGwentDuelDefinition;var target : CBetaGwentDuelCard;
         id=source.TemplateId();side=Side(source);enemy=BetaGwentOpponentId(side);s=source.Snapshot();source.monsterStage=0;source.monsterIds.Clear();source.monsterRemaining=1;
-        LogChannel('BetaGwent',"DUEL_NEUTRAL_PLAY template="+id+" side="+side);
+        BetaGwentLog("DUEL_NEUTRAL_PLAY template="+id+" side="+side);
         if(id==112101 || id==112107)source.monsterStage=0;
         else if(id==112102 || id==201523){ids.PushBack(1);ids.PushBack(2);ids.PushBack(4);game.MonsterRequest(source,ids,3,1,1);return;}
         else if(id==200532)game.MonsterWeather(side,s.locationMask,128);

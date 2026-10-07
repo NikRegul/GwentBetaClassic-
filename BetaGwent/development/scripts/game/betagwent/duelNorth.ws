@@ -1,7 +1,9 @@
-// Concrete consumers of the pinned Northern graphs; shared managed effects and requests.
+﻿// Concrete consumers of the pinned Northern graphs; shared managed effects and requests.
 class CBetaGwentDuelNorth extends IScriptable
 {
-    private var game : CBetaGwentDuelSession;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var game : CBetaGwentDuelSession;
     public function Initialize(owner : CBetaGwentDuelSession) { game = owner; }
     private function Side(source : CBetaGwentDuelCard) : int
     { var s : SBetaGwentCardSnapshot; s = source.Snapshot(); if (BetaGwentDuelSpying(source.TemplateId())) return BetaGwentOpponentId(s.positionPlayerId); return s.positionPlayerId; }
@@ -57,7 +59,7 @@ class CBetaGwentDuelNorth extends IScriptable
     {
         var d : SBetaGwentDuelDefinition; var s : SBetaGwentCardSnapshot;
         d = source.Definition(); s = source.Snapshot(); source.monsterStage = 0; source.monsterIds.Clear(); source.monsterRemaining = Max(1, d.specialCount);
-        LogChannel('BetaGwent', "DUEL_NORTH_PLAY template=" + source.TemplateId() + " mode=" + d.specialMode);
+        BetaGwentLog("DUEL_NORTH_PLAY template=" + source.TemplateId() + " mode=" + d.specialMode);
         if (d.specialMode <= 124) PlayedLow(source); else PlayedHigh(source);
     }
     private function PlayedLow(source : CBetaGwentDuelCard)

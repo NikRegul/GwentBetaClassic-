@@ -1,4 +1,4 @@
-// Isolated effect-free fixture checks. Never touches the displayed session.
+﻿// Isolated effect-free fixture checks. Never touches the displayed session.
 // These verify the development coordinator, not original Beta effect parity.
 class CBetaGwentDevelopmentBoardChecks extends IScriptable
 {

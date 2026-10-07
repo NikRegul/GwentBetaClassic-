@@ -1,4 +1,4 @@
-class CBetaGwentRequestFlowChecks extends IScriptable
+﻿class CBetaGwentRequestFlowChecks extends IScriptable
 {
     private var checks : int;
     private var failures : int;

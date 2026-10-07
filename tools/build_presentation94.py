@@ -43,7 +43,10 @@ def main():
         job('localization',[str(ROOT/'tools/localization89.py'),'sources','--output-dir',str(BASE/'en')])
         shutil.copytree(ROOT/'BetaGwent/ui/src/mx',english/'ui/mx',dirs_exist_ok=True)
         shutil.copytree(ROOT/'BetaGwent/ui/assets',english/'assets',dirs_exist_ok=True)
-        shutil.copyfile(ROOT/'BetaGwent/build/release89/en/project/BetaGwent0924/workspace/scripts/game/betagwent/duelAudioCatalog.ws',english/'scripts/game/betagwent/duelAudioCatalog.ws')
+        # Stage 105: English phrase durations regenerated from the live catalog
+        # (the release89 project copy no longer exists).
+        job('en-audio-catalog',[str(ROOT/'tools/generate_en_audio_catalog.py')])
+        shutil.copyfile(ROOT/'BetaGwent/audio/generated/duelAudioCatalog-en.ws',english/'scripts/game/betagwent/duelAudioCatalog.ws')
     original={stem:sha(WORK/(stem+'.redswf')) for stem in ENTRIES.values()}
     backups=BASE/'before-resources';backups.mkdir(exist_ok=True)
     for stem in ENTRIES.values():
@@ -74,7 +77,9 @@ def main():
                 report['menus'].append(dict(language=language,entry=entry,resource=str(resource),sha256=sha(resource),bindings=45))
         for language in ('ru','en'):
             frozen=json.loads((EVIDENCE/f'stage89-release-{language}.json').read_text('utf8'))
-            assert sha(Path(frozen['archive']))==frozen['archiveSha256']
+            # First-release ZIPs must stay unchanged when present; they may have been
+            # removed from disk (07.10.2026 cleanup), which is not a modification.
+            if Path(frozen['archive']).exists():assert sha(Path(frozen['archive']))==frozen['archiveSha256']
     except Exception:
         # Restore the actual resources present at invocation, not the older
         # first-run backup if the user invokes this builder again later.
@@ -83,6 +88,13 @@ def main():
             assert sha(restored)==original[stem]
             shutil.copyfile(restored,WORK/(stem+'.redswf'))
         raise
+    # A single-language run keeps the other language's still-valid menus, so
+    # RU and EN can be built in separate runs (package_presentation94 needs 3 per language).
+    previous=EVIDENCE/f'stage{options.stage}-completion.json'
+    if options.language and previous.exists():
+        kept=[m for m in json.loads(previous.read_text('utf8')).get('menus',[])
+              if m['language']!=options.language and Path(m['resource']).exists() and sha(Path(m['resource']))==m['sha256']]
+        report['menus']=kept+report['menus']
     report['atlasSha256']=sha(ROOT/'BetaGwent/ui/assets/card_atlas.png')
     report['sources']={p.name:sha(p) for p in (ROOT/'BetaGwent/ui/src').glob('*.as')}
     (EVIDENCE/f'stage{options.stage}-completion.json').write_text(json.dumps(report,indent=2)+'\n','utf8')

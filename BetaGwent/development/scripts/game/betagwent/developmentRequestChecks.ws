@@ -1,4 +1,4 @@
-// Isolated request/continuation checks. Never mutate the displayed DEV match.
+﻿// Isolated request/continuation checks. Never mutate the displayed DEV match.
 class CBetaGwentRequestChecks extends IScriptable
 {
     private var checks : int;

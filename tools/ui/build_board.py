@@ -36,7 +36,7 @@ if not args.reuse_assets:
     subprocess.run([sys.executable, str(ROOT / 'tools/ui/build_card_art.py')],cwd=ROOT,check=True,timeout=300)
     subprocess.run([sys.executable, str(ROOT / 'tools/build_full_catalog.py')],cwd=ROOT,check=True,timeout=60)
 commands = [
-    [shutil.which('java'), '-Duser.language=en', '-Duser.country=US', '-jar',
+    [shutil.which('java'), '-Xmx3g', '-Duser.language=en', '-Duser.country=US', '-jar',
      str(ROOT / 'tools/vendor/apache-royale-0.9.12/royale-asjs/lib/mxmlc.jar'),
      '-load-config=' + str(UI / 'board-config.xml'), '-output=' + str(SWF),
      '-source-path=' + str(SOURCE_DIR),
@@ -59,6 +59,12 @@ for index, command in enumerate(commands):
     if result.returncode or 'Error:' in log or 'Failed to' in log:
         print(log)
         raise SystemExit(result.returncode or 1)
+    if index==0:
+        # Stage 104: embed the original Gwent Beta TMP fonts as DefineFont3 tags.
+        fonts=subprocess.run([sys.executable,str(ROOT/'tools/ui/build_beta_fonts104.py'),'inject',str(SWF)],cwd=ROOT,
+                             stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=240)
+        (BUILD/(stem+'-fonts.log')).write_text(fonts.stdout.decode('utf-8','replace'),encoding='utf-8')
+        if fonts.returncode:print(fonts.stdout.decode('utf-8','replace'));raise SystemExit(fonts.returncode)
 if args.native_only:
     shutil.copyfile(DDS_BUILD/(stem+'.gfx'),BUILD/(stem+'.gfx'))
 

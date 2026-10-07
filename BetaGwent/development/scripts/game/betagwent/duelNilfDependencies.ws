@@ -1,8 +1,10 @@
-// Creation closure: abilities reached through leaders created by Usurper.
+﻿// Creation closure: abilities reached through leaders created by Usurper.
 class CBetaGwentNilfDependencies extends IScriptable
 {
-    private var game : CBetaGwentDuelSession;
-    private var nilf : CBetaGwentDuelNilf;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var game : CBetaGwentDuelSession;
+    public var nilf : CBetaGwentDuelNilf;
     public function Initialize(owner : CBetaGwentDuelSession, router : CBetaGwentDuelNilf) {game=owner;nilf=router;}
     private function Query(side : int, zone : int, tier : int, types : int, flags : int, source : CBetaGwentDuelCard, out ids : array<int>)
     {nilf.DepQuery(side,zone,tier,types,flags,source,ids);}
@@ -35,7 +37,7 @@ class CBetaGwentNilfDependencies extends IScriptable
         else if(id==200135){for(j=1;j<=4;j*=2)nilf.DepRandomDamage(source,enemy,j,3,1);}
         else if(id==200138){Request(source,side,32,2,10,65536);return;}
         else if(id==200139){Query(enemy,7,15,4,0,source,ids);for(i=0;i<ids.Size();i+=1){t=game.FindCard(ids[i]).Snapshot();if(game.CountLocation(enemy,t.locationMask)<4)valid.PushBack(ids[i]);}game.MonsterRequest(source,valid,2,0,1);return;}
-        else if(id==200293){Query(side,16,2,12,8192,source,ids);for(i=0;i<ids.Size();i+=1)if(game.FindCard(ids[i]).TemplateId()!=id)valid.PushBack(ids[i]);if(valid.Size()>0){i=valid[game.RandomIndex(valid.Size())];game.MonsterCreate(source,game.FindCard(i).TemplateId());return;}}
+        else if(id==200293){game.AgitatorPool(side,valid);if(valid.Size()>0){game.MonsterCreate(source,valid[game.RandomIndex(valid.Size())]);return;}}
         else if(id==200520 || id==201696){Query(side,32,BetaGwentNorthPick(id==200520,6,2),4,BetaGwentNorthPick(id==201696,8192,0),source,ids);for(i=0;i<ids.Size();i+=1){t=game.FindCard(ids[i]).Snapshot();if((id==200520 && t.runtimeTemplate.factionMask==16 && t.power.currentPower<=s.power.currentPower) || (id==201696 && !BetaGwentNilfSupport(t.runtimeTemplate.templateId)))valid.PushBack(ids[i]);}game.MonsterRequest(source,valid,2,0,1);return;}
         else if(id==201636){t=s;t.locationIndex+=1;game.QueueSpawn(t,id,1);}
         else if(id==201676){Request(source,side,16,6,14,1024);return;}
@@ -65,7 +67,7 @@ class CBetaGwentNilfDependencies extends IScriptable
                 if(id==142303)game.MonsterPower(source,source,t.power.basePower);
                 game.NorthMoveInactive(target,side,16,true);
                 game.NilfTake(game.FindCard(ids[i]),side);game.NilfSwapped(target);
-                LogChannel('BetaGwent',"DUEL_AUTOMATIC_SWAP source="+s.instanceId+" returned="+selected+" drawn="+ids[i]);
+                BetaGwentLog("DUEL_AUTOMATIC_SWAP source="+s.instanceId+" returned="+selected+" drawn="+ids[i]);
             }
         }
         else if(id==142310){game.MonsterPower(source,target,-BetaGwentNorthPick(source.monsterStage==0,3,1));if(source.monsterStage==0){source.monsterStage=1;Request(source,0,7,15,4,0);return;}}

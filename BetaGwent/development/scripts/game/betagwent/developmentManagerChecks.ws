@@ -1,4 +1,4 @@
-// Synthetic callbacks. Generated scenarios bind to original56 observations.
+﻿// Synthetic callbacks. Generated scenarios bind to original56 observations.
 struct SBetaGwentManagerCheckConfig
 {
     var request, stateChanging, priority, valid, fire, before, main, verbose : bool;

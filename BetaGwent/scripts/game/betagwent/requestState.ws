@@ -1,4 +1,4 @@
-// Memory-local card requests. Original event bus, card cloning, timeout RNG and
+﻿// Memory-local card requests. Original event bus, card cloning, timeout RNG and
 // cancellation/rollback are deliberately left to the future coordinator.
 // Request kind and guards below are mod-local; ability-state values are original.
 enum EBetaGwentCardRequestKind
@@ -93,11 +93,13 @@ function BetaGwentRequestContains(ids : array<int>, value : int) : bool
 
 class CBetaGwentCardRequest extends IScriptable
 {
-    private var requestState : SBetaGwentRequestSnapshot;
-    private var choices : array<SBetaGwentChoiceEntry>;
-    private var validTargets : array<int>;
-    private var selected : array<int>;
-    private var targetsInShape : array<int>;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var requestState : SBetaGwentRequestSnapshot;
+    public var choices : array<SBetaGwentChoiceEntry>;
+    public var validTargets : array<int>;
+    public var selected : array<int>;
+    public var targetsInShape : array<int>;
 
     private function CanInitialize(requestId : int, playerId : int, targetPlayerId : int) : bool
     {

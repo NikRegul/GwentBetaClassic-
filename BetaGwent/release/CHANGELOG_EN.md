@@ -1,3 +1,45 @@
+# Gwent Beta Classic 0.3.0
+
+**Back up your saves before updating. Delete the old modBetaGwent0924 folder before installing.**
+
+- New AI: before every move it plays out its candidate cards and leader on a copy of the board and picks the best result.
+- AI mulligans by card value learned from thousands of simulated matches.
+- AI no longer places units into harmful weather and prefers rows with useful effects.
+- AI places units for adjacency synergies (e.g. cards that boost both neighbours go between units).
+- AI chooses targets by simulation (e.g. Coral no longer turns its own unit into a figurine).
+- AI saves its leader: it no longer spends it to win a round that one hand card can win.
+- Named NPCs (Zoltan, innkeepers, tournaments) now draw a random archetype of their faction; all 40 archetypes appear much more often.
+- The opponent's deck archetype is shown instead of the NPC name.
+- Beta fonts, card frames, HUD, counters and faction card backs.
+- Leader intro with voice lines before the match.
+- Beta-style mulligan screen.
+- Original Beta row weather, drawn under the cards.
+- Multi-target effects play on all targets at once.
+- The acting card is highlighted, its name is shown and an arrow points from it to the target (useful for end-of-turn triggers).
+- Beta spying (eye) and revealed-card (magnifying glass) tokens.
+- Leader shows its power in the corner; the hand counter includes the leader.
+- Hand cards sit in an even, flat row.
+- Widescreen support: side panels instead of black bars.
+- Deck selection shows HD leader covers.
+- Deck builder: new "Owned" filter; deck size limit text updated (25–40).
+- All labels now fit their buttons and panels.
+- Removed the "Rematch" button.
+- Fixed: Beta target abilities are mandatory when a legal target exists (some cards could skip their target).
+- Fixed: Cow Carcass timer stalled when the side it lies on had passed.
+- Fixed: Dimun Light Longship boosted itself with no unit on its right.
+- Fixed: Dwarven Agitator now picks from your starting deck, not what is left in it.
+- Fixed: Zoltan's parrot and other created units are placed between units instead of at the row edge.
+- Fixed: pressing Space during the leader intro could freeze the screen.
+- Interface errors no longer freeze the match; they are written to scriptslog.txt.
+
+# Gwent Beta Classic 0.2.9
+
+**Back up your saves before updating.**
+
+- Fixed: the game was not paused during a match — key presses made Geralt drink potions and guards attack. Gwent menus now fully pause the game like vanilla Gwent.
+- Beta board laid out from the original Beta scene: pass coin, two-half crown, score ribbons, rows, leader, hand, deck and graveyard.
+- Rows and board halves at the original scale (were 81%).
+
 # Gwent Beta Classic 0.2.6
 
 **Back up saves before updating.**

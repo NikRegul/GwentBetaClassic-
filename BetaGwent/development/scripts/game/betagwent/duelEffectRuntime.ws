@@ -4,16 +4,18 @@ struct SBetaGwentDuelCueContext
 { var id, templateId, side, row : int; }
 class CBetaGwentDuelPassiveFrame extends IScriptable
 {
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
     public var actions : CBetaGwentActionQueue;
     public var source : SBetaGwentCardSnapshot;
     public var batchSerial : int;
 }
 class CBetaGwentDuelActionServices extends CBetaGwentActionServices
 {
-    private var runtime : CBetaGwentDuelEffectRuntime;
+    public var runtime : CBetaGwentDuelEffectRuntime;
     public function Initialize(value : CBetaGwentDuelEffectRuntime) { runtime = value; }
     public function EmitBeforeDiagnostic(action : CBetaGwentManagedAction)
-    { LogChannel('BetaGwent', "DUEL_MANAGER_BEFORE_DIAGNOSTIC"); }
+    { BetaGwentLog("DUEL_MANAGER_BEFORE_DIAGNOSTIC"); }
     public function LogAction(valid : bool, action : CBetaGwentManagedAction) : bool
     { if (!valid) runtime.RecordSkipped(); return true; }
     // All supported effects are local, not network/request/cache objects.
@@ -21,11 +23,13 @@ class CBetaGwentDuelActionServices extends CBetaGwentActionServices
 }
 class CBetaGwentDuelEffectAction extends CBetaGwentManagedAction
 {
-    private var attacker : CBetaGwentDuelCard;
-    private var target : CBetaGwentDuelCard;
-    private var runtime : CBetaGwentDuelEffectRuntime;
-    private var operation, amount, allowedLocations : int;
-    private var ignoreArmor : bool;
+    public var attacker : CBetaGwentDuelCard;
+    public var target : CBetaGwentDuelCard;
+    public var runtime : CBetaGwentDuelEffectRuntime;
+    public var operation, amount, allowedLocations : int;
+    public var ignoreArmor : bool;
+    public var attackId : int;
+    public function SetAttack(id : int) { attackId = id; }
 
     public function Setup(owner : CBetaGwentDuelEffectRuntime, card : CBetaGwentDuelCard,
         kind : int, value : int, bypassArmor : bool, context : CBetaGwentActionContext, optional source : CBetaGwentDuelCard, optional locations : int) : bool
@@ -54,6 +58,15 @@ class CBetaGwentDuelEffectAction extends CBetaGwentManagedAction
     protected function BeforeApplyImpl()
     { runtime.RecordBefore(); if (operation == 4) runtime.BeforeConsume(attacker, target); }
     protected function ApplyImpl() : bool
+    {
+        var previous : int; var result, sourced : bool;
+        // The acting card is the visual source, so turn-end triggers show who attacks/boosts.
+        if (attacker && attacker != target) sourced = runtime.game.BeginEffectSource(attacker);
+        previous = runtime.BeginAttack(attackId); result = ApplyEffect(); runtime.EndAttack(previous);
+        if (sourced) runtime.game.EndEffectSource();
+        return result;
+    }
+    private function ApplyEffect() : bool
     {
         var old, next : SBetaGwentCardSnapshot;
         old = target.Snapshot();
@@ -92,17 +105,21 @@ class CBetaGwentDuelEffectAction extends CBetaGwentManagedAction
 
 class CBetaGwentDuelEffectRuntime extends CBetaGwentActionSink
 {
-    private var game : CBetaGwentDuelSession;
-    private var queue : CBetaGwentActionQueue;
-    private var context : CBetaGwentManagerContext;
-    private var manager : CBetaGwentActionManager;
-    private var services : CBetaGwentDuelActionServices;
-    private var frames : array<CBetaGwentDuelPassiveFrame>;
-    private var buildingFrame : CBetaGwentDuelPassiveFrame;
-    private var dispatchingFrame : CBetaGwentDuelPassiveFrame;
-    private var passiveCount, maximumDepth : int;
-    private var failed, running : bool;
-    private var beforeCount, appliedCount, afterCount, skippedCount : int;
+    public var game : CBetaGwentDuelSession;
+    public var queue : CBetaGwentActionQueue;
+    public var context : CBetaGwentManagerContext;
+    public var manager : CBetaGwentActionManager;
+    public var services : CBetaGwentDuelActionServices;
+    public var frames : array<CBetaGwentDuelPassiveFrame>;
+    public var buildingFrame : CBetaGwentDuelPassiveFrame;
+    public var dispatchingFrame : CBetaGwentDuelPassiveFrame;
+    public var passiveCount, maximumDepth : int;
+    public var failed, running : bool;
+    public var beforeCount, appliedCount, afterCount, skippedCount : int;
+    // Attack grouping (original ACardAttack): consecutive enqueues, same source/op/sign.
+    public var attackSerial, attackKey : int; public var attackSource : CBetaGwentDuelCard; public var attackOpen : bool;
+    public function BeginAttack(id : int) : int { return game.SetVisualAttack(id); }
+    public function EndAttack(previous : int) { game.SetVisualAttack(previous); }
 
     public function Initialize(owner : CBetaGwentDuelSession)
     {
@@ -116,9 +133,12 @@ class CBetaGwentDuelEffectRuntime extends CBetaGwentActionSink
     }
     public function Enqueue(card : CBetaGwentDuelCard, kind : int, value : int, bypassArmor : bool, optional source : CBetaGwentDuelCard, optional locations : int) : bool
     {
-        var action : CBetaGwentDuelEffectAction;
+        var action : CBetaGwentDuelEffectAction; var key : int;
         if (failed || !card || kind < 1 || kind > 19) return false;
         action = new CBetaGwentDuelEffectAction in this;
+        key = kind * 2; if (value < 0) key += 1;
+        if (!attackOpen || attackSource != source || attackKey != key) { attackSerial += 1; attackOpen = true; attackSource = source; attackKey = key; }
+        action.SetAttack(attackSerial);
         if (!action.Setup(this, card, kind, value, bypassArmor, context, source, locations) || !PushPrepared(action))
         { failed = true; return false; }
         return true;
@@ -196,6 +216,7 @@ class CBetaGwentDuelEffectRuntime extends CBetaGwentActionSink
     {
         var managed : CBetaGwentManagedAction;
         managed = (CBetaGwentManagedAction)action;
+        attackOpen = false;
         if (!managed || !manager.ApplyAction(managed)) failed = true;
     }
     private function HasWork() : bool
@@ -258,7 +279,7 @@ class CBetaGwentDuelEffectRuntime extends CBetaGwentActionSink
     public function RecordAfter() { afterCount += 1; }
     public function Report()
     {
-        LogChannel('BetaGwent', "DUEL_EFFECT_SUMMARY before=" + beforeCount + " applied=" + appliedCount
+        BetaGwentLog("DUEL_EFFECT_SUMMARY before=" + beforeCount + " applied=" + appliedCount
             + " after=" + afterCount + " skipped=" + skippedCount + " pending=" + queue.Count()
             + " passivePending=" + game.PendingEventCount() + " passiveFrames=" + frames.Size() + " passiveDone=" + passiveCount
             + " maxPassiveDepth=" + maximumDepth + " managed=" + manager.GetDispatchCount() + " dirty=" + context.IsDirty());
@@ -268,10 +289,10 @@ class CBetaGwentDuelEffectRuntime extends CBetaGwentActionSink
 // One original SpawnCardsAction owns all preallocated requests.
 class CBetaGwentDuelSpawnAction extends CBetaGwentManagedAction
 {
-    private var runtime : CBetaGwentDuelEffectRuntime;
-    private var game : CBetaGwentDuelSession;
-    private var fromPosition : SBetaGwentCardSnapshot;
-    private var templateId : int; private var ids : array<int>;
+    public var runtime : CBetaGwentDuelEffectRuntime;
+    public var game : CBetaGwentDuelSession;
+    public var fromPosition : SBetaGwentCardSnapshot;
+    public var templateId : int; public var ids : array<int>;
     public function Setup(owner : CBetaGwentDuelEffectRuntime, session : CBetaGwentDuelSession,
         sourcePosition : SBetaGwentCardSnapshot, template : int, requests : array<int>, context : CBetaGwentActionContext) : bool
     {
@@ -294,10 +315,10 @@ class CBetaGwentDuelSpawnAction extends CBetaGwentManagedAction
 // Killed graph MoveCards: existing deck ID, no Played trigger or initial move.
 class CBetaGwentDuelMoveAction extends CBetaGwentManagedAction
 {
-    private var runtime : CBetaGwentDuelEffectRuntime;
-    private var game : CBetaGwentDuelSession;
-    private var destination : SBetaGwentCardSnapshot;
-    private var card : CBetaGwentDuelCard;
+    public var runtime : CBetaGwentDuelEffectRuntime;
+    public var game : CBetaGwentDuelSession;
+    public var destination : SBetaGwentCardSnapshot;
+    public var card : CBetaGwentDuelCard;
     public function Setup(owner : CBetaGwentDuelEffectRuntime, session : CBetaGwentDuelSession,
         fromPosition : SBetaGwentCardSnapshot, value : CBetaGwentDuelCard, context : CBetaGwentActionContext) : bool
     { runtime = owner; game = session; destination = fromPosition; card = value; SetStateChanging(true); return Prepare(context); }
@@ -316,10 +337,10 @@ class CBetaGwentDuelMoveAction extends CBetaGwentManagedAction
 // Concrete ChangeTimerAttack consumer; generic TimerChanged/Before-After hooks are not implemented.
 class CBetaGwentDuelCreatedCardAction extends CBetaGwentManagedAction
 {
-    private var runtime : CBetaGwentDuelEffectRuntime;
-    private var game : CBetaGwentDuelSession;
-    private var source : CBetaGwentDuelCard;
-    private var templateId, instanceId : int;
+    public var runtime : CBetaGwentDuelEffectRuntime;
+    public var game : CBetaGwentDuelSession;
+    public var source : CBetaGwentDuelCard;
+    public var templateId, instanceId : int;
     public function Setup(owner : CBetaGwentDuelEffectRuntime, session : CBetaGwentDuelSession,
         creator : CBetaGwentDuelCard, requestedTemplate : int, id : int, context : CBetaGwentActionContext) : bool
     { runtime = owner; game = session; source = creator; templateId = requestedTemplate; instanceId = id; SetStateChanging(true); return Prepare(context); }
@@ -335,9 +356,9 @@ class CBetaGwentDuelCreatedCardAction extends CBetaGwentManagedAction
 }
 class CBetaGwentDuelTimerAction extends CBetaGwentManagedAction
 {
-    private var runtime : CBetaGwentDuelEffectRuntime;
-    private var card : CBetaGwentDuelCard;
-    private var operation, value : int;
+    public var runtime : CBetaGwentDuelEffectRuntime;
+    public var card : CBetaGwentDuelCard;
+    public var operation, value : int;
     public function Setup(owner : CBetaGwentDuelEffectRuntime, target : CBetaGwentDuelCard,
         op : int, amount : int, context : CBetaGwentActionContext) : bool
     { runtime = owner; card = target; operation = op; value = amount; SetStateChanging(true); return Prepare(context); }
@@ -345,8 +366,9 @@ class CBetaGwentDuelTimerAction extends CBetaGwentManagedAction
     {
         var s : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition;
         if (!runtime || !card) return false; s = card.Snapshot(); d = card.Definition();
-        // Swordsman's timer is driven by the Skellige graph, not the Vran scheduler.
-        return (s.locationMask & 7) != 0 && !s.isWaitingToDie && s.power.currentPower > 0 && (d.timerPeriod > 0 || d.header.templateId == 200040);
+        // Swordsman's timer is driven by the Skellige graph, not the Vran scheduler. Graph-driven
+        // countdowns (Cow Carcass, Cantarella, Sappers, Behemoth...) have no period but a live timer.
+        return (s.locationMask & 7) != 0 && !s.isWaitingToDie && s.power.currentPower > 0 && (operation == 2 || d.timerPeriod > 0 || d.initialTimer > 0 || s.timerValue >= 0 || d.header.templateId == 200040);
     }
     protected function BeforeApplyImpl() { runtime.RecordBefore(); }
     protected function ApplyImpl() : bool
@@ -356,8 +378,8 @@ class CBetaGwentDuelTimerAction extends CBetaGwentManagedAction
 
 class CBetaGwentDuelRelocateAction extends CBetaGwentManagedAction
 {
-    private var runtime : CBetaGwentDuelEffectRuntime; private var game : CBetaGwentDuelSession;
-    private var card : CBetaGwentDuelCard; private var side, row : int; private var resetHand : bool;
+    public var runtime : CBetaGwentDuelEffectRuntime; public var game : CBetaGwentDuelSession;
+    public var card : CBetaGwentDuelCard; public var side, row : int; public var resetHand : bool;
     public function Setup(owner : CBetaGwentDuelEffectRuntime, session : CBetaGwentDuelSession,
         target : CBetaGwentDuelCard, destinationSide : int, destinationRow : int, handReset : bool, context : CBetaGwentActionContext) : bool
     { runtime = owner; game = session; card = target; side = destinationSide; row = destinationRow; resetHand = handReset; SetStateChanging(true); return Prepare(context); }

@@ -16,7 +16,11 @@ for source in sources:
     encoded = b'\xef\xbb\xbf' + text.encode('utf-8')
     patch, active = PATCH / source.name, ACTIVE / source.name
     if active.exists():
-        if not patch.exists() or active.read_bytes() != patch.read_bytes():
+        # Unexpected REDkit edits are preserved by refusing to overwrite them. The
+        # previous patch folder may be gone (build cleanup, 07.10.2026): then the
+        # active file is accepted only when it already equals the new source.
+        expected = patch.read_bytes() if patch.exists() else encoded
+        if active.read_bytes() != expected and active.read_bytes() != encoded:
             raise SystemExit('Active project differs from previous prepared patch: ' + str(active))
     prepared.append((source, encoded))
 # Validate the whole set before writing any target. Record source hashes so a

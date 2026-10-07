@@ -1,13 +1,15 @@
-// Numeric boundary port; original40 fixtures passed, native acceptance pending.
+﻿// Numeric boundary port; original40 fixtures passed, native acceptance pending.
 // Numeric CardPower subset from original Beta0.9.24.3.432 IL.
 // The final setter is a boundary: events, death and banish still need a live card.
 abstract class CBetaGwentPowerNumbers extends IScriptable
 {
-    private var initialized : bool;
-    private var basePower : int;
-    private var permanentPower : int;
-    private var currentPower : int;
-    private var currentArmor : int;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var initialized : bool;
+    public var basePower : int;
+    public var permanentPower : int;
+    public var currentPower : int;
+    public var currentArmor : int;
 
     // Local reconstruction boundary, not original CardPower.Init/Reset.
     // Keeps raw fields: clamping belongs to the original operation/setter.

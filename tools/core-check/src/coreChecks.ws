@@ -1,4 +1,4 @@
-// Development-only, memory-local core checks. No NPC, profile or reward writes.
+﻿// Development-only, memory-local core checks. No NPC, profile or reward writes.
 class CBetaGwentCoreChecks extends IScriptable
 {
     private var checks : int;

@@ -1,11 +1,13 @@
-// Queue boundary port, source: beta-resolution-il.txt and beta-action-fixtures.json.
+﻿// Queue boundary port, source: beta-resolution-il.txt and beta-action-fixtures.json.
 // Concrete validity and full ActionManager.ApplyAction policy belong to a sink.
 // No controller scheduler, death drain, requests/network or effect handlers here.
 class CBetaGwentQueuedAction extends IScriptable
 {
-    private var fireTriggers : bool;
-    private var beforeFired : bool;
-    private var priorityAction : bool;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var fireTriggers : bool;
+    public var beforeFired : bool;
+    public var priorityAction : bool;
     default fireTriggers = true;
 
     public function SetFireTriggers(value : bool) { fireTriggers = value; }
@@ -30,6 +32,8 @@ class CBetaGwentQueuedAction extends IScriptable
 
 abstract class CBetaGwentActionSink extends IScriptable
 {
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
     // Dispatch is not AAction.Apply: validity, initialization, event delivery,
     // cache destruction and effects remain the consumer's responsibility.
     public function DispatchAction(action : CBetaGwentQueuedAction) {}
@@ -37,12 +41,14 @@ abstract class CBetaGwentActionSink extends IScriptable
 
 class CBetaGwentActionQueue extends IScriptable
 {
-    private var actions : array<CBetaGwentQueuedAction>;
-    private var sink : CBetaGwentActionSink;
-    private var initialized : bool;
-    private var authority : bool;
-    private var authorityContext : CBetaGwentActionContext;
-    private var abilityLocal : bool;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var actions : array<CBetaGwentQueuedAction>;
+    public var sink : CBetaGwentActionSink;
+    public var initialized : bool;
+    public var authority : bool;
+    public var authorityContext : CBetaGwentActionContext;
+    public var abilityLocal : bool;
 
     public function Initialize(hasAuthority : bool, localQueue : bool, consumer : CBetaGwentActionSink) : bool
     {

@@ -1,4 +1,4 @@
-// Beta 0.9.24.3.432 draft. Verification status: BetaGwent/README.md.
+﻿// Beta 0.9.24.3.432 draft. Verification status: BetaGwent/README.md.
 // Gameplay enums retain original numeric values; BG identifiers are mod-local.
 enum EBetaGwentPhase
 {

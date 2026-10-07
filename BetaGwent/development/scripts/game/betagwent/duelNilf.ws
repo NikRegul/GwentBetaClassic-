@@ -1,11 +1,15 @@
-// Concrete consumers of strict Beta 0.9.24 graphs. Revealed is original token64.
+﻿// Concrete consumers of strict Beta 0.9.24 graphs. Revealed is original token64.
 class CBetaGwentNilfReaction extends IScriptable
-{ public var source : CBetaGwentDuelCard; public var kind, side : int; }
+{
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable; public var source : CBetaGwentDuelCard; public var kind, side : int; }
 
 class CBetaGwentDuelNilf extends IScriptable
 {
-    private var game : CBetaGwentDuelSession;
-    private var dependencies : CBetaGwentNilfDependencies;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var game : CBetaGwentDuelSession;
+    public var dependencies : CBetaGwentNilfDependencies;
     public function Initialize(owner : CBetaGwentDuelSession) { game = owner;dependencies=new CBetaGwentNilfDependencies in this;dependencies.Initialize(owner,this); }
     private function Side(source : CBetaGwentDuelCard) : int { return game.NorthActingSide(source); }
     private function Query(side : int, zone : int, tier : int, types : int, ignore : int, flags : int, source : CBetaGwentDuelCard, out ids : array<int>)
@@ -60,7 +64,7 @@ class CBetaGwentDuelNilf extends IScriptable
         var deck,valid : array<int>; var i : int;
         game.NorthPile(Side(source),16,deck);
         for(i=0;i<deck.Size();i+=1)if(RainfarnCandidate(source,game.FindCard(deck[i])))valid.PushBack(deck[i]);
-        LogChannel('BetaGwent',"DUEL_RAINFARN_POOL deck="+deck.Size()+" candidates="+valid.Size());
+        BetaGwentLog("DUEL_RAINFARN_POOL deck="+deck.Size()+" candidates="+valid.Size());
         game.MonsterRequest(source,valid,2,0,1);
     }
     private function Friendly(source : CBetaGwentDuelCard, flags : int) { Request(source,Side(source),7,15,4,264,flags); }
@@ -70,7 +74,7 @@ class CBetaGwentDuelNilf extends IScriptable
         if(source.MonsterMode()>=400){dependencies.Played(source);return;}
         id=source.TemplateId();side=Side(source);enemy=BetaGwentOpponentId(side);s=source.Snapshot();d=source.Definition();
         source.monsterStage=0;source.monsterStored=0;source.monsterIds.Clear();source.monsterRemaining=Max(1,d.specialCount);
-        LogChannel('BetaGwent',"DUEL_NILF_PLAY template="+id+" side="+side);
+        BetaGwentLog("DUEL_NILF_PLAY template="+id+" side="+side);
         if(id==162104){Request(source,side,32,1,4,0,0);return;}
         if(id==122106){Request(source,side,32,6,4,0,131072);return;}
         if(id==132106){Request(source,enemy,32,6,4,0,0);return;}
@@ -158,7 +162,7 @@ class CBetaGwentDuelNilf extends IScriptable
         if(source.MonsterMode()>=400){dependencies.Select(source,selected);return;}
         id=source.TemplateId();side=Side(source);enemy=BetaGwentOpponentId(side);s=source.Snapshot();target=game.FindCard(selected);
         if(id==200032 && selected>0 && !RainfarnCandidate(source,target))
-        {LogChannel('BetaGwent',"DUEL_RAINFARN_REJECT_STALE card="+selected);RainfarnRequest(source);return;}
+        {BetaGwentLog("DUEL_RAINFARN_REJECT_STALE card="+selected);RainfarnRequest(source);return;}
         if(id==162207 || id==162213 || id==201597 || id==200050 || id==201580 || id==201583 || id==201589 || id==201585 || id==201639 || id==200022)
         {if(selected>0)game.MonsterCreate(source,selected);else game.MonsterComplete(source);return;}
         if((id==201603 || id==201662 || id==201653) && source.monsterStage==0)
@@ -278,7 +282,7 @@ class CBetaGwentDuelNilf extends IScriptable
             }
             if(kind==4 && id==200294 && target && game.NorthActingSide(target)==s.positionPlayerId && BetaGwentNorthernCategory(t.runtimeTemplate.templateId,2))game.NilfQueueReaction(source,3,s.positionPlayerId);
             if(kind==5 && id==162212 && cause.positionPlayerId==s.positionPlayerId && (s.tokenMask&128)!=0)game.MonsterPower(source,source,1);
-            if(kind==6 && cause.positionPlayerId==s.positionPlayerId)
+            if(kind==6 && (cause.positionPlayerId==s.positionPlayerId || (id==162402 && ((s.positionPlayerId==1 && m.playerOne.hasPassed) || (s.positionPlayerId==2 && m.playerTwo.hasPassed)))))
             {
                 if(id==162308){for(j=0;j<source.nilfCounter;j+=1)game.NilfQueueReaction(source,4,s.positionPlayerId);source.nilfCounter=0;}
                 if(id==162402 && s.timerValue>0){game.QueueTimer(source,0,1);if(s.timerValue==1){Query(s.positionPlayerId,s.locationMask,15,4,8,16,source,ids);least=2147483647;for(j=0;j<ids.Size();j+=1){t=game.FindCard(ids[j]).Snapshot();least=Min(least,t.power.currentPower);}for(j=0;j<ids.Size();j+=1){t=game.FindCard(ids[j]).Snapshot();if(t.power.currentPower==least)game.QueueDestroy(game.FindCard(ids[j]));}game.MonsterOperation(source,source,14,0,7);}}

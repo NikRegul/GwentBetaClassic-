@@ -1,18 +1,20 @@
-// Draft storage for a two-player match; not a complete FSM or intent executor.
+﻿// Draft storage for a two-player match; not a complete FSM or intent executor.
 // Apply* methods are coordinator boundaries. Their guards are mod-local.
 // Source-backed mutations: Player.OnPass/OnRoundStart/OnTurnEnd, RoundInfo.SetResult.
 class CBetaGwentMatchState extends IScriptable
 {
-    private var initialized : bool;
-    private var playerOne : SBetaGwentPlayerState;
-    private var playerTwo : SBetaGwentPlayerState;
-    private var roundNumber : int;
-    private var turnSequence : int;
-    private var startingPlayerId : int;
-    private var currentPlayerId : int;
-    private var roundActive : bool;
-    private var turnActive : bool;
-    private var results : array<SBetaGwentRoundResult>;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var initialized : bool;
+    public var playerOne : SBetaGwentPlayerState;
+    public var playerTwo : SBetaGwentPlayerState;
+    public var roundNumber : int;
+    public var turnSequence : int;
+    public var startingPlayerId : int;
+    public var currentPlayerId : int;
+    public var roundActive : bool;
+    public var turnActive : bool;
+    public var results : array<SBetaGwentRoundResult>;
 
     public function Initialize() : EBetaGwentStateResult
     {

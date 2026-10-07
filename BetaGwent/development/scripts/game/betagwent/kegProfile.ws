@@ -1,4 +1,4 @@
-// Closed kegs live in the native inventory. Consume one only when opening.
+﻿// Closed kegs live in the native inventory. Consume one only when opening.
 // Persist the automatic cards and distinct rare offers; resuming never consumes
 // another keg or rerolls the paid choice. Legacy paid openings remain valid.
 class CBetaGwentKegMenuData extends IScriptable {}

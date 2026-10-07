@@ -1,4 +1,4 @@
-// Source: beta-card-rules-il.txt. These predicates are not full legal actions.
+﻿// Source: beta-card-rules-il.txt. These predicates are not full legal actions.
 function BetaGwentMaskIntersects(value : int, mask : int) : bool
 {
     // Original EnumExtensions.Contains means ANY shared bit, not ALL bits.

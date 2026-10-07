@@ -1,4 +1,4 @@
-// Source: beta-flow-il.txt and beta-legality-rounds-il.txt.
+﻿// Source: beta-flow-il.txt and beta-legality-rounds-il.txt.
 // Pure calculations: no UI, RNG, events, queues or automatic phase advancement.
 function BetaGwentIsPlayerId(playerId : int) : bool
 {

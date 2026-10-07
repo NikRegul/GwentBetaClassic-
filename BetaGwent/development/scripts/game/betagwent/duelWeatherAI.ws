@@ -2,7 +2,9 @@
 // Hidden zones are queried only for side2; side1 contributes public board/graves.
 class CBetaGwentWeatherAI extends IScriptable
 {
-    private var game : CBetaGwentDuelSession;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var game : CBetaGwentDuelSession;
     public function Initialize(owner : CBetaGwentDuelSession) { game=owner; }
     private function ReadZone(side : int, zone : int, out cards : array<CBetaGwentDuelCard>)
     {
@@ -140,6 +142,7 @@ class CBetaGwentWeatherAI extends IScriptable
         for(row=1;row<=4;row*=2){
             if(game.CountLocation(side,row)>=9)continue;
             value=-game.WeatherDamage(side,row)*2-game.CountLocation(side,row);
+            if(BetaGwentAIStrength()>=2)value=-game.AiRowPlacementCost(side,row,d);
             if(d.header.templateId==132310 && game.WeatherToken(1,row)==1)value+=Turns()*4;
             if(d.header.templateId==132104 || d.header.templateId==200218)value+=MoverValue(d.header.templateId,row)*3;
             if(d.header.templateId==132204){value=0;if(game.WeatherToken(1,row)==1)value+=Turns()*3;}

@@ -15,8 +15,10 @@ BASE=ROOT/('BetaGwent/build/release'+str(STAGE)+'/'+LANG)
 PROJECT=BASE/'project/BetaGwent0924';WORK=PROJECT/'workspace'
 COOKED=BASE/'cooked';PACKAGE=BASE/'package';CONTENT=PACKAGE/'Mods/modBetaGwent0924/content'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
-def job(name,args):
-    subprocess.run([sys.executable,str(ROOT/'tools/recon/run_wcc_job.py'),'--out',str(BASE/'jobs'/name),'--timeout','300','--',*args,'-uncookDir',str(ROOT/'depot')+'\\','-workspaceDir',str(PROJECT)+'\\'],cwd=ROOT,check=True)
+def job(name,args,expect=()):
+    # Stage 105: completion by output + stall restart (see run_wcc_job.py).
+    extra=[x for p in expect for x in ('--expect',str(p))]
+    subprocess.run([sys.executable,str(ROOT/'tools/recon/run_wcc_job.py'),'--out',str(BASE/'jobs'/name),'--timeout','1800',*extra,'--',*args,'-uncookDir',str(ROOT/'depot')+'\\','-workspaceDir',str(PROJECT)+'\\'],cwd=ROOT,check=True)
     log=(BASE/'jobs'/name/'stdout.txt').read_text('utf8',errors='replace')
     # Wcc can return zero after failed writer assertions. Exit status alone
     # must never authorize a corrupt resource to enter the shipping bundle.
@@ -71,6 +73,7 @@ if a.step=='prepare':
             con.execute('update STRINGS set TEXT=? where rowid=?',(en,rowid))
         con.commit();con.close()
     bank=ROOT/('BetaGwent/audio/wwise'+('-en89' if LANG=='en' else '')+'/GeneratedSoundBanks/Windows/BetaGwent79.bnk')
+    (WORK/'soundbanks/pc').mkdir(parents=True,exist_ok=True)  # base project rebuilt without this folder (stage 105)
     shutil.copyfile(bank,WORK/'soundbanks/pc/BetaGwent79.bnk')
     metadata=json.loads((PROJECT/'myproject1.w3edit').read_text('utf8'))
     metadata.update(version=VERSION,description='Gwent Beta Classic 0.9.24 — '+LANG.upper()+', 479 cards, five factions, collection, decks and controller support.',excludedDlc=[])
@@ -84,7 +87,7 @@ if a.step=='prepare':
 else:
     checked();CONTENT.mkdir(parents=True,exist_ok=True)
     if a.step=='cook':
-        job('cook',['cook','-platform=pc','-mod='+str(BASE/'cook-roots')+'\\','-outdir='+str(COOKED)+'\\'])
+        job('cook',['cook','-platform=pc','-mod='+str(BASE/'cook-roots')+'\\','-outdir='+str(COOKED)+'\\'],[COOKED/'cook.db'])
         if STAGE==96:
             sys.path.insert(0,str(ROOT/'tools/ui'))
             from verify_external_gui96 import verify
@@ -109,19 +112,19 @@ else:
         cache=BASE/'audio-cooked/CookedPC/soundspc.cache';data=cache.read_bytes();bank=(bankdir/'BetaGwent79.bnk').read_bytes()
         assert data[:4]==b'CS3W' and data[64:64+len(bank)]==bank and len(data)==len(bank)+104
         shutil.copyfile(cache,CONTENT/'soundspc.cache')
-    elif a.step=='dependencies':job('dependencies',['dependencies','-db='+str(COOKED/'cook.db'),'-out='+str(CONTENT/'dep.cache')])
+    elif a.step=='dependencies':job('dependencies',['dependencies','-db='+str(COOKED/'cook.db'),'-out='+str(CONTENT/'dep.cache')],[CONTENT/'dep.cache'])
     elif a.step=='pack':
         clean=BASE/'bundle-input';clean.mkdir(exist_ok=True)
         for p in COOKED.rglob('*'):
             if p.is_file() and p.name!='cook.db':
                 target=clean/p.relative_to(COOKED);target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,target)
-        job('pack',['pack','-dir='+str(clean)+'\\','-outdir='+str(CONTENT)+'\\','-compression='+('None' if STAGE>=97 else 'LZ4HC')])
+        job('pack',['pack','-dir='+str(clean)+'\\','-outdir='+str(CONTENT)+'\\','-compression='+('None' if STAGE>=97 else 'LZ4HC')],[CONTENT/'blob0.bundle'])
         if STAGE>=96:
             sys.path.insert(0,str(ROOT/'tools/ui'))
             from verify_bundle96 import verify
             report=verify(CONTENT/'blob0.bundle',clean,require_uncompressed_gui=STAGE>=97,gui_limit_mib=55 if STAGE>=98 else 100)
             (BASE/'packed-resources-verified.json').write_text(json.dumps(report,indent=2)+'\n','utf8')
-    elif a.step=='metadata':job('metadata',['metadatastore','-path='+str(CONTENT)+'\\','-out='+str(CONTENT/'metadata.store')])
+    elif a.step=='metadata':job('metadata',['metadatastore','-path='+str(CONTENT)+'\\','-out='+str(CONTENT/'metadata.store')],[CONTENT/'metadata.store'])
     elif a.step=='archive':
         compilation=a.compiled or ROOT/('BetaGwent/build/board-compile89a' if LANG=='ru' else 'BetaGwent/build/board-compile89enc')
         r=json.loads((compilation/'result.json').read_text('utf8'));log=(compilation/'stdout.txt').read_text('utf8',errors='replace')

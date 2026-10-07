@@ -1,4 +1,4 @@
-// Boundary model only: per-instance node state, not AAbility graph execution.
+﻿// Boundary model only: per-instance node state, not AAbility graph execution.
 enum EBetaGwentAbilityInstanceState
 {
     BG_AbilityStarted = 0,
@@ -10,12 +10,14 @@ enum EBetaGwentAbilityInstanceState
 
 class CBetaGwentAbilityContinuation extends IScriptable
 {
-    private var ownerInstanceId : int;
-    private var nodeId : int;
-    private var nodeSetup : bool;
-    private var completedNodes : int;
-    private var phase : EBetaGwentAbilityInstanceState;
-    private var pending : CBetaGwentCardRequest;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var ownerInstanceId : int;
+    public var nodeId : int;
+    public var nodeSetup : bool;
+    public var completedNodes : int;
+    public var phase : EBetaGwentAbilityInstanceState;
+    public var pending : CBetaGwentCardRequest;
 
     public function Initialize(instanceId : int) : bool
     {
@@ -83,7 +85,9 @@ struct SBetaGwentPendingRequestSlot
 
 class CBetaGwentRequestStore extends IScriptable
 {
-    private var slots : array<SBetaGwentPendingRequestSlot>;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var slots : array<SBetaGwentPendingRequestSlot>;
 
     public function Find(requestId : int, playerId : int, kind : EBetaGwentCardRequestKind) : CBetaGwentCardRequest
     {

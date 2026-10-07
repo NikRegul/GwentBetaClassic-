@@ -1,4 +1,4 @@
-// Generated strict Beta definitions. Closed DEV duel; no generic graph interpreter.
+﻿// Generated strict Beta definitions. Closed DEV duel; no generic graph interpreter.
 struct SBetaGwentDuelDefinition
 {
     var header : SBetaGwentTemplateHeader;

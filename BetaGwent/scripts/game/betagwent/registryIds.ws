@@ -1,13 +1,17 @@
-// Original allocator/lookup oracle16 passed; native adapter checked separately.
+﻿// Original allocator/lookup oracle16 passed; native adapter checked separately.
 // Card references are opaque until the live-card layer is implemented.
-class CBetaGwentRegistryCardReference extends IScriptable {}
+class CBetaGwentRegistryCardReference extends IScriptable {
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;}
 
 class CBetaGwentRegistryIdStore extends IScriptable
 {
-    private var initialized : bool;
-    private var nextId : int;
-    private var recycled : array<int>;
-    private var cards : array<CBetaGwentRegistryCardReference>;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var initialized : bool;
+    public var nextId : int;
+    public var recycled : array<int>;
+    public var cards : array<CBetaGwentRegistryCardReference>;
 
     // Local setup corresponding to observed ctor fields, not a port of ctor.
     public function Initialize() : bool

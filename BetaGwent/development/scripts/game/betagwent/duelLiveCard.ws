@@ -1,7 +1,7 @@
-// Closed preview lifecycle. Supported deathwish dispatch is owned by the session death batches.
+﻿// Closed preview lifecycle. Supported deathwish dispatch is owned by the session death batches.
 class CBetaGwentDuelPower extends CBetaGwentPowerNumbers
 {
-    private var card : CBetaGwentDuelCard;
+    public var card : CBetaGwentDuelCard;
     public function Attach(value : CBetaGwentDuelCard) { card = value; }
     public function ResetTemplatePower(base : int, armor : int) : bool
     { WriteBasePower(base); WritePermanentPower(0); return SetPowerAndArmor(base, armor); }
@@ -21,12 +21,12 @@ class CBetaGwentDuelPower extends CBetaGwentPowerNumbers
 
 class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
 {
-    private var cardState : SBetaGwentCardSnapshot;
-    private var definition : SBetaGwentDuelDefinition;
-    private var power : CBetaGwentDuelPower;
-    private var game : CBetaGwentDuelSession;
-    private var consumeAttackerId : int;
-    private var playedChild : CBetaGwentDuelCard;
+    public var cardState : SBetaGwentCardSnapshot;
+    public var definition : SBetaGwentDuelDefinition;
+    public var power : CBetaGwentDuelPower;
+    public var game : CBetaGwentDuelSession;
+    public var consumeAttackerId : int;
+    public var playedChild : CBetaGwentDuelCard;
     public var monsterStage, monsterRemaining, monsterStored, monsterOnce : int;
     public var playFromLocation, lastActiveRow : int;
     public var northernCrew : bool;
@@ -36,7 +36,7 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
 
     public function SetNilfCounter(value : int) {nilfCounter=value;}
     public var monsterIds : array<int>;
-    private var selectedModeId : int;
+    public var selectedModeId : int;
     public function ResetModeChoice() { selectedModeId = 0; }
     public function SelectMode(choice : int) : bool
     { var ids : array<int>; BetaGwentDuelModeChoices(definition.header.templateId, ids); if (!ids.Contains(choice)) return false; selectedModeId = choice; return true; }
@@ -72,7 +72,7 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
         game.SetVisualSource(cardState.instanceId,definition.header.templateId,cardState.positionPlayerId,cardState.locationMask);
         game.RecordVisual(8,cardState.instanceId,"Засада раскрылась: "+definition.title,650,24);
         game.SetVisualSource(previous.id,previous.templateId,previous.side,previous.row);
-        LogChannel('BetaGwent',"DUEL_AMBUSH_REVEALED card="+cardState.instanceId+" template="+definition.header.templateId);
+        BetaGwentLog("DUEL_AMBUSH_REVEALED card="+cardState.instanceId+" template="+definition.header.templateId);
     }
     public function SetRevealed(value : bool)
     {if(value)cardState.tokenMask=cardState.tokenMask|64;else if((cardState.tokenMask&64)!=0)cardState.tokenMask-=64;}
@@ -86,7 +86,7 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
         if (zone == 32 && (cardState.tokenMask & 512) != 0)
         {
             zone = 512; index = 0; cardState.canBePlayed = false; cardState.isWaitingToDie = false;
-            LogChannel('BetaGwent', "DUEL_DOOMED_REMOVED card=" + cardState.instanceId + " grave=false");
+            BetaGwentLog("DUEL_DOOMED_REMOVED card=" + cardState.instanceId + " grave=false");
         }
         // CardData.OnCardMoved removes Lock when leaving the graveyard.
         if (cardState.locationMask == 32 && zone != 32 && (cardState.tokenMask & 4) != 0) cardState.tokenMask -= 4;
@@ -159,7 +159,7 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
     }
     public function OnPowerChanged(oldPower : int, oldArmor : int)
     {
-        LogChannel('BetaGwent', "DUEL_POWER card=" + cardState.instanceId + " old=" + oldPower + "/" + oldArmor
+        BetaGwentLog("DUEL_POWER card=" + cardState.instanceId + " old=" + oldPower + "/" + oldArmor
             + " current=" + power.GetCurrentPower() + "/" + power.GetCurrentArmor());
         game.RecordPowerVisual(this, oldPower, oldArmor);
         if (oldArmor > 0 && power.GetCurrentArmor() == 0 && power.GetCurrentPower() > 0 && (cardState.locationMask & 7) != 0) game.NorthArmorBroken(this);

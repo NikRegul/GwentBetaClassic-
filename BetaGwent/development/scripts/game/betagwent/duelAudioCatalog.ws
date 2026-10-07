@@ -1,4 +1,4 @@
-// Generated from pinned CardAudio.xml. Source banks128 are not runtime banks.
+﻿// Generated from pinned CardAudio.xml. Source banks128 are not runtime banks.
 
 function BetaGwentAudioBankInstalled() : bool { return true; }
 

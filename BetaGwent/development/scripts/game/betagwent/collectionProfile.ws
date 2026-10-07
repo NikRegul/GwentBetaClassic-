@@ -1,4 +1,4 @@
-// Save-backed Beta ownership. The original game collection and eight deck slots
+﻿// Save-backed Beta ownership. The original game collection and eight deck slots
 // stay separate. Unknown schemas are preserved, never silently reinitialized.
 @addField(W3PlayerWitcher)
 private saved var betaGwentCollectionSchema : int;

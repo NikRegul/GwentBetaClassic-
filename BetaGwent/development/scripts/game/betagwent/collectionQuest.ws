@@ -1,4 +1,4 @@
-// One of each collectible template and leader. Copies beyond the first do not
+﻿// One of each collectible template and leader. Copies beyond the first do not
 // affect collection completion. Original completed quests are not rolled back.
 @addField(W3PlayerWitcher)
 private var betaGwentCollectionTrackingReady : bool;

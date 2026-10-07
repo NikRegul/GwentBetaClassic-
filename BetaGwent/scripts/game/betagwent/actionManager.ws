@@ -1,4 +1,4 @@
-// Original ApplyAction control flow, with explicit services and bool failures.
+﻿// Original ApplyAction control flow, with explicit services and bool failures.
 // No serialization/network/time/cache implementation is hidden in this layer.
 struct SBetaGwentDelay64
 {
@@ -17,9 +17,9 @@ function BetaGwentDelay64Positive(value : SBetaGwentDelay64) : bool
 
 class CBetaGwentManagerContext extends CBetaGwentActionContext
 {
-    private var mainController : bool;
-    private var verbose : bool;
-    private var dirty : bool;
+    public var mainController : bool;
+    public var verbose : bool;
+    public var dirty : bool;
     public function SetMain(value : bool) { mainController = value; }
     public function IsMain() : bool { return mainController; }
     public function SetVerbose(value : bool) { verbose = value; }
@@ -30,9 +30,9 @@ class CBetaGwentManagerContext extends CBetaGwentActionContext
 
 abstract class CBetaGwentManagedAction extends CBetaGwentApplicableAction
 {
-    private var networkId : int;
-    private var delay : SBetaGwentDelay64;
-    private var stateChanging : bool;
+    public var networkId : int;
+    public var delay : SBetaGwentDelay64;
+    public var stateChanging : bool;
     public function SetNetworkId(value : int) { networkId = value; }
     public function GetNetworkId() : int { return networkId; }
     public function SetDelay(value : SBetaGwentDelay64) { delay = value; }
@@ -52,6 +52,8 @@ abstract class CBetaGwentManagedRequest extends CBetaGwentManagedAction
 
 abstract class CBetaGwentActionServices extends IScriptable
 {
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
     // Defaults fail closed: a missing implementation must not report success.
     // EmitBeforeDiagnostic models ExceptionHelper.Create+pop, not a thrown error.
     public function EmitBeforeDiagnostic(action : CBetaGwentManagedAction) {}
@@ -78,12 +80,12 @@ enum EBetaGwentManagerFault
 
 class CBetaGwentActionManager extends CBetaGwentActionSink
 {
-    private var context : CBetaGwentManagerContext;
-    private var services : CBetaGwentActionServices;
-    private var initialized : bool;
-    private var lastKnownNetworkId : int;
-    private var fault : EBetaGwentManagerFault;
-    private var dispatches : int;
+    public var context : CBetaGwentManagerContext;
+    public var services : CBetaGwentActionServices;
+    public var initialized : bool;
+    public var lastKnownNetworkId : int;
+    public var fault : EBetaGwentManagerFault;
+    public var dispatches : int;
     public function Initialize(ownerContext : CBetaGwentManagerContext, ownerServices : CBetaGwentActionServices) : bool
     {
         if (initialized || !ownerContext || !ownerServices) return false;
@@ -157,9 +159,11 @@ class CBetaGwentActionManager extends CBetaGwentActionSink
 // implemented here. Stop before another queue removal once the sink faults.
 class CBetaGwentActionDriver extends IScriptable
 {
-    private var context : CBetaGwentManagerContext;
-    private var manager : CBetaGwentActionManager;
-    private var queue : CBetaGwentActionQueue;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var context : CBetaGwentManagerContext;
+    public var manager : CBetaGwentActionManager;
+    public var queue : CBetaGwentActionQueue;
     public function Initialize(ownerContext : CBetaGwentManagerContext, ownerManager : CBetaGwentActionManager, localQueue : bool) : bool
     {
         if (queue || !ownerContext || !ownerManager || !ownerManager.IsInitialized() || ownerManager.IsFaulted()) return false;

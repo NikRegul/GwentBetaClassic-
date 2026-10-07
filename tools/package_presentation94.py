@@ -50,8 +50,14 @@ def main():
         frozen=json.loads((ROOT/f'docs/evidence/stage89-release-{language}.json').read_text('utf8'))
         content=base/'package/Mods/modBetaGwent0924/content';content.mkdir(parents=True,exist_ok=True)
         database='LocalEditorStringDataBaseW3_UTF8_mod.db'
-        with sqlite3.connect(base/'project/BetaGwent0924'/database) as current, sqlite3.connect(ROOT/f'BetaGwent/build/release89/{language}/project/BetaGwent0924'/database) as previous:
-            assert current.execute('select * from STRINGS order by rowid').fetchall()==previous.execute('select * from STRINGS order by rowid').fetchall(),'Item strings changed; recook required'
+        previous_db=ROOT/f'BetaGwent/build/release89/{language}/project/BetaGwent0924'/database
+        if previous_db.exists():
+            with sqlite3.connect(base/'project/BetaGwent0924'/database) as current, sqlite3.connect(previous_db) as previous:
+                assert current.execute('select * from STRINGS order by rowid').fetchall()==previous.execute('select * from STRINGS order by rowid').fetchall(),'Item strings changed; recook required'
+        else:
+            # Stage 105: the release89 project was deleted; item strings are pinned by the
+            # stage89 w3strings hashes below (restored by tools/restore_build_base105.py).
+            print('Item-string DB baseline missing; relying on pinned stage89 w3strings',flush=True)
         records={item['path']:item for item in frozen['files']}
         for name in ('ru.w3strings','en.w3strings','soundspc.cache'):
             relative='Mods/modBetaGwent0924/content/'+name

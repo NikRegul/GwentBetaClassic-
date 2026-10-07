@@ -1,4 +1,4 @@
-// Interactive boundary fixture. Uses accepted request/continuation core, but
+﻿// Interactive boundary fixture. Uses accepted request/continuation core, but
 // does not execute card effects, mutate the board, or implement Beta rollback.
 struct SBetaGwentDevelopmentRequestCard
 {
@@ -12,21 +12,23 @@ struct SBetaGwentDevelopmentRequestCard
 
 class CBetaGwentDevelopmentRequestFlow extends IScriptable
 {
-    private var pending : CBetaGwentCardRequest;
-    private var continuation : CBetaGwentAbilityContinuation;
-    private var store : CBetaGwentRequestStore;
-    private var nextRequestId : int;
-    private var completed : int;
-    private var aborted : int;
-    private var sourceCards : array<SBetaGwentDevelopmentCard>;
-    private var lastResult : array<int>;
-    private var message : string;
-    private var isolatedCheck : bool;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var pending : CBetaGwentCardRequest;
+    public var continuation : CBetaGwentAbilityContinuation;
+    public var store : CBetaGwentRequestStore;
+    public var nextRequestId : int;
+    public var completed : int;
+    public var aborted : int;
+    public var sourceCards : array<SBetaGwentDevelopmentCard>;
+    public var lastResult : array<int>;
+    public var message : string;
+    public var isolatedCheck : bool;
     public function SetIsolatedCheckMode() { isolatedCheck = true; }
     private function Trace(text : string)
     {
-        if (isolatedCheck) LogChannel('BetaGwent', "REQUEST_FIXTURE_" + text);
-        else LogChannel('BetaGwent', "REQUEST_FLOW_" + text);
+        if (isolatedCheck) BetaGwentLog("REQUEST_FIXTURE_" + text);
+        else BetaGwentLog("REQUEST_FLOW_" + text);
     }
 
     public function IsPending() : bool { if (pending) return true; return false; }

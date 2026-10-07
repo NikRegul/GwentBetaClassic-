@@ -1,4 +1,4 @@
-// Synthetic field fixture. Not a Beta deck, effect executor, AI or saved profile.
+﻿// Synthetic field fixture. Not a Beta deck, effect executor, AI or saved profile.
 struct SBetaGwentDevelopmentCard
 {
     var card : SBetaGwentCardSnapshot;

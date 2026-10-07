@@ -1,8 +1,10 @@
 ﻿// Remaining Scoiatael graphs; the other fifty consumers are existing concrete dependencies.
 class CBetaGwentDuelScoia extends IScriptable
 {
-    private var game : CBetaGwentDuelSession;
-    private var historyOne, historyTwo : array<int>;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var game : CBetaGwentDuelSession;
+    public var historyOne, historyTwo : array<int>;
     public function Initialize(owner : CBetaGwentDuelSession) {game=owner;historyOne.Clear();historyTwo.Clear();}
     private function Side(source : CBetaGwentDuelCard) : int {return game.NorthActingSide(source);}
     private function Query(side : int, zone : int, tier : int, types : int, ignore : int, source : CBetaGwentDuelCard, out ids : array<int>)
@@ -24,7 +26,7 @@ class CBetaGwentDuelScoia extends IScriptable
         for(i=0;i<cards.Size();i+=1)
         {s=cards[i].card;if(s.runtimeTemplate.templateId!=201779 || (s.locationMask&7)==0 || s.positionPlayerId==side || s.isWaitingToDie || (s.tokenMask&4)!=0 || (s.tokenMask&8)==0)continue;
          ambush=game.FindCard(s.instanceId);ambush.RevealAmbush();game.RecordVisual(8,s.instanceId,"Моренн: особая способность отменена",650);cancelled=true;
-         LogChannel('BetaGwent',"DUEL_SCOIA_CANCEL source="+s.instanceId+" special="+t.instanceId);}
+         BetaGwentLog("DUEL_SCOIA_CANCEL source="+s.instanceId+" special="+t.instanceId);}
         return cancelled;
     }
     private function Milva(source : CBetaGwentDuelCard, side : int)
@@ -42,7 +44,7 @@ class CBetaGwentDuelScoia extends IScriptable
     {
         var id,side,enemy,i,damage,power : int;var s,t : SBetaGwentCardSnapshot;var ids,valid,history : array<int>;
         id=source.TemplateId();side=Side(source);enemy=BetaGwentOpponentId(side);s=source.Snapshot();source.monsterStage=0;source.monsterIds.Clear();source.monsterRemaining=1;
-        LogChannel('BetaGwent',"DUEL_SCOIA_PLAY template="+id+" side="+side);
+        BetaGwentLog("DUEL_SCOIA_PLAY template="+id+" side="+side);
         if(id==142101)
         {Query(side,7,15,12,8,NULL,ids);for(i=0;i<ids.Size();i+=1){t=game.FindCard(ids[i]).Snapshot();if(BetaGwentNilfDwarf(t.runtimeTemplate.templateId))power+=1;if(BetaGwentNilfElf(t.runtimeTemplate.templateId))damage+=1;}
          if(power>0)game.MonsterPower(source,source,power);source.monsterStored=damage;if(damage>0){Request(source,enemy,7,15,4,1);return;}}
@@ -95,18 +97,18 @@ class CBetaGwentDuelScoia extends IScriptable
             if(t.locationMask!=16 || t.positionPlayerId!=side || t.isWaitingToDie || (t.runtimeTierMask&6)==0
                 || (id==142102 && ((t.tokenMask&8)==0 || (t.runtimeTemplate.typeMask&12)==0))
                 || (id==201615 && t.runtimeTemplate.typeMask!=2))
-            {LogChannel('BetaGwent',"DUEL_DECK_PICK_REJECTED source="+s.instanceId+" target="+selected+" location="+t.locationMask);Played(source);return;}
-            LogChannel('BetaGwent',"DUEL_DECK_PICK source="+s.instanceId+" target="+selected+" template="+t.runtimeTemplate.templateId+" location=16 created="+target.createdCopy);
+            {BetaGwentLog("DUEL_DECK_PICK_REJECTED source="+s.instanceId+" target="+selected+" location="+t.locationMask);Played(source);return;}
+            BetaGwentLog("DUEL_DECK_PICK source="+s.instanceId+" target="+selected+" template="+t.runtimeTemplate.templateId+" location=16 created="+target.createdCopy);
             game.MonsterPlayExisting(source,target);return;
         }
         if(id==142106){
             if(t.locationMask!=32 || t.positionPlayerId!=enemy || t.runtimeTemplate.typeMask!=2
                 || (t.runtimeTierMask&6)==0 || t.isWaitingToDie || (t.tokenMask&512)!=0)
-            {LogChannel('BetaGwent',"DUEL_AGLAIS_PICK_REJECTED target="+selected+" zone="+t.locationMask);Played(source);return;}
+            {BetaGwentLog("DUEL_AGLAIS_PICK_REJECTED target="+selected+" zone="+t.locationMask);Played(source);return;}
             // Transfer the grave card before adding Doomed. Move(to Graveyard)
             // removes a Doomed card immediately, before its nested play begins.
             game.NorthMoveInactive(target,side,32,false);target.AddTokens(512);
-            LogChannel('BetaGwent',"DUEL_AGLAIS_REPLAY target="+selected+" side="+side+" banishAfterPlay=true");
+            BetaGwentLog("DUEL_AGLAIS_REPLAY target="+selected+" side="+side+" banishAfterPlay=true");
             game.MonsterPlayExisting(source,target);return;
         }
         if(id==142107){source.monsterStored=t.runtimeTemplate.templateId;source.monsterStage=1;game.MonsterPlayExisting(source,target);return;}

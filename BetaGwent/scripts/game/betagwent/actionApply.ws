@@ -1,16 +1,18 @@
-// Direct AAction.Apply boundary only. No ActionManager policy or card effect.
+﻿// Direct AAction.Apply boundary only. No ActionManager policy or card effect.
 // See beta-apply-fixtures.json (14 exact copied IL observations).
 class CBetaGwentActionContext extends IScriptable
 {
-    private var authority : bool;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var authority : bool;
     public function SetAuthority(value : bool) { authority = value; }
     public function HasAuthority() : bool { return authority; }
 }
 
 abstract class CBetaGwentApplicableAction extends CBetaGwentQueuedAction
 {
-    private var prepared : bool;
-    private var context : CBetaGwentActionContext;
+    public var prepared : bool;
+    public var context : CBetaGwentActionContext;
 
     // Local setup boundary: marks the state field that the oracle sets directly.
     // This does not port original Init, action allocator or registry binding.

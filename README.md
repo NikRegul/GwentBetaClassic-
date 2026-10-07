@@ -1,27 +1,25 @@
-# Gwent Beta Classic 0.2.6
+# Gwent Beta Classic 0.3.0
 
 Gwent Beta 0.9.24 inside The Witcher 3: 479 collectible cards, 21 leaders,
 five factions, saved decks, NPC rewards, kegs and controller support.
 
 **Back up saves before installation and every update. Bugs can still occur.**
 
-Russian 0.2.5 editor/NPC startup was accepted in the installed game. Compact
-native menus remain below 55 MiB; cards are 288×405 and faction board halves
-1536×531. Game memory settings are unchanged. 0.2.6 changes atlas sampling,
-the native Bitmap fallback, card selection borders and controller body bounds.
-Visual flicker/border acceptance and English acceptance still need testing.
+0.3.0 brings the battlefield close to the original Beta (fonts, card frames, HUD,
+mulligan screen, leader intro, row weather, simultaneous multi-target effects,
+spying/revealed tokens, widescreen panels) and a new AI that simulates its
+candidate plays on a cloned session before choosing. See
+[the changelog](BetaGwent/release/CHANGELOG_EN.md).
 
-Both packages retain the nested-play/cursor fixes from 0.2.4. Card rules and AI
-are unchanged. RU sources match the reused stage97 compilation; EN voice durations
-are synchronized with the English bank and freshly compiled in stage99. Six
-native menus are rebuilt. Package checks do not replace native battle tests.
-Original images, audio and Wwise keys are excluded. Original code is GPL-3.0-only.
+AI development: `tools/ai` transpiles the WitcherScript rules to JavaScript
+(`ws2js.py`, `build_js.py`) for headless self-play, A/B tests (`jshost/ab.js`)
+and tuning runs (`Train-AI-JS.ps1`, Node.js required). `gen_clone.py` generates
+the session cloner used by the in-game lookahead.
 
-- [Current build sequence](docs/BUILD99.md)
-- [Russian acceptance notes](docs/PRESENTATION99_RU.md)
-- [English acceptance notes](docs/PRESENTATION99_EN.md)
-- [Manual AI editing / Russian](docs/AI_MANUAL95_RU.md)
-- [Nexus and Steam preparation](docs/PUBLISH99_RU.md)
+Original images, audio, fonts and Wwise keys are excluded. Original code is GPL-3.0-only.
+
+- [Build guide / Russian](docs/BUILD_RU.md) · [English](docs/BUILD_EN.md)
+- [AI architecture / Russian](docs/ARCHITECTURE_AI_RU.md) · [English](docs/ARCHITECTURE_AI_EN.md)
 
 ## Contributing
 

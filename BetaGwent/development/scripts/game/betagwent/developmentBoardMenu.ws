@@ -10,6 +10,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     private var visualBusy : bool;
     private var requestFlow : CBetaGwentDevelopmentRequestFlow;
     private var setRequestHeader : CScriptedFlashFunction;
+    private var setRequestSource : CScriptedFlashFunction;
     private var pushRequestCard : CScriptedFlashFunction;
     private var revision : int;
     private var configured : bool;
@@ -51,6 +52,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     event OnConfigUI()
     {
         var preferredCards : array<int>; var preferredLeader : int;
+        var gameplayInputExceptions : array<EInputActionBlock>;
         var entryMode : int;var pendingBefore, requestedBefore : bool;var kegInit : CBetaGwentKegMenuData;
         var manager : CR4GwintManager; var npcPreset : SBetaGwentDuelPreset; var nativePlayer : CR4Player; var entryDefinition : SBetaGwentDuelDefinition;
         if (configured) return false;
@@ -62,6 +64,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         pushCard = GetMenuFlash().GetMemberFlashFunction("pushBoardCard");
         finishState = GetMenuFlash().GetMemberFlashFunction("finishBoardState");
         setRequestHeader = GetMenuFlash().GetMemberFlashFunction("setRequestHeader");
+        setRequestSource = GetMenuFlash().GetMemberFlashFunction("setRequestSource");
         pushRequestCard = GetMenuFlash().GetMemberFlashFunction("pushRequestCard");
         setDetails = GetMenuFlash().GetMemberFlashFunction("setBoardDetails");
         pushDetails = GetMenuFlash().GetMemberFlashFunction("pushCardDetails");
@@ -119,7 +122,6 @@ class CR4BetaGwentBoardMenu extends CR4Menu
             npcPreset=BetaGwentDuelPreset(enemyPreset);enemyLeader=npcPreset.leaderTemplateId;
             entryDefinition=BetaGwentDuelDefinition(ownLeader);if(forcedBetaFaction!=0 && entryDefinition.header.factionMask!=forcedBetaFaction){ownPreset=BetaGwentStarterPreset(forcedBetaFaction);npcPreset=BetaGwentDuelPreset(ownPreset);ownLeader=npcPreset.leaderTemplateId;}
             manager.gameRequested=false;thePlayer.SetGwintMinigameState(EMS_None);
-            theSound.EnterGameState(ESGS_Gwent);
         }
         revision = 0;
         configured = true;
@@ -130,10 +132,22 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         finishKegOpening=GetMenuFlash().GetMemberFlashFunction("finishKegOpening");
         setEditorName=GetMenuFlash().GetMemberFlashFunction("setEditorName");
         setEntryContext=GetMenuFlash().GetMemberFlashFunction("setEntryContext");
-        if(setEntryContext)setEntryContext.InvokeSelfThreeArgs(FlashArgInt(BetaGwentNorthPick(npcMatch,2,BetaGwentNorthPick(libraryOnly,1,0))),FlashArgString(NameToString(manager.betaEnemyDeckName)),FlashArgInt(forcedBetaFaction));
+        if(setEntryContext)setEntryContext.InvokeSelfThreeArgs(FlashArgInt(BetaGwentNorthPick(npcMatch,2,BetaGwentNorthPick(libraryOnly,1,0))),FlashArgString(BetaGwentEntryOpponentLabel(npcMatch,enemyPreset,manager.betaEnemyDeckName)),FlashArgInt(forcedBetaFaction));
         audio = new CBetaGwentDuelAudio in this; audio.Initialize();
         if (setAudioStatus) setAudioStatus.InvokeSelfTwoArgs(FlashArgBool(BetaGwentAudioBankInstalled()), FlashArgBool(audio.IsBankReady()));
+
+        // Beta Gwent owns the game audio state for the whole lifetime of this menu,
+        // not only for NPC matches. This suppresses the normal world mix in the
+        // same way as native Gwent while keeping Beta Gwent's own audio bridge alive.
+        theSound.EnterGameState(ESGS_Gwent);
+
+        // EMPTY_CONTEXT redirects menu input, but physical keys can still reach
+        // CPlayerInput through their gameplay bindings. Explicitly lock all player
+        // actions so quick-slot items, signs, attacks, etc. cannot fire behind UI.
         theInput.StoreContext('EMPTY_CONTEXT');
+        if (thePlayer)
+            thePlayer.BlockAllActions('BetaGwentBoard', true, gameplayInputExceptions, false);
+
         RefreshControllerDevice(theInput.LastUsedGamepad());
         LogChannel('BetaGwent', "BOARD_CONFIGURED schema=1 fixture=false previewDuel=true");
         LogChannel('BetaGwent', "BOARD_ENTRY name="+GetMenuName()+" editorOnly="+libraryOnly+" npc="+npcMatch+" pending="+pendingBefore+" requested="+requestedBefore+" lifecycle=81d");
@@ -613,6 +627,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
             FlashArgInt(requestSnapshot.limits.minimum), FlashArgInt(requestSnapshot.limits.maximum),
             FlashArgInt(requestSnapshot.selectedCount), FlashArgBool(!intermediate && (duel.IsPending() && requestSnapshot.limits.minimum == 0
                 || !duel.IsPending() && requestFlow.CanFinish())), FlashArgString(frame.status));
+        if (setRequestSource) setRequestSource.InvokeSelfTwoArgs(FlashArgInt(revision), FlashArgInt(duel.PendingSourceId()));
         if (!intermediate)
         {
             if (duel.IsPending()) duel.GetRequestViews(requestCards);
@@ -656,7 +671,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
                 FlashArgInt(requestView.templateId), FlashArgInt(requestView.factionId),
                 FlashArgBool(requestView.revealed), FlashArgBool(requestView.selected));
         }
-        setVisualCue.InvokeSelfNineArgs(FlashArgInt(revision), FlashArgInt(frame.kind), FlashArgInt(frame.sourceId),
+        setVisualCue.InvokeSelfNineArgs(FlashArgInt(revision), FlashArgInt(frame.kind + 256 * Min(255, Max(1, frame.attackCount))), FlashArgInt(frame.sourceId),
             FlashArgInt(frame.targetId), FlashArgInt(frame.side), FlashArgInt(frame.row), FlashArgInt(frame.templateId),
             FlashArgInt(frame.duration), FlashArgString(frame.status));
         setVisualTarget.InvokeSelfFiveArgs(FlashArgInt(revision), FlashArgInt(frame.targetTemplateId), FlashArgInt(frame.targetPower),
@@ -702,10 +717,16 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         }
         return false;
     }
+    event OnBetaGwentAudioIntro(opponent : int, player : int)
+    { if (!configured || !audio) return false; audio.Intro(opponent, player); return true; }
     event OnBetaGwentAudioUi(kind : int)
     { if (!configured || !audio) return false; audio.Ui(kind); return true; }
-    event OnBetaGwentAudioTick()
-    { if (configured && audio) { audio.Tick(); if(setAudioStatus)setAudioStatus.InvokeSelfTwoArgs(FlashArgBool(BetaGwentAudioBankInstalled()),FlashArgBool(audio.IsBankReady())); } }
+    event OnBetaGwentUIError(detail : string)
+    { LogChannel('BetaGwent', "UI_ERROR " + detail); }
+    event OnBetaGwentPerf(eventName : string, ms : int)
+    { if (configured && duel) duel.AiPerfFeedback(ms); }
+    event OnBetaGwentAudioTick(clock : int)
+    { if (configured && audio) { if (clock > 0) audio.SetClock(clock); audio.Tick(); if(setAudioStatus)setAudioStatus.InvokeSelfTwoArgs(FlashArgBool(BetaGwentAudioBankInstalled()),FlashArgBool(audio.IsBankReady())); } }
     event OnBetaGwentAudioSettings(effects : bool, voices : bool)
     { if (configured && audio) audio.Configure(effects, voices); }
     event OnBetaGwentAudioCancel()
@@ -820,6 +841,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         visualBusy = false; requestFlow.Close(); deckDraft = NULL; selectingDecks = true;
         PublishDeckSelection(); return true;
     }
+    private function BetaGwentEntryOpponentLabel(npc : bool, preset : int, deck : name) : string
+    { if(npc && preset>=54)return BetaGwentAIArchetypeName(preset); return NameToString(deck); }
     event OnBetaGwentRequestBegin(value : int, kind : int)
     {
         var cards : array<SBetaGwentDevelopmentCard>;
@@ -831,6 +854,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     }
     event OnBetaGwentRequestSelect(value : int, requestId : int, playerId : int, kind : int, itemId : int)
     {
+        LogChannel('BetaGwent', "UI_REQUEST_SELECT revision=" + value + " id=" + requestId + " kind=" + kind + " item=" + itemId);
         if (!AcceptRevision(value)) return false;
         if (duel.IsPending())
         {
@@ -847,6 +871,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     }
     event OnBetaGwentRequestFinish(value : int, requestId : int, playerId : int, kind : int)
     {
+        LogChannel('BetaGwent', "UI_REQUEST_FINISH revision=" + value + " id=" + requestId + " kind=" + kind);
         if (!AcceptRevision(value)) return false;
         if (duel.IsPending())
         {
@@ -900,13 +925,13 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     event OnClosingMenu()
     {
         var manager : CR4GwintManager; var result : SBetaGwentMatchSnapshot;var inventoryParent : CR4InventoryMenu;
+        var gameplayInputExceptions : array<EInputActionBlock>;
         if(npcMatch){
             AwardMatchReward();manager=theGame.GetGwintManager();if(!selectingDecks)result=session.Snapshot();
             if(!selectingDecks && result.matchWinnerMask==1)thePlayer.SetGwintMinigameState(EMS_End_PlayerWon);
             else if(!selectingDecks && result.matchWinnerMask!=0)thePlayer.SetGwintMinigameState(EMS_End_PlayerLost);
             else thePlayer.SetGwintMinigameState(EMS_End_PlayerLost | EMS_End_PlayerForfeited);
             manager.gameRequested=false;manager.betaNpcPending=false;manager.SetHasDoneTutorial(true);manager.SetHasDoneDeckTutorial(true);
-            theSound.LeaveGameState(ESGS_Gwent);theSound.SoundEvent("system_resume");
             if(!manager.testMatch && theGame.isUserSignedIn()){theGame.FadeOutAsync(0);theGame.SetFadeLock("Gwint_EndFadeOut");}
             manager.testMatch=false;manager.SetForcedFaction(GwintFaction_Neutral);
             LogChannel('BetaGwent',"NATIVE_GWENT_RESULT deck="+manager.betaEnemyDeckName+" winner="+result.matchWinnerMask+" state="+thePlayer.GetGwintMinigameState());
@@ -915,7 +940,16 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if (configured)
         {
             deckDraft = NULL; requestFlow.Close();
+
+            // Always restore gameplay input before returning to the world.
+            if (thePlayer)
+                thePlayer.BlockAllActions('BetaGwentBoard', false, gameplayInputExceptions, false);
             theInput.RestoreContext('EMPTY_CONTEXT', true);
+
+            // Balanced with EnterGameState() in OnConfigUI for every entry mode.
+            theSound.LeaveGameState(ESGS_Gwent);
+            theSound.SoundEvent("system_resume");
+
             SetOwnedMouseCursor(false);
             configured = false;
         }

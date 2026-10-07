@@ -243,7 +243,7 @@ package
                 if(s.mode=="editor"&&(n.label=="+"||n.label=="−"))continue;
                 var r:Rectangle=bodyBounds(n);
                 if(r.width<2||r.height<2||r.right<0||r.x>1920||r.bottom<0||r.y>1080)continue;
-                if(s.mode=="choice"&&(r.x+r.width/2<450||r.x+r.width/2>1450||r.y+r.height/2<215||r.y+r.height/2>815))continue;
+                if(s.mode=="choice"&&(r.x+r.width/2<40||r.x+r.width/2>1880||r.y+r.height/2<135||r.y+r.height/2>1060))continue;
                 n.rect=r;result.push(n);
             }
             return result;

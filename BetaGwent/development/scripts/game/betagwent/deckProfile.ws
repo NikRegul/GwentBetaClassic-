@@ -1,4 +1,4 @@
-// Separate saved profile fields: no changes to vanilla Gwent collection/decks.
+﻿// Separate saved profile fields: no changes to vanilla Gwent collection/decks.
 // Eight slots,40 template IDs per slot; shape checked before every read/write.
 @addField(W3PlayerWitcher)
 private saved var betaGwentDeckSchema : int;

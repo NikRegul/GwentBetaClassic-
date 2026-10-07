@@ -1,4 +1,55 @@
 ﻿// Archetype layer: own hand/deck only; enemy board/graves are public.
+// AI generation used by the game (self-play hosts override this per seat for A/B runs).
+function BetaGwentAIStrength() : int { return 4; }
+// Display name of an opponent deck archetype (shown instead of the NPC name).
+function BetaGwentAIArchetypeName(preset : int) : string
+{
+    switch(preset)
+    {
+    case 54: return "Шпионы";
+    case 55: return "Вампиры";
+    case 56: return "Рой главоглазов";
+    case 57: return "Машины Хенсельта";
+    case 58: return "Проклятие Адды";
+    case 59: return "Темп Кальвейта";
+    case 60: return "Мороз Дикой Охоты";
+    case 61: return "Яйца и поглощение";
+    case 62: return "Засады и Огонь";
+    case 63: return "Алхимия";
+    case 64: return "Кровавая луна";
+    case 65: return "Ветераны Тиршаха";
+    case 66: return "Краснолюды, эльфы и Огонь";
+    case 67: return "Накеры и поглощение";
+    case 68: return "Мечники ан Крайт";
+    case 69: return "Лирийские машины";
+    case 70: return "Королевская гвардия";
+    case 71: return "Темерцы";
+    case 72: return "Вскрытие Морврана";
+    case 73: return "Мазь и пехота";
+    case 74: return "Завещания";
+    case 75: return "Сброс карт";
+    case 76: return "Обмены";
+    case 77: return "Усиление колоды Лирии";
+    case 78: return "Ледяные тролли";
+    case 79: return "Усиление руки Эитнэ";
+    case 80: return "Морозные призраки";
+    case 81: return "Усиление руки Францески";
+    case 82: return "Брувер и Шуп";
+    case 83: return "Сорок карт Фольтеста";
+    case 84: return "Шахтёры и Ксавьер";
+    case 85: return "Великаны и огры";
+    case 86: return "Броня";
+    case 87: return "Невольничья пехота";
+    case 88: return "Усиление руки Нильфгаарда";
+    case 89: return "Проклятые корабли";
+    case 90: return "Усиление руки Брувера";
+    case 91: return "Заклинания скоя'таэлей";
+    case 92: return "Топорники";
+    case 93: return "Дриады";
+    }
+    return "Соперник";
+}
+
 // Bounded combo forecasts are ordering preferences, never extra catch-up points.
 function BetaGwentAIComboPriority(weight : int, heldPayoffs : int, activeSetups : int,
     heldSetups : int, playingSetup : bool, horizon : int) : int
@@ -18,12 +69,14 @@ function BetaGwentAIImperaDeployGain(publicSpies : int) : int
 {return Max(0,publicSpies)*2;}
 class CBetaGwentArchetypeAI extends IScriptable
 {
-    private var game : CBetaGwentDuelSession;
-    private var profile : int;
-    private var family : int;
-    private var pairs : array<SBetaGwentAICombo>;
-    private var hand, board : array<CBetaGwentDuelCard>;
-    private var situation : SBetaGwentMatchSnapshot;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var game : CBetaGwentDuelSession;
+    public var profile : int;
+    public var family : int;
+    public var pairs : array<SBetaGwentAICombo>;
+    public var hand, board : array<CBetaGwentDuelCard>;
+    public var situation : SBetaGwentMatchSnapshot;
     public function Initialize(owner : CBetaGwentDuelSession, deck : array<int>, preset : int, leader : int)
     {
         var profiles, candidate : array<int>;var i,j,k,score,bestScore : int;
@@ -210,10 +263,23 @@ class CBetaGwentArchetypeAI extends IScriptable
     {
         var i,id : int;var s : SBetaGwentCardSnapshot;id=d.header.templateId;
         if(d.header.typeMask!=4 || BetaGwentDuelSpying(id))return 0;
+        // Boosts to both sides (Duda, Toruviel): stand in the middle of the fullest open row.
+        if(id==112403 || id==142204)return MiddleAnchor(d);
         for(i=0;i<board.Size();i+=1){s=board[i].Snapshot();if(s.isWaitingToDie || (s.tokenMask&12)!=0 || game.CountLocation(2,s.locationMask)>=9)continue;
             if((id==152309 || id==152109) && board[i].TemplateId()==200040)return s.instanceId;
             if(BetaGwentNorthernCategory(id,1) && (BetaGwentNorthernCategory(board[i].TemplateId(),3) || board[i].northernCrew))return s.instanceId;
         }
+        return 0;
+    }
+    private function MiddleAnchor(d : SBetaGwentDuelDefinition) : int
+    {
+        var row,best,count,value,maximum : int;var cards : array<CBetaGwentDuelCard>;var s : SBetaGwentCardSnapshot;
+        maximum=-2147483647;
+        for(row=1;row<=4;row*=2){count=game.CountLocation(2,row);if(count<2 || count>=9)continue;
+            value=Min(4,count)*3-game.AiRowPlacementCost(2,row,d);if(value>maximum){maximum=value;best=row;}}
+        if(best==0)return 0;
+        game.GetZoneCards(2,best,cards);count=cards.Size();
+        for(row=0;row<count;row+=1){s=cards[row].Snapshot();if(s.locationIndex==count/2)return s.instanceId;}
         return 0;
     }
     public function Row(d : SBetaGwentDuelDefinition, original : int) : int
@@ -227,6 +293,7 @@ class CBetaGwentArchetypeAI extends IScriptable
             if(game.CountLocation(2,row)>=9)continue;game.GetZoneCards(2,row,cards);
             total=0;highest=0;for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();if((s.tokenMask&8)!=0)continue;total+=s.power.currentPower;highest=Max(highest,s.power.currentPower);}
             value=-game.WeatherDamage(2,row)*Max(1,Horizon())-cards.Size();
+            if(BetaGwentAIStrength()>=2)value=-game.AiRowPlacementCost(2,row,d);
             if(row==original)value+=1;
             if(!situation.playerOne.hasPassed && total+d.header.power>=25)value-=5;
             if(id==152309){for(i=0;i<cards.Size();i+=1)if(cards[i].TemplateId()==200040)value+=8;}

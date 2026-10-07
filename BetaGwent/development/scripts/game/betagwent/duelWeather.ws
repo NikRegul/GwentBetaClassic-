@@ -2,9 +2,11 @@
 // One row token: original Add/Set both replace the existing row token.
 class CBetaGwentDuelWeather extends IScriptable
 {
-    private var game : CBetaGwentDuelSession;
-    private var hazards : array<int>;
-    private var dreamRows : array<int>;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var game : CBetaGwentDuelSession;
+    public var hazards : array<int>;
+    public var dreamRows : array<int>;
     public function Initialize(owner : CBetaGwentDuelSession)
     {
         var i : int; game = owner; hazards.Clear(); dreamRows.Clear();
@@ -28,21 +30,21 @@ class CBetaGwentDuelWeather extends IScriptable
         // Add token fires AfterChangedLocationToken: contact hazards hit existing cards too.
         if (token == 512 || token == 2048) ContactRow(side, row, token);
         game.MonsterWeatherChanged(side, row, previous, token);
-        LogChannel('BetaGwent', "DUEL_WEATHER_APPLY side=" + side + " row=" + row + " token=" + token + " previous=" + previous); return true;
+        BetaGwentLog("DUEL_WEATHER_APPLY side=" + side + " row=" + row + " token=" + token + " previous=" + previous); return true;
     }
     public function ClearRow(side : int, row : int)
     {
         var index, previous : int; index = Slot(side, row); if (index < 0) return;
         previous = hazards[index]; hazards[index] = 0;
         if (previous != 0) game.RecordRowVisual(side, row, "Архигрифон: свой ряд очищен");
-        LogChannel('BetaGwent', "DUEL_ROW_CLEAR side=" + side + " row=" + row + " previous=" + previous);
+        BetaGwentLog("DUEL_ROW_CLEAR side=" + side + " row=" + row + " previous=" + previous);
     }
     public function RemoveBoons(side : int, row : int)
     {
         var index, token : int; index = Slot(side, row); if (index < 0) return;
         token = hazards[index]; if ((token & 384) == 0) return;
         hazards[index] = token - (token & 384); game.RecordRowVisual(side, row, "Благо снято");
-        LogChannel('BetaGwent', "DUEL_BOON_REMOVE side=" + side + " row=" + row + " previous=" + token);
+        BetaGwentLog("DUEL_BOON_REMOVE side=" + side + " row=" + row + " previous=" + token);
     }
     public function Reset()
     { var i : int; for (i = 0; i < hazards.Size(); i += 1) hazards[i] = 0; dreamRows.Clear(); }
@@ -67,7 +69,7 @@ class CBetaGwentDuelWeather extends IScriptable
         var i : int; dreamRows.Clear();
         // One global BoardManager graph: BeforeTurn priority0, all players/active rows.
         for (i = 0; i < hazards.Size(); i += 1) if (hazards[i] == 1024) dreamRows.PushBack(i);
-        LogChannel('BetaGwent', "DUEL_DREAM_CAPTURE rows=" + dreamRows.Size());
+        BetaGwentLog("DUEL_DREAM_CAPTURE rows=" + dreamRows.Size());
     }
     public function AfterPlayed(card : CBetaGwentDuelCard)
     {
@@ -90,7 +92,7 @@ class CBetaGwentDuelWeather extends IScriptable
                 target = game.FindCard(item.rowTargets[i]); if (!target) continue; s = target.Snapshot();
                 if ((s.tokenMask & 8) != 0 || (s.locationMask & 7) == 0 || s.isWaitingToDie) continue;
                 game.QueuePower(target, -amount, false);
-                LogChannel('BetaGwent', "DUEL_ROW_CONTACT token=" + item.rowToken + " target=" + s.instanceId + " damage=" + amount);
+                BetaGwentLog("DUEL_ROW_CONTACT token=" + item.rowToken + " target=" + s.instanceId + " damage=" + amount);
             }
             return;
         }
@@ -106,10 +108,15 @@ class CBetaGwentDuelWeather extends IScriptable
         }
         amount = BetaGwentDuelRowAmount(1024);
         for (i = 0; i < ids.Size(); i += 1) game.QueuePower(game.FindCard(ids[i]), -amount, false);
-        LogChannel('BetaGwent', "DUEL_DREAM_EXPLODE rows=" + item.rowTargets.Size() + " targets=" + ids.Size() + " damage=" + amount);
+        BetaGwentLog("DUEL_DREAM_EXPLODE rows=" + item.rowTargets.Size() + " targets=" + ids.Size() + " damage=" + amount);
     }
     public function Damage(side : int, row : int) : int
     { return DamageFor(side, row, Token(side, row)); }
+    // Harmful part only: Golden Froth (128) and token 256 boost the row's units.
+    public function Hazard(side : int, row : int) : int
+    { if ((Token(side, row) & 384) != 0) return 0; return Damage(side, row); }
+    public function Boon(side : int, row : int) : int
+    { if ((Token(side, row) & 384) == 0) return 0; return Damage(side, row); }
     public function DamageFor(side : int, row : int, token : int) : int
     {
         var cards : array<CBetaGwentDuelCard>; var i, total, templateId : int;
@@ -187,7 +194,7 @@ class CBetaGwentDuelWeather extends IScriptable
                 if (token == 64) { s = target.Snapshot(); if ((s.tokenMask & 8) != 0) continue; }
                 if (token == 64) { if (i == 0) amount = 2; else amount = 1; }
                 if (token == 128 || token == 256) game.QueuePower(target, amount, false); else game.QueuePower(target, -amount, false);
-                LogChannel('BetaGwent', "DUEL_WEATHER_TICK side=" + side + " row=" + row + " token=" + token + " target=" + targetId + " damage=" + amount);
+                BetaGwentLog("DUEL_WEATHER_TICK side=" + side + " row=" + row + " token=" + token + " target=" + targetId + " damage=" + amount);
             }
             // Complete the multi-target damage before draining deaths.
             game.FlushDeaths();
@@ -213,7 +220,7 @@ class CBetaGwentDuelWeather extends IScriptable
         { if ((Token(side, row) & 384) == 0) hazards[Slot(side, row)] = 0; }
         game.RecordRowVisual(side, 0, "Чистое небо: погода снята");
         for (i = 0; i < damaged.Size(); i += 1) game.QueuePower(damaged[i], boost, false);
-        LogChannel('BetaGwent', "DUEL_WEATHER_CLEAR side=" + side + " boosted=" + damaged.Size() + " boost=" + boost);
+        BetaGwentLog("DUEL_WEATHER_CLEAR side=" + side + " boosted=" + damaged.Size() + " boost=" + boost);
     }
     public function ClearValue(side : int, boost : int, optional immediate : bool) : int
     {

@@ -1,12 +1,12 @@
-// A half-strike is one managed action. Reactions resolve before the next half-strike.
+﻿// A half-strike is one managed action. Reactions resolve before the next half-strike.
 // Continuations append to the same FIFO, so long duels do not grow passive depth.
 class CBetaGwentMonsterDuelAction extends CBetaGwentManagedAction
 {
-    private var runtime : CBetaGwentDuelEffectRuntime;
-    private var game : CBetaGwentDuelSession;
-    private var source, target : CBetaGwentDuelCard;
-    private var retaliation : bool;
-    private var heal, armor : int;
+    public var runtime : CBetaGwentDuelEffectRuntime;
+    public var game : CBetaGwentDuelSession;
+    public var source, target : CBetaGwentDuelCard;
+    public var retaliation : bool;
+    public var heal, armor : int;
     public function Setup(owner : CBetaGwentDuelEffectRuntime, session : CBetaGwentDuelSession,
         first : CBetaGwentDuelCard, second : CBetaGwentDuelCard, counterAttack : bool,
         healing : int, protection : int, context : CBetaGwentActionContext) : bool

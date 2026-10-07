@@ -1,4 +1,4 @@
-// Source: TurnGameState.OnEnterState + BoardManager/Location.GetCards.
+﻿// Source: TurnGameState.OnEnterState + BoardManager/Location.GetCards.
 // Evaluate only after TurnStarted effects have reached the correct boundary.
 function BetaGwentDecideTurnEntry(hasAuthority : bool, player : SBetaGwentPlayerState,
     candidates : array<SBetaGwentCardSnapshot>) : EBetaGwentTurnEntryDecision

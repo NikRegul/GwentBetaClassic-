@@ -1,4 +1,4 @@
-// Raw SetPowerAndArmor seam: observes arguments, does not run clamp/events.
+﻿// Raw SetPowerAndArmor seam: observes arguments, does not run clamp/events.
 // Original40 numeric observations; CLR callback throws become false here.
 function BetaGwentPowerFields(baseValue : int, permanent : int, current : int, armor : int) : SBetaGwentPower
 {

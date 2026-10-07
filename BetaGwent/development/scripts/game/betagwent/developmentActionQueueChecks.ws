@@ -1,4 +1,4 @@
-// Isolated queue fixtures. Most expectations come from exact copied original
+﻿// Isolated queue fixtures. Most expectations come from exact copied original
 // IL; empty local invocation uses a guarded false instead of a CLR exception.
 class CBetaGwentActionCheckTrace extends CBetaGwentActionSink
 {

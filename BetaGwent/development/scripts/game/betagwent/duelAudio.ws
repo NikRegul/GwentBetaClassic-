@@ -7,6 +7,12 @@ class CBetaGwentDuelAudio extends IScriptable
     private var nextEffect, nextClick, voiceUntil : float;
     private var queuedVoices : array<int>;
     private var queuedAt : array<float>;
+    // Stage 104: the menu pauses the world (MPT_FullPause), so engine time can stop
+    // advancing while Gwent is open. Voice spacing and throttles use the Flash clock
+    // delivered by the board every 250 ms instead (OnBetaGwentAudioTick).
+    private var uiClock : float; private var hasUiClock : bool;
+    public function SetClock(milliseconds : int) { uiClock = (float)milliseconds / 1000.0f; hasUiClock = true; }
+    private function Now() : float { if (hasUiClock) return uiClock; return theGame.GetEngineTimeAsSeconds(); }
 
     public function Initialize()
     {
@@ -31,7 +37,7 @@ class CBetaGwentDuelAudio extends IScriptable
     {
         var now : float; var eventName : string;
         if (!enabled) return;
-        now = theGame.GetEngineTimeAsSeconds(); if (now < nextClick) return;
+        now = Now(); if (now < nextClick) return;
         if (BetaReady()) eventName = BetaGwentAudioUi(kind);
         if (eventName == "") switch (kind)
         {
@@ -46,7 +52,7 @@ class CBetaGwentDuelAudio extends IScriptable
     public function Cue(kind : int, templateId : int, flags : int, ownScore : int, enemyScore : int, rowToken : int, targetTokens : int)
     {
         var eventName : string; var now : float; var voiceTrigger, cueKind : int;
-        now = theGame.GetEngineTimeAsSeconds();
+        now = Now();
         if (kind == 1) voiceTrigger = 8;
         else if (kind == 24) voiceTrigger = 4;
         else if (kind == 25) voiceTrigger = 16;
@@ -124,10 +130,29 @@ class CBetaGwentDuelAudio extends IScriptable
         if ((kind == 2 || kind >= 20) && now < nextEffect) return;
         nextEffect = now + 0.10f; theSound.SoundEvent(eventName);
     }
+    // Stage 104: match intro (UIGameIntroRootPrefab). Game-start sting, then the
+    // opponent's and the player's leader lines, one after another.
+    public function Intro(opponent : int, player : int)
+    {
+        var now : float; var eventName : string;
+        now = Now();
+        if (enabled)
+        {
+            if (BetaReady()) eventName = BetaGwentAudioCue(7);
+            if (eventName == "") eventName = "gui_gwint_game_start";
+            theSound.SoundEvent(eventName);
+        }
+        if (!voices || !BetaReady()) return;
+        queuedVoices.Clear(); queuedAt.Clear();
+        if (opponent > 0 && BetaGwentAudioVoice(opponent) != "") { queuedVoices.PushBack(opponent); queuedAt.PushBack(now); }
+        if (player > 0 && BetaGwentAudioVoice(player) != "") { queuedVoices.PushBack(player); queuedAt.PushBack(now + 3.0f); }
+        LogChannel('BetaGwent', "AUDIO_INTRO opponent=" + opponent + " player=" + player);
+        Tick();
+    }
     public function Tick()
     {
         var id, voiceRoll : int; var now : float; var eventName : string;
-        now = theGame.GetEngineTimeAsSeconds();
+        now = Now();
         if (!BetaReady())
         {
             if (BetaGwentAudioBankInstalled() && !bankPendingReported && now - bankRequestedAt > 10.0f)

@@ -1,4 +1,4 @@
-// Generated shop conversion; original item definitions are not changed.
+﻿// Generated shop conversion; original item definitions are not changed.
 function BetaGwentLegacyShopCard(item : name) : int
 {
     var id : int;

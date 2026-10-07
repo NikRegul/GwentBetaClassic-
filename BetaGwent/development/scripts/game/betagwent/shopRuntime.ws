@@ -1,4 +1,4 @@
-// Convert existing saved merchant stock before the native shop builds its UI.
+﻿// Convert existing saved merchant stock before the native shop builds its UI.
 // New loot and old inventories take the same path; original item definitions,
 // player inventory, quests and native card rewards are left intact.
 @wrapMethod(CR4InventoryMenu)

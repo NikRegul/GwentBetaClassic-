@@ -1,4 +1,4 @@
-// Pure metadata helpers for AbilityManager.AddAbilityInstance's local batch.
+﻿// Pure metadata helpers for AbilityManager.AddAbilityInstance's local batch.
 // Does not resolve nodes, register triggers or schedule live ability instances.
 struct SBetaGwentTriggerTicket
 {

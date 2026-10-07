@@ -1,4 +1,4 @@
-param([string]$Workspace = 'D:\w3mod')
+﻿param([string]$Workspace = 'D:\w3mod')
 $ErrorActionPreference = 'Stop'
 Add-Type -Path (Join-Path $Workspace 'Gwent 0.9.24.3.432\MelonLoader\Mono.Cecil.dll')
 $taskDll = Join-Path $Workspace 'Gwent 0.9.24.3.432\Gwent_Data\Managed\Assembly-CSharp.dll'

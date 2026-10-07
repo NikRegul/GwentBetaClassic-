@@ -1,4 +1,4 @@
-class CBetaGwentApplyCheckAction extends CBetaGwentApplicableAction
+﻿class CBetaGwentApplyCheckAction extends CBetaGwentApplicableAction
 {
     private var trace : string;
     private var effectOK : bool;

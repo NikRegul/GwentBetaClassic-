@@ -1,4 +1,4 @@
-// Seeded Beta 0.9.24 integer RNG. Signed storage preserves uint32 bit patterns.
+﻿// Seeded Beta 0.9.24 integer RNG. Signed storage preserves uint32 bit patterns.
 // Source: GwentCore.MersenneTwisterRandom, beta-cancel-rng-il.txt.
 // The original increments a scalar cursor after twist; do not replace it with
 // the usual MT array cursor. Native overflow/shift acceptance remains deferred.
@@ -16,8 +16,10 @@ function BetaGwentLogicalShift(value : int, bits : int) : int
 
 class CBetaGwentRandomGenerator extends IScriptable
 {
-    private var words : array<int>;
-    private var remaining, cursor, reseedValue, initialSeed, draws : int;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var words : array<int>;
+    public var remaining, cursor, reseedValue, initialSeed, draws : int;
 
     public function Initialize(seed : int)
     {

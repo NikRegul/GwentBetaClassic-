@@ -1,12 +1,14 @@
-// Concrete pinned Beta 0.9.24 Monster graphs; display choices never become played cards.
+﻿// Concrete pinned Beta 0.9.24 Monster graphs; display choices never become played cards.
 class CBetaGwentDuelMonsters extends IScriptable
 {
-    private var game : CBetaGwentDuelSession;
-    private var north : CBetaGwentDuelNorth;
-    private var nilf : CBetaGwentDuelNilf;
-    private var neutral : CBetaGwentDuelNeutral;
-    private var skellige : CBetaGwentDuelSkellige;
-    private var scoia : CBetaGwentDuelScoia;
+    // BG_CLONE_FIELDS
+    public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
+    public var game : CBetaGwentDuelSession;
+    public var north : CBetaGwentDuelNorth;
+    public var nilf : CBetaGwentDuelNilf;
+    public var neutral : CBetaGwentDuelNeutral;
+    public var skellige : CBetaGwentDuelSkellige;
+    public var scoia : CBetaGwentDuelScoia;
     public function Initialize(owner : CBetaGwentDuelSession) { game = owner;neutral=new CBetaGwentDuelNeutral in this;neutral.Initialize(owner); skellige=new CBetaGwentDuelSkellige in this;skellige.Initialize(owner); north = new CBetaGwentDuelNorth in this; north.Initialize(owner); nilf = new CBetaGwentDuelNilf in this; nilf.Initialize(owner); scoia=new CBetaGwentDuelScoia in this;scoia.Initialize(owner); }
     private function Query(side : int, locations : int, tiers : int, ignore : int, traits : int, out ids : array<int>, optional types : int)
     {
@@ -79,7 +81,7 @@ class CBetaGwentDuelMonsters extends IScriptable
         d = source.Definition(); s = source.Snapshot(); source.monsterStage = 0; source.monsterIds.Clear();
         if (d.header.templateId == 200534) { source.monsterOnce = 1; source.monsterStored = 0; }
         source.monsterRemaining = d.specialCount;
-        LogChannel('BetaGwent', "DUEL_MONSTER_PLAY template=" + d.header.templateId + " mode=" + d.specialMode);
+        BetaGwentLog("DUEL_MONSTER_PLAY template=" + d.header.templateId + " mode=" + d.specialMode);
         if (d.specialMode == 1 || d.specialMode == 2)
         {
             if (d.specialMode == 1) { s.locationMask = 1; s.locationIndex = -3; }
