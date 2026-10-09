@@ -46,9 +46,9 @@ starters={ident for p in presets if p.get('starter') for ident in p['templateIds
 quest_records=json.loads((ROOT/'data/beta924/design/npc_rewards.json').read_text(encoding='utf8'))['assignments']
 quest_sources={r['goldTemplateId']:r['character'] for r in quest_records}
 def acquisition(ident,tier):
-    if ident in quest_sources:return ('Победить: '+quest_sources[ident]+'. Также может выпасть из бочки у торговца в крепости Барона.',quest_sources[ident])
-    if tier in (2,4):return ('Бочка у торговца в крепости Барона; случайная награда за первые четыре победы над обычным игроком/торговцем (по одной карте). Некоторые карты также продаются торговцами.','Бочка / случайный торговец')
-    return ('Бочка у торговца в крепости Барона.','Бочка')
+    if ident in quest_sources:return ('Карта может быть получена от: '+quest_sources[ident]+' (награда за победу)' +'. Также может выпасть из бочки или быть создана за осколки.','Карта может быть получена от:\n'+quest_sources[ident])
+    if tier in (2,4):return ('Бочка или создание за осколки; случайная награда за первые четыре победы над обычным игроком/торговцем (по одной карте). Некоторые карты также продаются торговцами.','')
+    return ('Можно получить из бочки или создать за осколки.','')
 records=[]
 def original_description(ident):
     values={}
@@ -96,7 +96,7 @@ for t in source['templates']:
     if t['attributes']['Availability']!='1' or f['Kind']!=1 or f['Tier'] not in (1,2,4,8):continue
     description=original_description(ident)
     how,short=acquisition(ident,f['Tier'])
-    if ident in starters:how="Стартовый набор. "+how;short="Стартовый набор"
+    if ident in starters:how="Стартовый набор. "+how
     records.append(dict(templateId=ident,title=source['localization'][LOCALE].get(str(ident)+'_name',str(ident)),
         description=description,tags=tags[ident],power=f['Power'],tier=f['Tier'],typeMask=f['Type'],faction=f['FactionId'],
         leader=f['Tier']==1,spy=f['Type']==4 and int(t['placement'].get('OpponentSide',0))!=0 and int(t['placement'].get('PlayerSide',0))==0,implemented=ident in done,hasArt=ident in arts,

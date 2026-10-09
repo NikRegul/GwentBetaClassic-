@@ -8,14 +8,15 @@ if (process.argv[2] === '--child') {
   for (let i = +from; i < +to; i++) {
     const a = 54 + (i % 40), b = 54 + ((i * 17 + 1 + Math.floor(i / 40)) % 40), seed = (+seed0 * 7919 + i * 104729) >>> 0;
     if (a === b) continue;
-    for (const swap of [false, true]) {
+    for (const mode of [0,1,2,3]) {
+      const swap=!!(mode&1), flipped=!!(mode&2), candidateLeft=swap===flipped;
       const L = swap ? b : a, R = swap ? a : b;            // A always drives deck `a`
       const TA = JSON.parse(process.env.TUNE_A || '{}'), TB = JSON.parse(process.env.TUNE_B || '{}');
-      h.Host.tunes = swap ? [TB, TA] : [TA, TB];
-      const r = swap ? h.play(L, R, seed, +sb, +sa) : h.play(L, R, seed, +sa, +sb);
+      h.Host.tunes = candidateLeft ? [TA, TB] : [TB, TA];
+      const r = candidateLeft ? h.play(L,R,seed,+sa,+sb) : h.play(L,R,seed,+sb,+sa);
       if (r.error) { out.E++; if (out.errors.length < 5) out.errors.push([L, R, seed, r.error.split('\n').slice(0, 4).join(' | '), (r.trace || []).slice(-5).join(' || ')]); continue; }
-      const aWon = swap ? r.winner === 2 : r.winner === 1, bWon = swap ? r.winner === 1 : r.winner === 2;
-      const deck = a; out.perDeck[deck] = out.perDeck[deck] || [0, 0];
+      const aWon = r.winner === (candidateLeft?1:2), bWon = r.winner === (candidateLeft?2:1);
+      const deck = candidateLeft?L:R; out.perDeck[deck] = out.perDeck[deck] || [0, 0];
       if (aWon) { out.A++; out.perDeck[deck][0]++; } else if (bWon) { out.B++; out.perDeck[deck][1]++; } else out.D++;
     }
   }

@@ -35,13 +35,15 @@ def size(p):
     except OSError:return -1
 def outputs_ready(started,stable):
     if not expect:return False
+    ready=True
     for p in expect:
         try:st=p.stat()
-        except OSError:return False
-        if st.st_mtime<started-2 or st.st_size<=0:return False
-        if stable.get(p)!=st.st_size:stable[p]=st.st_size;stable[str(p)+'@']=time.time();return False
-        if time.time()-stable[str(p)+'@']<8:return False
-    return True
+        except OSError:ready=False;continue
+        if st.st_mtime<started-2 or st.st_size<=0:ready=False;continue
+        if stable.get(p)!=st.st_size:
+            stable[p]=st.st_size;stable[str(p)+'@']=time.time();ready=False
+        elif time.time()-stable[str(p)+'@']<8:ready=False
+    return ready
 
 start=time.time();attempts=[];result=None
 for attempt in range(args.retries+1):

@@ -1,9 +1,18 @@
 # Как вручную менять ИИ Gwent Beta Classic
 
+Для текущих 46 колод используйте [инструкцию Stage 115](AI_RESEARCH115_RU.md).
+Составы из `deck_rules_researched_114.md` теперь имеют приоритет над прежними
+`deck_overrides.json`; эта инструкция описывает более раннюю версию.
+
 Основной файл стратегии:
 **D:\w3mod\BetaGwent\development\scripts\game\betagwent\duelArchetypeAI.ws**.
 Меняйте исходники в BetaGwent/development. Копии в GwentB/myproject1/workspace и
 BetaGwent/build/board-patch создаются автоматически и будут перезаписаны.
+
+## Авторские замены состава
+
+Файл: **D:\w3mod\data\beta924\ai\deck_overrides.json**.
+Для «Морозных призраков» профиль 29 копирует стартовую Дикую Охоту №16 в пресет №80 целиком, с лидером и копиями. Это фиксированная колода ИИ; сохранённая личная колода игрока не читается. Подробнее: [составы и пересборка](AI_DECK_OVERRIDES114_RU.md).
 
 ## Самая простая настройка лидеров
 

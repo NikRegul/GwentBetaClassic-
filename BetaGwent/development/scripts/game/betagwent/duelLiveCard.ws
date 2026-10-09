@@ -57,6 +57,23 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
         cardState.power.armor = definition.header.armor;
         power = new CBetaGwentDuelPower in this; power.Attach(this); power.InitFromFields(cardState.power);
     }
+    // Search copies carry anonymous priors for hidden opposing identities.
+    // Revealed hand cards and all public board/grave cards remain exact.
+    public function HideUnknownFromAi()
+    {
+        var s : SBetaGwentCardSnapshot;var hiddenBoard : bool;
+        if(!game || !game.aiSimulating)return;s=Snapshot();if(s.positionPlayerId!=1)return;
+        hiddenBoard=(s.locationMask&7)!=0 && (s.tokenMask&8)!=0;
+        if(!hiddenBoard && !((s.locationMask==8 || s.locationMask==16) && (s.tokenMask&64)==0))return;
+        definition=BetaGwentDuelDefinition(112101);definition.effect=0;definition.header.power=6;definition.header.armor=0;
+        definition.tokens=0;definition.unitTraits=0;definition.passiveBoost=0;definition.timerPeriod=0;definition.deathwishDamage=0;
+        definition.deathwishSpawnCount=0;definition.deathwishSummonTemplate=0;
+        cardState.originTemplateId=112101;cardState.runtimeTemplate=definition.header;cardState.runtimeTierMask=2;
+        cardState.tokenMask=0;if(hiddenBoard){cardState.tokenMask=8;definition.header.power=0;}
+        cardState.timerValue=-1;nilfCounter=0;selectedModeId=0;
+        cardState.runtimeTemplate=definition.header;cardState.power.basePower=definition.header.power;cardState.power.currentPower=definition.header.power;cardState.power.armor=0;
+        power.initialized=false;power.InitFromFields(cardState.power);
+    }
     public function Snapshot() : SBetaGwentCardSnapshot { cardState.power = power.Snapshot(); return cardState; }
     public function Definition() : SBetaGwentDuelDefinition { if (selectedModeId == 0) return definition; return BetaGwentDuelModeDefinition(definition, selectedModeId); }
     public function IsMonsterAbility() : bool { return definition.effect == 34; }

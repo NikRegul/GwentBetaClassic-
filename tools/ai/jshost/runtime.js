@@ -32,12 +32,12 @@ function FloorF(a) { return Math.floor(a); }
 function Clamp(a, lo, hi) { return a < lo ? lo : a > hi ? hi : a; }
 function RandRange(n) { return n > 0 ? Math.floor(Host.random() * n) : 0; }
 function LogChannel(channel, message) { if (Host.log) Host.log(message); }
-function BetaGwentAITrainingWeight(preset, index) { return Host.policy ? Host.policy(preset, index) : 0; }
+function BetaGwentAITrainingWeight(preset, index) { return Host.policy ? Host.policy(preset, index) : typeof __snapshotTrainingWeight === 'function' ? __snapshotTrainingWeight(preset,index) : 0; }
 function BetaGwentAIChooseOrdinaryPreset() { throw new Error('self play must supply an explicit preset'); }
 function BetaGwentAIRandomPreset() { return BetaGwentAIChooseOrdinaryPreset(); }
 function BetaGwentAIStrength() { return Host.strength; }
-const __tuneDefaults = { 0: 6, 1: 0, 2: 0, 3: 0, 4: 1, 5: 10, 6: 3, 7: 6, 8: 5, 9: 4 };
-function BetaGwentAITune(i) { const t = Host.tunes && Host.tunes[Host.seatIndex]; if (t && t[i] !== undefined) return t[i]; return __tuneDefaults[i] !== undefined ? __tuneDefaults[i] : 0; }
+const __tuneDefaults = { 0: 6, 1: 0, 2: 0, 3: 0, 4: 1, 5: 10, 6: 3, 7: 6, 8: 5, 9: 4, 10: 3, 11: 10, 12: 10, 13: 5, 14: 2, 15: 12, 16: 8, 17: 50, 18: 18, 19: 0, 20: 26, 21: 25, 22: 10, 23: 2, 24: 3, 25: 85, 26: 50, 27: 50, 28: 12, 29: 6, 30: 2, 31: 2, 32: 100 };
+function BetaGwentAITune(i) { if (Host.reads) Host.reads[i] = 1; const t = Host.tunes && Host.tunes[Host.seatIndex]; if (t && t[i] !== undefined) return t[i]; return __tuneDefaults[i] !== undefined ? __tuneDefaults[i] : 0; }
 let __simDepthHost = 0;
 function BetaGwentLog(message) { if (__simDepthHost === 0 && Host.log) Host.log(message); }
 function BetaGwentAISimEnter() { __simDepthHost++; }

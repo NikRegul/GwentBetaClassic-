@@ -1,0 +1,32 @@
+{
+  "stage": 120,
+  "version": "0.4.1",
+  "nativeMenus": 8,
+  "bindingsPerMenu": 46,
+  "archetypes": 46,
+  "archetypeChecks": 534,
+  "graveyardLockRegressionPassed": true,
+  "originalBoardsUnmodified": true,
+  "atlasDimensionsUnchanged": true,
+  "gameRuntimeVerified": false,
+  "retailInstallationModified": false,
+  "packages": [
+    {
+      "language": "ru",
+      "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.4.1-RU.zip",
+      "bytes": 200218144,
+      "sha256": "0085e6985667e1940d2d0a67e49cd8a06a99e876aa976873e9ed85a2053d4f24",
+      "freshCompiledSources": 67,
+      "crcAndManifestVerified": true
+    },
+    {
+      "language": "en",
+      "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.4.1-EN.zip",
+      "bytes": 199134769,
+      "sha256": "3139aca7a325948b7bb006c008b840581f01a2a0db494ac5d5c89fe7eaa26ca0",
+      "freshCompiledSources": 67,
+      "crcAndManifestVerified": true
+    }
+  ],
+  "previousReleaseUnmodified": true
+}

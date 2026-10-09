@@ -1,0 +1,170 @@
+{
+  "version": "0.4.1",
+  "stage": 120,
+  "language": "ru",
+  "mediaCount": 1418,
+  "files": [
+    {
+      "path": "ATTRIBUTIONS.md",
+      "bytes": 982,
+      "sha256": "9f115954e202d0cc463fb83864edb885bd678ee491fce7e34e6c7ba35a8726e7"
+    },
+    {
+      "path": "CHANGELOG_RU.md",
+      "bytes": 44649,
+      "sha256": "447da3af3ea07e12b47bebd6c2a98e87cb87a43f7860ca45e48da1d1c6d52233"
+    },
+    {
+      "path": "CONTROLS_RU.md",
+      "bytes": 3993,
+      "sha256": "e22191353395ba7dc94d2945a136822402381e4f9b2a8f1d9262ec7ffd07174a"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/ar.w3strings",
+      "bytes": 26189,
+      "sha256": "6961906f76ca73bd9bd3e4459516dda19a1ef265d37644cd375865d989ad5bd3"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/blob0.bundle",
+      "bytes": 224839463,
+      "sha256": "9b7ca0cff49345c0e091565d9d25d01983d23469e574aab5cca6c1503d30cdf9"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/br.w3strings",
+      "bytes": 26189,
+      "sha256": "6961906f76ca73bd9bd3e4459516dda19a1ef265d37644cd375865d989ad5bd3"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/cn.w3strings",
+      "bytes": 26189,
+      "sha256": "6961906f76ca73bd9bd3e4459516dda19a1ef265d37644cd375865d989ad5bd3"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/cz.w3strings",
+      "bytes": 26189,
+      "sha256": "c839705052b0e7229c1b2de59ef18ddc4734faef3aff5348ac0375ad1e38d04d"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/de.w3strings",
+      "bytes": 26189,
+      "sha256": "d0cee3f1aee6d5b16244bed2cf50c89a4873c22e683bb9a92cba93990567f738"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/dep.cache",
+      "bytes": 280,
+      "sha256": "ffc4229ae12b964ef1e0b6c69303c2bfe6eb0567c9e8ba22c00747fb903d862e"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/en.w3strings",
+      "bytes": 26189,
+      "sha256": "0260c986312e20ce08278aaa8d45049dd76b687d1b559c9657b442495b4a2c0e"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/es.w3strings",
+      "bytes": 26189,
+      "sha256": "0ddc2e8436018945dc90fa4ea87df1b1ecccf013e3be9d150a33134c34261eeb"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/esmx.w3strings",
+      "bytes": 26189,
+      "sha256": "6961906f76ca73bd9bd3e4459516dda19a1ef265d37644cd375865d989ad5bd3"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/fr.w3strings",
+      "bytes": 26189,
+      "sha256": "18bf6a4ed3736217cced2dbb43e24740e8bceb7a697bccd6380380107c7c40f0"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/hu.w3strings",
+      "bytes": 26189,
+      "sha256": "f380db7873abe78c9243b26916b31beeebf4f317c81a463fa230dcb16d09d713"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/it.w3strings",
+      "bytes": 26189,
+      "sha256": "d213359748d6b6ab0b79d837908aa53752f1664ee035ac410a46c2007e772e57"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/jp.w3strings",
+      "bytes": 26189,
+      "sha256": "1268f235c30089559f7bd596bedcdd6b074163bb6e900b6badcb7df822f04d7a"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/kr.w3strings",
+      "bytes": 26189,
+      "sha256": "6961906f76ca73bd9bd3e4459516dda19a1ef265d37644cd375865d989ad5bd3"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/metadata.store",
+      "bytes": 1814,
+      "sha256": "8274795459df59d07c5d317111f0f63c26faad03a46ba7eb08dc7dadc83195ad"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/pl.w3strings",
+      "bytes": 26189,
+      "sha256": "4f5ec6875893cffee524c5bbc14f7c48278f017e18e56f4fe77bd114cc7caa6b"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/precompiled.rsblob",
+      "bytes": 2193346,
+      "sha256": "c5d09cc8ec5681e03a9edd495814d976cffc88e2138d8cbb7af5582581a91988"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/ru.w3strings",
+      "bytes": 39567,
+      "sha256": "6ce31d0587b440bf7ecc3f3c5b672c313ee27232a0a463f6577596e7482aa7f2"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/soundspc.cache",
+      "bytes": 57186457,
+      "sha256": "86dbd191e5936a680b00ad79210e2f841126d87264ab778e1f84c23082e003c0"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/tr.w3strings",
+      "bytes": 26189,
+      "sha256": "6961906f76ca73bd9bd3e4459516dda19a1ef265d37644cd375865d989ad5bd3"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/ua.w3strings",
+      "bytes": 26189,
+      "sha256": "6961906f76ca73bd9bd3e4459516dda19a1ef265d37644cd375865d989ad5bd3"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/zh.w3strings",
+      "bytes": 26189,
+      "sha256": "c80ef16433dbe1503f85c226908da27dd7ce13fe830842c235ae271030fee504"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/info.json",
+      "bytes": 296,
+      "sha256": "f04b9db91244e29a86f1b95125c9d7dcc8a3c759410fb6cf0ccba7ea16f6bcba"
+    },
+    {
+      "path": "README_RU.md",
+      "bytes": 4893,
+      "sha256": "586552ad13d2537252ea28ecd845fbeca7cb6afb95a1b553b516bfee8b2eba2a"
+    },
+    {
+      "path": "SOURCE.txt",
+      "bytes": 75,
+      "sha256": "3f430e2e968b72fa1b15d1cf6b7fe13a7fedefa9a7257abf4fc5e2b0df831cb0"
+    },
+    {
+      "path": "UPDATE.md",
+      "bytes": 4592,
+      "sha256": "b9b88d66ed764799d249b26ddaf14d825c552e45b22d331b92513c9142eef712"
+    }
+  ],
+  "licenseIncluded": false,
+  "runtimeVerified": false,
+  "baseVersionUserAccepted": true,
+  "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.4.1-RU.zip",
+  "archiveBytes": 200218144,
+  "archiveSha256": "0085e6985667e1940d2d0a67e49cd8a06a99e876aa976873e9ed85a2053d4f24",
+  "archiveVerified": true
+}

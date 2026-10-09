@@ -3,14 +3,162 @@
 class CBetaGwentCloner extends IScriptable
 {
     private var epoch, head : int;
+    private var flipSeats : bool;
     private var originals, copies : array<IScriptable>;
-    public function CloneSession(source : CBetaGwentDuelSession, stamp : int) : CBetaGwentDuelSession
+    public function CloneSession(source : CBetaGwentDuelSession, stamp : int, optional reverseSeats : bool) : CBetaGwentDuelSession
     {
         var result : CBetaGwentDuelSession;
-        epoch = stamp; head = 0; originals.Clear(); copies.Clear();
+        epoch = stamp; head = 0; flipSeats = reverseSeats; originals.Clear(); copies.Clear();
         result = (CBetaGwentDuelSession)Obj(source);
         while (head < originals.Size()) { CopyAny(originals[head], copies[head]); head += 1; }
         return result;
+    }
+    private function Seat(value : int) : int
+    { if (!flipSeats) return value; if (value == 1) return 2; if (value == 2) return 1; return value; }
+    private function Winner(value : int) : int
+    { if (!flipSeats) return value; return (value & -4) | ((value & 1) * 2) | ((value & 2) / 2); }
+    private function StructSBetaGwentCardSnapshot(src : SBetaGwentCardSnapshot) : SBetaGwentCardSnapshot
+    {
+        var dst : SBetaGwentCardSnapshot;
+        dst = src;
+        dst.instanceId = src.instanceId;
+        dst.originTemplateId = src.originTemplateId;
+        dst.runtimeTemplate = src.runtimeTemplate;
+        dst.ownerId = Seat(src.ownerId);
+        dst.controllerId = Seat(src.controllerId);
+        dst.positionPlayerId = Seat(src.positionPlayerId);
+        dst.locationMask = src.locationMask;
+        dst.locationIndex = src.locationIndex;
+        dst.runtimeTierMask = src.runtimeTierMask;
+        dst.tokenMask = src.tokenMask;
+        dst.timerValue = src.timerValue;
+        dst.power = src.power;
+        dst.canBePlayed = src.canBePlayed;
+        dst.isInExecutionStack = src.isInExecutionStack;
+        dst.isWaitingToDie = src.isWaitingToDie;
+        return dst;
+    }
+    private function StructSBetaGwentChoiceCandidate(src : SBetaGwentChoiceCandidate) : SBetaGwentChoiceCandidate
+    {
+        var dst : SBetaGwentChoiceCandidate;
+        dst = src;
+        dst.originalInstanceId = src.originalInstanceId;
+        dst.positionPlayerId = Seat(src.positionPlayerId);
+        dst.templateId = src.templateId;
+        dst.deckFactionId = src.deckFactionId;
+        return dst;
+    }
+    private function StructSBetaGwentChoiceEntry(src : SBetaGwentChoiceEntry) : SBetaGwentChoiceEntry
+    {
+        var dst : SBetaGwentChoiceEntry;
+        dst = src;
+        dst.view = src.view;
+        dst.originalInstanceId = src.originalInstanceId;
+        dst.positionPlayerId = Seat(src.positionPlayerId);
+        return dst;
+    }
+    private function StructSBetaGwentDevelopmentCard(src : SBetaGwentDevelopmentCard) : SBetaGwentDevelopmentCard
+    {
+        var dst : SBetaGwentDevelopmentCard;
+        dst = src;
+        dst.card = StructSBetaGwentCardSnapshot(src.card);
+        dst.title = src.title;
+        dst.createdCopy = src.createdCopy;
+        return dst;
+    }
+    private function StructSBetaGwentDuelCueContext(src : SBetaGwentDuelCueContext) : SBetaGwentDuelCueContext
+    {
+        var dst : SBetaGwentDuelCueContext;
+        dst = src;
+        dst.id = src.id;
+        dst.templateId = src.templateId;
+        dst.side = Seat(src.side);
+        dst.row = src.row;
+        return dst;
+    }
+    private function StructSBetaGwentMatchSnapshot(src : SBetaGwentMatchSnapshot) : SBetaGwentMatchSnapshot
+    {
+        var dst : SBetaGwentMatchSnapshot;
+        dst = src;
+        dst.initialized = src.initialized;
+        dst.roundNumber = src.roundNumber;
+        dst.turnSequence = src.turnSequence;
+        dst.currentPlayerId = Seat(src.currentPlayerId);
+        dst.startingPlayerId = Seat(src.startingPlayerId);
+        dst.roundActive = src.roundActive;
+        dst.turnActive = src.turnActive;
+        if (flipSeats) { dst.playerOne = StructSBetaGwentPlayerState(src.playerTwo); } else { dst.playerOne = StructSBetaGwentPlayerState(src.playerOne); }
+        if (flipSeats) { dst.playerTwo = StructSBetaGwentPlayerState(src.playerOne); } else { dst.playerTwo = StructSBetaGwentPlayerState(src.playerTwo); }
+        dst.matchWinnerMask = Winner(src.matchWinnerMask);
+        return dst;
+    }
+    private function StructSBetaGwentPendingRequestSlot(src : SBetaGwentPendingRequestSlot) : SBetaGwentPendingRequestSlot
+    {
+        var dst : SBetaGwentPendingRequestSlot;
+        dst = src;
+        dst.request = (CBetaGwentCardRequest)Obj(src.request);
+        dst.continuation = (CBetaGwentAbilityContinuation)Obj(src.continuation);
+        return dst;
+    }
+    private function StructSBetaGwentPlayRequest(src : SBetaGwentPlayRequest) : SBetaGwentPlayRequest
+    {
+        var dst : SBetaGwentPlayRequest;
+        dst = src;
+        dst.playerId = Seat(src.playerId);
+        dst.requestedInstanceId = src.requestedInstanceId;
+        return dst;
+    }
+    private function StructSBetaGwentPlayerState(src : SBetaGwentPlayerState) : SBetaGwentPlayerState
+    {
+        var dst : SBetaGwentPlayerState;
+        dst = src;
+        dst.playerId = Seat(src.playerId);
+        dst.crowns = src.crowns;
+        dst.hasPassed = src.hasPassed;
+        dst.hasMadeInitialMoveForCurrentTurn = src.hasMadeInitialMoveForCurrentTurn;
+        return dst;
+    }
+    private function StructSBetaGwentRequestSnapshot(src : SBetaGwentRequestSnapshot) : SBetaGwentRequestSnapshot
+    {
+        var dst : SBetaGwentRequestSnapshot;
+        dst = src;
+        dst.initialized = src.initialized;
+        dst.requestId = src.requestId;
+        dst.playerId = Seat(src.playerId);
+        dst.targetPlayerId = Seat(src.targetPlayerId);
+        dst.kind = src.kind;
+        dst.limits = src.limits;
+        dst.selectedCount = src.selectedCount;
+        dst.validCount = src.validCount;
+        dst.applied = src.applied;
+        dst.destroyed = src.destroyed;
+        dst.autoDestroy = src.autoDestroy;
+        return dst;
+    }
+    private function StructSBetaGwentRoundResult(src : SBetaGwentRoundResult) : SBetaGwentRoundResult
+    {
+        var dst : SBetaGwentRoundResult;
+        dst = src;
+        dst.roundNumber = src.roundNumber;
+        dst.startingPlayerId = Seat(src.startingPlayerId);
+        if (flipSeats) { dst.scoreOne = src.scoreTwo; } else { dst.scoreOne = src.scoreOne; }
+        if (flipSeats) { dst.scoreTwo = src.scoreOne; } else { dst.scoreTwo = src.scoreTwo; }
+        dst.winnerMask = Winner(src.winnerMask);
+        if (flipSeats) { dst.crownDeltaOne = src.crownDeltaTwo; } else { dst.crownDeltaOne = src.crownDeltaOne; }
+        if (flipSeats) { dst.crownDeltaTwo = src.crownDeltaOne; } else { dst.crownDeltaTwo = src.crownDeltaTwo; }
+        return dst;
+    }
+    private function StructSBetaGwentTriggerTicket(src : SBetaGwentTriggerTicket) : SBetaGwentTriggerTicket
+    {
+        var dst : SBetaGwentTriggerTicket;
+        dst = src;
+        dst.instanceId = src.instanceId;
+        dst.ownerPresent = src.ownerPresent;
+        dst.priority = src.priority;
+        dst.locationMask = src.locationMask;
+        dst.ownerPlayerId = Seat(src.ownerPlayerId);
+        dst.ownerIndex = src.ownerIndex;
+        return dst;
     }
     public function Obj(o : IScriptable) : IScriptable
     {
@@ -29,25 +177,26 @@ class CBetaGwentCloner extends IScriptable
         var r11 : CBetaGwentAbilityContinuation;
         var r12 : CBetaGwentRequestStore;
         var r13 : CBetaGwentCardRequest;
-        var r14 : CBetaGwentAIChasePlanner;
-        var r15 : CBetaGwentArchetypeAI;
-        var r16 : CBetaGwentDuelPassiveFrame;
-        var r17 : CBetaGwentDuelEvent;
-        var r18 : CBetaGwentDuelEvents;
-        var r19 : CBetaGwentDuelMonsters;
-        var r20 : CBetaGwentDuelNeutral;
-        var r21 : CBetaGwentNilfReaction;
-        var r22 : CBetaGwentDuelNilf;
-        var r23 : CBetaGwentNilfDependencies;
-        var r24 : CBetaGwentDuelNorth;
-        var r25 : CBetaGwentDuelScoia;
-        var r26 : CBetaGwentDuelSession;
-        var r27 : CBetaGwentDuelSkellige;
-        var r28 : CBetaGwentDuelSpecials;
-        var r29 : CBetaGwentDuelVisualFrame;
-        var r30 : CBetaGwentDuelWeather;
-        var r31 : CBetaGwentWeatherAI;
-        var r32 : CBetaGwentDevelopmentRequestFlow;
+        var r14 : CBetaGwentPublicResponseAI;
+        var r15 : CBetaGwentAIChasePlanner;
+        var r16 : CBetaGwentArchetypeAI;
+        var r17 : CBetaGwentDuelPassiveFrame;
+        var r18 : CBetaGwentDuelEvent;
+        var r19 : CBetaGwentDuelEvents;
+        var r20 : CBetaGwentDuelMonsters;
+        var r21 : CBetaGwentDuelNeutral;
+        var r22 : CBetaGwentNilfReaction;
+        var r23 : CBetaGwentDuelNilf;
+        var r24 : CBetaGwentNilfDependencies;
+        var r25 : CBetaGwentDuelNorth;
+        var r26 : CBetaGwentDuelScoia;
+        var r27 : CBetaGwentDuelSession;
+        var r28 : CBetaGwentDuelSkellige;
+        var r29 : CBetaGwentDuelSpecials;
+        var r30 : CBetaGwentDuelVisualFrame;
+        var r31 : CBetaGwentDuelWeather;
+        var r32 : CBetaGwentWeatherAI;
+        var r33 : CBetaGwentDevelopmentRequestFlow;
         if (!o) return NULL;
         r0 = (CBetaGwentActionContext)o;
         if (r0) { if (r0.bgCloneEpoch == epoch) return r0.bgCloneRef; n = Make(o); r0.bgCloneEpoch = epoch; r0.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
@@ -77,44 +226,46 @@ class CBetaGwentCloner extends IScriptable
         if (r12) { if (r12.bgCloneEpoch == epoch) return r12.bgCloneRef; n = Make(o); r12.bgCloneEpoch = epoch; r12.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
         r13 = (CBetaGwentCardRequest)o;
         if (r13) { if (r13.bgCloneEpoch == epoch) return r13.bgCloneRef; n = Make(o); r13.bgCloneEpoch = epoch; r13.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r14 = (CBetaGwentAIChasePlanner)o;
+        r14 = (CBetaGwentPublicResponseAI)o;
         if (r14) { if (r14.bgCloneEpoch == epoch) return r14.bgCloneRef; n = Make(o); r14.bgCloneEpoch = epoch; r14.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r15 = (CBetaGwentArchetypeAI)o;
+        r15 = (CBetaGwentAIChasePlanner)o;
         if (r15) { if (r15.bgCloneEpoch == epoch) return r15.bgCloneRef; n = Make(o); r15.bgCloneEpoch = epoch; r15.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r16 = (CBetaGwentDuelPassiveFrame)o;
+        r16 = (CBetaGwentArchetypeAI)o;
         if (r16) { if (r16.bgCloneEpoch == epoch) return r16.bgCloneRef; n = Make(o); r16.bgCloneEpoch = epoch; r16.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r17 = (CBetaGwentDuelEvent)o;
+        r17 = (CBetaGwentDuelPassiveFrame)o;
         if (r17) { if (r17.bgCloneEpoch == epoch) return r17.bgCloneRef; n = Make(o); r17.bgCloneEpoch = epoch; r17.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r18 = (CBetaGwentDuelEvents)o;
+        r18 = (CBetaGwentDuelEvent)o;
         if (r18) { if (r18.bgCloneEpoch == epoch) return r18.bgCloneRef; n = Make(o); r18.bgCloneEpoch = epoch; r18.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r19 = (CBetaGwentDuelMonsters)o;
+        r19 = (CBetaGwentDuelEvents)o;
         if (r19) { if (r19.bgCloneEpoch == epoch) return r19.bgCloneRef; n = Make(o); r19.bgCloneEpoch = epoch; r19.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r20 = (CBetaGwentDuelNeutral)o;
+        r20 = (CBetaGwentDuelMonsters)o;
         if (r20) { if (r20.bgCloneEpoch == epoch) return r20.bgCloneRef; n = Make(o); r20.bgCloneEpoch = epoch; r20.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r21 = (CBetaGwentNilfReaction)o;
+        r21 = (CBetaGwentDuelNeutral)o;
         if (r21) { if (r21.bgCloneEpoch == epoch) return r21.bgCloneRef; n = Make(o); r21.bgCloneEpoch = epoch; r21.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r22 = (CBetaGwentDuelNilf)o;
+        r22 = (CBetaGwentNilfReaction)o;
         if (r22) { if (r22.bgCloneEpoch == epoch) return r22.bgCloneRef; n = Make(o); r22.bgCloneEpoch = epoch; r22.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r23 = (CBetaGwentNilfDependencies)o;
+        r23 = (CBetaGwentDuelNilf)o;
         if (r23) { if (r23.bgCloneEpoch == epoch) return r23.bgCloneRef; n = Make(o); r23.bgCloneEpoch = epoch; r23.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r24 = (CBetaGwentDuelNorth)o;
+        r24 = (CBetaGwentNilfDependencies)o;
         if (r24) { if (r24.bgCloneEpoch == epoch) return r24.bgCloneRef; n = Make(o); r24.bgCloneEpoch = epoch; r24.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r25 = (CBetaGwentDuelScoia)o;
+        r25 = (CBetaGwentDuelNorth)o;
         if (r25) { if (r25.bgCloneEpoch == epoch) return r25.bgCloneRef; n = Make(o); r25.bgCloneEpoch = epoch; r25.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r26 = (CBetaGwentDuelSession)o;
+        r26 = (CBetaGwentDuelScoia)o;
         if (r26) { if (r26.bgCloneEpoch == epoch) return r26.bgCloneRef; n = Make(o); r26.bgCloneEpoch = epoch; r26.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r27 = (CBetaGwentDuelSkellige)o;
+        r27 = (CBetaGwentDuelSession)o;
         if (r27) { if (r27.bgCloneEpoch == epoch) return r27.bgCloneRef; n = Make(o); r27.bgCloneEpoch = epoch; r27.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r28 = (CBetaGwentDuelSpecials)o;
+        r28 = (CBetaGwentDuelSkellige)o;
         if (r28) { if (r28.bgCloneEpoch == epoch) return r28.bgCloneRef; n = Make(o); r28.bgCloneEpoch = epoch; r28.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r29 = (CBetaGwentDuelVisualFrame)o;
+        r29 = (CBetaGwentDuelSpecials)o;
         if (r29) { if (r29.bgCloneEpoch == epoch) return r29.bgCloneRef; n = Make(o); r29.bgCloneEpoch = epoch; r29.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r30 = (CBetaGwentDuelWeather)o;
+        r30 = (CBetaGwentDuelVisualFrame)o;
         if (r30) { if (r30.bgCloneEpoch == epoch) return r30.bgCloneRef; n = Make(o); r30.bgCloneEpoch = epoch; r30.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r31 = (CBetaGwentWeatherAI)o;
+        r31 = (CBetaGwentDuelWeather)o;
         if (r31) { if (r31.bgCloneEpoch == epoch) return r31.bgCloneRef; n = Make(o); r31.bgCloneEpoch = epoch; r31.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r32 = (CBetaGwentDevelopmentRequestFlow)o;
+        r32 = (CBetaGwentWeatherAI)o;
         if (r32) { if (r32.bgCloneEpoch == epoch) return r32.bgCloneRef; n = Make(o); r32.bgCloneEpoch = epoch; r32.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
+        r33 = (CBetaGwentDevelopmentRequestFlow)o;
+        if (r33) { if (r33.bgCloneEpoch == epoch) return r33.bgCloneRef; n = Make(o); r33.bgCloneEpoch = epoch; r33.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
         return NULL;
     }
     private function Make(o : IScriptable) : IScriptable
@@ -157,6 +308,7 @@ class CBetaGwentCloner extends IScriptable
         if ((CBetaGwentMatchState)o) return new CBetaGwentMatchState in this;
         if ((CBetaGwentNilfDependencies)o) return new CBetaGwentNilfDependencies in this;
         if ((CBetaGwentNilfReaction)o) return new CBetaGwentNilfReaction in this;
+        if ((CBetaGwentPublicResponseAI)o) return new CBetaGwentPublicResponseAI in this;
         if ((CBetaGwentQueuedAction)o) return new CBetaGwentQueuedAction in this;
         if ((CBetaGwentRandomGenerator)o) return new CBetaGwentRandomGenerator in this;
         if ((CBetaGwentRegistryCardReference)o) return new CBetaGwentRegistryCardReference in this;
@@ -205,6 +357,7 @@ class CBetaGwentCloner extends IScriptable
         if ((CBetaGwentMatchState)src) { CopyMatchState((CBetaGwentMatchState)src, (CBetaGwentMatchState)dst); return; }
         if ((CBetaGwentNilfDependencies)src) { CopyNilfDependencies((CBetaGwentNilfDependencies)src, (CBetaGwentNilfDependencies)dst); return; }
         if ((CBetaGwentNilfReaction)src) { CopyNilfReaction((CBetaGwentNilfReaction)src, (CBetaGwentNilfReaction)dst); return; }
+        if ((CBetaGwentPublicResponseAI)src) { CopyPublicResponseAI((CBetaGwentPublicResponseAI)src, (CBetaGwentPublicResponseAI)dst); return; }
         if ((CBetaGwentQueuedAction)src) { CopyQueuedAction((CBetaGwentQueuedAction)src, (CBetaGwentQueuedAction)dst); return; }
         if ((CBetaGwentRandomGenerator)src) { CopyRandomGenerator((CBetaGwentRandomGenerator)src, (CBetaGwentRandomGenerator)dst); return; }
         if ((CBetaGwentRegistryCardReference)src) { CopyRegistryCardReference((CBetaGwentRegistryCardReference)src, (CBetaGwentRegistryCardReference)dst); return; }
@@ -259,7 +412,7 @@ class CBetaGwentCloner extends IScriptable
         dst.stateChanging = src.stateChanging;
         dst.runtime = (CBetaGwentDuelEffectRuntime)Obj(src.runtime);
         dst.game = (CBetaGwentDuelSession)Obj(src.game);
-        dst.destination = src.destination;
+        dst.destination = StructSBetaGwentCardSnapshot(src.destination);
         dst.card = (CBetaGwentDuelCard)Obj(src.card);
     }
     private function CopyDuelRelocateAction(src : CBetaGwentDuelRelocateAction, dst : CBetaGwentDuelRelocateAction)
@@ -275,7 +428,7 @@ class CBetaGwentCloner extends IScriptable
         dst.runtime = (CBetaGwentDuelEffectRuntime)Obj(src.runtime);
         dst.game = (CBetaGwentDuelSession)Obj(src.game);
         dst.card = (CBetaGwentDuelCard)Obj(src.card);
-        dst.side = src.side;
+        dst.side = Seat(src.side);
         dst.row = src.row;
         dst.resetHand = src.resetHand;
     }
@@ -291,7 +444,7 @@ class CBetaGwentCloner extends IScriptable
         dst.stateChanging = src.stateChanging;
         dst.runtime = (CBetaGwentDuelEffectRuntime)Obj(src.runtime);
         dst.game = (CBetaGwentDuelSession)Obj(src.game);
-        dst.fromPosition = src.fromPosition;
+        dst.fromPosition = StructSBetaGwentCardSnapshot(src.fromPosition);
         dst.templateId = src.templateId;
         dst.ids = src.ids;
     }
@@ -343,7 +496,7 @@ class CBetaGwentCloner extends IScriptable
     }
     private function CopyDuelCard(src : CBetaGwentDuelCard, dst : CBetaGwentDuelCard)
     {
-        dst.cardState = src.cardState;
+        dst.cardState = StructSBetaGwentCardSnapshot(src.cardState);
         dst.definition = src.definition;
         dst.power = (CBetaGwentDuelPower)Obj(src.power);
         dst.game = (CBetaGwentDuelSession)Obj(src.game);
@@ -370,7 +523,8 @@ class CBetaGwentCloner extends IScriptable
         dst.context = (CBetaGwentManagerContext)Obj(src.context);
         dst.manager = (CBetaGwentActionManager)Obj(src.manager);
         dst.services = (CBetaGwentDuelActionServices)Obj(src.services);
-        dst.frames.Clear(); for (i = 0; i < src.frames.Size(); i += 1) dst.frames.PushBack((CBetaGwentDuelPassiveFrame)Obj(src.frames[i]));
+        dst.frames = src.frames;
+        for (i = 0; i < dst.frames.Size(); i += 1) dst.frames[i] = (CBetaGwentDuelPassiveFrame)Obj(dst.frames[i]);
         dst.buildingFrame = (CBetaGwentDuelPassiveFrame)Obj(src.buildingFrame);
         dst.dispatchingFrame = (CBetaGwentDuelPassiveFrame)Obj(src.dispatchingFrame);
         dst.passiveCount = src.passiveCount;
@@ -401,7 +555,8 @@ class CBetaGwentCloner extends IScriptable
         dst.initialized = src.initialized;
         dst.nextId = src.nextId;
         dst.recycled = src.recycled;
-        dst.cards.Clear(); for (i = 0; i < src.cards.Size(); i += 1) dst.cards.PushBack((CBetaGwentRegistryCardReference)Obj(src.cards[i]));
+        dst.cards = src.cards;
+        for (i = 0; i < dst.cards.Size(); i += 1) dst.cards[i] = (CBetaGwentRegistryCardReference)Obj(dst.cards[i]);
     }
     private function CopyManagerContext(src : CBetaGwentManagerContext, dst : CBetaGwentManagerContext)
     {
@@ -435,7 +590,8 @@ class CBetaGwentCloner extends IScriptable
     private function CopyActionQueue(src : CBetaGwentActionQueue, dst : CBetaGwentActionQueue)
     {
         var i : int;
-        dst.actions.Clear(); for (i = 0; i < src.actions.Size(); i += 1) dst.actions.PushBack((CBetaGwentQueuedAction)Obj(src.actions[i]));
+        dst.actions = src.actions;
+        for (i = 0; i < dst.actions.Size(); i += 1) dst.actions[i] = (CBetaGwentQueuedAction)Obj(dst.actions[i]);
         dst.sink = (CBetaGwentActionSink)Obj(src.sink);
         dst.initialized = src.initialized;
         dst.authority = src.authority;
@@ -449,20 +605,25 @@ class CBetaGwentCloner extends IScriptable
         dst.profile = src.profile;
         dst.family = src.family;
         dst.pairs = src.pairs;
-        dst.hand.Clear(); for (i = 0; i < src.hand.Size(); i += 1) dst.hand.PushBack((CBetaGwentDuelCard)Obj(src.hand[i]));
-        dst.board.Clear(); for (i = 0; i < src.board.Size(); i += 1) dst.board.PushBack((CBetaGwentDuelCard)Obj(src.board[i]));
-        dst.situation = src.situation;
+        dst.hand = src.hand;
+        for (i = 0; i < dst.hand.Size(); i += 1) dst.hand[i] = (CBetaGwentDuelCard)Obj(dst.hand[i]);
+        dst.board = src.board;
+        for (i = 0; i < dst.board.Size(); i += 1) dst.board[i] = (CBetaGwentDuelCard)Obj(dst.board[i]);
+        dst.situation = StructSBetaGwentMatchSnapshot(src.situation);
     }
     private function CopyCardRequest(src : CBetaGwentCardRequest, dst : CBetaGwentCardRequest)
     {
-        dst.requestState = src.requestState;
+        var i : int;
+        dst.requestState = StructSBetaGwentRequestSnapshot(src.requestState);
         dst.choices = src.choices;
+        for (i = 0; i < dst.choices.Size(); i += 1) dst.choices[i] = StructSBetaGwentChoiceEntry(dst.choices[i]);
         dst.validTargets = src.validTargets;
         dst.selected = src.selected;
         dst.targetsInShape = src.targetsInShape;
     }
     private function CopyDevelopmentRequestFlow(src : CBetaGwentDevelopmentRequestFlow, dst : CBetaGwentDevelopmentRequestFlow)
     {
+        var i : int;
         dst.pending = (CBetaGwentCardRequest)Obj(src.pending);
         dst.continuation = (CBetaGwentAbilityContinuation)Obj(src.continuation);
         dst.store = (CBetaGwentRequestStore)Obj(src.store);
@@ -470,6 +631,7 @@ class CBetaGwentCloner extends IScriptable
         dst.completed = src.completed;
         dst.aborted = src.aborted;
         dst.sourceCards = src.sourceCards;
+        for (i = 0; i < dst.sourceCards.Size(); i += 1) dst.sourceCards[i] = StructSBetaGwentDevelopmentCard(dst.sourceCards[i]);
         dst.lastResult = src.lastResult;
         dst.message = src.message;
         dst.isolatedCheck = src.isolatedCheck;
@@ -478,8 +640,8 @@ class CBetaGwentCloner extends IScriptable
     {
         dst.kind = src.kind;
         dst.batchSerial = src.batchSerial;
-        dst.source = src.source;
-        dst.cause = src.cause;
+        dst.source = StructSBetaGwentCardSnapshot(src.source);
+        dst.cause = StructSBetaGwentCardSnapshot(src.cause);
         dst.rowToken = src.rowToken;
         dst.rowTargets = src.rowTargets;
         dst.banishedConsume = src.banishedConsume;
@@ -488,7 +650,8 @@ class CBetaGwentCloner extends IScriptable
     {
         var i : int;
         dst.game = (CBetaGwentDuelSession)Obj(src.game);
-        dst.pending.Clear(); for (i = 0; i < src.pending.Size(); i += 1) dst.pending.PushBack((CBetaGwentDuelEvent)Obj(src.pending[i]));
+        dst.pending = src.pending;
+        for (i = 0; i < dst.pending.Size(); i += 1) dst.pending[i] = (CBetaGwentDuelEvent)Obj(dst.pending[i]);
         dst.batchSerial = src.batchSerial;
     }
     private function CopyDuelMonsters(src : CBetaGwentDuelMonsters, dst : CBetaGwentDuelMonsters)
@@ -516,14 +679,14 @@ class CBetaGwentCloner extends IScriptable
     private function CopyDuelPassiveFrame(src : CBetaGwentDuelPassiveFrame, dst : CBetaGwentDuelPassiveFrame)
     {
         dst.actions = (CBetaGwentActionQueue)Obj(src.actions);
-        dst.source = src.source;
+        dst.source = StructSBetaGwentCardSnapshot(src.source);
         dst.batchSerial = src.batchSerial;
     }
     private function CopyDuelScoia(src : CBetaGwentDuelScoia, dst : CBetaGwentDuelScoia)
     {
         dst.game = (CBetaGwentDuelSession)Obj(src.game);
-        dst.historyOne = src.historyOne;
-        dst.historyTwo = src.historyTwo;
+        if (flipSeats) dst.historyOne = src.historyTwo; else dst.historyOne = src.historyOne;
+        if (flipSeats) dst.historyTwo = src.historyOne; else dst.historyTwo = src.historyTwo;
     }
     private function CopyDuelSession(src : CBetaGwentDuelSession, dst : CBetaGwentDuelSession)
     {
@@ -531,11 +694,14 @@ class CBetaGwentCloner extends IScriptable
         dst.events = (CBetaGwentDuelEvents)Obj(src.events);
         dst.drainingDeaths = src.drainingDeaths;
         dst.effects = (CBetaGwentDuelEffectRuntime)Obj(src.effects);
-        dst.playStack.Clear(); for (i = 0; i < src.playStack.Size(); i += 1) dst.playStack.PushBack((CBetaGwentDuelCard)Obj(src.playStack[i]));
+        dst.playStack = src.playStack;
+        for (i = 0; i < dst.playStack.Size(); i += 1) dst.playStack[i] = (CBetaGwentDuelCard)Obj(dst.playStack[i]);
         dst.match = (CBetaGwentMatchState)Obj(src.match);
         dst.registry = (CBetaGwentDuelRegistry)Obj(src.registry);
-        dst.live.Clear(); for (i = 0; i < src.live.Size(); i += 1) dst.live.PushBack((CBetaGwentDuelCard)Obj(src.live[i]));
-        dst.dying.Clear(); for (i = 0; i < src.dying.Size(); i += 1) dst.dying.PushBack((CBetaGwentDuelCard)Obj(src.dying[i]));
+        dst.live = src.live;
+        for (i = 0; i < dst.live.Size(); i += 1) dst.live[i] = (CBetaGwentDuelCard)Obj(dst.live[i]);
+        dst.dying = src.dying;
+        for (i = 0; i < dst.dying.Size(); i += 1) dst.dying[i] = (CBetaGwentDuelCard)Obj(dst.dying[i]);
         dst.pendingConsumeVisuals = src.pendingConsumeVisuals;
         dst.message = src.message;
         dst.waiting = src.waiting;
@@ -560,7 +726,7 @@ class CBetaGwentCloner extends IScriptable
         dst.mulligan = src.mulligan;
         dst.mulliganBudget = src.mulliganBudget;
         dst.mulliganUsed = src.mulliganUsed;
-        dst.roundStarter = src.roundStarter;
+        dst.roundStarter = Seat(src.roundStarter);
         dst.blacklistedTemplates = src.blacklistedTemplates;
         dst.reservedCards = src.reservedCards;
         dst.visualFrames.Clear();
@@ -568,48 +734,53 @@ class CBetaGwentCloner extends IScriptable
         dst.visualOverflow = src.visualOverflow;
         dst.visualSourceId = src.visualSourceId;
         dst.visualTemplateId = src.visualTemplateId;
-        dst.visualSide = src.visualSide;
+        dst.visualSide = Seat(src.visualSide);
         dst.visualRow = src.visualRow;
         dst.visualAttack = src.visualAttack;
-        dst.presetOne = src.presetOne;
-        dst.presetTwo = src.presetTwo;
-        dst.leaderTemplateOne = src.leaderTemplateOne;
-        dst.leaderTemplateTwo = src.leaderTemplateTwo;
-        dst.nilfJobs.Clear(); for (i = 0; i < src.nilfJobs.Size(); i += 1) dst.nilfJobs.PushBack((CBetaGwentNilfReaction)Obj(src.nilfJobs[i]));
+        dst.visualAttackTargets = src.visualAttackTargets;
+        if (flipSeats) { dst.presetOne = src.presetTwo; } else { dst.presetOne = src.presetOne; }
+        if (flipSeats) { dst.presetTwo = src.presetOne; } else { dst.presetTwo = src.presetTwo; }
+        if (flipSeats) { dst.leaderTemplateOne = src.leaderTemplateTwo; } else { dst.leaderTemplateOne = src.leaderTemplateOne; }
+        if (flipSeats) { dst.leaderTemplateTwo = src.leaderTemplateOne; } else { dst.leaderTemplateTwo = src.leaderTemplateTwo; }
+        dst.nilfJobs = src.nilfJobs;
+        for (i = 0; i < dst.nilfJobs.Size(); i += 1) dst.nilfJobs[i] = (CBetaGwentNilfReaction)Obj(dst.nilfJobs[i]);
         dst.nilfJob = (CBetaGwentNilfReaction)Obj(src.nilfJob);
         dst.nilfEndingTurn = src.nilfEndingTurn;
         dst.mulliganReactions = src.mulliganReactions;
-        dst.nilfInitialOne = src.nilfInitialOne;
-        dst.nilfInitialTwo = src.nilfInitialTwo;
-        dst.nilfSpellOne = src.nilfSpellOne;
-        dst.nilfSpellTwo = src.nilfSpellTwo;
+        if (flipSeats) dst.nilfInitialOne = src.nilfInitialTwo; else dst.nilfInitialOne = src.nilfInitialOne;
+        if (flipSeats) dst.nilfInitialTwo = src.nilfInitialOne; else dst.nilfInitialTwo = src.nilfInitialTwo;
+        if (flipSeats) { dst.nilfSpellOne = src.nilfSpellTwo; } else { dst.nilfSpellOne = src.nilfSpellOne; }
+        if (flipSeats) { dst.nilfSpellTwo = src.nilfSpellOne; } else { dst.nilfSpellTwo = src.nilfSpellTwo; }
         dst.nilfLastMovedUnit = src.nilfLastMovedUnit;
         dst.weatherAI = (CBetaGwentWeatherAI)Obj(src.weatherAI);
         dst.weatherProfile = src.weatherProfile;
         dst.archetypeAI = (CBetaGwentArchetypeAI)Obj(src.archetypeAI);
         dst.aiChaseRound = src.aiChaseRound;
         dst.aiChaseInitialHand = src.aiChaseInitialHand;
+        dst.aiChaseSpent = src.aiChaseSpent;
         dst.aiObservedRound = src.aiObservedRound;
         dst.aiObservedEnemyScore = src.aiObservedEnemyScore;
         dst.aiPublicTempo = src.aiPublicTempo;
-        dst.aiRoundHandOne = src.aiRoundHandOne;
-        dst.aiRoundHandTwo = src.aiRoundHandTwo;
+        if (flipSeats) { dst.aiRoundHandOne = src.aiRoundHandTwo; } else { dst.aiRoundHandOne = src.aiRoundHandOne; }
+        if (flipSeats) { dst.aiRoundHandTwo = src.aiRoundHandOne; } else { dst.aiRoundHandTwo = src.aiRoundHandTwo; }
         dst.aiPlacing = src.aiPlacing;
         dst.aiSimulating = src.aiSimulating;
         dst.aiCloneEpoch = src.aiCloneEpoch;
         dst.aiSimCloner = src.aiSimCloner;
         dst.aiSimDamp = src.aiSimDamp;
+        dst.aiDecisionSerial = src.aiDecisionSerial;
         dst.effectSourceDepth = src.effectSourceDepth;
         dst.savedSourceId = src.savedSourceId;
         dst.savedSourceTemplate = src.savedSourceTemplate;
-        dst.savedSourceSide = src.savedSourceSide;
+        dst.savedSourceSide = Seat(src.savedSourceSide);
         dst.savedSourceRow = src.savedSourceRow;
+        dst.aiLastStrategicValue = src.aiLastStrategicValue;
     }
     private function CopyDuelSkellige(src : CBetaGwentDuelSkellige, dst : CBetaGwentDuelSkellige)
     {
         dst.game = (CBetaGwentDuelSession)Obj(src.game);
-        dst.beastsOne = src.beastsOne;
-        dst.beastsTwo = src.beastsTwo;
+        if (flipSeats) { dst.beastsOne = src.beastsTwo; } else { dst.beastsOne = src.beastsOne; }
+        if (flipSeats) { dst.beastsTwo = src.beastsOne; } else { dst.beastsTwo = src.beastsTwo; }
     }
     private function CopyDuelSpecials(src : CBetaGwentDuelSpecials, dst : CBetaGwentDuelSpecials)
     {
@@ -618,31 +789,33 @@ class CBetaGwentCloner extends IScriptable
     }
     private function CopyDuelVisualFrame(src : CBetaGwentDuelVisualFrame, dst : CBetaGwentDuelVisualFrame)
     {
-        dst.matchState = src.matchState;
+        var i : int;
+        dst.matchState = StructSBetaGwentMatchSnapshot(src.matchState);
         dst.cards = src.cards;
+        for (i = 0; i < dst.cards.Size(); i += 1) dst.cards[i] = StructSBetaGwentDevelopmentCard(dst.cards[i]);
         dst.weatherTokens = src.weatherTokens;
         dst.weatherDamage = src.weatherDamage;
-        dst.scoreOne = src.scoreOne;
-        dst.scoreTwo = src.scoreTwo;
+        if (flipSeats) { dst.scoreOne = src.scoreTwo; } else { dst.scoreOne = src.scoreOne; }
+        if (flipSeats) { dst.scoreTwo = src.scoreOne; } else { dst.scoreTwo = src.scoreTwo; }
         dst.flags = src.flags;
         dst.enemyHand = src.enemyHand;
-        dst.graveOne = src.graveOne;
-        dst.graveTwo = src.graveTwo;
-        dst.deckOne = src.deckOne;
-        dst.deckTwo = src.deckTwo;
-        dst.leaderOne = src.leaderOne;
-        dst.leaderTwo = src.leaderTwo;
+        if (flipSeats) { dst.graveOne = src.graveTwo; } else { dst.graveOne = src.graveOne; }
+        if (flipSeats) { dst.graveTwo = src.graveOne; } else { dst.graveTwo = src.graveTwo; }
+        if (flipSeats) { dst.deckOne = src.deckTwo; } else { dst.deckOne = src.deckOne; }
+        if (flipSeats) { dst.deckTwo = src.deckOne; } else { dst.deckTwo = src.deckTwo; }
+        if (flipSeats) { dst.leaderOne = src.leaderTwo; } else { dst.leaderOne = src.leaderOne; }
+        if (flipSeats) { dst.leaderTwo = src.leaderOne; } else { dst.leaderTwo = src.leaderTwo; }
         dst.status = src.status;
         dst.kind = src.kind;
         dst.sourceId = src.sourceId;
         dst.targetId = src.targetId;
-        dst.side = src.side;
+        dst.side = Seat(src.side);
         dst.row = src.row;
         dst.templateId = src.templateId;
         dst.duration = src.duration;
         dst.targetTemplateId = src.targetTemplateId;
         dst.targetPower = src.targetPower;
-        dst.targetSide = src.targetSide;
+        dst.targetSide = Seat(src.targetSide);
         dst.targetZone = src.targetZone;
         dst.audioKind = src.audioKind;
         dst.attackId = src.attackId;
@@ -650,22 +823,30 @@ class CBetaGwentCloner extends IScriptable
     }
     private function CopyDuelWeather(src : CBetaGwentDuelWeather, dst : CBetaGwentDuelWeather)
     {
+        var i : int;
+        var swap : int;
         dst.game = (CBetaGwentDuelSession)Obj(src.game);
         dst.hazards = src.hazards;
         dst.dreamRows = src.dreamRows;
+        if (flipSeats) {
+            for (i = 0; i < 3 && i + 3 < dst.hazards.Size(); i += 1) { swap = dst.hazards[i]; dst.hazards[i] = dst.hazards[i+3]; dst.hazards[i+3] = swap; }
+            for (i = 0; i < dst.dreamRows.Size(); i += 1) dst.dreamRows[i] = (dst.dreamRows[i]+3)%6;
+        }
     }
     private function CopyMatchState(src : CBetaGwentMatchState, dst : CBetaGwentMatchState)
     {
+        var i : int;
         dst.initialized = src.initialized;
-        dst.playerOne = src.playerOne;
-        dst.playerTwo = src.playerTwo;
+        if (flipSeats) { dst.playerOne = StructSBetaGwentPlayerState(src.playerTwo); } else { dst.playerOne = StructSBetaGwentPlayerState(src.playerOne); }
+        if (flipSeats) { dst.playerTwo = StructSBetaGwentPlayerState(src.playerOne); } else { dst.playerTwo = StructSBetaGwentPlayerState(src.playerTwo); }
         dst.roundNumber = src.roundNumber;
         dst.turnSequence = src.turnSequence;
-        dst.startingPlayerId = src.startingPlayerId;
-        dst.currentPlayerId = src.currentPlayerId;
+        dst.startingPlayerId = Seat(src.startingPlayerId);
+        dst.currentPlayerId = Seat(src.currentPlayerId);
         dst.roundActive = src.roundActive;
         dst.turnActive = src.turnActive;
         dst.results = src.results;
+        for (i = 0; i < dst.results.Size(); i += 1) dst.results[i] = StructSBetaGwentRoundResult(dst.results[i]);
     }
     private function CopyNilfDependencies(src : CBetaGwentNilfDependencies, dst : CBetaGwentNilfDependencies)
     {
@@ -676,7 +857,16 @@ class CBetaGwentCloner extends IScriptable
     {
         dst.source = (CBetaGwentDuelCard)Obj(src.source);
         dst.kind = src.kind;
-        dst.side = src.side;
+        dst.side = Seat(src.side);
+    }
+    private function CopyPublicResponseAI(src : CBetaGwentPublicResponseAI, dst : CBetaGwentPublicResponseAI)
+    {
+        dst.templates = src.templates;
+        dst.weights = src.weights;
+        dst.evaluated = src.evaluated;
+        dst.rejected = src.rejected;
+        dst.eligibleProfiles = src.eligibleProfiles;
+        dst.penalty = src.penalty;
     }
     private function CopyQueuedAction(src : CBetaGwentQueuedAction, dst : CBetaGwentQueuedAction)
     {
@@ -702,14 +892,14 @@ class CBetaGwentCloner extends IScriptable
         dst.initialized = src.initialized;
         dst.nextId = src.nextId;
         dst.recycled = src.recycled;
-        dst.cards.Clear(); for (i = 0; i < src.cards.Size(); i += 1) dst.cards.PushBack((CBetaGwentRegistryCardReference)Obj(src.cards[i]));
+        dst.cards = src.cards;
+        for (i = 0; i < dst.cards.Size(); i += 1) dst.cards[i] = (CBetaGwentRegistryCardReference)Obj(dst.cards[i]);
     }
     private function CopyRequestStore(src : CBetaGwentRequestStore, dst : CBetaGwentRequestStore)
     {
         var i : int;
-        var slotSBetaGwentPendingRequestSlot : SBetaGwentPendingRequestSlot;
         dst.slots = src.slots;
-        for (i = 0; i < dst.slots.Size(); i += 1) { slotSBetaGwentPendingRequestSlot = dst.slots[i]; slotSBetaGwentPendingRequestSlot.request = (CBetaGwentCardRequest)Obj(slotSBetaGwentPendingRequestSlot.request); slotSBetaGwentPendingRequestSlot.continuation = (CBetaGwentAbilityContinuation)Obj(slotSBetaGwentPendingRequestSlot.continuation); dst.slots[i] = slotSBetaGwentPendingRequestSlot; }
+        for (i = 0; i < dst.slots.Size(); i += 1) dst.slots[i] = StructSBetaGwentPendingRequestSlot(dst.slots[i]);
     }
     private function CopyWeatherAI(src : CBetaGwentWeatherAI, dst : CBetaGwentWeatherAI)
     {

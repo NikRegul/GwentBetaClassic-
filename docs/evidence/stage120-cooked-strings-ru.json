@@ -1,0 +1,188 @@
+{
+  "stage": 120,
+  "languages": {
+    "ar": {
+      "bytes": 26189,
+      "sha256": "6961906f76ca73bd9bd3e4459516dda19a1ef265d37644cd375865d989ad5bd3",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "br": {
+      "bytes": 26189,
+      "sha256": "6961906f76ca73bd9bd3e4459516dda19a1ef265d37644cd375865d989ad5bd3",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "cn": {
+      "bytes": 26189,
+      "sha256": "6961906f76ca73bd9bd3e4459516dda19a1ef265d37644cd375865d989ad5bd3",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "cz": {
+      "bytes": 26189,
+      "sha256": "c839705052b0e7229c1b2de59ef18ddc4734faef3aff5348ac0375ad1e38d04d",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "de": {
+      "bytes": 26189,
+      "sha256": "d0cee3f1aee6d5b16244bed2cf50c89a4873c22e683bb9a92cba93990567f738",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "en": {
+      "bytes": 26189,
+      "sha256": "0260c986312e20ce08278aaa8d45049dd76b687d1b559c9657b442495b4a2c0e",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "es": {
+      "bytes": 26189,
+      "sha256": "0ddc2e8436018945dc90fa4ea87df1b1ecccf013e3be9d150a33134c34261eeb",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "esmx": {
+      "bytes": 26189,
+      "sha256": "6961906f76ca73bd9bd3e4459516dda19a1ef265d37644cd375865d989ad5bd3",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "fr": {
+      "bytes": 26189,
+      "sha256": "18bf6a4ed3736217cced2dbb43e24740e8bceb7a697bccd6380380107c7c40f0",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "hu": {
+      "bytes": 26189,
+      "sha256": "f380db7873abe78c9243b26916b31beeebf4f317c81a463fa230dcb16d09d713",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "it": {
+      "bytes": 26189,
+      "sha256": "d213359748d6b6ab0b79d837908aa53752f1664ee035ac410a46c2007e772e57",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "jp": {
+      "bytes": 26189,
+      "sha256": "1268f235c30089559f7bd596bedcdd6b074163bb6e900b6badcb7df822f04d7a",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "kr": {
+      "bytes": 26189,
+      "sha256": "6961906f76ca73bd9bd3e4459516dda19a1ef265d37644cd375865d989ad5bd3",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "pl": {
+      "bytes": 26189,
+      "sha256": "4f5ec6875893cffee524c5bbc14f7c48278f017e18e56f4fe77bd114cc7caa6b",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "ru": {
+      "bytes": 39567,
+      "sha256": "6ce31d0587b440bf7ecc3f3c5b672c313ee27232a0a463f6577596e7482aa7f2",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "tr": {
+      "bytes": 26189,
+      "sha256": "6961906f76ca73bd9bd3e4459516dda19a1ef265d37644cd375865d989ad5bd3",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "ua": {
+      "bytes": 26189,
+      "sha256": "6961906f76ca73bd9bd3e4459516dda19a1ef265d37644cd375865d989ad5bd3",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    },
+    "zh": {
+      "bytes": 26189,
+      "sha256": "c80ef16433dbe1503f85c226908da27dd7ce13fe830842c235ae271030fee504",
+      "version": 164,
+      "strings": 396,
+      "keyEntries": 396,
+      "encodedIdLayoutMatchesSource": true,
+      "keyTableCoversAllIds": true,
+      "nonemptyLengths": true
+    }
+  },
+  "packageLanguage": "ru",
+  "runtimeVerified": false,
+  "note": "Native ID/table layout verified; does not verify translation quality or decode language crypto."
+}

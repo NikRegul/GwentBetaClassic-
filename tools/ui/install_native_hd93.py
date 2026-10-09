@@ -50,7 +50,7 @@ def card_dds(export_name, exported_dds):
  import re
  import numpy as np
  match=re.match(rb'cards-(\d+)_png',export_name)
- if not match and not export_name.startswith((b'board_classic_png',b'board_wide_png',b'cardslots104_png',b'covers107_png')):return None
+ if not match and not export_name.startswith((b'board_classic_png',b'board_wide_png',b'cardslots104_png',b'covers107_png',b'keg109')):return None
  digest=sha(exported_dds+b'bc3-to-bc1-v1');cache=ROOT/'BetaGwent/build/card-bc1';cache.mkdir(exist_ok=True)
  target=cache/(digest+'.dds')
  if not target.exists():
@@ -72,14 +72,18 @@ def card_dds(export_name, exported_dds):
 def main():
  parser=argparse.ArgumentParser(description=__doc__)
  parser.add_argument('--apply',action='store_true')
- parser.add_argument('--entry',choices=['BetaGwentBoard','DeckBuilder','GwintGame'],default='BetaGwentBoard')
- a=parser.parse_args();stem={'BetaGwentBoard':'betagwent_board','DeckBuilder':'betagwent_decks','GwintGame':'betagwent_npc00'}[a.entry]
+ parser.add_argument('--entry',choices=['BetaGwentBoard','DeckBuilder','GwintGame','BetaGwentKeg'],default='BetaGwentBoard')
+ a=parser.parse_args();stem={'BetaGwentBoard':'betagwent_board','DeckBuilder':'betagwent_decks','GwintGame':'betagwent_npc00','BetaGwentKeg':'betagwent_kegop'}[a.entry]
  target=TARGET.with_name(stem+'.redswf');source=SOURCE.with_name(stem+'.swf')
  r,records=validate_resource(target);validate_image_linkages(r)
  _,old_gfx,old_swf=unpack_root(r)
  old_prefix,old_tags,_=movie_parts(old_swf);native_prefix,native_tags,native_tail=movie_parts(old_gfx)
  swf=source.read_bytes();prefix,tags,tail=movie_parts(swf)
- require(prefix==old_prefix==native_prefix and not tail,'Movie frame header changed')
+ # Preserve stage dimensions and frame count. Only 30 -> 60 Hz is allowed;
+ # the engine movie and authoring copy receive the same new frame header.
+ require(not tail and len(prefix)==len(old_prefix)==len(native_prefix),'Movie frame header size changed')
+ require(prefix[:-4]==old_prefix[:-4]==native_prefix[:-4] and prefix[-2:]==old_prefix[-2:]==native_prefix[-2:],'Movie stage extent/frame count changed')
+ require(struct.unpack_from('<H',prefix,len(prefix)-4)[0] in (30*256,60*256),'Unsupported movie frame rate')
  names=symbols(tags);old_import=next(raw for c,p,raw in native_tags if c==1000)
  dds_dir=ROOT/('BetaGwent/ui/build/native-atlas'+('' if a.entry=='BetaGwentBoard' else '-'+a.entry))
  exported=(dds_dir/(stem+'.gfx')).read_bytes()
@@ -103,7 +107,7 @@ def main():
  for c,p,_ in tags:
   if c!=35:continue
   cid=struct.unpack_from('<H',p)[0];export_name=names.get(cid,b'')
-  if export_name.startswith((b'cards-',b'board_classic_png',b'board_wide_png',b'cardslots104_png',b'covers107_png')):
+  if export_name.startswith((b'cards-',b'board_classic_png',b'board_wide_png',b'cardslots104_png',b'covers107_png',b'keg109')):
    filename=exported_images[subimages.get(cid,cid)]
    card_pages[sha((dds_dir/filename).read_bytes())]=export_name
  unique={};textures=[];infos=[];replacements={};bindings=[]

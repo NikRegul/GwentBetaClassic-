@@ -37,6 +37,9 @@ cards can be dragged directly onto eligible units or rows. Right-click,
 I, or Shift-click opens full card details.
 
 Keyboard: arrows navigate targets/rows, Enter confirms, F finishes an optional
-choice, Esc backs out, P passes, L uses the leader, Space skips playback.
+choice, Esc backs out, hold P to pass, L uses the leader, Space skips playback.
 
 0.2.1: ←→ hand, ↑ nearest field unit, ↓ from your bottom row returns to the hand. Placement: ↑↓ or LB/RB row. Start opens actions; target navigation does not drift into the side panel.
+
+Search and rename: click the field, choose RU/EN, type and confirm with Enter / Apply. An empty query clears the search.
+Mouse pass: hold the coin; a quick click cancels the hold.

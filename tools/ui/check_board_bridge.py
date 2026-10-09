@@ -32,11 +32,11 @@ def extract_methods(dump):
 def main():
     global SWF
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--entry',choices=['BetaGwentBoard','DeckBuilder','GwintGame'],default='BetaGwentBoard')
+    parser.add_argument('--entry',choices=['BetaGwentBoard','DeckBuilder','GwintGame','BetaGwentKeg'],default='BetaGwentBoard')
     args=parser.parse_args()
-    stem,root={'BetaGwentBoard':('betagwent_board','BetaGwentBoard'),'DeckBuilder':('betagwent_decks','BetaGwentDeckMenu'),'GwintGame':('betagwent_npc00','BetaGwentNpcMenu')}[args.entry]
+    stem,root={'BetaGwentBoard':('betagwent_board','BetaGwentBoard'),'DeckBuilder':('betagwent_decks','BetaGwentDeckMenu'),'BetaGwentKeg':('betagwent_kegop','BetaGwentKegMenu'),'GwintGame':('betagwent_npc00','BetaGwentNpcMenu')}[args.entry]
     SWF=SWF.with_name(stem+'.swf')
-    result = subprocess.run([shutil.which('java'), '-jar', str(DUMPER), '-abc', str(SWF)],
+    result = subprocess.run([str(Path(r'C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin\java.exe')) if Path(r'C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin\java.exe').exists() else shutil.which('java'), '-jar', str(DUMPER), '-abc', str(SWF)],
                             stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                             creationflags=subprocess.CREATE_NO_WINDOW, timeout=30)
     if result.returncode:

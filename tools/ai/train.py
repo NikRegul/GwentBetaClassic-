@@ -1,4 +1,6 @@
-"""Self-play evolutionary tuning of the actual WS battle AI, on all 40 decks."""
+"""Legacy C# self-play tuning of the actual WS battle AI, on all 46 decks.
+For researched stage115 policies use Train-AI-JS.ps1, the verified training host.
+"""
 from pathlib import Path
 import argparse, copy, hashlib, json, math, random, subprocess, sys, time
 ROOT=Path(__file__).resolve().parents[2]
@@ -19,16 +21,16 @@ def pool_ids():
  mapping={int(a):int(b) for a,b in re.findall(r'case\s+(\d+)\s*:\s*return\s+(\d+)\s*;',body)}
  active={p['id'] for p in rules['profiles'] if p['active']}
  ids=sorted(p for p,profile in mapping.items() if profile in active)
- if len(ids)!=40 or len(active)!=40:raise ValueError('Pool must contain every one of the 40 active profiles')
+ if len(ids)!=46 or len(active)!=46:raise ValueError('Pool must contain every one of the 46 active profiles')
  indexed={p['id']:p for p in presets}
  if any(p not in indexed for p in ids):raise ValueError('Missing canonical deck')
  return ids
 def schedule(pool,seed,cycles=1):
  rng=random.Random(seed);pairs=[]
  for cycle in range(cycles):
-  offset=1+(seed+cycle)%39
+  offset=1+(seed+cycle)%(len(pool)-1)
   for i,p in enumerate(pool):
-   q=pool[(i+offset)%40];deal=rng.randrange(1,2147483647)
+   q=pool[(i+offset)%len(pool)];deal=rng.randrange(1,2147483647)
    pairs.extend([[p,q,deal,0],[q,p,deal,1]])
  return pairs
 def batch(left,right,matches,directory,label):
@@ -141,7 +143,7 @@ def main():
   pairs=schedule(pool,args.seed+gen*41,args.cycles);label='g'+str(gen).zfill(5);focus=pool[gen%len(pool)]
   sweep_count=len(pairs)
   if gen%2:pairs+=focal_schedule(pool,focus,args.seed+gen*71,args.cycles)
-  print(label+': self play, all 40 decks, '+str(len(pairs))+' games per policy',flush=True)
+  print(label+': self play, all '+str(len(pool))+' decks, '+str(len(pairs))+' games per policy',flush=True)
   cand=batch(candidate,league,pairs,directory,label+'-candidate');control=batch(state['champion'],league,pairs,directory,label+'-control');fit=comparison(cand,control)
   sweep=comparison(cand[:sweep_count],control[:sweep_count]);focus_fit=comparison(cand[sweep_count:],control[sweep_count:]) if gen%2 else None
   if focus_fit:fit['eligible']=focus_fit['eligible'] and sweep['delta']>=0 and stats(cand)['errors']==0 and stats(control)['errors']==0

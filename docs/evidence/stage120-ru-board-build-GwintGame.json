@@ -1,0 +1,456 @@
+{
+  "entry": "GwintGame",
+  "rootClass": "BetaGwentNpcMenu",
+  "runs": [
+    {
+      "command": [
+        "C:\\Program Files\\Microsoft\\jdk-11.0.12.7-hotspot\\bin\\java.exe",
+        "-Xmx3g",
+        "-Duser.language=en",
+        "-Duser.country=US",
+        "-jar",
+        "D:\\w3mod\\tools\\vendor\\apache-royale-0.9.12\\royale-asjs\\lib\\mxmlc.jar",
+        "-load-config=D:\\w3mod\\BetaGwent\\ui\\board-config.xml",
+        "-output=D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00.swf",
+        "-source-path=D:\\w3mod\\BetaGwent\\ui\\src-GwintGame",
+        "-source-path+=D:\\GOG Galaxy\\Games\\The Witcher 3 REDkit\\r4data\\gameplay\\gui_new\\actionscript",
+        "-includes+=scaleform.gfx.KeyboardEventEx",
+        "D:\\w3mod\\BetaGwent\\ui\\src-GwintGame\\BetaGwentNpcMenu.as"
+      ],
+      "exitCode": 0,
+      "processExitCode": 0,
+      "completedByOutput": false,
+      "log": "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00-compile.log"
+    },
+    {
+      "command": [
+        "D:\\GOG Galaxy\\Games\\The Witcher 3 REDkit\\bin\\tools\\GFx4\\gfxexport_mult4fix.exe",
+        "-i",
+        "DDS",
+        "-quick",
+        "-d5",
+        "-ptresize",
+        "mult4",
+        "-o",
+        "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame",
+        "-d",
+        "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame",
+        "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00.swf"
+      ],
+      "exitCode": 0,
+      "processExitCode": 0,
+      "completedByOutput": false,
+      "log": "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00-export-dds.log"
+    }
+  ],
+  "assets": [
+    {
+      "source": "D:\\w3mod\\LegacyGwent-diy(1)\\LegacyGwent-diy\\src\\Cynthia.Card.Unity\\src\\Cynthia.Unity.Card\\Assets\\Resources\\Sprites\\Background\\GamBackground.png",
+      "copy": "D:\\w3mod\\BetaGwent\\ui\\assets\\board_classic.png",
+      "sha256": "21711ac7de5fbe32a08815decb9cdd7eb47f0e99a3ef365da9c7c626b6d15713",
+      "unchanged": true
+    },
+    {
+      "source": "D:\\w3mod\\LegacyGwent-diy(1)\\LegacyGwent-diy\\src\\Cynthia.Card.Unity\\src\\Cynthia.Unity.Card\\Assets\\Resources\\Sprites\\Background\\GameBackground2.png",
+      "copy": "D:\\w3mod\\BetaGwent\\ui\\assets\\board_wide.png",
+      "sha256": "b94d17f3bd6a63ede9bea49f7474cee64901df0b7d48ec663d681465a2e68a0c",
+      "unchanged": true
+    }
+  ],
+  "movies": [
+    {
+      "path": "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00.swf",
+      "bytes": 150832614,
+      "sha256": "81003ac8835cf04ed4147b49c21685a8ecc301cb031c3f0324afa75fe8d44938",
+      "signature": "FWS",
+      "version": 14,
+      "symbols": [
+        {
+          "characterId": 43,
+          "className": "BetaFontHalisMedium"
+        },
+        {
+          "characterId": 44,
+          "className": "BetaFontHalisBold"
+        },
+        {
+          "characterId": 45,
+          "className": "BetaFontDin"
+        },
+        {
+          "characterId": 46,
+          "className": "BetaFontNumbers"
+        },
+        {
+          "characterId": 31,
+          "className": "cards-6_png$76d4ff84fc2b43db3291448f760837642029239408"
+        },
+        {
+          "characterId": 42,
+          "className": "weather107_png$3cab72023a8215b17ee3ce68ae706248834594138"
+        },
+        {
+          "characterId": 25,
+          "className": "cards-0_png$eba14a619be348639a4660f875d6591b2016346474"
+        },
+        {
+          "characterId": 36,
+          "className": "crowns103_png$a53fd6901110341868a11265337e31ce615516982"
+        },
+        {
+          "characterId": 27,
+          "className": "cards-2_png$ec961152010adbe9162b60f6cc7749eb2014007916"
+        },
+        {
+          "characterId": 35,
+          "className": "covers107_png$65783845e3f3b24e844fd42ceadee72a-1376138946"
+        },
+        {
+          "characterId": 28,
+          "className": "cards-3_png$75d5641beb58e2d8f6a3cb1356c5e58b2013625069"
+        },
+        {
+          "characterId": 34,
+          "className": "cardslots104_png$b36929c2b852fbf361c90fcdf396d4d0-2074065239"
+        },
+        {
+          "characterId": 39,
+          "className": "interface10-104_png$aba2094573565c9af8dc5f8f4f88fc6b1169526047"
+        },
+        {
+          "characterId": 40,
+          "className": "interface11-108_png$6405aadcedab97fd466fcc640c535a4e441278375"
+        },
+        {
+          "characterId": 33,
+          "className": "cards-8_png$43c36b5851207a11c888b5c53faa69fa2027933042"
+        },
+        {
+          "characterId": 23,
+          "className": "boards_png$9f7a01af208f7160a8184d378c9471c81036787745"
+        },
+        {
+          "characterId": 30,
+          "className": "cards-5_png$b60da670663d31284a4a4b14138846462028047343"
+        },
+        {
+          "characterId": 26,
+          "className": "cards-1_png$f078b48500a174209f21bd9fa6102e952017012203"
+        },
+        {
+          "characterId": 37,
+          "className": "deckscreens104_png$37758e6ea781e08914dc11720d341947-733490256"
+        },
+        {
+          "characterId": 29,
+          "className": "cards-4_png$55fc3d14e09a8689fa953a468e9add622014798702"
+        },
+        {
+          "characterId": 38,
+          "className": "hud120_png$316c1446eb13537f586352d6613e0dc4-1714544105"
+        },
+        {
+          "characterId": 41,
+          "className": "intro104_png$4439b33ae06a7ae8a03da182ff03ca7d140226306"
+        },
+        {
+          "characterId": 32,
+          "className": "cards-7_png$f77bf5c78501273f311296dc3a5e71642026743025"
+        },
+        {
+          "characterId": 22,
+          "className": "battle_widgets101_png$cb9a1b3d05dd4e45926e1a9dce5fd889-906464346"
+        },
+        {
+          "characterId": 24,
+          "className": "cardfaces104_png$f91c17cba59e4b4e26cdc8f8e3e589b7-220765944"
+        },
+        {
+          "characterId": 0,
+          "className": "BetaGwentNpcMenu"
+        }
+      ]
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00.gfx",
+      "bytes": 754235,
+      "sha256": "19dd034eb5e046262c2485e30c74df748733e8205f3c688e55bd7ee4ca245f7b",
+      "signature": "GFX",
+      "version": 14,
+      "symbols": [
+        {
+          "characterId": 43,
+          "className": "BetaFontHalisMedium"
+        },
+        {
+          "characterId": 44,
+          "className": "BetaFontHalisBold"
+        },
+        {
+          "characterId": 45,
+          "className": "BetaFontDin"
+        },
+        {
+          "characterId": 46,
+          "className": "BetaFontNumbers"
+        },
+        {
+          "characterId": 31,
+          "className": "cards-6_png$76d4ff84fc2b43db3291448f760837642029239408"
+        },
+        {
+          "characterId": 42,
+          "className": "weather107_png$3cab72023a8215b17ee3ce68ae706248834594138"
+        },
+        {
+          "characterId": 25,
+          "className": "cards-0_png$eba14a619be348639a4660f875d6591b2016346474"
+        },
+        {
+          "characterId": 36,
+          "className": "crowns103_png$a53fd6901110341868a11265337e31ce615516982"
+        },
+        {
+          "characterId": 27,
+          "className": "cards-2_png$ec961152010adbe9162b60f6cc7749eb2014007916"
+        },
+        {
+          "characterId": 35,
+          "className": "covers107_png$65783845e3f3b24e844fd42ceadee72a-1376138946"
+        },
+        {
+          "characterId": 28,
+          "className": "cards-3_png$75d5641beb58e2d8f6a3cb1356c5e58b2013625069"
+        },
+        {
+          "characterId": 34,
+          "className": "cardslots104_png$b36929c2b852fbf361c90fcdf396d4d0-2074065239"
+        },
+        {
+          "characterId": 39,
+          "className": "interface10-104_png$aba2094573565c9af8dc5f8f4f88fc6b1169526047"
+        },
+        {
+          "characterId": 40,
+          "className": "interface11-108_png$6405aadcedab97fd466fcc640c535a4e441278375"
+        },
+        {
+          "characterId": 33,
+          "className": "cards-8_png$43c36b5851207a11c888b5c53faa69fa2027933042"
+        },
+        {
+          "characterId": 23,
+          "className": "boards_png$9f7a01af208f7160a8184d378c9471c81036787745"
+        },
+        {
+          "characterId": 30,
+          "className": "cards-5_png$b60da670663d31284a4a4b14138846462028047343"
+        },
+        {
+          "characterId": 26,
+          "className": "cards-1_png$f078b48500a174209f21bd9fa6102e952017012203"
+        },
+        {
+          "characterId": 37,
+          "className": "deckscreens104_png$37758e6ea781e08914dc11720d341947-733490256"
+        },
+        {
+          "characterId": 29,
+          "className": "cards-4_png$55fc3d14e09a8689fa953a468e9add622014798702"
+        },
+        {
+          "characterId": 38,
+          "className": "hud120_png$316c1446eb13537f586352d6613e0dc4-1714544105"
+        },
+        {
+          "characterId": 41,
+          "className": "intro104_png$4439b33ae06a7ae8a03da182ff03ca7d140226306"
+        },
+        {
+          "characterId": 32,
+          "className": "cards-7_png$f77bf5c78501273f311296dc3a5e71642026743025"
+        },
+        {
+          "characterId": 22,
+          "className": "battle_widgets101_png$cb9a1b3d05dd4e45926e1a9dce5fd889-906464346"
+        },
+        {
+          "characterId": 24,
+          "className": "cardfaces104_png$f91c17cba59e4b4e26cdc8f8e3e589b7-220765944"
+        },
+        {
+          "characterId": 0,
+          "className": "BetaGwentNpcMenu"
+        }
+      ]
+    }
+  ],
+  "textures": [
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board_i1.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board_i2.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board_i3.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board_i4.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board_i5.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board_i6.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board_i7.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board_i8.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board_i9.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board_ia.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board_ib.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board_ic.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board_id.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board_ie.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board_if.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks_i1.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks_i2.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks_i3.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks_i4.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks_i5.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks_i6.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks_i7.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks_i8.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks_i9.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks_ia.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks_ib.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks_ic.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks_id.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks_ie.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks_if.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00_i1.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00_i2.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00_i3.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00_i4.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00_i5.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00_i6.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00_i7.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00_i8.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00_i9.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00_ia.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00_ib.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00_ic.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00_id.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00_ie.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00_if.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\boards_png$217bbfeb34730c9d73616faf624a39891437693512.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\boards_png$915e06a62acc04e03ed3564d56742c122019131847.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\boards_png$98064d4c039deccb3781c458d111604878658279.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\boards_png$9ce5c4c731496daada4169c44ed94006-1138208943.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\boards_png$fc5fd09f935e91231e4839571fc99330-1516641872.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\board_classic_png$43f1d5d1a4119d7fa210763a97505724278443215.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\board_classic_png$5b1a3384ff6a769aa8776b2b7ac72448-1566909619.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\board_classic_png$9e06f61b271f1f5e49c1bc64e6f729c9362690472.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\board_classic_png$a712270110eae82b174da85d0978d8821771807630.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\board_classic_png$a792d95e1df830409886efb03813dfe6881117643.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\board_classic_png$c165b8a7f5a0464b1a8c692ba453d5d6-75116020.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\board_classic_png$fda9bc5ee3999ed01fdc8f5be4b996bb-2089559497.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\board_wide_png$76da6f4bdf96d0717e52d86a20001c85579262737.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\board_wide_png$79ae26b45a8b60a3ffb64554b1940f7c1170239534.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\board_wide_png$a25e754835312a2792b85d6a7bbd51f1-922670897.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\board_wide_png$a975ca0d1f3dba3226ea7894e9ef2560-1119755920.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\board_wide_png$ab0b7a34239721506392c661880e11fd-1765305934.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\board_wide_png$d042976bc1efa29376de99be28a1d536938518982.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\board_wide_png$efbdcc7b18bc2ddb7fde62d61b049f81718462709.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-0_png$2a8c1068f79bb58df9360524eadf8d81-716817350.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-0_png$4ad72b905d93bd4b33890dfd30e990bf2078799460.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-0_png$58d4bbb6fc2403abb2be1b30c6a9f0ed-1425438076.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-0_png$821afa5aa01f1816530905446efd0ee9-891537885.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-0_png$ba2acd03193bed5a761165a62d4e61c8-406506053.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-1_png$0da5fa242fcd0e03309b979a8ffa974c-716168005.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-1_png$48a1f44806f2a0f88726343eeefd5573-405316036.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-1_png$63b257f610d3ffb1cba57ed4495bf0f1-894542172.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-1_png$dde0bc8e0e196cadbd75932f7bcf63cd-1424248059.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-1_png$f0b5e11ca6eb546aed2371034c91daf02079727333.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-2_png$0bbd13c38e6f064aa80f2895ea7dfe522076182374.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-2_png$11c65dbc223126589eb952a3713fd119-1424630906.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-2_png$24512c621d05894967ef6dbb60230643-719172292.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-2_png$928324181cd47aba9c855a19392dd6c2-893892827.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-2_png$fcaaedf5e5150851ae3cb7045722bc7e-408860995.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-3_png$6cd621f774d7a4fe84108beb8ae4d680-896897114.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-3_png$9a972ff6e40c8367309058772757bb302077372391.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-3_png$aeda90583f33126537b3b8016b8c9e39-1410872313.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-3_png$e014bfac56361188ff400c96571d4dc0-407670978.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-3_png$e4eede7741d003ff8bd480dc61e1229e-717457987.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-4_png$1bc2d22d9da72050ba7a44a33dff18c6-1410206584.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-4_png$228c207107394958f657453018b6ae64-897282009.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-4_png$4d1d8cf024937aa62ceba3b319b696e4-410150977.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-5_png$16a734c79c51eb1236450435ae0f52fc-896091992.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-5_png$8ba443672ec9c53d9de8dfea5bb382e2-1413473015.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-5_png$c197486dcdd87d7ba3146d9d52c98687-408963008.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-6_png$912698c3d1229b5972589f530102c1de-1412299382.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-6_png$ccfc8a628c79db01c9997ab29ee162a5-916414167.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-6_png$f0f03a60afcbbb1fa28fb4460a3d932d-429285183.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-7_png$08a72095b017dd39e2bc241fb4e6345c-915224150.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-7_png$8d008a5e86ba64f2ec4ffea813db2b6c-1414779381.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-7_png$dc4fa269cbeab90f44edb0f2bd3dbb50-428095166.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-8_png$3d136e8adcde8e7585c34bab4b9f171c-1413589364.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-8_png$523e29a545adc308e715c902749cf698-917704149.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\cards-8_png$cac6b36d2584f23ac644f1ec8d8b4e7f-428478013.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\card_atlas_png$0af2e36bbce2f48ffa29f730caa24606668197665.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\card_atlas_png$29e74b0cbfafab866ac0014d9d315edc1511897662.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\card_atlas_png$4469874396e913f0957c3b71a6fc8dfc-1424958526.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\card_atlas_png$738bcb64a6684e8b6349b95d30e35456804249605.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\card_atlas_png$a003c9eee938daf053f2ecb1a23f4060-833457441.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\card_atlas_png$a2e6f8141462e430e395c34d18cf6d40-871500842.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\card_atlas_png$d2af807ea29dfb88d51afe9a491822d1-1282200704.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\interface-10_png$1341b6941a64fd75433e84a8053bf23f-735164434.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\interface-10_png$d48c459d834a7e43b2c74ce46103c65d807526742.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\interface-10_png$fd8a8850bbef331c9310c78890913537-915868115.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\interface-11_png$2b0358666c5fd664fd069960024667a9-914678098.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\interface-11_png$64b837995a46c868c974d63a16364d96-734500753.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\interface-11_png$bb1ad8adea2de1c5ef5bd7c0db63a8f4808454615.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\interface-5_png$90a6a7c247540209cdbf4c4e5ece78f6-1180134123.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\interface-5_png$c60a1c9e8c5e00661e943fa69e648c87-28625857.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\interface-6_png$40abdcd1be3f0dfe815a2bbbca2627f4-29008704.tga",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\interface-6_png$7e54cf21ac55e2b0b922d8acd4a31ec8-1178944106.tga"
+  ],
+  "nativeDDSDirectory": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame",
+  "nativeDDSTextures": [
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\battle_widgets101_png$cb9a1b3d05dd4e45926e1a9dce5fd889-906464346.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I1.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I10.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I11.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I12.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I13.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I14.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I15.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I2.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I3.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I4.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I5.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I6.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I7.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I8.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I9.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_IA.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_IB.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_IC.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_ID.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_IE.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_IF.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\boards_png$9f7a01af208f7160a8184d378c9471c81036787745.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cardfaces104_png$f91c17cba59e4b4e26cdc8f8e3e589b7-220765944.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-0_png$eba14a619be348639a4660f875d6591b2016346474.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-1_png$f078b48500a174209f21bd9fa6102e952017012203.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-2_png$ec961152010adbe9162b60f6cc7749eb2014007916.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-3_png$75d5641beb58e2d8f6a3cb1356c5e58b2013625069.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-4_png$55fc3d14e09a8689fa953a468e9add622014798702.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-5_png$b60da670663d31284a4a4b14138846462028047343.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-6_png$76d4ff84fc2b43db3291448f760837642029239408.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-7_png$f77bf5c78501273f311296dc3a5e71642026743025.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-8_png$43c36b5851207a11c888b5c53faa69fa2027933042.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cardslots104_png$b36929c2b852fbf361c90fcdf396d4d0-2074065239.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\covers107_png$65783845e3f3b24e844fd42ceadee72a-1376138946.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\crowns103_png$a53fd6901110341868a11265337e31ce615516982.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\deckscreens104_png$37758e6ea781e08914dc11720d341947-733490256.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\hud120_png$316c1446eb13537f586352d6613e0dc4-1714544105.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\interface10-104_png$aba2094573565c9af8dc5f8f4f88fc6b1169526047.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\interface11-108_png$6405aadcedab97fd466fcc640c535a4e441278375.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\intro104_png$4439b33ae06a7ae8a03da182ff03ca7d140226306.dds",
+    "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\weather107_png$3cab72023a8215b17ee3ce68ae706248834594138.dds"
+  ],
+  "textureFormat": "TGA preview; GFx-exported DXT5 DDS for embedded native atlas",
+  "redswfCreated": false,
+  "menuRegistered": false,
+  "runtimeVerified": false,
+  "scope": "Development board presentation, not a complete Beta match."
+}

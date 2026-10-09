@@ -61,7 +61,7 @@ class CBetaGwentDuelEffectAction extends CBetaGwentManagedAction
     {
         var previous : int; var result, sourced : bool;
         // The acting card is the visual source, so turn-end triggers show who attacks/boosts.
-        if (attacker && attacker != target) sourced = runtime.game.BeginEffectSource(attacker);
+        if (attacker) sourced = runtime.game.BeginEffectSource(attacker);
         previous = runtime.BeginAttack(attackId); result = ApplyEffect(); runtime.EndAttack(previous);
         if (sourced) runtime.game.EndEffectSource();
         return result;
@@ -137,6 +137,7 @@ class CBetaGwentDuelEffectRuntime extends CBetaGwentActionSink
         if (failed || !card || kind < 1 || kind > 19) return false;
         action = new CBetaGwentDuelEffectAction in this;
         key = kind * 2; if (value < 0) key += 1;
+        if((kind==1 || kind==2 || kind==12 || kind==13) && value>0)key=2;
         if (!attackOpen || attackSource != source || attackKey != key) { attackSerial += 1; attackOpen = true; attackSource = source; attackKey = key; }
         action.SetAttack(attackSerial);
         if (!action.Setup(this, card, kind, value, bypassArmor, context, source, locations) || !PushPrepared(action))

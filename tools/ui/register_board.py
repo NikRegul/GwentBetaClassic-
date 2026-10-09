@@ -14,6 +14,8 @@ ORIGINAL = Path(r'D:\GOG Galaxy\Games\The Witcher 3 REDkit\r4data\gameplay\gui_n
 CANDIDATE = WORKSPACE / 'betagwent/betagwent_dev.guiconfig'
 OVERLAY = WORKSPACE / 'gameplay/gui_new/guirsrc/r4default.guiconfig'
 EXPECTED = {'menuName': 'BetaGwentBoard', 'menuResource': r'betagwent\betagwent_board.menu'}
+# Stage 109: keg opening menu (written by tools/ui/cr2w_gui_write109.py).
+EXPECTED_KEG = {'menuName': 'BetaGwentKeg', 'menuResource': r'betagwent\betagwent_kegop.menu'}
 ORIGINAL_SHA256 = '6a6fa1cba73dc689570daff3a13f2be06776cc898caa298b781c9ab52bdd113d'
 
 
@@ -22,8 +24,8 @@ def validate_config(original, candidate):
         if original[field] != candidate[field]:
             raise ResourceError('Existing GUI field changed: ' + field)
     old, new = original['menus'], candidate['menus']
-    if new != old + [EXPECTED]:
-        raise ResourceError('Expected unchanged original menus plus exactly one BetaGwentBoard entry')
+    if new != old + [EXPECTED] and new != old + [EXPECTED, EXPECTED_KEG]:
+        raise ResourceError('Expected unchanged original menus plus BetaGwentBoard (and BetaGwentKeg) entries')
     names = [entry['menuName'] for entry in new]
     if len(names) != len(set(names)):
         raise ResourceError('Duplicate menu registration name')

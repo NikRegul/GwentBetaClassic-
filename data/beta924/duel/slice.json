@@ -50741,8 +50741,8 @@
     {
       "id": 54,
       "key": "ai-rules-1",
-      "title": "ИИ · Spies",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. spies",
+      "title": "ИИ · Шпионы",
+      "description": "Исследованный состав Beta 0.9.24; spies",
       "faction": 4,
       "leader": 200164,
       "templateIds": [
@@ -50754,6 +50754,8 @@
         162202,
         162212,
         162211,
+        162213,
+        162205,
         162302,
         162307,
         162307,
@@ -50763,14 +50765,12 @@
         162308,
         162315,
         162314,
+        162314,
+        162314,
         200115,
         162304,
         162304,
-        162304,
-        162213,
-        162205,
-        162314,
-        162314
+        162304
       ],
       "aiRulesProfile": 1,
       "unitCount": 25,
@@ -50811,6 +50811,14 @@
           "copies": 1
         },
         {
+          "templateId": 162213,
+          "copies": 1
+        },
+        {
+          "templateId": 162205,
+          "copies": 1
+        },
+        {
           "templateId": 162302,
           "copies": 1
         },
@@ -50837,14 +50845,6 @@
         {
           "templateId": 162304,
           "copies": 3
-        },
-        {
-          "templateId": 162213,
-          "copies": 1
-        },
-        {
-          "templateId": 162205,
-          "copies": 1
         }
       ]
     },
@@ -50852,7 +50852,7 @@
       "id": 55,
       "key": "ai-rules-2",
       "title": "ИИ · Vampires (Drain)",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. drain",
+      "description": "Исследованный состав Beta 0.9.24; drain",
       "faction": 2,
       "leader": 200055,
       "templateIds": [
@@ -50865,6 +50865,7 @@
         132203,
         112210,
         113209,
+        132205,
         132303,
         200233,
         132313,
@@ -50877,10 +50878,9 @@
         132409,
         132409,
         132409,
-        132205,
-        132305,
-        132305,
-        132305
+        132306,
+        132306,
+        132306
       ],
       "aiRulesProfile": 2,
       "unitCount": 22,
@@ -50925,6 +50925,10 @@
           "copies": 1
         },
         {
+          "templateId": 132205,
+          "copies": 1
+        },
+        {
           "templateId": 132303,
           "copies": 1
         },
@@ -50949,11 +50953,7 @@
           "copies": 3
         },
         {
-          "templateId": 132205,
-          "copies": 1
-        },
-        {
-          "templateId": 132305,
+          "templateId": 132306,
           "copies": 3
         }
       ]
@@ -50961,10 +50961,10 @@
     {
       "id": 56,
       "key": "ai-rules-3",
-      "title": "ИИ · Arachas Swarm",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. swarm",
+      "title": "ИИ · Рой главоглазов",
+      "description": "Исследованный состав Beta 0.9.24; swarm",
       "faction": 2,
-      "leader": 201587,
+      "leader": 201743,
       "templateIds": [
         112108,
         201773,
@@ -50976,9 +50976,6 @@
         133302,
         113209,
         113201,
-        132211,
-        132211,
-        132211,
         132201,
         132201,
         132201,
@@ -50989,12 +50986,15 @@
         200023,
         200023,
         200023,
-        201704,
-        201704
+        201606,
+        201606,
+        201606,
+        132308,
+        132308
       ],
       "aiRulesProfile": 3,
-      "unitCount": 15,
-      "specialCount": 10,
+      "unitCount": 17,
+      "specialCount": 8,
       "goldCount": 4,
       "silverCount": 6,
       "cards": [
@@ -51039,10 +51039,6 @@
           "copies": 1
         },
         {
-          "templateId": 132211,
-          "copies": 3
-        },
-        {
           "templateId": 132201,
           "copies": 3
         },
@@ -51059,7 +51055,11 @@
           "copies": 3
         },
         {
-          "templateId": 201704,
+          "templateId": 201606,
+          "copies": 3
+        },
+        {
+          "templateId": 132308,
           "copies": 2
         }
       ]
@@ -51068,7 +51068,7 @@
       "id": 57,
       "key": "ai-rules-4",
       "title": "ИИ · Machines Henselt",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. machines",
+      "description": "Исследованный состав Beta 0.9.24; machines",
       "faction": 8,
       "leader": 200170,
       "templateIds": [
@@ -51084,6 +51084,7 @@
         113309,
         122214,
         122302,
+        122302,
         200049,
         200049,
         200049,
@@ -51095,8 +51096,7 @@
         122301,
         122307,
         201704,
-        201659,
-        122302
+        201659
       ],
       "aiRulesProfile": 4,
       "unitCount": 20,
@@ -51182,19 +51182,20 @@
       "id": 58,
       "key": "ai-rules-5",
       "title": "ИИ · Adda Cursed",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. cursed",
+      "description": "Исследованный состав Beta 0.9.24; cursed",
       "faction": 8,
       "leader": 201595,
       "templateIds": [
         201618,
         122103,
         122202,
+        122102,
         112210,
         122206,
         122211,
         122207,
-        113208,
         122208,
+        123201,
         122314,
         122314,
         201625,
@@ -51208,13 +51209,12 @@
         201628,
         122307,
         201633,
-        122102,
-        122302,
-        122302
+        201633,
+        201633
       ],
       "aiRulesProfile": 5,
-      "unitCount": 24,
-      "specialCount": 1,
+      "unitCount": 21,
+      "specialCount": 4,
       "goldCount": 4,
       "silverCount": 6,
       "cards": [
@@ -51228,6 +51228,10 @@
         },
         {
           "templateId": 122202,
+          "copies": 1
+        },
+        {
+          "templateId": 122102,
           "copies": 1
         },
         {
@@ -51247,11 +51251,11 @@
           "copies": 1
         },
         {
-          "templateId": 113208,
+          "templateId": 122208,
           "copies": 1
         },
         {
-          "templateId": 122208,
+          "templateId": 123201,
           "copies": 1
         },
         {
@@ -51276,15 +51280,7 @@
         },
         {
           "templateId": 201633,
-          "copies": 1
-        },
-        {
-          "templateId": 122102,
-          "copies": 1
-        },
-        {
-          "templateId": 122302,
-          "copies": 2
+          "copies": 3
         }
       ]
     },
@@ -51292,7 +51288,7 @@
       "id": 59,
       "key": "ai-rules-6",
       "title": "ИИ · Tempo Calveit",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. reveal",
+      "description": "Исследованный состав Beta 0.9.24; reveal",
       "faction": 4,
       "leader": 200164,
       "templateIds": [
@@ -51393,8 +51389,8 @@
     {
       "id": 60,
       "key": "ai-rules-7",
-      "title": "ИИ · Wild Hunt Frost",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. weather",
+      "title": "ИИ · Мороз Дикой Охоты",
+      "description": "Исследованный состав Beta 0.9.24; weather",
       "faction": 2,
       "leader": 131101,
       "templateIds": [
@@ -51500,7 +51496,7 @@
       "id": 61,
       "key": "ai-rules-8",
       "title": "ИИ · Eggs Consume",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. consume",
+      "description": "Исследованный состав Beta 0.9.24; consume",
       "faction": 2,
       "leader": 201743,
       "templateIds": [
@@ -51513,12 +51509,10 @@
         200019,
         200022,
         200223,
+        132205,
         132211,
         132211,
         132211,
-        201606,
-        201606,
-        201606,
         132308,
         132308,
         132308,
@@ -51528,7 +51522,9 @@
         200539,
         200539,
         200539,
-        132205
+        132217,
+        132217,
+        132217
       ],
       "aiRulesProfile": 8,
       "unitCount": 21,
@@ -51573,11 +51569,11 @@
           "copies": 1
         },
         {
-          "templateId": 132211,
-          "copies": 3
+          "templateId": 132205,
+          "copies": 1
         },
         {
-          "templateId": 201606,
+          "templateId": 132211,
           "copies": 3
         },
         {
@@ -51593,8 +51589,8 @@
           "copies": 3
         },
         {
-          "templateId": 132205,
-          "copies": 1
+          "templateId": 132217,
+          "copies": 3
         }
       ]
     },
@@ -51602,7 +51598,7 @@
       "id": 62,
       "key": "ai-rules-9",
       "title": "ИИ · Scorch Ambush",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. ambush",
+      "description": "Исследованный состав Beta 0.9.24; ambush",
       "faction": 16,
       "leader": 200166,
       "templateIds": [
@@ -51707,18 +51703,18 @@
     {
       "id": 63,
       "key": "ai-rules-11",
-      "title": "ИИ · Alchemy",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. alchemy",
+      "title": "ИИ · Алхимия",
+      "description": "Исследованный состав Beta 0.9.24; alchemy",
       "faction": 4,
-      "leader": 200163,
+      "leader": 200164,
       "templateIds": [
         200237,
-        201773,
+        200078,
         201601,
         200154,
         162210,
         162202,
-        162204,
+        201583,
         113209,
         200223,
         113102,
@@ -51731,16 +51727,16 @@
         201619,
         201619,
         201619,
-        113310,
-        113310,
-        113310,
-        113301,
-        113301,
-        113301
+        200224,
+        200224,
+        200224,
+        113311,
+        113311,
+        113311
       ],
       "aiRulesProfile": 11,
-      "unitCount": 12,
-      "specialCount": 13,
+      "unitCount": 10,
+      "specialCount": 15,
       "goldCount": 4,
       "silverCount": 6,
       "cards": [
@@ -51749,7 +51745,7 @@
           "copies": 1
         },
         {
-          "templateId": 201773,
+          "templateId": 200078,
           "copies": 1
         },
         {
@@ -51769,7 +51765,7 @@
           "copies": 1
         },
         {
-          "templateId": 162204,
+          "templateId": 201583,
           "copies": 1
         },
         {
@@ -51797,11 +51793,11 @@
           "copies": 3
         },
         {
-          "templateId": 113310,
+          "templateId": 200224,
           "copies": 3
         },
         {
-          "templateId": 113301,
+          "templateId": 113311,
           "copies": 3
         }
       ]
@@ -51810,7 +51806,7 @@
       "id": 64,
       "key": "ai-rules-13",
       "title": "ИИ · Bloodmoon Wraiths",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. moonlight",
+      "description": "Исследованный состав Beta 0.9.24; moonlight",
       "faction": 2,
       "leader": 201587,
       "templateIds": [
@@ -51824,9 +51820,6 @@
         132220,
         112210,
         132203,
-        200295,
-        200295,
-        200295,
         132303,
         132303,
         132303,
@@ -51838,7 +51831,10 @@
         201704,
         201704,
         200067,
-        200067
+        200067,
+        132409,
+        132409,
+        132409
       ],
       "aiRulesProfile": 13,
       "unitCount": 20,
@@ -51887,10 +51883,6 @@
           "copies": 1
         },
         {
-          "templateId": 200295,
-          "copies": 3
-        },
-        {
           "templateId": 132303,
           "copies": 3
         },
@@ -51909,6 +51901,10 @@
         {
           "templateId": 200067,
           "copies": 2
+        },
+        {
+          "templateId": 132409,
+          "copies": 3
         }
       ]
     },
@@ -51916,7 +51912,7 @@
       "id": 65,
       "key": "ai-rules-14",
       "title": "ИИ · Veterans",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. veterans",
+      "description": "Исследованный состав Beta 0.9.24; veterans",
       "faction": 32,
       "leader": 201597,
       "templateIds": [
@@ -51929,6 +51925,7 @@
         113209,
         113201,
         153201,
+        152205,
         200046,
         200046,
         200046,
@@ -51943,8 +51940,7 @@
         152310,
         152310,
         201704,
-        201704,
-        152205
+        201704
       ],
       "aiRulesProfile": 14,
       "unitCount": 20,
@@ -51989,6 +51985,10 @@
           "copies": 1
         },
         {
+          "templateId": 152205,
+          "copies": 1
+        },
+        {
           "templateId": 200046,
           "copies": 3
         },
@@ -52011,10 +52011,6 @@
         {
           "templateId": 201704,
           "copies": 2
-        },
-        {
-          "templateId": 152205,
-          "copies": 1
         }
       ]
     },
@@ -52022,7 +52018,7 @@
       "id": 66,
       "key": "ai-rules-15",
       "title": "ИИ · Dwarf-Elf-Scorch",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. dwarves",
+      "description": "Исследованный состав Beta 0.9.24; dwarves",
       "faction": 16,
       "leader": 200166,
       "templateIds": [
@@ -52131,8 +52127,8 @@
     {
       "id": 67,
       "key": "ai-rules-16",
-      "title": "ИИ · Nekker Consume",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. consume",
+      "title": "ИИ · Накеры и поглощение",
+      "description": "Исследованный состав Beta 0.9.24; consume",
       "faction": 2,
       "leader": 201743,
       "templateIds": [
@@ -52145,6 +52141,7 @@
         200019,
         200022,
         200223,
+        132205,
         132211,
         132211,
         132211,
@@ -52159,8 +52156,7 @@
         132305,
         200539,
         200539,
-        200539,
-        132205
+        200539
       ],
       "aiRulesProfile": 16,
       "unitCount": 21,
@@ -52205,6 +52201,10 @@
           "copies": 1
         },
         {
+          "templateId": 132205,
+          "copies": 1
+        },
+        {
           "templateId": 132211,
           "copies": 3
         },
@@ -52223,10 +52223,6 @@
         {
           "templateId": 200539,
           "copies": 3
-        },
-        {
-          "templateId": 132205,
-          "copies": 1
         }
       ]
     },
@@ -52234,7 +52230,7 @@
       "id": 68,
       "key": "ai-rules-17",
       "title": "ИИ · Greatswords",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. greatswords",
+      "description": "Исследованный состав Beta 0.9.24; greatswords",
       "faction": 32,
       "leader": 200160,
       "templateIds": [
@@ -52339,8 +52335,8 @@
     {
       "id": 69,
       "key": "ai-rules-18",
-      "title": "ИИ · Lyrian Machines",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. machines",
+      "title": "ИИ · Лирийские машины",
+      "description": "Исследованный состав Beta 0.9.24; machines",
       "faction": 8,
       "leader": 200168,
       "templateIds": [
@@ -52351,6 +52347,9 @@
         201748,
         123201,
         200019,
+        122212,
+        122211,
+        122208,
         122314,
         200049,
         200049,
@@ -52365,9 +52364,6 @@
         122214,
         122307,
         201704,
-        122212,
-        122211,
-        122208,
         122302
       ],
       "aiRulesProfile": 18,
@@ -52405,6 +52401,18 @@
           "copies": 1
         },
         {
+          "templateId": 122212,
+          "copies": 1
+        },
+        {
+          "templateId": 122211,
+          "copies": 1
+        },
+        {
+          "templateId": 122208,
+          "copies": 1
+        },
+        {
           "templateId": 122314,
           "copies": 1
         },
@@ -52433,18 +52441,6 @@
           "copies": 1
         },
         {
-          "templateId": 122212,
-          "copies": 1
-        },
-        {
-          "templateId": 122211,
-          "copies": 1
-        },
-        {
-          "templateId": 122208,
-          "copies": 1
-        },
-        {
           "templateId": 122302,
           "copies": 1
         }
@@ -52453,8 +52449,8 @@
     {
       "id": 70,
       "key": "ai-rules-19",
-      "title": "ИИ · Queensguards",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. queensguard",
+      "title": "ИИ · Королевская гвардия",
+      "description": "Исследованный состав Beta 0.9.24; queensguard",
       "faction": 32,
       "leader": 200159,
       "templateIds": [
@@ -52559,8 +52555,8 @@
     {
       "id": 71,
       "key": "ai-rules-20",
-      "title": "ИИ · Temerians",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. temerians",
+      "title": "ИИ · Темерцы",
+      "description": "Исследованный состав Beta 0.9.24; temerians",
       "faction": 8,
       "leader": 200168,
       "templateIds": [
@@ -52665,8 +52661,8 @@
     {
       "id": 72,
       "key": "ai-rules-21",
-      "title": "ИИ · Morvran Reveal",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. reveal",
+      "title": "ИИ · Вскрытие Морврана",
+      "description": "Исследованный состав Beta 0.9.24; reveal",
       "faction": 4,
       "leader": 200163,
       "templateIds": [
@@ -52768,42 +52764,82 @@
       "id": 73,
       "key": "ai-rules-22",
       "title": "ИИ · Ointment Spallas",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. soldiers",
+      "description": "Исследованный состав Beta 0.9.24; soldiers",
       "faction": 4,
       "leader": 200164,
       "templateIds": [
+        200032,
+        201773,
+        200237,
+        162105,
+        162210,
+        162211,
+        162202,
+        200050,
+        200019,
+        113201,
         200294,
         200294,
         200294,
         201661,
         201661,
         201661,
-        200296,
-        200296,
-        200296,
         201610,
         201610,
         201610,
-        122403,
-        122403,
-        122403,
         201617,
         201617,
         201617,
-        162304,
         201619,
         201619,
-        201619,
-        113319,
-        162311,
-        162311
+        201619
       ],
       "aiRulesProfile": 22,
-      "unitCount": 21,
-      "specialCount": 4,
-      "goldCount": 0,
-      "silverCount": 0,
+      "unitCount": 20,
+      "specialCount": 5,
+      "goldCount": 4,
+      "silverCount": 6,
       "cards": [
+        {
+          "templateId": 200032,
+          "copies": 1
+        },
+        {
+          "templateId": 201773,
+          "copies": 1
+        },
+        {
+          "templateId": 200237,
+          "copies": 1
+        },
+        {
+          "templateId": 162105,
+          "copies": 1
+        },
+        {
+          "templateId": 162210,
+          "copies": 1
+        },
+        {
+          "templateId": 162211,
+          "copies": 1
+        },
+        {
+          "templateId": 162202,
+          "copies": 1
+        },
+        {
+          "templateId": 200050,
+          "copies": 1
+        },
+        {
+          "templateId": 200019,
+          "copies": 1
+        },
+        {
+          "templateId": 113201,
+          "copies": 1
+        },
         {
           "templateId": 200294,
           "copies": 3
@@ -52813,15 +52849,7 @@
           "copies": 3
         },
         {
-          "templateId": 200296,
-          "copies": 3
-        },
-        {
           "templateId": 201610,
-          "copies": 3
-        },
-        {
-          "templateId": 122403,
           "copies": 3
         },
         {
@@ -52829,47 +52857,35 @@
           "copies": 3
         },
         {
-          "templateId": 162304,
-          "copies": 1
-        },
-        {
           "templateId": 201619,
           "copies": 3
-        },
-        {
-          "templateId": 113319,
-          "copies": 1
-        },
-        {
-          "templateId": 162311,
-          "copies": 2
         }
       ]
     },
     {
       "id": 74,
       "key": "ai-rules-23",
-      "title": "ИИ · Deathwish",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. deathwish",
+      "title": "ИИ · Завещания",
+      "description": "Исследованный состав Beta 0.9.24; deathwish",
       "faction": 2,
       "leader": 201587,
       "templateIds": [
+        132107,
+        112103,
+        112106,
         200534,
+        132205,
+        200053,
+        132209,
+        132217,
+        132217,
         132217,
         132312,
         113305,
         132213,
-        132107,
-        112103,
-        112106,
-        132205,
-        200053,
-        132209,
         132305,
         132305,
         132305,
-        132217,
-        132217,
         132308,
         132308,
         132308,
@@ -52887,7 +52903,31 @@
       "silverCount": 4,
       "cards": [
         {
+          "templateId": 132107,
+          "copies": 1
+        },
+        {
+          "templateId": 112103,
+          "copies": 1
+        },
+        {
+          "templateId": 112106,
+          "copies": 1
+        },
+        {
           "templateId": 200534,
+          "copies": 1
+        },
+        {
+          "templateId": 132205,
+          "copies": 1
+        },
+        {
+          "templateId": 200053,
+          "copies": 1
+        },
+        {
+          "templateId": 132209,
           "copies": 1
         },
         {
@@ -52904,30 +52944,6 @@
         },
         {
           "templateId": 132213,
-          "copies": 1
-        },
-        {
-          "templateId": 132107,
-          "copies": 1
-        },
-        {
-          "templateId": 112103,
-          "copies": 1
-        },
-        {
-          "templateId": 112106,
-          "copies": 1
-        },
-        {
-          "templateId": 132205,
-          "copies": 1
-        },
-        {
-          "templateId": 200053,
-          "copies": 1
-        },
-        {
-          "templateId": 132209,
           "copies": 1
         },
         {
@@ -52959,8 +52975,8 @@
     {
       "id": 75,
       "key": "ai-rules-24",
-      "title": "ИИ · Discard",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. discard",
+      "title": "ИИ · Сброс карт",
+      "description": "Исследованный состав Beta 0.9.24; discard",
       "faction": 32,
       "leader": 200159,
       "templateIds": [
@@ -53061,8 +53077,8 @@
     {
       "id": 76,
       "key": "ai-rules-25",
-      "title": "ИИ · Swap",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. swap",
+      "title": "ИИ · Обмены",
+      "description": "Исследованный состав Beta 0.9.24; swap",
       "faction": 16,
       "leader": 200165,
       "templateIds": [
@@ -53168,13 +53184,11 @@
       "id": 77,
       "key": "ai-rules-26",
       "title": "ИИ · Lyrian Deckbuff",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. temerians",
+      "description": "Исследованный состав Beta 0.9.24; temerians",
       "faction": 8,
       "leader": 200168,
       "templateIds": [
         122102,
-        122314,
-        122306,
         201618,
         122108,
         122105,
@@ -53184,6 +53198,7 @@
         122208,
         123201,
         200019,
+        122314,
         122317,
         122317,
         123301,
@@ -53196,6 +53211,7 @@
         122310,
         122310,
         122316,
+        122316,
         122316
       ],
       "aiRulesProfile": 26,
@@ -53206,14 +53222,6 @@
       "cards": [
         {
           "templateId": 122102,
-          "copies": 1
-        },
-        {
-          "templateId": 122314,
-          "copies": 1
-        },
-        {
-          "templateId": 122306,
           "copies": 1
         },
         {
@@ -53253,6 +53261,10 @@
           "copies": 1
         },
         {
+          "templateId": 122314,
+          "copies": 1
+        },
+        {
           "templateId": 122317,
           "copies": 2
         },
@@ -53270,21 +53282,22 @@
         },
         {
           "templateId": 122316,
-          "copies": 2
+          "copies": 3
         }
       ]
     },
     {
       "id": 78,
       "key": "ai-rules-27",
-      "title": "ИИ · Ice Trolls",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. tall",
+      "title": "ИИ · Ледяные тролли",
+      "description": "Исследованный состав Beta 0.9.24; tall",
       "faction": 2,
       "leader": 201587,
       "templateIds": [
         132218,
         132104,
         131102,
+        132102,
         132204,
         200052,
         200218,
@@ -53292,25 +53305,24 @@
         201698,
         113206,
         132212,
-        200502,
-        200502,
-        132314,
-        132314,
         132212,
         200502,
+        200502,
+        200502,
+        132314,
+        132314,
         132310,
         132310,
         132310,
-        132305,
-        132305,
-        132305,
         113311,
-        132102,
-        132309
+        132309,
+        113302,
+        113302,
+        132402
       ],
       "aiRulesProfile": 27,
-      "unitCount": 23,
-      "specialCount": 2,
+      "unitCount": 21,
+      "specialCount": 4,
       "goldCount": 4,
       "silverCount": 6,
       "cards": [
@@ -53324,6 +53336,10 @@
         },
         {
           "templateId": 131102,
+          "copies": 1
+        },
+        {
+          "templateId": 132102,
           "copies": 1
         },
         {
@@ -53367,19 +53383,19 @@
           "copies": 3
         },
         {
-          "templateId": 132305,
-          "copies": 3
-        },
-        {
           "templateId": 113311,
           "copies": 1
         },
         {
-          "templateId": 132102,
+          "templateId": 132309,
           "copies": 1
         },
         {
-          "templateId": 132309,
+          "templateId": 113302,
+          "copies": 2
+        },
+        {
+          "templateId": 132402,
           "copies": 1
         }
       ]
@@ -53387,8 +53403,8 @@
     {
       "id": 79,
       "key": "ai-rules-28",
-      "title": "ИИ · Eithne Handbuff",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. handbuff",
+      "title": "ИИ · Усиление руки Эитнэ",
+      "description": "Исследованный состав Beta 0.9.24; handbuff",
       "faction": 16,
       "leader": 200166,
       "templateIds": [
@@ -53489,36 +53505,36 @@
     {
       "id": 80,
       "key": "ai-rules-29",
-      "title": "ИИ · Frost Wraiths",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. weather",
+      "title": "ИИ · Морозные призраки",
+      "description": "Исследованный состав Beta 0.9.24; weather",
       "faction": 2,
       "leader": 131101,
       "templateIds": [
-        132104,
         132102,
-        201773,
-        200154,
+        132104,
+        131102,
+        201776,
         132204,
-        132210,
         200218,
-        132220,
-        132203,
         132214,
-        200295,
-        200295,
-        200295,
-        132303,
-        132313,
-        132313,
-        132313,
-        132402,
-        132402,
-        132310,
-        132310,
-        132310,
-        153301,
+        132205,
+        112210,
+        113206,
         113302,
-        113302
+        113302,
+        113302,
+        132402,
+        132402,
+        132402,
+        132310,
+        132310,
+        132310,
+        132309,
+        132309,
+        132309,
+        200026,
+        200301,
+        200301
       ],
       "aiRulesProfile": 29,
       "unitCount": 21,
@@ -53527,19 +53543,19 @@
       "silverCount": 6,
       "cards": [
         {
-          "templateId": 132104,
-          "copies": 1
-        },
-        {
           "templateId": 132102,
           "copies": 1
         },
         {
-          "templateId": 201773,
+          "templateId": 132104,
           "copies": 1
         },
         {
-          "templateId": 200154,
+          "templateId": 131102,
+          "copies": 1
+        },
+        {
+          "templateId": 201776,
           "copies": 1
         },
         {
@@ -53547,19 +53563,7 @@
           "copies": 1
         },
         {
-          "templateId": 132210,
-          "copies": 1
-        },
-        {
           "templateId": 200218,
-          "copies": 1
-        },
-        {
-          "templateId": 132220,
-          "copies": 1
-        },
-        {
-          "templateId": 132203,
           "copies": 1
         },
         {
@@ -53567,31 +53571,39 @@
           "copies": 1
         },
         {
-          "templateId": 200295,
-          "copies": 3
-        },
-        {
-          "templateId": 132303,
+          "templateId": 132205,
           "copies": 1
         },
         {
-          "templateId": 132313,
+          "templateId": 112210,
+          "copies": 1
+        },
+        {
+          "templateId": 113206,
+          "copies": 1
+        },
+        {
+          "templateId": 113302,
           "copies": 3
         },
         {
           "templateId": 132402,
-          "copies": 2
+          "copies": 3
         },
         {
           "templateId": 132310,
           "copies": 3
         },
         {
-          "templateId": 153301,
+          "templateId": 132309,
+          "copies": 3
+        },
+        {
+          "templateId": 200026,
           "copies": 1
         },
         {
-          "templateId": 113302,
+          "templateId": 200301,
           "copies": 2
         }
       ]
@@ -53599,8 +53611,8 @@
     {
       "id": 81,
       "key": "ai-rules-30",
-      "title": "ИИ · Francesca Handbuff",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. handbuff",
+      "title": "ИИ · Усиление руки Францески",
+      "description": "Исследованный состав Beta 0.9.24; handbuff",
       "faction": 16,
       "leader": 200165,
       "templateIds": [
@@ -53628,7 +53640,7 @@
         142308,
         201704,
         201704,
-        113311
+        113301
       ],
       "aiRulesProfile": 30,
       "unitCount": 21,
@@ -53701,7 +53713,7 @@
           "copies": 2
         },
         {
-          "templateId": 113311,
+          "templateId": 113301,
           "copies": 1
         }
       ]
@@ -53710,7 +53722,7 @@
       "id": 82,
       "key": "ai-rules-31",
       "title": "ИИ · Brouver Shupe",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. singleton",
+      "description": "Исследованный состав Beta 0.9.24; singleton",
       "faction": 16,
       "leader": 200167,
       "templateIds": [
@@ -53852,16 +53864,12 @@
       "id": 83,
       "key": "ai-rules-32",
       "title": "ИИ · 40 Foltest",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. temerians",
+      "description": "Исследованный состав Beta 0.9.24; temerians",
       "faction": 8,
       "leader": 200168,
       "templateIds": [
         122101,
         122102,
-        200033,
-        201628,
-        122316,
-        123301,
         201618,
         122108,
         122211,
@@ -53870,23 +53878,23 @@
         122208,
         123201,
         200019,
-        122317,
-        122317,
-        123301,
-        123301,
-        122311,
-        122311,
-        122311,
-        122310,
-        122310,
-        122310,
         122316,
         122316,
+        122316,
+        123301,
+        123301,
+        123301,
+        122317,
+        122317,
+        122311,
+        122311,
+        122311,
+        122310,
+        122310,
+        122310,
         122307,
-        200033,
         122301,
         122313,
-        201628,
         122314,
         201624,
         201622,
@@ -53895,11 +53903,15 @@
         122304,
         122309,
         122318,
-        200132
+        200132,
+        113301,
+        113301,
+        113301,
+        113311
       ],
       "aiRulesProfile": 32,
-      "unitCount": 38,
-      "specialCount": 2,
+      "unitCount": 34,
+      "specialCount": 6,
       "goldCount": 4,
       "silverCount": 6,
       "cards": [
@@ -53910,22 +53922,6 @@
         {
           "templateId": 122102,
           "copies": 1
-        },
-        {
-          "templateId": 200033,
-          "copies": 2
-        },
-        {
-          "templateId": 201628,
-          "copies": 2
-        },
-        {
-          "templateId": 122316,
-          "copies": 3
-        },
-        {
-          "templateId": 123301,
-          "copies": 3
         },
         {
           "templateId": 201618,
@@ -53958,6 +53954,14 @@
         {
           "templateId": 200019,
           "copies": 1
+        },
+        {
+          "templateId": 122316,
+          "copies": 3
+        },
+        {
+          "templateId": 123301,
+          "copies": 3
         },
         {
           "templateId": 122317,
@@ -54018,6 +54022,14 @@
         {
           "templateId": 200132,
           "copies": 1
+        },
+        {
+          "templateId": 113301,
+          "copies": 3
+        },
+        {
+          "templateId": 113311,
+          "copies": 1
         }
       ]
     },
@@ -54025,7 +54037,7 @@
       "id": 84,
       "key": "ai-rules-34",
       "title": "ИИ · Dwarf Miner/Xavier",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. dwarves",
+      "description": "Исследованный состав Beta 0.9.24; dwarves",
       "faction": 16,
       "leader": 200167,
       "templateIds": [
@@ -54126,14 +54138,15 @@
     {
       "id": 85,
       "key": "ai-rules-35",
-      "title": "ИИ · Tall Ogres",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. tall",
+      "title": "ИИ · Великаны и огры",
+      "description": "Исследованный состав Beta 0.9.24; tall",
       "faction": 2,
       "leader": 201587,
       "templateIds": [
         132218,
         200220,
         200154,
+        132107,
         132204,
         132216,
         132205,
@@ -54154,8 +54167,7 @@
         132305,
         132305,
         201704,
-        201704,
-        132107
+        201704
       ],
       "aiRulesProfile": 35,
       "unitCount": 20,
@@ -54173,6 +54185,10 @@
         },
         {
           "templateId": 200154,
+          "copies": 1
+        },
+        {
+          "templateId": 132107,
           "copies": 1
         },
         {
@@ -54226,18 +54242,14 @@
         {
           "templateId": 201704,
           "copies": 2
-        },
-        {
-          "templateId": 132107,
-          "copies": 1
         }
       ]
     },
     {
       "id": 86,
       "key": "ai-rules-36",
-      "title": "ИИ · Armor",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. armor",
+      "title": "ИИ · Броня",
+      "description": "Исследованный состав Beta 0.9.24; armor",
       "faction": 8,
       "leader": 200168,
       "templateIds": [
@@ -54350,8 +54362,8 @@
     {
       "id": 87,
       "key": "ai-rules-37",
-      "title": "ИИ · Slave Infantry",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. soldiers",
+      "title": "ИИ · Невольничья пехота",
+      "description": "Исследованный состав Beta 0.9.24; soldiers",
       "faction": 4,
       "leader": 200164,
       "templateIds": [
@@ -54453,7 +54465,7 @@
       "id": 88,
       "key": "ai-rules-38",
       "title": "ИИ · NG Handbuff",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. ng-handbuff",
+      "description": "Исследованный состав Beta 0.9.24; ng-handbuff",
       "faction": 4,
       "leader": 200162,
       "templateIds": [
@@ -54478,10 +54490,10 @@
         200044,
         201704,
         201704,
-        201704,
         133301,
         133301,
-        133301
+        133301,
+        113311
       ],
       "aiRulesProfile": 38,
       "unitCount": 17,
@@ -54543,19 +54555,23 @@
         },
         {
           "templateId": 201704,
-          "copies": 3
+          "copies": 2
         },
         {
           "templateId": 133301,
           "copies": 3
+        },
+        {
+          "templateId": 113311,
+          "copies": 1
         }
       ]
     },
     {
       "id": 89,
       "key": "ai-rules-39",
-      "title": "ИИ · Cursed Ships",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. greatswords",
+      "title": "ИИ · Проклятые корабли",
+      "description": "Исследованный состав Beta 0.9.24; greatswords",
       "faction": 32,
       "leader": 200159,
       "templateIds": [
@@ -54656,8 +54672,8 @@
     {
       "id": 90,
       "key": "ai-rules-40",
-      "title": "ИИ · Brouver Handbuff",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. handbuff",
+      "title": "ИИ · Усиление руки Брувера",
+      "description": "Исследованный состав Beta 0.9.24; handbuff",
       "faction": 16,
       "leader": 200167,
       "templateIds": [
@@ -54685,7 +54701,7 @@
         201704,
         201704,
         201704,
-        113311
+        113301
       ],
       "aiRulesProfile": 40,
       "unitCount": 19,
@@ -54754,7 +54770,7 @@
           "copies": 3
         },
         {
-          "templateId": 113311,
+          "templateId": 113301,
           "copies": 1
         }
       ]
@@ -54763,7 +54779,7 @@
       "id": 91,
       "key": "ai-rules-41",
       "title": "ИИ · Spell'teal Decotions",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. spells",
+      "description": "Исследованный состав Beta 0.9.24; spells",
       "faction": 16,
       "leader": 200166,
       "templateIds": [
@@ -54868,8 +54884,8 @@
     {
       "id": 92,
       "key": "ai-rules-45",
-      "title": "ИИ · Axemen",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. axemen",
+      "title": "ИИ · Топорники",
+      "description": "Исследованный состав Beta 0.9.24; axemen",
       "faction": 32,
       "leader": 200161,
       "templateIds": [
@@ -54974,24 +54990,24 @@
     {
       "id": 93,
       "key": "ai-rules-46",
-      "title": "ИИ · Dryads",
-      "description": "Адаптация пользовательского deck_rules к строгой Beta 0.9.24. dryads",
+      "title": "ИИ · Дриады",
+      "description": "Исследованный состав Beta 0.9.24; dryads",
       "faction": 16,
       "leader": 200166,
       "templateIds": [
         142102,
         142106,
+        142107,
+        201779,
         200523,
         200520,
         142209,
-        142301,
-        201753,
-        142303,
-        142107,
-        201779,
         142204,
         142208,
         142210,
+        142301,
+        201753,
+        142303,
         142316,
         142316,
         142316,
@@ -55020,6 +55036,14 @@
           "copies": 1
         },
         {
+          "templateId": 142107,
+          "copies": 1
+        },
+        {
+          "templateId": 201779,
+          "copies": 1
+        },
+        {
           "templateId": 200523,
           "copies": 1
         },
@@ -55032,26 +55056,6 @@
           "copies": 1
         },
         {
-          "templateId": 142301,
-          "copies": 1
-        },
-        {
-          "templateId": 201753,
-          "copies": 1
-        },
-        {
-          "templateId": 142303,
-          "copies": 1
-        },
-        {
-          "templateId": 142107,
-          "copies": 1
-        },
-        {
-          "templateId": 201779,
-          "copies": 1
-        },
-        {
           "templateId": 142204,
           "copies": 1
         },
@@ -55061,6 +55065,18 @@
         },
         {
           "templateId": 142210,
+          "copies": 1
+        },
+        {
+          "templateId": 142301,
+          "copies": 1
+        },
+        {
+          "templateId": 201753,
+          "copies": 1
+        },
+        {
+          "templateId": 142303,
           "copies": 1
         },
         {
@@ -55080,10 +55096,626 @@
           "copies": 3
         }
       ]
+    },
+    {
+      "id": 94,
+      "key": "ai-rules-10",
+      "aiRulesProfile": 10,
+      "title": "ИИ · Аретуза: магический контроль Фольтеста",
+      "description": "Исследованный состав Beta 0.9.24; machines",
+      "faction": 8,
+      "leader": 200168,
+      "templateIds": [
+        122108,
+        201773,
+        122103,
+        201618,
+        122211,
+        122207,
+        113208,
+        122203,
+        123201,
+        200019,
+        200033,
+        200033,
+        200033,
+        201628,
+        201628,
+        201628,
+        113302,
+        113302,
+        113302,
+        113301,
+        113301,
+        113301,
+        113311,
+        113311,
+        113311
+      ],
+      "unitCount": 14,
+      "specialCount": 11,
+      "goldCount": 4,
+      "silverCount": 6,
+      "cards": [
+        {
+          "templateId": 122108,
+          "copies": 1
+        },
+        {
+          "templateId": 201773,
+          "copies": 1
+        },
+        {
+          "templateId": 122103,
+          "copies": 1
+        },
+        {
+          "templateId": 201618,
+          "copies": 1
+        },
+        {
+          "templateId": 122211,
+          "copies": 1
+        },
+        {
+          "templateId": 122207,
+          "copies": 1
+        },
+        {
+          "templateId": 113208,
+          "copies": 1
+        },
+        {
+          "templateId": 122203,
+          "copies": 1
+        },
+        {
+          "templateId": 123201,
+          "copies": 1
+        },
+        {
+          "templateId": 200019,
+          "copies": 1
+        },
+        {
+          "templateId": 200033,
+          "copies": 3
+        },
+        {
+          "templateId": 201628,
+          "copies": 3
+        },
+        {
+          "templateId": 113302,
+          "copies": 3
+        },
+        {
+          "templateId": 113301,
+          "copies": 3
+        },
+        {
+          "templateId": 113311,
+          "copies": 3
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "key": "ai-rules-12",
+      "aiRulesProfile": 12,
+      "title": "ИИ · Солдаты Эмгыра",
+      "description": "Исследованный состав Beta 0.9.24; soldiers",
+      "faction": 4,
+      "leader": 200162,
+      "templateIds": [
+        200032,
+        201773,
+        162105,
+        162104,
+        162210,
+        162211,
+        162202,
+        200050,
+        162204,
+        113201,
+        200294,
+        200294,
+        200294,
+        201661,
+        201661,
+        201661,
+        201610,
+        201610,
+        201610,
+        201617,
+        201617,
+        201617,
+        162304,
+        201704,
+        201704
+      ],
+      "unitCount": 22,
+      "specialCount": 3,
+      "goldCount": 4,
+      "silverCount": 6,
+      "cards": [
+        {
+          "templateId": 200032,
+          "copies": 1
+        },
+        {
+          "templateId": 201773,
+          "copies": 1
+        },
+        {
+          "templateId": 162105,
+          "copies": 1
+        },
+        {
+          "templateId": 162104,
+          "copies": 1
+        },
+        {
+          "templateId": 162210,
+          "copies": 1
+        },
+        {
+          "templateId": 162211,
+          "copies": 1
+        },
+        {
+          "templateId": 162202,
+          "copies": 1
+        },
+        {
+          "templateId": 200050,
+          "copies": 1
+        },
+        {
+          "templateId": 162204,
+          "copies": 1
+        },
+        {
+          "templateId": 113201,
+          "copies": 1
+        },
+        {
+          "templateId": 200294,
+          "copies": 3
+        },
+        {
+          "templateId": 201661,
+          "copies": 3
+        },
+        {
+          "templateId": 201610,
+          "copies": 3
+        },
+        {
+          "templateId": 201617,
+          "copies": 3
+        },
+        {
+          "templateId": 162304,
+          "copies": 1
+        },
+        {
+          "templateId": 201704,
+          "copies": 2
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "key": "ai-rules-33",
+      "aiRulesProfile": 33,
+      "title": "ИИ · Бран: раны и мечники",
+      "description": "Исследованный состав Beta 0.9.24; greatswords",
+      "faction": 32,
+      "leader": 200159,
+      "templateIds": [
+        200102,
+        201773,
+        200177,
+        152107,
+        152214,
+        152209,
+        200212,
+        152211,
+        153201,
+        152206,
+        200040,
+        200040,
+        200040,
+        152309,
+        152309,
+        152309,
+        152302,
+        152302,
+        152302,
+        200145,
+        200145,
+        200145,
+        152311,
+        152311,
+        152311
+      ],
+      "unitCount": 24,
+      "specialCount": 1,
+      "goldCount": 4,
+      "silverCount": 6,
+      "cards": [
+        {
+          "templateId": 200102,
+          "copies": 1
+        },
+        {
+          "templateId": 201773,
+          "copies": 1
+        },
+        {
+          "templateId": 200177,
+          "copies": 1
+        },
+        {
+          "templateId": 152107,
+          "copies": 1
+        },
+        {
+          "templateId": 152214,
+          "copies": 1
+        },
+        {
+          "templateId": 152209,
+          "copies": 1
+        },
+        {
+          "templateId": 200212,
+          "copies": 1
+        },
+        {
+          "templateId": 152211,
+          "copies": 1
+        },
+        {
+          "templateId": 153201,
+          "copies": 1
+        },
+        {
+          "templateId": 152206,
+          "copies": 1
+        },
+        {
+          "templateId": 200040,
+          "copies": 3
+        },
+        {
+          "templateId": 152309,
+          "copies": 3
+        },
+        {
+          "templateId": 152302,
+          "copies": 3
+        },
+        {
+          "templateId": 200145,
+          "copies": 3
+        },
+        {
+          "templateId": 152311,
+          "copies": 3
+        }
+      ]
+    },
+    {
+      "id": 97,
+      "key": "ai-rules-42",
+      "aiRulesProfile": 42,
+      "title": "ИИ · Солдаты и рыцари Фольтеста",
+      "description": "Исследованный состав Beta 0.9.24; temerians",
+      "faction": 8,
+      "leader": 200168,
+      "templateIds": [
+        122102,
+        201618,
+        122108,
+        122105,
+        122208,
+        122211,
+        122207,
+        123201,
+        200019,
+        122212,
+        201622,
+        201622,
+        201622,
+        122316,
+        122316,
+        122316,
+        122310,
+        122310,
+        122310,
+        122311,
+        122311,
+        122311,
+        123301,
+        123301,
+        123301
+      ],
+      "unitCount": 23,
+      "specialCount": 2,
+      "goldCount": 4,
+      "silverCount": 6,
+      "cards": [
+        {
+          "templateId": 122102,
+          "copies": 1
+        },
+        {
+          "templateId": 201618,
+          "copies": 1
+        },
+        {
+          "templateId": 122108,
+          "copies": 1
+        },
+        {
+          "templateId": 122105,
+          "copies": 1
+        },
+        {
+          "templateId": 122208,
+          "copies": 1
+        },
+        {
+          "templateId": 122211,
+          "copies": 1
+        },
+        {
+          "templateId": 122207,
+          "copies": 1
+        },
+        {
+          "templateId": 123201,
+          "copies": 1
+        },
+        {
+          "templateId": 200019,
+          "copies": 1
+        },
+        {
+          "templateId": 122212,
+          "copies": 1
+        },
+        {
+          "templateId": 201622,
+          "copies": 3
+        },
+        {
+          "templateId": 122316,
+          "copies": 3
+        },
+        {
+          "templateId": 122310,
+          "copies": 3
+        },
+        {
+          "templateId": 122311,
+          "copies": 3
+        },
+        {
+          "templateId": 123301,
+          "copies": 3
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "key": "ai-rules-43",
+      "aiRulesProfile": 43,
+      "title": "ИИ · Харальд: дождь и топорники",
+      "description": "Исследованный состав Beta 0.9.24; axemen",
+      "faction": 32,
+      "leader": 200161,
+      "templateIds": [
+        152105,
+        200102,
+        113101,
+        200018,
+        152214,
+        201646,
+        200212,
+        152211,
+        153201,
+        113203,
+        152312,
+        152312,
+        152312,
+        200105,
+        200105,
+        200105,
+        200300,
+        200300,
+        200300,
+        152306,
+        152306,
+        152306,
+        113312,
+        113312,
+        113312
+      ],
+      "unitCount": 18,
+      "specialCount": 7,
+      "goldCount": 4,
+      "silverCount": 6,
+      "cards": [
+        {
+          "templateId": 152105,
+          "copies": 1
+        },
+        {
+          "templateId": 200102,
+          "copies": 1
+        },
+        {
+          "templateId": 113101,
+          "copies": 1
+        },
+        {
+          "templateId": 200018,
+          "copies": 1
+        },
+        {
+          "templateId": 152214,
+          "copies": 1
+        },
+        {
+          "templateId": 201646,
+          "copies": 1
+        },
+        {
+          "templateId": 200212,
+          "copies": 1
+        },
+        {
+          "templateId": 152211,
+          "copies": 1
+        },
+        {
+          "templateId": 153201,
+          "copies": 1
+        },
+        {
+          "templateId": 113203,
+          "copies": 1
+        },
+        {
+          "templateId": 152312,
+          "copies": 3
+        },
+        {
+          "templateId": 200105,
+          "copies": 3
+        },
+        {
+          "templateId": 200300,
+          "copies": 3
+        },
+        {
+          "templateId": 152306,
+          "copies": 3
+        },
+        {
+          "templateId": 113312,
+          "copies": 3
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "key": "ai-rules-44",
+      "aiRulesProfile": 44,
+      "title": "ИИ · Фольтест: усиление колоды",
+      "description": "Исследованный состав Beta 0.9.24; temerians",
+      "faction": 8,
+      "leader": 200168,
+      "templateIds": [
+        122201,
+        122102,
+        122108,
+        122105,
+        122212,
+        122208,
+        122211,
+        123201,
+        200019,
+        122203,
+        122310,
+        122310,
+        122310,
+        122311,
+        122311,
+        122311,
+        122316,
+        122316,
+        122316,
+        123301,
+        123301,
+        123301,
+        201622,
+        201622,
+        201622
+      ],
+      "unitCount": 23,
+      "specialCount": 2,
+      "goldCount": 4,
+      "silverCount": 6,
+      "cards": [
+        {
+          "templateId": 122201,
+          "copies": 1
+        },
+        {
+          "templateId": 122102,
+          "copies": 1
+        },
+        {
+          "templateId": 122108,
+          "copies": 1
+        },
+        {
+          "templateId": 122105,
+          "copies": 1
+        },
+        {
+          "templateId": 122212,
+          "copies": 1
+        },
+        {
+          "templateId": 122208,
+          "copies": 1
+        },
+        {
+          "templateId": 122211,
+          "copies": 1
+        },
+        {
+          "templateId": 123201,
+          "copies": 1
+        },
+        {
+          "templateId": 200019,
+          "copies": 1
+        },
+        {
+          "templateId": 122203,
+          "copies": 1
+        },
+        {
+          "templateId": 122310,
+          "copies": 3
+        },
+        {
+          "templateId": 122311,
+          "copies": 3
+        },
+        {
+          "templateId": 122316,
+          "copies": 3
+        },
+        {
+          "templateId": 123301,
+          "copies": 3
+        },
+        {
+          "templateId": 201622,
+          "copies": 3
+        }
+      ]
     }
   ],
-  "presetsSourceSha256": "82798d8290800f8089d4e70b3c1e22f4f8c42739825ede01c565c19ad72ed12d",
-  "selectablePresetCount": 93,
+  "presetsSourceSha256": "f94ac411c7f1365225938f29cbe81c27545a63d828d7a7143e7d93430e0da1c5",
+  "selectablePresetCount": 99,
   "leaderIds": [
     131101,
     200055,

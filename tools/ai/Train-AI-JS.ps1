@@ -1,27 +1,23 @@
-# Self-play training of the Beta Gwent AI on all 40 archetypes (headless, Node.js).
-# Run:  powershell -ExecutionPolicy Bypass -File D:\w3mod\tools\ai\Train-AI-JS.ps1 [-Generations 30] [-Pairs 200] [-Resume]
-# Output: BetaGwent\training\js-<date>\ (summary.csv, gen-*.json, best.json, train.log).
-# Send that folder (or train.log + best.json) back for analysis; apply with:
-#   python tools\ai\apply_tunes.py BetaGwent\training\js-<date>\best.json
-param([int]$Generations = 30, [int]$Pairs = 200, [int]$Strength = 4, [int]$Shards = 0, [string]$Output = '', [switch]$Resume)
-$ErrorActionPreference = 'Stop'
-Set-Location 'D:\w3mod'
-if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
-    throw 'Node.js not found. Install it once:  winget install OpenJS.NodeJS.LTS  (then open a new PowerShell window).'
-}
-if (-not $Output) { $Output = 'BetaGwent\training\js-' + (Get-Date -Format 'yyyy-MM-dd') }
+# Immutable self-play run; all 46 researched decks, both seats and both model/deck assignments.
+param([int]$Generations=30,[int]$Pairs=200,[int]$Strength=4,[int]$Shards=0,[string]$Output='',[switch]$Resume,[switch]$NoFast)
+$ErrorActionPreference='Stop'
+Set-Location (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent)
+if ($Pairs -lt 46 -or $Generations -lt 1 -or $Strength -lt 1 -or $Strength -gt 4) { throw 'Pairs >= 46; Generations >= 1; Strength 1..4' }
+if (-not $Output) { $Output='BetaGwent\training\js-'+(Get-Date -Format 'yyyy-MM-dd-HHmmss') }
 New-Item -ItemType Directory -Force -Path $Output | Out-Null
-New-Item -ItemType Directory -Force -Path 'BetaGwent\build\ai-js' | Out-Null
-Write-Host '=== translating battle scripts (WS -> JS)' -ForegroundColor Cyan
-& python -X utf8 tools/ai/gen_clone.py
-if ($LASTEXITCODE -ne 0) { throw 'gen_clone failed' }
-& python -X utf8 tools/ai/build_js.py BetaGwent/build/ai-js/rules.js
-if ($LASTEXITCODE -ne 0) { throw 'build_js failed' }
-$nodeArgs = @('tools/ai/jshost/train.js', '--rules', 'BetaGwent/build/ai-js/rules.js', '--out', $Output,
-          '--generations', "$Generations", '--pairs', "$Pairs", '--strength', "$Strength")
-if ($Shards -gt 0) { $nodeArgs += @('--shards', "$Shards") }
-if ($Resume) { $nodeArgs += '--resume' }
-Write-Host "=== training ($Generations generations x $($Pairs*2) games), log: $Output\train.log" -ForegroundColor Cyan
-& node @nodeArgs 2>&1 | Tee-Object -FilePath (Join-Path $Output 'train.log') -Append
-if ($LASTEXITCODE -ne 0) { throw "training exited with $LASTEXITCODE" }
-Write-Host "=== done. Best tunes: $Output\best.json" -ForegroundColor Green
+$Output=(Resolve-Path -LiteralPath $Output).Path
+$lock=$null
+try {
+    $lock=[System.IO.File]::Open((Join-Path $Output 'run.lock'),[System.IO.FileMode]::OpenOrCreate,[System.IO.FileAccess]::ReadWrite,[System.IO.FileShare]::None)
+    $snapshot=Join-Path $Output 'snapshot'
+    $freezeArgs=@('-X','utf8','tools/ai/snapshot.py',$snapshot)
+    if ($Resume) { $freezeArgs+='--resume' }
+    & python @freezeArgs
+    if ($LASTEXITCODE -ne 0) { throw 'Snapshot verification failed' }
+    $nodeArgs=@((Join-Path $snapshot 'train.js'),'--rules',(Join-Path $snapshot 'rules.js'),'--out',$Output,'--generations',"$Generations",'--pairs',"$Pairs",'--strength',"$Strength")
+    if ($Shards -gt 0) { $nodeArgs+=@('--shards',"$Shards") }
+    if ($Resume) { $nodeArgs+='--resume' }
+    Write-Host "Training: $Generations generations, $($Pairs*4) games per set; $Output"
+    & node @nodeArgs 2>&1 | Tee-Object -FilePath (Join-Path $Output 'train.log') -Append
+    if ($LASTEXITCODE -ne 0) { throw "Training failed with exit $LASTEXITCODE; completed checkpoints remain available" }
+} finally { if ($lock) { $lock.Dispose() } }

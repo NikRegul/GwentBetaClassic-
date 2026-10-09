@@ -1,0 +1,565 @@
+{
+  "schema": 1,
+  "stage": 115,
+  "profiles": [
+    {
+      "profileId": 1,
+      "family": "spies",
+      "passPolicy": "T",
+      "keep": {
+        "162308": 2,
+        "162314": 1,
+        "162307": 1,
+        "200032": 1
+      },
+      "opening": {
+        "162308": 6
+      }
+    },
+    {
+      "profileId": 2,
+      "family": "drain",
+      "passPolicy": "L",
+      "keep": {
+        "132302": 2,
+        "132313": 1,
+        "132103": 1
+      },
+      "opening": {
+        "132103": 4,
+        "132302": 4
+      }
+    },
+    {
+      "profileId": 3,
+      "family": "swarm",
+      "passPolicy": "T",
+      "keep": {
+        "132201": 2,
+        "132304": 1,
+        "132308": 1,
+        "201606": 1
+      },
+      "opening": {
+        "201660": 6,
+        "132201": 6
+      }
+    },
+    {
+      "profileId": 4,
+      "family": "machines",
+      "passPolicy": "T",
+      "keep": {
+        "200049": 1,
+        "122301": 1,
+        "122302": 1,
+        "122318": 2
+      },
+      "opening": {
+        "200529": 3
+      }
+    },
+    {
+      "profileId": 5,
+      "family": "cursed",
+      "passPolicy": "T",
+      "keep": {
+        "201630": 1,
+        "201628": 1
+      },
+      "opening": {
+        "201628": 3
+      }
+    },
+    {
+      "profileId": 6,
+      "family": "reveal",
+      "passPolicy": "T",
+      "keep": {
+        "162317": 2,
+        "162316": 1,
+        "132407": 0,
+        "162306": 1
+      },
+      "opening": {
+        "162317": 6
+      }
+    },
+    {
+      "profileId": 7,
+      "family": "weather",
+      "passPolicy": "L",
+      "keep": {
+        "132402": 1,
+        "132310": 1,
+        "200026": 1
+      },
+      "opening": {
+        "200301": 6
+      }
+    },
+    {
+      "profileId": 8,
+      "family": "consume",
+      "passPolicy": "T",
+      "keep": {
+        "132305": 1,
+        "132211": 2,
+        "132308": 1,
+        "132217": 1
+      },
+      "opening": {
+        "132305": 4,
+        "132217": 3
+      }
+    },
+    {
+      "profileId": 9,
+      "family": "ambush",
+      "passPolicy": "T",
+      "keep": {
+        "142307": 1,
+        "142310": 1
+      },
+      "opening": {
+        "142205": 4
+      }
+    },
+    {
+      "profileId": 10,
+      "family": "machines",
+      "passPolicy": "T",
+      "keep": {},
+      "opening": {}
+    },
+    {
+      "profileId": 11,
+      "family": "alchemy",
+      "passPolicy": "T",
+      "keep": {
+        "122403": 2,
+        "200124": 1
+      },
+      "opening": {}
+    },
+    {
+      "profileId": 12,
+      "family": "soldiers",
+      "passPolicy": "T",
+      "keep": {
+        "200294": 1,
+        "201610": 1,
+        "201661": 1,
+        "201617": 1
+      },
+      "opening": {
+        "200294": 6
+      }
+    },
+    {
+      "profileId": 13,
+      "family": "moonlight",
+      "passPolicy": "L",
+      "keep": {
+        "200112": 1,
+        "132220": 1,
+        "132409": 1
+      },
+      "opening": {}
+    },
+    {
+      "profileId": 14,
+      "family": "veterans",
+      "passPolicy": "T",
+      "keep": {
+        "200046": 2
+      },
+      "opening": {
+        "200046": 7
+      }
+    },
+    {
+      "profileId": 15,
+      "family": "dwarves",
+      "passPolicy": "T",
+      "keep": {
+        "200293": 1
+      },
+      "opening": {}
+    },
+    {
+      "profileId": 16,
+      "family": "consume",
+      "passPolicy": "T",
+      "keep": {
+        "132305": 1,
+        "132211": 2,
+        "132308": 1,
+        "201606": 1
+      },
+      "opening": {
+        "132305": 4
+      }
+    },
+    {
+      "profileId": 17,
+      "family": "greatswords",
+      "passPolicy": "L",
+      "keep": {
+        "200040": 1,
+        "152309": 1
+      },
+      "opening": {}
+    },
+    {
+      "profileId": 18,
+      "family": "machines",
+      "passPolicy": "T",
+      "keep": {
+        "200049": 1,
+        "122301": 1,
+        "122302": 1,
+        "122318": 2
+      },
+      "opening": {}
+    },
+    {
+      "profileId": 19,
+      "family": "queensguard",
+      "passPolicy": "T",
+      "keep": {
+        "152307": 1,
+        "152305": 1
+      },
+      "opening": {}
+    },
+    {
+      "profileId": 20,
+      "family": "temerians",
+      "passPolicy": "T",
+      "keep": {
+        "122310": 1,
+        "122311": 1,
+        "122316": 1,
+        "201622": 0
+      },
+      "opening": {
+        "122310": 5
+      }
+    },
+    {
+      "profileId": 21,
+      "family": "reveal",
+      "passPolicy": "T",
+      "keep": {
+        "162317": 2,
+        "162316": 1,
+        "132407": 0,
+        "162306": 1
+      },
+      "opening": {
+        "162317": 6
+      }
+    },
+    {
+      "profileId": 22,
+      "family": "soldiers",
+      "passPolicy": "T",
+      "keep": {
+        "200294": 1,
+        "201610": 1,
+        "201661": 1,
+        "201617": 1
+      },
+      "opening": {
+        "200294": 6
+      }
+    },
+    {
+      "profileId": 23,
+      "family": "deathwish",
+      "passPolicy": "T",
+      "keep": {
+        "132217": 1,
+        "132308": 1,
+        "132312": 1
+      },
+      "opening": {
+        "132217": 4
+      }
+    },
+    {
+      "profileId": 24,
+      "family": "discard",
+      "passPolicy": "T",
+      "keep": {
+        "152314": 1,
+        "200036": 1,
+        "152305": 1
+      },
+      "opening": {
+        "152314": 6
+      }
+    },
+    {
+      "profileId": 25,
+      "family": "swap",
+      "passPolicy": "T",
+      "keep": {
+        "142303": 1,
+        "142309": 1,
+        "201638": 1
+      },
+      "opening": {}
+    },
+    {
+      "profileId": 26,
+      "family": "temerians",
+      "passPolicy": "T",
+      "keep": {
+        "122310": 1,
+        "122311": 1,
+        "122316": 1
+      },
+      "opening": {
+        "122310": 5
+      }
+    },
+    {
+      "profileId": 27,
+      "family": "tall",
+      "passPolicy": "T",
+      "keep": {
+        "132212": 1,
+        "200502": 1
+      },
+      "opening": {}
+    },
+    {
+      "profileId": 28,
+      "family": "handbuff",
+      "passPolicy": "L",
+      "keep": {
+        "142205": 2,
+        "200535": 1,
+        "200136": 1
+      },
+      "opening": {
+        "142205": 6
+      }
+    },
+    {
+      "profileId": 29,
+      "family": "weather",
+      "passPolicy": "L",
+      "keep": {
+        "132402": 1,
+        "132310": 1,
+        "200026": 1
+      },
+      "opening": {
+        "200301": 6
+      }
+    },
+    {
+      "profileId": 30,
+      "family": "handbuff",
+      "passPolicy": "L",
+      "keep": {
+        "142205": 2,
+        "200535": 1
+      },
+      "opening": {
+        "142205": 6
+      }
+    },
+    {
+      "profileId": 31,
+      "family": "singleton",
+      "passPolicy": "T",
+      "keep": {},
+      "opening": {}
+    },
+    {
+      "profileId": 32,
+      "family": "temerians",
+      "passPolicy": "T",
+      "keep": {
+        "122310": 1,
+        "122311": 1,
+        "122316": 1,
+        "201622": 0
+      },
+      "opening": {
+        "122310": 5
+      }
+    },
+    {
+      "profileId": 33,
+      "family": "greatswords",
+      "passPolicy": "L",
+      "keep": {
+        "200040": 1,
+        "152309": 1
+      },
+      "opening": {}
+    },
+    {
+      "profileId": 34,
+      "family": "dwarves",
+      "passPolicy": "T",
+      "keep": {
+        "142213": 1,
+        "142201": 1,
+        "200293": 1,
+        "201559": 1
+      },
+      "opening": {
+        "142201": 6,
+        "142213": 5
+      }
+    },
+    {
+      "profileId": 35,
+      "family": "tall",
+      "passPolicy": "T",
+      "keep": {
+        "132212": 1,
+        "200502": 1
+      },
+      "opening": {}
+    },
+    {
+      "profileId": 36,
+      "family": "armor",
+      "passPolicy": "L",
+      "keep": {
+        "123301": 1,
+        "122314": 1
+      },
+      "opening": {
+        "123301": 4
+      }
+    },
+    {
+      "profileId": 37,
+      "family": "soldiers",
+      "passPolicy": "T",
+      "keep": {
+        "201610": 1,
+        "201661": 1,
+        "201617": 1
+      },
+      "opening": {}
+    },
+    {
+      "profileId": 38,
+      "family": "ng-handbuff",
+      "passPolicy": "T",
+      "keep": {
+        "162318": 1,
+        "162303": 1,
+        "200044": 1
+      },
+      "opening": {}
+    },
+    {
+      "profileId": 39,
+      "family": "greatswords",
+      "passPolicy": "L",
+      "keep": {
+        "152309": 1
+      },
+      "opening": {}
+    },
+    {
+      "profileId": 40,
+      "family": "handbuff",
+      "passPolicy": "L",
+      "keep": {
+        "142205": 2,
+        "200535": 1
+      },
+      "opening": {
+        "142205": 6
+      }
+    },
+    {
+      "profileId": 41,
+      "family": "spells",
+      "passPolicy": "T",
+      "keep": {
+        "200039": 2,
+        "142308": 1
+      },
+      "opening": {}
+    },
+    {
+      "profileId": 42,
+      "family": "temerians",
+      "passPolicy": "T",
+      "keep": {
+        "122310": 1,
+        "122311": 1,
+        "122316": 1,
+        "201622": 0
+      },
+      "opening": {
+        "122310": 5
+      }
+    },
+    {
+      "profileId": 43,
+      "family": "axemen",
+      "passPolicy": "L",
+      "keep": {
+        "152312": 2,
+        "200105": 1,
+        "200300": 1,
+        "152306": 1
+      },
+      "opening": {
+        "152312": 6,
+        "201646": 5
+      }
+    },
+    {
+      "profileId": 44,
+      "family": "temerians",
+      "passPolicy": "T",
+      "keep": {
+        "122310": 1,
+        "122311": 1,
+        "122316": 1,
+        "201622": 0
+      },
+      "opening": {
+        "122310": 5
+      }
+    },
+    {
+      "profileId": 45,
+      "family": "axemen",
+      "passPolicy": "L",
+      "keep": {
+        "152312": 2,
+        "200105": 1,
+        "200300": 1,
+        "152306": 1
+      },
+      "opening": {
+        "152312": 6,
+        "201646": 5
+      }
+    },
+    {
+      "profileId": 46,
+      "family": "dryads",
+      "passPolicy": "T",
+      "keep": {
+        "142209": 1
+      },
+      "opening": {}
+    }
+  ]
+}

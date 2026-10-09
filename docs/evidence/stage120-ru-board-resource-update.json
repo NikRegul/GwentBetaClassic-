@@ -1,0 +1,484 @@
+{
+  "entry": "BetaGwentBoard",
+  "source": "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board.swf",
+  "sourceSha256": "de807dea309a7e490310faae6167ac6ae820d39fa69a18562da554bd69e0a550",
+  "target": "D:\\w3mod\\GwentB\\myproject1\\workspace\\betagwent\\betagwent_board.redswf",
+  "updatedSha256": "fc1e3eea50bc666c848fdea4edc5c49948e37a695b4a96abd131f8734e52427d",
+  "updatedBytes": 205434308,
+  "originalSha256": "9aca64e87ca36000844f678468294f2ed5a180571d633604edd61a4605a572a8",
+  "candidate": "D:\\w3mod\\BetaGwent\\build\\native-hd93-resource\\betagwent_board.redswf",
+  "backup": "D:\\w3mod\\BetaGwent\\build\\resource-backups\\9aca64e87ca36000844f678468294f2ed5a180571d633604edd61a4605a572a8.redswf",
+  "applied": true,
+  "nativeABCMatchesBuiltSWF": true,
+  "nativeSymbolsMatchBuiltSWF": true,
+  "headerTableChunkChecksumsVerified": true,
+  "nativeImageLinkagePrefixVerified": true,
+  "totalTextureChunks": 21,
+  "exportedBindings": 42,
+  "aliasTexturesDeduplicated": 21,
+  "bindings": [
+    {
+      "cid": 1,
+      "imageId": 0,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_I1.dds",
+      "sha256": "d764f3f96346a8c0feb91f0ee50a9e020d84b1d010f06a8e8907e39abaaf0fad",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 2,
+      "imageId": 1,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_I2.dds",
+      "sha256": "b728a9277eb9f39e469d1a13f961ca014aa271f44f2ba6b40f23f7320cd479f3",
+      "size": [
+        1024,
+        832
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 3,
+      "imageId": 2,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_I3.dds",
+      "sha256": "8f2bc16afe77e76a379d76fba9dba012584a33857f8ffdefe9129bd11410de23",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 4,
+      "imageId": 3,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_I4.dds",
+      "sha256": "2db88a10d8bcbd74cfa7915d4069a21e1d39b61ea3cc12a0702b237fb265c26b",
+      "size": [
+        512,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 5,
+      "imageId": 4,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_I5.dds",
+      "sha256": "142c1536accb03f3a53d1f8aa89b37d40026bdd424e12e9f3cb0a91d1478b9f8",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 6,
+      "imageId": 5,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_I6.dds",
+      "sha256": "5eef1ceb34ac6e6fb0c769331571b42d45926ea71521c72509966e0ed533d245",
+      "size": [
+        1296,
+        2128
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 7,
+      "imageId": 6,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_I7.dds",
+      "sha256": "6736948cacc947ac68e09df977f1e355d91c200954e2bfa2c1658f49b3f40108",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 8,
+      "imageId": 7,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_I8.dds",
+      "sha256": "adff3b08671ad80624e3723fda8394dacddd198032d45524b9706690714b68e5",
+      "size": [
+        2048,
+        2032
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 9,
+      "imageId": 8,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_I9.dds",
+      "sha256": "722b38e07931dbea8c56b4578eff018410a7802b0fccb3a786cc508d6358f9f8",
+      "size": [
+        1680,
+        2288
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 10,
+      "imageId": 9,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_IA.dds",
+      "sha256": "f578b4ac600a83a3c1fd943c7700cee87ac9f257aafeac24ae2b34d34b4e778f",
+      "size": [
+        1584,
+        1348
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 11,
+      "imageId": 10,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_IB.dds",
+      "sha256": "2f34c2f3868dfda80b01fbc3d1f82015637fc1bd752f713542c95884867d558e",
+      "size": [
+        2880,
+        408
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 12,
+      "imageId": 11,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_IC.dds",
+      "sha256": "f5888e51e71803337cafaa2844321ec7bff3f95df4cdc999cee30b90007879e4",
+      "size": [
+        3072,
+        2656
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 13,
+      "imageId": 12,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_ID.dds",
+      "sha256": "892be989719587163b0ec7bf21d59488a7196e5a4d7653873b77fd16a65173ff",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 14,
+      "imageId": 13,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_IE.dds",
+      "sha256": "5776e6af8558597e26d84b954614e56be0822bb3f9959036cd0a2cdb8fb566d4",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 15,
+      "imageId": 14,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_IF.dds",
+      "sha256": "c2822b0a686fda888bd71499659ca50941352bc53cbeebfcceb0c846daab4cfa",
+      "size": [
+        1024,
+        1288
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 16,
+      "imageId": 15,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_I10.dds",
+      "sha256": "d9cc6840128ca0117285660110772056a68663d7fe47ba04df9a50a987cf0c2a",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 17,
+      "imageId": 16,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_I11.dds",
+      "sha256": "aad6d99782e7f25fdf604e5f9f0963a4ac0da76673e870dcdb630670c7f7aa2d",
+      "size": [
+        1024,
+        1988
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 18,
+      "imageId": 17,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_I12.dds",
+      "sha256": "ba77cef1dcae954b9c7b32e90716aed8ac432925433367b7715c1b718e4f5886",
+      "size": [
+        1400,
+        604
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 19,
+      "imageId": 18,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_I13.dds",
+      "sha256": "769e2ff11ea555de52da1354ac023ebc00adf8960b3a4fea315e57ad0fc4cc73",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 20,
+      "imageId": 19,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_I14.dds",
+      "sha256": "e9e7c1dcf32d4b1e8ac70b6047ff3e778f316751d990c57410be343ff2585011",
+      "size": [
+        512,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 21,
+      "imageId": 20,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\betagwent_board_I15.dds",
+      "sha256": "fe1b05a618010c772580b0b45e43fe06491ef548b5decb5daf427ef9834092b8",
+      "size": [
+        1024,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 22,
+      "imageId": 19,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\battle_widgets101_png$cb9a1b3d05dd4e45926e1a9dce5fd889-906464346.dds",
+      "sha256": "e9e7c1dcf32d4b1e8ac70b6047ff3e778f316751d990c57410be343ff2585011",
+      "size": [
+        512,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 23,
+      "imageId": 11,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\boards_png$9f7a01af208f7160a8184d378c9471c81036787745.dds",
+      "sha256": "f5888e51e71803337cafaa2844321ec7bff3f95df4cdc999cee30b90007879e4",
+      "size": [
+        3072,
+        2656
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 24,
+      "imageId": 20,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\cardfaces104_png$f91c17cba59e4b4e26cdc8f8e3e589b7-220765944.dds",
+      "sha256": "fe1b05a618010c772580b0b45e43fe06491ef548b5decb5daf427ef9834092b8",
+      "size": [
+        1024,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 25,
+      "imageId": 2,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\cards-0_png$eba14a619be348639a4660f875d6591b2016346474.dds",
+      "sha256": "8f2bc16afe77e76a379d76fba9dba012584a33857f8ffdefe9129bd11410de23",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 26,
+      "imageId": 13,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\cards-1_png$f078b48500a174209f21bd9fa6102e952017012203.dds",
+      "sha256": "5776e6af8558597e26d84b954614e56be0822bb3f9959036cd0a2cdb8fb566d4",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 27,
+      "imageId": 4,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\cards-2_png$ec961152010adbe9162b60f6cc7749eb2014007916.dds",
+      "sha256": "142c1536accb03f3a53d1f8aa89b37d40026bdd424e12e9f3cb0a91d1478b9f8",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 28,
+      "imageId": 6,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\cards-3_png$75d5641beb58e2d8f6a3cb1356c5e58b2013625069.dds",
+      "sha256": "6736948cacc947ac68e09df977f1e355d91c200954e2bfa2c1658f49b3f40108",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 29,
+      "imageId": 15,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\cards-4_png$55fc3d14e09a8689fa953a468e9add622014798702.dds",
+      "sha256": "d9cc6840128ca0117285660110772056a68663d7fe47ba04df9a50a987cf0c2a",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 30,
+      "imageId": 12,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\cards-5_png$b60da670663d31284a4a4b14138846462028047343.dds",
+      "sha256": "892be989719587163b0ec7bf21d59488a7196e5a4d7653873b77fd16a65173ff",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 31,
+      "imageId": 0,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\cards-6_png$76d4ff84fc2b43db3291448f760837642029239408.dds",
+      "sha256": "d764f3f96346a8c0feb91f0ee50a9e020d84b1d010f06a8e8907e39abaaf0fad",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 32,
+      "imageId": 18,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\cards-7_png$f77bf5c78501273f311296dc3a5e71642026743025.dds",
+      "sha256": "769e2ff11ea555de52da1354ac023ebc00adf8960b3a4fea315e57ad0fc4cc73",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 33,
+      "imageId": 10,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\cards-8_png$43c36b5851207a11c888b5c53faa69fa2027933042.dds",
+      "sha256": "2f34c2f3868dfda80b01fbc3d1f82015637fc1bd752f713542c95884867d558e",
+      "size": [
+        2880,
+        408
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 34,
+      "imageId": 7,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\cardslots104_png$b36929c2b852fbf361c90fcdf396d4d0-2074065239.dds",
+      "sha256": "adff3b08671ad80624e3723fda8394dacddd198032d45524b9706690714b68e5",
+      "size": [
+        2048,
+        2032
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 35,
+      "imageId": 5,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\covers107_png$65783845e3f3b24e844fd42ceadee72a-1376138946.dds",
+      "sha256": "5eef1ceb34ac6e6fb0c769331571b42d45926ea71521c72509966e0ed533d245",
+      "size": [
+        1296,
+        2128
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 36,
+      "imageId": 3,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\crowns103_png$a53fd6901110341868a11265337e31ce615516982.dds",
+      "sha256": "2db88a10d8bcbd74cfa7915d4069a21e1d39b61ea3cc12a0702b237fb265c26b",
+      "size": [
+        512,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 37,
+      "imageId": 14,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\deckscreens104_png$37758e6ea781e08914dc11720d341947-733490256.dds",
+      "sha256": "c2822b0a686fda888bd71499659ca50941352bc53cbeebfcceb0c846daab4cfa",
+      "size": [
+        1024,
+        1288
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 38,
+      "imageId": 16,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\hud120_png$316c1446eb13537f586352d6613e0dc4-1714544105.dds",
+      "sha256": "aad6d99782e7f25fdf604e5f9f0963a4ac0da76673e870dcdb630670c7f7aa2d",
+      "size": [
+        1024,
+        1988
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 39,
+      "imageId": 8,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\interface10-104_png$aba2094573565c9af8dc5f8f4f88fc6b1169526047.dds",
+      "sha256": "722b38e07931dbea8c56b4578eff018410a7802b0fccb3a786cc508d6358f9f8",
+      "size": [
+        1680,
+        2288
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 40,
+      "imageId": 9,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\interface11-108_png$6405aadcedab97fd466fcc640c535a4e441278375.dds",
+      "sha256": "f578b4ac600a83a3c1fd943c7700cee87ac9f257aafeac24ae2b34d34b4e778f",
+      "size": [
+        1584,
+        1348
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 41,
+      "imageId": 17,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\intro104_png$4439b33ae06a7ae8a03da182ff03ca7d140226306.dds",
+      "sha256": "ba77cef1dcae954b9c7b32e90716aed8ac432925433367b7715c1b718e4f5886",
+      "size": [
+        1400,
+        604
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 42,
+      "imageId": 1,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas\\weather107_png$3cab72023a8215b17ee3ce68ae706248834594138.dds",
+      "sha256": "b728a9277eb9f39e469d1a13f961ca014aa271f44f2ba6b40f23f7320cd479f3",
+      "size": [
+        1024,
+        832
+      ],
+      "format": "DXT5"
+    }
+  ],
+  "nativeRuntimeVerified": false
+}

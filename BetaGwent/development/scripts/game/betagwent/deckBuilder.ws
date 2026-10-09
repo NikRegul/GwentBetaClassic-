@@ -89,7 +89,7 @@ class CBetaGwentDeckLibrary extends IScriptable
         var player : W3PlayerWitcher; var draft : CBetaGwentDeckDraft; var slot : int;
         unlimitedCollection=practice;slots.Clear(); player = (W3PlayerWitcher)thePlayer;
         if(player)player.BetaGwentEnsureCollection();
-        for (slot = 1; slot <= 8; slot += 1)
+        for (slot = 1; slot <= 13; slot += 1)
         {
             draft = new CBetaGwentDeckDraft in this; draft.slot = slot;draft.limitedCollection=!unlimitedCollection;
             if (!player || !player.BetaGwentLoadDeck(slot, draft.cards, draft.title, draft.faction, draft.leader)) draft = NULL;
@@ -106,9 +106,13 @@ class CBetaGwentDeckLibrary extends IScriptable
     public function Remember(id : int)
     { var player : W3PlayerWitcher; player = (W3PlayerWitcher)thePlayer; if (player) player.BetaGwentRememberDeck(id); }
     public function Get(id : int) : CBetaGwentDeckDraft
-    { if (id < 1001 || id > 1008 || slots.Size() != 8) return NULL; return slots[id - 1001]; }
+    {
+        if (slots.Size() != 13) return NULL;
+        if (id >= 16 && id <= 20) return slots[id - 8];
+        if (id < 1001 || id > 1008) return NULL; return slots[id - 1001];
+    }
     public function FirstEmpty() : int
-    { var i : int; for (i = 0; i < slots.Size(); i += 1) if (!slots[i]) return i + 1; return 0; }
+    { var i : int; for (i = 0; i < 8 && i < slots.Size(); i += 1) if (!slots[i]) return i + 1; return 0; }
     public function Edit(id : int) : CBetaGwentDeckDraft
     {
         var draft, storedDeck : CBetaGwentDeckDraft; var preset : SBetaGwentDuelPreset; var i : int; var leaderDefinition : SBetaGwentDuelDefinition;
@@ -118,14 +122,15 @@ class CBetaGwentDeckLibrary extends IScriptable
             draft.slot = storedDeck.slot; draft.faction = storedDeck.faction; draft.leader = storedDeck.leader; draft.title = storedDeck.title;
             for (i = 0; i < storedDeck.cards.Size(); i += 1) draft.cards.PushBack(storedDeck.cards[i]); return draft;
         }
-        draft.slot = FirstEmpty(); if (draft.slot == 0) return NULL;
+        if (id >= 16 && id <= 20) draft.slot = id - 7; else draft.slot = FirstEmpty();
+        if (draft.slot == 0) return NULL;
         preset = BetaGwentDuelPreset(BetaGwentStarterPreset(2));
         draft.faction = 2; draft.leader = preset.leaderTemplateId; draft.title = "Моя колода " + draft.slot;
         if (id != 0)
         {
             preset = BetaGwentDuelPreset(id); if (preset.id == 0) return NULL;
             BetaGwentDuelPresetDeck(id, draft.cards); draft.leader = preset.leaderTemplateId; leaderDefinition = BetaGwentDuelDefinition(draft.leader); draft.faction = leaderDefinition.header.factionMask;
-            draft.title = preset.title;
+            draft.title = StrLeft(preset.title,48);
         }
         return draft;
     }
@@ -149,6 +154,13 @@ class CBetaGwentDeckLibrary extends IScriptable
             for (i = 0; i < draft.cards.Size(); i += 1) cards.PushBack(draft.cards[i]); leader = draft.leader; return true;
         }
         preset = BetaGwentDuelPreset(id); if (preset.id == 0) return false;
+        leader = preset.leaderTemplateId; return BetaGwentDuelPresetDeck(id, cards);
+    }
+    public function ResolveOpponent(id : int, out cards : array<int>, out leader : int) : bool
+    {
+        var preset : SBetaGwentDuelPreset;
+        if (id >= 1001 && id <= 1008) return Resolve(id, cards, leader);
+        cards.Clear(); preset = BetaGwentDuelPreset(id); if (preset.id == 0) return false;
         leader = preset.leaderTemplateId; return BetaGwentDuelPresetDeck(id, cards);
     }
 }

@@ -8,7 +8,7 @@ BUILD=ROOT/'BetaGwent/build/ai-selfplay'
 CORE=ROOT/'BetaGwent/scripts/game/betagwent'
 DEV=ROOT/'BetaGwent/development/scripts/game/betagwent'
 FILES=list(CORE.glob('*.ws'))+[DEV/(n+'.ws') for n in (
- 'duelAICatalog','duelAIPass','duelAITuning','duelArchetypeAI','duelCatalog',
+ 'duelAICatalog','duelAIResearch','duelAIPass','duelAITuning','duelArchetypeAI','duelCatalog',
  'duelEffectRuntime','duelEvents','duelLiveCard','duelMonsterDuel','duelMonsters',
  'duelNeutral','duelNilf','duelNilfDependencies','duelNorth','duelScoia','duelSession',
  'duelSkellige','duelSpecials','duelVisualFrame','duelWeather','duelWeatherAI',

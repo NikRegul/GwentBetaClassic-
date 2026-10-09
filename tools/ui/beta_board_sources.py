@@ -28,7 +28,7 @@ def mesh_data(path):
             for i in range(1,len(polygon)-1):faces.append([polygon[0],polygon[i],polygon[i+1]])
     return np.array(vertices),np.array(uvs),faces
 
-def bake(mesh,texture,scale,offset,size=None,world_bounds=None):
+def bake(mesh,texture,scale,offset,size=None,world_bounds=None,frontmost=False):
     vertices,uvs,faces=mesh_data(mesh)
     width,height=size or (1536,540)
     lower,upper=vertices.min(axis=0),vertices.max(axis=0)
@@ -39,7 +39,9 @@ def bake(mesh,texture,scale,offset,size=None,world_bounds=None):
     screen[:,1]=(upper[1]-vertices[:,1])/(upper[1]-lower[1])*(height-1)
     pixels=np.array(Image.open(texture).convert('RGBA'))
     canvas=np.zeros((height,width,4),dtype=np.uint8)
-    depth=np.full((height,width),-np.inf)
+    # Unity's battle camera is at Z=-185 looking towards +Z. The near surface
+    # therefore has the smallest Z. Keep the legacy order opt-in for other bakes.
+    depth=np.full((height,width),np.inf if frontmost else -np.inf)
     for face in faces:
         p=screen[[f[0] for f in face]]
         tex=uvs[[f[1] for f in face]]*scale+offset
@@ -54,7 +56,8 @@ def bake(mesh,texture,scale,offset,size=None,world_bounds=None):
         wb=((c[1]-a[1])*(xx-c[0])+(a[0]-c[0])*(yy-c[1]))/denominator
         wc=1-wa-wb
         z=wa*a[2]+wb*b[2]+wc*c[2]
-        mask=(wa>=-1e-5)&(wb>=-1e-5)&(wc>=-1e-5)&(z>=depth[y0:y1+1,x0:x1+1])
+        visible=(z<=depth[y0:y1+1,x0:x1+1]) if frontmost else (z>=depth[y0:y1+1,x0:x1+1])
+        mask=(wa>=-1e-5)&(wb>=-1e-5)&(wc>=-1e-5)&visible
         uv=wa[:,:,None]*tex[0]+wb[:,:,None]*tex[1]+wc[:,:,None]*tex[2]
         tx=np.clip(uv[:,:,0]*(pixels.shape[1]-1),0,pixels.shape[1]-1)
         ty=np.clip((1-uv[:,:,1])*(pixels.shape[0]-1),0,pixels.shape[0]-1)

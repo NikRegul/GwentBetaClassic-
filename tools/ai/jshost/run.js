@@ -1,12 +1,13 @@
 // node run.js rules.js mode games seed [strengthLeft strengthRight]
 const h = require('./selfplay.js').load(process.argv[2]);
-const pool = []; for (let p = 54; p <= 93; p++) pool.push(p);
+const fs=require('fs'),path=require('path');
+const pool=JSON.parse(fs.readFileSync(path.join(path.dirname(process.argv[2]),'manifest.json'),'utf8')).presets;
 const games = +process.argv[4] || 80, seed0 = +process.argv[5] || 1;
 const sl = +(process.argv[6] ?? 1), sr = +(process.argv[7] ?? 1);
 let res = { L: 0, R: 0, D: 0, E: 0 }, errs = {}, perDeck = {}, t0 = Date.now();
 let rng = seed0 >>> 0 || 1; const rnd = () => { rng ^= rng << 13; rng >>>= 0; rng ^= rng >>> 17; rng ^= rng << 5; rng >>>= 0; return rng; };
 for (let i = 0; i < games; i++) {
-  const a = pool[i % 40], b = pool[(i + 1 + (rnd() % 39)) % 40], seed = rnd();
+  const a = pool[i % pool.length], b = pool[(i + 1 + (rnd() % (pool.length-1))) % pool.length], seed = rnd();
   for (const [x, y, flip] of [[a, b, false], [b, a, true]]) {
     // flip: same deal, strengths swapped seats so each strength plays both decks
     const r = h.play(x, y, seed, flip ? sr : sl, flip ? sl : sr);

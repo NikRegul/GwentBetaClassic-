@@ -275,7 +275,10 @@ class CBetaGwentDuelNilf extends IScriptable
             }
             if((s.locationMask&7)==0)continue;
             if(kind==2 && id==162312)game.MonsterPower(source,source,1);
-            if((kind==3 || kind==11) && target && (t.locationMask&7)!=0 && t.instanceId!=s.instanceId && (kind==11 || (cause.locationMask&7)==0 || cause.positionPlayerId!=t.positionPlayerId))
+            // Spawn (12) is also an arrival: Cow Carcass already has Spying here.
+            // The preceding move notification uses its final position, so it
+            // does not count as another arrival and cannot trigger twice.
+            if((kind==3 || kind==11 || kind==12) && target && (t.locationMask&7)!=0 && t.instanceId!=s.instanceId && (kind==11 || kind==12 || (cause.locationMask&7)==0 || cause.positionPlayerId!=t.positionPlayerId))
             {
                 if(id==200296 && t.positionPlayerId==s.positionPlayerId)game.MonsterPower(source,source,1);
                 if((t.tokenMask&128)!=0 && t.positionPlayerId!=s.positionPlayerId){if(id==162307)game.MonsterPower(source,source,2);if(id==162308 && m.currentPlayerId==s.positionPlayerId)source.nilfCounter+=1;}

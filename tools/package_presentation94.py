@@ -21,10 +21,11 @@ def main():
     parser.add_argument('--compiled',type=Path,help='Explicit fresh compilation for a single language')
     args=parser.parse_args()
     completed=json.loads((ROOT/f'docs/evidence/stage{args.stage}-completion.json').read_text('utf8'))
-    assert len(completed['menus']) in (3,6)
+    per=4 if args.stage>=109 else 3
+    assert len(completed['menus']) in (per,2*per)
     for item in completed['menus']:assert sha(Path(item['resource']))==item['sha256']
     for language in ((args.language,) if args.language else ('ru','en')):
-        assert len([m for m in completed['menus'] if m['language']==language])==3
+        assert len([m for m in completed['menus'] if m['language']==language])==per
         base=ROOT/f'BetaGwent/build/release{args.stage}/{language}'
         logs=base/'preview-logs';logs.mkdir(parents=True,exist_ok=True)
         compilation=args.compiled or ROOT/f'BetaGwent/build/board-compile{args.stage}{language}'
@@ -51,7 +52,10 @@ def main():
         content=base/'package/Mods/modBetaGwent0924/content';content.mkdir(parents=True,exist_ok=True)
         database='LocalEditorStringDataBaseW3_UTF8_mod.db'
         previous_db=ROOT/f'BetaGwent/build/release89/{language}/project/BetaGwent0924'/database
-        if previous_db.exists():
+        if args.stage>=109:
+            # Stage 109: item strings changed (keg description) - cook them fresh; reuse only the audio cache.
+            print('Item strings recooked for stage',args.stage,flush=True)
+        elif previous_db.exists():
             with sqlite3.connect(base/'project/BetaGwent0924'/database) as current, sqlite3.connect(previous_db) as previous:
                 assert current.execute('select * from STRINGS order by rowid').fetchall()==previous.execute('select * from STRINGS order by rowid').fetchall(),'Item strings changed; recook required'
         else:
@@ -59,10 +63,12 @@ def main():
             # stage89 w3strings hashes below (restored by tools/restore_build_base105.py).
             print('Item-string DB baseline missing; relying on pinned stage89 w3strings',flush=True)
         records={item['path']:item for item in frozen['files']}
-        for name in ('ru.w3strings','en.w3strings','soundspc.cache'):
+        # Stage 109: strings (keg text) and sound bank (troll lines) are cooked fresh.
+        for name in (() if args.stage>=109 else ('ru.w3strings','en.w3strings','soundspc.cache')):
             relative='Mods/modBetaGwent0924/content/'+name
             assert sha(old/relative)==records[relative]['sha256']
             shutil.copyfile(old/relative,content/name)
+        if args.stage>=109:step('strings');step('audio')
         for name in ('dependencies','pack','metadata','archive'):step(name)
     print('Requested '+args.version+' archives ready; originals unchanged.',flush=True)
 

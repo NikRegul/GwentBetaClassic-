@@ -114,35 +114,41 @@ private function BetaGwentProgressionPick(maximum : int) : int
 @addMethod(W3PlayerWitcher)
 public function BetaGwentWinReward(deck : name, npcId : int) : string
 {
-    var ids,pool : array<int>;var i,id,gold,rewarded : int;var d : SBetaGwentDuelDefinition;
+    var ids,pool : array<int>;var i,id,gold,rewarded,scraps : int;var d : SBetaGwentDuelDefinition;
     if(!BetaGwentEnsureCollection())return "Коллекция недоступна: неизвестная схема сохранения.";
     gold=BetaGwentQuestGold(deck);
     if(gold!=0) {
-        if(betaGwentRewardedQuests.Contains(deck))return "Квестовая награда от этого игрока уже получена.";
+        // Repeat wins against quest and tournament players: +50 scraps.
+        if(betaGwentRewardedQuests.Contains(deck)){BetaGwentAddScraps(50);return "Победа: +50 осколков (всего "+BetaGwentScraps()+").";}
         betaGwentRewardedQuests.PushBack(deck);
         d=BetaGwentDuelDefinition(gold);
         if(BetaGwentGrant(gold)) {
             LogChannel('BetaGwent',"COLLECTION_REWARD quest="+deck+" card="+gold);
             return "Новая золотая карта: "+d.title;
         }
-        AddMoney(300);LogChannel('BetaGwent',"COLLECTION_REWARD quest="+deck+" duplicateGold="+gold+" crowns=300");
-        return "Золотая карта уже есть в коллекции. Награда:300 крон.";
+        scraps=BetaGwentReceive(gold);LogChannel('BetaGwent',"COLLECTION_REWARD quest="+deck+" duplicateGold="+gold+" scraps="+scraps);
+        return "Золотая карта уже есть в коллекции: +"+scraps+" осколков (всего "+BetaGwentScraps()+").";
     }
     if(npcId==0) {
         LogChannel('BetaGwent',"COLLECTION_REWARD_DEFERRED npc="+deck+" reason=missingActorIdentity");
-        return "Не удалось определить персонажа для первой награды.";
+        BetaGwentAddScraps(20);return "Победа: +20 осколков (всего "+BetaGwentScraps()+").";
     }
     // Each saved occurrence is one rewarded win. Old saves contain one occurrence.
     for(i=0;i<betaGwentRewardedNpcs.Size();i+=1)if(betaGwentRewardedNpcs[i]==npcId)rewarded+=1;
-    if(rewarded>=4)return "Все четыре награды этого игрока уже получены.";
+    // After the four card rewards every further win is worth 20 scraps.
+    if(rewarded>=4){BetaGwentAddScraps(20);return "Победа: +20 осколков (всего "+BetaGwentScraps()+").";}
     BetaGwentDuelCollection(ids);
     for(i=0;i<ids.Size();i+=1) {
         d=BetaGwentDuelDefinition(ids[i]);
-        if((d.header.tierMask==2 || d.header.tierMask==4) && BetaGwentOwned(ids[i])<BetaGwentCollectionCap(ids[i]))pool.PushBack(ids[i]);
+        // Beta economy: duplicates can drop; a copy above the limit becomes scraps.
+        if(d.header.tierMask==2 || d.header.tierMask==4)pool.PushBack(ids[i]);
     }
-    if(pool.Size()==0)return "Все бронзовые и серебряные карты уже собраны.";
-    id=pool[BetaGwentProgressionPick(pool.Size())];if(!BetaGwentGrant(id))return "Награда уже получена.";
+    if(pool.Size()==0)return "Награда недоступна.";
+    id=pool[BetaGwentProgressionPick(pool.Size())];scraps=BetaGwentReceive(id);
     betaGwentRewardedNpcs.PushBack(npcId);
+    d=BetaGwentDuelDefinition(id);
+    if(scraps>0){LogChannel('BetaGwent',"COLLECTION_REWARD npc="+deck+" card="+id+" duplicateScraps="+scraps+" rewardedWins="+(rewarded+1));
+        return "Дубль: "+d.title+" → +"+scraps+" осколков (всего "+BetaGwentScraps()+") · Награда "+(rewarded+1)+"/4";}
     d=BetaGwentDuelDefinition(id);LogChannel('BetaGwent',"COLLECTION_REWARD npc="+deck+" card="+id+" copies="+BetaGwentOwned(id)+" rewardedWins="+(rewarded+1));
     return "Новая карта: "+d.title+" ("+BetaGwentOwned(id)+"/"+BetaGwentCollectionCap(id)+") · Награда "+(rewarded+1)+"/4";
 }

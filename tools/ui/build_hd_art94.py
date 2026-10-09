@@ -66,7 +66,7 @@ def main():
   binding=next(v for k,v in material['m_SavedProperties']['m_TexEnvs'] if k=='_MainTex')
   bounds=([-124,-95,0],[160,3,0]) if half['side']==1 else ([-124,-3,0],[160,95,0])
   art=bake(mesh,texture,[binding['m_Scale'][k] for k in ('x','y')],
-           [binding['m_Offset'][k] for k in ('x','y')],size=(2048,708),world_bounds=bounds)
+           [binding['m_Offset'][k] for k in ('x','y')],size=(2048,708),world_bounds=bounds,frontmost=True)
   path=OUT/f"board-{half['faction']}-{half['side']}.png";art.save(path)
   x,y=i%2*2048,i//2*708;image.paste(art,(x,y));ident=-1300-i
   slots[ident]=[page,x,y,2048,708]

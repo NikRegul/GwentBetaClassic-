@@ -14,9 +14,9 @@ rules=read('data/beta924/ai/rules.json')
 presets=read('data/beta924/duel/presets.json')['presets']
 full={c['templateId']:c for c in read('data/beta924/planning/full_catalog.json')['cards']}
 active=[p for p in rules['profiles'] if p['active']]
-assert len(active)==40 and len(presets)==93
-assert rules['sourceSha256']==hashlib.sha256((ROOT/'deck_rules.txt').read_bytes()).hexdigest()
-assert [p['id'] for p in presets]==list(range(1,94))
+assert len(active)==46 and len(presets)==99
+assert rules['sourceSha256']==hashlib.sha256((ROOT/'deck_rules_researched_114.md').read_bytes()).hexdigest()
+assert [p['id'] for p in presets]==list(range(1,100))
 for p in presets:
     assert 25<=len(p['templateIds'])<=40
     assert full[p['leader']]['leader'] and full[p['leader']]['faction']==p['faction']
@@ -28,7 +28,7 @@ for p in presets:
 for p in active:
     if p['family']=='singleton':assert len(set(p['templateIds']))==25
     if p['id']==32:assert len(p['templateIds'])==40
-frozen=ROOT/'BetaGwent/build/release87/project/BetaGwent0924/workspace/scripts/game/betagwent/duelCatalog.ws'
+frozen=ROOT/'BetaGwent/build/stage114/powershell/20261009-083631-771-ai/snapshot/sources/BetaGwent/development/scripts/game/betagwent/duelCatalog.ws'
 old=frozen.read_text(encoding='utf-8-sig')
 meta=old[old.index('struct SBetaGwentDuelPreset'):old.index('function BetaGwentDuelPresetDeck(')]
 for p in presets[:53]:
@@ -66,6 +66,7 @@ build=ROOT/'BetaGwent/build/ai-rules88-check';build.mkdir(exist_ok=True)
 checks=[f'if ({expression} != {expected}) throw new Exception({json.dumps(name)});' for name,expression,expected in cases]
 # Execute the actual chase planner as well: one boosted Impera must beat a pair.
 planner=chase_source[chase_source.index('class CBetaGwentAIChasePlanner'):].replace(' extends IScriptable','')
+planner=re.sub(r'public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;', '', planner)
 def signature(m):
     params=', '.join(t.strip().replace('array<','List<')+' '+n.strip() for n,t in (p.split(':') for p in m[3].split(',')))
     return m[1]+' '+m[4]+' '+m[2]+'('+params+')'
@@ -84,10 +85,10 @@ program='using System;using System.Collections.Generic;'+structs+planner+'class 
 (build/'policy.csproj').write_text('<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net7.0</TargetFramework><CheckEolTargetFramework>false</CheckEolTargetFramework></PropertyGroup></Project>',encoding='utf-8')
 offline=build/'empty-feed';offline.mkdir(exist_ok=True)
 run=subprocess.run(['dotnet','run','--project',str(build/'policy.csproj'),'--property:RestoreSources='+str(offline)],cwd=build,capture_output=True,text=True,timeout=60,creationflags=subprocess.CREATE_NO_WINDOW)
-report=dict(stage=88,passed=run.returncode==0,sourceSha256=hashlib.sha256(raw).hexdigest(),legalPresets=93,activeProfiles=40,
+report=dict(stage=115,passed=run.returncode==0,sourceSha256=hashlib.sha256(raw).hexdigest(),legalPresets=99,activeProfiles=46,
     preservedOriginalDecksAndLeaders=53,sourceTextRetained=True,shupeSingletonVerified=True,foltest40Verified=True,
     cases=[dict(name=n,expected=e) for n,_,e in cases],imperaOneCardChaseVerified=run.returncode==0,
     chaseSourceSha256=hashlib.sha256(chase_source.encode('utf-8')).hexdigest(),stdout=run.stdout,stderr=run.stderr,nativeRuntimeVerified=False)
-(ROOT/'docs/evidence/stage88-ai-policy.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+(ROOT/'docs/evidence/stage115-ai-policy.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(run.stdout);print(run.stderr)
 raise SystemExit(run.returncode)

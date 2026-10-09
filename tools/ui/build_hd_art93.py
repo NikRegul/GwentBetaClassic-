@@ -66,7 +66,7 @@ def main():
   binding=next(v for k,v in material['m_SavedProperties']['m_TexEnvs'] if k=='_MainTex')
   bounds=([-124,-95,0],[160,3,0]) if half['side']==1 else ([-124,-3,0],[160,95,0])
   art=bake(mesh,texture,[binding['m_Scale'][k] for k in ('x','y')],
-           [binding['m_Offset'][k] for k in ('x','y')],size=(2048,708),world_bounds=bounds)
+           [binding['m_Offset'][k] for k in ('x','y')],size=(2048,708),world_bounds=bounds,frontmost=True)
   path=OUT/f"board-{half['faction']}-{half['side']}.png";art.save(path)
   x,y=i%2*2048,i//2*708;image.paste(art,(x,y));ident=-1300-i
   slots[ident]=[page,x,y,2048,708]
@@ -116,7 +116,10 @@ def main():
  private static var shared:Array=[];
  private static var slots:Object=SLOTS;
  public static var lastError:String="";
- public static function has(id:int):Boolean {return slots.hasOwnProperty(id);}
+ public static function has(id:int):Boolean {
+  if(!slots.hasOwnProperty(id))return false;
+  var page:int=int(slots[id][0]);return page>=0&&page<types.length&&types[page]!=null;
+ }
  public static function size(id:int):Array {return has(id)?[slots[id][3],slots[id][4]]:null;}
  public static function view(id:int,w:Number,h:Number):Sprite {
   if(!has(id))return null;

@@ -15,7 +15,7 @@ ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'BetaGwent/build/stage94'
 EVIDENCE=ROOT/'docs/evidence'
 WORK=ROOT/'GwentB/myproject1/workspace/betagwent'
-ENTRIES={'BetaGwentBoard':'betagwent_board','GwintGame':'betagwent_npc00','DeckBuilder':'betagwent_decks'}
+ENTRIES={'BetaGwentBoard':'betagwent_board','GwintGame':'betagwent_npc00','DeckBuilder':'betagwent_decks','BetaGwentKeg':'betagwent_kegop'}
 
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def job(name,args):
@@ -69,12 +69,12 @@ def main():
                     shutil.copyfile(EVIDENCE/(base+suffix+'.json'),EVIDENCE/(f'stage{options.stage}-'+language+'-'+base+suffix+'.json'))
                 bridge=json.loads((EVIDENCE/('board-bridge-bytecode'+suffix+'.json')).read_text('utf8'))
                 native=json.loads((EVIDENCE/('board-resource-update'+suffix+'.json')).read_text('utf8'))
-                assert bridge['passed'] and len(bridge['bindings'])==45
+                assert bridge['passed'] and len(bridge['bindings'])==46
                 assert native['nativeABCMatchesBuiltSWF'] and native['headerTableChunkChecksumsVerified']
                 resource=BASE/language/'resources'/(stem+'.redswf');resource.parent.mkdir(parents=True,exist_ok=True)
                 shutil.copyfile(WORK/resource.name,resource)
                 assert sha(resource)==native['updatedSha256']
-                report['menus'].append(dict(language=language,entry=entry,resource=str(resource),sha256=sha(resource),bindings=45))
+                report['menus'].append(dict(language=language,entry=entry,resource=str(resource),sha256=sha(resource),bindings=len(bridge['bindings'])))
         for language in ('ru','en'):
             frozen=json.loads((EVIDENCE/f'stage89-release-{language}.json').read_text('utf8'))
             # First-release ZIPs must stay unchanged when present; they may have been

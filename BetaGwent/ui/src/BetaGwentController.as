@@ -210,7 +210,8 @@ package
             if(callback!=null)n.action=callback;
             if(card!=null){n.card=card;n.detail=detail;}
             var rect:Rectangle=bodyBounds(n);
-            n.key=n.scope+":"+int(rect.x)+":"+int(rect.y)+":"+(card!=null?"card"+(card.id>0?card.id:card.templateId):tag);
+            // Card focus follows its instance when hand sorting changes the coordinates.
+            n.key=n.scope+":"+(n.card!=null?n.tag+":card"+(n.card.viewKey!=null?n.card.viewKey:n.card.id>0?n.card.id:n.card.templateId):int(rect.x)+":"+int(rect.y)+":"+n.tag);
             dirty=true;
         }
         private function bodyCorners(n:Object):Array
@@ -380,17 +381,33 @@ package
             var n:Object=getFocus();var r:Rectangle=n?bodyBounds(n):null;
             var line:String=s.typing?"Ввод текста в системной клавиатуре":s.hint+(n?"   ·   "+n.label:"");
             if(yStarted>0&&yCanPass&&s.pass&&!yCommitted)line="Удерживайте "+(device==1||device==6?"△":"Y")+" для паса… "+int(Math.min(100,100*(now-yStarted)/650))+"%";
-            if(line!=lastHint){lastHint=line;hint.text=line;dirty=true;}
+            if(line!=lastHint){
+                lastHint=line;hint.text=line;var fontSize:int=18;
+                while(hint.textWidth>hint.width-12&&fontSize>14){fontSize--;hint.setTextFormat(new TextFormat("$NormalFont",fontSize,0xF5E6A7));}
+                if(fontSize==18)hint.setTextFormat(new TextFormat("$NormalFont",18,0xF5E6A7));
+                dirty=true;
+            }
             if(!dirty&&r&&lastRect&&r.equals(lastRect))return;
             dirty=false;graphics.clear();hint.visible=!s.typing;hint.y=s.hintY;
             graphics.beginFill(0x10191F,.95);graphics.drawRoundRect(24,s.hintY-2,1872,31,6,6);graphics.endFill();
+            graphics.lineStyle(1,0x92784E,.8);graphics.moveTo(32,s.hintY+29);graphics.lineTo(1888,s.hintY+29);
+            if(yStarted>0&&yCanPass&&s.pass&&!yCommitted){
+                graphics.beginFill(0xF0D18C,.9);graphics.drawRect(32,s.hintY+26,1856*Math.min(1,(now-yStarted)/650),3);graphics.endFill();dirty=true;
+            }
             if(n&&!s.typing){
                 lastRect=r.clone();lastKey=n.key;
                 graphics.lineStyle(3,0xF5E6A7,1);
                 if(n.body){
-                    var corners:Array=bodyCorners(n);graphics.moveTo(corners[0].x,corners[0].y);
-                    for(var i:int=1;i<4;i++)graphics.lineTo(corners[i].x,corners[i].y);
-                    graphics.lineTo(corners[0].x,corners[0].y);
+                    // Short corner marks leave card art and insertion ghosts readable.
+                    var corners:Array=bodyCorners(n);
+                    for(var i:int=0;i<4;i++){
+                        var point:Point=corners[i],previous:Point=corners[(i+3)%4],next:Point=corners[(i+1)%4];
+                        var edgeX:Number=next.x-point.x,edgeY:Number=next.y-point.y;
+                        var ratio:Number=Math.min(.3,16/Math.max(1,Math.sqrt(edgeX*edgeX+edgeY*edgeY)));
+                        graphics.moveTo(point.x+edgeX*ratio,point.y+edgeY*ratio);graphics.lineTo(point.x,point.y);
+                        edgeX=previous.x-point.x;edgeY=previous.y-point.y;ratio=Math.min(.3,16/Math.max(1,Math.sqrt(edgeX*edgeX+edgeY*edgeY)));
+                        graphics.lineTo(point.x+edgeX*ratio,point.y+edgeY*ratio);
+                    }
                 }else graphics.drawRoundRect(r.x,r.y,r.width,r.height,4,4);
             }
         }

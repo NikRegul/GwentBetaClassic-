@@ -1,0 +1,133 @@
+{
+  "boards": [
+    {
+      "faction": 2,
+      "side": 1,
+      "nearZ": "minimum",
+      "mesh": "Monster_Board_Bot",
+      "texture": "Monsters_BoardBottomTex"
+    },
+    {
+      "faction": 2,
+      "side": 2,
+      "nearZ": "minimum",
+      "mesh": "Monster_Board_Top",
+      "texture": "Monsters_BoardTopTex"
+    },
+    {
+      "faction": 4,
+      "side": 1,
+      "nearZ": "minimum",
+      "mesh": "Nilfgaard_Board_Bot",
+      "texture": "Nilfgaard_BoardBottomTex"
+    },
+    {
+      "faction": 4,
+      "side": 2,
+      "nearZ": "minimum",
+      "mesh": "Nilfgaard_Board_Top",
+      "texture": "Nilfgaard_BoardTopTex"
+    },
+    {
+      "faction": 8,
+      "side": 1,
+      "nearZ": "minimum",
+      "mesh": "NorthernRealms_Board_Bot",
+      "texture": "NorthernRealms_BoardBottomTex"
+    },
+    {
+      "faction": 8,
+      "side": 2,
+      "nearZ": "minimum",
+      "mesh": "NorthernRealms_Board_Top",
+      "texture": "NorthernRealms_BoardTopTex"
+    },
+    {
+      "faction": 16,
+      "side": 1,
+      "nearZ": "minimum",
+      "mesh": "ScoiaTael_Board_Bot",
+      "texture": "Scoiatael_BoardBottomTex"
+    },
+    {
+      "faction": 16,
+      "side": 2,
+      "nearZ": "minimum",
+      "mesh": "ScoiaTael_Board_Top",
+      "texture": "Scoiatael_BoardTopTex"
+    },
+    {
+      "faction": 32,
+      "side": 1,
+      "nearZ": "minimum",
+      "mesh": "Skellige_Board_Bot",
+      "texture": "Skellige_BoardBottomTex"
+    },
+    {
+      "faction": 32,
+      "side": 2,
+      "nearZ": "minimum",
+      "mesh": "Skellige_Board_Top",
+      "texture": "Skellige_BoardTopTex"
+    }
+  ],
+  "dividers": [
+    [
+      -1901,
+      1422.4,
+      11.1,
+      50.8,
+      112.6
+    ],
+    [
+      -1900,
+      491.2,
+      11.1,
+      50.8,
+      112.6
+    ],
+    [
+      -1901,
+      1422.4,
+      956.3,
+      50.8,
+      112.6
+    ],
+    [
+      -1900,
+      491.2,
+      956.3,
+      50.8,
+      112.6
+    ],
+    [
+      -1901,
+      607.9,
+      956.3,
+      50.8,
+      112.6
+    ],
+    [
+      -1901,
+      607.9,
+      11.1,
+      50.8,
+      112.6
+    ]
+  ],
+  "dimensionsUnchanged": true,
+  "runtimeMirrorRequired": true,
+  "originalsUnchanged": true,
+  "sourceHashes": {
+    "D:\\w3mod\\Gwent 0.9.24.3.432\\Gwent_Data\\StreamingAssets\\AssetBundles\\boards\\halfs\\factions\\1": "1e135f85da195bce388e0a1d2678003f4caddbdda367cdf6c2f245cb9d2d7817",
+    "D:\\w3mod\\Gwent 0.9.24.3.432\\Gwent_Data\\StreamingAssets\\AssetBundles\\boards\\halfs\\factions\\2": "75da70014e4617604cd5bd4d58cc6fd501c832b8964d5a2585a1c00b67dc441c",
+    "D:\\w3mod\\Gwent 0.9.24.3.432\\Gwent_Data\\StreamingAssets\\AssetBundles\\boards\\halfs\\factions\\3": "f24f54a416b0127ffefeb17675adfc5d85e488599d77ad11f650622bf41fdb09",
+    "D:\\w3mod\\Gwent 0.9.24.3.432\\Gwent_Data\\StreamingAssets\\AssetBundles\\boards\\halfs\\factions\\4": "36689dea2b10122ee67eb351257c8efade05bb7d08c6455c8b60b29a407f0097",
+    "D:\\w3mod\\Gwent 0.9.24.3.432\\Gwent_Data\\StreamingAssets\\AssetBundles\\boards\\halfs\\factions\\5": "71f40c5d6875fdc73f42338b2ebdef4cd33b0f56d58b89314eb2d726377e529d",
+    "D:\\w3mod\\Gwent 0.9.24.3.432\\Gwent_Data\\sharedassets8.assets": "9ff00d664be3dc613ab56d0b4353759ec4bda0cb22ef25bb674d9fee70076c93",
+    "D:\\w3mod\\Gwent 0.9.24.3.432\\Gwent_Data\\level8": "81d565ff83ec09c0f7682c2a730983c2e0928c203106c5a8570d69ce026fe920"
+  },
+  "boardAtlasSha256": "8475cf71f5241011974c347860e513330fc4644c8c06eefb4cd405eb4ffe4faa",
+  "hudAtlasSha256": "ccd14db25cc7e0fdd5629aabd45e93264ce98d8c7d67f24ed974f8678349876f",
+  "runtimeVerified": false
+}

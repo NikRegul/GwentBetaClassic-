@@ -39,5 +39,7 @@ def main():
         s=f.read_text('utf-8-sig')
         def replace(m):
             v=value(m.group());return json.dumps(lookup[v],ensure_ascii=False) if CYR.search(v) else m.group()
-        out.write_text(PAT.sub(replace,s),'utf-8-sig' if f.suffix=='.ws' else 'utf8')
+        translated=PAT.sub(replace,s)
+        if f.name=='BetaGwentBoard.as':translated=translated.replace('nameRussian:Boolean=true;', 'nameRussian:Boolean=false;')
+        out.write_text(translated,'utf-8-sig' if f.suffix=='.ws' else 'utf8')
 if __name__=='__main__':main()

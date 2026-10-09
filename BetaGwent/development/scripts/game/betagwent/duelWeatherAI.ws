@@ -87,10 +87,9 @@ class CBetaGwentWeatherAI extends IScriptable
     {
         var cards : array<CBetaGwentDuelCard>;var i,lowest : int;var s : SBetaGwentCardSnapshot;
         if(game.WeatherToken(1,row)==1 || Turns()==0)return 0;
-        ReadZone(1,row,cards);lowest=2147483647;
-        for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();if(VisibleUnit(s))lowest=Min(lowest,s.power.currentPower);}
-        if(lowest==2147483647)return 0;
-        return Min(lowest+Max(0,cards.Size()-1)*3,2*Turns());
+        // Stage 110: same damage-over-time forecast as every other weather play
+        // (ticks left in the round, chance that the enemy passes, Wild Hunt Rider bonus).
+        return game.AiWeatherForecast(2,row,1);
     }
     public function IrisValue(row : int) : int
     {

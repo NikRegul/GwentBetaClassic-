@@ -1,4 +1,21 @@
 ﻿// Presentation only. Never consumes match RNG, executes rules or republishes UI.
+// Original Beta row-hit events already included in both language sound banks.
+// Identity wins over row bits: overlapping weather tokens must not change the
+// sound of the effect that actually caused this tick.
+function BetaGwentAudioWeatherImpact(templateId : int, rowToken : int) : string
+{
+    if (templateId == 113302) return "bg79_fx_2638191190"; // PowerRowIce
+    if (templateId == 113305) return "bg79_fx_3719213110"; // PowerRowDarkMagic
+    if (templateId == 113312) return "bg79_fx_3336903518"; // PowerRowPhysical
+    if (templateId == 113203) return "bg79_fx_3403686934"; // PowerDirectLightning
+    if (templateId == 200018 || templateId == 113101 || templateId == 201749) return "bg79_fx_1166539820";
+    if ((rowToken & 1) != 0) return "bg79_fx_2638191190";
+    if ((rowToken & 2) != 0) return "bg79_fx_3719213110";
+    if ((rowToken & 64) != 0) return "bg79_fx_3403686934";
+    if ((rowToken & 4) != 0) return "bg79_fx_3336903518";
+    return "bg79_fx_1166539820";
+}
+
 class CBetaGwentDuelAudio extends IScriptable
 {
     private var enabled, voices, ownsBank : bool;
@@ -59,7 +76,9 @@ class CBetaGwentDuelAudio extends IScriptable
         if (voices && voiceTrigger != 0 && templateId > 0 && BetaReady() && (BetaGwentAudioVoiceTriggers(templateId) & voiceTrigger) != 0 && BetaGwentAudioVoice(templateId) != "")
         {
             // Bound the queue and skip stale chatter after long summon chains.
-            if (queuedVoices.Size() < 4) { queuedVoices.PushBack(templateId); queuedAt.PushBack(now); }
+            // Beta: a newly played card cuts off the previous line; nothing piles up to play later.
+            if (kind == 1) StopVoice(); else { queuedVoices.Clear(); queuedAt.Clear(); }
+            queuedVoices.PushBack(templateId); queuedAt.PushBack(now);
             Tick();
         }
         if (!enabled || kind == 0 || kind == 8 || kind == 13 || kind == 14 && now < nextEffect) return;
@@ -77,6 +96,7 @@ class CBetaGwentDuelAudio extends IScriptable
             else if (kind == 24) eventName = BetaGwentAudioRevealEffect(templateId);
             else if (kind == 25) eventName = BetaGwentAudioTransformEffect(templateId);
             if (kind == 4) eventName = BetaGwentAudioWeather(rowToken);
+            if (kind == 33) eventName = BetaGwentAudioWeatherImpact(templateId, rowToken);
             if (kind == 6)
             {
                 if ((flags & 16) != 0 && (flags & 32) == 0) cueKind = 30;
@@ -123,6 +143,7 @@ class CBetaGwentDuelAudio extends IScriptable
                 case 26: eventName = "gui_gwint_using_ability"; break;
                 case 27: eventName = "gui_gwint_using_ability"; break;
                 case 32: eventName = "gui_gwint_using_ability"; break;
+                case 33: eventName = "gui_gwint_using_ability"; break;
                 default: return;
             }
         }
@@ -171,7 +192,7 @@ class CBetaGwentDuelAudio extends IScriptable
         while (queuedVoices.Size() > 0)
         {
             id = queuedVoices[0];
-            if (now - queuedAt[0] > 4.0f) { queuedVoices.Erase(0); queuedAt.Erase(0); continue; }
+            if (now - queuedAt[0] > 1.5f) { queuedVoices.Erase(0); queuedAt.Erase(0); continue; }
             queuedVoices.Erase(0); queuedAt.Erase(0);
             voiceRoll=RandRange(1000000);eventName=BetaGwentAudioVoiceVariant(id,voiceRoll);theSound.SoundEvent(eventName);
             LogChannel('BetaGwent', "AUDIO_VOICE_REQUEST template=" + id + " event=" + eventName);
@@ -183,6 +204,24 @@ class CBetaGwentDuelAudio extends IScriptable
     {
         queuedVoices.Clear(); queuedAt.Clear(); voiceUntil = 0.0f;
         if (BetaReady()) theSound.SoundEvent("bg79_stop_voice");
+    }
+    // Stage 109: shop troll (Beta keg opening). 1 smash, 2 common, 3 rare, 4 epic, 5 legendary,
+    // 6 choice made, 7 final reveal, 8 before smash. Events from tools/ui/add_keg_audio109.py.
+    public function Keg(kind : int)
+    {
+        var names : array<string>; var eventName : string;
+        if (!voices || !BetaReady()) return;
+        if (kind == 1) { names.PushBack("bg79_vo_keg_ShopTrollDialogues_37"); names.PushBack("bg79_vo_keg_ShopTrollDialogues_38"); names.PushBack("bg79_vo_keg_ShopTrollDialogues_39"); names.PushBack("bg79_vo_keg_ShopTrollDialogues_40"); names.PushBack("bg79_vo_keg_ShopTrollDialogues_41"); }
+        if (kind == 2) { names.PushBack("bg79_vo_keg_TrollShopDialoguesP3_14"); names.PushBack("bg79_vo_keg_TrollShopDialoguesP3_15"); names.PushBack("bg79_vo_keg_TrollShopDialoguesP3_16"); }
+        if (kind == 3) { names.PushBack("bg79_vo_keg_TrollShopDialoguesP3_4"); names.PushBack("bg79_vo_keg_TrollShopDialoguesP3_3"); }
+        if (kind == 4) { names.PushBack("bg79_vo_keg_TrollShopDialoguesP3_5"); }
+        if (kind == 5) { names.PushBack("bg79_vo_keg_TrollShopDialoguesP3_1"); }
+        if (kind == 6) { names.PushBack("bg79_vo_keg_TrollShopDialoguesP3_17"); names.PushBack("bg79_vo_keg_TrollShopDialoguesP3_18"); }
+        if (kind == 7) { names.PushBack("bg79_vo_keg_TrollShopDialoguesP3_40"); names.PushBack("bg79_vo_keg_TrollShopDialoguesP3_41"); names.PushBack("bg79_vo_keg_TrollShopDialoguesP3_30"); }
+        if (kind == 8) { names.PushBack("bg79_vo_keg_ShopTrollDialogues_29"); names.PushBack("bg79_vo_keg_ShopTrollDialogues_30"); names.PushBack("bg79_vo_keg_ShopTrollDialogues_31"); }
+        if (names.Size() == 0) return;
+        StopVoice(); eventName = names[RandRange(names.Size())];
+        theSound.SoundEvent(eventName); LogChannel('BetaGwent', "AUDIO_KEG kind=" + kind + " event=" + eventName);
     }
     public function Cancel()
     {

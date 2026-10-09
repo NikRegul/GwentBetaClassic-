@@ -158,9 +158,67 @@ for number,(block,(family,base_id)) in enumerate(zip(blocks,configs),1):
     profile.update(active=True,leader=leader,faction=faction,familyId=families[family],presetId=preset_id,templateIds=selected)
     profiles.append(profile)
 
+# Author-approved replacements take precedence over the adapted DIY rosters.
+# Copy from the canonical preset, never from hidden player zones during a match.
+overrides = read('data/beta924/ai/deck_overrides.json')
+assert overrides['schema'] == 1
+for override in overrides['profiles']:
+    profile = next(p for p in profiles if p['id'] == override['profileId'])
+    assert profile['active']
+    source = base_by_id[override['copyPresetId']]
+    preset = next(p for p in base if p['id'] == profile['presetId'])
+    assert source['faction'] == profile['faction'], 'Deck override must retain its faction'
+    preset['leader'] = profile['leader'] = source['leader']
+    preset['templateIds'] = list(source['templateIds'])
+    profile['templateIds'] = list(source['templateIds'])
+    profile['changes'] = [dict(requested=profile['title'], resolvedName=source['title'], method='author-approved-preset-copy', sourcePresetId=source['id'])]
+    profile['notes'] = [override['reason']]
+    profile['rosterOverride'] = override
+
+# The reviewed proposal supersedes the original DIY adaptation and old roster
+# overrides. Original presets 1..53 and established AI identities 54..93 stay put.
+research = read('data/beta924/ai/researched115.json')
+assert research['schema'] == 1 and len(research['profiles']) == 46
+assert research['sourceSha256'] == hashlib.sha256((ROOT/research['source']).read_bytes()).hexdigest(), 'Re-import the edited proposal explicitly before building'
+beta_titles = {
+    10: 'Аретуза: магический контроль Фольтеста',
+    12: 'Солдаты Эмгыра',
+    33: 'Бран: раны и мечники',
+    42: 'Солдаты и рыцари Фольтеста',
+    43: 'Харальд: дождь и топорники',
+    44: 'Фольтест: усиление колоды',
+}
+for proposed in research['profiles']:
+    profile = next(p for p in profiles if p['id'] == proposed['id'])
+    family = proposed['family'] or profile['family']
+    display_title = beta_titles.get(profile['id'], proposed['title'])
+    assert family in families, family
+    selected = list(proposed['templateIds'])
+    leader = proposed['leader']; faction = proposed['faction']
+    counts = Counter(selected); tiers = Counter(full[i]['tier'] for i in selected)
+    assert len(selected) == (40 if profile['id'] == 32 else 25)
+    assert full[leader]['leader'] and full[leader]['faction'] == faction
+    assert tiers[8] <= 4 and tiers[4] <= 6
+    assert all(not full[i]['leader'] and full[i]['faction'] in (1,faction) and n <= (3 if full[i]['tier']==2 else 1) for i,n in counts.items())
+    if family == 'singleton': assert len(counts) == len(selected)
+    preset = next((p for p in base if p['id'] == proposed['presetId']), None)
+    if preset is None:
+        preset = dict(id=proposed['presetId'], key=f'ai-rules-{profile["id"]}', aiRulesProfile=profile['id'])
+        base.append(preset)
+    assert preset['aiRulesProfile'] == profile['id']
+    preset.update(title='ИИ · '+display_title, description='Исследованный состав Beta 0.9.24; '+family,
+                  faction=faction,leader=leader,templateIds=selected)
+    profile.pop('reason',None);profile.pop('rosterOverride',None)
+    profile.update(active=True,title=display_title,family=family,familyId=families[family],
+                   leader=leader,faction=faction,presetId=preset['id'],templateIds=selected,
+                   passPolicy=proposed['passPolicy'],strategy=proposed['strategy'],
+                   notes=['Approved researched Beta proposal; exact roster, no automatic fillers.'],
+                   changes=[dict(requested=proposed['title'],resolvedName='Точный состав из исследованного документа',method='author-researched-roster',sourceSection=proposed['sourceSection'])])
+base.sort(key=lambda p:p['id'])
+assert [p['id'] for p in base] == list(range(1,100))
+
 # Explicit legal combo dependencies shared by all decks, including named NPC variants.
 combo_names = [
- ('Impera Brigade',['Ambassador','Emissary','Cantarella','Joachim de Wett','Assassin'],3),
  ('Impera Enforcers',['Ambassador','Emissary','Joachim de Wett','Assassin'],3),
  ('Mangonel',['Alchemist','Vattier de Rideaux','Nilfgaardian Knight'],3),
  ('Standard Bearer',['Slave Infantry','Recruit','Alba Armored Cavalry'],3),
@@ -183,7 +241,7 @@ combo_names = [
 ]
 combos=[dict(setup=card(setup),payoff=card(payoff),weight=weight) for setup,payoffs,weight in combo_names for payoff in payoffs]
 engines={card(n):w for n,w in [
- ('Impera Brigade',2),('Impera Enforcers',2),('Mangonel',2),('Standard Bearer',2),('Alba Armored Cavalry',1),
+ ('Impera Enforcers',2),('Mangonel',2),('Standard Bearer',2),('Alba Armored Cavalry',1),
  ('Siege Support',2),('Redanian Knight-Elect',2),('Reinforced Trebuchet',1),('Vrihedd Dragoon',1),
  ('Hawker Smuggler',1),('Farseer',2),('Yarpen Zigrin',1),('An Craite Greatsword',2),
  ('Dimun Light Longship',2),('An Craite Longship',2),('Tuirseach Axeman',2),('Savage Bear',1),
@@ -194,11 +252,11 @@ resurrectors=[card(n) for n in ['Priestess of Freya','Sigrdrifa','Restore','Dimu
 document['presets']=base
 path.write_text(json.dumps(document,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 dest=ROOT/'data/beta924/ai';dest.mkdir(exist_ok=True)
-report=dict(stage=88,source='deck_rules.txt',sourceSha256=hashlib.sha256(raw).hexdigest(),families=families,
+report=dict(stage=115,source=research['source'],sourceSha256=research['sourceSha256'],families=families,
     profiles=profiles,combos=combos,engineWeights=engines,finishers=finishers,resurrectors=resurrectors,
-    limitation='Role substitutions retain original Beta abilities; strategic advice is adapted, not a faithful implementation of unavailable DIY cards.')
+    limitation='Exact researched Beta rosters. Strategy text is retained alongside executable conditional rules; historical DIY abilities are not introduced.')
 (dest/'rules.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-lines=['// Generated from deck_rules.txt by tools/build_ai_rules.py. No player private zones.',
+lines=['// Generated from researched115.json by tools/build_ai_rules.py. No player private zones.',
     'struct SBetaGwentAICombo { var setup, payoff, weight : int; }',
     'function BetaGwentAICombos(out pairs : array<SBetaGwentAICombo>) {', '    var p : SBetaGwentAICombo; pairs.Clear();']
 for p in combos: lines.append(f'    p.setup={p["setup"]};p.payoff={p["payoff"]};p.weight={p["weight"]};pairs.PushBack(p);')
@@ -214,6 +272,7 @@ active=[p for p in profiles if p['active']]
 table('BetaGwentAIProfileFamily',[(p['id'],p['familyId']) for p in active])
 table('BetaGwentAIPresetProfile',[(p['presetId'],p['id']) for p in active])
 table('BetaGwentAIProfileLeader',[(p['id'],p['leader']) for p in active])
+table('BetaGwentAIProfileLongRound',[(p['id'],'true') for p in active if p['passPolicy']=='L'],'bool','false')
 lines+=['function BetaGwentAIProfileTitle(id : int) : string {','    switch(id) {']
 lines += [f'    case {p["id"]}: return {json.dumps(p["title"],ensure_ascii=False)};' for p in active]
 lines += ['    default: return "Общая стратегия";','    }','}']
@@ -225,7 +284,7 @@ lines += ['    default: ids.Clear();return false;','    }','}']
 lines+=['function BetaGwentAIRandomPreset() : int {', '    return BetaGwentAIChooseOrdinaryPreset();', '}']
 (ROOT/'BetaGwent/development/scripts/game/betagwent/duelAICatalog.ws').write_text('\n'.join(bounded_helpers(lines))+'\n',encoding='utf-8-sig')
 md=['# Адаптация deck_rules: этап88','',f'Источник: SHA-256 `{report["sourceSha256"]}`.',
-    '',f'Активны {len(active)} из {len(profiles)} профилей. Лидеры отсутствующих шести пропущены.',
+    '',f'Активны {len(active)} из {len(profiles)} профилей. Шесть отсутствующих лидеров заменены согласованными Beta-адаптациями.',
     'Способности замен сохраняются из Beta0.9.24; замена роли не переносит способность DIY.',
     'Пресеты1–53, стартовые колоды и квестовые награды сохранены.', '',
     '| № | Архетип | Пресет | Изменения состава |','|---|---|---|---|']

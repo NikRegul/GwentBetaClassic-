@@ -1,0 +1,35 @@
+{
+  "stage": 119,
+  "version": "0.4.0",
+  "nativeMenus": 8,
+  "bindingsPerMenu": 46,
+  "archetypeChecks": 534,
+  "archetypes": 46,
+  "comparisonGames": 184,
+  "candidateWins": 89,
+  "baselineWins": 89,
+  "draws": 6,
+  "errors": 0,
+  "confirmedBetter": false,
+  "gameRuntimeVerified": false,
+  "retailInstallationModified": false,
+  "packages": [
+    {
+      "language": "ru",
+      "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.4.0-RU.zip",
+      "bytes": 199571804,
+      "sha256": "d939f807e30db0c71a6138f91c01bed7b892ab551a19a94571deae748cd318f9",
+      "freshCompiledSources": 67,
+      "crcAndManifestVerified": true
+    },
+    {
+      "language": "en",
+      "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.4.0-EN.zip",
+      "bytes": 198484584,
+      "sha256": "4e033c60529d6006f62e3551e79123c63aaa99555db1e76570a6b13ce6ed3009",
+      "freshCompiledSources": 67,
+      "crcAndManifestVerified": true
+    }
+  ],
+  "previousPreviewUnmodified": true
+}

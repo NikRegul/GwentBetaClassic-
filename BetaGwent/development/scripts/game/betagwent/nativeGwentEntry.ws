@@ -6,6 +6,10 @@ public var betaEnemyDeckName : name;
 @addField(CR4GwintManager)
 public var betaTalkNpcId : int;
 @addField(CR4GwintManager)
+public var betaTalkNpcName : string;
+@addField(CR4GwintManager)
+public var betaMatchNpcName : string;
+@addField(CR4GwintManager)
 public var betaMatchNpcId : int;
 @addField(CR4GwintManager)
 public var betaOrdinaryDeckBag : array<int>;
@@ -35,7 +39,7 @@ function OnGwintGameRequested(deckName : name, forceFaction : eGwintFaction, add
 function SetEnemyDeck(deckName : name) : void
 {
     betaEnemyDeckName=deckName;betaNpcPending=true;
-    betaMatchNpcId=betaTalkNpcId;
+    betaMatchNpcId=betaTalkNpcId;betaMatchNpcName=betaTalkNpcName;
     wrappedMethod(deckName);
 }
 
@@ -45,14 +49,14 @@ function SetEnemyDeck(deckName : name) : void
 function OnInteraction(actionName : string, activator : CEntity)
 {
     var manager : CR4GwintManager;manager=theGame.GetGwintManager();
-    if(actionName=="Talk" && activator==thePlayer)manager.betaTalkNpcId=GetGuidHash();
+    if(actionName=="Talk" && activator==thePlayer){manager.betaTalkNpcId=GetGuidHash();manager.betaTalkNpcName=GetDisplayName();}
     wrappedMethod(actionName,activator);
 }
 @wrapMethod(W3MerchantNPC)
 function OnInteraction(actionName : string, activator : CEntity)
 {
     var manager : CR4GwintManager;manager=theGame.GetGwintManager();
-    if(actionName=="Talk" && activator==thePlayer)manager.betaTalkNpcId=GetGuidHash();
+    if(actionName=="Talk" && activator==thePlayer){manager.betaTalkNpcId=GetGuidHash();manager.betaTalkNpcName=GetDisplayName();}
     wrappedMethod(actionName,activator);
 }
 
@@ -126,8 +130,8 @@ function BetaGwentNpcPreset(deck : name) : int
 {
     var assigned : int;
     assigned=BetaGwentQuestPreset(deck);
-    // Named opponents (Zoltan, innkeepers, tournaments...) use their faction's archetypes.
-    if(assigned!=0)return BetaGwentAIChooseFactionPreset(BetaGwentPresetFaction(assigned));
+    // Named quest opponents retain their authored deck.
+    if(assigned!=0)return assigned;
     return BetaGwentAIRandomPreset();
 }
 

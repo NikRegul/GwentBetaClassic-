@@ -1,0 +1,7 @@
+# Canonical/source/compiled preparation evidence uses byte-for-byte hashes.
+# Preserve line endings rather than rewriting them during checkout.
+* -text
+*.redswf binary
+*.menu binary
+*.guiconfig binary
+*.png binary

@@ -28,7 +28,9 @@ function BetaGwentAIOrdinaryPresets(out ids : array<int>) {
     ids.PushBack(60);
     ids.PushBack(61);
     ids.PushBack(62);
+    ids.PushBack(94);
     ids.PushBack(63);
+    ids.PushBack(95);
     ids.PushBack(64);
     ids.PushBack(65);
     ids.PushBack(66);
@@ -49,6 +51,7 @@ function BetaGwentAIOrdinaryPresets(out ids : array<int>) {
     ids.PushBack(81);
     ids.PushBack(82);
     ids.PushBack(83);
+    ids.PushBack(96);
     ids.PushBack(84);
     ids.PushBack(85);
     ids.PushBack(86);
@@ -57,6 +60,9 @@ function BetaGwentAIOrdinaryPresets(out ids : array<int>) {
     ids.PushBack(89);
     ids.PushBack(90);
     ids.PushBack(91);
+    ids.PushBack(97);
+    ids.PushBack(98);
+    ids.PushBack(99);
     ids.PushBack(92);
     ids.PushBack(93);
 }

@@ -1,12 +1,7 @@
-﻿// Generated from deck_rules.txt by tools/build_ai_rules.py. No player private zones.
+﻿// Generated from researched115.json by tools/build_ai_rules.py. No player private zones.
 struct SBetaGwentAICombo { var setup, payoff, weight : int; }
 function BetaGwentAICombos(out pairs : array<SBetaGwentAICombo>) {
     var p : SBetaGwentAICombo; pairs.Clear();
-    p.setup=162307;p.payoff=162315;p.weight=3;pairs.PushBack(p);
-    p.setup=162307;p.payoff=162314;p.weight=3;pairs.PushBack(p);
-    p.setup=162307;p.payoff=162210;p.weight=3;pairs.PushBack(p);
-    p.setup=162307;p.payoff=162211;p.weight=3;pairs.PushBack(p);
-    p.setup=162307;p.payoff=200115;p.weight=3;pairs.PushBack(p);
     p.setup=162308;p.payoff=162315;p.weight=3;pairs.PushBack(p);
     p.setup=162308;p.payoff=162314;p.weight=3;pairs.PushBack(p);
     p.setup=162308;p.payoff=162211;p.weight=3;pairs.PushBack(p);
@@ -75,7 +70,6 @@ function BetaGwentAICombos(out pairs : array<SBetaGwentAICombo>) {
 }
 function BetaGwentAIEngine(id : int) : int {
     switch(id) {
-    case 162307: return 2;
     case 162308: return 2;
     case 162317: return 2;
     case 200294: return 2;
@@ -142,7 +136,9 @@ function BetaGwentAIProfileFamily(id : int) : int {
     case 7: return 7;
     case 8: return 8;
     case 9: return 9;
+    case 10: return 4;
     case 11: return 10;
+    case 12: return 17;
     case 13: return 11;
     case 14: return 12;
     case 15: return 13;
@@ -163,6 +159,7 @@ function BetaGwentAIProfileFamily(id : int) : int {
     case 30: return 22;
     case 31: return 23;
     case 32: return 16;
+    case 33: return 14;
     case 34: return 13;
     case 35: return 21;
     case 36: return 24;
@@ -171,6 +168,9 @@ function BetaGwentAIProfileFamily(id : int) : int {
     case 39: return 14;
     case 40: return 22;
     case 41: return 26;
+    case 42: return 16;
+    case 43: return 27;
+    case 44: return 16;
     case 45: return 27;
     case 46: return 28;
     default: return 0;
@@ -187,7 +187,9 @@ function BetaGwentAIPresetProfile(id : int) : int {
     case 60: return 7;
     case 61: return 8;
     case 62: return 9;
+    case 94: return 10;
     case 63: return 11;
+    case 95: return 12;
     case 64: return 13;
     case 65: return 14;
     case 66: return 15;
@@ -208,6 +210,7 @@ function BetaGwentAIPresetProfile(id : int) : int {
     case 81: return 30;
     case 82: return 31;
     case 83: return 32;
+    case 96: return 33;
     case 84: return 34;
     case 85: return 35;
     case 86: return 36;
@@ -216,6 +219,9 @@ function BetaGwentAIPresetProfile(id : int) : int {
     case 89: return 39;
     case 90: return 40;
     case 91: return 41;
+    case 97: return 42;
+    case 98: return 43;
+    case 99: return 44;
     case 92: return 45;
     case 93: return 46;
     default: return 0;
@@ -225,14 +231,16 @@ function BetaGwentAIProfileLeader(id : int) : int {
     switch(id) {
     case 1: return 200164;
     case 2: return 200055;
-    case 3: return 201587;
+    case 3: return 201743;
     case 4: return 200170;
     case 5: return 201595;
     case 6: return 200164;
     case 7: return 131101;
     case 8: return 201743;
     case 9: return 200166;
-    case 11: return 200163;
+    case 10: return 200168;
+    case 11: return 200164;
+    case 12: return 200162;
     case 13: return 201587;
     case 14: return 201597;
     case 15: return 200166;
@@ -253,6 +261,7 @@ function BetaGwentAIProfileLeader(id : int) : int {
     case 30: return 200165;
     case 31: return 200167;
     case 32: return 200168;
+    case 33: return 200159;
     case 34: return 200167;
     case 35: return 201587;
     case 36: return 200168;
@@ -261,53 +270,80 @@ function BetaGwentAIProfileLeader(id : int) : int {
     case 39: return 200159;
     case 40: return 200167;
     case 41: return 200166;
+    case 42: return 200168;
+    case 43: return 200161;
+    case 44: return 200168;
     case 45: return 200161;
     case 46: return 200166;
     default: return 0;
     }
 }
+function BetaGwentAIProfileLongRound(id : int) : bool {
+    switch(id) {
+    case 2: return true;
+    case 7: return true;
+    case 13: return true;
+    case 17: return true;
+    case 28: return true;
+    case 29: return true;
+    case 30: return true;
+    case 33: return true;
+    case 36: return true;
+    case 39: return true;
+    case 40: return true;
+    case 43: return true;
+    case 45: return true;
+    default: return false;
+    }
+}
 function BetaGwentAIProfileTitle(id : int) : string {
     switch(id) {
-    case 1: return "Spies";
+    case 1: return "Шпионы";
     case 2: return "Vampires (Drain)";
-    case 3: return "Arachas Swarm";
+    case 3: return "Рой главоглазов";
     case 4: return "Machines Henselt";
     case 5: return "Adda Cursed";
     case 6: return "Tempo Calveit";
-    case 7: return "Wild Hunt Frost";
+    case 7: return "Мороз Дикой Охоты";
     case 8: return "Eggs Consume";
     case 9: return "Scorch Ambush";
-    case 11: return "Alchemy";
+    case 10: return "Аретуза: магический контроль Фольтеста";
+    case 11: return "Алхимия";
+    case 12: return "Солдаты Эмгыра";
     case 13: return "Bloodmoon Wraiths";
     case 14: return "Veterans";
     case 15: return "Dwarf-Elf-Scorch";
-    case 16: return "Nekker Consume";
+    case 16: return "Накеры и поглощение";
     case 17: return "Greatswords";
-    case 18: return "Lyrian Machines";
-    case 19: return "Queensguards";
-    case 20: return "Temerians";
-    case 21: return "Morvran Reveal";
+    case 18: return "Лирийские машины";
+    case 19: return "Королевская гвардия";
+    case 20: return "Темерцы";
+    case 21: return "Вскрытие Морврана";
     case 22: return "Ointment Spallas";
-    case 23: return "Deathwish";
-    case 24: return "Discard";
-    case 25: return "Swap";
+    case 23: return "Завещания";
+    case 24: return "Сброс карт";
+    case 25: return "Обмены";
     case 26: return "Lyrian Deckbuff";
-    case 27: return "Ice Trolls";
-    case 28: return "Eithne Handbuff";
-    case 29: return "Frost Wraiths";
-    case 30: return "Francesca Handbuff";
+    case 27: return "Ледяные тролли";
+    case 28: return "Усиление руки Эитнэ";
+    case 29: return "Морозные призраки";
+    case 30: return "Усиление руки Францески";
     case 31: return "Brouver Shupe";
     case 32: return "40 Foltest";
+    case 33: return "Бран: раны и мечники";
     case 34: return "Dwarf Miner/Xavier";
-    case 35: return "Tall Ogres";
-    case 36: return "Armor";
-    case 37: return "Slave Infantry";
+    case 35: return "Великаны и огры";
+    case 36: return "Броня";
+    case 37: return "Невольничья пехота";
     case 38: return "NG Handbuff";
-    case 39: return "Cursed Ships";
-    case 40: return "Brouver Handbuff";
+    case 39: return "Проклятые корабли";
+    case 40: return "Усиление руки Брувера";
     case 41: return "Spell'teal Decotions";
-    case 45: return "Axemen";
-    case 46: return "Dryads";
+    case 42: return "Солдаты и рыцари Фольтеста";
+    case 43: return "Харальд: дождь и топорники";
+    case 44: return "Фольтест: усиление колоды";
+    case 45: return "Топорники";
+    case 46: return "Дриады";
     default: return "Общая стратегия";
     }
 }
@@ -322,7 +358,9 @@ function BetaGwentAIProfileIds(out ids : array<int>) {
     ids.PushBack(7);
     ids.PushBack(8);
     ids.PushBack(9);
+    ids.PushBack(10);
     ids.PushBack(11);
+    ids.PushBack(12);
     ids.PushBack(13);
     ids.PushBack(14);
     ids.PushBack(15);
@@ -343,6 +381,7 @@ function BetaGwentAIProfileIds(out ids : array<int>) {
     ids.PushBack(30);
     ids.PushBack(31);
     ids.PushBack(32);
+    ids.PushBack(33);
     ids.PushBack(34);
     ids.PushBack(35);
     ids.PushBack(36);
@@ -351,6 +390,9 @@ function BetaGwentAIProfileIds(out ids : array<int>) {
     ids.PushBack(39);
     ids.PushBack(40);
     ids.PushBack(41);
+    ids.PushBack(42);
+    ids.PushBack(43);
+    ids.PushBack(44);
     ids.PushBack(45);
     ids.PushBack(46);
 }
@@ -365,7 +407,9 @@ function BetaGwentAIProfileDeck(id : int, out ids : array<int>) : bool {
     case 7: return BetaGwentDuelPresetDeck(60,ids);
     case 8: return BetaGwentDuelPresetDeck(61,ids);
     case 9: return BetaGwentDuelPresetDeck(62,ids);
+    case 10: return BetaGwentDuelPresetDeck(94,ids);
     case 11: return BetaGwentDuelPresetDeck(63,ids);
+    case 12: return BetaGwentDuelPresetDeck(95,ids);
     case 13: return BetaGwentDuelPresetDeck(64,ids);
     case 14: return BetaGwentDuelPresetDeck(65,ids);
     case 15: return BetaGwentDuelPresetDeck(66,ids);
@@ -386,6 +430,7 @@ function BetaGwentAIProfileDeck(id : int, out ids : array<int>) : bool {
     case 30: return BetaGwentDuelPresetDeck(81,ids);
     case 31: return BetaGwentDuelPresetDeck(82,ids);
     case 32: return BetaGwentDuelPresetDeck(83,ids);
+    case 33: return BetaGwentDuelPresetDeck(96,ids);
     case 34: return BetaGwentDuelPresetDeck(84,ids);
     case 35: return BetaGwentDuelPresetDeck(85,ids);
     case 36: return BetaGwentDuelPresetDeck(86,ids);
@@ -394,6 +439,9 @@ function BetaGwentAIProfileDeck(id : int, out ids : array<int>) : bool {
     case 39: return BetaGwentDuelPresetDeck(89,ids);
     case 40: return BetaGwentDuelPresetDeck(90,ids);
     case 41: return BetaGwentDuelPresetDeck(91,ids);
+    case 42: return BetaGwentDuelPresetDeck(97,ids);
+    case 43: return BetaGwentDuelPresetDeck(98,ids);
+    case 44: return BetaGwentDuelPresetDeck(99,ids);
     case 45: return BetaGwentDuelPresetDeck(92,ids);
     case 46: return BetaGwentDuelPresetDeck(93,ids);
     default: ids.Clear();return false;

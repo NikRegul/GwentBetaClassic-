@@ -1,6 +1,6 @@
 // Appended to the transpiled rules inside one script scope.
-const __Seats = new Set(['ownerPlayerId','positionPlayerId','playerId','targetPlayerId','startingPlayerId','currentPlayerId','roundStarter','visualSide','side']);
-const __Pairs = ['aiRoundHand','player','score','crownDelta','preset','leaderTemplate','nilfInitial','nilfSpell','grave','deck','leader'];
+const __Seats = new Set(['ownerId','controllerId','ownerPlayerId','positionPlayerId','playerId','targetPlayerId','startingPlayerId','currentPlayerId','roundStarter','visualSide','savedSourceSide','side','targetSide']);
+const __Pairs = ['aiRoundHand','player','score','crownDelta','preset','leaderTemplate','nilfInitial','nilfSpell','grave','deck','leader','history','beasts'];
 function __flip(n) { return n === 1 ? 2 : n === 2 ? 1 : n; }
 function __visit(v, seen) {
   if (v === null || typeof v !== 'object') return v;
@@ -9,6 +9,9 @@ function __visit(v, seen) {
   if (seen.has(v)) return v; seen.add(v);
   for (const p of __Pairs) { const a = p + 'One', b = p + 'Two'; if (a in v && b in v) { const t = v[a]; v[a] = v[b]; v[b] = t; } }
   for (const k of Object.keys(v)) {
+    // Clone stamps/references are bookkeeping, not part of a player seat. Do
+    // not walk into previous disposable simulations when swapping a real turn.
+    if (k === 'bgCloneRef' || k === 'bgCloneEpoch' || k === 'aiSimCloner') continue;
     const old = v[k];
     if (typeof old === 'number' && __Seats.has(k)) v[k] = __flip(old);
     else if (k === 'winnerMask' || k === 'matchWinnerMask') v[k] = ((old & 1) << 1) | ((old & 2) >> 1);
@@ -22,15 +25,20 @@ function __visit(v, seen) {
 }
 const __mem = new WeakMap();
 function __swap(g) {
-  const m = __mem.get(g) || { rev: false, slots: [[0,0,0,0,0],[0,0,0,0,0]] }; __mem.set(g, m);
+  const m = __mem.get(g) || { rev: false, slots: [[0,0,0,0,0,0],[0,0,0,0,0,0]] }; __mem.set(g, m);
   let actor = m.rev ? 0 : 1;
-  m.slots[actor] = [g.aiChaseRound, g.aiChaseInitialHand, g.aiObservedRound, g.aiObservedEnemyScore, g.aiPublicTempo];
+  m.slots[actor] = [g.aiChaseRound, g.aiChaseInitialHand, g.aiObservedRound, g.aiObservedEnemyScore, g.aiPublicTempo, g.aiChaseSpent];
   __visit(g, new Set()); m.rev = !m.rev; actor = m.rev ? 0 : 1;
-  const s = m.slots[actor]; g.aiChaseRound = s[0]; g.aiChaseInitialHand = s[1]; g.aiObservedRound = s[2]; g.aiObservedEnemyScore = s[3]; g.aiPublicTempo = Math.max(14, s[4]);
+  const s = m.slots[actor]; g.aiChaseRound = s[0]; g.aiChaseInitialHand = s[1]; g.aiObservedRound = s[2]; g.aiObservedEnemyScore = s[3]; g.aiPublicTempo = Math.max(14, s[4]); g.aiChaseSpent = s[5];
   g.weatherAI.Initialize(g); g.weatherProfile = g.weatherAI.Matches(g.nilfInitialTwo);
   g.archetypeAI.Initialize(g, g.nilfInitialTwo, g.presetTwo, g.leaderTemplateTwo);
+  __context(g);
 }
 function __reversed(g) { const m = __mem.get(g); return !!(m && m.rev); }
+function __context(g) {
+  Host.seatIndex = __reversed(g) ? 0 : 1;
+  Host.strength = Host.matchStrength[Host.seatIndex];
+}
 function __mulligan(g) { __swap(g); g.AiMulligan(g.mulliganBudget); __swap(g); g.RefreshMulligan(); g.FinishMulligan(g.requestId); }
 function __pending(g) {
   if (!g.IsPending()) return true;
@@ -61,6 +69,8 @@ function __pending(g) {
   return !g.fatal;
 }
 function __play(left, right, seed, strengthLeft, strengthRight, traceLimit) {
+  Host.matchStrength = [strengthLeft, strengthRight];
+  Host.seatIndex = 1; Host.strength = strengthRight; __simDepthHost = 0;
   let state = (seed >>> 0) || 1;
   Host.random = () => { state ^= state << 13; state >>>= 0; state ^= state >>> 17; state ^= state << 5; state >>>= 0; return state / 4294967296; };
   const trace = []; Host.log = (s) => { trace.push(s); if (trace.length > (traceLimit || 80)) trace.shift(); };
@@ -68,7 +78,7 @@ function __play(left, right, seed, strengthLeft, strengthRight, traceLimit) {
   const seatStrength = () => __reversed(g) ? strengthLeft : strengthRight; // AI acts as side 2
   try {
     if (!g.InitializeWithPresets(left, right)) throw new Error('Invalid preset');
-    g.recordVisuals = false; g.aiSimDamp = 0;
+    g.recordVisuals = false; g.aiSimDamp = Host.simDamp === undefined ? 40 : Host.simDamp;
     for (; steps < 500; steps++) {
       if (g.IsFatal()) throw new Error(g.GetMessage());
       const m = g.Snapshot();

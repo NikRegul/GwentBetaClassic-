@@ -14,10 +14,10 @@ function OnConfigUI()
         inventory=npc.GetInventory();if(inventory) {
             inventory.UpdateLoot();inventory.GetAllItems(items);
             // Expand the old single-keg stock once on existing merchant saves.
-            // Fresh/replenished stock comes from the 50-keg loot overlay.
+            // Fresh/replenished stock comes from the 5-keg loot overlay.
             if(!npc.betaGwentBulkKegStockMigrated && inventory.GetItemQuantityByName('betagwent_keg')>0) {
                 stockCount=inventory.GetItemQuantityByName('betagwent_keg');
-                if(stockCount<50)inventory.AddAnItem('betagwent_keg',50-stockCount,true,true);
+                if(stockCount<5)inventory.AddAnItem('betagwent_keg',5-stockCount,true,true);
                 npc.betaGwentBulkKegStockMigrated=true;
             }
             for(i=0;i<items.Size();i+=1) {
@@ -60,15 +60,13 @@ function BuyItem(item : SItemUniqueId, quantity : int) : bool
             showNotification("Нельзя купить больше бочек, чем осталось редких карт. Уже купленные бочки учтены.");return false;
         }
         // The quantity is bounded by stock and the finite rare pool before multiplication.
-        cost=150*quantity;
-        if(player.GetMoney()<cost){showNotification("Недостаточно крон. Бочка стоит 150 крон.");return false;}
-        newItem=stock.GiveItemTo(player.inv,item,quantity,true,true,false);
-        if(!player.inv.IsIdValid(newItem))return false;
-        player.RemoveMoney(cost);stock.AddMoney(cost);
-        _playerInv.SetFilterType(IFT_Default);UpdateInventoryFilter(IFT_Default);
-        InventoryUpdateItem(newItem);UpdateEncumbranceInfo();
-        LogChannel('BetaGwent',"KEG_PURCHASE quantity="+quantity+" crowns="+cost+" unopened="+player.inv.GetItemQuantityByName('betagwent_keg'));
-        showNotification("Бочки добавлены в инвентарь. Выберите бочку и нажмите «Использовать», чтобы открыть одну.");
+        cost=200*quantity;
+        if(player.GetMoney()<cost){showNotification("Недостаточно крон. Бочка стоит 200 крон.");return false;}
+        // Stage 110: kegs go to a save counter, never into Geralt's inventory (see kegProfile.ws).
+        if(!stock.RemoveItem(item,quantity))return false;
+        player.RemoveMoney(cost);stock.AddMoney(cost);player.BetaGwentAddKegs(quantity);
+        LogChannel('BetaGwent',"KEG_PURCHASE quantity="+quantity+" crowns="+cost+" unopened="+player.BetaGwentKegCount());
+        message="Неоткрытых бочек: "+player.BetaGwentKegCount()+". Открыть их можно в редакторе колод гвинта.";showNotification(message);
     }else {
         if(quantity<1 || quantity>stock.GetItemQuantity(item) || player.BetaGwentOwned(id)+quantity>BetaGwentCollectionCap(id)) {
             showNotification("Достигнут лимит копий этой карты.");return false;
@@ -98,60 +96,23 @@ function OnBuyItem(item : SItemUniqueId, quantity : int, moveToIdx : int)
     }
     player=(W3PlayerWitcher)thePlayer;if(!player)return false;
     maximum=Min(quantity,player.BetaGwentKegPurchaseCapacity());
-    maximum=Min(maximum,player.GetMoney()/150);
+    maximum=Min(maximum,player.GetMoney()/200);
     if(maximum<1){showNotification("Недостаточно крон или все редкие карты уже получены/зарезервированы купленными бочками.");return false;}
     if(_quantityPopupData)delete _quantityPopupData;
     _quantityPopupData=new QuantityPopupData in this;
     _quantityPopupData.itemId=item;_quantityPopupData.actionType=QTF_Buy;_quantityPopupData.inventoryRef=this;
-    _quantityPopupData.itemCost=150;_quantityPopupData.showPrice=true;
+    _quantityPopupData.itemCost=200;_quantityPopupData.showPrice=true;
     _quantityPopupData.minValue=1;_quantityPopupData.currentValue=1;_quantityPopupData.maxValue=maximum;
     RequestSubMenu('PopupMenu',_quantityPopupData);return true;
 }
 
-// Retain the native default action, including in tooltips/context menus.
-@wrapMethod(W3GuiBaseInventoryComponent)
-function GetItemActionType(item : SItemUniqueId, optional bGetDefault : bool) : EInventoryActionType
-{
-    if(_inv.GetItemName(item)=='betagwent_keg')return IAT_Consume;
-    return wrappedMethod(item,bGetDefault);
-}
-// Assign the action on the final player item object. Super calls in the
-// inherited serializer must not be relied on to dispatch a wrapped getter.
-// Keep Sell/Transfer intact in shop and stash instead of opening a keg there.
-@wrapMethod(W3GuiPlayerInventoryComponent)
-function SetInventoryFlashObjectForItem(itemId : SItemUniqueId, out flashObject : CScriptedFlashObject) : void
-{
-    wrappedMethod(itemId,flashObject);
-    if(_inv.GetItemName(itemId)=='betagwent_keg' && !_shopInvCmp && !stashMode && currentDefaultItemAction==IAT_None) {
-        flashObject.SetMemberFlashInt("actionType",IAT_Consume);
-        flashObject.SetMemberFlashBool("disableAction",false);
-        flashObject.SetMemberFlashBool("cantEquip",false);
-        LogChannel('BetaGwent',"KEG_INVENTORY_ACTION action=consume quantity="+_inv.GetItemQuantity(itemId));
-    }
-}
-@wrapMethod(CR4InventoryMenu)
-function GetItemDefaultAction(item : SItemUniqueId) : EInventoryActionType
-{
-    if(_inv.GetItemName(item)=='betagwent_keg')return IAT_Consume;
-    return wrappedMethod(item);
-}
+// Stage 110: kegs are opened only from the deck editor (Kegs button). The
+// inventory gets no Use action; if the vanilla consume path is ever reached,
+// keep the keg instead of eating it.
 @wrapMethod(CR4InventoryMenu)
 function OnConsumeItem(item : SItemUniqueId)
 {
-    var player : W3PlayerWitcher;var init : CBetaGwentKegMenuData;
     if(thePlayer.inv.GetItemName(item)!='betagwent_keg'){return wrappedMethod(item);}
-    LogChannel('BetaGwent',"KEG_INVENTORY_USE_REQUEST");
-    player=(W3PlayerWitcher)thePlayer;
-    if(!player || player.IsInCombat()){showNotification("Бочку можно открыть вне боя.");return false;}
-    if(!player.BetaGwentOpenInventoryKeg(item)) {
-        // NPC/shop rewards can fill the rare pool after bulk purchase. Do not
-        // strand an already paid keg: return its fixed price only when exhausted.
-        if(player.BetaGwentEnsureCollection() && player.BetaGwentKegRareRemaining()==0 && player.inv.RemoveItem(item,1)) {
-            player.AddMoney(150);UpdatePlayerMoney();showNotification("Все редкие карты уже собраны. За бочку возвращено 150 крон.");
-        }else {showNotification("Не удалось открыть бочку. Она осталась в инвентаре.");return false;}
-    }else {
-        init=new CBetaGwentKegMenuData in this;RequestSubMenu('DeckBuilder',init);
-    }
-    if(player.inv.GetItemQuantity(item)>0)InventoryUpdateItem(item);else InventoryRemoveItem(item);
-    UpdateItemsCounter();return true;
+    showNotification("Бочку можно открыть в редакторе колод гвинта.");return false;
 }
+
