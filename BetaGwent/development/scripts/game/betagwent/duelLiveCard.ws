@@ -198,6 +198,14 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
         if (BetaGwentDuelResetInInactive(cardState.runtimeTemplate.templateId)) cardState.timerValue = definition.initialTimer;
         power.SetCurrentPair(power.GetBasePower() + power.GetPermanentPower(), definition.header.armor);
     }
+    public function ResetInDeck()
+    {
+        // Shuffling preserves this instance's current strength, including weakening.
+        // Clear the same transient tags/timer/armor as the previous inactive reset.
+        cardState.tokenMask = cardState.tokenMask & 1792;
+        if (BetaGwentDuelResetInInactive(cardState.runtimeTemplate.templateId)) cardState.timerValue = definition.initialTimer;
+        power.SetCurrentPair(power.GetCurrentPower(), definition.header.armor);
+    }
     public function ChangeBasePower(delta : int, ignoreArmor : bool) : bool
     {
         var armor, changed : int; armor = power.GetCurrentArmor(); changed = delta;

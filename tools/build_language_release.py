@@ -23,7 +23,28 @@ def job(name,args,expect=(),workspace=None):
     job_dir=BASE/'jobs'/name;retry=1
     while job_dir.exists():
         job_dir=BASE/'jobs'/(name+'-retry'+str(retry));retry+=1
-    subprocess.run([sys.executable,str(ROOT/'tools/recon/run_wcc_job.py'),'--out',str(job_dir),'--timeout','1800',*extra,'--',*args,'-uncookDir',str(ROOT/'depot')+'\\','-workspaceDir',str(workspace or PROJECT)+'\\'],cwd=ROOT,check=True)
+    try:
+        subprocess.run([sys.executable,str(ROOT/'tools/recon/run_wcc_job.py'),'--out',str(job_dir),'--timeout','1800',*extra,'--',*args,'-uncookDir',str(ROOT/'depot')+'\\','-workspaceDir',str(workspace or PROJECT)+'\\'],cwd=ROOT,check=True)
+    except subprocess.CalledProcessError:
+        outcome=json.loads((job_dir/'result.json').read_text('utf8'))
+        output=(job_dir/'stdout.txt').read_text('utf8',errors='replace')
+        # REDkit 5.01 can close an invalid handle during shutdown, after the
+        # pack writer has completed. Accept only this known shutdown failure,
+        # with the writer's completion line AND every payload verified against
+        # the frozen cooked input. A merely existing file is never sufficient.
+        if name!='pack' or STAGE<96 or outcome['exitCode']!=0xC0000008 or outcome['timedOut'] or len(expect)!=1:
+            raise
+        if "Bundle '"+str(expect[0])+"' saved," not in output:
+            raise
+        fatal=('Internal cooking buffer is to small','!!! FATAL WRITING ERROR !!!','[Error][Assertion]','Cooking error for resource')
+        if any(marker in output for marker in fatal):raise
+        sys.path.insert(0,str(ROOT/'tools/ui'))
+        from verify_bundle96 import verify
+        verified=verify(expect[0],BASE/'bundle-input',require_uncompressed_gui=STAGE>=97,gui_limit_mib=55 if STAGE>=98 else 100)
+        recovery=dict(nativeProcessExitCode=outcome['exitCode'],writerCompleted=True,payloadsVerified=True,
+                      entries=len(verified['entries']),nativeRuntimeVerified=False)
+        (job_dir/'verified-shutdown-recovery.json').write_text(json.dumps(recovery,indent=2)+'\n','utf8')
+        print('Pack writer completed; verified every payload after REDkit shutdown error.',flush=True)
     log=(job_dir/'stdout.txt').read_text('utf8',errors='replace')
     # Wcc can return zero after failed writer assertions. Exit status alone
     # must never authorize a corrupt resource to enter the shipping bundle.
@@ -186,7 +207,13 @@ else:
         for f in ('blob0.bundle','dep.cache','metadata.store','ru.w3strings','en.w3strings','soundspc.cache','precompiled.rsblob'):assert (CONTENT/f).stat().st_size>0
         info=json.loads((PROJECT/'myproject1.w3edit').read_text('utf8'));info['gameVersion']='5.01' if STAGE>=111 else info['gameVersion']
         (CONTENT.parent/'info.json').write_text(json.dumps({k:info[k] for k in ('name','modName','version','gameVersion','description','author','dependencies')},indent=2)+'\n','utf8')
-        for name in ('README_'+LANG.upper()+'.md','CONTROLS_'+LANG.upper()+'.md','CHANGELOG_'+LANG.upper()+'.md'):shutil.copyfile(ROOT/'BetaGwent/release'/name,PACKAGE/name)
+        for name in ('README_'+LANG.upper()+'.md','CONTROLS_'+LANG.upper()+'.md','CHANGELOG_'+LANG.upper()+'.md'):
+            current=ROOT/'BetaGwent/release'/('publish-'+VERSION)/name
+            if not current.exists():current=ROOT/'BetaGwent/release'/name
+            text=current.read_text('utf8')
+            if name.startswith(('README_','CONTROLS_')):
+                text=re.sub(r'^(# [^\n]*?)\b\d+\.\d+\.\d+\b',lambda m:m[1]+VERSION,text,count=1)
+            (PACKAGE/name).write_text(text,'utf8')
         for name in ('LICENSE','ATTRIBUTIONS.md'):
             shutil.copyfile(ROOT/'BetaGwent/build/public-source89/GwentBetaClassic'/name,PACKAGE/name)
         (PACKAGE/'SOURCE.txt').write_text('Source code (GPL-3.0-only): https://github.com/NikRegul/GwentBetaClassic-\n','ascii')

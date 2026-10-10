@@ -52,6 +52,8 @@ class CBetaGwentDuelMonsters extends IScriptable
         for (i = 0; i < ids.Size(); i += 1)
         {
             t = game.FindCard(ids[i]).Snapshot();
+            if ((d.specialMode == 11 || d.specialMode == 20 || d.specialMode == 21 || d.specialMode == 24)
+                && !game.CanConsume(source, game.FindCard(ids[i]))) continue;
             if (d.specialMode == 22 && source.monsterStage == 0 && t.instanceId == s.instanceId) continue;
             if ((d.specialMode == 16 || d.specialMode == 17 || d.specialMode == 18 || d.specialMode == 32) && t.locationMask == s.locationMask) continue;
             if((d.specialMode==16 || d.specialMode==17 || d.specialMode==18 || d.specialMode==32) && game.CountLocation(t.positionPlayerId,s.locationMask)>=9)continue;
@@ -153,6 +155,8 @@ class CBetaGwentDuelMonsters extends IScriptable
         if (source.MonsterMode() >= 200) { nilf.Select(source, id); return; }
         if (source.MonsterMode() >= 100) { north.Select(source, id); return; }
         s = source.Snapshot(); d = source.Definition(); target = game.FindCard(id);
+        if (target && (d.specialMode == 11 || d.specialMode == 20 || d.specialMode == 21 || d.specialMode == 24)
+            && !game.CanConsume(source, target)) { RequestTargets(source); return; }
         if (d.specialMode == 18)
         {
             if (id != 0) source.monsterIds.PushBack(id);
@@ -174,7 +178,7 @@ class CBetaGwentDuelMonsters extends IScriptable
         if (d.specialMode == 11)
         {
             if (target)
-            { t = target.Snapshot(); game.QueueConsume(source, target); game.MonsterPower(source, source, t.power.currentPower); game.FlushDeaths(); }
+            { t = target.Snapshot(); if (game.QueueConsume(source, target)) { game.MonsterPower(source, source, t.power.currentPower); game.FlushDeaths(); } }
             source.monsterRemaining -= 1; s = source.Snapshot();
             if (target && source.monsterRemaining > 0 && (s.locationMask & 7) != 0 && !s.isWaitingToDie) { RequestTargets(source); return; }
             game.MonsterComplete(source); return;
@@ -213,10 +217,10 @@ class CBetaGwentDuelMonsters extends IScriptable
         else if (d.specialMode == 9) game.MonsterDeckCopies(s.positionPlayerId, t.runtimeTemplate.templateId, d.specialCount);
         else if (d.specialMode == 10) game.MonsterForceDeathwish(target);
         else if (d.specialMode == 20 || d.specialMode == 21)
-        { game.QueueConsume(source, target); game.MonsterPower(source, source, t.power.currentPower); }
+        { if (game.QueueConsume(source, target)) game.MonsterPower(source, source, t.power.currentPower); }
         else if (d.specialMode == 23) { PlayDeckCopy(source, t.runtimeTemplate.templateId); return; }
         else if (d.specialMode == 24)
-        { game.QueueConsume(source, target); game.FlushDeaths(); PlayDeckCopy(source, t.runtimeTemplate.templateId); return; }
+        { if (!game.QueueConsume(source, target)) { game.MonsterComplete(source); return; } game.FlushDeaths(); PlayDeckCopy(source, t.runtimeTemplate.templateId); return; }
         else if (d.specialMode == 25 || d.specialMode == 27)
         { source.monsterStored = id; game.MonsterPlayExisting(source, target); return; }
         else if (d.specialMode == 29)
@@ -275,7 +279,7 @@ class CBetaGwentDuelMonsters extends IScriptable
             // Graph92 consumes its counter on the first AfterPlayed, before comparing the stored child.
             source.monsterOnce = 0;
             if (source.monsterStored == t.instanceId && (t.locationMask & 7) != 0 && !t.isWaitingToDie)
-            { game.QueueConsume(source, child); game.MonsterPower(source, source, t.power.basePower); }
+            { if (game.QueueConsume(source, child)) game.MonsterPower(source, source, t.power.basePower); }
         }
     }
     private function ResurrectDraug(source : CBetaGwentDuelCard)

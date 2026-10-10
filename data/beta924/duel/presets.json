@@ -562,7 +562,7 @@
         200301
       ],
       "starter": true,
-      "starterRevision": 2
+      "starterRevision": 3
     },
     {
       "id": 17,
@@ -599,7 +599,7 @@
         122307
       ],
       "starter": true,
-      "starterRevision": 2
+      "starterRevision": 3
     },
     {
       "id": 18,
@@ -636,7 +636,7 @@
         201617
       ],
       "starter": true,
-      "starterRevision": 2
+      "starterRevision": 3
     },
     {
       "id": 19,
@@ -648,7 +648,7 @@
       "templateIds": [
         142101,
         142106,
-        142102,
+        142103,
         201611,
         142203,
         142211,
@@ -673,7 +673,7 @@
         201704
       ],
       "starter": true,
-      "starterRevision": 2
+      "starterRevision": 3
     },
     {
       "id": 20,
@@ -710,7 +710,7 @@
         152305
       ],
       "starter": true,
-      "starterRevision": 2
+      "starterRevision": 3
     },
     {
       "id": 21,
@@ -2091,7 +2091,7 @@
         122206,
         122211,
         122207,
-        122208,
+        200019,
         123201,
         122314,
         122314,

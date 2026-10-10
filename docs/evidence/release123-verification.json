@@ -1,0 +1,69 @@
+{
+  "stage": 123,
+  "version": "0.4.3",
+  "nativeMenus": 8,
+  "bindingsPerMenu": 46,
+  "packages": [
+    {
+      "language": "ru",
+      "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.4.3-RU.zip",
+      "bytes": 200303622,
+      "sha256": "737563a25170e1a7d2305db0daec41250308a934ecb6c7d8c40c05a41fddc94c",
+      "crcAndManifestVerified": true,
+      "freshNativeSources": 69,
+      "menusUnder55MiB": true
+    },
+    {
+      "language": "en",
+      "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.4.3-EN.zip",
+      "bytes": 199230939,
+      "sha256": "cf5c8eb5904dad034d2d4559672670dee2d0e974cedd25019f0d6df41ab601b1",
+      "crcAndManifestVerified": true,
+      "freshNativeSources": 69,
+      "menusUnder55MiB": true
+    }
+  ],
+  "regressions": {
+    "ai123": {
+      "stage": 123,
+      "checks": 41,
+      "actualWitcherScript": true,
+      "nativeGameTested": false
+    },
+    "rotation123": {
+      "stage": 123,
+      "checks": 557,
+      "cycles": 4,
+      "mockedSaveRoundtrip": true,
+      "nativeSaveTested": false
+    },
+    "controller123": {
+      "stage": 123,
+      "checks": 19,
+      "actualActionScript": true,
+      "nativeControllerTested": false
+    },
+    "catalog123": {
+      "stage": 123,
+      "checks": 18,
+      "actualActionScript": true,
+      "nativeMouseTested": false
+    },
+    "crafting123": {
+      "stage": 123,
+      "checks": 44,
+      "actualMenuAndProfileWS": true,
+      "nativeMouseTested": false
+    },
+    "wcc-retry123": {
+      "stage": 123,
+      "checks": 12,
+      "actualWccRunner": true,
+      "mockedProcessExits": true
+    }
+  },
+  "retailGameTested": false,
+  "nativeSaveRoundtripTested": false,
+  "nativeControllerTested": false,
+  "previousReleaseUnmodified": true
+}

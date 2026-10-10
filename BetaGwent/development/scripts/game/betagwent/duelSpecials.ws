@@ -309,12 +309,12 @@ class CBetaGwentDuelSpecials extends IScriptable
             {
                 for (i = 0; i < cards.Size(); i += 1)
                 { s = cards[i].Snapshot(); unitDefinition = cards[i].Definition(); if ((s.tokenMask & 8) == 0 && !s.isWaitingToDie && (unitDefinition.unitTraits & 288) != 0) value = 4; }
-                return value;
+                return value+weather.ReplacementValue(player,side,row,d.specialToken);
             }
             for (i = 0; i < cards.Size(); i += 1)
             { s = cards[i].Snapshot(); if ((s.tokenMask & 8) == 0 && !s.isWaitingToDie) value += DamageScore(s, player, BetaGwentDuelRowAmount(d.specialToken)); }
             // A small continuation estimate; full archetype search remains pending.
-            return value + 2;
+            return value + 2+weather.ReplacementValue(player,side,row,d.specialToken);
         }
         if (d.specialMode == 20)
         {
@@ -329,7 +329,9 @@ class CBetaGwentDuelSpecials extends IScriptable
             if (d.specialToken == 64) value = Min(cards.Size(), 3) + Min(cards.Size(), 1);
             if (d.specialCount == 2) { game.GetZoneCards(side, row * 2, cards); value += Min(cards.Size(), 1) * 2; }
             token = weather.Token(side, row); if (token == d.specialToken) value = 0;
-            return value * 2;
+            value=value*2+weather.ReplacementValue(player,side,row,d.specialToken);
+            if(d.specialCount==2)value+=weather.ReplacementValue(player,side,row*2,d.specialToken);
+            return value;
         }
         for (i = 0; i < cards.Size(); i += 1)
         {

@@ -16,7 +16,7 @@ function fixture(p){const g=new CBetaGwentDuelSession();check(g.InitializeWithPr
  g.match.currentPlayerId=2;g.match.roundActive=true;g.match.turnActive=true;g.match.roundNumber=1;g.match.playerOne.hasPassed=false;g.match.playerTwo.hasPassed=false;
  g.recordVisuals=false;return g;}
 for(const preset of pool){const ids={v:[]};BetaGwentDuelPresetDeck(preset,ids);
- const ordinary=ids.v.find(t=>{const d=BetaGwentDuelDefinition(t);return d.header.typeMask===4&&d.header.tierMask===2&&!BetaGwentDuelSpying(t)&&!([15,23].includes(d.effect))&&!gAdj(t)&&!d.deathwishDamage;});
+ const ordinary=ids.v.find(t=>{const d=BetaGwentDuelDefinition(t);return d.header.typeMask===4&&d.header.tierMask===2&&!new CBetaGwentDuelSession().AiClearsOwnRow(d)&&!BetaGwentDuelSpying(t)&&!([15,23].includes(d.effect))&&!gAdj(t)&&!d.deathwishDamage;});
  function gAdj(t){return [152309,152109,123301,132308].includes(t);}
  check(ordinary,'ordinary real roster card '+preset);
  const c={preset,profile:BetaGwentAIPresetProfile(preset),weather:false,adjacency:false,chase:false,fullPlay:false,spawnOrSummon:false,discardSetup:'not_present',engineProtection:'not_present'};

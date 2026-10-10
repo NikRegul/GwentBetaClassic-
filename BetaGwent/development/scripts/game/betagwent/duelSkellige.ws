@@ -108,14 +108,25 @@ class CBetaGwentDuelSkellige extends IScriptable
      if(target.TemplateId()==152301 && (current.locationMask&7)!=0 && (current.tokenMask&4)==0)game.QueueTransform(target,target,152405);
      if(old.power.currentPower+old.power.basePower>current.power.currentPower+current.power.basePower && (current.locationMask&7)!=0){game.GetCards(cards);for(i=0;i<cards.Size();i+=1){s=cards[i].card;if(s.runtimeTemplate.templateId==201646 && (s.locationMask&7)!=0 && (s.tokenMask&12)==0 && s.positionPlayerId!=current.positionPlayerId)game.MonsterPower(game.FindCard(s.instanceId),game.FindCard(s.instanceId),1);}}
     }
+    public function ReviveMorkvarg(source : CBetaGwentDuelCard, row : int, index : int)
+    {
+        var s : SBetaGwentCardSnapshot;
+        s=source.Snapshot();if(s.locationMask!=32)return;
+        // Revive first, then Weaken as the card says. At one base strength the
+        // weakening now enters the normal death/banish queue on the board.
+        source.ResetCurrentPower();
+        game.NorthResurrect(source,0,row,index,false);
+        s=source.Snapshot();if((s.locationMask&7)==0)return;
+        source.ChangeBasePower(-(s.power.basePower+1)/2,true);
+    }
     public function Trigger(kind : int, cause : SBetaGwentCardSnapshot)
     {
         var cards : array<SBetaGwentDevelopmentCard>;var source,target,left,right : CBetaGwentDuelCard;var s,t,pos : SBetaGwentCardSnapshot;var ids : array<int>;var m : SBetaGwentMatchSnapshot;var i,j,id,row,amount : int;
         game.GetCards(cards);target=game.FindCard(cause.instanceId);if(target)t=target.Snapshot();m=game.NilfMatch();
         for(i=0;i<cards.Size();i+=1){s=cards[i].card;source=game.FindCard(s.instanceId);id=s.runtimeTemplate.templateId;if(!source || s.isWaitingToDie || (s.tokenMask&4)!=0)continue;
          if(kind==3 && target && t.locationMask==32 && t.positionPlayerId==s.positionPlayerId && (cause.locationMask&24)!=0){if((s.locationMask&7)!=0 && id==152314)RandomDamage(source,BetaGwentOpponentId(s.positionPlayerId),7,2);if(id==201778 && t.runtimeTemplate.typeMask==4 && (s.locationMask&7)!=0 && s.timerValue>0 && (t.tokenMask&512)==0 && m.currentPlayerId==s.positionPlayerId){source.ChangeTimer(1,0);game.NilfQueueReaction(target,7,t.positionPlayerId);}}
-         if(kind==15 && id==152209 && s.locationMask==32){amount=(s.power.basePower+1)/2;source.ChangeBasePower(-amount,true);t=source.Snapshot();if(t.power.basePower+t.power.permanentPower>0)game.NorthResurrect(source,0,0,-3,false);}
-         if(kind==3 && t.instanceId==s.instanceId && s.locationMask==32 && (cause.locationMask&767)!=0){if(id==152209){amount=(s.power.basePower+1)/2;source.ChangeBasePower(-amount,true);t=source.Snapshot();if(t.power.basePower+t.power.permanentPower>0)game.NorthResurrect(source,0,BetaGwentNorthPick((cause.locationMask&7)!=0,cause.locationMask,0),BetaGwentNorthPick((cause.locationMask&7)!=0,cause.locationIndex,-3),false);}if(id==152316 && (cause.locationMask&24)!=0)game.NorthResurrect(source,0,0,-3,false);}
+         if(kind==15 && id==152209 && s.locationMask==32)ReviveMorkvarg(source,0,-3);
+         if(kind==3 && t.instanceId==s.instanceId && s.locationMask==32 && (cause.locationMask&767)!=0){if(id==152209)ReviveMorkvarg(source,BetaGwentNorthPick((cause.locationMask&7)!=0,cause.locationMask,0),BetaGwentNorthPick((cause.locationMask&7)!=0,cause.locationIndex,-3));if(id==152316 && (cause.locationMask&24)!=0)game.NorthResurrect(source,0,0,-3,false);}
          if(kind==3 && id==200177 && s.locationMask==32 && target && cause.locationMask==32 && (t.locationMask&7)!=0 && (m.currentPlayerId==s.positionPlayerId || t.runtimeTemplate.templateId==112207 || t.runtimeTemplate.templateId==152209 || t.runtimeTemplate.templateId==200529)){source.ChangeTimer(1,0);t=source.Snapshot();if(t.timerValue==0)game.NorthResurrect(source,0,0,-3,false);}
          if(kind==3 && id==152210 && (s.locationMask&7)!=0 && target && cause.locationMask==8 && (t.locationMask&7)!=0 && t.positionPlayerId!=s.positionPlayerId && (t.tokenMask&8)==0)game.MonsterPower(source,target,-1);
          if(kind==9 && cause.instanceId==s.instanceId){pos=cause;pos.locationIndex=-3;if(id==152104)game.QueueRandomRowSpawn(pos,152402,1);if(id==152401){Query(BetaGwentOpponentId(cause.positionPlayerId),7,15,4,0,264,NULL,ids);for(j=0;j<ids.Size();j+=1)if(game.FindCard(ids[j]).TemplateId()==152101)game.MonsterPower(source,game.FindCard(ids[j]),10);}if(id==201572 && m.currentPlayerId==BetaGwentOpponentId(cause.positionPlayerId)){pos.positionPlayerId=BetaGwentOpponentId(cause.positionPlayerId);game.QueueRandomRowSpawn(pos,152406,1);}if(id==201573){Query(cause.positionPlayerId,7,15,4,0,8,NULL,ids);if(ids.Size()>0)game.MonsterOperation(source,game.FindCard(ids[game.RandomIndex(ids.Size())]),12,4,7);}if(id==201574){Query(BetaGwentOpponentId(cause.positionPlayerId),cause.locationMask,15,4,0,8,NULL,ids);for(j=0;j<ids.Size();j+=1)game.MonsterPower(source,game.FindCard(ids[j]),-4);}}

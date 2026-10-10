@@ -136,7 +136,9 @@ class CBetaGwentWeatherAI extends IScriptable
     }
     public function BestRow(d : SBetaGwentDuelDefinition) : int
     {
-        var row,best,value,maximum,side : int;maximum=-2147483647;side=2;
+        var row,best,value,maximum,side : int;
+        if(BetaGwentDuelSpying(d.header.templateId))return game.AiBestSpyRow(2,d);
+        maximum=-2147483647;side=2;
         if(BetaGwentDuelSpying(d.header.templateId))side=1;
         for(row=1;row<=4;row*=2){
             if(game.CountLocation(side,row)>=9)continue;
@@ -161,6 +163,8 @@ class CBetaGwentWeatherAI extends IScriptable
         var cards : array<CBetaGwentDuelCard>;var s : SBetaGwentCardSnapshot;var option : SBetaGwentDuelDefinition;
         var i,row,value,best,body,gold,silver,golds,silvers : int;var ids : array<int>;
         body=power;if(BetaGwentDuelSpying(d.header.templateId))body=-power;
+        if(d.effect==9 || d.effect==10)return game.AiCreatedOptionValue(d,2,immediate);
+        if(d.effect==34 && (d.specialMode==105 || d.header.templateId==142202))return body+game.AiCreatedPoolValue(d,2,immediate);
         if(d.header.templateId==132205)return body+MorvuddValue(immediate);
         if(d.header.templateId==132214){value=HuntCount(8,false);if(fromHand)value=Max(0,value-1);return body+BestHit(d.amount+value*d.conditionalDamage,d.amount+value*d.conditionalDamage,immediate);}
         if(d.header.templateId==132102)return body+BestHit(4,8,immediate);
@@ -176,6 +180,7 @@ class CBetaGwentWeatherAI extends IScriptable
         if(d.header.templateId==200026){ReadZone(2,7,cards);for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();option=cards[i].Definition();if((option.unitTraits&4096)==0 || s.runtimeTierMask!=2 || (s.tokenMask&264)!=0 || option.header.templateId==200026 || CountTemplate(16,option.header.templateId)==0)continue;value=Gain(option,option.header.power,true,false,immediate);best=Max(best,value);}return body+best;}
         if(d.header.templateId==131101){BetaGwentMonsterTemplates(131101,ids);for(i=0;i<ids.Size();i+=1){option=BetaGwentDuelDefinition(ids[i]);best=Max(best,Gain(option,option.header.power,true,false,immediate));}return body+best;}
         if(d.header.templateId==131102 && !shallow){if(immediate){gold=2147483647;silver=2147483647;}ReadZone(2,16,cards);for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();option=cards[i].Definition();value=Gain(option,s.power.currentPower,true,false,immediate);if(s.runtimeTierMask==8){if(immediate)gold=Min(gold,value);else gold+=value;golds+=1;}if(s.runtimeTierMask==4){if(immediate)silver=Min(silver,value);else silver+=value;silvers+=1;}}if(golds>0){best=gold;if(!immediate)best=gold/golds;}if(silvers>0){value=silver;if(!immediate)value=silver/silvers;best=Max(best,value);}return body+best;}
+        if(!immediate)return body+game.AiClearDeployGain(d,2);
         return body;
     }
     public function Setup(d : SBetaGwentDuelDefinition) : int

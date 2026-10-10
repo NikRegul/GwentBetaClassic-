@@ -35,7 +35,12 @@ def main():
     # Compile only the frozen copies, including the translator.
     import importlib.util
     spec=importlib.util.spec_from_file_location('frozen_build',directory/'sources/tools/ai/build_js.py')
-    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.main(directory/'rules.js')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    # Refresh the clone only inside this frozen copy, never in working scripts.
+    import gen_clone
+    gen_clone.CORE=module.CORE;gen_clone.DEV=module.DEV;gen_clone.OUT=module.DEV/'duelClone.ws'
+    gen_clone.patch_sources(gen_clone.program());gen_clone.gen(gen_clone.program())
+    module.main(directory/'rules.js')
     ws=(directory/'sources/BetaGwent/development/scripts/game/betagwent/duelAIPass.ws').read_text('utf-8-sig')
     block=ws.split('function BetaGwentAITune(',1)[1].split('// Average public value',1)[0]
     defaults={k:int(v) for k,v in re.findall(r'case (\d+): return (-?\d+);',block)}

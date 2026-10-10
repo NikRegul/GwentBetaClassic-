@@ -1,0 +1,6 @@
+{
+  "stage": 123,
+  "checks": 12,
+  "actualWccRunner": true,
+  "mockedProcessExits": true
+}

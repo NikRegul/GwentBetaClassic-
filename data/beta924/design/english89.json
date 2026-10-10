@@ -2644,5 +2644,9 @@
   "ИИ · Бран: раны и мечники": "AI · Bran: wounds and Greatswords",
   "ИИ · Солдаты и рыцари Фольтеста": "AI · Foltest's soldiers and knights",
   "ИИ · Харальд: дождь и топорники": "AI · Harald: rain and Axemen",
-  "ИИ · Фольтест: усиление колоды": "AI · Foltest: deck boosts"
+  "ИИ · Фольтест: усиление колоды": "AI · Foltest: deck boosts",
+  ": укажите отряд, которому нужно нанести урон.\n": ": select a unit to damage.\n",
+  "Посмотреть стол": "View board",
+  "Вернуться к выбору": "Return to selection",
+  "Изначальная сила исчерпана": "Base power depleted"
 }

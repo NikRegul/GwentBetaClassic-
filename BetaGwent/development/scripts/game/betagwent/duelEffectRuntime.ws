@@ -49,7 +49,7 @@ class CBetaGwentDuelEffectAction extends CBetaGwentManagedAction
         var s : SBetaGwentCardSnapshot;
         if (!target || !runtime || operation < 1 || operation > 19) return false;
         if (operation == 4 || operation == 5)
-        { if (!attacker) return false; s = attacker.Snapshot(); if ((s.locationMask & 7) == 0 || s.isWaitingToDie) return false; }
+        { if (!runtime.game.CanConsume(attacker, target)) return false; s = attacker.Snapshot(); if ((s.locationMask & 7) == 0 || s.isWaitingToDie) return false; }
         s = target.Snapshot();
         if (operation == 5) return (s.locationMask == 32 || s.locationMask == 8) && !s.isWaitingToDie;
         if (operation == 14) return (s.locationMask & 7) != 0 && (bool)attacker;

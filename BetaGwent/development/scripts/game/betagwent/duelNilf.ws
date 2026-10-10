@@ -82,7 +82,8 @@ class CBetaGwentDuelNilf extends IScriptable
         if(id==122403){Top(source,side,2,14,512,2,true);return;}
         if(id==132407 || id==162301 || id==162312 || id==162212 || id==200294 || id==200296 || id==152312 || id==200219){game.MonsterComplete(source);return;}
         if(id==162101){source.monsterRemaining=2;Request(source,s.positionPlayerId,s.locationMask,15,4,256,16);return;}
-        if(id==162102 || id==162305 || id==162306 || id==162308 || id==200124 || id==152304){Enemy(source);return;}
+        if(id==162102 || id==162305 || id==162306 || id==162308 || id==152304){Enemy(source);return;}
+        if(id==200124){Request(source,0,7,15,4,264,0);return;}
         if(id==162103){source.monsterRemaining=2;Request(source,side,8,14,14,64,0);return;}
         if(id==162105){Request(source,BetaGwentNorthPick(game.NilfTruce(),0,side),7,15,4,264,16);return;}
         if(id==162106){Request(source,side,16,14,14,0,0);return;}

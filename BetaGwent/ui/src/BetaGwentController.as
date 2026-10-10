@@ -199,7 +199,8 @@ package
             for each(var old:Object in nodes)if(old.sprite==sprite){n=old;break;}
             if(!n){
                 var s:Object=state();var scope:String=s.baseMode;
-                for each(var layer:Object in s.layers)if(layer.root.contains(sprite)){scope=layer.mode;break;}
+                // Nested dialogs belong to their innermost scope, not the choice screen beneath them.
+                for each(var layer:Object in s.layers)if(layer.root&&layer.root.contains(sprite))scope=layer.mode;
                 n={sprite:sprite,scope:scope,label:"Выбор карты",tag:"control"};nodes.push(n);
             }
             if(label.length)n.label=label;
@@ -298,7 +299,10 @@ package
                 var forward:Number=dir==37?-dx:dir==39?dx:dir==38?-dy:dy;
                 var across:Number=dir==37||dir==39?Math.abs(dy):Math.abs(dx);
                 if(forward<=4)continue;
-                var cost:Number=forward+across*2.5+(across>forward?1000:0);
+                // Vertical movement enters the nearest row first, then the nearest card in it.
+                // A dense top row must not make the aligned bottom row cheaper than the middle one.
+                if((dir==38||dir==40) && n.tag!="control" && forward<Math.min(origin.height,other.rect.height)*.35)continue;
+                var cost:Number=(dir==38||dir==40)&&n.tag!="control"?Math.round(forward/24)*10000+across:forward+across*2.5+(across>forward?1000:0);
                 if(cost<score){score=cost;best=other;}
             }
             // Wrap along the same column/row at an edge, so D-pad down still

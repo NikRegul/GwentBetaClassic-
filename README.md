@@ -1,38 +1,40 @@
-# Gwent Beta Classic 0.4.1
+# Gwent Beta Classic 0.4.3
 
 Gwent Beta 0.9.24 inside The Witcher 3: 479 collectible cards, 21 leaders,
 five factions, editable saved decks, NPC matches, card collecting and controller support.
+Targets PC game version 5.01. Install one language package at a time.
 
-**Back up saves before installation and every update. Bugs can still occur.**
+0.4.3 prevents self-consumption and fixes Morkvarg returning with zero strength.
+Shuffling a weakened card preserves its strength. AI target selection, Vran food
+chains, spy placement, empty Ointment choices and weather replacement are corrected.
+The 46-deck opponent rotation persists with saves, and Cursed Adda has two tactics.
 
-0.4.1 restores gold ornaments and fittings by baking the camera-facing surfaces
-of all ten original faction board halves. It retains the single horizontal
-reflection, adds original hand/leader separators, improves score typography,
-animates the original hit sheet and routes weather impacts to dedicated sounds.
-Locked cards retain and display their lock in the graveyard. Atlas dimensions
-and card resolution are unchanged. Packages target PC game version 5.01.
+Ability choices use the mulligan-style grid with board inspection during a pending
+choice. Craft buttons appear directly on cards and work before NPC matches;
+controller focus and row
+navigation are corrected, and frost/rain presentation and timer alignment improved.
+The local changelog also records the preceding 0.4.2 fixes.
 
-Changes since 0.3.4 also include researched deck rosters and AI strategies,
-46-archetype checks, decision logging, reproducible AI comparison, action previews,
-animation settings and unified card/deck/graveyard selection screens.
-
-- [Cumulative changelog / English](BetaGwent/release/publish-0.4.1/CHANGELOG_0.3.4_to_0.4.1_EN.md)
-- [Cumulative changelog / Russian](BetaGwent/release/publish-0.4.1/CHANGELOG_0.3.4_to_0.4.1_RU.md)
-- [0.4.1 build and acceptance notes / English](docs/PRESENTATION120_EN.md)
-- [0.4.1 build and acceptance notes / Russian](docs/PRESENTATION120_RU.md)
-- [0.4.0 AI tools and configuration](docs/PRESENTATION119_EN.md)
-- [PowerShell build script](tools/Build-0.4.1.ps1)
+- [0.4.3 changelog / English](BetaGwent/release/publish-0.4.3/CHANGELOG_EN.md)
+- [0.4.3 changelog / Russian](BetaGwent/release/publish-0.4.3/CHANGELOG_RU.md)
+- [0.4.3 validation / English](docs/PRESENTATION123_EN.md)
+- [0.4.3 validation / Russian](docs/PRESENTATION123_RU.md)
+- [PowerShell build script](tools/Build-0.4.3.ps1)
+- [AI comparison script](tools/Compare-AI.ps1)
+- [Completed 0.4.1 vs 0.4.2 comparison](docs/AI_COMPARISON_041_042_REVIEW_RU.md)
 - [Build guide / Russian](docs/BUILD_RU.md) / [English](docs/BUILD_EN.md)
-- [AI architecture / Russian](docs/ARCHITECTURE_AI_RU.md) / [English](docs/ARCHITECTURE_AI_EN.md)
 
-Native menus, script compilation and archive checks are verified during the
-build. Visual, audio and controller acceptance still require installed-game
-testing. A literal recreation of Unity shaders/particles is not claimed.
+The completed 0.4.2 versus 0.4.1 comparison scored 50.35% over 1,840 games;
+this does not establish overall superiority. 0.4.3 regression checks validate
+corrected situations, not an overall playing-strength improvement.
+
+Native script/menu compilation and archive checks are verified during the build.
+Installed-game visuals, controller operation and native save round trips still
+require acceptance testing. Back up saves before installation and updates.
 
 This repository contains source code and documentation. Original clients,
 textures, fonts, audio, native templates, tool SDKs and Wwise license keys are
-excluded. The local build needs those inputs; a fresh clone is not a complete
-standalone build environment. Original code is GPL-3.0-only.
+excluded. A fresh clone needs those local build inputs. Original code is GPL-3.0-only.
 
 ## Contributing
 

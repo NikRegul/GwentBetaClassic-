@@ -122,6 +122,12 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         ownLeader = 200055; enemyLeader = 200158;
         ownPreset = deckLibrary.Preferred();
         if (deckLibrary.Resolve(ownPreset, preferredCards, preferredLeader)) ownLeader = preferredLeader;
+        if(entryMode==0){
+            enemyPreset=manager.betaDebugEnemyPreset;manager.betaDebugEnemyPreset=0;
+            if(!BetaGwentDebugOpponentAllowed(enemyPreset))enemyPreset=BetaGwentAIRandomPreset();
+            npcPreset=BetaGwentDuelPreset(enemyPreset);enemyLeader=npcPreset.leaderTemplateId;
+            LogChannel('BetaGwent',"DEBUG_OPPONENT_SELECTED preset="+enemyPreset+" archetype="+BetaGwentAIArchetypeName(enemyPreset)+" source=practice_entry");
+        }
         if(npcMatch){
             enemyPreset=BetaGwentNpcPreset(manager.betaEnemyDeckName);
             npcPreset=BetaGwentDuelPreset(enemyPreset);enemyLeader=npcPreset.leaderTemplateId;
@@ -289,7 +295,13 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     event OnBetaGwentCollectionCraft(id : int)
     {
         var player : W3PlayerWitcher;var d : SBetaGwentDuelDefinition;player=(W3PlayerWitcher)thePlayer;
-        if(!configured || !player || npcMatch)return false;
+        // The NPC deck-selection screen also hosts the collection and deck editor.
+        // Crafting is allowed there, but never after the battle has started.
+        if(!configured || !player || !selectingDecks) {
+            LogChannel('BetaGwent',"COLLECTION_CRAFT_REJECT card="+id+" configured="+configured+" selectingDecks="+selectingDecks+" npcMatch="+npcMatch);
+            return false;
+        }
+        LogChannel('BetaGwent',"COLLECTION_CRAFT_REQUEST card="+id+" npcMatch="+npcMatch+" copies="+player.BetaGwentOwned(id)+" scraps="+player.BetaGwentScraps());
         d=BetaGwentDuelDefinition(id);
         if(player.BetaGwentCraft(id)){PublishCollection();CollectionStatus("Создана карта: "+d.title+" (−"+BetaGwentCraftCost(id)+" осколков).");return true;}
         PublishCollection();CollectionStatus("Не хватает осколков или карта уже собрана.");return false;
@@ -325,7 +337,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
             return;
         }
         if(result.matchWinnerMask!=1)return;
-        rewardGranted=true;earnedText=player.BetaGwentWinReward(manager.betaEnemyDeckName,manager.betaMatchNpcId);
+        rewardGranted=true;earnedText=player.BetaGwentWinReward(manager.betaEnemyDeckName,manager.betaMatchNpcId,manager.betaMatchRewardActorKey);
         PublishCollection();if(setRewardMessage)setRewardMessage.InvokeSelfOneArg(FlashArgString(earnedText));
     }
     private function PublishDeckCards(option : int, ids : array<int>)
@@ -360,6 +372,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
             for (option = 1; option <= BetaGwentDuelPresetCount(); option += 1)
             {
                 if((npcMatch || libraryOnly) && (option<16 || option>20) && option!=enemyPreset)continue;
+                if(!npcMatch && !libraryOnly && !BetaGwentDebugDeckVisible(option,ownPreset))continue;
                 preset = BetaGwentDuelPreset(option); BetaGwentDuelPresetDeck(option, ids);
                 storedDeck = deckLibrary.Get(option);
                 if (storedDeck)
@@ -568,6 +581,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if(side==1 && (npcMatch || libraryOnly) && !((W3PlayerWitcher)thePlayer).BetaGwentOwnsDeck(cards,leader)){PublishDeckSelection();return false;}
         chosen=BetaGwentDuelDefinition(leader);if(npcMatch && (side==2 || (forcedBetaFaction!=0 && chosen.header.factionMask!=forcedBetaFaction))){PublishDeckSelection();return false;}
         if (side == 1) { ownPreset = presetId; ownLeader = leader; deckLibrary.Remember(ownPreset); } else { enemyPreset = presetId; enemyLeader = leader; }
+        if(side==2)LogChannel('BetaGwent',"DEBUG_OPPONENT_SELECTED preset="+enemyPreset+" archetype="+BetaGwentAIArchetypeName(enemyPreset)+" source=deck_picker");
         PublishDeckSelection(); return true;
     }
     event OnBetaGwentLeaderSelect(value : int, side : int, templateId : int)
@@ -1052,15 +1066,22 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     }
 }
 
-exec function bgboard_open()
+exec function bgboard_open(optional enemyPreset : int)
 {
     var nativePlayer : CR4Player;
+    var manager : CR4GwintManager;
+    if(enemyPreset!=0 && !BetaGwentDebugOpponentAllowed(enemyPreset))
+    {
+        LogChannel('BetaGwent',"DEBUG_OPPONENT_REJECT preset="+enemyPreset+" reason=inactive_preset use=bgboard_decks()");
+        return;
+    }
     if (theGame.GetGuiManager().IsAnyMenu())
     {
         LogChannel('BetaGwent', "BOARD_OPEN_SKIPPED existing menu");
         return;
     }
     LogChannel('BetaGwent', "BOARD_OPEN_REQUEST name=BetaGwentBoard");
+    manager=theGame.GetGwintManager();manager.betaDebugEnemyPreset=enemyPreset;
     nativePlayer=thePlayer;nativePlayer.betaPracticeRequested=true;
     theGame.RequestMenu('BetaGwentBoard');
 }

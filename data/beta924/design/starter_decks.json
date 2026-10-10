@@ -1,5 +1,5 @@
 {
-  "revision": 2,
+  "revision": 3,
   "approved": true,
   "source": "User supplied compositions; names resolved against strict local Beta 0.9.24 catalog; Jutta confirmed as Skellige card 25.",
   "migration": "Add missing copies on existing saves, retain previous cards and saved decks; defer while a paid rare choice is pending.",
@@ -284,8 +284,8 @@
           "copies": 1
         },
         {
-          "templateId": 142102,
-          "title": "Изенгрим",
+          "templateId": 142103,
+          "title": "Иорвет",
           "copies": 1
         },
         {

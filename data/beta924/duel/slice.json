@@ -23657,7 +23657,7 @@
       "targetExcludedFaction": 0,
       "weatherToken": 0,
       "targetMinimum": 0,
-      "targetSide": 2,
+      "targetSide": 0,
       "playTemplateId": 0,
       "passiveBoost": 0,
       "passiveWeatherToken": 0,
@@ -46577,7 +46577,7 @@
         200301
       ],
       "starter": true,
-      "starterRevision": 2,
+      "starterRevision": 3,
       "unitCount": 21,
       "specialCount": 4,
       "goldCount": 4,
@@ -46684,7 +46684,7 @@
         122307
       ],
       "starter": true,
-      "starterRevision": 2,
+      "starterRevision": 3,
       "unitCount": 23,
       "specialCount": 2,
       "goldCount": 4,
@@ -46791,7 +46791,7 @@
         201617
       ],
       "starter": true,
-      "starterRevision": 2,
+      "starterRevision": 3,
       "unitCount": 25,
       "specialCount": 0,
       "goldCount": 4,
@@ -46869,7 +46869,7 @@
       "templateIds": [
         142101,
         142106,
-        142102,
+        142103,
         201611,
         142203,
         142211,
@@ -46894,7 +46894,7 @@
         201704
       ],
       "starter": true,
-      "starterRevision": 2,
+      "starterRevision": 3,
       "unitCount": 19,
       "specialCount": 6,
       "goldCount": 4,
@@ -46909,7 +46909,7 @@
           "copies": 1
         },
         {
-          "templateId": 142102,
+          "templateId": 142103,
           "copies": 1
         },
         {
@@ -47005,7 +47005,7 @@
         152305
       ],
       "starter": true,
-      "starterRevision": 2,
+      "starterRevision": 3,
       "unitCount": 25,
       "specialCount": 0,
       "goldCount": 4,
@@ -51194,7 +51194,7 @@
         122206,
         122211,
         122207,
-        122208,
+        200019,
         123201,
         122314,
         122314,
@@ -51213,8 +51213,8 @@
         201633
       ],
       "aiRulesProfile": 5,
-      "unitCount": 21,
-      "specialCount": 4,
+      "unitCount": 20,
+      "specialCount": 5,
       "goldCount": 4,
       "silverCount": 6,
       "cards": [
@@ -51251,7 +51251,7 @@
           "copies": 1
         },
         {
-          "templateId": 122208,
+          "templateId": 200019,
           "copies": 1
         },
         {
@@ -55714,7 +55714,7 @@
       ]
     }
   ],
-  "presetsSourceSha256": "f94ac411c7f1365225938f29cbe81c27545a63d828d7a7143e7d93430e0da1c5",
+  "presetsSourceSha256": "f943fe2f18a737439868dbd2d7bd7c13046fe9bdbd0e8a5a02d9278bf9ed0caa",
   "selectablePresetCount": 99,
   "leaderIds": [
     131101,

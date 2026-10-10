@@ -6,6 +6,8 @@ work is done, or stalls during start-up. The runner therefore
     then closes the lingering process (reported as completedByOutput);
   * restarts a stalled attempt (no log growth and no output for --stall seconds)
     up to --retries times, keeping every attempt's log;
+  * retries REDkit's known invalid-handle shutdown crash (0xC0000008), without
+    treating a crashed attempt as successful;
   * still fails on the overall --timeout.
 """
 from pathlib import Path
@@ -74,7 +76,8 @@ for attempt in range(args.retries+1):
             except subprocess.TimeoutExpired:pass
     attempts.append(dict(attempt=attempt,state=state,exitCode=process.returncode,seconds=round(time.time()-began,2)))
     print(json.dumps(attempts[-1]),flush=True)
-    if state=='stalled' and attempt<args.retries:continue
+    retryable=state=='stalled' or (state=='exited' and process.returncode==0xC0000008)
+    if retryable and attempt<args.retries:continue
     result=state;break
 
 ok=result=='completedByOutput' or (result=='exited' and process.returncode==0)

@@ -1,4 +1,4 @@
-# Editable build entry point for the current sources (Stage 119 / 0.4.0).
+﻿# Editable build entry point for the current sources (Stage 119 / 0.4.0).
 # powershell -ExecutionPolicy Bypass -File D:\w3mod\tools\Build-GwentBeta.ps1
 [CmdletBinding()]
 param(
@@ -32,6 +32,23 @@ function StatePath([string]$Lang) { Join-Path $StateRoot "$Lang-compile.json" }
 function SaveCompilation([string]$Lang, [string]$Path) {
     @{ stage=$Stage; language=$Lang; compiled=[IO.Path]::GetFullPath($Path); run=$Run } |
         ConvertTo-Json | Set-Content -LiteralPath (StatePath $Lang) -Encoding UTF8
+}
+function CompileScripts([string]$Lang, [string]$Patch) {
+    for ($attempt = 0; $attempt -le 2; $attempt++) {
+        $suffix = if ($attempt -eq 0) { '' } else { "-retry$attempt" }
+        $out = "BetaGwent/build/board-compile${Stage}${Lang}-$Run$suffix"
+        try {
+            PythonStep "$Lang native compilation" @('tools/recon/run_redkit_compile.py','--out',$out,'--patch',$Patch,'--timeout','300','--terms-already-accepted')
+            SaveCompilation $Lang $out
+            return
+        } catch {
+            $resultPath = Join-Path $Root "$out/result.json"
+            if ($attempt -ge 2 -or -not (Test-Path -LiteralPath $resultPath)) { throw }
+            $result = Get-Content -LiteralPath $resultPath -Raw -Encoding UTF8 | ConvertFrom-Json
+            if ($result.timedOut -or $result.processExitCode -ne 3221225480) { throw }
+            Write-Warning "$Lang compiler hit REDkit shutdown error 0xC0000008; retrying in a fresh output directory."
+        }
+    }
 }
 function CompilationOf([string]$Lang) {
     if ($Compiled) {
@@ -68,18 +85,33 @@ function RestoreRussianProject {
     if (-not (Test-Path -LiteralPath $reportFile)) { return }
     $report = Get-Content -LiteralPath $reportFile -Raw -Encoding UTF8 | ConvertFrom-Json
     $allowed = [IO.Path]::GetFullPath((Join-Path $BuildRoot "stage$Stage\ru\resources"))+'\'
+    $restore = @()
     foreach ($menu in @($report.menus | Where-Object { $_.language -eq 'ru' })) {
         $path = [IO.Path]::GetFullPath($menu.resource)
         if (-not $path.StartsWith($allowed,[StringComparison]::OrdinalIgnoreCase)) { throw 'Unsafe RU resource path.' }
         $name = [IO.Path]::GetFileName($path)
         if ($name -notin @('betagwent_board.redswf','betagwent_npc00.redswf','betagwent_decks.redswf','betagwent_kegop.redswf')) { throw 'Unexpected resource name.' }
-        if ((Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLower() -ne $menu.sha256.ToLower()) { throw 'RU checksum mismatch.' }
-        Copy-Item -LiteralPath $path -Destination (Join-Path $Root "GwentB\myproject1\workspace\betagwent\$name") -Force
+        if ((Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLower() -ne $menu.sha256.ToLower()) {
+            if ($Step -in @('full','package')) { throw 'RU checksum mismatch. Rebuild menus before packaging.' }
+            Write-Warning 'Interrupted menu build: keeping current workspace resources. Rebuild menus before packaging.'
+            return
+        }
+        $restore += @{ path=$path; name=$name }
+    }
+    foreach ($item in $restore) {
+        Copy-Item -LiteralPath $item.path -Destination (Join-Path $Root "GwentB\myproject1\workspace\betagwent\$($item.name)") -Force
     }
 }
 function PrepareSources {
     PythonStep 'font metrics' @('tools/ui/build_text_metrics112.py')
     if ($Stage -ge 120) { PythonStep 'camera-facing Beta boards and native dividers' @('tools/ui/build_board120.py') }
+    if ($Stage -ge 121 -and (Test-Path -LiteralPath (Join-Path $Root 'Gwent 0.9.24.3.432\Gwent_Data\sharedassets8.assets'))) {
+        $weatherPythonPath = $env:PYTHONPATH
+        try {
+            $env:PYTHONPATH = (Join-Path $Root 'tools\vendor\audio-python') + ';' + $weatherPythonPath
+            PythonStep 'original Beta weather and 36-frame Golden Froth' @('tools/ui/build_weather107.py')
+        } finally { $env:PYTHONPATH = $weatherPythonPath }
+    }
     if ($KegVideo) {
         PythonStep 'extract keg video' @('tools/ui/extract_keg111.py',$KegVideo)
     }
@@ -87,6 +119,7 @@ function PrepareSources {
     PythonStep 'full card catalog' @('tools/build_full_catalog.py')
     PythonStep 'AI deck overrides and profiles' @('tools/build_ai_rules.py')
     PythonStep 'editable researched AI strategy tables' @('tools/build_research_strategy115.py')
+    PythonStep 'starter collection progression' @('tools/build_progression.py')
     PythonStep 'duel card and deck definitions' @('tools/build_duel_catalog.py')
     PythonStep 'AI deep-copy generator' @('tools/ai/gen_clone.py')
     PythonStep 'menu pause flags' @('tools/ui/set_menu_pause.py',
@@ -99,6 +132,19 @@ function PrepareSources {
     if ($CheckAI) {
         $snapshot = Join-Path $StateRoot "$Run-ai\snapshot"
         PythonStep 'freeze AI' @('tools/ai/snapshot.py',$snapshot)
+        if ($Stage -ge 123) {
+            & node tools/ai/check_consume_self.js $snapshot (Join-Path $snapshot 'consume123.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Self-consumption regression failed.' }
+            & node tools/ai/scenarios123.js $snapshot (Join-Path $snapshot 'checks123.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Target, spy, consume chain and roster regression failed.' }
+            PythonStep 'saved opponent rotation' @('tools/ai/check_rotation123.py',$snapshot)
+            & node tools/ui/check_controller123.js
+            if ($LASTEXITCODE -ne 0) { throw 'Controller scope, row navigation and choice layout regression failed.' }
+            & node tools/ui/check_catalog123.js
+            if ($LASTEXITCODE -ne 0) { throw 'Persistent collection selection and Craft button regression failed.' }
+            PythonStep 'craft event routing and save-profile economy' @('tools/ai/check_crafting123.py',$snapshot)
+            PythonStep 'bounded REDkit shutdown retry' @('tools/recon/check_wcc_retry123.py')
+        }
         & node tools/ai/check_public_response113.js $snapshot
         if ($LASTEXITCODE -ne 0) { throw 'Native response regression failed.' }
         & node tools/ai/scenarios112.js $snapshot
@@ -117,6 +163,14 @@ function PrepareSources {
             if ($Stage -ge 120) {
                 & node tools/ai/scenarios120.js $snapshot (Join-Path $snapshot 'checks120.json')
                 if ($LASTEXITCODE -ne 0) { throw 'Graveyard lock regression failed.' }
+                if ($Stage -ge 121) {
+                    & node tools/ai/scenarios121.js $snapshot (Join-Path $snapshot 'checks121.json')
+                    if ($LASTEXITCODE -ne 0) { throw 'Weather and consume regression failed.' }
+                    PythonStep 'save reward ledger and starter migration' @('tools/ai/check_rewards121.py',$snapshot)
+                    & node tools/ui/check_mulligan121.js
+                    if ($LASTEXITCODE -ne 0) { throw 'Mulligan slot order and geometry regression failed.' }
+                    PythonStep 'weather flipbook and seamless storm atlas' @('tools/ui/check_weather121.py')
+                }
             }
         }
     }
@@ -138,9 +192,7 @@ try {
         }
         if ($Step -in @('full','scripts')) {
             $patch = if ($lang -eq 'ru') { 'BetaGwent/build/board-patch' } else { "BetaGwent/build/stage$Stage/en/en-source/scripts" }
-            $out = "BetaGwent/build/board-compile${Stage}${lang}-$Run"
-            PythonStep "$lang native compilation" @('tools/recon/run_redkit_compile.py','--out',$out,'--patch',$patch,'--timeout','300','--terms-already-accepted')
-            SaveCompilation $lang $out
+            CompileScripts $lang $patch
         }
         if ($Step -in @('full','package')) {
             $compile = CompilationOf $lang

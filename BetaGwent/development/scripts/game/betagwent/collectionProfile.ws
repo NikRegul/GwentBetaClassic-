@@ -11,6 +11,10 @@ private saved var betaGwentProgressionSeed : int;
 @addField(W3PlayerWitcher)
 private saved var betaGwentRewardedNpcs : array<int>;
 @addField(W3PlayerWitcher)
+private saved var betaGwentRewardActors : array<EntityHandle>;
+@addField(W3PlayerWitcher)
+private saved var betaGwentRewardActorWins : array<int>;
+@addField(W3PlayerWitcher)
 private saved var betaGwentRewardedQuests : array<name>;
 @addField(W3PlayerWitcher)
 private saved var betaGwentStarterSetRevision : int;
@@ -112,7 +116,7 @@ private function BetaGwentProgressionPick(maximum : int) : int
     if(maximum<=0)return 0;return next%maximum;
 }
 @addMethod(W3PlayerWitcher)
-public function BetaGwentWinReward(deck : name, npcId : int) : string
+public function BetaGwentWinReward(deck : name, npcId : int, optional actorKey : int) : string
 {
     var ids,pool : array<int>;var i,id,gold,rewarded,scraps : int;var d : SBetaGwentDuelDefinition;
     if(!BetaGwentEnsureCollection())return "Коллекция недоступна: неизвестная схема сохранения.";
@@ -133,8 +137,13 @@ public function BetaGwentWinReward(deck : name, npcId : int) : string
         LogChannel('BetaGwent',"COLLECTION_REWARD_DEFERRED npc="+deck+" reason=missingActorIdentity");
         BetaGwentAddScraps(20);return "Победа: +20 осколков (всего "+BetaGwentScraps()+").";
     }
-    // Each saved occurrence is one rewarded win. Old saves contain one occurrence.
-    for(i=0;i<betaGwentRewardedNpcs.Size();i+=1)if(betaGwentRewardedNpcs[i]==npcId)rewarded+=1;
+    // EntityHandle is the engine's save-backed entity reference. A runtime
+    // GuidHash is only a legacy migration key, never the new actor identity.
+    if(actorKey<=0 || actorKey>betaGwentRewardActorWins.Size() || betaGwentRewardActors.Size()!=betaGwentRewardActorWins.Size()) {
+        LogChannel('BetaGwent',"COLLECTION_REWARD_DEFERRED npc="+npcId+" reason=missingPersistentActor");
+        BetaGwentAddScraps(20);return "Победа: +20 осколков (всего "+BetaGwentScraps()+").";
+    }
+    rewarded=betaGwentRewardActorWins[actorKey-1];
     // After the four card rewards every further win is worth 20 scraps.
     if(rewarded>=4){BetaGwentAddScraps(20);return "Победа: +20 осколков (всего "+BetaGwentScraps()+").";}
     BetaGwentDuelCollection(ids);
@@ -146,9 +155,29 @@ public function BetaGwentWinReward(deck : name, npcId : int) : string
     if(pool.Size()==0)return "Награда недоступна.";
     id=pool[BetaGwentProgressionPick(pool.Size())];scraps=BetaGwentReceive(id);
     betaGwentRewardedNpcs.PushBack(npcId);
+    betaGwentRewardActorWins[actorKey-1]=Min(4,rewarded+1);
+    LogChannel('BetaGwent',"COLLECTION_REWARD_COUNTER actorKey="+actorKey+" runtimeId="+npcId+" wins="+betaGwentRewardActorWins[actorKey-1]);
     d=BetaGwentDuelDefinition(id);
     if(scraps>0){LogChannel('BetaGwent',"COLLECTION_REWARD npc="+deck+" card="+id+" duplicateScraps="+scraps+" rewardedWins="+(rewarded+1));
         return "Дубль: "+d.title+" → +"+scraps+" осколков (всего "+BetaGwentScraps()+") · Награда "+(rewarded+1)+"/4";}
     d=BetaGwentDuelDefinition(id);LogChannel('BetaGwent',"COLLECTION_REWARD npc="+deck+" card="+id+" copies="+BetaGwentOwned(id)+" rewardedWins="+(rewarded+1));
     return "Новая карта: "+d.title+" ("+BetaGwentOwned(id)+"/"+BetaGwentCollectionCap(id)+") · Награда "+(rewarded+1)+"/4";
+}
+
+@addMethod(W3PlayerWitcher)
+public function BetaGwentRewardActorKey(actor : CEntity) : int
+{
+    var i,legacyWins,runtimeId : int;var handle : EntityHandle;
+    if(!actor || betaGwentRewardActors.Size()!=betaGwentRewardActorWins.Size())return 0;
+    for(i=0;i<betaGwentRewardActors.Size();i+=1)
+        if(EntityHandleGet(betaGwentRewardActors[i])==actor)return i+1;
+    runtimeId=actor.GetGuidHash();
+    // Carry forward old recorded wins when their original identity is available.
+    // Never clear this legacy ledger or rebuild counts on loading a save.
+    for(i=0;i<betaGwentRewardedNpcs.Size();i+=1)
+        if(betaGwentRewardedNpcs[i]==runtimeId)legacyWins+=1;
+    EntityHandleSet(handle,actor);betaGwentRewardActors.PushBack(handle);
+    betaGwentRewardActorWins.PushBack(Min(4,legacyWins));
+    LogChannel('BetaGwent',"COLLECTION_REWARD_ACTOR key="+betaGwentRewardActors.Size()+" runtimeId="+runtimeId+" migratedWins="+Min(4,legacyWins));
+    return betaGwentRewardActors.Size();
 }

@@ -1,0 +1,10 @@
+{
+  "baseline": "BetaGwent/training/stage123-release/pre-morkvarg-snapshot-20261010",
+  "fingerprint": "c81d47b11de9b2f338b452f49b772aaa69819cebbfd20c3860e63b3df1e8f05c",
+  "reproduced": true,
+  "damagedDiscard": {
+    "location": 1,
+    "currentPower": 0,
+    "basePower": 4
+  }
+}

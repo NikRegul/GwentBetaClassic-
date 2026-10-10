@@ -8415,7 +8415,7 @@ function BetaGwentDuelDefinitionGroup67(id : int) : SBetaGwentDuelDefinition
         value.initialTimer = -1; value.timerPeriod = 0; value.timerPriority = 0; value.conditionalBoost = 0; value.conditionalWeatherToken = 0; value.deploySummonTemplate = 0; value.deploySummonOtherTemplate = 0; value.deploySummonIgnore = 0; value.deploySummonLinked = 0;
         value.specialMode = 250;
         value.targetMinimum = 0;
-        value.targetSide = 2;
+        value.targetSide = 0;
         value.targetTypes = 4;
         value.targetTiers = 15;
         value.targetIgnore = 264;
@@ -16437,7 +16437,7 @@ function BetaGwentDuelPresetDetails4(id : int) : SBetaGwentDuelPreset
     case 58:
         value.id = 58; value.leaderTemplateId = 201595;
         value.title = "ИИ · Adda Cursed"; value.description = "Исследованный состав Beta 0.9.24; cursed";
-        value.unitCount = 21; value.specialCount = 4;
+        value.unitCount = 20; value.specialCount = 5;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 59:
@@ -17358,7 +17358,7 @@ function BetaGwentDuelPresetCards19(out ids : array<int>)
 {
     ids.PushBack(142101);
     ids.PushBack(142106);
-    ids.PushBack(142102);
+    ids.PushBack(142103);
     ids.PushBack(201611);
     ids.PushBack(142203);
     ids.PushBack(142211);
@@ -18495,7 +18495,7 @@ function BetaGwentDuelPresetCards58(out ids : array<int>)
     ids.PushBack(122206);
     ids.PushBack(122211);
     ids.PushBack(122207);
-    ids.PushBack(122208);
+    ids.PushBack(200019);
     ids.PushBack(123201);
     ids.PushBack(122314);
     ids.PushBack(122314);

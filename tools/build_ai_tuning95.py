@@ -29,23 +29,7 @@ def main():
     lines += [f'    ids.PushBack({i});' for i in pool]
     lines += ['}',
       'function BetaGwentAIChooseOrdinaryPreset() : int {',
-      '    var manager : CR4GwintManager;var i,j,tmp,picked : int;',
-      '    manager=theGame.GetGwintManager();if(!manager)return 54;',
-      '    if(manager.betaOrdinaryDeckBag.Size()==0) {',
-      '        BetaGwentAIOrdinaryPresets(manager.betaOrdinaryDeckBag);',
-      '        for(i=manager.betaOrdinaryDeckBag.Size()-1;i>0;i-=1){',
-      '            j=RandRange(i+1);tmp=manager.betaOrdinaryDeckBag[i];',
-      '            manager.betaOrdinaryDeckBag[i]=manager.betaOrdinaryDeckBag[j];manager.betaOrdinaryDeckBag[j]=tmp;',
-      '        }',
-      '        i=manager.betaOrdinaryDeckBag.Size()-1;',
-      '        if(i>0 && manager.betaOrdinaryDeckBag[i]==manager.betaOrdinaryLastPreset){',
-      '            tmp=manager.betaOrdinaryDeckBag[0];manager.betaOrdinaryDeckBag[0]=manager.betaOrdinaryDeckBag[i];manager.betaOrdinaryDeckBag[i]=tmp;',
-      '        }',
-      '    }',
-      '    i=manager.betaOrdinaryDeckBag.Size()-1;picked=manager.betaOrdinaryDeckBag[i];manager.betaOrdinaryDeckBag.Erase(i);',
-      '    manager.betaOrdinaryLastPreset=picked;',
-      '    LogChannel(\'BetaGwent\',"DUEL_AI_POOL preset="+picked+" remaining="+manager.betaOrdinaryDeckBag.Size()+" policy=shuffle95");',
-      '    return picked;','}']
+      '    return BetaGwentChooseDiversePreset();','}']
     (ROOT/'BetaGwent/development/scripts/game/betagwent/duelAITuning.ws').write_text('\n'.join(lines)+'\n','utf-8-sig')
     print('Generated tuning and shuffle pool:',len(pool),'archetypes')
 if __name__=='__main__':main()

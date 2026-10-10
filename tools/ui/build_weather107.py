@@ -44,6 +44,30 @@ def mask_alpha(image, mask, floor=0.0):
     m = m.point(lambda v: int(255 * (floor + (1 - floor) * v / 255)))
     image = image.copy(); image.putalpha(ImageChops.multiply(a, m)); return image
 
+def storm_tile(image, mask):
+    # RainMask fades both ends of a complete row. Repeating that mask with
+    # each moving sea tile creates a travelling empty stripe at every join.
+    # Keep only its vertical softness; the row itself supplies horizontal clip.
+    image = image.convert('RGBA')
+    mask = mask.convert('L').resize(image.size, Image.Resampling.LANCZOS)
+    vertical = Image.new('L', image.size)
+    vertical.putdata([max(mask.crop((0, y, mask.width, y + 1)).getdata())
+                      for y in range(mask.height) for _ in range(mask.width)])
+    image.putalpha(ImageChops.multiply(image.getchannel('A'), vertical))
+    # Match the outermost texels, with a small smooth blend into the original
+    # repeatable Beta sea. This also avoids a colour seam after DDS filtering.
+    original = image.copy(); seam = min(16, image.width // 4)
+    for y in range(image.height):
+        ends = [original.getpixel((0, y)), original.getpixel((image.width - 1, y))]
+        shared = tuple(round((a + b) / 2) for a, b in zip(*ends))
+        for x in range(seam):
+            weight = x / (seam - 1); weight = weight * weight * (3 - 2 * weight)
+            for edge in (x, image.width - 1 - x):
+                pixel = original.getpixel((edge, y))
+                image.putpixel((edge, y), tuple(round(a * (1 - weight) + b * weight)
+                                               for a, b in zip(shared, pixel)))
+    return image
+
 def main():
     env = UnityPy.load(str(SOURCE)); tex = {}
     for o in env.objects:
@@ -74,12 +98,20 @@ def main():
     add(-1958, 'ragh-rocks', T('raghnaroog_background_png'), (1024, 96))
     add(-1959, 'ragh-veins', tint(light_alpha(T('Mask_raghnarroog_emision')), (255, 120, 40)), (1024, 96))
     # Skellige storm: sea surface and lightning.
-    sea = T('SkelligeStormSeaTilingSmall'); sea = mask_alpha(sea, T('RainMask').convert('L'), 0.0)
+    sea = storm_tile(T('SkelligeStormSeaTilingSmall'), T('RainMask'))
     add(-1960, 'storm-sea', sea, (512, 96))
     # Moon (Moonlight boon / Blood Moon contact) and Golden Froth foam.
     add(-1962, 'moon', T('Moon'), (96, 96))
-    foam = T('GoldenFrothFoamTex'); cell = foam.width // 5
-    add(-1963, 'froth-foam', foam.crop((cell * 2, cell * 2, cell * 3, cell * 3)), (48, 48))
+    # The original is a SIX-by-six flipbook. A five-cell crop combined
+    # neighbouring corners into disconnected square specks.
+    foam = T('GoldenFrothFoamTex')
+    foam_sheet = Image.new('RGBA', (384, 384))
+    for frame in range(36):
+        col, row = frame % 6, frame // 6
+        tile = foam.crop((round(col * foam.width / 6), round(row * foam.height / 6),
+                          round((col + 1) * foam.width / 6), round((row + 1) * foam.height / 6)))
+        foam_sheet.alpha_composite(tile.resize((64, 64), Image.Resampling.LANCZOS), (col * 64, row * 64))
+    add(-1963, 'froth-foam', foam_sheet, foam_sheet.size)
     # Pitfall trap: splintered planks; Dragon's Dream: smoke dragon head.
     add(-1964, 'pitfall-wood', T('PitfallTrap_WoodCracks'), (1024, 96))
     add(-1965, 'dream-head', light_alpha(T('RowDragonsDreamSmoke_Head')), (48, 96))
@@ -90,7 +122,7 @@ def main():
     add(-1968, 'token-spying', eye, (128, 64))
     add(-1969, 'token-visibility', T('TokenVisibility'), (64, 64))
     # Pack: full-width strips first, then half strips, then small sprites.
-    page = Image.new('RGBA', (1024, 1024)); slots = {}; x = y = row = 0
+    page = Image.new('RGBA', (1024, 2048)); slots = {}; x = y = row = 0
     for ident, label, im in sorted(layers, key=lambda l: (-l[2].width, -l[2].height)):
         if x + im.width > 1024: x = 0; y += row; row = 0
         page.alpha_composite(im, (x, y)); slots[str(ident)] = [PAGE, x, y, im.width, im.height]

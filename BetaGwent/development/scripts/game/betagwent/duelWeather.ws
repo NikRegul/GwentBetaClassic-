@@ -32,6 +32,23 @@ class CBetaGwentDuelWeather extends IScriptable
         game.MonsterWeatherChanged(side, row, previous, token);
         BetaGwentLog("DUEL_WEATHER_APPLY side=" + side + " row=" + row + " token=" + token + " previous=" + previous); return true;
     }
+    public function ReplacementValue(player : int, side : int, row : int, next : int) : int
+    {
+        var token,value,i,eligible,ticks : int;var cards : array<CBetaGwentDuelCard>;var s : SBetaGwentCardSnapshot;var d : SBetaGwentDuelDefinition;
+        token=Token(side,row);if(token==0 || token==next)return 0;
+        value=ClearRowForecast(side,row);
+        if((token&384)!=0){
+            ticks=game.AiClearWeatherTicks(side);game.GetZoneCards(side,row,cards);
+            for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();d=cards[i].Definition();
+                if(s.isWaitingToDie || (s.tokenMask&8)!=0)continue;
+                if(token==128 || (d.unitTraits&288)!=0)eligible+=1;
+            }
+            if(token==128)eligible=Min(2,eligible);
+            value=-eligible*Damage(side,row)*ticks/10;
+        }
+        if(side!=player)value=-value;
+        return value;
+    }
     public function ClearRow(side : int, row : int)
     {
         var index, previous : int; index = Slot(side, row); if (index < 0) return;
@@ -224,17 +241,46 @@ class CBetaGwentDuelWeather extends IScriptable
     }
     public function ClearValue(side : int, boost : int, optional immediate : bool) : int
     {
-        var row, i, total, targets : int; var cards : array<CBetaGwentDuelCard>; var s : SBetaGwentCardSnapshot;
+        var row, i, total : int; var cards : array<CBetaGwentDuelCard>; var s : SBetaGwentCardSnapshot;
         for (row = 1; row <= 4; row *= 2)
         {
             if (Token(side, row) == 0 || (Token(side, row) & 384) != 0) continue;
-            game.GetZoneCards(side, row, cards); targets = Min(1, cards.Size());
-            if (Token(side, row) == 4) targets = Min(2, cards.Size());
-            if (Token(side, row) == 64) { if(!immediate)total += (Min(3, cards.Size()) + Min(1, cards.Size())) * 2; targets = 0; }
-            if(!immediate)total += Damage(side, row) * targets * 2;
+            game.GetZoneCards(side, row, cards);
+            if(!immediate)total += ClearRowForecast(side,row);
             for (i = 0; i < cards.Size(); i += 1)
             { s = cards[i].Snapshot(); if (!s.isWaitingToDie && s.power.currentPower < s.power.basePower + s.power.permanentPower) total += boost; }
         }
+        return total;
+    }
+    // Saved future damage ranks a normal play; it is never immediate score
+    // available for catching a passed opponent. No RNG or private cards read.
+    public function ClearRowForecast(side : int, row : int) : int
+    {
+        var cards : array<CBetaGwentDuelCard>;var s : SBetaGwentCardSnapshot;
+        var i,token,ticks,extreme,eligible,ties,amount,total,loss : int;
+        token=Token(side,row);ticks=game.AiClearWeatherTicks(side);
+        if(ticks==0 || token==0 || (token&384)!=0 || token==512 || token==2048)return 0;
+        game.GetZoneCards(side,row,cards);extreme=2147483647;
+        if(token==2 || token==32)extreme=-2147483647;
+        for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();
+            if(s.isWaitingToDie || (s.tokenMask&8)!=0)continue;
+            eligible+=1;
+            if(token==1 || token==16)extreme=Min(extreme,s.power.currentPower);
+            else if(token==2 || token==32)extreme=Max(extreme,s.power.currentPower);
+        }
+        if(eligible==0)return 0;
+        for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();
+            if(s.isWaitingToDie || (s.tokenMask&8)!=0)continue;
+            if((token==1 || token==16 || token==2 || token==32) && s.power.currentPower!=extreme)continue;
+            if(token==64 && i>=3)continue;
+            amount=Damage(side,row);
+            if(token==64){amount=1;if(i==0)amount=2;}
+            if(token==1024){ticks=10;} // One explosion, not repeating weather.
+            loss=Min(s.power.currentPower,Max(0,amount*ticks/10-s.power.armor));
+            total+=loss;ties+=1;
+        }
+        if(token==4)return total*Min(2,eligible)/eligible;
+        if((token==1 || token==16 || token==2 || token==32) && ties>0)return total/ties;
         return total;
     }
 }

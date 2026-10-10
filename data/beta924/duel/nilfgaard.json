@@ -893,7 +893,7 @@
       "fields": {
         "specialMode": 250,
         "targetMinimum": 0,
-        "targetSide": 2,
+        "targetSide": 0,
         "targetTypes": 4,
         "targetTiers": 15,
         "targetIgnore": 264,

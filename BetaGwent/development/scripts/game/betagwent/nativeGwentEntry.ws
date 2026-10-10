@@ -12,11 +12,18 @@ public var betaMatchNpcName : string;
 @addField(CR4GwintManager)
 public var betaMatchNpcId : int;
 @addField(CR4GwintManager)
+public var betaTalkNpcHandle : EntityHandle;
+@addField(CR4GwintManager)
+public var betaMatchRewardActorKey : int;
+@addField(CR4GwintManager)
 public var betaOrdinaryDeckBag : array<int>;
 @addField(CR4GwintManager)
 public var betaOrdinaryLastPreset : int;
 @addField(CR4GwintManager)
 public var betaFactionDeckBag : array<int>;
+// One-shot practice selection only; never saved or applied to NPC/quest matches.
+@addField(CR4GwintManager)
+public var betaDebugEnemyPreset : int;
 @addField(CR4Player)
 public var betaPracticeRequested : bool;
 @addField(CR4GwintManager)
@@ -38,8 +45,11 @@ function OnGwintGameRequested(deckName : name, forceFaction : eGwintFaction, add
 @wrapMethod(CR4GwintManager)
 function SetEnemyDeck(deckName : name) : void
 {
+    var player : W3PlayerWitcher;player=(W3PlayerWitcher)thePlayer;
     betaEnemyDeckName=deckName;betaNpcPending=true;
     betaMatchNpcId=betaTalkNpcId;betaMatchNpcName=betaTalkNpcName;
+    betaMatchRewardActorKey=0;
+    if(player)betaMatchRewardActorKey=player.BetaGwentRewardActorKey(EntityHandleGet(betaTalkNpcHandle));
     wrappedMethod(deckName);
 }
 
@@ -49,14 +59,14 @@ function SetEnemyDeck(deckName : name) : void
 function OnInteraction(actionName : string, activator : CEntity)
 {
     var manager : CR4GwintManager;manager=theGame.GetGwintManager();
-    if(actionName=="Talk" && activator==thePlayer){manager.betaTalkNpcId=GetGuidHash();manager.betaTalkNpcName=GetDisplayName();}
+    if(actionName=="Talk" && activator==thePlayer){manager.betaTalkNpcId=GetGuidHash();manager.betaTalkNpcName=GetDisplayName();EntityHandleSet(manager.betaTalkNpcHandle,this);}
     wrappedMethod(actionName,activator);
 }
 @wrapMethod(W3MerchantNPC)
 function OnInteraction(actionName : string, activator : CEntity)
 {
     var manager : CR4GwintManager;manager=theGame.GetGwintManager();
-    if(actionName=="Talk" && activator==thePlayer){manager.betaTalkNpcId=GetGuidHash();manager.betaTalkNpcName=GetDisplayName();}
+    if(actionName=="Talk" && activator==thePlayer){manager.betaTalkNpcId=GetGuidHash();manager.betaTalkNpcName=GetDisplayName();EntityHandleSet(manager.betaTalkNpcHandle,this);}
     wrappedMethod(actionName,activator);
 }
 
@@ -107,7 +117,7 @@ function BetaGwentPresetFaction(preset : int) : int
     var p : SBetaGwentDuelPreset; var d : SBetaGwentDuelDefinition;
     p=BetaGwentDuelPreset(preset);d=BetaGwentDuelDefinition(p.leaderTemplateId);return d.header.factionMask;
 }
-// Named opponents keep their faction and rewards but draw one of the 40 adapted
+// Named opponents keep their faction and rewards but draw one of the 46 adapted
 // archetypes of that faction (shuffled bag, no immediate repeat).
 function BetaGwentAIChooseFactionPreset(faction : int) : int
 {
