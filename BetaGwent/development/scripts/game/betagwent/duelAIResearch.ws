@@ -48,9 +48,9 @@ function BetaGwentAIResearchKeep(profile : int, card : int) : int {
         }
     case 7:
         switch(card) {
-        case 132402: return 1;
-        case 132310: return 1;
-        case 200026: return 1;
+        case 132302: return 2;
+        case 132301: return 0;
+        case 132314: return 1;
         default: return -1;
         }
     case 8:
@@ -75,10 +75,8 @@ function BetaGwentAIResearchKeep(profile : int, card : int) : int {
         }
     case 12:
         switch(card) {
-        case 200294: return 1;
-        case 201610: return 1;
-        case 201661: return 1;
-        case 201617: return 1;
+        case 162308: return 2;
+        case 162314: return 1;
         default: return -1;
         }
     case 13:
@@ -166,16 +164,15 @@ function BetaGwentAIResearchKeep(profile : int, card : int) : int {
         }
     case 25:
         switch(card) {
-        case 142303: return 1;
-        case 142309: return 1;
-        case 201638: return 1;
+        case 142205: return 2;
+        case 200535: return 1;
         default: return -1;
         }
     case 26:
         switch(card) {
-        case 122310: return 1;
-        case 122311: return 1;
-        case 122316: return 1;
+        case 123301: return 1;
+        case 122308: return 1;
+        case 201622: return 0;
         default: return -1;
         }
     case 27:
@@ -345,7 +342,7 @@ function BetaGwentAIResearchOpening(profile : int, card : int) : int {
         }
     case 7:
         switch(card) {
-        case 200301: return 6;
+        case 132302: return 5;
         default: return 0;
         }
     case 8:
@@ -361,7 +358,7 @@ function BetaGwentAIResearchOpening(profile : int, card : int) : int {
         }
     case 12:
         switch(card) {
-        case 200294: return 6;
+        case 162308: return 6;
         default: return 0;
         }
     case 14:
@@ -399,9 +396,14 @@ function BetaGwentAIResearchOpening(profile : int, card : int) : int {
         case 152314: return 6;
         default: return 0;
         }
+    case 25:
+        switch(card) {
+        case 142205: return 6;
+        default: return 0;
+        }
     case 26:
         switch(card) {
-        case 122310: return 5;
+        case 123301: return 5;
         default: return 0;
         }
     case 28:

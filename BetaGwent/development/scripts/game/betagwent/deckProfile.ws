@@ -12,6 +12,21 @@ public function BetaGwentReducedEffects() : bool { return betaGwentReducedEffect
 @addMethod(W3PlayerWitcher)
 public function BetaGwentSetPresentation(tempo : int, reduced : bool)
 { if(tempo!=10 && tempo!=15 && tempo!=20)return;betaGwentAnimationTempo=tempo;betaGwentReducedEffects=reduced; }
+// Stage 131: opponent difficulty. 1 = easy, 2 = normal, 3 = hard (0 = never set: hard,
+// the behaviour of earlier versions).
+@addField(W3PlayerWitcher)
+private saved var betaGwentDifficulty : int;
+@addMethod(W3PlayerWitcher)
+public function BetaGwentDifficulty() : int { if(betaGwentDifficulty>=1 && betaGwentDifficulty<=3)return betaGwentDifficulty;return 3; }
+@addMethod(W3PlayerWitcher)
+public function BetaGwentSetDifficulty(level : int) { if(level>=1 && level<=3)betaGwentDifficulty=level; }
+// Pause before each opponent move: 1=none, 2=0.4 s, 3=0.8 s, 4=1.2 s (0 = never set).
+@addField(W3PlayerWitcher)
+private saved var betaGwentAiPause : int;
+@addMethod(W3PlayerWitcher)
+public function BetaGwentAiPause() : int { if(betaGwentAiPause>=1 && betaGwentAiPause<=4)return betaGwentAiPause;return 1; }
+@addMethod(W3PlayerWitcher)
+public function BetaGwentSetAiPause(pause : int) { if(pause>=1 && pause<=4)betaGwentAiPause=pause; }
 @addField(W3PlayerWitcher)
 private saved var betaGwentDeckSchema : int;
 @addField(W3PlayerWitcher)
@@ -64,6 +79,27 @@ public function BetaGwentStoreDeck(slot : int, cards : array<int>, title : strin
     for (i = 0; i < 40; i += 1)
     { betaGwentDeckCards[index * 40 + i] = 0; if (i < cards.Size()) betaGwentDeckCards[index * 40 + i] = cards[i]; }
     LogChannel('BetaGwent', "DECK_PROFILE_SAVED slot=" + slot + " cards=" + cards.Size() + " leader=" + leader + " schema=1");
+    BetaGwentBackupProfile();
+    return true;
+}
+
+@addMethod(W3PlayerWitcher)
+public function BetaGwentClearDeck(slot : int) : bool
+{
+    var i, index : int;
+    if (slot >= 9 && slot <= 13)
+    {
+        if (!BetaGwentStarterDeckProfileValid()) return false;
+        index = slot - 9; betaGwentStarterDeckNames[index] = ""; betaGwentStarterDeckLeaders[index] = 0;
+        betaGwentStarterDeckFactions[index] = 0; betaGwentStarterDeckLengths[index] = 0;
+        for (i = 0; i < 40; i += 1) betaGwentStarterDeckCards[index * 40 + i] = 0;
+        LogChannel('BetaGwent', "STARTER_DECK_RESET preset=" + (index + 16)); BetaGwentBackupProfile(); return true;
+    }
+    if (slot < 1 || slot > 8 || !BetaGwentDeckProfileValid()) return false;
+    index = slot - 1; betaGwentDeckNames[index] = ""; betaGwentDeckFactions[index] = 0;
+    betaGwentDeckLeaders[index] = 0; betaGwentDeckLengths[index] = 0;
+    for (i = 0; i < 40; i += 1) betaGwentDeckCards[index * 40 + i] = 0;
+    LogChannel('BetaGwent', "DECK_PROFILE_DELETED slot=" + slot); BetaGwentBackupProfile();
     return true;
 }
 
@@ -126,5 +162,5 @@ private function BetaGwentStoreStarterDeck(index : int, cards : array<int>, titl
     betaGwentStarterDeckFactions[index] = faction; betaGwentStarterDeckLengths[index] = cards.Size();
     for (i = 0; i < 40; i += 1)
     { betaGwentStarterDeckCards[index * 40 + i] = 0; if (i < cards.Size()) betaGwentStarterDeckCards[index * 40 + i] = cards[i]; }
-    LogChannel('BetaGwent', "STARTER_DECK_SAVED preset=" + (index + 16) + " cards=" + cards.Size()); return true;
+    LogChannel('BetaGwent', "STARTER_DECK_SAVED preset=" + (index + 16) + " cards=" + cards.Size()); BetaGwentBackupProfile(); return true;
 }

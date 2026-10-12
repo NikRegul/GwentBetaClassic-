@@ -1,0 +1,72 @@
+{
+  "en": {
+    "bank": "D:\\w3mod\\BetaGwent\\audio\\wwise-en89\\GeneratedSoundBanks\\Windows\\BetaGwent79.bnk",
+    "bytes": 56176072,
+    "sha256": "3f2414cb16f19805b407645e5867fdd1ba437b18c135ca7a78aa12ea83f0e78b",
+    "project": "wwise-en89",
+    "rewrittenDurations": 1323,
+    "eventInventoryPreserved": true,
+    "voiceCount": 907,
+    "defaultTextLanguage": 2,
+    "trollVoice": "en",
+    "patch": "D:\\w3mod\\BetaGwent\\build\\stage137\\en\\sources\\scripts",
+    "catalogSha256": "8a458eeb4bc341363698fd70a817f8f52d7674c832079fcfa891511e5aba252c",
+    "bridgeSha256": "fb813b209d5a3a6c3d42474025737543c42e97cc332f19347e6d4cf8ac575d35"
+  },
+  "ru": {
+    "bank": "D:\\w3mod\\BetaGwent\\audio\\wwise\\GeneratedSoundBanks\\Windows\\BetaGwent79.bnk",
+    "bytes": 57186348,
+    "sha256": "25b9fe20bad38ac31394f5e277c0738cd2b208fead3dce7e44af9bb83e1d49b5",
+    "project": "wwise",
+    "rewrittenDurations": 1323,
+    "eventInventoryPreserved": true,
+    "voiceCount": 907,
+    "defaultTextLanguage": 1,
+    "trollVoice": "ru",
+    "patch": "D:\\w3mod\\BetaGwent\\build\\stage137\\ru\\sources\\scripts",
+    "catalogSha256": "cf671f6081a8629b4c9b0c174699783b750b7fb24062f7c249c8e42d2805b13f",
+    "bridgeSha256": "255d7993f5e00b035ff38c09dca88fef1aba71afc237f94affd068c4d560c84d"
+  },
+  "de": {
+    "bank": "D:\\w3mod\\BetaGwent\\audio\\wwise-de137\\GeneratedSoundBanks\\Windows\\BetaGwent79.bnk",
+    "bytes": 54388881,
+    "sha256": "679a9488ef2692e0de30180d67bb0c12304a13ba6d5a5bc3f65a340d20829438",
+    "project": "wwise-de137",
+    "rewrittenDurations": 1323,
+    "eventInventoryPreserved": true,
+    "voiceCount": 907,
+    "defaultTextLanguage": 3,
+    "trollVoice": "ru",
+    "patch": "D:\\w3mod\\BetaGwent\\build\\stage137\\de\\sources\\scripts",
+    "catalogSha256": "a7c526410886559aabec0d9ba540eda8e143e0476edc3416639cb2b8dc0bf892",
+    "bridgeSha256": "405808baf9c0751c6de56bdfbcc93e354bbcf58344f81983bc19b9781167b89d"
+  },
+  "it": {
+    "bank": "D:\\w3mod\\BetaGwent\\audio\\wwise-it137\\GeneratedSoundBanks\\Windows\\BetaGwent79.bnk",
+    "bytes": 52659729,
+    "sha256": "24855703bf05f9cba0a259f800bcf7ae6460880887783479bda38aca057dadfb",
+    "project": "wwise-it137",
+    "rewrittenDurations": 1323,
+    "eventInventoryPreserved": true,
+    "voiceCount": 907,
+    "defaultTextLanguage": 5,
+    "trollVoice": "ru",
+    "patch": "D:\\w3mod\\BetaGwent\\build\\stage137\\it\\sources\\scripts",
+    "catalogSha256": "5fe7016af84af04ac33530fc1fe529e609a7c6b7174e1e34677fee8b284ab28d",
+    "bridgeSha256": "7dfae0c473443b789588b3a76bbd5b801a06c50f3ab9a68847d6fb9feff230eb"
+  },
+  "pt-br": {
+    "bank": "D:\\w3mod\\BetaGwent\\audio\\wwise-pt-br137\\GeneratedSoundBanks\\Windows\\BetaGwent79.bnk",
+    "bytes": 55734974,
+    "sha256": "53def8953784bc1ff5ae332ae1e95fcbcaf42e8b211127b92367f1ac53cb0624",
+    "project": "wwise-pt-br137",
+    "rewrittenDurations": 1323,
+    "eventInventoryPreserved": true,
+    "voiceCount": 907,
+    "defaultTextLanguage": 9,
+    "trollVoice": "pt-br",
+    "patch": "D:\\w3mod\\BetaGwent\\build\\stage137\\pt-br\\sources\\scripts",
+    "catalogSha256": "6368577c1054ad97df7b54a4abae75e9fdc64c9a30206cb41d6b3706219cde9d",
+    "bridgeSha256": "260a01beca1d6019116700493658d1b2adcb708433c6c43dd79ee72299d9290a"
+  }
+}

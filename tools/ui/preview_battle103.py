@@ -36,7 +36,7 @@ def main():
         x, y, w, h = L['ribbon'][f'{faction}:{side}']; paint(-1530 - faction * 2 - (side - 1), w, h, x, y, (.25, .68, 1) if side == 1 else (1, .22, .16))
         for half in (1, 2):
             cx, cy, cw, ch = L['crownHalf'][f'{side}:{half}']; won = crowns[side] >= half
-            paint((-1540 if side == 1 else -1542) + half - 1, cw, ch, cx, cy, None if won else (.42, .42, .42), alpha=1 if won else .32)
+            paint((-1540 if side == 1 else -1542) - (half - 1), cw, ch, cx, cy, None if won else (.42, .42, .42), alpha=1 if won else .32)
         sx, sy, sw, sh = L['score'][str(side)]; draw.text((sx + sw / 2, sy + sh / 2), '72' if side == 1 else '156', font=big, fill='white', anchor='mm')
         lx, ly, lw, lh = L['leader'][str(side)]; w, h = 104, 146
         px = lx + (lw - w) / 2; py = min(ly + (lh - h) / 2, 1080 - h - 8) if side == 1 else max(ly + (lh - h) / 2, 8)

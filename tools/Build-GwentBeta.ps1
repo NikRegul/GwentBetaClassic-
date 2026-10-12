@@ -1,4 +1,4 @@
-﻿# Editable build entry point for the current sources (Stage 119 / 0.4.0).
+# Editable build entry point for the current sources (Stage 119 / 0.4.0).
 # powershell -ExecutionPolicy Bypass -File D:\w3mod\tools\Build-GwentBeta.ps1
 [CmdletBinding()]
 param(
@@ -30,7 +30,7 @@ function PythonStep([string]$Title, [string[]]$Arguments) {
 }
 function StatePath([string]$Lang) { Join-Path $StateRoot "$Lang-compile.json" }
 function SaveCompilation([string]$Lang, [string]$Path) {
-    @{ stage=$Stage; language=$Lang; compiled=[IO.Path]::GetFullPath($Path); run=$Run } |
+    @{ stage=$Stage; language=$Lang; compiled=$(if ([IO.Path]::IsPathRooted($Path)) { [IO.Path]::GetFullPath($Path) } else { [IO.Path]::GetFullPath((Join-Path $Root $Path)) }); run=$Run } |
         ConvertTo-Json | Set-Content -LiteralPath (StatePath $Lang) -Encoding UTF8
 }
 function CompileScripts([string]$Lang, [string]$Patch) {
@@ -45,8 +45,15 @@ function CompileScripts([string]$Lang, [string]$Patch) {
             $resultPath = Join-Path $Root "$out/result.json"
             if ($attempt -ge 2 -or -not (Test-Path -LiteralPath $resultPath)) { throw }
             $result = Get-Content -LiteralPath $resultPath -Raw -Encoding UTF8 | ConvertFrom-Json
-            if ($result.timedOut -or $result.processExitCode -ne 3221225480) { throw }
-            Write-Warning "$Lang compiler hit REDkit shutdown error 0xC0000008; retrying in a fresh output directory."
+            # Retry REDkit's shutdown error 0xC0000008 and a compiler that hung during engine start-up
+            # (timed out before compiling anything). A real script error is never retried.
+            $log = Join-Path $Root "$out/stdout.txt"
+            if ((Test-Path -LiteralPath $log) -and ((Get-Content -LiteralPath $log -Raw) -match '\[Script\]: Error \[')) { throw }
+            $compiled = (Test-Path -LiteralPath $log) -and ((Get-Content -LiteralPath $log -Raw) -match "Starting commandlet 'compilescripts'")
+            $hung = $result.timedOut -and -not $compiled
+            if (-not $hung -and $result.processExitCode -ne 3221225480) { throw }
+            Get-Process wcc_lite -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
+            Write-Warning "$Lang compiler hung or hit REDkit shutdown error 0xC0000008; retrying in a fresh output directory."
         }
     }
 }
@@ -116,6 +123,7 @@ function PrepareSources {
         PythonStep 'extract keg video' @('tools/ui/extract_keg111.py',$KegVideo)
     }
     PythonStep 'keg atlas and original emblems' @('tools/ui/build_keg109.py')
+    if ($Stage -ge 126) { PythonStep 'original Beta lock chains and clip timings' @('tools/ui/build_lock126.py') }
     PythonStep 'full card catalog' @('tools/build_full_catalog.py')
     PythonStep 'AI deck overrides and profiles' @('tools/build_ai_rules.py')
     PythonStep 'editable researched AI strategy tables' @('tools/build_research_strategy115.py')
@@ -128,8 +136,24 @@ function PrepareSources {
         'GwentB/myproject1/workspace/gameplay/gui_new/guirsrc/r4deck_builder.menu',
         'GwentB/myproject1/workspace/betagwent/betagwent_kegop.menu')
     PythonStep 'packaging baselines' @('tools/restore_build_base105.py')
+    if ($Stage -ge 135) {
+        PythonStep 'RU/EN dialogue gain and bank inventory' @('tools/ui/build_voice_mix135.py')
+        PythonStep 'base release excludes premium portraits' @('tools/check_base_release_portraits.py')
+    }
+    if ($Stage -ge 136) {
+        PythonStep 'loop-only leader atlases' @('tools/prepare_release060.py','--part','leaders')
+        PythonStep '21 native leader movies' @('tools/ui/build_leaders136.py')
+        PythonStep 'RU/EN text display tables' @('tools/ui/build_text_language136.py')
+        & node tools/ui/check_release136.js
+        if ($LASTEXITCODE -ne 0) { throw 'Leader lifecycle and bilingual text regression failed.' }
+        PythonStep 'native leader allowlist and loop-only provenance' @('tools/ui/check_leaders136.py')
+    }
     PythonStep 'prepare WitcherScript' @('tools/ui/prepare_board_scripts.py')
     if ($CheckAI) {
+        if ($Stage -ge 133) {
+            PythonStep 'native local declaration order regression' @('tools/ai/check_locals133.py')
+            PythonStep 'complete cooked resources and clean retry regression' @('tools/recon/check_cook_completion133.py')
+        }
         $snapshot = Join-Path $StateRoot "$Run-ai\snapshot"
         PythonStep 'freeze AI' @('tools/ai/snapshot.py',$snapshot)
         if ($Stage -ge 123) {
@@ -144,6 +168,83 @@ function PrepareSources {
             if ($LASTEXITCODE -ne 0) { throw 'Persistent collection selection and Craft button regression failed.' }
             PythonStep 'craft event routing and save-profile economy' @('tools/ai/check_crafting123.py',$snapshot)
             PythonStep 'bounded REDkit shutdown retry' @('tools/recon/check_wcc_retry123.py')
+        }
+        if ($Stage -ge 124) {
+            & node tools/ai/scenarios124.js $snapshot (Join-Path $Evidence 'optional124.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Optional card counts and Aard row movement regression failed.' }
+            & node tools/ui/check_optional124.js
+            if ($LASTEXITCODE -ne 0) { throw 'Optional choice controls regression failed.' }
+        }
+        if ($Stage -ge 125) {
+            & node tools/ai/scenarios125.js $snapshot (Join-Path $Evidence 'spy125.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Draw-spy forecast, late-round recovery and RNG isolation regression failed.' }
+            # Stage 126 supersedes these cases and exercises the current gridWrap contract.
+            if ($Stage -lt 126) {
+                & node tools/ui/check_controller125.js
+                if ($LASTEXITCODE -ne 0) { throw 'Controller logical rows, column memory and focus restoration regression failed.' }
+            }
+        }
+        if ($Stage -ge 126) {
+            & node tools/ai/check_followups126.js $snapshot (Join-Path $Evidence 'followups126.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Contextual mulligan, whole-hand concession and spy activation regression failed.' }
+            PythonStep 'native Skellige quest counter repair' @('tools/ai/check_quest126.py',$snapshot)
+            & node tools/ui/check_halfcast126.js
+            if ($LASTEXITCODE -ne 0) { throw 'Whole-half spell casting regression failed.' }
+            & node tools/ai/check_engines126.js $snapshot (Join-Path $Evidence 'engines126.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Engine removal and lock priorities regression failed.' }
+            & node tools/ai/check_weather_visual126.js $snapshot (Join-Path $Evidence 'weather-visual126.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Weather decisions, individual damage hits, Roach and resurrection regression failed.' }
+            & node tools/ui/check_controller126.js
+            if ($LASTEXITCODE -ne 0) { throw 'Controller footer, empty deck and match result navigation regression failed.' }
+            & node tools/ui/check_timing126.js
+            if ($LASTEXITCODE -ne 0) { throw 'Uniform weather timing and mass-consume presentation regression failed.' }
+            & node tools/ui/check_card_presentation126.js
+            if ($LASTEXITCODE -ne 0) { throw 'Complete placement card faces and victory crown regression failed.' }
+            & node tools/ai/check_decisive127.js $snapshot (Join-Path $Evidence 'decisive127.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Decisive-round ordering regression failed.' }
+            & node tools/ai/check_ships127.js $snapshot (Join-Path $Evidence 'ships127.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Longship engine targeting regression failed.' }
+            & node tools/ai/check_concede127.js $snapshot (Join-Path $Evidence 'concede127.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Round-one concession regression failed.' }
+            & node tools/ai/check_tutor127.js $snapshot (Join-Path $Evidence 'tutor127.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Empty tutor valuation regression failed.' }
+            & node tools/ai/check_preventive127.js $snapshot (Join-Path $Evidence 'preventive127.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Preventive weather regression failed.' }
+            & node tools/ai/check_clearrisk127.js $snapshot (Join-Path $Evidence 'clearrisk127.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Clear Skies reserve regression failed.' }
+            & node tools/ai/check_draug127.js $snapshot (Join-Path $Evidence 'draug127.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Draug resurrection and timing regression failed.' }
+            & node tools/ai/check_combo127.js $snapshot (Join-Path $Evidence 'combo127.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Fringilla and Draig Bon-Dhu combo regression failed.' }
+            & node tools/ai/check_no_targets127.js $snapshot (Join-Path $Evidence 'no-targets127.json')
+            if ($LASTEXITCODE -ne 0) { throw 'Empty mandatory ability feedback regression failed.' }
+            & node tools/ui/check_followups127.js
+            if ($LASTEXITCODE -ne 0) { throw 'Held piles, one-page choices, history and AI pause regression failed.' }
+            & node tools/ai/check_deck_combos128.js $snapshot
+            if ($LASTEXITCODE -ne 0) { throw 'Longship, Thunder and ambush preparation regression failed.' }
+            PythonStep 'reviewed deck legality and protected starter rosters' @('tools/ai/check_rosters128.py')
+            if ($Stage -ge 131) {
+                & node tools/ai/check_losing131.js $snapshot (Join-Path $Evidence 'losing131.json')
+                if ($LASTEXITCODE -ne 0) { throw 'Losing-play pass regression failed.' }
+                & node tools/ai/check_cavalry131.js $snapshot (Join-Path $Evidence 'cavalry131.json')
+                if ($LASTEXITCODE -ne 0) { throw 'Kaedweni Cavalry armor targeting regression failed.' }
+                & node tools/ai/check_ciri131.js $snapshot (Join-Path $Evidence 'ciri131.json')
+                if ($LASTEXITCODE -ne 0) { throw 'False Ciri return timing regression failed.' }
+            }
+            if ($Stage -ge 133) {
+                & node tools/ai/check_policy133.js $snapshot (Join-Path $Evidence 'policy133.json')
+                if ($LASTEXITCODE -ne 0) { throw 'Public AI policy and Epidemic regression failed.' }
+                & node tools/ai/check_hidden_information133.js $snapshot (Join-Path $Evidence 'hidden-information133.json')
+                if ($LASTEXITCODE -ne 0) { throw 'Hidden-information invariance across all 46 profiles failed.' }
+                & node tools/ui/check_presentation133.js (Join-Path $Evidence 'presentation133.json')
+                if ($LASTEXITCODE -ne 0) { throw 'Replay retiming and introduction regression failed.' }
+                PythonStep 'RU/EN leader intro queue regression' @('tools/ui/check_intro_audio133.py',$snapshot,(Join-Path $Evidence 'intro-audio133.json'))
+                if ($Stage -ge 135) {
+                    & node tools/ui/check_ux135.js (Join-Path $Evidence 'ux135.json')
+                    if ($LASTEXITCODE -ne 0) { throw 'Tutorial layout, modal and controller regression failed.' }
+                    PythonStep 'voice completion, music duck and opponent gate regression' @('tools/ui/check_audio135.py',$snapshot,(Join-Path $Evidence 'audio135.json'))
+                }
+            }
         }
         & node tools/ai/check_public_response113.js $snapshot
         if ($LASTEXITCODE -ne 0) { throw 'Native response regression failed.' }
@@ -167,6 +268,7 @@ function PrepareSources {
                     & node tools/ai/scenarios121.js $snapshot (Join-Path $snapshot 'checks121.json')
                     if ($LASTEXITCODE -ne 0) { throw 'Weather and consume regression failed.' }
                     PythonStep 'save reward ledger and starter migration' @('tools/ai/check_rewards121.py',$snapshot)
+                    PythonStep 'profile mirror format 2: banks, checksum, staged restore, reward ledgers' @('tools/ai/check_profile136.py',$snapshot)
                     & node tools/ui/check_mulligan121.js
                     if ($LASTEXITCODE -ne 0) { throw 'Mulligan slot order and geometry regression failed.' }
                     PythonStep 'weather flipbook and seamless storm atlas' @('tools/ui/check_weather121.py')

@@ -1,0 +1,28 @@
+[b]0.6.0[/b]
+[list]
+[*]Only the 21 leaders are animated: on the board, in hand and in the right-side hover portrait. Other cards retain static artwork.
+[*]Portraits use calm Loop clips. Large Intro entrance animations are excluded; the short loop boundary uses an overlapping frame blend.
+[*]Loading is delayed; up to three small portraits and one hover portrait are allowed. Switching cards and redrawing release the old movie. Static artwork remains on loading failure. Reduced effects disables animated portraits.
+[*]Added independent RU/EN text selection: the “Text RU / EN” button at the upper left of deck/collection menus and the text option in the battle settings menu. The preference is stored with the game save.
+[*]Each archive includes one voice language: RU or EN. Changing text does not change voices. After in-game validation of 0.6.0, a translation preview is planned for 0.6.1 to gather feedback.
+[*]Card search supports both languages. Custom deck names and search input remain unchanged.
+[*]Added regressions for text switching, user input, resource cleanup, portrait limits, Intro exclusion and the exact leader allowlist. UI, speech and AI fixes from 0.5.4 are retained.
+[*]The profile mirror now uses two alternating banks with checksums. Validation precedes application; a damaged current bank falls back to the previous bank. Pending paid keg choices, settings and reward ledgers are included. A real game-save restoration test is still required.
+[*]RU/EN switching applies to mod screens and card descriptions. Inventory item names and notifications outside those screens still follow the package and game language.
+[/list]
+
+[size=4][b]New in 0.5.4[/b][/size]
+
+[list]
+[*]Aligned the Tutorial button inside the right deck-selection panel. Tutorial pages share consistent margins, a layout grid and a button baseline; Try it is centred below its example.
+[*]Card details retain and blur the tutorial behind them. Returning restores the same page and example.
+[*]Added a dedicated tutorial controller mode: visible focus above the window, card and action selection, LB/RB page navigation and return from card details.
+[*]Added Cantarella and an explanation of her draw ability to the Spies page. Removed advice to always save the leader for the final round.
+[*]Music is temporarily ducked during dialogue and restored to the user volume when speech ends or is cancelled. Game settings are never overwritten. RU/EN dialogue bank gain increased by 6 dB.
+[*]Playing another card no longer cuts off the current line. The queue is bounded and stale summon chatter expires. The AI waits for speech to finish after replaying a move.
+[*]Device changes, focus updates and pointer movement no longer skip leader introductions. Deliberate skipping remains available.
+[*]Controller focus returns to the board after a completed play and its mandatory choices.
+[*]Added no-target effect diagnostics for future match analysis. In the reviewed log, the AI detected an Elven Mercenary with no targets and replaced it during mulligan; this case does not confirm a tutor bug.
+[*]Added tutorial, controller, speech queue, music duck and opponent wait regressions. Base packaging excludes premium portraits, including stale staged assets.
+[/list]
+

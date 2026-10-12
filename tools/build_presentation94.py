@@ -7,6 +7,7 @@ from pathlib import Path
 import argparse
 import hashlib
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -18,6 +19,12 @@ WORK=ROOT/'GwentB/myproject1/workspace/betagwent'
 ENTRIES={'BetaGwentBoard':'betagwent_board','GwintGame':'betagwent_npc00','DeckBuilder':'betagwent_decks','BetaGwentKeg':'betagwent_kegop'}
 
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+def validate_bindings(bridge, script):
+    expected=sorted(set(re.findall(r'GetMemberFlashFunction\("([^"]+)"\)',script)))
+    # Validate the current contract, including new UI methods, rather than an
+    # old fixed method count. The ABC checker still verifies every signature.
+    if not expected or not bridge['passed'] or bridge['bindings']!=expected:
+        raise RuntimeError('Compiled menu does not match the current script/UI contract')
 def job(name,args):
     log=BASE/'logs'/f'{name}.txt';log.parent.mkdir(parents=True,exist_ok=True)
     with log.open('w',encoding='utf8') as output:
@@ -69,7 +76,7 @@ def main():
                     shutil.copyfile(EVIDENCE/(base+suffix+'.json'),EVIDENCE/(f'stage{options.stage}-'+language+'-'+base+suffix+'.json'))
                 bridge=json.loads((EVIDENCE/('board-bridge-bytecode'+suffix+'.json')).read_text('utf8'))
                 native=json.loads((EVIDENCE/('board-resource-update'+suffix+'.json')).read_text('utf8'))
-                assert bridge['passed'] and len(bridge['bindings'])==46
+                validate_bindings(bridge,(ROOT/'BetaGwent/development/scripts/game/betagwent/developmentBoardMenu.ws').read_text('utf-8-sig'))
                 assert native['nativeABCMatchesBuiltSWF'] and native['headerTableChunkChecksumsVerified']
                 resource=BASE/language/'resources'/(stem+'.redswf');resource.parent.mkdir(parents=True,exist_ok=True)
                 shutil.copyfile(WORK/resource.name,resource)

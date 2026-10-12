@@ -11,10 +11,17 @@ out.mkdir(parents=True, exist_ok=True)
 collection = (source/'collectionProfile.ws').read_text('utf-8-sig')
 cap = re.search(r'function BetaGwentCollectionCap\(.*?\n}\n', collection, re.S).group()
 collection = collection.replace(cap, '')
-profile = collection + (source/'deckProfile.ws').read_text('utf-8-sig')
+profile = collection + (source/'deckProfile.ws').read_text('utf-8-sig') + (source/'profileBackup.ws').read_text('utf-8-sig')
 profile = re.sub(r'@add(?:Field|Method)\(W3PlayerWitcher\)\s*', '', profile).replace('private saved var', 'private var')
 wrapper = out/'profile.ws'
 wrapper.write_text('struct EntityHandle { var stableId : string; }\n'+cap+'\nclass W3PlayerWitcher extends IScriptable {\n'+profile+'''
+ private var betaGwentScraps : int;
+ private var betaGwentKegsUnopened : int;
+ private var betaGwentKegAutomatic : array<int>;
+ private var betaGwentKegOffers : array<int>;
+ private var betaGwentKegAutomaticScraps : array<int>;
+ private var betaGwentOpponentBag : array<int>;
+ private var betaGwentOpponentRecent : array<int>;
  public function BetaGwentUpdateCollectionProgress() {}
  public function BetaGwentSyncTournamentAccess() {}
  public function BetaGwentKegPending() : bool { return false; }
@@ -26,6 +33,12 @@ extra = list(source.glob('*.ws')) + list((ROOT/'BetaGwent/scripts/game/betagwent
 translated, _ = ws2js.build([wrapper,source/'duelCatalog.ws',source/'progressionCatalog.ws'], extra)
 host = '\n'.join((snapshot/f).read_text('utf8') for f in ('runtime.js','rules.js','harness.js'))
 checks = r'''
+const facts=new Map();
+function FactsSet(k,v){facts.set(k,v);}
+function FactsQueryLatestValue(k){return facts.get(k)||0;}
+function LogChannel(){}
+function NameToString(v){return String(v);}
+const theGame=null;
 function StrLen(v){return v.length;}
 function StrLeft(v,n){return v.slice(0,n);}
 const entities=new Map();
@@ -63,6 +76,29 @@ check(p.BetaGwentEnsureCollection(),'apply new starter revision');
 check(p.BetaGwentOwned(142103)===1&&p.BetaGwentOwned(142102)===1,'Iorveth added while Isengrim retained');
 check(JSON.stringify([p.betaGwentStarterDeckCards,p.betaGwentStarterDeckNames,p.betaGwentStarterDeckLeaders])===prior,'customized starter remains byte-for-byte unchanged');
 check(p.betaGwentStarterSetRevision===3,'revision applied once');
+// Rename/edit -> mock save reload -> reset exactly one override -> reload again.
+check(p.BetaGwentStoreStarterDeck(0,cards.v,'Other starter',16,200166),'store independent starter override');
+const untouched=JSON.stringify([p.betaGwentStarterDeckNames[0],p.betaGwentStarterDeckCards.slice(0,40)]);
+const reloaded=Object.assign(player(),JSON.parse(JSON.stringify(p)));
+const loadedCards={v:[]},loadedName={v:''},loadedFaction={v:0},loadedLeader={v:0};
+check(reloaded.BetaGwentLoadDeck(12,loadedCards,loadedName,loadedFaction,loadedLeader)&&loadedName.v==='Customized','renamed starter survives mock reload');
+check(reloaded.BetaGwentClearDeck(12),'reset chosen starter override');
+const again=Object.assign(player(),JSON.parse(JSON.stringify(reloaded)));
+check(!again.BetaGwentLoadDeck(12,loadedCards,loadedName,loadedFaction,loadedLeader),'reset survives mock reload and allows default fallback');
+check(JSON.stringify([again.betaGwentStarterDeckNames[0],again.betaGwentStarterDeckCards.slice(0,40)])===untouched,'reset preserves independent starter');
+check(again.betaGwentStarterDeckCards.slice(120,160).every(v=>v===0),'reset clears only chosen starter card range');
+// Stage 131: profile mirror survives a save made without the mod.
+facts.clear();
+const src=player();check(src.BetaGwentEnsureCollection(),'backup source collection');
+const deck={v:[]};BetaGwentDuelPresetDeck(19,deck);
+check(src.BetaGwentStoreDeck(1,deck.v,'Mine',16,200166),'store player deck for backup');
+src.betaGwentScraps=77;src.betaGwentKegsUnopened=2;src.BetaGwentBackupProfile();
+const wiped=player();check(wiped.BetaGwentEnsureCollection(),'empty profile restores from facts');
+check(JSON.stringify(wiped.betaGwentOwnedIds)===JSON.stringify(src.betaGwentOwnedIds)&&JSON.stringify(wiped.betaGwentOwnedCopies)===JSON.stringify(src.betaGwentOwnedCopies),'restored collection matches');
+check(wiped.betaGwentScraps===77&&wiped.betaGwentKegsUnopened===2,'restored scraps and kegs');
+const rc={v:[]},rn={v:''},rf={v:0},rl={v:0};
+check(wiped.BetaGwentLoadDeck(1,rc,rn,rf,rl)&&JSON.stringify(rc.v)===JSON.stringify(deck.v)&&rl.v===200166&&rf.v===16,'restored deck cards, leader and faction');
+const kept=player();kept.BetaGwentEnsureCollection();kept.betaGwentScraps=5;check(!kept.BetaGwentRestoreProfile()&&kept.betaGwentScraps===5,'existing profile is never overwritten');
 console.log(JSON.stringify({stage:121,checks,nativeSerializationTested:false}));
 '''
 script = out/'checks.js'

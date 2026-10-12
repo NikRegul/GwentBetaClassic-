@@ -1,0 +1,343 @@
+{
+  "checks": 108,
+  "decisions": [
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 2,
+      "seed": 331,
+      "hiddenPower": 1,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 113308,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=false sequence=false",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=64 template=113308 gain=5 reason=best_evaluation_or_reachable_chase evaluationWinner=50 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 2,
+      "seed": 331,
+      "hiddenPower": 40,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 113308,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=false sequence=false",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=64 template=113308 gain=5 reason=best_evaluation_or_reachable_chase evaluationWinner=50 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 2,
+      "seed": 982451653,
+      "hiddenPower": 1,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 113308,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=false sequence=false",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=64 template=113308 gain=5 reason=best_evaluation_or_reachable_chase evaluationWinner=50 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 2,
+      "seed": 982451653,
+      "hiddenPower": 40,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 113308,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=false sequence=false",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=64 template=113308 gain=5 reason=best_evaluation_or_reachable_chase evaluationWinner=50 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 2,
+      "seed": 2026101233,
+      "hiddenPower": 1,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 113308,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=false sequence=false",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=64 template=113308 gain=5 reason=best_evaluation_or_reachable_chase evaluationWinner=50 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 2,
+      "seed": 2026101233,
+      "hiddenPower": 40,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 113308,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=false sequence=false",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=64 template=113308 gain=5 reason=best_evaluation_or_reachable_chase evaluationWinner=50 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 3,
+      "seed": 331,
+      "hiddenPower": 1,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 112101,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=65 template=112101 gain=2 reason=best_evaluation_or_reachable_chase evaluationWinner=60 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 3,
+      "seed": 331,
+      "hiddenPower": 40,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 112101,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=65 template=112101 gain=2 reason=best_evaluation_or_reachable_chase evaluationWinner=60 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 3,
+      "seed": 982451653,
+      "hiddenPower": 1,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 112101,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=65 template=112101 gain=2 reason=best_evaluation_or_reachable_chase evaluationWinner=60 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 3,
+      "seed": 982451653,
+      "hiddenPower": 40,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 112101,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=65 template=112101 gain=2 reason=best_evaluation_or_reachable_chase evaluationWinner=60 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 3,
+      "seed": 2026101233,
+      "hiddenPower": 1,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 112101,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=65 template=112101 gain=2 reason=best_evaluation_or_reachable_chase evaluationWinner=60 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 3,
+      "seed": 2026101233,
+      "hiddenPower": 40,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 112101,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=65 template=112101 gain=2 reason=best_evaluation_or_reachable_chase evaluationWinner=60 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 4,
+      "seed": 331,
+      "hiddenPower": 1,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 112101,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=true",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=true sequence=true",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=65 template=112101 gain=2 reason=best_evaluation_or_reachable_chase evaluationWinner=60 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 4,
+      "seed": 331,
+      "hiddenPower": 40,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 112101,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=true",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=true sequence=true",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=65 template=112101 gain=2 reason=best_evaluation_or_reachable_chase evaluationWinner=60 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 4,
+      "seed": 982451653,
+      "hiddenPower": 1,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 112101,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=true",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=true sequence=true",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=65 template=112101 gain=2 reason=best_evaluation_or_reachable_chase evaluationWinner=60 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 4,
+      "seed": 982451653,
+      "hiddenPower": 40,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 112101,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=true",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=true sequence=true",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=65 template=112101 gain=2 reason=best_evaluation_or_reachable_chase evaluationWinner=60 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 4,
+      "seed": 2026101233,
+      "hiddenPower": 1,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 112101,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=true",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=true sequence=true",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=65 template=112101 gain=2 reason=best_evaluation_or_reachable_chase evaluationWinner=60 chase=false"
+      ]
+    },
+    {
+      "case": "epidemic_hidden_power",
+      "strength": 4,
+      "seed": 2026101233,
+      "hiddenPower": 40,
+      "allowed": [
+        113308,
+        112101
+      ],
+      "selected": 112101,
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=64 template=113308 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=true",
+        "AI_REASON schema=1 decision=1 event=OPTION card=65 template=112101 tempo=2 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=true sequence=true",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=65 template=112101 gain=2 reason=best_evaluation_or_reachable_chase evaluationWinner=60 chase=false"
+      ]
+    },
+    {
+      "case": "minimum_resource_catchup",
+      "strength": 2,
+      "seed": 794568949,
+      "allowed": [
+        "ordinary"
+      ],
+      "selected": "ordinary",
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=62 template=112101 tempo=7 utility=7 reserve=5 draw=0 setup=0 priority=0 evaluation=50 exact=false sequence=false",
+        "AI_REASON schema=1 decision=1 event=OPTION card=63 template=112101 tempo=12 utility=12 reserve=5 draw=0 setup=0 priority=0 evaluation=100 exact=false sequence=false",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=62 template=112101 gain=7 reason=best_evaluation_or_reachable_chase evaluationWinner=100 chase=true"
+      ]
+    },
+    {
+      "case": "minimum_resource_catchup",
+      "strength": 3,
+      "seed": 794568949,
+      "allowed": [
+        "ordinary"
+      ],
+      "selected": "ordinary",
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=62 template=112101 tempo=7 utility=7 reserve=5 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=OPTION card=63 template=112101 tempo=12 utility=12 reserve=5 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=62 template=112101 gain=7 reason=best_evaluation_or_reachable_chase evaluationWinner=100 chase=true"
+      ]
+    },
+    {
+      "case": "minimum_resource_catchup",
+      "strength": 4,
+      "seed": 794568949,
+      "allowed": [
+        "ordinary"
+      ],
+      "selected": "ordinary",
+      "reason": [
+        "AI_REASON schema=1 decision=1 event=OPTION card=62 template=112101 tempo=7 utility=7 reserve=5 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=OPTION card=63 template=112101 tempo=12 utility=12 reserve=5 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+        "AI_REASON schema=1 decision=1 event=SELECT action=card card=62 template=112101 gain=7 reason=best_evaluation_or_reachable_chase evaluationWinner=100 chase=true"
+      ]
+    }
+  ],
+  "actualWitcherScript": true,
+  "nativeGameTested": false,
+  "fingerprint": "a709c0e77cf4e4a044f7a97e7bf84a33afd87cdf89644fbbdc19148646cb6478",
+  "sources": {
+    "BetaGwent/development/scripts/game/betagwent/duelSession.ws": "e077a3985e73554c211100538e5971a732709d405502636992e5fbd2e3d53db7",
+    "BetaGwent/development/scripts/game/betagwent/duelAIPass.ws": "c3f1600af50eea9591b0e6741f5916252128809ee7fe29ff02fb10d239392c10",
+    "BetaGwent/development/scripts/game/betagwent/duelPublicResponseAI.ws": "1a3d4bcf8894c52c7ae6984dafb5abe04a70273f0fd507b100749d2e5ed5ef94"
+  }
+}

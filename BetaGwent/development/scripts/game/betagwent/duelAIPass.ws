@@ -73,6 +73,27 @@ function BetaGwentAITune(index : int) : int
     }
     return 0;
 }
+// Reserve scarce resources for the next round using only public hand sizes/crowns.
+// A deciding round and an uncontested catch-up never pay this extra cost.
+function BetaGwentAIResourcePressure(round : int, ownCrowns : int, enemyCrowns : int, ownHand : int, enemyHand : int, resource : int) : int
+{
+    var pressure : int;
+    if(round>=3 || enemyCrowns>=1 || ownHand<=1 || resource<=0)return 0;
+    pressure=Max(0,enemyHand-ownHand+1);
+    if(round==2 && ownCrowns>0)pressure+=2;
+    if(resource>=5)return Min(4,pressure);
+    return Min(2,pressure);
+}
+// Probability of a pass in a public reply hypothesis, not knowledge of a hand.
+function BetaGwentAIReplyPassChance(round : int, ownCrowns : int, enemyCrowns : int, lead : int, ownHand : int, enemyHand : int, leader : bool) : int
+{
+    if(ownHand==0){if(leader)return 35;return 100;}
+    if(round>=3 || enemyCrowns>=1)return 5;
+    if(lead>12 && ownHand<=enemyHand)return 45;
+    if(lead>0 && ownHand<=enemyHand)return 25;
+    if(lead< -20 && ownCrowns>0 && ownHand<=3)return 60;
+    return 10;
+}
 // Average public value of an opponent card this round, with a prior of 10.
 function BetaGwentAICardValue(points : int, played : int) : int
 { return (Max(0,points)+20)/(Max(0,played)+2); }
@@ -80,7 +101,7 @@ function BetaGwentAICardValue(points : int, played : int) : int
 // the round to keep cards; 3 = dry pass with the round lead in crowns.
 function BetaGwentAIRoundDecision(round : int, ownCrowns : int, enemyCrowns : int, lead : int,
     ownHand : int, enemyHand : int, bestTempo : int, enemyValue : int, enemyLeader : bool,
-    optional longRound : bool, optional liveEngines : int) : int
+    optional longRound : bool, optional liveEngines : int, optional bestValue : int) : int
 {
     var margin, threshold : int;
     if(ownHand==0)return 0;
@@ -108,7 +129,11 @@ function BetaGwentAIRoundDecision(round : int, ownCrowns : int, enemyCrowns : in
     if(bestTempo+lead>0)return 0;
     // One card cannot take the lead: the opponent's last plays outvalue ours.
     threshold=18;if(longRound)threshold=22;
-    if(ownHand>=3 && ownHand<=enemyHand && -lead>threshold && bestTempo+lead<=0){
+    // Stage 127: card advantage only buys points at the end of the round, about one
+    // average play (9) per extra card. A deficit beyond that is conceded now, before
+    // more cards are thrown after a round that is already lost. bestValue includes the
+    // future value of the best play (weather ticks, engines), not just its immediate tempo.
+    if(ownHand>=3 && -lead>threshold && bestTempo+lead<=0 && -lead>Max(0,ownHand-enemyHand)*9+Max(bestTempo,bestValue)){
         // A functioning long-round engine needs a larger deficit before it
         // is abandoned; its hypothetical ticks still are not current points.
         if(longRound && liveEngines>0 && -lead<=bestTempo+liveEngines*3+threshold)return 0;

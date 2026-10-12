@@ -105,8 +105,8 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
             zone = 512; index = 0; cardState.canBePlayed = false; cardState.isWaitingToDie = false;
             BetaGwentLog("DUEL_DOOMED_REMOVED card=" + cardState.instanceId + " grave=false");
         }
-        // CardData.OnCardMoved removes Lock when leaving the graveyard.
-        if (cardState.locationMask == 32 && zone != 32 && (cardState.tokenMask & 4) != 0) cardState.tokenMask -= 4;
+        // Lock belongs to this instance, including after resurrection. Only an
+        // explicit unlock or transformation removes it.
         if ((cardState.locationMask & 7) != 0 && (zone & 7) != 0 && side != cardState.positionPlayerId)
         { if ((cardState.tokenMask & 128) != 0) cardState.tokenMask -= 128; else cardState.tokenMask += 128; }
         cardState.controllerId = side;

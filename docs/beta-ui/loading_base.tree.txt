@@ -1,0 +1,80 @@
+Button_BasicUI ap=[-86.0, -387.5] size=[0.0, 48.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 1.0] ButtonControl Label HorizontalLayoutGroup ContentSizeFitter LayoutElement ButtonSoundHandler LabelButtonView
+  Background ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[btn_wide_idle_300] AssetLoader SpriteSheetButtonView HorizontalLayoutGroup LayoutInputModeViewDisabler
+    Text ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"Simple Text" LayoutElement
+InputButtonContainerPrefab ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] HorizontalLayoutGroup InputButtonContainer
+Label_BasicGlyph ap=[90.8, -410.0] size=[0.0, 45.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 0.5] GlyphLabelControl PlatformGlyphController HorizontalLayoutGroup ContentSizeFitter LayoutElement
+  Dir ap=[75.32, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] HorizontalLayoutGroup ContentSizeFitter LayoutInputModeViewDisabler
+    Image ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image AssetLoader LayoutElement
+    Text ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 0.5] TextMeshProUGUI"Simple Text" Label LayoutElement
+LoadingSpinner ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+  Background ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[loader_bg]
+  ProgressBar ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[progress_fill_mask]
+  Hourglass ap=[-0.04, 0.02] size=[0.01, 0.01] amin=[0.29, 0.34] amax=[0.71, 0.75] pivot=[0.5, 0.5] Image[timer_icon]
+UICombatIntroductionV2Prefab ap=[-1125.48, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] UICombatIntroductionV2Panel FactionThemeChanger GraphicRaycaster UICombatIntroductionV2PanelSoundHandler
+  OpponentCardSlot scale=[50.0, 50.0, 50.0] CombatIntroductionCardAnimator
+    CardAnim_Hide CombatIntroductionAnimationController
+      ShopCardJoint_Reveal01 
+      CardRenderingCamera CameraSettingsController PostProcessLayer
+  BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+    Background ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[combat_loading_bg] AssetLoader
+    BackgroundImageRight ap=[224.0, 61.85] size=[771.0, 771.7] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[vs_monster_right] AssetLoader FactionImage
+  Description ap=[8.0, -59.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+    Details ap=[231.9, -87.1] size=[552.5, 600.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 1.0] VerticalLayoutGroup
+      Top ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+        Banner ap=[-4.0, -3.5] size=[8.0, 43.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[Banner_NEU] AssetLoader FactionImage
+        OpponentName ap=[0.0, -8.0] size=[-139.47, 13.1] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] HorizontalLayoutGroup
+          FactionIcon ap=[55.8, -56.55] size=[111.6, 113.1] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] LayoutElement Image[neutral_icon_med] AssetLoader FactionImage
+          Layout ap=[250.07, -56.55] size=[276.93, 58.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] VerticalLayoutGroup
+            OpponentName ap=[138.46, -38.0] size=[276.93, 40.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"name"
+      Layout ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] VerticalLayoutGroup
+        OpponentStoryText ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] TextMeshProUGUI LayoutElement
+        ------------------------------ ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement Image[divider_combat_loading] AssetLoader
+        SpecialMechanicsGroup ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] VerticalLayoutGroup LayoutElement
+          MechanicsDescriptionTemplate (off) ap=[281.75, -20.0] size=[541.5, 40.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] SpecialMechanicsDescription LayoutElement HorizontalLayoutGroup
+            Image ap=[20.0, -20.0] size=[40.0, 40.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[bullet] LayoutElement AssetLoader
+            Text ap=[298.25, -20.0] size=[486.5, 20.02] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI LayoutElement
+    CardRenderTarget ap=[344.0, 68.0] size=[600.0, 600.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] RawImage
+  LoadingFolder ap=[982.41, 287.92] size=[270.0, 90.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 0.5] HorizontalLayoutGroup
+    LoadingSpinnerRoot ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+    LoadingText ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"## loading_text" LocalizedTextMeshPro
+  ButtonsParent ap=[0.0, 41.0] size=[764.0, 100.0] amin=[0.5, 0.0] amax=[0.5, 0.0] pivot=[0.5, 0.5]
+UILoadingScreenBlankPrefab ap=[0.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] UILoadingScreenBase GraphicRaycaster
+UILoadingScreenPrefab ap=[0.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] UILoadingScreen GraphicRaycaster
+  _CardLoadingRenderer scale=[45.0, 45.0, 45.0] CardLoadingRenderer
+    UIPreview 
+      ProxiesPreset1 UILoadingScreenAnchorPreset
+        MainProxy 
+        BgProxy1 
+        BgProxy2 
+      ProxiesPreset2 UILoadingScreenAnchorPreset
+        MainProxy 
+        BgProxy1 
+        BgProxy2 
+      ProxiesPreset3 UILoadingScreenAnchorPreset
+        MainProxy 
+        BgProxy1 
+        BgProxy2 
+      ProxiesPreset4 UILoadingScreenAnchorPreset
+        MainProxy 
+        BgProxy1 
+        BgProxy2 
+      ProxiesPreset5 UILoadingScreenAnchorPreset
+        MainProxy 
+        BgProxy1 
+        BgProxy2 
+  MainBg ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.0] UIImage[loading_background] AssetLoader
+  CardName ap=[278.58, 269.0] size=[530.74, 60.2] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] HorizontalLayoutGroup LayoutElement
+    Layout ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement VerticalLayoutGroup
+      Name ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 1.0] TextMeshProUGUI"dagon " LayoutElement
+  CardDescritpion ap=[285.9, 211.6] size=[516.1, 50.8] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TextMeshProUGUI"Fog creeps on little cat feet. Fog creep"
+  MainFolder ap=[298.4, 4.7] size=[524.1, 339.3] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] VerticalLayoutGroup
+    FolderCreature ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+      StrengthTxt ap=[12.4, 0.0] size=[456.7, 40.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TextMeshProUGUI"[MISSING]card_strength" LocalizedTextMeshPro
+      StrengthVal ap=[-254.7, 0.0] size=[58.8, 43.5] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TextMeshProUGUI"13"
+    FolderTooltip ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement UIPreviewCardAbility
+      TooltipTxt ap=[253.7, -13.0] size=[520.6, 0.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 1.0] TextMeshProUGUI"I told you so" ContentSizeFitter UITransformResizer
+  CardsImage ap=[-320.0, -0.1] size=[750.0, 750.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image AssetLoader
+  Banner ap=[-195.5, -291.1] size=[355.4, 96.8] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[-1.16, 0.0] Image[ribbon-NIL] AssetLoader FactionImage
+  LoadingTextLayout ap=[-512.4, 207.3] size=[165.0, 48.52] amin=[1.0, 0.0] amax=[1.0, 0.0] pivot=[0.0, 0.5] HorizontalLayoutGroup
+    LoadingText ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI LayoutElement
+  LoadingSpinner ap=[1255.0, -695.0] size=[100.0, 100.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 0.5]

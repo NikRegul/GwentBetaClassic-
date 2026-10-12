@@ -144,6 +144,17 @@ class CBetaGwentDeckLibrary extends IScriptable
         if (!player.BetaGwentStoreDeck(draft.slot, draft.cards, title, draft.faction, draft.leader)) return false;
         Initialize(unlimitedCollection); return true;
     }
+    public function Delete(id : int) : bool
+    {
+        var player : W3PlayerWitcher;
+        if (!Get(id) || !((id >= 1001 && id <= 1008) || (id >= 16 && id <= 20))) return false;
+        player = (W3PlayerWitcher)thePlayer; if (!player) return false;
+        // Starter decks 16-20 live in slots 9-13: clearing the override restores the original list.
+        // User decks are 1001-1008 (slots 1-8); only 16-20 are starter overrides.
+        if (id >= 16 && id <= 20) { if (!player.BetaGwentClearDeck(id - 7)) return false; }
+        else if (!player.BetaGwentClearDeck(id - 1000)) return false;
+        Initialize(unlimitedCollection); return true;
+    }
     public function Resolve(id : int, out cards : array<int>, out leader : int) : bool
     {
         var draft : CBetaGwentDeckDraft; var preset : SBetaGwentDuelPreset; var validation : SBetaGwentDeckValidation; var i : int;
@@ -163,4 +174,12 @@ class CBetaGwentDeckLibrary extends IScriptable
         cards.Clear(); preset = BetaGwentDuelPreset(id); if (preset.id == 0) return false;
         leader = preset.leaderTemplateId; return BetaGwentDuelPresetDeck(id, cards);
     }
+}
+
+// Saved AI difficulty (1 easy, 2 medium, 3 hard); kept outside the battle scripts.
+function BetaGwentDifficultyLevel() : int
+{
+    var player : W3PlayerWitcher; player = (W3PlayerWitcher)thePlayer;
+    if (player) return player.BetaGwentDifficulty();
+    return 3;
 }

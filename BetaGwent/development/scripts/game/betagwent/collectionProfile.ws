@@ -80,6 +80,8 @@ public function BetaGwentEnsureCollection() : bool
         }return true;
     }
     if(betaGwentOwnedIds.Size()!=0 || betaGwentOwnedCopies.Size()!=0) return false;
+    // Profile fields lost by a save made without the mod: restore from the facts mirror.
+    if(BetaGwentRestoreProfile()){BetaGwentUpdateCollectionProgress();BetaGwentSyncTournamentAccess();return true;}
     betaGwentCollectionSeeding=true;betaGwentCollectionSchema=1;
     BetaGwentApplyStarterSet();
     // One-time migration of valid saved DEV decks, preserving existing work.
@@ -123,8 +125,11 @@ public function BetaGwentWinReward(deck : name, npcId : int, optional actorKey :
     gold=BetaGwentQuestGold(deck);
     if(gold!=0) {
         // Repeat wins against quest and tournament players: +50 scraps.
-        if(betaGwentRewardedQuests.Contains(deck)){BetaGwentAddScraps(50);return "Победа: +50 осколков (всего "+BetaGwentScraps()+").";}
-        betaGwentRewardedQuests.PushBack(deck);
+        // Stage 136: the facts mirror also counts, so a restored profile is not paid twice.
+        if(betaGwentRewardedQuests.Contains(deck) || BetaGwentMirroredQuestReward(deck)){
+            if(!betaGwentRewardedQuests.Contains(deck))betaGwentRewardedQuests.PushBack(deck);
+            BetaGwentAddScraps(50);return "Победа: +50 осколков (всего "+BetaGwentScraps()+").";}
+        betaGwentRewardedQuests.PushBack(deck);BetaGwentMirrorQuestReward(deck);
         d=BetaGwentDuelDefinition(gold);
         if(BetaGwentGrant(gold)) {
             LogChannel('BetaGwent',"COLLECTION_REWARD quest="+deck+" card="+gold);
@@ -155,7 +160,7 @@ public function BetaGwentWinReward(deck : name, npcId : int, optional actorKey :
     if(pool.Size()==0)return "Награда недоступна.";
     id=pool[BetaGwentProgressionPick(pool.Size())];scraps=BetaGwentReceive(id);
     betaGwentRewardedNpcs.PushBack(npcId);
-    betaGwentRewardActorWins[actorKey-1]=Min(4,rewarded+1);
+    betaGwentRewardActorWins[actorKey-1]=Min(4,rewarded+1);BetaGwentMirrorNpcWins(npcId,betaGwentRewardActorWins[actorKey-1]);
     LogChannel('BetaGwent',"COLLECTION_REWARD_COUNTER actorKey="+actorKey+" runtimeId="+npcId+" wins="+betaGwentRewardActorWins[actorKey-1]);
     d=BetaGwentDuelDefinition(id);
     if(scraps>0){LogChannel('BetaGwent',"COLLECTION_REWARD npc="+deck+" card="+id+" duplicateScraps="+scraps+" rewardedWins="+(rewarded+1));
@@ -176,6 +181,8 @@ public function BetaGwentRewardActorKey(actor : CEntity) : int
     // Never clear this legacy ledger or rebuild counts on loading a save.
     for(i=0;i<betaGwentRewardedNpcs.Size();i+=1)
         if(betaGwentRewardedNpcs[i]==runtimeId)legacyWins+=1;
+    // After a restore from the facts mirror the saved ledger is gone; use the mirrored count.
+    legacyWins=Max(legacyWins,BetaGwentMirroredNpcWins(runtimeId));
     EntityHandleSet(handle,actor);betaGwentRewardActors.PushBack(handle);
     betaGwentRewardActorWins.PushBack(Min(4,legacyWins));
     LogChannel('BetaGwent',"COLLECTION_REWARD_ACTOR key="+betaGwentRewardActors.Size()+" runtimeId="+runtimeId+" migratedWins="+Min(4,legacyWins));

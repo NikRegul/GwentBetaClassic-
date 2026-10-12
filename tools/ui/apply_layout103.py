@@ -69,7 +69,7 @@ new_hud = '''        private function drawBetaBattleHud():void
                     var slot:Array=BetaGwentBoardLayout.crownHalf[side+":"+halfIndex];
                     var won:Boolean=crowns[side-1]>=halfIndex;
                     var crown:Sprite=new Sprite();crown.x=slot[0];crown.y=slot[1];crown.mouseEnabled=false;crown.mouseChildren=false;content.addChild(crown);
-                    paintArt(crown,(side==1?-1540:-1542)+(halfIndex-1),slot[2],slot[3],0,0);
+                    paintArt(crown,(side==1?-1540:-1542)-(halfIndex-1),slot[2],slot[3],0,0);
                     // Not yet won: the same half, dimmed and desaturated.
                     if(!won){crown.alpha=.32;crown.transform.colorTransform=new ColorTransform(.42,.42,.42);}
                     if(won&&activeCue&&activeCue.kind==6&&halfIndex>previousCrowns[side-1]&&!reducedMotion){

@@ -46,7 +46,7 @@ def validate_resource(path):
     require(struct.unpack_from('<II', data, 24) == (len(data), len(data)), 'Unexpected file/buffer extent')
     require(header_crc(data) == struct.unpack_from('<I', data, 32)[0], 'Invalid header CRC')
     texture_count = len(resource.exports) - 1
-    require(1 <= texture_count <= 32 and [item['class'] for item in resource.exports] == ['CSwfResource'] + ['CSwfTexture'] * texture_count,
+    require(0 <= texture_count <= 32 and [item['class'] for item in resource.exports] == ['CSwfResource'] + ['CSwfTexture'] * texture_count,
             'Unexpected resource chunks')
     root_props, _ = resource.properties_at(resource.exports[0]['data'])
     require(root_props['textures'] == ('array:2,0,handle:CSwfTexture',

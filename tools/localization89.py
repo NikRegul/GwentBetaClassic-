@@ -25,6 +25,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('action',choices=['inventory','sources']);p.add_argument('--output-dir',type=Path);a=p.parse_args()
     lookup=strings();unknown={}
     for f in sources():
+        if f.name=='BetaGwentTextData.as':continue
         for m in PAT.finditer(f.read_text('utf-8-sig')):
             v=value(m.group())
             if CYR.search(v) and v not in lookup:unknown.setdefault(v,[]).append(f.name)
@@ -39,7 +40,8 @@ def main():
         s=f.read_text('utf-8-sig')
         def replace(m):
             v=value(m.group());return json.dumps(lookup[v],ensure_ascii=False) if CYR.search(v) else m.group()
-        translated=PAT.sub(replace,s)
+        translated=s if f.name=='BetaGwentTextData.as' else PAT.sub(replace,s)
+        if f.name=='BetaGwentTextLanguage.as':translated=translated.replace('DEFAULT_LANGUAGE:int=1;', 'DEFAULT_LANGUAGE:int=2;')
         if f.name=='BetaGwentBoard.as':translated=translated.replace('nameRussian:Boolean=true;', 'nameRussian:Boolean=false;')
         out.write_text(translated,'utf-8-sig' if f.suffix=='.ws' else 'utf8')
 if __name__=='__main__':main()

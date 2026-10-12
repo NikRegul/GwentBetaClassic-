@@ -1,0 +1,178 @@
+{
+  "stage": 137,
+  "leaderArt": {
+    "12110100": {
+      "sourceFrames": 513,
+      "uniqueFrames": 513,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 0.8123924204653371,
+      "maxStep": 1.665531517094017,
+      "loopBoundaryStep": 0.9240414292497625
+    },
+    "12110200": {
+      "sourceFrames": 189,
+      "uniqueFrames": 189,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 0.965377938034188,
+      "maxStep": 8.40775611348528,
+      "loopBoundaryStep": 1.3264556623931625
+    },
+    "12110300": {
+      "sourceFrames": 430,
+      "uniqueFrames": 430,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 1.3193257359924027,
+      "maxStep": 2.9296504036087367,
+      "loopBoundaryStep": 1.4441625118708452
+    },
+    "13110100": {
+      "sourceFrames": 326,
+      "uniqueFrames": 326,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 1.0684502611585944,
+      "maxStep": 1.6077056623931623,
+      "loopBoundaryStep": 1.3230650522317189
+    },
+    "13110300": {
+      "sourceFrames": 257,
+      "uniqueFrames": 257,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 2.474971064814815,
+      "maxStep": 21.437203228869897,
+      "loopBoundaryStep": 16.194422186609685
+    },
+    "14110100": {
+      "sourceFrames": 432,
+      "uniqueFrames": 432,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 1.6838348765432098,
+      "maxStep": 5.891092414529915,
+      "loopBoundaryStep": 0.9539930555555556
+    },
+    "14110200": {
+      "sourceFrames": 652,
+      "uniqueFrames": 652,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 1.1023637820512822,
+      "maxStep": 2.2048536918328585,
+      "loopBoundaryStep": 1.135008606362773
+    },
+    "14110300": {
+      "sourceFrames": 339,
+      "uniqueFrames": 339,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 1.2844439992877494,
+      "maxStep": 2.1779142924976256,
+      "loopBoundaryStep": 1.3128932217473885
+    },
+    "15110100": {
+      "sourceFrames": 161,
+      "uniqueFrames": 161,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 3.0048781754510925,
+      "maxStep": 5.878613188509021,
+      "loopBoundaryStep": 2.7983959520417856
+    },
+    "15110200": {
+      "sourceFrames": 264,
+      "uniqueFrames": 264,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 3.6477623456790123,
+      "maxStep": 6.6328347578347575,
+      "loopBoundaryStep": 2.6946966999050335
+    },
+    "15110300": {
+      "sourceFrames": 365,
+      "uniqueFrames": 365,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 2.402666488603989,
+      "maxStep": 18.21027718423552,
+      "loopBoundaryStep": 2.15244391025641
+    },
+    "16110100": {
+      "sourceFrames": 368,
+      "uniqueFrames": 368,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 0.5821017331433999,
+      "maxStep": 1.707042378917379,
+      "loopBoundaryStep": 0.7549634971509971
+    },
+    "16110200": {
+      "sourceFrames": 417,
+      "uniqueFrames": 417,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 0.9608855650522317,
+      "maxStep": 5.6796875,
+      "loopBoundaryStep": 0.9815111585944919
+    },
+    "16110300": {
+      "sourceFrames": 264,
+      "uniqueFrames": 264,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 2.270224952516619,
+      "maxStep": 4.229656339031339,
+      "loopBoundaryStep": 1.9623100664767332
+    },
+    "20005500": {
+      "sourceFrames": 192,
+      "uniqueFrames": 192,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 4.869168447293447,
+      "maxStep": 11.680325557929725,
+      "loopBoundaryStep": 1.5408802231718899
+    },
+    "20006000": {
+      "sourceFrames": 266,
+      "uniqueFrames": 266,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 2.6178700735992404,
+      "maxStep": 6.784202872744539,
+      "loopBoundaryStep": 1.4048774335232668
+    },
+    "20006300": {
+      "sourceFrames": 336,
+      "uniqueFrames": 336,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 0.18419842117758783,
+      "maxStep": 1.5120785849952516,
+      "loopBoundaryStep": 0.150500059354226
+    },
+    "20007500": {
+      "sourceFrames": 368,
+      "uniqueFrames": 368,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 0.9975516381766382,
+      "maxStep": 4.571217651946818,
+      "loopBoundaryStep": 2.872091642924976
+    },
+    "20158000": {
+      "sourceFrames": 273,
+      "uniqueFrames": 273,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 0.6261945037986705,
+      "maxStep": 5.881862832383666,
+      "loopBoundaryStep": 0.40033683523266855
+    },
+    "20158700": {
+      "sourceFrames": 153,
+      "uniqueFrames": 153,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 1.1297631766381766,
+      "maxStep": 2.4591271961063628,
+      "loopBoundaryStep": 0.9900804249762583
+    },
+    "20174300": {
+      "sourceFrames": 145,
+      "uniqueFrames": 145,
+      "identicalAdjacentFrames": 0,
+      "medianStep": 1.8226829594017095,
+      "maxStep": 3.7893815289648622,
+      "loopBoundaryStep": 1.971235458214625
+    }
+  },
+  "nativeGameTested": false,
+  "sources": {
+    "tools/ui/check_leader_motion137.py": "6efe6f66fc89fe31d128ed5192be3044bc5774d96938b3a286e24258b0a68ba4"
+  },
+  "note": "Captured frames and exact blended endpoint; this does not measure native playback."
+}

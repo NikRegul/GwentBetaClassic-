@@ -1,3 +1,5 @@
+> Current release: 0.6.1 / Stage 137. See [the project README](../README.md) and the current build/acceptance guides. The stage notes below are historical.
+
 # Building Gwent Beta Classic
 
 Read BUILD_RU.md for the detailed, confirmed sequence and ARCHITECTURE_AI_EN.md

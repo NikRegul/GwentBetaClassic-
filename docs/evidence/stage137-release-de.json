@@ -1,0 +1,188 @@
+{
+  "version": "0.6.1",
+  "stage": 137,
+  "language": "de",
+  "mediaCount": 1438,
+  "files": [
+    {
+      "path": "ATTRIBUTIONS.md",
+      "bytes": 982,
+      "sha256": "9f115954e202d0cc463fb83864edb885bd678ee491fce7e34e6c7ba35a8726e7"
+    },
+    {
+      "path": "CHANGELOG_EN.md",
+      "bytes": 7108,
+      "sha256": "babdd828fa84d1c0bc69348a216b5b1d6955987231263431f6180f26470e825d"
+    },
+    {
+      "path": "CONTROLS_EN.md",
+      "bytes": 5995,
+      "sha256": "3f46e6a0fd4f7ece9f623c1aceae261a8d1a89ab7ab3ebfe9cf06c7087915190"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/ar.w3strings",
+      "bytes": 26001,
+      "sha256": "2cdcf7bb41cec8ee4f2fca9f568f323d6474bc1105e16fd741b968f8d331b02a"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/blob0.bundle",
+      "bytes": 394905137,
+      "sha256": "da98a3f269d432f2636ebee27e3f297e35974573c2fe126d062161a1d45d1e6e"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/br.w3strings",
+      "bytes": 30490,
+      "sha256": "9b5d1a11154a6d30ae8d41b9c427fc4fc91cfdd186059d78e17e85804e325c52"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/cn.w3strings",
+      "bytes": 28957,
+      "sha256": "4982403b5cdb0a221f7df27fda145c4190ac353758c270740d873f1c2d0fdd9a"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/cz.w3strings",
+      "bytes": 26001,
+      "sha256": "290d5448a1199e883c8edb80c9dd9b9b445f8b4363131ecc328f7bd9e3fd4b46"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/de.w3strings",
+      "bytes": 29682,
+      "sha256": "a005f7d677bc3a3bbe0fe232e8bc8c482e5dc9ad8149f2f4d2e6cadac6297c92"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/dep.cache",
+      "bytes": 7363,
+      "sha256": "1a944c792c72e7f58d8602b8ac2c601bf7f18747f177b9a16354a078380d01ca"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/en.w3strings",
+      "bytes": 26001,
+      "sha256": "fa34d95dc6ae623b7bde6b4f199a0e1f31984a7d50c7b145610a9f54f83b2149"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/es.w3strings",
+      "bytes": 30141,
+      "sha256": "1660a066fee6a1efe21ce323c196a84483516069a442e32782b5c4a294a22b39"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/esmx.w3strings",
+      "bytes": 30139,
+      "sha256": "9c4d3dc43c36aafc363ff78fa2ccc93fb6636bc8c5c53ef2cd29fd06c05cebc8"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/fr.w3strings",
+      "bytes": 31747,
+      "sha256": "8a84c84dbd04c0a98ab4d79e34cb09bc4f5cea699dad2cf67422728313b05587"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/hu.w3strings",
+      "bytes": 26001,
+      "sha256": "2bf2463db16fe1d3d2e68736795b27c1c27935f95dcd474ba12207782df13a89"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/it.w3strings",
+      "bytes": 30043,
+      "sha256": "127903dbfc8a41addb7eba12772744f819f32a625d569caecdad37142a272895"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/jp.w3strings",
+      "bytes": 39255,
+      "sha256": "5af01bae827cd7dc9e1bd18a7bc41a3afc4928c96cdec274f62679f03cca8e88"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/kr.w3strings",
+      "bytes": 32501,
+      "sha256": "f68f67efda07bab6604a384f272043633fbd30ad2177a27016c62d9b18c83911"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/metadata.store",
+      "bytes": 44062,
+      "sha256": "33aced0f6fe2d0e5bc0c80ad775f26b0428941f7a5bf152b8d8b72db557f3d99"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/pl.w3strings",
+      "bytes": 26846,
+      "sha256": "f8c5fcaadb0e63df1a3663023c010f301f7b6a0b488448de31ac1286920648d8"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/precompiled.rsblob",
+      "bytes": 2265737,
+      "sha256": "b97d9a59aae97676f8d29c19de5a8bb057545d52f0b9f327d7b7e37b58ab6368"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/ru.w3strings",
+      "bytes": 39567,
+      "sha256": "6ce31d0587b440bf7ecc3f3c5b672c313ee27232a0a463f6577596e7482aa7f2"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/soundspc.cache",
+      "bytes": 54388985,
+      "sha256": "7b642bd8e5a0873249c47242beccec4a45c14d0a7d0be534157a56dedfa0dc0c"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/tr.w3strings",
+      "bytes": 26001,
+      "sha256": "2cdcf7bb41cec8ee4f2fca9f568f323d6474bc1105e16fd741b968f8d331b02a"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/ua.w3strings",
+      "bytes": 26001,
+      "sha256": "2cdcf7bb41cec8ee4f2fca9f568f323d6474bc1105e16fd741b968f8d331b02a"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/content/zh.w3strings",
+      "bytes": 28769,
+      "sha256": "21ef1509d43128f136adf6f03f8351f391fd28063ef246126127201ece03c800"
+    },
+    {
+      "path": "Mods/modBetaGwent0924/info.json",
+      "bytes": 296,
+      "sha256": "e82b8a86c18fc8ae12d3cd773a03b4fac778ebe28192b7175c34d199d7a9eb63"
+    },
+    {
+      "path": "NOTO-LICENSE-OFL.txt",
+      "bytes": 4301,
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+    },
+    {
+      "path": "README_EN.md",
+      "bytes": 4332,
+      "sha256": "395bcafce03169b650c19dc4f7462abc400b7ce1845c455f9bbbefb1b39b6f49"
+    },
+    {
+      "path": "SOURCE.txt",
+      "bytes": 75,
+      "sha256": "3f430e2e968b72fa1b15d1cf6b7fe13a7fedefa9a7257abf4fc5e2b0df831cb0"
+    }
+  ],
+  "licenseIncluded": false,
+  "runtimeVerified": false,
+  "baseVersionUserAccepted": true,
+  "voiceCount": 907,
+  "voiceLanguage": "de",
+  "textLanguages": [
+    "ru_ru",
+    "en_us",
+    "de_de",
+    "fr_fr",
+    "it_it",
+    "pl_pl",
+    "es_es",
+    "es_mx",
+    "pt_br",
+    "jp_jp",
+    "kr_kr",
+    "zh_cn",
+    "zh_tw"
+  ],
+  "fontLicenseIncluded": true,
+  "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.6.1-DE.zip",
+  "archiveBytes": 291037855,
+  "archiveSha256": "ef7906a4cce73fde051f3e0a6ee898bf057dafbf7febec1f2ee8148c79ddd49c",
+  "archiveVerified": true
+}

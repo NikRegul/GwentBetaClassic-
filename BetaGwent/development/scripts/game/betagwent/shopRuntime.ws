@@ -80,6 +80,8 @@ function BuyItem(item : SItemUniqueId, quantity : int) : bool
         d=BetaGwentDuelDefinition(id);message="В коллекцию добавлена карта: "+d.title;showNotification(message);
     }
     if(stock.GetItemQuantity(item)==0)ShopRemoveItem(item);else ShopUpdateItem(item);
+    // Stage 136: purchases happen outside the Gwent menus; mirror the profile right away.
+    player.BetaGwentBackupProfile();
     UpdatePlayerMoney();UpdateMerchantData();UpdateItemsCounter();theSound.SoundEvent("gui_inventory_buy");return true;
 }
 

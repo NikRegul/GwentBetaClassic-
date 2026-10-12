@@ -22,6 +22,8 @@ class CBetaGwentDuelAudio extends IScriptable
     private var bankReported, bankPendingReported : bool;
     private var bankRequestedAt : float;
     private var nextEffect, nextClick, voiceUntil : float;
+    private var introVoices : bool;
+    private var musicDucked : bool;
     private var queuedVoices : array<int>;
     private var queuedAt : array<float>;
     // Stage 104: the menu pauses the world (MPT_FullPause), so engine time can stop
@@ -50,6 +52,17 @@ class CBetaGwentDuelAudio extends IScriptable
     private function BetaReady() : bool
     { return BetaGwentAudioBankInstalled() && theSound.SoundIsBankLoaded("betagwent79.bnk"); }
     public function IsBankReady() : bool { return BetaReady(); }
+    private function SetVoiceMix(active : bool)
+    {
+        var value : string; var volume : float;
+        if(musicDucked==active)return;
+        value=theGame.GetInGameConfigWrapper().GetVarValue('Audio','MusicVolume');
+        volume=StringToFloat(value);if(value=="")volume=100.0f;
+        musicDucked=active;
+        if(active)volume*=0.4f;
+        // Native Music bus RTPC. Change only the live mix; never write user settings.
+        theSound.SoundGlobalParameter("menu_volume_music",volume,0.15f);
+    }
     public function Ui(kind : int)
     {
         var now : float; var eventName : string;
@@ -75,10 +88,9 @@ class CBetaGwentDuelAudio extends IScriptable
         else if (kind == 25) voiceTrigger = 16;
         if (voices && voiceTrigger != 0 && templateId > 0 && BetaReady() && (BetaGwentAudioVoiceTriggers(templateId) & voiceTrigger) != 0 && BetaGwentAudioVoice(templateId) != "")
         {
-            // Bound the queue and skip stale chatter after long summon chains.
-            // Beta: a newly played card cuts off the previous line; nothing piles up to play later.
-            if (kind == 1) StopVoice(); else { queuedVoices.Clear(); queuedAt.Clear(); }
-            queuedVoices.PushBack(templateId); queuedAt.PushBack(now);
+            // Finish the current line. A bounded queue avoids long summon chatter.
+            if(!IsIntroActive())introVoices=false;
+            if(queuedVoices.Size()<2){queuedVoices.PushBack(templateId); queuedAt.PushBack(now);}
             Tick();
         }
         if (!enabled || kind == 0 || kind == 8 || kind == 13 || kind == 14 && now < nextEffect) return;
@@ -164,9 +176,9 @@ class CBetaGwentDuelAudio extends IScriptable
             theSound.SoundEvent(eventName);
         }
         if (!voices || !BetaReady()) return;
-        queuedVoices.Clear(); queuedAt.Clear();
+        StopVoice(); introVoices=true;
         if (opponent > 0 && BetaGwentAudioVoice(opponent) != "") { queuedVoices.PushBack(opponent); queuedAt.PushBack(now); }
-        if (player > 0 && BetaGwentAudioVoice(player) != "") { queuedVoices.PushBack(player); queuedAt.PushBack(now + 3.0f); }
+        if (player > 0 && BetaGwentAudioVoice(player) != "") { queuedVoices.PushBack(player); queuedAt.PushBack(now); }
         LogChannel('BetaGwent', "AUDIO_INTRO opponent=" + opponent + " player=" + player);
         Tick();
     }
@@ -176,6 +188,7 @@ class CBetaGwentDuelAudio extends IScriptable
         now = Now();
         if (!BetaReady())
         {
+            SetVoiceMix(false);
             if (BetaGwentAudioBankInstalled() && !bankPendingReported && now - bankRequestedAt > 10.0f)
             {
                 bankPendingReported = true;
@@ -192,17 +205,27 @@ class CBetaGwentDuelAudio extends IScriptable
         while (queuedVoices.Size() > 0)
         {
             id = queuedVoices[0];
-            if (now - queuedAt[0] > 1.5f) { queuedVoices.Erase(0); queuedAt.Erase(0); continue; }
+            if (now < queuedAt[0]) return;
+            if (!introVoices && now - queuedAt[0] > 1.5f) { queuedVoices.Erase(0); queuedAt.Erase(0); continue; }
             queuedVoices.Erase(0); queuedAt.Erase(0);
-            voiceRoll=RandRange(1000000);eventName=BetaGwentAudioVoiceVariant(id,voiceRoll);theSound.SoundEvent(eventName);
+            voiceRoll=RandRange(1000000);eventName=BetaGwentAudioVoiceVariant(id,voiceRoll);SetVoiceMix(true);theSound.SoundEvent(eventName);
             LogChannel('BetaGwent', "AUDIO_VOICE_REQUEST template=" + id + " event=" + eventName);
             voiceUntil = now + BetaGwentAudioVoiceVariantDuration(id,voiceRoll) + 0.12f;
             break;
         }
+        if(now>=voiceUntil && queuedVoices.Size()==0){introVoices=false;SetVoiceMix(false);}
     }
+    public function IsVoiceActive() : bool
+    { return voices && BetaReady() && (queuedVoices.Size()>0 || Now()<voiceUntil); }
+    public function IsIntroActive() : bool
+    { return introVoices && voices && BetaReady() && (queuedVoices.Size()>0 || Now()<voiceUntil); }
+    public function CancelIntro()
+    { if(introVoices)StopVoice(); }
     private function StopVoice()
     {
+        introVoices=false;
         queuedVoices.Clear(); queuedAt.Clear(); voiceUntil = 0.0f;
+        SetVoiceMix(false);
         if (BetaReady()) theSound.SoundEvent("bg79_stop_voice");
     }
     // Stage 109: shop troll (Beta keg opening). 1 smash, 2 common, 3 rare, 4 epic, 5 legendary,

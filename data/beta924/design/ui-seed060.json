@@ -1,0 +1,23 @@
+{
+  "de_de": {
+    "Pass": "Passen", "Back": "Zurück", "Next": "Weiter", "Close": "Schließen",
+    "Try it": "Ausprobieren", "Opponent": "Gegner", "You": "Du", "Tutorial": "Tutorial",
+    "Leaders": "Anführer", "Cancel": "Abbrechen", "Rename": "Umbenennen", "Clear": "Leeren",
+    "Deck": "Deck", "Yes": "Ja", "No": "Nein", "Decks": "Decks", "Save": "Speichern",
+    "Spies": "Spione", "Craft": "Herstellen", "Done": "Fertig"
+  },
+  "it_it": {
+    "Pass": "Passa", "Back": "Indietro", "Next": "Avanti", "Close": "Chiudi",
+    "Try it": "Prova", "Opponent": "Avversario", "You": "Tu", "Tutorial": "Tutorial",
+    "Leaders": "Leader", "Cancel": "Annulla", "Rename": "Rinomina", "Clear": "Svuota",
+    "Deck": "Mazzo", "Yes": "Sì", "No": "No", "Decks": "Mazzi", "Save": "Salva",
+    "Spies": "Spie", "Craft": "Crea", "Done": "Fatto"
+  },
+  "pt_br": {
+    "Pass": "Passar", "Back": "Voltar", "Next": "Avançar", "Close": "Fechar",
+    "Try it": "Experimentar", "Opponent": "Adversário", "You": "Você", "Tutorial": "Tutorial",
+    "Leaders": "Líderes", "Cancel": "Cancelar", "Rename": "Renomear", "Clear": "Limpar",
+    "Deck": "Baralho", "Yes": "Sim", "No": "Não", "Decks": "Baralhos", "Save": "Salvar",
+    "Spies": "Espiões", "Craft": "Criar", "Done": "Concluído"
+  }
+}

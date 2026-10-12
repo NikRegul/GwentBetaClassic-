@@ -88,7 +88,7 @@ class CBetaGwentDuelNeutral extends IScriptable
         if(!target){game.MonsterComplete(source);return;}t=target.Snapshot();
         if(id==112104){power=Max(0,t.power.currentPower-t.power.basePower);game.NeutralDrain(source,target,power);game.MonsterPower(source,source,power);}
         else if(id==112105){game.NilfBanish(target);game.MonsterPower(source,source,t.power.basePower);}
-        else if(id==112111 || id==112205){game.MonsterPower(source,target,-BetaGwentNorthPick(id==112111,3,2));if(id==112111){source.monsterIds.PushBack(selected);if(t.locationMask==4 || t.locationMask==2)game.QueueRelocation(target,enemy,t.locationMask/2,false);}source.monsterRemaining-=1;game.FlushDeaths();if(source.monsterRemaining>0){Request(source,enemy,7,15,4,BetaGwentNorthPick(id==112205,1,0));return;}}
+        else if(id==112111 || id==112205){game.MonsterPower(source,target,-BetaGwentNorthPick(id==112111,3,2));if(id==112111){source.monsterIds.PushBack(selected);if(t.locationMask==1 || t.locationMask==2)game.QueueRelocation(target,enemy,t.locationMask*2,false);}source.monsterRemaining-=1;game.FlushDeaths();if(source.monsterRemaining>0){Request(source,enemy,7,15,4,BetaGwentNorthPick(id==112205,1,0));return;}}
         else if(id==112201)game.MonsterOperation(source,source,11,t.power.currentPower,7);
         else if(id==112208){game.NeutralCopy(side,t.runtimeTemplate.templateId,8);game.NeutralCopy(enemy,t.runtimeTemplate.templateId,8);game.QueueTimer(source,0,1);}
         else if(id==112211){Initial(source,enemy,t.runtimeTierMask,14,ids);if(ids.Size()>0){game.NilfDiscard(target);game.NeutralCopy(side,ids[game.RandomIndex(ids.Size())],8);}}
@@ -146,7 +146,7 @@ class CBetaGwentDuelNeutral extends IScriptable
         for(i=0;i<cards.Size();i+=1){s=cards[i].card;source=game.FindCard(s.instanceId);id=s.runtimeTemplate.templateId;if(!source || (s.tokenMask&4)!=0 || s.isWaitingToDie)continue;enemy=BetaGwentOpponentId(s.positionPlayerId);
          if(kind==3 && cause.instanceId==s.instanceId && id==112110 && s.locationMask==32){game.MonsterOperation(source,source,12,3,32);game.FlushEffects();game.NorthMoveInactive(source,s.positionPlayerId,16,true);}
          if(kind==9 && cause.instanceId==s.instanceId && id==112209){pos=cause;pos.locationIndex=-3;game.QueueRandomRowSpawn(pos,200320,1);}
-         if(kind==4 && id==112210 && s.locationMask==16 && t.positionPlayerId==s.positionPlayerId && t.runtimeTemplate.typeMask==4 && t.runtimeTierMask==8 && target.playFromLocation==8)game.NorthRandomSummon(source);
+         if(kind==4 && id==112210 && s.locationMask==16 && target && t.positionPlayerId==s.positionPlayerId && game.NorthActingSide(target)==s.positionPlayerId && t.runtimeTemplate.typeMask==4 && t.runtimeTierMask==8 && target.playFromLocation==8)game.NorthRandomSummon(source);
          if(kind==6 && id==200226 && s.locationMask==32 && cause.positionPlayerId==s.positionPlayerId && s.timerValue>0){source.ChangeTimer(1,0);s=source.Snapshot();if(s.timerValue==0)game.NilfQueueReaction(source,8,s.positionPlayerId);}
          if((s.locationMask&7)==0 || (s.tokenMask&8)!=0)continue;
          if(kind==14 && id==112110){game.MonsterOperation(source,source,12,3,7);game.FlushEffects();game.NorthMoveInactive(source,s.positionPlayerId,16,true);}

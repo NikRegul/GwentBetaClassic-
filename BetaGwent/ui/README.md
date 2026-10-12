@@ -1,3 +1,5 @@
+> Current release: 0.6.1 / Stage 137. See [the project README](../../README.md) and the current build/acceptance guides. The stage notes below are historical.
+
 > **Текущий этап93: HD-оформление боя и редактора колоды.**
 > Доски2048×708, крупные карты256×360, оригинальные фон/полки/рамки/кнопки.
 > Общий стиль выбора колод, каталога, замены карт, бочек и сбросов.

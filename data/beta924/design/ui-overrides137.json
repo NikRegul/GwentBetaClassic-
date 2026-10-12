@@ -1,0 +1,14 @@
+{
+  "en_us": ["Your melee row", "Your ranged row", "Your siege row", "Enemy melee row", "Enemy ranged row", "Enemy siege row"],
+  "de_de": ["Deine Nahkampfreihe", "Deine Fernkampfreihe", "Deine Belagerungsreihe", "Gegnerische Nahkampfreihe", "Gegnerische Fernkampfreihe", "Gegnerische Belagerungsreihe"],
+  "fr_fr": ["Votre rangée de mêlée", "Votre rangée à distance", "Votre rangée de siège", "Rangée de mêlée ennemie", "Rangée à distance ennemie", "Rangée de siège ennemie"],
+  "it_it": ["La tua fila da mischia", "La tua fila a distanza", "La tua fila d'assedio", "Fila da mischia avversaria", "Fila a distanza avversaria", "Fila d'assedio avversaria"],
+  "pl_pl": ["Twój rząd walki wręcz", "Twój rząd walki dystansowej", "Twój rząd oblężniczy", "Wrogi rząd walki wręcz", "Wrogi rząd walki dystansowej", "Wrogi rząd oblężniczy"],
+  "es_es": ["Tu fila cuerpo a cuerpo", "Tu fila a distancia", "Tu fila de asedio", "Fila cuerpo a cuerpo enemiga", "Fila a distancia enemiga", "Fila de asedio enemiga"],
+  "es_mx": ["Tu fila cuerpo a cuerpo", "Tu fila a distancia", "Tu fila de asedio", "Fila cuerpo a cuerpo enemiga", "Fila a distancia enemiga", "Fila de asedio enemiga"],
+  "pt_br": ["Sua fileira corpo a corpo", "Sua fileira à distância", "Sua fileira de cerco", "Fileira corpo a corpo inimiga", "Fileira à distância inimiga", "Fileira de cerco inimiga"],
+  "jp_jp": ["自軍の近接列", "自軍の間接列", "自軍の攻城列", "敵軍の近接列", "敵軍の間接列", "敵軍の攻城列"],
+  "kr_kr": ["아군 근접 행", "아군 원거리 행", "아군 공성 행", "적군 근접 행", "적군 원거리 행", "적군 공성 행"],
+  "zh_cn": ["我方近战排", "我方远程排", "我方攻城排", "敌方近战排", "敌方远程排", "敌方攻城排"],
+  "zh_tw": ["我方近戰排", "我方遠程排", "我方攻城排", "敵方近戰排", "敵方遠程排", "敵方攻城排"]
+}

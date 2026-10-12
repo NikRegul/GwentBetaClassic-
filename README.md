@@ -1,51 +1,43 @@
-# Gwent Beta Classic 0.4.3
+# Gwent Beta Classic 0.6.1
 
-Gwent Beta 0.9.24 inside The Witcher 3: 479 collectible cards, 21 leaders,
-five factions, editable saved decks, NPC matches, card collecting and controller support.
-Targets PC game version 5.01. Install one language package at a time.
+Gwent Beta 0.9.24 inside The Witcher 3: 479 collectible cards including 21 leaders, five factions, 46 opponent archetypes, saved custom decks, crafting, kegs, NPC rewards, and mouse/keyboard/controller support. The current target is PC Next-Gen 5.01; a separate 1.32 version is planned for 1.0 and is not yet supported.
 
-0.4.3 prevents self-consumption and fixes Morkvarg returning with zero strength.
-Shuffling a weakened card preserves its strength. AI target selection, Vran food
-chains, spy placement, empty Ointment choices and weather replacement are corrected.
-The 46-deck opponent rotation persists with saves, and Cursed Adda has two tactics.
+0.6.1 adds 13 selectable text languages and animated leader portraits on the battlefield and in card previews. Ordinary card portraits remain static. Large character entrance animations are a separate future feature. The leader crash hotfix removes unsafe disposal of engine-owned images and defers resource unloading; the user confirmed the corrected RU build no longer crashes in their retest.
 
-Ability choices use the mulligan-style grid with board inspection during a pending
-choice. Craft buttons appear directly on cards and work before NPC matches;
-controller focus and row
-navigation are corrected, and frost/rain presentation and timer alignment improved.
-The local changelog also records the preceding 0.4.2 fixes.
+## Languages and packages
 
-- [0.4.3 changelog / English](BetaGwent/release/publish-0.4.3/CHANGELOG_EN.md)
-- [0.4.3 changelog / Russian](BetaGwent/release/publish-0.4.3/CHANGELOG_RU.md)
-- [0.4.3 validation / English](docs/PRESENTATION123_EN.md)
-- [0.4.3 validation / Russian](docs/PRESENTATION123_RU.md)
-- [PowerShell build script](tools/Build-0.4.3.ps1)
-- [AI comparison script](tools/Compare-AI.ps1)
-- [Completed 0.4.1 vs 0.4.2 comparison](docs/AI_COMPARISON_041_042_REVIEW_RU.md)
-- [Build guide / Russian](docs/BUILD_RU.md) / [English](docs/BUILD_EN.md)
+Install **one** complete voice package: **EN, RU, DE, IT, or PT-BR**. Every package includes Russian, English, German, French, Italian, Polish, Spanish, Latin American Spanish, Brazilian Portuguese, Japanese, Korean, Simplified Chinese, and Traditional Chinese text. Text selection is independent of voices and persists with game saves. To change voices, install another voice package; runtime voice switching is not implemented. The keg troll uses Russian fallback in DE and IT.
 
-The completed 0.4.2 versus 0.4.1 comparison scored 50.35% over 1,840 games;
-this does not establish overall superiority. 0.4.3 regression checks validate
-corrected situations, not an overall playing-strength improvement.
+Official beta card texts are used where available. New UI translations are a preview and need native-speaker feedback; ES-MX and Traditional Chinese UI include adaptations. Native inventory/merchant item names follow the game's text language.
 
-Native script/menu compilation and archive checks are verified during the build.
-Installed-game visuals, controller operation and native save round trips still
-require acceptance testing. Back up saves before installation and updates.
+## Build and test
 
-This repository contains source code and documentation. Original clients,
-textures, fonts, audio, native templates, tool SDKs and Wwise license keys are
-excluded. A fresh clone needs those local build inputs. Original code is GPL-3.0-only.
+From a configured local workspace, after any current build has finished:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\Build-0.6.1.ps1 -Language all -RebuildExisting
+```
+
+Use `-Language ru` for RU only. The full pipeline freezes source inputs, runs regressions, compiles native scripts and menus, packages the selected voices, and validates fresh archives, CRC, manifest and SHA-256. Existing selected archives and staging projects are preserved before rebuilding. Concurrent builds are locked. The script does not install or publish the mod.
+
+- [Build instructions (RU)](docs/BUILD_0.6.1_RU.md)
+- [Manual acceptance checklist (RU)](docs/TESTING_0.6.1_RU.md)
+- [Installation and controls (EN)](BetaGwent/release/publish-0.6.1/README_EN.md) / [RU](BetaGwent/release/publish-0.6.1/README_RU.md)
+- [Changelog (EN)](BetaGwent/release/publish-0.6.1/CHANGELOG_EN.md) / [RU](BetaGwent/release/publish-0.6.1/CHANGELOG_RU.md)
+- [Leader crash diagnosis and retest (RU)](docs/reviews/2026-10-12-crash061-hotfix.md)
+- [Roadmap (EN)](docs/ROADMAP.md) / [RU](docs/ROADMAP_1.0_RU.md)
+- [Documentation index](docs/README.md)
+
+Automated compilation and artifact checks do not establish complete in-game acceptance. The latest completed hotfix verification ran 49 regression suites and checked RU; the user's subsequent five-package build and the broader manual checklist require their own results. Do not distribute quarantined archives. The obsolete Redux compatibility layer is excluded.
+
+## Repository scope
+
+The public repository contains source code, generators, tests and documentation. Original clients, art, fonts, audio, native resource templates, SDKs, private Wwise projects and release archives are excluded. A fresh clone needs those local inputs and the configured Windows/REDkit/Wwise toolchain; the build is not yet a portable one-command setup. Prepared `BetaGwent/build/languages137` dictionaries/fonts/voice inputs are local dependencies; see [the dependency guide](docs/LOCAL_INPUTS_0.6.1.md).
+
+The old experiment animating all premium cards remains separate in `codex/premium-card-previews` in the development workspace. The current pipeline permits only 21 leader portraits and rejects ordinary premium resources.
 
 ## Contributing
 
-Use Issues for bugs and strategy examples; include language/version, deck,
-round, score, controller/mouse, recent actions and expected behavior. Submit
-focused PRs. Modify generators instead of generated tables, preserve saved
-field/preset identities, compile with REDkit and describe relevant validation.
-Source-only publication intentionally excludes original clients, depot,
-art/audio assets, SDKs, native resource templates and Wwise licenses. A fresh
-clone needs those local build inputs; current setup is not fully portable.
+For a bug, include the exact package/version, voice and text language, leader pair/decks, round/turn, input device, relevant actions and expected behavior. Prefer a short reproducible scenario and relevant log excerpt. Preserve saved profile fields and preset IDs; change generators rather than generated catalogs. Add a regression for a reproduced defect and validate changed native behavior in-game.
 
-Original project code is GPL-3.0-only; see LICENSE and ATTRIBUTIONS.md.
-Gwent/The Witcher names, original card texts, art, sound and game resources
-belong to their respective owners and are not relicensed under GPL.
+Original project code is GPL-3.0-only; see LICENSE and ATTRIBUTIONS.md in the public repository. Gwent/The Witcher names and original texts, art, sound and game resources belong to their respective owners and are not relicensed under GPL.

@@ -9,58 +9,58 @@
 | № | Архетип | Пресет | Изменения состава |
 |---|---|---|---|
 | 1 | Шпионы | 54 | 1 |
-| 2 | Vampires (Drain) | 55 | 1 |
+| 2 | Вампиры: иссушение | 55 | 1 |
 | 3 | Рой главоглазов | 56 | 1 |
-| 4 | Machines Henselt | 57 | 1 |
-| 5 | Adda Cursed | 58 | 1 |
-| 6 | Tempo Calveit | 59 | 1 |
-| 7 | Мороз Дикой Охоты | 60 | 1 |
-| 8 | Eggs Consume | 61 | 1 |
-| 9 | Scorch Ambush | 62 | 1 |
-| 10 | Аретуза: магический контроль Фольтеста | 94 | 1 |
+| 4 | Машины Хенсельта | 57 | 1 |
+| 5 | Проклятие Адды | 58 | 1 |
+| 6 | Темп Кальвейта | 59 | 1 |
+| 7 | Дагон: туман и утопцы | 60 | 2 |
+| 8 | Яйца и поглощение | 61 | 1 |
+| 9 | Засады и Огонь | 62 | 1 |
+| 10 | Аретуза: магический контроль Фольтеста | 94 | 3 |
 | 11 | Алхимия | 63 | 1 |
-| 12 | Солдаты Эмгыра | 95 | 1 |
-| 13 | Bloodmoon Wraiths | 64 | 1 |
-| 14 | Veterans | 65 | 1 |
-| 15 | Dwarf-Elf-Scorch | 66 | 1 |
+| 12 | Узурпатор: имперский контроль | 95 | 2 |
+| 13 | Кровавая луна | 64 | 1 |
+| 14 | Ветераны Тиршаха | 65 | 1 |
+| 15 | Краснолюды, эльфы и Огонь | 66 | 1 |
 | 16 | Накеры и поглощение | 67 | 1 |
-| 17 | Greatswords | 68 | 1 |
-| 18 | Лирийские машины | 69 | 1 |
+| 17 | Мечники ан Крайт | 68 | 1 |
+| 18 | Лирийские машины | 69 | 2 |
 | 19 | Королевская гвардия | 70 | 1 |
 | 20 | Темерцы | 71 | 1 |
 | 21 | Вскрытие Морврана | 72 | 1 |
-| 22 | Ointment Spallas | 73 | 1 |
-| 23 | Завещания | 74 | 1 |
+| 22 | Мазь и пехота | 73 | 1 |
+| 23 | Завещания | 74 | 2 |
 | 24 | Сброс карт | 75 | 1 |
-| 25 | Обмены | 76 | 1 |
-| 26 | Lyrian Deckbuff | 77 | 1 |
+| 25 | Филавандрель: эльфы и заклинания | 76 | 2 |
+| 26 | Радовид: броня и контроль | 77 | 2 |
 | 27 | Ледяные тролли | 78 | 1 |
 | 28 | Усиление руки Эитнэ | 79 | 1 |
 | 29 | Морозные призраки | 80 | 1 |
 | 30 | Усиление руки Францески | 81 | 1 |
-| 31 | Brouver Shupe | 82 | 1 |
-| 32 | 40 Foltest | 83 | 1 |
+| 31 | Брувер и Шуп | 82 | 1 |
+| 32 | Сорок карт Фольтеста | 83 | 2 |
 | 33 | Бран: раны и мечники | 96 | 1 |
-| 34 | Dwarf Miner/Xavier | 84 | 1 |
-| 35 | Великаны и огры | 85 | 1 |
+| 34 | Шахтёры и Ксавьер | 84 | 1 |
+| 35 | Великаны и огры | 85 | 2 |
 | 36 | Броня | 86 | 1 |
-| 37 | Невольничья пехота | 87 | 1 |
-| 38 | NG Handbuff | 88 | 1 |
-| 39 | Проклятые корабли | 89 | 1 |
+| 37 | Невольничья пехота | 87 | 2 |
+| 38 | Усиление руки Нильфгаарда | 88 | 1 |
+| 39 | Проклятые корабли | 89 | 2 |
 | 40 | Усиление руки Брувера | 90 | 1 |
-| 41 | Spell'teal Decotions | 91 | 1 |
-| 42 | Солдаты и рыцари Фольтеста | 97 | 1 |
+| 41 | Заклинания скоя'таэлей | 91 | 1 |
+| 42 | Солдаты и рыцари Фольтеста | 97 | 2 |
 | 43 | Харальд: дождь и топорники | 98 | 1 |
-| 44 | Фольтест: усиление колоды | 99 | 1 |
+| 44 | Фольтест: усиление колоды | 99 | 2 |
 | 45 | Топорники | 92 | 1 |
-| 46 | Дриады | 93 | 1 |
+| 46 | Дриады | 93 | 2 |
 
 ## 1. Шпионы
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Шпионы → Точный состав из исследованного документа (author-researched-roster).
 
-## 2. Vampires (Drain)
+## 2. Вампиры: иссушение
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Vampires (Drain) → Точный состав из исследованного документа (author-researched-roster).
@@ -70,32 +70,34 @@ Approved researched Beta proposal; exact roster, no automatic fillers.
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Рой главоглазов → Точный состав из исследованного документа (author-researched-roster).
 
-## 4. Machines Henselt
+## 4. Машины Хенсельта
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Machines Henselt → Точный состав из исследованного документа (author-researched-roster).
 
-## 5. Adda Cursed
+## 5. Проклятие Адды
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Adda Cursed → Точный состав из исследованного документа (author-researched-roster).
 
-## 6. Tempo Calveit
+## 6. Темп Кальвейта
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Tempo Calveit → Точный состав из исследованного документа (author-researched-roster).
 
-## 7. Мороз Дикой Охоты
+## 7. Дагон: туман и утопцы
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
+Различимый состав под ранее неиспользовавшегося лидера; вместо близкого клона.
 - Мороз Дикой Охоты → Точный состав из исследованного документа (author-researched-roster).
+- Различимый состав под ранее неиспользовавшегося лидера; вместо близкого клона. → дополнение базовым архетипом (reviewed-deck-patch128).
 
-## 8. Eggs Consume
+## 8. Яйца и поглощение
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Eggs Consume → Точный состав из исследованного документа (author-researched-roster).
 
-## 9. Scorch Ambush
+## 9. Засады и Огонь
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Scorch Ambush → Точный состав из исследованного документа (author-researched-roster).
@@ -103,29 +105,35 @@ Approved researched Beta proposal; exact roster, no automatic fillers.
 ## 10. Аретуза: магический контроль Фольтеста
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
+Убрать пустое Подкрепление; Последнее желание имеет цели, Наталис сохраняет Приказ о выступлении.
+0.5.2: Гром заменён на Реданских рыцарей — больше отрядов под Фольтеста и Адепток (A/B 26% против 17%).
 - AreTuza (контрольный маг-архетип) → Точный состав из исследованного документа (author-researched-roster).
+- Убрать пустое Подкрепление; Последнее желание имеет цели, Наталис сохраняет Приказ о выступлении. → дополнение базовым архетипом (reviewed-deck-patch128).
+- 0.5.2: Гром заменён на Реданских рыцарей — больше отрядов под Фольтеста и Адепток (A/B 26% против 17%). → дополнение базовым архетипом (reviewed-deck-patch128).
 
 ## 11. Алхимия
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Алхимия → Точный состав из исследованного документа (author-researched-roster).
 
-## 12. Солдаты Эмгыра
+## 12. Узурпатор: имперский контроль
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
+Различимый состав под ранее неиспользовавшегося лидера; вместо близкого клона. 0.5.1: Вангемар и Эган заменены на Казнь и Вреемде (A/B 9/36 против 4/36).
 - Anna Spalla Soldiers → Точный состав из исследованного документа (author-researched-roster).
+- Различимый состав под ранее неиспользовавшегося лидера; вместо близкого клона. 0.5.1: Вангемар и Эган заменены на Казнь и Вреемде (A/B 9/36 против 4/36). → дополнение базовым архетипом (reviewed-deck-patch128).
 
-## 13. Bloodmoon Wraiths
+## 13. Кровавая луна
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Bloodmoon Wraiths → Точный состав из исследованного документа (author-researched-roster).
 
-## 14. Veterans
+## 14. Ветераны Тиршаха
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Veterans → Точный состав из исследованного документа (author-researched-roster).
 
-## 15. Dwarf-Elf-Scorch
+## 15. Краснолюды, эльфы и Огонь
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Dwarf-Elf-Scorch → Точный состав из исследованного документа (author-researched-roster).
@@ -135,7 +143,7 @@ Approved researched Beta proposal; exact roster, no automatic fillers.
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Накеры и поглощение → Точный состав из исследованного документа (author-researched-roster).
 
-## 17. Greatswords
+## 17. Мечники ан Крайт
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Greatswords → Точный состав из исследованного документа (author-researched-roster).
@@ -143,7 +151,9 @@ Approved researched Beta proposal; exact roster, no automatic fillers.
 ## 18. Лирийские машины
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
+Трололо вместо Неннеке: бронированное тело для колоды машин.
 - Лирийские машины → Точный состав из исследованного документа (author-researched-roster).
+- Трололо вместо Неннеке: бронированное тело для колоды машин. → дополнение базовым архетипом (reviewed-deck-patch128).
 
 ## 19. Королевская гвардия
 
@@ -160,7 +170,7 @@ Approved researched Beta proposal; exact roster, no automatic fillers.
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Вскрытие Морврана → Точный состав из исследованного документа (author-researched-roster).
 
-## 22. Ointment Spallas
+## 22. Мазь и пехота
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Ointment Spallas → Точный состав из исследованного документа (author-researched-roster).
@@ -168,22 +178,28 @@ Approved researched Beta proposal; exact roster, no automatic fillers.
 ## 23. Завещания
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
+После парных прогонов: Кухарка: ритуал, Плотва и Оззрел; Ирис без надёжной активации здесь не прижилась.
 - Завещания → Точный состав из исследованного документа (author-researched-roster).
+- После парных прогонов: Кухарка: ритуал, Плотва и Оззрел; Ирис без надёжной активации здесь не прижилась. → дополнение базовым архетипом (reviewed-deck-patch128).
 
 ## 24. Сброс карт
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Сброс карт → Точный состав из исследованного документа (author-researched-roster).
 
-## 25. Обмены
+## 25. Филавандрель: эльфы и заклинания
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
+Различимый состав под ранее неиспользовавшегося лидера; вместо близкого клона.
 - Обмены → Точный состав из исследованного документа (author-researched-roster).
+- Различимый состав под ранее неиспользовавшегося лидера; вместо близкого клона. → дополнение базовым архетипом (reviewed-deck-patch128).
 
-## 26. Lyrian Deckbuff
+## 26. Радовид: броня и контроль
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
+Различимый состав под ранее неиспользовавшегося лидера; вместо близкого клона.
 - Lyrian Deckbuff → Точный состав из исследованного документа (author-researched-roster).
+- Различимый состав под ранее неиспользовавшегося лидера; вместо близкого клона. → дополнение базовым архетипом (reviewed-deck-patch128).
 
 ## 27. Ледяные тролли
 
@@ -205,22 +221,24 @@ Approved researched Beta proposal; exact roster, no automatic fillers.
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Усиление руки Францески → Точный состав из исследованного документа (author-researched-roster).
 
-## 31. Brouver Shupe
+## 31. Брувер и Шуп
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Brouver Shupe → Точный состав из исследованного документа (author-researched-roster).
 
-## 32. 40 Foltest
+## 32. Сорок карт Фольтеста
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
+После парных прогонов заменён только Охотник за ведьмами; Бурая Хоругвь сохранена. В колоде два Каэдвенских рыцаря.
 - 40 Foltest → Точный состав из исследованного документа (author-researched-roster).
+- После парных прогонов заменён только Охотник за ведьмами; Бурая Хоругвь сохранена. В колоде два Каэдвенских рыцаря. → дополнение базовым архетипом (reviewed-deck-patch128).
 
 ## 33. Бран: раны и мечники
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Fanatics → Точный состав из исследованного документа (author-researched-roster).
 
-## 34. Dwarf Miner/Xavier
+## 34. Шахтёры и Ксавьер
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Dwarf Miner/Xavier → Точный состав из исследованного документа (author-researched-roster).
@@ -228,7 +246,9 @@ Approved researched Beta proposal; exact roster, no automatic fillers.
 ## 35. Великаны и огры
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
+Шестая серебряная карта; Йотун и Голиаф поддерживают тему огроидов.
 - Великаны и огры → Точный состав из исследованного документа (author-researched-roster).
+- Шестая серебряная карта; Йотун и Голиаф поддерживают тему огроидов. → дополнение базовым архетипом (reviewed-deck-patch128).
 
 ## 36. Броня
 
@@ -238,9 +258,11 @@ Approved researched Beta proposal; exact roster, no automatic fillers.
 ## 37. Невольничья пехота
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
+0.5.2: Неофиты из Виковаро без карт алхимии заменены на Кавалерию «Альба», растущую от копий Невольничьей пехоты (A/B 26% против 5%).
 - Невольничья пехота → Точный состав из исследованного документа (author-researched-roster).
+- 0.5.2: Неофиты из Виковаро без карт алхимии заменены на Кавалерию «Альба», растущую от копий Невольничьей пехоты (A/B 26% против 5%). → дополнение базовым архетипом (reviewed-deck-patch128).
 
-## 38. NG Handbuff
+## 38. Усиление руки Нильфгаарда
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - NG Handbuff → Точный состав из исследованного документа (author-researched-roster).
@@ -248,14 +270,16 @@ Approved researched Beta proposal; exact roster, no automatic fillers.
 ## 39. Проклятые корабли
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
+Четвёртое золото: Лугос даёт целевой сброс и удаление.
 - Проклятые корабли → Точный состав из исследованного документа (author-researched-roster).
+- Четвёртое золото: Лугос даёт целевой сброс и удаление. → дополнение базовым архетипом (reviewed-deck-patch128).
 
 ## 40. Усиление руки Брувера
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Усиление руки Брувера → Точный состав из исследованного документа (author-researched-roster).
 
-## 41. Spell'teal Decotions
+## 41. Заклинания скоя'таэлей
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
 - Spell'teal Decotions → Точный состав из исследованного документа (author-researched-roster).
@@ -263,7 +287,9 @@ Approved researched Beta proposal; exact roster, no automatic fillers.
 ## 42. Солдаты и рыцари Фольтеста
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
+Трололо вместо Неннеке: броня и поддержка оруженосцев.
 - Cintrians → Точный состав из исследованного документа (author-researched-roster).
+- Трололо вместо Неннеке: броня и поддержка оруженосцев. → дополнение базовым архетипом (reviewed-deck-patch128).
 
 ## 43. Харальд: дождь и топорники
 
@@ -273,7 +299,9 @@ Approved researched Beta proposal; exact roster, no automatic fillers.
 ## 44. Фольтест: усиление колоды
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
+Трололо вместо Неннеке: броня и поддержка оруженосцев.
 - Calanthe Deckbuff → Точный состав из исследованного документа (author-researched-roster).
+- Трололо вместо Неннеке: броня и поддержка оруженосцев. → дополнение базовым архетипом (reviewed-deck-patch128).
 
 ## 45. Топорники
 
@@ -283,4 +311,6 @@ Approved researched Beta proposal; exact roster, no automatic fillers.
 ## 46. Дриады
 
 Approved researched Beta proposal; exact roster, no automatic fillers.
+0.5.2: Знающие заменены на Махакамскую стражу (A/B 31% против 25%).
 - Дриады → Точный состав из исследованного документа (author-researched-roster).
+- 0.5.2: Знающие заменены на Махакамскую стражу (A/B 31% против 25%). → дополнение базовым архетипом (reviewed-deck-patch128).

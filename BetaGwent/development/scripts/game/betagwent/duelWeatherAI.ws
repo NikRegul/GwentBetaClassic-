@@ -52,7 +52,7 @@ class CBetaGwentWeatherAI extends IScriptable
         if(d.passiveBoost>0)value+=d.passiveBoost*2;
         if(s.runtimeTemplate.templateId==200301)value+=Min(5,Turns());
         if(s.runtimeTemplate.templateId==132310 && game.WeatherToken(2,s.locationMask)==1)value+=Turns();
-        return value;
+        return Max(value,game.AiEngineValue(s,2));
     }
     private function Hit(s : SBetaGwentCardSnapshot, amount : int, optional immediate : bool) : int
     {
@@ -163,6 +163,8 @@ class CBetaGwentWeatherAI extends IScriptable
         var cards : array<CBetaGwentDuelCard>;var s : SBetaGwentCardSnapshot;var option : SBetaGwentDuelDefinition;
         var i,row,value,best,body,gold,silver,golds,silvers : int;var ids : array<int>;
         body=power;if(BetaGwentDuelSpying(d.header.templateId))body=-power;
+        if(d.weatherToken!=0 || d.effect==33 || d.effect==28 && (d.specialMode==14 || d.specialMode==15 || d.specialMode==37))
+            return body+game.AiCreatedOptionValue(d,2,immediate)-d.header.power;
         if(d.effect==9 || d.effect==10)return game.AiCreatedOptionValue(d,2,immediate);
         if(d.effect==34 && (d.specialMode==105 || d.header.templateId==142202))return body+game.AiCreatedPoolValue(d,2,immediate);
         if(d.header.templateId==132205)return body+MorvuddValue(immediate);

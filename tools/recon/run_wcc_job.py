@@ -17,8 +17,10 @@ parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--out',type=Path,required=True)
 parser.add_argument('--timeout',type=int,default=180)
 parser.add_argument('--expect',type=Path,action='append',default=[],help='Output file(s) whose appearance means the job is done')
+parser.add_argument('--expect-list',type=Path,help='JSON array of expected paths, avoiding Windows command length limits')
 parser.add_argument('--stall',type=int,default=240)
 parser.add_argument('--retries',type=int,default=2)
+parser.add_argument('--fresh-cook-output',type=Path,help='Preserve and replace this job\'s cooked folder before every attempt')
 parser.add_argument('arguments',nargs=argparse.REMAINDER)
 args=parser.parse_args()
 root=Path(__file__).resolve().parents[2]
@@ -31,12 +33,27 @@ tool=Path(r'D:\GOG Galaxy\Games\The Witcher 3 REDkit\bin\x64_RedKit\wcc_lite.exe
 log=out/'wcc.log'
 command=[str(tool),*arguments,'-agreetoterms','-wcclog='+str(log)]
 expect=[p.resolve() for p in args.expect]
+if args.expect_list:
+    entries=json.loads(args.expect_list.read_text('utf8'))
+    if not isinstance(entries,list) or not all(isinstance(p,str) for p in entries):
+        raise SystemExit('Expected path list must be a JSON array of strings')
+    expect.extend(Path(p).resolve() for p in entries)
+fresh_cook=args.fresh_cook_output.resolve() if args.fresh_cook_output else None
+if fresh_cook and (not arguments or arguments[0]!='cook' or fresh_cook!=out.parent.parent/'cooked' or not fresh_cook.is_relative_to(root/'BetaGwent/build')):
+    raise SystemExit('Fresh cook output must be the build job sibling cooked directory')
 
 def size(p):
     try:return p.stat().st_size
     except OSError:return -1
 def outputs_ready(started,stable):
     if not expect:return False
+    if arguments and arguments[0]=='cook':
+        # cook.db exists before resources finish. Only this attempt's final
+        # cooker message can authorize closing a lingering native process.
+        with (out/'stdout.txt').open('rb') as stream:
+            stream.seek(cook_stdout_offset)
+            current=stream.read().decode('utf8',errors='replace')
+        if 'Cooking finished in ' not in current:return False
     ready=True
     for p in expect:
         try:st=p.stat()
@@ -50,6 +67,18 @@ def outputs_ready(started,stable):
 start=time.time();attempts=[];result=None
 for attempt in range(args.retries+1):
     if log.exists():log.replace(out/f'wcc-attempt{attempt}.log')
+    if fresh_cook and fresh_cook.exists():
+        fresh_cook.rename(out/f'cooked-before-attempt{attempt}')
+    # cooksounds refuses to append to a split list, including one left by its
+    # own shutdown crash. Preserve that diagnostic before a fresh attempt.
+    if arguments and arguments[0]=='cooksounds':
+        for argument in arguments:
+            if argument.startswith('-outsplitfile='):
+                split=Path(argument.split('=',1)[1]).resolve()
+                if not split.is_relative_to(root):raise SystemExit('Audio split list must stay inside the workspace')
+                if split.exists() and split.stat().st_size>0:
+                    split.replace(out/f'audio-split-before-attempt{attempt}.list')
+    cook_stdout_offset=max(0,size(out/'stdout.txt'))
     began=time.time();stable={};last_size=-1;last_change=began;state='running'
     with (out/'stdout.txt').open('ab') as stdout,(out/'stderr.txt').open('ab') as stderr:
         # Own minimised console: without a console wcc_lite could hang (07.10.2026).

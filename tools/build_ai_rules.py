@@ -214,6 +214,8 @@ for proposed in research['profiles']:
                    passPolicy=proposed['passPolicy'],strategy=proposed['strategy'],
                    notes=['Approved researched Beta proposal; exact roster, no automatic fillers.'],
                    changes=[dict(requested=proposed['title'],resolvedName='Точный состав из исследованного документа',method='author-researched-roster',sourceSection=proposed['sourceSection'])])
+from ai_deck_patch128 import apply_patch as apply_reviewed_decks
+reviewed_patch = apply_reviewed_decks(ROOT, profiles, base, full, families)
 base.sort(key=lambda p:p['id'])
 assert [p['id'] for p in base] == list(range(1,100))
 
@@ -238,6 +240,11 @@ combo_names = [
  ('Celaeno Harpy',['Vran Warrior','Forktail','Cyclops'],3),
  ("D'ao",['Griffin','Cyclops'],3),('Rotfiend',['Griffin','Cyclops'],2),
  ('Wild Hunt Drakkar',['Wild Hunt Hound','Wild Hunt Rider','Wild Hunt Warrior','Wild Hunt Navigator'],2),
+ # These spies can prepare a weak left neighbour, but Fringilla's runtime
+ # evaluates any ordered pair by its actual power, irrespective of template.
+ # Draig Bon-Dhu strengthens the soldiers a Priestess of Freya raises.
+ ('Emissary',['Fringilla Vigo'],3),('Ambassador',['Fringilla Vigo'],2),
+ ('Draig Bon-Dhu',['Priestess of Freya'],3),
 ]
 combos=[dict(setup=card(setup),payoff=card(payoff),weight=weight) for setup,payoffs,weight in combo_names for payoff in payoffs]
 engines={card(n):w for n,w in [

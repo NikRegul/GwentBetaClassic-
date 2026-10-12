@@ -547,6 +547,15 @@ play_choice_ids=sorted({g['templateId'] for g in c['abilities'] if g['type']=='C
 lines+=['', 'function BetaGwentDuelPlayChoice(id : int) : bool', '{', '    switch (id)', '    {']
 lines+=[f'    case {id}: return true;' for id in play_choice_ids]
 lines+=['    }', '    return false;', '}']
+optional_choices = {}
+for record in records:
+    id = record['templateId']
+    tooltip = re.sub(r'<[^>]+>', '', c['localization']['en_us'].get(f'{id}_tooltip', ''))
+    if re.search(r'\bup to \{MaxTargets\}', tooltip, re.I):
+        optional_choices[id] = record['originalVariables']['MaxTargets']
+lines += ['', 'function BetaGwentDuelOptionalChoiceLimit(id : int) : int', '{', '    switch (id)', '    {']
+lines += [f'    case {id}: return {maximum};' for id, maximum in sorted(optional_choices.items())]
+lines += ['    }', '    return 0;', '}']
 lines=bounded_helpers(lines)
 source.write_text('\n'.join(lines) + '\n',encoding='utf-8-sig')
 out = ROOT / 'data/beta924/duel'; out.mkdir(exist_ok=True)

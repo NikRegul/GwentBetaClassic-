@@ -21,6 +21,8 @@ parser.add_argument('--native-only',action='store_true',help='Export DDS/GFx onl
 parser.add_argument('--source-dir',type=Path,help='Isolated localized source directory; requires --reuse-assets')
 args = parser.parse_args()
 SOURCE_DIR=args.source_dir.resolve() if args.source_dir else UI/'src'
+ORIGINAL_SOURCE_DIR=SOURCE_DIR
+SOURCE_HASHES={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in SOURCE_DIR.glob('*.as')}
 if args.source_dir and not args.reuse_assets:raise SystemExit('Use --reuse-assets with isolated sources')
 stem, root_class = {'BetaGwentBoard':('betagwent_board','BetaGwentBoard'), 'DeckBuilder':('betagwent_decks','BetaGwentDeckMenu'), 'GwintGame':('betagwent_npc00','BetaGwentNpcMenu'), 'BetaGwentKeg':('betagwent_kegop','BetaGwentKegMenu')}[args.entry]
 # Stage 109: each menu embeds only the art pages it uses (55 MiB GUI budget per menu).
@@ -153,7 +155,9 @@ for source_name, target_name in [('GamBackground.png', 'board_classic.png'), ('G
     if source_hash != target_hash:
         raise SystemExit('Copied DIY board does not match source')
     assets.append(dict(source=str(source), copy=str(target), sha256=target_hash, unchanged=True))
-report = dict(entry=args.entry,rootClass=root_class,runs=runs, assets=assets, movies=[inspect(SWF), inspect(BUILD / (stem+'.gfx'))],
+if SOURCE_HASHES!={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in ORIGINAL_SOURCE_DIR.glob('*.as')}:
+    raise RuntimeError('Menu sources changed during compilation; rebuild this menu')
+report = dict(entry=args.entry,rootClass=root_class,runs=runs, assets=assets,sources=SOURCE_HASHES, movies=[inspect(SWF), inspect(BUILD / (stem+'.gfx'))],
               textures=[str(p) for p in BUILD.iterdir() if p.suffix.lower() == '.tga'],
               nativeDDSDirectory=str(DDS_BUILD),
               nativeDDSTextures=[str(p) for p in DDS_BUILD.glob('*.dds')],

@@ -16418,7 +16418,7 @@ function BetaGwentDuelPresetDetails4(id : int) : SBetaGwentDuelPreset
         break;
     case 55:
         value.id = 55; value.leaderTemplateId = 200055;
-        value.title = "ИИ · Vampires (Drain)"; value.description = "Исследованный состав Beta 0.9.24; drain";
+        value.title = "ИИ · Вампиры: иссушение"; value.description = "Исследованный состав Beta 0.9.24; drain";
         value.unitCount = 22; value.specialCount = 3;
         value.goldCount = 4; value.silverCount = 6;
         break;
@@ -16430,26 +16430,26 @@ function BetaGwentDuelPresetDetails4(id : int) : SBetaGwentDuelPreset
         break;
     case 57:
         value.id = 57; value.leaderTemplateId = 200170;
-        value.title = "ИИ · Machines Henselt"; value.description = "Исследованный состав Beta 0.9.24; machines";
+        value.title = "ИИ · Машины Хенсельта"; value.description = "Исследованный состав Beta 0.9.24; machines";
         value.unitCount = 20; value.specialCount = 5;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 58:
         value.id = 58; value.leaderTemplateId = 201595;
-        value.title = "ИИ · Adda Cursed"; value.description = "Исследованный состав Beta 0.9.24; cursed";
+        value.title = "ИИ · Проклятие Адды"; value.description = "Исследованный состав Beta 0.9.24; cursed";
         value.unitCount = 20; value.specialCount = 5;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 59:
         value.id = 59; value.leaderTemplateId = 200164;
-        value.title = "ИИ · Tempo Calveit"; value.description = "Исследованный состав Beta 0.9.24; reveal";
+        value.title = "ИИ · Темп Кальвейта"; value.description = "Исследованный состав Beta 0.9.24; reveal";
         value.unitCount = 25; value.specialCount = 0;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 60:
-        value.id = 60; value.leaderTemplateId = 131101;
-        value.title = "ИИ · Мороз Дикой Охоты"; value.description = "Исследованный состав Beta 0.9.24; weather";
-        value.unitCount = 22; value.specialCount = 3;
+        value.id = 60; value.leaderTemplateId = 200158;
+        value.title = "ИИ · Дагон: туман и утопцы"; value.description = "Исследованный состав Beta 0.9.24; weather";
+        value.unitCount = 19; value.specialCount = 6;
         value.goldCount = 4; value.silverCount = 6;
         break;
         default: break;
@@ -16463,13 +16463,13 @@ function BetaGwentDuelPresetDetails5(id : int) : SBetaGwentDuelPreset
     switch(id) {
     case 61:
         value.id = 61; value.leaderTemplateId = 201743;
-        value.title = "ИИ · Eggs Consume"; value.description = "Исследованный состав Beta 0.9.24; consume";
+        value.title = "ИИ · Яйца и поглощение"; value.description = "Исследованный состав Beta 0.9.24; consume";
         value.unitCount = 21; value.specialCount = 4;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 62:
         value.id = 62; value.leaderTemplateId = 200166;
-        value.title = "ИИ · Scorch Ambush"; value.description = "Исследованный состав Beta 0.9.24; ambush";
+        value.title = "ИИ · Засады и Огонь"; value.description = "Исследованный состав Beta 0.9.24; ambush";
         value.unitCount = 22; value.specialCount = 3;
         value.goldCount = 4; value.silverCount = 6;
         break;
@@ -16481,19 +16481,19 @@ function BetaGwentDuelPresetDetails5(id : int) : SBetaGwentDuelPreset
         break;
     case 64:
         value.id = 64; value.leaderTemplateId = 201587;
-        value.title = "ИИ · Bloodmoon Wraiths"; value.description = "Исследованный состав Beta 0.9.24; moonlight";
+        value.title = "ИИ · Кровавая луна"; value.description = "Исследованный состав Beta 0.9.24; moonlight";
         value.unitCount = 20; value.specialCount = 5;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 65:
         value.id = 65; value.leaderTemplateId = 201597;
-        value.title = "ИИ · Veterans"; value.description = "Исследованный состав Beta 0.9.24; veterans";
+        value.title = "ИИ · Ветераны Тиршаха"; value.description = "Исследованный состав Beta 0.9.24; veterans";
         value.unitCount = 20; value.specialCount = 5;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 66:
         value.id = 66; value.leaderTemplateId = 200166;
-        value.title = "ИИ · Dwarf-Elf-Scorch"; value.description = "Исследованный состав Beta 0.9.24; dwarves";
+        value.title = "ИИ · Краснолюды, эльфы и Огонь"; value.description = "Исследованный состав Beta 0.9.24; dwarves";
         value.unitCount = 19; value.specialCount = 6;
         value.goldCount = 4; value.silverCount = 6;
         break;
@@ -16505,7 +16505,7 @@ function BetaGwentDuelPresetDetails5(id : int) : SBetaGwentDuelPreset
         break;
     case 68:
         value.id = 68; value.leaderTemplateId = 200160;
-        value.title = "ИИ · Greatswords"; value.description = "Исследованный состав Beta 0.9.24; greatswords";
+        value.title = "ИИ · Мечники ан Крайт"; value.description = "Исследованный состав Beta 0.9.24; greatswords";
         value.unitCount = 24; value.specialCount = 1;
         value.goldCount = 4; value.silverCount = 6;
         break;
@@ -16544,15 +16544,15 @@ function BetaGwentDuelPresetDetails6(id : int) : SBetaGwentDuelPreset
     switch(id) {
     case 73:
         value.id = 73; value.leaderTemplateId = 200164;
-        value.title = "ИИ · Ointment Spallas"; value.description = "Исследованный состав Beta 0.9.24; soldiers";
+        value.title = "ИИ · Мазь и пехота"; value.description = "Исследованный состав Beta 0.9.24; soldiers";
         value.unitCount = 20; value.specialCount = 5;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 74:
         value.id = 74; value.leaderTemplateId = 201587;
         value.title = "ИИ · Завещания"; value.description = "Исследованный состав Beta 0.9.24; deathwish";
-        value.unitCount = 22; value.specialCount = 3;
-        value.goldCount = 3; value.silverCount = 4;
+        value.unitCount = 23; value.specialCount = 2;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 75:
         value.id = 75; value.leaderTemplateId = 200159;
@@ -16561,15 +16561,15 @@ function BetaGwentDuelPresetDetails6(id : int) : SBetaGwentDuelPreset
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 76:
-        value.id = 76; value.leaderTemplateId = 200165;
-        value.title = "ИИ · Обмены"; value.description = "Исследованный состав Beta 0.9.24; swap";
+        value.id = 76; value.leaderTemplateId = 201589;
+        value.title = "ИИ · Филавандрель: эльфы и заклинания"; value.description = "Исследованный состав Beta 0.9.24; handbuff";
         value.unitCount = 23; value.specialCount = 2;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 77:
-        value.id = 77; value.leaderTemplateId = 200168;
-        value.title = "ИИ · Lyrian Deckbuff"; value.description = "Исследованный состав Beta 0.9.24; temerians";
-        value.unitCount = 23; value.specialCount = 2;
+        value.id = 77; value.leaderTemplateId = 200169;
+        value.title = "ИИ · Радовид: броня и контроль"; value.description = "Исследованный состав Beta 0.9.24; armor";
+        value.unitCount = 21; value.specialCount = 4;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 78:
@@ -16598,19 +16598,19 @@ function BetaGwentDuelPresetDetails6(id : int) : SBetaGwentDuelPreset
         break;
     case 82:
         value.id = 82; value.leaderTemplateId = 200167;
-        value.title = "ИИ · Brouver Shupe"; value.description = "Исследованный состав Beta 0.9.24; singleton";
+        value.title = "ИИ · Брувер и Шуп"; value.description = "Исследованный состав Beta 0.9.24; singleton";
         value.unitCount = 20; value.specialCount = 5;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 83:
         value.id = 83; value.leaderTemplateId = 200168;
-        value.title = "ИИ · 40 Foltest"; value.description = "Исследованный состав Beta 0.9.24; temerians";
+        value.title = "ИИ · Сорок карт Фольтеста"; value.description = "Исследованный состав Beta 0.9.24; temerians";
         value.unitCount = 34; value.specialCount = 6;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 84:
         value.id = 84; value.leaderTemplateId = 200167;
-        value.title = "ИИ · Dwarf Miner/Xavier"; value.description = "Исследованный состав Beta 0.9.24; dwarves";
+        value.title = "ИИ · Шахтёры и Ксавьер"; value.description = "Исследованный состав Beta 0.9.24; dwarves";
         value.unitCount = 24; value.specialCount = 1;
         value.goldCount = 4; value.silverCount = 6;
         break;
@@ -16627,7 +16627,7 @@ function BetaGwentDuelPresetDetails7(id : int) : SBetaGwentDuelPreset
         value.id = 85; value.leaderTemplateId = 201587;
         value.title = "ИИ · Великаны и огры"; value.description = "Исследованный состав Beta 0.9.24; tall";
         value.unitCount = 20; value.specialCount = 5;
-        value.goldCount = 4; value.silverCount = 5;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 86:
         value.id = 86; value.leaderTemplateId = 200168;
@@ -16643,15 +16643,15 @@ function BetaGwentDuelPresetDetails7(id : int) : SBetaGwentDuelPreset
         break;
     case 88:
         value.id = 88; value.leaderTemplateId = 200162;
-        value.title = "ИИ · NG Handbuff"; value.description = "Исследованный состав Beta 0.9.24; ng-handbuff";
+        value.title = "ИИ · Усиление руки Нильфгаарда"; value.description = "Исследованный состав Beta 0.9.24; ng-handbuff";
         value.unitCount = 17; value.specialCount = 8;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 89:
         value.id = 89; value.leaderTemplateId = 200159;
         value.title = "ИИ · Проклятые корабли"; value.description = "Исследованный состав Beta 0.9.24; greatswords";
-        value.unitCount = 23; value.specialCount = 2;
-        value.goldCount = 3; value.silverCount = 6;
+        value.unitCount = 24; value.specialCount = 1;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 90:
         value.id = 90; value.leaderTemplateId = 200167;
@@ -16661,7 +16661,7 @@ function BetaGwentDuelPresetDetails7(id : int) : SBetaGwentDuelPreset
         break;
     case 91:
         value.id = 91; value.leaderTemplateId = 200166;
-        value.title = "ИИ · Spell'teal Decotions"; value.description = "Исследованный состав Beta 0.9.24; spells";
+        value.title = "ИИ · Заклинания скоя'таэлей"; value.description = "Исследованный состав Beta 0.9.24; spells";
         value.unitCount = 12; value.specialCount = 13;
         value.goldCount = 4; value.silverCount = 6;
         break;
@@ -16680,13 +16680,13 @@ function BetaGwentDuelPresetDetails7(id : int) : SBetaGwentDuelPreset
     case 94:
         value.id = 94; value.leaderTemplateId = 200168;
         value.title = "ИИ · Аретуза: магический контроль Фольтеста"; value.description = "Исследованный состав Beta 0.9.24; machines";
-        value.unitCount = 14; value.specialCount = 11;
+        value.unitCount = 17; value.specialCount = 8;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 95:
-        value.id = 95; value.leaderTemplateId = 200162;
-        value.title = "ИИ · Солдаты Эмгыра"; value.description = "Исследованный состав Beta 0.9.24; soldiers";
-        value.unitCount = 22; value.specialCount = 3;
+        value.id = 95; value.leaderTemplateId = 201580;
+        value.title = "ИИ · Узурпатор: имперский контроль"; value.description = "Исследованный состав Beta 0.9.24; soldiers";
+        value.unitCount = 21; value.specialCount = 4;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 96:
@@ -18545,31 +18545,31 @@ function BetaGwentDuelPresetCards59(out ids : array<int>)
 
 function BetaGwentDuelPresetCards60(out ids : array<int>)
 {
-    ids.PushBack(132102);
-    ids.PushBack(132104);
+    ids.PushBack(132103);
+    ids.PushBack(200220);
     ids.PushBack(112102);
-    ids.PushBack(131102);
-    ids.PushBack(132204);
+    ids.PushBack(201773);
+    ids.PushBack(132203);
+    ids.PushBack(132210);
+    ids.PushBack(201657);
+    ids.PushBack(113209);
+    ids.PushBack(113203);
     ids.PushBack(200218);
-    ids.PushBack(132205);
-    ids.PushBack(201698);
-    ids.PushBack(112215);
-    ids.PushBack(132214);
-    ids.PushBack(113302);
-    ids.PushBack(113302);
-    ids.PushBack(113302);
-    ids.PushBack(132402);
-    ids.PushBack(132402);
-    ids.PushBack(132402);
-    ids.PushBack(200026);
-    ids.PushBack(200301);
-    ids.PushBack(200301);
-    ids.PushBack(200301);
-    ids.PushBack(132310);
-    ids.PushBack(132310);
-    ids.PushBack(132310);
-    ids.PushBack(132309);
-    ids.PushBack(132309);
+    ids.PushBack(132301);
+    ids.PushBack(132301);
+    ids.PushBack(132301);
+    ids.PushBack(132302);
+    ids.PushBack(132302);
+    ids.PushBack(132302);
+    ids.PushBack(132314);
+    ids.PushBack(132314);
+    ids.PushBack(132314);
+    ids.PushBack(132303);
+    ids.PushBack(132303);
+    ids.PushBack(132303);
+    ids.PushBack(113305);
+    ids.PushBack(113305);
+    ids.PushBack(113305);
 }
 
 function BetaGwentDuelPresetCards61(out ids : array<int>)
@@ -18813,7 +18813,6 @@ function BetaGwentDuelPresetCards69(out ids : array<int>)
     ids.PushBack(201748);
     ids.PushBack(123201);
     ids.PushBack(200019);
-    ids.PushBack(122212);
     ids.PushBack(122211);
     ids.PushBack(122208);
     ids.PushBack(122314);
@@ -18831,6 +18830,7 @@ function BetaGwentDuelPresetCards69(out ids : array<int>)
     ids.PushBack(122307);
     ids.PushBack(201704);
     ids.PushBack(122302);
+    ids.PushBack(122209);
 }
 
 function BetaGwentDuelPresetCards70(out ids : array<int>)
@@ -18960,9 +18960,7 @@ function BetaGwentDuelPresetCards74(out ids : array<int>)
     ids.PushBack(132209);
     ids.PushBack(132217);
     ids.PushBack(132217);
-    ids.PushBack(132217);
     ids.PushBack(132312);
-    ids.PushBack(113305);
     ids.PushBack(132213);
     ids.PushBack(132305);
     ids.PushBack(132305);
@@ -18974,8 +18972,10 @@ function BetaGwentDuelPresetCards74(out ids : array<int>)
     ids.PushBack(132306);
     ids.PushBack(132306);
     ids.PushBack(200295);
-    ids.PushBack(132313);
     ids.PushBack(113303);
+    ids.PushBack(200221);
+    ids.PushBack(112210);
+    ids.PushBack(201698);
 }
 
 function BetaGwentDuelPresetCards75(out ids : array<int>)
@@ -19009,60 +19009,60 @@ function BetaGwentDuelPresetCards75(out ids : array<int>)
 
 function BetaGwentDuelPresetCards76(out ids : array<int>)
 {
-    ids.PushBack(200209);
-    ids.PushBack(132105);
+    ids.PushBack(142101);
     ids.PushBack(142103);
-    ids.PushBack(112112);
-    ids.PushBack(112212);
-    ids.PushBack(142211);
+    ids.PushBack(142106);
+    ids.PushBack(201773);
     ids.PushBack(142202);
-    ids.PushBack(112210);
+    ids.PushBack(142212);
+    ids.PushBack(142204);
+    ids.PushBack(142208);
+    ids.PushBack(143201);
     ids.PushBack(113209);
-    ids.PushBack(113201);
-    ids.PushBack(201638);
-    ids.PushBack(201638);
-    ids.PushBack(201638);
-    ids.PushBack(142302);
-    ids.PushBack(142302);
-    ids.PushBack(142302);
-    ids.PushBack(142309);
-    ids.PushBack(142309);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
+    ids.PushBack(200535);
+    ids.PushBack(200535);
+    ids.PushBack(200535);
     ids.PushBack(201636);
-    ids.PushBack(142303);
-    ids.PushBack(142303);
-    ids.PushBack(142303);
-    ids.PushBack(142313);
-    ids.PushBack(142313);
-    ids.PushBack(142313);
+    ids.PushBack(201636);
+    ids.PushBack(201636);
+    ids.PushBack(142312);
+    ids.PushBack(142312);
+    ids.PushBack(142312);
+    ids.PushBack(142310);
+    ids.PushBack(142310);
+    ids.PushBack(142310);
 }
 
 function BetaGwentDuelPresetCards77(out ids : array<int>)
 {
-    ids.PushBack(122102);
+    ids.PushBack(122104);
+    ids.PushBack(122106);
     ids.PushBack(201618);
-    ids.PushBack(122108);
-    ids.PushBack(122105);
+    ids.PushBack(201773);
+    ids.PushBack(122209);
     ids.PushBack(122211);
-    ids.PushBack(113208);
     ids.PushBack(122207);
+    ids.PushBack(122203);
     ids.PushBack(122208);
-    ids.PushBack(123201);
     ids.PushBack(200019);
-    ids.PushBack(122314);
+    ids.PushBack(123301);
+    ids.PushBack(123301);
+    ids.PushBack(123301);
+    ids.PushBack(122308);
+    ids.PushBack(122308);
+    ids.PushBack(122308);
     ids.PushBack(122317);
     ids.PushBack(122317);
-    ids.PushBack(123301);
-    ids.PushBack(123301);
-    ids.PushBack(123301);
-    ids.PushBack(122311);
-    ids.PushBack(122311);
-    ids.PushBack(122311);
-    ids.PushBack(122310);
-    ids.PushBack(122310);
-    ids.PushBack(122310);
-    ids.PushBack(122316);
-    ids.PushBack(122316);
-    ids.PushBack(122316);
+    ids.PushBack(122317);
+    ids.PushBack(201622);
+    ids.PushBack(201622);
+    ids.PushBack(201622);
+    ids.PushBack(113301);
+    ids.PushBack(113301);
+    ids.PushBack(113301);
 }
 
 function BetaGwentDuelPresetCards78(out ids : array<int>)
@@ -19247,11 +19247,11 @@ function BetaGwentDuelPresetCards83(out ids : array<int>)
     ids.PushBack(122304);
     ids.PushBack(122309);
     ids.PushBack(122318);
-    ids.PushBack(200132);
     ids.PushBack(113301);
     ids.PushBack(113301);
     ids.PushBack(113301);
     ids.PushBack(113311);
+    ids.PushBack(201622);
 }
 
 function BetaGwentDuelPresetCards84(out ids : array<int>)
@@ -19289,13 +19289,11 @@ function BetaGwentDuelPresetCards85(out ids : array<int>)
     ids.PushBack(200220);
     ids.PushBack(200154);
     ids.PushBack(132107);
-    ids.PushBack(132204);
     ids.PushBack(132216);
     ids.PushBack(132205);
     ids.PushBack(200223);
     ids.PushBack(133302);
     ids.PushBack(132212);
-    ids.PushBack(112405);
     ids.PushBack(112405);
     ids.PushBack(200037);
     ids.PushBack(200037);
@@ -19310,6 +19308,8 @@ function BetaGwentDuelPresetCards85(out ids : array<int>)
     ids.PushBack(132305);
     ids.PushBack(201704);
     ids.PushBack(201704);
+    ids.PushBack(200218);
+    ids.PushBack(200052);
 }
 
 function BetaGwentDuelPresetCards86(out ids : array<int>)
@@ -19358,9 +19358,9 @@ function BetaGwentDuelPresetCards87(out ids : array<int>)
     ids.PushBack(201610);
     ids.PushBack(201610);
     ids.PushBack(201610);
-    ids.PushBack(122403);
-    ids.PushBack(122403);
-    ids.PushBack(122403);
+    ids.PushBack(200296);
+    ids.PushBack(200296);
+    ids.PushBack(200296);
     ids.PushBack(201617);
     ids.PushBack(201617);
     ids.PushBack(201617);
@@ -19425,7 +19425,7 @@ function BetaGwentDuelPresetCards89(out ids : array<int>)
     ids.PushBack(200145);
     ids.PushBack(200145);
     ids.PushBack(201704);
-    ids.PushBack(201704);
+    ids.PushBack(152106);
 }
 
 function BetaGwentDuelPresetCards90(out ids : array<int>)
@@ -19536,9 +19536,9 @@ function BetaGwentDuelPresetCards93(out ids : array<int>)
     ids.PushBack(142308);
     ids.PushBack(142308);
     ids.PushBack(142308);
-    ids.PushBack(200138);
-    ids.PushBack(200138);
-    ids.PushBack(200138);
+    ids.PushBack(142317);
+    ids.PushBack(142317);
+    ids.PushBack(142317);
     ids.PushBack(113301);
     ids.PushBack(113301);
     ids.PushBack(113301);
@@ -19554,7 +19554,6 @@ function BetaGwentDuelPresetCards94(out ids : array<int>)
     ids.PushBack(122207);
     ids.PushBack(113208);
     ids.PushBack(122203);
-    ids.PushBack(123201);
     ids.PushBack(200019);
     ids.PushBack(200033);
     ids.PushBack(200033);
@@ -19568,38 +19567,39 @@ function BetaGwentDuelPresetCards94(out ids : array<int>)
     ids.PushBack(113301);
     ids.PushBack(113301);
     ids.PushBack(113301);
-    ids.PushBack(113311);
-    ids.PushBack(113311);
-    ids.PushBack(113311);
+    ids.PushBack(122308);
+    ids.PushBack(122308);
+    ids.PushBack(122308);
+    ids.PushBack(113102);
 }
 
 function BetaGwentDuelPresetCards95(out ids : array<int>)
 {
-    ids.PushBack(200032);
-    ids.PushBack(201773);
+    ids.PushBack(162102);
+    ids.PushBack(200031);
     ids.PushBack(162105);
-    ids.PushBack(162104);
-    ids.PushBack(162210);
-    ids.PushBack(162211);
-    ids.PushBack(162202);
+    ids.PushBack(201773);
     ids.PushBack(200050);
+    ids.PushBack(162209);
     ids.PushBack(162204);
-    ids.PushBack(113201);
-    ids.PushBack(200294);
-    ids.PushBack(200294);
-    ids.PushBack(200294);
+    ids.PushBack(113309);
+    ids.PushBack(162206);
+    ids.PushBack(162202);
+    ids.PushBack(162308);
+    ids.PushBack(162308);
+    ids.PushBack(162308);
+    ids.PushBack(162314);
+    ids.PushBack(162314);
+    ids.PushBack(162314);
     ids.PushBack(201661);
     ids.PushBack(201661);
     ids.PushBack(201661);
-    ids.PushBack(201610);
-    ids.PushBack(201610);
-    ids.PushBack(201610);
     ids.PushBack(201617);
     ids.PushBack(201617);
     ids.PushBack(201617);
-    ids.PushBack(162304);
-    ids.PushBack(201704);
-    ids.PushBack(201704);
+    ids.PushBack(113301);
+    ids.PushBack(113301);
+    ids.PushBack(113301);
 }
 
 function BetaGwentDuelPresetCards96(out ids : array<int>)
@@ -19642,7 +19642,6 @@ function BetaGwentDuelPresetCards97(out ids : array<int>)
     ids.PushBack(122207);
     ids.PushBack(123201);
     ids.PushBack(200019);
-    ids.PushBack(122212);
     ids.PushBack(201622);
     ids.PushBack(201622);
     ids.PushBack(201622);
@@ -19658,6 +19657,7 @@ function BetaGwentDuelPresetCards97(out ids : array<int>)
     ids.PushBack(123301);
     ids.PushBack(123301);
     ids.PushBack(123301);
+    ids.PushBack(122209);
 }
 
 function BetaGwentDuelPresetCards98(out ids : array<int>)
@@ -19695,7 +19695,6 @@ function BetaGwentDuelPresetCards99(out ids : array<int>)
     ids.PushBack(122102);
     ids.PushBack(122108);
     ids.PushBack(122105);
-    ids.PushBack(122212);
     ids.PushBack(122208);
     ids.PushBack(122211);
     ids.PushBack(123201);
@@ -19716,6 +19715,7 @@ function BetaGwentDuelPresetCards99(out ids : array<int>)
     ids.PushBack(201622);
     ids.PushBack(201622);
     ids.PushBack(201622);
+    ids.PushBack(122209);
 }
 
 function BetaGwentDuelIsLeader(id : int) : bool { return id == 131101 || id == 200055 || id == 200158 || id == 200159 || id == 200160 || id == 200161 || id == 200162 || id == 200163 || id == 200164 || id == 200165 || id == 200166 || id == 200167 || id == 200168 || id == 200169 || id == 200170 || id == 201580 || id == 201587 || id == 201589 || id == 201595 || id == 201597 || id == 201743; }
@@ -57064,4 +57064,18 @@ function BetaGwentDuelPlayChoice(id : int) : bool
         default: break;
     }
     return false;
+}
+
+function BetaGwentDuelOptionalChoiceLimit(id : int) : int
+{
+    switch (id)
+    {
+    case 122204: return 2;
+    case 162103: return 2;
+    case 200159: return 3;
+    case 200163: return 4;
+    case 200209: return 2;
+        default: break;
+    }
+    return 0;
 }

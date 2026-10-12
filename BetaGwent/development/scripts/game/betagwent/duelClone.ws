@@ -539,6 +539,7 @@ class CBetaGwentCloner extends IScriptable
         dst.attackKey = src.attackKey;
         dst.attackSource = (CBetaGwentDuelCard)Obj(src.attackSource);
         dst.attackOpen = src.attackOpen;
+        dst.attackTargets = src.attackTargets;
     }
     private function CopyDuelPower(src : CBetaGwentDuelPower, dst : CBetaGwentDuelPower)
     {
@@ -761,6 +762,7 @@ class CBetaGwentCloner extends IScriptable
         dst.aiObservedRound = src.aiObservedRound;
         dst.aiObservedEnemyScore = src.aiObservedEnemyScore;
         dst.aiPublicTempo = src.aiPublicTempo;
+        dst.aiEnemyRowPlays = src.aiEnemyRowPlays;
         if (flipSeats) { dst.aiRoundHandOne = src.aiRoundHandTwo; } else { dst.aiRoundHandOne = src.aiRoundHandOne; }
         if (flipSeats) { dst.aiRoundHandTwo = src.aiRoundHandOne; } else { dst.aiRoundHandTwo = src.aiRoundHandTwo; }
         dst.aiPlacing = src.aiPlacing;

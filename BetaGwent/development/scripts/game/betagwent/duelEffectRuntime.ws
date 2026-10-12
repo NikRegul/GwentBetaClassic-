@@ -116,8 +116,13 @@ class CBetaGwentDuelEffectRuntime extends CBetaGwentActionSink
     public var passiveCount, maximumDepth : int;
     public var failed, running : bool;
     public var beforeCount, appliedCount, afterCount, skippedCount : int;
-    // Attack grouping (original ACardAttack): consecutive enqueues, same source/op/sign.
+    // Buffs can share one arrival. Damage pulses must keep separate snapshots,
+    // even when the same ship hits the same target four times in one queue.
     public var attackSerial, attackKey : int; public var attackSource : CBetaGwentDuelCard; public var attackOpen : bool;
+    // Stage 126: targets already hit by the open attack. One sweep over different units
+    // (Ulfhedinn, Arachas venom, Shrike) shares one visual attack; a second hit on the
+    // same unit still starts a new pulse with its own snapshot.
+    public var attackTargets : array<int>;
     public function BeginAttack(id : int) : int { return game.SetVisualAttack(id); }
     public function EndAttack(previous : int) { game.SetVisualAttack(previous); }
 
@@ -133,12 +138,15 @@ class CBetaGwentDuelEffectRuntime extends CBetaGwentActionSink
     }
     public function Enqueue(card : CBetaGwentDuelCard, kind : int, value : int, bypassArmor : bool, optional source : CBetaGwentDuelCard, optional locations : int) : bool
     {
-        var action : CBetaGwentDuelEffectAction; var key : int;
+        var action : CBetaGwentDuelEffectAction; var key, targetId : int; var targetState : SBetaGwentCardSnapshot;
         if (failed || !card || kind < 1 || kind > 19) return false;
+        targetState = card.Snapshot(); targetId = targetState.instanceId;
         action = new CBetaGwentDuelEffectAction in this;
         key = kind * 2; if (value < 0) key += 1;
         if((kind==1 || kind==2 || kind==12 || kind==13) && value>0)key=2;
-        if (!attackOpen || attackSource != source || attackKey != key) { attackSerial += 1; attackOpen = true; attackSource = source; attackKey = key; }
+        if (!attackOpen || attackSource != source || attackKey != key || ((kind == 1 || kind == 12) && value < 0 && attackTargets.Contains(targetId)))
+        { attackSerial += 1; attackOpen = true; attackSource = source; attackKey = key; attackTargets.Clear(); }
+        attackTargets.PushBack(targetId);
         action.SetAttack(attackSerial);
         if (!action.Setup(this, card, kind, value, bypassArmor, context, source, locations) || !PushPrepared(action))
         { failed = true; return false; }

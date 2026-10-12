@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[2]
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--base',type=Path,default=ROOT/'BetaGwent/build/release87')
 p.add_argument('--stage',type=int,default=87)
-p.add_argument('--package-language',choices=['ru','en'])
+p.add_argument('--package-language',choices=['ru','en','de','it','pt-br'])
 a=p.parse_args();BASE=a.base.resolve()
 database=BASE/'project/BetaGwent0924/LocalEditorStringDataBaseW3_UTF8_mod.db'
 with sqlite3.connect(database.as_uri()+'?mode=ro',uri=True) as db:

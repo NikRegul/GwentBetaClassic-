@@ -1,0 +1,14 @@
+{
+  "stage": 137,
+  "passed": true,
+  "checks": 297,
+  "nativeRuntimeVerified": false,
+  "sources": {
+    "BetaGwent/ui/src/BetaGwentTextLanguage.as": "928b5f772b3a97c249b223a23312a9f8e6e7f5191883cb859911dd4da95acb47",
+    "BetaGwent/ui/src/BetaGwentLeaderPreview.as": "cd8f660b990d2e7e9ad213ff2dec23e61f2a30c63269e69209f680ea7ba1664a",
+    "BetaGwent/ui/src/BetaGwentBoard.as": "f4d35ee1d8dee00caca24bd679d4cac94f5d1f9deccaa1ea217c598ab4f5c989",
+    "tools/ui/check_release137.js": "8d436a1768c12d04aa445ea4ab0f049c5c3651cc501c5550a9d78dfe4ab816ac",
+    "BetaGwent/ui/src/BetaGwentFonts.as": "e7a391fc2d22b9dfe6c28d83c215ac31615fafc618b0819c5b1a138d56a220dc",
+    "BetaGwent/development/scripts/game/betagwent/developmentBoardMenu.ws": "d440537de83d1ff957eb02bb18adcd3946cc5cf4a409b52d79c83a3c375eedfe"
+  }
+}

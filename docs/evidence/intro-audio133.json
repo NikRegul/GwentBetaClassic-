@@ -1,0 +1,73 @@
+{
+  "reports": [
+    {
+      "language": "ru",
+      "checks": 11293,
+      "pairs": 3844,
+      "leaders": 21,
+      "variantCounts": {
+        "131101": 3,
+        "200055": 3,
+        "200158": 1,
+        "200159": 3,
+        "200160": 3,
+        "200161": 3,
+        "200162": 3,
+        "200163": 3,
+        "200164": 3,
+        "200165": 3,
+        "200166": 3,
+        "200167": 3,
+        "200168": 3,
+        "200169": 5,
+        "200170": 2,
+        "201580": 3,
+        "201587": 5,
+        "201589": 3,
+        "201595": 3,
+        "201597": 3,
+        "201743": 1
+      },
+      "exhaustiveLeaderVariantPairs": true,
+      "actualWitcherScript": true,
+      "nativeGameTested": false
+    },
+    {
+      "language": "en",
+      "checks": 11293,
+      "pairs": 3844,
+      "leaders": 21,
+      "variantCounts": {
+        "131101": 3,
+        "200055": 3,
+        "200158": 1,
+        "200159": 3,
+        "200160": 3,
+        "200161": 3,
+        "200162": 3,
+        "200163": 3,
+        "200164": 3,
+        "200165": 3,
+        "200166": 3,
+        "200167": 3,
+        "200168": 3,
+        "200169": 5,
+        "200170": 2,
+        "201580": 3,
+        "201587": 5,
+        "201589": 3,
+        "201595": 3,
+        "201597": 3,
+        "201743": 1
+      },
+      "exhaustiveLeaderVariantPairs": true,
+      "actualWitcherScript": true,
+      "nativeGameTested": false
+    }
+  ],
+  "sources": {
+    "BetaGwent/development/scripts/game/betagwent/duelAudio.ws": "1647412a39ef588fc56bf3d97bee1eee5e7955a1da9489e9bfe603128e552b1d",
+    "BetaGwent/development/scripts/game/betagwent/duelAudioCatalog.ws": "364425b93615fd630d0fb7730f80820ccc70f1343d83a6251ac1910e902e2472",
+    "BetaGwent/audio/generated/duelAudioCatalog-en.ws": "8a458eeb4bc341363698fd70a817f8f52d7674c832079fcfa891511e5aba252c"
+  }
+}

@@ -297,7 +297,7 @@ class CBetaGwentDuelSpecials extends IScriptable
     }
     public function RowValue(d : SBetaGwentDuelDefinition, player : int, side : int, row : int) : int
     {
-        var cards : array<CBetaGwentDuelCard>; var i, value, token, powerDelta : int; var s : SBetaGwentCardSnapshot; var unitDefinition : SBetaGwentDuelDefinition;
+        var cards, hand : array<CBetaGwentDuelCard>; var i, value, token, powerDelta, eligible, future, ticks : int; var s : SBetaGwentCardSnapshot; var unitDefinition : SBetaGwentDuelDefinition;
         if (!ValidRow(d, player, side, row)) return -2147483647;
         game.GetZoneCards(side, row, cards);
         if (d.specialMode == 26)
@@ -308,8 +308,18 @@ class CBetaGwentDuelSpecials extends IScriptable
             if (d.specialToken == 256)
             {
                 for (i = 0; i < cards.Size(); i += 1)
-                { s = cards[i].Snapshot(); unitDefinition = cards[i].Definition(); if ((s.tokenMask & 8) == 0 && !s.isWaitingToDie && (unitDefinition.unitTraits & 288) != 0) value = 4; }
-                return value+weather.ReplacementValue(player,side,row,d.specialToken);
+                { s = cards[i].Snapshot(); unitDefinition = cards[i].Definition(); if ((s.tokenMask & 8) == 0 && !s.isWaitingToDie && (unitDefinition.unitTraits & 288) != 0) eligible += 1; }
+                ticks = game.AiClearWeatherTicks(side);
+                value = eligible * BetaGwentDuelRowAmount(256) * ticks / 10;
+                // Own hand is public to this AI. Moving future Beasts/Vampires
+                // into the cleared row is useful, but they miss the first tick.
+                game.GetZoneCards(side, 8, hand);
+                for (i = 0; i < hand.Size(); i += 1)
+                { unitDefinition = hand[i].Definition(); if (unitDefinition.header.typeMask == 4 && (unitDefinition.unitTraits & 288) != 0) future += 1; }
+                future = Min(2, Min(future, Max(0, 9 - cards.Size())));
+                value += future * BetaGwentDuelRowAmount(256) * Max(0, ticks - 10) / 20;
+                if (side != player) value = -value;
+                return value + weather.ReplacementValue(player,side,row,d.specialToken);
             }
             for (i = 0; i < cards.Size(); i += 1)
             { s = cards[i].Snapshot(); if ((s.tokenMask & 8) == 0 && !s.isWaitingToDie) value += DamageScore(s, player, BetaGwentDuelRowAmount(d.specialToken)); }
@@ -324,13 +334,14 @@ class CBetaGwentDuelSpecials extends IScriptable
         }
         if (d.specialMode == 15)
         {
-            value = Min(cards.Size(), 1) * 2;
-            if (d.specialToken == 128) value = Min(cards.Size(), 2) * d.amount;
-            if (d.specialToken == 64) value = Min(cards.Size(), 3) + Min(cards.Size(), 1);
-            if (d.specialCount == 2) { game.GetZoneCards(side, row * 2, cards); value += Min(cards.Size(), 1) * 2; }
-            token = weather.Token(side, row); if (token == d.specialToken) value = 0;
-            value=value*2+weather.ReplacementValue(player,side,row,d.specialToken);
-            if(d.specialCount==2)value+=weather.ReplacementValue(player,side,row*2,d.specialToken);
+            if(d.specialToken!=128){
+                value=game.AiWeatherForecast(player,row,d.specialToken);
+                if(d.specialCount==2)value+=game.AiWeatherForecast(player,row*2,d.specialToken);
+                return value;
+            }
+            value=Min(cards.Size(),2)*d.amount*2;
+            if(weather.Token(side,row)==d.specialToken)value=0;
+            value+=weather.ReplacementValue(player,side,row,d.specialToken);
             return value;
         }
         for (i = 0; i < cards.Size(); i += 1)
@@ -358,11 +369,12 @@ class CBetaGwentDuelSpecials extends IScriptable
         }
         return best;
     }
-    public function Value(source : CBetaGwentDuelCard) : int
+    public function Value(source : CBetaGwentDuelCard, optional immediate : bool) : int
     {
         var d, targetDefinition : SBetaGwentDuelDefinition; var a, s : SBetaGwentCardSnapshot;
         var ids, selected : array<int>; var side, row, i, j, value, rowValue, maximum, amount : int;
         d = source.Definition(); a = source.Snapshot(); side = a.positionPlayerId; amount = Amount(source);
+        if(immediate && (d.specialMode==14 || d.specialMode==15 || (d.specialMode==37 && d.specialToken==256)))return 0;
         if (d.specialRequest == 2) return BestRow(d, side, i, j);
         if (d.specialRequest == 1)
         {
@@ -376,7 +388,7 @@ class CBetaGwentDuelSpecials extends IScriptable
         if (d.specialMode == 14)
         {
             for (row = 1; row <= 4; row *= 2)
-            { Gather(BetaGwentOpponentId(side), row, d, ids); if (weather.Token(BetaGwentOpponentId(side), row) != d.specialToken) value += Min(1, ids.Size()) * d.amount * 2; }
+            { value+=game.AiWeatherForecast(side,row,d.specialToken); }
             return value;
         }
         if (d.specialMode == 4 || d.specialMode == 5)

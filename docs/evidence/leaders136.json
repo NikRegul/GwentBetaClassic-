@@ -1,0 +1,166 @@
+{
+  "stage": 136,
+  "bindings": {
+    "131101": "13110100",
+    "200055": "20005500",
+    "200158": "13110300",
+    "200159": "15110100",
+    "200160": "15110200",
+    "200161": "15110300",
+    "200162": "16110100",
+    "200163": "16110200",
+    "200164": "16110300",
+    "200165": "14110100",
+    "200166": "14110200",
+    "200167": "14110300",
+    "200168": "12110100",
+    "200169": "12110200",
+    "200170": "12110300",
+    "201580": "20158000",
+    "201587": "20158700",
+    "201589": "20007500",
+    "201595": "20006300",
+    "201597": "20006000",
+    "201743": "20174300"
+  },
+  "resources": {
+    "12110100": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/12110100.redswf",
+      "bytes": 1599942,
+      "sha256": "377ffde4568914859cc75d3532674cfd2c9174a87a90eca0eaa4c160af190ff1",
+      "pixelSha256": "85bcf91bbbbe3112b4edf5f92ebf70f5002cb1e49389eb5b3fff8f17c3a6316b"
+    },
+    "12110200": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/12110200.redswf",
+      "bytes": 1599943,
+      "sha256": "bf151f3ec87f488d390d2355940f444cca8d6c7a87d5b0035aecd3c22e395bc1",
+      "pixelSha256": "d75ff927e78a327de565181c0a166902db1af2979baa0fdc3cde96431355c622"
+    },
+    "12110300": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/12110300.redswf",
+      "bytes": 1599943,
+      "sha256": "655d6f96d254227e7c46952da0216f2c4c07a79f4139ee31594fc5ce8fd3b42d",
+      "pixelSha256": "4ec0d99f677368c6f856661ff70de51872e4d3c6377540bb55f0becc2768eb68"
+    },
+    "13110100": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/13110100.redswf",
+      "bytes": 1599942,
+      "sha256": "1ba7da798caacea3c0a3ce2583ccd797f56a0b0df69c13b4d828b585f3569141",
+      "pixelSha256": "dd43a2caeb87f574197afaaa6ea5d110cc98e7afb22a34b38cf7b2ff7539b705"
+    },
+    "13110300": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/13110300.redswf",
+      "bytes": 1599943,
+      "sha256": "e4250f1f0b6fa3c9445cc23d6582f90628dce0c0c89033bab6c665bffcb7d86c",
+      "pixelSha256": "cf129e09cc0365e222c0f983878e76d482a581be9cef662d8776427765c5cac4"
+    },
+    "14110100": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/14110100.redswf",
+      "bytes": 1599942,
+      "sha256": "6cf8e30f9e5f0f43cee1c225327a5a258798b5a4ff367dde313f0abb05172a06",
+      "pixelSha256": "78ce04ba172ea5d30333f299f8b170987712eacfea343722bc3c25e9c210ca00"
+    },
+    "14110200": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/14110200.redswf",
+      "bytes": 1599943,
+      "sha256": "7c31fdffc3012b0280c782e42db8ca7b707a453d4067a49aa23c2646a2329088",
+      "pixelSha256": "3c614d2814be46895ca24ec128c105dcee5fa9c79959d32e7962cdb936c71043"
+    },
+    "14110300": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/14110300.redswf",
+      "bytes": 1599943,
+      "sha256": "c257b813a86f5bb81bba83f3ab2b72fb98b16fc6567f62fbdad0b189cfcabc72",
+      "pixelSha256": "e789664c269a69122c424be1d3555a2eea8e3745112af1ae6bbe03d5de447939"
+    },
+    "15110100": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/15110100.redswf",
+      "bytes": 1599942,
+      "sha256": "e2b617ca5084dc909c0a34e900552b9ed872ade14998aa9bb2f445c4e14c5f7f",
+      "pixelSha256": "6e0ca46245a6a668bbf12762df92693419454434116047aff76c3e97033f9877"
+    },
+    "15110200": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/15110200.redswf",
+      "bytes": 1599943,
+      "sha256": "19aadda51904f9efa2c5044f98cce373d0421107bf7f0ad1dc9c496637a9333d",
+      "pixelSha256": "a93b1395a762ceef18ffff34d50231c3eda9fd288092d0c029bb089c38e7a31c"
+    },
+    "15110300": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/15110300.redswf",
+      "bytes": 1599943,
+      "sha256": "6bad24261828b9bedcab6d63cce41175f8b2b1ddb3fb04dded13d0e8e9134baf",
+      "pixelSha256": "8cd3bd65320f0249b5dcd1b13725f4eaba69198142e746feb7f0a7fa310fb824"
+    },
+    "16110100": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/16110100.redswf",
+      "bytes": 1599942,
+      "sha256": "1b64261cb330b0a09e629a423bf15e8edf69ffb791423b4164b41e559d2e0e59",
+      "pixelSha256": "af0f15a511b9d1c14f8b926c1be0a47612e7b766e57c637340480d706f72b55a"
+    },
+    "16110200": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/16110200.redswf",
+      "bytes": 1599942,
+      "sha256": "a14759a5d4ab39a5e3c19e73def28644113c4833d653c992d2cc1573e7f88b4d",
+      "pixelSha256": "417704cfa4d0e98c6a60510c44c8b08a2e3eb41ed061bf4433f951aff4cbda20"
+    },
+    "16110300": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/16110300.redswf",
+      "bytes": 1599942,
+      "sha256": "3e074d57e6b4058885358a3c4fbd47d1450d2754b01cd3fad3c3250f3fdad988",
+      "pixelSha256": "330603e98d8971f68c80a1f9d93cdedc668f4b7716c23029128da8bc5de8bb85"
+    },
+    "20005500": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/20005500.redswf",
+      "bytes": 1599942,
+      "sha256": "79fff4d27c2cf1ed85d8ddf0717f051db9ae3760eefd7083a9163d20e47768d3",
+      "pixelSha256": "cb85e4e38b42176857d45aa2fb83f68eb45cc6ec8aa222ec190a4fa96a97364a"
+    },
+    "20006000": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/20006000.redswf",
+      "bytes": 1599941,
+      "sha256": "c8000a9a9879b11fbe49e4cc952b847b4eec604e4f321778f17de8527ba2fc24",
+      "pixelSha256": "7730faeef46dbc1b8cfb8506e4e23387e67693ba2d6271ae6ac501ebe4832176"
+    },
+    "20006300": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/20006300.redswf",
+      "bytes": 1599942,
+      "sha256": "a9e5793766625778abf46cb008a8e8901eabbb9e621391f2e708f4c758f0ffd9",
+      "pixelSha256": "a49bc8db510c5f46f849154ba96e9c43c105f609e24121cef726142815ca5600"
+    },
+    "20007500": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/20007500.redswf",
+      "bytes": 1599942,
+      "sha256": "0f0a875919cdf8d269acb6ea249887557f7efe8c68891c5390b7f45d0dbc5001",
+      "pixelSha256": "2d2b85507bf2ca25e67ebf2d5f31c5f9fb4d79f2675b9b5fd86ab3f886a71464"
+    },
+    "20158000": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/20158000.redswf",
+      "bytes": 1599942,
+      "sha256": "64db0a1f6bcdc8b2e6c442aea58626ba7a9871c4823f5caf44a043cf9c03bb87",
+      "pixelSha256": "f6263975b84d8992b8501d728c43395ec04e3439755d26e0299a604edcaf4213"
+    },
+    "20158700": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/20158700.redswf",
+      "bytes": 1599941,
+      "sha256": "6c243fd90057ecbfc01c41590f3213071b78bb05645ded6e066b047cab7526a7",
+      "pixelSha256": "cb9b9a7f29f3540f3444531903dade56f12659606784cd0d238ccd36b113f61b"
+    },
+    "20174300": {
+      "path": "gameplay/gui_new/swf/betagwentleaders/20174300.redswf",
+      "bytes": 1599942,
+      "sha256": "3a06144d2650c24922462c94eadbfa2ac1ba393e5ecbecb5e229c5219de44e73",
+      "pixelSha256": "01098211c190eb78eaf0812724d5b7844376c78ae68a3d3c8dd9d950585c0657"
+    }
+  },
+  "preparationSha256": "4e87a972881a2f81142149e8e8a6d0adb36bea454f83883eb6217dc6569a2f6a",
+  "frames": 40,
+  "fps": 12,
+  "maxActivePreviews": 1,
+  "maxBoardMovies": 3,
+  "maxActiveMovies": 4,
+  "nativeRuntimeVerified": false,
+  "sources": {
+    "tools/ui/build_leaders136.py": "a526c414988d3e484724e70eb1f7b26bb4d2f626dbff67892edf06e2059cc4eb",
+    "tools/ui/leaders060/BetaLeaderMovie.as": "19138dc70beab8241475c633b0926f621a0b7b459b732b2f4066de692fa24f70",
+    "BetaGwent/ui/src/BetaGwentLeaderCatalog.as": "b5788f3ee963161a4ac2e0dbcd62ebdbf936459bfce0df3885f4854511df60eb"
+  }
+}

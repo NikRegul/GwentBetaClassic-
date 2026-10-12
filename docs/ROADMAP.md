@@ -1,24 +1,24 @@
-# После версии 0.2.0
+# Roadmap to 1.0
 
-Текущая точка: RU/EN пакеты собраны; исправлен фокус выбора, обычные NPC
-получают случайные составы, наградные победы расширены до четырёх.
-Предыдущая установленная RU-сборка принята владельцем после партии.
-Новым изменениям нужна короткая приёмка, не повторение всего старого набора.
+Updated 12 October 2026. Crashes, data loss, blocked actions and match softlocks are fixed immediately regardless of the milestone theme.
 
-1. Проверить одним проходом Лютика с контроллером/мышью, четыре награды и
-   отсутствие пятой; EN-текст/фразы; сохранение и полную перезагрузку.
-2. Публикация исходников/пакетов и сбор конкретных отзывов по колодам.
-3. Поле и анимации максимально близко к Gwent Beta0.9.24: изучить локальные
-   UI/VFX/тайминги исходной беты, перенести компоновку и движение карт;
-   погода, выделение целей, переходы раундов и длинные цепочки эффектов.
-4. Доводка ИИ по реальным ситуациям пользователя. Составы и правила уже
-   подключены; следующие правки должны объясняться конкретными решениями.
-5. Широкая проверка турниров, квестовых фактов/коллекции, старых сейвов/NG+,
-   разных контроллеров/разрешений и совместимости с распространёнными модами.
-6. Уменьшить дублирование атласов между тремя меню; переносимые настройки
-   путей/автоматический bootstrap для разработчиков; музыка/реплики диктора.
+The current line is 0.6.1: animated portraits for 21 leaders, a preview of 13 text languages and five complete voice packages (EN/RU/DE/IT/PT-BR). The user confirmed the leader crash hotfix on RU. Full multi-package acceptance is still required. Ordinary card portraits remain static; large character entrance animations are a separate feature.
 
-Остальные карты добавлять не требуется: 479 коллекционных, включая21 лидера,
-уже реализованы. Дальнейшее развитие — точность взаимодействий, UX/анимации,
-стратегии и надёжность интеграции. Утилиты сборки сохраняют артефакты и хеши;
-это не заменяет игровую проверку новых сценариев.
+| Milestone | Focus |
+|---|---|
+| 0.6.0+ | Leader animation continuity/resource lifecycle and AI: mulligan/combinations, card and target evaluation, round/pass/leader planning, available information and decision time |
+| 0.7.0+ | Finish localization: native-speaker proofreading, grammar templates, fonts/layout, external text, voice coverage/timing and clear fallback behavior |
+| 0.8.0+ | UI/UX: mouse/keyboard/controller, focus and choices, tutorial, accessibility, resolutions and all languages |
+| 0.9.0 | Remaining beta effects and animation fidelity, including large leader entrances; compare reference scenes and document engine limits |
+| 1.0 | Complete supported languages, final rules/quest/save acceptance, and a separate branch and packages for The Witcher 3 1.32 |
+
+Early translation feedback in 0.6.1 does not replace the dedicated localization milestone. Current support targets PC Next-Gen 5.01; 1.32 support is planned, not implemented.
+
+Before 1.0, validate profile upgrades/NG+, all custom slots, single-charge purchases and rewards, pending keg choices, quests/tournaments, card interaction rules, hidden information, long-session performance and tested mod combinations. Compare AI changes with frozen versions, matched seeds and mirrored sides; keep roster changes and algorithm changes separate. Artifact checks must bind to the exact shipped source snapshot and fresh archives.
+
+- [Detailed plan (RU)](ROADMAP_1.0_RU.md)
+- [Manual acceptance checklist (RU)](TESTING_0.6.1_RU.md)
+- [Current repository state (RU)](REPOSITORY_CURRENT_RU.md)
+- [Build instructions (RU)](BUILD_0.6.1_RU.md)
+
+Release acceptance requires no known data loss, duplicate rewards, crashes or blocked supported matches/quests; successful compilation alone does not establish that. Preserve the all-card premium experiment separately: the current release permits only leader portraits.

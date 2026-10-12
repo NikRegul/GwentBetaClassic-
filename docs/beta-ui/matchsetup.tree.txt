@@ -1,0 +1,243 @@
+Button_BasicUI ap=[-86.0, -387.5] size=[0.0, 48.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 1.0] ButtonControl Label HorizontalLayoutGroup ContentSizeFitter LayoutElement ButtonSoundHandler LabelButtonView
+  Background ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[btn_wide_idle_300] AssetLoader SpriteSheetButtonView HorizontalLayoutGroup LayoutInputModeViewDisabler
+    Text ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"Simple Text" LayoutElement
+CardSidePreview ap=[0.0, 0.0] size=[0.0, 750.0] amin=[0.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] UISidePreview
+  CardSlot 
+    CardPreviewTemplate UISidePreviewCard CardRotationController UISidePreviewCardSoundHandler
+      CardTransform 
+        CardContainerTransform 
+    CardRenderingCamera CameraSettingsController PostProcessLayer
+    CardAnchorsRoot 
+  Details ap=[0.5, -245.0] size=[-133.0, 349.18] amin=[0.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] VerticalLayoutGroup UISidePreviewDetails FactionThemeChanger Fade
+    DeckStatsPanel ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement
+    CraftPanel ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] VerticalLayoutGroup UISidePreviewCraftWidget
+      BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] LayoutElement Image AssetLoader FactionImage
+      Craft ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement TextMeshProUGUI"[MISSING]label_craft"
+      Mill ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement TextMeshProUGUI"[MISSING]label_mill"
+      Upgrade ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement TextMeshProUGUI"[MISSING]label_upgrade"
+    UncraftablePanel ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement HorizontalLayoutGroup
+      BG ap=[0.3, 0.0] size=[-0.6, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[side_preview_info_bg_MON] AssetLoader FactionImage LayoutElement
+      --------------------- ap=[0.5, 0.0] size=[1.0, 5.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.5] Image[general_metal_title_line] AssetLoader LayoutElement
+      Label ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 0.5] LocalizedTextMeshPro TextMeshProUGUI"[MISSING]label_uncraftable"
+    NamePanel ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement
+      BG ap=[0.5, 0.0] size=[-1.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image AssetLoader LayoutElement FactionImage
+      Name ap=[0.0, -4.9] size=[-28.8, 36.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] HorizontalLayoutGroup LayoutElement
+        Label ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 0.5] TextMeshProUGUI"COMMANDER'S HORN"
+      Description ap=[3.6, 7.2] size=[-21.6, 25.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.0] HorizontalLayoutGroup LayoutElement
+        Categories ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 0.5] TextMeshProUGUI"Categories"
+      ------------------------ ap=[0.5, 3.6] size=[1.0, 5.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] Image[metal_title_line_NOR_NIL_SCO] AssetLoader FactionImage
+    CardPreviewTooltips ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] TooltipsController VerticalLayoutGroup
+  CardRenderTarget ap=[0.0, 105.0] size=[800.0, 800.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] RawImage
+  Tooltip Regions ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] CardSidePreviewTooltipHandler
+    Tooltip Context ap=[-12.3, 124.6] size=[223.3, 281.6] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TooltipContext
+    TooltipRoot ap=[-12.3, 124.6] size=[223.3, 281.6] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] scale=[0.5, 0.5, 1.0]
+CardSidePreviewTooltip ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] AbilityTooltip LayoutElement FactionThemeChanger
+  Content ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] VerticalLayoutGroup ContentSizeFitter
+    Bgs ap=[0.0, -0.5] size=[0.0, -1.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] LayoutElement
+      BG ap=[0.5, 0.0] size=[-1.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[side_preview_info_bg_NEU] AssetLoader FactionImage
+      gradient ap=[0.5, 1.0] size=[-1.0, 19.94] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] Image[side_preview_gradient] AssetLoader
+      ------------------------ ap=[0.5, -3.6] size=[1.0, 5.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, -0.0] Image[metal_title_line_NOR_NIL_SCO] AssetLoader FactionImage
+    Description ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"Below would be the flavor text for this " LayoutElement UISimpleTextLayoutLimiter
+      Inline Graphic ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0]
+DeckPickerPrefab ap=[0.0, 0.0] size=[355.0, 715.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] UIDeckPickerContainer
+  DeckCards ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] UIDeckCardsContainer ScrollRectScrollToFocusedContentExtension
+    BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[woodpanel_small_bg] AssetLoader
+    ScrollLayout ap=[-3.5, -42.0] size=[-43.0, -136.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] ScrollShadowWidget
+      ScrollRect ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image Mask ScrollRect
+        ScrollViewGroup ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] VerticalLayoutGroup ContentSizeFitter
+          LeaderSlotButton ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] UIDeckCardButtonControl UIDeckLeaderCardButtonView GameObjectButtonView LayoutElement ButtonSoundHandler
+            CardImage ap=[-4.0, 0.0] size=[240.0, -8.0] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[1.0, 0.5] Image AssetLoader
+            Gradient ap=[0.0, 0.0] size=[-4.0, -4.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[dp_slot_gradient_bg] AssetLoader
+            Frame ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[dp_slot_gold] AssetLoader
+            Hovered (off) ap=[-0.5, 0.0] size=[39.0, 12.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_hovered_frame] AssetLoader
+            Down (off) ap=[-0.5, 0.0] size=[39.0, 12.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_hovered_frame] AssetLoader
+            FactionBG ap=[-8.0, 0.0] size=[100.0, 16.0] amin=[0.0, 0.0] amax=[0.0, 1.0] pivot=[0.0, 0.5] Image[dp_ornament_sco_bg] AssetLoader FactionImage
+            Diamond ap=[28.0, 0.0] size=[65.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[dp_slot_diamond_bg] AssetLoader
+              Crown ap=[0.0, -5.0] size=[0.0, 25.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] Image[dp_icon_crown] AssetLoader
+              SpecialIcon ap=[0.0, 10.0] size=[0.0, 28.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.0] Image[dp_icon_special_gold] AssetLoader
+              PowerLabel ap=[0.0, 10.0] size=[0.0, 28.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.0] Label TextMeshProUGUI"12"
+                TMP SubMeshUI [LogotypeBold_Material] ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.0] TMP_SubMeshUI
+            NameLabel ap=[-15.0, 0.0] size=[190.0, -10.0] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[1.0, 0.5] Label TextMeshProUGUI"Brouver Hoog"
+          CardSlotsContainer ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] UIDeckCardSlotContainer VerticalLayoutGroup
+      ScrollbarParent ap=[-6.5, 0.0] size=[7.0, -40.0] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[1.0, 0.5]
+      TopShade ap=[2.5, -30.0] size=[-3.0, 30.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.0] Image[dp_top_bar_gradient] AssetLoader
+      BottomShade ap=[2.5, -1.0] size=[-3.0, 30.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.0] Image[dp_bottom_bar_gradient] AssetLoader
+      DefaultCardButtonPool ap=[151.0, -184.0] size=[0.0, 0.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] DeckCardButtonControlPool
+        Template 
+          CardSlotButton (off) ap=[0.0, 37.0] size=[292.0, 37.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 1.0] UIDeckCardButtonControl UIDeckDefaultCardButtonView GameObjectButtonView LayoutElement ButtonSoundHandler
+            CardImage ap=[-4.0, 0.0] size=[240.0, -8.0] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[1.0, 0.5] Image AssetLoader
+            Gradient ap=[-28.0, 0.0] size=[-64.0, -8.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[dp_slot_gradient_bg] AssetLoader
+            Count ap=[-3.0, 0.0] size=[25.0, -10.0] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[1.0, 0.5]
+              BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[1.0, 0.5] Image[dp_slot_copies_bg] AssetLoader
+              CountLabel ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[1.0, 0.5] Label TextMeshProUGUI"x2"
+            Frame ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[dp_slot_gold] AssetLoader
+            SpecialIcon ap=[15.0, 0.0] size=[25.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 1.0] pivot=[0.0, 0.5] Image[dp_icon_special_gold] AssetLoader
+            PowerLabel ap=[15.0, 0.0] size=[25.0, -10.0] amin=[0.0, 0.0] amax=[0.0, 1.0] pivot=[0.0, 0.5] Label TextMeshProUGUI"10"
+              TMP SubMeshUI [LogotypeBold_Material] ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.5] TMP_SubMeshUI
+            NameLabel ap=[45.0, 0.0] size=[210.0, -10.0] amin=[0.0, 0.0] amax=[0.0, 1.0] pivot=[0.0, 0.5] Label TextMeshProUGUI"BLUE MOUNTAIN COMMANDO"
+            Hovered (off) ap=[-0.5, 0.0] size=[39.0, 12.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_hovered_frame] AssetLoader
+            Down (off) ap=[-0.5, 0.0] size=[39.0, 12.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_hovered_frame] AssetLoader
+    StatsRoot ap=[-1.0, -15.0] size=[-28.0, 100.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0]
+    DragHighlight (off) ap=[-0.5, -44.5] size=[-41.0, -131.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_wide_square_toggle_frame] AssetLoader
+    VFX ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+      AddCardVFXPool ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] VFXLimitedPool
+      RemoveCardVFXPool ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] VFXLimitedPool
+      CounterVFXPool ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] VFXLimitedPool
+      PremiumVFXPool ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] SimplePool
+  DeckList ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] UIDeckListContainer ScrollRectScrollToFocusedContentExtension
+    Root ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] RectTransformWidget
+      BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[woodpanel_small_bg] AssetLoader
+      ScrollLayout ap=[-5.0, 0.5] size=[-40.0, -51.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] ScrollShadowWidget
+        ScrollRect ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image Mask ScrollRect
+          ScrollViewContainer ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] VerticalLayoutGroup ContentSizeFitter
+            NewDeckButton ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] ButtonControl GameObjectButtonView LabelButtonView LayoutElement ButtonSoundHandler
+              BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[dp_newdeck_bg] AssetLoader
+              Label ap=[17.5, -1.07] size=[-65.0, -22.13] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Label TextMeshProUGUI"NEW DECK"
+              Icon ap=[10.0, 0.0] size=[35.0, -20.0] amin=[0.0, 0.0] amax=[0.0, 1.0] pivot=[0.0, 0.5] Image[dp_icon_newdeck] AssetLoader
+              Hovered (off) ap=[-0.5, 0.0] size=[39.0, 12.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_hovered_frame] AssetLoader
+              Down (off) ap=[-0.5, 0.0] size=[39.0, 12.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_hovered_frame] AssetLoader
+            DeckButtonTemplate ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] DeckDropdownContainer VerticalLayoutGroup ContentSizeFitter
+              Button ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] UIDeckButtonControl UIDeckButtonView GameObjectButtonView LayoutElement ButtonSoundHandler
+                Shadow ap=[4.0, -3.0] size=[0.0, -14.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[card_shadow_20%Opacity] AssetLoader
+                LeaderImage ap=[-4.0, 0.0] size=[240.0, -24.0] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[1.0, 0.5] Image AssetLoader
+                Gradient ap=[1.0, 0.0] size=[-8.0, -22.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[dp_slot_gradient_bg] AssetLoader
+                Frame ap=[0.0, 0.0] size=[0.0, -16.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[dp_slot_gold] AssetLoader
+                Hovered (off) ap=[-0.5, 0.0] size=[39.0, -4.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_hovered_frame] AssetLoader
+                Down (off) ap=[-0.5, 0.0] size=[39.0, -4.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_hovered_frame] AssetLoader
+                FactionBG ap=[-11.0, 0.0] size=[100.0, 6.0] amin=[0.0, 0.0] amax=[0.0, 1.0] pivot=[0.0, 0.5] Image[dp_ornament_sco_bg] AssetLoader FactionImage
+                ValidIcon ap=[35.0, 1.5] size=[70.0, -33.0] amin=[0.0, 0.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[dp_icon_valid] AssetLoader
+                Text ap=[-20.0, 0.0] size=[190.0, -42.0] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[1.0, 0.5]
+                  DeckNameLabel ap=[0.0, 0.0] size=[0.0, 20.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] Label TextMeshProUGUI"SCOIA'TAEL DECK"
+                  LeaderNameLabel ap=[0.0, 0.0] size=[0.0, 15.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.0] Label TextMeshProUGUI"Brouver Hoog"
+              DropdownMask ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] RectMask2D LayoutElement
+                DropdownList ap=[0.0, 0.0] size=[-4.0, 0.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] ContentSizeFitter VerticalLayoutGroup
+                  DropdownButtonTemplate ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] ButtonControl SpriteSheetButtonView GameObjectButtonView LabelButtonView LayoutElement ButtonSoundHandler
+                    BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_wide_idle_300] AssetLoader
+                    Label ap=[0.0, 0.0] size=[-14.0, -14.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"Rename" Label
+                    Inactive (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_square_idle] AssetLoader
+        ScrollbarParent ap=[-6.5, 0.0] size=[7.0, -40.0] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[1.0, 0.5]
+        TopShade ap=[4.0, -30.0] size=[-6.0, 30.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.0] Image[dp_top_bar_gradient] AssetLoader
+        BottomShade ap=[4.0, -1.0] size=[-6.0, 30.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.0] Image[dp_bottom_bar_gradient] AssetLoader
+      DeckButtonPool ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] DropdownLimitedPool
+DeckStatsWidgetPrefab ap=[0.0, 0.0] size=[0.0, 100.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] UIDeckStatsWidget
+  DeckPickerBG (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[dp_stats_sco_bg] AssetLoader FactionImage
+  SidePreviewBG (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[side_preview_info_bg_SCO] AssetLoader FactionImage
+  Counters ap=[0.0, -4.0] size=[0.0, 65.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0]
+    Gold ap=[-55.0, 0.0] size=[55.0, 0.0] amin=[0.5, 0.0] amax=[0.5, 1.0] pivot=[0.5, 0.5]
+      BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.5] Image[dp_stats_gold_bg] AssetLoader
+      Label ap=[0.0, 0.82] size=[-10.0, -16.93] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"3/4"
+    Silver ap=[0.0, 0.0] size=[55.0, 0.0] amin=[0.5, 0.0] amax=[0.5, 1.0] pivot=[0.5, 0.5]
+      BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.5] Image[dp_stats_silver_bg] AssetLoader
+      Label ap=[0.0, 0.82] size=[-10.0, -16.93] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"5/6"
+    Bronze ap=[55.0, 0.0] size=[55.0, 0.0] amin=[0.5, 0.0] amax=[0.5, 1.0] pivot=[0.5, 0.5]
+      BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.5] Image[dp_stats_bronze_bg] AssetLoader
+      Label ap=[0.0, 0.82] size=[-10.0, -16.93] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"40"
+  Ribbon ap=[0.5, 7.0] size=[-9.0, 30.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.0]
+    BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[side_ribbon_sco] AssetLoader FactionImage
+    Label ap=[0.0, 0.0] size=[-20.0, -10.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Label TextMeshProUGUI"CARDS: 26"
+    ValidVFX ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+      Flare_FX 
+      Flare_FX_Leaves 
+Highlight_CardPreview 
+  UI_Highlight_bot scale=[5.0, 5.0, 5.0]
+  UI_Highlight_top_01 scale=[5.0, 5.0, 5.0]
+InputButtonContainerPrefab ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] HorizontalLayoutGroup InputButtonContainer
+Label_BasicGlyph ap=[90.8, -410.0] size=[0.0, 45.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 0.5] GlyphLabelControl PlatformGlyphController HorizontalLayoutGroup ContentSizeFitter LayoutElement
+  Dir ap=[75.32, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] HorizontalLayoutGroup ContentSizeFitter LayoutInputModeViewDisabler
+    Image ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image AssetLoader LayoutElement
+    Text ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 0.5] TextMeshProUGUI"Simple Text" Label LayoutElement
+LoadingSpinner ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+  Background ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[loader_bg]
+  ProgressBar ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[progress_fill_mask]
+  Hourglass ap=[-0.04, 0.02] size=[0.01, 0.01] amin=[0.29, 0.34] amax=[0.71, 0.75] pivot=[0.5, 0.5] Image[timer_icon]
+PremiumShine_BronzeSlot ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] SimplePoolInstance
+  GlitterBronze ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image
+  ShineBronze ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image
+PremiumShine_GoldSlot ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] SimplePoolInstance
+  GlitterGold ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image
+  ShineGold ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image
+PremiumShine_LeaderSlot ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] SimplePoolInstance
+  GlitterLeader ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image
+  ShineLeader ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image
+PremiumShine_SilverSlot ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] SimplePoolInstance
+  GlitterSilver ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image
+  ShineSilver ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image
+ScrollBarPrefab ap=[0.0, 0.0] size=[5.0, 240.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] MinSizeHandleScrollbar Image[scrollbar_middle] AssetLoader
+  Handle ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5]
+    HandleImage ap=[0.0, 0.0] size=[15.0, 0.0] amin=[0.5, 0.0] amax=[0.5, 1.0] pivot=[0.5, 0.5] Image[scrollbar_handle] AssetLoader
+Title ap=[0.0, 0.0] size=[650.0, 90.0] amin=[0.5, 1.0] amax=[0.5, 1.0] pivot=[0.5, 1.0] TitleBanner
+  Left_Chain ap=[79.11, -0.0] size=[17.42, 94.77] amin=[0.0, 0.5] amax=[0.0, 0.5] pivot=[0.5, 0.0] Image[silver_chain] AssetLoader
+  Right_Chain ap=[-73.89, -2.0] size=[17.42, 94.77] amin=[1.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.0] Image[silver_chain] AssetLoader
+  Background ap=[0.0, -7.0] size=[615.71, 35.7] amin=[0.5, 0.0] amax=[0.5, 1.0] pivot=[0.5, 0.5] Image[Banner_Default] AssetLoader FactionImage
+  Label ap=[0.0, -21.35] size=[-183.9, -42.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Label TextMeshProUGUI"DECK BUILDER"
+    TMP SubMeshUI [PFDinTextCondPro_Material] ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TMP_SubMeshUI
+UIDBCounter VFXPoolableComponent
+  Container scale=[150.0, 150.0, 150.0]
+    FlashStart_FX 
+    Flare_Fx 
+    Sparks_Fx 
+    Wave_FX 
+UIDBSlotAdd VFXPoolableComponent
+  Flare_FX 
+  Sparks1_FX 
+  Trail2_FX 
+  Trail1_FX 
+  FlashEnd_FX 
+UIDBSlotRemove VFXPoolableComponent
+  FlashStart_FX 
+  Trail1_FX 
+  Trail2_FX 
+  Sparks1_FX 
+  Flare_FX 
+UIMatchSetupPrefab ap=[0.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] UIMatchSetupPanel GraphicRaycaster UIMatchSetupPanelSoundHandler
+  MainBackground ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[BGSetupPractice] AssetLoader
+  DeckPickerParent ap=[-603.0, -16.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] RectTransformWidget ProxyContainer
+  SidePreview ap=[605.0, -15.0] size=[355.0, -185.0] amin=[0.5, 0.0] amax=[0.5, 1.0] pivot=[0.5, 0.5] RectTransformWidget
+    BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[woodpanel_small_bg] AssetLoader
+    CardBG ap=[0.5, 143.5] size=[-91.0, -353.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[side_preview_slot] AssetLoader
+    SidePreviewParent ap=[0.0, 35.0] size=[375.0, 750.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+  CenterSection ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] HorizontalContainer
+    CenterBackground ap=[-0.06, -15.71] size=[855.59, 714.21] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[paper_bg] AssetLoader
+    | LeftDivider ap=[-430.34, -15.05] size=[40.0, -185.0] amin=[0.5, 0.0] amax=[0.5, 1.0] pivot=[0.5, 0.5] scale=[1.003, 1.003, 1.003] Image[divider_metal_vertical] AssetLoader
+    | RightDivider ap=[428.33, -15.05] size=[40.0, -185.0] amin=[0.5, 0.0] amax=[0.5, 1.0] pivot=[0.5, 0.5] scale=[1.003, 1.003, 1.003] Image[divider_metal_vertical] AssetLoader
+    FactionPreviewWidget ap=[-0.26, -14.96] size=[721.53, 600.29] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] FactionPreviewWidget
+      LeftImage ap=[0.0, 0.0] size=[298.49, 600.39] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 0.0] Image[vs_scoia_left_preview] AssetLoader
+      RightImage ap=[0.0, 0.0] size=[334.75, 600.27] amin=[1.0, 0.0] amax=[1.0, 0.0] pivot=[1.0, 0.0] Image[vs_skel_right_preview] AssetLoader
+    MessageScrollWidget ap=[0.0, 224.8] size=[540.0, 95.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] MenuLabelParchmentWidget MenuLabelParchmentWidgetSoundHandler
+      ScrollContent ap=[0.0, 0.0] size=[540.0, 95.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] RectMask2D
+        ScrollBackground ap=[0.74, -2.43] size=[518.56, 77.41] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[scroll_bg_horizontal_Default] AssetLoader FactionImage HorizontalLayoutGroup
+          Message ap=[0.0, 0.0] size=[374.73, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Label TextMeshProUGUI"Hunting for a special opponent"
+            TMP SubMeshUI [LantingheiExtralight_Material] ap=[0.0, -15.0] size=[0.0, 30.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] TMP_SubMeshUI
+          LoadingIconParent (off) ap=[451.65, -38.71] size=[90.0, 90.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] LayoutElement ContentSizeFitter
+      HandleParent ap=[0.0, 0.0] size=[540.0, 95.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+        LeftHandle ap=[10.12, 0.0] size=[20.24, 95.07] amin=[0.0, 0.5] amax=[0.0, 0.5] pivot=[0.5, 0.5] Image[scroll_handle_horizontal_Default] AssetLoader LayoutElement FactionImage
+        RightHandle ap=[-10.12, 0.0] size=[20.24, 95.07] amin=[1.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] Image[scroll_handle_horizontal_Default] AssetLoader LayoutElement FactionImage
+    MainImage ap=[0.56, -47.7] size=[534.91, 384.22] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] MatchSetupCenterImage
+      Image ap=[0.0, 0.0] size=[-10.0, -10.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[mainmenu_visual_casual] AssetLoader
+      Frame ap=[-0.06, 0.57] size=[569.74, 414.99] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[ms_large_image_frame] AssetLoader
+      FrameLeftAccent ap=[-237.72, -143.0] size=[119.08, 145.54] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[ms_heraldic_corners] AssetLoader
+      FrameRightAccent ap=[238.2, -143.0] size=[119.08, 145.54] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[ms_heraldic_corners] AssetLoader
+    StartBattleButton ap=[0.0, -241.9] size=[179.15, 47.2] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] CanvasGroupWidget ProxyContainer
+      BattleButton ap=[0.0, 2.0] size=[0.0, 45.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] ButtonControl Label HorizontalLayoutGroup ContentSizeFitter LayoutElement ButtonSoundHandler
+        BackgroundUnderneath ap=[4.31, -33.13] size=[-2.99, -1.47] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[-1.0, 1.0, 1.0] Image[ms_banner] AssetLoader LayoutElement
+        MainBackground ap=[3.4, 1.26] size=[118.97, 63.66] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[ms_button_BG] AssetLoader LayoutElement
+        Background ap=[0.0, 0.0] size=[0.0, 49.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[ms_button_nornal] AssetLoader SpriteSheetButtonView HorizontalLayoutGroup
+          Image ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] PlatformGlyphController Image[keycode_A] AssetLoader LayoutElement InputModeViewDisabler
+          Text ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"start battle" LayoutElement
+        Sounds ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5]
+          ui_mainmenu_menu_navigate ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] SoundMessageContainer
+            Events 
+              Event AkEvent
+    DeckSummary ap=[0.0, 148.9] size=[688.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] CanvasGroupWidget
+      Background ap=[0.0, 0.0] size=[0.0, 44.74] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[ms_deck_name_bg] AssetLoader HorizontalLayoutGroup ContentSizeFitter
+        FactionIcon ap=[0.0, 0.0] size=[0.0, 58.29] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image AssetLoader FactionImage LayoutElement
+        SelectedDeckNameLabel ap=[184.92, 0.0] size=[0.0, 43.8] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Label TextMeshProUGUI"MY AWESOME DECK N13" ContentSizeFitter
+          TMP SubMeshUI [PFDinTextCondPro_Material] ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TMP_SubMeshUI
+  TitleParent ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+  ButtonPopupParent ap=[0.0, 45.4] size=[764.0, 100.0] amin=[0.5, 0.0] amax=[0.5, 0.0] pivot=[0.5, 0.5]
+  Sounds ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+    scoiatael ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] SoundMessageContainer
+    monsters ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] SoundMessageContainer
+    skellige ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] SoundMessageContainer
+    northernRealms ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] SoundMessageContainer
+    nilfgaard ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] SoundMessageContainer

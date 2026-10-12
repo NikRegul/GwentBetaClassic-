@@ -1,0 +1,22 @@
+{
+  "stage": 136,
+  "leaders": 21,
+  "nonLeaderAnimations": 0,
+  "loopOnly": true,
+  "introExcluded": true,
+  "packagingGuardChecks": 6,
+  "maxBoardMovies": 3,
+  "maxHoverMovies": 1,
+  "estimatedAtlasWorstCaseBytes": 57507840,
+  "animationBudgetBytes": 73400320,
+  "measuredNativeMemory": false,
+  "nativeGameTested": false,
+  "sources": {
+    "BetaGwent/ui/src/BetaGwentLeaderPreview.as": "d9d04260b7f2539880df3cb67f899618212048b59a70833a51186af4445f2ccd",
+    "BetaGwent/ui/src/BetaGwentBoard.as": "8cd9f04b91864a0f91d36739dd8a1b7750ec0893a798d0c6805dc1a3747ba67c",
+    "tools/ui/leaders060/Capture.cs": "ce32ebde289ae047cab4073d5bc539aa3e7bcc7fcd2fe2d6e4ec6dbe8a5b8956",
+    "tools/ui/leaders060/BetaLeaderMovie.as": "19138dc70beab8241475c633b0926f621a0b7b459b732b2f4066de692fa24f70",
+    "tools/ui/check_leaders136.py": "bc9578e38f00ffe4ac73c609da2ab4e15b7528f2f641d84fa7f699e6d52437c6",
+    "tools/build_language_release.py": "89623ddfbdc6141e571ebf192290496dd045f102d059393eab315f34dbcfe369"
+  }
+}

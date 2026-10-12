@@ -266,7 +266,7 @@ def main():
         mixer = ET.SubElement(actor_children, 'ActorMixer', Name=name, ID=guid(name))
         mixer_ids[role] = guid(name)
         prop_list = ET.SubElement(mixer, 'PropertyList')
-        ET.SubElement(prop_list, 'Property', Name='Volume', Type='Real64', Value='-6' if role == 'voice' else '-9')
+        ET.SubElement(prop_list, 'Property', Name='Volume', Type='Real64', Value='0' if role == 'voice' else '-9')
         ref(mixer, 'OutputBus', 'GUI', '{FD72CAE9-14F8-4BA2-A9F2-CF69D62BC9AB}', '{A568D181-8F88-497D-B088-3998BC403D7B}')
         ref(mixer, 'Conversion', 'W3 sfx conversion settings', '{CD5FEB1F-5340-419B-B846-9C660D7A1B24}', '{EF9CA0AB-7C72-4A75-875D-4E59C5D1D875}')
         children = ET.SubElement(mixer, 'ChildrenList')

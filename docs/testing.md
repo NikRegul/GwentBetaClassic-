@@ -1,3 +1,5 @@
+> Current release: 0.6.1 / Stage 137. See [the project README](../README.md) and the current build/acceptance guides. The stage notes below are historical.
+
 # Проверки и behavioral oracle
 
 ## Выполнено в разведке

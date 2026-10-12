@@ -252,7 +252,7 @@ def write_as(faces):
             var format:TextFormat=new TextFormat(beta?face:"$NormalFont",size,color,bold&&(!beta||face==TITLE),null,null,null,null,align);
             if(beta&&spacing!=0)format.letterSpacing=spacing;
             field.embedFonts=beta;field.defaultTextFormat=format;field.setTextFormat(format);
-            return beta;
+            return BetaGwentTextLanguage.font(field,face)||beta;
         }
     }
 }

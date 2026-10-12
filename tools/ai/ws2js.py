@@ -143,7 +143,15 @@ class Parser:
         if s.at(':'): s.next(); ret = s.type_()
         body = None
         if s.at(';'): s.next()
-        else: body = s.block()
+        else:
+            body = s.block()
+            executable = False
+            for statement in body.body:
+                if statement.kind == 'var':
+                    if executable:
+                        raise SyntaxError(f'{name}: WitcherScript locals must precede executable statements')
+                else:
+                    executable = True
         return N(kind='function', name=name, params=params, ret=ret, body=body, mods=mods)
 
     # ---- statements

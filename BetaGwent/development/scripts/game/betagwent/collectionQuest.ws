@@ -84,3 +84,51 @@ function OnItemAdded(data : SItemChangedData)
     wrappedMethod(data);
     for(i=0;i<muted.Size();i+=1)if(GetItemQuantity(muted[i])>0)AddItemTag(muted[i],theGame.params.GWINT_CARD_ACHIEVEMENT_TAG);
 }
+
+// Repair the DLC's display from permanent native quest reward claims. Owning
+// a Beta starter deck qualifies for admission but must not fabricate NPC wins.
+function BetaGwentSkelligeQuestClaims() : int
+{
+    var merchants : array<name>;var i,count : int;
+    merchants.PushBack('shop_12_tournament_meadows_armourer');
+    merchants.PushBack('shop_13_tournament_meadows_blacksmith');
+    merchants.PushBack('shop_18_cocatrice_inn_innkeeper');
+    merchants.PushBack('shop_19_rafstmen_village_innkeeper');
+    merchants.PushBack('shop_09_ravello_herbalist');
+    merchants.PushBack('shop_25_tournament_meadows_innkeper');
+    merchants.PushBack('shop_31_trappers_village_innkeeper');
+    merchants.PushBack('shop_32_trappers_village_armourer');
+    merchants.PushBack('shop_37_city_west_innkeeper');
+    merchants.PushBack('shop_38_city_west_armourer');
+    merchants.PushBack('shop_41_city_west_alchemist');
+    merchants.PushBack('shop_43_city_east_wine_merchant');
+    merchants.PushBack('shop_45_city_east_merchant');
+    merchants.PushBack('shop_46_city_south_herbalist');
+    merchants.PushBack('shop_47_city_brothel_mom');
+    merchants.PushBack('shop_14_tournament_meadows_barber');
+    merchants.PushBack('shop_22_port_butcher');
+    merchants.PushBack('shop_cammerlengo');
+    for(i=0;i<merchants.Size();i+=1)if(FactsQuerySum("merchant_card_"+merchants[i]+"_card_already_given")>0)count+=1;
+    return count;
+}
+function BetaGwentSyncSkelligeQuestProgress()
+{
+    var manager : CWitcherJournalManager;var entries : array<CJournalBase>;
+    var objective : CJournalQuestObjective;var questEntry : CJournalQuest;var i,count,current : int;
+    manager=theGame.GetJournalManager();if(!manager)return;
+    count=BetaGwentSkelligeQuestClaims();if(count==0)return;
+    manager.GetActivatedOfType('CJournalQuestObjective',entries);
+    for(i=0;i<entries.Size();i+=1){
+        objective=(CJournalQuestObjective)entries[i];if(!objective || objective.GetCount()!=19 || manager.GetEntryStatus(objective)!=JS_Active)continue;
+        questEntry=objective.GetParentQuest();if(!questEntry || questEntry.baseName!="cg700_all_cards")continue;
+        current=manager.GetQuestObjectiveCount(objective.guid);
+        if(current<count){manager.SetQuestObjectiveCount(objective.guid,count);LogChannel('BetaGwent',"SKELLIGE_QUEST_PROGRESS old="+current+" claimed="+count);}
+    }
+}
+// Run outside the reward graph, which can increment its counter later in the
+// same frame. Never double-increment, reset completed quests or alter admission.
+@wrapMethod(CR4JournalQuestMenu)
+function OnConfigUI()
+{
+    BetaGwentSyncSkelligeQuestProgress();wrappedMethod();
+}

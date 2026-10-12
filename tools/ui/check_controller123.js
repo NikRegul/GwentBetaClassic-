@@ -10,14 +10,14 @@ function extract(source,name){
  return source.slice(start,end).replace(/:(DisplayObject|String|Function|Object|Rectangle|void|int|Number|Array|Boolean)\b(?=\s*(?:[,)=;{]|in\b))/g,'').replace(/for each\((.*?) in (.*?)\)/g,'for($1 of $2)');
 }
 const context=vm.createContext({Math,Number});
-vm.runInContext(`var movementAt=-1000,dirty=false,nodes=[],focus=null,chosen=null;
+vm.runInContext(`var movementAt=-1000,navigationColumn=NaN,dirty=false,nodes=[],focus=null,chosen=null;
 function int(v){return v|0;}function getTimer(){return 1000;}function getFocus(){return focus;}function candidates(){return nodes;}
 var currentMode='inspect',layers=[];function state(){return {mode:currentMode,baseMode:'choice',layers};}
 function select(n){chosen=n;}function invoke(){}function prune(){}function bodyBounds(n){return n.sprite.rect;}
-`+extract(controller,'navigate')+'\n'+extract(controller,'registerControl')+'\n'+extract(board,'overviewLayout'),context);
+`+(controller.includes('function navigationLane(')?extract(controller,'navigationLane')+'\n':'')+extract(controller,'navigate')+'\n'+extract(controller,'registerControl')+'\n'+extract(board,'overviewLayout'),context);
 let checks=0;function check(v,n){if(!v)throw Error(n);checks++;}
 function node(x,y,tag='card'){return {tag,rect:{x,y,width:110,height:130}};}
-function move(from,options,dir,mode='inspect'){context.focus=from;context.nodes=[from,...options];context.chosen=null;context.currentMode=mode;context.movementAt=-1000;context.navigate(dir);return context.chosen;}
+function move(from,options,dir,mode='inspect'){context.focus=from;context.nodes=[from,...options];context.chosen=null;context.currentMode=mode;context.movementAt=-1000;context.navigationColumn=NaN;context.navigate(dir);return context.chosen;}
 const top=node(900,100),middle=node(0,250),bottom=node(900,400);
 check(move(top,[middle,bottom],40)===middle,'down reaches sparse middle row before aligned bottom row');
 check(move(bottom,[top,middle],38)===middle,'up reaches sparse middle row before aligned top row');

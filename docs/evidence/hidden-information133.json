@@ -1,0 +1,1757 @@
+{
+  "schema": 1,
+  "fingerprint": "a709c0e77cf4e4a044f7a97e7bf84a33afd87cdf89644fbbdc19148646cb6478",
+  "kind": "full_decision_hidden_information_metamorphic",
+  "nativeGameTested": false,
+  "checks": 46,
+  "results": [
+    {
+      "preset": 54,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=162104 tempo=1 utility=1 reserve=6 draw=0 setup=0 priority=-12 evaluation=-134 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=162315 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=-6 evaluation=40 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=162308 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=18 evaluation=260 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=162308 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=18 evaluation=260 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=162211 tempo=-5 utility=-5 reserve=3 draw=0 setup=0 priority=-6 evaluation=-122 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=162314 tempo=-2 utility=-2 reserve=0 draw=0 setup=0 priority=-6 evaluation=-80 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=200115 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=-6 evaluation=30 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200032 tempo=4 utility=7 reserve=6 draw=0 setup=0 priority=0 evaluation=46 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=162212 tempo=10 utility=10 reserve=3 draw=0 setup=0 priority=0 evaluation=88 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=40 template=112112 tempo=3 utility=3 reserve=6 draw=0 setup=0 priority=0 evaluation=6 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=30 template=162308 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=260 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=162104 tempo=1 utility=1 reserve=6 draw=0 setup=0 priority=-12 evaluation=-134 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=162315 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=-6 evaluation=40 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=162308 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=18 evaluation=260 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=162308 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=18 evaluation=260 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=162211 tempo=-5 utility=-5 reserve=3 draw=0 setup=0 priority=-6 evaluation=-122 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=162314 tempo=-2 utility=-2 reserve=0 draw=0 setup=0 priority=-6 evaluation=-80 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=200115 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=-6 evaluation=30 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200032 tempo=4 utility=7 reserve=6 draw=0 setup=0 priority=0 evaluation=46 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=162212 tempo=10 utility=10 reserve=3 draw=0 setup=0 priority=0 evaluation=88 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=40 template=112112 tempo=3 utility=3 reserve=6 draw=0 setup=0 priority=0 evaluation=6 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=30 template=162308 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=260 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 55,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=132306 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=-10 evaluation=-60 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=113101 tempo=0 utility=9 reserve=4 draw=0 setup=0 priority=0 evaluation=74 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132302 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=4 evaluation=140 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=132313 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132302 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=4 evaluation=140 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=132409 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=132409 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=132220 tempo=5 utility=5 reserve=3 draw=0 setup=0 priority=0 evaluation=38 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=132303 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=132103 tempo=18 utility=24 reserve=6 draw=0 setup=0 priority=4 evaluation=256 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=37 template=132103 gain=18 reason=best_evaluation_or_reachable_chase evaluationWinner=256 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=132306 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=-10 evaluation=-60 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=113101 tempo=0 utility=9 reserve=4 draw=0 setup=0 priority=0 evaluation=74 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132302 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=4 evaluation=140 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=132313 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132302 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=4 evaluation=140 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=132409 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=132409 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=132220 tempo=5 utility=5 reserve=3 draw=0 setup=0 priority=0 evaluation=38 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=132303 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=132103 tempo=18 utility=24 reserve=6 draw=0 setup=0 priority=4 evaluation=256 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=37 template=132103 gain=18 reason=best_evaluation_or_reachable_chase evaluationWinner=256 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 56,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=200220 tempo=6 utility=6 reserve=6 draw=6 setup=0 priority=0 evaluation=96 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200023 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132304 tempo=9 utility=15 reserve=0 draw=6 setup=0 priority=0 evaluation=210 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=133302 tempo=0 utility=0 reserve=3 draw=0 setup=0 priority=0 evaluation=-12 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=201606 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=-3 evaluation=50 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=201606 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=-3 evaluation=50 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=132201 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=15 evaluation=250 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=132308 tempo=6 utility=8 reserve=0 draw=0 setup=0 priority=-3 evaluation=50 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=113207 tempo=3 utility=3 reserve=3 draw=0 setup=0 priority=0 evaluation=18 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=36 template=132201 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=250 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=200220 tempo=6 utility=6 reserve=6 draw=6 setup=0 priority=0 evaluation=96 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200023 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132304 tempo=9 utility=15 reserve=0 draw=6 setup=0 priority=0 evaluation=210 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=133302 tempo=0 utility=0 reserve=3 draw=0 setup=0 priority=0 evaluation=-12 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=201606 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=-3 evaluation=50 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=201606 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=-3 evaluation=50 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=132201 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=15 evaluation=250 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=132308 tempo=6 utility=8 reserve=0 draw=0 setup=0 priority=-3 evaluation=50 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=113207 tempo=3 utility=3 reserve=3 draw=0 setup=0 priority=0 evaluation=18 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=36 template=132201 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=250 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 57,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=122307 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122103 tempo=15 utility=21 reserve=6 draw=0 setup=0 priority=0 evaluation=186 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=122318 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=-6 evaluation=0 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200049 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=3 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=123201 tempo=11 utility=14 reserve=3 draw=6 setup=0 priority=0 evaluation=188 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=122301 tempo=7 utility=7 reserve=0 draw=0 setup=0 priority=3 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=122214 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=0 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201618 tempo=19 utility=19 reserve=6 draw=0 setup=0 priority=0 evaluation=166 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201659 tempo=0 utility=0 reserve=0 draw=0 setup=0 priority=0 evaluation=0 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=201748 tempo=10 utility=10 reserve=3 draw=0 setup=0 priority=0 evaluation=88 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=32 template=123201 gain=11 reason=best_evaluation_or_reachable_chase evaluationWinner=188 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=122307 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122103 tempo=15 utility=21 reserve=6 draw=0 setup=0 priority=0 evaluation=186 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=122318 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=-6 evaluation=0 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200049 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=3 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=123201 tempo=11 utility=14 reserve=3 draw=6 setup=0 priority=0 evaluation=188 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=122301 tempo=7 utility=7 reserve=0 draw=0 setup=0 priority=3 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=122214 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=0 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201618 tempo=19 utility=19 reserve=6 draw=0 setup=0 priority=0 evaluation=166 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201659 tempo=0 utility=0 reserve=0 draw=0 setup=0 priority=0 evaluation=0 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=201748 tempo=10 utility=10 reserve=3 draw=0 setup=0 priority=0 evaluation=88 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=32 template=123201 gain=11 reason=best_evaluation_or_reachable_chase evaluationWinner=188 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 58,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=201633 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122202 tempo=3 utility=3 reserve=6 draw=0 setup=0 priority=0 evaluation=6 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=201630 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=201628 tempo=12 utility=15 reserve=0 draw=0 setup=0 priority=3 evaluation=180 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=122307 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=REJECT card=35 template=122206 reason=no_profitable_deathwish_activation",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=122314 tempo=8 utility=8 reserve=16 draw=0 setup=0 priority=0 evaluation=16 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=122103 tempo=18 utility=27 reserve=6 draw=0 setup=0 priority=0 evaluation=246 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201633 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=122211 tempo=11 utility=11 reserve=9 draw=0 setup=0 priority=0 evaluation=74 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=37 template=122103 gain=18 reason=best_evaluation_or_reachable_chase evaluationWinner=246 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=201633 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122202 tempo=3 utility=3 reserve=6 draw=0 setup=0 priority=0 evaluation=6 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=201630 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=201628 tempo=12 utility=15 reserve=0 draw=0 setup=0 priority=3 evaluation=180 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=122307 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=REJECT card=35 template=122206 reason=no_profitable_deathwish_activation",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=122314 tempo=8 utility=8 reserve=16 draw=0 setup=0 priority=0 evaluation=16 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=122103 tempo=18 utility=27 reserve=6 draw=0 setup=0 priority=0 evaluation=246 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201633 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=122211 tempo=11 utility=11 reserve=9 draw=0 setup=0 priority=0 evaluation=74 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=37 template=122103 gain=18 reason=best_evaluation_or_reachable_chase evaluationWinner=246 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 59,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=162317 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=12 evaluation=210 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=162106 tempo=10 utility=12 reserve=6 draw=0 setup=0 priority=0 evaluation=96 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=162318 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=-6 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=162209 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=162316 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=-6 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=162202 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=162306 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200031 tempo=7 utility=7 reserve=6 draw=0 setup=0 priority=0 evaluation=46 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=162317 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=12 evaluation=210 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=162212 tempo=10 utility=10 reserve=3 draw=0 setup=0 priority=0 evaluation=88 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=leader reason=useful_ability_and_best_evaluation template=200164"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=162317 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=12 evaluation=210 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=162106 tempo=10 utility=12 reserve=6 draw=0 setup=0 priority=0 evaluation=96 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=162318 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=-6 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=162209 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=162316 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=-6 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=162202 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=162306 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200031 tempo=7 utility=7 reserve=6 draw=0 setup=0 priority=0 evaluation=46 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=162317 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=12 evaluation=210 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=162212 tempo=10 utility=10 reserve=3 draw=0 setup=0 priority=0 evaluation=88 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=leader reason=useful_ability_and_best_evaluation template=200164"
+        ]
+      }
+    },
+    {
+      "preset": 60,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=113305 tempo=0 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=112102 tempo=5 utility=5 reserve=9 draw=0 setup=0 priority=0 evaluation=14 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132314 tempo=7 utility=7 reserve=0 draw=0 setup=0 priority=0 evaluation=70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=132302 tempo=10 utility=10 reserve=0 draw=0 setup=2 priority=5 evaluation=170 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132302 tempo=10 utility=10 reserve=0 draw=0 setup=2 priority=5 evaluation=170 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=113209 tempo=0 utility=0 reserve=3 draw=6 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=132303 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=132303 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=132210 tempo=14 utility=14 reserve=3 draw=0 setup=0 priority=0 evaluation=128 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200220 tempo=18 utility=21 reserve=6 draw=6 setup=0 priority=0 evaluation=246 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=37 template=200220 gain=18 reason=best_evaluation_or_reachable_chase evaluationWinner=246 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=113305 tempo=0 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=112102 tempo=5 utility=5 reserve=9 draw=0 setup=0 priority=0 evaluation=14 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132314 tempo=7 utility=7 reserve=0 draw=0 setup=0 priority=0 evaluation=70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=132302 tempo=10 utility=10 reserve=0 draw=0 setup=2 priority=5 evaluation=170 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132302 tempo=10 utility=10 reserve=0 draw=0 setup=2 priority=5 evaluation=170 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=113209 tempo=0 utility=0 reserve=3 draw=6 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=132303 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=132303 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=132210 tempo=14 utility=14 reserve=3 draw=0 setup=0 priority=0 evaluation=128 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200220 tempo=18 utility=21 reserve=6 draw=6 setup=0 priority=0 evaluation=246 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=37 template=200220 gain=18 reason=best_evaluation_or_reachable_chase evaluationWinner=246 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 61,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=131102 tempo=1 utility=1 reserve=6 draw=6 setup=0 priority=0 evaluation=34 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132305 tempo=4 utility=6 reserve=0 draw=0 setup=1 priority=7 evaluation=140 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132308 tempo=6 utility=9 reserve=0 draw=0 setup=-2 priority=-6 evaluation=10 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=200022 tempo=0 utility=0 reserve=3 draw=0 setup=0 priority=0 evaluation=-22 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=200539 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=-12 evaluation=-100 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=113209 tempo=11 utility=11 reserve=3 draw=6 setup=0 priority=0 evaluation=148 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=132211 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=-8 evaluation=10 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201776 tempo=16 utility=16 reserve=6 draw=0 setup=0 priority=0 evaluation=124 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=132217 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=6 evaluation=140 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200019 tempo=0 utility=0 reserve=3 draw=6 setup=0 priority=0 evaluation=38 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=35 template=113209 gain=11 reason=best_evaluation_or_reachable_chase evaluationWinner=148 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=131102 tempo=1 utility=1 reserve=6 draw=6 setup=0 priority=0 evaluation=34 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132305 tempo=4 utility=6 reserve=0 draw=0 setup=1 priority=7 evaluation=140 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132308 tempo=6 utility=9 reserve=0 draw=0 setup=-2 priority=-6 evaluation=10 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=200022 tempo=0 utility=0 reserve=3 draw=0 setup=0 priority=0 evaluation=-22 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=200539 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=-12 evaluation=-100 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=113209 tempo=11 utility=11 reserve=3 draw=6 setup=0 priority=0 evaluation=148 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=132211 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=-8 evaluation=10 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201776 tempo=16 utility=16 reserve=6 draw=0 setup=0 priority=0 evaluation=124 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=132217 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=6 evaluation=140 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200019 tempo=0 utility=0 reserve=3 draw=6 setup=0 priority=0 evaluation=38 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=35 template=113209 gain=11 reason=best_evaluation_or_reachable_chase evaluationWinner=148 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 62,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=142108 tempo=4 utility=4 reserve=9 draw=0 setup=0 priority=0 evaluation=4 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=142205 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=4 evaluation=130 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=142302 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=0 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=142302 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=0 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=142202 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=142310 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=142307 tempo=0 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=112102 tempo=5 utility=5 reserve=9 draw=0 setup=0 priority=0 evaluation=14 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201636 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=112210 tempo=4 utility=4 reserve=3 draw=0 setup=0 priority=0 evaluation=28 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=29 template=142205 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=130 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=142108 tempo=4 utility=4 reserve=9 draw=0 setup=0 priority=0 evaluation=4 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=142205 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=4 evaluation=130 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=142302 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=0 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=142302 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=0 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=142202 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=142310 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=142307 tempo=0 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=112102 tempo=5 utility=5 reserve=9 draw=0 setup=0 priority=0 evaluation=14 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201636 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=112210 tempo=4 utility=4 reserve=3 draw=0 setup=0 priority=0 evaluation=28 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=29 template=142205 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=130 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 63,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=201601 tempo=5 utility=5 reserve=6 draw=0 setup=0 priority=0 evaluation=26 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=122403 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=122403 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=REJECT card=32 template=113209 reason=no_useful_legal_pile_target",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=200224 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=162202 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200124 tempo=16 utility=16 reserve=0 draw=0 setup=0 priority=0 evaluation=160 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200078 tempo=16 utility=16 reserve=6 draw=0 setup=0 priority=0 evaluation=136 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=201583 tempo=0 utility=0 reserve=3 draw=0 setup=0 priority=0 evaluation=-12 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=40 template=200154 tempo=19 utility=25 reserve=6 draw=6 setup=0 priority=0 evaluation=286 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=40 template=200154 gain=19 reason=best_evaluation_or_reachable_chase evaluationWinner=286 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=201601 tempo=5 utility=5 reserve=6 draw=0 setup=0 priority=0 evaluation=26 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=122403 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=122403 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=REJECT card=32 template=113209 reason=no_useful_legal_pile_target",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=200224 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=162202 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200124 tempo=16 utility=16 reserve=0 draw=0 setup=0 priority=0 evaluation=160 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200078 tempo=16 utility=16 reserve=6 draw=0 setup=0 priority=0 evaluation=136 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=201583 tempo=0 utility=0 reserve=3 draw=0 setup=0 priority=0 evaluation=-12 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=40 template=200154 tempo=19 utility=25 reserve=6 draw=6 setup=0 priority=0 evaluation=286 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=40 template=200154 gain=19 reason=best_evaluation_or_reachable_chase evaluationWinner=286 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 64,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=132409 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=113101 tempo=2 utility=11 reserve=4 draw=0 setup=0 priority=0 evaluation=94 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200112 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=132313 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132313 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=132220 tempo=5 utility=5 reserve=3 draw=0 setup=0 priority=0 evaluation=38 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=200067 tempo=0 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=200067 tempo=0 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=132303 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=30 template=132313 gain=11 reason=best_evaluation_or_reachable_chase evaluationWinner=110 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=132409 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=113101 tempo=2 utility=11 reserve=4 draw=0 setup=0 priority=0 evaluation=94 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200112 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=132313 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132313 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=132220 tempo=5 utility=5 reserve=3 draw=0 setup=0 priority=0 evaluation=38 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=200067 tempo=0 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=200067 tempo=0 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=132303 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=30 template=132313 gain=11 reason=best_evaluation_or_reachable_chase evaluationWinner=110 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 65,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=112105 tempo=16 utility=19 reserve=9 draw=0 setup=0 priority=0 evaluation=154 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200528 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=152304 tempo=11 utility=12 reserve=0 draw=0 setup=0 priority=-3 evaluation=90 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=152304 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=-3 evaluation=80 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=113201 tempo=0 utility=0 reserve=3 draw=0 setup=0 priority=0 evaluation=-12 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=200144 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=-3 evaluation=-20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200046 tempo=7 utility=8 reserve=0 draw=0 setup=0 priority=16 evaluation=240 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=17 utility=23 reserve=6 draw=0 setup=0 priority=0 evaluation=206 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201704 tempo=2 utility=5 reserve=0 draw=6 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=113209 tempo=0 utility=0 reserve=3 draw=6 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=36 template=200046 gain=7 reason=best_evaluation_or_reachable_chase evaluationWinner=240 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=112105 tempo=16 utility=19 reserve=9 draw=0 setup=0 priority=0 evaluation=154 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200528 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=152304 tempo=11 utility=12 reserve=0 draw=0 setup=0 priority=-3 evaluation=90 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=152304 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=-3 evaluation=80 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=113201 tempo=0 utility=0 reserve=3 draw=0 setup=0 priority=0 evaluation=-12 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=200144 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=-3 evaluation=-20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200046 tempo=7 utility=8 reserve=0 draw=0 setup=0 priority=16 evaluation=240 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=17 utility=23 reserve=6 draw=0 setup=0 priority=0 evaluation=206 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201704 tempo=2 utility=5 reserve=0 draw=6 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=113209 tempo=0 utility=0 reserve=3 draw=6 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=36 template=200046 gain=7 reason=best_evaluation_or_reachable_chase evaluationWinner=240 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 66,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=201704 tempo=11 utility=14 reserve=0 draw=6 setup=0 priority=0 evaluation=200 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=142103 tempo=14 utility=14 reserve=6 draw=0 setup=0 priority=0 evaluation=116 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=142305 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=201636 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=201636 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=142207 tempo=2 utility=2 reserve=3 draw=0 setup=0 priority=0 evaluation=8 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=201704 tempo=0 utility=0 reserve=0 draw=6 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=142106 tempo=8 utility=8 reserve=6 draw=0 setup=0 priority=0 evaluation=56 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=113319 tempo=4 utility=4 reserve=3 draw=0 setup=0 priority=0 evaluation=28 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=27 template=201704 gain=11 reason=best_evaluation_or_reachable_chase evaluationWinner=200 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=201704 tempo=11 utility=14 reserve=0 draw=6 setup=0 priority=0 evaluation=200 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=142103 tempo=14 utility=14 reserve=6 draw=0 setup=0 priority=0 evaluation=116 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=142305 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=201636 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=201636 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=142207 tempo=2 utility=2 reserve=3 draw=0 setup=0 priority=0 evaluation=8 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=201704 tempo=0 utility=0 reserve=0 draw=6 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=142106 tempo=8 utility=8 reserve=6 draw=0 setup=0 priority=0 evaluation=56 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=113319 tempo=4 utility=4 reserve=3 draw=0 setup=0 priority=0 evaluation=28 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=27 template=201704 gain=11 reason=best_evaluation_or_reachable_chase evaluationWinner=200 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 67,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=131102 tempo=1 utility=1 reserve=6 draw=6 setup=0 priority=0 evaluation=46 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132308 tempo=6 utility=9 reserve=0 draw=0 setup=-2 priority=-3 evaluation=40 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=201606 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=-3 evaluation=60 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=200022 tempo=0 utility=0 reserve=3 draw=0 setup=0 priority=0 evaluation=-12 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=132305 tempo=4 utility=6 reserve=0 draw=0 setup=1 priority=10 evaluation=170 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=113209 tempo=11 utility=11 reserve=3 draw=6 setup=0 priority=0 evaluation=158 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=132211 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=-8 evaluation=10 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201776 tempo=9 utility=12 reserve=6 draw=0 setup=0 priority=0 evaluation=96 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=200539 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=-12 evaluation=-100 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200019 tempo=0 utility=0 reserve=3 draw=6 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=34 template=132305 gain=4 reason=best_evaluation_or_reachable_chase evaluationWinner=170 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=131102 tempo=1 utility=1 reserve=6 draw=6 setup=0 priority=0 evaluation=46 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132308 tempo=6 utility=9 reserve=0 draw=0 setup=-2 priority=-3 evaluation=40 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=201606 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=-3 evaluation=60 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=200022 tempo=0 utility=0 reserve=3 draw=0 setup=0 priority=0 evaluation=-12 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=132305 tempo=4 utility=6 reserve=0 draw=0 setup=1 priority=10 evaluation=170 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=113209 tempo=11 utility=11 reserve=3 draw=6 setup=0 priority=0 evaluation=158 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=132211 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=-8 evaluation=10 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201776 tempo=9 utility=12 reserve=6 draw=0 setup=0 priority=0 evaluation=96 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=200539 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=-12 evaluation=-100 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200019 tempo=0 utility=0 reserve=3 draw=6 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=34 template=132305 gain=4 reason=best_evaluation_or_reachable_chase evaluationWinner=170 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 68,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=152107 tempo=5 utility=5 reserve=9 draw=0 setup=0 priority=0 evaluation=14 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=152306 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=152309 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=-3 evaluation=70 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=200212 tempo=-8 utility=1 reserve=3 draw=0 setup=0 priority=0 evaluation=-2 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=200145 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-10 evaluation=-70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=152203 tempo=12 utility=12 reserve=3 draw=0 setup=0 priority=0 evaluation=108 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200040 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=3 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201776 tempo=13 utility=16 reserve=6 draw=0 setup=0 priority=0 evaluation=136 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200043 tempo=7 utility=7 reserve=3 draw=0 setup=0 priority=0 evaluation=58 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=40 template=200102 tempo=3 utility=3 reserve=6 draw=0 setup=0 priority=0 evaluation=6 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=37 template=201776 gain=13 reason=best_evaluation_or_reachable_chase evaluationWinner=136 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=152107 tempo=5 utility=5 reserve=9 draw=0 setup=0 priority=0 evaluation=14 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=152306 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=152309 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=-3 evaluation=70 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=200212 tempo=-8 utility=1 reserve=3 draw=0 setup=0 priority=0 evaluation=-2 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=200145 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-10 evaluation=-70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=152203 tempo=12 utility=12 reserve=3 draw=0 setup=0 priority=0 evaluation=108 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200040 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=3 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201776 tempo=13 utility=16 reserve=6 draw=0 setup=0 priority=0 evaluation=136 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200043 tempo=7 utility=7 reserve=3 draw=0 setup=0 priority=0 evaluation=58 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=40 template=200102 tempo=3 utility=3 reserve=6 draw=0 setup=0 priority=0 evaluation=6 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=37 template=201776 gain=13 reason=best_evaluation_or_reachable_chase evaluationWinner=136 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 69,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122201 tempo=11 utility=14 reserve=6 draw=0 setup=0 priority=0 evaluation=116 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=122301 tempo=7 utility=7 reserve=0 draw=0 setup=0 priority=6 evaluation=130 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=122318 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=-6 evaluation=0 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=122318 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=-6 evaluation=0 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=122211 tempo=6 utility=6 reserve=19 draw=0 setup=0 priority=0 evaluation=-16 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=123201 tempo=12 utility=15 reserve=3 draw=6 setup=0 priority=0 evaluation=198 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200049 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=6 evaluation=150 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=122108 tempo=15 utility=15 reserve=6 draw=0 setup=0 priority=0 evaluation=126 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=122209 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200019 tempo=0 utility=0 reserve=3 draw=6 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=35 template=123201 gain=12 reason=best_evaluation_or_reachable_chase evaluationWinner=198 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122201 tempo=11 utility=14 reserve=6 draw=0 setup=0 priority=0 evaluation=116 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=122301 tempo=7 utility=7 reserve=0 draw=0 setup=0 priority=6 evaluation=130 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=122318 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=-6 evaluation=0 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=122318 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=-6 evaluation=0 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=122211 tempo=6 utility=6 reserve=19 draw=0 setup=0 priority=0 evaluation=-16 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=123201 tempo=12 utility=15 reserve=3 draw=6 setup=0 priority=0 evaluation=198 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200049 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=6 evaluation=150 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=122108 tempo=15 utility=15 reserve=6 draw=0 setup=0 priority=0 evaluation=126 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=122209 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200019 tempo=0 utility=0 reserve=3 draw=6 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=35 template=123201 gain=12 reason=best_evaluation_or_reachable_chase evaluationWinner=198 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 70,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=152106 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=152307 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=152307 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=152211 tempo=3 utility=3 reserve=3 draw=0 setup=0 priority=-10 evaluation=-82 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=152303 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=152303 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200036 tempo=12 utility=15 reserve=0 draw=0 setup=0 priority=0 evaluation=150 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200177 tempo=6 utility=6 reserve=9 draw=0 setup=0 priority=0 evaluation=24 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=152305 tempo=11 utility=17 reserve=0 draw=0 setup=0 priority=0 evaluation=170 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=152203 tempo=12 utility=12 reserve=3 draw=0 setup=0 priority=0 evaluation=108 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=leader reason=useful_ability_and_best_evaluation template=200159"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=152106 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=152307 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=152307 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=152211 tempo=3 utility=3 reserve=3 draw=0 setup=0 priority=-10 evaluation=-82 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=152303 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=152303 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200036 tempo=12 utility=15 reserve=0 draw=0 setup=0 priority=0 evaluation=150 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200177 tempo=6 utility=6 reserve=9 draw=0 setup=0 priority=0 evaluation=24 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=152305 tempo=11 utility=17 reserve=0 draw=0 setup=0 priority=0 evaluation=170 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=152203 tempo=12 utility=12 reserve=3 draw=0 setup=0 priority=0 evaluation=108 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=leader reason=useful_ability_and_best_evaluation template=200159"
+        ]
+      }
+    },
+    {
+      "preset": 71,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122105 tempo=-4 utility=-4 reserve=9 draw=0 setup=0 priority=0 evaluation=-76 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=123301 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=122310 tempo=7 utility=12 reserve=0 draw=0 setup=0 priority=5 evaluation=170 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=122208 tempo=3 utility=3 reserve=3 draw=0 setup=0 priority=0 evaluation=18 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=122316 tempo=12 utility=21 reserve=0 draw=0 setup=0 priority=0 evaluation=210 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=122311 tempo=6 utility=9 reserve=0 draw=0 setup=0 priority=0 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=122207 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=122108 tempo=15 utility=15 reserve=6 draw=0 setup=0 priority=0 evaluation=126 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=122307 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=113208 tempo=4 utility=4 reserve=3 draw=0 setup=0 priority=0 evaluation=28 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=33 template=122316 gain=12 reason=best_evaluation_or_reachable_chase evaluationWinner=210 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122105 tempo=-4 utility=-4 reserve=9 draw=0 setup=0 priority=0 evaluation=-76 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=123301 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=122310 tempo=7 utility=12 reserve=0 draw=0 setup=0 priority=5 evaluation=170 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=122208 tempo=3 utility=3 reserve=3 draw=0 setup=0 priority=0 evaluation=18 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=122316 tempo=12 utility=21 reserve=0 draw=0 setup=0 priority=0 evaluation=210 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=122311 tempo=6 utility=9 reserve=0 draw=0 setup=0 priority=0 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=122207 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=122108 tempo=15 utility=15 reserve=6 draw=0 setup=0 priority=0 evaluation=126 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=122307 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=113208 tempo=4 utility=4 reserve=3 draw=0 setup=0 priority=0 evaluation=28 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=33 template=122316 gain=12 reason=best_evaluation_or_reachable_chase evaluationWinner=210 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 72,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=201776 tempo=5 utility=5 reserve=6 draw=0 setup=0 priority=0 evaluation=26 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=162306 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=162317 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=9 evaluation=180 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=162317 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=9 evaluation=180 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=113309 tempo=11 utility=11 reserve=6 draw=0 setup=0 priority=0 evaluation=86 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=200227 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=162316 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=-6 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201601 tempo=5 utility=5 reserve=6 draw=0 setup=0 priority=0 evaluation=26 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=201664 tempo=14 utility=17 reserve=3 draw=0 setup=0 priority=0 evaluation=158 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=40 template=112112 tempo=3 utility=3 reserve=6 draw=0 setup=0 priority=0 evaluation=6 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=30 template=162317 gain=9 reason=best_evaluation_or_reachable_chase evaluationWinner=180 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=201776 tempo=5 utility=5 reserve=6 draw=0 setup=0 priority=0 evaluation=26 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=162306 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=162317 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=9 evaluation=180 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=162317 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=9 evaluation=180 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=113309 tempo=11 utility=11 reserve=6 draw=0 setup=0 priority=0 evaluation=86 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=200227 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=162316 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=-6 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201601 tempo=5 utility=5 reserve=6 draw=0 setup=0 priority=0 evaluation=26 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=201664 tempo=14 utility=17 reserve=3 draw=0 setup=0 priority=0 evaluation=158 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=40 template=112112 tempo=3 utility=3 reserve=6 draw=0 setup=0 priority=0 evaluation=6 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=30 template=162317 gain=9 reason=best_evaluation_or_reachable_chase evaluationWinner=180 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 73,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=200237 tempo=6 utility=9 reserve=6 draw=0 setup=0 priority=0 evaluation=66 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=201610 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-3 evaluation=0 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=201661 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=200050 tempo=4 utility=4 reserve=3 draw=0 setup=0 priority=0 evaluation=28 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=201617 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=-3 evaluation=-20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=162211 tempo=-5 utility=-5 reserve=3 draw=0 setup=0 priority=0 evaluation=-62 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200294 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=12 evaluation=220 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=162202 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=40 template=162105 tempo=20 utility=20 reserve=6 draw=0 setup=0 priority=0 evaluation=176 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=36 template=200294 gain=10 reason=best_evaluation_or_reachable_chase evaluationWinner=220 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=200237 tempo=6 utility=9 reserve=6 draw=0 setup=0 priority=0 evaluation=66 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=201610 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-3 evaluation=0 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=201661 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=200050 tempo=4 utility=4 reserve=3 draw=0 setup=0 priority=0 evaluation=28 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=201617 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=-3 evaluation=-20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=162211 tempo=-5 utility=-5 reserve=3 draw=0 setup=0 priority=0 evaluation=-62 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200294 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=12 evaluation=220 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=162202 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=40 template=162105 tempo=20 utility=20 reserve=6 draw=0 setup=0 priority=0 evaluation=176 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=36 template=200294 gain=10 reason=best_evaluation_or_reachable_chase evaluationWinner=220 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 74,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=200221 tempo=1 utility=1 reserve=6 draw=0 setup=0 priority=0 evaluation=-14 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=112106 tempo=19 utility=22 reserve=6 draw=0 setup=0 priority=0 evaluation=196 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132306 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=-10 evaluation=-60 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132308 tempo=6 utility=8 reserve=0 draw=0 setup=0 priority=-3 evaluation=50 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=132217 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=7 evaluation=150 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=200295 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=0 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=113303 tempo=4 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=200053 tempo=0 utility=0 reserve=5 draw=0 setup=0 priority=0 evaluation=-20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=112103 tempo=19 utility=22 reserve=6 draw=0 setup=0 priority=0 evaluation=196 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201698 tempo=5 utility=5 reserve=3 draw=0 setup=0 priority=0 evaluation=38 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=28 template=112106 gain=19 reason=best_evaluation_or_reachable_chase evaluationWinner=196 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=200221 tempo=1 utility=1 reserve=6 draw=0 setup=0 priority=0 evaluation=-14 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=112106 tempo=19 utility=22 reserve=6 draw=0 setup=0 priority=0 evaluation=196 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132306 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=-10 evaluation=-60 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132308 tempo=6 utility=8 reserve=0 draw=0 setup=0 priority=-3 evaluation=50 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=132217 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=7 evaluation=150 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=200295 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=0 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=113303 tempo=4 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=200053 tempo=0 utility=0 reserve=5 draw=0 setup=0 priority=0 evaluation=-20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=112103 tempo=19 utility=22 reserve=6 draw=0 setup=0 priority=0 evaluation=196 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201698 tempo=5 utility=5 reserve=3 draw=0 setup=0 priority=0 evaluation=38 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=28 template=112106 gain=19 reason=best_evaluation_or_reachable_chase evaluationWinner=196 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 75,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=152107 tempo=5 utility=5 reserve=9 draw=0 setup=0 priority=0 evaluation=14 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=152303 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=200036 tempo=12 utility=15 reserve=0 draw=0 setup=0 priority=-3 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200036 tempo=12 utility=15 reserve=0 draw=0 setup=0 priority=-3 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=152207 tempo=12 utility=12 reserve=3 draw=0 setup=0 priority=0 evaluation=108 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=112207 tempo=5 utility=5 reserve=3 draw=0 setup=0 priority=0 evaluation=38 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=152305 tempo=11 utility=17 reserve=0 draw=0 setup=0 priority=0 evaluation=170 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=152106 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=152314 tempo=9 utility=10 reserve=0 draw=0 setup=0 priority=12 evaluation=220 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=152209 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=-7 evaluation=8 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=38 template=152314 gain=9 reason=best_evaluation_or_reachable_chase evaluationWinner=220 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=152107 tempo=5 utility=5 reserve=9 draw=0 setup=0 priority=0 evaluation=14 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=152303 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=200036 tempo=12 utility=15 reserve=0 draw=0 setup=0 priority=-3 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200036 tempo=12 utility=15 reserve=0 draw=0 setup=0 priority=-3 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=152207 tempo=12 utility=12 reserve=3 draw=0 setup=0 priority=0 evaluation=108 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=112207 tempo=5 utility=5 reserve=3 draw=0 setup=0 priority=0 evaluation=38 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=152305 tempo=11 utility=17 reserve=0 draw=0 setup=0 priority=0 evaluation=170 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=152106 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=152314 tempo=9 utility=10 reserve=0 draw=0 setup=0 priority=12 evaluation=220 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=152209 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=-7 evaluation=8 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=38 template=152314 gain=9 reason=best_evaluation_or_reachable_chase evaluationWinner=220 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 76,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=142310 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=142106 tempo=8 utility=8 reserve=6 draw=0 setup=0 priority=0 evaluation=56 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=201636 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200535 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=-3 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=142312 tempo=7 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=142212 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=142205 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=9 evaluation=180 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=142103 tempo=14 utility=14 reserve=6 draw=0 setup=0 priority=0 evaluation=116 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=142310 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=142204 tempo=6 utility=8 reserve=3 draw=0 setup=0 priority=0 evaluation=68 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=36 template=142205 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=180 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=142310 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=142106 tempo=8 utility=8 reserve=6 draw=0 setup=0 priority=0 evaluation=56 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=201636 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200535 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=-3 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=142312 tempo=7 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=142212 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=142205 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=9 evaluation=180 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=142103 tempo=14 utility=14 reserve=6 draw=0 setup=0 priority=0 evaluation=116 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=142310 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=142204 tempo=6 utility=8 reserve=3 draw=0 setup=0 priority=0 evaluation=68 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=36 template=142205 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=180 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 77,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=201618 tempo=19 utility=19 reserve=6 draw=0 setup=0 priority=0 evaluation=166 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=122317 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=0 evaluation=80 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=122308 tempo=7 utility=7 reserve=0 draw=0 setup=0 priority=0 evaluation=70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=122203 tempo=-13 utility=-4 reserve=3 draw=10 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=122211 tempo=6 utility=6 reserve=19 draw=0 setup=0 priority=0 evaluation=-16 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=123301 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=5 evaluation=150 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=122106 tempo=4 utility=4 reserve=6 draw=0 setup=0 priority=0 evaluation=16 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=122207 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=28 template=201618 gain=19 reason=best_evaluation_or_reachable_chase evaluationWinner=166 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=201618 tempo=19 utility=19 reserve=6 draw=0 setup=0 priority=0 evaluation=166 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=122317 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=0 evaluation=80 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=122308 tempo=7 utility=7 reserve=0 draw=0 setup=0 priority=0 evaluation=70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=122203 tempo=-13 utility=-4 reserve=3 draw=10 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=122211 tempo=6 utility=6 reserve=19 draw=0 setup=0 priority=0 evaluation=-16 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=123301 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=5 evaluation=150 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=122106 tempo=4 utility=4 reserve=6 draw=0 setup=0 priority=0 evaluation=16 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=122207 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=28 template=201618 gain=19 reason=best_evaluation_or_reachable_chase evaluationWinner=166 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 78,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=113302 tempo=0 utility=3 reserve=0 draw=0 setup=2 priority=0 evaluation=50 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=131102 tempo=14 utility=17 reserve=6 draw=6 setup=0 priority=0 evaluation=206 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132310 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=200502 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132314 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=0 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=132205 tempo=12 utility=12 reserve=3 draw=0 setup=0 priority=0 evaluation=108 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=113311 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=132309 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=132212 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=132104 tempo=9 utility=9 reserve=6 draw=0 setup=0 priority=0 evaluation=66 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=28 template=131102 gain=14 reason=best_evaluation_or_reachable_chase evaluationWinner=206 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=113302 tempo=0 utility=3 reserve=0 draw=0 setup=2 priority=0 evaluation=50 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=131102 tempo=14 utility=17 reserve=6 draw=6 setup=0 priority=0 evaluation=206 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132310 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=200502 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132314 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=0 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=132205 tempo=12 utility=12 reserve=3 draw=0 setup=0 priority=0 evaluation=108 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=113311 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=132309 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=132212 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=132104 tempo=9 utility=9 reserve=6 draw=0 setup=0 priority=0 evaluation=66 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=28 template=131102 gain=14 reason=best_evaluation_or_reachable_chase evaluationWinner=206 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 79,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=201615 tempo=2 utility=2 reserve=6 draw=0 setup=0 priority=0 evaluation=-4 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200535 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=-3 evaluation=70 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200136 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=-4 evaluation=40 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=113201 tempo=0 utility=0 reserve=3 draw=0 setup=0 priority=0 evaluation=-12 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=142205 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=9 evaluation=180 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=142106 tempo=8 utility=8 reserve=6 draw=0 setup=0 priority=0 evaluation=56 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201704 tempo=8 utility=11 reserve=0 draw=6 setup=0 priority=0 evaluation=170 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=142202 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=36 template=142205 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=180 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=201615 tempo=2 utility=2 reserve=6 draw=0 setup=0 priority=0 evaluation=-4 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200535 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=-3 evaluation=70 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200136 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=-4 evaluation=40 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=113201 tempo=0 utility=0 reserve=3 draw=0 setup=0 priority=0 evaluation=-12 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=142205 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=9 evaluation=180 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=142106 tempo=8 utility=8 reserve=6 draw=0 setup=0 priority=0 evaluation=56 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201704 tempo=8 utility=11 reserve=0 draw=6 setup=0 priority=0 evaluation=170 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=142202 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=36 template=142205 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=180 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 80,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=200026 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-2 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=131102 tempo=18 utility=28 reserve=6 draw=6 setup=0 priority=0 evaluation=336 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132310 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=-2 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132402 tempo=4 utility=8 reserve=0 draw=0 setup=4 priority=-2 evaluation=120 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=132205 tempo=12 utility=12 reserve=3 draw=0 setup=0 priority=0 evaluation=108 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=132309 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=-2 evaluation=80 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=132309 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=-2 evaluation=80 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=200218 tempo=8 utility=8 reserve=9 draw=0 setup=0 priority=0 evaluation=14 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=132104 tempo=15 utility=27 reserve=6 draw=0 setup=0 priority=0 evaluation=216 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=200301 tempo=7 utility=8 reserve=0 draw=0 setup=0 priority=16 evaluation=290 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=28 template=131102 gain=18 reason=best_evaluation_or_reachable_chase evaluationWinner=336 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=200026 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-2 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=131102 tempo=18 utility=28 reserve=6 draw=6 setup=0 priority=0 evaluation=336 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132310 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=-2 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=132402 tempo=4 utility=8 reserve=0 draw=0 setup=4 priority=-2 evaluation=120 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=132205 tempo=12 utility=12 reserve=3 draw=0 setup=0 priority=0 evaluation=108 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=132309 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=-2 evaluation=80 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=132309 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=-2 evaluation=80 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=200218 tempo=8 utility=8 reserve=9 draw=0 setup=0 priority=0 evaluation=14 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=132104 tempo=15 utility=27 reserve=6 draw=0 setup=0 priority=0 evaluation=216 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=200301 tempo=7 utility=8 reserve=0 draw=0 setup=0 priority=16 evaluation=290 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=28 template=131102 gain=18 reason=best_evaluation_or_reachable_chase evaluationWinner=336 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 81,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=201704 tempo=10 utility=15 reserve=0 draw=6 setup=0 priority=0 evaluation=210 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=201776 tempo=5 utility=5 reserve=6 draw=0 setup=0 priority=0 evaluation=26 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200535 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=-6 evaluation=-10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=142205 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=12 evaluation=210 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=142205 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=12 evaluation=210 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=142206 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=142401 tempo=10 utility=12 reserve=0 draw=0 setup=0 priority=-6 evaluation=60 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=20 utility=26 reserve=6 draw=0 setup=0 priority=0 evaluation=236 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=37 template=201773 gain=20 reason=best_evaluation_or_reachable_chase evaluationWinner=236 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=201704 tempo=10 utility=15 reserve=0 draw=6 setup=0 priority=0 evaluation=210 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=201776 tempo=5 utility=5 reserve=6 draw=0 setup=0 priority=0 evaluation=26 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200535 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=-6 evaluation=-10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=142205 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=12 evaluation=210 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=142205 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=12 evaluation=210 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=142206 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=142401 tempo=10 utility=12 reserve=0 draw=0 setup=0 priority=-6 evaluation=60 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=20 utility=26 reserve=6 draw=0 setup=0 priority=0 evaluation=236 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=37 template=201773 gain=20 reason=best_evaluation_or_reachable_chase evaluationWinner=236 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 82,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=142108 tempo=4 utility=4 reserve=9 draw=0 setup=0 priority=0 evaluation=4 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=142317 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=142310 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=142305 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=200138 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=142102 tempo=7 utility=7 reserve=6 draw=0 setup=0 priority=0 evaluation=46 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201704 tempo=9 utility=12 reserve=0 draw=6 setup=0 priority=0 evaluation=180 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=142202 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=38 template=201704 gain=9 reason=best_evaluation_or_reachable_chase evaluationWinner=180 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=142108 tempo=4 utility=4 reserve=9 draw=0 setup=0 priority=0 evaluation=4 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=142317 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=142310 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=142305 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=200138 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=142102 tempo=7 utility=7 reserve=6 draw=0 setup=0 priority=0 evaluation=46 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201704 tempo=9 utility=12 reserve=0 draw=6 setup=0 priority=0 evaluation=180 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=142202 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=38 template=201704 gain=9 reason=best_evaluation_or_reachable_chase evaluationWinner=180 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 83,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=122311 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122317 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=0 evaluation=80 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=122211 tempo=11 utility=11 reserve=9 draw=0 setup=0 priority=0 evaluation=74 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=122208 tempo=3 utility=3 reserve=3 draw=0 setup=0 priority=0 evaluation=18 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=122102 tempo=13 utility=16 reserve=6 draw=0 setup=0 priority=0 evaluation=136 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=122310 tempo=7 utility=13 reserve=0 draw=0 setup=0 priority=5 evaluation=180 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=201618 tempo=19 utility=19 reserve=6 draw=0 setup=0 priority=0 evaluation=166 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=122307 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=122316 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=122309 tempo=7 utility=7 reserve=0 draw=0 setup=0 priority=0 evaluation=70 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=34 template=122310 gain=7 reason=best_evaluation_or_reachable_chase evaluationWinner=180 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=122311 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122317 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=0 evaluation=80 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=122211 tempo=11 utility=11 reserve=9 draw=0 setup=0 priority=0 evaluation=74 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=122208 tempo=3 utility=3 reserve=3 draw=0 setup=0 priority=0 evaluation=18 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=122102 tempo=13 utility=16 reserve=6 draw=0 setup=0 priority=0 evaluation=136 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=122310 tempo=7 utility=13 reserve=0 draw=0 setup=0 priority=5 evaluation=180 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=201618 tempo=19 utility=19 reserve=6 draw=0 setup=0 priority=0 evaluation=166 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=122307 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=122316 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=122309 tempo=7 utility=7 reserve=0 draw=0 setup=0 priority=0 evaluation=70 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=34 template=122310 gain=7 reason=best_evaluation_or_reachable_chase evaluationWinner=180 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 84,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=142105 tempo=8 utility=8 reserve=6 draw=0 setup=0 priority=0 evaluation=56 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=142305 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=142317 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=142317 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=201559 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-2 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=142213 tempo=8 utility=8 reserve=3 draw=0 setup=0 priority=11 evaluation=178 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=142311 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=-2 evaluation=60 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200532 tempo=10 utility=10 reserve=6 draw=0 setup=0 priority=0 evaluation=76 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=200293 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=-2 evaluation=-10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=201696 tempo=3 utility=3 reserve=3 draw=0 setup=0 priority=-10 evaluation=-82 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=35 template=142213 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=178 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=142105 tempo=8 utility=8 reserve=6 draw=0 setup=0 priority=0 evaluation=56 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=142305 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=142317 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=142317 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=201559 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-2 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=142213 tempo=8 utility=8 reserve=3 draw=0 setup=0 priority=11 evaluation=178 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=142311 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=-2 evaluation=60 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200532 tempo=10 utility=10 reserve=6 draw=0 setup=0 priority=0 evaluation=76 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=200293 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=-2 evaluation=-10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=201696 tempo=3 utility=3 reserve=3 draw=0 setup=0 priority=-10 evaluation=-82 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=35 template=142213 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=178 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 85,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=201704 tempo=0 utility=0 reserve=0 draw=6 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=200154 tempo=0 utility=0 reserve=6 draw=6 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132306 tempo=4 utility=4 reserve=0 draw=0 setup=-2 priority=-10 evaluation=-80 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200502 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=133302 tempo=0 utility=0 reserve=3 draw=0 setup=0 priority=0 evaluation=-12 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=132305 tempo=4 utility=6 reserve=0 draw=0 setup=1 priority=0 evaluation=70 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=201704 tempo=0 utility=0 reserve=0 draw=6 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=132205 tempo=12 utility=12 reserve=3 draw=0 setup=0 priority=0 evaluation=108 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200037 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200220 tempo=17 utility=20 reserve=6 draw=6 setup=0 priority=0 evaluation=236 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=37 template=200220 gain=17 reason=best_evaluation_or_reachable_chase evaluationWinner=236 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=201704 tempo=0 utility=0 reserve=0 draw=6 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=200154 tempo=0 utility=0 reserve=6 draw=6 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=132306 tempo=4 utility=4 reserve=0 draw=0 setup=-2 priority=-10 evaluation=-80 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200502 tempo=4 utility=4 reserve=0 draw=0 setup=0 priority=0 evaluation=40 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=133302 tempo=0 utility=0 reserve=3 draw=0 setup=0 priority=0 evaluation=-12 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=132305 tempo=4 utility=6 reserve=0 draw=0 setup=1 priority=0 evaluation=70 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=201704 tempo=0 utility=0 reserve=0 draw=6 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=132205 tempo=12 utility=12 reserve=3 draw=0 setup=0 priority=0 evaluation=108 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200037 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200220 tempo=17 utility=20 reserve=6 draw=6 setup=0 priority=0 evaluation=236 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=37 template=200220 gain=17 reason=best_evaluation_or_reachable_chase evaluationWinner=236 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 86,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=201704 tempo=8 utility=11 reserve=0 draw=6 setup=0 priority=0 evaluation=170 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122106 tempo=4 utility=4 reserve=6 draw=0 setup=0 priority=0 evaluation=16 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=201628 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=123301 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=4 evaluation=140 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=200019 tempo=0 utility=0 reserve=3 draw=6 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=122211 tempo=11 utility=11 reserve=9 draw=0 setup=0 priority=0 evaluation=74 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=201622 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=0 evaluation=80 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=122103 tempo=14 utility=20 reserve=6 draw=0 setup=0 priority=0 evaluation=176 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=122302 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=0 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=122208 tempo=3 utility=3 reserve=3 draw=0 setup=0 priority=0 evaluation=18 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=37 template=122103 gain=14 reason=best_evaluation_or_reachable_chase evaluationWinner=176 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=201704 tempo=8 utility=11 reserve=0 draw=6 setup=0 priority=0 evaluation=170 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122106 tempo=4 utility=4 reserve=6 draw=0 setup=0 priority=0 evaluation=16 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=201628 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=123301 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=4 evaluation=140 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=200019 tempo=0 utility=0 reserve=3 draw=6 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=122211 tempo=11 utility=11 reserve=9 draw=0 setup=0 priority=0 evaluation=74 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=201622 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=0 evaluation=80 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=122103 tempo=14 utility=20 reserve=6 draw=0 setup=0 priority=0 evaluation=176 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=122302 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=0 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=122208 tempo=3 utility=3 reserve=3 draw=0 setup=0 priority=0 evaluation=18 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=37 template=122103 gain=14 reason=best_evaluation_or_reachable_chase evaluationWinner=176 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 87,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=200032 tempo=5 utility=5 reserve=6 draw=0 setup=0 priority=0 evaluation=26 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200296 tempo=7 utility=8 reserve=0 draw=0 setup=0 priority=4 evaluation=120 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=201610 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-4 evaluation=-10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200296 tempo=7 utility=7 reserve=0 draw=0 setup=0 priority=4 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=201617 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=-4 evaluation=-30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=162202 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=201661 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=13 utility=16 reserve=6 draw=0 setup=0 priority=0 evaluation=136 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201704 tempo=7 utility=10 reserve=0 draw=6 setup=0 priority=0 evaluation=160 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=162211 tempo=-5 utility=-5 reserve=3 draw=0 setup=0 priority=0 evaluation=-62 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=38 template=201704 gain=7 reason=best_evaluation_or_reachable_chase evaluationWinner=160 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=200032 tempo=5 utility=5 reserve=6 draw=0 setup=0 priority=0 evaluation=26 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200296 tempo=7 utility=8 reserve=0 draw=0 setup=0 priority=4 evaluation=120 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=201610 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-4 evaluation=-10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200296 tempo=7 utility=7 reserve=0 draw=0 setup=0 priority=4 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=201617 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=-4 evaluation=-30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=162202 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=201661 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=13 utility=16 reserve=6 draw=0 setup=0 priority=0 evaluation=136 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=201704 tempo=7 utility=10 reserve=0 draw=6 setup=0 priority=0 evaluation=160 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=162211 tempo=-5 utility=-5 reserve=3 draw=0 setup=0 priority=0 evaluation=-62 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=38 template=201704 gain=7 reason=best_evaluation_or_reachable_chase evaluationWinner=160 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 88,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=201773 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200044 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=162303 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=201704 tempo=12 utility=15 reserve=0 draw=6 setup=0 priority=0 evaluation=210 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=133301 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=162202 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=162318 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200237 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=113311 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=162204 tempo=6 utility=6 reserve=3 draw=0 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=33 template=201704 gain=12 reason=best_evaluation_or_reachable_chase evaluationWinner=210 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=201773 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200044 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=162303 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=201704 tempo=12 utility=15 reserve=0 draw=6 setup=0 priority=0 evaluation=210 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=133301 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=162202 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=162318 tempo=12 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200237 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=113311 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=162204 tempo=6 utility=6 reserve=3 draw=0 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=33 template=201704 gain=12 reason=best_evaluation_or_reachable_chase evaluationWinner=210 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 89,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=200102 tempo=3 utility=3 reserve=6 draw=0 setup=0 priority=0 evaluation=6 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=152302 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=152309 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=152206 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=200145 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-10 evaluation=-70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=200145 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-10 evaluation=-70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=152311 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200177 tempo=6 utility=6 reserve=9 draw=0 setup=0 priority=0 evaluation=24 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=152106 tempo=15 utility=18 reserve=6 draw=0 setup=0 priority=0 evaluation=156 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200212 tempo=-8 utility=1 reserve=3 draw=0 setup=0 priority=0 evaluation=-2 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=38 template=152106 gain=15 reason=best_evaluation_or_reachable_chase evaluationWinner=156 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=200102 tempo=3 utility=3 reserve=6 draw=0 setup=0 priority=0 evaluation=6 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=152302 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=152309 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=152206 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=200145 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-10 evaluation=-70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=200145 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-10 evaluation=-70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=152311 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200177 tempo=6 utility=6 reserve=9 draw=0 setup=0 priority=0 evaluation=24 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=152106 tempo=15 utility=18 reserve=6 draw=0 setup=0 priority=0 evaluation=156 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200212 tempo=-8 utility=1 reserve=3 draw=0 setup=0 priority=0 evaluation=-2 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=38 template=152106 gain=15 reason=best_evaluation_or_reachable_chase evaluationWinner=156 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 90,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=201704 tempo=8 utility=12 reserve=0 draw=6 setup=0 priority=0 evaluation=180 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=142107 tempo=2 utility=2 reserve=6 draw=0 setup=0 priority=-12 evaluation=-124 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=142205 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=12 evaluation=210 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200535 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=-3 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=201704 tempo=0 utility=0 reserve=0 draw=6 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=142212 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=142401 tempo=10 utility=12 reserve=0 draw=0 setup=0 priority=-3 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=142103 tempo=18 utility=21 reserve=6 draw=0 setup=0 priority=0 evaluation=186 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=30 template=142205 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=210 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=201704 tempo=8 utility=12 reserve=0 draw=6 setup=0 priority=0 evaluation=180 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=142107 tempo=2 utility=2 reserve=6 draw=0 setup=0 priority=-12 evaluation=-124 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=142205 tempo=8 utility=9 reserve=0 draw=0 setup=0 priority=12 evaluation=210 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200535 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=-3 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=201704 tempo=0 utility=0 reserve=0 draw=6 setup=0 priority=0 evaluation=60 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=142212 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=142401 tempo=10 utility=12 reserve=0 draw=0 setup=0 priority=-3 evaluation=90 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=142103 tempo=18 utility=21 reserve=6 draw=0 setup=0 priority=0 evaluation=186 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=30 template=142205 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=210 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 91,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=201704 tempo=0 utility=0 reserve=0 draw=6 setup=0 priority=-2 evaluation=40 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=200058 tempo=0 utility=0 reserve=6 draw=0 setup=0 priority=0 evaluation=-24 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=113310 tempo=10 utility=11 reserve=0 draw=0 setup=0 priority=-2 evaluation=90 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=-2 evaluation=-10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=200019 tempo=13 utility=23 reserve=3 draw=6 setup=0 priority=0 evaluation=278 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=113301 tempo=9 utility=10 reserve=3 draw=0 setup=0 priority=-2 evaluation=68 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=113301 tempo=9 utility=10 reserve=3 draw=0 setup=0 priority=-2 evaluation=68 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200039 tempo=2 utility=2 reserve=7 draw=0 setup=0 priority=10 evaluation=92 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201615 tempo=2 utility=2 reserve=6 draw=0 setup=0 priority=0 evaluation=-4 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=142303 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=32 template=200019 gain=13 reason=best_evaluation_or_reachable_chase evaluationWinner=278 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=201704 tempo=0 utility=0 reserve=0 draw=6 setup=0 priority=-2 evaluation=40 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=200058 tempo=0 utility=0 reserve=6 draw=0 setup=0 priority=0 evaluation=-24 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=113310 tempo=10 utility=11 reserve=0 draw=0 setup=0 priority=-2 evaluation=90 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=-2 evaluation=-10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=200019 tempo=13 utility=23 reserve=3 draw=6 setup=0 priority=0 evaluation=278 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=113301 tempo=9 utility=10 reserve=3 draw=0 setup=0 priority=-2 evaluation=68 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=113301 tempo=9 utility=10 reserve=3 draw=0 setup=0 priority=-2 evaluation=68 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200039 tempo=2 utility=2 reserve=7 draw=0 setup=0 priority=10 evaluation=92 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201615 tempo=2 utility=2 reserve=6 draw=0 setup=0 priority=0 evaluation=-4 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=142303 tempo=5 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=32 template=200019 gain=13 reason=best_evaluation_or_reachable_chase evaluationWinner=278 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 92,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=113101 tempo=2 utility=11 reserve=4 draw=0 setup=0 priority=0 evaluation=94 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=152312 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=12 evaluation=180 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200105 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=-3 evaluation=80 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=152211 tempo=3 utility=3 reserve=3 draw=0 setup=0 priority=-10 evaluation=-82 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=152306 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=201646 tempo=6 utility=7 reserve=3 draw=0 setup=0 priority=5 evaluation=108 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200300 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=-3 evaluation=60 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200102 tempo=3 utility=3 reserve=6 draw=0 setup=0 priority=0 evaluation=6 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=200145 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-10 evaluation=-70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200212 tempo=-8 utility=1 reserve=3 draw=0 setup=0 priority=0 evaluation=-2 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=29 template=152312 gain=6 reason=best_evaluation_or_reachable_chase evaluationWinner=180 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=113101 tempo=2 utility=11 reserve=4 draw=0 setup=0 priority=0 evaluation=94 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=152312 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=12 evaluation=180 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200105 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=-3 evaluation=80 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=152211 tempo=3 utility=3 reserve=3 draw=0 setup=0 priority=-10 evaluation=-82 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=152306 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=201646 tempo=6 utility=7 reserve=3 draw=0 setup=0 priority=5 evaluation=108 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200300 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=-3 evaluation=60 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200102 tempo=3 utility=3 reserve=6 draw=0 setup=0 priority=0 evaluation=6 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=200145 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-10 evaluation=-70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200212 tempo=-8 utility=1 reserve=3 draw=0 setup=0 priority=0 evaluation=-2 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=29 template=152312 gain=6 reason=best_evaluation_or_reachable_chase evaluationWinner=180 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 93,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=142107 tempo=2 utility=2 reserve=6 draw=0 setup=0 priority=0 evaluation=-4 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=142316 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=142316 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=142317 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=142317 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=142301 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=142106 tempo=8 utility=8 reserve=6 draw=0 setup=0 priority=0 evaluation=56 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=33 template=142317 gain=11 reason=best_evaluation_or_reachable_chase evaluationWinner=110 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=142107 tempo=2 utility=2 reserve=6 draw=0 setup=0 priority=0 evaluation=-4 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=142308 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=142316 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=142316 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=142317 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=142317 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=142301 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=142106 tempo=8 utility=8 reserve=6 draw=0 setup=0 priority=0 evaluation=56 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=33 template=142317 gain=11 reason=best_evaluation_or_reachable_chase evaluationWinner=110 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 94,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122103 tempo=19 utility=28 reserve=6 draw=0 setup=0 priority=0 evaluation=256 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=113302 tempo=2 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=201628 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=113302 tempo=0 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=122203 tempo=-13 utility=-1 reserve=3 draw=10 setup=0 priority=0 evaluation=78 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=122207 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=15 utility=15 reserve=6 draw=0 setup=0 priority=0 evaluation=126 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=113102 tempo=5 utility=11 reserve=3 draw=6 setup=0 priority=0 evaluation=158 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=113208 tempo=4 utility=4 reserve=3 draw=0 setup=0 priority=0 evaluation=28 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=28 template=122103 gain=19 reason=best_evaluation_or_reachable_chase evaluationWinner=256 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122103 tempo=19 utility=28 reserve=6 draw=0 setup=0 priority=0 evaluation=256 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=113302 tempo=2 utility=5 reserve=0 draw=0 setup=0 priority=0 evaluation=50 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=201628 tempo=2 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=113302 tempo=0 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=122203 tempo=-13 utility=-1 reserve=3 draw=10 setup=0 priority=0 evaluation=78 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=122207 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=15 utility=15 reserve=6 draw=0 setup=0 priority=0 evaluation=126 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=113102 tempo=5 utility=11 reserve=3 draw=6 setup=0 priority=0 evaluation=158 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=113208 tempo=4 utility=4 reserve=3 draw=0 setup=0 priority=0 evaluation=28 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=28 template=122103 gain=19 reason=best_evaluation_or_reachable_chase evaluationWinner=256 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 95,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=162105 tempo=20 utility=20 reserve=6 draw=0 setup=0 priority=0 evaluation=176 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=201661 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=162314 tempo=-2 utility=-2 reserve=0 draw=0 setup=0 priority=-3 evaluation=-50 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=113309 tempo=11 utility=11 reserve=6 draw=0 setup=0 priority=0 evaluation=86 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=201617 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=201617 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=162209 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=162308 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=9 evaluation=170 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200031 tempo=7 utility=7 reserve=6 draw=0 setup=0 priority=0 evaluation=46 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=28 template=162105 gain=20 reason=best_evaluation_or_reachable_chase evaluationWinner=176 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=113301 tempo=9 utility=9 reserve=3 draw=0 setup=0 priority=0 evaluation=78 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=162105 tempo=20 utility=20 reserve=6 draw=0 setup=0 priority=0 evaluation=176 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=201661 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=162314 tempo=-2 utility=-2 reserve=0 draw=0 setup=0 priority=-3 evaluation=-50 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=113309 tempo=11 utility=11 reserve=6 draw=0 setup=0 priority=0 evaluation=86 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=201617 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=201617 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=162209 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=162308 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=9 evaluation=170 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200031 tempo=7 utility=7 reserve=6 draw=0 setup=0 priority=0 evaluation=46 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=28 template=162105 gain=20 reason=best_evaluation_or_reachable_chase evaluationWinner=176 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 96,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=152311 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=200177 tempo=6 utility=6 reserve=9 draw=0 setup=0 priority=0 evaluation=24 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=152302 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=152309 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=-3 evaluation=70 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=200145 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-10 evaluation=-70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=200145 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-10 evaluation=-70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200040 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=3 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=152311 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200212 tempo=-8 utility=1 reserve=3 draw=0 setup=0 priority=0 evaluation=-2 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=27 template=152311 gain=11 reason=best_evaluation_or_reachable_chase evaluationWinner=110 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=152311 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=200177 tempo=6 utility=6 reserve=9 draw=0 setup=0 priority=0 evaluation=24 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=152302 tempo=10 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=152309 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=-3 evaluation=70 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=200145 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-10 evaluation=-70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=200145 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=-10 evaluation=-70 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=200040 tempo=8 utility=8 reserve=0 draw=0 setup=0 priority=3 evaluation=110 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201773 tempo=6 utility=6 reserve=6 draw=0 setup=0 priority=0 evaluation=36 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=152311 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200212 tempo=-8 utility=1 reserve=3 draw=0 setup=0 priority=0 evaluation=-2 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=27 template=152311 gain=11 reason=best_evaluation_or_reachable_chase evaluationWinner=110 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 97,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122108 tempo=15 utility=15 reserve=6 draw=0 setup=0 priority=0 evaluation=126 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=122316 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=122310 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=5 evaluation=80 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=123201 tempo=13 utility=16 reserve=3 draw=6 setup=0 priority=0 evaluation=208 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=122311 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=123301 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=122211 tempo=6 utility=6 reserve=19 draw=0 setup=0 priority=0 evaluation=-16 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201618 tempo=19 utility=19 reserve=6 draw=0 setup=0 priority=0 evaluation=166 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=122209 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=122207 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=32 template=123201 gain=13 reason=best_evaluation_or_reachable_chase evaluationWinner=208 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122108 tempo=15 utility=15 reserve=6 draw=0 setup=0 priority=0 evaluation=126 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=122316 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=122310 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=5 evaluation=80 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=123201 tempo=13 utility=16 reserve=3 draw=6 setup=0 priority=0 evaluation=208 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=122311 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=123301 tempo=8 utility=10 reserve=0 draw=0 setup=0 priority=0 evaluation=100 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=122211 tempo=6 utility=6 reserve=19 draw=0 setup=0 priority=0 evaluation=-16 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=201618 tempo=19 utility=19 reserve=6 draw=0 setup=0 priority=0 evaluation=166 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=122209 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=122207 tempo=13 utility=13 reserve=3 draw=0 setup=0 priority=0 evaluation=118 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=32 template=123201 gain=13 reason=best_evaluation_or_reachable_chase evaluationWinner=208 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 98,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=113312 tempo=1 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=113101 tempo=2 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200300 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=-3 evaluation=60 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200105 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=-3 evaluation=80 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=152306 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=201646 tempo=6 utility=6 reserve=3 draw=0 setup=0 priority=5 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=152312 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=12 evaluation=180 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200102 tempo=3 utility=3 reserve=6 draw=0 setup=0 priority=0 evaluation=6 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=113312 tempo=0 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200212 tempo=5 utility=5 reserve=3 draw=0 setup=0 priority=0 evaluation=38 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=36 template=152312 gain=6 reason=best_evaluation_or_reachable_chase evaluationWinner=180 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=27 template=113312 tempo=1 utility=2 reserve=0 draw=0 setup=0 priority=0 evaluation=20 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=113101 tempo=2 utility=11 reserve=0 draw=0 setup=0 priority=0 evaluation=110 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=29 template=200300 tempo=9 utility=9 reserve=0 draw=0 setup=0 priority=-3 evaluation=60 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=200105 tempo=11 utility=11 reserve=0 draw=0 setup=0 priority=-3 evaluation=80 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=34 template=152306 tempo=1 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=201646 tempo=6 utility=6 reserve=3 draw=0 setup=0 priority=5 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=152312 tempo=6 utility=6 reserve=0 draw=0 setup=0 priority=12 evaluation=180 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=200102 tempo=3 utility=3 reserve=6 draw=0 setup=0 priority=0 evaluation=6 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=113312 tempo=0 utility=1 reserve=0 draw=0 setup=0 priority=0 evaluation=10 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=200212 tempo=5 utility=5 reserve=3 draw=0 setup=0 priority=0 evaluation=38 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=36 template=152312 gain=6 reason=best_evaluation_or_reachable_chase evaluationWinner=180 chase=false"
+        ]
+      }
+    },
+    {
+      "preset": 99,
+      "pass": true,
+      "original": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122108 tempo=15 utility=15 reserve=6 draw=0 setup=0 priority=0 evaluation=126 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=122311 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=122316 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=200019 tempo=8 utility=14 reserve=3 draw=6 setup=0 priority=0 evaluation=188 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=123301 tempo=8 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=122211 tempo=6 utility=6 reserve=19 draw=0 setup=0 priority=0 evaluation=-16 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=122310 tempo=7 utility=13 reserve=0 draw=0 setup=0 priority=5 evaluation=180 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=122102 tempo=13 utility=16 reserve=6 draw=0 setup=0 priority=0 evaluation=136 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=122209 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=123201 tempo=0 utility=0 reserve=3 draw=6 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=32 template=200019 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=188 chase=false"
+        ]
+      },
+      "mutated": {
+        "ok": true,
+        "fatal": false,
+        "choices": [
+          "AI_REASON schema=1 decision=1 event=OPTION card=28 template=122108 tempo=15 utility=15 reserve=6 draw=0 setup=0 priority=0 evaluation=126 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=30 template=122311 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=31 template=122316 tempo=3 utility=3 reserve=0 draw=0 setup=0 priority=0 evaluation=30 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=32 template=200019 tempo=8 utility=14 reserve=3 draw=6 setup=0 priority=0 evaluation=188 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=33 template=123301 tempo=8 utility=12 reserve=0 draw=0 setup=0 priority=0 evaluation=120 exact=true sequence=true",
+          "AI_REASON schema=1 decision=1 event=OPTION card=35 template=122211 tempo=6 utility=6 reserve=19 draw=0 setup=0 priority=0 evaluation=-16 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=36 template=122310 tempo=7 utility=13 reserve=0 draw=0 setup=0 priority=5 evaluation=180 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=37 template=122102 tempo=13 utility=16 reserve=6 draw=0 setup=0 priority=0 evaluation=136 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=38 template=122209 tempo=11 utility=11 reserve=3 draw=0 setup=0 priority=0 evaluation=98 exact=true sequence=false",
+          "AI_REASON schema=1 decision=1 event=OPTION card=39 template=123201 tempo=0 utility=0 reserve=3 draw=6 setup=0 priority=0 evaluation=48 exact=false sequence=false",
+          "AI_REASON schema=1 decision=1 event=SELECT action=card card=32 template=200019 gain=8 reason=best_evaluation_or_reachable_chase evaluationWinner=188 chase=false"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[b]0.6.1[/b]
+
+- Fixed a crash during leader introductions, including Eredin / Radovid and Eredin / Arachas Queen: portrait pages no longer manually dispose engine-owned textures.
+- Portrait pages are unloaded after loading completes, outside loader callbacks. Added regressions for repeated hovering, loading errors and the total page limit, including pages awaiting unloading.
+- All five packages include 13 text languages: EN, RU, DE, FR, IT, PL, ES, ES-MX, PT-BR, JP, KR, ZH-CN and ZH-TW. Text selection is independent of voices and persists with your game save.
+- Five complete installation variants, each with one voice language: EN, RU, DE, IT or PT-BR. The keg troll uses Russian lines in DE/IT. Install only one package.
+- Added fonts for the new languages, including Japanese, Korean and Chinese. A missing TC character uses an SC glyph. Only the selected dictionary and fonts are loaded.
+- Card translations are based on official Beta localization; new interface translations need community feedback and proofreading. ES-MX and ZH-TW adapt ES and SC interface text while using official card names.
+- Friendly and enemy row labels are translated as complete phrases, correcting French and Spanish word order. Native card item strings support all 13 languages; these labels outside the mod interface follow the game's language.
+- The 21 leader card portraits use full motion cycles at 24 fps, with a blended loop seam. Board portraits survive interface redraws and hovering hand cards.
+- Portrait frames stream in pages: at most two pages per portrait and four portraits at once. This bounds animation resources, not total game memory.
+- Ordinary premium card animations and large leader entrance animations are not included.
+- Voice timings now match each package's actual recordings, including dialogue queues and music ducking.
+
+Translation preview for PC 5.01. The 1.32 build is not included yet. Compilation, resource and archive checks do not replace in-game testing of motion, fonts and saves.
+

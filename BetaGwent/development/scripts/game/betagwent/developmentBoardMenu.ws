@@ -8,6 +8,9 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     private var setWeather : CScriptedFlashFunction;
     private var beginVisualBatch, setVisualCue, setVisualTarget : CScriptedFlashFunction;
     private var visualBusy : bool;
+    // Stage 131: the opponent thinks after the player's move has been shown, not before it,
+    // so placing a card never stalls on the AI's simulations.
+    private var deferredOpponent : bool;
     private var requestFlow : CBetaGwentDevelopmentRequestFlow;
     private var setRequestHeader : CScriptedFlashFunction;
     private var setRequestSource : CScriptedFlashFunction;
@@ -20,6 +23,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     private var pushCard : CScriptedFlashFunction;
     private var finishState : CScriptedFlashFunction;
     private var beginDeckSelection, pushDeckOption, pushDeckCard, finishDeckSelection : CScriptedFlashFunction;
+    private var markDeckEdited : CScriptedFlashFunction; // optional: starter deck has a saved override
+    private var markDeckInvalid : CScriptedFlashFunction; // optional: why a listed deck cannot start
     private var selectingDecks : bool;
     private var ownPreset, enemyPreset : int;
     private var ownLeader, enemyLeader : int;
@@ -32,14 +37,21 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     private var editorPublishedFaction : int;
     private var publishedTemplates : array<int>;
     private var selectionPublished : bool;
+    private var deckOptionCount : int;
     private var beginPileView, pushPileCard, pushPilePowerBase, finishPileView : CScriptedFlashFunction;
     private var pileViewSequence : int;
     private var audio : CBetaGwentDuelAudio;
     private var audioRevisions : array<int>;
     private var audioFrames : array<CBetaGwentDuelVisualFrame>;
     private var setAudioStatus : CScriptedFlashFunction;
+    private var setIntroAudioState : CScriptedFlashFunction;
+    private var introAudioSerial : int;
+    private var setTutorialSeen : CScriptedFlashFunction;
+    private var setTextLanguage : CScriptedFlashFunction;
     private var presentationTempo : int;
     private var presentationReduced : bool;
+    private var presentationAiPause : int;
+    private var presentationDifficulty : int;
     private var setEntryContext : CScriptedFlashFunction;
     private var npcMatch, libraryOnly, kegOnly, kegNested, kegSwitch : bool;
     private var forcedBetaFaction : int;
@@ -80,6 +92,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         setVisualTarget = GetMenuFlash().GetMemberFlashFunction("setVisualTarget");
         beginDeckSelection = GetMenuFlash().GetMemberFlashFunction("beginDeckSelection");
         pushDeckOption = GetMenuFlash().GetMemberFlashFunction("pushDeckOption");
+        markDeckEdited = GetMenuFlash().GetMemberFlashFunction("markDeckEdited");
+        markDeckInvalid = GetMenuFlash().GetMemberFlashFunction("markDeckInvalid");
         pushDeckCard = GetMenuFlash().GetMemberFlashFunction("pushDeckCard");
         finishDeckSelection = GetMenuFlash().GetMemberFlashFunction("finishDeckSelection");
         pushLeaderOption = GetMenuFlash().GetMemberFlashFunction("pushLeaderOption");
@@ -97,6 +111,9 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         pushPilePowerBase = GetMenuFlash().GetMemberFlashFunction("pushPilePowerBase");
         finishPileView = GetMenuFlash().GetMemberFlashFunction("finishPileView");
         setAudioStatus = GetMenuFlash().GetMemberFlashFunction("setAudioStatus");
+        setIntroAudioState = GetMenuFlash().GetMemberFlashFunction("setIntroAudioState");
+        setTutorialSeen = GetMenuFlash().GetMemberFlashFunction("setTutorialSeen");
+        setTextLanguage = GetMenuFlash().GetMemberFlashFunction("setTextLanguage");
         if (!setControllerDevice || !setControllerInput || !beginPileView || !pushPileCard || !pushPilePowerBase || !finishPileView || !pushEditorCopies || !pushTemplateDetails || !pushTemplateRules || !pushLiveStats || !beginDeckEditor || !pushEditorCard || !finishDeckEditor || !setVisualTarget || !pushPlayRules || !setPlacementCard || !setHeader || !setCounts || !pushCard || !finishState || !setRequestHeader || !pushRequestCard || !setDetails || !pushDetails || !pushStatus || !pushTimer || !setWeather || !beginVisualBatch || !setVisualCue || !beginDeckSelection || !pushDeckOption || !pushDeckCard || !finishDeckSelection || !pushLeaderOption || !setBoardLeaders)
         {
             LogChannel('BetaGwent', "BOARD_MISSING_FLASH_FUNCTION");
@@ -145,9 +162,12 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         setEntryContext=GetMenuFlash().GetMemberFlashFunction("setEntryContext");
         if(setEntryContext)setEntryContext.InvokeSelfThreeArgs(FlashArgInt(BetaGwentNorthPick(npcMatch,2,BetaGwentNorthPick(libraryOnly,1,0))),FlashArgString(BetaGwentEntryOpponentLabel(npcMatch,enemyPreset,manager.betaEnemyDeckName)),FlashArgInt(forcedBetaFaction));
         audio = new CBetaGwentDuelAudio in this; audio.Initialize();
-        presentationPlayer=(W3PlayerWitcher)thePlayer;presentationTempo=10;
-        if(presentationPlayer){presentationTempo=presentationPlayer.BetaGwentAnimationTempo();presentationReduced=presentationPlayer.BetaGwentReducedEffects();}
-        if (setAudioStatus) setAudioStatus.InvokeSelfFourArgs(FlashArgBool(BetaGwentAudioBankInstalled()), FlashArgBool(audio.IsBankReady()),FlashArgInt(presentationTempo),FlashArgBool(presentationReduced));
+        presentationPlayer=(W3PlayerWitcher)thePlayer;presentationTempo=10;presentationAiPause=1;presentationDifficulty=3;
+        if(presentationPlayer){presentationTempo=presentationPlayer.BetaGwentAnimationTempo();presentationReduced=presentationPlayer.BetaGwentReducedEffects();presentationAiPause=presentationPlayer.BetaGwentAiPause();presentationDifficulty=presentationPlayer.BetaGwentDifficulty();}
+        if (setAudioStatus) setAudioStatus.InvokeSelfSixArgs(FlashArgBool(BetaGwentAudioBankInstalled()), FlashArgBool(audio.IsBankReady()),FlashArgInt(presentationTempo),FlashArgBool(presentationReduced),FlashArgInt(presentationAiPause),FlashArgInt(presentationDifficulty));
+        // The tutorial is offered once before the first game; the flag lives in facts, so it survives saves made without the mod.
+        if(setTextLanguage)setTextLanguage.InvokeSelfOneArg(FlashArgInt(FactsQueryLatestValue("bg_text_language")));
+        if (setTutorialSeen) setTutorialSeen.InvokeSelfOneArg(FlashArgBool(FactsQueryLatestValue("bg_tutorial_seen") > 0));
 
         // Beta Gwent owns the game audio state for the whole lifetime of this menu,
         // not only for NPC matches. This suppresses the normal world mix in the
@@ -232,6 +252,12 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         LogChannel('BetaGwent', "BOARD_INTENT action=" + action + " revision=" + value + " card=" + instanceId + " row=" + row);
     }
 
+    private function OpponentTurnWaiting() : bool
+    {
+        var m : SBetaGwentMatchSnapshot;
+        if (duel.IsPending() || duel.IsWaitingRound() || duel.IsFatal()) return false;
+        m = duel.Snapshot(); return m.currentPlayerId == 2 && m.matchWinnerMask == 0;
+    }
     private function Publish(status : string)
     {
         var frames : array<CBetaGwentDuelVisualFrame>; var frame : CBetaGwentDuelVisualFrame; var i : int;
@@ -239,7 +265,9 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         audioRevisions.Clear(); audioFrames.Clear();
         if (deckDraft) { PublishDeckEditor(status); return; }
         if (selectingDecks) { PublishDeckSelection(); return; }
-        duel.PumpOpponent();
+        if (duel.visualFrames.Size() > 0 && OpponentTurnWaiting())
+        { deferredOpponent = true; LogChannel('BetaGwent', "AI_TURN_DEFERRED frames=" + duel.visualFrames.Size()); }
+        else duel.PumpOpponent();
         if (!requestFlow.IsPending()) status = duel.GetMessage();
         duel.TakeVisualFrames(frames); visualBusy = frames.Size() > 0;
         beginVisualBatch.InvokeSelfOneArg(FlashArgInt(frames.Size() + 1));
@@ -358,7 +386,9 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         var ids, leaders : array<int>; var preset : SBetaGwentDuelPreset;
         var leader : SBetaGwentDuelDefinition; var option, i : int;
         var storedDeck : CBetaGwentDeckDraft; var validation : SBetaGwentDeckValidation;
+        var reason : string; var player : W3PlayerWitcher;
         if (!configured || !selectingDecks || deckDraft) return;
+        player = (W3PlayerWitcher)thePlayer;
         revision += 1; visualBusy = false;
         beginDeckSelection.InvokeSelfFiveArgs(FlashArgInt(revision), FlashArgInt(ownPreset), FlashArgInt(enemyPreset), FlashArgInt(ownLeader), FlashArgInt(enemyLeader));
         BetaGwentDuelLeaders(leaders);
@@ -369,6 +399,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         }
         if (!selectionPublished)
         {
+            deckOptionCount = 0;
             for (option = 1; option <= BetaGwentDuelPresetCount(); option += 1)
             {
                 if((npcMatch || libraryOnly) && (option<16 || option>20) && option!=enemyPreset)continue;
@@ -386,17 +417,27 @@ class CR4BetaGwentBoardMenu extends CR4Menu
                 pushDeckOption.InvokeSelfNineArgs(FlashArgInt(option), FlashArgString(preset.title), FlashArgString(preset.description),
                     FlashArgInt(preset.leaderTemplateId), FlashArgString(leader.title), FlashArgInt(preset.unitCount),
                     FlashArgInt(preset.specialCount), FlashArgInt(preset.goldCount), FlashArgInt(preset.silverCount));
-                PublishDeckCards(option, ids);
+                PublishDeckCards(option, ids); deckOptionCount += 1;
+                if (storedDeck && markDeckEdited) markDeckEdited.InvokeSelfOneArg(FlashArgInt(option));
+                reason = "";
+                if (storedDeck && !validation.valid) reason = validation.message;
+                else if ((npcMatch || libraryOnly) && player && !player.BetaGwentOwnsDeck(ids, preset.leaderTemplateId)) reason = "Не хватает карт в коллекции.";
+                if (reason != "" && markDeckInvalid) markDeckInvalid.InvokeSelfTwoArgs(FlashArgInt(option), FlashArgString(reason));
             }
             for (option = 1001; option <= 1008; option += 1)
             {
                 storedDeck = deckLibrary.Get(option); if (!storedDeck) continue;
-                validation = storedDeck.Validation(); if (!validation.valid) continue;
+                // Invalid custom decks stay listed with their reason, so they can be fixed.
+                validation = storedDeck.Validation();
                 leader = BetaGwentDuelDefinition(storedDeck.leader);
                 pushDeckOption.InvokeSelfNineArgs(FlashArgInt(option), FlashArgString(storedDeck.title), FlashArgString("Своя колода · слот " + storedDeck.slot),
                     FlashArgInt(storedDeck.leader), FlashArgString(leader.title), FlashArgInt(validation.units),
                     FlashArgInt(validation.specials), FlashArgInt(validation.gold), FlashArgInt(validation.silver));
-                PublishDeckCards(option, storedDeck.cards);
+                PublishDeckCards(option, storedDeck.cards); deckOptionCount += 1;
+                reason = "";
+                if (!validation.valid) reason = validation.message;
+                else if ((npcMatch || libraryOnly) && player && !player.BetaGwentOwnsDeck(storedDeck.cards, storedDeck.leader)) reason = "Не хватает карт в коллекции.";
+                if (reason != "" && markDeckInvalid) markDeckInvalid.InvokeSelfTwoArgs(FlashArgInt(option), FlashArgString(reason));
             }
             selectionPublished = true;
         }
@@ -584,6 +625,22 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if(side==2)LogChannel('BetaGwent',"DEBUG_OPPONENT_SELECTED preset="+enemyPreset+" archetype="+BetaGwentAIArchetypeName(enemyPreset)+" source=deck_picker");
         PublishDeckSelection(); return true;
     }
+    event OnBetaGwentDeckDelete(value : int, presetId : int)
+    {
+        var cards : array<int>; var leader : int;
+        if (!configured || !selectingDecks || deckDraft || value != revision) return false;
+        if ((presetId >= 1001 && deckOptionCount <= 1) || !deckLibrary.Delete(presetId))
+        { LogChannel('BetaGwent',"DECK_DELETE_REJECT id="+presetId+" decks="+deckOptionCount); PublishDeckSelection(); return false; }
+        LogChannel('BetaGwent',"DECK_DELETED id="+presetId);
+        selectionPublished = false;
+        if (ownPreset == presetId && presetId >= 16 && presetId <= 20)
+        { if (deckLibrary.Resolve(ownPreset, cards, leader)) ownLeader = leader; }
+        else if (ownPreset == presetId)
+        { ownPreset = deckLibrary.Preferred(); if (deckLibrary.Resolve(ownPreset, cards, leader)) ownLeader = leader; deckLibrary.Remember(ownPreset); }
+        if (enemyPreset == presetId)
+        { enemyPreset = 2; if (deckLibrary.ResolveOpponent(enemyPreset, cards, leader)) enemyLeader = leader; }
+        PublishDeckSelection(); return true;
+    }
     event OnBetaGwentLeaderSelect(value : int, side : int, templateId : int)
     {
         var cards : array<int>; var presetLeader : int; var chosen, original : SBetaGwentDuelDefinition;
@@ -602,7 +659,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         var ownCards, enemyCards : array<int>; var leader : int;var chosen : SBetaGwentDuelDefinition;
         chosen=BetaGwentDuelDefinition(ownLeader);if(libraryOnly || (npcMatch && forcedBetaFaction!=0 && chosen.header.factionMask!=forcedBetaFaction))return false;
         if (audio) audio.Cancel(); audioRevisions.Clear(); audioFrames.Clear();
-        requestFlow.Close(); visualBusy = false;
+        requestFlow.Close(); visualBusy = false; deferredOpponent = false;
         if (!deckLibrary.Resolve(ownPreset, ownCards, leader) || !deckLibrary.ResolveOpponent(enemyPreset, enemyCards, leader)) return false;
         if(npcMatch && !((W3PlayerWitcher)thePlayer).BetaGwentOwnsDeck(ownCards,ownLeader))return false;
         if (!session.InitializeWithDecks(ownCards, enemyCards, ownLeader, enemyLeader, ownPreset, enemyPreset)) return false;
@@ -622,6 +679,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         var d : SBetaGwentDuelDefinition; var side : int;
         if (publishedTemplates.Contains(id)) return;
         d = BetaGwentDuelDefinition(id); side = d.targetSide; if (d.weatherToken != 0) side = 2;
+        if(duel.DirectSpecialKind(d)==3 && side!=2)side=1;
         pushTemplateDetails.InvokeSelfFourArgs(FlashArgInt(id), FlashArgString(d.description), FlashArgInt(d.header.tierMask), FlashArgInt(d.header.typeMask));
         pushTemplateRules.InvokeSelfNineArgs(FlashArgInt(id), FlashArgInt(duel.DirectSpecialKind(d)), FlashArgInt(side),
             FlashArgInt(d.targetTypes), FlashArgInt(d.targetTiers), FlashArgInt(d.targetIgnore), FlashArgInt(d.consumeMaximum), FlashArgInt(d.specialRowMask), FlashArgString(duel.ActionPreviewGeometry(d)));
@@ -774,7 +832,16 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if (!configured || selectingDecks || value != revision) return false;
         audioRevisions.Clear(); audioFrames.Clear();
         visualBusy = false;
-        AwardMatchReward();LogChannel('BetaGwent', "BOARD_VISUAL_DONE revision=" + value); return true;
+        LogChannel('BetaGwent', "BOARD_VISUAL_DONE revision=" + value);
+        ResumeOpponentAfterVoice();
+        AwardMatchReward(); return true;
+    }
+
+    private function ResumeOpponentAfterVoice()
+    {
+        if(!configured || visualBusy || !deferredOpponent || (audio && audio.IsVoiceActive()))return;
+        deferredOpponent=false;
+        if(!duel.IsPending())Publish(duel.GetMessage());
     }
 
     event OnBetaGwentAudioCue(value : int)
@@ -807,8 +874,20 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         }
         return false;
     }
-    event OnBetaGwentAudioIntro(opponent : int, player : int)
-    { if (!configured || !audio) return false; audio.Intro(opponent, player); return true; }
+    event OnBetaGwentAudioIntro(opponent : int, player : int, optional serial : int, optional clock : int)
+    {
+        introAudioSerial=serial;
+        if(configured && audio){audio.SetClock(clock);audio.Intro(opponent,player);}
+        PublishIntroAudio();return true;
+    }
+    private function PublishIntroAudio()
+    {
+        var pending : bool;
+        if(configured && audio)pending=audio.IsIntroActive();
+        if(setIntroAudioState && introAudioSerial>0)setIntroAudioState.InvokeSelfTwoArgs(FlashArgInt(introAudioSerial),FlashArgBool(pending));
+    }
+    event OnBetaGwentAudioIntroCancel(serial : int)
+    { if(serial==introAudioSerial){if(audio)audio.CancelIntro();introAudioSerial=0;} }
     event OnBetaGwentAudioKeg(kind : int)
     { if (audio) audio.Keg(kind); }
     event OnBetaGwentAudioUi(kind : int)
@@ -818,9 +897,19 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     event OnBetaGwentPerf(eventName : string, ms : int)
     { if (configured && duel) duel.AiPerfFeedback(ms); }
     event OnBetaGwentAudioTick(clock : int)
-    { if (configured && audio) { if (clock > 0) audio.SetClock(clock); audio.Tick(); if(setAudioStatus)setAudioStatus.InvokeSelfFourArgs(FlashArgBool(BetaGwentAudioBankInstalled()),FlashArgBool(audio.IsBankReady()),FlashArgInt(presentationTempo),FlashArgBool(presentationReduced)); } }
-    event OnBetaGwentAudioSettings(effects : bool, voices : bool, optional tempo : int, optional reduced : bool)
-    { var player : W3PlayerWitcher;if (configured && audio) audio.Configure(effects, voices);player=(W3PlayerWitcher)thePlayer;if(player && (tempo==10 || tempo==15 || tempo==20)){presentationTempo=tempo;presentationReduced=reduced;player.BetaGwentSetPresentation(tempo,reduced);} }
+    { if (configured && audio) { if (clock > 0) audio.SetClock(clock); audio.Tick(); PublishIntroAudio(); ResumeOpponentAfterVoice(); if(setAudioStatus)setAudioStatus.InvokeSelfSixArgs(FlashArgBool(BetaGwentAudioBankInstalled()),FlashArgBool(audio.IsBankReady()),FlashArgInt(presentationTempo),FlashArgBool(presentationReduced),FlashArgInt(presentationAiPause),FlashArgInt(presentationDifficulty)); } }
+    event OnBetaGwentTextLanguage(language:int)
+    {
+        if(language<1||language>13)return false;
+        FactsSet("bg_text_language",language);
+        if(setTextLanguage)setTextLanguage.InvokeSelfOneArg(FlashArgInt(language));
+    }
+    event OnBetaGwentTutorialSeen()
+    { FactsSet("bg_tutorial_seen", 1); LogChannel('BetaGwent', "TUTORIAL_OFFERED"); }
+    event OnBetaGwentAudioSettings(effects : bool, voices : bool, optional tempo : int, optional reduced : bool, optional aiPause : int, optional difficulty : int)
+    { var player : W3PlayerWitcher;if (configured && audio) audio.Configure(effects, voices);player=(W3PlayerWitcher)thePlayer;if(player && (tempo==10 || tempo==15 || tempo==20)){presentationTempo=tempo;presentationReduced=reduced;player.BetaGwentSetPresentation(tempo,reduced);}
+      if(player && aiPause>=1 && aiPause<=4){presentationAiPause=aiPause;player.BetaGwentSetAiPause(aiPause);}
+      if(player && difficulty>=1 && difficulty<=3){presentationDifficulty=difficulty;player.BetaGwentSetDifficulty(difficulty);LogChannel('BetaGwent',"AI_DIFFICULTY level="+difficulty);} }
     event OnBetaGwentAudioCancel()
     {
         audioRevisions.Clear(); audioFrames.Clear();
@@ -1024,6 +1113,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     {
         var manager : CR4GwintManager; var result : SBetaGwentMatchSnapshot;var inventoryParent : CR4InventoryMenu;
         var gameplayInputExceptions : array<EInputActionBlock>;var boardParent : CR4BetaGwentBoardMenu;var kegMenuInit : CBetaGwentKegMenuData;
+        var backupPlayer : W3PlayerWitcher;
         if(npcMatch){
             AwardMatchReward();manager=theGame.GetGwintManager();if(!selectingDecks)result=session.Snapshot();
             if(!selectingDecks && result.matchWinnerMask==1)thePlayer.SetGwintMinigameState(EMS_End_PlayerWon);
@@ -1034,6 +1124,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
             manager.testMatch=false;manager.SetForcedFaction(GwintFaction_Neutral);
             LogChannel('BetaGwent',"NATIVE_GWENT_RESULT deck="+manager.betaEnemyDeckName+" winner="+result.matchWinnerMask+" state="+thePlayer.GetGwintMinigameState());
         }
+        // Mirror collection, scraps, kegs and decks into facts (survives a save made without the mod).
+        backupPlayer=(W3PlayerWitcher)thePlayer;if(backupPlayer)backupPlayer.BetaGwentBackupProfile();
         if (audio) audio.Close(); audio = NULL; audioRevisions.Clear(); audioFrames.Clear();
         if (configured)
         {

@@ -1,0 +1,767 @@
+ActionButton ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] ContactActionButton LayoutElement
+  Button ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] ButtonControl GameObjectButtonView SocialButtonCounterView ImageButtonView LabelButtonView ButtonSoundHandler
+    HighlightFolder (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+      HiglightImage ap=[0.4, 0.0] size=[20.8, 8.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_state] AssetLoader
+    BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_wide_idle_450] AssetLoader
+    ActionName ap=[21.16, 0.0] size=[-64.57, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"View Profile" Label
+    ActionIcon ap=[10.3, 1.15] size=[38.7, 47.1] amin=[0.0, 0.5] amax=[0.0, 0.5] pivot=[0.0, 0.5] Image[chat_icon] AssetLoader
+    NewIndicator (off) ap=[-18.0, -20.3] size=[45.0, 45.0] amin=[1.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[0.8, 0.8, 0.8]
+      BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[notification] AssetLoader
+      CounterText ap=[-0.3, -0.1] size=[-17.0, -16.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"!"
+ActionButton ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement QuestActionButton
+  Button ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] ButtonControl GameObjectButtonView SocialButtonCounterView ImageButtonView LabelButtonView ButtonSoundHandler
+    HighlightFolder (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+      HiglightImage ap=[0.4, 0.0] size=[20.8, 8.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_state] AssetLoader
+    BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_wide_idle_450] AssetLoader
+    ActionName ap=[21.16, 0.0] size=[-64.57, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"View Profile" Label
+    ActionIcon ap=[10.3, 1.15] size=[38.7, 47.1] amin=[0.0, 0.5] amax=[0.0, 0.5] pivot=[0.0, 0.5] Image[icon_abandon_dailyquest] AssetLoader
+    NewIndicator (off) ap=[-18.0, -20.3] size=[45.0, 45.0] amin=[1.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[0.8, 0.8, 0.8]
+      BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[notification] AssetLoader
+      CounterText ap=[-0.3, -0.1] size=[-17.0, -16.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"!"
+Button_BasicUI ap=[-86.0, -387.5] size=[0.0, 48.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 1.0] ButtonControl Label HorizontalLayoutGroup ContentSizeFitter LayoutElement ButtonSoundHandler LabelButtonView
+  Background ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[btn_wide_idle_300] AssetLoader SpriteSheetButtonView HorizontalLayoutGroup LayoutInputModeViewDisabler
+    Text ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"Simple Text" LayoutElement
+CardButtonControl_Large (off) ap=[0.0, 0.0] size=[17.5, 21.5] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] CardButtonControl CardButtonView
+  Background ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image
+CardButtonControl_Large_Smooth (off) ap=[0.0, 0.0] size=[17.5, 21.5] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] CardButtonControl CardButtonViewSmooth
+  Background ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image
+CardButtonControl_Small (off) ap=[0.0, 0.0] size=[17.5, 21.5] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] CardButtonControl CardButtonView
+  Background ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image
+CardSidePreview ap=[0.0, 0.0] size=[0.0, 750.0] amin=[0.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] UISidePreview
+  CardSlot 
+    CardPreviewTemplate UISidePreviewCard CardRotationController UISidePreviewCardSoundHandler
+      CardTransform 
+        CardContainerTransform 
+    CardRenderingCamera CameraSettingsController PostProcessLayer
+    CardAnchorsRoot 
+  Details ap=[0.5, -245.0] size=[-133.0, 349.18] amin=[0.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] VerticalLayoutGroup UISidePreviewDetails FactionThemeChanger Fade
+    DeckStatsPanel ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement
+    CraftPanel ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] VerticalLayoutGroup UISidePreviewCraftWidget
+      BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] LayoutElement Image AssetLoader FactionImage
+      Craft ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement TextMeshProUGUI"[MISSING]label_craft"
+      Mill ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement TextMeshProUGUI"[MISSING]label_mill"
+      Upgrade ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement TextMeshProUGUI"[MISSING]label_upgrade"
+    UncraftablePanel ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement HorizontalLayoutGroup
+      BG ap=[0.3, 0.0] size=[-0.6, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[side_preview_info_bg_MON] AssetLoader FactionImage LayoutElement
+      --------------------- ap=[0.5, 0.0] size=[1.0, 5.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.5] Image[general_metal_title_line] AssetLoader LayoutElement
+      Label ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 0.5] LocalizedTextMeshPro TextMeshProUGUI"[MISSING]label_uncraftable"
+    NamePanel ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement
+      BG ap=[0.5, 0.0] size=[-1.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image AssetLoader LayoutElement FactionImage
+      Name ap=[0.0, -4.9] size=[-28.8, 36.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] HorizontalLayoutGroup LayoutElement
+        Label ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 0.5] TextMeshProUGUI"COMMANDER'S HORN"
+      Description ap=[3.6, 7.2] size=[-21.6, 25.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.0] HorizontalLayoutGroup LayoutElement
+        Categories ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 0.5] TextMeshProUGUI"Categories"
+      ------------------------ ap=[0.5, 3.6] size=[1.0, 5.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] Image[metal_title_line_NOR_NIL_SCO] AssetLoader FactionImage
+    CardPreviewTooltips ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] TooltipsController VerticalLayoutGroup
+  CardRenderTarget ap=[0.0, 105.0] size=[800.0, 800.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] RawImage
+  Tooltip Regions ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] CardSidePreviewTooltipHandler
+    Tooltip Context ap=[-12.3, 124.6] size=[223.3, 281.6] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TooltipContext
+    TooltipRoot ap=[-12.3, 124.6] size=[223.3, 281.6] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] scale=[0.5, 0.5, 1.0]
+CardSidePreviewTooltip ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] AbilityTooltip LayoutElement FactionThemeChanger
+  Content ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] VerticalLayoutGroup ContentSizeFitter
+    Bgs ap=[0.0, -0.5] size=[0.0, -1.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] LayoutElement
+      BG ap=[0.5, 0.0] size=[-1.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[side_preview_info_bg_NEU] AssetLoader FactionImage
+      gradient ap=[0.5, 1.0] size=[-1.0, 19.94] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] Image[side_preview_gradient] AssetLoader
+      ------------------------ ap=[0.5, -3.6] size=[1.0, 5.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, -0.0] Image[metal_title_line_NOR_NIL_SCO] AssetLoader FactionImage
+    Description ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"Below would be the flavor text for this " LayoutElement UISimpleTextLayoutLimiter
+      Inline Graphic ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0]
+ChatMessageLocal ap=[131.4, 0.0] size=[253.16, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] VerticalLayoutGroup ContentSizeFitter ChatMessageRenderer
+  UpperFolder ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+    ChatMessageBGTriangle ap=[-19.8, -21.2] size=[-46.83, -21.33] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] Image[chat_bubble_PL1.2] AssetLoader
+    PlayerName ap=[-29.0, 29.61] size=[-73.2, -59.2] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"wwjghjjghjghjghjghjghjghjghjhgjghjhgjhgj"
+    Cosmetics ap=[97.0, -11.7] size=[60.0, 60.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] LayoutElement
+      PlayerCosmeticViewParent ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+  StretchingFolder ap=[0.0, 0.0] size=[0.0, -12.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement
+    ChatMessageBG ap=[-19.5, 0.51] size=[-46.82, 0.01] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] Image[chat_bubble_PL2.2] AssetLoader
+  TextMeshPro Text ap=[-32.0, -45.3] size=[-119.3, 0.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] TextMeshProUGUI"dsadasd HHHH" UITransformResizer ContentSizeFitter LayoutElement
+ChatMessageNonLocal ap=[131.4, 0.0] size=[253.16, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] VerticalLayoutGroup ContentSizeFitter ChatMessageRenderer
+  UpperFolder ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+    ChatMessageBGTriangle ap=[147.41, -21.29] size=[205.83, 59.13] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 1.0] Image[chat_bubble_OP1.2] AssetLoader
+    PlayerName ap=[32.28, 29.57] size=[-70.24, -59.1] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"wwwwwwwwwwwwww..."
+    Cosmetics ap=[-95.0, -10.2] size=[60.0, 60.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] LayoutElement
+      PlayerCosmeticView ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+  StretchingFolder ap=[0.0, 0.0] size=[0.0, -12.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement
+    ChatMessageBG ap=[20.76, -0.0] size=[-46.81, 0.01] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] Image[chat_bubble_OP2.2] AssetLoader
+  TextMeshPro Text ap=[33.4, -44.2] size=[-104.7, 0.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] TextMeshProUGUI"jhkhjk" UITransformResizer ContentSizeFitter LayoutElement
+ChatWindow ap=[0.0, 0.0] size=[-5.3, -0.54] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] VerticalContainer MoveInputHandler ScrollRectScrollToFocusedContentExtension ChatWindow
+  ClipArea ap=[-10.3, 53.9] size=[-20.6, -53.9] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.0] Image Mask ScrollRect
+    List ap=[-0.0, 0.0] size=[-0.62, 0.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] VerticalLayoutGroup ContentSizeFitter
+  Scrollbar ap=[-12.28, 27.5] size=[7.3, -95.0] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+  InputFieldBar ap=[-0.21, -248.4] size=[6.91, -508.8] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] GraphicRaycaster
+    AlphaMaskBottom ap=[0.95, 0.0] size=[-1.89, 20.2] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.0] scale=[1.0, 1.0, 0.0] Image[BottomDivider] AssetLoader
+    TextMeshPro - InputField ap=[-22.9, 0.0] size=[223.2, 43.4] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[chat_field] InputFieldControl AssetLoader InputField
+      Text Mask ap=[1.4, -0.77] size=[-18.7, -20.24] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] RectMask2D
+        Viewport ap=[0.0, 0.0] size=[-8.0, -4.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+          InputFieldTextAnchor ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+            Placeholder ap=[0.0, -0.95] size=[0.0, -1.91] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"Enter text..." Label
+            Text ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.0] TextMeshProUGUI"​" ContentSizeFitter
+    Button_BasicUI ap=[93.3, -0.9] size=[43.0, 33.2] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.0, 0.5] Image AssetLoader GameObjectButtonView ButtonControl
+      Layout ap=[-4.19, -0.22] size=[8.38, -1.52] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[1.0, 1.0, 0.0]
+        ButtonBg ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[1.0, 1.0, 0.0] Image[btn_square_idle] AssetLoader
+        NAVIGATION (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_square_hovered] LayoutElement AssetLoader
+        HIT (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_square_down] LayoutElement AssetLoader
+        ButtonIcon ap=[-0.46, -0.27] size=[32.3, 19.75] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] scale=[1.5, 1.5, 0.0] Image[send_icon] AssetLoader
+ContactEntryRenderer (off) ap=[4.0, 0.0] size=[253.41, 65.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 1.0] ContactEntryRenderer VerticalLayoutGroup ContentSizeFitter MoveInputHandler
+  HeaderButton ap=[126.71, -32.5] size=[253.41, 65.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[sub_category_Player] LayoutElement GameObjectButtonView SocialButtonCounterView ButtonControl AssetLoader ButtonSoundHandler
+    HighlightFolder (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+      HiglightImage ap=[0.4, 0.0] size=[20.8, 8.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_state] AssetLoader
+    PlayerCosmeticViewParent ap=[-90.8, 0.0] size=[75.0, 75.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] LayoutElement
+    TextArea ap=[33.5, 1.4] size=[-78.4, -17.1] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+      PlayerName ap=[0.0, -0.0] size=[147.0, 18.9] amin=[0.0, 0.5] amax=[0.0, 0.5] pivot=[0.0, 0.0] TextMeshProUGUI"SparklePony"
+      PlayerRichPresence ap=[0.0, -1.7] size=[147.0, 18.2] amin=[0.0, 0.5] amax=[0.0, 0.5] pivot=[0.0, 1.0] TextMeshProUGUI"dsfsdfsdfsdfsdfsdf"
+    OnlineStatus ap=[-9.3, -8.9] size=[16.21, 16.21] amin=[1.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[offline_indicator] AssetLoader
+    NewIndicator (off) ap=[-13.9, -16.0] size=[45.0, 45.0] amin=[1.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[0.8, 0.8, 0.8]
+      BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[notification] AssetLoader
+      CounterText ap=[-0.3, -0.1] size=[-17.0, -16.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"!"
+  Foldout ap=[130.0, -65.0] size=[253.41, 0.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 1.0] RectMask2D LayoutElement
+    ActionsPanel ap=[127.6, -0.02] size=[276.26, 6.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 1.0] ContentSizeFitter VerticalLayoutGroup
+ContactEntryRendererPlaceholder ap=[0.0, 0.0] size=[240.55, 65.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] LayoutElement ContactEntryRendererPlaceholder MoveInputHandler
+ContactsSection ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] VerticalLayoutGroup ContactsSectionRenderer MoveInputHandler
+  ContactsSectionHeader ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement GameObjectButtonView ButtonControl SocialButtonCounterView LabelButtonView
+    HighlightFolder (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+      HiglightImage ap=[0.4, 0.0] size=[20.8, 8.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_state] AssetLoader
+    BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[Category_tab] AssetLoader
+    Arrow ap=[-30.0, 0.0] size=[15.0, 15.0] amin=[1.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] Image[arrow] AssetLoader
+    BGDisabled (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[Category_tab] AssetLoader
+      ArrowDisabled ap=[-30.5, 0.0] size=[15.0, 15.0] amin=[1.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] Image[arrow] AssetLoader
+    SectionName ap=[-14.32, -0.4] size=[-64.4, -41.3] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"Recent" Label
+    Counter ap=[-16.05, -0.4] size=[-67.9, -41.3] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"0/0"
+    NewIndicator (off) ap=[-10.6, -12.5] size=[45.0, 45.0] amin=[1.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[0.8, 0.8, 0.8]
+      BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[notification] AssetLoader
+      CounterText ap=[-0.3, -0.1] size=[-17.0, -16.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"!"
+  Foldout ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] RectMask2D LayoutElement
+    ContactsContainer ap=[122.8, 0.0] size=[253.55, 0.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 1.0] VerticalLayoutGroup ContentSizeFitter
+ContactsWindow ap=[-0.62, 0.0] size=[-11.96, -0.54] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] ContactsWindow VerticalContainer MoveInputHandler ContactsWindowVisualResourcesProvider ScrollRectScrollToFocusedContentExtension ContactEntryRendererPool ContatcActionButtonPool ContactsWindowSoundHandler
+  ClipArea ap=[-10.26, 0.0] size=[-20.52, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.0] Image Mask ScrollRect AssetLoader
+    List ap=[-0.0, 0.0] size=[-0.62, 0.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] VerticalLayoutGroup ContentSizeFitter
+  Scrollbar ap=[-11.0, 0.0] size=[7.3, -40.0] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+CrimsonButtonPanel_Default ap=[0.0, 65.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.5] HorizontalLayoutGroup InputButtonContainer
+DailyQuestSectionRenderer ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] VerticalLayoutGroup DailyQuestSectionRenderer
+  DailyQuestSectionButton ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement GameObjectButtonView ButtonControl SocialButtonCounterView ButtonSoundHandler LabelButtonView
+    HighlightFolder (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+      HiglightImage ap=[0.4, 0.0] size=[20.8, 8.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_state] AssetLoader
+    BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[Category_tab] AssetLoader
+    Arrow ap=[-32.3, 0.0] size=[15.0, 15.0] amin=[1.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] Image[arrow] AssetLoader
+    BGDisabled (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[Category_tab] AssetLoader
+      ArrowDisabled ap=[-30.5, 0.0] size=[15.0, 15.0] amin=[1.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] Image[arrow] AssetLoader
+    SectionName ap=[-14.32, -0.4] size=[-64.4, -41.3] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"Quests" Label
+    Counter ap=[-16.05, -0.4] size=[-67.9, -41.3] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"0/0"
+    NewIndicator ap=[-10.6, -12.5] size=[45.0, 45.0] amin=[1.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[0.8, 0.8, 0.8]
+      BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[notification] AssetLoader
+      CounterText ap=[-0.3, -0.1] size=[-17.0, -16.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"!"
+  Foldout ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] RectMask2D LayoutElement
+    BGMask ap=[-0.43, 0.23] size=[-5.03, 0.23] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] LayoutElement Image[quests_background] AssetLoader
+    ContactsContainer ap=[130.0, 0.0] size=[253.55, 0.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 1.0] VerticalLayoutGroup ContentSizeFitter
+DailyQuestSlotRenderer ap=[124.28, 0.0] size=[240.55, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] DailyQuestSlotRenderer VerticalLayoutGroup ContentSizeFitter
+  DailyQuestEmptySlot ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement Image[quests_slot] AssetLoader
+  Button ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] ButtonControl Image[quests_button_active] GameObjectButtonView AssetLoader ButtonSoundHandler LayoutElement
+    HighlightFolder (off) ap=[-0.0, 0.0] size=[-0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+      HiglightImage ap=[0.4, 0.0] size=[20.8, 8.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_state] AssetLoader
+    ActiveQuestFolder ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+      QuestIcon ap=[14.15, -3.61] size=[43.01, -16.16] amin=[0.0, 0.0] amax=[0.0, 1.0] pivot=[0.0, 0.5] Image[quests_icon] LayoutElement AssetLoader ImageButtonView
+      QuestTitle ap=[29.36, -8.11] size=[-71.29, -32.1] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] Label TextMeshProUGUI"Win 5 Ranked matches with Nilfgaard"
+        TMP SubMeshUI [TextMeshPro/Sprite] ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] TMP_SubMeshUI
+      QuestProgress ap=[24.86, -44.01] size=[-68.31, -49.57] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] Label TextMeshProUGUI"0 / 5"
+        TMP SubMeshUI [TextMeshPro/Sprite] ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] TMP_SubMeshUI
+      QuestCompletedIcon ap=[98.6, -17.1] size=[44.09, 40.56] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[quest_finished_check_icon] AssetLoader
+      RewardAmount ap=[-74.0, -34.9] size=[-208.63, -37.83] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] Label TextMeshProUGUI"20"
+        TMP SubMeshUI [TextMeshPro/Sprite] ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] TMP_SubMeshUI
+      NewIndicator (off) ap=[-10.6, -12.5] size=[45.0, 45.0] amin=[1.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[0.8, 0.8, 0.8]
+        BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[notification] AssetLoader
+        CounterText ap=[-0.3, -0.1] size=[-17.0, -16.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"!"
+  Foldout ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] RectMask2D LayoutElement
+    ActionsPanel ap=[120.27, -0.02] size=[240.56, 0.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 1.0] ContentSizeFitter VerticalLayoutGroup
+DeckStatsWidgetPrefab ap=[0.0, 0.0] size=[0.0, 100.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] UIDeckStatsWidget
+  DeckPickerBG (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[dp_stats_sco_bg] AssetLoader FactionImage
+  SidePreviewBG (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[side_preview_info_bg_SCO] AssetLoader FactionImage
+  Counters ap=[0.0, -4.0] size=[0.0, 65.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0]
+    Gold ap=[-55.0, 0.0] size=[55.0, 0.0] amin=[0.5, 0.0] amax=[0.5, 1.0] pivot=[0.5, 0.5]
+      BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.5] Image[dp_stats_gold_bg] AssetLoader
+      Label ap=[0.0, 0.82] size=[-10.0, -16.93] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"3/4"
+    Silver ap=[0.0, 0.0] size=[55.0, 0.0] amin=[0.5, 0.0] amax=[0.5, 1.0] pivot=[0.5, 0.5]
+      BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.5] Image[dp_stats_silver_bg] AssetLoader
+      Label ap=[0.0, 0.82] size=[-10.0, -16.93] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"5/6"
+    Bronze ap=[55.0, 0.0] size=[55.0, 0.0] amin=[0.5, 0.0] amax=[0.5, 1.0] pivot=[0.5, 0.5]
+      BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.5] Image[dp_stats_bronze_bg] AssetLoader
+      Label ap=[0.0, 0.82] size=[-10.0, -16.93] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"40"
+  Ribbon ap=[0.5, 7.0] size=[-9.0, 30.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.0]
+    BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[side_ribbon_sco] AssetLoader FactionImage
+    Label ap=[0.0, 0.0] size=[-20.0, -10.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Label TextMeshProUGUI"CARDS: 26"
+    ValidVFX ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+      Flare_FX 
+      Flare_FX_Leaves 
+FactionRowPrefab ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement FactionSummaryRowView
+  Bars ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+    SlideableRight ap=[208.11, -34.07] size=[223.97, 68.15] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 0.5] Mask UIImage AssetLoader
+      RightContent ap=[-227.8, -34.07] size=[223.97, 68.15] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 0.5]
+        RightBanner ap=[-17.4, -0.62] size=[0.0, 9.14] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.5] UIImage[R_MON] AssetLoader
+        WinsText ap=[-30.7, -6.3] size=[-61.4, -43.4] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI TweenableContentDataHolder
+    SlideableLeft ap=[208.11, -34.07] size=[208.11, 68.15] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[1.0, 0.5] Mask UIImage AssetLoader
+      LeftContent ap=[426.42, -34.07] size=[208.11, 68.15] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[1.0, 0.5]
+        BannerBG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.16, 0.16] amax=[1.0, 0.65] pivot=[0.5, 0.5] UIImage[L_BannerBackground] AssetLoader
+        CollectionFill ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.16, 0.16] amax=[1.0, 0.65] pivot=[0.5, 0.5] UIImage[FillBar_Mon] AssetLoader
+          PremiumCollectionFill ap=[0.0, 0.0] size=[0.0, 20.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.0] UIImage[FillBar_Small] AssetLoader
+          CollectionText base ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.41, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI TweenableContentDataHolder
+          CollectionText slash ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.41, 0.0] amax=[0.53, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"/"
+          CollectionText total ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.53, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI
+        BannerFront ap=[-0.05, -3.89] size=[-0.05, 7.78] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[1.0, 0.5] UIImage AssetLoader
+  RowIcon ap=[0.0, -3.0] size=[100.0, 14.0] amin=[0.5, 0.0] amax=[0.5, 1.0] pivot=[0.5, 0.5] scale=[0.0, 0.0, 0.0] UIImage TweenableContentDataHolder AssetLoader
+Highlight_CardBoard CardHighlightView
+  HighlightMovingEdge scale=[1.43, 1.13, 0.85]
+  CardFrontGlow scale=[0.997, 0.961, 1.921]
+  Frame scale=[1.049, 1.026, 1.0]
+Highlight_CardPreview 
+  UI_Highlight_bot scale=[5.0, 5.0, 5.0]
+  UI_Highlight_top_01 scale=[5.0, 5.0, 5.0]
+InputButtonContainerPrefab ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] HorizontalLayoutGroup InputButtonContainer
+Label_BasicGlyph ap=[90.8, -410.0] size=[0.0, 45.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 0.5] GlyphLabelControl PlatformGlyphController HorizontalLayoutGroup ContentSizeFitter LayoutElement
+  Dir ap=[75.32, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] HorizontalLayoutGroup ContentSizeFitter LayoutInputModeViewDisabler
+    Image ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image AssetLoader LayoutElement
+    Text ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 0.5] TextMeshProUGUI"Simple Text" Label LayoutElement
+LoadingSpinner ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+  Background ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[loader_bg]
+  ProgressBar ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[progress_fill_mask]
+  Hourglass ap=[-0.04, 0.02] size=[0.01, 0.01] amin=[0.29, 0.34] amax=[0.71, 0.75] pivot=[0.5, 0.5] Image[timer_icon]
+MessageEntryRenderer ap=[124.28, -4.0] size=[240.55, 68.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 1.0] LayoutElement SocialMessageRenderer
+  Button ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] ButtonControl Image[sub_category_tab] GameObjectButtonView AssetLoader ButtonSoundHandler LabelButtonView
+    HighlightFolder (off) ap=[-0.0, 0.0] size=[-0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+      HiglightImage ap=[0.4, 0.0] size=[20.8, 8.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_state] AssetLoader
+    MessageIcon ap=[4.9, 0.0] size=[48.9, 0.0] amin=[0.0, 0.0] amax=[0.0, 1.0] pivot=[0.0, 0.5] Image[notif_icon_info] LayoutElement AssetLoader ImageButtonView
+    MessageTitle ap=[23.38, -8.6] size=[-75.05, -17.7] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] TextMeshProUGUI"Server will enter maintainence tomorrow " Label
+      TMP SubMeshUI [TextMeshPro/Sprite] ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] TMP_SubMeshUI
+MessagesWindow ap=[-0.62, 0.0] size=[-11.96, -0.54] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] MessagesWindow VerticalContainer MoveInputHandler ScrollRectScrollToFocusedContentExtension MessagesWindowSoundHandler
+  ClipArea ap=[-10.26, 0.0] size=[-20.52, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.0] Image Mask ScrollRect AssetLoader
+    List ap=[-0.0, 0.0] size=[-0.62, 0.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] VerticalLayoutGroup ContentSizeFitter
+  Scrollbar ap=[-11.0, 0.0] size=[7.3, -40.0] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+ScrollBarPrefab ap=[0.0, 0.0] size=[5.0, 240.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] MinSizeHandleScrollbar Image[scrollbar_middle] AssetLoader
+  Handle ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5]
+    HandleImage ap=[0.0, 0.0] size=[15.0, 0.0] amin=[0.5, 0.0] amax=[0.5, 1.0] pivot=[0.5, 0.5] Image[scrollbar_handle] AssetLoader
+SearchSection ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] VerticalLayoutGroup SearchSectionRenderer MoveInputHandler
+  ContactsSectionHeader ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement ButtonControl
+    InputFieldBar ap=[-2.9, 0.0] size=[5.8, -15.1] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] GraphicRaycaster
+      TopDivider (off) ap=[4.8, 0.0] size=[-4.9, 25.1] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[1.0, 1.0, 0.0] Image[Wooden_holder_devider] AssetLoader
+      Button_BasicUI ap=[85.1, -1.4] size=[34.61, 33.2] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.0, 0.5] Image ButtonControl GameObjectButtonView AssetLoader ButtonSoundHandler
+        Layout ap=[1.18, -0.13] size=[-0.25, -6.82] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[1.0, 1.0, 0.0]
+          ButtonBg ap=[0.9, 0.36] size=[9.72, 5.07] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[1.0, 1.0, 0.0] Image[btn_square_idle] AssetLoader
+          NAVIGATION (off) ap=[0.9, 0.36] size=[9.72, 5.07] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[1.0, 1.0, 0.0] Image[btn_square_hovered] LayoutElement AssetLoader
+          HIT (off) ap=[0.9, 0.36] size=[9.72, 5.07] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[1.0, 1.0, 0.0] Image[btn_square_down] LayoutElement AssetLoader
+          ButtonIcon ap=[1.33, -0.4] size=[32.11, 19.75] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] scale=[1.0, 1.0, 0.0] Image[textsearch_icon] AssetLoader
+      TextMeshPro - InputField ap=[-18.1, 0.0] size=[206.4, 43.4] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[chat_field] InputFieldControl AssetLoader InputField GameObjectInputFieldView InputFieldSoundHandler
+        HighlightFolder ap=[-0.31, -0.47] size=[-8.15, -10.98] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+          HiglightImage ap=[0.0, 0.0] size=[21.6, 8.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[navigation_state] AssetLoader
+        TextMask ap=[1.4, 0.7] size=[-18.7, -17.3] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] RectMask2D
+          Viewport ap=[0.0, 0.0] size=[-8.0, -4.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+            InputFieldTextAnchor ap=[-0.0, -0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+              Placeholder ap=[-0.0, -1.57] size=[0.0, -3.13] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"Enter text..." Label
+              Text ap=[0.0, 0.0] size=[0.0, -4.75] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.0] TextMeshProUGUI"​" ContentSizeFitter
+      TopDivider ap=[4.8, -49.06] size=[-4.9, 25.1] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[1.0, 1.0, 0.0] Image[Wooden_holder_devider] AssetLoader
+  Foldout ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] RectMask2D LayoutElement
+    ContactsContainer ap=[126.4, 0.0] size=[253.55, 0.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 1.0] VerticalLayoutGroup ContentSizeFitter
+SocialFeatureButton ap=[25.0, 0.0] size=[0.0, 50.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] SocialButton LayoutElement Image ContentSizeFitter ImageButtonView SocialButtonCounterView GameObjectButtonView ToggleButtonView ButtonSoundHandler
+  Layout ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] VerticalLayoutGroup
+    INACTIVE (off) ap=[85.84, -22.5] size=[171.67, 67.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[outer_btn_idle] LayoutElement HorizontalLayoutGroup AssetLoader
+    ACTIVE ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[outer_btn_idle] LayoutElement HorizontalLayoutGroup AssetLoader
+    SELECTED (off) ap=[34.2, -22.5] size=[68.4, 67.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[outer_btn_down] LayoutElement HorizontalLayoutGroup AssetLoader
+    NAVIGATION (off) ap=[25.0, -38.09] size=[50.0, 23.83] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[outer_btn_toggle] LayoutElement HorizontalLayoutGroup AssetLoader
+    HIT (off) ap=[34.2, -22.5] size=[68.4, 67.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[outer_btn_down] LayoutElement HorizontalLayoutGroup AssetLoader
+  ToggleButtonLyout (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] VerticalLayoutGroup
+    CheckedState ap=[25.0, -25.0] size=[50.0, 50.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[outer_btn_toggle] LayoutElement HorizontalLayoutGroup AssetLoader
+  Icon ap=[0.0, 0.0] size=[30.0, 30.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[message_icon] AssetLoader
+  Counter (off) ap=[-7.18, -4.5] size=[34.5, 34.5] amin=[1.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] UILayerOffsetComponent
+    BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[notification] AssetLoader
+    CounterText ap=[-0.3, 0.0] size=[-12.3, -10.3] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"!"
+UIBattleTurnTimerPrefab ap=[0.0, 0.0] size=[0.0, 41.2] amin=[0.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] UILayerOffsetComponent UITimerController
+  UpperTimerFolder ap=[1.29, 16.39] size=[500.0, 18.6] amin=[0.5, 0.0] amax=[0.5, 0.0] pivot=[0.5, 0.5] UITimer
+    TimerBar ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+      TimerBarBg (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image AssetLoader
+      TimerBarMask ap=[0.0, -1.2] size=[0.0, -5.62] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image Mask AssetLoader
+        TimerStartingPosition ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 1.0] pivot=[0.0, 0.0]
+        TimerEndPosition ap=[0.0, 0.0] size=[0.0, 0.0] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[1.0, 0.5]
+        TimerBar ap=[0.0, 0.0] size=[-44.56, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[timer_progress_enemy] AssetLoader
+      ---------------------- ap=[0.0, -7.6] size=[0.0, 6.0] amin=[0.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] Image[long-line] AssetLoader
+      ---------------------- ap=[0.0, 5.4] size=[0.0, 6.0] amin=[0.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] Image[long-line] AssetLoader
+    Decoration1 ap=[0.0, -0.0] size=[77.17, 51.33] amin=[0.0, 0.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] UIImage[timer-icon_enemy] AssetLoader
+    Decoration2 ap=[0.0, -0.0] size=[81.76, 51.33] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] UIImage[unnamed (1)] AssetLoader
+      Count ap=[0.0, 0.0] size=[-14.25, -9.55] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[1.397, 1.397, 0.279] TextMeshProUGUI"0"
+UIBlackOutPanelPrefab ap=[0.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] GraphicRaycaster UIBlackOutPanelV2
+  Container ap=[0.0, 0.0] size=[1308.0, 736.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+    ImageR ap=[600.0, 0.0] size=[2200.0, 1000.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image
+    ImageM ap=[0.0, 0.0] size=[2200.0, 1000.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image
+    ImageL ap=[-600.0, 0.0] size=[2200.0, 1000.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image
+UIBoothGameBlockPrefab ap=[-0.0, -0.0] size=[706.0, 436.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] UIBlockGameBoothPanel GraphicRaycaster
+  BLUR ap=[-0.2, -0.1] size=[1599.5, 900.1] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image AssetLoader
+  SimplePopupBg ap=[-1.0, 47.0] size=[928.0, 342.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image AssetLoader
+  Divider ap=[-1.0, 140.56] size=[840.0, 9.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image AssetLoader
+  TitleText ap=[3.0, 169.1] size=[862.0, 50.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TextMeshProUGUI"## booth_block_game_title" LocalizedTextMeshPro
+  MainText ap=[-1.0, 36.0] size=[840.0, 174.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TextMeshProUGUI"## booth_block_game_text" InlineGraphicPlatformSwitcher LocalizedTextMeshPro
+    Inline Graphic ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+  ButtonPanels (1) ap=[-0.81, 48.05] size=[889.0, 315.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image UIButton LayoutElement UIButtonInputActionTrigger AssetLoader
+  ButtonPopupParent ap=[-30.0, -243.63] size=[0.0, 0.0] amin=[0.5, 1.0] amax=[0.5, 1.0] pivot=[0.5, 1.0] HorizontalLayoutGroup ContentSizeFitter
+UICardPreviewPrefab ap=[0.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] UICardPreview UICardPreviewSoundHandler GraphicRaycaster
+  Content ap=[0.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+    BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+      BlackOverlay ap=[0.0, 0.0] size=[-0.0, -0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[challenges_background] AssetLoader
+      TopBar ap=[0.0, 0.0] size=[-0.0, 100.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0]
+        Turn Timer (Card Preview) ap=[0.0, 10.0] size=[448.0, 41.2] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] scale=[3.58, 3.58, 3.58] UITimer UILayerOffsetComponent
+          UpperTimerFolder ap=[0.0, 17.0] size=[135.0, 18.6] amin=[0.5, 0.0] amax=[0.5, 0.0] pivot=[0.5, 0.5]
+            TimerBar ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+              TimerBarBg ap=[0.0, -0.58] size=[0.0, 2.06] amin=[0.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] Image AssetLoader
+              TimerBarMask ap=[0.0, 0.25] size=[0.0, 2.07] amin=[0.0, 0.5] amax=[1.0, 0.5] pivot=[-0.0, 0.5] Image Mask AssetLoader
+                TimerStartingPosition ap=[0.1, 0.0] size=[0.05, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[-0.0, 0.5]
+                TimerEndPosition ap=[0.0, 0.0] size=[135.0, -0.0] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.5]
+                TimerBar ap=[2.01, 0.0] size=[0.05, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[-0.0, 0.5] UIImage AssetLoader
+              ---------------------- ap=[0.0, -1.56] size=[0.0, 2.0] amin=[0.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] Image[long-line] AssetLoader
+              ---------------------- ap=[0.0, 0.97] size=[0.0, 2.0] amin=[0.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] Image[long-line] AssetLoader
+            Decoration1 ap=[0.0, 0.0] size=[23.93, 0.0] amin=[0.0, 0.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] UIImage AssetLoader
+            Decoration2 ap=[0.0, 0.0] size=[23.95, 0.0] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] UIImage AssetLoader
+            Count ap=[135.0, -9.3] size=[9.7, 9.05] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] scale=[1.397, 1.397, 0.279] TextMeshProUGUI"0"
+    Timer ap=[70.0, -95.8] size=[0.0, 41.2] amin=[0.5, 1.0] amax=[0.5, 1.0] pivot=[0.5, 0.5]
+    CardDetails ap=[-270.0, 0.0] size=[-960.0, -240.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] VerticalLayoutGroup CardPreviewMouseTooltipHandler CardPreviewGamepadTooltipHandler
+      CardName ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 1.0] HorizontalLayoutGroup
+        Layout ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement VerticalLayoutGroup
+          Name ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 1.0] TextMeshProUGUI"dagon " LayoutElement
+          Categories ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"Categories"
+      Description ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] VerticalLayoutGroup
+        FlavorText ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 1.0] TextMeshProUGUI"Lorem ipsum dolor sit amet, consectetur " LayoutElement
+        Layout ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] HorizontalLayoutGroup
+          ------------------------ ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] scale=[1.0, 0.8, 1.0] Image[popup_divider] LayoutElement AssetLoader
+      CardDetails ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 1.0] VerticalLayoutGroup
+        CreatureFolder ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement VerticalLayoutGroup
+          Strength ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] HorizontalLayoutGroup LayoutElement
+            Value ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] scale=[1.1, 1.1, 1.0] TextMeshProUGUI"13" LayoutElement
+              TMP SubMeshUI [HalisGRMedium_Material] ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TMP_SubMeshUI
+            Label ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LocalizedTextMeshPro TextMeshProUGUI"[MISSING]card_strength"
+        Ability ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] UIPreviewCardAbility VerticalLayoutGroup
+          AbilityFlavorText ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] TextMeshProUGUI"Lorem ipsum dolor sit amet, consectetur " LayoutElement
+        AbilitiesFolderPositionCreature (off) ap=[0.0, 3.0] size=[57.9, 39.87] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 1.0] scale=[3.5, 1.87, 1.0]
+      ConnectedCardsPreview ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement HorizontalLayoutGroup ConnectedCardsPreview ScrollRect
+        Viewport ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement VerticalLayoutGroup Mask Image AssetLoader
+          ConnectedCards ap=[314.0, 0.0] size=[628.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement VerticalLayoutGroup ContentSizeFitter
+        Scrollbar ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Scrollbar LayoutElement
+          BG ap=[0.0, 0.0] size=[-4.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[scrollbar_middle] AssetLoader
+          Sliding Area ap=[0.0, 0.0] size=[0.0, -2.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+            Handle ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[scroll_bar_sellector] AssetLoader
+    Arrows ap=[0.0, 2.0] size=[0.0, 40.0] amin=[0.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5]
+      LeftArrowButton ap=[85.0, 0.0] size=[150.0, 150.0] amin=[0.0, 0.5] amax=[0.0, 0.5] pivot=[0.5, 0.5] scale=[-1.0, 1.0, 1.0] ButtonControl
+        ButtonView ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[1.0, 0.5] Image[preview_arrow_inactive] AssetLoader SpriteSheetButtonView
+      RightArrowButton ap=[-160.0, 0.0] size=[150.0, 150.0] amin=[1.0, 0.5] amax=[1.0, 0.5] pivot=[0.0, 0.5] ButtonControl
+        ButtonView ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[1.0, 0.5] Image[preview_arrow_inactive] AssetLoader SpriteSheetButtonView
+    Controls ap=[0.0, 50.0] size=[0.0, 0.0] amin=[0.5, 0.0] amax=[0.5, 0.0] pivot=[0.5, 0.5] HorizontalLayoutGroup ContentSizeFitter
+    ScrollControls ap=[-936.9, -25.8] size=[635.41, 348.67] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] scale=[1.2, 1.2, 1.0]
+    Buttons ap=[0.0, 0.0] size=[0.0, 100.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.0]
+    CardImage ap=[407.0, -16.0] size=[400.0, 486.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] scale=[0.95, 0.95, 0.95]
+      CardArtist ap=[0.0, -100.0] size=[0.0, 61.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.0] TextMeshProUGUI"Created by: <b>Boaty McBoatface, Boaty M"
+      CardPreviewRoot ap=[-10.0, -84.0] size=[20.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+      VFXDir ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[19.0, 19.0, 19.0] UILayerOffsetComponent
+        AssembleCard (off) ap=[-0.0, -0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] GeneralSoundHandler UILayerOffsetComponent VFXGameObjectDisabler
+          Attractor 0 (off) 
+          Circle ParticleSystemQualityController ParticleScaler
+          Turbulent ParticleSystemQualityController ParticleScaler
+          Ring scale=[18.0, 18.0, 18.0] ParticleSystemQualityController ParticleScaler
+          Sounds 
+            RENAMTE_TO_ULTIMATE_EVENT_NAME SoundMessageContainer
+              Events 
+                Event AkEvent
+        CraftPremium (off) ap=[-0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] GeneralSoundHandler UILayerOffsetComponent VFXGameObjectDisabler
+          Flame_1 scale=[0.8, 0.8, 0.8]
+          Flame_2 scale=[0.779, 0.779, 0.779]
+          Attractor 0 (off) ScaleWindZone
+            Circle ParticleSystemQualityController ParticleScaler
+              CircleBig ParticleSystemQualityController
+              Ring ParticleScaler
+              Charge ParticleScaler
+              Flash ParticleScaler
+              Blast ParticleSystemQualityController ParticleScaler
+                Big ParticleSystemQualityController ParticleScaler
+              ShootingStars ParticleSystemQualityController ParticleScaler
+                Dust ParticleSystemQualityController ParticleScaler
+              Stars (off) ParticleSystemQualityController ParticleScaler
+                Stars ParticleSystemQualityController
+              TealDust ParticleSystemQualityController ParticleScaler
+          Sounds 
+            ui_mainmenu_collection_transmute SoundMessageContainer
+              Events 
+                Event AkEvent
+        DisassembleCard (off) ap=[-0.0, -0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] GeneralSoundHandler UILayerOffsetComponent VFXGameObjectDisabler
+          Attractor (off) 
+          Sounds 
+            RENAME_TO_ULTIMATE_EVENT_NAME SoundMessageContainer
+              Events 
+                Event AkEvent
+          Circle ParticleSystemQualityController ParticleScaler
+          Turbulent ParticleSystemQualityController ParticleScaler
+          Ring ParticleSystemQualityController ParticleScaler
+  Templates (off) ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+    ConnectedCard ap=[0.0, -101.71] size=[613.0, 120.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 0.5] ConnectedCardPreviewDisplay LayoutElement HorizontalLayoutGroup
+      Card ap=[0.0, 0.0] size=[100.0, 120.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 1.0] RawImage LayoutElement
+        Render ap=[214.0, -111.74] size=[428.0, 223.48] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5]
+          Anchor ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+            CardPollen (off) scale=[11.25, 11.25, 11.25]
+              InertiaRoot 
+                Root scale=[1.0, 1.0, 3.0]
+                  RootForArt scale=[0.9, 0.9, 0.9]
+                    CardMeshTest scale=[1.0, 0.262, 1.0]
+                    Back scale=[1.0, 0.013, 1.0]
+                  IconPositioners 
+                    FirstIcon 
+                    SecondIcon 
+                    ThirdIcon 
+                    FourthIcon 
+              Colliders 
+                Primary 
+                Sticky 
+          Camera ap=[0.0, -1.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+      AbilitiesFolder ap=[116.0, -60.0] size=[497.0, 120.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 0.5] LayoutElement VerticalLayoutGroup UIPreviewCardAbility
+        Name ap=[248.5, -12.5] size=[497.0, 25.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] LayoutElement TextMeshProUGUI"dagon"
+        Cathegory ap=[248.5, -39.2] size=[497.0, 22.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"Categories" LayoutElement
+        AbilityFlavorText ap=[248.5, -53.4] size=[497.0, 66.6] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 1.0] TextMeshProUGUI"Lorem ipsum dolor sit amet, consectetur " LayoutElement
+UICashExpirePopupPrefab ap=[0.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] GraphicRaycaster UICashExpirePopup GraphicRaycaster
+  BLUR ap=[0.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image AssetLoader
+  Content ap=[0.0, 0.0] size=[-500.0, -369.48] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] VerticalLayoutGroup Image[pop-up_9slice] AssetLoader
+    Title ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"## panel_cash_expire_title" LocalizedTextMeshPro LayoutElement
+    Divider ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+      Divider ap=[0.0, 0.0] size=[10.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[floating_divider] AssetLoader
+    ___whitespace ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+    Description ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"## panel_cash_expire_desc" LayoutElement LocalizedTextMeshPro
+    ___whitespace ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+    Content ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement HorizontalLayoutGroup
+      ExpireTemplate (off) ap=[391.67, -180.26] size=[783.33, 360.51] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] VerticalLayoutGroup UIExpireTemplate LayoutElement
+        Layout ap=[391.67, -90.0] size=[783.33, 180.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] HorizontalLayoutGroup
+          ImageLayout ap=[135.83, -90.0] size=[271.67, 180.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] LayoutElement VerticalLayoutGroup
+            whitespace ap=[135.83, -5.0] size=[271.67, 10.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] LayoutElement
+            PowderImage ap=[135.83, -90.0] size=[271.67, 160.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] UIImage[dust_400] LayoutElement AssetLoader
+            whitespace ap=[135.83, -175.0] size=[271.67, 10.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] LayoutElement
+          Layout ap=[527.5, -90.0] size=[511.67, 75.12] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] VerticalLayoutGroup LayoutElement
+            Layout ap=[255.83, -15.0] size=[511.67, 30.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] LayoutElement HorizontalLayoutGroup
+              AmountLabel ap=[145.18, -15.0] size=[290.35, 30.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] LayoutElement TextMeshProUGUI"x1200 METEORITE POWDER"
+            Timer ap=[255.83, -55.56] size=[511.67, 39.12] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] HorizontalLayoutGroup LayoutElement
+              Icon ap=[17.5, -19.56] size=[35.0, 35.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[timer_preview_icon] LayoutElement AssetLoader
+              VGroup ap=[278.33, -19.56] size=[466.67, 39.12] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] VerticalLayoutGroup
+                TextPanel ap=[90.91, -8.51] size=[181.82, 17.01] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] HorizontalLayoutGroup LayoutElement
+                  TextTitle ap=[90.91, -8.51] size=[181.82, 17.01] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"panel_cash_expire_timer" LocalizedTextMeshPro
+                TimeTextPanel ap=[233.33, -28.07] size=[466.67, 22.11] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] HorizontalLayoutGroup LayoutElement
+                  TextTitle ap=[233.33, -11.06] size=[466.67, 22.11] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"4h:55m:44s"
+              HasExpired (off) ap=[507.3, -19.56] size=[230.4, 17.01] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"panel_cash_expire_has_expired" LocalizedTextMeshPro
+        Divider ap=[391.67, -184.0] size=[783.33, 8.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] LayoutElement
+          Divider ap=[0.0, 0.0] size=[-80.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[floating_divider 1] AssetLoader
+      ScrollRect ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Mask Image LayoutElement ScrollRect
+        Content ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.0, 1.0] VerticalLayoutGroup LayoutElement ContentSizeFitter
+      ScrollbarParent ap=[1032.5, -160.0] size=[15.0, 314.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] LayoutElement
+    Buttons ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] HorizontalLayoutGroup
+UIDebugToolCreateNewPrefab ap=[0.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] GraphicRaycaster UIDebugToolsCreateNewPanel
+  Panel ap=[0.0, 0.0] size=[900.0, 800.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+    Background ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[woodpanel_large_bg] AssetLoader
+    TitleLabel ap=[0.0, -25.8] size=[250.0, 43.4] amin=[0.5, 1.0] amax=[0.5, 1.0] pivot=[0.5, 1.0] TextMeshProUGUI"Bug Reporting Tool"
+    VerticalContainer ap=[0.0, -79.8] size=[0.0, 500.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] VerticalContainer VerticalLayoutGroup
+      HorizontalDivider ap=[0.0, 0.0] size=[0.0, 20.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+        Image ap=[0.0, -5.0] size=[-50.0, 10.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[popup-line] AssetLoader LayoutElement
+      SummaryContainer ap=[0.0, 0.0] size=[0.0, 48.85] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] HorizontalContainer HorizontalLayoutGroup
+        Label ap=[0.0, 0.0] size=[250.0, 43.4] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"Summary" LayoutElement
+        InputField ap=[0.0, 0.0] size=[550.0, 40.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] InputFieldControl InputField GameObjectInputFieldView LayoutElement
+          BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[textsearch_idle] AssetLoader
+          Toggle (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[textsearch_toggle] AssetLoader
+          Mask ap=[0.0, 0.5] size=[-16.0, -11.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] RectMask2D
+            Viewport ap=[0.0, 0.0] size=[-8.0, -4.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+              Placeholder ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.0] TextMeshProUGUI"Input Summary..."
+              Anchor ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+                Text ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.0] TextMeshProUGUI"​" ContentSizeFitter
+      ReporterContainer ap=[0.0, 0.0] size=[0.0, 60.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] HorizontalContainer HorizontalLayoutGroup
+        Label ap=[0.0, 0.0] size=[250.0, 43.4] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"Reporter" LayoutElement
+        InputField ap=[0.0, 0.0] size=[550.0, 40.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] InputFieldControl InputField GameObjectInputFieldView LayoutElement
+          BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[textsearch_idle] AssetLoader
+          Toggle (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[textsearch_toggle] AssetLoader
+          Mask ap=[0.0, 0.5] size=[-16.0, -11.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] RectMask2D
+            Viewport ap=[0.0, 0.0] size=[-8.0, -4.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+              Placeholder ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.0] TextMeshProUGUI"Input Reporter Name..."
+              Anchor ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+                Text ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.0] TextMeshProUGUI"​" ContentSizeFitter
+      DescriptionContainer ap=[0.0, 0.0] size=[0.0, 300.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] VerticalContainer VerticalLayoutGroup
+        Label ap=[0.0, 0.0] size=[250.0, 43.4] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"Description" LayoutElement
+        InputField ap=[0.0, 0.0] size=[800.0, 200.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] InputFieldControl InputField GameObjectInputFieldView LayoutElement
+          BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[textsearch_idle] AssetLoader
+          Toggle (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[textsearch_toggle] AssetLoader
+          Mask ap=[0.0, 0.5] size=[-16.0, -11.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] RectMask2D
+            Viewport ap=[0.0, 0.0] size=[-8.0, -4.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+              Placeholder ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.0] TextMeshProUGUI"Input Description..."
+              Anchor ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+                Text ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.0] TextMeshProUGUI"​" ContentSizeFitter
+      HorizontalDivider ap=[0.0, 0.0] size=[0.0, 20.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+        Image ap=[0.0, -5.0] size=[-50.0, 10.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[popup-line] AssetLoader LayoutElement
+      AppendToContainer ap=[0.0, 0.0] size=[0.0, 48.85] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] HorizontalContainer HorizontalLayoutGroup
+        Label ap=[0.0, 0.0] size=[250.0, 43.4] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"Append To" LayoutElement
+        InputField ap=[0.0, 0.0] size=[550.0, 40.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] InputFieldControl InputField GameObjectInputFieldView LayoutElement
+          BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[textsearch_idle] AssetLoader
+          Toggle (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[textsearch_toggle] AssetLoader
+          Mask ap=[0.0, 0.5] size=[-16.0, -11.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] RectMask2D
+            Viewport ap=[0.0, 0.0] size=[-8.0, -4.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+              Placeholder ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.0] TextMeshProUGUI"Case Number"
+              Anchor ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+                Text ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.0] TextMeshProUGUI"​" ContentSizeFitter
+      StatusContainer ap=[0.0, 0.0] size=[0.0, 48.85] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] HorizontalLayoutGroup
+        Label ap=[0.0, 0.0] size=[250.0, 43.4] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"Status:" LayoutElement
+        StatusDisplay ap=[0.0, 0.0] size=[549.88, 104.7] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.0] TextMeshProUGUI"ERROR: NOT LOGGED IN"
+    InputContainerParent ap=[0.0, 37.62] size=[0.0, 100.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.0]
+UIFadeOverlayPrefab ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] GraphicRaycaster UIFadeOverlayPanel CrimsonFadeExtension
+  Overlay ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] DynamicOverlay
+UIMainMenuItemsBoughtOutsidePrefab ap=[-1172.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] UIMainMenuItemsBoughtOutsideGamePanel GraphicRaycaster
+  BLUR ap=[0.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image AssetLoader
+  Content ap=[0.0, 0.0] size=[-800.0, -440.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] UIImage[pop-up_9slice] VerticalLayoutGroup AssetLoader
+    Title ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"## input_card_management_transaction_com" LayoutElement LocalizedTextMeshPro
+    Divider ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+      Divider ap=[0.0, 0.0] size=[10.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[floating_divider 1] AssetLoader
+    VisualGroups ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement HorizontalLayoutGroup
+      KegsGroup ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement VerticalLayoutGroup
+        Image ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] UIImage[placeholder_barrel7] AssetLoader
+        Label ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement TextMeshProUGUI"Kegs: 4"
+      PowderGroup ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement VerticalLayoutGroup
+        Image ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] UIImage[dust_400] AssetLoader
+        Label ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement TextMeshProUGUI"Powder: 400"
+      ShardsGroup ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement VerticalLayoutGroup
+        Image ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+          Sprite ap=[0.0, 0.0] size=[120.0, 120.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[arena_ticket] AssetLoader
+        Label ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement TextMeshProUGUI"Powder: 400"
+    ___whitespace ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+    Buttons ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] HorizontalLayoutGroup
+UIMenusSocialPrefab ap=[0.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] scale=[0.237, 0.237, 0.237] SocialPanel GraphicRaycaster GraphicRaycaster SocialPanelMouseTooltipHandler SocialPanelSoundHandler
+  SocialWindow ap=[0.0, 0.0] size=[323.3, 722.0] amin=[0.0, 0.5] amax=[0.0, 0.5] pivot=[0.0, 0.5]
+    OpenWindowGuide ap=[-102.0, -40.0] size=[68.0, 50.0] amin=[0.5, 0.0] amax=[0.5, 0.0] pivot=[0.5, 0.5]
+      KeyboardandMouse ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] ReactiveContainer
+        OpenWindowButton ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] LayoutElement ContentSizeFitter ButtonControl GameObjectButtonView SocialButtonCounterView ButtonSoundHandler
+          Layout ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] VerticalLayoutGroup
+            INACTIVE (off) ap=[45.0, -5.75] size=[90.0, 33.5] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[outer_btn_idle] LayoutElement HorizontalLayoutGroup AssetLoader
+            ACTIVE ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[outer_btn_idle] LayoutElement HorizontalLayoutGroup AssetLoader
+            SELECTED (off) ap=[45.0, -22.5] size=[90.0, 67.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[outer_btn_toggle] LayoutElement HorizontalLayoutGroup AssetLoader
+            NAVIGATION (off) ap=[45.0, -22.5] size=[90.0, 67.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[outer_btn_toggle] LayoutElement HorizontalLayoutGroup AssetLoader
+            HIT (off) ap=[45.0, -39.25] size=[90.0, 33.5] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[outer_btn_down] LayoutElement HorizontalLayoutGroup AssetLoader
+          Icon ap=[0.0, 0.0] size=[22.4, 30.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[menu_icon] AssetLoader
+          Counter (off) ap=[-7.74, -1.8] size=[45.0, 45.0] amin=[1.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+            BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[notification] AssetLoader
+            CounterText ap=[-0.4, -0.7] size=[-27.73, -28.42] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"!"
+      Consoles ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] ReactiveContainer
+        Glyph ap=[0.0, 0.0] size=[0.0, 35.0] amin=[0.0, 0.5] amax=[1.0, 0.5] pivot=[0.5, 0.5] Image PlatformGlyphController AssetLoader
+    Content (off) ap=[0.0, -50.0] size=[323.3, 722.0] amin=[0.0, 0.5] amax=[0.0, 0.5] pivot=[0.0, 0.5]
+      BG ap=[0.0, 3.0] size=[0.0, -55.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[Wooden_holder_1] AssetLoader EventConsumerControl
+      WindowContent ap=[-0.16, 37.35] size=[-33.99, -165.3] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] RectMask2D
+      Divider ap=[0.9, 37.72] size=[-36.1, -164.55] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[1.0, 1.0, 0.0]
+        AlphaMaskTop ap=[-1.35, -0.37] size=[-4.34, 20.6] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] Image[Wooden_holder_Upper_gradient] AssetLoader
+        AlphaMaskBottom ap=[0.1, -4.81] size=[2.03, 25.01] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.0] Image[BottomDivider] AssetLoader
+      ButtonsWithGlyphs ap=[1.0, -277.0] size=[-49.0, -660.2] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] HorizontalLayoutGroup
+        LeftGlyph ap=[119.65, -30.9] size=[35.0, 61.8] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] LayoutElement ReactiveContainer
+          Glyph ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image PlatformGlyphController AssetLoader
+        SocialFeaturesButtons ap=[137.15, -30.9] size=[0.0, 61.8] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] HorizontalLayoutGroup SocialButtonFeaturesBar HorizontalContainer RadioGroup
+        RightGlyph ap=[154.65, -30.9] size=[35.0, 61.8] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] LayoutElement ReactiveContainer
+          Glyph ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image PlatformGlyphController AssetLoader
+      Button_CloseRC ap=[288.9, -18.2] size=[43.0, 25.5] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 1.0] ReactiveContainer
+        Button_Close ap=[1.5, -3.5] size=[32.5, 31.1] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.0, 1.0] Image GameObjectButtonView ButtonControl ButtonSoundHandler
+          Layout ap=[16.8, -15.37] size=[36.6, 37.75] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5]
+            NAVIGATION (off) ap=[17.5, -19.9] size=[51.0, 35.7] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[close_nav_btn] LayoutElement AssetLoader
+            HIT (off) ap=[17.5, -19.9] size=[51.0, 35.7] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[close_nav_btn] LayoutElement AssetLoader
+            ButtonBg ap=[17.5, -19.9] size=[51.0, 35.7] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image[close_btn] AssetLoader
+          Sounds ap=[46.7, 4.53] size=[0.0, 0.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5]
+            ui_mainmenu_menu_navigate ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] SoundMessageContainer
+              Events 
+                Event AkEvent
+UINotificationsPrefab ap=[0.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] UINotificationsPanel GraphicRaycaster
+  StartPosition ap=[415.0, -95.0] size=[0.0, 0.0] amin=[1.0, 1.0] amax=[1.0, 1.0] pivot=[1.0, 1.0]
+  EndPosition ap=[0.0, -95.0] size=[0.0, 0.0] amin=[1.0, 1.0] amax=[1.0, 1.0] pivot=[1.0, 1.0]
+  UINotificationControl ap=[393.9, -95.0] size=[346.53, 80.03] amin=[1.0, 1.0] amax=[1.0, 1.0] pivot=[1.0, 1.0] UINotificationControl LayoutElement UINotificationControlSoundHandler
+    Bg ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[1.0, 1.0] Image[notif_bg_multiplayer] LayoutElement AssetLoader
+    Icon_old ap=[42.6, 0.29] size=[54.9, 54.21] amin=[0.0, 0.5] amax=[0.0, 0.5] pivot=[0.5, 0.5] NotificationIconWidget Image AssetLoader LayoutElement
+    Icon_Label ap=[-118.0, -45.2] size=[-300.39, -53.83] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] scale=[1.003, 1.003, 1.003] Label TextMeshProUGUI"20"
+    TextLabel ap=[29.54, 0.29] size=[259.08, 54.21] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Label TextMeshProUGUI
+UIPopupPanelPrefab ap=[0.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] PopupPanel GraphicRaycaster CanvasScaler PopupPanelSoundHandler
+  BGBlur (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image AssetLoader
+  PopupControl ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] ContentSizeFitter VerticalLayoutGroup PopupControl
+    BGShadow ap=[0.0, 0.0] size=[30.0, 30.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[popup_bg_shadow] AssetLoader LayoutElement
+    Title ap=[332.0, 0.0] size=[660.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] HorizontalLayoutGroup LayoutElement ContentSizeFitter
+      BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[popup_bg_title] AssetLoader LayoutElement
+      Text ap=[330.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"gdfg gfdg dfg fgf gfdgfd gfdg fgdfg dfg " Label LayoutElement ContentSizeFitter
+      Divider ap=[0.0, 0.0] size=[0.0, 5.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 0.5] Image[popup_divider] AssetLoader LayoutElement
+    Content ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] VerticalLayoutGroup LayoutElement
+      Image (off) ap=[330.0, -20.0] size=[0.0, 0.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] Image AssetLoader LayoutElement
+      Description ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] TextMeshProUGUI"You have unlocked the ability to mill un" Label InlineGraphicPlatformSwitcher
+      MillSpares ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] MillSparesPopupWidget VerticalLayoutGroup
+        Counters ap=[0.0, 0.0] size=[0.0, 60.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement HorizontalLayoutGroup
+          Common ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"x8"
+          | ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[board-div-1] AssetLoader LayoutElement
+          Rare ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"x4"
+          |  ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[board-div-1] AssetLoader LayoutElement
+          Epic ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"x2"
+          | ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[board-div-1] AssetLoader LayoutElement
+          Legendary ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"x1"
+        ----------- ap=[0.0, 0.0] size=[0.0, 25.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[popup_title_divider] LayoutElement AssetLoader
+        CardCount ap=[0.0, 0.0] size=[0.0, 60.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement HorizontalLayoutGroup
+          Icon ap=[0.0, 0.0] size=[0.0, 60.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[multiple_cards_icon] AssetLoader LayoutElement
+          Count ap=[0.0, 0.0] size=[0.0, -0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"x11"
+      CraftValues ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] CraftPopupWidget LayoutElement
+        Text ap=[0.0, 0.0] size=[0.0, -0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"GAIN: <sprite="PopupIcons" name="Scraps""
+          TMP SubMeshUI [TextMeshPro/Sprite] ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TMP_SubMeshUI
+      LoadingIconParent ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+      InputField ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] InputFieldControl InputField GameObjectInputFieldView LayoutElement
+        BG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[textsearch_idle] AssetLoader
+        Toggle (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[textsearch_toggle] AssetLoader
+        Mask ap=[0.0, 0.5] size=[-16.0, -11.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] RectMask2D
+          Viewport ap=[0.0, 0.0] size=[-8.0, -4.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+            Placeholder ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.0] TextMeshProUGUI"Text goes here..."
+            Anchor ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+              Text ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 0.0] TextMeshProUGUI"​" ContentSizeFitter
+    ButtonsPanelParent ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+    BGFrame ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[popup_bg_frame] AssetLoader LayoutElement
+UIProfilePanelPrefab ap=[-1217.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] scale=[0.997, 0.997, 0.997] GraphicRaycaster GraphicRaycaster ProfilePanel ProfilePanelSoundHandler
+  BLUR ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image
+  Panel ap=[0.0, 0.0] size=[1218.0, 579.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] scale=[1.1, 1.1, 1.1]
+    ProfileBanner ap=[-0.12, 0.0] size=[0.24, 0.0] amin=[0.03, 0.0] amax=[0.28, 1.0] pivot=[0.5, 0.5] UIProfileBanner
+      BG ap=[-14.6, -1.35] size=[81.06, 15.11] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] UIImage[SocialFeature_Paper] AssetLoader
+      BannerContentContainer ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+        ProfileCardContainer ap=[-14.0, -0.0] size=[28.0, 0.0] amin=[0.0, 0.41] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+          ProfileCard ap=[0.0, 0.0] size=[314.49, 314.5] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] RawImage RawImagePortal
+          RenderingArea ap=[70000.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+            Camera 
+              ControlCardHolder ap=[0.0, -1.5] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+        PlayerBasicInfoBannerContainer ap=[-16.9, -3.5] size=[77.0, 34.6] amin=[0.0, 0.3] amax=[1.0, 0.43] pivot=[0.5, 0.5] UIImage Mask
+          PlayerBasicInfoBanner ap=[0.0, 0.0] size=[368.13, 112.06] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] FactionImage Image[NEU_LeftBanner] AssetLoader
+            PlayerName ap=[13.88, 12.12] size=[175.05, 28.5] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TextMeshProUGUI
+              TMP SubMeshUI [PFDinTextCondPro_Material] ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TMP_SubMeshUI
+            PlayerTitle ap=[13.9, -15.61] size=[175.1, 26.98] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TextMeshProUGUI
+              TMP SubMeshUI [PFDinTextCondPro_Material] ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TMP_SubMeshUI
+            Icon ap=[133.8, -0.3] size=[57.51, 67.9] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[Lvl_Banner] AssetLoader
+              LVL-label ap=[0.0, 17.05] size=[60.4, 24.3] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TextMeshProUGUI"## lvl_profile_panel" LocalizedTextMeshPro
+              LVL-amount ap=[0.0, -2.44] size=[42.0, 21.48] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TextMeshProUGUI"10"
+                TMP SubMeshUI [PFDinTextCondPro_Material] ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TMP_SubMeshUI
+            Cosmetics ap=[-124.1, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] LayoutElement
+              PlayerAvatar ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.29, 0.29] amax=[0.71, 0.71] pivot=[0.5, 0.5] UIImage AssetLoader
+              PlayerBorder ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] UIImage AssetLoader
+        PlayerStatsContainer ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 0.3] pivot=[0.5, 0.5] Mask UIImage
+          PlayerStats ap=[-6.5, 25.0] size=[0.0, 0.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] GridLayoutGroup ContentSizeFitter
+            WonGames ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+              WonGamesIcon ap=[-0.0, -0.0] size=[0.0, 0.0] amin=[0.0, 0.12] amax=[0.42, 0.85] pivot=[0.39, 0.5] Image[Crown] AssetLoader
+              WonGamesText ap=[0.0, -0.94] size=[0.0, 1.87] amin=[0.5, 0.04] amax=[0.95, 0.89] pivot=[0.5, 0.5] TextMeshProUGUI"16479"
+            CollectionCompletion ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+              CollectionCompletionIcon ap=[-0.01, -0.03] size=[-0.02, -0.42] amin=[0.0, 0.03] amax=[0.41, 0.97] pivot=[0.5, 0.5] UIImage[multiple-cards] AssetLoader
+              CollectionCompletionText ap=[0.0, 0.0] size=[0.0, -0.0] amin=[0.47, 0.03] amax=[1.0, 0.87] pivot=[0.5, 0.5] TextMeshProUGUI"240 / 365"
+            CurrentRank ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+              CurrentRankIcon ap=[-7.09, -3.1] size=[0.04, 9.3] amin=[0.01, 0.0] amax=[0.52, 1.0] pivot=[0.5, 0.5] UIImage AssetLoader
+              CurrentRankDescription ap=[0.02, -0.01] size=[0.03, -0.02] amin=[0.46, 0.0] amax=[0.98, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"High Rank" LocalizedTextMeshPro
+            HighestRank ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+              HighestRankIcon ap=[-7.09, -3.1] size=[0.04, 9.3] amin=[0.01, 0.0] amax=[0.52, 1.0] pivot=[0.5, 0.5] UIImage[rank_18] AssetLoader
+              HighestRankDescription ap=[0.02, -0.01] size=[0.03, -0.02] amin=[0.46, 0.0] amax=[0.98, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"High Rank" LocalizedTextMeshPro
+    MainPanel ap=[0.0, 0.0] size=[-0.0, 0.0] amin=[0.3, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+      BG ap=[-7.39, -1.4] size=[29.88, 22.8] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] UIImage[SocialFeature_Wood] AssetLoader
+      ErrorMessage ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+        ErrorText ap=[0.0, 0.0] size=[685.0, 393.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TextMeshProUGUI"## profile_error_message" LocalizedTextMeshPro
+      MainPanelContentContainer ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.03] amax=[0.98, 1.0] pivot=[0.5, 0.5]
+        Information panel ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+          SummaryTab ap=[-0.0, -14.4] size=[-411.5, -80.2] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+            TitleRow ap=[0.0, 0.0] size=[372.8, 59.9] amin=[0.5, 1.0] amax=[0.5, 1.0] pivot=[0.5, 1.0]
+              CollectionText ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.5, 0.41] pivot=[0.5, 0.5] TextMeshProUGUI"## collection_summary_profile_panel" LocalizedTextMeshPro
+                TMP SubMeshUI [PFDinTextCondPro_Material] ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TMP_SubMeshUI
+                CollectionCompletionIcon ap=[2.83, 29.95] size=[29.45, 35.8] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] UIImage[multiple-cards] AssetLoader
+              VictoriesText ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.5, 0.0] amax=[1.0, 0.41] pivot=[0.5, 0.5] TextMeshProUGUI"## victories_summary_profile_panel" LocalizedTextMeshPro
+                TMP SubMeshUI [PFDinTextCondPro_Material] ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TMP_SubMeshUI
+                WonGamesIcon ap=[0.0, 31.21] size=[37.57, 37.58] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[Crown] AssetLoader
+            SummaryTab ap=[-0.0, 0.04] size=[0.0, 0.09] amin=[0.0, 0.0] amax=[1.0, 0.87] pivot=[0.5, 0.5] VerticalLayoutGroup UIProfileSummary
+              NeutralRow ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement
+                SlideableLeft ap=[4.0, 0.07] size=[216.0, 68.0] amin=[0.0, 0.5] amax=[0.0, 0.5] pivot=[0.0, 0.5] Mask UIImage
+                  NeutralLeftContent ap=[216.0, 0.0] size=[432.08, 68.14] amin=[0.0, 0.5] amax=[0.0, 0.5] pivot=[0.0, 0.5]
+                    FillBG ap=[-69.2, -5.07] size=[331.14, 31.97] amin=[1.0, 0.5] amax=[1.0, 0.5] pivot=[1.0, 0.5] UIImage[L_BannerBackground] AssetLoader
+                    NeutralCollectionFill ap=[-69.0, -5.07] size=[331.14, 31.97] amin=[1.0, 0.5] amax=[1.0, 0.5] pivot=[1.0, 0.5] UIImage[FillBar_Neu] AssetLoader
+                      NeutralPremiumCollectionFill ap=[0.0, 0.0] size=[0.0, -23.9] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.0] UIImage[FillBar_SmallNeu] AssetLoader
+                      NeutralCollectionText amount ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.49, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI TweenableContentDataHolder
+                      NeutralCollectionText slash ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.49, 0.0] amax=[0.55, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI"/" TweenableContentDataHolder
+                      NeutralCollectionText total ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.55, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] TextMeshProUGUI TweenableContentDataHolder
+                    bannerBG ap=[-2.0, -2.7] size=[552.0, 82.64] amin=[1.0, 0.5] amax=[1.0, 0.5] pivot=[1.0, 0.5] UIImage[R_Neu] AssetLoader
+                NeutralRowIcon ap=[0.0, 0.0] size=[98.3, 100.2] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] scale=[0.0, 0.0, 0.0] UIImage[player_profile_neutral_icon] TweenableContentDataHolder AssetLoader
+        FavouriteCardCarouselSelection ap=[10.46, -9.07] size=[20.91, 18.14] amin=[0.0, 0.02] amax=[0.98, 1.0] pivot=[0.5, 0.5] UISelectFavouriteCardCarouselProfile TooltipContext UIFavouriteCardPanelFilterTooltips
+          BarContainer ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.77] amax=[1.0, 0.95] pivot=[0.5, 0.5] VerticalLayoutGroup
+            FactionContainer ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] RadioContainer RadioGroup HorizontalLayoutGroup
+              LeftBumperImage ap=[0.0, 0.0] size=[30.0, 30.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[input_xbox_v2_LBumper] UIPlatformSpriteSwitcher AssetLoader InputModeViewDisabler
+              FactionTemplate ap=[0.0, 0.0] size=[50.0, 40.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] scale=[0.912, 0.912, 0.912] ToggleButtonControl ToggleButtonView SpriteSheetButtonView GameObjectButtonView DataButtonView DataColorButtonView TooltipButtonView ToggleButtonSoundHandler
+                ButtonBG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_filter_idle] AssetLoader
+                InnerBG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_filter_bg] AssetLoader
+                Hovered (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_filter_bg_hovered] AssetLoader
+                Down (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_filter_bg_hovered] AssetLoader
+                Toggle (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_filter_toggle_frame] AssetLoader
+                Icon ap=[0.0, 0.5] size=[0.0, -1.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[db_filter_faction_all_icon] AssetLoader
+              RightBumperImage ap=[0.0, 0.0] size=[30.0, 30.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[input_xbox_v2_RBumper] UIPlatformSpriteSwitcher AssetLoader InputModeViewDisabler
+            TierContainer ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] RadioContainer RadioGroup HorizontalLayoutGroup
+              LeftBumperImage ap=[0.0, 0.0] size=[30.0, 30.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[input_xbox_v2_LBumper] UIPlatformSpriteSwitcher AssetLoader InputModeViewDisabler
+              TierTemplate ap=[0.0, 0.0] size=[50.0, 40.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] scale=[0.912, 0.912, 0.912] ToggleButtonControl ToggleButtonView SpriteSheetButtonView DataButtonView DataColorButtonView GameObjectButtonView TooltipButtonView ButtonSoundHandler
+                ButtonBG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_filter_idle] AssetLoader
+                InnerBG ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_filter_bg] AssetLoader
+                Hovered (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_filter_bg_hovered] AssetLoader
+                Down (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_filter_bg_hovered] AssetLoader
+                Toggle (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[btn_filter_toggle_frame] AssetLoader
+                Icon ap=[0.0, 1.0] size=[-2.0, -4.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[db_filter_tier_gold] AssetLoader
+              RightBumperImage ap=[0.0, 0.0] size=[30.0, 30.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] Image[input_xbox_v2_RBumper] UIPlatformSpriteSwitcher AssetLoader InputModeViewDisabler
+          CardArea ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 0.77] pivot=[0.5, 0.5]
+            ---------------------- ap=[0.0, -5.0] size=[0.0, 50.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[divider] AssetLoader
+            ScrollBarPosition ap=[-17.5, 5.0] size=[7.5, -50.0] amin=[1.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+            CarouselRenderTexture ap=[-10.0, 0.02] size=[-20.0, 0.04] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] RawImage Mask DragContainer
+              CarouselRendering ap=[-0.0, 0.04] size=[0.0, 0.08] amin=[0.0, 0.0] amax=[1.0, 0.98] pivot=[0.5, 0.5] RawImage RawImagePortal
+            DarkBarTop ap=[-0.0, -5.0] size=[0.0, 40.0] amin=[0.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 1.0] Image[side_preview_gradient] AssetLoader
+            DarkBarBot ap=[0.0, 0.0] size=[0.0, 40.0] amin=[0.0, 0.0] amax=[1.0, 0.0] pivot=[0.5, 1.0] Image[side_preview_gradient] AssetLoader
+          Rendering Area ap=[6995.36, 2000.01] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+            GridlHolder CardGridScrollBar
+              CardGrid ap=[0.0, 0.0] size=[130.0, 70.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] GridLayout CardGridContainer CardButtonControlPool CardGridContainerSoundHandler
+                Camera 
+      LoadingIndicator ap=[-184.3, 0.0] size=[145.0, 145.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+    V------------ ap=[-3.74, -0.0] size=[18.52, 19.6] amin=[0.28, 0.0] amax=[0.3, 1.0] pivot=[0.5, 0.5] UIImage[PlayerProfile_Middle_Background] AssetLoader
+    ButtonPopupParent ap=[0.0, -58.5] size=[0.0, 0.0] amin=[0.5, 0.0] amax=[0.5, 0.0] pivot=[0.5, 1.0] scale=[0.8, 0.8, 1.0] HorizontalLayoutGroup ContentSizeFitter InputButtonContainer
+    Button_CloseRC ap=[0.0, 0.0] size=[36.0, 36.0] amin=[1.0, 1.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] ReactiveContainer
+      Button_BasicUI ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.0, 1.0] Button CrimsonButtonStateController LayoutElement CrimsonButtonContentChanger Image HorizontalLayoutGroup ContentSizeFitter ButtonSoundHandler
+        Sounds ap=[-11.0, 0.0] size=[0.0, 0.0] amin=[0.0, 1.0] amax=[0.0, 1.0] pivot=[0.5, 0.5] scale=[0.997, 0.997, 0.0]
+          ui_mainmenu_menu_navigate ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] SoundMessageContainer
+            Events 
+              Event AkEvent
+        Layout ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5]
+          ButtonBg ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[1.0, 1.0, 0.0] Image[close_btn] AssetLoader
+          NAVIGATION (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[1.0, 1.0, 0.0] Image[close_nav_btn] LayoutElement AssetLoader
+          HIT (off) ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[1.0, 1.0, 0.0] Image[close_nav_btn] LayoutElement AssetLoader
+UITauntsPrefab ap=[0.0, 0.0] size=[1600.0, 900.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TauntSelectorView TauntSelectorAvatarView TauntSelectorViewSoundHandler GraphicRaycaster
+  RootContainer ap=[0.0, -0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[0.88, 0.88, 1.0]
+    Background ap=[-0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] scale=[1.12, 1.12, 1.0] ButtonControl
+      Background ap=[0.0, 0.0] size=[0.0, -0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image[background] AssetLoader
+    RingBackground ap=[0.0, 0.0] size=[300.0, 300.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[Taunts_outer_circle_bg] AssetLoader
+    CenterAvatarSlot ap=[0.0, 0.0] size=[176.0, 176.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[Taunts_inner_circle_bg] AssetLoader
+      CenterCircularMask ap=[0.0, 0.0] size=[130.0, 130.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[icon_shadow] Mask AssetLoader
+        AvatarCenterImage ap=[0.0, 0.0] size=[126.0, 126.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image AssetLoader
+        AvatarDesaturationMask ap=[0.0, 0.0] size=[126.0, 126.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image AssetLoader
+        TimerDivider ap=[0.0, -65.0] size=[870.0, 24.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] scale=[0.15, 0.1, 1.0] Image[progress_line] AssetLoader
+      ClickBlocker ap=[0.0, 0.0] size=[317.91, 303.7] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] scale=[1.12, 1.12, 1.0] ButtonControl
+        Background ap=[0.0, 0.0] size=[0.0, -0.0] amin=[0.0, 0.0] amax=[1.0, 1.0] pivot=[0.5, 0.5] Image AssetLoader
+    HighlightContainer ap=[0.0, 0.0] size=[300.0, 300.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+      LargeHighlightRing ap=[1.0, 0.0] size=[300.0, 300.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] scale=[0.95, 0.95, 1.0] Image[Taunts_outer_nav_circle_bg] AssetLoader
+      InnerHighlightRing ap=[0.0, 0.0] size=[220.0, 220.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[Taunts_inner_nav_circle] AssetLoader
+      HighlightIndicator (off) ap=[0.0, 0.0] size=[192.0, 192.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[Taunts_inner_nav_circle5] AssetLoader
+    SlotsContainer ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+      Slots ap=[0.0, -3.4] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+        Slot View 0 ap=[52.0, 122.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TauntAnimatorHelper
+        Slot View 1 ap=[102.0, 18.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TauntAnimatorHelper
+        Slot View 2 ap=[52.0, -82.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TauntAnimatorHelper
+        Slot View 3 ap=[-52.0, -82.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TauntAnimatorHelper
+        Slot View 4 ap=[-102.0, 18.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TauntAnimatorHelper
+        Slot View 5 ap=[-52.0, 122.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TauntAnimatorHelper
+      Separators ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5]
+        Slot Separator 1 ap=[1.0, 108.0] size=[38.0, 108.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TauntAnimatorHelper
+        Slot Separator 2 ap=[94.0, 52.0] size=[38.0, 108.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TauntAnimatorHelper
+        Slot Separator 3 ap=[92.7, -53.5] size=[38.0, 108.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TauntAnimatorHelper
+        Slot Separator 4 ap=[0.0, -108.0] size=[38.0, 108.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TauntAnimatorHelper
+        Slot Separator 5 ap=[-93.5, -54.0] size=[38.0, 108.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TauntAnimatorHelper
+        Slot Separator 6 ap=[-94.0, 52.0] size=[38.0, 108.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TauntAnimatorHelper
+      SlotPrefabTemplate ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TauntCategorySelectorView
+        Button_FitToTextSize ap=[0.0, 0.0] size=[0.0, 30.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.0, 1.0] Image ContentSizeFitter HorizontalLayoutGroup
+          Layout ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] VerticalLayoutGroup
+            Image ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement Image[btn_wide_idle_300] AssetLoader SpriteSheetButtonView HorizontalLayoutGroup
+              Text ap=[81.32, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] TextMeshProUGUI"Simple Text " ContentSizeFitter LayoutElement
+      SlotSeparatorTemplate ap=[0.0, 0.0] size=[100.0, 100.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] TauntSelectorSeparator
+        Highlighted (off) ap=[0.0, 0.0] size=[18.0, 50.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[Taunts_notch_active] AssetLoader
+        Default ap=[0.0, 0.0] size=[18.0, 50.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] Image[Taunts_notch_inactive] AssetLoader
+    BottomPanel ap=[0.0, -146.5] size=[0.0, 0.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 1.0] VerticalLayoutGroup LayoutElement ContentSizeFitter
+      Separator ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 0.5] LayoutElement Image[floating_divider-small] AssetLoader
+      BottomButtons ap=[0.0, 0.0] size=[0.0, 0.0] amin=[0.0, 0.0] amax=[0.0, 0.0] pivot=[0.5, 1.0] LayoutElement HorizontalLayoutGroup Image[collection_curved_shadow] AssetLoader
+      Buttons ap=[0.0, 42.0] size=[0.0, 0.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] ContentSizeFitter HorizontalLayoutGroup LayoutElement UITransformResizer
+    Sounds 
+      selector_open SoundMessageContainer
+      selector_close SoundMessageContainer
+      select SoundMessageContainer
+UITooltipsPrefab ap=[0.0, 0.0] size=[3200.0, 1800.0] amin=[0.5, 0.5] amax=[0.5, 0.5] pivot=[0.5, 0.5] UITooltipPanel

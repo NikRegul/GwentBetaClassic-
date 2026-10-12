@@ -1,6 +1,12 @@
 ﻿// Archetype layer: own hand/deck only; enemy board/graves are public.
 // AI generation used by the game (self-play hosts override this per seat for A/B runs).
-function BetaGwentAIStrength() : int { return 4; }
+// AI generation by the player's difficulty: easy = 2 (round economy only), normal = 3
+// (exact simulation of its own plays), hard = 4 (follow-ups and public replies).
+function BetaGwentAIStrength() : int
+{
+    switch (BetaGwentDifficultyLevel()) { case 1: return 2; case 2: return 3; }
+    return 4;
+}
 // Display name of an opponent deck archetype (shown instead of the NPC name).
 function BetaGwentAIArchetypeName(preset : int) : string
 {
@@ -130,6 +136,13 @@ class CBetaGwentArchetypeAI extends IScriptable
         if(situation.playerOne.hasPassed)return 0;
         return Min(3,Min(game.CountLocation(2,8),game.CountLocation(1,8)+1));
     }
+    private function GraveSoldiers() : int
+    {
+        var cards : array<CBetaGwentDuelCard>;var i,total : int;var s : SBetaGwentCardSnapshot;
+        game.GetZoneCards(2,32,cards);
+        for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();if(!s.isWaitingToDie && s.runtimeTierMask==2 && BetaGwentSkelligeCategory(s.runtimeTemplate.templateId,4))total+=1;}
+        return total;
+    }
     private function Count(cards : array<CBetaGwentDuelCard>, id : int, active : bool) : int
     {
         var i,total : int;var s : SBetaGwentCardSnapshot;
@@ -150,6 +163,9 @@ class CBetaGwentArchetypeAI extends IScriptable
         // Queensguards multiply through resurrection; keep one seed to be killed.
         if(id==152307 && game.CountLocation(2,32)>0)value+=Min(12,QueensguardExtra(0));
         if(id==152205 && game.CountLocation(2,32)==0)value-=8;
+        // Stage 127: Draig first, then a Priestess of Freya raises the strengthened soldier.
+        if(id==152205 && Count(hand,152310,false)>0 && GraveSoldiers()>0)value+=6;
+        if(id==152310 && Count(hand,152205,false)>0 && GraveSoldiers()>0)value-=6;
         if(BetaGwentAIResurrector(id) && PileGain(d)<=0)value-=10;
         // Army strengthening benefits the whole deck before bodies are deployed.
         if(id==200046 && situation.roundNumber==1 && horizon>=2)value+=5;
@@ -249,7 +265,8 @@ class CBetaGwentArchetypeAI extends IScriptable
         if(id==152307 && Count(hand,id,false)>1)return 20*BetaGwentAITune(32)/100;
         if((id==152209 || id==152316) && game.LeaderAvailable(2) && game.LeaderTemplateId(2)==200159)return 23*BetaGwentAITune(32)/100;
         if(situation.roundNumber==1 && BetaGwentAIResurrector(id) && PileGain(d)==0)return 16*BetaGwentAITune(32)/100;
-        if(id==152205 && game.CountLocation(2,32)==0)return 15*BetaGwentAITune(32)/100;
+        // The graveyard is always empty at the first mulligan; Draig waits for it to fill.
+        if(id==152205 && game.CountLocation(2,32)==0 && situation.roundNumber>=3)return 15*BetaGwentAITune(32)/100;
         return 0;
     }
     private function EligiblePile(source : int, t : SBetaGwentCardSnapshot) : bool

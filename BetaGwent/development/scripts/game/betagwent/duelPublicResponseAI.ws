@@ -25,9 +25,11 @@ class CBetaGwentPublicResponseAI extends IScriptable
         for(i=0;i<profiles.Size();i+=1){
             id=BetaGwentAIProfileLeader(profiles[i]); d=BetaGwentDuelDefinition(id);
             if(d.header.factionMask!=faction)continue;
-            eligibleProfiles+=1;weight=1;if(id==game.leaderTemplateOne)weight=3;
+            eligibleProfiles+=1;weight=12;if(id==game.leaderTemplateOne)weight=24;
             BetaGwentAIProfileDeck(profiles[i],deck);
-            for(j=0;j<seen.Size();j+=1){k=deck.FindFirst(seen[j]);if(k>=0)deck.Erase(k);}
+            // Soft evidence: custom lists/transforms must not eliminate every prior.
+            // Remove seen copies, and reduce support for profiles missing public cards.
+            for(j=0;j<seen.Size();j+=1){k=deck.FindFirst(seen[j]);if(k>=0){deck.Erase(k);weight=Min(64,weight+2);}else weight=Max(1,weight/2);}
             for(j=0;j<deck.Size();j+=1){
                 k=pool.FindFirst(deck[j]);if(k<0){pool.PushBack(deck[j]);mass.PushBack(weight);}
                 else mass[k]+=weight;
@@ -53,9 +55,10 @@ class CBetaGwentPublicResponseAI extends IScriptable
     {
         var h,best : CBetaGwentDuelSession; var c,slot : CBetaGwentDuelCard;
         var m : SBetaGwentMatchSnapshot; var s : SBetaGwentCardSnapshot;
-        var d : SBetaGwentDuelDefinition; var i,j,id,gain,extra,worst,total,sum,w : int;
+        var d : SBetaGwentDuelDefinition; var i,j,id,gain,extra,worst,total,sum,w,bestSupport,passChance : int;
         evaluated=0;rejected=0;penalty=0;m=root.match.Snapshot();worst=-2147483647;
         if(m.playerOne.hasPassed || m.currentPlayerId!=1 || !m.turnActive)return NULL;
+        passChance=BetaGwentAIReplyPassChance(m.roundNumber,m.playerOne.crowns,m.playerTwo.crowns,root.Score(1)-root.Score(2),root.CountLocation(1,8),root.CountLocation(2,8),root.LeaderAvailable(1));
         for(i=0;i<=templates.Size();i+=1){
             if(i==templates.Size() && !root.LeaderAvailable(1))continue;
             if(i<templates.Size() && root.CountLocation(1,8)==0)continue;
@@ -78,9 +81,12 @@ class CBetaGwentPublicResponseAI extends IScriptable
             // Ordinary body tempo is common to all our choices. Penalize the
             // extra control/engine swing instead of treating it as scored points.
             extra=Max(0,gain-d.header.power);evaluated+=1;total+=w;sum+=extra*w;
-            if(extra>worst){worst=extra;best=h;}
+            if(!best || extra*w>bestSupport){worst=extra;bestSupport=extra*w;best=h;}
         }
-        if(total>0)penalty=Min(12,(sum/total+Max(0,worst))/4);
+        // Expected control loss is discounted by a pass. A rare worst reply no
+        // longer substitutes for every opponent's next play in the sequence.
+        if(total>0)penalty=Min(12,(sum/total)*(100-passChance)/200);
+        if(passChance==100)return NULL;
         if(!best)return NULL;return best.AiReverseClone();
     }
 }
