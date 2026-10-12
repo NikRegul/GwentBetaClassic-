@@ -16650,8 +16650,8 @@ function BetaGwentDuelPresetDetails7(id : int) : SBetaGwentDuelPreset
     case 89:
         value.id = 89; value.leaderTemplateId = 200159;
         value.title = "ИИ · Проклятые корабли"; value.description = "Исследованный состав Beta 0.9.24; greatswords";
-        value.unitCount = 24; value.specialCount = 1;
-        value.goldCount = 4; value.silverCount = 6;
+        value.unitCount = 23; value.specialCount = 2;
+        value.goldCount = 3; value.silverCount = 6;
         break;
     case 90:
         value.id = 90; value.leaderTemplateId = 200167;
@@ -19425,7 +19425,7 @@ function BetaGwentDuelPresetCards89(out ids : array<int>)
     ids.PushBack(200145);
     ids.PushBack(200145);
     ids.PushBack(201704);
-    ids.PushBack(152106);
+    ids.PushBack(201704);
 }
 
 function BetaGwentDuelPresetCards90(out ids : array<int>)
@@ -19695,6 +19695,7 @@ function BetaGwentDuelPresetCards99(out ids : array<int>)
     ids.PushBack(122102);
     ids.PushBack(122108);
     ids.PushBack(122105);
+    ids.PushBack(122212);
     ids.PushBack(122208);
     ids.PushBack(122211);
     ids.PushBack(123201);
@@ -19715,7 +19716,6 @@ function BetaGwentDuelPresetCards99(out ids : array<int>)
     ids.PushBack(201622);
     ids.PushBack(201622);
     ids.PushBack(201622);
-    ids.PushBack(122209);
 }
 
 function BetaGwentDuelIsLeader(id : int) : bool { return id == 131101 || id == 200055 || id == 200158 || id == 200159 || id == 200160 || id == 200161 || id == 200162 || id == 200163 || id == 200164 || id == 200165 || id == 200166 || id == 200167 || id == 200168 || id == 200169 || id == 200170 || id == 201580 || id == 201587 || id == 201589 || id == 201595 || id == 201597 || id == 201743; }

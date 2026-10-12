@@ -9,7 +9,7 @@ function extract(name){
  return source.slice(start,end).replace(/:(DisplayObject|String|Function|Object|Rectangle|void|int|Number|Array|Boolean|Event)\b(?=\s*(?:[,)=;{]|in\b))/g,'').replace(/for each\((.*?) in (.*?)\)/g,'for($1 of $2)');
 }
 const c=vm.createContext({Math,Number,console});
-vm.runInContext(`var now=1000,movementAt=-1000,navigationColumn=NaN,dirty=false,nodes=[],focus=null;
+vm.runInContext(`var now=1000,autoPicked=false,movementAt=-1000,navigationColumn=NaN,dirty=false,nodes=[],focus=null;
 var currentMode='',mode='inspect',saved={},lastRect=null,lastKey='',axis=0,events=[],accepts=0;
 var pressed={},repeats={},inputCode=0,swap=false,yStarted=0,yCommitted=false,yCanPass=false;
 var active=true,hint={visible:true},graphics={clear(){}},surface={focus:null};

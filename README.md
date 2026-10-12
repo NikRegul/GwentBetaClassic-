@@ -1,8 +1,8 @@
-# Gwent Beta Classic 0.6.1
+# Gwent Beta Classic 0.6.2
 
 Gwent Beta 0.9.24 inside The Witcher 3: 479 collectible cards including 21 leaders, five factions, 46 opponent archetypes, saved custom decks, crafting, kegs, NPC rewards, and mouse/keyboard/controller support. The current target is PC Next-Gen 5.01; a separate 1.32 version is planned for 1.0 and is not yet supported.
 
-0.6.1 adds 13 selectable text languages and animated leader portraits on the battlefield and in card previews. Ordinary card portraits remain static. Large character entrance animations are a separate future feature. The leader crash hotfix removes unsafe disposal of engine-owned images and defers resource unloading; the user confirmed the corrected RU build no longer crashes in their retest.
+0.6.2 adds action history, ability-chain highlights, smoother hand and controller focus, a large 2D leader scene, deck-editor explanations and undo, faster keg reveals, and session effect settings. It restores the Cursed Ships and Foltest deck-boost rosters and adjusts draw-spy scoring. The release retains 13 selectable text languages and animated portraits for 21 leaders. Ordinary card portraits remain static; original 3D leader entrances are still planned. The user confirmed the preceding 0.6.1 leader crash fix on RU.
 
 ## Languages and packages
 
@@ -15,20 +15,22 @@ Official beta card texts are used where available. New UI translations are a pre
 From a configured local workspace, after any current build has finished:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\Build-0.6.1.ps1 -Language all -RebuildExisting
+powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\Build-All-0.6.2.ps1
 ```
 
-Use `-Language ru` for RU only. The full pipeline freezes source inputs, runs regressions, compiles native scripts and menus, packages the selected voices, and validates fresh archives, CRC, manifest and SHA-256. Existing selected archives and staging projects are preserved before rebuilding. Concurrent builds are locked. The script does not install or publish the mod.
+Use `Build-0.6.2.ps1 -Language ru` for RU only. The full pipeline freezes source inputs, runs regressions, compiles native scripts and menus, packages the selected voices, and validates fresh archives, CRC, manifest and SHA-256. Existing selected archives and staging projects are preserved before rebuilding. Concurrent builds are locked. The script does not install or publish the mod.
 
-- [Build instructions (RU)](docs/BUILD_0.6.1_RU.md)
+- [Build instructions (RU)](docs/BUILD_0.6.2_RU.md)
+- [New UI and manual checks (RU)](docs/UI_0.6.2_RU.md)
 - [Manual acceptance checklist (RU)](docs/TESTING_0.6.1_RU.md)
-- [Installation and controls (EN)](BetaGwent/release/publish-0.6.1/README_EN.md) / [RU](BetaGwent/release/publish-0.6.1/README_RU.md)
-- [Changelog (EN)](BetaGwent/release/publish-0.6.1/CHANGELOG_EN.md) / [RU](BetaGwent/release/publish-0.6.1/CHANGELOG_RU.md)
+- [Installation and controls (EN)](BetaGwent/release/publish-0.6.2/README_EN.md) / [RU](BetaGwent/release/publish-0.6.2/README_RU.md)
+- [Changelog since 0.4.5 (EN)](BetaGwent/release/publish-0.6.2/CHANGELOG_0.4.5_to_0.6.2_EN.md) / [RU](BetaGwent/release/publish-0.6.2/CHANGELOG_0.4.5_to_0.6.2_RU.md)
+- [Nexus description, 13 languages](BetaGwent/release/publish-0.6.2/NEXUS_DESCRIPTION_0.6.2.txt)
 - [Leader crash diagnosis and retest (RU)](docs/reviews/2026-10-12-crash061-hotfix.md)
 - [Roadmap (EN)](docs/ROADMAP.md) / [RU](docs/ROADMAP_1.0_RU.md)
 - [Documentation index](docs/README.md)
 
-Automated compilation and artifact checks do not establish complete in-game acceptance. The latest completed hotfix verification ran 49 regression suites and checked RU; the user's subsequent five-package build and the broader manual checklist require their own results. Do not distribute quarantined archives. The obsolete Redux compatibility layer is excluded.
+The completed 0.6.2 RU build passed 52 regression suites, native compilation of 70 scripts and four menus, and ZIP/manifest/SHA-256 verification. The other four 0.6.2 voice packages have not yet been verified. In-game acceptance and comparison of the old and new AI remain separate work; no AI strength improvement is established by these build checks. Do not distribute quarantined archives. The obsolete Redux compatibility layer is excluded.
 
 ## Repository scope
 

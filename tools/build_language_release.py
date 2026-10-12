@@ -97,7 +97,7 @@ if a.step=='prepare':
     if STAGE>=136:
         shutil.copytree(ROOT/('BetaGwent/build/leaders137/resources' if STAGE>=137 else 'BetaGwent/build/leaders136/resources'),WORK,dirs_exist_ok=True)
     if STAGE>=137:
-        shutil.copytree(ROOT/'BetaGwent/build/text137/resources',WORK,dirs_exist_ok=True)
+        shutil.copytree(ROOT/('BetaGwent/build/text138/resources' if STAGE>=138 else 'BetaGwent/build/text137/resources'),WORK,dirs_exist_ok=True)
     check_leaders(WORK)
     # Remove any legacy compatibility layer inherited from a packaging baseline.
     for mode in ('items','items_plus'):
@@ -141,7 +141,7 @@ if a.step=='prepare':
             con.execute('update STRINGS set TEXT=? where rowid=?',(en,rowid))
         con.commit();con.close()
     bank=ROOT/('BetaGwent/audio/wwise'+('-en89' if LANG=='en' else '')+'/GeneratedSoundBanks/Windows/BetaGwent79.bnk')
-    if STAGE>=137:bank=Path(json.loads((ROOT/'docs/evidence/voice137.json').read_text('utf8'))[LANG]['bank'])
+    if STAGE>=137:bank=Path(json.loads((ROOT/('docs/evidence/voice138.json' if STAGE>=138 else 'docs/evidence/voice137.json')).read_text('utf8'))[LANG]['bank'])
     (WORK/'soundbanks/pc').mkdir(parents=True,exist_ok=True)  # base project rebuilt without this folder (stage 105)
     shutil.copyfile(bank,WORK/'soundbanks/pc/BetaGwent79.bnk')
     metadata=json.loads((PROJECT/'myproject1.w3edit').read_text('utf8'))
@@ -176,7 +176,7 @@ else:
             verified={art:verify(WORK/item['path'],COOKED/item['path']) for art,item in leaders['resources'].items()}
             (BASE/'cooked-leaders-verified.json').write_text(json.dumps(verified,indent=2)+'\n','utf8')
             if STAGE>=137:
-                texts=json.loads((ROOT/'docs/evidence/languages137.json').read_text('utf8'))['languages']
+                texts=json.loads((ROOT/('docs/evidence/languages138.json' if STAGE>=138 else 'docs/evidence/languages137.json')).read_text('utf8'))['languages']
                 text_verified={locale:verify(WORK/item['path'],COOKED/item['path']) for locale,item in texts.items()}
                 (BASE/'cooked-text-verified.json').write_text(json.dumps(text_verified,indent=2)+'\n','utf8')
         for p in WORK.rglob('*'):
@@ -185,7 +185,7 @@ else:
     elif a.step=='strings':
         if STAGE>=137:
             from language_release137 import cook_strings
-            cook_strings(ROOT,BASE,PROJECT,CONTENT,job,LANG)
+            cook_strings(ROOT,BASE,PROJECT,CONTENT,job,LANG,stage=STAGE)
         else:
             # Other game languages get English item names/descriptions. Never rename
             # an EN w3strings binary: native cooking writes each language's encoding.
@@ -225,7 +225,7 @@ else:
     elif a.step=='audio':
         bankdir=BASE/'audio-banks/Windows';bankdir.mkdir(parents=True,exist_ok=True)
         source=ROOT/('BetaGwent/audio/wwise'+('-en89' if LANG=='en' else '')+'/GeneratedSoundBanks/Windows')
-        if STAGE>=137:source=Path(json.loads((ROOT/'docs/evidence/voice137.json').read_text('utf8'))[LANG]['bank']).parent
+        if STAGE>=137:source=Path(json.loads((ROOT/('docs/evidence/voice138.json' if STAGE>=138 else 'docs/evidence/voice137.json')).read_text('utf8'))[LANG]['bank']).parent
         for name in ('BetaGwent79.bnk','BetaGwent79.txt'):shutil.copyfile(source/name,bankdir/name)
         seed=WORK/'soundbanks/soundsplitseed.csv';seed.parent.mkdir(parents=True,exist_ok=True)
         seed.write_text('Bank;Chunk\nbetagwent79.bnk;content0\n','utf8')  # cooksounds needs the split seed (see build_test_release.py)
@@ -285,7 +285,7 @@ else:
         files=[dict(path=p.relative_to(PACKAGE).as_posix(),bytes=p.stat().st_size,sha256=sha(p)) for p in sorted(PACKAGE.rglob('*')) if p.is_file() and p.name!='manifest.json']
         report=dict(version=VERSION,stage=STAGE,language=LANG,mediaCount=1418,files=files,licenseIncluded=False,runtimeVerified=False,baseVersionUserAccepted=True)
         if STAGE>=137:
-            voices=json.loads((ROOT/'docs/evidence/voice137.json').read_text('utf8'))
+            voices=json.loads((ROOT/('docs/evidence/voice138.json' if STAGE>=138 else 'docs/evidence/voice137.json')).read_text('utf8'))
             bank=Path(voices[LANG]['bank']).read_bytes();offset=0;media_count=None
             while offset<len(bank):
                 code=bank[offset:offset+4];length=struct.unpack_from('<I',bank,offset+4)[0]
@@ -295,7 +295,7 @@ else:
                 offset+=8+length
             assert media_count is not None and offset==len(bank)
             report.update(mediaCount=media_count,voiceCount=907,voiceLanguage=LANG,
-                          textLanguages=list(json.loads((ROOT/'docs/evidence/languages137.json').read_text('utf8'))['languages']),
+                          textLanguages=list(json.loads((ROOT/('docs/evidence/languages138.json' if STAGE>=138 else 'docs/evidence/languages137.json')).read_text('utf8'))['languages']),
                           fontLicenseIncluded=True)
         (PACKAGE/'manifest.json').write_text(json.dumps(report,indent=2)+'\n','utf8')
         dest=ROOT/('BetaGwent/release/GwentBetaClassic-'+VERSION+'-'+LANG.upper()+'.zip')

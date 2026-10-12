@@ -11,6 +11,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     // Stage 131: the opponent thinks after the player's move has been shown, not before it,
     // so placing a card never stalls on the AI's simulations.
     private var deferredOpponent : bool;
+    private var deferredVoiceAt : float;
     private var requestFlow : CBetaGwentDevelopmentRequestFlow;
     private var setRequestHeader : CScriptedFlashFunction;
     private var setRequestSource : CScriptedFlashFunction;
@@ -831,7 +832,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     {
         if (!configured || selectingDecks || value != revision) return false;
         audioRevisions.Clear(); audioFrames.Clear();
-        visualBusy = false;
+        visualBusy = false; if(audio)deferredVoiceAt=audio.CurrentTime();
         LogChannel('BetaGwent', "BOARD_VISUAL_DONE revision=" + value);
         ResumeOpponentAfterVoice();
         AwardMatchReward(); return true;
@@ -839,7 +840,10 @@ class CR4BetaGwentBoardMenu extends CR4Menu
 
     private function ResumeOpponentAfterVoice()
     {
-        if(!configured || visualBusy || !deferredOpponent || (audio && audio.IsVoiceActive()))return;
+        // A spoken card line delays the opponent briefly, never for its whole length:
+        // after 1 s the turn continues and the line keeps playing over it.
+        if(!configured || visualBusy || !deferredOpponent)return;
+        if(audio && audio.IsVoiceActive() && audio.CurrentTime()-deferredVoiceAt<1.0f)return;
         deferredOpponent=false;
         if(!duel.IsPending())Publish(duel.GetMessage());
     }

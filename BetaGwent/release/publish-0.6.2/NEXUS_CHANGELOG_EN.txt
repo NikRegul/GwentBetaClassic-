@@ -1,0 +1,84 @@
+[size=5][b]Gwent Beta Classic — changes from 0.4.5 to 0.6.2[/b][/size]
+
+0.4.5 is the comparison baseline. The following changes were added afterwards and are retained in 0.6.2. Historical notes for individual releases do not mean every earlier setting or roster remains unchanged.
+
+[size=4][b]0.4.6–0.5.0 — AI, rules and controls[/b][/size]
+
+[list]
+[*]Reworked engine, damage/lock target, weather, draw and empty-tutor evaluation. Mulligan considers remaining deck targets; the AI evaluates whether its full hand and leader can catch up and saves resources for later rounds.
+[*]Iris and Sabrina are evaluated with actual Deathwish activation plans; Fringilla considers neighbours and placement order, Draig prepares the graveyard, and ships include future triggers. Added plans for Draug, Thunder and ambushes.
+[*]Revised selected rosters and added leader variety through Dagon, Radovid, Usurper and Filavandrel. The pool contains 46 archetypes. Equal evaluations favour the card with less value in reserve.
+[*]Fixed Roach triggers, preservation of locks through resurrection, Draug's eligible graveyard targets and the Skellige deck collection quest counter.
+[*]Specials without a row choice target a board half. Improved controller navigation, large choice grids, held LT/RT pile browsing, previews and return to the current action.
+[*]Restored lock chains, complete moving card frames and victory crowns; synchronized individual weather hits, boosts and armour. Added starter-deck reset, ownership filters, sorting, action history and AI delay settings.
+[*]Removed the auxiliary Redux compatibility layer. The separate modBetaGwentReduxCompat folder is no longer required; compatibility with other Gwent overhauls has not been separately confirmed.
+[/list]
+
+[size=4][b]0.5.1 — profile, difficulty and card details[/b][/size]
+
+[list]
+[*]Added three saved AI difficulty levels, related cards in detailed inspection and the first tutorial.
+[*]Added a backup of collection, decks, scraps and kegs within the save, supporting recovery after loading without the mod. Improved protection of player progress.
+[*]Removed the pause after card placement by calculating the opponent's reply after presentation. Hidden ambushes no longer leak through counters, highlights, speech or history.
+[*]Added Speed up followed by Skip, effects for Scorch, Igni and Epidemic, and fixes for collection overlap, score frames and settings.
+[*]The AI passes instead of making a guaranteed losing play, removes armour more carefully with Kaedweni Cavalry, and considers engine/special ordering. Updated the Usurper roster.
+[/list]
+
+[size=4][b]0.5.2 — interactive tutorial and rosters[/b][/size]
+
+[list]
+[*]Expanded the tutorial to seven pages, with separate leader and ambush topics. Try plays short examples on a miniature board; the tutorial is accessible from deck selection and battle.
+[*]Fixed deletion of saved custom decks and False Ciri's timing relative to the opponent's pass.
+[*]Paired trials informed changes to Slave Infantry, Arethusa and Dryads: Alba Cavalry, Redanian Knights and Mahakam Defender replaced less suitable cards.
+[/list]
+
+[size=4][b]0.5.3 — speech, playback and public information[/b][/size]
+
+[list]
+[*]Introductions wait for both leaders' lines; a long first line cannot displace the second. Skipping stops speech.
+[*]Speed changes synchronize card movement, numbers and sound without resetting progress. Grouped effects preserve separate reveal and status-change moments.
+[*]Epidemic excludes hidden ambushes when finding the weakest unit; armour and immunity do not prevent destruction. AI evaluation follows the same rules.
+[*]The AI considers card advantage, next-round reserves, pass probability and revealed cards. Bounded simulation includes engines, control, draw and combinations; added hidden-information invariance checks.
+[/list]
+
+[size=4][b]0.5.4 — tutorial, audio and focus[/b][/size]
+
+[list]
+[*]Aligned tutorial pages and buttons; card inspection preserves the page behind it and returns to the same example. Added dedicated gamepad navigation and Cantarella's explanation.
+[*]Speech temporarily ducks music without overwriting user settings. RU/EN speech is louder, new actions do not cut off the current line, and stale lines from long chains are skipped.
+[*]Device changes and pointer movement no longer skip introductions automatically. Focus returns to the board after mandatory choices.
+[*]Added audio, tutorial and controller regressions. Ordinary animated premium portraits are excluded from the main release line.
+[/list]
+
+[size=4][b]0.6.0 — leaders and independent text language[/b][/size]
+
+[list]
+[*]Added animated portraits for 21 leaders on the board, in hand and in the right preview, deferred loading and static artwork on failure. Ordinary card illustrations remain static.
+[*]Separated RU/EN text selection from voices and saved the preference with the game. Search supports both languages; user deck names and queries are not translated.
+[*]Profile backup uses alternating checksum-protected banks and includes settings, rewards and paid pending keg choices.
+[/list]
+
+[size=4][b]0.6.1 — 13 languages and leader crash fix[/b][/size]
+
+[list]
+[*]Added 13 text languages and five voice variants: EN, RU, DE, IT and PT-BR. Every package includes every text language; DE/IT use Russian keg-troll lines. Text preference persists independently.
+[*]Added embedded Japanese, Korean and Chinese fonts, native item-name translations and complete row-label phrases. Fixed brief Russian text flashes in other languages. UI translations remain a preview.
+[*]Leader portraits use full 24 fps motion cycles with blended seams. Fixed the native crash cause: pages no longer dispose engine-owned textures. Unloading happens outside loader callbacks, with bounded owners and pending pages. The user confirmed the fix on RU.
+[*]Gamepad focus follows card placement on the board, including deck summons. Speech delays the AI by at most one second; timings match actual recordings.
+[/list]
+
+[size=4][b]0.6.2 — detailed history, smoother UI and spies[/b][/size]
+
+[list]
+[*]Added ability-chain hints and detailed history of the last 32 actions, including public mass-effect targets. Card inspection returns to the same history page; hidden opponent information remains concealed.
+[*]Details show base, normal and current power, net change, armour and known statuses. Recovery and resurrection have distinct accents.
+[*]Hand hovering smoothly raises the card and spreads neighbours; buttons and controller focus have transitions and disabled-action reasons.
+[*]Added a large two-dimensional leader scene with off, short and full modes. Flashes, shake and chain hints have separate settings until the menu closes. Original three-dimensional leader entrances are not included.
+[*]The editor shows restriction reasons and missing-copy costs. Confirmed card additions/removals can be undone; faction filters are remembered while the menu remains open. Crafting is not rolled back.
+[*]Kegs highlight rarity, mark new cards when ownership is known and reveal the first four cards together. The fifth still requires an explicit choice.
+[*]Restored the previous Cursed Ships and Foltest deck-boost rosters. Their stage 128 revisions remain disabled with an explanation.
+[*]Thaler and four other draw spies consider card advantage. A remaining lead of 10+ or a deficit of 15+ in a concedable round reduces the gifted-point cost. The discount is disabled in round three; an opponent pass or empty deck earns no extra draw advantage.
+[*]Prepared new labels and fonts for all 13 languages, a PowerShell builder for all five packages and archive validation. RU 0.6.2 passed 52 regression suites, native compilation of 70 scripts, four-menu checks and ZIP validation. In-game acceptance and long AI comparisons are separate; no superiority claim is made for the new AI.
+[/list]
+
+Target game version: PC Next-Gen 5.01. Support for 1.32 has not been released. Check Files for available voice packages. Back up your saves before updating and replace the previous mod folder completely.

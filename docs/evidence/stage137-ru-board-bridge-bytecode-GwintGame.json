@@ -1,7 +1,7 @@
 {
   "swf": "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00.swf",
-  "bytes": 151262546,
-  "sha256": "a7cbd491c1a1dfc7a67b587da84bf7b769b87234d8deae340b334e9239a6f2b2",
+  "bytes": 151264040,
+  "sha256": "c6bd993f622afcadab330e45eacd68b6baf816bae09231ee5f0c654a20cfec31",
   "checks": {
     "exactRegistrationName": true,
     "allScriptBindingsPresent": true,

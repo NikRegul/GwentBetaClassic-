@@ -31,7 +31,10 @@ for change in variety['decks']:
     counts=Counter(by_id[change['presetId']]['templateIds'])
     overlap=max(sum((counts&Counter(p['templateIds'])).values()) for p in active if p['presetId']!=change['presetId'])
     assert overlap<=18,(change['presetId'],overlap)
-for ident in (74,85,89):
+for change in patch['decks']:
+    if change.get('enabled',True) is False and change['presetId'] not in {v['presetId'] for v in variety['decks'] if v.get('enabled',True)}:
+        assert Counter(by_id[change['presetId']]['templateIds'])==Counter(change['expectedTemplateIds']),('disabled revision must keep the original roster',change['presetId'])
+for ident in (74,85):
     tiers=Counter(full[i]['tier'] for i in by_id[ident]['templateIds'])
     assert tiers[8]==4 and tiers[4]==6,(ident,tiers)
 assert 123201 not in by_id[94]['templateIds'] and 200019 in by_id[94]['templateIds']

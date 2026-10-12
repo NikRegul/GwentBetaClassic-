@@ -1,7 +1,7 @@
 {
   "swf": "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board.swf",
-  "bytes": 151262369,
-  "sha256": "9690c9f0a2496a63ac8d10d7bb06b63a3188af23aace09976ebec2fef3152c87",
+  "bytes": 151263863,
+  "sha256": "48f4096c8d94c028348ce1ed5e84f120f29581d0f5f33c55d095686887a462fa",
   "checks": {
     "exactRegistrationName": true,
     "allScriptBindingsPresent": true,

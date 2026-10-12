@@ -1,0 +1,89 @@
+{
+  "stage": 138,
+  "languages": {
+    "ru_ru": {
+      "entries": 72,
+      "nativeBytes": 93474,
+      "requiredCharacters": 67,
+      "verified": true
+    },
+    "en_us": {
+      "entries": 72,
+      "nativeBytes": 491039,
+      "requiredCharacters": 112,
+      "verified": true
+    },
+    "de_de": {
+      "entries": 72,
+      "nativeBytes": 517613,
+      "requiredCharacters": 117,
+      "verified": true
+    },
+    "fr_fr": {
+      "entries": 72,
+      "nativeBytes": 521745,
+      "requiredCharacters": 124,
+      "verified": true
+    },
+    "it_it": {
+      "entries": 72,
+      "nativeBytes": 504564,
+      "requiredCharacters": 114,
+      "verified": true
+    },
+    "pl_pl": {
+      "entries": 72,
+      "nativeBytes": 511662,
+      "requiredCharacters": 128,
+      "verified": true
+    },
+    "es_es": {
+      "entries": 72,
+      "nativeBytes": 505758,
+      "requiredCharacters": 121,
+      "verified": true
+    },
+    "es_mx": {
+      "entries": 72,
+      "nativeBytes": 509550,
+      "requiredCharacters": 121,
+      "verified": true
+    },
+    "pt_br": {
+      "entries": 72,
+      "nativeBytes": 509328,
+      "requiredCharacters": 123,
+      "verified": true
+    },
+    "jp_jp": {
+      "entries": 72,
+      "nativeBytes": 2303203,
+      "requiredCharacters": 176,
+      "verified": true
+    },
+    "kr_kr": {
+      "entries": 72,
+      "nativeBytes": 2687843,
+      "requiredCharacters": 162,
+      "verified": true
+    },
+    "zh_cn": {
+      "entries": 72,
+      "nativeBytes": 3047349,
+      "requiredCharacters": 154,
+      "verified": true
+    },
+    "zh_tw": {
+      "entries": 72,
+      "nativeBytes": 3349753,
+      "requiredCharacters": 153,
+      "verified": true
+    }
+  },
+  "nativeGameTested": false,
+  "sources": {
+    "data/beta924/design/ui-polish138.json": "c5697685f510ccaab2e8cdff393f4e84a8208fed70cf79992ad55a85554d1d91",
+    "tools/ui/build_ui_languages138.py": "2ba12063b76d5aaeae179a0b270f7c5defb965b7541d4079b52af622de930a4a",
+    "tools/ui/build_ui_text138.py": "112190a3c26cd8c6d3de70b315349ba70922852bf0edfea9ff4fa44305fb76b2"
+  }
+}

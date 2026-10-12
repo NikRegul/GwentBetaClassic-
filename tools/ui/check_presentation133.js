@@ -8,7 +8,7 @@ function extract(name){
  return source.slice(start,end).replace(/:(String|Object|void|int|Number|Array|Boolean|Event|MouseEvent)\b(?=\s*(?:[,)=;{]|in\b))/g,'').replace(/for each\((.*?) in (.*?)\)/g,'for($1 of $2)');
 }
 let checks=0;function check(v,n){if(!v)throw Error(n);checks++;console.log('PASS',n);}
-const c=vm.createContext({Math,int:x=>x|0,Number,String,getTimer:()=>c.now,MouseEvent:{CLICK:1}});
+const c=vm.createContext({Math,int:x=>x|0,Number,String,getTimer:()=>c.now,MouseEvent:{CLICK:1},BetaGwentTextLanguage:{assign(f,v){if(f)f.text=v;},track(){},forget(){}}});
 vm.runInContext(`var now=100,playing=true,fastReplay=false,FAST_REPLAY_SCALE=.25,
  animationRate=1,animationOffset=0,animationStarted=0,animationBaseDuration=700,frameAnimationTempo=1,
  frameDuration=700,frameDeadline=700,audioCueAt=400,replayHint={text:'УСКОРИТЬ'},reducedMotion=false,

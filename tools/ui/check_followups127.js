@@ -2,16 +2,19 @@
 'use strict';
 const fs=require('fs'),vm=require('vm');
 const source=fs.readFileSync('BetaGwent/ui/src/BetaGwentBoard.as','utf8');
-function extract(name){
- const start=source.indexOf('function '+name+'('),open=source.indexOf('{',start);let end=open+1,depth=1;
+function extract(name,text=source){
+ if(typeof text!=='string')text=source;
+ const start=text.indexOf('function '+name+'('),open=text.indexOf('{',start);let end=open+1,depth=1;
  if(start<0)throw Error(name);
- for(;depth;end++){if(source[end]==='{')depth++;if(source[end]==='}')depth--;}
- return source.slice(start,end).replace(/:(String|Function|Object|void|int|Number|Array|Boolean)\b(?=\s*(?:[,)=;{]|in\b))/g,'').replace(/for each\((.*?) in (.*?)\)/g,'for($1 of $2)');
+ for(;depth;end++){if(text[end]==='{')depth++;if(text[end]==='}')depth--;}
+ return text.slice(start,end).replace(/:(String|Function|Object|void|int|Number|Array|Boolean)\b(?=\s*(?:[,)=;{]|in\b))/g,'').replace(/for each\((.*?) in (.*?)\)/g,'for($1 of Object.values($2))');
 }
 const b=vm.createContext({Math,Number,console});
+const helper=fs.readFileSync('BetaGwent/ui/src/BetaGwentUi138.as','utf8');
 const cardAspect=source.match(/BETA_CARD_ASPECT\s*:\s*Number\s*=\s*([0-9.]+)\s*\/\s*([0-9.]+)/);
 if(!cardAspect)throw Error('Production card aspect ratio is missing');
 vm.runInContext(`var actionHistory=[],historyScores=[0,0],playing=true,aiPauseIndex=2,aiTurnShown=false,reducedMotion=false;
+var cards=[],displayedCards={},departedPoses={},BetaGwentFullCatalog={find(){return null;}};
 var BETA_CARD_ASPECT=${Number(cardAspect[1])/Number(cardAspect[2])},heldPileMask=0,heldPileRequest=false,revision=10,pileView=null,pileOpen=false,draws=0;
 var ready=true,detailOpen=false,controllerMenuOpen=false,nameOpen=false,sends=[],renders=0,focusReads=0;
 var previewLayer={numChildren:0},controller={getFocus(){focusReads++;}};
@@ -19,7 +22,8 @@ function int(v){return v|0;} function canInspectPile(){return ready&&!playing;}
 function closePileView(){pileView=null;pileOpen=false;}
 function closeCardDetail(){detailOpen=false;} function render(){renders++;}
 function send(name,args){sends.push({name,args});} function drawPileView(){draws++;}
-`+['noteHistory','historyLine','aiTurnDelay','overviewLayout','abilityOverviewLayout','inspectPile','beginPileView','finishPileView'].map(extract).join('\n'),b);
+`+extract('publicCard',helper)+'\n'+extract('view',helper)+'\nvar BetaGwentUi138={publicCard,view};\n'+
+ ['safeHistoryCard','recordHistoryDetails','noteHistory','historyLine','aiTurnDelay','overviewLayout','abilityOverviewLayout','inspectPile','beginPileView','finishPileView'].map(extract).join('\n'),b);
 // This is the unmodified hold branch from controllerCommand, before unrelated commands.
 vm.runInContext(extract('controllerCommand').split('if(name=="trace")')[0]+'}',b);
 let checks=0;function check(v,n){if(!v)throw Error(n);checks++;}
@@ -38,8 +42,8 @@ b.noteHistory({title:'Frost',kind:2,source:0,row:1},[10,2]);
 b.noteHistory({title:'damage',kind:2,source:7,row:0},[10,4]);
 check(b.actionHistory[1].end[1]===0,'weather is not attributed to preceding card');
 check(b.historyLine(b.actionHistory[0]).includes('+4'),'weather entry includes all tick deltas');
-for(let i=0;i<12;i++)b.noteHistory({title:'play '+i,kind:1},[10+i,4]);
-check(b.actionHistory.length===10&&b.actionHistory[0].title==='play 11','history keeps latest ten');
+for(let i=0;i<40;i++)b.noteHistory({title:'play '+i,kind:1},[10+i,4]);
+check(b.actionHistory.length===32&&b.actionHistory[0].title==='play 39','history keeps latest 32');
 for(const reduced of [false,true])for(let setting=1;setting<=4;setting++){
  b.reducedMotion=reduced;b.aiPauseIndex=setting;
  check(b.aiTurnDelay({current:2,cue:{kind:1}})===(setting-1)*400,'AI pause independent of reduced effects '+setting+'/'+reduced);

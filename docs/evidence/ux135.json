@@ -4,7 +4,7 @@
   "actualActionScript": true,
   "nativeGameTested": false,
   "sources": {
-    "BetaGwent/ui/src/BetaGwentBoard.as": "f4d35ee1d8dee00caca24bd679d4cac94f5d1f9deccaa1ea217c598ab4f5c989",
-    "BetaGwent/ui/src/BetaGwentController.as": "8f3224c0ab1353742fc5e4c9815ce83229773ee1a9831a5bf32025605b4244e1"
+    "BetaGwent/ui/src/BetaGwentBoard.as": "81f8f02306142d8539c4c5f381fb0f2a6c0d2311f2ae2022fe0db27ab549c038",
+    "BetaGwent/ui/src/BetaGwentController.as": "7872b1cf2706a8e66fb6e31daec4613f9dca696bda2e6beef5ba800b6c495dd8"
   }
 }

@@ -15,6 +15,21 @@ PROJECTS = {'en': 'wwise-en89', 'ru': 'wwise', 'de': 'wwise-de137',
 LOCALES = {'de': 'de_de', 'it': 'it_it', 'pt-br': 'pt_br'}
 DEFAULT_TEXT = {'en': 2, 'ru': 1, 'de': 3, 'it': 5, 'pt-br': 9}
 SHA = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+# Distinct per voice package: installing another package resets the text language once
+# to that package's language (EN -> English, RU -> Russian, ...); later choices persist.
+PACKAGE_ID = {'en': 1001, 'ru': 1002, 'de': 1003, 'it': 1004, 'pt-br': 1005}
+
+
+def language_bridge(text, language):
+    old = 'FlashArgInt(FactsQueryLatestValue("bg_text_language"))'
+    assert text.count(old) == 1
+    text = text.replace(old, 'FlashArgInt(BetaGwentTextLanguage137(FactsQueryLatestValue("bg_text_language")))')
+    default, package = DEFAULT_TEXT[language], PACKAGE_ID[language]
+    return text + ('\nfunction BetaGwentTextLanguage137(value:int):int\n{\n'
+                   f'    if(FactsQueryLatestValue("bg_text_language_package")!={package})\n'
+                   f'    {{ FactsSet("bg_text_language_package",{package});FactsSet("bg_text_language",{default});'
+                   f'LogChannel(\'BetaGwent\',"TEXT_LANGUAGE_PACKAGE_DEFAULT package={package} language={default}");return {default}; }}\n'
+                   f'    if(value>=1&&value<=13)return value;return {default};\n}}\n')
 
 
 def durations(source, wav_folder):
@@ -88,14 +103,10 @@ def main():
         output, count = durations(catalog.read_text('utf-8-sig'), project/'Originals/SFX/BetaGwent79')
         catalog.write_text(output, 'utf-8-sig')
         bridge = patch/'game/betagwent/developmentBoardMenu.ws'
-        text = bridge.read_text('utf-8-sig')
-        text = text.replace('FlashArgInt(FactsQueryLatestValue("bg_text_language"))',
-                            f'FlashArgInt(BetaGwentTextLanguage137(FactsQueryLatestValue("bg_text_language")))')
-        text += f'\nfunction BetaGwentTextLanguage137(value:int):int\n{{ if(value>=1&&value<=13)return value;return {DEFAULT_TEXT[language]}; }}\n'
-        bridge.write_text(text, 'utf-8-sig')
+        bridge.write_text(language_bridge(bridge.read_text('utf-8-sig'), language), 'utf-8-sig')
         reports[language] = dict(bank=str(bank), bytes=bank.stat().st_size, sha256=SHA(bank),
                                  project=folder, rewrittenDurations=count, eventInventoryPreserved=True,
-                                 voiceCount=907, defaultTextLanguage=DEFAULT_TEXT[language],
+                                 voiceCount=907, defaultTextLanguage=DEFAULT_TEXT[language], packageId=PACKAGE_ID[language],
                                  trollVoice='ru' if language in ('de', 'it') else language,
                                  patch=str(patch), catalogSha256=SHA(catalog), bridgeSha256=SHA(bridge))
         print('Voice ready:', language, bank.stat().st_size, count, 'durations', flush=True)

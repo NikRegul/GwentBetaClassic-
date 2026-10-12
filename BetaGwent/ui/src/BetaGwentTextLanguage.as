@@ -53,10 +53,14 @@ package
                 for(head in groups[value])groups[value][head].sort(longest);
         }
         private static function longest(a:String,b:String):Number{return b.length-a.length;}
+        // TextField.text reads paragraph breaks back as "\r"; dictionaries use "\n".
+        public static function normalize(value:String):String
+        { return value&&value.indexOf("\r")>=0?value.split("\r\n").join("\n").split("\r").join("\n"):value; }
         private static function word(c:String):Boolean{return c.length>0&&/[A-Za-z0-9_А-Яа-яЁё]/.test(c);}
         public static function translate(value:String,target:int=0):String
         {
             if(!value)return value;
+            value=normalize(value);
             if(target==0)target=language;
             if(target==1||target<1||target>13)return value;
             initialize();
@@ -89,18 +93,35 @@ package
         public static function track(field:TextField):void
         {
             if(!field||field.type=="input")return;
-            var raw:String=field.text;
+            var raw:String=normalize(field.text);
             fields[field]={raw:raw,shown:raw,format:field.getTextFormat(),face:field.getTextFormat().font,embedded:field.embedFonts};
             update(field,fields[field]);
         }
         public static function forget(field:TextField):void{delete fields[field];}
+        // Replace a tracked field's source text and show the translation in the same frame.
+        public static function assign(field:TextField,value:String):void
+        {
+            if(!field)return;
+            if(field.type=="input"||!fields[field]){field.text=value==null?"":value;if(field.type!="input")track(field);return;}
+            var state:Object=fields[field];state.shown=normalize(field.text);state.raw=normalize(value==null?"":value);update(field,state);
+        }
+        // Cheap per-frame pass: only fields whose text was replaced outside assign().
+        public static function sweep():void
+        {
+            for(var item:Object in fields){
+                var field:TextField=item as TextField;var state:Object=fields[item];
+                if(field&&state&&field.text!==state.seen)update(field,state);
+            }
+        }
+        // True once the selected language resource (dictionary and fonts) is in use.
+        public static function loaded():Boolean{return resourceLoader!=null&&pendingLoader==null;}
         private static function update(field:TextField,state:Object):void
         {
             if(field.type=="input")return;
-            if(field.text!=state.shown)state.raw=field.text;
+            if(normalize(field.text)!=state.shown)state.raw=normalize(field.text);
             var shown:String=translate(state.raw);
             var format:TextFormat=field.getTextFormat();var scroll:int=field.scrollV;
-            if(field.text!=shown)field.text=shown;
+            if(normalize(field.text)!=shown)field.text=shown;
             if(bodyFont&&state.face!=BetaGwentFonts.NUMBERS&&hasGlyphs(shown)){
                 var original:String=String(state.face);
                 format.font=original==BetaGwentFonts.TITLE?titleFont:bodyFont;
@@ -110,14 +131,14 @@ package
                 format.font="$NormalFont";field.embedFonts=false;
             }
             field.defaultTextFormat=format;field.setTextFormat(format);field.scrollV=scroll;
-            state.shown=shown;
+            state.shown=shown;state.seen=field.text;
         }
         public static function font(field:TextField,face:String):Boolean
         { if(field.type=="input")return false;if(!fields[field])track(field);fields[field].face=face;if(bodyFont)update(field,fields[field]);return bodyFont!=null; }
         private static function hasGlyphs(value:String):Boolean
         { for(var i:int=0;i<value.length;i++){var c:String=value.charAt(i);if(c!="\n"&&c!="\r"&&fontCharacters.indexOf(c)<0)return false;}return true; }
         public static function refresh():void
-        { for(var item:Object in fields){var field:TextField=item as TextField;if(field&&field.stage)update(field,fields[field]);} }
+        { for(var item:Object in fields){var field:TextField=item as TextField;if(field)update(field,fields[field]);} }
         public static function select(value:int):void
         {
             value=value>=1&&value<=13?value:DEFAULT_LANGUAGE;

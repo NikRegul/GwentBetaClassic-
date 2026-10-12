@@ -54591,12 +54591,12 @@
         200145,
         200145,
         201704,
-        152106
+        201704
       ],
       "aiRulesProfile": 39,
-      "unitCount": 24,
-      "specialCount": 1,
-      "goldCount": 4,
+      "unitCount": 23,
+      "specialCount": 2,
+      "goldCount": 3,
       "silverCount": 6,
       "cards": [
         {
@@ -54657,11 +54657,7 @@
         },
         {
           "templateId": 201704,
-          "copies": 1
-        },
-        {
-          "templateId": 152106,
-          "copies": 1
+          "copies": 2
         }
       ]
     },
@@ -55616,6 +55612,7 @@
         122102,
         122108,
         122105,
+        122212,
         122208,
         122211,
         123201,
@@ -55635,8 +55632,7 @@
         123301,
         201622,
         201622,
-        201622,
-        122209
+        201622
       ],
       "unitCount": 23,
       "specialCount": 2,
@@ -55657,6 +55653,10 @@
         },
         {
           "templateId": 122105,
+          "copies": 1
+        },
+        {
+          "templateId": 122212,
           "copies": 1
         },
         {
@@ -55698,15 +55698,11 @@
         {
           "templateId": 201622,
           "copies": 3
-        },
-        {
-          "templateId": 122209,
-          "copies": 1
         }
       ]
     }
   ],
-  "presetsSourceSha256": "12441a63400f213e7732caa3dd83e2a439d0936f94225b3cdc61bc983a298d3e",
+  "presetsSourceSha256": "5a1b80ca6dd65c97e8656879e55356b1b9145850ac01acdc7fecd4462297e112",
   "selectablePresetCount": 99,
   "leaderIds": [
     131101,

@@ -2,7 +2,7 @@
 
 Updated 12 October 2026. Crashes, data loss, blocked actions and match softlocks are fixed immediately regardless of the milestone theme.
 
-The current line is 0.6.1: animated portraits for 21 leaders, a preview of 13 text languages and five complete voice packages (EN/RU/DE/IT/PT-BR). The user confirmed the leader crash hotfix on RU. Full multi-package acceptance is still required. Ordinary card portraits remain static; large character entrance animations are a separate feature.
+The current line is 0.6.2: animated portraits for 21 leaders, a preview of 13 text languages and five complete voice packages (EN/RU/DE/IT/PT-BR). The user confirmed the leader crash hotfix on RU. Full multi-package acceptance is still required. Ordinary card portraits remain static; 0.6.2 adds a large 2D leader scene and UI improvements; original 3D entrances remain a separate feature. The RU 0.6.2 build passed automated checks; in-game acceptance and AI comparison remain separate.
 
 | Milestone | Focus |
 |---|---|
@@ -19,6 +19,6 @@ Before 1.0, validate profile upgrades/NG+, all custom slots, single-charge purch
 - [Detailed plan (RU)](ROADMAP_1.0_RU.md)
 - [Manual acceptance checklist (RU)](TESTING_0.6.1_RU.md)
 - [Current repository state (RU)](REPOSITORY_CURRENT_RU.md)
-- [Build instructions (RU)](BUILD_0.6.1_RU.md)
+- [Build instructions (RU)](BUILD_0.6.2_RU.md)
 
 Release acceptance requires no known data loss, duplicate rewards, crashes or blocked supported matches/quests; successful compilation alone does not establish that. Preserve the all-card premium experiment separately: the current release permits only leader portraits.

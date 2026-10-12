@@ -37,7 +37,7 @@ def translate(raw, locale, lookup):
     raise RuntimeError('Missing native item translation '+locale+': '+raw)
 
 
-def cook_strings(root, base, project, content, job, voice):
+def cook_strings(root, base, project, content, job, voice, stage=137):
     from localization89 import strings
     english = strings()
     prepared = root/'BetaGwent/build/languages137/ui'
@@ -71,4 +71,4 @@ def cook_strings(root, base, project, content, job, voice):
                         'LATEST_STRINGS_WITH_INFO_NEW', '-languages='+codes, '-platforms=pc'],
         expect=[content/(code+'.w3strings') for _, code in languages], workspace=fallback)
     subprocess.run([sys.executable, str(root/'tools/recon/verify_release_strings.py'), '--base', str(base),
-                    '--stage', '137', '--package-language', voice], check=True, cwd=root)
+                    '--stage', str(stage), '--package-language', voice], check=True, cwd=root)

@@ -9,3 +9,8 @@ $BuildArguments=@('-X','utf8','tools/build_release137.py','--step',$Step,'--lang
 if($RebuildExisting){$BuildArguments+='--rebuild-existing'}
 & python @BuildArguments
 if($LASTEXITCODE -ne 0){throw '0.6.1 build failed; inspect BetaGwent/build/stage137/logs137.'}
+if($Step -eq 'full' -or $Step -eq 'verify'){
+    Get-ChildItem -LiteralPath 'BetaGwent/release' -Filter 'GwentBetaClassic-0.6.1-*.zip' |
+        ForEach-Object { '{0}  {1:N0} bytes  {2}' -f $_.Name,$_.Length,$_.LastWriteTime }
+    'Report: docs/evidence/validation137.json'
+}

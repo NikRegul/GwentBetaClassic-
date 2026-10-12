@@ -13,6 +13,7 @@ def main():
     gate=a.output.parent/'opponent-gate135.ws'
     gate.write_text('''class CBetaOpponentGate extends IScriptable {
 public var configured,visualBusy,deferredOpponent : bool;
+public var deferredVoiceAt : float;
 public var audio : CBetaGwentDuelAudio;
 public var publications : int;
 public var duel : CBetaFakeDuel;
@@ -66,6 +67,15 @@ check(!transition.IsIntroActive()&&!transition.introVoices,'completed introducti
 transition.Cue(1,first,0,0,0,0,0);transition.Cue(1,second,0,0,0,0,0);
 clock=transition.voiceUntil+3;transition.SetClock(Math.ceil(clock*1000));transition.Tick();
 check(!transition.IsVoiceActive()&&transition.queuedVoices.length===0,'ordinary stale chatter expires after an introduction');
+// 0.6.1: a long line delays the opponent by at most one second after the replay.
+clock=100;const cap=new CBetaGwentDuelAudio();cap.Initialize();cap.SetClock(100000);cap.Cue(1,first,0,0,0,0,0);cap.Tick();
+check(cap.IsVoiceActive(),'capped-wait fixture starts a line');const longLine=cap.voiceUntil>101.3;
+const capGate=new CBetaOpponentGate();capGate.configured=true;capGate.visualBusy=false;capGate.deferredOpponent=true;capGate.audio=cap;
+capGate.duel={IsPending(){return false;},GetMessage(){return '';}};capGate.deferredVoiceAt=cap.CurrentTime();
+clock=100.5;cap.SetClock(100500);capGate.ResumeOpponentAfterVoice();check(capGate.publications===0&&capGate.deferredOpponent,'opponent still waits during the first second of a line');
+clock=101.25;cap.SetClock(101250);capGate.ResumeOpponentAfterVoice();
+check(capGate.publications===1&&!capGate.deferredOpponent,'opponent continues after one second');
+check(!longLine||cap.IsVoiceActive(),'the line keeps playing over the opponent turn');
 console.log(JSON.stringify({checks,actualWitcherScript:true,nativePlaybackVerified:false}));
 ''','utf8')
         result=subprocess.run(['node',str(script)],capture_output=True,text=True,encoding='utf8')

@@ -30,7 +30,7 @@ def main():
     for name in ('check_controller123','check_catalog123','check_optional124',
                  'check_halfcast126','check_controller126','check_timing126',
                  'check_card_presentation126','check_followups127','check_presentation133',
-                 'check_ux135','check_release137','check_leader_release137'):
+                 'check_ux135','check_release137','check_leader_release137','check_fixes061'):
         commands.append(['node', f'tools/ui/{name}.js'])
     for name in ('check_rotation123','check_crafting123','check_quest126',
                  'check_rewards121','check_profile136'):

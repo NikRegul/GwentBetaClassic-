@@ -66,7 +66,7 @@
     }
   ],
   "sources": {
-    "BetaGwent/development/scripts/game/betagwent/duelAudio.ws": "1647412a39ef588fc56bf3d97bee1eee5e7955a1da9489e9bfe603128e552b1d",
+    "BetaGwent/development/scripts/game/betagwent/duelAudio.ws": "1e22a9511c38c01c8330e3c18d5854db880af4882ef673257ef552cdd5bb3c50",
     "BetaGwent/development/scripts/game/betagwent/duelAudioCatalog.ws": "364425b93615fd630d0fb7730f80820ccc70f1343d83a6251ac1910e902e2472",
     "BetaGwent/audio/generated/duelAudioCatalog-en.ws": "8a458eeb4bc341363698fd70a817f8f52d7674c832079fcfa891511e5aba252c"
   }

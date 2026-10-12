@@ -1,10 +1,10 @@
 {
   "entry": "DeckBuilder",
   "source": "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks.swf",
-  "sourceSha256": "8214fb63e2a80c576bfec694e2114e5fd65c9b804c90178ea74aecc5de7bbc32",
+  "sourceSha256": "659430e514876c194d05de1a20dd967826575a01d0f2e56e928cbdc90691de81",
   "target": "D:\\w3mod\\GwentB\\myproject1\\workspace\\betagwent\\betagwent_decks.redswf",
-  "updatedSha256": "a28e77b4a541b58400e5dcbe671ecf6600278fc09f39c2ba4b8ae5e0d9dd2a22",
-  "updatedBytes": 206239477,
+  "updatedSha256": "7fa2eba54094ab260f188a65de29d70d32756924ccb64270160ab5c3e3bf4fc1",
+  "updatedBytes": 206240976,
   "originalSha256": "cbceda2c61e4b0147b579bb59334fe6806e2abe916e4435d41c1a1bf0e2c20a2",
   "candidate": "D:\\w3mod\\BetaGwent\\build\\native-hd93-resource\\betagwent_decks.redswf",
   "backup": "D:\\w3mod\\BetaGwent\\build\\resource-backups\\cbceda2c61e4b0147b579bb59334fe6806e2abe916e4435d41c1a1bf0e2c20a2.redswf",

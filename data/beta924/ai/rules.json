@@ -2482,8 +2482,7 @@
       "sourceText": "Cursed Ships\r\nЛидер: Bran Tuirseach\r\nСостав колоды с количеством копий:\r\n\r\n    6 Triss: Telekinesis\r\n\r\n    6 Cerys an Craite\r\n\r\n    3 Hym\r\n\r\n    1 Sigvald\r\n\r\n    13 Udalryk\r\n\r\n    9 Morkvarg\r\n\r\n    5 Skjall\r\n\r\n    4 Gremist\r\n\r\n    3 Sigrdrifa\r\n\r\n    Restore\r\n\r\n    9 An Craite Blacksmith x3\r\n\r\n    8 Svalblod Ravager x3\r\n\r\n    7 Dimun Light Longship x3\r\n\r\n    1 Dimun Pirate Captain x2\r\n\r\n    1 Dimun Corsair x3\r\n\r\n    Scout x2\r\n\r\n    Bone Talisman x2\r\n\r\nОсновной план:\r\nВозвращение классической колоды с изменениями: меньше кораблей, больше синергии с Sigvald и Cerys. Длинный раунд через Longship, carryover через Blacksmith, досягаемость через Ravager. Беречь Longship, Sigvald, Cerys.\r\nМуллиган:\r\nОставлять: Dimun Light Longship, Sigvald, Cerys, An Craite Blacksmith. Менять дубликаты Dimun Corsair, если нет синергии.\r\nПервый раунд:\r\nРазыграть Longship, набрать темп.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Cerys.\r\nПоследний раунд:\r\nСохранить Longship, Sigvald, Cerys.\r\nСвязки:\r\n\r\n    Dimun Light Longship → длинный раунд.\r\n\r\n    An Craite Blacksmith → carryover.\r\n\r\n    Sigvald → Cerys → финишер.\r\n    Если нет Longship — использовать Ravager для досягаемости.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к Alchemy, Adda Cursed, Spies.\r\n    Типичные ошибки:\r\n    Не защищать Longship; тратить Sigvald рано; игнорировать зачистки.\r\n\r\nBROUVER HANDBUFF",
       "family": "greatswords",
       "notes": [
-        "Approved researched Beta proposal; exact roster, no automatic fillers.",
-        "Четвёртое золото: Лугос даёт целевой сброс и удаление."
+        "Approved researched Beta proposal; exact roster, no automatic fillers."
       ],
       "changes": [
         {
@@ -2491,16 +2490,6 @@
           "resolvedName": "Точный состав из исследованного документа",
           "method": "author-researched-roster",
           "sourceSection": "39. Проклятые корабли\r"
-        },
-        {
-          "method": "reviewed-deck-patch128",
-          "requested": "Четвёртое золото: Лугос даёт целевой сброс и удаление.",
-          "removed": [
-            201704
-          ],
-          "added": [
-            152106
-          ]
         }
       ],
       "active": true,
@@ -2533,7 +2522,7 @@
         200145,
         200145,
         201704,
-        152106
+        201704
       ],
       "passPolicy": "L",
       "strategy": {
@@ -2814,8 +2803,7 @@
       "sourceText": "Calanthe Deckbuff\r\nЛидер: Queen Calanthe\r\nСостав колоды:\r\n\r\n    Lonely Champion\r\n\r\n    Lyrian Cavalry\r\n\r\n    Buff-карты\r\n\r\n    Прочие\r\n\r\nОсновной план:\r\nПростейшая колода, punish opponents without control. Один юнит (Lonely Champion) усиливается всем, затем возвращается в колоду через Calanthe. Lyrian Cavalry позволяет разыгрывать бронзу на 50+ очков. Беречь Lonely Champion, Calanthe, Lyrian Cavalry.\r\nМуллиган:\r\nОставлять: Lonely Champion, Calanthe, Lyrian Cavalry, buff-карты. Менять дубликаты, если нет синергии.\r\nПервый раунд:\r\nРазыграть Lonely Champion, усилить его.\r\nВторой раунд:\r\nПосле победы — пасовать, если рука сильна. После поражения — выиграть через Lyrian Cavalry.\r\nПоследний раунд:\r\nСохранить Lonely Champion, Calanthe, Lyrian Cavalry.\r\nСвязки:\r\n\r\n    Lonely Champion → buff → Calanthe → shuffle.\r\n\r\n    Lyrian Cavalry → разыгрывание бронзы.\r\n    Если нет Calanthe — использовать другие способы возврата.\r\n    Выбор целей:\r\n    Убивать движки, блокировать ключевых. Не тратить контроль на мелких.\r\n    Пас:\r\n    Впереди — пасовать, если противник потратил больше. Отстаём — догнать одной картой.\r\n    Противодействие:\r\n    Слабость к любой колоде с контролем.\r\n    Типичные ошибки:\r\n    Не защищать Lonely Champion; тратить Calanthe рано; игнорировать контроль противника.\r\n\r\nAXEMEN",
       "family": "temerians",
       "notes": [
-        "Approved researched Beta proposal; exact roster, no automatic fillers.",
-        "Трололо вместо Неннеке: броня и поддержка оруженосцев."
+        "Approved researched Beta proposal; exact roster, no automatic fillers."
       ],
       "changes": [
         {
@@ -2823,16 +2811,6 @@
           "resolvedName": "Точный состав из исследованного документа",
           "method": "author-researched-roster",
           "sourceSection": "44. Calanthe Deckbuff\r"
-        },
-        {
-          "method": "reviewed-deck-patch128",
-          "requested": "Трололо вместо Неннеке: броня и поддержка оруженосцев.",
-          "removed": [
-            122212
-          ],
-          "added": [
-            122209
-          ]
         }
       ],
       "active": true,
@@ -2845,6 +2823,7 @@
         122102,
         122108,
         122105,
+        122212,
         122208,
         122211,
         123201,
@@ -2864,8 +2843,7 @@
         123301,
         201622,
         201622,
-        201622,
-        122209
+        201622
       ],
       "passPolicy": "T",
       "strategy": {

@@ -18,7 +18,7 @@ from snapshot import verify as verify_snapshot
 from verify_bundle96 import verify as verify_bundle
 from verify_cooked_menu95 import verify as verify_cooked
 from check_assets137 import main as check_assets
-from build_voice137 import durations, DEFAULT_TEXT
+from build_voice137 import durations, DEFAULT_TEXT, language_bridge
 
 
 def sha(path):
@@ -43,7 +43,8 @@ def main():
     assert len(motion['leaderArt'])==21 and all(x['uniqueFrames']==x['sourceFrames'] for x in motion['leaderArt'].values())
     regression=read(EVIDENCE/'regressions137.json')
     assert verify_snapshot(Path(regression['snapshot']))['fingerprint']==regression['fingerprint']
-    assert len(regression['checks'])>=49
+    assert len(regression['checks'])>=50
+    assert any(c['script']=='tools/ui/check_fixes061.js' for c in regression['checks']),'0.6.1 playtest-fix regressions missing'
     release_test=read(EVIDENCE/'leader-release137.json')
     assert release_test['passed'] and release_test['checks']>=3
     assert_sources(release_test['sources'])
@@ -105,10 +106,8 @@ def main():
         expected,_=durations((original/'duelAudioCatalog.ws').read_text('utf-8-sig'),
                              ROOT/'BetaGwent/audio'/voices[language]['project']/'Originals/SFX/BetaGwent79')
         assert expected==(patch/'game/betagwent/duelAudioCatalog.ws').read_text('utf-8-sig')
-        expected=(original/'developmentBoardMenu.ws').read_text('utf-8-sig').replace(
-            'FlashArgInt(FactsQueryLatestValue("bg_text_language"))',
-            'FlashArgInt(BetaGwentTextLanguage137(FactsQueryLatestValue("bg_text_language")))')
-        expected+=f'\nfunction BetaGwentTextLanguage137(value:int):int\n{{ if(value>=1&&value<=13)return value;return {DEFAULT_TEXT[language]}; }}\n'
+        expected=language_bridge((original/'developmentBoardMenu.ws').read_text('utf-8-sig'),language)
+        assert f'FactsSet("bg_text_language",{DEFAULT_TEXT[language]})' in expected
         assert expected==(patch/'game/betagwent/developmentBoardMenu.ws').read_text('utf-8-sig')
         frozen=read(base/'frozen.json')
         for item in frozen['files']:assert sha(project/item['path'])==item['sha256']

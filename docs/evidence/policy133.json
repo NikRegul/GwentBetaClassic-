@@ -334,7 +334,7 @@
   ],
   "actualWitcherScript": true,
   "nativeGameTested": false,
-  "fingerprint": "a709c0e77cf4e4a044f7a97e7bf84a33afd87cdf89644fbbdc19148646cb6478",
+  "fingerprint": "374ac0add2fe76f92fa0238aad2ca30fa99c7d11fcad6eba4a06341dd6c917b1",
   "sources": {
     "BetaGwent/development/scripts/game/betagwent/duelSession.ws": "e077a3985e73554c211100538e5971a732709d405502636992e5fbd2e3d53db7",
     "BetaGwent/development/scripts/game/betagwent/duelAIPass.ws": "c3f1600af50eea9591b0e6741f5916252128809ee7fe29ff02fb10d239392c10",

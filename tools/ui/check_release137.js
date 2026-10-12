@@ -19,7 +19,7 @@ const common={Loader,Object,URLRequest:class{constructor(url){this.url=url;}},Ev
  BetaGwentFonts:{BODY:'PF Din Text Cond Pro',TITLE:'Halis GR',NUMBERS:'Gwent Numbers'}};
 const c=vm.createContext({...common,console,trace(){}});
 vm.runInContext('var DEFAULT_LANGUAGE=1,language=1,pendingLanguage=0,fields={},maps,groups,protectedNames={},caches=[],cacheCount=0,resourceLoader=null,pendingLoader=null,bodyFont=null,titleFont=null,fontCharacters="",changed=null;var CODES='+JSON.stringify(codes)+',LABELS='+JSON.stringify(codes)+';'+
- ['initialize','indexLanguage','longest','word','translate','protect','track','forget','update','font','hasGlyphs','refresh','select','languageLoaded','languageFailed','label','search'].map(n=>extract(text,n)).join('\n'),c);
+ ['initialize','indexLanguage','longest','normalize','word','translate','protect','track','forget','assign','sweep','loaded','update','font','hasGlyphs','refresh','select','languageLoaded','languageFailed','label','search'].map(n=>extract(text,n)).join('\n'),c);
 for(let id=1;id<=13;id++){
  const locale=codes[id];let data=id===1?{}:id===2?en:JSON.parse(fs.readFileSync('BetaGwent/build/languages137/ui/'+locale+'.json','utf8'));
  data={...data,...Object.fromEntries(Object.entries(data).map(([k,v])=>[k.toUpperCase(),v.toUpperCase()]))};

@@ -2,6 +2,10 @@
 
 - Fixed a crash at the beginning of the leader introduction, including Eredin paired with Radovid or the Arachas Queen: portrait frame changes no longer manually dispose an engine-owned texture.
 - Portrait page unloading is deferred outside loader callbacks. Added regression checks for repeated hovering, unfinished loads, missing resources and the total page limit, including pages awaiting unloading.
+- After installation the text language defaults to the voice package: EN → English, RU → Russian, DE → German, IT → Italian, PT-BR → Portuguese (Brazil). A choice made in settings persists afterwards.
+- Fixed Russian strings in the match menu in other languages (control hints, "Text:"). Tutorial lines and hints no longer flash in Russian before translation.
+- Gamepad: when a card goes onto the board (from hand, from the deck, Reinforcements, summons, row choice), focus moves to the board instead of the graveyard.
+- A card's voice line delays the opponent's turn by at most one second; the turn continues while the line finishes.
 - All five packages include 13 text languages: EN, RU, DE, FR, IT, PL, ES, ES-MX, PT-BR, JP, KR, ZH-CN and ZH-TW. Text selection is independent of voices and persists with your game save.
 - Five complete installation variants, each with one voice language: EN, RU, DE, IT or PT-BR. The keg troll uses Russian lines in DE/IT. Install only one package.
 - Added fonts for the new languages, including Japanese, Korean and Chinese. A missing TC character uses an SC glyph. Only the selected dictionary and fonts are loaded.

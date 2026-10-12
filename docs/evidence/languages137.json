@@ -49,11 +49,11 @@
     },
     "en_us": {
       "path": "gameplay/gui_new/swf/betagwenttext/en_us.redswf",
-      "bytes": 489606,
-      "sha256": "f9aa2c30e85e8c44c846373e410a03ea8cbd620ff91c26e8ce29aa888afb5064",
+      "bytes": 489656,
+      "sha256": "6fc2078db3ba175d588c6574391fd2512232903880b43a9f14798b837f3f5a0d",
       "id": 2,
       "label": "English",
-      "entries": 8430,
+      "entries": 8434,
       "glyphs": 207,
       "fallbacks": {
         "body": {
@@ -158,8 +158,8 @@
           "54620": "NotoSansKR-Medium.otf"
         }
       },
-      "sourceSha256": "1e67c6b489f290b89d14b360c79f5d2590871c36c29c7dc4da1a5034798483e8",
-      "dictionarySha256": "e363d9eac096f433ff66310a2128a2372a5448e42b936562a9fd7297ef9de156"
+      "sourceSha256": "289ee15f62cc0cebf70c26b25a1557bac9ce21d780e04dfd0d44acb1c596c399",
+      "dictionarySha256": "2c7851b5118e5a72cf3e4cce6f3b1586fa27c2959fb772cb26134d1422b9caed"
     },
     "de_de": {
       "path": "gameplay/gui_new/swf/betagwenttext/de_de.redswf",

@@ -1,0 +1,27 @@
+{
+  "version": "0.6.2",
+  "passed": true,
+  "packages": [
+    {
+      "language": "ru",
+      "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.6.2-RU.zip",
+      "bytes": 293897803,
+      "sha256": "aae26c22031d61c201f7a98cbece9c54f1bd2e31c41788ba1956bbdf8cada54b",
+      "freshNativeScripts": 70,
+      "textLanguages": 13
+    }
+  ],
+  "menus": 4,
+  "voicePackages": 1,
+  "textLanguages": 13,
+  "leaderCards": 21,
+  "leaderPages": 282,
+  "otherAnimatedCards": 0,
+  "regressionSuites": 52,
+  "oldArchivesUnmodified": true,
+  "nativeGameTested": false,
+  "installedGameModified": false,
+  "nativeAtlasDisposeRemovedFromAll282Pages": true,
+  "inGameLeaderIntroductionRetestRequired": true,
+  "verifiedAtUtc": "2026-10-12T13:31:33.947339+00:00"
+}

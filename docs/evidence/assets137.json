@@ -10,10 +10,10 @@
   "embeddedGlyphCoverage": true,
   "currentCatalogStringsChecked": 1246,
   "inputSources": {
-    "data/beta924/design/english89.json": "30f2b7fb21a59c7ff12213cfa0175a1362eba3ab87d08e12317dc09da214ccd8",
+    "data/beta924/design/english89.json": "8852a9c67e853221b9cfab3ba26a506cc0b29a1306b47b9bee930121c748b2a4",
     "tools/localization89.py": "5a08ee4d25fde928c9f5e09e35f9924142c859776d287718255307f13771c130",
     "data/beta924/design/ui-overrides137.json": "5322de58def7ea93d3ca3c37fc5e37c1a201bb605ef9fa66828390fc0fddb640",
-    "BetaGwent/development/scripts/game/betagwent/duelCatalog.ws": "41f761563d5981624977133be2f237a9be0fb29a76a2a371b612747f826ee413",
+    "BetaGwent/development/scripts/game/betagwent/duelCatalog.ws": "8e104904c73c6dbbfba25676b0975a53f7c537590e47363cc828191f9b18aa06",
     "BetaGwent/build/languages137/ui/de_de.json": "105396d76a969ce0d662ee73f0027cd7b6c29c1836ceebff3de3ea08991e2b53",
     "BetaGwent/build/languages137/ui/fr_fr.json": "36225f861b0b37eddd387e6c919f83195d1d61a9c0dd3e8833d0d57b016f49c6",
     "BetaGwent/build/languages137/ui/it_it.json": "8f9510a44db268927d4244ac44ae110806dbc2edbdbbb0dcba61f4da8fabc0f9",
@@ -32,7 +32,7 @@
     "tools/ui/build_leaders137.py": "8bfdfca27801bf64b8623a2e5844d4f9bf3449dd01ebc9dab9d2564ece2850f1",
     "tools/ui/leaders060/Capture137.cs": "54247f7960dac9e27b6c0e0a7381869b8d2e1677047abf097623e30d4f9dbc57",
     "tools/ui/leaders060/BetaLeaderMovie137.as": "8e74080deebbe6c245e758216a0d06a77abd93815a3a14abd5ad29e525854c9b",
-    "tools/language_release137.py": "c6d896942f6d825e75a7228d33ecc5c0cc257273ea1354b4ea11072943fa4153"
+    "tools/language_release137.py": "49a9d2b6b967bdc132939ce35473e1f326266f80aa509cec7b4731ed3592e2c6"
   },
   "nativeGameTested": false
 }

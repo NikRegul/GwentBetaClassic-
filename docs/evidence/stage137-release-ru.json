@@ -11,8 +11,8 @@
     },
     {
       "path": "CHANGELOG_RU.md",
-      "bytes": 13740,
-      "sha256": "d15006992d9e414c640657e7594a697dc52425ce21bd2309efb42149338cd820"
+      "bytes": 14882,
+      "sha256": "4548ba975ee930e5d44e140271260b7b09a404cbeb29e4c1ab0baf66430adc21"
     },
     {
       "path": "CONTROLS_RU.md",
@@ -31,8 +31,8 @@
     },
     {
       "path": "Mods/modBetaGwent0924/content/blob0.bundle",
-      "bytes": 394903005,
-      "sha256": "577035c31f0b71fefa64a1e4be00a3bfcf36c68bddef9675ddc660b4a50fd45c"
+      "bytes": 394906013,
+      "sha256": "2c6efc17c4df595d7f01acdc791991fb8d63dc375275f2d000e7ba5ca59b0e13"
     },
     {
       "path": "Mods/modBetaGwent0924/content/br.w3strings",
@@ -102,7 +102,7 @@
     {
       "path": "Mods/modBetaGwent0924/content/metadata.store",
       "bytes": 44062,
-      "sha256": "739a3634811ff61240576b581cd5c4471277d0958383f704b943fdc75cdff80c"
+      "sha256": "5fd4c41ebcb208e3ab54ec193b086700ad5b429a5711c1843e6d9ffddce625b6"
     },
     {
       "path": "Mods/modBetaGwent0924/content/pl.w3strings",
@@ -111,8 +111,8 @@
     },
     {
       "path": "Mods/modBetaGwent0924/content/precompiled.rsblob",
-      "bytes": 2265736,
-      "sha256": "8bbb684345fc99ee698ca3705063ffe5d08afbce050750abd863d7e918a87772"
+      "bytes": 2266057,
+      "sha256": "00676278232581c410dc2791f90bf5c45db9d50a2bb80a439cb9418389077d26"
     },
     {
       "path": "Mods/modBetaGwent0924/content/ru.w3strings",
@@ -122,7 +122,7 @@
     {
       "path": "Mods/modBetaGwent0924/content/soundspc.cache",
       "bytes": 57186452,
-      "sha256": "d8c5c2cada137d040b42221e5375b835223727426d4fb2d0ca5728bb4af34919"
+      "sha256": "31f361c96e68928ecbe8eccd46257fef1906ce887391455be28288a0f7caaffa"
     },
     {
       "path": "Mods/modBetaGwent0924/content/tr.w3strings",
@@ -182,7 +182,7 @@
   ],
   "fontLicenseIncluded": true,
   "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.6.1-RU.zip",
-  "archiveBytes": 293845589,
-  "archiveSha256": "4690a91bda6174eb522b6144ed46baab7d17e85fa5edac67e4c7319b54695b19",
+  "archiveBytes": 293848280,
+  "archiveSha256": "021ce719b8d1b96f72990556aaca4d776e08da04bc3b577b71a76655434325e8",
   "archiveVerified": true
 }

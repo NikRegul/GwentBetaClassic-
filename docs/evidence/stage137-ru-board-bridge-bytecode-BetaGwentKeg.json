@@ -1,7 +1,7 @@
 {
   "swf": "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_kegop.swf",
-  "bytes": 162462431,
-  "sha256": "2980df6e705ad44ef56dac3277572184ff15c35269c44b31e7442cae5bf2b4b9",
+  "bytes": 162463926,
+  "sha256": "ec3a3439dc52ce098b2f18d4dd165a4c1fc608c2129ab9208715305467e2439a",
   "checks": {
     "exactRegistrationName": true,
     "allScriptBindingsPresent": true,

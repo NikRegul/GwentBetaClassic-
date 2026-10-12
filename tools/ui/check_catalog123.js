@@ -18,7 +18,8 @@ var ownedCopies={},scraps=1160,skin=3,browsingCatalog=true,dragging=false,detail
 var ready=true,entryMode=2,editorCraft=null;
 var hoveredCard,hoveredDetail,lastInspectedCard,hoverCardId=0,hoverPreviewAt=0,keyboardFocusId=0,selected=0,inspection=null;
 var controller={registerControl:function(){}},RIGHT_CLICK_EVENT='right',BetaGwentFonts={};
-var crafted=[],cleared=0;
+var crafted=[],cleared=0,uiMotions=[],reducedMotion=false;
+function getTimer(){return 100;}
 function int(v){return v|0;}function text(parent,label){var c={label};parent.addChild(c);return c;}
 function cardRarity(){return 8;}function craftCost(){return 800;}
 function drawBetaSidePreview(c,d,parent){if(!parent)throw Error('collection preview requires a separate container');parent.addChild({card:c});}
@@ -26,7 +27,7 @@ function editorBetaButton(parent,label,x,y,w,h,enabled,callback){var b=new Sprit
 function send(name,args){crafted.push({name,args});}function redrawCatalogDetail(){redrawBetaCatalogDetail();}
 function showBattleCard(){throw Error('collection must not use transient battle preview');}
 function clearBattlePreview(){cleared++;}function updateFocusedInspection(){}function showEditorCard(){}
-`+extract('redrawBetaCatalogDetail')+'\n'+extract('attachInspect')+'\n'+extract('cardCraftButton'),context);
+`+extract('uiTween')+'\n'+extract('redrawBetaCatalogDetail')+'\n'+extract('attachInspect')+'\n'+extract('cardCraftButton'),context);
 let checks=0;function check(v,n){if(!v)throw Error(n);checks++;}
 const c={templateId:201743,title:'Queen',description:'Consume allies',tier:1},tile=new Sprite();
 context.attachInspect(tile,c,{description:c.description},173,231);tile.handlers.over({});

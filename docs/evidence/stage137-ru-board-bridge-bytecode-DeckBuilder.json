@@ -1,7 +1,7 @@
 {
   "swf": "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks.swf",
-  "bytes": 151262538,
-  "sha256": "8214fb63e2a80c576bfec694e2114e5fd65c9b804c90178ea74aecc5de7bbc32",
+  "bytes": 151264032,
+  "sha256": "659430e514876c194d05de1a20dd967826575a01d0f2e56e928cbdc90691de81",
   "checks": {
     "exactRegistrationName": true,
     "allScriptBindingsPresent": true,

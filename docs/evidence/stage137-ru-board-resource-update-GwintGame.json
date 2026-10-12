@@ -1,10 +1,10 @@
 {
   "entry": "GwintGame",
   "source": "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00.swf",
-  "sourceSha256": "a7cbd491c1a1dfc7a67b587da84bf7b769b87234d8deae340b334e9239a6f2b2",
+  "sourceSha256": "c6bd993f622afcadab330e45eacd68b6baf816bae09231ee5f0c654a20cfec31",
   "target": "D:\\w3mod\\GwentB\\myproject1\\workspace\\betagwent\\betagwent_npc00.redswf",
-  "updatedSha256": "1393edac6b668933fefab9298637af3299488d602af73f81fffc6a4bc08af8cf",
-  "updatedBytes": 206239522,
+  "updatedSha256": "ee4535c1670dc1297d8b0a8ba1c22a5e87a3d5a1f9b18d339f9798fd66bab758",
+  "updatedBytes": 206241022,
   "originalSha256": "42f63016a4b9eebdf25e90418871badae1276f251f7f55013d54d8bfc97d4d23",
   "candidate": "D:\\w3mod\\BetaGwent\\build\\native-hd93-resource\\betagwent_npc00.redswf",
   "backup": "D:\\w3mod\\BetaGwent\\build\\resource-backups\\42f63016a4b9eebdf25e90418871badae1276f251f7f55013d54d8bfc97d4d23.redswf",

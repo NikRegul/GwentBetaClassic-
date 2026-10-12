@@ -1,10 +1,10 @@
 {
   "entry": "BetaGwentBoard",
   "source": "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_board.swf",
-  "sourceSha256": "9690c9f0a2496a63ac8d10d7bb06b63a3188af23aace09976ebec2fef3152c87",
+  "sourceSha256": "48f4096c8d94c028348ce1ed5e84f120f29581d0f5f33c55d095686887a462fa",
   "target": "D:\\w3mod\\GwentB\\myproject1\\workspace\\betagwent\\betagwent_board.redswf",
-  "updatedSha256": "2a738f8781385181f1a1b9847637d6e16d787f0ad040781e72e61916ed7aae82",
-  "updatedBytes": 206239179,
+  "updatedSha256": "3054f0ad2327ecb206377e4423d621da64b6aebaf597affaf92d785a74a04515",
+  "updatedBytes": 206240909,
   "originalSha256": "4b854f1a03da90e1a3858687e453a87a81943de5c1a92885a4b680d6ed2239d5",
   "candidate": "D:\\w3mod\\BetaGwent\\build\\native-hd93-resource\\betagwent_board.redswf",
   "backup": "D:\\w3mod\\BetaGwent\\build\\resource-backups\\4b854f1a03da90e1a3858687e453a87a81943de5c1a92885a4b680d6ed2239d5.redswf",

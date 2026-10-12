@@ -3486,6 +3486,21 @@ class CBetaGwentDuelSession extends IScriptable
         AiExplain("SPY_FORECAST","card="+cardId+" template="+card.TemplateId()+" samples="+count+" tempo="+tempo+" drawnFollowup="+(total/count)+" recoveries="+recovered+" risk="+risk+" rejected="+unsafe+" reason=unordered_own_deck_and_actual_followup");
         return total/count;
     }
+    // A drawing spy keeps the hand size while the opponent's points grow: +1 card.
+    // Its gift matters only if it changes who takes the round. When the round
+    // stays ours by a wide margin the opponent must keep chasing (two extra cards);
+    // in a round we will concede the points cost nothing. Never in a deciding round.
+    private function AiSpyCardEdge(gift : int) : int
+    {
+        var m : SBetaGwentMatchSnapshot;var lead,edge : int;
+        m=match.Snapshot();
+        if(m.roundNumber>=3 || m.playerOne.hasPassed || CountLocation(2,16)==0)return 0;
+        lead=Score(2)-Score(1);edge=4;
+        if(lead-gift>=10)edge+=gift/2;
+        else if(!AiDecisiveRound() && lead<=-15)edge+=gift/2;
+        AiExplain("SPY_CARD_EDGE","gift="+gift+" lead="+lead+" edge="+edge+" round="+m.roundNumber);
+        return edge;
+    }
     private function AiSpyUnrecoverable(card : CBetaGwentDuelCard) : bool
     {
         var g : CBetaGwentDuelSession;var turns,risk,tempo : int;var result : bool;var s : SBetaGwentCardSnapshot;
@@ -4472,7 +4487,7 @@ class CBetaGwentDuelSession extends IScriptable
             if(drawSpy){
                 spyDraw=AiSpyDrawForecast(live[i],spyUnsafe,spyRisk,spyTempo);
                 if(spyUnsafe){AiExplain("REJECT","card="+s.instanceId+" template="+d.header.templateId+" reason=late_spy_cannot_recover_lead_with_followups");continue;}
-                value+=spyTempo-tempo+spyDraw-spyRisk;tempo=spyTempo;
+                value+=spyTempo-tempo+spyDraw-spyRisk+AiSpyCardEdge(-spyTempo);tempo=spyTempo;
             }else{
                 for(j=0;j<exactIds.Size();j+=1)if(exactIds[j]==s.instanceId && exactValues[j]!=-2147483647){value+=exactValues[j]-tempo;if(!m.playerOne.hasPassed)value+=exactStrategic[j];tempo=exactValues[j];}
                 for(j=0;j<upliftIds.Size();j+=1)if(upliftIds[j]==s.instanceId)value+=upliftValues[j]*BetaGwentAITune(8)/10;

@@ -32,6 +32,7 @@ class CBetaGwentDuelAudio extends IScriptable
     private var uiClock : float; private var hasUiClock : bool;
     public function SetClock(milliseconds : int) { uiClock = (float)milliseconds / 1000.0f; hasUiClock = true; }
     private function Now() : float { if (hasUiClock) return uiClock; return theGame.GetEngineTimeAsSeconds(); }
+    public function CurrentTime() : float { return Now(); }
 
     public function Initialize()
     {

@@ -117,9 +117,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--step', choices=('full', 'prepare', 'scripts', 'menus', 'package', 'verify'), default='full')
     parser.add_argument('--language', choices=('all','both',*VOICES), default='all', help='all builds all five voice packages')
-    parser.add_argument('--rebuild-existing',action='store_true',help='Preserve old selected outputs and create a fresh staging project')
+    parser.add_argument('--rebuild-existing',action='store_true',help='Preserve old selected outputs and create a fresh staging project (implied by --step full)')
     arguments = parser.parse_args()
     languages=VOICES if arguments.language in ('all','both') else (arguments.language,)
+    # A full build always produces fresh packages from current sources: earlier archives
+    # and frozen staging are preserved (quarantine/history), never silently reused.
+    rebuild=arguments.rebuild_existing or arguments.step=='full'
     BASE.mkdir(parents=True, exist_ok=True)
     lock_path = ROOT/'BetaGwent/build/.build.lock'
     # Serialize this entry point, including the nested legacy preparation.
@@ -129,7 +132,7 @@ def main():
         try: msvcrt.locking(lock.fileno(), msvcrt.LK_NBLCK, 1)
         except OSError: raise RuntimeError('Another project build is running')
         try:
-            if arguments.step in ('full','package') and not arguments.rebuild_existing:
+            if arguments.step=='package' and not rebuild:
                 existing=[language for language in languages if (ROOT/f'BetaGwent/release/GwentBetaClassic-0.6.1-{language.upper()}.zip').exists()]
                 if existing:raise RuntimeError('Existing archives: '+','.join(existing)+'. Use -RebuildExisting to preserve them and rebuild.')
             if arguments.step in ('full', 'prepare'):
@@ -147,7 +150,7 @@ def main():
                 if arguments.step in ('full', 'scripts'): compile_scripts(languages)
                 if arguments.step in ('full', 'menus'):
                     python('menus', 'tools/build_presentation94.py', '--stage', '137', '--language', 'ru')
-                if arguments.step in ('full', 'package'): package(languages,arguments.rebuild_existing)
+                if arguments.step in ('full', 'package'): package(languages,rebuild)
                 if arguments.step in ('full', 'verify'):
                     python('release-verification', 'tools/verify_release137.py','--language',arguments.language)
             print('Finished requested 0.6.1 phase:', arguments.step, flush=True)

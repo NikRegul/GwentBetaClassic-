@@ -43,6 +43,7 @@ var content=new Sprite(),tutorialLayer=new Sprite(),detailLayer=new Sprite(),pre
 [content,tutorialLayer,detailLayer,previewLayer,controller].forEach(n=>root.addChild(n));
 var nodes=[],focused=null,sent=[],buttons=[],clock=100,uiSounds=0;
 var TUTORIAL=null,tutorialPage=-1,tutorialReturn=-1,tutorialFirstRun=false,tutorialBody=null,detailBody=null,detailBack=[],detailOpen=false;
+var historyReturnPage=-1,historyReturnEntry=-1,historyEntryIndex=-1;
 var WIDE_PAD=0,skin=3,kegOpen=false,browsingCatalog=false,editingDeck=false,selectingDecks=true,flags=0,requestId=0,requestKind=0,controllerInspectBoard=false;
 var rowRequest=false,selected=0,nameOpen=false,controllerMenuOpen=false,pileOpen=false,mulliganConfirm=false,controllerTyping=false,ready=true,playing=false;
 var choiceLayer=new Sprite(),mulliganDialog=new Sprite(),nameLayer=new Sprite(),controllerMenuLayer=new Sprite(),pileLayer=new Sprite();
@@ -70,7 +71,7 @@ controller.registerControl=function(sprite,label,action,card,detail,tag){
 controller.getFocus=function(){var s=controllerContext();var valid=nodes.filter(n=>s.root.contains(n.sprite)&&n.scope===s.mode);if(!valid.includes(focused))focused=valid[0]||null;return focused;};
 controller.focusTag=function(){focused=null;return controller.getFocus();};
 Array.NUMERIC=1;Array.prototype.sortOn=function(key){this.sort((a,b)=>a[key]-b[key]);};
-`+['controllerContext','tutorialPages','catalogByTitle','openTutorial','tutorialDemo','tutorialCardOpener','openCardDetail','closeCardDetail'].map(n=>extract(source,n)).join('\n'),c);
+`+['controllerContext','tutorialPages','catalogByTitle','openTutorial','tutorialDemo','tutorialCardOpener','enemyAmbush','openCardDetail','closeCardDetail'].map(n=>extract(source,n)).join('\n'),c);
 Object.defineProperty(c,'numChildren',{get(){return c.root.numChildren;}});
 for(let page=0;page<7;page++){
  c.buttons=[];c.openTutorial(page);

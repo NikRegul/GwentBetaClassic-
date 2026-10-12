@@ -1,0 +1,709 @@
+[center][size=6][b][color=#d4af37]Gwent Beta Classic[/color][/b][/size]
+[size=3]Standalone Gwent Beta 0.9.24 inside The Witcher 3[/size]
+
+[size=2]Version [b]0.6.2[/b] · Changelog tab for all changes · [url=https://github.com/NikRegul/GwentBetaClassic-]GitHub[/url][/size][/center]
+[line]
+[center][size=3][b]Language · Язык · Sprache · Langue · Lingua · Język · Idioma · 言語 · 언어 · 语言 · 語言[/b][/size]
+[size=2]English is shown below. Pick your language and press [b]Show[/b].[/size][/center]
+[size=3][b][color=#d4af37]Русский[/color][/b][/size]
+[spoiler]
+[size=4][b]Важно[/b][/size]
+[b]Перед установкой и перед каждым обновлением делайте резервную копию сохранений.[/b] Мод в активной разработке, для первых партий используйте отдельное сохранение.
+[b]0.6.2 — пробная версия переводов:[/b] текст мода теперь доступен на 13 языках. Тексты карт взяты из официальной локализации беты, перевод интерфейса новый и может содержать ошибки. Пожалуйста, сообщайте обо всём, что звучит неправильно.
+[b]Новое в 0.6.2:[/b] подробная история последних 32 действий, подсказки цепочек и текущие параметры открытых карт; плавная рука и фокус, отдельные эффекты восстановления, крупная двумерная сцена лидера. В редакторе — причины ограничений, стоимость недостающих копий и отмена добавления/удаления карты; в бочках — раскрытие первых четырёх карт одной кнопкой с отдельным выбором пятой. Вспышки, тряска и сцены настраиваются до закрытия меню. Возвращены прежние составы «Проклятых кораблей» и «Фольтест: усиление колоды», обновлена оценка шпионов с добором. Переводы остаются пробными; игровая проверка и сравнение ИИ продолжаются. Оригинальные трёхмерные вступления лидеров пока не включены.
+
+[size=4][b]О моде[/b][/size]
+Gwent Beta Classic заменяет встроенный гвинт в The Witcher 3 картами, правилами и полем самостоятельного Gwent Beta 0.9.24. Партии остаются частью мира Ведьмака: играйте с NPC, проходите квесты, покупайте бочки и собирайте свои колоды.
+
+[size=4][b]Возможности[/b][/size]
+[list]
+[*][b]479[/b] коллекционных карт, включая [b]21[/b] лидера, все пять фракций
+[*]Поле, интерфейс, шрифты, рамки карт, погода и эффекты беты; анимированные лидеры
+[*]Редактор колод: пять стартовых колод, которые можно менять, и восемь своих слотов, фильтры и поиск
+[*]Соперники с [b]46[/b] архетипами колод беты и три уровня сложности ИИ
+[*]Бочки за 200 крон у торговцев картами гвинта, открываются как в бете
+[*]Осколки: создание карт за 30 / 80 / 200 / 800 по редкости; лишние копии распыляются сами
+[*]Обучение, замена карт, просмотр сбросов и колоды, подробный просмотр карт
+[*]Мышь, клавиатура и контроллер
+[/list]
+
+[size=4][b]Языки[/b][/size]
+[b]Текст:[/b] английский, русский, немецкий, французский, итальянский, польский, испанский (Испания), испанский (Латинская Америка), португальский (Бразилия), японский, корейский, упрощённый и традиционный китайский. Язык меняется в любой момент кнопкой языка текста в левом верхнем углу меню колод и коллекции или в настройках боя; выбор сохраняется.
+[b]Озвучка:[/b] в каждом пакете один язык голосов: EN, RU, DE, IT или PT-BR. Смена текста голоса не меняет. В бете нет немецких и итальянских записей тролля с бочками, поэтому в этих пакетах он говорит по-русски.
+Каждый из пяти пакетов содержит все 13 языков текста; EN — универсальный вариант с английскими голосами. Для смены озвучки установите другой пакет. В DE и IT тролль говорит по-русски. Язык текста сохраняется вместе с сохранением игры. Новый интерфейс переведён ИИ и ожидает вычитки носителями; ES-MX и ZH-TW используют адаптации испанского и упрощённого китайского. Нативные названия предметов зависят от языка игры; часть внешних уведомлений пока остаётся на RU/EN.
+
+[size=4][b]Установка[/b][/size]
+[list=1]
+[*]Закройте игру и сделайте резервную копию сохранений.
+[*]Скачайте один пакет с нужным языком озвучки. Ставьте только один пакет.
+[*]Распакуйте папку Mods в каталог The Witcher 3. Должно получиться [b]The Witcher 3/Mods/modBetaGwent0924/content[/b].
+[*]Загрузите сохранение. Колоды редактируются в обычном меню колоды гвинта, партия начинается разговором с NPC, который играет в гвинт.
+[/list]
+[b]Обновление:[/b] сначала удалите старую папку [b]modBetaGwent0924[/b], затем установите новую. Не смешивайте файлы разных версий.
+
+[size=4][b]Требования[/b][/size]
+[list]
+[*]The Witcher 3 на PC, версия 5.01. Более ранние не проверялись; отдельная сборка для 1.32 запланирована.
+[*]REDkit и Wwise для игры не нужны.
+[/list]
+
+[size=4][b]Совместимость[/b][/size]
+Удалите устаревшую папку [b]modBetaGwentReduxCompat[/b]: отдельный слой совместимости больше не входит в мод. Совместимость с Redux/Redo Expansion отдельно не подтверждена. Другие переработки гвинта и моды, меняющие его меню, обмен карт или награды, могут конфликтовать. После изменения набора модов заново выполните объединение скриптов в Script Merger.
+
+[size=4][b]Сообщения об ошибках[/b][/size]
+Укажите версии мода и игры, язык озвучки пакета и язык текста, другие установленные моды, карты, лидеров и раунд, а также шаги для повторения. Приложите скриншот и [b]Documents/The Witcher 3/scriptslog.txt[/b] сразу после ошибки: перезапуск игры его перезаписывает.
+Для ошибок перевода укажите язык и экран, приложите скриншот и предложите лучший вариант.
+
+[size=4][b]Благодарности[/b][/size]
+Спасибо CD Projekt за The Witcher и Gwent, LegacyGwent DIY за материалы карт и поля, сообществу Beta Gwent за сохранённые материалы и идеи архетипов, и всем, кто тестирует мод и присылает подробные отчёты.
+Неофициальный фанатский проект. Авторский код мода распространяется по GPL-3.0-only; оригинальные игровые материалы принадлежат их владельцам.
+[url=https://github.com/NikRegul/GwentBetaClassic-]Исходный код на GitHub[/url]
+[/spoiler]
+[size=3][b][color=#d4af37]Deutsch[/color][/b][/size]
+[spoiler]
+[size=4][b]Wichtig[/b][/size]
+[b]Sichere vor der Installation und vor jedem Update deine Spielstände.[/b] Die Mod befindet sich in aktiver Entwicklung, nutze für die ersten Partien einen separaten Spielstand.
+[b]0.6.2 ist eine Übersetzungs-Vorschau:[/b] Der Text der Mod ist jetzt in 13 Sprachen verfügbar. Die Kartentexte stammen aus der offiziellen Lokalisierung der Beta, die Übersetzung der Oberfläche ist neu und kann Fehler enthalten. Bitte melde alles, was falsch klingt.
+[b]Neu in 0.6.2:[/b] detaillierter Verlauf der letzten 32 Aktionen, Hinweise zu Fähigkeitsketten und aktuelle Werte offener Karten; weichere Hand- und Fokusbewegungen, eigene Heilungseffekte und eine große zweidimensionale Anführerszene. Der Deck-Editor zeigt Einschränkungen und die Kosten fehlender Exemplare; Hinzufügen und Entfernen lassen sich rückgängig machen. Fässer können die ersten vier Karten gemeinsam aufdecken; die fünfte wird separat gewählt. Blitze, Wackeln und Szenen sind für die aktuelle Menüsitzung einstellbar. Zwei Decklisten wurden zurückgesetzt und die Bewertung kartenziehender Spione überarbeitet. Übersetzungen, Spieltests und KI-Vergleiche sind noch in Arbeit. Die originalen dreidimensionalen Anführerauftritte sind nicht enthalten.
+
+[size=4][b]Über die Mod[/b][/size]
+Gwent Beta Classic ersetzt das Gwint aus The Witcher 3 durch die Karten, Regeln und das Spielbrett der eigenständigen Gwent Beta 0.9.24. Die Partien bleiben Teil der Witcher-Welt: Spiele gegen NPCs, erledige Quests, kaufe Fässer und baue deine eigenen Decks.
+
+[size=4][b]Funktionen[/b][/size]
+[list]
+[*][b]479[/b] Sammelkarten, darunter [b]21[/b] Anführer, alle fünf Fraktionen
+[*]Spielbrett, HUD, Schriften, Kartenrahmen, Wetter und Effekte der Beta; animierte Anführer
+[*]Deck-Editor: fünf veränderbare Startdecks und acht eigene Plätze, Filter und Suche
+[*]Gegner mit [b]46[/b] Deck-Archetypen der Beta und drei KI-Schwierigkeitsstufen
+[*]Fässer für 200 Kronen bei Gwint-Kartenhändlern, geöffnet wie in der Beta
+[*]Fetzen: Karten für 30 / 80 / 200 / 800 je nach Seltenheit herstellen; überzählige Exemplare werden automatisch zermahlen
+[*]Tutorial, Mulligan, Ansicht von Friedhöfen und Deck, ausführliche Kartenansicht
+[*]Maus, Tastatur und Controller
+[/list]
+
+[size=4][b]Sprachen[/b][/size]
+[b]Text:[/b] Englisch, Russisch, Deutsch, Französisch, Italienisch, Polnisch, Spanisch (Spanien), Spanisch (Lateinamerika), Portugiesisch (Brasilien), Japanisch, Koreanisch, vereinfachtes und traditionelles Chinesisch. Jederzeit umschaltbar über die Textsprache-Schaltfläche oben links in den Deck- und Sammlungsmenüs oder in den Kampfeinstellungen; die Wahl wird gespeichert.
+[b]Sprachausgabe:[/b] Jedes Paket enthält eine Sprachausgabe: EN, RU, DE, IT oder PT-BR. Ein Wechsel der Textsprache ändert die Stimmen nicht. In der Beta gibt es keine deutschen und italienischen Aufnahmen des Fass-Trolls, daher spricht er in diesen Paketen Russisch.
+Jedes der fünf Pakete enthält alle 13 Textsprachen; EN ist die universelle Variante mit englischen Stimmen. Für andere Stimmen installiere ein anderes Paket. In DE und IT spricht der Fass-Troll Russisch. Die Textsprache wird mit dem Spielstand gespeichert. Die neue Oberfläche wurde mit KI übersetzt und benötigt muttersprachliche Prüfung; ES-MX und ZH-TW sind Anpassungen des spanischen und vereinfachten chinesischen Texts. Native Gegenstandsnamen folgen der Spielsprache; einige Meldungen außerhalb der Oberfläche bleiben vorerst RU/EN.
+
+[size=4][b]Installation[/b][/size]
+[list=1]
+[*]Schließe das Spiel und sichere deine Spielstände.
+[*]Lade ein Paket mit der gewünschten Sprachausgabe herunter. Installiere nur ein Paket.
+[*]Entpacke den Ordner Mods in dein The-Witcher-3-Verzeichnis. Ergebnis: [b]The Witcher 3/Mods/modBetaGwent0924/content[/b].
+[*]Lade deinen Spielstand. Decks bearbeitest du im normalen Gwint-Deckmenü, eine Partie startest du im Gespräch mit einem NPC, der Gwint spielt.
+[/list]
+[b]Update:[/b] Lösche zuerst den alten Ordner [b]modBetaGwent0924[/b] und installiere dann den neuen. Mische keine Dateien verschiedener Versionen.
+
+[size=4][b]Voraussetzungen[/b][/size]
+[list]
+[*]The Witcher 3 für PC, Version 5.01. Ältere Versionen wurden nicht getestet; ein eigener Build für 1.32 ist geplant.
+[*]REDkit und Wwise werden zum Spielen nicht benötigt.
+[/list]
+
+[size=4][b]Kompatibilität[/b][/size]
+Entferne den veralteten Ordner [b]modBetaGwentReduxCompat[/b]; die separate Kompatibilitätsschicht ist nicht mehr enthalten. Die Kompatibilität mit Redux/Redo Expansion wurde nicht separat bestätigt. Andere Gwint-Überarbeitungen und Mods für Gwint-Menüs, Kartenhandel oder Belohnungen können Konflikte verursachen. Führe nach Änderungen an der Mod-Auswahl die Skriptzusammenführung in Script Merger erneut aus.
+
+[size=4][b]Fehlermeldungen[/b][/size]
+Gib bitte die Versionen von Mod und Spiel, die Sprachausgabe des Pakets und deine Textsprache, weitere installierte Mods, beteiligte Karten, Anführer und Runde sowie die Schritte zum Nachstellen an. Hänge einen Screenshot und [b]Documents/The Witcher 3/scriptslog.txt[/b] direkt nach dem Fehler an: Ein Neustart des Spiels überschreibt die Datei.
+Bei Übersetzungsfehlern nenne Sprache und Bildschirm, füge einen Screenshot hinzu und schlage eine bessere Formulierung vor.
+
+[size=4][b]Danksagung[/b][/size]
+Danke an CD Projekt für The Witcher und Gwent, an LegacyGwent DIY für Karten- und Spielbrettmaterial, an die Beta-Gwent-Community für bewahrtes Material und Archetyp-Ideen und an alle, die die Mod testen und ausführliche Berichte schicken.
+Inoffizielles Fanprojekt. Der eigene Code der Mod steht unter GPL-3.0-only; die Originalinhalte des Spiels gehören ihren Rechteinhabern.
+[url=https://github.com/NikRegul/GwentBetaClassic-]Quellcode auf GitHub[/url]
+[/spoiler]
+[size=3][b][color=#d4af37]Français[/color][/b][/size]
+[spoiler]
+[size=4][b]Important[/b][/size]
+[b]Sauvegardez vos parties avant l'installation et avant chaque mise à jour.[/b] Le mod est en développement actif : utilisez une sauvegarde séparée pour vos premières parties.
+[b]La 0.6.2 est une préversion des traductions :[/b] le texte du mod est désormais disponible en 13 langues. Les textes des cartes proviennent de la localisation officielle de la bêta ; la traduction de l'interface est nouvelle et peut contenir des erreurs. Signalez tout ce qui sonne faux.
+[b]Nouveautés de 0.6.2 :[/b] historique détaillé des 32 dernières actions, indications des chaînes de capacités et valeurs actuelles des cartes visibles ; mouvements plus fluides de la main et du focus, effets de soin distincts et grande scène de chef en deux dimensions. L’éditeur indique les restrictions et le coût des exemplaires manquants ; l’ajout et le retrait d’une carte peuvent être annulés. Les tonneaux révèlent les quatre premières cartes ensemble ; la cinquième reste un choix séparé. Flashs, secousses et scènes se règlent pour la session du menu. Deux compositions ont été restaurées et l’évaluation des espions avec pioche a été revue. Traductions, tests en jeu et comparaisons de l’IA restent en cours. Les introductions originales des chefs en trois dimensions ne sont pas incluses.
+
+[size=4][b]À propos[/b][/size]
+Gwent Beta Classic remplace le Gwynt de The Witcher 3 par les cartes, les règles et le plateau de Gwent Beta 0.9.24 autonome. Les parties restent intégrées au monde du Sorceleur : affrontez des PNJ, accomplissez des quêtes, achetez des tonneaux et construisez vos decks.
+
+[size=4][b]Fonctionnalités[/b][/size]
+[list]
+[*][b]479[/b] cartes à collectionner, dont [b]21[/b] chefs, pour les cinq factions
+[*]Plateau, interface, polices, cadres de cartes, météo et effets de la bêta ; chefs animés
+[*]Éditeur de decks : cinq decks de départ modifiables et huit emplacements personnels, filtres et recherche
+[*]Adversaires avec [b]46[/b] archétypes de decks de la bêta et trois niveaux de difficulté de l'IA
+[*]Tonneaux à 200 couronnes chez les marchands de cartes, ouverts comme dans la bêta
+[*]Fragments : fabriquez des cartes pour 30 / 80 / 200 / 800 selon la rareté ; les exemplaires en trop sont recyclés automatiquement
+[*]Tutoriel, mulligan, consultation des cimetières et du deck, fiche détaillée des cartes
+[*]Souris, clavier et manette
+[/list]
+
+[size=4][b]Langues[/b][/size]
+[b]Texte :[/b] anglais, russe, allemand, français, italien, polonais, espagnol (Espagne), espagnol (Amérique latine), portugais (Brésil), japonais, coréen, chinois simplifié et chinois traditionnel. Changez-la à tout moment avec le bouton de langue du texte en haut à gauche des menus des decks et de la collection, ou dans les paramètres de combat ; le choix est enregistré.
+[b]Voix :[/b] chaque paquet contient une langue de doublage : EN, RU, DE, IT ou PT-BR. Changer la langue du texte ne change pas les voix.
+Chacun des cinq paquets contient les 13 langues de texte ; EN est la version universelle avec les voix anglaises. Pour changer les voix, installez un autre paquet. Dans DE et IT, le troll des tonneaux parle russe. La langue du texte est enregistrée avec la sauvegarde. La nouvelle interface a été traduite par IA et doit être relue par des locuteurs natifs ; ES-MX et ZH-TW adaptent l’espagnol et le chinois simplifié. Les noms natifs des objets suivent la langue du jeu ; certaines notifications extérieures restent en RU/EN.
+
+[size=4][b]Installation[/b][/size]
+[list=1]
+[*]Fermez le jeu et sauvegardez vos parties.
+[*]Téléchargez un seul paquet, avec la langue de doublage voulue. N'installez qu'un paquet.
+[*]Extrayez son dossier Mods dans le répertoire de The Witcher 3. Résultat : [b]The Witcher 3/Mods/modBetaGwent0924/content[/b].
+[*]Chargez votre sauvegarde. Modifiez vos decks dans le menu habituel des decks de Gwynt, ou parlez à un PNJ qui joue au Gwynt pour lancer une partie.
+[/list]
+[b]Mise à jour :[/b] supprimez d'abord l'ancien dossier [b]modBetaGwent0924[/b], puis installez le nouveau. Ne mélangez pas les fichiers de versions différentes.
+
+[size=4][b]Configuration requise[/b][/size]
+[list]
+[*]The Witcher 3 sur PC, version 5.01. Les versions antérieures n'ont pas été testées ; une version distincte pour la 1.32 est prévue.
+[*]REDkit et Wwise ne sont pas nécessaires pour jouer.
+[/list]
+
+[size=4][b]Compatibilité[/b][/size]
+Supprimez l’ancien dossier [b]modBetaGwentReduxCompat[/b] : la couche de compatibilité séparée n’est plus incluse. La compatibilité avec Redux/Redo Expansion n’a pas été confirmée séparément. Les autres refontes du Gwynt et les mods touchant ses menus, les échanges de cartes ou les récompenses peuvent entrer en conflit. Après avoir modifié vos mods, refaites la fusion des scripts avec Script Merger.
+
+[size=4][b]Signaler un bug[/b][/size]
+Indiquez les versions du mod et du jeu, la langue de doublage du paquet et votre langue de texte, les autres mods installés, les cartes, chefs et manche concernés, ainsi que les étapes pour reproduire le problème. Joignez une capture d'écran et [b]Documents/The Witcher 3/scriptslog.txt[/b] juste après le problème : relancer le jeu l'écrase.
+Pour une erreur de traduction, précisez la langue et l'écran, ajoutez une capture et proposez une meilleure formulation.
+
+[size=4][b]Remerciements[/b][/size]
+Merci à CD Projekt pour The Witcher et Gwent, à LegacyGwent DIY pour les ressources des cartes et du plateau, à la communauté Beta Gwent pour la préservation des archives et les idées d'archétypes, et à tous ceux qui testent le mod et envoient des rapports détaillés.
+Projet de fan non officiel. Le code original du mod est sous licence GPL-3.0-only ; les contenus originaux du jeu appartiennent à leurs propriétaires.
+[url=https://github.com/NikRegul/GwentBetaClassic-]Code source sur GitHub[/url]
+[/spoiler]
+[size=3][b][color=#d4af37]Italiano[/color][/b][/size]
+[spoiler]
+[size=4][b]Importante[/b][/size]
+[b]Esegui un backup dei salvataggi prima dell'installazione e prima di ogni aggiornamento.[/b] La mod è in sviluppo attivo: per le prime partite usa un salvataggio separato.
+[b]La 0.6.2 è un'anteprima delle traduzioni:[/b] il testo della mod è ora disponibile in 13 lingue. I testi delle carte provengono dalla localizzazione ufficiale della beta; la traduzione dell'interfaccia è nuova e può contenere errori. Segnala tutto ciò che suona sbagliato.
+[b]Novità di 0.6.2:[/b] cronologia dettagliata delle ultime 32 azioni, indicazioni delle catene di abilità e valori attuali delle carte visibili; movimenti più fluidi della mano e del focus, effetti di cura distinti e una grande scena del comandante in due dimensioni. L’editor mostra restrizioni e costo delle copie mancanti; aggiunta e rimozione delle carte possono essere annullate. I barili rivelano insieme le prime quattro carte; la quinta richiede una scelta separata. Lampi, scosse e scene si regolano per la sessione del menu. Ripristinate due composizioni e rivista la valutazione delle spie con pesca. Traduzioni, prove in gioco e confronti dell’IA sono ancora in corso. Le introduzioni originali dei comandanti in tre dimensioni non sono incluse.
+
+[size=4][b]La mod[/b][/size]
+Gwent Beta Classic sostituisce il Gwent di The Witcher 3 con le carte, le regole e il tabellone di Gwent Beta 0.9.24 standalone. Le partite restano parte del mondo di The Witcher: sfida i PNG, completa missioni, compra barili e costruisci i tuoi mazzi.
+
+[size=4][b]Caratteristiche[/b][/size]
+[list]
+[*][b]479[/b] carte collezionabili, tra cui [b]21[/b] comandanti, per tutte e cinque le fazioni
+[*]Tabellone, interfaccia, caratteri, cornici delle carte, clima ed effetti della beta; comandanti animati
+[*]Editor dei mazzi: cinque mazzi iniziali modificabili e otto slot personali, filtri e ricerca
+[*]Avversari con [b]46[/b] archetipi di mazzi della beta e tre livelli di difficoltà dell'IA
+[*]Barili da 200 corone dai mercanti di carte, aperti come nella beta
+[*]Frammenti: crea carte per 30 / 80 / 200 / 800 in base alla rarità; le copie in eccesso vengono macinate automaticamente
+[*]Tutorial, mulligan, visualizzazione dei cimiteri e del mazzo, scheda dettagliata delle carte
+[*]Mouse, tastiera e controller
+[/list]
+
+[size=4][b]Lingue[/b][/size]
+[b]Testo:[/b] inglese, russo, tedesco, francese, italiano, polacco, spagnolo (Spagna), spagnolo (America Latina), portoghese (Brasile), giapponese, coreano, cinese semplificato e cinese tradizionale. Cambiala in qualsiasi momento con il pulsante della lingua del testo in alto a sinistra nei menu dei mazzi e della collezione, oppure nelle impostazioni di battaglia; la scelta viene salvata.
+[b]Voci:[/b] ogni pacchetto contiene una lingua di doppiaggio: EN, RU, DE, IT o PT-BR. Cambiare il testo non cambia le voci. Nella beta non esistono registrazioni in italiano e tedesco del troll dei barili, quindi in questi pacchetti parla in russo.
+Ognuno dei cinque pacchetti contiene tutte le 13 lingue di testo; EN è la variante universale con voci inglesi. Per cambiare le voci, installa un altro pacchetto. In DE e IT il troll dei barili parla russo. La lingua del testo viene registrata nel salvataggio. La nuova interfaccia è stata tradotta con IA e richiede una revisione da parte di madrelingua; ES-MX e ZH-TW adattano lo spagnolo e il cinese semplificato. I nomi nativi degli oggetti seguono la lingua del gioco; alcuni messaggi esterni restano in RU/EN.
+
+[size=4][b]Installazione[/b][/size]
+[list=1]
+[*]Chiudi il gioco ed esegui un backup dei salvataggi.
+[*]Scarica un pacchetto con la lingua di doppiaggio desiderata. Installa un solo pacchetto.
+[*]Estrai la cartella Mods nella cartella di The Witcher 3. Risultato: [b]The Witcher 3/Mods/modBetaGwent0924/content[/b].
+[*]Carica il salvataggio. Modifica i mazzi dal normale menu dei mazzi di Gwent, oppure parla con un PNG che gioca a Gwent per iniziare una partita.
+[/list]
+[b]Aggiornamento:[/b] elimina prima la vecchia cartella [b]modBetaGwent0924[/b], poi installa la nuova. Non mescolare file di versioni diverse.
+
+[size=4][b]Requisiti[/b][/size]
+[list]
+[*]The Witcher 3 su PC, versione 5.01. Le versioni precedenti non sono state testate; è prevista una build separata per la 1.32.
+[*]REDkit e Wwise non servono per giocare.
+[/list]
+
+[size=4][b]Compatibilità[/b][/size]
+Elimina la vecchia cartella [b]modBetaGwentReduxCompat[/b]: il livello di compatibilità separato non è più incluso. La compatibilità con Redux/Redo Expansion non è stata confermata separatamente. Altre revisioni di Gwent e mod che cambiano menu, scambi di carte o ricompense possono causare conflitti. Dopo aver cambiato le mod installate, ripeti l’unione degli script con Script Merger.
+
+[size=4][b]Segnalazione bug[/b][/size]
+Indica le versioni della mod e del gioco, la lingua di doppiaggio del pacchetto e la lingua del testo, le altre mod installate, carte, comandanti e round coinvolti e i passaggi per riprodurre il problema. Allega uno screenshot e [b]Documents/The Witcher 3/scriptslog.txt[/b] subito dopo il problema: riavviare il gioco lo sovrascrive.
+Per gli errori di traduzione indica lingua e schermata, aggiungi uno screenshot e proponi una formulazione migliore.
+
+[size=4][b]Ringraziamenti[/b][/size]
+Grazie a CD Projekt per The Witcher e Gwent, a LegacyGwent DIY per le risorse di carte e tabellone, alla community di Beta Gwent per aver conservato il materiale storico e le idee per gli archetipi, e a tutti coloro che testano la mod e inviano segnalazioni dettagliate.
+Progetto amatoriale non ufficiale. Il codice originale della mod è distribuito con licenza GPL-3.0-only; i contenuti originali del gioco appartengono ai rispettivi proprietari.
+[url=https://github.com/NikRegul/GwentBetaClassic-]Codice sorgente su GitHub[/url]
+[/spoiler]
+[size=3][b][color=#d4af37]Polski[/color][/b][/size]
+[spoiler]
+[size=4][b]Ważne[/b][/size]
+[b]Przed instalacją i przed każdą aktualizacją zrób kopię zapasową zapisów.[/b] Mod jest w aktywnym rozwoju, więc do pierwszych partii użyj osobnego zapisu.
+[b]Wersja 0.6.2 to wersja testowa tłumaczeń:[/b] tekst moda jest teraz dostępny w 13 językach. Teksty kart pochodzą z oficjalnej lokalizacji bety, a tłumaczenie interfejsu jest nowe i może zawierać błędy. Zgłaszaj wszystko, co brzmi źle.
+[b]Nowości w 0.6.2:[/b] szczegółowa historia ostatnich 32 działań, wskazówki łańcuchów umiejętności i bieżące wartości odkrytych kart; płynniejszy ruch ręki i fokusu, osobne efekty leczenia oraz duża dwuwymiarowa scena dowódcy. Edytor pokazuje ograniczenia i koszt brakujących kopii; dodanie i usunięcie karty można cofnąć. Beczki odkrywają cztery pierwsze karty naraz; piątą wybiera się osobno. Błyski, wstrząsy i sceny można ustawić na czas otwarcia menu. Przywrócono dwa wcześniejsze składy i zmieniono ocenę szpiegów dobierających karty. Tłumaczenia, testy w grze i porównania AI nadal trwają. Oryginalne trójwymiarowe wejścia dowódców nie są dołączone.
+
+[size=4][b]O modzie[/b][/size]
+Gwent Beta Classic zastępuje gwinta z Wiedźmina 3 kartami, zasadami i planszą samodzielnej wersji Gwent Beta 0.9.24. Partie pozostają częścią świata Wiedźmina: graj z NPC, wykonuj zadania, kupuj beczki i buduj własne talie.
+
+[size=4][b]Funkcje[/b][/size]
+[list]
+[*][b]479[/b] kart kolekcjonerskich, w tym [b]21[/b] dowódców, wszystkie pięć frakcji
+[*]Plansza, interfejs, czcionki, ramki kart, pogoda i efekty z bety; animowani dowódcy
+[*]Edytor talii: pięć edytowalnych talii startowych i osiem własnych miejsc, filtry i wyszukiwanie
+[*]Przeciwnicy z [b]46[/b] archetypami talii z bety i trzy poziomy trudności SI
+[*]Beczki za 200 koron u handlarzy kartami, otwierane jak w becie
+[*]Skrawki: twórz karty za 30 / 80 / 200 / 800 zależnie od rzadkości; nadmiarowe kopie są mielone automatycznie
+[*]Samouczek, mulligan, podgląd cmentarzy i talii, szczegółowy podgląd kart
+[*]Mysz, klawiatura i kontroler
+[/list]
+
+[size=4][b]Języki[/b][/size]
+[b]Tekst:[/b] angielski, rosyjski, niemiecki, francuski, włoski, polski, hiszpański (Hiszpania), hiszpański (Ameryka Łacińska), portugalski (Brazylia), japoński, koreański, chiński uproszczony i chiński tradycyjny. Język zmienisz w każdej chwili przyciskiem języka tekstu w lewym górnym rogu menu talii i kolekcji lub w ustawieniach bitwy; wybór jest zapisywany.
+[b]Głosy:[/b] każda paczka zawiera jeden język głosów: EN, RU, DE, IT lub PT-BR. Zmiana języka tekstu nie zmienia głosów.
+Każda z pięciu paczek zawiera wszystkie 13 języków tekstu; EN to uniwersalny wariant z angielskimi głosami. Aby zmienić głosy, zainstaluj inną paczkę. W DE i IT troll od beczek mówi po rosyjsku. Język tekstu jest zapisywany wraz ze stanem gry. Nowy interfejs przetłumaczono za pomocą AI i wymaga on korekty przez rodzimych użytkowników języka; ES-MX i ZH-TW to adaptacje hiszpańskiego i chińskiego uproszczonego. Natywne nazwy przedmiotów zależą od języka gry; część komunikatów poza interfejsem pozostaje w RU/EN.
+
+[size=4][b]Instalacja[/b][/size]
+[list=1]
+[*]Zamknij grę i zrób kopię zapasową zapisów.
+[*]Pobierz jedną paczkę z wybranym językiem głosów. Instaluj tylko jedną paczkę.
+[*]Wypakuj jej folder Mods do katalogu The Witcher 3. Wynik: [b]The Witcher 3/Mods/modBetaGwent0924/content[/b].
+[*]Wczytaj zapis. Talie edytujesz w zwykłym menu talii gwinta, a partię zaczynasz rozmową z NPC, który gra w gwinta.
+[/list]
+[b]Aktualizacja:[/b] najpierw usuń stary folder [b]modBetaGwent0924[/b], potem zainstaluj nowy. Nie mieszaj plików z różnych wersji.
+
+[size=4][b]Wymagania[/b][/size]
+[list]
+[*]The Witcher 3 na PC, wersja 5.01. Wcześniejsze wersje nie były testowane; planowana jest osobna wersja dla 1.32.
+[*]REDkit i Wwise nie są potrzebne do gry.
+[/list]
+
+[size=4][b]Kompatybilność[/b][/size]
+Usuń stary folder [b]modBetaGwentReduxCompat[/b]: osobna warstwa zgodności nie jest już dołączana. Zgodność z Redux/Redo Expansion nie została osobno potwierdzona. Inne przeróbki gwinta oraz mody zmieniające jego menu, handel kartami lub nagrody mogą powodować konflikty. Po zmianie zestawu modów ponownie scal skrypty w Script Merger.
+
+[size=4][b]Zgłaszanie błędów[/b][/size]
+Podaj wersje moda i gry, język głosów paczki i język tekstu, inne zainstalowane mody, karty, dowódców i rundę oraz kroki do odtworzenia błędu. Załącz zrzut ekranu i [b]Documents/The Witcher 3/scriptslog.txt[/b] zaraz po wystąpieniu problemu: ponowne uruchomienie gry nadpisuje ten plik.
+Przy błędach tłumaczenia podaj język i ekran, dodaj zrzut ekranu i zaproponuj lepsze sformułowanie.
+
+[size=4][b]Podziękowania[/b][/size]
+Dziękujemy CD Projekt za Wiedźmina i Gwinta, LegacyGwent DIY za materiały kart i planszy, społeczności Beta Gwent za zachowanie archiwalnych materiałów i pomysły na archetypy oraz wszystkim, którzy testują moda i przysyłają szczegółowe zgłoszenia.
+Nieoficjalny projekt fanowski. Oryginalny kod moda jest udostępniony na licencji GPL-3.0-only; oryginalne materiały z gry należą do ich właścicieli.
+[url=https://github.com/NikRegul/GwentBetaClassic-]Kod źródłowy na GitHubie[/url]
+[/spoiler]
+[size=3][b][color=#d4af37]Español (España)[/color][/b][/size]
+[spoiler]
+[size=4][b]Importante[/b][/size]
+[b]Haz una copia de seguridad de tus partidas guardadas antes de instalar y antes de cada actualización.[/b] El mod está en desarrollo activo: usa una partida aparte para tus primeras partidas de Gwent.
+[b]La 0.6.2 es una versión de prueba de las traducciones:[/b] el texto del mod ya está disponible en 13 idiomas. Los textos de las cartas proceden de la localización oficial de la beta; la traducción de la interfaz es nueva y puede contener errores. Avísanos de todo lo que suene mal.
+[b]Novedades de 0.6.2:[/b] historial detallado de las últimas 32 acciones, indicaciones de cadenas de habilidades y valores actuales de las cartas visibles; movimiento más fluido de la mano y del foco, efectos de curación propios y una gran escena del líder en dos dimensiones. El editor muestra restricciones y el coste de las copias que faltan; se puede deshacer la adición o retirada de una carta. Los barriles revelan las cuatro primeras cartas juntas; la quinta se elige aparte. Destellos, sacudidas y escenas se ajustan durante la sesión del menú. Se han restaurado dos composiciones y revisado la valoración de espías con robo. Las traducciones, pruebas en el juego y comparaciones de IA siguen en curso. Las entradas originales de líderes en tres dimensiones no están incluidas.
+
+[size=4][b]Sobre el mod[/b][/size]
+Gwent Beta Classic sustituye el Gwent de The Witcher 3 por las cartas, las reglas y el tablero de Gwent Beta 0.9.24 independiente. Las partidas siguen formando parte del mundo de The Witcher: juega contra PNJ, completa misiones, compra barriles y crea tus propios mazos.
+
+[size=4][b]Características[/b][/size]
+[list]
+[*][b]479[/b] cartas coleccionables, incluidos [b]21[/b] líderes, de las cinco facciones
+[*]Tablero, interfaz, fuentes, marcos de cartas, clima y efectos de la beta; líderes animados
+[*]Editor de mazos: cinco mazos iniciales editables y ocho huecos propios, filtros y búsqueda
+[*]Rivales con [b]46[/b] arquetipos de mazos de la beta y tres niveles de dificultad de la IA
+[*]Barriles por 200 coronas en los mercaderes de cartas, que se abren como en la beta
+[*]Fragmentos: fabrica cartas por 30 / 80 / 200 / 800 según su rareza; las copias sobrantes se muelen automáticamente
+[*]Tutorial, mulligan, consulta de cementerios y del mazo, vista detallada de las cartas
+[*]Ratón, teclado y mando
+[/list]
+
+[size=4][b]Idiomas[/b][/size]
+[b]Texto:[/b] inglés, ruso, alemán, francés, italiano, polaco, español (España), español (Latinoamérica), portugués (Brasil), japonés, coreano, chino simplificado y chino tradicional. Cámbialo cuando quieras con el botón de idioma del texto, arriba a la izquierda en los menús de mazos y colección, o en los ajustes de combate; la elección se guarda.
+[b]Voces:[/b] cada paquete incluye un idioma de voces: EN, RU, DE, IT o PT-BR. Cambiar el idioma del texto no cambia las voces.
+Cada uno de los cinco paquetes incluye los 13 idiomas de texto; EN es la opción universal con voces inglesas. Para cambiar las voces, instala otro paquete. En DE e IT, el trol de los barriles habla ruso. El idioma del texto se almacena con la partida guardada. La nueva interfaz se ha traducido con IA y necesita revisión por hablantes nativos; ES-MX y ZH-TW adaptan el español y el chino simplificado. Los nombres nativos de los objetos siguen el idioma del juego; algunos avisos externos siguen en RU/EN.
+
+[size=4][b]Instalación[/b][/size]
+[list=1]
+[*]Cierra el juego y haz una copia de seguridad de tus partidas.
+[*]Descarga un paquete con el idioma de voces que quieras. Instala solo un paquete.
+[*]Extrae su carpeta Mods en la carpeta de The Witcher 3. Resultado: [b]The Witcher 3/Mods/modBetaGwent0924/content[/b].
+[*]Carga tu partida. Edita los mazos en el menú normal de mazos de Gwent o habla con un PNJ que juegue al Gwent para empezar una partida.
+[/list]
+[b]Actualización:[/b] borra primero la carpeta antigua [b]modBetaGwent0924[/b] y luego instala la nueva. No mezcles archivos de versiones distintas.
+
+[size=4][b]Requisitos[/b][/size]
+[list]
+[*]The Witcher 3 en PC, versión 5.01. Las versiones anteriores no se han probado; está prevista una versión aparte para la 1.32.
+[*]No hacen falta REDkit ni Wwise para jugar.
+[/list]
+
+[size=4][b]Compatibilidad[/b][/size]
+Elimina la carpeta antigua [b]modBetaGwentReduxCompat[/b]: la capa de compatibilidad independiente ya no se incluye. La compatibilidad con Redux/Redo Expansion no se ha confirmado por separado. Otras revisiones de Gwent y mods que cambien sus menús, el intercambio de cartas o las recompensas pueden causar conflictos. Tras cambiar los mods instalados, vuelve a combinar los scripts con Script Merger.
+
+[size=4][b]Informar de errores[/b][/size]
+Indica las versiones del mod y del juego, el idioma de voces del paquete y tu idioma de texto, otros mods instalados, las cartas, líderes y ronda implicados y los pasos para reproducir el fallo. Adjunta una captura y [b]Documents/The Witcher 3/scriptslog.txt[/b] justo después del problema: al reiniciar el juego se sobrescribe.
+Para errores de traducción, indica el idioma y la pantalla, añade una captura y propón una redacción mejor.
+
+[size=4][b]Agradecimientos[/b][/size]
+Gracias a CD Projekt por The Witcher y Gwent, a LegacyGwent DIY por los recursos de cartas y tablero, a la comunidad de Beta Gwent por conservar el material histórico y las ideas de arquetipos, y a todos los que prueban el mod y envían informes detallados.
+Proyecto de fans no oficial. El código original del mod se distribuye bajo GPL-3.0-only; los recursos originales del juego pertenecen a sus propietarios.
+[url=https://github.com/NikRegul/GwentBetaClassic-]Código fuente en GitHub[/url]
+[/spoiler]
+[size=3][b][color=#d4af37]Español (Latinoamérica)[/color][/b][/size]
+[spoiler]
+[size=4][b]Importante[/b][/size]
+[b]Haz un respaldo de tus partidas guardadas antes de instalar y antes de cada actualización.[/b] El mod está en desarrollo activo: usa una partida aparte para tus primeros juegos de Gwent.
+[b]La 0.6.2 es una versión de prueba de las traducciones:[/b] el texto del mod ya está disponible en 13 idiomas. Los textos de las cartas vienen de la localización oficial de la beta; la traducción de la interfaz es nueva y puede tener errores. Avísanos de todo lo que suene raro.
+[b]Novedades de 0.6.2:[/b] historial detallado de las últimas 32 acciones, indicaciones de cadenas de habilidades y valores actuales de las cartas visibles; movimiento más fluido de la mano y del foco, efectos de curación propios y una gran escena del líder en dos dimensiones. El editor muestra restricciones y el costo de las copias que faltan; se puede deshacer la adición o retirada de una carta. Los barriles revelan las cuatro primeras cartas juntas; la quinta se elige por separado. Destellos, sacudidas y escenas se ajustan durante la sesión del menú. Se restauraron dos composiciones y se revisó la valoración de espías que roban cartas. Las traducciones, pruebas en el juego y comparaciones de IA siguen en curso. Las entradas originales de líderes en tres dimensiones no están incluidas.
+
+[size=4][b]Acerca del mod[/b][/size]
+Gwent Beta Classic reemplaza el Gwent de The Witcher 3 con las cartas, las reglas y el tablero de Gwent Beta 0.9.24 independiente. Las partidas siguen siendo parte del mundo de The Witcher: juega contra NPC, completa misiones, compra barriles y arma tus propios mazos.
+
+[size=4][b]Características[/b][/size]
+[list]
+[*][b]479[/b] cartas coleccionables, incluidos [b]21[/b] líderes, de las cinco facciones
+[*]Tablero, interfaz, fuentes, marcos de cartas, clima y efectos de la beta; líderes animados
+[*]Editor de mazos: cinco mazos iniciales editables y ocho espacios propios, filtros y búsqueda
+[*]Rivales con [b]46[/b] arquetipos de mazos de la beta y tres niveles de dificultad de la IA
+[*]Barriles por 200 coronas con los comerciantes de cartas, que se abren como en la beta
+[*]Fragmentos: fabrica cartas por 30 / 80 / 200 / 800 según su rareza; las copias sobrantes se muelen automáticamente
+[*]Tutorial, mulligan, consulta de cementerios y del mazo, vista detallada de las cartas
+[*]Mouse, teclado y control
+[/list]
+
+[size=4][b]Idiomas[/b][/size]
+[b]Texto:[/b] inglés, ruso, alemán, francés, italiano, polaco, español (España), español (Latinoamérica), portugués (Brasil), japonés, coreano, chino simplificado y chino tradicional. Cámbialo cuando quieras con el botón de idioma del texto, arriba a la izquierda en los menús de mazos y colección, o en la configuración de combate; la elección se guarda.
+[b]Voces:[/b] cada paquete incluye un idioma de voces: EN, RU, DE, IT o PT-BR. Cambiar el idioma del texto no cambia las voces.
+Cada uno de los cinco paquetes incluye los 13 idiomas de texto; EN es la opción universal con voces en inglés. Para cambiar las voces, instala otro paquete. En DE e IT, el troll de los barriles habla ruso. El idioma del texto se guarda con la partida. La nueva interfaz se tradujo con IA y necesita revisión por hablantes nativos; ES-MX y ZH-TW adaptan el español y el chino simplificado. Los nombres nativos de los objetos siguen el idioma del juego; algunos avisos externos siguen en RU/EN.
+
+[size=4][b]Instalación[/b][/size]
+[list=1]
+[*]Cierra el juego y haz un respaldo de tus partidas.
+[*]Descarga un paquete con el idioma de voces que quieras. Instala solo un paquete.
+[*]Extrae su carpeta Mods en la carpeta de The Witcher 3. Resultado: [b]The Witcher 3/Mods/modBetaGwent0924/content[/b].
+[*]Carga tu partida. Edita los mazos en el menú normal de mazos de Gwent o platica con un NPC que juegue Gwent para empezar una partida.
+[/list]
+[b]Actualización:[/b] primero elimina la carpeta anterior [b]modBetaGwent0924[/b] y después instala la nueva. No mezcles archivos de versiones distintas.
+
+[size=4][b]Requisitos[/b][/size]
+[list]
+[*]The Witcher 3 en PC, versión 5.01. Las versiones anteriores no se han probado; está planeada una versión aparte para la 1.32.
+[*]No necesitas REDkit ni Wwise para jugar.
+[/list]
+
+[size=4][b]Compatibilidad[/b][/size]
+Elimina la carpeta anterior [b]modBetaGwentReduxCompat[/b]: la capa de compatibilidad independiente ya no se incluye. La compatibilidad con Redux/Redo Expansion no se confirmó por separado. Otras modificaciones de Gwent y mods que cambien sus menús, el intercambio de cartas o las recompensas pueden causar conflictos. Después de cambiar los mods instalados, vuelve a combinar los scripts con Script Merger.
+
+[size=4][b]Reportar errores[/b][/size]
+Indica las versiones del mod y del juego, el idioma de voces del paquete y tu idioma de texto, otros mods instalados, las cartas, líderes y ronda involucrados y los pasos para reproducir la falla. Adjunta una captura de pantalla y [b]Documents/The Witcher 3/scriptslog.txt[/b] justo después del problema: al reiniciar el juego se sobrescribe.
+Para errores de traducción, indica el idioma y la pantalla, agrega una captura y propón una mejor redacción.
+
+[size=4][b]Agradecimientos[/b][/size]
+Gracias a CD Projekt por The Witcher y Gwent, a LegacyGwent DIY por los recursos de cartas y tablero, a la comunidad de Beta Gwent por conservar el material histórico y las ideas de arquetipos, y a todos los que prueban el mod y mandan reportes detallados.
+Proyecto de fans no oficial. El código original del mod se distribuye bajo GPL-3.0-only; los recursos originales del juego pertenecen a sus dueños.
+[url=https://github.com/NikRegul/GwentBetaClassic-]Código fuente en GitHub[/url]
+[/spoiler]
+[size=3][b][color=#d4af37]Português (Brasil)[/color][/b][/size]
+[spoiler]
+[size=4][b]Importante[/b][/size]
+[b]Faça backup dos seus saves antes de instalar e antes de cada atualização.[/b] O mod está em desenvolvimento ativo, então use um save separado nas primeiras partidas.
+[b]A 0.6.2 é uma prévia das traduções:[/b] o texto do mod agora está disponível em 13 idiomas. Os textos das cartas vêm da localização oficial do beta; a tradução da interface é nova e pode conter erros. Avise sobre tudo o que soar errado.
+[b]Novidades da 0.6.2:[/b] histórico detalhado das últimas 32 ações, indicações de cadeias de habilidades e valores atuais das cartas visíveis; movimentos mais suaves da mão e do foco, efeitos de cura próprios e uma grande cena do líder em duas dimensões. O editor mostra restrições e o custo das cópias que faltam; adicionar e remover cartas pode ser desfeito. Os barris revelam as quatro primeiras cartas juntas; a quinta é escolhida separadamente. Clarões, tremores e cenas são ajustáveis durante a sessão do menu. Duas composições foram restauradas e a avaliação de espiões que compram cartas foi revista. Traduções, testes no jogo e comparações da IA continuam em andamento. As entradas originais dos líderes em três dimensões não estão incluídas.
+
+[size=4][b]Sobre o mod[/b][/size]
+Gwent Beta Classic substitui o Gwent de The Witcher 3 pelas cartas, regras e tabuleiro do Gwent Beta 0.9.24 independente. As partidas continuam fazendo parte do mundo de The Witcher: jogue contra NPCs, conclua missões, compre barris e monte seus próprios baralhos.
+
+[size=4][b]Recursos[/b][/size]
+[list]
+[*][b]479[/b] cartas colecionáveis, incluindo [b]21[/b] líderes, das cinco facções
+[*]Tabuleiro, interface, fontes, molduras de cartas, clima e efeitos do beta; líderes animados
+[*]Editor de baralhos: cinco baralhos iniciais editáveis e oito espaços próprios, filtros e busca
+[*]Oponentes com [b]46[/b] arquétipos de baralho do beta e três níveis de dificuldade da IA
+[*]Barris por 200 coroas com os comerciantes de cartas, abertos como no beta
+[*]Fragmentos: crie cartas por 30 / 80 / 200 / 800 conforme a raridade; cópias excedentes são moídas automaticamente
+[*]Tutorial, mulligan, visualização dos cemitérios e do baralho, detalhes completos das cartas
+[*]Mouse, teclado e controle
+[/list]
+
+[size=4][b]Idiomas[/b][/size]
+[b]Texto:[/b] inglês, russo, alemão, francês, italiano, polonês, espanhol (Espanha), espanhol (América Latina), português (Brasil), japonês, coreano, chinês simplificado e chinês tradicional. Troque a qualquer momento pelo botão de idioma do texto no canto superior esquerdo dos menus de baralhos e coleção, ou nas configurações de batalha; a escolha fica salva.
+[b]Vozes:[/b] cada pacote traz um idioma de vozes: EN, RU, DE, IT ou PT-BR. Trocar o idioma do texto não muda as vozes. O pacote PT-BR tem dublagem completa do beta, incluindo o troll dos barris.
+Cada um dos cinco pacotes inclui os 13 idiomas de texto; EN é a opção universal com vozes em inglês. Para mudar as vozes, instale outro pacote. Em DE e IT, o troll dos barris fala russo. O idioma do texto é registrado no save. A nova interface foi traduzida com IA e precisa de revisão por falantes nativos; ES-MX e ZH-TW adaptam o espanhol e o chinês simplificado. Os nomes nativos dos itens seguem o idioma do jogo; alguns avisos externos continuam em RU/EN.
+
+[size=4][b]Instalação[/b][/size]
+[list=1]
+[*]Feche o jogo e faça backup dos seus saves.
+[*]Baixe um pacote com o idioma de vozes desejado. Instale apenas um pacote.
+[*]Extraia a pasta Mods na pasta do The Witcher 3. Resultado: [b]The Witcher 3/Mods/modBetaGwent0924/content[/b].
+[*]Carregue seu save. Edite os baralhos no menu normal de baralhos de Gwent ou converse com um NPC que joga Gwent para começar uma partida.
+[/list]
+[b]Atualização:[/b] apague primeiro a pasta antiga [b]modBetaGwent0924[/b] e depois instale a nova. Não misture arquivos de versões diferentes.
+
+[size=4][b]Requisitos[/b][/size]
+[list]
+[*]The Witcher 3 no PC, versão 5.01. Versões anteriores não foram testadas; uma versão separada para a 1.32 está planejada.
+[*]REDkit e Wwise não são necessários para jogar.
+[/list]
+
+[size=4][b]Compatibilidade[/b][/size]
+Remova a pasta antiga [b]modBetaGwentReduxCompat[/b]: a camada de compatibilidade separada não é mais incluída. A compatibilidade com Redux/Redo Expansion não foi confirmada separadamente. Outras reformulações do Gwent e mods que alterem seus menus, trocas de cartas ou recompensas podem causar conflitos. Depois de mudar os mods instalados, refaça a mesclagem dos scripts com Script Merger.
+
+[size=4][b]Relatar bugs[/b][/size]
+Informe as versões do mod e do jogo, o idioma de vozes do pacote e o idioma do texto, outros mods instalados, as cartas, líderes e rodada envolvidos e os passos para reproduzir o problema. Anexe uma captura de tela e o [b]Documents/The Witcher 3/scriptslog.txt[/b] logo após o problema: reiniciar o jogo sobrescreve o arquivo.
+Para erros de tradução, informe o idioma e a tela, anexe uma captura e sugira uma redação melhor.
+
+[size=4][b]Agradecimentos[/b][/size]
+Obrigado à CD Projekt por The Witcher e Gwent, ao LegacyGwent DIY pelos recursos de cartas e tabuleiro, à comunidade do Beta Gwent por preservar o material histórico e as ideias de arquétipos, e a todos que testam o mod e enviam relatórios detalhados.
+Projeto de fã não oficial. O código original do mod é distribuído sob GPL-3.0-only; os recursos originais do jogo pertencem aos seus donos.
+[url=https://github.com/NikRegul/GwentBetaClassic-]Código-fonte no GitHub[/url]
+[/spoiler]
+[size=3][b][color=#d4af37]日本語[/color][/b][/size]
+[spoiler]
+[size=4][b]重要[/b][/size]
+[b]インストール前と毎回のアップデート前に、必ずセーブデータをバックアップしてください。[/b] MODは開発中のため、最初の数試合は別のセーブデータで遊ぶことをおすすめします。
+[b]0.6.2は翻訳のプレビュー版です。[/b] MODのテキストが13言語に対応しました。カードのテキストはベータ版の公式ローカライズから取り込んでいますが、インターフェースの翻訳は新しく、誤りがあるかもしれません。おかしな表現を見つけたらお知らせください。
+[b]0.6.2の新機能：[/b]直近32件の行動履歴、能力の連鎖表示、公開カードの現在の数値を追加。手札とフォーカスの動きが滑らかになり、回復専用の演出と大きな2Dリーダー演出を追加しました。デッキ編集では制限の理由と不足分の作成費用を表示し、カードの追加・削除を取り消せます。タルの最初の4枚はまとめて公開でき、5枚目は別途選択します。閃光、揺れ、演出の設定はメニューを閉じるまで有効です。2つのデッキ構成を以前のものに戻し、ドローするスパイの評価を変更しました。翻訳、実機テスト、AI比較は継続中です。オリジナルの3Dリーダー登場演出は含まれません。
+
+[size=4][b]MODについて[/b][/size]
+Gwent Beta Classicは、The Witcher 3のグウェントを、単体版Gwent Beta 0.9.24のカード、ルール、盤面に置き換えるMODです。試合はウィッチャーの世界の一部のまま：NPCと対戦し、クエストをこなし、樽を買い、自分のデッキを組みましょう。
+
+[size=4][b]主な機能[/b][/size]
+[list]
+[*]全5勢力、リーダー[b]21[/b]枚を含む収集カード[b]479[/b]枚
+[*]ベータ版の盤面、HUD、フォント、カードフレーム、天候、エフェクト。リーダーはアニメーション付き
+[*]デッキエディター：編集可能なスターターデッキ5つと自由に使える8枠、フィルターと検索
+[*]ベータ版の[b]46[/b]種類のデッキアーキタイプを使う対戦相手、AIの難易度は3段階
+[*]グウェントのカード商人から200クラウンで買える樽。ベータ版と同じ演出で開封
+[*]スクラップ：レアリティに応じて30 / 80 / 200 / 800でカードを作成。余分な枚数は自動で分解
+[*]チュートリアル、マリガン、墓地とデッキの確認、カードの詳細表示
+[*]マウス、キーボード、コントローラーに対応
+[/list]
+
+[size=4][b]言語[/b][/size]
+[b]テキスト：[/b]英語、ロシア語、ドイツ語、フランス語、イタリア語、ポーランド語、スペイン語（スペイン）、スペイン語（中南米）、ポルトガル語（ブラジル）、日本語、韓国語、簡体字中国語、繁体字中国語。デッキ／コレクション画面の左上にあるテキスト言語ボタン、または対戦中の設定からいつでも切り替えられ、選択は保存されます。
+[b]音声：[/b]各パッケージに含まれる音声言語は1つです（EN、RU、DE、IT、PT-BR）。テキスト言語を変えても音声は変わりません。日本語音声のパッケージはありません。
+5種類の各パッケージに13言語すべてのテキストが含まれます。ENは英語音声の汎用パッケージです。音声を変更するには別のパッケージをインストールしてください。DEとITでは樽のトロールがロシア語で話します。テキスト言語はゲームのセーブに保存されます。新しいUIはAI翻訳で、ネイティブによる確認が必要です。ES-MXとZH-TWのUIはスペイン語と簡体字中国語を基に調整しています。ゲーム標準のアイテム名はゲームの言語に従い、一部の外部通知はまだRU/ENです。
+
+[size=4][b]インストール[/b][/size]
+[list=1]
+[*]ゲームを終了し、セーブデータをバックアップします。
+[*]希望する音声言語のパッケージを1つだけダウンロードします。複数のパッケージを同時に入れないでください。
+[*]パッケージ内のModsフォルダをThe Witcher 3のフォルダに展開します。[b]The Witcher 3/Mods/modBetaGwent0924/content[/b] になれば正解です。
+[*]セーブデータをロードします。デッキは通常のグウェントのデッキメニューで編集でき、グウェントを遊ぶNPCに話しかけると試合が始まります。
+[/list]
+[b]アップデート：[/b]先に古い[b]modBetaGwent0924[/b]フォルダを削除してから、新しいものを入れてください。異なるバージョンのファイルを混ぜないでください。
+
+[size=4][b]動作環境[/b][/size]
+[list]
+[*]PC版The Witcher 3、バージョン5.01。それ以前のバージョンは未検証です。1.32向けの別ビルドを予定しています。
+[*]プレイにREDkitやWwiseは不要です。
+[/list]
+
+[size=4][b]互換性[/b][/size]
+古い[b]modBetaGwentReduxCompat[/b]フォルダを削除してください。独立した互換レイヤーは含まれなくなりました。Redux/Redo Expansionとの互換性は個別には確認されていません。他のグウェント改変MODや、メニュー、カード取引、報酬を変更するMODとは競合する可能性があります。MOD構成を変更した後はScript Mergerでスクリプトを再マージしてください。
+
+[size=4][b]バグ報告[/b][/size]
+MODとゲームのバージョン、パッケージの音声言語とテキスト言語、導入している他のMOD、関係するカード・リーダー・ラウンド、再現手順を書いてください。問題が起きた直後にスクリーンショットと[b]Documents/The Witcher 3/scriptslog.txt[/b]を添付してください。ゲームを再起動すると上書きされます。
+翻訳の誤りは、言語と画面、スクリーンショット、より良い訳の提案を添えてお知らせください。
+
+[size=4][b]クレジット[/b][/size]
+The WitcherとGwentを生んだCD Projekt、カードと盤面の素材を提供してくれたLegacyGwent DIY、資料を保存しアーキタイプのアイデアを共有してくれたBeta Gwentコミュニティ、そしてテストと詳しい報告をしてくれるすべての方に感謝します。
+非公式のファンプロジェクトです。MOD独自のコードはGPL-3.0-onlyで公開しています。ゲームのオリジナル素材の権利は各権利者に帰属します。
+[url=https://github.com/NikRegul/GwentBetaClassic-]GitHubのソースコード[/url]
+[/spoiler]
+[size=3][b][color=#d4af37]한국어[/color][/b][/size]
+[spoiler]
+[size=4][b]중요[/b][/size]
+[b]설치 전과 업데이트할 때마다 반드시 세이브 파일을 백업하세요.[/b] 모드는 개발 중이므로 처음 몇 판은 별도의 세이브로 플레이하는 것을 권장합니다.
+[b]0.6.2은 번역 미리보기 버전입니다.[/b] 이제 모드 텍스트를 13개 언어로 볼 수 있습니다. 카드 텍스트는 베타의 공식 현지화를 그대로 사용했지만, 인터페이스 번역은 새로 만든 것이라 오류가 있을 수 있습니다. 어색한 표현이 있으면 알려 주세요.
+[b]0.6.2의 새로운 기능:[/b] 최근 32개 행동의 상세 기록, 능력 연쇄 안내와 공개 카드의 현재 수치를 추가했습니다. 손패와 포커스 이동이 부드러워졌으며, 별도 회복 효과와 큰 2D 리더 연출을 추가했습니다. 덱 편집기에서 제한 사유와 부족한 카드의 제작 비용을 표시하며, 카드 추가와 제거를 되돌릴 수 있습니다. 통의 첫 네 장을 한 번에 공개할 수 있고 다섯 번째 카드는 별도로 선택합니다. 섬광, 흔들림, 연출 설정은 메뉴를 닫을 때까지 적용됩니다. 두 덱을 이전 구성으로 복원하고 카드를 뽑는 첩자의 평가를 수정했습니다. 번역 검토, 게임 내 테스트와 AI 비교는 진행 중입니다. 원작의 3D 리더 등장 연출은 포함되지 않습니다.
+
+[size=4][b]모드 소개[/b][/size]
+Gwent Beta Classic은 The Witcher 3의 궨트를 독립형 Gwent Beta 0.9.24의 카드, 규칙, 게임판으로 바꿉니다. 대결은 그대로 위쳐 세계의 일부입니다. NPC와 대결하고, 퀘스트를 진행하고, 통을 사고, 나만의 덱을 만들어 보세요.
+
+[size=4][b]주요 기능[/b][/size]
+[list]
+[*]다섯 진영 전부, 리더 [b]21[/b]장을 포함한 수집 카드 [b]479[/b]장
+[*]베타의 게임판, HUD, 글꼴, 카드 테두리, 날씨와 효과, 움직이는 리더
+[*]덱 편집기: 수정 가능한 시작 덱 5개와 개인 슬롯 8개, 필터와 검색
+[*]베타의 덱 아키타입 [b]46[/b]종을 사용하는 상대, AI 난이도 3단계
+[*]궨트 카드 상인에게서 200크라운에 사는 통, 베타처럼 개봉
+[*]조각: 희귀도에 따라 30 / 80 / 200 / 800으로 카드 제작, 초과 사본은 자동으로 분쇄
+[*]튜토리얼, 멀리건, 무덤과 덱 보기, 카드 상세 보기
+[*]마우스, 키보드, 컨트롤러 지원
+[/list]
+
+[size=4][b]언어[/b][/size]
+[b]텍스트:[/b] 영어, 러시아어, 독일어, 프랑스어, 이탈리아어, 폴란드어, 스페인어(스페인), 스페인어(중남미), 포르투갈어(브라질), 일본어, 한국어, 중국어 간체, 중국어 번체. 덱/컬렉션 메뉴 왼쪽 위의 텍스트 언어 버튼이나 전투 설정에서 언제든지 바꿀 수 있으며, 선택은 저장됩니다.
+[b]음성:[/b] 각 패키지에는 음성 언어가 하나씩 들어 있습니다(EN, RU, DE, IT, PT-BR). 텍스트 언어를 바꿔도 음성은 바뀌지 않습니다. 한국어 음성 패키지는 없습니다.
+다섯 패키지 모두 13개 텍스트 언어를 포함합니다. EN은 영어 음성을 사용하는 범용 패키지입니다. 음성을 바꾸려면 다른 패키지를 설치하세요. DE와 IT에서는 술통 트롤이 러시아어로 말합니다. 텍스트 언어는 게임 저장 데이터에 기록됩니다. 새 UI는 AI로 번역되어 원어민 검수가 필요하며, ES-MX와 ZH-TW UI는 스페인어와 중국어 간체를 바탕으로 조정했습니다. 게임 기본 아이템 이름은 게임 언어를 따르며 일부 외부 알림은 아직 RU/EN입니다.
+
+[size=4][b]설치[/b][/size]
+[list=1]
+[*]게임을 종료하고 세이브 파일을 백업합니다.
+[*]원하는 음성 언어의 패키지를 하나만 내려받습니다. 패키지는 하나만 설치하세요.
+[*]패키지의 Mods 폴더를 The Witcher 3 폴더에 압축 해제합니다. 결과 경로: [b]The Witcher 3/Mods/modBetaGwent0924/content[/b]
+[*]세이브를 불러옵니다. 덱은 기존 궨트 덱 메뉴에서 편집하고, 궨트를 하는 NPC에게 말을 걸면 대결이 시작됩니다.
+[/list]
+[b]업데이트:[/b] 먼저 기존 [b]modBetaGwent0924[/b] 폴더를 삭제한 뒤 새 버전을 설치하세요. 서로 다른 버전의 파일을 섞지 마세요.
+
+[size=4][b]요구 사항[/b][/size]
+[list]
+[*]PC판 The Witcher 3, 버전 5.01. 이전 버전은 테스트하지 않았으며, 1.32용 별도 빌드를 계획하고 있습니다.
+[*]플레이에 REDkit과 Wwise는 필요하지 않습니다.
+[/list]
+
+[size=4][b]호환성[/b][/size]
+예전 [b]modBetaGwentReduxCompat[/b] 폴더를 삭제하세요. 별도의 호환 계층은 더 이상 포함되지 않습니다. Redux/Redo Expansion과의 호환성은 별도로 확인되지 않았습니다. 다른 궨트 개편 모드나 메뉴, 카드 거래, 보상을 변경하는 모드는 충돌할 수 있습니다. 설치한 모드 구성을 바꾼 후 Script Merger로 스크립트를 다시 병합하세요.
+
+[size=4][b]버그 제보[/b][/size]
+모드와 게임 버전, 패키지의 음성 언어와 텍스트 언어, 설치한 다른 모드, 관련된 카드·리더·라운드, 재현 방법을 적어 주세요. 문제가 생긴 직후 스크린샷과 [b]Documents/The Witcher 3/scriptslog.txt[/b]를 첨부해 주세요. 게임을 다시 시작하면 파일이 덮어써집니다.
+번역 오류는 언어와 화면, 스크린샷, 더 나은 표현 제안을 함께 보내 주세요.
+
+[size=4][b]감사의 말[/b][/size]
+The Witcher와 Gwent를 만든 CD Projekt, 카드와 게임판 자료를 제공한 LegacyGwent DIY, 자료를 보존하고 아키타입 아이디어를 나눠 준 Beta Gwent 커뮤니티, 그리고 모드를 테스트하고 자세한 제보를 보내 주시는 모든 분께 감사드립니다.
+비공식 팬 프로젝트입니다. 모드 고유 코드는 GPL-3.0-only로 배포되며, 게임 원본 자료의 권리는 각 소유자에게 있습니다.
+[url=https://github.com/NikRegul/GwentBetaClassic-]GitHub 소스 코드[/url]
+[/spoiler]
+[size=3][b][color=#d4af37]简体中文[/color][/b][/size]
+[spoiler]
+[size=4][b]重要[/b][/size]
+[b]安装前以及每次更新前，请务必备份存档。[/b]模组仍在积极开发中，前几局建议使用单独的存档。
+[b]0.6.2 是翻译预览版：[/b]模组文本现已支持 13 种语言。卡牌文本来自 Beta 的官方本地化，界面翻译是新做的，可能存在错误。发现不通顺的地方请告诉我们。
+[b]0.6.2 新内容：[/b]新增最近32次行动的详细历史、能力连锁提示和公开卡牌的当前数值。手牌与焦点移动更平滑，并加入独立恢复特效和大型二维领袖演出。牌组编辑器显示限制原因及缺少卡牌的制作费用，可撤销卡牌的加入或移除。酒桶前四张牌可一次揭开，第五张仍需单独选择。闪光、震动和演出设置在关闭菜单前有效。恢复了两套旧牌组构成，并调整抽牌间谍的估值。翻译校对、游戏内测试和AI对比仍在进行。原版三维领袖登场动画尚未包含。
+
+[size=4][b]关于模组[/b][/size]
+Gwent Beta Classic 将《巫师 3》的昆特牌替换为独立版 Gwent Beta 0.9.24 的卡牌、规则和牌桌。对局依然是巫师世界的一部分：与 NPC 对战、完成任务、购买桶、组建自己的牌组。
+
+[size=4][b]主要功能[/b][/size]
+[list]
+[*]五大阵营共 [b]479[/b] 张可收集卡牌，其中包括 [b]21[/b] 张领袖牌
+[*]Beta 的牌桌、HUD、字体、卡框、天气和特效；领袖牌带动画
+[*]牌组编辑器：五套可修改的初始牌组和八个自定义栏位，支持筛选和搜索
+[*]对手使用 [b]46[/b] 种 Beta 牌组原型，AI 难度分三档
+[*]昆特牌商人出售 200 克朗的桶，开桶方式与 Beta 相同
+[*]碎片：按稀有度花费 30 / 80 / 200 / 800 合成卡牌，多余副本会自动分解
+[*]教程、调度、查看墓地和牌库、卡牌详情
+[*]支持鼠标、键盘和手柄
+[/list]
+
+[size=4][b]语言[/b][/size]
+[b]文字：[/b]英语、俄语、德语、法语、意大利语、波兰语、西班牙语（西班牙）、西班牙语（拉丁美洲）、葡萄牙语（巴西）、日语、韩语、简体中文、繁体中文。可随时通过牌组和收藏菜单左上角的文字语言按钮或战斗设置切换，选择会被保存。
+[b]语音：[/b]每个安装包只含一种语音：EN、RU、DE、IT 或 PT-BR。切换文字语言不会改变语音。没有中文语音包。
+五种安装包均包含全部 13 种文字语言；EN 是使用英语语音的通用版本。更换语音需要安装另一种安装包。DE 和 IT 包中的酒桶巨魔使用俄语。文字语言随游戏存档保存。新界面由 AI 翻译，需要母语者校对；ES-MX 和 ZH-TW 界面分别基于西班牙语和简体中文调整。游戏原生物品名称跟随游戏语言，部分界面外通知目前仍为 RU/EN。
+
+[size=4][b]安装[/b][/size]
+[list=1]
+[*]关闭游戏并备份存档。
+[*]下载一个带有所需语音语言的安装包。只安装一个安装包。
+[*]将其中的 Mods 文件夹解压到《巫师 3》的游戏目录，结果应为 [b]The Witcher 3/Mods/modBetaGwent0924/content[/b]。
+[*]读取存档。在原有的昆特牌牌组菜单中编辑牌组，与会玩昆特牌的 NPC 对话即可开始对局。
+[/list]
+[b]更新：[/b]先删除旧的 [b]modBetaGwent0924[/b] 文件夹，再安装新版本。不要混用不同版本的文件。
+
+[size=4][b]系统要求[/b][/size]
+[list]
+[*]PC 版《巫师 3》，游戏版本 5.01。更早的版本未经测试；计划为 1.32 推出单独版本。
+[*]游玩不需要 REDkit 和 Wwise。
+[/list]
+
+[size=4][b]兼容性[/b][/size]
+请删除旧的 [b]modBetaGwentReduxCompat[/b] 文件夹，独立兼容层已不再附带。与 Redux/Redo Expansion 的兼容性尚未单独确认。其他昆特牌改动模组，以及修改菜单、卡牌交易或奖励的模组可能产生冲突。更改模组组合后，请用 Script Merger 重新合并脚本。
+
+[size=4][b]反馈问题[/b][/size]
+请注明模组和游戏版本、安装包的语音语言和文字语言、已安装的其他模组、涉及的卡牌、领袖和回合，以及复现步骤。出现问题后请立即附上截图和 [b]Documents/The Witcher 3/scriptslog.txt[/b]：重新启动游戏会覆盖该文件。
+反馈翻译错误时，请注明语言和界面，附上截图并给出更好的译法。
+
+[size=4][b]致谢[/b][/size]
+感谢 CD Projekt 带来《巫师》和昆特牌，感谢 LegacyGwent DIY 提供卡牌和牌桌素材，感谢 Beta Gwent 社区保存历史资料并分享牌组原型思路，也感谢每一位测试模组并提交详细报告的玩家。
+非官方粉丝项目。模组原创代码以 GPL-3.0-only 许可发布；游戏原始素材归各自所有者所有。
+[url=https://github.com/NikRegul/GwentBetaClassic-]GitHub 源代码[/url]
+[/spoiler]
+[size=3][b][color=#d4af37]繁體中文[/color][/b][/size]
+[spoiler]
+[size=4][b]重要[/b][/size]
+[b]安裝前以及每次更新前，請務必備份存檔。[/b]模組仍在積極開發中，前幾局建議使用另外的存檔。
+[b]0.6.2 是翻譯預覽版：[/b]模組文字現已支援 13 種語言。卡牌文字來自 Beta 的官方在地化，介面翻譯是新做的，可能有錯誤。發現不通順的地方請告訴我們。
+[b]0.6.2 新內容：[/b]新增最近32次行動的詳細歷史、能力連鎖提示和公開卡牌的目前數值。手牌與焦點移動更平滑，並加入獨立恢復特效和大型二維領導牌演出。牌組編輯器顯示限制原因及缺少卡牌的製作費用，可復原卡牌的加入或移除。酒桶前四張牌可一次揭開，第五張仍須單獨選擇。閃光、震動和演出設定在關閉選單前有效。恢復了兩套舊牌組構成，並調整抽牌間諜的估值。翻譯校對、遊戲內測試和AI對比仍在進行。原版三維領導牌登場動畫尚未包含。
+
+[size=4][b]關於模組[/b][/size]
+Gwent Beta Classic 將《巫師 3》的昆特牌替換為獨立版 Gwent Beta 0.9.24 的卡牌、規則和牌桌。對局依然是巫師世界的一部分：與 NPC 對戰、完成任務、購買桶、組建自己的牌組。
+
+[size=4][b]主要功能[/b][/size]
+[list]
+[*]五大陣營共 [b]479[/b] 張可收集卡牌，其中包括 [b]21[/b] 張領導牌
+[*]Beta 的牌桌、HUD、字型、卡框、天氣和特效；領導牌附動畫
+[*]牌組編輯器：五套可修改的初始牌組和八個自訂欄位，支援篩選和搜尋
+[*]對手使用 [b]46[/b] 種 Beta 牌組原型，AI 難度分三級
+[*]昆特牌商人販售 200 克朗的桶，開桶方式與 Beta 相同
+[*]碎片：依稀有度花費 30 / 80 / 200 / 800 合成卡牌，多餘副本會自動分解
+[*]教學、調度、檢視墓地和牌庫、卡牌詳情
+[*]支援滑鼠、鍵盤和控制器
+[/list]
+
+[size=4][b]語言[/b][/size]
+[b]文字：[/b]英文、俄文、德文、法文、義大利文、波蘭文、西班牙文（西班牙）、西班牙文（拉丁美洲）、葡萄牙文（巴西）、日文、韓文、簡體中文、繁體中文。可隨時透過牌組和收藏選單左上角的文字語言按鈕或戰鬥設定切換，選擇會被保存。
+[b]語音：[/b]每個安裝包只含一種語音：EN、RU、DE、IT 或 PT-BR。切換文字語言不會改變語音。沒有中文語音包。
+五種安裝包均包含全部 13 種文字語言；EN 是使用英文語音的通用版本。更換語音需要安裝另一種安裝包。DE 和 IT 包中的酒桶巨魔使用俄語。文字語言隨遊戲存檔儲存。新介面由 AI 翻譯，需要母語者校對；ES-MX 和 ZH-TW 介面分別以西班牙文和簡體中文為基礎調整。遊戲原生物品名稱跟隨遊戲語言，部分介面外通知目前仍為 RU/EN。
+
+[size=4][b]安裝[/b][/size]
+[list=1]
+[*]關閉遊戲並備份存檔。
+[*]下載一個帶有所需語音語言的安裝包。只安裝一個安裝包。
+[*]將其中的 Mods 資料夾解壓縮到《巫師 3》的遊戲目錄，結果應為 [b]The Witcher 3/Mods/modBetaGwent0924/content[/b]。
+[*]讀取存檔。在原有的昆特牌牌組選單中編輯牌組，與會玩昆特牌的 NPC 對話即可開始對局。
+[/list]
+[b]更新：[/b]先刪除舊的 [b]modBetaGwent0924[/b] 資料夾，再安裝新版本。不要混用不同版本的檔案。
+
+[size=4][b]系統需求[/b][/size]
+[list]
+[*]PC 版《巫師 3》，遊戲版本 5.01。更早的版本未經測試；預計為 1.32 推出獨立版本。
+[*]遊玩不需要 REDkit 和 Wwise。
+[/list]
+
+[size=4][b]相容性[/b][/size]
+請刪除舊的 [b]modBetaGwentReduxCompat[/b] 資料夾，獨立相容層已不再附帶。與 Redux/Redo Expansion 的相容性尚未單獨確認。其他昆特牌改動模組，以及修改選單、卡牌交易或獎勵的模組可能產生衝突。更改模組組合後，請用 Script Merger 重新合併指令碼。
+
+[size=4][b]回報問題[/b][/size]
+請註明模組和遊戲版本、安裝包的語音語言和文字語言、已安裝的其他模組、涉及的卡牌、領導牌和回合，以及重現步驟。發生問題後請立即附上截圖和 [b]Documents/The Witcher 3/scriptslog.txt[/b]：重新啟動遊戲會覆蓋該檔案。
+回報翻譯錯誤時，請註明語言和畫面，附上截圖並提供更好的譯法。
+
+[size=4][b]致謝[/b][/size]
+感謝 CD Projekt 帶來《巫師》和昆特牌，感謝 LegacyGwent DIY 提供卡牌和牌桌素材，感謝 Beta Gwent 社群保存歷史資料並分享牌組原型構想，也感謝每一位測試模組並提交詳細回報的玩家。
+非官方粉絲專案。模組原創程式碼以 GPL-3.0-only 授權發布；遊戲原始素材歸各自所有者所有。
+[url=https://github.com/NikRegul/GwentBetaClassic-]GitHub 原始碼[/url]
+[/spoiler]
+[line]
+[size=3][b][color=#d4af37]English[/color][/b][/size]
+
+[size=4][b]Important[/b][/size]
+[b]Back up your saves before installing and before every update.[/b] The mod is in active development, so use a separate save for your first matches.
+[b]0.6.2 is a translation preview:[/b] the mod is now available in 13 text languages. Card texts come from the official Beta localization; the interface translation is new and may contain mistakes. Please report anything that reads wrong.
+[b]New in 0.6.2:[/b] detailed history of the last 32 actions, ability-chain hints and current public card statistics; smoother hand and focus movement, distinct recovery effects and a large two-dimensional leader scene. The deck editor shows restriction reasons and missing-copy costs, with undo for card additions/removals. Kegs can reveal the first four cards together; the fifth remains an explicit choice. Flashes, shake and scenes have settings lasting until the menu closes. Restored the previous Cursed Ships and Foltest deck-boost rosters and revised draw-spy evaluation. Translations remain a preview; in-game testing and AI comparisons are ongoing. Original three-dimensional leader entrances are not included.
+
+[size=4][b]About the mod[/b][/size]
+Gwent Beta Classic replaces vanilla Gwent in The Witcher 3 with the cards, rules and board of standalone Gwent Beta 0.9.24. Matches stay part of the Witcher world: play against NPCs, finish quests, buy kegs and build your own decks.
+
+[size=4][b]Features[/b][/size]
+[list]
+[*][b]479[/b] collectible cards, including [b]21[/b] leaders, across all five factions
+[*]Beta board, HUD, fonts, card frames, weather and effects; animated leaders
+[*]Deck builder: five editable starter decks plus eight custom slots, filters and search
+[*]Opponents with [b]46[/b] Beta deck archetypes and three AI difficulty levels
+[*]Kegs for 200 crowns from Gwent card merchants, opened Beta-style
+[*]Scraps: craft cards for 30 / 80 / 200 / 800 by rarity; extra copies are milled automatically
+[*]Tutorial, mulligan, graveyard and deck viewers, full card inspection
+[*]Mouse, keyboard and controller support
+[/list]
+
+[size=4][b]Languages[/b][/size]
+[b]Text:[/b] English, Russian, German, French, Italian, Polish, Spanish (Spain), Spanish (Latin America), Portuguese (Brazil), Japanese, Korean, Simplified Chinese and Traditional Chinese. Switch any time with the text language button at the top left of the deck and collection menus or in the battle settings; your choice is saved.
+[b]Voice:[/b] each package contains one voice language: EN, RU, DE, IT or PT-BR. Changing the text does not change the voices. The Beta has no German or Italian recordings of the keg troll, so in those packages he speaks Russian.
+Each of the five packages includes all 13 text languages; EN is the universal option with English voices. To change voices, install another package. The keg troll speaks Russian in DE and IT. Text language is stored with the game save. The new UI was translated with AI and needs native-speaker proofreading; ES-MX and ZH-TW adapt Spanish and Simplified Chinese UI. Native item names follow the game language; some notifications outside the UI remain RU/EN.
+
+[size=4][b]Installation[/b][/size]
+[list=1]
+[*]Close the game and back up your saves.
+[*]Download one package with the voice language you want. Install only one package.
+[*]Extract its Mods folder into your The Witcher 3 directory. The result should be [b]The Witcher 3/Mods/modBetaGwent0924/content[/b].
+[*]Load your save. Open the Gwent deck menu to edit decks, or talk to an NPC who plays Gwent to start a match.
+[/list]
+[b]Updating:[/b] delete the old [b]modBetaGwent0924[/b] folder first, then install the new one. Do not mix files from different versions.
+
+[size=4][b]Requirements[/b][/size]
+[list]
+[*]The Witcher 3 on PC, version 5.01. Earlier versions have not been tested; a separate build for 1.32 is planned.
+[*]REDkit and Wwise are not needed to play.
+[/list]
+
+[size=4][b]Compatibility[/b][/size]
+Remove the obsolete [b]modBetaGwentReduxCompat[/b] folder; the separate compatibility layer is no longer included. Compatibility with Redux/Redo Expansion has not been separately confirmed. Other Gwent overhauls and mods changing its menus, card trading or rewards may conflict. After changing your mod setup, merge scripts again with Script Merger.
+
+[size=4][b]Bug reports[/b][/size]
+Please include the mod and game versions, the package voice language and your text language, other installed mods, the cards, leaders and round involved, and the steps to reproduce. Attach a screenshot and [b]Documents/The Witcher 3/scriptslog.txt[/b] right after the problem: restarting the game overwrites it.
+For translation mistakes, name the language and screen, add a screenshot and suggest a better wording.
+
+[size=4][b]Credits[/b][/size]
+Thanks to CD Projekt for The Witcher and Gwent, LegacyGwent DIY for card and board assets, the Beta Gwent community for preserving historical material and archetype ideas, and everyone who tests the mod and sends detailed reports.
+Unofficial fan project. Original mod code is GPL-3.0-only; original game assets belong to their owners.
+[url=https://github.com/NikRegul/GwentBetaClassic-]Source code on GitHub[/url]

@@ -31,6 +31,9 @@ package
         private var focus:Object;
         private var currentMode:String="";
         private var lastRect:Rectangle;
+        private var focusVisualKey:String="";
+        private var focusVisualAt:int=0;
+        public var reducedMotion:Boolean=false;
         private var lastKey:String="";
         private var dirty:Boolean=true;
         private var hint:TextField=new TextField();
@@ -49,6 +52,7 @@ package
         private var traceAt:int=-1000;
         private var inputCode:int=0;
         public var active:Boolean=false;
+        private var autoPicked:Boolean=false;
         public var device:int=0;
         public var swap:Boolean=false;
 
@@ -272,20 +276,26 @@ package
         {
             var s:Object=state();var options:Array=candidates();
             if(currentMode!=s.mode){if(focus)saved[currentMode]=focus.key;currentMode=s.mode;focus=null;lastRect=null;lastKey=saved[currentMode]||"";navigationColumn=NaN;}
-            if(focus&&options.indexOf(focus)>=0)return focus;
-            focus=null;
+            if(focus&&options.indexOf(focus)>=0){
+                // A fallback pick (made before the board positions/rows existed) yields to them.
+                if(autoPicked&&focus.tag!=s.preferred&&(s.mode=="placement"||s.mode=="rows"||s.mode=="target")){
+                    for each(var better:Object in options)if(better.tag==s.preferred){select(better);return focus;}
+                }
+                return focus;
+            }
+            focus=null;autoPicked=false;
             for each(var n:Object in options)if(n.key==lastKey){focus=n;break;}
             if(!focus&&lastRect) {
                 var nearest:Number=Number.MAX_VALUE;
                 for each(n in options){var dx:Number=n.rect.x-lastRect.x,dy:Number=n.rect.y-lastRect.y;var distance:Number=dx*dx+dy*dy;if(distance<nearest){nearest=distance;focus=n;}}
             }
             if(!focus)for each(n in options)if(n.tag==s.preferred){focus=n;break;}
-            if(!focus&&options.length)focus=options[0];
+            if(!focus&&options.length){focus=options[0];autoPicked=focus.tag!=s.preferred;}
             if(focus){lastKey=focus.key;lastRect=focus.rect.clone();invoke("focus",focus);}return focus;
         }
         private function select(n:Object,keepColumn:Boolean=false):void
         {
-            if(!n)return;focus=n;lastKey=n.key;lastRect=n.rect.clone();saved[currentMode]=n.key;
+            if(!n)return;focus=n;autoPicked=false;lastKey=n.key;lastRect=n.rect.clone();saved[currentMode]=n.key;
             if(!keepColumn)navigationColumn=NaN;
             dirty=true;invoke("focus",n);
         }
@@ -476,12 +486,15 @@ package
             var line:String=s.typing?"Ввод текста в системной клавиатуре":s.hint+(n?"   ·   "+n.label:"");
             if(yStarted>0&&yCanPass&&s.pass&&!yCommitted)line="Удерживайте "+(device==1||device==6?"△":"Y")+" для паса… "+int(Math.min(100,100*(now-yStarted)/650))+"%";
             if(line!=lastHint){
-                lastHint=line;hint.text=line;BetaGwentTextLanguage.track(hint);var fontSize:int=18;
+                lastHint=line;BetaGwentTextLanguage.assign(hint,line);var fontSize:int=18;
                 while(hint.textWidth>hint.width-12&&fontSize>14){fontSize--;hint.setTextFormat(new TextFormat("$NormalFont",fontSize,0xF5E6A7));}
                 if(fontSize==18)hint.setTextFormat(new TextFormat("$NormalFont",18,0xF5E6A7));
                 dirty=true;
             }
-            if(!dirty&&r&&lastRect&&r.equals(lastRect))return;
+            var visualKey:String=n?n.key:"";
+            if(visualKey!=focusVisualKey){focusVisualKey=visualKey;focusVisualAt=now;}
+            var focusProgress:Number=reducedMotion?1:Math.min(1,(now-focusVisualAt)/140);
+            if(!dirty&&r&&lastRect&&r.equals(lastRect)&&focusProgress>=1)return;
             dirty=false;graphics.clear();hint.visible=!s.typing;hint.y=s.hintY;
             graphics.beginFill(0x10191F,.95);graphics.drawRoundRect(24,s.hintY-2,1872,31,6,6);graphics.endFill();
             graphics.lineStyle(1,0x92784E,.8);graphics.moveTo(32,s.hintY+29);graphics.lineTo(1888,s.hintY+29);
@@ -490,7 +503,7 @@ package
             }
             if(n&&!s.typing){
                 lastRect=r.clone();lastKey=n.key;
-                graphics.lineStyle(3,0xF5E6A7,1);
+                graphics.lineStyle(3,0xF5E6A7,.4+.6*(1-Math.pow(1-focusProgress,3)));
                 if(n.body){
                     // Short corner marks leave card art and insertion ghosts readable.
                     var corners:Array=bodyCorners(n);
