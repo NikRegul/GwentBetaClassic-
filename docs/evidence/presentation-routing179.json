@@ -1,0 +1,162 @@
+{
+  "registry": {
+    "CardTransformAttackVFXHandlerData": {
+      "pathId": 3942,
+      "rows": [
+        {
+          "method": 0,
+          "effects": {
+            "0": {
+              "pathId": 4269,
+              "prefab": "NatureTransform",
+              "component": "CardTransformVisualEffect"
+            },
+            "11": {
+              "pathId": 4269,
+              "prefab": "NatureTransform",
+              "component": "CardTransformVisualEffect"
+            }
+          },
+          "overrides": {}
+        },
+        {
+          "method": 5,
+          "effects": {
+            "0": {
+              "pathId": 4269,
+              "prefab": "NatureTransform",
+              "component": "CardTransformVisualEffect"
+            }
+          },
+          "overrides": {}
+        }
+      ],
+      "decodedBytes": 16696,
+      "trailingBytes": 0
+    },
+    "CardPromoteAttackVFXHandlerData": {
+      "pathId": 3938,
+      "rows": [
+        {
+          "method": 0,
+          "effects": {
+            "0": {
+              "pathId": 4100,
+              "prefab": "PromoteSimpleVFX",
+              "component": "CardPromoteVisualEffect"
+            }
+          },
+          "overrides": {}
+        },
+        {
+          "method": 1,
+          "effects": {
+            "0": {
+              "pathId": 4078,
+              "prefab": "DemoteParticleSimpleVFX",
+              "component": "CardPromoteVisualEffect"
+            }
+          },
+          "overrides": {}
+        }
+      ],
+      "decodedBytes": 16696,
+      "trailingBytes": 0
+    }
+  },
+  "transformGraphs": [
+    {
+      "templateId": 132101,
+      "effects": [
+        {
+          "nodeId": 174,
+          "node": "TransformCardsNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 0
+          },
+          "elementName": "DarkMagic",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null,
+          "sounds": {}
+        }
+      ]
+    },
+    {
+      "templateId": 152107,
+      "effects": [
+        {
+          "nodeId": 31,
+          "node": "TransformCardsNode",
+          "fields": {
+            "ElementType": 2048,
+            "AttackMethod": 0
+          },
+          "elementName": "Nature",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null,
+          "sounds": {}
+        }
+      ]
+    },
+    {
+      "templateId": 152301,
+      "effects": [
+        {
+          "nodeId": 53,
+          "node": "TransformCardsNode",
+          "fields": {
+            "ElementType": 2048,
+            "AttackMethod": 0
+          },
+          "elementName": "Nature",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null,
+          "sounds": {}
+        }
+      ]
+    },
+    {
+      "templateId": 200053,
+      "effects": [
+        {
+          "nodeId": 31,
+          "node": "TransformCardsNode",
+          "fields": {
+            "ElementType": 2048,
+            "AttackMethod": 0
+          },
+          "elementName": "Nature",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null,
+          "sounds": {}
+        }
+      ]
+    },
+    {
+      "templateId": 201625,
+      "effects": [
+        {
+          "nodeId": 50,
+          "node": "TransformCardsNode",
+          "fields": {
+            "ElementType": 2048,
+            "AttackMethod": 0
+          },
+          "elementName": "Nature",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null,
+          "sounds": {}
+        }
+      ]
+    }
+  ],
+  "promoteOperationGraphs": 0,
+  "decision": "Use the default NatureTransform for all current transform events. Promote/Demote prefabs remain inventoried, not inferred from template rarity.",
+  "nativeGameTested": false
+}

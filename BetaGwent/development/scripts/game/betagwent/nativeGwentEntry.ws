@@ -73,9 +73,11 @@ function OnInteraction(actionName : string, activator : CEntity)
 @wrapMethod(CR4Player)
 function OnGwintGameEnded()
 {
-    var manager : CR4GwintManager;manager=theGame.GetGwintManager();
+    var manager : CR4GwintManager;var player : W3PlayerWitcher;var won : bool;manager=theGame.GetGwintManager();
+    won=(GetGwintMinigameState() & EMS_End_PlayerWon)!=0 && !manager.testMatch;
     manager.betaNpcPending=false;manager.gameRequested=false;
     wrappedMethod();
+    player=(W3PlayerWitcher)this;if(won && player)player.BetaGwentScheduleQuestSync();
 }
 
 // Native NPC requests go through DeckBuilder before GwintGame. The same menu

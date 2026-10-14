@@ -1,0 +1,79 @@
+{
+  "stage": 149,
+  "version": "0.6.8b",
+  "language": "ru",
+  "passed": true,
+  "regressionSuites": 52,
+  "nativeScripts": 70,
+  "nativeMenus": 4,
+  "sourceFingerprint": "062dc6855892e6ce261534b4eec59e7fb897467d66184473c70bf3c949c10b3f",
+  "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.6.8b-RU.zip",
+  "archiveSha256": "85ef7698b1f1beaec485ca6470f06a31e728283970025329803ab7571b73ba47",
+  "bytes": 305870202,
+  "bundleEntries": 351,
+  "guiLimitMiB": 56,
+  "guiMenus": {
+    "betagwent_board.redswf": {
+      "bytes": 58502538,
+      "MiB": 55.792367935180664
+    },
+    "betagwent_npc00.redswf": {
+      "bytes": 58502610,
+      "MiB": 55.792436599731445
+    },
+    "betagwent_decks.redswf": {
+      "bytes": 58502606,
+      "MiB": 55.79243278503418
+    },
+    "betagwent_kegop.redswf": {
+      "bytes": 53485883,
+      "MiB": 51.00811290740967
+    }
+  },
+  "oneShotLeaders": 12,
+  "loopFallbackLeaders": 9,
+  "previousArchivesUnmodified": true,
+  "nativeGameTested": false,
+  "sourceStage": 148,
+  "reducedEffectAtlases": [
+    {
+      "file": "kill_beta.png",
+      "before": [
+        1024,
+        512
+      ],
+      "after": [
+        512,
+        256
+      ],
+      "sourceSha256": "5a059949ced84199f3ad6ea3f7f9f9df236f62a654f30fd110ba3b207821766d",
+      "sha256": "7129e5f513d0adddf2bb95a3a3b8184afe3b533e8654386ffc8bb19454237abf"
+    },
+    {
+      "file": "kill2_beta.png",
+      "before": [
+        1024,
+        256
+      ],
+      "after": [
+        512,
+        128
+      ],
+      "sourceSha256": "e433c0e9c0e78b318269b9ef4dc389ac1c6eb5c87d4bf3d0d288c4f73b25805a",
+      "sha256": "119e070450eb02d3929de26d2df456c11d5227536e2eef3f8d1f5a3fc7f5eb2a"
+    },
+    {
+      "file": "lightning_beta.png",
+      "before": [
+        512,
+        512
+      ],
+      "after": [
+        256,
+        256
+      ],
+      "sourceSha256": "7ecdde11030c39468270cb86623c6d5e46815ca5d5ced5b1fca921a88c8b01ea",
+      "sha256": "2d008d42aa83801d06670a6533a5c0020f1106df06776bb6e4b252259bfd5e26"
+    }
+  ]
+}

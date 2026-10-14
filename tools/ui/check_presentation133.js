@@ -5,11 +5,11 @@ const source=fs.readFileSync('BetaGwent/ui/src/BetaGwentBoard.as','utf8');
 function extract(name){
  const start=source.indexOf('function '+name+'('),open=source.indexOf('{',start);let depth=1,end=open+1;
  if(start<0)throw Error(name);for(;depth;end++){if(source[end]==='{')depth++;if(source[end]==='}')depth--;}
- return source.slice(start,end).replace(/:(String|Object|void|int|Number|Array|Boolean|Event|MouseEvent)\b(?=\s*(?:[,)=;{]|in\b))/g,'').replace(/for each\((.*?) in (.*?)\)/g,'for($1 of $2)');
+ return source.slice(start,end).replace(/:(String|Object|void|int|Number|Array|Boolean|Event|MouseEvent|BetaGwentLeaderPreview)\b(?=\s*(?:[,)=;{]|in\b))/g,'').replace(/for each\((.*?) in (.*?)\)/g,'for($1 of $2)');
 }
 let checks=0;function check(v,n){if(!v)throw Error(n);checks++;console.log('PASS',n);}
 const c=vm.createContext({Math,int:x=>x|0,Number,String,getTimer:()=>c.now,MouseEvent:{CLICK:1},BetaGwentTextLanguage:{assign(f,v){if(f)f.text=v;},track(){},forget(){}}});
-vm.runInContext(`var now=100,playing=true,fastReplay=false,FAST_REPLAY_SCALE=.25,
+vm.runInContext(`var now=100,playing=true,fastReplay=false,mouseReplayBoosted=false,FAST_REPLAY_SCALE=.25,
  animationRate=1,animationOffset=0,animationStarted=0,animationBaseDuration=700,frameAnimationTempo=1,
  frameDuration=700,frameDeadline=700,audioCueAt=400,replayHint={text:'УСКОРИТЬ'},reducedMotion=false,
  activeCue={kind:1},skipCount=0,renderCount=0;
@@ -33,7 +33,7 @@ for(const barrier of [3,8,9,24,25,26,5,6]){
 check(c.collapseSweeps([frame(2,10,1),frame(2,20,2),frame(2,10,3)]).length===1,'sweep still groups separate targets with power reactions');
 check(c.collapseSweeps([frame(2,10,1),frame(2,10,1)]).length===2,'repeated hits on one target remain separate');
 vm.runInContext(`var introStart=100,introSkipAt=0,introSerial=7,introAudioPending=true,
- INTRO_MS=4600,INTRO_TIMEOUT_MS=30000,introParts=[],sent=[],
+ INTRO_MS=4600,introVisualMs=4600,INTRO_TIMEOUT_MS=30000,introParts=[],introLeaderMovies=[],sent=[],
  introLayer={numChildren:0,alpha:1,mouseEnabled:true,removeEventListener(){},graphics:{clear(){}}};
  function send(name,args){sent.push({name,args});}
  `+['setIntroAudioState','skipIntro','finishIntro','animateIntroBody'].map(extract).join('\n'),c);

@@ -26,7 +26,7 @@ function drawBetaSidePreview(c,d,parent){if(!parent)throw Error('collection prev
 function editorBetaButton(parent,label,x,y,w,h,enabled,callback){var b=new Sprite();Object.assign(b,{label,x,y,w,h,enabled,callback});parent.addChild(b);if(enabled)b.addEventListener('click',function(e){e.stopPropagation();callback();});return b;}
 function send(name,args){crafted.push({name,args});}function redrawCatalogDetail(){redrawBetaCatalogDetail();}
 function showBattleCard(){throw Error('collection must not use transient battle preview');}
-function clearBattlePreview(){cleared++;}function updateFocusedInspection(){}function showEditorCard(){}
+function clearBattlePreview(){cleared++;}function updateFocusedInspection(){}function showEditorCard(){}function paintCollectionNew(){}function markCollectionSeen(){}
 `+extract('uiTween')+'\n'+extract('redrawBetaCatalogDetail')+'\n'+extract('attachInspect')+'\n'+extract('cardCraftButton'),context);
 let checks=0;function check(v,n){if(!v)throw Error(n);checks++;}
 const c={templateId:201743,title:'Queen',description:'Consume allies',tier:1},tile=new Sprite();

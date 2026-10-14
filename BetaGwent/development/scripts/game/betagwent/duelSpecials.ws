@@ -57,11 +57,15 @@ class CBetaGwentDuelSpecials extends IScriptable
     private function Amount(source : CBetaGwentDuelCard) : int
     {
         var d : SBetaGwentDuelDefinition; var s : SBetaGwentCardSnapshot;
-        var cards : array<CBetaGwentDuelCard>; var i, amount : int;
-        d = source.Definition(); amount = d.amount;
+        d = source.Definition(); s = source.Snapshot(); return DefinitionAmount(d,s.positionPlayerId);
+    }
+    private function DefinitionAmount(d : SBetaGwentDuelDefinition, side : int) : int
+    {
+        var s : SBetaGwentCardSnapshot;var cards : array<CBetaGwentDuelCard>;var i,amount : int;
+        amount = d.amount;
         if (d.header.templateId == 200224)
         {
-            s = source.Snapshot(); game.GetZoneCards(s.positionPlayerId, 32, cards);
+            game.GetZoneCards(side, 32, cards);
             for (i = 0; i < cards.Size(); i += 1)
             { s = cards[i].Snapshot(); if (s.runtimeTemplate.templateId == 200224) amount += 1; }
         }
@@ -371,9 +375,14 @@ class CBetaGwentDuelSpecials extends IScriptable
     }
     public function Value(source : CBetaGwentDuelCard, optional immediate : bool) : int
     {
-        var d, targetDefinition : SBetaGwentDuelDefinition; var a, s : SBetaGwentCardSnapshot;
-        var ids, selected : array<int>; var side, row, i, j, value, rowValue, maximum, amount : int;
-        d = source.Definition(); a = source.Snapshot(); side = a.positionPlayerId; amount = Amount(source);
+        var s : SBetaGwentCardSnapshot;s=source.Snapshot();
+        return DefinitionValue(source.Definition(),s.positionPlayerId,immediate);
+    }
+    public function DefinitionValue(d : SBetaGwentDuelDefinition, side : int, optional immediate : bool) : int
+    {
+        var targetDefinition : SBetaGwentDuelDefinition;var s : SBetaGwentCardSnapshot;
+        var ids, selected : array<int>;var row, i, j, value, rowValue, maximum, amount : int;
+        amount = DefinitionAmount(d,side);
         if(immediate && (d.specialMode==14 || d.specialMode==15 || (d.specialMode==37 && d.specialToken==256)))return 0;
         if (d.specialRequest == 2) return BestRow(d, side, i, j);
         if (d.specialRequest == 1)

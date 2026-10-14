@@ -1,0 +1,87 @@
+{
+  "stage": 142,
+  "overlays": [
+    {
+      "path": "gameplay/items/def_loot_shops.xml",
+      "innStocks": [
+        "_store__Crossroads_Innkeeper",
+        "_store__Golden_Sturgeon_Inn",
+        "_store__Kingfisher_Inn_Olivier",
+        "_store__Innkeeper_Stjepan",
+        "_store__Gooses_Cunt_Barkeep",
+        "_store__Seven_Cats_Inn",
+        "_store__Innkeeperess_Prologue",
+        "_store__Innkeeper_Epilogue",
+        "_store__Kaer_Trolde_Inn",
+        "_store__Arinbjorn_Innkeeper",
+        "_store__Brokvar_Innkeeper",
+        "_store__Dimun_Tavern_Barkeep",
+        "_store__Tuiseach_Inn_owner"
+      ],
+      "added": [
+        "_store__Innkeeper_Epilogue"
+      ],
+      "sourceSha256": "d2abd1f2f786bbfff76b27997f519046011fd0affec030c7f37c6f63c49517b0",
+      "overlaySha256": "09e5922b64651ade965b860f824082d31311296d70aba90d9cf5cc13e11e6eb1"
+    },
+    {
+      "path": "gameplay/items_plus/def_loot_shops.xml",
+      "innStocks": [
+        "_store__Crossroads_Innkeeper",
+        "_store__Golden_Sturgeon_Inn",
+        "_store__Kingfisher_Inn_Olivier",
+        "_store__Innkeeper_Stjepan",
+        "_store__Gooses_Cunt_Barkeep",
+        "_store__Seven_Cats_Inn",
+        "_store__Innkeeperess_Prologue",
+        "_store__Innkeeper_Epilogue",
+        "_store__Kaer_Trolde_Inn",
+        "_store__Arinbjorn_Innkeeper",
+        "_store__Brokvar_Innkeeper",
+        "_store__Dimun_Tavern_Barkeep",
+        "_store__Tuiseach_Inn_owner"
+      ],
+      "added": [
+        "_store__Crossroads_Innkeeper",
+        "_store__Golden_Sturgeon_Inn",
+        "_store__Kingfisher_Inn_Olivier",
+        "_store__Innkeeper_Stjepan",
+        "_store__Gooses_Cunt_Barkeep",
+        "_store__Seven_Cats_Inn",
+        "_store__Innkeeperess_Prologue",
+        "_store__Innkeeper_Epilogue",
+        "_store__Kaer_Trolde_Inn",
+        "_store__Arinbjorn_Innkeeper",
+        "_store__Brokvar_Innkeeper",
+        "_store__Dimun_Tavern_Barkeep",
+        "_store__Tuiseach_Inn_owner"
+      ],
+      "sourceSha256": "d2abd1f2f786bbfff76b27997f519046011fd0affec030c7f37c6f63c49517b0",
+      "overlaySha256": "c68cc99aa10beb8f354ec24e58d23dbd5f0af53c913d9c91d7da014a962f098f"
+    },
+    {
+      "path": "dlc/bob/data/gameplay/items/def_loot_shops.xml",
+      "innStocks": [
+        "_EP2_store__Innkeeper"
+      ],
+      "added": [
+        "_EP2_store__Innkeeper"
+      ],
+      "sourceSha256": "c46acc95ade28e66a1cf1edafd5a4fa0bf88cb1526c8be8594bb80b72438e914",
+      "overlaySha256": "3281e77e3d99fe23d7362a47fbe626d6c00334601f34f3a858a342acb987173b"
+    },
+    {
+      "path": "dlc/bob/data/gameplay/items_plus/def_loot_shops.xml",
+      "innStocks": [
+        "_EP2_store__Innkeeper"
+      ],
+      "added": [
+        "_EP2_store__Innkeeper"
+      ],
+      "sourceSha256": "771f744404c582e38b45d17376194d883b99eb3ccfc0668f174c8362e4c63f7a",
+      "overlaySha256": "194e1f66f9a956b78b156e7f8b7ef2706a1785d2bd569abfab2a0b0aa8132958"
+    }
+  ],
+  "runtimeFallback": "W3MerchantComponent.GetMapPinType() == Innkeeper, one migration per NPC",
+  "nativeGameTested": false
+}

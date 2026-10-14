@@ -1,0 +1,51 @@
+{
+  "stage": 171,
+  "version": "0.7.1",
+  "language": "ru",
+  "passed": true,
+  "regressionSuites": 70,
+  "nativeScripts": 70,
+  "nativeMenus": 4,
+  "sourceFingerprint": "4614996257120a4cb0b40a8fda46c000da5be8681504db4c2eb60c54477169be",
+  "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.7.1-RU.zip",
+  "archiveSha256": "c48337338f186ec257ac88dfb59bb35c2000de85378c7a605d087f0bf4559d38",
+  "bytes": 314570516,
+  "bundleEntries": 351,
+  "guiLimitMiB": 65,
+  "guiMenus": {
+    "betagwent_board.redswf": {
+      "bytes": 65106495,
+      "MiB": 62.090392112731934
+    },
+    "betagwent_npc00.redswf": {
+      "bytes": 65106608,
+      "MiB": 62.09049987792969
+    },
+    "betagwent_decks.redswf": {
+      "bytes": 65106580,
+      "MiB": 62.09047317504883
+    },
+    "betagwent_kegop.redswf": {
+      "bytes": 60089988,
+      "MiB": 57.306278228759766
+    }
+  },
+  "oneShotLeaders": 12,
+  "loopFallbackLeaders": 9,
+  "previousArchivesUnmodified": true,
+  "nativeGameTested": false,
+  "shopKegIcon": {
+    "icon": "gameplay/gui_new/icons/inventory/betagwent/ico_betagwent_keg.png",
+    "sha256": "7ddedc16e430bd143e0afbbf034c7b407721685ce07ec0011196c05c1180d52b",
+    "size": [
+      64,
+      64
+    ],
+    "originalBetaSprite": true,
+    "sourceAndBindingVerified": true,
+    "nativeRuntimeVerified": false,
+    "manifestSha256": "66bee28aaa720175aeca664c966e536cb988a9e2e6f537273c8594493ebcb52e",
+    "assetSha256": "7ddedc16e430bd143e0afbbf034c7b407721685ce07ec0011196c05c1180d52b",
+    "scriptSha256": "49e21cf772f8bc69c876582fd38d8ce5695c363013c7958757cde4a79df4ebc0"
+  }
+}

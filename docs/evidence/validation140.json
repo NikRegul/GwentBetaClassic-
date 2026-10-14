@@ -1,0 +1,15 @@
+{
+  "stage": 140,
+  "version": "0.6.4",
+  "passed": true,
+  "packages": [
+    {
+      "language": "ru",
+      "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.6.4-RU.zip",
+      "sha256": "fb9e20b1620969ea781823c3900958c67684c68390e7a3c9501280429c89861f",
+      "bytes": 293902737
+    }
+  ],
+  "previous063ArchivesUnmodified": true,
+  "nativeGameTested": false
+}

@@ -1,0 +1,19 @@
+{
+  "stage": 177,
+  "version": "0.7.2",
+  "nativeGameTested": false,
+  "canonicalSourceChanges": [
+    "BetaGwent\\ui\\src\\BetaGwentElement164.as"
+  ],
+  "effectEngineOnlyNumericLiteralFix": true,
+  "canonicalNativeScriptsUnmodified": true,
+  "previousArchives": {
+    "GwentBetaClassic-0.7.1-RU.zip": "c48337338f186ec257ac88dfb59bb35c2000de85378c7a605d087f0bf4559d38",
+    "GwentBetaClassic-0.7.0-vfx1-RU.zip": "ca8d04446fe723243a62b77824861731a0b163a2814f7e1260bf042b773ab1c7",
+    "GwentBetaClassic-0.6.10-RU.zip": "b887df0f8216b91038e87046792b3b7dd9729087968aec4459ce95147dc19aa5"
+  },
+  "newArchiveSha256": "a932735981978f33d3c05f72087f96f69d2c6f9069e760236ad87061612e395e",
+  "newArchiveBytes": 314577640,
+  "memoryRules": "docs/VFX_RENDERING_RULES_RU.md",
+  "agentEntry": "AGENTS.md"
+}

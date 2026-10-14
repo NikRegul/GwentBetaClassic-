@@ -1,0 +1,21 @@
+{
+  "focusedChecks": 42,
+  "regressionSuites": 32,
+  "regressionsPassed": true,
+  "fingerprint": "f245fb08dbb71302d3a9f1dc8c41ca844331927b07113c0aa5b38a388becce8b",
+  "canonicalSourceSHA256": {
+    "BetaGwent\\development\\scripts\\game\\betagwent\\duelSession.ws": "8cfc097373fa1b86ca91d8efed8b74b22433bbf2552bb557952621338754f737",
+    "BetaGwent\\development\\scripts\\game\\betagwent\\duelSpecials.ws": "792aa279e8f9f7986e53d239d586f9ec95e78332739d9de14ac82bb03d4ef3ef"
+  },
+  "canonicalMatchesTestedSnapshot": true,
+  "sourceBOMAndCRLFPreserved": true,
+  "nativeCompilePassed": true,
+  "nativePatchScripts": 70,
+  "nativeSourcesUnchanged": true,
+  "nativeBlob": {
+    "path": "D:\\w3mod\\tmp\\ai-miruna-aglais180\\native-compile\\compiled\\blob.rsblob",
+    "bytes": 2299874,
+    "sha256": "07CCC9AB513D25A775B016D98F25214EB31782A44978DDC9D22FBFDC1DBBAC67"
+  },
+  "nativeGameTested": false
+}

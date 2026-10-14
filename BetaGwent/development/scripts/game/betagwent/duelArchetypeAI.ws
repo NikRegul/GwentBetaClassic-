@@ -219,10 +219,28 @@ class CBetaGwentArchetypeAI extends IScriptable
         if(id==200136 && Count(board,142205,true)==0 && Count(hand,142205,false)>0)value-=4;
         return value;
     }
+    // Keep one resurrection payoff for a concrete discard setup, even while
+    // the opening grave is empty. Only our known hand/deck can supply targets.
+    private function PlannedResurrection(id : int) : bool
+    {
+        var cards : array<CBetaGwentDuelCard>;var i : int;var s : SBetaGwentCardSnapshot;var handDiscard,deckDiscard : bool;
+        if(!BetaGwentAIResurrector(id) || Count(hand,id,false)>1)return false;
+        handDiscard=Count(hand,152103,false)+Count(hand,152213,false)>0;
+        deckDiscard=game.LeaderAvailable(2) && game.LeaderTemplateId(2)==200159;
+        if(!handDiscard && !deckDiscard)return false;
+        if(deckDiscard)game.GetZoneCards(2,16,cards);
+        if(handDiscard)for(i=0;i<hand.Size();i+=1)cards.PushBack(hand[i]);
+        for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();
+            // These return immediately on discard, leaving no resurrection target.
+            if(s.runtimeTemplate.templateId==id || s.runtimeTemplate.templateId==152209 || s.runtimeTemplate.templateId==152316)continue;
+            if(EligiblePile(id,s) && s.power.currentPower>0)return true;}
+        return false;
+    }
     public function MulliganKeepBonus(card : CBetaGwentDuelCard) : int
     {
         var limit : int;limit=BetaGwentAIResearchKeep(profile,card.TemplateId());
         if(limit>0 && Count(hand,card.TemplateId(),false)<=limit)return 8;
+        if(PlannedResurrection(card.TemplateId()))return 6;
         return 0;
     }
     public function Reserve(d : SBetaGwentDuelDefinition) : int
@@ -264,7 +282,7 @@ class CBetaGwentArchetypeAI extends IScriptable
         if((id==132407 || id==132301 || id==142313) && ZoneCopies(16,id)>0)return 24*BetaGwentAITune(32)/100;
         if(id==152307 && Count(hand,id,false)>1)return 20*BetaGwentAITune(32)/100;
         if((id==152209 || id==152316) && game.LeaderAvailable(2) && game.LeaderTemplateId(2)==200159)return 23*BetaGwentAITune(32)/100;
-        if(situation.roundNumber==1 && BetaGwentAIResurrector(id) && PileGain(d)==0)return 16*BetaGwentAITune(32)/100;
+        if(situation.roundNumber==1 && BetaGwentAIResurrector(id) && PileGain(d)==0 && !PlannedResurrection(id))return 16*BetaGwentAITune(32)/100;
         // The graveyard is always empty at the first mulligan; Draig waits for it to fill.
         if(id==152205 && game.CountLocation(2,32)==0 && situation.roundNumber>=3)return 15*BetaGwentAITune(32)/100;
         return 0;

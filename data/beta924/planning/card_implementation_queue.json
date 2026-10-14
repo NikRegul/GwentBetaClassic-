@@ -1,0 +1,7245 @@
+{
+  "catalogSha256": "022539802636cb45e92123a630c3788a0674c39b538fa1f69a64761a6b3ddbd3",
+  "source": "Original client0.9.24.3.432 catalogue; faction enum from managed assembly",
+  "scope": "Availability1/Kind1/Tier1,2,4,8 candidates, including Doomed. Additional leader/game-mode restrictions must be checked before enabling each candidate. Token/internal templates and arbitrary graph parity are separate work.",
+  "candidateCount": 479,
+  "collectionCandidateCount": 458,
+  "leaderCandidateCount": 21,
+  "byFaction": [
+    {
+      "faction": "Neutral",
+      "factionMask": 1,
+      "collectionCandidates": 113,
+      "implementedCollection": 113,
+      "remainingCollection": 0,
+      "leaderCandidates": 0,
+      "implementedLeaders": 0
+    },
+    {
+      "faction": "Monsters",
+      "factionMask": 2,
+      "collectionCandidates": 74,
+      "implementedCollection": 74,
+      "remainingCollection": 0,
+      "leaderCandidates": 5,
+      "implementedLeaders": 5
+    },
+    {
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "collectionCandidates": 71,
+      "implementedCollection": 71,
+      "remainingCollection": 0,
+      "leaderCandidates": 4,
+      "implementedLeaders": 4
+    },
+    {
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "collectionCandidates": 67,
+      "implementedCollection": 67,
+      "remainingCollection": 0,
+      "leaderCandidates": 4,
+      "implementedLeaders": 4
+    },
+    {
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "collectionCandidates": 66,
+      "implementedCollection": 66,
+      "remainingCollection": 0,
+      "leaderCandidates": 4,
+      "implementedLeaders": 4
+    },
+    {
+      "faction": "Skellige",
+      "factionMask": 32,
+      "collectionCandidates": 67,
+      "implementedCollection": 67,
+      "remainingCollection": 0,
+      "leaderCandidates": 4,
+      "implementedLeaders": 4
+    }
+  ],
+  "cards": [
+    {
+      "templateId": 112101,
+      "title": "Цири",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/13"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 112102,
+      "title": "Геральт: Игни",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/14"
+      ],
+      "abilityGraphNodeCount": 19
+    },
+    {
+      "templateId": 112103,
+      "title": "Геральт из Ривии",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 15,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [],
+      "abilityGraphNodeCount": 0
+    },
+    {
+      "templateId": 112104,
+      "title": "Регис",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/15"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 112105,
+      "title": "Регис: высший вампир",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/16"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 112106,
+      "title": "Трисс Меригольд",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/17"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 112107,
+      "title": "Виллентретенмерт",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/18"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 112108,
+      "title": "Йеннифэр",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/19"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 112109,
+      "title": "Золтан: прохвост",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/20"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 112110,
+      "title": "Цири: натиск",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/21"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 112111,
+      "title": "Геральт: Аард",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/22"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 112112,
+      "title": "Аваллак'х: Знающий",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/23"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 112113,
+      "title": "Йеннифэр: чародейка",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/24"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 113101,
+      "title": "Рагнарек",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/44"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 113316,
+      "title": "Возрождение",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/68"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 122107,
+      "title": "Трисс: колдунья",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/80"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 132105,
+      "title": "Аваллак'х",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/125"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 132215,
+      "title": "Гюнтер о'Дим",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/142"
+      ],
+      "abilityGraphNodeCount": 31
+    },
+    {
+      "templateId": 200018,
+      "title": "Коратская жара",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/299"
+      ],
+      "abilityGraphNodeCount": 4
+    },
+    {
+      "templateId": 200056,
+      "title": "Агуара: истинный лик",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 2,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/327"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 200058,
+      "title": "Проклятие Умы",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/328"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 200062,
+      "title": "Агуара",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/329"
+      ],
+      "abilityGraphNodeCount": 59
+    },
+    {
+      "templateId": 200078,
+      "title": "Испытание Травами",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/333"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 200079,
+      "title": "Сон Ханмарвина",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/334"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 200154,
+      "title": "Королевский указ",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/362"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 200225,
+      "title": "Намордник",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/396"
+      ],
+      "abilityGraphNodeCount": 25
+    },
+    {
+      "templateId": 200226,
+      "title": "Волкобой",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/397"
+      ],
+      "abilityGraphNodeCount": 31
+    },
+    {
+      "templateId": 200235,
+      "title": "Ламберт: мечник",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/402"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 200236,
+      "title": "Эскель: следопыт",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/403"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 200237,
+      "title": "Весемир: наставник",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/404"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 200532,
+      "title": "Эль предков",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/420"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 201523,
+      "title": "Геральт: Ирден",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/425"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 201579,
+      "title": "Феникс",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/433"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 201613,
+      "title": "Саэсентессис: пламя",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/454"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 201626,
+      "title": "Цири: нова",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/466"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 201627,
+      "title": "Выходной день Лавка",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/467"
+      ],
+      "abilityGraphNodeCount": 32
+    },
+    {
+      "templateId": 201632,
+      "title": "Сигилль",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/471"
+      ],
+      "abilityGraphNodeCount": 43
+    },
+    {
+      "templateId": 201772,
+      "title": "Геральт: профессионал",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/557"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 201773,
+      "title": "Трисс: телекинез",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/558"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 201774,
+      "title": "Лютик: тщеславие",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/559"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 201776,
+      "title": "Лютик: поэт",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/560"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 201817,
+      "title": "Иуарраквакс",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 8,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/566"
+      ],
+      "abilityGraphNodeCount": 26
+    },
+    {
+      "templateId": 112201,
+      "title": "Дуду",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/25"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 112202,
+      "title": "Эскель",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/26"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 112203,
+      "title": "Весемир",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/27"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 112204,
+      "title": "Ламберт",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/28"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 112205,
+      "title": "Миргтабракке",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/29"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 112206,
+      "title": "Оквист",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/30"
+      ],
+      "abilityGraphNodeCount": 23
+    },
+    {
+      "templateId": 112207,
+      "title": "Ольгерд фон Эверек",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/31"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 112208,
+      "title": "Оператор",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/32"
+      ],
+      "abilityGraphNodeCount": 25
+    },
+    {
+      "templateId": 112209,
+      "title": "Корова-призерка",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/33"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 112210,
+      "title": "Плотва",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/34"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 112211,
+      "title": "Ивасик",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/35"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 112212,
+      "title": "Сара",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/36"
+      ],
+      "abilityGraphNodeCount": 44
+    },
+    {
+      "templateId": 112213,
+      "title": "Король Нищих",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/37"
+      ],
+      "abilityGraphNodeCount": 29
+    },
+    {
+      "templateId": 112214,
+      "title": "Киприан Вилли",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/38"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 112215,
+      "title": "Ирис фон Эверек",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/39"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 113102,
+      "title": "Последнее желание",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/45"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 113201,
+      "title": "Чучело",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/46"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 113202,
+      "title": "Градобитие Меригольд",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/47"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 113203,
+      "title": "Шторм Скеллиге",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/48"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 113205,
+      "title": "Двимеритовая бомба",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/50"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 113206,
+      "title": "Белый Хлад",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/51"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 113207,
+      "title": "Командирский рог",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/52"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 113208,
+      "title": "Ведермакар",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/53"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 113209,
+      "title": "Альзур: Двойной крест",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/54"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 113306,
+      "title": "Яд мантикоры",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/59"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 113309,
+      "title": "Казнь",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/62"
+      ],
+      "abilityGraphNodeCount": 4
+    },
+    {
+      "templateId": 113315,
+      "title": "Зеркало Беккера",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/67"
+      ],
+      "abilityGraphNodeCount": 26
+    },
+    {
+      "templateId": 122216,
+      "title": "Тесак",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/96"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 200019,
+      "title": "Приказ о выступлении",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/300"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 200020,
+      "title": "Некромантия",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/301"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 200022,
+      "title": "Круг призыва",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/303"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 200053,
+      "title": "Компрессия",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/325"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 200083,
+      "title": "Компаньоны Ирис",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/337"
+      ],
+      "abilityGraphNodeCount": 20
+    },
+    {
+      "templateId": 200087,
+      "title": "Доррегарай из Воле",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/338"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 200089,
+      "title": "Нивеллен",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/340"
+      ],
+      "abilityGraphNodeCount": 19
+    },
+    {
+      "templateId": 200091,
+      "title": "Стрегобор",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/341"
+      ],
+      "abilityGraphNodeCount": 27
+    },
+    {
+      "templateId": 200223,
+      "title": "Мандрагора",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/394"
+      ],
+      "abilityGraphNodeCount": 22
+    },
+    {
+      "templateId": 200523,
+      "title": "Микель из Лисьих Ям",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/416"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 200530,
+      "title": "Испорченный эль",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/419"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 201634,
+      "title": "Обрушение Беккера",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/473"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 201635,
+      "title": "Славная охота",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/474"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 201637,
+      "title": "Мечта дракона",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/476"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 201639,
+      "title": "Гарнизон",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/478"
+      ],
+      "abilityGraphNodeCount": 19
+    },
+    {
+      "templateId": 201697,
+      "title": "Черная кровь",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/516"
+      ],
+      "abilityGraphNodeCount": 31
+    },
+    {
+      "templateId": 113204,
+      "title": "Землетрясение",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/49"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 113301,
+      "title": "Альзур: Гром",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/55"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 113302,
+      "title": "Трескучий мороз",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/56"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 113303,
+      "title": "Рассвет",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/57"
+      ],
+      "abilityGraphNodeCount": 29
+    },
+    {
+      "templateId": 113305,
+      "title": "Густой туман",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/58"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 113307,
+      "title": "Выброс адреналина",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/60"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 113308,
+      "title": "Эпидемия",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/61"
+      ],
+      "abilityGraphNodeCount": 4
+    },
+    {
+      "templateId": 113310,
+      "title": "Ласточка",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/63"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 113311,
+      "title": "Гром",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/64"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 113312,
+      "title": "Проливной дождь",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/65"
+      ],
+      "abilityGraphNodeCount": 4
+    },
+    {
+      "templateId": 113319,
+      "title": "Двимеритовые кандалы",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/69"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 113320,
+      "title": "Мардрём",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/70"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 133301,
+      "title": "Щит из чешуи виверны",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/168"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 153301,
+      "title": "На куски",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/253"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 200008,
+      "title": "Зелье Петри",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/297"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 200009,
+      "title": "Сорокопутка",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/298"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 200021,
+      "title": "Леденящий кровь рык",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/302"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 200023,
+      "title": "Яд главоглаза",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/304"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 200224,
+      "title": "Вороний глаз",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/395"
+      ],
+      "abilityGraphNodeCount": 21
+    },
+    {
+      "templateId": 200519,
+      "title": "Махакамский эль",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/414"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 201631,
+      "title": "Допплер",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/470"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 201647,
+      "title": "Каменный вал",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/484"
+      ],
+      "abilityGraphNodeCount": 26
+    },
+    {
+      "templateId": 201656,
+      "title": "Мастерское копье",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/488"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 201704,
+      "title": "Разведка",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/523"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 201744,
+      "title": "Споры",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/543"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 201749,
+      "title": "Золотая пена",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/548"
+      ],
+      "abilityGraphNodeCount": 4
+    },
+    {
+      "templateId": 201753,
+      "title": "Ополчение крестьян",
+      "faction": "Neutral",
+      "factionMask": 1,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/550"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 131102,
+      "title": "Ге'эльс",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 8,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/120"
+      ],
+      "abilityGraphNodeCount": 22
+    },
+    {
+      "templateId": 132101,
+      "title": "Драуг",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 8,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/121"
+      ],
+      "abilityGraphNodeCount": 37
+    },
+    {
+      "templateId": 132102,
+      "title": "Имлерих",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 8,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/122"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 132103,
+      "title": "Леший",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 8,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/123"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 132104,
+      "title": "Карантир",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 8,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/124"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 132106,
+      "title": "Ключник",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 8,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/126"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 132107,
+      "title": "Кейран",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 8,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/127"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 132108,
+      "title": "Мируна",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 8,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/128"
+      ],
+      "abilityGraphNodeCount": 24
+    },
+    {
+      "templateId": 132218,
+      "title": "Старый Грот: спящий",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 8,
+      "power": 12,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/145"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 132408,
+      "title": "Старый Грот",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 8,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/166"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 200220,
+      "title": "Шептуха: дань",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/391"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 200221,
+      "title": "Кухарка: ритуал",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 8,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/392"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 200222,
+      "title": "Пряха: заговор",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 8,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/393"
+      ],
+      "abilityGraphNodeCount": 26
+    },
+    {
+      "templateId": 201781,
+      "title": "Имлерих: шабаш",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 8,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/565"
+      ],
+      "abilityGraphNodeCount": 27
+    },
+    {
+      "templateId": 132202,
+      "title": "Жальница",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/130"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 132203,
+      "title": "Абайя",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/131"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 132204,
+      "title": "Пугач",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 13,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/132"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 132205,
+      "title": "Морвудд",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/133"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 132206,
+      "title": "Шептуха",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/134"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 132207,
+      "title": "Кухарка",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/135"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 132208,
+      "title": "Пряха",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/136"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 132209,
+      "title": "Имперская мантикора",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 13,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [],
+      "abilityGraphNodeCount": 0
+    },
+    {
+      "templateId": 132210,
+      "title": "Ифрит",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/137"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 132214,
+      "title": "Нитраль",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/141"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 132216,
+      "title": "Принц-жаба",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/143"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 132220,
+      "title": "Носферат",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/146"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 132406,
+      "title": "Бескостный",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/164"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 133302,
+      "title": "Гнездо чудовищ",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/169"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 200052,
+      "title": "Голиаф",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/324"
+      ],
+      "abilityGraphNodeCount": 25
+    },
+    {
+      "templateId": 200073,
+      "title": "Адда: стрыга",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/332"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 200218,
+      "title": "Йотун",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/390"
+      ],
+      "abilityGraphNodeCount": 21
+    },
+    {
+      "templateId": 200534,
+      "title": "Троллиха из Вергена",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/421"
+      ],
+      "abilityGraphNodeCount": 26
+    },
+    {
+      "templateId": 201584,
+      "title": "Руна Девана",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/438"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 201657,
+      "title": "Паразит",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/489"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 201660,
+      "title": "Рюхин",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/491"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 201698,
+      "title": "Оззрел",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 4,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/517"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 112405,
+      "title": "Бес",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [],
+      "abilityGraphNodeCount": 0
+    },
+    {
+      "templateId": 132201,
+      "title": "Огромный главоглаз",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/129"
+      ],
+      "abilityGraphNodeCount": 22
+    },
+    {
+      "templateId": 132211,
+      "title": "Накер-воин",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/138"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 132212,
+      "title": "Ледяной Великан",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/139"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 132213,
+      "title": "Д'ао",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/140"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 132217,
+      "title": "Гарпия келено",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/144"
+      ],
+      "abilityGraphNodeCount": 4
+    },
+    {
+      "templateId": 132301,
+      "title": "Туманник",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/147"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 132302,
+      "title": "Древний туманник",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/148"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 132303,
+      "title": "Виверна",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/149"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 132304,
+      "title": "Трутень главоглаза",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/150"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 132305,
+      "title": "Накер",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/151"
+      ],
+      "abilityGraphNodeCount": 32
+    },
+    {
+      "templateId": 132306,
+      "title": "Гуль",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/152"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 132307,
+      "title": "Архигрифон",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/153"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 132308,
+      "title": "Вран-воин",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/154"
+      ],
+      "abilityGraphNodeCount": 23
+    },
+    {
+      "templateId": 132309,
+      "title": "Воин Дикой Охоты",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/155"
+      ],
+      "abilityGraphNodeCount": 19
+    },
+    {
+      "templateId": 132310,
+      "title": "Всадник Дикой Охоты",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/156"
+      ],
+      "abilityGraphNodeCount": 0
+    },
+    {
+      "templateId": 132312,
+      "title": "Грифон",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/157"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 132313,
+      "title": "Экимма",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/158"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 132314,
+      "title": "Утопец",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/159"
+      ],
+      "abilityGraphNodeCount": 29
+    },
+    {
+      "templateId": 132315,
+      "title": "Гарпия",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/160"
+      ],
+      "abilityGraphNodeCount": 20
+    },
+    {
+      "templateId": 132402,
+      "title": "Гончая Дикой Охоты",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/162"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 132409,
+      "title": "Эхидна",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/167"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 200026,
+      "title": "Чародей Дикой Охоты",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/305"
+      ],
+      "abilityGraphNodeCount": 28
+    },
+    {
+      "templateId": 200037,
+      "title": "Циклоп",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/312"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 200038,
+      "title": "Архиспора",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/313"
+      ],
+      "abilityGraphNodeCount": 24
+    },
+    {
+      "templateId": 200067,
+      "title": "Лунный свет",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/330"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 200112,
+      "title": "Сирена",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/347"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 200114,
+      "title": "Альфа-волколак",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/348"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 200233,
+      "title": "Куролиск",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/400"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 200295,
+      "title": "Гнилец",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/407"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 200301,
+      "title": "Драккар Дикой Охоты",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/411"
+      ],
+      "abilityGraphNodeCount": 39
+    },
+    {
+      "templateId": 200502,
+      "title": "Ледяной тролль",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/412"
+      ],
+      "abilityGraphNodeCount": 29
+    },
+    {
+      "templateId": 200539,
+      "title": "Ослизг",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 2,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/423"
+      ],
+      "abilityGraphNodeCount": 28
+    },
+    {
+      "templateId": 201599,
+      "title": "Котолак",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/445"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 201600,
+      "title": "Волколак",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/446"
+      ],
+      "abilityGraphNodeCount": 25
+    },
+    {
+      "templateId": 201606,
+      "title": "Вилохвост",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/449"
+      ],
+      "abilityGraphNodeCount": 19
+    },
+    {
+      "templateId": 201700,
+      "title": "Тролль под мостом",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/519"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 201701,
+      "title": "Барбегаз",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/520"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 131101,
+      "title": "Эредин Бреакк Глас",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 1,
+      "power": 5,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/119"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 200055,
+      "title": "Скрытый",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 1,
+      "power": 5,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/326"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 200158,
+      "title": "Дагон",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 1,
+      "power": 8,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/363"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 201587,
+      "title": "Шепчущий холм",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 1,
+      "power": 6,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/440"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 201743,
+      "title": "Королева главоглазов",
+      "faction": "Monsters",
+      "factionMask": 2,
+      "tier": 1,
+      "power": 7,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/542"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 162101,
+      "title": "Лето из Гулеты",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 8,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/254"
+      ],
+      "abilityGraphNodeCount": 22
+    },
+    {
+      "templateId": 162102,
+      "title": "Мэнно Коегоорн",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 8,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/255"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 162103,
+      "title": "Ваттье де Ридо",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 8,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/256"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 162104,
+      "title": "Кагыр аэп Кеаллах",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 8,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/257"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 162105,
+      "title": "Вильгефорц",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 8,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/258"
+      ],
+      "abilityGraphNodeCount": 41
+    },
+    {
+      "templateId": 162106,
+      "title": "Стефан Скеллен",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 8,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/259"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 162107,
+      "title": "Тибор Эггебрахт",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 8,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/260"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 162108,
+      "title": "Ксартизий",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 8,
+      "power": 13,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/261"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 163101,
+      "title": "Убийство",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 8,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/295"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 200031,
+      "title": "Лео Бонарт",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 8,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/308"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 200032,
+      "title": "Раинфарн из Аттре",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 8,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/309"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 200071,
+      "title": "Шилярд Фиц-Эстерлен",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 8,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/331"
+      ],
+      "abilityGraphNodeCount": 29
+    },
+    {
+      "templateId": 201601,
+      "title": "Йеннифэр: колдунья",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 8,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/447"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 201603,
+      "title": "Лето: убийца королей",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 8,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/448"
+      ],
+      "abilityGraphNodeCount": 27
+    },
+    {
+      "templateId": 201780,
+      "title": "Йеннифэр: некромант",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 8,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/564"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 162201,
+      "title": "Альбрых",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/262"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 162202,
+      "title": "Ассирэ вар Анагыд",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/263"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 162203,
+      "title": "Цинтия",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/264"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 162204,
+      "title": "Петер Саар Гвинлеве",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/265"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 162205,
+      "title": "Фрингилья Виго",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/266"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 162206,
+      "title": "Свирс",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/267"
+      ],
+      "abilityGraphNodeCount": 22
+    },
+    {
+      "templateId": 162207,
+      "title": "Вангемар",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/268"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 162208,
+      "title": "Эган",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/269"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 162209,
+      "title": "Зеррит",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/270"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 162210,
+      "title": "Кантарелла",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 13,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/271"
+      ],
+      "abilityGraphNodeCount": 22
+    },
+    {
+      "templateId": 162211,
+      "title": "Иоахим де Ветт",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/272"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 162212,
+      "title": "Лже-Цири",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/273"
+      ],
+      "abilityGraphNodeCount": 27
+    },
+    {
+      "templateId": 162213,
+      "title": "Кеаллах аэп Груффыд",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 2,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/274"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 162401,
+      "title": "Страж",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/293"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 163201,
+      "title": "Измена",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/296"
+      ],
+      "abilityGraphNodeCount": 43
+    },
+    {
+      "templateId": 200041,
+      "title": "Толстая Хельга",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/316"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 200050,
+      "title": "Вреемде",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/323"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 200227,
+      "title": "Генрих вар Аттре",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/398"
+      ],
+      "abilityGraphNodeCount": 42
+    },
+    {
+      "templateId": 201583,
+      "title": "Руна Даждьбог",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/437"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 201662,
+      "title": "Трупный яд",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/493"
+      ],
+      "abilityGraphNodeCount": 26
+    },
+    {
+      "templateId": 201664,
+      "title": "Врыгефф",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/494"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 201699,
+      "title": "Ворота Нильфгаарда",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/518"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 122403,
+      "title": "Неофит из Виковаро",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 2,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/116"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 132407,
+      "title": "Имперский голем",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/165"
+      ],
+      "abilityGraphNodeCount": 20
+    },
+    {
+      "templateId": 162301,
+      "title": "Даэрлянский солдат",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/275"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 162302,
+      "title": "Разносчик заразы",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/276"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 162303,
+      "title": "Разведчик",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/277"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 162304,
+      "title": "Медик из Виковаро",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/278"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 162305,
+      "title": "Арбалетчик Деитвена",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/279"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 162306,
+      "title": "Огненный скорпион",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/280"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 162307,
+      "title": "Бригада \"Импера\"",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/281"
+      ],
+      "abilityGraphNodeCount": 28
+    },
+    {
+      "templateId": 162308,
+      "title": "Боец \"Импера\"",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/282"
+      ],
+      "abilityGraphNodeCount": 51
+    },
+    {
+      "templateId": 162309,
+      "title": "Сержант \"Наузикаа\"",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/283"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 162310,
+      "title": "Бригада \"Наузикаа\"",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/284"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 162311,
+      "title": "Пикинер \"Альба\"",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/285"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 162312,
+      "title": "Копейщик \"Альба\"",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/286"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 162313,
+      "title": "Инженер",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/287"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 162314,
+      "title": "Эмиссар",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 2,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/288"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 162315,
+      "title": "Посол",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 2,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/289"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 162316,
+      "title": "Алхимик",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/290"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 162317,
+      "title": "Мангонела",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/291"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 162318,
+      "title": "Рыцарь Нильфгаарда",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 12,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/292"
+      ],
+      "abilityGraphNodeCount": 21
+    },
+    {
+      "templateId": 200044,
+      "title": "Дивизия \"Магна\"",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/319"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 200115,
+      "title": "Убийца",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/349"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 200118,
+      "title": "Лазутчик",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/350"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 200124,
+      "title": "Ведьмак школы Змеи",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/351"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 200294,
+      "title": "Знаменосец",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/406"
+      ],
+      "abilityGraphNodeCount": 24
+    },
+    {
+      "templateId": 200296,
+      "title": "Кавалерия \"Альба\"",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/408"
+      ],
+      "abilityGraphNodeCount": 20
+    },
+    {
+      "templateId": 200518,
+      "title": "Дивизия \"Венендаль\"",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/413"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 201609,
+      "title": "Охотник за рабами",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/450"
+      ],
+      "abilityGraphNodeCount": 24
+    },
+    {
+      "templateId": 201610,
+      "title": "Невольничья пехота",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/451"
+      ],
+      "abilityGraphNodeCount": 37
+    },
+    {
+      "templateId": 201612,
+      "title": "Погонщик рабов",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/453"
+      ],
+      "abilityGraphNodeCount": 22
+    },
+    {
+      "templateId": 201616,
+      "title": "Мастер маскировки",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/456"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 201617,
+      "title": "Рекрут",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/457"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 201619,
+      "title": "Притирка",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/459"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 201661,
+      "title": "Караул",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/492"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 200162,
+      "title": "Эмгыр вар Эмрейс",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 1,
+      "power": 7,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/367"
+      ],
+      "abilityGraphNodeCount": 28
+    },
+    {
+      "templateId": 200163,
+      "title": "Морвран Воорхис",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 1,
+      "power": 7,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/368"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 200164,
+      "title": "Ян Кальвейт",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 1,
+      "power": 5,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/369"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 201580,
+      "title": "Узурпатор",
+      "faction": "Nilfgaard",
+      "factionMask": 4,
+      "tier": 1,
+      "power": 1,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/434"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 122101,
+      "title": "Кровавый Барон",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 8,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/74"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 122102,
+      "title": "Вернон Роше",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 8,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/75"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 122103,
+      "title": "Ян Наталис",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/76"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 122104,
+      "title": "Филиппа Эйльхарт",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 8,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/77"
+      ],
+      "abilityGraphNodeCount": 32
+    },
+    {
+      "templateId": 122105,
+      "title": "Сигизмунд Дийкстра",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 8,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/78"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 122106,
+      "title": "Шани",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 8,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/79"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 122108,
+      "title": "Кейра Мец",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/81"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 122201,
+      "title": "Лютик",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 8,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/82"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 122202,
+      "title": "Присцилла",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 8,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/83"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 201618,
+      "title": "Зельткирк из Гулеты",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 8,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/458"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 201620,
+      "title": "Вандергрифт",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 8,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/460"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 201621,
+      "title": "Кийян",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 8,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/461"
+      ],
+      "abilityGraphNodeCount": 28
+    },
+    {
+      "templateId": 201777,
+      "title": "Роше: беспощадный",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/561"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 122203,
+      "title": "Талер",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 13,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/84"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 122204,
+      "title": "Бьянка",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 12,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/85"
+      ],
+      "abilityGraphNodeCount": 32
+    },
+    {
+      "templateId": 122205,
+      "title": "Шеала де Тансервилль",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/86"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 122206,
+      "title": "Сабрина Глевиссиг",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/87"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 122207,
+      "title": "Детмольд",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/88"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 122208,
+      "title": "Принц Стеннис",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/89"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 122209,
+      "title": "Трололо",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/90"
+      ],
+      "abilityGraphNodeCount": 0
+    },
+    {
+      "templateId": 122210,
+      "title": "Принцесса Паветта",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/91"
+      ],
+      "abilityGraphNodeCount": 27
+    },
+    {
+      "templateId": 122211,
+      "title": "Маргарита Ло-Антиль",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/92"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 122212,
+      "title": "Неннеке",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/93"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 122213,
+      "title": "Одрин",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/94"
+      ],
+      "abilityGraphNodeCount": 25
+    },
+    {
+      "templateId": 122401,
+      "title": "Игоша",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/114"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 122402,
+      "title": "Чур",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/115"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 123201,
+      "title": "Подкрепление",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/117"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 200088,
+      "title": "Губерт Рейк",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/339"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 200098,
+      "title": "Винсент Мэйс",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/342"
+      ],
+      "abilityGraphNodeCount": 21
+    },
+    {
+      "templateId": 200529,
+      "title": "Ронвид с Малого Луга",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/418"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 201582,
+      "title": "Руна Зоря",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/436"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 201648,
+      "title": "Меч Вандергрифта",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/485"
+      ],
+      "abilityGraphNodeCount": 24
+    },
+    {
+      "templateId": 201650,
+      "title": "Призрак Сабрины",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/486"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 201748,
+      "title": "Гордость Фольтеста",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 4,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/547"
+      ],
+      "abilityGraphNodeCount": 19
+    },
+    {
+      "templateId": 122214,
+      "title": "Каэдвенский сотник",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/95"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 122301,
+      "title": "Баллиста",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/97"
+      ],
+      "abilityGraphNodeCount": 36
+    },
+    {
+      "templateId": 122302,
+      "title": "Усиленная баллиста",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/98"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 122303,
+      "title": "Требушет",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/99"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 122304,
+      "title": "Осадная башня",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/100"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 122306,
+      "title": "Охотник из Кринфрида",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/101"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 122307,
+      "title": "Разведчик Рубайл",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/102"
+      ],
+      "abilityGraphNodeCount": 29
+    },
+    {
+      "templateId": 122308,
+      "title": "Реданский рыцарь",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/103"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 122309,
+      "title": "Осадный инженер",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/104"
+      ],
+      "abilityGraphNodeCount": 23
+    },
+    {
+      "templateId": 122310,
+      "title": "Полоски: разведчик",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/105"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 122311,
+      "title": "Полоски: боец",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/106"
+      ],
+      "abilityGraphNodeCount": 27
+    },
+    {
+      "templateId": 122312,
+      "title": "Полевой медик",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/107"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 122313,
+      "title": "Бурая Хоругвь",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/108"
+      ],
+      "abilityGraphNodeCount": 21
+    },
+    {
+      "templateId": 122314,
+      "title": "Каэдвенская конница",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/109"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 122315,
+      "title": "Усиленный требушет",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/110"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 122316,
+      "title": "Темерская пехота",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/111"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 122317,
+      "title": "Реданская элита",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/112"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 122318,
+      "title": "Осадный мастер",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/113"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 123301,
+      "title": "Реданский оруженосец",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/118"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 200033,
+      "title": "Адептка из Аретузы",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/310"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 200048,
+      "title": "Учитель из Бан Арда",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/321"
+      ],
+      "abilityGraphNodeCount": 27
+    },
+    {
+      "templateId": 200049,
+      "title": "Таран",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/322"
+      ],
+      "abilityGraphNodeCount": 34
+    },
+    {
+      "templateId": 200132,
+      "title": "Охотник за ведьмами",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/352"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 200171,
+      "title": "Тридамская пехота",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/376"
+      ],
+      "abilityGraphNodeCount": 0
+    },
+    {
+      "templateId": 200299,
+      "title": "Темерский барабанщик",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/409"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 200540,
+      "title": "Молотобоец Аэдирна",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/424"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 201622,
+      "title": "Каэдвенский рыцарь",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/462"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 201624,
+      "title": "Каэдвенский призрак",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/464"
+      ],
+      "abilityGraphNodeCount": 28
+    },
+    {
+      "templateId": 201625,
+      "title": "Проклятый рыцарь",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/465"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 201628,
+      "title": "Замученный чародей",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 2,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/468"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 201630,
+      "title": "Проклятая чародейка",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/469"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 201633,
+      "title": "Кровавый бич",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/472"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 201659,
+      "title": "Лебедка",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/490"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 200168,
+      "title": "Король Фольтест",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 1,
+      "power": 5,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/373"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 200169,
+      "title": "Король Радовид V",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 1,
+      "power": 6,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/374"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 200170,
+      "title": "Король Хенсельт",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 1,
+      "power": 3,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/375"
+      ],
+      "abilityGraphNodeCount": 26
+    },
+    {
+      "templateId": 201595,
+      "title": "Принцесса Адда",
+      "faction": "NorthernRealms",
+      "factionMask": 8,
+      "tier": 1,
+      "power": 6,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/442"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 142101,
+      "title": "Саэсентессис",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 8,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/170"
+      ],
+      "abilityGraphNodeCount": 20
+    },
+    {
+      "templateId": 142102,
+      "title": "Изенгрим",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 8,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/171"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 142103,
+      "title": "Иорвет",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/172"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 142104,
+      "title": "Мильва",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/173"
+      ],
+      "abilityGraphNodeCount": 29
+    },
+    {
+      "templateId": 142105,
+      "title": "Золтан Хивай",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 8,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/174"
+      ],
+      "abilityGraphNodeCount": 34
+    },
+    {
+      "templateId": 142106,
+      "title": "Аглайиса",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 8,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/175"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 142107,
+      "title": "Итлинна Аэгиль",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 8,
+      "power": 2,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/176"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 142108,
+      "title": "Ширру",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 8,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/177"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 200080,
+      "title": "Ксавьер Моран",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 8,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/335"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 200209,
+      "title": "Саския",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 8,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/388"
+      ],
+      "abilityGraphNodeCount": 33
+    },
+    {
+      "templateId": 201611,
+      "title": "Иорвет: медитация",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 8,
+      "power": 2,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/452"
+      ],
+      "abilityGraphNodeCount": 44
+    },
+    {
+      "templateId": 201615,
+      "title": "Изенгрим: изгой",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 8,
+      "power": 2,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/455"
+      ],
+      "abilityGraphNodeCount": 30
+    },
+    {
+      "templateId": 201779,
+      "title": "Моренн: дитя леса",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/563"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 142201,
+      "title": "Деннис Кранмер",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/178"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 142202,
+      "title": "Ида Эмеан",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/179"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 142203,
+      "title": "Яевинн",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 13,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/180"
+      ],
+      "abilityGraphNodeCount": 20
+    },
+    {
+      "templateId": 142204,
+      "title": "Торувьель",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/181"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 142206,
+      "title": "Киаран аэп Эасниллен",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/183"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 142207,
+      "title": "Барклай Эльс",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 2,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/184"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 142208,
+      "title": "Моренн",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/185"
+      ],
+      "abilityGraphNodeCount": 24
+    },
+    {
+      "templateId": 142209,
+      "title": "Браэнн",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/186"
+      ],
+      "abilityGraphNodeCount": 19
+    },
+    {
+      "templateId": 142210,
+      "title": "Малена",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/187"
+      ],
+      "abilityGraphNodeCount": 25
+    },
+    {
+      "templateId": 142211,
+      "title": "Аэлирэнн",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/188"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 142212,
+      "title": "Шелдон Скаггс",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/189"
+      ],
+      "abilityGraphNodeCount": 25
+    },
+    {
+      "templateId": 142213,
+      "title": "Ярпен Зигрин",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/190"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 142214,
+      "title": "Элеас",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/191"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 143201,
+      "title": "Дар природы",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/209"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 200030,
+      "title": "Милаэн",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/307"
+      ],
+      "abilityGraphNodeCount": 25
+    },
+    {
+      "templateId": 200228,
+      "title": "Волчья яма",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/399"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 200520,
+      "title": "Эйвар Хаттори",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/415"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 201585,
+      "title": "Руна Марена",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/439"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 201653,
+      "title": "Махакамский рог",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/487"
+      ],
+      "abilityGraphNodeCount": 26
+    },
+    {
+      "templateId": 201676,
+      "title": "Павко Галье",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/502"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 201696,
+      "title": "Паулье Дальберг",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 4,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/515"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 142205,
+      "title": "Кавалерия \"Врихедд\"",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/182"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 142301,
+      "title": "Медик-гавенкар",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/192"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 142302,
+      "title": "Бригада \"Врихедд\"",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/193"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 142303,
+      "title": "Офицер \"Врихедд\"",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/194"
+      ],
+      "abilityGraphNodeCount": 28
+    },
+    {
+      "templateId": 142304,
+      "title": "Дол Блатанна: ловчий",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/195"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 142305,
+      "title": "Краснолюд-поединщик",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/196"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 142306,
+      "title": "Защитник Махакама",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [],
+      "abilityGraphNodeCount": 0
+    },
+    {
+      "templateId": 142307,
+      "title": "Саперы \"Врихедд\"",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/197"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 142308,
+      "title": "Эльфский наемник",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/198"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 142309,
+      "title": "Авангард \"Врихедд\"",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/199"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 142310,
+      "title": "Дол Блатанна: лучник",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/200"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 142311,
+      "title": "Краснолюд-наемник",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/201"
+      ],
+      "abilityGraphNodeCount": 21
+    },
+    {
+      "templateId": 142312,
+      "title": "Гавенкарская подмога",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/202"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 142313,
+      "title": "Танцор клинка",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/203"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 142314,
+      "title": "Дол Блатанна: стрелок",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/204"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 142315,
+      "title": "Боец-гавенкар",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/205"
+      ],
+      "abilityGraphNodeCount": 19
+    },
+    {
+      "templateId": 142316,
+      "title": "Эльфские диверсанты",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/206"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 142317,
+      "title": "Махакамская стража",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/207"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 142401,
+      "title": "Новичок \"Врихедд\"",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/208"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 200039,
+      "title": "Дол Блатанна: часовой",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 2,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/314"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 200042,
+      "title": "Мародер из Махакама",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/317"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 200135,
+      "title": "Пиротехник",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/353"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 200136,
+      "title": "Оракул",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/354"
+      ],
+      "abilityGraphNodeCount": 37
+    },
+    {
+      "templateId": 200138,
+      "title": "Знающий",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 2,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/355"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 200139,
+      "title": "Пантера",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/356"
+      ],
+      "abilityGraphNodeCount": 28
+    },
+    {
+      "templateId": 200293,
+      "title": "Агитатор краснолюдов",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/405"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 200535,
+      "title": "Эльфский мастер меча",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/422"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 201559,
+      "title": "Махакамская рать",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/426"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 201636,
+      "title": "Охотник-полуэльф",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/475"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 201638,
+      "title": "Эльфская разведчица",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/477"
+      ],
+      "abilityGraphNodeCount": 22
+    },
+    {
+      "templateId": 201643,
+      "title": "Эльфская сабля",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/480"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 201645,
+      "title": "Ловушка-давилка",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/482"
+      ],
+      "abilityGraphNodeCount": 25
+    },
+    {
+      "templateId": 200165,
+      "title": "Францеска Финдабаир",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 1,
+      "power": 7,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/370"
+      ],
+      "abilityGraphNodeCount": 28
+    },
+    {
+      "templateId": 200166,
+      "title": "Эитнэ",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 1,
+      "power": 5,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/371"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 200167,
+      "title": "Брувер Гоог",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 1,
+      "power": 4,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/372"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 201589,
+      "title": "Филавандрель",
+      "faction": "Scoiatael",
+      "factionMask": 16,
+      "tier": 1,
+      "power": 4,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/441"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 152101,
+      "title": "Хьялмар ан Крайт",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 8,
+      "power": 16,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/211"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 152103,
+      "title": "Мышовур",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 8,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/212"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 152104,
+      "title": "Камби",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 8,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/213"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 152105,
+      "title": "Бирна Бран",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/214"
+      ],
+      "abilityGraphNodeCount": 5
+    },
+    {
+      "templateId": 152106,
+      "title": "Лугос Безумный",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/215"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 152107,
+      "title": "Коралл",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 8,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/216"
+      ],
+      "abilityGraphNodeCount": 6
+    },
+    {
+      "templateId": 152109,
+      "title": "Морской Вепрь",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 8,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/217"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 200028,
+      "title": "Вабьорн",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 8,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/306"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 200102,
+      "title": "Хим",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 8,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/343"
+      ],
+      "abilityGraphNodeCount": 33
+    },
+    {
+      "templateId": 200103,
+      "title": "Олаф",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 8,
+      "power": 20,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/344"
+      ],
+      "abilityGraphNodeCount": 19
+    },
+    {
+      "templateId": 200104,
+      "title": "Ульфхединн",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/345"
+      ],
+      "abilityGraphNodeCount": 23
+    },
+    {
+      "templateId": 200177,
+      "title": "Керис ан Крайт",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/380"
+      ],
+      "abilityGraphNodeCount": 20
+    },
+    {
+      "templateId": 201778,
+      "title": "Керис: неустрашимая",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 8,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/562"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 152201,
+      "title": "Лугос Синий",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/218"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 152202,
+      "title": "Чемпион чемпионов",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/219"
+      ],
+      "abilityGraphNodeCount": 19
+    },
+    {
+      "templateId": 152203,
+      "title": "Джанго Фретт",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/220"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 152204,
+      "title": "Донар ан Хиндар",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/221"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 152205,
+      "title": "Драйг Бон-Ду",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/222"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 152206,
+      "title": "Гремист",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/223"
+      ],
+      "abilityGraphNodeCount": 9
+    },
+    {
+      "templateId": 152207,
+      "title": "Хольгер Чернорукий",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/224"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 152208,
+      "title": "Ютта ан Димун",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 13,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/225"
+      ],
+      "abilityGraphNodeCount": 4
+    },
+    {
+      "templateId": 152209,
+      "title": "Моркварг",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/226"
+      ],
+      "abilityGraphNodeCount": 22
+    },
+    {
+      "templateId": 152211,
+      "title": "Зигфрида",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/228"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 152213,
+      "title": "Сванриге Тиршах",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/229"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 152214,
+      "title": "Удальрик",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 13,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/230"
+      ],
+      "abilityGraphNodeCount": 23
+    },
+    {
+      "templateId": 153201,
+      "title": "Восстановление",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/252"
+      ],
+      "abilityGraphNodeCount": 22
+    },
+    {
+      "templateId": 200043,
+      "title": "Безумный Харальд",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/318"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 200212,
+      "title": "Скьялль",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/389"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 201581,
+      "title": "Руна Стрибог",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/435"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 201623,
+      "title": "Огромный кабан",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/463"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 201642,
+      "title": "Инкрустированный меч",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/479"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 201644,
+      "title": "Иоанна",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/481"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 201646,
+      "title": "Дерран",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 4,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/483"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 113313,
+      "title": "Ан Крайт: боец",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 5,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/66"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 152210,
+      "title": "Дикий медведь",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/227"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 152301,
+      "title": "Разъяренный берсерк",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/231"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 152302,
+      "title": "Берсерк-мародер",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/232"
+      ],
+      "abilityGraphNodeCount": 34
+    },
+    {
+      "templateId": 152303,
+      "title": "Ан Крайт: воин",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 12,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/233"
+      ],
+      "abilityGraphNodeCount": 4
+    },
+    {
+      "templateId": 152304,
+      "title": "Тиршах: ловчий",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/234"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 152305,
+      "title": "Димун: пират",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 11,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/235"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 152306,
+      "title": "Димун: капитан",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/236"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 152307,
+      "title": "Друммонд: стража",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/237"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 152308,
+      "title": "Хэймэй: скальд",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/238"
+      ],
+      "abilityGraphNodeCount": 65
+    },
+    {
+      "templateId": 152309,
+      "title": "Димун: легкий драккар",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/239"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 152310,
+      "title": "Жрица Фрейи",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/240"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 152311,
+      "title": "Ан Крайт: оружейник",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 9,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/241"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 152312,
+      "title": "Тиршах: топорник",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 6,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/242"
+      ],
+      "abilityGraphNodeCount": 16
+    },
+    {
+      "templateId": 152313,
+      "title": "Тиршах: поединщик",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/243"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 152314,
+      "title": "Ан Крайт: драккар",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/244"
+      ],
+      "abilityGraphNodeCount": 18
+    },
+    {
+      "templateId": 152315,
+      "title": "Тиршах: лучник",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/245"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 152316,
+      "title": "Ан Крайт: налетчик",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 4,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/246"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 152317,
+      "title": "Ан Крайт: кузнец",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/247"
+      ],
+      "abilityGraphNodeCount": 10
+    },
+    {
+      "templateId": 152318,
+      "title": "Друммонд: щитоносец",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/248"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 200036,
+      "title": "Друммонд: мародер",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/311"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 200040,
+      "title": "Ан Крайт: мечник",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/315"
+      ],
+      "abilityGraphNodeCount": 17
+    },
+    {
+      "templateId": 200046,
+      "title": "Тиршах: ветеран",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/320"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 200081,
+      "title": "Хэймэй: травница",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/336"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 200105,
+      "title": "Димун: боевой корабль",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/346"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 200144,
+      "title": "Тиршах: дрессировщик",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 1,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/357"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 200145,
+      "title": "Димун: корсар",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 3,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/358"
+      ],
+      "abilityGraphNodeCount": 8
+    },
+    {
+      "templateId": 200146,
+      "title": "Димун: контрабандист",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/359"
+      ],
+      "abilityGraphNodeCount": 15
+    },
+    {
+      "templateId": 200147,
+      "title": "Хэймэй: фламиника",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 10,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/360"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 200149,
+      "title": "Хэймэй: защитник",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 2,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/361"
+      ],
+      "abilityGraphNodeCount": 7
+    },
+    {
+      "templateId": 200300,
+      "title": "Ан Крайт: китобой",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 8,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/410"
+      ],
+      "abilityGraphNodeCount": 23
+    },
+    {
+      "templateId": 200528,
+      "title": "Хэймэй: копейщица",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 2,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/417"
+      ],
+      "abilityGraphNodeCount": 30
+    },
+    {
+      "templateId": 201578,
+      "title": "Ан Крайт: мародер",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 7,
+      "typeMask": 4,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/432"
+      ],
+      "abilityGraphNodeCount": 11
+    },
+    {
+      "templateId": 201598,
+      "title": "Костяной талисман",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 2,
+      "power": 0,
+      "typeMask": 2,
+      "leader": false,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/444"
+      ],
+      "abilityGraphNodeCount": 22
+    },
+    {
+      "templateId": 200159,
+      "title": "Бран Тиршах",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 1,
+      "power": 2,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/364"
+      ],
+      "abilityGraphNodeCount": 13
+    },
+    {
+      "templateId": 200160,
+      "title": "Крах ан Крайт",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 1,
+      "power": 5,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/365"
+      ],
+      "abilityGraphNodeCount": 12
+    },
+    {
+      "templateId": 200161,
+      "title": "Харальд Хромой",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 1,
+      "power": 6,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/366"
+      ],
+      "abilityGraphNodeCount": 14
+    },
+    {
+      "templateId": 201597,
+      "title": "Эйст Тиршах",
+      "faction": "Skellige",
+      "factionMask": 32,
+      "tier": 1,
+      "power": 5,
+      "typeMask": 4,
+      "leader": true,
+      "implementedInClosedDuel": true,
+      "abilityRecordKeys": [
+        "ability/443"
+      ],
+      "abilityGraphNodeCount": 9
+    }
+  ],
+  "implementedMeans": "Concrete closed-duel definition/consumer exists; not a claim of full original runtime parity.",
+  "runtimeVerified": false
+}

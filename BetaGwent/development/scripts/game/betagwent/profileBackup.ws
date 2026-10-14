@@ -71,6 +71,9 @@ public function BetaGwentBackupProfile()
     var ids : array<int>; var i, slot, faction, leader, bank, generation : int; var title, p, d : string;
     if (betaGwentCollectionSchema != 1 || betaGwentCollectionSeeding || betaGwentOwnedIds.Size() != betaGwentOwnedCopies.Size()) return;
     if (FactsQueryLatestValue("bg_b2_hold") > 0) { LogChannel('BetaGwent', "PROFILE_BACKUP_HELD reason=invalidMirrorKept"); return; }
+    BetaGwentEnsureNewCards();
+    // Preserve an unknown auxiliary schema rather than replacing its mirror.
+    if(betaGwentNewCardsSchema!=1)return;
     BetaGwentBackupRewardLedger();
     bank = 3 - FactsQueryLatestValue("bg_b2_cur"); if (bank != 1 && bank != 2) bank = 1;
     p = "bg_b2_" + bank + "_";
@@ -106,12 +109,17 @@ public function BetaGwentBackupProfile()
     for (i = 0; i < betaGwentOpponentBag.Size(); i += 1) BetaGwentBkPut(p + "ob" + i, betaGwentOpponentBag[i]);
     BetaGwentBkPut(p + "or", betaGwentOpponentRecent.Size());
     for (i = 0; i < betaGwentOpponentRecent.Size(); i += 1) BetaGwentBkPut(p + "or" + i, betaGwentOpponentRecent[i]);
+    // Format 3 extends the same two transactional banks. Format 2 has fm=0.
+    BetaGwentBkPut(p + "fm", 3);
+    BetaGwentBkPut(p + "fg", generation);
+    BetaGwentBkPut(p + "nc", betaGwentNewCardIds.Size());
+    for(i=0;i<betaGwentNewCardIds.Size();i+=1)BetaGwentBkPut(p + "ni" + i,betaGwentNewCardIds[i]);
     FactsSet(p + "sa", betaGwentBkA); FactsSet(p + "sb", betaGwentBkB);
     // Completion marker, then the bank switch: both strictly last.
     FactsSet(p + "done", generation);
     FactsSet("bg_b2_gen", generation);
     FactsSet("bg_b2_cur", bank);
-    LogChannel('BetaGwent', "PROFILE_BACKUP format=2 bank=" + bank + " generation=" + generation + " distinct=" + betaGwentOwnedIds.Size() + " scraps=" + betaGwentScraps + " kegs=" + betaGwentKegsUnopened + " kegChoice=" + betaGwentKegOffers.Size());
+    LogChannel('BetaGwent', "PROFILE_BACKUP format=3 bank=" + bank + " generation=" + generation + " distinct=" + betaGwentOwnedIds.Size() + " scraps=" + betaGwentScraps + " kegs=" + betaGwentKegsUnopened + " kegChoice=" + betaGwentKegOffers.Size());
 }
 
 @addMethod(W3PlayerWitcher)
@@ -156,8 +164,8 @@ public function BetaGwentRestoreProfile() : bool
 @addMethod(W3PlayerWitcher)
 private function BetaGwentRestoreBank(bank : int) : bool
 {
-    var ids, copies, lengths, leaders, factions, cards, deck, automatic, automaticScraps, offers, bag, recent : array<int>;
-    var i, n, slot, offset, value, count, cap, generation, scraps, kegs, preferred, seed, tempo, reduced, difficulty, pause, restoredDecks : int;
+    var ids, copies, lengths, leaders, factions, cards, deck, automatic, automaticScraps, offers, bag, recent, unseen : array<int>;
+    var i, n, slot, offset, value, count, cap, generation, scraps, kegs, preferred, seed, tempo, reduced, difficulty, pause, restoredDecks, format : int;
     var p, d, source : string;
     p = "bg_b2_" + bank + "_"; source = "bank" + bank;
     generation = FactsQueryLatestValue(p + "done");
@@ -199,11 +207,27 @@ private function BetaGwentRestoreBank(bank : int) : bool
     n = BetaGwentBkGet(p + "or");
     if (n < 0 || n > 8) return BetaGwentBackupRejected(source, "opponentRecent");
     for (i = 0; i < n; i += 1) { value = BetaGwentBkGet(p + "or" + i); if (value <= 0) return BetaGwentBackupRejected(source, "opponent"); recent.PushBack(value); }
+    format=FactsQueryLatestValue(p + "fm");
+    // Old mod versions reuse these banks without clearing extension keys.
+    // Match the extension to its generation before interpreting it.
+    if(FactsQueryLatestValue(p + "fg")!=generation)format=0;
+    if(format!=0 && format!=3)return BetaGwentBackupRejected(source,"format");
+    if(format==3){
+        if(BetaGwentBkGet(p + "fm")!=3)return BetaGwentBackupRejected(source,"format");
+        if(BetaGwentBkGet(p + "fg")!=generation)return BetaGwentBackupRejected(source,"formatGeneration");
+        n=BetaGwentBkGet(p + "nc");
+        if(n<0 || n>ids.Size())return BetaGwentBackupRejected(source,"newCardCount");
+        for(i=0;i<n;i+=1){value=BetaGwentBkGet(p + "ni" + i);
+            if(!ids.Contains(value) || unseen.Contains(value))return BetaGwentBackupRejected(source,"newCardEntry");
+            unseen.PushBack(value);
+        }
+    }
     if (FactsQueryLatestValue(p + "sa") != betaGwentBkA || FactsQueryLatestValue(p + "sb") != betaGwentBkB) return BetaGwentBackupRejected(source, "checksum");
 
     // Every check passed: apply. Fields that are already set are never overwritten.
     betaGwentCollectionSeeding = true; betaGwentCollectionSchema = 1;
     betaGwentOwnedIds = ids; betaGwentOwnedCopies = copies;
+    betaGwentNewCardsSchema=1;betaGwentNewCardIds=unseen;
     betaGwentStarterSetRevision = BetaGwentStarterRevision();
     if (betaGwentScraps <= 0) betaGwentScraps = scraps;
     if (betaGwentKegsUnopened <= 0) betaGwentKegsUnopened = kegs;
@@ -226,7 +250,7 @@ private function BetaGwentRestoreBank(bank : int) : bool
     if (preferred > 0 && betaGwentPreferredDeck == 0) betaGwentPreferredDeck = preferred;
     betaGwentCollectionSeeding = false;
     FactsSet("bg_b2_restored", 1);
-    LogChannel('BetaGwent', "PROFILE_RESTORED format=2 bank=" + bank + " generation=" + generation + " distinct=" + betaGwentOwnedIds.Size() + " decks=" + restoredDecks + " scraps=" + betaGwentScraps + " kegs=" + betaGwentKegsUnopened + " kegChoice=" + betaGwentKegOffers.Size());
+    LogChannel('BetaGwent', "PROFILE_RESTORED format="+(format==3?3:2)+" bank=" + bank + " generation=" + generation + " distinct=" + betaGwentOwnedIds.Size() + " decks=" + restoredDecks + " scraps=" + betaGwentScraps + " kegs=" + betaGwentKegsUnopened + " kegChoice=" + betaGwentKegOffers.Size());
     return true;
 }
 // Format 1 (0.5.1–0.5.4): no checksum or completion marker. Same validation, staged apply.
@@ -255,6 +279,7 @@ private function BetaGwentRestoreLegacyProfile() : bool
         if (BetaGwentStoreDeck(slot, deck, "Колода " + slot, FactsQueryLatestValue(prefix + "f"), FactsQueryLatestValue(prefix + "l"))) restoredDecks += 1;
     }
     value = FactsQueryLatestValue("bg_bk_pref") - 1; if (value > 0 && betaGwentPreferredDeck == 0) betaGwentPreferredDeck = value;
+    betaGwentNewCardsSchema=1;betaGwentNewCardIds.Clear();
     betaGwentCollectionSeeding = false;
     FactsSet("bg_b2_restored", 1);
     LogChannel('BetaGwent', "PROFILE_RESTORED format=1 distinct=" + betaGwentOwnedIds.Size() + " decks=" + restoredDecks + " scraps=" + betaGwentScraps + " kegs=" + betaGwentKegsUnopened);

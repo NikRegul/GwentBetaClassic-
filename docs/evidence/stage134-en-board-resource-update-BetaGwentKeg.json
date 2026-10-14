@@ -1,0 +1,528 @@
+{
+  "entry": "BetaGwentKeg",
+  "source": "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_kegop.swf",
+  "sourceSha256": "42079071caf0adcb2c05b7b0c2da531c24d9504dbef45b02d1e0122065ea2983",
+  "target": "D:\\w3mod\\GwentB\\myproject1\\workspace\\betagwent\\betagwent_kegop.redswf",
+  "updatedSha256": "2edc5f1f76b547d53668bfa1129e29fdc19ee3230b596e4eee14716b39df37d7",
+  "updatedBytes": 211751359,
+  "originalSha256": "2f8fc01715cc4db75fef7b9c24028b299d7b0c26a484fcbbdadb3f58cfb6d78e",
+  "candidate": "D:\\w3mod\\BetaGwent\\build\\native-hd93-resource\\betagwent_kegop.redswf",
+  "backup": "D:\\w3mod\\BetaGwent\\build\\resource-backups\\2f8fc01715cc4db75fef7b9c24028b299d7b0c26a484fcbbdadb3f58cfb6d78e.redswf",
+  "applied": true,
+  "nativeABCMatchesBuiltSWF": true,
+  "nativeSymbolsMatchBuiltSWF": true,
+  "headerTableChunkChecksumsVerified": true,
+  "nativeImageLinkagePrefixVerified": true,
+  "totalTextureChunks": 23,
+  "exportedBindings": 46,
+  "aliasTexturesDeduplicated": 23,
+  "bindings": [
+    {
+      "cid": 1,
+      "imageId": 0,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I1.dds",
+      "sha256": "6e65faf75f405f91167acd35963dc85bf473c8a9273c243738485e1d6318c18f",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 2,
+      "imageId": 1,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I2.dds",
+      "sha256": "6736948cacc947ac68e09df977f1e355d91c200954e2bfa2c1658f49b3f40108",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 3,
+      "imageId": 2,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I3.dds",
+      "sha256": "892be989719587163b0ec7bf21d59488a7196e5a4d7653873b77fd16a65173ff",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 4,
+      "imageId": 3,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I4.dds",
+      "sha256": "769e2ff11ea555de52da1354ac023ebc00adf8960b3a4fea315e57ad0fc4cc73",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 5,
+      "imageId": 4,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I5.dds",
+      "sha256": "2541679d83c52abefecd566955fcc7dc7665c0231e342185edb61bc4be57f617",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 6,
+      "imageId": 5,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I6.dds",
+      "sha256": "04b7a0d5be9f8430b6614d224d615374af4cf297b43de4d8e0aa065dcfe955c0",
+      "size": [
+        1440,
+        812
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 7,
+      "imageId": 6,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I7.dds",
+      "sha256": "8f2bc16afe77e76a379d76fba9dba012584a33857f8ffdefe9129bd11410de23",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 8,
+      "imageId": 7,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I8.dds",
+      "sha256": "aea397493517e6c23ccea52e6ea81f25b6ea9c53958ad94247cd2ac7248a5ab5",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 9,
+      "imageId": 8,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I9.dds",
+      "sha256": "3ba7d7151fbe05e4c5211e5eaf8ca7707f0726394d582e95ea0077be46f327ff",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 10,
+      "imageId": 9,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_IA.dds",
+      "sha256": "84f2060e5b21a003fb241ef6cb817705938d8bfbd708867233f66468242c9ca5",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 11,
+      "imageId": 10,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_IB.dds",
+      "sha256": "142c1536accb03f3a53d1f8aa89b37d40026bdd424e12e9f3cb0a91d1478b9f8",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 12,
+      "imageId": 11,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_IC.dds",
+      "sha256": "d12c9f334ea3a86724392bc7a897b38f6d24bb1040422645d240d80947739683",
+      "size": [
+        1092,
+        920
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 13,
+      "imageId": 12,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_ID.dds",
+      "sha256": "2f34c2f3868dfda80b01fbc3d1f82015637fc1bd752f713542c95884867d558e",
+      "size": [
+        2880,
+        408
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 14,
+      "imageId": 13,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_IE.dds",
+      "sha256": "801c158ce571ecdebf9d28c44f8875d5b73382d7a142dfcc249d5e2b6e2e39f0",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 15,
+      "imageId": 14,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_IF.dds",
+      "sha256": "d568e1ac0c19fdc1fef2602aebd00452acc38ce516cfe91de90e2b4deedc714e",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 16,
+      "imageId": 15,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I10.dds",
+      "sha256": "d9cc6840128ca0117285660110772056a68663d7fe47ba04df9a50a987cf0c2a",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 17,
+      "imageId": 16,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I11.dds",
+      "sha256": "5776e6af8558597e26d84b954614e56be0822bb3f9959036cd0a2cdb8fb566d4",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 18,
+      "imageId": 17,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I12.dds",
+      "sha256": "e9679a758d5190a588d69fb041bd47fb88394541ca3b2574084745c5acdfbe30",
+      "size": [
+        1024,
+        1988
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 19,
+      "imageId": 18,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I13.dds",
+      "sha256": "bcb1629b83a9347488d486ce35074a023636960d18ffa7890334b9e2b504e41b",
+      "size": [
+        960,
+        540
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 20,
+      "imageId": 19,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I14.dds",
+      "sha256": "d764f3f96346a8c0feb91f0ee50a9e020d84b1d010f06a8e8907e39abaaf0fad",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 21,
+      "imageId": 20,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I15.dds",
+      "sha256": "f578b4ac600a83a3c1fd943c7700cee87ac9f257aafeac24ae2b34d34b4e778f",
+      "size": [
+        1584,
+        1348
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 22,
+      "imageId": 21,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I16.dds",
+      "sha256": "fe1b05a618010c772580b0b45e43fe06491ef548b5decb5daf427ef9834092b8",
+      "size": [
+        1024,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 23,
+      "imageId": 22,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\betagwent_kegop_I17.dds",
+      "sha256": "6dff01e5dc53c535e29f0e76be19e2ecbef22e6fc85d239f3baba932242a773e",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 24,
+      "imageId": 21,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\cardfaces104_png$5bdb47f6c00fc77434aa353e5cd8e9da-1617110624.dds",
+      "sha256": "fe1b05a618010c772580b0b45e43fe06491ef548b5decb5daf427ef9834092b8",
+      "size": [
+        1024,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 25,
+      "imageId": 6,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\cards-0_png$d2570ae27cc20569c1cc808cc31de344-1963364398.dds",
+      "sha256": "8f2bc16afe77e76a379d76fba9dba012584a33857f8ffdefe9129bd11410de23",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 26,
+      "imageId": 16,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\cards-1_png$17fd206a8912b92b2985c1ba64463b81-1966370733.dds",
+      "sha256": "5776e6af8558597e26d84b954614e56be0822bb3f9959036cd0a2cdb8fb566d4",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 27,
+      "imageId": 10,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\cards-2_png$9b73ebeb6e7e1e67468ae594153b96f5-1966753580.dds",
+      "sha256": "142c1536accb03f3a53d1f8aa89b37d40026bdd424e12e9f3cb0a91d1478b9f8",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 28,
+      "imageId": 1,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\cards-3_png$da66143ab4ea2edf2418f822830859a6-1965579947.dds",
+      "sha256": "6736948cacc947ac68e09df977f1e355d91c200954e2bfa2c1658f49b3f40108",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 29,
+      "imageId": 15,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\cards-4_png$b739dc6c870e7e609932230ea1dc0d75-1969108522.dds",
+      "sha256": "d9cc6840128ca0117285660110772056a68663d7fe47ba04df9a50a987cf0c2a",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 30,
+      "imageId": 2,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\cards-5_png$fead3bbb36036adb5cbe13dedd11b446-1967918505.dds",
+      "sha256": "892be989719587163b0ec7bf21d59488a7196e5a4d7653873b77fd16a65173ff",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 31,
+      "imageId": 19,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\cards-6_png$b2e71511f8e90c0fa96eacecf1ae038d-1971184936.dds",
+      "sha256": "d764f3f96346a8c0feb91f0ee50a9e020d84b1d010f06a8e8907e39abaaf0fad",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 32,
+      "imageId": 3,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\cards-7_png$74123a9416c11cb8d7dd1f733ad8e4eb-1969487015.dds",
+      "sha256": "769e2ff11ea555de52da1354ac023ebc00adf8960b3a4fea315e57ad0fc4cc73",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 33,
+      "imageId": 12,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\cards-8_png$c62595d4cbc2ef7d900cb488400ab435-1989268518.dds",
+      "sha256": "2f34c2f3868dfda80b01fbc3d1f82015637fc1bd752f713542c95884867d558e",
+      "size": [
+        2880,
+        408
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 34,
+      "imageId": 17,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\hud126_png$2ced4dbbffe914037bd93ee7229b46012067433122.dds",
+      "sha256": "e9679a758d5190a588d69fb041bd47fb88394541ca3b2574084745c5acdfbe30",
+      "size": [
+        1024,
+        1988
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 35,
+      "imageId": 20,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\interface11-108_png$ac4293e3e6757e0b9ecf7c172bd4093a1152626191.dds",
+      "sha256": "f578b4ac600a83a3c1fd943c7700cee87ac9f257aafeac24ae2b34d34b4e778f",
+      "size": [
+        1584,
+        1348
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 36,
+      "imageId": 4,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\keg109-0_png$6039bdf6a7b798af502dd4284dd1d24c-643796667.dds",
+      "sha256": "2541679d83c52abefecd566955fcc7dc7665c0231e342185edb61bc4be57f617",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 37,
+      "imageId": 13,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\keg109-1_png$76d1b36535b961dca2f25a62debb3f76-642606650.dds",
+      "sha256": "801c158ce571ecdebf9d28c44f8875d5b73382d7a142dfcc249d5e2b6e2e39f0",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 38,
+      "imageId": 7,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\keg109-2_png$7ffed24f2ec9b81e1a5d72c2cb469db6-645103033.dds",
+      "sha256": "aea397493517e6c23ccea52e6ea81f25b6ea9c53958ad94247cd2ac7248a5ab5",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 39,
+      "imageId": 14,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\keg109-3_png$132a6df6536d2b539e043aa12e61c2c8-643913016.dds",
+      "sha256": "d568e1ac0c19fdc1fef2602aebd00452acc38ce516cfe91de90e2b4deedc714e",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 40,
+      "imageId": 0,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\keg109-4_png$ce833daa4f2a2c797237e968348d29e8-664218807.dds",
+      "sha256": "6e65faf75f405f91167acd35963dc85bf473c8a9273c243738485e1d6318c18f",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 41,
+      "imageId": 9,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\keg109-5_png$aac3cbc08b2770f4de0f9ce5b385facb-663028790.dds",
+      "sha256": "84f2060e5b21a003fb241ef6cb817705938d8bfbd708867233f66468242c9ca5",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 42,
+      "imageId": 22,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\keg109-6_png$595bf6f0601e0bef53ffcfdea68b7e73-663425973.dds",
+      "sha256": "6dff01e5dc53c535e29f0e76be19e2ecbef22e6fc85d239f3baba932242a773e",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 43,
+      "imageId": 8,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\keg109-7_png$129b0fd18e5c2409e661fabe8b959656-666430260.dds",
+      "sha256": "3ba7d7151fbe05e4c5211e5eaf8ca7707f0726394d582e95ea0077be46f327ff",
+      "size": [
+        1280,
+        2520
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 44,
+      "imageId": 11,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\keg109-backs_png$2f8a8615cdd524c9fb18bfb111b2f7652048076545.dds",
+      "sha256": "d12c9f334ea3a86724392bc7a897b38f6d24bb1040422645d240d80947739683",
+      "size": [
+        1092,
+        920
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 45,
+      "imageId": 18,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\keg109-bg_png$f2bfba5afb25357be7d9fcff211e4c5a1974508360.dds",
+      "sha256": "bcb1629b83a9347488d486ce35074a023636960d18ffa7890334b9e2b504e41b",
+      "size": [
+        960,
+        540
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 46,
+      "imageId": 5,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-BetaGwentKeg\\keg109-scene_png$02e5e10035ed67fac307e0b4236bd6fb1418115873.dds",
+      "sha256": "04b7a0d5be9f8430b6614d224d615374af4cf297b43de4d8e0aa065dcfe955c0",
+      "size": [
+        1440,
+        812
+      ],
+      "format": "DXT1"
+    }
+  ],
+  "nativeRuntimeVerified": false
+}

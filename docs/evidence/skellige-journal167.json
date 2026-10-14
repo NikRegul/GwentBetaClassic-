@@ -1,0 +1,28 @@
+{
+  "source": "D:\\GOG Galaxy\\Games\\The Witcher 3 REDkit\\r4data\\dlc\\bob\\journal\\quests\\cg700allcards.journal",
+  "sha256": "34485f7fc358ef485af5dd97d5a969a3be544a244337c184406773b8229ca3c5",
+  "version": 162,
+  "objectiveCount": 19,
+  "mapPins": [
+    "shop_09_ravello_herbalist",
+    "shop_12_tournament_meadows_armourer",
+    "shop_13_tournament_meadows_blacksmith",
+    "shop_18_cocatrice_inn_innkeeper",
+    "shop_19_rafstmen_village_innkeeper",
+    "shop_25_tournament_meadows_innkeper",
+    "shop_31_trappers_village_innkeeper",
+    "shop_32_trappers_village_armourer",
+    "shop_37_city_west_innkeeper",
+    "shop_38_city_west_armourer",
+    "shop_41_city_west_alchemist",
+    "shop_43_city_east_wine_merchant",
+    "shop_45_city_east_merchant",
+    "shop_46_city_south_herbalist",
+    "shop_47_city_brothel_mom",
+    "shop_cammerlengo",
+    "q705_tailor",
+    "shop_22_port_butcher",
+    "shop_14_tournament_meadows_barber"
+  ],
+  "sourceModified": false
+}

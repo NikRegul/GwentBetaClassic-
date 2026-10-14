@@ -112,7 +112,7 @@
     {
       "path": "Mods/modBetaGwent0924/content/precompiled.rsblob",
       "bytes": 2266605,
-      "sha256": "8b302100d36202b3b74873108b29e8c22640ef290f7b02d04565f7715d886c07"
+      "sha256": "7b011e7a0b4718619a658b1b752c81ea953fdc5ed9e052cbb5952a7cff069da0"
     },
     {
       "path": "Mods/modBetaGwent0924/content/ru.w3strings",
@@ -122,7 +122,7 @@
     {
       "path": "Mods/modBetaGwent0924/content/soundspc.cache",
       "bytes": 57186452,
-      "sha256": "2f446f296ed5b5cbe328561d153330fa0f41796878c3d9b08edcb20212d7be69"
+      "sha256": "6af21f24c7de8d835f4dd3ec1ebf138bd16de5e2db81a14fbdc30906e1892309"
     },
     {
       "path": "Mods/modBetaGwent0924/content/tr.w3strings",
@@ -183,6 +183,6 @@
   "fontLicenseIncluded": true,
   "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.6.2-RU.zip",
   "archiveBytes": 293897803,
-  "archiveSha256": "aae26c22031d61c201f7a98cbece9c54f1bd2e31c41788ba1956bbdf8cada54b",
+  "archiveSha256": "7694c4e3505c7c5f1b7ce5d57e9dee041f9cc2541be5936da87343fcc839cdea",
   "archiveVerified": true
 }

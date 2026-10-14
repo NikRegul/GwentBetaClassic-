@@ -8,6 +8,7 @@ parser.add_argument('--language',choices=['ru','en','de','it','pt-br'],required=
 parser.add_argument('--stage',type=int,default=89)
 parser.add_argument('--version',default='0.2.0')
 parser.add_argument('--compiled',type=Path,help='Verified script compilation for this package')
+parser.add_argument('--gui-limit-mib',type=int,help='Explicit per-menu loading target for a test build; default unchanged')
 a=parser.parse_args();LANG=a.language;VERSION=a.version;STAGE=a.stage
 if STAGE!=89 and VERSION=='0.2.0':raise SystemExit('New stages must use a new version; first-release archives are immutable')
 if not re.fullmatch(r'[0-9A-Za-z.\-]+',VERSION):raise SystemExit('Invalid version')
@@ -16,6 +17,9 @@ PROJECT=BASE/'project/BetaGwent0924';WORK=PROJECT/'workspace'
 COOKED=BASE/'cooked';PACKAGE=BASE/'package';CONTENT=PACKAGE/'Mods/modBetaGwent0924/content'
 # Stage 109 adds the keg-opening menu.
 GUI_LIMIT_MIB=56 if STAGE>=136 else 55 if STAGE>=98 else 100
+if a.gui_limit_mib is not None:
+    if not 1<=a.gui_limit_mib<100:parser.error('--gui-limit-mib must be 1..99 (native writer ceiling stays 100 MiB)')
+    GUI_LIMIT_MIB=a.gui_limit_mib
 MENUS=('betagwent_board.redswf','betagwent_npc00.redswf','betagwent_decks.redswf')+(('betagwent_kegop.redswf',) if STAGE>=109 else ())
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def check_no_redux_compatibility(workspace):
@@ -39,6 +43,13 @@ def check_leaders(workspace):
     expected={Path(item['path']).name for item in report['resources'].values()}
     assert len(report['bindings'])==21 and {p.name for p in folder.glob('*')}==expected,'non-leader or missing portrait in release'
     for item in report['resources'].values():assert sha(workspace/item['path'])==item['sha256'],'stale leader movie'
+    if STAGE>=142:
+        intros=json.loads((ROOT/'docs/evidence/leader-intros142.json').read_text('utf8'))
+        folder=workspace/'gameplay/gui_new/swf/betagwentleaderintros'
+        expected={Path(item['path']).name for item in intros['resources'].values()}
+        assert len(intros['bindings'])==12 and len(intros['loopFallback'])==9
+        assert {p.name for p in folder.glob('*')}==expected,'missing or non-leader entrance resource'
+        for item in intros['resources'].values():assert sha(workspace/item['path'])==item['sha256'],'stale entrance movie'
 
 def job(name,args,expect=(),workspace=None):
     # Stage 105: completion by output + stall restart (see run_wcc_job.py).
@@ -81,6 +92,8 @@ def job(name,args,expect=(),workspace=None):
     if any(marker in log for marker in fatal):raise RuntimeError('Wcc resource failure in '+name+'; inspect '+str(job_dir/'stdout.txt'))
 def checked():
     report=json.loads((BASE/'frozen.json').read_text('utf8'))
+    if report.get('guiLimitMiB',56 if STAGE>=136 else 55 if STAGE>=98 else 100)!=GUI_LIMIT_MIB:
+        raise RuntimeError('GUI loading target differs from the frozen package configuration')
     for f in report['files']:
         if sha(PROJECT/f['path'])!=f['sha256']:raise RuntimeError('Frozen source changed: '+f['path'])
     check_no_redux_compatibility(WORK)
@@ -93,9 +106,21 @@ if a.step=='prepare':
     current=ROOT/'GwentB/myproject1'
     for rel in ('workspace/betagwent','workspace/gameplay/gui_new','workspace/gameplay/items','workspace/gameplay/items_plus','workspace/gameplay/globals'):
         if (current/rel).exists():copy_release_tree(current/rel,PROJECT/rel)
+    if STAGE>=142 and (current/'workspace/dlc').exists():
+        copy_release_tree(current/'workspace/dlc',WORK/'dlc')
+    if STAGE>=161:
+        from shop_keg_icon161 import prepare_cache, validate as validate_shop_icon
+        validate_shop_icon(WORK)
+        shop_icon=prepare_cache()
+        icon_cache=PROJECT/'betagwent-assets/texture.cache'
+        icon_cache.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(shop_icon['cache'],icon_cache)
+        (PROJECT/'betagwent-assets/shop-icon.json').write_text(json.dumps(shop_icon,indent=2)+'\n','utf8')
     check_no_premium_portraits(WORK)
     if STAGE>=136:
         shutil.copytree(ROOT/('BetaGwent/build/leaders137/resources' if STAGE>=137 else 'BetaGwent/build/leaders136/resources'),WORK,dirs_exist_ok=True)
+    if STAGE>=142:
+        shutil.copytree(ROOT/'BetaGwent/build/leader-intro-resources142/resources',WORK,dirs_exist_ok=True)
     if STAGE>=137:
         shutil.copytree(ROOT/('BetaGwent/build/text138/resources' if STAGE>=138 else 'BetaGwent/build/text137/resources'),WORK,dirs_exist_ok=True)
     check_leaders(WORK)
@@ -124,7 +149,9 @@ if a.step=='prepare':
         for name in MENUS:
             preparation[name]=strip_authoring(WORK/'betagwent'/name)
             if preparation[name]['after']>=100*1024*1024:raise RuntimeError('Menu exceeds verified Wcc writer budget: '+name)
-            if STAGE>=98 and preparation[name]['after']>=GUI_LIMIT_MIB*1024*1024:raise RuntimeError('Compact GUI exceeds '+str(GUI_LIMIT_MIB)+' MiB loading target: '+name)
+            print(name+': '+format(preparation[name]['after']/1048576,'.3f')+' MiB / '+str(GUI_LIMIT_MIB)+' MiB target',flush=True)
+            if STAGE>=98 and preparation[name]['after']>=GUI_LIMIT_MIB*1024*1024:
+                raise RuntimeError('Compact GUI exceeds '+str(GUI_LIMIT_MIB)+' MiB loading target: '+name+'; actual '+format(preparation[name]['after']/1048576,'.3f')+' MiB, excess '+format((preparation[name]['after']-GUI_LIMIT_MIB*1048576)/1048576,'.3f')+' MiB')
         (BASE/'menu-input.json').write_text(json.dumps(preparation,indent=2)+'\n','utf8')
     if LANG=='en' and STAGE<137:
         sys.path.insert(0,str(ROOT/'tools'));from localization89 import strings
@@ -141,7 +168,7 @@ if a.step=='prepare':
             con.execute('update STRINGS set TEXT=? where rowid=?',(en,rowid))
         con.commit();con.close()
     bank=ROOT/('BetaGwent/audio/wwise'+('-en89' if LANG=='en' else '')+'/GeneratedSoundBanks/Windows/BetaGwent79.bnk')
-    if STAGE>=137:bank=Path(json.loads((ROOT/('docs/evidence/voice138.json' if STAGE>=138 else 'docs/evidence/voice137.json')).read_text('utf8'))[LANG]['bank'])
+    if STAGE>=137:bank=Path(json.loads((ROOT/('docs/evidence/voice141.json' if STAGE>=141 else 'docs/evidence/voice138.json' if STAGE>=138 else 'docs/evidence/voice137.json')).read_text('utf8'))[LANG]['bank'])
     (WORK/'soundbanks/pc').mkdir(parents=True,exist_ok=True)  # base project rebuilt without this folder (stage 105)
     shutil.copyfile(bank,WORK/'soundbanks/pc/BetaGwent79.bnk')
     metadata=json.loads((PROJECT/'myproject1.w3edit').read_text('utf8'))
@@ -151,11 +178,15 @@ if a.step=='prepare':
         if p.suffix in ('.menu','.guiconfig','.redswf','.redswfx'):
             target=BASE/'cook-roots'/p.relative_to(WORK);target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,target)
     files=[dict(path=p.relative_to(PROJECT).as_posix(),sha256=sha(p)) for p in sorted(PROJECT.rglob('*')) if p.is_file()]
-    (BASE/'frozen.json').write_text(json.dumps(dict(stage=STAGE,language=LANG,files=files),indent=2),'utf8')
+    (BASE/'frozen.json').write_text(json.dumps(dict(stage=STAGE,language=LANG,guiLimitMiB=GUI_LIMIT_MIB,files=files),indent=2),'utf8')
     print('Frozen '+LANG+' project',flush=True)
 else:
     checked();CONTENT.mkdir(parents=True,exist_ok=True)
     if a.step=='cook':
+        if STAGE>=161:
+            # Only the merchant icon is cached. Board textures stay inline, as
+            # required by the verified GUI loading profile.
+            shutil.copyfile(PROJECT/'betagwent-assets/texture.cache',CONTENT/'texture.cache')
         expected=[COOKED/'cook.db']+[COOKED/p.relative_to(BASE/'cook-roots') for p in (BASE/'cook-roots').rglob('*') if p.is_file()]
         job('cook',['cook','-platform=pc','-mod='+str(BASE/'cook-roots')+'\\','-outdir='+str(COOKED)+'\\'],expected)
         if STAGE==96:
@@ -175,6 +206,10 @@ else:
             leaders=json.loads((ROOT/('docs/evidence/leaders137.json' if STAGE>=137 else 'docs/evidence/leaders136.json')).read_text('utf8'))
             verified={art:verify(WORK/item['path'],COOKED/item['path']) for art,item in leaders['resources'].items()}
             (BASE/'cooked-leaders-verified.json').write_text(json.dumps(verified,indent=2)+'\n','utf8')
+            if STAGE>=142:
+                intros=json.loads((ROOT/'docs/evidence/leader-intros142.json').read_text('utf8'))
+                verified={art:verify(WORK/item['path'],COOKED/item['path']) for art,item in intros['resources'].items()}
+                (BASE/'cooked-leader-intros-verified.json').write_text(json.dumps(verified,indent=2)+'\n','utf8')
             if STAGE>=137:
                 texts=json.loads((ROOT/('docs/evidence/languages138.json' if STAGE>=138 else 'docs/evidence/languages137.json')).read_text('utf8'))['languages']
                 text_verified={locale:verify(WORK/item['path'],COOKED/item['path']) for locale,item in texts.items()}
@@ -225,7 +260,7 @@ else:
     elif a.step=='audio':
         bankdir=BASE/'audio-banks/Windows';bankdir.mkdir(parents=True,exist_ok=True)
         source=ROOT/('BetaGwent/audio/wwise'+('-en89' if LANG=='en' else '')+'/GeneratedSoundBanks/Windows')
-        if STAGE>=137:source=Path(json.loads((ROOT/('docs/evidence/voice138.json' if STAGE>=138 else 'docs/evidence/voice137.json')).read_text('utf8'))[LANG]['bank']).parent
+        if STAGE>=137:source=Path(json.loads((ROOT/('docs/evidence/voice141.json' if STAGE>=141 else 'docs/evidence/voice138.json' if STAGE>=138 else 'docs/evidence/voice137.json')).read_text('utf8'))[LANG]['bank']).parent
         for name in ('BetaGwent79.bnk','BetaGwent79.txt'):shutil.copyfile(source/name,bankdir/name)
         seed=WORK/'soundbanks/soundsplitseed.csv';seed.parent.mkdir(parents=True,exist_ok=True)
         seed.write_text('Bank;Chunk\nbetagwent79.bnk;content0\n','utf8')  # cooksounds needs the split seed (see build_test_release.py)
@@ -269,6 +304,8 @@ else:
         doclang=LANG.upper() if LANG in ('ru','en') else 'EN'
         for name in ('README_'+doclang+'.md','CONTROLS_'+doclang+'.md','CHANGELOG_'+doclang+'.md'):
             current=ROOT/'BetaGwent/release'/('publish-'+VERSION)/name
+            release_document=ROOT/'docs/releases'/VERSION/name
+            if release_document.exists():current=release_document
             if not current.exists():current=ROOT/'BetaGwent/release'/name
             text=current.read_text('utf8')
             if name.startswith(('README_','CONTROLS_')):
@@ -285,7 +322,7 @@ else:
         files=[dict(path=p.relative_to(PACKAGE).as_posix(),bytes=p.stat().st_size,sha256=sha(p)) for p in sorted(PACKAGE.rglob('*')) if p.is_file() and p.name!='manifest.json']
         report=dict(version=VERSION,stage=STAGE,language=LANG,mediaCount=1418,files=files,licenseIncluded=False,runtimeVerified=False,baseVersionUserAccepted=True)
         if STAGE>=137:
-            voices=json.loads((ROOT/('docs/evidence/voice138.json' if STAGE>=138 else 'docs/evidence/voice137.json')).read_text('utf8'))
+            voices=json.loads((ROOT/('docs/evidence/voice141.json' if STAGE>=141 else 'docs/evidence/voice138.json' if STAGE>=138 else 'docs/evidence/voice137.json')).read_text('utf8'))
             bank=Path(voices[LANG]['bank']).read_bytes();offset=0;media_count=None
             while offset<len(bank):
                 code=bank[offset:offset+4];length=struct.unpack_from('<I',bank,offset+4)[0]
@@ -294,7 +331,7 @@ else:
                     media_count=length//12
                 offset+=8+length
             assert media_count is not None and offset==len(bank)
-            report.update(mediaCount=media_count,voiceCount=907,voiceLanguage=LANG,
+            report.update(mediaCount=media_count,voiceCount=voices[LANG]['voiceCount'],voiceLanguage=LANG,
                           textLanguages=list(json.loads((ROOT/('docs/evidence/languages138.json' if STAGE>=138 else 'docs/evidence/languages137.json')).read_text('utf8'))['languages']),
                           fontLicenseIncluded=True)
         (PACKAGE/'manifest.json').write_text(json.dumps(report,indent=2)+'\n','utf8')

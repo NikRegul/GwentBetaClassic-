@@ -1,0 +1,1893 @@
+{
+  "summary": {
+    "catalogSha256": "022539802636cb45e92123a630c3788a0674c39b538fa1f69a64761a6b3ddbd3",
+    "count": 85,
+    "countsByTier": {
+      "8": 12,
+      "4": 39,
+      "2": 34
+    },
+    "implemented": 85,
+    "remaining": [],
+    "runtimeVerified": false,
+    "scope": "Original Availability1/Kind1/special Type2/Tier2,4,8 candidates, including Doomed; current concrete definitions only count as implemented."
+  },
+  "specials": [
+    {
+      "templateId": 113101,
+      "title": "Рагнарек",
+      "description": "Сыграйте Бедствие в каждом ряду противника, которое в начале хода наносит 2 ед. урона его сильнейшему отряду.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 8,
+        "Tier": 8,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113316,
+      "title": "Возрождение",
+      "description": "Воскресите золотой отряд (но не лидера).",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 8,
+        "Tier": 8,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxTargets": 1
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 163101,
+      "title": "Убийство",
+      "description": "Нанесите 8 ед. урона вражескому отряду. Повторите один раз.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 4,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 8,
+        "Tier": 8,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 8,
+        "Counter": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200018,
+      "title": "Коратская жара",
+      "description": "Сыграйте Бедствие в каждом ряду противника, которое в начале хода наносит 2 ед. урона его слабейшему отряду.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 8,
+        "Tier": 8,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200058,
+      "title": "Проклятие Умы",
+      "description": "Сотворите любой золотой отряд (но не лидера).",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 8,
+        "Tier": 8,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 200078,
+      "title": "Испытание Травами",
+      "description": "Усильте ведьмака до 25 ед. или нанесите 10 ед. урона отряду, который не является ведьмаком. Если он выживет, усильте его до 25 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 8,
+        "Tier": 8,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 10,
+        "MaxTargets": 1,
+        "Boost": 25
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200079,
+      "title": "Сон Ханмарвина",
+      "description": "Создайте базовую копию золотого отряда из сброса противника (но не лидера) и усильте этот отряд на 2 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 8,
+        "Tier": 8,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Boost": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200154,
+      "title": "Королевский указ",
+      "description": "Сыграйте золотой отряд из вашей колоды и усильте его на 2 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 8,
+        "Tier": 8,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Boost": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200225,
+      "title": "Намордник",
+      "description": "Очаруйте бронзовый или серебряный вражеский отряд с силой 8 ед. или меньше.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 8,
+        "Tier": 8,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxTargets": 1,
+        "Power": 8
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200226,
+      "title": "Волкобой",
+      "description": "После 3 ходов в сбросе нанесите в конце хода 6 ед. урона сильнейшему вражескому отряду и усильте слабейший дружественный отряд на 6 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": 3,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 8,
+        "Tier": 8,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Boost": 6,
+        "Damage": 6,
+        "Counter": 3
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201627,
+      "title": "Выходной день Лавка",
+      "description": "Если в вашей стартовой колоде нет дублей, отправьте Лавка в приключение.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 8,
+        "Tier": 8,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 201632,
+      "title": "Сигилль",
+      "description": "Выбор: нанесите по 3 ед. урона всем вражеским отрядам с нечетным значением силы, или нанесите по 3 ед. урона всем вражеским отрядам с четным значением силы, или сыграйте из вашей колоды бронзовый или серебряный отряд.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 8,
+        "Tier": 8,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 3
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113102,
+      "title": "Последнее желание",
+      "description": "Посмотрите случайные карты в вашей колоде (всего 2) и сыграйте одну из них.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Counter": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113201,
+      "title": "Чучело",
+      "description": "Повторно сыграйте бронзовый или серебряный дружественный отряд и усильте его на 3 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Max targets": 1,
+        "Boost": 3
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113202,
+      "title": "Градобитие Меригольд",
+      "description": "Уменьшите силу всех бронзовых и серебряных отрядов в ряду наполовину.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Halve": 50
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113203,
+      "title": "Шторм Скеллиге",
+      "description": "Сыграйте Бедствие в ряду противника, которое в начале хода наносит 2, 1 и 1 ед. урона его отрядам в левом конце ряда.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 2,
+        "Damage1": 1,
+        "Damage2": 1
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113205,
+      "title": "Двимеритовая бомба",
+      "description": "Восстановите все усиленные отряды в ряду.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxTargets": 1
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113206,
+      "title": "Белый Хлад",
+      "description": "Сыграйте Трескучий мороз в 2 смежных рядах противника.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxTargets": 1,
+        "Rows": 2,
+        "Damage": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113207,
+      "title": "Командирский рог",
+      "description": "Усильте смежные отряды (всего 5) на 3 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Boost": 3,
+        "Counter": 5
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113209,
+      "title": "Альзур: Двойной крест",
+      "description": "Усильте сильнейший бронзовый или серебряный отряд в вашей колоде на 2 ед. и сыграйте его.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Boost": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113306,
+      "title": "Яд мантикоры",
+      "description": "Нанесите 13 ед. урона.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 13,
+        "MaxTargets": 1
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113309,
+      "title": "Казнь",
+      "description": "Уничтожьте все сильнейшие отряды.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 113315,
+      "title": "Зеркало Беккера",
+      "description": "Передайте до 10 ед. силы сильнейшего отряда слабейшему.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Power": 10,
+        "Damage": 0
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 123201,
+      "title": "Подкрепление",
+      "description": "Сыграйте бронзового или серебряного солдата, машину, офицера или отряд поддержки из вашей колоды.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 8,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxTargets": 1
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 133302,
+      "title": "Гнездо чудовищ",
+      "description": "Создайте бронзового трупоеда или инсектоида и усильте его на 1 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 2,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxTargets": 1,
+        "Boost": 1
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 143201,
+      "title": "Дар природы",
+      "description": "Сыграйте бронзовую или серебряную особую карту из вашей колоды.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 16,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 153201,
+      "title": "Восстановление",
+      "description": "Верните бронзовый или серебряный отряд Скеллиге из вашего сброса в вашу руку, добавьте ему категорию Обреченность и сделайте его изначальную силу равной 8 ед. Затем сыграйте карту.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 32,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxTargets": 1,
+        "Set": 8
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 163201,
+      "title": "Измена",
+      "description": "Заставьте несколько смежных вражеских отрядов (всего 2) вызвать друг друга на дуэль.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 4,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 0,
+        "MaxTargets": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200019,
+      "title": "Приказ о выступлении",
+      "description": "Усильте слабейший бронзовый или серебряный отряд в вашей колоде на 2 ед. и сыграйте его.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Boost": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200020,
+      "title": "Некромантия",
+      "description": "Удалите бронзовый или серебряный отряд из любого сброса, затем усильте дружественный отряд на силу удаленного отряда.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxTargets": 1
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200022,
+      "title": "Круг призыва",
+      "description": "Создайте базовую копию последнего бронзового или серебряного отряда (не агента), появившегося на поле.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 200053,
+      "title": "Компрессия",
+      "description": "Обратите бронзовый или серебряный отряд в Нефритовую статуэтку.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxTargets": 1
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200223,
+      "title": "Мандрагора",
+      "description": "Выбор: исцелите отряд и укрепите его на 6 ед. или восстановите отряд и ослабьте его на 6 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxTargets": 1,
+        "Strengthen": 6,
+        "Weaken": 6
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200228,
+      "title": "Волчья яма",
+      "description": "Сыграйте Бедствие в ряду противника, которое наносит по 3 ед. урона отрядам при контакте.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 16,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 3
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200530,
+      "title": "Испорченный эль",
+      "description": "Нанесите по 6 ед. урона сильнейшему вражескому отряду в каждом ряду.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 6
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201581,
+      "title": "Руна Стрибог",
+      "description": "Сотворите бронзовую или серебряную карту Скеллиге.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 32,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 201582,
+      "title": "Руна Зоря",
+      "description": "Сотворите бронзовую или серебряную карту Королевств Севера.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 8,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 201583,
+      "title": "Руна Даждьбог",
+      "description": "Сотворите бронзовую или серебряную карту Нильфгаарда.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 4,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 201584,
+      "title": "Руна Девана",
+      "description": "Сотворите бронзовую или серебряную карту Чудовищ.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 2,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 201585,
+      "title": "Руна Марена",
+      "description": "Сотворите бронзовую или серебряную карту Скоя'таэлей.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 16,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 201634,
+      "title": "Обрушение Беккера",
+      "description": "Нанесите по 2 ед. урона случайным вражеским отрядам (всего 10).",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 2,
+        "MaxTargets": 10
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201635,
+      "title": "Славная охота",
+      "description": "Если проигрываете, создайте Имперскую мантикору. Если выигрываете или при ничьей, создайте Яд мантикоры.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 201637,
+      "title": "Мечта дракона",
+      "description": "Сыграйте Бедствие в ряду противника, которое взорвется, когда сыграют другую особую карту, и нанесет по 4 ед. урона всем отрядам в этом ряду.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 4
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201639,
+      "title": "Гарнизон",
+      "description": "Сотворите бронзовый или серебряный отряд из стартовой колоды противника и усильте его на 2 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Boost": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201642,
+      "title": "Инкрустированный меч",
+      "description": "Сотворите бронзового или серебряного солдата Скеллиге и укрепите его на 3 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 32,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Strengthen": 3
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201648,
+      "title": "Меч Вандергрифта",
+      "description": "Выбор: уничтожьте бронзовый или серебряный проклятый вражеский отряд или нанесите 9 ед. урона и, если уничтожите отряд, удалите его.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 8,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 9
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201653,
+      "title": "Махакамский рог",
+      "description": "Выбор: сотворите бронзового или серебряного краснолюда или укрепите отряд на 7 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 16,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxTargets": 1,
+        "Strengthen": 7
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201657,
+      "title": "Паразит",
+      "description": "Нанесите 12 ед. урона вражескому отряду или усильте дружественный отряд на 12 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 2,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 12,
+        "Boost": 12
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201662,
+      "title": "Трупный яд",
+      "description": "Выбор: нанесите по 2 ед. урона вражескому отряду и всем отрядам с теми же категориями или уничтожьте бронзовый или серебряный нейтральный отряд.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 4,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201697,
+      "title": "Черная кровь",
+      "description": "Выбор: сотворите бронзового трупоеда или вампира и усильте его на 2 ед. либо уничтожьте бронзового или серебряного трупоеда или вампира.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxTargets": 1,
+        "Boost": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201699,
+      "title": "Ворота Нильфгаарда",
+      "description": "Сыграйте бронзового или серебряного офицера из вашей колоды и усильте его на 1 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 4,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 4,
+        "Tier": 4,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxChoices": 1,
+        "Boost": 1
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113204,
+      "title": "Землетрясение",
+      "description": "Нанесите по 1 ед. урона всем вражеским отрядам.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 1
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113301,
+      "title": "Альзур: Гром",
+      "description": "Нанесите 9 ед. урона.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 1,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 9,
+        "MaxTargets": 1
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113302,
+      "title": "Трескучий мороз",
+      "description": "Сыграйте Бедствие в ряду противника, которое в начале хода наносит 2 ед. урона его слабейшему отряду.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 1,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113303,
+      "title": "Рассвет",
+      "description": "Выбор: усильте все поврежденные дружественные отряды под действием Бедствий на 2 ед. и очистите вашу сторону от всех Бедствий или сыграйте случайный бронзовый отряд из вашей колоды.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 1,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxTargets": 1,
+        "Boost": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113305,
+      "title": "Густой туман",
+      "description": "Сыграйте Бедствие в ряду противника, которое в начале хода наносит 2 ед. урона его сильнейшему отряду.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 1,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113307,
+      "title": "Выброс адреналина",
+      "description": "Измените статус стойкости у отряда.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Num of Targets": 1
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113308,
+      "title": "Эпидемия",
+      "description": "Уничтожьте все слабейшие отряды.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 113310,
+      "title": "Ласточка",
+      "description": "Усильте отряд на 10 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 1,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Boost": 10
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113311,
+      "title": "Гром",
+      "description": "Усильте 3 смежных отряда на 3 ед. и добавьте им 2 ед. брони.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 1,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Boost": 3,
+        "Armor": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113312,
+      "title": "Проливной дождь",
+      "description": "Сыграйте Бедствие в ряду противника, которое в начале хода наносит по 1 ед. урона 2 его случайным отрядам.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 1,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 1,
+        "MaxTargets": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113319,
+      "title": "Двимеритовые кандалы",
+      "description": "Измените статус блокировки у отряда. Если это вражеский отряд, нанесите ему 4 ед. урона.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 4
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 113320,
+      "title": "Мардрём",
+      "description": "Выбор: восстановите отряд и укрепите его на 3 ед. или восстановите отряд и ослабьте его на 3 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxTargets": 1,
+        "Strengthen": 3,
+        "Weaken": 3
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 133301,
+      "title": "Щит из чешуи виверны",
+      "description": "Усильте отряд на изначальную силу бронзового или серебряного отряда в вашей руке.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 153301,
+      "title": "На куски",
+      "description": "Нанесите по 3 ед. урона всем отрядам в одном ряду.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 3
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200008,
+      "title": "Зелье Петри",
+      "description": "Усильте случайные дружественные отряды (всего 6) на 2 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Boost": 2,
+        "MaxTargets": 6
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200009,
+      "title": "Сорокопутка",
+      "description": "Нанесите по 2 ед. урона случайным вражеским отрядам (всего 6).",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 2,
+        "MaxTargets": 6
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200021,
+      "title": "Леденящий кровь рык",
+      "description": "Уничтожьте дружественный отряд.\nСоздайте Медведя.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 200023,
+      "title": "Яд главоглаза",
+      "description": "Нанесите по 4 ед. урона 3 смежным отрядам.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 1,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 4,
+        "MaxTargets": 3
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200067,
+      "title": "Лунный свет",
+      "description": "Выбор: сыграйте Благо Полная луна или сыграйте Бедствие Кровавая луна.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 2,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 200224,
+      "title": "Вороний глаз",
+      "description": "Нанесите по 4 ед. урона сильнейшему вражескому отряду в каждом ряду. Дополнительно нанесите по 1 ед. урона за каждую копию этой карты в вашем сбросе.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 4,
+        "Damage2": 1
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 200519,
+      "title": "Махакамский эль",
+      "description": "Усильте случайный дружественный отряд в каждом ряду на 4 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Boost": 4
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201598,
+      "title": "Костяной талисман",
+      "description": "Выбор: воскресите бронзового зверя или сектанта или же исцелите дружественный отряд и укрепите его на 3 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 32,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Strengthen": 3
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201619,
+      "title": "Притирка",
+      "description": "Воскресите бронзовый отряд силой 5 ед. или меньше.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 4,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Power": 5,
+        "MaxTargets": 1
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201631,
+      "title": "Допплер",
+      "description": "Создайте случайный бронзовый отряд вашей фракции.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {},
+      "implemented": true
+    },
+    {
+      "templateId": 201633,
+      "title": "Кровавый бич",
+      "description": "Нанесите 5 ед. урона и создайте Призрака в случайном ряду.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 8,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 5
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201643,
+      "title": "Эльфская сабля",
+      "description": "Нанесите 10 ед. урона отряду, не относящемуся к эльфам.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 16,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 10
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201645,
+      "title": "Ловушка-давилка",
+      "description": "Нанесите 6 ед. урона отрядам на конце ряда противника.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 16,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 6
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201647,
+      "title": "Каменный вал",
+      "description": "Нанесите 7 ед. урона вражескому отряду и переместите его в ряд выше. Если этот ряд заполнен, уничтожьте этот вражеский отряд.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 7
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201656,
+      "title": "Мастерское копье",
+      "description": "Нанесите урон, равный изначальной силе бронзового или серебряного отряда в вашей руке.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Boost": 1
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201659,
+      "title": "Лебедка",
+      "description": "Усильте все машины на вашей стороне поля на 3 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 8,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Boost": 3
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201704,
+      "title": "Разведка",
+      "description": "Посмотрите бронзовые отряды (всего 2) в вашей колоде и сыграйте 1 из них.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 1,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "MaxTargets": 2,
+        "MaxTargets2": 1,
+        "DeckSize": 0
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201744,
+      "title": "Споры",
+      "description": "Нанесите по 2 ед. урона всем отрядам в одном ряду и очистите этот ряд от Блага.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Damage": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201749,
+      "title": "Золотая пена",
+      "description": "Сыграйте Благо в дружественном ряду, которое в начале хода усиливает случайные отряды (всего 2) на 1 ед.",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Boost": 1,
+        "MaxTargets": 2
+      },
+      "implemented": true
+    },
+    {
+      "templateId": 201753,
+      "title": "Ополчение крестьян",
+      "description": "Создайте крестьян в ряду (всего 3).",
+      "fields": {
+        "Armor": 0,
+        "FactionId": 1,
+        "InitialTimer": -1,
+        "Kind": 1,
+        "LinkedTemplateId": 0,
+        "LinkedTemplateOrder": 0,
+        "Power": 0,
+        "Rarity": 2,
+        "Tier": 2,
+        "Tokens": 0,
+        "Type": 2
+      },
+      "variables": {
+        "Counter": 3
+      },
+      "implemented": true
+    }
+  ]
+}

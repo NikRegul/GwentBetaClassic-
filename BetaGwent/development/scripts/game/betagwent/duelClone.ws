@@ -501,6 +501,8 @@ class CBetaGwentCloner extends IScriptable
         dst.power = (CBetaGwentDuelPower)Obj(src.power);
         dst.game = (CBetaGwentDuelSession)Obj(src.game);
         dst.consumeAttackerId = src.consumeAttackerId;
+        dst.destroying = src.destroying;
+        dst.deathCue = StructSBetaGwentDuelCueContext(src.deathCue);
         dst.playedChild = (CBetaGwentDuelCard)Obj(src.playedChild);
         dst.monsterStage = src.monsterStage;
         dst.monsterRemaining = src.monsterRemaining;
@@ -771,6 +773,19 @@ class CBetaGwentCloner extends IScriptable
         dst.aiSimCloner = src.aiSimCloner;
         dst.aiSimDamp = src.aiSimDamp;
         dst.aiDecisionSerial = src.aiDecisionSerial;
+        dst.aiPreparationIds.Clear();
+        dst.aiPreparationSequences.Clear();
+        dst.aiPreparationSpies.Clear();
+        dst.aiPreparedIds.Clear();
+        dst.aiPreparedValues.Clear();
+        dst.aiPreparedStrategic.Clear();
+        dst.aiPreparedUpliftIds.Clear();
+        dst.aiPreparedUplifts.Clear();
+        dst.aiPreparedSpyIds.Clear();
+        dst.aiPreparedSpyDraw.Clear();
+        dst.aiPreparedSpyRisk.Clear();
+        dst.aiPreparedSpyTempo.Clear();
+        dst.aiPreparedSpyUnsafe.Clear();
         dst.effectSourceDepth = src.effectSourceDepth;
         dst.savedSourceId = src.savedSourceId;
         dst.savedSourceTemplate = src.savedSourceTemplate;

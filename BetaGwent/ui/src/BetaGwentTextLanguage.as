@@ -42,6 +42,7 @@ package
         private static function indexLanguage(value:int,data:Object):void
         {
             initialize();
+            data=BetaGwentUiText142.extend(value,data);
             for(var old:int=1;old<=13;old++){maps[old]={};groups[old]={};}
             maps[value]=data;caches=[];cacheCount=0;
                 for(var key:String in data){

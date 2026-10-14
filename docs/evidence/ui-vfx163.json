@@ -1,0 +1,169 @@
+{
+  "stage": 163,
+  "scope": "All UI JavaScript checks against current 0.7 routing; baseline failures rechecked using exact 0.6.10 routing",
+  "checks": [
+    {
+      "script": "tools/ui/check_banish160.js",
+      "exitCode": 0,
+      "sha256": "12d17bb357508bc2b7efa693d1110b150bd01fe833ab7eedf2c0e7f2d4679021",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_banish160.log"
+    },
+    {
+      "script": "tools/ui/check_card_presentation126.js",
+      "exitCode": 0,
+      "sha256": "8f7a3ae1527025ba4df9372787805462b2527fda2a514d4df9d03ed5cc1e7d13",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_card_presentation126.log"
+    },
+    {
+      "script": "tools/ui/check_card_vfx163.js",
+      "exitCode": 0,
+      "sha256": "3e535b09665c82718510521ee8d3625ee08dc4574ec3ea85de0e06802238ee0d",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_card_vfx163.log"
+    },
+    {
+      "script": "tools/ui/check_catalog123.js",
+      "exitCode": 0,
+      "sha256": "617403f8790fd44aff64a0056ee9d6efd1d233bc963ca93fa2d75317da514286",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_catalog123.log"
+    },
+    {
+      "script": "tools/ui/check_controller123.js",
+      "exitCode": 0,
+      "sha256": "2654429bac0eb6120e40792c5100ae7fa530ed2681e7026c6a8699208e89aa16",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_controller123.log"
+    },
+    {
+      "script": "tools/ui/check_controller125.js",
+      "exitCode": 1,
+      "sha256": "846e18f9f823f378a79b6f26d8e5917f9dc889e0cc7bea050d9f9bed4210f8de",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_controller125.log",
+      "baseline0610ExitCode": 1
+    },
+    {
+      "script": "tools/ui/check_controller126.js",
+      "exitCode": 0,
+      "sha256": "33535b1aa4ea1ebec7378eb368524de7a872246bbb0414c94da225a3eeb965fb",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_controller126.log"
+    },
+    {
+      "script": "tools/ui/check_effects140.js",
+      "exitCode": 0,
+      "sha256": "4125b987799b0065f4a60c5200f262bd9c5ef543318d13e252248445115147ec",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_effects140.log"
+    },
+    {
+      "script": "tools/ui/check_fixes061.js",
+      "exitCode": 0,
+      "sha256": "25dfae5329fb686650eb67b29716d2b74694e45caf77ef5eb99bd4c117e3f438",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_fixes061.log"
+    },
+    {
+      "script": "tools/ui/check_fixes143.js",
+      "exitCode": 0,
+      "sha256": "10996ad472288a6e0203d623f16f66e5fda1fbb20024a23c30bb7c6b5aec7181",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_fixes143.log"
+    },
+    {
+      "script": "tools/ui/check_followups127.js",
+      "exitCode": 0,
+      "sha256": "25a686cb8f2fe3dcd46680639f3a2bb4bcd5fa39ffab48fe38b562c8e96bf857",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_followups127.log"
+    },
+    {
+      "script": "tools/ui/check_followups158.js",
+      "exitCode": 0,
+      "sha256": "d2daf7ae6fa66d2b48b660022adf8ba5f5076f8689ff79bca64218d53ca4e547",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_followups158.log"
+    },
+    {
+      "script": "tools/ui/check_halfcast126.js",
+      "exitCode": 0,
+      "sha256": "c8edb359d39ffe5a3ec90e2f347fb2dc5d2df924c57cdafa1dec2d5da2cf1702",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_halfcast126.log"
+    },
+    {
+      "script": "tools/ui/check_leader_release137.js",
+      "exitCode": 0,
+      "sha256": "aba16e5e94b9533f56accb329b29a8ea628b99e4d523af39eca625cf4e0c0b9b",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_leader_release137.log"
+    },
+    {
+      "script": "tools/ui/check_motion139.js",
+      "exitCode": 0,
+      "sha256": "ce1bea54fa872173b10d840bee0c083c0635a812bb26537c2e16f88453c58e21",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_motion139.log"
+    },
+    {
+      "script": "tools/ui/check_mulligan121.js",
+      "exitCode": 0,
+      "sha256": "2b59dc4b0f3ee0d0714561f4623238735d907c360c77e775dd2d7aac1e23db9a",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_mulligan121.log"
+    },
+    {
+      "script": "tools/ui/check_native_consume156.js",
+      "exitCode": 0,
+      "sha256": "7d22d85942d9494b87f9242bbd976c65dadd4c602ee5401fa7f511235bb446b0",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_native_consume156.log"
+    },
+    {
+      "script": "tools/ui/check_optional124.js",
+      "exitCode": 0,
+      "sha256": "1ba053a77c8bc0080b2206ad04e18e954396e8f30c81a84cc16c06157205ee15",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_optional124.log"
+    },
+    {
+      "script": "tools/ui/check_playtest_vfx150.js",
+      "exitCode": 0,
+      "sha256": "40b7183236d403652bc14a38f8e84ceca325fbab75bbdc65ea4fdc01448653d0",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_playtest_vfx150.log"
+    },
+    {
+      "script": "tools/ui/check_polish138.js",
+      "exitCode": 0,
+      "sha256": "30c4bc66eb4d272e67554bebd6471651db46df07be69c638df315f3ef659e9d9",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_polish138.log"
+    },
+    {
+      "script": "tools/ui/check_presentation133.js",
+      "exitCode": 0,
+      "sha256": "238f39d0ac0e1ffea335b9dad76c1cdf098fbb03ddae5b6916e4d24424e81c3f",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_presentation133.log"
+    },
+    {
+      "script": "tools/ui/check_release136.js",
+      "exitCode": 1,
+      "sha256": "137a2cd6d59d3bdbc75a48dd8c02de3cd4ae294094619ffeeb931ad01d7c8004",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_release136.log",
+      "baseline0610ExitCode": 1
+    },
+    {
+      "script": "tools/ui/check_release137.js",
+      "exitCode": 0,
+      "sha256": "eb6d8847bc9ce640987e57aeba10887493c636fb4d56f3383a61e9236187df91",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_release137.log"
+    },
+    {
+      "script": "tools/ui/check_special_vfx142.js",
+      "exitCode": 0,
+      "sha256": "80b89932a090c2011287bccbf83c963ae5c3877baee2133e5b86a751178c717a",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_special_vfx142.log"
+    },
+    {
+      "script": "tools/ui/check_timing126.js",
+      "exitCode": 0,
+      "sha256": "2ea05dea6f4350ac0b6cbb195a9611329a462ee958a8ce5bd0c725aea0825b18",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_timing126.log"
+    },
+    {
+      "script": "tools/ui/check_ux135.js",
+      "exitCode": 0,
+      "sha256": "a726df4135ed484328b317677a9fa7c1e35d7cc66ba74d63d44c31a24b4f195c",
+      "log": "D:\\w3mod\\BetaGwent\\build\\element-vfx163\\checks\\check_ux135.log"
+    }
+  ],
+  "newFailures": [],
+  "nativeGameTested": false,
+  "nativeActionScriptCompileExitCode": 0,
+  "nativeSyntaxCompilePassed": true,
+  "nativePackageBuilt": false
+}

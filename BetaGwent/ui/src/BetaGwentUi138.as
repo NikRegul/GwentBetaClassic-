@@ -5,6 +5,9 @@ package {
         public static var shake:Boolean=true;
         public static var scenes:int=1; // 0 off, 1 short, 2 full.
         public static var chains:Boolean=true;
+        public static var helpLabels:Boolean=true;
+        public static var intensity:Number=1; // Independent of tempo and reduced motion.
+        public static var dynamicLeaders:Boolean=true;
         public static var filters:Object={};
         public static function sceneDuration(reduced:Boolean):Number {
             return reduced||scenes==0?0:scenes==1?700:1200;

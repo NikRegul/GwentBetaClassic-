@@ -1,0 +1,8 @@
+{
+  "stage": 168,
+  "checks": 26,
+  "actualActionScript": true,
+  "nativeGameTested": false,
+  "clearWeatherSource": "BoardEffect_ClearWeather/LayeredShaft",
+  "atlasMiB": 6.5
+}

@@ -20,6 +20,35 @@ private saved var betaGwentRewardedQuests : array<name>;
 private saved var betaGwentStarterSetRevision : int;
 @addField(W3PlayerWitcher)
 private var betaGwentCollectionSeeding : bool;
+// Independent additive save extension: ownership schema 1 remains unchanged.
+@addField(W3PlayerWitcher)
+private saved var betaGwentNewCardsSchema : int;
+@addField(W3PlayerWitcher)
+private saved var betaGwentNewCardIds : array<int>;
+
+@addMethod(W3PlayerWitcher)
+private function BetaGwentEnsureNewCards()
+{
+    // Existing collections have no unseen cards on their first upgraded load.
+    if(betaGwentNewCardsSchema==0 && betaGwentNewCardIds.Size()==0)betaGwentNewCardsSchema=1;
+}
+@addMethod(W3PlayerWitcher)
+public function BetaGwentCardIsNew(id : int) : bool
+{ return betaGwentNewCardsSchema==1 && betaGwentNewCardIds.Contains(id) && BetaGwentOwned(id)>0; }
+@addMethod(W3PlayerWitcher)
+private function BetaGwentMarkNewCard(id : int)
+{
+    BetaGwentEnsureNewCards();
+    if(!betaGwentCollectionSeeding && betaGwentNewCardsSchema==1 && BetaGwentOwned(id)>0 && !betaGwentNewCardIds.Contains(id))betaGwentNewCardIds.PushBack(id);
+}
+@addMethod(W3PlayerWitcher)
+public function BetaGwentCardSeen(id : int) : bool
+{
+    var at : int;
+    if(betaGwentNewCardsSchema!=1 || BetaGwentOwned(id)<1)return false;
+    at=betaGwentNewCardIds.FindFirst(id);if(at<0)return false;
+    betaGwentNewCardIds.Erase(at);return true;
+}
 
 function BetaGwentCollectionCap(id : int) : int
 {
@@ -44,9 +73,9 @@ public function BetaGwentGrant(id : int) : bool
     if(betaGwentCollectionSchema!=1 || betaGwentOwnedIds.Size()!=betaGwentOwnedCopies.Size() || cap==0) return false;
     for(i=0;i<betaGwentOwnedIds.Size();i+=1) if(betaGwentOwnedIds[i]==id) {
         if(betaGwentOwnedCopies[i]>=cap) return false;
-        betaGwentOwnedCopies[i]+=1; return true;
+        betaGwentOwnedCopies[i]+=1;BetaGwentMarkNewCard(id);return true;
     }
-    betaGwentOwnedIds.PushBack(id);betaGwentOwnedCopies.PushBack(1);
+    betaGwentOwnedIds.PushBack(id);betaGwentOwnedCopies.PushBack(1);BetaGwentMarkNewCard(id);
     if(!betaGwentCollectionSeeding)BetaGwentUpdateCollectionProgress();return true;
 }
 // Additive starter migration: never removes cards, saved deck slots or reward claims.
@@ -72,6 +101,7 @@ public function BetaGwentEnsureCollection() : bool
     if(betaGwentCollectionSchema!=0) {
         if(betaGwentCollectionSchema!=1 || betaGwentOwnedIds.Size()!=betaGwentOwnedCopies.Size())return false;
         if(!betaGwentCollectionSeeding) {
+            BetaGwentEnsureNewCards();
             // Paid offers retain their reservation until the player chooses.
             if(betaGwentStarterSetRevision<BetaGwentStarterRevision() && !BetaGwentKegPending()) {
                 betaGwentCollectionSeeding=true;BetaGwentApplyStarterSet();betaGwentCollectionSeeding=false;
@@ -93,7 +123,7 @@ public function BetaGwentEnsureCollection() : bool
             while(BetaGwentOwned(ids[i])<needed) if(!BetaGwentGrant(ids[i]))break;
         }
     }
-    betaGwentCollectionSeeding=false;BetaGwentUpdateCollectionProgress();BetaGwentSyncTournamentAccess();
+    betaGwentCollectionSeeding=false;BetaGwentEnsureNewCards();BetaGwentUpdateCollectionProgress();BetaGwentSyncTournamentAccess();
     LogChannel('BetaGwent',"COLLECTION_INITIALIZED schema=1 starters=5 distinct="+betaGwentOwnedIds.Size());return true;
 }
 @addMethod(W3PlayerWitcher)
@@ -187,4 +217,25 @@ public function BetaGwentRewardActorKey(actor : CEntity) : int
     betaGwentRewardActorWins.PushBack(Min(4,legacyWins));
     LogChannel('BetaGwent',"COLLECTION_REWARD_ACTOR key="+betaGwentRewardActors.Size()+" runtimeId="+runtimeId+" migratedWins="+Min(4,legacyWins));
     return betaGwentRewardActors.Size();
+}
+
+// Debug acquisition uses normal collection caps without spending or rewarding.
+@addMethod(W3PlayerWitcher)
+public function BetaGwentGrantAllCards() : int
+{
+    var ids, leaders, received : array<int>;var i,id,total : int;
+    if(!BetaGwentEnsureCollection())return -1;
+    BetaGwentDuelCollection(ids);BetaGwentDuelLeaders(leaders);
+    for(i=0;i<leaders.Size();i+=1)if(!ids.Contains(leaders[i]))ids.PushBack(leaders[i]);
+    betaGwentCollectionSeeding=true;
+    for(i=0;i<ids.Size();i+=1){id=ids[i];
+        while(BetaGwentOwned(id)<BetaGwentCollectionCap(id)){
+            if(!BetaGwentGrant(id))break;
+            total+=1;if(!received.Contains(id))received.PushBack(id);
+        }
+    }
+    betaGwentCollectionSeeding=false;
+    for(i=0;i<received.Size();i+=1)BetaGwentMarkNewCard(received[i]);
+    BetaGwentUpdateCollectionProgress();BetaGwentSyncTournamentAccess();BetaGwentBackupProfile();
+    LogChannel('BetaGwent',"COLLECTION_DEBUG_ALL granted="+total+" distinct="+betaGwentOwnedIds.Size());return total;
 }

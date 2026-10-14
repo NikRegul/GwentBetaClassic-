@@ -1,0 +1,638 @@
+{
+  "entry": "GwintGame",
+  "source": "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_npc00.swf",
+  "sourceSha256": "47989342ed385f4dc99ad9987bc7dd93640154d8e3dd77319bff97bdf2c87a86",
+  "target": "D:\\w3mod\\GwentB\\myproject1\\workspace\\betagwent\\betagwent_npc00.redswf",
+  "updatedSha256": "1ef69f000b025cb5b70e6f4d39ff6490f0e923f9c729801fabf32777a45dfe1a",
+  "updatedBytes": 208776081,
+  "originalSha256": "1ea41c49b5570c10bb4fbce1986fd3025a27375f22df4e345fb2ba5a5d560abd",
+  "candidate": "D:\\w3mod\\BetaGwent\\build\\native-hd93-resource\\betagwent_npc00.redswf",
+  "backup": "D:\\w3mod\\BetaGwent\\build\\resource-backups\\1ea41c49b5570c10bb4fbce1986fd3025a27375f22df4e345fb2ba5a5d560abd.redswf",
+  "applied": true,
+  "nativeABCMatchesBuiltSWF": true,
+  "nativeSymbolsMatchBuiltSWF": true,
+  "headerTableChunkChecksumsVerified": true,
+  "nativeImageLinkagePrefixVerified": true,
+  "totalTextureChunks": 28,
+  "exportedBindings": 56,
+  "aliasTexturesDeduplicated": 28,
+  "bindings": [
+    {
+      "cid": 1,
+      "imageId": 0,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I1.dds",
+      "sha256": "5457feebee04beb7f2676cfa8a1940272f41e1f67b3efdcc961f6216a4fa794e",
+      "size": [
+        256,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 2,
+      "imageId": 1,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I2.dds",
+      "sha256": "093b70fcbfacf3d895e310d1327a6ca8e2118db1d76e76e29ab6e262ddab90a2",
+      "size": [
+        512,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 3,
+      "imageId": 2,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I3.dds",
+      "sha256": "16e7255d3bdf03a0060e5b33b67fe35789ca30950bd4e02d999ea1244908b4d7",
+      "size": [
+        256,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 4,
+      "imageId": 3,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I4.dds",
+      "sha256": "f6239549b90759261c23842b256fed0b8e730a6d202e327951e04645953e7b67",
+      "size": [
+        500,
+        660
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 5,
+      "imageId": 4,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I5.dds",
+      "sha256": "774fd2abe29ab1a79a5004a95cecebd46002e5711a2cee298e1fe1c37753fb53",
+      "size": [
+        512,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 6,
+      "imageId": 5,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I6.dds",
+      "sha256": "c29d6eb792f4c28a17871cace874da8c05fe59167485e74f3b22db55c416faca",
+      "size": [
+        512,
+        128
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 7,
+      "imageId": 6,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I7.dds",
+      "sha256": "142c1536accb03f3a53d1f8aa89b37d40026bdd424e12e9f3cb0a91d1478b9f8",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 8,
+      "imageId": 7,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I8.dds",
+      "sha256": "5eef1ceb34ac6e6fb0c769331571b42d45926ea71521c72509966e0ed533d245",
+      "size": [
+        1296,
+        2128
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 9,
+      "imageId": 8,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I9.dds",
+      "sha256": "2f34c2f3868dfda80b01fbc3d1f82015637fc1bd752f713542c95884867d558e",
+      "size": [
+        2880,
+        408
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 10,
+      "imageId": 9,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_IA.dds",
+      "sha256": "d764f3f96346a8c0feb91f0ee50a9e020d84b1d010f06a8e8907e39abaaf0fad",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 11,
+      "imageId": 10,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_IB.dds",
+      "sha256": "d9cc6840128ca0117285660110772056a68663d7fe47ba04df9a50a987cf0c2a",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 12,
+      "imageId": 11,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_IC.dds",
+      "sha256": "e9e7c1dcf32d4b1e8ac70b6047ff3e778f316751d990c57410be343ff2585011",
+      "size": [
+        512,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 13,
+      "imageId": 12,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_ID.dds",
+      "sha256": "2db88a10d8bcbd74cfa7915d4069a21e1d39b61ea3cc12a0702b237fb265c26b",
+      "size": [
+        512,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 14,
+      "imageId": 13,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_IE.dds",
+      "sha256": "722b38e07931dbea8c56b4578eff018410a7802b0fccb3a786cc508d6358f9f8",
+      "size": [
+        1680,
+        2288
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 15,
+      "imageId": 14,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_IF.dds",
+      "sha256": "e9679a758d5190a588d69fb041bd47fb88394541ca3b2574084745c5acdfbe30",
+      "size": [
+        1024,
+        1988
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 16,
+      "imageId": 15,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I10.dds",
+      "sha256": "adff3b08671ad80624e3723fda8394dacddd198032d45524b9706690714b68e5",
+      "size": [
+        2048,
+        2032
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 17,
+      "imageId": 16,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I11.dds",
+      "sha256": "c2822b0a686fda888bd71499659ca50941352bc53cbeebfcceb0c846daab4cfa",
+      "size": [
+        1024,
+        1288
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 18,
+      "imageId": 17,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I12.dds",
+      "sha256": "6736948cacc947ac68e09df977f1e355d91c200954e2bfa2c1658f49b3f40108",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 19,
+      "imageId": 18,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I13.dds",
+      "sha256": "f578b4ac600a83a3c1fd943c7700cee87ac9f257aafeac24ae2b34d34b4e778f",
+      "size": [
+        1584,
+        1348
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 20,
+      "imageId": 19,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I14.dds",
+      "sha256": "e02a2a2b98c00998c1db9c9e572be77b41078ead02d7038246f03f2b430ddb19",
+      "size": [
+        1024,
+        1216
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 21,
+      "imageId": 20,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I15.dds",
+      "sha256": "892be989719587163b0ec7bf21d59488a7196e5a4d7653873b77fd16a65173ff",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 22,
+      "imageId": 21,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I16.dds",
+      "sha256": "5776e6af8558597e26d84b954614e56be0822bb3f9959036cd0a2cdb8fb566d4",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 23,
+      "imageId": 22,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I17.dds",
+      "sha256": "769e2ff11ea555de52da1354ac023ebc00adf8960b3a4fea315e57ad0fc4cc73",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 24,
+      "imageId": 23,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I18.dds",
+      "sha256": "8f2bc16afe77e76a379d76fba9dba012584a33857f8ffdefe9129bd11410de23",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 25,
+      "imageId": 24,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I19.dds",
+      "sha256": "f5888e51e71803337cafaa2844321ec7bff3f95df4cdc999cee30b90007879e4",
+      "size": [
+        3072,
+        2656
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 26,
+      "imageId": 25,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I1A.dds",
+      "sha256": "ba77cef1dcae954b9c7b32e90716aed8ac432925433367b7715c1b718e4f5886",
+      "size": [
+        1400,
+        604
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 27,
+      "imageId": 26,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I1B.dds",
+      "sha256": "fe1b05a618010c772580b0b45e43fe06491ef548b5decb5daf427ef9834092b8",
+      "size": [
+        1024,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 28,
+      "imageId": 27,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\betagwent_npc00_I1C.dds",
+      "sha256": "b53a2bff629cd7c250815238819da91076c14cba5d5be8cdde400c0e9244b918",
+      "size": [
+        256,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 29,
+      "imageId": 11,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\battle_widgets101_png$d0c654131779b924005d1b024cc4c3cd-1733764530.dds",
+      "sha256": "e9e7c1dcf32d4b1e8ac70b6047ff3e778f316751d990c57410be343ff2585011",
+      "size": [
+        512,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 30,
+      "imageId": 24,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\boards_png$1a08c191df575c10ba5ad82217b2a6424669817.dds",
+      "sha256": "f5888e51e71803337cafaa2844321ec7bff3f95df4cdc999cee30b90007879e4",
+      "size": [
+        3072,
+        2656
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 31,
+      "imageId": 26,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cardfaces104_png$82fd17b4f7035fe0ad91234dbb236ebe1983884384.dds",
+      "sha256": "fe1b05a618010c772580b0b45e43fe06491ef548b5decb5daf427ef9834092b8",
+      "size": [
+        1024,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 32,
+      "imageId": 23,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-0_png$0d5fe0f3c6ed05317e71353cdb34fc28-2067006190.dds",
+      "sha256": "8f2bc16afe77e76a379d76fba9dba012584a33857f8ffdefe9129bd11410de23",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 33,
+      "imageId": 21,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-1_png$858f788fb762c759ae72cddbaddb8f0c-2067405421.dds",
+      "sha256": "5776e6af8558597e26d84b954614e56be0822bb3f9959036cd0a2cdb8fb566d4",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 34,
+      "imageId": 6,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-2_png$846c64ec94d409a5a9e5eaa6dc8b9e97-2066477548.dds",
+      "sha256": "142c1536accb03f3a53d1f8aa89b37d40026bdd424e12e9f3cb0a91d1478b9f8",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 35,
+      "imageId": 17,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-3_png$41dd8ee4766cd63c40ee27029fb0826f-2069481835.dds",
+      "sha256": "6736948cacc947ac68e09df977f1e355d91c200954e2bfa2c1658f49b3f40108",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 36,
+      "imageId": 10,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-4_png$edfff118ec028c90e68ad6111624adf4-2068816106.dds",
+      "sha256": "d9cc6840128ca0117285660110772056a68663d7fe47ba04df9a50a987cf0c2a",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 37,
+      "imageId": 20,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-5_png$7829b936e5808a5d049df3289e1527d7-2071836777.dds",
+      "sha256": "892be989719587163b0ec7bf21d59488a7196e5a4d7653873b77fd16a65173ff",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 38,
+      "imageId": 9,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-6_png$19b761c5c532d29dedde31ede69f97b7-2070124520.dds",
+      "sha256": "d764f3f96346a8c0feb91f0ee50a9e020d84b1d010f06a8e8907e39abaaf0fad",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 39,
+      "imageId": 22,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-7_png$42d416d249bc918e49b2b29e9f3feb1e-2089906023.dds",
+      "sha256": "769e2ff11ea555de52da1354ac023ebc00adf8960b3a4fea315e57ad0fc4cc73",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 40,
+      "imageId": 8,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cards-8_png$75db4fc013efb1d9acdff3bf2ad8ab80-2089240294.dds",
+      "sha256": "2f34c2f3868dfda80b01fbc3d1f82015637fc1bd752f713542c95884867d558e",
+      "size": [
+        2880,
+        408
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 41,
+      "imageId": 15,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\cardslots104_png$d0b42ef00b324671084360e01f2075bc432570625.dds",
+      "sha256": "adff3b08671ad80624e3723fda8394dacddd198032d45524b9706690714b68e5",
+      "size": [
+        2048,
+        2032
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 42,
+      "imageId": 7,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\covers107_png$3bce529988bfcae632922a0a37ad464c1837518822.dds",
+      "sha256": "5eef1ceb34ac6e6fb0c769331571b42d45926ea71521c72509966e0ed533d245",
+      "size": [
+        1296,
+        2128
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 43,
+      "imageId": 12,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\crowns103_png$afdc7822383cbd19956f3edd8da13bbc-480736802.dds",
+      "sha256": "2db88a10d8bcbd74cfa7915d4069a21e1d39b61ea3cc12a0702b237fb265c26b",
+      "size": [
+        512,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 44,
+      "imageId": 16,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\deckscreens104_png$9e66092382205340e0e9f65267f5e36f-289008632.dds",
+      "sha256": "c2822b0a686fda888bd71499659ca50941352bc53cbeebfcceb0c846daab4cfa",
+      "size": [
+        1024,
+        1288
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 45,
+      "imageId": 3,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\fire_png$53833cd68e5d90e22ebef8bfd2262d24-1328794111.dds",
+      "sha256": "f6239549b90759261c23842b256fed0b8e730a6d202e327951e04645953e7b67",
+      "size": [
+        500,
+        660
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 46,
+      "imageId": 0,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\frame_png$027bbd1fa03b3c35c8624e7c6fc319b6-1774576774.dds",
+      "sha256": "5457feebee04beb7f2676cfa8a1940272f41e1f67b3efdcc961f6216a4fa794e",
+      "size": [
+        256,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 47,
+      "imageId": 14,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\hud126_png$3f79800ab792819a1552f1d29724f64f-376747678.dds",
+      "sha256": "e9679a758d5190a588d69fb041bd47fb88394541ca3b2574084745c5acdfbe30",
+      "size": [
+        1024,
+        1988
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 48,
+      "imageId": 13,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\interface10-104_png$351e811ff43676e5d00107f97fe965e32067800519.dds",
+      "sha256": "722b38e07931dbea8c56b4578eff018410a7802b0fccb3a786cc508d6358f9f8",
+      "size": [
+        1680,
+        2288
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 49,
+      "imageId": 18,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\interface11-108_png$149ed5e2400a59c84f107c6679d647d2823917647.dds",
+      "sha256": "f578b4ac600a83a3c1fd943c7700cee87ac9f257aafeac24ae2b34d34b4e778f",
+      "size": [
+        1584,
+        1348
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 50,
+      "imageId": 25,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\intro104_png$00e5082c5ac1fef7204c90fe734b35a51359234650.dds",
+      "sha256": "ba77cef1dcae954b9c7b32e90716aed8ac432925433367b7715c1b718e4f5886",
+      "size": [
+        1400,
+        604
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 51,
+      "imageId": 5,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\kill2_beta_png$e08504eccad43410b3ef49ddd305192e2116109733.dds",
+      "sha256": "c29d6eb792f4c28a17871cace874da8c05fe59167485e74f3b22db55c416faca",
+      "size": [
+        512,
+        128
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 52,
+      "imageId": 4,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\kill_beta_png$de33526b2d4ce80501183455ef38bdb7782104319.dds",
+      "sha256": "774fd2abe29ab1a79a5004a95cecebd46002e5711a2cee298e1fe1c37753fb53",
+      "size": [
+        512,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 53,
+      "imageId": 27,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\lightning_beta_png$fb284a51063e07be42403e2002dcda1c-210908625.dds",
+      "sha256": "b53a2bff629cd7c250815238819da91076c14cba5d5be8cdde400c0e9244b918",
+      "size": [
+        256,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 54,
+      "imageId": 1,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\lightning_png$6645ca2b694804b980a117d25816075a-239601449.dds",
+      "sha256": "093b70fcbfacf3d895e310d1327a6ca8e2118db1d76e76e29ab6e262ddab90a2",
+      "size": [
+        512,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 55,
+      "imageId": 2,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\sparks_png$1755cad0a0a1c3f11e4d491348731dba-383351999.dds",
+      "sha256": "16e7255d3bdf03a0060e5b33b67fe35789ca30950bd4e02d999ea1244908b4d7",
+      "size": [
+        256,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 56,
+      "imageId": 19,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-GwintGame\\weather107_png$3892b72152f8d396c46c23917bd522c61726392754.dds",
+      "sha256": "e02a2a2b98c00998c1db9c9e572be77b41078ead02d7038246f03f2b430ddb19",
+      "size": [
+        1024,
+        1216
+      ],
+      "format": "DXT5"
+    }
+  ],
+  "nativeRuntimeVerified": false
+}

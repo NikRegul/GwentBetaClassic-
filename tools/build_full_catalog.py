@@ -99,6 +99,7 @@ for t in source['templates']:
     if ident in starters:how="Стартовый набор. "+how
     records.append(dict(templateId=ident,title=source['localization'][LOCALE].get(str(ident)+'_name',str(ident)),
         description=description,tags=tags[ident],power=f['Power'],tier=f['Tier'],typeMask=f['Type'],faction=f['FactionId'],
+        placementMask=(int(t['placement'].get('PlayerSide',0))|int(t['placement'].get('OpponentSide',0)))&7,
         leader=f['Tier']==1,spy=f['Type']==4 and int(t['placement'].get('OpponentSide',0))!=0 and int(t['placement'].get('PlayerSide',0))==0,implemented=ident in done,hasArt=ident in arts,
         acquisition=how,acquisitionShort=short,acquisitionAssigned=True,owned=None,ownershipTracked=True))
 records.sort(key=lambda c:(c['faction'],-c['tier'],c['title']))

@@ -1,0 +1,48 @@
+{
+  "version": "0.7.3",
+  "stage": 185,
+  "passed": true,
+  "packages": [
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.7.3-RU.zip",
+      "bytes": 315645857,
+      "sha256": "f39617a7dafd795ec55f532ce9a28792280920239d0b4c4c706f2078dabe0287",
+      "voice": "ru",
+      "textLanguages": 13,
+      "verified": true
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.7.3-EN.zip",
+      "bytes": 314629204,
+      "sha256": "993e70a3ea2ce8efa7c50873ffb326d501898febbb68b836a20ee7b72089baf6",
+      "voice": "en",
+      "textLanguages": 13,
+      "verified": true
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.7.3-DE.zip",
+      "bytes": 312837883,
+      "sha256": "790e1db10cee332dbc780d7265df2108d014f3137d29d87430ef2a2873e4fadc",
+      "voice": "de",
+      "textLanguages": 13,
+      "verified": true
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.7.3-IT.zip",
+      "bytes": 311110854,
+      "sha256": "e7e0dfc05cb9664af0aff158fa709097d770b80dffcab9794deb7bfdb3b845da",
+      "voice": "it",
+      "textLanguages": 13,
+      "verified": true
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.7.3-PT-BR.zip",
+      "bytes": 314187771,
+      "sha256": "908ca41560eaaa915cad28caa758ace1db1289a01d9350a929edca4e330d64d8",
+      "voice": "pt-br",
+      "textLanguages": 13,
+      "verified": true
+    }
+  ],
+  "nativeGameTested": false
+}

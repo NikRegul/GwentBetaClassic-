@@ -5,14 +5,22 @@
 function OnConfigUI()
 {
     var data : IScriptable;var init : W3InventoryInitData;var npc : CNewNPC;
-    var inventory : CInventoryComponent;var player : W3PlayerWitcher;
+    var inventory : CInventoryComponent;var player : W3PlayerWitcher;var merchant : W3MerchantComponent;
     var items,current : array<SItemUniqueId>;var i,j,id,quantity,available,stockCount : int;
     data=GetMenuInitData();init=(W3InventoryInitData)data;npc=(CNewNPC)data;
     if(init)npc=(CNewNPC)init.containerNPC;
     player=(W3PlayerWitcher)thePlayer;
-    if(npc && npc.HasTag('Merchant') && player && player.BetaGwentEnsureCollection()) {
+    if(npc)merchant=(W3MerchantComponent)npc.GetComponentByClassName('W3MerchantComponent');
+    if(npc && (npc.HasTag('Merchant') || (merchant && merchant.GetMapPinType()=='Innkeeper')) && player && player.BetaGwentEnsureCollection()) {
         inventory=npc.GetInventory();if(inventory) {
             inventory.UpdateLoot();inventory.GetAllItems(items);
+            // All innkeepers, including DLC and already saved inventories. This
+            // migration runs once per NPC; reopening a sold-out shop is not a refill.
+            if(merchant && merchant.GetMapPinType()=='Innkeeper' && !npc.betaGwentInnkeeperKegsStocked) {
+                stockCount=inventory.GetItemQuantityByName('betagwent_keg');
+                if(stockCount<5)inventory.AddAnItem('betagwent_keg',5-stockCount,true,true);
+                npc.betaGwentInnkeeperKegsStocked=true;
+            }
             // Expand the old single-keg stock once on existing merchant saves.
             // Fresh/replenished stock comes from the 5-keg loot overlay.
             if(!npc.betaGwentBulkKegStockMigrated && inventory.GetItemQuantityByName('betagwent_keg')>0) {
@@ -87,6 +95,9 @@ function BuyItem(item : SItemUniqueId, quantity : int) : bool
 
 @addField(CNewNPC)
 public saved var betaGwentBulkKegStockMigrated : bool;
+
+@addField(CNewNPC)
+public saved var betaGwentInnkeeperKegsStocked : bool;
 
 // Native inventory supplies quantity controls; keep their displayed price exact.
 @wrapMethod(CR4InventoryMenu)

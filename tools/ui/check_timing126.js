@@ -9,8 +9,10 @@ function extract(name){
  return source.slice(start,end).replace(/:(String|Object|void|int|Number|Array|Boolean)\b(?=\s*(?:[,)=;{]|in\b))/g,'').replace(/for each\((.*?) in (.*?)\)/g,'for($1 of $2)');
 }
 const c=vm.createContext({Math,Number,BetaGwentVisualTimings:{FROST_INTRO:1,FOG_INTRO:1,RAIN_INTRO:1}});
+// The elemental engine has its own production-code regression (check_elements164).
+c.presentationFloor178=()=>0;c.elementCueFloor164=()=>0;c.drawElementCue164=()=>null;
 const autoMass=/AUTO_MASS_CONSUME:Boolean=true/.test(source);
-vm.runInContext('var replayFrames=[],animationTempo=1,visualTimeScale=1,MASS_TICK_MS=70,AUTO_MASS_CONSUME='+autoMass+';'+extract('cueMinimumDuration')+extract('prepareReplayTiming'),c);
+vm.runInContext('var activeCue=null,replayFrames=[],animationTempo=1,visualTimeScale=1,MASS_TICK_MS=70,AUTO_MASS_CONSUME='+autoMass+';'+extract('cueMinimumDuration')+extract('prepareReplayTiming'),c);
 let checks=0;function check(v,n){if(!v)throw Error(n);checks++;console.log('PASS',n);}
 function cue(kind,source=0,row=1){return {cue:{kind,source,row,duration:260,target:1}};}
 for(const tempo of [1,2]){
@@ -35,6 +37,6 @@ if(autoMass){
 check(!c.replayFrames.at(-1).cue.massFollow&&c.replayFrames.at(-1).cue.floor===930,'weather after consumes keeps normal speed');
 c.replayFrames=[cue(11,10),cue(11,11),cue(11,10),cue(1,10),cue(11,10)];c.prepareReplayTiming();
 check(c.replayFrames.every(f=>!f.cue.massFollow),'different consumers and card plays never merge into one consume');
-check(/function accelerateReplay\(/.test(source)&&/drawBetaHint\(fastReplay\?"Пропустить":"Ускорить"/.test(source),'Speed up control replaces automatic acceleration');
+check(/function accelerateReplay\(/.test(source)&&source.includes('Удерживайте ПКМ · ускорить'),'Speed up control replaces automatic acceleration');
 const report={stage:126,checks,actualActionScript:true,nativeVisualVerified:false,releaseBuildStarted:false};
 fs.writeFileSync('docs/evidence/timing126.json',JSON.stringify(report,null,2)+'\n');

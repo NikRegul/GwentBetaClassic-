@@ -108,21 +108,31 @@ function BetaGwentSkelligeQuestClaims() : int
     merchants.PushBack('shop_14_tournament_meadows_barber');
     merchants.PushBack('shop_22_port_butcher');
     merchants.PushBack('shop_cammerlengo');
+    merchants.PushBack('q705_tailor');
     for(i=0;i<merchants.Size();i+=1)if(FactsQuerySum("merchant_card_"+merchants[i]+"_card_already_given")>0)count+=1;
     return count;
 }
 function BetaGwentSyncSkelligeQuestProgress()
 {
     var manager : CWitcherJournalManager;var entries : array<CJournalBase>;
-    var objective : CJournalQuestObjective;var questEntry : CJournalQuest;var i,count,current : int;
+    var objective : CJournalQuestObjective;var questEntry : CJournalQuest;var phase : CJournalQuestPhase;var i,j,k,count,current : int;
     manager=theGame.GetJournalManager();if(!manager)return;
     count=BetaGwentSkelligeQuestClaims();if(count==0)return;
-    manager.GetActivatedOfType('CJournalQuestObjective',entries);
+    // Follow the native quest-menu traversal. Activated roots are quests;
+    // their objectives live inside phases, not in the root registry.
+    manager.GetActivatedOfType('CJournalQuest',entries);
     for(i=0;i<entries.Size();i+=1){
-        objective=(CJournalQuestObjective)entries[i];if(!objective || objective.GetCount()!=19 || manager.GetEntryStatus(objective)!=JS_Active)continue;
-        questEntry=objective.GetParentQuest();if(!questEntry || questEntry.baseName!="cg700_all_cards")continue;
-        current=manager.GetQuestObjectiveCount(objective.guid);
-        if(current<count){manager.SetQuestObjectiveCount(objective.guid,count);LogChannel('BetaGwent',"SKELLIGE_QUEST_PROGRESS old="+current+" claimed="+count);}
+        questEntry=(CJournalQuest)entries[i];
+        if(!questEntry || questEntry.baseName!="cg700_all_cards" || manager.GetEntryStatus(questEntry)!=JS_Active)continue;
+        for(j=0;j<questEntry.GetNumChildren();j+=1){
+            phase=(CJournalQuestPhase)questEntry.GetChild(j);if(!phase)continue;
+            for(k=0;k<phase.GetNumChildren();k+=1){
+                objective=(CJournalQuestObjective)phase.GetChild(k);
+                if(!objective || objective.GetCount()!=19 || manager.GetEntryStatus(objective)!=JS_Active)continue;
+                current=manager.GetQuestObjectiveCount(objective.guid);
+                if(current<count){manager.SetQuestObjectiveCount(objective.guid,count);LogChannel('BetaGwent',"SKELLIGE_QUEST_PROGRESS old="+current+" claimed="+count);}
+            }
+        }
     }
 }
 // Run outside the reward graph, which can increment its counter later in the
@@ -131,4 +141,21 @@ function BetaGwentSyncSkelligeQuestProgress()
 function OnConfigUI()
 {
     BetaGwentSyncSkelligeQuestProgress();wrappedMethod();
+}
+
+// Wait until the native reward graph has left its win branch before repairing
+// the HUD counter. Read claims; never increment or award a second card.
+@addField(W3PlayerWitcher)
+private var betaGwentQuestSyncPasses : int;
+@addMethod(W3PlayerWitcher)
+public function BetaGwentScheduleQuestSync()
+{
+    RemoveTimer('BetaGwentQuestSyncTick');betaGwentQuestSyncPasses=3;
+    AddTimer('BetaGwentQuestSyncTick',3.0f,false);
+}
+@addMethod(W3PlayerWitcher)
+private timer function BetaGwentQuestSyncTick(deltaTime : float, timerId : int)
+{
+    BetaGwentSyncSkelligeQuestProgress();betaGwentQuestSyncPasses-=1;
+    if(betaGwentQuestSyncPasses>0)AddTimer('BetaGwentQuestSyncTick',3.0f,false);
 }

@@ -25,6 +25,7 @@ package {
         private var started:Boolean=false;
         private var portraitWidth:Number;
         private var portraitHeight:Number;
+        private var playbackStart:int=0;
 
         private static var graveyard:Array=[];
         private static var reaper:Timer;
@@ -33,8 +34,10 @@ package {
         private static var livePages:int=0;
         private static const MAX_LIVE_PAGES:int=12;
 
-        public function BetaGwentLeaderPreview(id:int,w:Number,h:Number) {
-            cardId=id;metadata=BetaGwentLeaderCatalog.info(id);resize(w,h);
+        public function BetaGwentLeaderPreview(id:int,w:Number,h:Number,entrance:Boolean=false,startDelay:int=0) {
+            cardId=id;metadata=entrance?BetaGwentLeaderIntroCatalog.info(id):null;
+            if(!metadata)metadata=BetaGwentLeaderCatalog.info(id);
+            playbackStart=getTimer()+startDelay;resize(w,h);
             mouseEnabled=false;mouseChildren=false;if(!metadata)return;
             addEventListener(Event.ADDED_TO_STAGE,added);
             addEventListener(Event.REMOVED_FROM_STAGE,removed);
@@ -43,6 +46,7 @@ package {
         public function resize(w:Number,h:Number):void {portraitWidth=w;portraitHeight=h;scaleX=w/192;scaleY=h/234;}
         public function frameAt(milliseconds:Number):int {
             var duration:Number=metadata.duration*1000;
+            if(metadata.once)return Math.min(metadata.frames-1,int(Math.max(0,milliseconds-playbackStart)/duration*metadata.frames));
             return int(((milliseconds%duration)+duration)%duration/duration*metadata.frames);
         }
         private function stopDelay():void {if(delay){delay.stop();delay.removeEventListener(TimerEvent.TIMER_COMPLETE,begin);delay=null;}}
@@ -54,7 +58,7 @@ package {
         private function removed(e:Event):void {removeEventListener(Event.ENTER_FRAME,tick);}
         private function request(page:int):void {
             if(slots[page]||failedPages[page]||disposed||livePages>=MAX_LIVE_PAGES)return;
-            var path:String=BetaGwentLeaderCatalog.path(cardId,page);if(!path)return;
+            var path:String=metadata.once?BetaGwentLeaderIntroCatalog.path(cardId,page):BetaGwentLeaderCatalog.path(cardId,page);if(!path)return;
             var loader:Loader=new Loader();loader.visible=false;
             livePages++;
             var entry:Object={loader:loader,ready:false,done:false};
@@ -67,7 +71,7 @@ package {
         // Runs only from ENTER_FRAME or the start/add path, never from a loader event.
         private function tick(e:Event):void {
             if(disposed||!stage||!metadata)return;
-            var frame:int=frameAt(getTimer()),page:int=int(frame/24),next:int=(page+1)%metadata.pages;
+            var frame:int=frameAt(getTimer()),page:int=int(frame/24),next:int=metadata.once?Math.min(metadata.pages-1,page+1):(page+1)%metadata.pages;
             var entry:Object=slots[page];var key:String;var drop:Array=[];
             if(entry&&entry.failed){failedPages[page]=true;drop.push(page);entry=null;}
             if(entry&&entry.ready&&entry.loader.content){

@@ -230,6 +230,8 @@ function PrepareSources {
                 if ($LASTEXITCODE -ne 0) { throw 'Kaedweni Cavalry armor targeting regression failed.' }
                 & node tools/ai/check_ciri131.js $snapshot (Join-Path $Evidence 'ciri131.json')
                 if ($LASTEXITCODE -ne 0) { throw 'False Ciri return timing regression failed.' }
+                & node tools/ai/check_assassin133.js $snapshot (Join-Path $Evidence 'assassin133.json')
+                if ($LASTEXITCODE -ne 0) { throw 'Assassin victim placement regression failed.' }
             }
             if ($Stage -ge 133) {
                 & node tools/ai/check_policy133.js $snapshot (Join-Path $Evidence 'policy133.json')

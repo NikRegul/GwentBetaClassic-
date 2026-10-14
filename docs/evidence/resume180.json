@@ -1,0 +1,14 @@
+{
+  "previousInterruptedStage": 179,
+  "freshStage": 180,
+  "version": "0.7.3",
+  "backup": "D:\\w3mod\\tmp\\backup-resume180-20261014-183606",
+  "reuseVerifiedMenuStage": 179,
+  "aiSourceSHA256": {
+    "BetaGwent\\development\\scripts\\game\\betagwent\\duelSession.ws": "8cfc097373fa1b86ca91d8efed8b74b22433bbf2552bb557952621338754f737",
+    "BetaGwent\\development\\scripts\\game\\betagwent\\duelSpecials.ws": "792aa279e8f9f7986e53d239d586f9ec95e78332739d9de14ac82bb03d4ef3ef"
+  },
+  "newAISuite": "tools/ai/check_miruna_aglais_scorch180.js",
+  "expectedRegressionSuites": 77,
+  "nativeGameTested": false
+}

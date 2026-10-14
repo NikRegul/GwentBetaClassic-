@@ -1,0 +1,18 @@
+{
+  "stage": 143,
+  "version": "0.6.7",
+  "language": "ru",
+  "passed": true,
+  "regressionSuites": 51,
+  "nativeScripts": 70,
+  "nativeMenus": 4,
+  "sourceFingerprint": "af7c3a3a183f68bfa51633e520bd845d05e4dfc56bed283793c5fa78eb513fac",
+  "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.6.7-RU.zip",
+  "archiveSha256": "fa16f5bcc24d7764241caf357e1944251ff0b2c22da771e9dbe86dd2f8505b75",
+  "bytes": 305391680,
+  "bundleEntries": 351,
+  "oneShotLeaders": 12,
+  "loopFallbackLeaders": 9,
+  "previousArchivesUnmodified": true,
+  "nativeGameTested": false
+}

@@ -53,7 +53,7 @@ for old in stock:
  ET.SubElement(item,'tags').text='BetaGwentCard,EncumbranceOff,Lootable'
  strings += [(key,title),(key+'_desc','Карта Beta Gwent 0.9.24: '+title+'. Покупка пополняет коллекцию. Лимит: '+('3 копии.' if ts[ident]['fields']['Tier']==2 else '1 копия.'))]
  records.append(dict(legacyItem=name,betaItem=new,templateId=ident,title=title,reason=reason,price=int(old.get('price','20'))))
-item=ET.SubElement(itemroot,'item',name='betagwent_keg',hold_slot='',equip_slot='',template='',stackable='999',ability_slots='0',category='misc',price='150',icon_path='icons/inventory/gwint/ico_gwent_weather_neutral.png',localisation_key_name='bg_keg_name',localisation_key_description='bg_keg_desc')
+item=ET.SubElement(itemroot,'item',name='betagwent_keg',hold_slot='',equip_slot='',template='',stackable='999',ability_slots='0',category='misc',price='150',icon_path='icons/inventory/betagwent/ico_betagwent_keg.png',localisation_key_name='bg_keg_name',localisation_key_description='bg_keg_desc')
 ET.SubElement(item,'tags').text='BetaGwentKeg,EncumbranceOff,Lootable'
 strings += [('bg_keg_name','Бочка карт Beta Gwent'),('bg_keg_desc','150 крон. До четырёх недостающих бронзовых карт и выбор одной из трёх редких: серебро, золото или лидер. Если бронза исчерпана, выдаётся только редкий выбор за ту же цену. Можно купить несколько бочек сразу. В инвентаре выберите «Использовать», чтобы открыть одну. Редкий выбор сохраняется до подтверждения.')]
 out=WORK/'gameplay/items/betagwent_shop.xml';out.parent.mkdir(parents=True,exist_ok=True);ET.indent(items);ET.ElementTree(items).write(out,encoding='utf8',xml_declaration=True)

@@ -96,6 +96,7 @@ class CBetaGwentDuelNeutral extends IScriptable
         else if(id==200079){source.monsterStored=t.runtimeTemplate.templateId;game.MonsterCreate(source,t.runtimeTemplate.templateId);return;}
         else if(id==200083){game.NilfTake(target,side);Query(side,8,14,14,0,ids);if(ids.Size()>0)game.NilfDiscard(game.FindCard(ids[game.RandomIndex(ids.Size())]));}
         else if(id==200235){Query(enemy,7,15,4,8,ids);for(i=0;i<ids.Size();i+=1)if(game.FindCard(ids[i]).TemplateId()==t.runtimeTemplate.templateId)game.MonsterPower(source,game.FindCard(ids[i]),-4);}
+        else if(id==201772){if((t.runtimeTemplate.factionMask&2)!=0)game.QueueDestroy(target);else game.MonsterPower(source,target,-4);}
         else if(id==200236)game.QueueDestroy(target);
         else if(id==200237 || id==201579 || id==201776){game.MonsterPlayExisting(source,target);return;}
         game.MonsterComplete(source);
@@ -135,7 +136,7 @@ class CBetaGwentDuelNeutral extends IScriptable
     public function Row(source : CBetaGwentDuelCard, side : int, row : int)
     {var ids : array<int>;var s : SBetaGwentCardSnapshot;var i,power : int;
      if(source.TemplateId()==200532)game.MonsterWeather(side,row,128);
-     else if(source.TemplateId()==201523){Query(side,row,15,4,8,ids);for(i=0;i<ids.Size();i+=1)game.NeutralReset(game.FindCard(ids[i]));}
+     else if(source.TemplateId()==201523){game.YrdenVisual(side,row);Query(side,row,15,4,8,ids);for(i=0;i<ids.Size();i+=1)game.NeutralReset(game.FindCard(ids[i]));}
      else {Query(BetaGwentOpponentId(Side(source)),row,15,4,8,ids);for(i=0;i<ids.Size();i+=1){s=game.FindCard(ids[i]).Snapshot();power+=s.power.currentPower;}if(power>=25)Extremes(source,BetaGwentOpponentId(Side(source)),row,true,3,0,0);}
      game.MonsterComplete(source);
     }

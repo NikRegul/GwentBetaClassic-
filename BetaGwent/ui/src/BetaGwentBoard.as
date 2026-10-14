@@ -1,4 +1,4 @@
-package
+﻿package
 {
     import flash.display.Bitmap;
     import flash.display.Sprite;
@@ -13,6 +13,7 @@ package
     import flash.events.TextEvent;
     import flash.external.ExternalInterface;
     import flash.geom.Rectangle;
+    import flash.geom.Point;
     import flash.geom.Matrix;
     import flash.display.GradientType;
     import flash.filters.GlowFilter;
@@ -58,7 +59,11 @@ package
         private var controllerTyping:Boolean=false;
         private var controllerInspectBoard:Boolean=false;
         private var focusBoardAfterReplay:Boolean=false;
+        private var focusHandAfterReplay:Boolean=false;
         private var controllerMenuOpen:Boolean=false;
+        private var controllerMenuTab:int=0;
+        private var controllerMenuFocus:String="";
+        private var controllerMenuHelp:TextField;
         private var controllerMenuLayer:Sprite=new Sprite();
         private var nameLayer:Sprite=new Sprite();
         private var nameOpen:Boolean=false;
@@ -103,6 +108,9 @@ package
         private var skin:int=3;
         private var battlePreview:Sprite;
         private var leaderPreview:BetaGwentLeaderPreview;
+        private var leaderPreviewCard:Object;
+        private var leaderPreviewDetail:Object;
+        private var introLeaderMovies:Array=[];
         private var boardLeaderMovies:Array=[];
         private var textRefreshAt:int=0;
         private var battlePreviewKey:String="";
@@ -116,6 +124,7 @@ package
         private var catalogFaction:int=0;
         private var catalogType:int=0;
         private var catalogStatus:int=0;
+        private var catalogPosition178:int=0;
         private var catalogSort:int=0;
         private var catalogSearch:String="";
         private var catalogPicked:Object;
@@ -129,6 +138,127 @@ package
         private var templateRules:Object={};
         private var hoverCardId:int=0;
         private var searchDeadline:int=0;
+        private var editorScroll178:Number=0;
+        private var catalogScroll178:Number=0;
+        private var deckScroll178:Number=0;
+        private var shelves178:Object={};
+        private var shelfCards178:Object={};
+        private var deckList178:Sprite;
+        private function scrollShelf178(pane:String,amount:Number):void
+        {
+            if(!ready||detailOpen||nameOpen||controllerMenuOpen)return;
+            var model:Object=shelves178[pane];if(!model)return;
+            var value:Number=Math.max(0,Math.min(model.max,amount));
+            if(pane=="collection"){editorScroll178=value;redrawEditorCollection();}
+            else if(pane=="catalog"){catalogScroll178=value;redrawCatalogGrid();}
+            else if(pane=="deck"){deckScroll178=value;redrawDeckList178();}
+        }
+        private function shelfSelect178(pane:String,index:int):void
+        {
+            var model:Object=shelves178[pane],list:Array=shelfCards178[pane];
+            if(!model||!list||index<0||index>=list.length)return;
+            var value:Number=BetaGwentVirtualShelf178.ensure(index,model.columns,model.rowHeight,model.height,model.offset);
+            scrollShelf178(pane,value);
+            controller.focusKey((pane=="catalog"?"catalog":"editor")+":card:card"+pane+list[index].templateId);
+        }
+        private function shelfBar178(parent:Sprite,pane:String,x:Number,y:Number,height:Number):void
+        {
+            var model:Object=shelves178[pane];if(!model||model.max<=0)return;
+            var track:Sprite=panel(parent,x,y,12,height,0x10171B,0.8);
+            var thumbHeight:Number=Math.max(30,height*height/model.total),travel:Number=height-thumbHeight;
+            var thumb:Sprite=panel(track,1,travel*model.offset/model.max,10,thumbHeight,0xBDA46C,0.9);
+            thumb.buttonMode=true;
+            track.addEventListener(MouseEvent.MOUSE_DOWN,function(e:MouseEvent):void{
+                if(isInspectMouse(e)||!ready)return;e.stopImmediatePropagation();clearEditorDrag178();
+                var surface:Stage=stage;if(!surface)return;
+                var top:Number=track.localToGlobal(new Point(0,0)).y;
+                var verticalScale:Number=(track.localToGlobal(new Point(0,height)).y-top)/height;
+                var grabbed:Number=thumb.hitTestPoint(e.stageX,e.stageY,true)?(e.stageY-top)/verticalScale-thumb.y:thumbHeight/2;
+                var move:Function=function(ev:MouseEvent):void{scrollShelf178(pane,Math.max(0,Math.min(travel,(ev.stageY-top)/verticalScale-grabbed))/travel*model.max);};
+                var finish:Function=function(ev:Event):void{surface.removeEventListener(MouseEvent.MOUSE_MOVE,move);surface.removeEventListener(MouseEvent.MOUSE_UP,finish);surface.removeEventListener(Event.DEACTIVATE,finish);};
+                surface.addEventListener(MouseEvent.MOUSE_MOVE,move);surface.addEventListener(MouseEvent.MOUSE_UP,finish);surface.addEventListener(Event.DEACTIVATE,finish);move(e);
+            });
+        }
+        private function redrawDeckList178():void
+        {
+            if(!deckList178||!editingDeck)return;
+            while(deckList178.numChildren)deckList178.removeChildAt(0);
+            var list:Array=[];for each(var item:Object in editorCards)if(item.copies>0)list.push(item);list.sort(sortEditorCards);
+            var shelf:BetaGwentVirtualShelf178=new BetaGwentVirtualShelf178(list.length,1,40,372,480,deckScroll178);
+            deckList178.addChild(shelf);shelves178.deck=shelf.layout;shelfCards178.deck=list;deckScroll178=shelf.layout.offset;
+            for(var i:int=shelf.layout.first;i<shelf.layout.end;i++){
+                var c:Object=BetaGwentVirtualShelf178.card(list[i],"deck",i,46,428,372,480);c.side=1;
+                var row:Sprite=deckSlotRow(shelf.body,c,0,i*40-deckScroll178,372,38);
+                attachInspect(row,c,{description:c.description},372,38);
+                if(ready){attachEditorClick(row,editorAction("OnBetaGwentDeckEditorChange",c.templateId,-1));attachEditorDrag178(row,c,-1,372,38);}
+            }
+            if(!list.length)betaLabel(deckList178,"Нажмите на карту в коллекции,\nчтобы добавить её в колоду.",6,42,360,18,0xCFC8BA,BetaGwentFonts.BODY,false,"center").height=60;
+            shelfBar178(deckList178,"deck",376,0,480);
+        }
+
+        private var editorDragId178:int=0;
+        private var editorDragAmount178:int=0;
+        private var editorDragRevision178:int=0;
+        private var editorDragStart178:Point;
+        private var editorDragTile178:Sprite;
+        private var editorDragBounds178:Rectangle;
+        private var editorDragging178:Boolean=false;
+        private var editorDragGhost178:Sprite;
+        private var editorClickUntil178:int=0;
+        private function clearEditorDrag178():void
+        {
+            editorDragId178=0;editorDragging178=false;editorDragStart178=null;editorDragTile178=null;editorDragBounds178=null;
+            if(editorDragGhost178&&editorDragGhost178.parent)editorDragGhost178.parent.removeChild(editorDragGhost178);
+            editorDragGhost178=null;dragLayer.graphics.clear();
+        }
+        private function attachEditorDrag178(tile:Sprite,c:Object,amount:int,w:Number,h:Number):void
+        {
+            tile.addEventListener(MouseEvent.MOUSE_DOWN,function(e:MouseEvent):void{
+                if(isInspectMouse(e)||!ready||!editingDeck||detailOpen||nameOpen||controllerMenuOpen||editorCraft)return;
+                for(var child:Object=e.target;child&&child!=tile;child=child.parent)if(child.name=="editorCraftButton178")return;
+                var local:Point=tile.globalToLocal(new Point(e.stageX,e.stageY));
+                if(local.x<0||local.y<0||local.x>w||local.y>h)return;
+                if(amount>0&&!c.canAdd||amount<0&&int(c.copies)<1)return;
+                clearEditorDrag178();editorDragId178=int(c.templateId);editorDragAmount178=amount;editorDragRevision178=revision;editorDragStart178=new Point(mouseX,mouseY);editorDragTile178=tile;editorDragBounds178=new Rectangle(0,0,w,h);
+            });
+        }
+        private function editorDragTarget178():Object
+        {
+            if(!editingDeck||!ready||revision!=editorDragRevision178)return null;
+            var c:Object=editorById[editorDragId178];if(!c)return null;
+            if(editorDragAmount178>0&&c.canAdd&&mouseX>=21&&mouseX<=447&&mouseY>=129&&mouseY<=987)return {x:21,y:129,w:426,h:858};
+            if(editorDragAmount178<0&&c.copies>0&&mouseX>=447&&mouseX<=1473&&mouseY>=129&&mouseY<=987)return {x:447,y:129,w:1026,h:858};
+            return null;
+        }
+        private function moveEditorDrag178():void
+        {
+            if(!editorDragStart178)return;
+            if(revision!=editorDragRevision178||!ready||!editingDeck){clearEditorDrag178();return;}
+            if(!editorDragging178){
+                if(Math.abs(mouseX-editorDragStart178.x)+Math.abs(mouseY-editorDragStart178.y)<9)return;
+                editorDragging178=true;editorDragGhost178=new Sprite();dragLayer.addChild(editorDragGhost178);editorDragGhost178.mouseEnabled=false;editorDragGhost178.mouseChildren=false;
+                paintBetaFace(editorDragGhost178,editorDragId178,100,140,1);
+            }
+            editorDragGhost178.x=mouseX-50;editorDragGhost178.y=mouseY-70;
+            var target:Object=editorDragTarget178();editorDragGhost178.alpha=target?0.95:0.6;dragLayer.graphics.clear();
+            if(target){dragLayer.graphics.lineStyle(2,0xB7D6C2,0.7);dragLayer.graphics.beginFill(0x95B7A2,0.08);dragLayer.graphics.drawRect(target.x,target.y,target.w,target.h);dragLayer.graphics.endFill();}
+        }
+        private function endEditorDrag178(e:MouseEvent):void
+        {
+            var id:int=editorDragId178,amount:int=editorDragAmount178;
+            var target:Object=editorDragging178?editorDragTarget178():null;
+            // GFx does not reliably synthesize CLICK through a masked shelf.
+            // Resolve a stationary press on release, using the original body.
+            var click:Boolean=false;
+            if(!editorDragging178&&editorDragTile178&&editorDragBounds178&&editorDragTile178.stage&&ready&&editingDeck&&revision==editorDragRevision178&&!isInspectMouse(e)){
+                var released:Point=editorDragTile178.globalToLocal(new Point(e.stageX,e.stageY));
+                click=editorDragBounds178.contains(released.x,released.y);
+            }
+            if(editorDragging178||click){editorClickUntil178=getTimer()+250;e.stopImmediatePropagation();}
+            if(target||click)editorFeedbackOrigin178={x:mouseX,y:mouseY};
+            clearEditorDrag178();if(target||click)editorAction("OnBetaGwentDeckEditorChange",id,amount)();
+        }
+
         private var editorPage:int=0;
         private var editorListPage:int=0;
         private var editorTier:int=0;
@@ -194,6 +324,7 @@ package
         private var departedOrder:Array=[];
         private var consumedVisualIds:Object={};
         private var actionHistory:Array=[];
+        private var historyCardStates:Object={};
         private var uiMotions:Array=[];
         private var handHoverId:int=0;
         private var historyReturnPage:int=-1;
@@ -205,6 +336,93 @@ package
         private var editorPending:Object;
         private var editorUndoPending:Boolean=false;
         private var editorFlight:Object;
+        private var editorFeedbackOrigin178:Object;
+        private var editorPosition:int=0;
+        private var editorStrength:int=0;
+        private var editorBaseline:String=null;
+        private var editorExitPrompt:Boolean=false;
+        private var editorExitNextKeg:Boolean=false;
+        private var effectGallery:Boolean=false;
+        private var galleryEntries:Array=[];
+        private var galleryIndex:int=0;
+        private var galleryAudioAt:int=0;
+        private var galleryPending:Boolean=false;
+        public function startEffectGallery(enabled:Boolean):void
+        {
+            if(!enabled)return;
+            effectGallery=true;galleryPending=true;
+            // Native OnConfigUI is still on the stack. Initialise the scene on
+            // the next UI frame, after the bridge has finished configuring.
+        }
+        private function galleryStep(direction:int):void
+        {if(galleryEntries.length==0){galleryShow(0);return;}galleryShow((galleryIndex+direction+galleryEntries.length)%galleryEntries.length);}
+        private function galleryRepeat():void {galleryShow(galleryIndex);}
+        private function gallerySound(launch:Boolean=false):void
+        {
+            if(!effectGallery||!soundEnabled||!activeCue||activeCue.templateId<=0)return;
+            var kind:int=int(activeCue.audioKind||activeCue.kind);if(launch)kind+=100;
+            var token:int=activeCue.kind==4&&weatherRows.length?int(weatherRows[0].token):0;
+            send("OnBetaGwentEffectGalleryAudio",[activeCue.templateId,kind,token,getTimer()]);
+        }
+        private function galleryShow(index:int):void
+        {
+            galleryPending=false;uiErrorCount=0;ready=true;playing=false;
+            try{
+                if(galleryEntries.length==0)galleryEntries=BetaGwentEffectGallery168.entries();
+                galleryShowScene(index);
+            }catch(error:Error){
+                reportUIError("galleryShow "+index,error);
+                while(content.numChildren)content.removeChildAt(0);
+                drawGalleryControls();controller.focusTag("control");
+            }
+        }
+        private function galleryShowScene(index:int):void
+        {
+            if(!effectGallery||galleryEntries.length==0)return;
+            galleryAudioAt=0;send("OnBetaGwentAudioCancel",[]);
+            galleryIndex=Math.max(0,Math.min(index,galleryEntries.length-1));
+            var scene:Object=BetaGwentEffectGallery168.scene(galleryEntries[galleryIndex]);
+            clearDrag();closeControllerMenu();selected=0;requestId=0;requestKind=0;rowRequest=false;
+            editingDeck=false;selectingDecks=false;browsingCatalog=false;kegOpen=false;playing=false;ready=true;
+            introStart=0;introAudioPending=false;introFocusPending=false;current=0;round=1;flags=0;
+            scores=[0,0];crowns=[0,0];enemyHand=0;deckCounts=[10,10];graves=[0,0];
+            consumedVisualIds={};departedPoses={};departedOrder=[];previousPoses={};displayedCards={};
+            weatherEffects=[];weatherFades=[];weatherBirths={};cardDetails={};
+            for each(var card:Object in scene.before){var d:Object=BetaGwentFullCatalog.find(card.templateId);cardDetails[card.id]=d?{description:d.description,tier:d.tier,typeMask:d.typeMask}:{description:"",tier:2,typeMask:4};}
+            cards=scene.before;weatherRows=scene.weatherBefore;activeCue={kind:0,source:0,target:0,templateId:0};
+            frameDuration=3500/animationTempo;frameAnimationTempo=animationTempo;animationRate=1;render();
+            cards=scene.after;weatherRows=scene.weatherAfter;activeCue=scene.cue;revision++;serverRevision=revision;
+            for each(var currentGalleryCard:Object in cards){var currentGalleryDefinition:Object=BetaGwentFullCatalog.find(int(currentGalleryCard.templateId));if(currentGalleryDefinition)cardDetails[currentGalleryCard.id]={description:currentGalleryDefinition.description,tier:currentGalleryDefinition.tier,typeMask:currentGalleryDefinition.typeMask};}
+            render();galleryAudioAt=getTimer()+int(cueImpactDelay());
+            var binding:Object=BetaGwentSpecialVfx.prefabs(int(activeCue.templateId),int(activeCue.audioKind)==20);
+            if(activeCue.kind==2&&binding&&binding.method==1)gallerySound(true);
+            controller.focusTag("galleryRepeat");
+            send("OnBetaGwentControllerTrace",[0,"effect "+(galleryIndex+1),"gallery",galleryEntries[galleryIndex].title]);
+        }
+        private function drawEffectGallery():void
+        {
+            var entry:Object=galleryEntries[galleryIndex];if(!entry)return;
+            if(entry.preset){
+                var preset:Object=BetaGwentElementData164.preset(entry.preset),region:Object;
+                if(preset.method>=2)region=elementRegion164(2,1,preset.method);
+                else region={x:760,y:500,w:90,h:120};
+                var fx:Sprite=new Sprite();fx.mouseEnabled=false;fx.mouseChildren=false;content.addChild(fx);fx.alpha=BetaGwentUi138.intensity;
+                drawElement164(fx,entry.preset,region.x+region.w/2,region.y+region.h/2,region.w,region.h,0,{remaining:220},220,preset.projectile?450:0,800,800);
+            }
+        }
+        private function drawGalleryControls():void
+        {
+            var entry:Object=galleryEntries[galleryIndex]||{title:"",mode:""};
+            var available:Boolean=galleryEntries.length>0;
+            var bar:Sprite=panel(content,40,14,1840,90,0x081016,.95);
+            text(bar,"ПРОСМОТР ЭФФЕКТОВ",720,4,900,22,0xF2D184);
+            text(bar,(available?galleryIndex+1:0)+" / "+galleryEntries.length+" · "+entry.title+" · "+(entry.mode||entry.preset||(entry.hurting?"Урон":"Усиление")),720,40,900,20,0xE8E4DA).height=45;
+            var repeat:Sprite=editorBetaButton(content,"Повторить",300,35,200,48,available,galleryRepeat);
+            if(available)controller.registerControl(repeat,"Повторить",galleryRepeat,null,null,"galleryRepeat");
+            editorSmallButton(content,"Назад",70,35,200,48,available,function():void{galleryStep(-1);});
+            editorSmallButton(content,"Далее",530,35,200,48,available,function():void{galleryStep(1);});
+            editorSmallButton(content,"Закрыть",1690,35,160,48,true,requestBoardClose);
+        }
         private var lastLeaderSceneRevision:int=-1;
         private var kegNewIds:Object={};
         private var buttonFeedback:Array=[];
@@ -288,7 +506,12 @@ package
             var target:Object=safeHistoryCard(int(cue.target),frameCards);
             if(!target&&cue.targetView&&BetaGwentUi138.publicCard(cue.targetView))target=BetaGwentUi138.view(cue.targetView);
             if(!root.actor&&actor)root.actor=actor;
-            if(root.events.length<32)root.events.push({kind:cue.kind,title:String(cue.title||""),actor:actor,target:target});
+            var targetBefore:Object=historyCardStates[cue.target];var change:String="";
+            if(targetBefore&&target){
+                if(targetBefore.power!=null&&target.power!=null&&int(targetBefore.power)!=int(target.power))change="Сила: "+targetBefore.power+" → "+target.power;
+                if(targetBefore.armor!=null&&target.armor!=null&&int(targetBefore.armor)!=int(target.armor))change+=(change?" · ":"")+"Броня: "+targetBefore.armor+" → "+target.armor;
+            }
+            if(root.events.length<128)root.events.push({kind:cue.kind,title:String(cue.title||""),actor:actor,target:target,change:change});
             if(int(cue.kind)==2&&int(cue.attackCount)>1){
                 for each(var changed:Object in frameCards){
                     var prior:Object=displayedCards[changed.id];
@@ -357,7 +580,8 @@ package
             for(var i:int=historyEventPage*6;i<Math.min(entry.events.length,(historyEventPage+1)*6);i++){
                 var ev:Object=entry.events[i],y:Number=120+(i-historyEventPage*6)*112;
                 historyCardButton(box,ev.actor,40,y,58,80);historyCardButton(box,ev.target,128,y,58,80);
-                betaLabel(box,ev.title||entry.title,222,y+8,1110,20,0xF2EEE4,BetaGwentFonts.BODY).height=72;
+                var who:String=(ev.actor?ev.actor.title:"")+(ev.target?" → "+ev.target.title:"");
+                betaLabel(box,who+"\n"+(ev.title||entry.title)+(ev.change?"\n"+ev.change:""),222,y+2,1110,18,0xF2EEE4,BetaGwentFonts.BODY).height=94;
             }
             editorBetaButton(box,"Назад",40,824,220,48,true,function():void{openHistory(historyPage);});
             editorBetaButton(box,"‹",1030,824,76,48,historyEventPage>0,function():void{openHistoryEntry(index,historyEventPage-1);});
@@ -370,20 +594,21 @@ package
             if(!BetaGwentUi138.chains||!activeCue||activeCue.kind==0||activeCue.kind>=17||activeCue.kind==5||activeCue.kind==6||activeCue.kind==7)return;
             var label:String=activeCue.title||"";
             if(int(activeCue.attackCount)>1)label+=" · "+activeCue.attackCount;
-            var strip:Sprite=panel(fx,590,525,740,30,0x0A1418,.92);strip.mouseEnabled=false;strip.mouseChildren=false;
+            if(BetaGwentUi138.helpLabels){var strip:Sprite=panel(fx,590,525,740,30,0x0A1418,.92);strip.mouseEnabled=false;strip.mouseChildren=false;
             betaLabel(strip,label,12,3,716,16,0xF0DDA6,BetaGwentFonts.BODY,false,"center").height=26;
-            animations.push({sprite:strip,fromX:590,fromY:525,toX:590,toY:525,fade:true,remove:true,duration:reducedMotion?320:Math.max(400,animationBaseDuration-60),delay:0});
+            animations.push({sprite:strip,fromX:590,fromY:525,toX:590,toY:525,fade:true,remove:true,duration:reducedMotion?320:Math.max(400,animationBaseDuration-60),delay:0});}
             var hits:Array=[];
             if(activeCue.kind==2&&int(activeCue.attackCount)>1){
                 for(var key:String in displayedCards){var p:Object=displayedCards[key];if(p&&(int(p.delta)!=0||int(p.armorDelta)!=0))hits.push(p);}
             }else if(target)hits.push(target);
             // Outlines arrive in one shared impact instant. Do not turn a simultaneous attack into sequential rules.
             for each(var hit:Object in hits){
+                if(!(int(hit.delta)<0||int(hit.armorDelta)<0))continue;
                 var mark:Sprite=new Sprite();mark.mouseEnabled=false;mark.mouseChildren=false;fx.addChild(mark);
                 mark.x=hit.x-3;mark.y=hit.y-3;
-                mark.graphics.lineStyle(2,hit.delta<0||hit.armorDelta<0?0xEE8B70:0xA5E3CD,.85);
+                mark.graphics.lineStyle(1.5,0xE08A70,.4);
                 mark.graphics.drawRect(0,0,poseW(hit)+6,poseH(hit)+6);
-                animations.push({sprite:mark,fromX:mark.x,fromY:mark.y,toX:mark.x,toY:mark.y,fade:true,remove:true,duration:reducedMotion?260:420,delay:reducedMotion?0:cueImpactDelay()*animationTempo,hideBeforeDelay:true});
+                animations.push({sprite:mark,fromX:mark.x,fromY:mark.y,toX:mark.x,toY:mark.y,fade:true,remove:true,duration:reducedMotion?260:420,delay:reducedMotion?0:cueImpactTime(),hideBeforeDelay:true});
             }
         }
         private function drawRecoveryCue(fx:Sprite,pose:Object):void
@@ -392,47 +617,24 @@ package
             var c:Object=cardById(int(activeCue.target)),before:Object=previousPoses[activeCue.target];
             var style:String=BetaGwentUi138.effect(activeCue,before,c);
             if(style!="recovery"&&style!="resurrect")return;
-            var aura:Sprite=new Sprite();fx.addChild(aura);aura.mouseEnabled=false;aura.mouseChildren=false;
-            aura.x=poseX(pose);aura.y=poseY(pose);
-            var color:uint=style=="resurrect"?0xC5A3F5:0x9DE5C2;
-            aura.graphics.lineStyle(2,color,.8);aura.graphics.drawEllipse(-poseW(pose)*.5,-poseH(pose)*.5,poseW(pose),poseH(pose));
-            for(var i:int=0;i<5;i++){
-                var px:Number=(i-2)*poseW(pose)/5;
-                aura.graphics.moveTo(px,12);aura.graphics.lineTo(px,-12);
-                aura.graphics.moveTo(px-5,0);aura.graphics.lineTo(px+5,0);
-            }
-            animations.push({sprite:aura,fromX:aura.x,fromY:aura.y+14,toX:aura.x,toY:aura.y-22,fade:true,remove:true,duration:500,
-                delay:cueImpactDelay()*animationTempo,hideBeforeDelay:true});
+            // Recovery uses the same brief, card-sized light as strength gains.
+            // The old ellipse and five plus signs could remain over the card.
+            drawBoostCue(fx,pose,cueImpactTime());
         }
         private function drawLeaderScene(fx:Sprite):void
         {
-            if(!activeCue||activeCue.kind!=1||lastLeaderSceneRevision==revision)return;
-            var id:int=int(activeCue.templateId),catalog:Object=BetaGwentFullCatalog.find(id);
-            if(!catalog||!catalog.leader)return;
-            lastLeaderSceneRevision=revision;
-            var duration:Number=BetaGwentUi138.sceneDuration(reducedMotion);if(duration<=0)return;
-            // Reuse existing portrait art. No extra loader, engine bitmap ownership or premium resources.
-            var side:int=int(activeCue.side)||1,fi:int=editorFactionIndex(catalog.faction);
-            var color:uint=[0xB94E46,0x67A6D5,0xD9BB69,0x76B67E,0xA58EC7][fi];
-            var scene:Sprite=new Sprite();scene.mouseEnabled=false;scene.mouseChildren=false;fx.addChild(scene);
-            var sx:Number=side==1?465:1125;
-            var plate:Sprite=panel(scene,0,0,330,476,0x0B1014,.95);
-            plate.graphics.lineStyle(3,color,.9);plate.graphics.drawRect(0,0,330,476);
-            var portrait:Sprite=new Sprite();portrait.x=41;portrait.y=18;plate.addChild(portrait);paintBetaFace(portrait,id,248,348,side);
-            betaLabel(plate,catalog.title,16,382,298,24,0xF6EACD,BetaGwentFonts.TITLE,true,"center").height=60;
-            scene.x=sx;scene.y=180;scene.alpha=0;
-            animations.push({sprite:scene,fromX:sx+(side==1?-40:40),fromY:180,toX:sx,toY:180,scene:true,remove:true,duration:duration});
+            // Leader entrances belong exclusively to the pre-match introduction.
         }
         private function rememberEditorFilters():void
         {
             if(!editorState)return;
             BetaGwentUi138.filters[editorState.faction]={search:editorSearch,tier:editorTier,type:editorType,
-                factionOnly:editorFactionOnly,ownedOnly:editorOwnedOnly};
+                factionOnly:editorFactionOnly,ownedOnly:editorOwnedOnly,position:editorPosition,strength:editorStrength,newOnly:editorNewOnly};
         }
         private function restoreEditorFilters(faction:int):void
         {
             var f:Object=BetaGwentUi138.filters[faction];if(!f)return;
-            editorSearch=f.search;editorTier=f.tier;editorType=f.type;editorFactionOnly=f.factionOnly;editorOwnedOnly=f.ownedOnly;
+            editorSearch=f.search;editorTier=f.tier;editorType=f.type;editorFactionOnly=f.factionOnly;editorOwnedOnly=f.ownedOnly;editorPosition=int(f.position);editorStrength=int(f.strength);editorNewOnly=Boolean(f.newOnly);editorScroll178=0;
         }
         private function editorCounts():Object
         {var result:Object={};for each(var c:Object in editorCards)result[c.templateId]=int(c.copies);return result;}
@@ -444,10 +646,15 @@ package
             var now:Object=editorCounts(),matched:Boolean=true;
             for(var key:String in now)if(int(now[key])!=int(pending.before[key])+(int(key)==pending.id?pending.amount:0))matched=false;
             for(key in pending.before)if(int(pending.before[key])>0&&!now.hasOwnProperty(key))matched=false;
+            if(pending.bulk){
+                matched=true;
+                for(key in now)if(int(now[key])!=int(pending.restore?pending.restore[key]:0))matched=false;
+                for(key in pending.restore)if(int(pending.restore[key])>0&&!now.hasOwnProperty(key))matched=false;
+            }
             if(matched){
                 if(editorUndoPending)editorUndo.pop();
-                else {editorUndo.push({id:pending.id,amount:pending.amount,after:now});if(editorUndo.length>20)editorUndo.shift();}
-                editorFlight={id:pending.id,amount:pending.amount};
+                else {editorUndo.push({id:pending.id,amount:pending.amount,bulk:pending.bulk,before:pending.before,after:now});if(editorUndo.length>20)editorUndo.shift();}
+                if(!pending.bulk)editorFlight={id:pending.id,amount:pending.amount,origin:pending.origin};
             }else editorUndo=[];
             editorUndoPending=false;
         }
@@ -457,6 +664,7 @@ package
             var last:Object=editorUndo[editorUndo.length-1],now:Object=editorCounts();
             for(var key:String in now)if(int(now[key])!=int(last.after[key])){editorUndo=[];return;}
             for(key in last.after)if(int(last.after[key])>0&&!now.hasOwnProperty(key)){editorUndo=[];return;}
+            if(last.bulk){editorUndoPending=true;editorAction("OnBetaGwentDeckEditorRestore")();return;}
             var c:Object=editorById[last.id];
             if(!c||last.amount<0&&!c.canAdd||last.amount>0&&int(c.copies)<last.amount)return;
             editorUndoPending=true;editorAction("OnBetaGwentDeckEditorChange",last.id,-last.amount)();
@@ -469,16 +677,27 @@ package
             if(reasons.length==0&&editorState.status)reasons.push(editorState.status);
             return reasons.join(" · ");
         }
+        private function editorFeedbackPoint178(id:int,pane:String):Object
+        {
+            var shelf:Object=shelves178[pane],index:int=-1;
+            var list:Array=shelfCards178[pane];
+            if(shelf&&list){for(var i:int=0;i<list.length;i++)if(int(list[i].templateId)==id){index=i;break;}
+                if(index>=0){var row:int=int(index/shelf.columns);var y:Number=row*shelf.rowHeight-shelf.offset+shelf.rowHeight/2;
+                    if(y>=0&&y<=shelf.height)return pane=="deck"?{x:220,y:428+y}:{x:482+18+(index%shelf.columns)*186+86,y:306+y};}}
+            return pane=="deck"?{x:220,y:660}:{x:960,y:620};
+        }
         private function drawEditorFeedback():void
         {
             var summary:String=editorSummary();
-            if(summary)betaLabel(content,summary,474,938,972,16,0xE8D3A6,BetaGwentFonts.BODY,false,"center").height=48;
+            if(summary)betaLabel(content,summary,474,940,972,16,0xE8D3A6,BetaGwentFonts.BODY,false,"center").height=22;
             editorBetaButton(content,"Отменить карту",1488,918,388,48,ready&&editorUndo.length>0,undoEditorChange);
-            if(editorFlight&&editorFlight.amount>0&&!reducedMotion){
+            if(editorFlight&&!reducedMotion){
                 var c:Object=editorById[editorFlight.id];
                 if(c){var tile:Sprite=new Sprite();content.addChild(tile);tile.mouseEnabled=false;tile.mouseChildren=false;
-                    paintBetaFace(tile,c.templateId,76,106,1);tile.x=900;tile.y=500;
-                    animations.push({sprite:tile,fromX:900,fromY:500,toX:315,toY:430,fade:true,remove:true,duration:320,arc:20});}
+                    var start:Object=editorFlight.origin||editorFeedbackPoint178(c.templateId,editorFlight.amount>0?"collection":"deck");
+                    var end:Object=editorFeedbackPoint178(c.templateId,editorFlight.amount>0?"deck":"collection");
+                    paintArt(tile,c.templateId,76,106);tile.x=start.x-38;tile.y=start.y-53;
+                    animations.push({sprite:tile,fromX:tile.x,fromY:tile.y,toX:end.x-38,toY:end.y-53,fade:true,remove:true,duration:320,betaFlight:true,tilt:0,arc:12});}
             }
             editorFlight=null;
         }
@@ -504,8 +723,10 @@ package
             if(kind==0)BetaGwentUi138.flashes=!BetaGwentUi138.flashes;
                 else if(kind==1)BetaGwentUi138.shake=!BetaGwentUi138.shake;
                 else if(kind==2)BetaGwentUi138.scenes=(BetaGwentUi138.scenes+1)%3;
-                else BetaGwentUi138.chains=!BetaGwentUi138.chains;
-                closeControllerMenu();openControllerMenu();
+                else if(kind==3)BetaGwentUi138.chains=!BetaGwentUi138.chains;
+                else if(kind==5){BetaGwentUi138.helpLabels=!BetaGwentUi138.helpLabels;send("OnBetaGwentBoardHelp",[BetaGwentUi138.helpLabels]);}
+                else BetaGwentUi138.intensity=BetaGwentUi138.intensity==1?0.55:BetaGwentUi138.intensity==0.55?0.25:1;
+                closeControllerMenu();render();openControllerMenu();
             };
         }
         private function kegRevealAll():void
@@ -523,13 +744,15 @@ package
         private function noteHistory(cue:Object,frameScores:Array,frameCards:Array=null):void
         {
             if(!frameScores)return;
+            if(actionHistory.length==0||cue&&cue.kind==17)historyCardStates={};
             if(cue&&cue.title&&(cue.kind==1||cue.kind==5||cue.kind==6||cue.kind==17||cue.kind==2&&cue.source==0&&cue.row>0)){
                 var entry:Object={title:String(cue.title),kind:cue.kind,start:cue.kind==17?[0,0]:historyScores.concat(),end:frameScores.concat()};
                 // Each replay frame is applied once. Equal titles can be two
                 // different copies played on consecutive turns.
-                actionHistory.unshift(entry);if(actionHistory.length>32)actionHistory.pop();
+                actionHistory.unshift(entry);if(actionHistory.length>64)actionHistory.pop();
             }else if(actionHistory.length>0&&(actionHistory[0].kind==1||actionHistory[0].kind==2))actionHistory[0].end=frameScores.concat();
             recordHistoryDetails(cue,frameCards||cards);
+            var visibleStates:Object={};for each(var state:Object in (frameCards||cards)){var publicState:Object=BetaGwentUi138.view(state);if(publicState)visibleStates[state.id]=publicState;}historyCardStates=visibleStates;
             historyScores=frameScores.concat();
         }
         private function historyLine(entry:Object):String
@@ -560,12 +783,15 @@ package
         private static const AUTO_MASS_CONSUME:Boolean=false;
         private static const FAST_REPLAY_SCALE:Number=0.25;
         private var fastReplay:Boolean=false;
+        private var mouseReplayHeld:Boolean=false;
+        private var mouseReplayBoosted:Boolean=false;
+        private var mouseReplayAt:int=0;
         private function accelerateReplay():void
         {
             if(!playing)return;
             if(fastReplay){skipReplay();return;}
             fastReplay=true;
-            retimeReplay(FAST_REPLAY_SCALE);
+            if(!mouseReplayBoosted)retimeReplay(FAST_REPLAY_SCALE);
             if(replayHint)BetaGwentTextLanguage.assign(replayHint,"Пропустить".toUpperCase());
         }
         // A virtual presentation clock preserves the current movement/impact progress.
@@ -586,10 +812,32 @@ package
         private var frameDuration:Number=230;
         private var audioCueAt:Number=0;
         private var audioCueRevision:int=0;
+        private var audioCueRevisions:Array=[];
         private var pendingImpacts:Array=[];
         private var autoRoundAt:int=0;private var autoRoundSent:int=-1;
         private var autoRoundRevision:int=-1;
         private var ownedCopies:Object={};
+        private var collectionNew:Object={};
+        private var collectionBadges178:Object={};
+        private var collectionSeenPending:Object={};
+        private var editorNewOnly:Boolean=false;
+        private var catalogNewOnly:Boolean=false;
+        public function setCollectionNew(id:int,value:Boolean):void
+        { collectionNew[id]=value;delete collectionSeenPending[id];
+            if(!value&&collectionBadges178[id]){for each(var badge:Sprite in collectionBadges178[id])if(content.contains(badge))uiTween(badge,"alpha",0,140);delete collectionBadges178[id];}
+        }
+        private function markCollectionSeen(id:int):void
+        {
+            if(this.effectGallery||!(editingDeck||browsingCatalog)||!collectionNew[id]||collectionSeenPending[id])return;
+            collectionSeenPending[id]=true;send("OnBetaGwentCollectionSeen",[id]);
+        }
+        private function paintCollectionNew(parent:Sprite,id:int,w:Number):void
+        {
+            if(!collectionNew[id])return;
+            var badge:Sprite=panel(parent,Math.max(3,w-62),4,58,22,0x283B29,0.96);badge.mouseEnabled=false;badge.mouseChildren=false;
+            var keep:Array=[];if(collectionBadges178[id])for each(var old:Sprite in collectionBadges178[id])if(content.contains(old))keep.push(old);keep.push(badge);collectionBadges178[id]=keep;
+            betaLabel(badge,"НОВАЯ",2,2,54,14,0xEADD91,BetaGwentFonts.BODY,false,"center").mouseEnabled=false;
+        }
         private var rewardMessage:String="";
         private var kegOpen:Boolean=false;
         private var pendingKeg:Boolean=false;
@@ -678,7 +926,8 @@ package
         }
         private function controllerContext():Object
         {
-            var base:String=kegOpen?"keg":browsingCatalog?"catalog":editingDeck?"editor":selectingDecks?"selection":(flags>>4)>0?"result":requestId>0&&requestKind==1?"choice":canPlaceSelected()||canPlacePending()?"placement":rowRequest?"rows":requestId>0||selected>0?"target":controllerInspectBoard?"inspect":"battle";
+            if(this.introStart>0||(this.introInputUntil>0&&this.introInputUntil>getTimer()))return {mode:"intro",baseMode:"intro",accept:true,replay:true,pass:false,typing:false,root:introLayer,layers:[],preferred:"control",hint:"A / × — пропустить вступление",hintVisible:true,hintY:1040};
+            var base:String=this.createDeckOpen178?"create":this.effectGallery?"gallery":kegOpen?"keg":browsingCatalog?"catalog":editingDeck?"editor":selectingDecks?"selection":(flags>>4)>0?"result":requestId>0&&requestKind==1?"choice":canPlaceSelected()||canPlacePending()?"placement":rowRequest?"rows":requestId==0&&selected>0&&controllerQuickSpecial(selected)?"battle":requestId>0||selected>0?"target":controllerInspectBoard?"inspect":"battle";
             if(requestId>0&&requestKind==1&&choiceTableHidden())base="inspect";
             var mode:String=nameOpen?"name":detailOpen?(tutorialPage>=0?"tutorial":"detail"):controllerMenuOpen?"actions":pileOpen?"pile":mulliganConfirm?"confirm":base;
             var ps:Boolean=controller&&(controller.device==1||controller.device==6);
@@ -687,6 +936,7 @@ package
             var inspect:String=ps?"□":"X",alt:String=ps?"△":"Y",view:String=ps?"Touchpad":"View";
             var hint:String="↑↓←→ выбор · "+accept+" подтвердить · "+back+" назад · "+inspect+" карта";
             if(mode=="battle")hint="←→ рука · ↑ поле · "+accept+" выбрать · "+inspect+" описание · "+alt+" удержать: пас · Start действия";
+            if(mode=="battle"&&selected>0&&controllerQuickSpecial(selected))hint="←→ рука · "+accept+" сыграть · "+back+" отменить · "+inspect+" описание";
             else if(mode=="inspect")hint="↑↓←→ карта на поле · "+inspect+" / "+accept+" описание · L3 / "+back+" вернуться к руке";
             else if(mode=="placement")hint="←→ место вставки · ↑↓ / LB/RB ряд · "+accept+" поставить · "+back+" отменить · "+inspect+" описание";
             else if(mode=="target")hint="↑↓←→ подсвеченная цель · "+accept+" применить · "+inspect+" описание · "+(isCaranthirChoice()?"LB/RB Мороз без перемещения":"Start кнопки выбора");
@@ -699,13 +949,17 @@ package
             else if(mode=="result")hint=accept+" выйти из боя";
             else if(mode=="pile"&&pileView&&pileView.zone==16)hint="↑↓←→ карта · "+accept+" / "+inspect+" описание · Правый стик: текст · "+back+" вернуться";
             else hint+=" · LB/RB страницы";
-            if(playing)hint=accept+" / "+back+": пропустить показ действий";
+            if((mode=="editor"||mode=="catalog")&&skin==3)hint=hint.split("LB/RB страницы").join("LB / RB · "+BetaGwentTextLanguage.translate("Прокрутка"));
+            if(mode=="gallery")hint="LB / RB · "+BetaGwentTextLanguage.translate("Назад")+" / "+BetaGwentTextLanguage.translate("Далее")+" · "+accept+" "+BetaGwentTextLanguage.translate("Повторить")+" · "+back+" "+BetaGwentTextLanguage.translate("Закрыть");
+            if(mode=="actions")hint="↑↓←→ пункт · "+accept+" изменить / открыть · LB/RB вкладки · "+back+" / Start закрыть";
+            else if(playing&&!detailOpen&&!pileOpen&&!nameOpen)hint=accept+" ускорить · "+back+" пропустить · Start настройки";
             var pref:String=mode=="result"?"finish":mode=="rows"?"row":mode=="placement"?"position":mode=="target"||mode=="choice"||mode=="keg"?"target":mode=="battle"?"hand":mode=="inspect"||mode=="editor"||mode=="catalog"||mode=="pile"?"card":"control";
             return {mode:mode,baseMode:base,typing:controllerTyping,preferred:pref,
-                accept:!controllerTyping&&(ready||playing||nameOpen||detailOpen||pileOpen||controllerMenuOpen),replay:playing&&!detailOpen&&!pileOpen,pass:canAct()&&!nameOpen&&!controllerMenuOpen&&!controllerTyping,
+                shelves:(editingDeck||browsingCatalog)&&skin==3?shelves178:null,
+                accept:!controllerTyping&&(ready||playing||nameOpen||detailOpen||pileOpen||controllerMenuOpen),replay:playing&&!detailOpen&&!pileOpen&&!controllerMenuOpen&&!nameOpen&&!mulliganConfirm,pass:canAct()&&!nameOpen&&!controllerMenuOpen&&!controllerTyping,
                 root:nameOpen?nameLayer:detailOpen?(tutorialPage>=0?tutorialLayer:detailLayer):controllerMenuOpen?controllerMenuLayer:pileOpen?pileLayer:mulliganConfirm?mulliganDialog:base=="choice"?choiceLayer:content,
                 layers:[{root:choiceLayer,mode:"choice"},{root:mulliganDialog,mode:"confirm"},{root:nameLayer,mode:"name"},{root:tutorialLayer,mode:"tutorial"},{root:detailLayer,mode:"detail"},{root:controllerMenuLayer,mode:"actions"},{root:pileLayer,mode:"pile"}],
-                hint:hint,hintY:mode=="battle"||mode=="inspect"||mode=="placement"||mode=="target"||mode=="rows"?80:mode=="detail"?990:mode=="tutorial"?984:1040};
+                hint:hint,hintVisible:true,hintSide:["battle","inspect","placement","target","rows"].indexOf(mode)>=0,hintY:mode=="battle"||mode=="inspect"||mode=="placement"||mode=="target"||mode=="rows"?80:mode=="detail"?990:mode=="tutorial"?984:1040};
         }
         private function controllerPlacement(id:int):Object
         {
@@ -740,17 +994,32 @@ package
                 if(canDirectTarget(c)){submitBoard("OnBetaGwentBoardPlayTarget",[revision,selected,id]);return;}
                 if(canAct()&&c.side==1&&c.zone==8&&c.canPlay){
                     controllerInspectBoard=false;
+                    if(selected==id&&controllerQuickSpecial(id)){submitBoard("OnBetaGwentBoardPlay",[revision,id,1]);return;}
                     selected=selected==id?0:id;keyboardFocusId=selected;focusedRow=0;render();
-                    if(selected>0)controller.focusTag(canPlaceSelected()?"position":"target");
+                    if(selected>0){if(controllerQuickSpecial(selected))controller.focusKey("battle:hand:card"+selected);else controller.focusTag(canPlaceSelected()?"position":"target");}
                     return;
                 }
                 openCardDetail(c,cardDetails[id]);return;
             }
         }
+        private function controllerQuickSpecial(id:int):Boolean
+        {
+            var rule:Object=playRules[id];if(!rule||(int(rule.kind)!=0&&int(rule.kind)!=3))return false;
+            var definition:Object=cardDetails[id];
+            return definition&&int(definition.typeMask)==2;
+        }
+        private function restoreTurnHandFocus():Boolean
+        {
+            if(!focusHandAfterReplay||!canAct()||controllerMenuOpen||nameOpen||mulliganConfirm||browsingCatalog)return false;
+            focusHandAfterReplay=false;focusBoardAfterReplay=false;controllerInspectBoard=false;
+            selected=0;keyboardFocusId=0;focusedRow=0;return true;
+        }
         private function closeControllerMenu():void
-        {controllerMenuOpen=false;while(controllerMenuLayer.numChildren)controllerMenuLayer.removeChildAt(0);}
+        {controllerMenuOpen=false;editorExitPrompt=false;while(controllerMenuLayer.numChildren)controllerMenuLayer.removeChildAt(0);}
         private function requestBoardClose():void
         {
+            if(this.effectGallery){send("OnBetaGwentBoardClose",[]);return;}
+            if(editingDeck){requestEditorExit();return;}
             if(entryMode==1||(selectingDecks&&entryMode!=2)||(flags>>4)!=0){send("OnBetaGwentBoardClose",[]);return;}
             closeControllerMenu();clearPlacementGhost();controllerMenuOpen=true;
             panel(controllerMenuLayer,-WIDE_PAD,0,1920+2*WIDE_PAD,1080,0x080C10,.8);
@@ -764,12 +1033,37 @@ package
         public function requestCloseFromGame(ignored:int):void
         {
             // Native CloseMenu input must follow the same safe back navigation.
+            if(this.effectGallery&&!detailOpen&&!controllerMenuOpen){send("OnBetaGwentBoardClose",[]);return;}
             if(nameOpen){closeNameInput();return;}
             if(detailOpen||controllerMenuOpen||pileOpen||browsingCatalog||kegOpen||editingDeck||selectingDecks||selected>0){controllerCommand("back");return;}
             openControllerMenu();
         }
         private function controllerMenuAction(name:String):Function
         {return function():void{closeControllerMenu();controllerCommand(name);};}
+        private function selectControllerMenuTab(value:int):void
+        {
+            controllerMenuTab=value;controllerMenuFocus="menu:"+["continue","tempo","sound","tutorial"][value];
+            closeControllerMenu();openControllerMenu();
+        }
+        private function menuTabAction(value:int):Function
+        {return function():void{selectControllerMenuTab(value);};}
+        private function menuItem(parent:Sprite,item:Object,index:int):void
+        {
+            var row:int=int(index/2),column:int=index%2;
+            var x:Number=56+column*580,y:Number=206+row*78;
+            var callback:Function=function():void{
+                controllerMenuFocus="menu:"+item.id;
+                if(!item.enabled){if(controllerMenuHelp)BetaGwentTextLanguage.assign(controllerMenuHelp,item.reason);return;}
+                item.action();
+                // Some settings already rebuild the board/menu. Refresh only the old menu.
+                if(controllerMenuOpen&&controllerMenuLayer.contains(parent)){closeControllerMenu();openControllerMenu();}
+            };
+            var p:Sprite=editorBetaButton(parent,item.title,x,y,544,58,item.enabled,callback);
+            // Disabled entries remain focusable so their reason is available on a pad.
+            controller.registerControl(p,item.title,callback,null,{description:item.reason||""},"control",null,new Rectangle(0,0,544,58));
+            controller.menuControl(p,String(item.id),row+1,column*2);
+            p.addEventListener(MouseEvent.ROLL_OVER,function(e:MouseEvent):void{if(controllerMenuHelp)BetaGwentTextLanguage.assign(controllerMenuHelp,item.reason||"LB/RB — вкладки. Настройки можно менять во время анимации.");});
+        }
         private function openControllerMenu():void
         {
             if(detailOpen||pileOpen||kegOpen||browsingCatalog||editingDeck||selectingDecks){controller.focusTag("control");return;}
@@ -777,46 +1071,76 @@ package
             clearPlacementGhost();controllerMenuOpen=true;
             panel(controllerMenuLayer,-WIDE_PAD,0,1920+2*WIDE_PAD,1080,0x080C10,.78);
             var box:Sprite=betaFrame(controllerMenuLayer,330,92,1260,880,-1414);
-            // Content stays inside the frame: 56..1180 horizontally, 30..840 vertically.
-            var L:Number=56,LW:Number=540,R:Number=636,RW:Number=544,HW:Number=262,R2:Number=918;
-            text(box,"ДЕЙСТВИЯ",L,30,LW,30,0xF5D77F);
-            editorSmallButton(box,"Продолжить",L,84,LW,52,true,closeControllerMenu);
-            text(box,"Удерживайте P / Y / △ или монету для паса.",L,146,LW,20).height=40;
-            editorSmallButton(box,"Способность лидера",L,198,LW,52,canAct()&&leaderOne,controllerMenuAction("leader"));
-            editorSmallButton(box,"Посмотреть свою колоду",L,260,LW,52,canInspectPile(),controllerMenuAction("deck"));
-            editorSmallButton(box,"Ваш сброс",L,322,LW,52,canInspectPile(),controllerMenuAction("ownGrave"));
-            editorSmallButton(box,"Сброс соперника",L,384,LW,52,canInspectPile(),controllerMenuAction("enemyGrave"));
-            editorSmallButton(box,"Завершить партию…",L,446,LW,52,true,requestBoardClose);
-            editorSmallButton(box,"Пропустить анимацию",L,508,LW,52,playing,function():void{closeControllerMenu();skipReplay();});
-            var keys:TextField=text(box,"Удерживайте LT — свой сброс, RT — колода\nОба курка — сброс соперника · View — колода\nR3 — лидер · X — подробности карты\nO — сортировка руки · удерживайте Y / △ для паса",L,590,LW,20,0xB9B4A9);keys.height=130;keys.wordWrap=true;
-            text(box,"НАСТРОЙКИ",R,30,RW,30,0xF5D77F);
-            tempoLabel=button("Темп: "+animationTempo+"×",R,84,HW,true,cycleTempo,box);
-            motionLabel=button(reducedMotion?"Эффекты: кратко":"Эффекты: полно",R2,84,HW,true,toggleMotion,box);
-            button(soundEnabled?"Звук: вкл":"Звук: выкл",R,146,HW,true,toggleSound,box);
-            button(!betaAudioAvailable?(betaAudioInstalled?"Фразы: нет банка":"Фразы: ждут банк"):voiceEnabled?"Фразы: вкл":"Фразы: выкл",R2,146,HW,betaAudioAvailable,toggleVoice,box);
-            button("Пауза ИИ: "+aiPauseName(),R,208,HW,true,cycleAiPause,box);
-            button("Рука: "+handSortName(),R2,208,HW,!playing&&dragId==0,cycleHandSort,box);
-            button(handSortReverse?"По убыванию":"По возрастанию",R,270,HW,!playing&&dragId==0&&handSortMode!=3,reverseHandSort,box);
-            button("Выбор колод",R2,270,HW,ready&&entryMode!=2,function():void{closeControllerMenu();submitBoard("OnBetaGwentBoardRestart",[serverRevision]);},box);
-            button("Сложность ИИ: "+difficultyName(),R,332,RW,true,cycleDifficulty,box);
-            button("Текст: "+BetaGwentTextLanguage.label(),R,394,HW,true,cycleTextLanguage,box);
-            button("Обучение",R2,394,HW,true,function():void{closeControllerMenu();openTutorial(0);},box);
-            text(box,"ПОСЛЕДНИЕ ДЕЙСТВИЯ · [ВЫ | СОПЕРНИК]",R,468,RW,20,0xCFB176);
-            button("История действий",R,502,RW,true,function():void{openHistory();},box);
-            button(BetaGwentUi138.flashes?"Вспышки: вкл":"Вспышки: выкл",R,564,HW,true,changePresentationOption(0),box);
-            button(BetaGwentUi138.shake?"Тряска: вкл":"Тряска: выкл",R2,564,HW,true,changePresentationOption(1),box);
-            button("Сцены: "+["выкл","кратко","полно"][BetaGwentUi138.scenes],R,626,RW,true,changePresentationOption(2),box);
-            button(BetaGwentUi138.chains?"Цепочки: вкл":"Цепочки: выкл",R,688,RW,true,changePresentationOption(3),box);
-            text(box,"Эти настройки действуют до закрытия меню игры",R,764,RW,16,0xB9B4A9).height=56;
+            text(box,"МЕНЮ БОЯ",56,28,1148,30,0xF5D77F);
+            var tabs:Array=["Действия","Эффекты","Звук и игра","Управление"];
+            for(var i:int=0;i<tabs.length;i++){
+                var tab:Sprite=editorBetaButton(box,tabs[i],56+i*290,88,272,54,true,menuTabAction(i),controllerMenuTab==i);
+                controller.menuControl(tab,"tab"+i,0,i);
+            }
+            var items:Array=[];
+            if(controllerMenuTab==0){
+                items=[
+                    {id:"continue",title:"Продолжить",enabled:true,action:closeControllerMenu},
+                    {id:"history",title:"История действий",enabled:true,action:function():void{closeControllerMenu();openHistory();}},
+                    {id:"leader",title:"Способность лидера",enabled:canAct()&&leaderOne,action:controllerMenuAction("leader"),reason:!leaderOne?"Способность лидера уже использована":"Лидер доступен в свой ход без незавершённого выбора"},
+                    {id:"deck",title:"Посмотреть свою колоду",enabled:canInspectPile(),action:controllerMenuAction("deck"),reason:"Просмотр доступен после завершения текущего действия"},
+                    {id:"ownGrave",title:"Ваш сброс",enabled:canInspectPile(),action:controllerMenuAction("ownGrave"),reason:"Просмотр доступен после завершения текущего действия"},
+                    {id:"enemyGrave",title:"Сброс соперника",enabled:canInspectPile(),action:controllerMenuAction("enemyGrave"),reason:"Просмотр доступен после завершения текущего действия"},
+                    {id:"skip",title:"Пропустить анимацию",enabled:playing,action:function():void{closeControllerMenu();skipReplay();},reason:"Сейчас нет проигрываемой анимации"},
+                    {id:"exit",title:"Завершить партию…",enabled:true,action:requestBoardClose,reason:"Откроется подтверждение выхода"}
+                ];
+            }else if(controllerMenuTab==1){
+                items=[
+                    {id:"tempo",title:"Темп: "+animationTempo+"×",enabled:true,action:cycleTempo},
+                    {id:"brightness",title:"Яркость: "+Math.round(BetaGwentUi138.intensity*100)+"%",enabled:true,action:changePresentationOption(4)},
+                    {id:"motion",title:reducedMotion?"Эффекты: кратко":"Эффекты: полно",enabled:true,action:toggleMotion},
+                    {id:"leaders",title:BetaGwentUi138.dynamicLeaders?"Лидеры: динамические":"Лидеры: статические",enabled:true,action:toggleLeaderMotion,reason:"Портреты на поле, справа и во вступлении. Выбор сохраняется с игрой"},
+                    {id:"flashes",title:BetaGwentUi138.flashes?"Вспышки: вкл":"Вспышки: выкл",enabled:true,action:changePresentationOption(0)},
+                    {id:"shake",title:BetaGwentUi138.shake?"Тряска: вкл":"Тряска: выкл",enabled:true,action:changePresentationOption(1)},
+                    {id:"chains",title:BetaGwentUi138.chains?"Подписи цепочек: вкл":"Подписи цепочек: выкл",enabled:true,action:changePresentationOption(3)},
+                    {id:"help",title:BetaGwentUi138.helpLabels?"Сообщения на поле: вкл":"Сообщения на поле: выкл",enabled:true,action:changePresentationOption(5)},
+                    {id:"entrances",title:"Вступления: "+["выкл","кратко","полно"][BetaGwentUi138.scenes],enabled:true,action:changePresentationOption(2)}
+                ];
+            }else if(controllerMenuTab==2){
+                items=[
+                    {id:"sound",title:soundEnabled?"Звук: вкл":"Звук: выкл",enabled:true,action:toggleSound},
+                    {id:"voice",title:voiceEnabled?"Фразы: вкл":"Фразы: выкл",enabled:betaAudioAvailable,action:toggleVoice,reason:betaAudioAvailable?"Голоса карт и лидеров":"Звуковой банк ещё не загружен"},
+                    {id:"pause",title:"Пауза ИИ: "+aiPauseName(),enabled:true,action:cycleAiPause},
+                    {id:"difficulty",title:"Сложность ИИ: "+difficultyName(),enabled:true,action:cycleDifficulty},
+                    {id:"sort",title:"Рука: "+handSortName(),enabled:!playing&&dragId==0,action:cycleHandSort,reason:"Сортировка доступна после окончания анимации"},
+                    {id:"reverse",title:handSortReverse?"По убыванию":"По возрастанию",enabled:!playing&&dragId==0&&handSortMode!=3,action:reverseHandSort,reason:handSortMode==3?"Порядок добора не имеет обратной сортировки":"Сортировка доступна после окончания анимации"},
+                    {id:"language",title:"Текст: "+BetaGwentTextLanguage.label(),enabled:true,action:cycleTextLanguage},
+                    {id:"restart",title:"Выбор колод",enabled:ready&&entryMode!=2&&!playing&&requestId==0,action:function():void{closeControllerMenu();submitBoard("OnBetaGwentBoardRestart",[serverRevision]);},reason:entryMode==2?"В бою с NPC смена колоды недоступна":"Завершите текущее действие"}
+                ];
+            }else{
+                var keys:TextField=text(box,"Крестовина / левый стик — выбор карты, цели или пункта\nA / × — подтвердить · B / ○ — назад\nX / □ — подробности карты · удерживать Y / △ — пас\nStart — меню боя · LB/RB — вкладки, ряды или страницы\nL3 / ↑ из руки — посмотреть поле · B / ○ — вернуться\nLT — свой сброс · RT — колода · оба курка — сброс соперника\nПравый стик — прокрутить описание · R3 — способность лидера",56,310,1148,23,0xDED5C1);keys.height=360;
+                items=[{id:"tutorial",title:"Обучение",enabled:true,action:function():void{closeControllerMenu();openTutorial(0);}},
+                    {id:"continue",title:"Продолжить",enabled:true,action:closeControllerMenu}];
+            }
+            for(i=0;i<items.length;i++)menuItem(box,items[i],i);
+            controllerMenuHelp=text(box,"LB/RB — вкладки. Настройки можно менять во время анимации.",56,730,1148,19,0xCFC3AA);controllerMenuHelp.height=56;
+            var resume:Sprite=editorBetaButton(box,"Вернуться в бой",56,804,1148,48,true,closeControllerMenu);
+            controller.menuControl(resume,"resume",99,0);
+            controller.getFocus();
+            if(controllerMenuFocus.length)controller.focusKey(controllerMenuFocus);else controller.focusKey("menu:"+["continue","tempo","sound","tutorial"][controllerMenuTab]);
+        }
+        public function setLeaderMotion(dynamic:Boolean):void
+        {BetaGwentUi138.dynamicLeaders=dynamic;if(!dynamic)clearLeaderMovies();}
+        private function toggleLeaderMotion():void
+        {
+            setLeaderMotion(!BetaGwentUi138.dynamicLeaders);
+            send("OnBetaGwentLeaderMotion",[BetaGwentUi138.dynamicLeaders]);render();
         }
 
         private function controllerPage(direction:int,node:Object):void
         {
+            if(editorExitPrompt||createDeckOpen178)return;
+            if(controllerMenuOpen){selectControllerMenuTab((controllerMenuTab+direction+4)%4);return;}
             if(tutorialPage>=0){openTutorial(tutorialPage+direction);return;}
             if(detailOpen){controllerScroll(direction*3);return;}
             if(pileOpen){if(pileView&&pileView.zone==16){controller.focusTag("card",direction);return;}pilePage=Math.max(0,pilePage+direction);pilePicked=null;drawPileView();return;}
-            if(browsingCatalog){catalogPage=Math.max(0,catalogPage+direction);redrawCatalogGrid();return;}
-            if(editingDeck){if(editorDeckPane(node))editorListPage=Math.max(0,editorListPage+direction);else editorPage=Math.max(0,editorPage+direction);render();return;}
+            if(browsingCatalog){if(skin==3){scrollShelf178("catalog",catalogScroll178+direction*326);return;}catalogPage=Math.max(0,catalogPage+direction);redrawCatalogGrid();return;}
+            if(editingDeck){if(skin==3){var pane:String=editorDeckPane(node)?"deck":"collection";scrollShelf178(pane,(pane=="deck"?deckScroll178:editorScroll178)+direction*240);return;}if(editorDeckPane(node))editorListPage=Math.max(0,editorListPage+direction);else editorPage=Math.max(0,editorPage+direction);render();return;}
             if(selectingDecks){
                 var viewed:Object=deckOption(deckViewSide==1?ownPreset:enemyPreset);
                 if(node&&node.rect.y>=562&&node.rect.y<984&&viewed)deckPage=Math.max(0,Math.min(Math.ceil(viewed.cards.length/14)-1,deckPage+direction));
@@ -832,6 +1156,7 @@ package
         {var node:Object=controller.getFocus();var body:TextField=detailOpen?detailBody:pileOpen?pileDetail:requestKind==1&&skin==3&&node&&node.card&&node.card.stripBody?node.card.stripBody as TextField:browsingCatalog?catalogAbility:inspection;if(body)body.scrollV=Math.max(1,Math.min(body.maxScrollV,body.scrollV+amount));}
         private function controllerCommand(name:String,node:Object=null):void
         {
+            if(introStart==0&&this.introInputUntil>0&&this.introInputUntil>getTimer())return;
             if(name=="pileHold"){
                 var mask:int=node?int(node.mask):0;
                 if(mask==0){
@@ -846,6 +1171,10 @@ package
             if(name=="trace"){send("OnBetaGwentControllerTrace",[node.code,node.action,node.mode,node.focus]);return;}
             if(name=="device"||name=="mouse"){send("OnBetaGwentControllerDevice",[name=="device"]);return;}
             if(introStart>0){if(["back","skip","fast","menu","inspect"].indexOf(name)>=0)skipIntro();return;}
+            if(this.effectGallery&&!detailOpen&&!controllerMenuOpen){
+                if(name=="previous"){galleryStep(-1);return;}if(name=="next"){galleryStep(1);return;}
+                if(name=="back"){send("OnBetaGwentBoardClose",[]);return;}
+            }
             if(name=="clickSound"||name=="tickSound"){uiSound(name=="tickSound"?3:1);return;}
             if(requestId>0&&requestKind==1&&!detailOpen&&!pileOpen&&!mulliganConfirm&&(name=="board"||name=="alternate"||name=="back"&&choiceTableHidden())){toggleChoiceTable();return;}
             if(mulliganConfirm&&["menu","alternate","previous","next","deck","leader","pass","board","ownGrave","enemyGrave"].indexOf(name)>=0)return;
@@ -858,14 +1187,14 @@ package
                 return;
             }
             if(name=="fast"){accelerateReplay();return;}
-            if(name=="skip"||playing&&name=="back"){skipReplay();return;}
+            if(name=="skip"||playing&&name=="back"&&!controllerMenuOpen&&!detailOpen&&!pileOpen&&!nameOpen&&!mulliganConfirm){skipReplay();return;}
             if(name=="board"&&!detailOpen&&!pileOpen&&!editingDeck&&!browsingCatalog&&!selectingDecks&&requestId==0&&selected==0&&!playing){
                 var handFocus:Object=controller.getFocus();
                 var handX:Number=handFocus?handFocus.rect.x+handFocus.rect.width/2:960;
                 controllerInspectBoard=!controllerInspectBoard;render();
                 if(controllerInspectBoard)controller.focusNearestCard("card",handX,900);else controller.getFocus();return;
             }
-            if(editingDeck&&!detailOpen){
+            if(editingDeck&&!detailOpen&&!controllerMenuOpen){
                 if(name=="ownGrave"||name=="enemyGrave"){
                     var editorNode:Object=controller.getFocus();
                     if(editorNode&&editorNode.card&&editorNode.card.tier!=1){var currentCard:Object=editorNode.card;
@@ -878,19 +1207,24 @@ package
                 if(name=="alternate"){if(ready)openTextInput(1,editorSearch);return;}
             }
             if(name=="alternate"){openControllerMenu();return;}
+            if(name=="shelfSelect"&&node){shelfSelect178(node.pane,int(node.index));return;}
             if(name=="focus"){
+                if(controllerMenuOpen&&controllerMenuHelp){BetaGwentTextLanguage.assign(controllerMenuHelp,node.detail&&node.detail.description?String(node.detail.description):"LB/RB — вкладки. Настройки можно менять во время анимации.");return;}
                 if(node.row){focusedSide=node.row.side;focusedRow=node.row.zone;keyboardFocusId=0;if(!node.card){hoveredCard=null;hoveredDetail=null;clearBattlePreview();}}
                 if(node.placement)showPlacementGhost(node.placement);else clearPlacementGhost();
                 if(node.card){if(node.card.side==1&&node.card.zone==8)setHandHover(int(node.card.id));else setHandHover(0);hoveredCard=node.card;hoveredDetail=node.detail;if(inspection&&!editingDeck)BetaGwentTextLanguage.assign(inspection,cardReading(node.card,node.detail));showBattleCard(node.card,node.detail);if(pileOpen)showPileCard(node.card);if(browsingCatalog){catalogPicked=node.card;redrawCatalogDetail();}}
                 if(requestKind==1&&skin==3&&node.card)showMulliganCard(node.card,node.detail);
                 if(editingDeck&&node.card)showEditorCard(node.card);
+                if(controller.active&&node.card&&(editingDeck||browsingCatalog))markCollectionSeen(int(node.card.templateId));
                 return;
             }
             if(name=="back"){
+                if(this.editorDragId178>0){clearEditorDrag178();return;}
                 if(detailOpen){closeCardDetail();return;}if(controllerMenuOpen){closeControllerMenu();return;}if(pileOpen){closePileView();return;}
                 if(mulliganConfirm){mulliganConfirm=false;render();return;}
                 if(browsingCatalog){closeCatalog();return;}if(kegOpen){send("OnBetaGwentBoardClose",[]);return;}
-                if(editingDeck){editorAction("OnBetaGwentDeckEditorCancel")();return;}if(selectingDecks){requestBoardClose();return;}
+                if(createDeckOpen178){backDeckCreator178();return;}
+                if(editingDeck){requestEditorExit();return;}if(selectingDecks){requestBoardClose();return;}
                 if(requestId>0){if(isMulliganHand()&&skin==3)requestMulliganFinish();else if(canFinishRequest())sendRequest("OnBetaGwentRequestFinish");return;}
                 if(controllerInspectBoard){controllerInspectBoard=false;keyboardFocusId=0;focusedRow=0;render();controller.restoreFocus("hand");return;}
                 if(selected>0){selected=0;keyboardFocusId=0;focusedRow=0;render();controller.restoreFocus("hand");return;}openControllerMenu();return;
@@ -900,7 +1234,7 @@ package
                 if(detailOpen){closeCardDetail();return;}
                 if(node&&node.card)openCardDetail(node.card,node.detail);return;
             }
-            if(name=="menu"){if(requestId>0){controller.focusTag("control");return;}openControllerMenu();return;}
+            if(name=="menu"){if(controllerMenuOpen){closeControllerMenu();return;}if(requestId>0){controller.focusTag("control");return;}openControllerMenu();return;}
             if(name=="previous"||name=="next"){controllerPage(name=="previous"?-1:1,node);return;}
             if(name=="scrollUp"||name=="scrollDown"){controllerScroll(name=="scrollUp"?-3:3);return;}
             if(detailOpen||pileOpen||controllerMenuOpen)return;
@@ -917,10 +1251,20 @@ package
             keyboardStage.addEventListener(KeyboardEvent.KEY_DOWN,onKey);
             keyboardStage.addEventListener(KeyboardEvent.KEY_UP,onKeyUp);
             keyboardStage.addEventListener(MouseEvent.MOUSE_MOVE,onDragMove);
+            keyboardStage.addEventListener(MouseEvent.MOUSE_UP,onReplayMouseUp,true,200);
             keyboardStage.addEventListener(MouseEvent.MOUSE_UP,onDragEnd);
+            keyboardStage.addEventListener(Event.DEACTIVATE,onReplayDeactivate);
             keyboardStage.addEventListener(MouseEvent.CLICK,onStageClick,true);
             keyboardStage.addEventListener(RIGHT_CLICK_EVENT,onStageClick,true);
+            keyboardStage.addEventListener(MouseEvent.CLICK,onStageClick,false);
+            keyboardStage.addEventListener(RIGHT_CLICK_EVENT,onStageClick,false);
             keyboardStage.addEventListener(MouseEvent.MOUSE_DOWN,onStageMouseDown,true,200);
+            keyboardStage.addEventListener(MouseEvent.MOUSE_DOWN,onStageMouseDown,false,200);
+            keyboardStage.addEventListener("rightMouseDown",onStageMouseDown,true,200);
+            keyboardStage.addEventListener("rightMouseDown",onStageMouseDown,false,200);
+            keyboardStage.addEventListener("rightMouseUp",onReplayMouseUp,true,200);
+            keyboardStage.addEventListener("rightMouseUp",onReplayMouseUp,false,200);
+            keyboardStage.addEventListener(MouseEvent.MOUSE_UP,onReplayMouseUp,false,200);
             if(ExternalInterface.available) ExternalInterface.call("registerMenu",registrationName(),this);
             addEventListener(Event.ENTER_FRAME,waitForBridge);
         }
@@ -940,10 +1284,20 @@ package
                 keyboardStage.removeEventListener(KeyboardEvent.KEY_DOWN,onKey);
                 keyboardStage.removeEventListener(KeyboardEvent.KEY_UP,onKeyUp);
                 keyboardStage.removeEventListener(MouseEvent.MOUSE_MOVE,onDragMove);
+                keyboardStage.removeEventListener(MouseEvent.MOUSE_UP,onReplayMouseUp,true);
                 keyboardStage.removeEventListener(MouseEvent.MOUSE_UP,onDragEnd);
+                keyboardStage.removeEventListener(Event.DEACTIVATE,onReplayDeactivate);
                 keyboardStage.removeEventListener(MouseEvent.CLICK,onStageClick,true);
                 keyboardStage.removeEventListener(RIGHT_CLICK_EVENT,onStageClick,true);
+                keyboardStage.removeEventListener(MouseEvent.CLICK,onStageClick,false);
+                keyboardStage.removeEventListener(RIGHT_CLICK_EVENT,onStageClick,false);
                 keyboardStage.removeEventListener(MouseEvent.MOUSE_DOWN,onStageMouseDown,true);
+                keyboardStage.removeEventListener(MouseEvent.MOUSE_DOWN,onStageMouseDown,false);
+                keyboardStage.removeEventListener("rightMouseDown",onStageMouseDown,true);
+                keyboardStage.removeEventListener("rightMouseDown",onStageMouseDown,false);
+                keyboardStage.removeEventListener("rightMouseUp",onReplayMouseUp,true);
+                keyboardStage.removeEventListener("rightMouseUp",onReplayMouseUp,false);
+                keyboardStage.removeEventListener(MouseEvent.MOUSE_UP,onReplayMouseUp,false);
             }
             clearDrag();keyboardStage=null;
         }
@@ -959,10 +1313,19 @@ package
         private function onKey(e:KeyboardEvent):void
         {
             var key:int=e.keyCode;
+            if(this.effectGallery&&!detailOpen&&!controllerMenuOpen){
+                if(key==37||key==39){e.preventDefault();galleryStep(key==37?-1:1);return;}
+                if(key==13||key==32){e.preventDefault();galleryRepeat();return;}
+                if(key==27){e.preventDefault();send("OnBetaGwentBoardClose",[]);return;}
+            }
             if(key==9&&requestId>0&&requestKind==1&&!detailOpen&&!mulliganConfirm){e.preventDefault();e.stopImmediatePropagation();toggleChoiceTable();return;}
             if(key==27){e.preventDefault();e.stopImmediatePropagation();}
             if(introStart>0){skipIntro();return;}
-            if(controllerMenuOpen){if(key==27)closeControllerMenu();return;}
+            if(controllerMenuOpen){
+                if(key==27)closeControllerMenu();
+                else if(editorExitPrompt&&key==13)leaveEditor(true,editorExitNextKeg);
+                return;
+            }
             if(nameOpen){
                 if(key>=136&&key<256)return;
                 if(key==37||key==39||key==36||key==35)return;
@@ -998,6 +1361,8 @@ package
                 else if(key==13){if(mulliganAnswer){if(confirmYes!=null)confirmYes();else finishMulligan();}else{mulliganConfirm=false;render();}}
                 return;
             }
+            if(key==27&&editorDragId178>0){clearEditorDrag178();return;}
+            if(createDeckOpen178){if(key==27)backDeckCreator178();else if(key==13&&createFaction178!=0)confirmDeckCreator178();return;}
             if(kegOpen&&skin==3){e.preventDefault();kegKey(key);return;}
             if(kegOpen){e.preventDefault();if(key==27){kegOpen=false;render();}else if(key>=49&&key<=51&&key-49<kegOffers.length)chooseKeg(kegOffers[key-49].templateId)();return;}
             if(key==73&&!(keyboardStage.focus is TextField&&TextField(keyboardStage.focus).type==TextFieldType.INPUT)){
@@ -1023,14 +1388,14 @@ package
                     if(key==27){keyboardStage.focus=null;e.preventDefault();}return;
                 }
                 if(key==27){e.preventDefault();closeCatalog();}
-                else if(key==37||key==39){e.preventDefault();catalogPage+=key==37?-1:1;redrawCatalogGrid();}
+                else if(key==37||key==39){e.preventDefault();if(skin==3)scrollShelf178("catalog",catalogScroll178+(key==37?-326:326));else{catalogPage+=key==37?-1:1;redrawCatalogGrid();}}
                 return;
             }
             if(editingDeck){
                 if(keyboardStage.focus is TextField&&TextField(keyboardStage.focus).type==TextFieldType.INPUT){
                     if(key==27){keyboardStage.focus=null;e.preventDefault();}return;
                 }
-                if(key==27&&ready){e.preventDefault();editorAction("OnBetaGwentDeckEditorCancel")();}return;
+                if(key==27&&ready){e.preventDefault();requestEditorExit();}return;
             }
             if([27,13,32,37,38,39,40,49,50,51,79,80,76,78,70].indexOf(key)<0)return;
             e.preventDefault();
@@ -1073,15 +1438,43 @@ package
         }
         private function clearDrag():void
         {
+            if(this.editorDragId178>0)clearEditorDrag178();
             clearPlacementGhost();dragId=0;dragging=false;dragGhost=null;dragLayer.graphics.clear();
             while(dragLayer.numChildren)dragLayer.removeChildAt(0);
         }
         private function onStageMouseDown(e:MouseEvent):void
         {
+            if(replayMouse(e))return;
             if(isInspectMouse(e)){clearDrag();e.preventDefault();e.stopImmediatePropagation();}
+        }
+        private function replayMouse(e:MouseEvent):Boolean
+        {
+            if(!playing||controllerMenuOpen||detailOpen||pileOpen||nameOpen||mulliganConfirm||!isInspectMouse(e))return false;
+            e.preventDefault();e.stopImmediatePropagation();
+            if((e.type==MouseEvent.MOUSE_DOWN||e.type=="rightMouseDown")&&!mouseReplayHeld){mouseReplayHeld=true;mouseReplayAt=getTimer();}
+            // A short click never changes tempo or opens a card over the replay.
+            return true;
+        }
+        private function releaseReplayMouse():void
+        {
+            mouseReplayHeld=false;
+            if(mouseReplayBoosted&&playing&&!fastReplay)retimeReplay(1/FAST_REPLAY_SCALE);
+            mouseReplayBoosted=false;
+        }
+        private function onReplayMouseUp(e:MouseEvent):void
+        {if(mouseReplayHeld&&(isInspectMouse(e)||!("buttonIdx" in Object(e))))releaseReplayMouse();}
+        private function onReplayDeactivate(e:Event):void
+        {releaseReplayMouse();}
+        private function updateReplayMouse(now:int):void
+        {
+            if(!playing||controllerMenuOpen||detailOpen||pileOpen||nameOpen){releaseReplayMouse();return;}
+            if(mouseReplayHeld&&!mouseReplayBoosted&&now-mouseReplayAt>=180){
+                mouseReplayBoosted=true;if(!fastReplay)retimeReplay(FAST_REPLAY_SCALE);
+            }
         }
         private function onStageClick(e:MouseEvent):void
         {
+            if(replayMouse(e))return;
             if(isInspectMouse(e)){
                 e.preventDefault();e.stopImmediatePropagation();
                 var now:int=getTimer();if(now-rightMouseAt<120)return;rightMouseAt=now;
@@ -1127,6 +1520,7 @@ package
         }
         private function onDragMove(e:MouseEvent):void
         {
+            if(this.editorDragId178>0){moveEditorDrag178();return;}
             if(pileOpen||detailOpen){clearPlacementGhost();return;}
             if(dragId==0){updatePlacementHover();return;}
             if(revision!=dragRevision||!canAct()){clearDrag();return;}
@@ -1153,6 +1547,7 @@ package
         }
         private function onDragEnd(e:MouseEvent):void
         {
+            if(this.editorDragId178>0){endEditorDrag178(e);return;}
             if(dragId==0)return;
             var id:int=dragId;var wasDragging:Boolean=dragging;
             var target:Object=wasDragging&&revision==dragRevision&&canAct()?dragTarget():null;
@@ -1257,15 +1652,16 @@ package
             // The native adapter requires this registered DisplayObject as receiver.
             if(_NATIVE_callGameEvent==null)return;
             var started:int=this.bridgeClock();
+            var planning:Boolean=current==2&&(eventName=="OnBetaGwentAudioTick"&&!playing||eventName=="OnBetaGwentVisualDone");
             _NATIVE_callGameEvent.call(this,eventName,args);
             // The native call is synchronous: report slow AI turns so WS can lower its lookahead.
             var spent:int=this.bridgeClock()-started;
-            if(spent>=300&&eventName.indexOf("OnBetaGwentAudio")<0&&eventName!="OnBetaGwentPerf")_NATIVE_callGameEvent.call(this,"OnBetaGwentPerf",[eventName,spent]);
+            if(planning||spent>=300&&eventName.indexOf("OnBetaGwentAudio")<0&&eventName!="OnBetaGwentPerf")_NATIVE_callGameEvent.call(this,"OnBetaGwentPerf",[eventName,spent]);
         }
         public function beginDeckSelection(rev:int,firstPreset:int,secondPreset:int,firstLeader:int,secondLeader:int):void
         {
             if(rev<serverRevision)return;
-            clearDrag();browsingCatalog=false;editingDeck=false;editorCollection=null;selectingDecks=true;ready=false;playing=false;revision=rev;serverRevision=rev;
+            clearDrag();createDeckOpen178=false;browsingCatalog=false;editingDeck=false;editorCollection=null;selectingDecks=true;ready=false;playing=false;revision=rev;serverRevision=rev;
             revealOwnDeck=ownPreset!=firstPreset;ownPreset=firstPreset;enemyPreset=secondPreset;deckPage=0;
             chosenLeaders=[firstLeader,secondLeader];leaderOptions=[];
             receivingFrames=[];replayFrames=[];incoming=null;frameDeadline=0;activeCue=null;
@@ -1274,15 +1670,32 @@ package
             rowRequest=false;weatherRows=[];weatherBirths={};displayedCards={};departedPoses={};departedOrder=[];consumedVisualIds={};actionHistory=[];historyScores=[0,0];lastRoundResult=null;previousCrowns=[0,0];previousEnemyHand=0;
         }
         public function beginKegOpening(rev:int):void
-        { kegNewIds={};revision=rev;kegOpen=true;pendingKeg=true;kegAutomatic=[];kegOffers=[];kegPhase=-1;kegRevealed=[false,false,false,false];kegPicked=-1;kegFinalVoiced=false; }
+        { kegNewIds={};revision=rev;serverRevision=rev;kegOpen=true;pendingKeg=true;kegAutomatic=[];kegOffers=[];kegPhase=-1;kegRevealed=[false,false,false,false];kegPicked=-1;kegFinalVoiced=false;kegCommitted=false; }
         public function setUnopenedKegs(count:int,pending:Boolean):void
         {unopenedKegs=Math.max(0,count);pendingKeg=pending;}
         public function pushKegCard(id:int,ordinary:Boolean,scraps:int):void
         { var original:Object=BetaGwentFullCatalog.find(id);if(!original)return;var card:Object={};for(var key:String in original)card[key]=original[key];card.duplicateScraps=scraps;card.ordinary=ordinary;if(ordinary&&scraps==0&&int(ownedCopies[id])==1)kegNewIds[id]=true;(ordinary?kegAutomatic:kegOffers).push(card); }
         public function finishKegOpening(rev:int):void
         { if(rev==revision){ready=true;render();} }
+        public function finishKegChoice(rev:int,success:Boolean):void
+        {
+            if(rev<serverRevision||!kegOpen)return;
+            revision=rev;serverRevision=rev;ready=true;kegCommitted=success;
+            kegPhase=success?3:2;pendingKeg=!success;render();
+        }
         private function chooseKeg(id:int):Function
-        { return function():void{if(!ready)return;kegOpen=false;pendingKeg=false;ready=false;send("OnBetaGwentKegChoose",[revision,id]);}; }
+        {return function():void{if(!ready)return;for(var i:int=0;i<kegOffers.length;i++)if(kegOffers[i].templateId==id){kegPicked=i;commitKegChoice();return;}};}
+        private var kegCommitted:Boolean=false;
+        private function commitKegChoice():void
+        {
+            if(!ready||kegCommitted||kegPicked<0||kegPicked>=kegOffers.length)return;
+            ready=false;send("OnBetaGwentKegChoose",[revision,int(kegOffers[kegPicked].templateId)]);
+        }
+        private function nextKeg():void
+        {
+            if(!ready||!kegCommitted||unopenedKegs<1)return;
+            ready=false;send("OnBetaGwentKegOpen",[revision]);
+        }
         // ---------------------------------------------------------------------------------
         // Stage 109: Beta 0.9.24 keg opening. Troll flipbook (keg menu only, pages 21+), flash,
         // four faction backs to reveal, choice of the fifth card, "your new cards".
@@ -1297,7 +1710,7 @@ package
             if(key==27){kegClose();return;}
             if(kegPhase==0){kegSkipTroll();return;}
             if(kegPhase==1&&(key==32||key==13)){kegRevealNext();return;}
-            if(kegPhase==2){if(key>=49&&key<=51&&key-49<kegOffers.length){kegPicked=key-49;render();}else if((key==32||key==13)&&kegPicked>=0){kegPhase=3;kegVoice(6);render();}return;}
+            if(kegPhase==2){if(key>=49&&key<=51&&key-49<kegOffers.length){kegPicked=key-49;render();}else if((key==32||key==13)&&kegPicked>=0){kegVoice(6);commitKegChoice();}return;}
             if(kegPhase==3&&(key==32||key==13))kegFinish();
         }
         // Shop troll lines (duelAudio.Keg): 1 smash, 2-5 reveal by rarity, 6 choice, 7 final, 8 before smash.
@@ -1344,11 +1757,7 @@ package
             }
         }
         private function kegFinish():void
-        {
-            if(kegPicked<0||kegPicked>=kegOffers.length||!ready)return;
-            var id:int=int(kegOffers[kegPicked].templateId);kegStopTroll();
-            kegOpen=false;pendingKeg=false;ready=false;send("OnBetaGwentKegChoose",[revision,id]);
-        }
+        {if(ready&&kegCommitted)kegClose();}
         private static const KEG_W:Number=300,KEG_H:Number=365;
         private var kegSlots:Array=[];
         private function kegTitle(title:String,sub:String):void
@@ -1429,7 +1838,7 @@ package
                         controller.registerControl(p,"Выбрать карту",function():void{kegPicked=index;render();},null,null,"target");
                     })(i);
                 }
-                betaWideButton("Выбрать",820,1002,280,ready&&kegPicked>=0,function():void{kegPhase=3;kegVoice(6);render();});
+                betaWideButton("Выбрать",820,1002,280,ready&&kegPicked>=0,function():void{kegVoice(6);commitKegChoice();});
             }else{
                 kegTitle("ВАШИ НОВЫЕ КАРТЫ!","Лишние копии превращаются в осколки.");
                 var got:Array=kegAutomatic.concat(kegPicked>=0?[kegOffers[kegPicked]]:[]);
@@ -1444,12 +1853,13 @@ package
                     if(firstShow&&!reducedMotion){betaBurst(content,-103,x+KEG_W/2,232+KEG_H/2,820,0x8FD0FF,0,460);
                         animations.push({sprite:p,fromX:x,fromY:232,toX:x,toY:232,duration:420,appear:true,fromScaleX:1.25,fromScaleY:1.25,toScaleX:1,toScaleY:1});}
                 }
-                betaWideButton("Готово",820,1002,280,ready,kegFinish);
+                if(unopenedKegs>0)betaWideButton("Открыть ещё одну бочку",620,1002,400,ready&&kegCommitted,nextKeg);
+                betaWideButton("Готово",unopenedKegs>0?1050:820,1002,280,ready&&kegCommitted,kegFinish);
             }
         }
         private function drawKeg():void
         {
-            if(skin==3){drawKegBeta();return;}
+            if(skin==3||kegPhase==3){drawKegBeta();return;}
             wideArt(content,BetaGwentDeckArt104.BG_SETUP);betaWindow(content,64,24,1792,1032);
             text(content,"BETA GWENT · ОПЛАЧЕННАЯ БОЧКА",96,49,1390,32,0xE8D3A6);
             editorSmallButton(content,"Продолжить позже",1510,48,310,42,true,function():void{kegOpen=false;render();});
@@ -1738,12 +2148,7 @@ package
             var tag:Sprite=new Sprite();tag.x=780;tag.y=322;content.addChild(tag);
             paintArt(tag,BetaGwentDeckArt104.MS_NAME_BG,358,61,0,0);paintArt(tag,-1501-Math.min(4,fi),34,34,24,13);
             betaSlotLabel(tag,leader?leader.title:(first?first.leader:""),62,0,234,61,18,0xF2EEE4,BetaGwentFonts.BODY);
-            var sideLeaders:Array=leadersForFaction(cardFaction(chosenLeaders[0]));
-            if(sideLeaders.length>1&&pickerSide==0){
-                var at:int=0;for(var li:int=0;li<sideLeaders.length;li++)if(sideLeaders[li].id==chosenLeaders[0])at=li;
-                betaWideButton("‹",700,326,56,ready,selectLeaderAction(1,sideLeaders[(at+sideLeaders.length-1)%sideLeaders.length].id));
-                betaWideButton("›",1162,326,56,ready,selectLeaderAction(1,sideLeaders[(at+1)%sideLeaders.length].id));
-            }
+            // The leader is changed only in the deck editor.
             var corner:Sprite=new Sprite();corner.x=594;corner.y=650;content.addChild(corner);paintArt(corner,BetaGwentDeckArt104.MS_CORNERS,144,176,0,0);
             var corner2:Sprite=new Sprite();corner2.x=1324;corner2.y=650;corner2.scaleX=-1;content.addChild(corner2);paintArt(corner2,BetaGwentDeckArt104.MS_CORNERS,144,176,0,0);
             if(entryMode!=1){
@@ -1863,10 +2268,10 @@ package
             if(rev<serverRevision)return;
             if(slot>=1001)BetaGwentTextLanguage.protect(title);
             if(!editingDeck||!editorState||editorState.slot!=slot){
-                rememberEditorFilters();editorUndo=[];editorPending=null;editorUndoPending=false;
-                editorName=title;editorSearch="";editorTier=0;editorType=0;editorFactionOnly=false;editorOwnedOnly=false;editorCraft=null;editorPage=0;editorListPage=0;restoreEditorFilters(faction);
+                rememberEditorFilters();editorUndo=[];editorPending=null;editorUndoPending=false;editorBaseline=null;
+                editorName=title;editorSearch="";editorTier=0;editorType=0;editorPosition=0;editorStrength=0;editorNewOnly=false;editorScroll178=0;deckScroll178=0;editorFactionOnly=false;editorOwnedOnly=false;editorCraft=null;editorPage=0;editorListPage=0;restoreEditorFilters(faction);
             }
-            clearDrag();editingDeck=true;selectingDecks=false;ready=false;playing=false;
+            clearDrag();createDeckOpen178=false;editingDeck=true;selectingDecks=false;ready=false;playing=false;
             var sameCollection:Boolean=editorState&&editorState.faction==faction&&editorCards.length>0;
             if(editorState&&editorState.faction!=faction){rememberEditorFilters();restoreEditorFilters(faction);editorUndo=[];editorPending=null;editorUndoPending=false;}
             revision=rev;serverRevision=rev;leaderOptions=[];
@@ -1897,15 +2302,96 @@ package
         {
             if(!editingDeck||rev!=revision)return;
             editorCards.sort(sortEditorCards);
+            if(editorBaseline==null)editorBaseline=editorSignature();
             for each(var entry:Object in editorCards)entry.canAdd=editorState.total<40&&entry.copies<(entryMode==0?(entry.tier==2?3:1):int(ownedCopies[entry.templateId]))
                 &&(entry.tier!=8||editorState.golds<4)&&(entry.tier!=4||editorState.silvers<6);
             editorState.status=status;settleEditorUndo();ready=true;render();reportArtwork();
         }
+        private var createDeckOpen178:Boolean=false;
+        private var createFaction178:int=0;
+        private var createLeader178:int=0;
+        private function beginDeckCreator178():void
+        {
+            if(!ready||!selectingDecks)return;
+            createDeckOpen178=true;createFaction178=0;createLeader178=0;render();controller.focusTag("control");
+        }
+        private function backDeckCreator178():void
+        {
+            if(!createDeckOpen178)return;
+            if(createFaction178!=0){createFaction178=0;createLeader178=0;}else createDeckOpen178=false;
+            render();controller.focusTag("control");
+        }
+        private function createFactionAction178(faction:int):Function
+        {
+            return function():void{
+                if(!createDeckOpen178||!editorFactionAvailable(faction))return;
+                var leaders:Array=leadersForFaction(faction);if(!leaders.length)return;
+                createFaction178=faction;createLeader178=int(leaders[0].id);render();controller.focusTag("card");
+            };
+        }
+        private function createLeaderAction178(id:int):Function
+        {
+            return function():void{
+                if(!createDeckOpen178||!ready||cardFaction(id)!=createFaction178)return;
+                if(entryMode!=0&&int(ownedCopies[id])<1)return;
+                createLeader178=id;render();
+            };
+        }
+        private function confirmDeckCreator178():void
+        {
+            if(!createDeckOpen178||!ready||!selectingDecks||createFaction178==0||cardFaction(createLeader178)!=createFaction178)return;
+            if(!editorFactionAvailable(createFaction178)||entryMode!=0&&int(ownedCopies[createLeader178])<1)return;
+            ready=false;send("OnBetaGwentDeckCreate",[revision,createLeader178]);
+        }
+        private function drawDeckCreator178():void
+        {
+            paintArt(content,BetaGwentDeckArt104.BG_BUILDER,1920,1080,0,0);
+            panel(content,36,28,1848,982,0x121714,.92);
+            text(content,createFaction178==0?"Выберите фракцию":"Выберите лидера",82,54,1600,36,0xE9D7AF);
+            var factions:Array=[2,8,4,16,32],names:Array=["Чудовища","Север","Нильфгаард","Скоя’таэли","Скеллиге"];
+            if(createFaction178==0){
+                for(var i:int=0;i<factions.length;i++){
+                    var faction:int=int(factions[i]),x:Number=82+i*352;
+                    paintArt(content,-1420-editorFactionIndex(faction),312,420,x,168);
+                    var emblemId:int=-1240-editorFactionIndex(faction);
+                    var emblemSize:Array=BetaGwentHDArt.size(emblemId);
+                    if(emblemSize){
+                        var emblemScale:Number=Math.min(208/emblemSize[0],240/emblemSize[1]);
+                        var emblemW:Number=emblemSize[0]*emblemScale,emblemH:Number=emblemSize[1]*emblemScale;
+                        paintArt(content,emblemId,emblemW,emblemH,x+(312-emblemW)/2,168+(420-emblemH)/2);
+                    }
+                    editorBetaButton(content,names[i],x,624,312,64,editorFactionAvailable(faction),createFactionAction178(faction));
+                }
+            }else{
+                var leaders:Array=leadersForFaction(createFaction178);
+                for(var j:int=0;j<leaders.length;j++){
+                    var leader:Object=leaders[j],card:Object=BetaGwentFullCatalog.find(int(leader.id));
+                    var tile:Sprite=new Sprite();tile.x=84+(j%5)*196;tile.y=166+int(j/5)*320;content.addChild(tile);
+                    paintArt(tile,int(leader.id),174,244);
+                    tile.graphics.lineStyle(int(leader.id)==createLeader178?3:1,0xD4B779,.95);tile.graphics.drawRect(0,0,174,244);
+                    var label:TextField=text(tile,String(leader.title),0,250,174,18,0xE5D6BB);label.height=54;
+                    var action:Function=createLeaderAction178(int(leader.id));attachEditorClick(tile,action);
+                    controller.registerControl(tile,String(leader.title),action,card,{description:leader.description},"card",null,new Rectangle(0,0,174,244));
+                }
+                var chosen:Object=leaderOption(createLeader178);
+                if(chosen){
+                    var preview:Sprite=new Sprite();preview.x=1210;preview.y=144;content.addChild(preview);
+                    paintBetaFace(preview,createLeader178,280,392,1);
+                    text(content,String(chosen.title),1530,156,300,26,0xEDD9B1);
+                    var description:TextField=text(content,String(chosen.description),1530,216,300,22,0xDED4C0);description.height=600;description.wordWrap=true;
+                }
+                editorBetaButton(content,"Создать колоду",1150,894,650,68,ready&&chosen!=null,confirmDeckCreator178);
+            }
+            editorBetaButton(content,createFaction178==0?"Назад":"Вернуться к фракциям",82,914,440,56,ready,backDeckCreator178);
+            finishLeaderRender();
+        }
+
         private function openEditorAction(id:int):Function
         {
             var expected:int=revision;
             return function():void{
                 if(!ready||!selectingDecks||revision!=expected)return;
+                if(id==0){beginDeckCreator178();return;}
                 ready=false;send("OnBetaGwentDeckEditorOpen",[expected,id]);
             };
         }
@@ -1916,12 +2402,16 @@ package
                 if(!ready||!editingDeck||revision!=expected)return;
                 var args:Array=[expected];
                 if(eventName=="OnBetaGwentDeckEditorChange"){
-                    editorPending={id:id,amount:amount,before:editorCounts(),slot:editorState.slot,faction:editorState.faction};
+                    editorPending={id:id,amount:amount,before:editorCounts(),slot:editorState.slot,faction:editorState.faction,origin:editorFeedbackOrigin178||editorFeedbackPoint178(id,amount>0?"collection":"deck")};editorFeedbackOrigin178=null;
                     args.push(id,amount);
+                }
+                else if(eventName=="OnBetaGwentDeckEditorClear"||eventName=="OnBetaGwentDeckEditorRestore"){
+                    editorPending={bulk:true,before:editorCounts(),slot:editorState.slot,faction:editorState.faction,
+                        restore:eventName=="OnBetaGwentDeckEditorRestore"?editorUndo[editorUndo.length-1].before:null};
                 }
                 else if(eventName=="OnBetaGwentDeckEditorLeader")args.push(id);
                 else if(eventName=="OnBetaGwentDeckEditorSave")args.push(editorName);
-                if(eventName!="OnBetaGwentDeckEditorChange"){editorUndo=[];editorPending=null;editorUndoPending=false;}
+                if(eventName!="OnBetaGwentDeckEditorSave"&&eventName!="OnBetaGwentDeckEditorChange"&&eventName!="OnBetaGwentDeckEditorClear"&&eventName!="OnBetaGwentDeckEditorRestore"){editorUndo=[];editorPending=null;editorUndoPending=false;}
                 rememberEditorFilters();ready=false;send(eventName,args);
             };
         }
@@ -1931,7 +2421,7 @@ package
         { return function():void {
             if(kind==1)catalogFaction=value;else if(kind==2)catalogTier=value;
             else if(kind==3)catalogType=value;else if(kind==5)catalogSort=value;else catalogStatus=value;
-            catalogPage=0;render();
+            catalogPage=0;catalogScroll178=0;render();
         }; }
         private function catalogCards():Array
         {
@@ -1943,6 +2433,8 @@ package
                 if(catalogType>1&&(c.leader||c.typeMask!=catalogType))continue;
                 if(query&&!BetaGwentTextLanguage.search(c.title+" "+c.description+" "+c.tags+" "+c.templateId,query))continue;
                 var owned:int=int(ownedCopies[c.templateId]);
+                if(catalogNewOnly&&!collectionNew[c.templateId])continue;
+                if(!BetaGwentVirtualShelf178.position(int(c.placementMask),int(c.typeMask),catalogPosition178)||catalogPosition178>0&&c.leader)continue;
                 if(catalogStatus==1&&owned==0||catalogStatus==2&&owned>0||catalogStatus==3&&(owned>0||scraps<craftCost(c)))continue;
                 found.push(c);
             }
@@ -1954,7 +2446,7 @@ package
             return found;
         }
         private function catalogPick(c:Object):Function
-        { return function():void{catalogPicked=c;redrawCatalogDetail();}; }
+        { return function():void{catalogPicked=c;markCollectionSeen(int(c.templateId));redrawCatalogDetail();}; }
         private function redrawCatalogGrid():void
         {
             if(skin==3){redrawBetaCatalogGrid();return;}
@@ -2021,8 +2513,11 @@ package
             betaLabel(content,"СОРТИРОВКА",56,548,354,18,0xEEE7D5,BetaGwentFonts.TITLE,true,"center",2);
             var sorts:Array=[0,1,2,3],sortNames:Array=["Стандарт","По силе","По названию","По редкости"];
             for(i=0;i<sorts.length;i++)editorBetaButton(content,sortNames[i],56+(i%2)*182,580+int(i/2)*50,172,42,true,catalogFilter(5,sorts[i]),catalogSort==sorts[i]);
+            editorBetaButton(content,"Новые карты",56,700,354,42,true,function():void{catalogNewOnly=!catalogNewOnly;catalogScroll178=0;render();},catalogNewOnly);
+            var positions:Array=["Позиция: все","Рукопашный","Дальнобойный","Осадный","Подвижные","Событие"];
+            editorBetaButton(content,positions[catalogPosition178],56,750,354,42,true,function():void{catalogPosition178=(catalogPosition178+1)%6;catalogScroll178=0;render();},catalogPosition178!=0);
             var input:TextField=editorInput(catalogSearch,474,138,953,46);
-            input.addEventListener(Event.CHANGE,function(e:Event):void{catalogSearch=input.text;catalogPage=0;searchDeadline=getTimer()+160;});
+            input.addEventListener(Event.CHANGE,function(e:Event):void{catalogSearch=input.text;catalogPage=0;catalogScroll178=0;searchDeadline=getTimer()+160;});
             var factions:Array=[0,1,2,8,16,32,4],names:Array=["Все","Нейтральные","Чудовища","Север","Скоя'таэли","Скеллиге","Нильфгаард"];
             for(var i:int=0;i<factions.length;i++)editorBetaButton(content,names[i],474+i*137,202,129,40,true,catalogFilter(1,factions[i]),catalogFaction==factions[i]);
             var tiers:Array=[0,8,4,2,1],tn:Array=["Все","Золото","Серебро","Бронза","Лидеры"];
@@ -2030,6 +2525,7 @@ package
             var types:Array=[0,4,2],typesNames:Array=["Все","Отряды","Особые"];
             for(i=0;i<types.length;i++)editorBetaButton(content,typesNames[i],1065+i*123,252,115,40,true,catalogFilter(3,types[i]),catalogType==types[i]);
             catalogGrid=new Sprite();catalogGrid.x=474;catalogGrid.y=319;content.addChild(catalogGrid);
+            catalogGrid.addEventListener(MouseEvent.MOUSE_WHEEL,function(e:MouseEvent):void{e.stopPropagation();scrollShelf178("catalog",catalogScroll178-e.delta*36);});
             catalogDetail=new Sprite();content.addChild(catalogDetail);
             editorBetaButton(content,"Назад к колодам",1515,1002,330,48,true,closeCatalog);
             redrawBetaCatalogGrid();redrawBetaCatalogDetail();
@@ -2037,9 +2533,10 @@ package
         private function redrawBetaCatalogGrid():void
         {
             if(!catalogGrid)return;while(catalogGrid.numChildren)catalogGrid.removeChildAt(0);
-            var list:Array=catalogCards(),pages:int=Math.max(1,Math.ceil(list.length/10));catalogPage=Math.max(0,Math.min(catalogPage,pages-1));
-            for(var i:int=catalogPage*10;i<Math.min(list.length,(catalogPage+1)*10);i++){
-                var c:Object=list[i],n:int=i-catalogPage*10;var tile:Sprite=new Sprite();tile.x=n%5*192;tile.y=int(n/5)*326;catalogGrid.addChild(tile);
+            var list:Array=catalogCards();var viewport:BetaGwentVirtualShelf178=new BetaGwentVirtualShelf178(list.length,5,326,970,650,catalogScroll178);
+            catalogGrid.addChild(viewport);shelves178.catalog=viewport.layout;shelfCards178.catalog=list;catalogScroll178=viewport.layout.offset;
+            for(var i:int=viewport.layout.first;i<viewport.layout.end;i++){
+                var c:Object=BetaGwentVirtualShelf178.card(list[i],"catalog",i,474,319,970,650);var tile:Sprite=new Sprite();tile.x=i%5*192;tile.y=int(i/5)*326-catalogScroll178;viewport.body.addChild(tile);
                 paintBetaFace(tile,int(c.templateId),173,231,0);
                 if(c.typeMask==4||c.leader)betaPowerField(tile,String(c.power),173,231,0xFFFFFF);
                 var title:TextField=betaLabel(tile,c.title,0,240,173,18,0xEDE7D8,BetaGwentFonts.TITLE,false,"center");title.height=48;
@@ -2050,9 +2547,8 @@ package
                 cardCraftButton(tile,c,173,231);
             }
             var ownedShown:int=0;for each(var shown:Object in list)if(int(ownedCopies[shown.templateId])>0)ownedShown++;
-            text(catalogGrid,"Всего: "+list.length+" · есть: "+ownedShown+" · "+(catalogPage+1)+" / "+pages,160,682,630,20,0xD6C6A8);
-            editorBetaButton(catalogGrid,"Назад",0,678,140,44,catalogPage>0,function():void{catalogPage--;redrawBetaCatalogGrid();});
-            editorBetaButton(catalogGrid,"Вперёд",810,678,140,44,catalogPage+1<pages,function():void{catalogPage++;redrawBetaCatalogGrid();});
+            text(catalogGrid,"Всего: "+list.length+" · есть: "+ownedShown,0,670,930,20,0xD6C6A8);
+            shelfBar178(catalogGrid,"catalog",974,0,650);
         }
         private function redrawBetaCatalogDetail():void
         {
@@ -2062,10 +2558,10 @@ package
             var preview:Sprite=new Sprite();catalogDetail.addChild(preview);
             drawBetaSidePreview(c,{description:c.description},preview);
             var owned:int=int(ownedCopies[c.templateId]),cap:int=c.tier==2?3:1;
-            // Below the filter and sort blocks of the left panel (they end at y 672).
+            // Below the left panel buttons (the position button ends at y 792).
             var rarityNames:Object={1:"Обычная",2:"Редкая",4:"Эпическая",8:"Легендарная"};
-            var owns:TextField=text(catalogDetail,"В коллекции: "+owned+" / "+cap+" · "+rarityNames[cardRarity(c)]+" · создать "+craftCost(c),56,700,354,20,0xE8D3A6);owns.height=56;owns.wordWrap=true;
-            if(c.acquisitionShort){var source:TextField=text(catalogDetail,c.acquisition,56,760,354,18,0xE4DFD0);source.height=180;source.wordWrap=true;}
+            var owns:TextField=text(catalogDetail,"В коллекции: "+owned+" / "+cap+" · "+rarityNames[cardRarity(c)]+" · создать "+craftCost(c),56,808,354,20,0xE8D3A6);owns.height=52;owns.wordWrap=true;
+            if(c.acquisitionShort){var source:TextField=text(catalogDetail,c.acquisition,56,864,354,18,0xE4DFD0);source.height=84;source.wordWrap=true;}
         }
         private function drawCatalog():void
         {
@@ -2096,7 +2592,7 @@ package
         {
             controller.registerControl(p,"",callback,null,null,"");
             p.buttonMode=true;
-            p.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{uiSound(3);callback();});
+            p.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{if(editorDragging178||getTimer()<editorClickUntil178)return;uiSound(3);callback();});
         }
         private function editorInput(value:String,x:Number,y:Number,w:Number,maxChars:int):TextField
         {
@@ -2192,6 +2688,67 @@ package
                 editorTier=tier;editorType=typeMask;editorFactionOnly=factionOnly;editorPage=0;render();
             };
         }
+        private function editorSignature():String
+        {
+            var parts:Array=[editorName,editorState.faction,editorState.leader],counts:Array=[];
+            for each(var c:Object in editorCards)if(c.copies>0)counts.push(c.templateId+":"+c.copies);
+            counts.sort();return parts.join("|")+"|"+counts.join(",");
+        }
+        private function leaveEditor(save:Boolean,nextKeg:Boolean):void
+        {
+            if(!ready||!editingDeck)return;
+            closeControllerMenu();rememberEditorFilters();ready=false;
+            send("OnBetaGwentDeckEditorLeave",[revision,save,editorName,nextKeg]);
+        }
+        private function requestEditorExit(nextKeg:Boolean=false):void
+        {
+            if(!ready||!editingDeck)return;
+            if(editorSignature()==editorBaseline){leaveEditor(false,nextKeg);return;}
+            closeControllerMenu();controllerMenuOpen=true;editorExitPrompt=true;editorExitNextKeg=nextKeg;
+            panel(controllerMenuLayer,-WIDE_PAD,0,1920+2*WIDE_PAD,1080,0x080C10,.8);
+            var box:Sprite=betaFrame(controllerMenuLayer,420,330,1080,390,-1414);
+            text(box,"Сохранить изменения колоды?",34,30,1012,30,0xF5D77F);
+            text(box,"Состав, лидер или название изменены. Выберите, что сделать перед выходом.",34,104,1012,23).height=110;
+            editorSmallButton(box,"Сохранить",34,270,318,58,true,function():void{leaveEditor(true,nextKeg);});
+            editorSmallButton(box,"Не сохранять",380,270,318,58,true,function():void{leaveEditor(false,nextKeg);});
+            editorSmallButton(box,"Отмена",726,270,318,58,true,closeControllerMenu);
+            controller.focusTag("control");
+        }
+        private function editorExtraFilter(kind:int):Function
+        {
+            return function():void{
+                if(!ready)return;
+                if(kind==1)editorPosition=(editorPosition+1)%6;
+                else if(kind==2)editorStrength=(editorStrength+1)%3;
+                else {editorSearch="";editorTier=0;editorType=0;editorFactionOnly=false;editorOwnedOnly=false;editorPosition=0;editorStrength=0;editorNewOnly=false;}
+                editorPage=0;editorScroll178=0;render();
+            };
+        }
+        private function editorPositionMatches(c:Object):Boolean
+        {
+            if(editorPosition==0)return true;
+            if(editorPosition==5)return c.typeMask==2;
+            if(c.typeMask!=4)return false;
+            var definition:Object=BetaGwentFullCatalog.find(c.templateId);
+            var mask:int=definition?int(definition.placementMask):0;
+            if(editorPosition==4)return mask!=0&&(mask&(mask-1))!=0;
+            return mask==[0,1,2,4][editorPosition];
+        }
+        private function sortEditorCollection(a:Object,b:Object):Number
+        {
+            if(editorStrength!=0&&a.power!=b.power)return editorStrength==1?a.power-b.power:b.power-a.power;
+            var order:Number=sortEditorCards(a,b);return order!=0?order:a.templateId-b.templateId;
+        }
+        private function drawEditorExtraFilters(beta:Boolean):void
+        {
+            var positions:Array=["Позиция: все","Рукопашный","Дальнобойный","Осадный","Подвижные","Событие"];
+            var strengths:Array=["По редкости","Слабые сначала","Сильные сначала"];
+            var x:Number=beta?482:464,y:Number=beta?272:268;
+            editorBetaButton(content,positions[editorPosition],x,y,300,30,ready,editorExtraFilter(1),editorPosition!=0);
+            editorBetaButton(content,strengths[editorStrength],x+310,y,230,30,ready,editorExtraFilter(2),editorStrength!=0);
+            editorBetaButton(content,"Новые карты",x+550,y,180,30,ready,function():void{editorNewOnly=!editorNewOnly;editorScroll178=0;render();},editorNewOnly);
+            editorBetaButton(content,"Сбросить фильтры",x+740,y,224,30,ready,editorExtraFilter(0));
+        }
         private function sortEditorCards(a:Object,b:Object):Number
         {
             if(a.tier!=b.tier)return b.tier-a.tier;
@@ -2262,7 +2819,7 @@ package
                     editorCraft=null;send("OnBetaGwentCollectionCraft",[id]);
                 });
             // Disabled craft controls must not activate the parent card's Add action.
-            button.mouseChildren=false;
+            button.name="editorCraftButton178";button.mouseChildren=false;
             button.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{e.stopPropagation();});
         }
 
@@ -2312,6 +2869,8 @@ package
             while(previewLayer.numChildren)previewLayer.removeChildAt(0);
             var filtered:Array=[];var query:String=editorSearch.toLowerCase();
             for each(var c:Object in editorCards){
+                if(!editorPositionMatches(c))continue;
+                if(editorNewOnly&&!collectionNew[c.templateId])continue;
                 if(editorTier!=0&&editorTier!=c.tier)continue;
                 if(editorType!=0&&editorType!=c.typeMask)continue;
                 if(editorFactionOnly&&c.faction==1)continue;
@@ -2319,6 +2878,7 @@ package
                 if(query.length>0&&!BetaGwentTextLanguage.search(c.title+" "+c.description+" "+BetaGwentCardTags.text(c.templateId),query))continue;
                 filtered.push(c);
             }
+            filtered.sort(sortEditorCollection);
             var pages:int=Math.max(1,Math.ceil(filtered.length/12));editorPage=Math.max(0,Math.min(editorPage,pages-1));
             for(var i:int=editorPage*12;i<Math.min(filtered.length,(editorPage+1)*12);i++){
                 c=filtered[i];var n:int=i-editorPage*12;
@@ -2389,22 +2949,9 @@ package
                     betaLabel(content,"Сменить лидера",110,384,244,15,0xCFC8BA,BetaGwentFonts.BODY,false,"center");
                 }
             }
-            var perPage:int=12;var pages:int=Math.max(1,Math.ceil(selectedCards.length/perPage));editorListPage=Math.max(0,Math.min(editorListPage,pages-1));
-            var list:Sprite=new Sprite();content.addChild(list);
-            list.graphics.beginFill(0,0);list.graphics.drawRect(46,428,372,perPage*40);list.graphics.endFill();
-            for(var i:int=editorListPage*perPage;i<Math.min(selectedCards.length,(editorListPage+1)*perPage);i++){
-                c=selectedCards[i];c.side=1;
-                var row:Sprite=deckSlotRow(list,c,46,428+(i-editorListPage*perPage)*40,372,38);
-                attachInspect(row,c,{description:c.description},372,38);
-                if(ready)attachEditorClick(row,editorAction("OnBetaGwentDeckEditorChange",c.templateId,-1));
-            }
-            if(!selectedCards.length)betaLabel(content,"Нажмите на карту в коллекции,\nчтобы добавить её в колоду.",52,470,360,18,0xCFC8BA,BetaGwentFonts.BODY,false,"center").height=60;
-            list.addEventListener(MouseEvent.MOUSE_WHEEL,function(e:MouseEvent):void{e.stopPropagation();editorListPage=Math.max(0,editorListPage+(e.delta<0?1:-1));render();});
-            if(pages>1){
-                betaWideButton("‹",46,918,60,ready&&editorListPage>0,function():void{editorListPage--;render();});
-                betaSlotLabel(content,(editorListPage+1)+" / "+pages,110,918,244,48,16,0xCFC8BA,BetaGwentFonts.BODY);
-                betaWideButton("›",358,918,60,ready&&editorListPage+1<pages,function():void{editorListPage++;render();});
-            }
+            deckList178=new Sprite();deckList178.x=46;deckList178.y=428;content.addChild(deckList178);
+            deckList178.addEventListener(MouseEvent.MOUSE_WHEEL,function(e:MouseEvent):void{e.stopPropagation();clearEditorDrag178();scrollShelf178("deck",deckScroll178-e.delta*20);});
+            redrawDeckList178();
             // centre: Collection with the filter bar
             paintArt(content,BetaGwentDeckArt104.WOOD_LARGE,1026,858,447,129);
             var tiers:Array=[0,2,4,8];var tierIcons:Array=[BetaGwentDeckArt104.TIER_ALL,BetaGwentDeckArt104.TIER_BRONZE,BetaGwentDeckArt104.TIER_SILVER,BetaGwentDeckArt104.TIER_GOLD];
@@ -2422,9 +2969,9 @@ package
             betaWideButton(editorOwnedOnly?"В наличии":"Все карты",1054,226,150,ready,editorOwnedToggle());
             var searchInput:TextField=editorInput(editorSearch,1212,224,234,64);
             searchInput.addEventListener(Event.CHANGE,function(e:Event):void{editorSearch=searchInput.text;editorPage=0;searchDeadline=getTimer()+160;});
-            content.graphics.lineStyle(2,0x6A5A44,.8);content.graphics.moveTo(474,286);content.graphics.lineTo(1446,286);content.graphics.lineStyle();
+            drawEditorExtraFilters(true);
             editorCollection=new Sprite();editorCollection.x=0;editorCollection.y=0;content.addChild(editorCollection);
-            editorCollection.addEventListener(MouseEvent.MOUSE_WHEEL,function(e:MouseEvent):void{e.stopPropagation();if(!ready)return;editorPage=Math.max(0,editorPage+(e.delta<0?1:-1));redrawEditorCollection();});
+            editorCollection.addEventListener(MouseEvent.MOUSE_WHEEL,function(e:MouseEvent):void{e.stopPropagation();if(!ready)return;clearEditorDrag178();scrollShelf178("collection",editorScroll178-e.delta*36);});
             redrawEditorCollection();
             // right: SidePreview
             paintArt(content,BetaGwentHud104.WOOD_PANEL,426,858,1473,129);
@@ -2436,7 +2983,7 @@ package
             // bottom
             betaWideButton("Сохранить",560,1002,260,ready,editorAction("OnBetaGwentDeckEditorSave"));
             betaWideButton("Очистить",840,1002,240,ready&&editorState.total>0,editorAction("OnBetaGwentDeckEditorClear"));
-            betaWideButton("Отмена",1100,1002,240,ready,editorAction("OnBetaGwentDeckEditorCancel"));
+            betaWideButton("Отмена",1100,1002,240,ready,function():void{requestEditorExit();});
         }
         private function betaFilterButton(icon:int,x:Number,y:Number,on:Boolean,callback:Function):void
         {
@@ -2455,6 +3002,8 @@ package
             while(editorCollection.numChildren)editorCollection.removeChildAt(0);
             var filtered:Array=[];var query:String=editorSearch.toLowerCase();
             for each(var c:Object in editorCards){
+                if(!editorPositionMatches(c))continue;
+                if(editorNewOnly&&!collectionNew[c.templateId])continue;
                 if(editorTier!=0&&editorTier!=c.tier)continue;
                 if(editorType!=0&&editorType!=c.typeMask)continue;
                 if(editorFactionOnly&&c.faction==1)continue;
@@ -2462,11 +3011,13 @@ package
                 if(query.length>0&&!BetaGwentTextLanguage.search(c.title+" "+c.description+" "+BetaGwentCardTags.text(c.templateId),query))continue;
                 filtered.push(c);
             }
-            var perPage:int=10;var pages:int=Math.max(1,Math.ceil(filtered.length/perPage));editorPage=Math.max(0,Math.min(editorPage,pages-1));
+            filtered.sort(sortEditorCollection);
+            var viewport:BetaGwentVirtualShelf178=new BetaGwentVirtualShelf178(filtered.length,5,240,960,636,editorScroll178);
+            viewport.x=482;viewport.y=306;editorCollection.addChild(viewport);shelves178.collection=viewport.layout;shelfCards178.collection=filtered;editorScroll178=viewport.layout.offset;
             var cw:Number=164,ch:Number=Math.round(164/BETA_CARD_ASPECT);
-            for(var i:int=editorPage*perPage;i<Math.min(filtered.length,(editorPage+1)*perPage);i++){
-                c=filtered[i];var n:int=i-editorPage*perPage;c.side=1;
-                var tile:Sprite=new Sprite();tile.x=500+(n%5)*186;tile.y=306+int(n/5)*318;editorCollection.addChild(tile);
+            for(var i:int=viewport.layout.first;i<viewport.layout.end;i++){
+                c=BetaGwentVirtualShelf178.card(filtered[i],"collection",i,482,306,960,636);c.side=1;
+                var tile:Sprite=new Sprite();tile.x=46+(i%5)*176;tile.y=int(i/5)*240-editorScroll178;viewport.body.addChild(tile);
                 tile.graphics.beginFill(0,.45);tile.graphics.drawRect(4,6,cw,ch);tile.graphics.endFill();
                 paintBetaFace(tile,c.templateId,cw,ch,1);
                 if(c.typeMask==4)betaPowerField(tile,String(c.power),cw,ch,0xFFFFFF);
@@ -2480,18 +3031,13 @@ package
                 var shelf:TextField=betaLabel(tile,c.copies+" / "+cap,0,ch+6,cw,16,c.canAdd?0xF2EEE4:0xA49A88,BetaGwentFonts.BODY,false,"center");
                 if(craftable)tile.alpha=.75;
                 attachInspect(tile,c,{description:c.description},cw,ch);
-                if(c.canAdd&&ready)attachEditorClick(tile,editorAction("OnBetaGwentDeckEditorChange",c.templateId,1));
+                if(c.canAdd&&ready){attachEditorClick(tile,editorAction("OnBetaGwentDeckEditorChange",c.templateId,1));attachEditorDrag178(tile,c,1,cw,ch);}
                 else drawDisabledReason(tile,disabledReason(c),cw,ch);
                 cardCraftButton(tile,c,cw,ch);
             }
             if(filtered.length==0)betaLabel(editorCollection,"Нет карт, подходящих под фильтры.",474,560,972,22,0xF2EEE4,BetaGwentFonts.BODY,false,"center");
-            var prev:Function=function():void{editorPage--;redrawEditorCollection();};
-            var next:Function=function():void{editorPage++;redrawEditorCollection();};
-            var start:int=content.numChildren;
-            betaWideButton("‹",474,884,70,ready&&editorPage>0,prev);
-            betaWideButton("›",1376,884,70,ready&&editorPage+1<pages,next);
-            while(content.numChildren>start)editorCollection.addChild(content.getChildAt(start));
-            betaSlotLabel(editorCollection,"Коллекция: "+filtered.length+" · "+(editorPage+1)+" / "+pages+(entryMode!=0?" · Осколки: "+scraps:""),560,884,800,48,17,0xE8DCC4,BetaGwentFonts.BODY);
+            shelfBar178(editorCollection,"collection",1448,306,636);
+            betaSlotLabel(editorCollection,"Коллекция: "+filtered.length+(entryMode!=0?" · Осколки: "+scraps:""),482,962,960,24,17,0xE8DCC4,BetaGwentFonts.BODY);
             if(editorCraft)drawEditorCraft();
         }
         private var editorCraft:Object=null;
@@ -2587,7 +3133,7 @@ package
             editorBetaButton(content,editorOwnedOnly?"В наличии":"Все карты",1002,218,152,40,ready,editorOwnedToggle(),editorOwnedOnly);
             searchInput.addEventListener(Event.CHANGE,function(e:Event):void{editorSearch=searchInput.text;editorPage=0;searchDeadline=getTimer()+160;});
             editorBetaButton(content,editorFactionOnly?"Фракция":"Фракция + нейтральные",1164,218,224,40,ready,editorFilterAction(editorTier,editorType,!editorFactionOnly),editorFactionOnly);
-            text(content,"Поиск по названию, способности и тегам",464,268,924,17,0xC5C0AC).height=26;
+            drawEditorExtraFilters(false);
             editorCollection=new Sprite();editorCollection.x=464;editorCollection.y=310;content.addChild(editorCollection);
             editorCollection.addEventListener(MouseEvent.MOUSE_WHEEL,function(e:MouseEvent):void{e.stopPropagation();if(!ready)return;editorPage=Math.max(0,editorPage+(e.delta<0?1:-1));redrawEditorCollection();});
             redrawEditorCollection();
@@ -2595,7 +3141,9 @@ package
             var preview:Object=editorById[editorPreviewId];if(!preview&&editorCards.length)preview=editorCards[0];showEditorCard(preview);
             text(content,editorState.status,464,947,924,19,editorState.valid?0xA6D6AF:0xE8D3A6).height=48;
             editorBetaButton(content,"Сохранить колоду",56,990,364,42,ready,editorAction("OnBetaGwentDeckEditorSave"),true);
-            editorBetaButton(content,"Отменить",1448,990,420,42,ready,editorAction("OnBetaGwentDeckEditorCancel"));
+            editorBetaButton(content,"Очистить",1448,934,420,42,ready&&editorState.total>0,editorAction("OnBetaGwentDeckEditorClear"));
+            editorBetaButton(content,"Отменить карту",1448,878,420,42,ready&&editorUndo.length>0,undoEditorChange);
+            editorBetaButton(content,"Отменить",1448,990,420,42,ready,function():void{requestEditorExit();});
             text(content,"Коллекция: добавить · состав: убрать · ПКМ / X: просмотр\nLT / RT: − / + · View: панели · LB / RB: страницы · Start: сохранить",464,990,924,17,0xD1CCBA).height=44;
         }
 
@@ -2693,9 +3241,9 @@ package
         {
             if(!incoming||rev!=incoming.revision)return;
             // kind + 256 * targets: one original Beta attack may hit many cards at once.
-            var attackCount:int=Math.max(1,kind>>8);kind=kind&255;
+            var audioKind:int=kind>>>16;var attackCount:int=Math.max(1,(kind>>8)&255);kind=kind&255;
             incoming.cue={kind:kind,source:source,target:target,side:side,row:row,
-                templateId:templateId,duration:duration,title:title,attackCount:attackCount};
+                templateId:templateId,duration:duration,title:title,attackCount:attackCount,audioKind:audioKind};
         }
         // Stage 126: one card changing the power of several different units in one sweep
         // (Ulfhedinn on every enemy, Arachas Venom on 3 adjacent units, mass boosts) plays as
@@ -2711,10 +3259,11 @@ package
             var result:Array=[];var i:int=0;
             while(i<frames.length){
                 var lead:Object=frames[i].cue;
-                if(lead.kind!=2||int(lead.source)==0){result.push(frames[i]);i++;continue;}
+                if(lead.kind!=2||int(lead.source)==0||lead.triggerBoost){result.push(frames[i]);i++;continue;}
                 var targets:Array=[int(lead.target)];var last:int=i;var j:int=i+1;var gap:int=0;
                 while(j<frames.length&&gap<=4){
                     var c:Object=frames[j].cue;
+                    if(c.triggerBoost)break;
                     if(c.kind==2&&c.source==lead.source){
                         if(targets.indexOf(int(c.target))>=0)break;
                         targets.push(int(c.target));last=j;gap=0;
@@ -2724,11 +3273,96 @@ package
                 }
                 if(targets.length<2){result.push(frames[i]);i++;continue;}
                 var merged:Object={};for(var key:String in lead)merged[key]=lead[key];
+                var completeTargets:Boolean=true;for(var memberIndex:int=i;memberIndex<=last;memberIndex++)if(int(frames[memberIndex].cue.attackCount)>1)completeTargets=false;
+                if(completeTargets)merged.hitTargets=targets;
                 merged.attackCount=Math.max(int(lead.attackCount),targets.length);merged.sequence=0;merged.sequenceSize=0;
                 var name:String=String(lead.title||"");var colon:int=name.indexOf(":");
                 if(colon>0)merged.title=name.substr(0,colon)+": целей "+targets.length;
-                var keep:Object=frames[last];keep.cue=merged;result.push(keep);
+                var keep:Object={};for(key in frames[last])keep[key]=frames[last][key];
+                keep.cue=merged;keep.historyFrames=frames.slice(i,last+1);result.push(keep);
+                merged.soundRevisions=[];var soundKinds:Object={};
+                for each(var soundFrame:Object in keep.historyFrames){var soundKind:int=int(soundFrame.cue.audioKind);
+                    if(soundKind>0&&!soundKinds[soundKind]){soundKinds[soundKind]=true;merged.soundRevisions.push(soundFrame.revision);}}
+                if(merged.soundRevisions.length==0)merged.soundRevisions.push(keep.revision);
                 i=last+1;
+            }
+            return result;
+        }
+        private function collapseDeathSweeps(frames:Array):Array
+        {
+            var result:Array=[];var i:int=0;
+            while(i<frames.length){
+                var lead:Object=frames[i].cue;
+                if(lead.kind!=3||int(lead.source)==0){result.push(frames[i++]);continue;}
+                var targets:Array=[int(lead.target)];var members:Array=[frames[i]];var j:int=i+1;
+                while(j<frames.length){var next:Object=frames[j].cue;
+                    if(next.kind!=3||next.source!=lead.source||next.templateId!=lead.templateId||next.side!=lead.side||targets.indexOf(int(next.target))>=0)break;
+                    targets.push(int(next.target));members.push(frames[j]);j++;}
+                if(members.length==1){result.push(frames[i++]);continue;}
+                var cue:Object={};for(var key:String in lead)cue[key]=lead[key];cue.deathTargets=targets;
+                var keep:Object={};for(key in frames[j-1])keep[key]=frames[j-1][key];
+                keep.cue=cue;keep.historyFrames=members;result.push(keep);i=j;
+            }
+            return result;
+        }
+        private function noteFrameHistory(frame:Object):void
+        {
+            if(frame.historyFrames){for each(var member:Object in frame.historyFrames)noteFrameHistory(member);}
+            else noteHistory(frame.cue,frame.scores,frame.cards);
+        }
+        private function collapseTriggerBoosts(frames:Array,beforeCards:Array):Array
+        {
+            var result:Array=[],prior:Object={};var i:int=0;
+            for each(var initial:Object in beforeCards)prior[initial.id]=initial;
+            while(i<frames.length){
+                var members:Array=[],targets:Array=[];var j:int=i;
+                while(j<frames.length){
+                    var frame:Object=frames[j],cue:Object=frame.cue;
+                    if(cue.kind!=2||cue.target<=0||targets.indexOf(int(cue.target))>=0)break;
+                    var after:Object=null;for each(var card:Object in frame.cards)if(card.id==cue.target){after=card;break;}
+                    var before:Object=prior[cue.target];
+                    if(!before||!after||(int(after.zone)&7)==0||after.side!=before.side||after.zone!=before.zone||
+                        int(after.power)<=int(before.power)||int(after.armor)<int(before.armor))break;
+                    // Do not swallow an unrelated damage/reveal in the same native snapshot.
+                    var unsafe:Boolean=false,changedTargets:Array=[];
+                    for each(card in frame.cards){var old:Object=prior[card.id];
+                        if(old&&(int(card.power)<int(old.power)||int(card.armor)<int(old.armor)||card.zone!=old.zone||card.side!=old.side||card.templateId!=old.templateId)){unsafe=true;break;}
+                        if(old&&(int(card.zone)&7)!=0&&(int(card.tokens)&8)==0&&int(card.power)>int(old.power)){
+                            if(targets.indexOf(int(card.id))>=0){unsafe=true;break;}
+                            changedTargets.push(int(card.id));
+                        }
+                    }
+                    if(unsafe)break;
+                    members.push(frame);targets=targets.concat(changedTargets);
+                    for each(card in frame.cards)prior[card.id]=card;
+                    j++;
+                }
+                if(members.length>1){
+                    var merged:Object={};for(var field:String in members[0].cue)merged[field]=members[0].cue[field];
+                    merged.hitTargets=targets;merged.attackCount=targets.length;merged.triggerBoost=true;
+                    merged.title="Одновременное усиление: "+targets.length;
+                    var keep:Object={};for(field in members[members.length-1])keep[field]=members[members.length-1][field];
+                    keep.cue=merged;keep.historyFrames=members;result.push(keep);i=j;
+                }else if(members.length==1){result.push(members[0]);i=j;}
+                else {result.push(frames[i]);for each(card in frames[i].cards)prior[card.id]=card;i++;}
+            }
+            return result;
+        }
+        private function collapseWeatherCasts(frames:Array):Array
+        {
+            var result:Array=[];var i:int=0;
+            while(i<frames.length){
+                var lead:Object=frames[i].cue;
+                if(lead.kind!=4||lead.source<=0||lead.row<=0||[113206,113101,200018,201749,113303].indexOf(int(lead.templateId))<0){result.push(frames[i++]);continue;}
+                var members:Array=[frames[i]],lanes:Array=[{side:lead.side,zone:lead.row}],keys:Array=[lead.side+":"+lead.row];var j:int=i+1;
+                while(j<frames.length){
+                    var next:Object=frames[j].cue;var key:String=next.side+":"+next.row;
+                    if(next.kind!=4||next.source!=lead.source||next.templateId!=lead.templateId||next.row<=0||keys.indexOf(key)>=0)break;
+                    members.push(frames[j]);lanes.push({side:next.side,zone:next.row});keys.push(key);j++;
+                }
+                var cue:Object={};for(var field:String in lead)cue[field]=lead[field];cue.weatherCastRows=lanes;
+                var keep:Object={};for(field in frames[j-1])keep[field]=frames[j-1][field];
+                keep.cue=cue;keep.historyFrames=members;result.push(keep);i=j;
             }
             return result;
         }
@@ -2739,7 +3373,7 @@ package
             if(receivingFrames.length<expectedFrames)return;
             replayFrames=receivingFrames;receivingFrames=[];
             if(current==1)for each(var focusFrame:Object in replayFrames)if(focusFrame.cue.kind==1)focusBoardAfterReplay=true;
-            replayFrames=collapseSweeps(replayFrames);fastReplay=false;
+            replayFrames=collapseWeatherCasts(collapseDeathSweeps(collapseSweeps(collapseTriggerBoosts(collapseMourntart(collapseProjectileDeaths(replayFrames)),cards))));fastReplay=false;
             // Only contiguous changes of the same source/row form a visual multi-target action.
             // Rule order and all intermediate snapshots stay intact.
             for(var groupStart:int=0;groupStart<replayFrames.length;groupStart++){
@@ -2760,14 +3394,87 @@ package
             prepareReplayTiming();
             showNextFrame();
         }
+        private function collapseMourntart(frames:Array):Array
+        {
+            var result:Array=[];
+            for(var i:int=0;i<frames.length;i++){
+                var first:Object=frames[i],cue:Object=first.cue;
+                if(cue.kind!=11||cue.templateId!=132202){result.push(first);continue;}
+                var targets:Array=[],seen:Object={},j:int=i;
+                var previous:Array=i>0?frames[i-1].cards:cards;
+                while(j<frames.length){
+                    var candidate:Object=frames[j],next:Object=candidate.cue;
+                    if(next.kind==11){
+                        if(next.source!=cue.source||next.templateId!=132202||seen[next.target])break;
+                        seen[next.target]=true;targets.push({id:next.target,view:next.targetView});
+                    }else if(next.kind==2||next.kind==8&&(next.templateId==132305&&next.source==next.target||j+1<frames.length&&frames[j+1].cue.kind==2&&frames[j+1].cue.target==next.target)){
+                        // A hand Nekker announces a consume trigger without a board-power frame.
+                        var safe:Boolean=true,prior:Object={};
+                        for each(var before:Object in previous)prior[before.id]=before;
+                        for each(var after:Object in candidate.cards){before=prior[after.id];if(before&&
+                            (after.power<before.power||after.armor<before.armor||after.side!=before.side||after.zone!=before.zone||after.tokens!=before.tokens))safe=false;}
+                        if(!safe)break;
+                    }else break;
+                    previous=candidate.cards;j++;
+                    if(next.kind==2&&next.source==cue.source&&next.target==cue.source)break;
+                }
+                if(targets.length<2){result.push(first);continue;}
+                var grouped:Object={},groupCue:Object={};
+                for(var key:String in frames[j-1])grouped[key]=frames[j-1][key];
+                for(key in cue)groupCue[key]=cue[key];
+                groupCue.massTargets=targets;groupCue.massGrouped=true;grouped.historyFrames=frames.slice(i,j);
+                grouped.cue=groupCue;grouped.revision=first.revision;
+                // Swallow first, then commit every accumulated boost in one separate tick.
+                var initial:Array=i>0?frames[i-1].cards:cards,original:Object={},boostTargets:Array=[];
+                for each(before in initial)original[before.id]=before;
+                var boostFrame:Object={},boostCue:Object={},consumeCards:Array=[];
+                for(key in frames[j-1])boostFrame[key]=frames[j-1][key];
+                for(key in cue)boostCue[key]=cue[key];
+                grouped.scores=grouped.scores?grouped.scores.concat():[0,0];
+                for each(after in grouped.cards){
+                    before=original[after.id];var consumeCard:Object={};for(key in after)consumeCard[key]=after[key];
+                    if(before&&after.zone==before.zone&&after.side==before.side&&after.power>before.power){
+                        boostTargets.push(int(after.id));consumeCard.power=before.power;
+                        if((int(after.zone)&7)!=0)grouped.scores[int(after.side)-1]-=after.power-before.power;
+                    }
+                    consumeCards.push(consumeCard);
+                }
+                grouped.cards=consumeCards;result.push(grouped);
+                if(boostTargets.length>0){
+                    boostCue.kind=2;boostCue.target=cue.source;boostCue.hitTargets=boostTargets;boostCue.attackCount=boostTargets.length;
+                    boostCue.audioKind=21;boostCue.massConsumeBoost=true;boostCue.triggerBoost=true;boostCue.title="Усиление после поглощения";
+                    boostFrame.cue=boostCue;boostFrame.historyFrames=[];result.push(boostFrame);
+                }
+                i=j-1;
+            }
+            return result;
+        }
+        private function collapseProjectileDeaths(frames:Array):Array
+        {
+            var result:Array=[];
+            for(var i:int=0;i<frames.length;i++){
+                var lead:Object=frames[i].cue;
+                if(lead.kind!=2||lead.templateId!=200224){result.push(frames[i]);continue;}
+                var targets:Array=[],j:int=i;
+                while(j<frames.length){var cue:Object=frames[j].cue;
+                    if(cue.source!=lead.source||cue.templateId!=200224||(cue.kind!=2&&cue.kind!=3))break;
+                    if(cue.kind==2&&targets.indexOf(int(cue.target))<0)targets.push(int(cue.target));j++;
+                }
+                var combined:Object={},spellCue:Object={};
+                for(var key:String in frames[j-1])combined[key]=frames[j-1][key];
+                for(key in lead)spellCue[key]=lead[key];
+                spellCue.hitTargets=targets;spellCue.projectileDeaths=true;spellCue.attackCount=targets.length;
+                combined.cue=spellCue;combined.historyFrames=frames.slice(i,j);result.push(combined);i=j-1;
+            }
+            return result;
+        }
         private function prepareReplayTiming():void
         {
             // Ordinary hits keep the same tempo regardless of row, source or batch size.
             // Only a mass-consume chain uses quick bookkeeping snapshots.
             visualTimeScale=1/animationTempo;
-            // Mass consume (Mourntart eating a whole graveyard): one swallow animation for every
-            // card of the run, then the remaining snapshots tick by quickly so each counter
-            // (the consumer, every Nekker) still rises card by card.
+            // Mourntart is already one swallow followed by one accumulated boost.
+            // Other consume chains retain their normal timing unless explicitly grouped.
             for(var mi:int=0;mi<replayFrames.length;mi++){
                 var mc:Object=replayFrames[mi].cue;if(mc.kind!=11)continue;
                 var members:Array=[mi];var mj:int=mi+1;
@@ -2787,8 +3494,22 @@ package
                 for(var mk:int=mi+1;mk<=lastMember;mk++)replayFrames[mk].cue.massFollow=true;
                 mi=lastMember;
             }
+            var priorCards:Array=this.cards;
             for each(var timed:Object in replayFrames){
+                var savedCue:Object=activeCue;activeCue=timed.cue;
                 timed.cue.floor=timed.cue.massFollow?MASS_TICK_MS:timed.cue.massTargets?cueMinimumDuration(11)+260:cueMinimumDuration(timed.cue.kind);
+                timed.cue.floor=Math.max(Number(timed.cue.floor),elementCueFloor164(timed.cue),presentationFloor178(timed.cue,priorCards,timed.cards));
+                activeCue=savedCue;
+                // A banished unit dissolves for the full Beta 1.2 s (BanishCardEffect).
+                if(timed.cards&&priorCards&&!timed.cue.massFollow){
+                    var remaining:Object={};for each(var nextCard:Object in timed.cards)remaining[nextCard.id]=true;
+                    var bc:Object=timed.cue;var banishOp:Boolean=int(bc.audioKind)==12||bc.kind==12&&int(bc.templateId)!=201523;
+                    for each(var priorCard:Object in priorCards){
+                        if(priorCard.zone==8||remaining[priorCard.id])continue;
+                        if((int(priorCard.tokens)&512)!=0||banishOp&&int(bc.target)==int(priorCard.id)){timed.cue.floor=Math.max(Number(timed.cue.floor),1300);break;}
+                    }
+                }
+                if(timed.cards)priorCards=timed.cards;
             }
         }
         public function setVisualTarget(rev:int,templateId:int,power:int,side:int,zone:int):void
@@ -2815,14 +3536,15 @@ package
             requestFinish=frame.requestFinish;requestMessage=frame.requestMessage;requestCards=frame.requestCards;
             if(!isMulliganHand())mulliganSlots=[];
             activeCue=frame.cue;playing=replayFrames.length>0;ready=true;
-            var restoreBoard:Boolean=focusBoardAfterReplay&&!playing&&requestId==0&&(flags>>4)==0&&!selectingDecks&&!detailOpen&&!pileOpen;
+            if(current==1&&previousTurn!=1)focusHandAfterReplay=true;
+            var restoreBoard:Boolean=focusBoardAfterReplay&&!focusHandAfterReplay&&!playing&&requestId==0&&(flags>>4)==0&&!selectingDecks&&!detailOpen&&!pileOpen&&!controllerMenuOpen&&!nameOpen;
             if(restoreBoard){controllerInspectBoard=true;focusBoardAfterReplay=false;}
             if(skin==3&&introStart==0&&current==1&&previousTurn!=1&&requestKind!=1&&(flags>>4)==0&&activeCue.kind!=6)turnBannerAt=getTimer();
             previousTurn=current;
             maybeStartIntro();
             if(activeCue.kind==6)lastRoundResult={round:round,scores:scores.concat(),crowns:crowns.concat(),flags:flags,title:activeCue.title};
             if(activeCue.kind==7||activeCue.kind==17)lastRoundResult=null;
-            noteHistory(activeCue,scores,frame.cards);
+            noteFrameHistory(frame);
             // Repeating weather rows and damage pulses use identical readability floors.
             var minimum:Number=reducedMotion?320:(activeCue.floor!=undefined?Number(activeCue.floor):cueMinimumDuration(activeCue.kind));
             var sceneCard:Object=activeCue.kind==1?BetaGwentFullCatalog.find(int(activeCue.templateId)):null;
@@ -2835,15 +3557,23 @@ package
             if(current==1)aiTurnShown=false;
             if((activeCue.kind==1||activeCue.kind==5)&&current==2)aiTurnShown=true;
             frameDuration+=aiTurnDelay(replayFrames[0]);
-            if(fastReplay&&playing)frameDuration=Math.max(60,frameDuration*FAST_REPLAY_SCALE);
-            if(!playing)fastReplay=false;
+            if((fastReplay||mouseReplayBoosted)&&playing)frameDuration=Math.max(60,frameDuration*FAST_REPLAY_SCALE);
+            // A pass needs readable real time even inside a fast chain. Explicit Skip still bypasses it.
+            if(playing&&activeCue.kind==5&&activeCue.side==2)frameDuration=Math.max(900,frameDuration);
+            if(!playing){fastReplay=false;releaseReplayMouse();}
             frameDeadline=playing?getTimer()+frameDuration:0;
             // A drawing error must never stall the replay: report it and keep the duel going.
             try{render();}catch(renderError:Error){reportUIError("render r"+revision,renderError);}
             reportArtwork();
             if(restoreBoard)controller.focusNearestCard("card",960,800);
             audioCueAt=0;
-            if(!skipAudio&&activeCue.kind>0&&!activeCue.massFollow){audioCueRevision=revision;audioCueAt=getTimer()+cueImpactDelay();}
+            if(!skipAudio&&activeCue.kind>0&&!activeCue.massFollow){
+                audioCueRevision=revision;audioCueRevisions=activeCue.soundRevisions?activeCue.soundRevisions:[revision];audioCueAt=getTimer()+cueImpactDelay();
+                if(activeCue.kind==2&&!activeCue.triggerBoost&&int(activeCue.source)>0&&activeCue.source!=activeCue.target){
+                    var launchProfile:Object=BetaGwentSpecialVfx.prefabs(int(activeCue.templateId),int(activeCue.audioKind)!=21&&int(activeCue.audioKind)!=23);
+                    if(launchProfile&&launchProfile.method==1)send("OnBetaGwentAudioSpellLaunch",[revision,getTimer()]);
+                }
+            }
             if(!playing){
                 send("OnBetaGwentVisualDone",[serverRevision]);
                 autoRoundAt=canNextRound()?getTimer()+1400:0;autoRoundRevision=revision;
@@ -2871,10 +3601,13 @@ package
         private function animateReplay(e:Event):void
         {
             var now:int=getTimer();
+            updateReplayMouse(now);
+            if(this.effectGallery&&galleryPending){galleryShow(galleryIndex);}
+            if(this.effectGallery&&galleryAudioAt>0&&now>=galleryAudioAt){galleryAudioAt=0;gallerySound();}
             BetaGwentTextLanguage.sweep();updateTextGate(now);
-            if(audioCueAt>0&&now>=audioCueAt){audioCueAt=0;if(audioCueRevision==revision)send("OnBetaGwentAudioCue",[audioCueRevision]);}
+            if(audioCueAt>0&&now>=audioCueAt){audioCueAt=0;if(audioCueRevision==revision)for each(var soundRevision:int in audioCueRevisions)send("OnBetaGwentAudioCue",[soundRevision]);}
             if(connected&&(artworkReportPending||artworkReport!=BetaGwentCardArt.successes*100+BetaGwentCardArt.failures))flushArtworkReport();
-            if(connected&&betaAudioInstalled&&now>=audioTickAt){audioTickAt=now+250;send("OnBetaGwentAudioTick",[now]);}
+            if(connected&&now>=audioTickAt){audioTickAt=now+(current==2&&!playing?33:250);send("OnBetaGwentAudioTick",[now]);}
             if(playing&&frameDeadline>0&&now>=frameDeadline)showNextFrame();
             // The round summary may end while the graveyard view, a card detail or the menu is open
             // (canNextRound() false at that moment). Re-arm as soon as the board is free again,
@@ -2893,8 +3626,8 @@ package
                 if(skipped.cue.kind==6)lastRoundResult={round:skipped.round,scores:skipped.scores.concat(),crowns:skipped.crowns.concat(),flags:skipped.flags,title:skipped.cue.title};
                 if(skipped.cue.kind==7||skipped.cue.kind==17)lastRoundResult=null;
             }
-            for(var skippedIndex:int=0;skippedIndex<replayFrames.length-1;skippedIndex++){var skippedFrame:Object=replayFrames[skippedIndex];noteHistory(skippedFrame.cue,skippedFrame.scores,skippedFrame.cards);}
-            replayFrames=[replayFrames[replayFrames.length-1]];skipAudio=true;showNextFrame();skipAudio=false;
+            for(var skippedIndex:int=0;skippedIndex<replayFrames.length-1;skippedIndex++){var skippedFrame:Object=replayFrames[skippedIndex];noteFrameHistory(skippedFrame);}
+            consumedVisualIds={};replayFrames=[replayFrames[replayFrames.length-1]];skipAudio=true;showNextFrame();skipAudio=false;
         }
 
         private function uiSound(kind:int=1):void
@@ -2928,6 +3661,7 @@ package
         }
         public function setAudioStatus(installed:Boolean,available:Boolean,tempo:int=0,reduced:Boolean=false,aiPause:int=0,difficulty:int=0):void
         { betaAudioInstalled=installed;betaAudioAvailable=available;if(tempo==10||tempo==15||tempo==20){animationTempo=tempo/10;reducedMotion=reduced;}if(aiPause>=1&&aiPause<=4)aiPauseIndex=aiPause;if(difficulty>=1&&difficulty<=3)difficultyIndex=difficulty; }
+        public function setBoardHelp(visible:Boolean):void {BetaGwentUi138.helpLabels=visible;}
         // Opponent difficulty: 1 easy, 2 normal, 3 hard (saved with the Witcher save).
         private var difficultyIndex:int=3;
         private function difficultyName():String{return difficultyIndex==1?"лёгкая":difficultyIndex==2?"средняя":"высокая";}
@@ -3022,7 +3756,7 @@ package
             return {x:g.x+(g.w-Math.max(1,count)*step+8)/2,step:step,w:step-8};
         }
         private function canAct():Boolean
-        { return !detailOpen && !pileOpen && ready && !editingDeck && !selectingDecks && !playing && requestId==0 && current==1 && (flags&1)==0 && (flags&12)==0 && (flags>>4)==0; }
+        { return !this.effectGallery && !detailOpen && !pileOpen && ready && !editingDeck && !selectingDecks && !playing && requestId==0 && current==1 && (flags&1)==0 && (flags&12)==0 && (flags>>4)==0; }
         private function halfCastSide():int
         {
             var rule:Object=playRules[selected];
@@ -3068,6 +3802,26 @@ package
                 &&(rule.side==0||rule.side==c.side)&&(detail.typeMask&rule.types)!=0
                 &&(detail.tier&rule.tiers)!=0&&(int(c.tokens)&rule.ignore)==0
                 &&(rule.maximum==0||c.power<=rule.maximum);
+        }
+        private function battleDisabledReason(c:Object):String
+        {
+            if(!c)return "";
+            if(playing)return "Дождитесь окончания анимации или пропустите её";
+            if(!ready)return "Ожидается обновление поля";
+            if((flags>>4)>0)return "Партия завершена";
+            if((flags&1)!=0&&requestId==0)return "Вы уже спасовали";
+            if(current!=1&&requestId==0)return "Сейчас ход соперника";
+            if(requestId>0&&requestKind==2&&!rowRequest&&!canPlacePending())
+                return findRequestCard(c.id)==null?"Эта карта не входит в допустимые цели способности":"";
+            var rule:Object=playRules[selected],detail:Object=cardDetails[c.id];
+            if(selected==0||!rule||rule.kind!=1)return "";
+            if((int(c.zone)&7)==0)return "Выберите отряд на поле";
+            if(rule.side!=0&&rule.side!=c.side)return rule.side==1?"Нужен союзный отряд":"Нужен вражеский отряд";
+            if(!detail||(detail.typeMask&rule.types)==0)return "Этот тип карты не подходит";
+            if((detail.tier&rule.tiers)==0)return "Редкость карты не подходит для способности";
+            if((int(c.tokens)&rule.ignore)!=0)return "Защита или статус карты запрещает эту цель";
+            if(rule.maximum>0&&c.power>rule.maximum)return "Сила цели выше допустимой: "+rule.maximum;
+            return "";
         }
         private function attachDirectTarget(p:Sprite,id:int):void
         {
@@ -3141,8 +3895,8 @@ package
             placementGhost.graphics.lineStyle(3,0xD9FFF5,1);placementGhost.graphics.drawRect(x,g.y+4,width,g.h-8);
             placementGhost.graphics.moveTo(x+width/2,g.y-3);placementGhost.graphics.lineTo(x+width/2,g.y-15);
             var rowName:String=target.zone==1?"Ближний ряд":target.zone==2?"Дальний ряд":"Осадный ряд";
-            var label:Sprite=panel(placementGhost,1536,842,332,58,0x10191F,.98);
-            text(label,rowName+" · позиция "+(index+1)+" / "+(units.length+1)+" · "+c.title+" · нажмите, чтобы разместить",10,3,312,17,0xD9FFF5).height=54;
+            {var label:Sprite=panel(placementGhost,1536,842,332,58,0x10191F,.98);
+            text(label,rowName+" · позиция "+(index+1)+" / "+(units.length+1)+" · "+c.title+" · нажмите, чтобы разместить",10,3,312,17,0xD9FFF5).height=54;}
             if(c.templateId==132104){
                 var frostRow:Object=rowGeometry(2,target.zone);
                 placementGhost.graphics.lineStyle(3,0xA3E9FF,.95);placementGhost.graphics.beginFill(0x8ED7FF,.18);
@@ -3206,11 +3960,12 @@ package
         }
         private function render():void
         {
+            var restoreHand:Boolean=restoreTurnHandFocus();
             rememberEditorFilters();uiMotions=[];buttonFeedback=[];handHoverId=0;
             beginLeaderRender();clearPlacementGhost();previousPoses=displayedCards;
             battlePreview=null;battlePreviewKey="";tempoLabel=null;motionLabel=null;
             animations=[];pendingImpacts=[];targetPulses=[];cardSprites={}; animationFrame=0;animationStarted=getTimer();
-            animationOffset=0;animationRate=fastReplay&&playing?1/FAST_REPLAY_SCALE:1;
+            animationOffset=0;animationRate=(fastReplay||mouseReplayBoosted)&&playing?1/FAST_REPLAY_SCALE:1;
             frameAnimationTempo=animationTempo;animationBaseDuration=frameDuration*animationRate;replayHint=null;
             aimLayer.graphics.clear();aimKey="";
             // Retain only weather removed by this snapshot; normal redraws do
@@ -3226,9 +3981,21 @@ package
             while(previewLayer.numChildren)previewLayer.removeChildAt(0);
             while(choiceLayer.numChildren)choiceLayer.removeChildAt(0);
             while(content.numChildren) content.removeChildAt(0);
+            if(this.effectGallery){
+                // No battle HUD, turn banner, pass button or match-only state.
+                // The controls live outside the effect's failure boundary.
+                try{
+                    if(skin==3)drawFactionBoards();drawRows();
+                    for each(var galleryFade:Object in weatherFades)content.addChild(galleryFade.sprite);
+                    for each(var galleryWeather:Object in weatherEffects)content.addChild(galleryWeather.sprite);
+                    drawCards();animateWeather(null);drawVisualCue();drawEffectGallery();
+                }catch(galleryError:Error){reportUIError("galleryRender "+galleryIndex,galleryError);}
+                drawGalleryControls();finishLeaderRender();return;
+            }
             if(kegOpen){drawKeg();return;}
             if(browsingCatalog){drawCatalog();return;}
-            if(editingDeck){drawDeckEditor();if(skin==3)drawEditorFeedback();if(pendingKeg||entryMode==1&&unopenedKegs>0)editorSmallButton(content,pendingKeg?"Продолжить выбор":"Бочки · "+unopenedKegs,1588,28,276,42,ready,function():void{send("OnBetaGwentKegOpen",[revision]);});return;}
+            if(editingDeck){drawDeckEditor();if(skin==3)drawEditorFeedback();if(pendingKeg||entryMode==1&&unopenedKegs>0)editorSmallButton(content,pendingKeg?"Продолжить выбор":"Бочки · "+unopenedKegs,1588,28,276,42,ready,function():void{requestEditorExit(true);});return;}
+            if(createDeckOpen178){drawDeckCreator178();return;}
             if(selectingDecks){drawDeckSelection();return;}
             if(entryMode==1){text(content,"Открытие редактора колод…",96,88,1720,30,0xE8D3A6);return;}
             if(skin==3)drawFactionBoards();
@@ -3265,6 +4032,7 @@ package
             }
             if(!playing&&requestId>0 && requestKind==1) drawChoices();
             updateFocusedInspection();
+            if(leaderPreviewCard&&leaderPreview&&battlePreview&&battlePreview.numChildren==0)showBattleCard(leaderPreviewCard,leaderPreviewDetail);
             if(!playing&&requestId>0&&!(skin==3&&requestKind==1)){
                 if(skin==3){
                     var prompt:TextField=text(content,requestKind==2&&!rowRequest&&!canPlacePending()?"Нажмите подсвеченную карту, чтобы применить способность.":requestInstruction(),1536,778,332,21,0xF5D77F);
@@ -3288,6 +4056,7 @@ package
             var boardKey:String=boardFocus==""?"":boardFocus+":"+requestId+":"+selected;
             if(boardKey!=boardFocusKey){boardFocusKey=boardKey;if(boardFocus!=""&&controller.active&&!controllerMenuOpen)controller.restoreFocus(boardFocus);}
             finishLeaderRender();
+            if(restoreHand&&controller.active)controller.restoreFocus("hand");
         }
         private var boardFocusKey:String="";
         private function rowLabel(side:int,zone:int):String
@@ -3345,7 +4114,12 @@ package
         {
             if(browsingCatalog||!battlePreview||!c)return;
             var key:String=c.templateId+":"+c.power+":"+c.tokens;
-            if(key==battlePreviewKey&&battlePreview.numChildren)return;clearLeaderPreview();battlePreviewKey=key;
+            if(key==battlePreviewKey&&battlePreview.numChildren)return;
+            var entry:Object=BetaGwentFullCatalog.find(c.templateId);
+            if(!entry||!entry.leader||leaderPreview&&leaderPreview.cardId!=c.templateId)clearLeaderPreview();
+            if(entry&&entry.leader){leaderPreviewCard=c;leaderPreviewDetail=detail;}
+            else {leaderPreviewCard=null;leaderPreviewDetail=null;}
+            battlePreviewKey=key;
             while(battlePreview.numChildren)battlePreview.removeChildAt(0);
             if(skin==3){drawBetaSidePreview(c,detail,null,true);return;}
             paintArt(battlePreview,-1250-editorFactionIndex(cardFaction(c.templateId)),336,50,0,0);
@@ -3383,6 +4157,7 @@ package
         {
             if(reducedMotion)return;
             var burst:Sprite=betaVisual(id,size,size,tint);if(!burst)return;
+            if(id==-103||id==-105||id==-106||id==BetaGwentWeather107.SPARKLE||id==BetaGwentWeather107.NOVA)burst.blendMode="add";
             parent.addChild(burst);burst.x=x;burst.y=y;burst.alpha=0;
             animations.push({sprite:burst,fromX:x,fromY:y,toX:x,toY:y,fade:true,remove:true,duration:duration,
                 delay:delay,hideBeforeDelay:true,fromScaleX:.35,fromScaleY:.35,toScaleX:1.35,toScaleY:1.35});
@@ -3412,7 +4187,7 @@ package
             }
             if(halfCastSide()>0){var halfTarget:Object=halfCastTarget();if(halfTarget){side=halfTarget.side;zone=1;}else if(focus&&focus.row&&focus.row.side==halfCastSide()){side=focus.row.side;zone=1;}else{side=0;zone=0;}legal=false;}
             var rule:Object=requestId>0?templateRules[requestSourceTemplate]:playRules[selected];
-            var key:String=revision+":"+available+":"+selected+":"+(legal?c.id:0)+":"+side+":"+zone+":"+requestCount+":"+(placementPreview?placementPreview.anchor+":"+placementPreview.zone:"none");
+            var key:String=revision+":"+available+":"+selected+":"+(c?c.id:0)+":"+side+":"+zone+":"+requestCount+":"+(placementPreview?placementPreview.anchor+":"+placementPreview.zone:"none");
             if(key==actionPreviewKey)return;actionPreviewKey=key;
             actionPreviewLayer.graphics.clear();while(actionPreviewLayer.numChildren)actionPreviewLayer.removeChildAt(0);
             if(!available)return;
@@ -3429,7 +4204,7 @@ package
                     }
                     if(hit&&(unit.zone&7)!=0){previewOutline(unit);affected++;}
                 }
-                summary="Целей в области: "+affected;
+                summary=(c.title||"Выбранная цель")+" · сила "+c.power+(c.armor>0?" · броня "+c.armor:"")+"\nЦелей в области: "+affected+"\nНажмите, чтобы подтвердить цель";
             }else if(zone>0){
                 var rows:Array=[zone];if(scope==5&&zone<4)rows.push(zone*2);
                 for each(var lane:int in rows){
@@ -3445,12 +4220,13 @@ package
                 }
                 summary=scope==4||scope==5?"Погода: рядов "+rows.length:scope==3||scope==6?"Целей в области: "+affected:"Выбран ряд для способности";
             }
+            if(c&&!legal&&summary.length==0)summary=battleDisabledReason(c);
             if(requestId>0&&requestKind!=1&&!canPlacePending()&&!leaderRow){
                 if(summary.length)summary+="\n";
                 summary+="Осталось выбрать: "+Math.max(0,requestMax-requestCount);
                 if(requestMin>requestCount)summary+=" · выбор обязателен";
             }
-            if(summary.length&&!placementPreview){var label:TextField=text(actionPreviewLayer,summary,1536,842,332,19,0xA8EDF2);label.height=76;label.mouseEnabled=false;}
+            if(summary.length&&!placementPreview){var label:TextField=text(actionPreviewLayer,summary,1536,816,332,18,legal?0xA8EDF2:0xEACD91);label.height=104;label.mouseEnabled=false;}
         }
         private function rowCards(side:int,zone:int):Array
         {var result:Array=[];for each(var c:Object in cards)if(c.side==side&&c.zone==zone)result.push(c);return result;}
@@ -3476,7 +4252,7 @@ package
             else drawCueArrow(aimLayer,sx-1,sy-1,2,2,target.x,target.y,target.width,target.height,color);
         }
         private function canInspectPile():Boolean
-        { return ready&&!playing&&!selectingDecks&&!editingDeck&&!browsingCatalog&&dragId==0; }
+        { return !this.effectGallery&&ready&&!playing&&!selectingDecks&&!editingDeck&&!browsingCatalog&&dragId==0; }
         private function inspectPile(side:int,zone:int,held:Boolean=false):void
         {
             if(!canInspectPile()||!((zone==32&&(side==1||side==2))||(zone==16&&side==1)))return;
@@ -3699,7 +4475,7 @@ package
                 centerBetaNumber(value,scoreBox[0]+scoreBox[2]/2,scoreBox[1]+scoreBox[3]/2,120);scoreX=value.x;scoreY=value.y;
                 if(playing&&activeCue&&activeCue.kind==2&&previousScores[side-1]!=scores[side-1]&&!reducedMotion){
                     value.text=String(previousScores[side-1]);
-                    animations.push({sprite:value,fromX:scoreX,fromY:scoreY,toX:scoreX,toY:scoreY,counter:value,fromValue:previousScores[side-1],toValue:scores[side-1],numberX:scoreBox[0]+scoreBox[2]/2,numberY:scoreBox[1]+scoreBox[3]/2,numberSize:120,duration:BetaGwentBetaMotion.duration("POWER_UP"),scaleCurve:scores[side-1]>previousScores[side-1]?"POWER_UP":"POWER_DOWN",delay:cueImpactDelay()*animationTempo});
+                    animations.push({sprite:value,fromX:scoreX,fromY:scoreY,toX:scoreX,toY:scoreY,counter:value,fromValue:previousScores[side-1],toValue:scores[side-1],numberX:scoreBox[0]+scoreBox[2]/2,numberY:scoreBox[1]+scoreBox[3]/2,numberSize:120,duration:BetaGwentBetaMotion.duration("POWER_UP"),scaleCurve:scores[side-1]>previousScores[side-1]?"POWER_UP":"POWER_DOWN",delay:cueImpactTime()});
                 }
                 var seat:Array=betaLeaderRect(side);
                 var leader:Sprite=new Sprite();leader.x=seat[0];leader.y=seat[1];content.addChild(leader);
@@ -3852,6 +4628,10 @@ package
             if(playing&&callback==accelerateReplay)replayHint=field;
             var w:Number=Math.ceil(field.textWidth)+8;if(playing&&callback==accelerateReplay)w=Math.max(w,180);field.width=w;
             var iconW:Number=icon!=0?40:0;field.x=iconW;
+            if(playing){
+                h.graphics.lineStyle(1,0xD7BC75,.85);h.graphics.beginFill(0x17180F,.9);
+                h.graphics.drawRoundRect(-12,-5,iconW+w+24,48,8,8);h.graphics.endFill();
+            }
             if(icon!=0)paintArt(h,icon,36,36,0,1);
             h.x=hintRight-(iconW+w);hintRight=h.x-28;
             if(callback!=null&&enabled){
@@ -3874,7 +4654,7 @@ package
         {
             hintRight=1880;
             // Long sequences play at normal speed; the player chooses to speed them up, then to skip.
-            if(playing){drawBetaHint(fastReplay?"Пропустить":"Ускорить",controller.active?BetaGwentHud104.PAD_A:BetaGwentHud104.KEY_LC,accelerateReplay);return;}
+            if(playing){if(!controller.active)drawBetaHint("Удерживайте ПКМ · ускорить",BetaGwentHud104.KEY_RC,null);return;}
             if(requestId>0&&requestFinish){
                 drawBetaHint(isOptionalMultiChoice()?"Завершить выбор":isCaranthirChoice()?"Мороз без перемещения":templateChoice?"Выберите вариант":pileChoice?(rowMode==14?"Без выбора":"Без розыгрыша"):handPowerChoice?"Выберите отряд":graveyardChoice?"Без поглощения":requestKind==1?"Закончить обмен":leaderRow?"Отмена":"Без цели",
                     controller.active?BetaGwentHud104.PAD_A:BetaGwentHud104.KEY_LC,requestAction("OnBetaGwentRequestFinish"),ready&&requestFinish&&(!rowRequest||leaderRow||rowMode==3||rowMode==1||rowMode>=8));
@@ -3923,22 +4703,26 @@ package
         private function clearLeaderPreview():void
         { if(leaderPreview){leaderPreview.dispose();leaderPreview=null;} }
         private function clearLeaderMovies():void
-        { clearLeaderPreview();for each(var movie:BetaGwentLeaderPreview in boardLeaderMovies)movie.dispose();boardLeaderMovies=[]; }
+        { clearLeaderPreview();leaderPreviewCard=null;leaderPreviewDetail=null;for each(var movie:BetaGwentLeaderPreview in boardLeaderMovies)movie.dispose();boardLeaderMovies=[]; }
         private function beginLeaderRender():void
         {
-            clearLeaderPreview();
             if(!canAnimateLeader()){clearLeaderMovies();return;}
+            if(leaderPreview){leaderPreview.used=false;if(leaderPreview.parent)leaderPreview.parent.removeChild(leaderPreview);}
             for each(var movie:BetaGwentLeaderPreview in boardLeaderMovies){movie.used=false;if(movie.parent)movie.parent.removeChild(movie);}
         }
         private function finishLeaderRender():void
-        { for(var i:int=boardLeaderMovies.length-1;i>=0;i--)if(!boardLeaderMovies[i].used){boardLeaderMovies[i].dispose();boardLeaderMovies.splice(i,1);} }
+        { for(var i:int=boardLeaderMovies.length-1;i>=0;i--)if(!boardLeaderMovies[i].used){boardLeaderMovies[i].dispose();boardLeaderMovies.splice(i,1);}if(leaderPreview&&!leaderPreview.used)clearLeaderPreview(); }
         private function canAnimateLeader():Boolean
-        { return !reducedMotion&&!selectingDecks&&!editingDeck&&!browsingCatalog&&!kegOpen&&!pileOpen&&tutorialPage<0&&!detailOpen; }
+        { return BetaGwentUi138.dynamicLeaders&&!selectingDecks&&!editingDeck&&!browsingCatalog&&!kegOpen&&!pileOpen&&tutorialPage<0&&!detailOpen; }
         private function attachLeaderMovie(parent:Sprite,id:int,w:Number,h:Number,hover:Boolean=false):void
         {
             if(!canAnimateLeader()||!BetaGwentLeaderCatalog.info(id))return;
             var movie:BetaGwentLeaderPreview;
-            if(hover){clearLeaderPreview();movie=new BetaGwentLeaderPreview(id,w,h);leaderPreview=movie;}
+            if(hover){
+                if(leaderPreview&&leaderPreview.cardId==id)movie=leaderPreview;
+                else {clearLeaderPreview();movie=new BetaGwentLeaderPreview(id,w,h);leaderPreview=movie;}
+                movie.used=true;movie.resize(w,h);
+            }
             else{
                 for each(var existing:BetaGwentLeaderPreview in boardLeaderMovies)if(!existing.used&&existing.cardId==id){movie=existing;break;}
                 if(!movie){
@@ -3953,7 +4737,7 @@ package
             parent.addChild(movie);
         }
         private function clearBattlePreview():void
-        { clearLeaderPreview();if(battlePreview)while(battlePreview.numChildren)battlePreview.removeChildAt(0);battlePreviewKey=""; }
+        { clearLeaderPreview();leaderPreviewCard=null;leaderPreviewDetail=null;if(battlePreview)while(battlePreview.numChildren)battlePreview.removeChildAt(0);battlePreviewKey=""; }
         private function drawBetaSidePreview(c:Object,detail:Object,previewParent:Sprite=null,animatePortrait:Boolean=false):void
         {
             var parent:Sprite=previewParent||battlePreview;
@@ -3968,7 +4752,7 @@ package
             }else paintCardBack(card,w,h,2);
             paintStaticCardState(card,c,w,h);
             card.filters=[new GlowFilter(side==2?0xE0402A:0x3AA8F0,.85,16,16,2,2)];
-            if(!reducedMotion){
+            if(!reducedMotion&&!(animatePortrait&&leaderPreview&&leaderPreview.cardId==c.templateId)){
                 animations.push({sprite:card,fromX:previewX+24,fromY:card.y,toX:previewX,toY:card.y,curve:"PREVIEW",duration:BetaGwentBetaMotion.duration("PREVIEW"),appear:true});
                 card.x=previewX+24;card.alpha=0;
             }
@@ -3987,9 +4771,10 @@ package
             if(c.timer!=null&&int(c.timer)>=0&&!enemyAmbush(c))reading+=(reading.length?"\n":"")+"Счётчик: "+int(c.timer);
             var info:Sprite=new Sprite();info.x=previewX;info.y=662;parent.addChild(info);
             var body:TextField=text(info,reading,14,10,284,18,0xEDEAE2);body.wordWrap=true;body.multiline=true;
-            body.height=Math.min(pileOpen?245:330,body.textHeight+10);
+            body.height=Math.min(pileOpen?245:controller.active?88:330,body.textHeight+10);
             if(previewParent){mulliganReading=body;body.mouseEnabled=true;body.addEventListener(MouseEvent.MOUSE_WHEEL,function(e:MouseEvent):void{body.scrollV-=e.delta;e.stopPropagation();});}
             if(browsingCatalog)catalogAbility=body;
+            if(!previewParent&&!browsingCatalog&&!pileOpen)inspection=body;
             if(pileOpen){pileDetail=body;body.mouseEnabled=true;body.addEventListener(MouseEvent.MOUSE_WHEEL,function(e:MouseEvent):void{body.scrollV-=e.delta;e.stopPropagation();});}
             var bh:Number=Math.max(56,body.height+20);
             var bg:Sprite=new Sprite();info.addChildAt(bg,0);paintArt(bg,BetaGwentHud104.infoBg(fi),312,bh,0,0);
@@ -4068,6 +4853,7 @@ package
         private var introStart:int=0;
         private var introParts:Array=[];
         private static const INTRO_MS:int=4600;
+        private var introVisualMs:int=4600;
         private static const INTRO_TIMEOUT_MS:int=30000;
         private var introSerial:int=0;
         private var introAudioPending:Boolean=false;
@@ -4097,11 +4883,16 @@ package
             var deck:Sprite=new Sprite();deck.x=cardX+(top?18:-18);deck.y=cardY+8;deck.rotation=top?7:-7;introLayer.addChild(deck);
             paintCardBack(deck,w,h,side);introPart(deck,top?250:1050,top?650:1450,top?320:-320,0);
             var card:Sprite=new Sprite();card.x=cardX;card.y=cardY;introLayer.addChild(card);
-            paintBetaFace(card,leader,w,h,side);
+            paintBetaFace(card,leader,w,h,side,false,false);
+            if(BetaGwentUi138.dynamicLeaders&&BetaGwentUi138.scenes>0){
+                var movie:BetaGwentLeaderPreview=new BetaGwentLeaderPreview(leader,w,h,true,top?300:1100);
+                card.addChildAt(movie,Math.min(1,card.numChildren));introLeaderMovies.push(movie);
+            }
             var text0:Object=BetaGwentCardText.find(leader);
             if(text0&&text0.power>0)betaPowerField(card,String(text0.power),w,h,0xFFFFFF);
             card.filters=[new GlowFilter(0x000000,.8,24,24,2,2)];
             introPart(card,top?300:1100,top?760:1560,top?360:-360,0);
+            introParts[introParts.length-1].entranceId=leader;introParts[introParts.length-1].side=side;
             var info:Sprite=new Sprite();info.x=top?540:967;info.y=top?160:705;introLayer.addChild(info);
             paintArt(info,side==1?BetaGwentHud104.PLAYER_AVATAR:BetaGwentHud104.avatar(leader,fi),47,47,153,12);
             var name:String=side==1?"Геральт":String(leaderNames[1]||"Соперник");
@@ -4119,6 +4910,11 @@ package
         private function startIntro():void
         {
             finishIntro();
+            introVisualMs=INTRO_MS;
+            for(var introSideIndex:int=0;introSideIndex<2;introSideIndex++){
+                var entrance:Object=BetaGwentLeaderIntroCatalog.info(int(leaderIds[introSideIndex]));
+                if(entrance)introVisualMs=Math.max(introVisualMs,(introSideIndex==0?1100:300)+Math.ceil(entrance.duration*1000));
+            }
             setChildIndex(introLayer,numChildren-1);
             introLayer.mouseEnabled=true;introLayer.mouseChildren=false;introLayer.alpha=1;
             introLayer.graphics.beginFill(0,1);introLayer.graphics.drawRect(-WIDE_PAD,0,1920+2*WIDE_PAD,1080);introLayer.graphics.endFill();
@@ -4133,29 +4929,44 @@ package
             send("OnBetaGwentAudioIntro",[int(leaderIds[1]),int(leaderIds[0]),introSerial,getTimer()]);
         }
         private var introSkipAt:int=0;
+        private var introInputUntil:int=0;
+        private var introFocusPending:Boolean=false;
         // getTimer() starts with the movie: "now - INTRO_MS" can be <= 0 in the first seconds,
         // which used to leave the black intro layer on screen forever. Track the skip separately.
         private function skipIntro(e:MouseEvent=null):void
         { if(e)e.stopImmediatePropagation();if(introStart>0&&introSkipAt==0){introSkipAt=Math.max(1,getTimer());introAudioPending=false;send("OnBetaGwentAudioIntroCancel",[introSerial]);} }
         private function finishIntro():void
         {
+            if(introStart>0){introInputUntil=getTimer()+450;introFocusPending=true;}
             if(introStart>0)send("OnBetaGwentAudioIntroCancel",[introSerial]);
             introStart=0;introSkipAt=0;introAudioPending=false;introParts=[];introLayer.removeEventListener(MouseEvent.CLICK,skipIntro);
+            for each(var movie:BetaGwentLeaderPreview in introLeaderMovies)movie.dispose();introLeaderMovies=[];
             introLayer.graphics.clear();while(introLayer.numChildren)introLayer.removeChildAt(0);introLayer.mouseEnabled=false;
         }
         private function animateIntro(e:Event):void
         {try{animateIntroBody(e);}catch(frameError:Error){reportUIError("animateIntro",frameError);}}
+        private function restoreFocusAfterIntro():void
+        {
+            if(!introFocusPending||introStart>0||getTimer()<introInputUntil)return;
+            introFocusPending=false;introInputUntil=0;
+            // Controls drawn during the intro belonged to its temporary scope.
+            // Re-register them only after the confirmation guard has expired.
+            render();
+            if(controller.active&&isMulliganHand()&&!detailOpen&&!pileOpen&&!controllerMenuOpen&&!nameOpen&&!mulliganConfirm)
+                controller.focusTag("target");
+        }
         private function animateIntroBody(e:Event):void
         {
-            if(introStart<=0){if(introLayer.numChildren>0)finishIntro();return;}
+            if(introStart<=0){if(introLayer.numChildren>0)finishIntro();restoreFocusAfterIntro();return;}
             var t:int=getTimer()-introStart;
             if(introSkipAt>0){var fade:int=getTimer()-introSkipAt;if(fade>=380){finishIntro();return;}introLayer.alpha=1-fade/380;return;}
             // Audio ticks acknowledge both leader lines, including long localized variants.
             // A missing bridge/bank must never trap the player behind the intro.
             if(t>=INTRO_TIMEOUT_MS){finishIntro();return;}
-            if(t>=INTRO_MS&&!introAudioPending){introSkipAt=Math.max(1,getTimer());return;}
+            if(t>=Math.max(INTRO_MS,introVisualMs)&&!introAudioPending){introSkipAt=Math.max(1,getTimer());return;}
             introLayer.alpha=1;
             for each(var part:Object in introParts){
+                if(part.entranceId&&!part.entranceSound&&t>=part.t0){part.entranceSound=true;send("OnBetaGwentAudioLeaderEntrance",[int(part.entranceId),int(part.side),introSerial,getTimer()]);}
                 var k:Number=Math.max(0,Math.min(1,(t-part.t0)/Math.max(1,part.t1-part.t0)));
                 var ease:Number=1-Math.pow(1-k,3);
                 part.sprite.alpha=k;
@@ -4168,7 +4979,7 @@ package
             // Original Leader collider is 146 x 200 at hand depth and is cut by
             // the screen edge; keep the visible card fully on screen.
             var r:Array=BetaGwentBoardLayout.leader[String(side)];
-            var w:Number=104,h:Number=146;
+            var w:Number=104,h:Number=Math.round(w/BETA_CARD_ASPECT);
             return [r[0]+(r[2]-w)/2,side==1?Math.min(r[1]+(r[3]-h)/2,1080-h-8):Math.max(r[1]+(r[3]-h)/2,8),w,h];
         }
         private function betaPilePoint(side:int,grave:Boolean):Array
@@ -4224,7 +5035,7 @@ package
                 animations.push({sprite:scoreText,fromX:18,fromY:90,toX:18,toY:90,counter:scoreText,
                     fromValue:previousScores[side-1],toValue:scores[side-1],duration:BetaGwentBetaMotion.duration("POWER_UP"),
                     scaleCurve:scores[side-1]>previousScores[side-1]?"POWER_UP":"POWER_DOWN",
-                    delay:cueImpactDelay()*animationTempo,remove:false});
+                    delay:cueImpactTime(),remove:false});
             }
             text(p,"Раунды: "+crowns[side-1]+" / 2",18,156,172,18);
             for(var sealIndex:int=0;sealIndex<2;sealIndex++){
@@ -4297,7 +5108,7 @@ package
                         rowTotal.text=String(oldTotal);
                         animations.push({sprite:rowTotal,fromX:rowTotal.x,fromY:rowTotal.y,toX:rowTotal.x,toY:rowTotal.y,counter:rowTotal,
                             fromValue:oldTotal,toValue:total,numberX:rowScore[0]+rowScore[2]/2,numberY:rowScore[1]+rowScore[3]/2,numberSize:76,
-                            duration:BetaGwentBetaMotion.duration("POWER_UP"),scaleCurve:total>oldTotal?"POWER_UP":"POWER_DOWN",delay:cueImpactDelay()*animationTempo});
+                            duration:BetaGwentBetaMotion.duration("POWER_UP"),scaleCurve:total>oldTotal?"POWER_UP":"POWER_DOWN",delay:cueImpactTime()});
                     }
                 }
             }
@@ -4323,10 +5134,10 @@ package
                     var action:Function=controllerRowAction(side,zone);
                     // A separate target remains visible/focusable even with no
                     // units. Unit inspection must not replace this row action.
-                    var rowTarget:Sprite=betaFrame(content,hit.x+hit.width-184,hit.y+hit.height-31,176,28,-1401);
+                    var rowTarget:Sprite=new Sprite();rowTarget.x=hit.x;rowTarget.y=hit.y;
+                    rowTarget.graphics.beginFill(0,0);rowTarget.graphics.drawRect(0,0,hit.width,hit.height);rowTarget.graphics.endFill();content.addChild(rowTarget);
                     rowTarget.mouseEnabled=false;rowTarget.mouseChildren=false;
-                    text(rowTarget,isCaranthirChoice()?"МОРОЗ · без движения":"ВЫБРАТЬ РЯД",8,3,160,12,0xD5F6FF).height=25;
-                    controller.registerControl(rowTarget,rowLabel(side,zone),action,null,null,"row",{rowOnly:true,side:side,zone:zone},new Rectangle(0,0,176,28));
+                    controller.registerControl(rowTarget,rowLabel(side,zone),action,null,null,"row",{rowOnly:true,side:side,zone:zone},new Rectangle(0,0,hit.width,hit.height));
                 }
             }
             hit.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{
@@ -4438,6 +5249,17 @@ package
         }
         private function sortedHand(values:Array):Array
         {var sorted:Array=values.concat();sorted.sort(compareHand);return sorted;}
+        private function rowDepartureDelay(side:int,zone:int):Number
+        {
+            if(reducedMotion||!activeCue||activeCue.kind!=3)return 0;
+            var live:Object={};for each(var c:Object in cards)if((int(c.zone)&7)!=0)live[c.id]=true;
+            var style:int=killEffectStyle(int(activeCue.templateId));var delay:Number=0;
+            for(var id:String in displayedCards){var old:Object=displayedCards[id];
+                if(old.side!=side||old.zone!=zone||live[id])continue;
+                delay=Math.max(delay,style==3?igniRowDelay(zone)+100+1150:style==2?1200:style==1?1210:440);
+            }
+            return delay;
+        }
         private function drawCards():void
         {
             var nextCards:Object={};
@@ -4456,6 +5278,8 @@ package
                 if(c.zone==8&&(c.side!=1||canPlacePending())) continue;
                 if(c.zone!=8&&c.zone!=1&&c.zone!=2&&c.zone!=4) continue;
                 var isHand:Boolean=c.zone==8;
+                if(activeCue&&(activeCue.kind==15||activeCue.kind==16)&&int(activeCue.target)==int(c.id))delete consumedVisualIds[c.id];
+                if(consumedTombstone(c.id)&&int(c.power)>0&&(int(c.zone)&7)!=0&&!(activeCue&&activeCue.kind==11&&isConsumeVictim(c.id)))delete consumedVisualIds[c.id];
                 if(consumedTombstone(c.id)&&!(activeCue&&activeCue.kind==11&&activeCue.target==c.id))continue;
                 var handAngle:Number=0;var slot:int=isHand&&handRank[c.id]!=null?int(handRank[c.id]):int(c.index);
                 var g:Object=isHand?{x:handLeft+slot*step,y:(skin==3?(selected==c.id?926:944):(selected==c.id?900:920))-Math.abs(handAngle)*1.5,h:skin==3?Math.round(104/BETA_CARD_ASPECT):140}:rowGeometry(c.side,c.zone);
@@ -4475,30 +5299,35 @@ package
                 if(before && before.templateId==c.templateId&&!revealed) {
                     if(before.x!=p.x || before.y!=p.y || before.rotation!=handAngle) {
                         var flight:Boolean=before.zone==8&&!isHand;
+                        var relocation:Boolean=!isHand&&(before.zone!=c.zone||before.side!=c.side);
                         animations.push({sprite:p,fromX:before.x,fromY:before.y,toX:p.x,toY:p.y,fade:false,remove:false,
-                            duration:flight?600:isHand?220:280,arc:flight?36:0,betaFlight:flight,staged:flight,stageX:skin==3?BetaGwentBoardLayout.presentation[String(c.side)][0]:860,stageY:skin==3?BetaGwentBoardLayout.presentation[String(c.side)][1]:380,stageScaleX:(skin==3?BetaGwentBoardLayout.presentation[String(c.side)][2]:160)/cardWidth,stageScaleY:(skin==3?BetaGwentBoardLayout.presentation[String(c.side)][3]:225)/cardHeight,settle:false,tilt:flight?(p.x>before.x?5:-5):0,
+                            duration:flight?600:relocation?420:isHand?220:280,delay:!isHand&&!relocation?rowDepartureDelay(c.side,c.zone):0,arc:flight?36:relocation?24:0,betaFlight:flight||relocation,staged:flight,stageX:skin==3?BetaGwentBoardLayout.presentation[String(c.side)][0]:860,stageY:skin==3?BetaGwentBoardLayout.presentation[String(c.side)][1]:380,stageScaleX:(skin==3?BetaGwentBoardLayout.presentation[String(c.side)][2]:160)/cardWidth,stageScaleY:(skin==3?BetaGwentBoardLayout.presentation[String(c.side)][3]:225)/cardHeight,settle:flight||relocation,tilt:flight||relocation?(p.x>before.x?5:-5):0,
                             fromRotation:before.rotation!=null?before.rotation:0,toRotation:handAngle,
                             fromScaleX:flight?before.width/cardWidth:1,fromScaleY:flight?before.height/cardHeight:1,toScaleX:1,toScaleY:1});
                         p.x=before.x;p.y=before.y;
                         if(flight){p.scaleX=before.width/cardWidth;p.scaleY=before.height/cardHeight;}
                     }
                     if(before.power!=c.power || before.armor!=c.armor) {
-                        var hitDelay:Number=activeCue&&activeCue.kind==2?cueImpactDelay()*animationTempo:0;
+                        var hitDelay:Number=activeCue&&(activeCue.kind==2||activeCue.kind==11)?cueImpactTime():0;
                         var flash:Sprite=new Sprite();flash.mouseEnabled=false;
                         var flashTint:uint=c.power>before.power?0x71C496:c.power<before.power?0xDF705E:0x83C5E5;
                         var flashMatrix:Matrix=new Matrix();flashMatrix.createGradientBox(cardWidth,cardHeight,Math.PI/2);
-                        flash.graphics.beginGradientFill(GradientType.LINEAR,[flashTint,flashTint,flashTint],[0,.32,0],[0,128,255],flashMatrix);
+                        flash.graphics.beginGradientFill(GradientType.LINEAR,[flashTint,flashTint,flashTint],[0,0.2,0],[0,128,255],flashMatrix);
                         flash.graphics.drawRect(0,0,cardWidth,cardHeight);flash.graphics.endFill();
-                        p.addChild(flash);flash.visible=BetaGwentUi138.flashes&&!reducedMotion;
+                        p.addChild(flash);flash.visible=false;
                         animations.push({sprite:flash,fromX:0,fromY:0,toX:0,toY:0,fade:true,remove:true,duration:220,delay:hitDelay,hideBeforeDelay:true});
                         var delta:int=c.power-before.power;var armorDelta:int=c.armor-before.armor;
                         var label:String=delta!=0?(delta>0?"+":"")+delta:"";
                         if(armorDelta!=0)label+=(label?" · ":"")+"Б "+(armorDelta>0?"+":"")+armorDelta;
                         var number:Sprite=new Sprite();number.mouseEnabled=false;number.mouseChildren=false;
                         var numberWidth:Number=Math.max(cardWidth,120);
-                        betaLabel(number,label,-numberWidth/2,0,numberWidth,20,delta>0?0xA5F5B8:delta<0?0xFFB09B:0xBCEAFF,BetaGwentFonts.BODY,false,"center");
-                        p.addChild(number);number.x=cardWidth/2;number.y=-8;
-                        animations.push({sprite:number,fromX:cardWidth/2,fromY:-8,toX:cardWidth/2,toY:-38,fade:true,remove:true,duration:420,delay:hitDelay,hideBeforeDelay:true});
+                        // Beta: a large outlined "+4"/"-1" in the middle of the card.
+                        var plain:Boolean=armorDelta==0;var numberSize:Number=plain?Math.max(20,cardHeight*.32):Math.max(16,cardHeight*.17);
+                        var numberField:TextField=betaLabel(number,label,-numberWidth/2,-numberSize*.6,numberWidth,numberSize,delta>0?0x7CF25E:delta<0?0xFF5A46:0xBCEAFF,plain?BetaGwentFonts.TITLE:BetaGwentFonts.BODY,true,"center");
+                        numberField.filters=[new GlowFilter(0x000000,.95,5,5,5,2)];
+                        p.addChild(number);number.x=cardWidth/2;number.y=cardHeight*.55;number.alpha=0;
+                        animations.push({sprite:number,fromX:cardWidth/2,fromY:cardHeight*.55,toX:cardWidth/2,toY:cardHeight*.45,fade:true,fromAlpha:1,remove:true,duration:620,delay:hitDelay,hideBeforeDelay:true,
+                            fromScaleX:1.25,fromScaleY:1.25,toScaleX:1,toScaleY:1});
                         if((delta<0||armorDelta<0)&&!isHand&&!reducedMotion&&before.x==x&&before.y==g.y+4)
                             animations.push({sprite:p,fromX:x,fromY:g.y+4,toX:x,toY:g.y+4,shake:armorDelta<0&&delta==0?2:3,remove:false,duration:180,delay:hitDelay});
                     }
@@ -4507,20 +5336,10 @@ package
                     var oldArt:Sprite=panel(content,p.x,p.y,cardWidth,cardHeight,0x18343D,.92);
                     oldArt.mouseEnabled=false;oldArt.mouseChildren=false;
                     paintPlacementCard(oldArt,before,cardWidth,cardHeight);
-                    animations.push({sprite:oldArt,fromX:p.x,fromY:p.y,toX:p.x+cardWidth/2,toY:p.y,fade:true,remove:true,
-                        duration:250,fromScaleX:1,fromScaleY:1,toScaleX:.04,toScaleY:1});
-                    animations.push({sprite:p,fromX:p.x+cardWidth/2,fromY:p.y,toX:p.x,toY:p.y,fade:false,remove:false,appear:true,
-                        duration:250,delay:170,fromScaleX:.04,fromScaleY:1,toScaleX:1,toScaleY:1});
-                    if(revealed&&!reducedMotion){
-                        // Ambush sprung: a gold burst as the face turns, then a rising call-out.
-                        var springX:Number=p.x+cardWidth/2,springY:Number=p.y+cardHeight/2;
-                        betaBurst(content,-105,springX,springY,cardWidth*1.7,0xE9C46A,380,380);
-                        var sprung:Sprite=new Sprite();sprung.mouseEnabled=false;sprung.mouseChildren=false;content.addChild(sprung);
-                        betaLabel(sprung,"ЗАСАДА!",-90,0,180,18,0xF5D77F,BetaGwentFonts.TITLE,true,"center",2).filters=[new GlowFilter(0,1,6,6,4,2)];
-                        sprung.x=springX;sprung.y=p.y-4;sprung.alpha=0;
-                        animations.push({sprite:sprung,fromX:springX,fromY:p.y-4,toX:springX,toY:p.y-34,fade:true,remove:true,duration:620,delay:420,hideBeforeDelay:true});
-                    }
-                    p.x+=cardWidth/2;p.scaleX=.04;p.alpha=0;
+                    if(revealed){
+                        queueCardFlip(oldArt,p,cardWidth);
+                        drawPresentation178(content,"AmbushEffect",nextCards[c.id],180,48);
+                    }else queueTransformation178(oldArt,p);
                 } else {
                     var originX:Number=p.x;
                     var originY:Number=p.y;
@@ -4535,7 +5354,7 @@ package
                         else{originX=330;originY=730;}
                     }
                     animations.push({sprite:p,fromX:originX,fromY:originY,toX:p.x,toY:p.y,fade:false,remove:false,appear:true,
-                        duration:isHand?260:480,arc:isHand?0:36,betaFlight:true,settle:!isHand,tilt:originX<p.x?5:-5,fromRotation:0,toRotation:handAngle,fromScaleX:.8,fromScaleY:.8,toScaleX:1,toScaleY:1});
+                        duration:isHand?260:activeCue&&activeCue.kind==1?600:420,arc:isHand?0:36,betaFlight:true,settle:!isHand,tilt:originX<p.x?5:-5,fromRotation:0,toRotation:handAngle,fromScaleX:.8,fromScaleY:.8,toScaleX:1,toScaleY:1});
                     p.x=originX;p.y=originY;p.alpha=0;
                 }
                 var detail:Object=cardDetails[c.id];
@@ -4552,13 +5371,9 @@ package
                     powerBadge.text=String(before.power);powerBadge.textColor=powerColor(before);
                     pendingImpacts.push({field:powerBadge,value:powerValue,tint:powerColor(c)});
                     animations.push({sprite:powerBadge,fromX:powerBadge.x,fromY:powerBadge.y,toX:powerBadge.x,toY:powerBadge.y,
-                        scaleCurve:c.power>before.power?"POWER_UP":"POWER_DOWN",duration:BetaGwentBetaMotion.duration("POWER_UP"),delay:cueImpactDelay()*animationTempo});
+                        scaleCurve:c.power>before.power?"POWER_UP":"POWER_DOWN",duration:BetaGwentBetaMotion.duration("POWER_UP"),delay:cueImpactTime()});
                 }
                 if(isHand&&skin!=3){var caption:TextField=text(p,c.title,7,cardHeight-34,cardWidth-12,13);caption.height=32;}
-                if(concealed){
-                    var ambushBadge:Sprite=panel(p,2,cardHeight*.42,cardWidth-4,19,0x101315,.97);ambushBadge.mouseEnabled=false;ambushBadge.mouseChildren=false;
-                    text(ambushBadge,"ЗАСАДА",3,1,cardWidth-8,12,0xF5D77F).height=17;
-                }else if(!isHand&&isAmbush(c.templateId))text(p,"РАСКРЫТА",3,cardHeight*.42,cardWidth-6,11,0xA5F5B8).height=18;
                 if(c.armor>0||before&&before.armor>0&&activeCue&&activeCue.kind==2&&!reducedMotion) {
                     var armorBadge:Sprite=new Sprite();p.addChild(armorBadge);armorBadge.mouseEnabled=false;paintArt(armorBadge,BetaGwentHud104.SHIELD,30,33,cardWidth-33,2);
                     var armorValue:TextField=betaLabel(p,c.armor>0?String(c.armor):"",cardWidth-33,2,30,26,0xFFF0CA,BetaGwentFonts.NUMBERS,false,"center");
@@ -4567,7 +5382,7 @@ package
                         armorValue.text=before.armor>0?String(before.armor):"";
                         centerBetaNumber(armorValue,cardWidth-18,16,26);
                         pendingImpacts.push({field:armorValue,value:c.armor>0?String(c.armor):"",tint:0xFFF0CA,numberX:cardWidth-18,numberY:16,numberSize:26});
-                        var armorDelay:Number=cueImpactDelay()*animationTempo;
+                        var armorDelay:Number=cueImpactTime();
                         animations.push({sprite:armorValue,fromX:armorValue.x,fromY:armorValue.y,toX:armorValue.x,toY:armorValue.y,
                             scaleCurve:c.armor>before.armor?"POWER_UP":"POWER_DOWN",numberX:cardWidth-18,numberY:16,numberSize:26,
                             duration:BetaGwentBetaMotion.duration("POWER_UP"),delay:armorDelay});
@@ -4605,9 +5420,6 @@ package
                     attachDirectTarget(p,c.id);
                 }
                 else if(!isHand&&canPlaceBefore(c)) {
-                    p.graphics.lineStyle(3,0x9CF0F5);
-                    p.graphics.moveTo(-4,4);p.graphics.lineTo(-4,cardHeight-4);
-                    p.graphics.moveTo(-7,10);p.graphics.lineTo(-4,5);p.graphics.lineTo(-1,10);
                     attachPlacement(p,c.id);
                 }
             }
@@ -4619,27 +5431,34 @@ package
                     departedPoses[oldId]=previous;
                     while(departedOrder.length>96)delete departedPoses[departedOrder.shift()];
                 }
-                if(nextCards[oldId] || previous.zone==8 || consumedTombstone(oldId))continue;
+                if(nextCards[oldId] || previous.zone==8 || consumedTombstone(oldId) || isConsumeVictim(oldId))continue;
+                if(activeCue&&activeCue.kind==3&&killEffectStyle(int(activeCue.templateId))!=0){
+                    var departStyle:int=killEffectStyle(int(activeCue.templateId));
+                    drawDissolveDeparture(previous,departStyle==2?BetaGwentDissolve144.POISON:BetaGwentDissolve144.FIRE,
+                        departStyle==3?igniRowDelay(int(previous.zone))+100:departStyle==2?150:60,departStyle==2?1050:1150);continue;
+                }
+                // Doomed units and banish operations never reach the graveyard: Beta BanishCardEffect.
+                if((int(previous.tokens)&512)!=0||banishCueTarget(activeCue,int(oldId))){
+                    drawBanishDeparture(previous,activeCue&&activeCue.projectileDeaths?cueImpactTime():activeCue&&activeCue.kind==17?Math.min(320,previous.x%400)*.65:0);continue;
+                }
                 var fading:Sprite=panel(content,previous.x,previous.y,previous.width,previous.height,0x171714,.9);
                 fading.mouseEnabled=false;fading.mouseChildren=false;
-                paintArt(fading,previous.templateId,previous.width-6,previous.height-6);
-                // Preserve the actual portrait size during removal as during placement.
-                text(fading,String(previous.power),8,4,68,26,powerColor(previous));
+                // Departures retain the same frame, statuses and concealed back.
+                // A separate bare-art portrait used to pop in at the death frame.
+                paintPlacementCard(fading,previous,previous.width,previous.height);
                 
-                var vanishes:Boolean=(int(previous.tokens)&512)!=0||activeCue&&activeCue.kind==12&&int(activeCue.target)==int(oldId);
-                betaBurst(content,-104,previous.x+40,previous.y+40,110,vanishes?0xB8B7DC:0xB7A69B,40,410);
+                var departureDelay:Number=activeCue&&activeCue.projectileDeaths?cueImpactTime():40;
+                var leaveDelay:Number=activeCue&&activeCue.projectileDeaths?departureDelay:activeCue&&activeCue.kind==17?Math.min(320,previous.x%400)*.65:0;
+                betaBurst(content,-104,previous.x+40,previous.y+40,110,0xB7A69B,departureDelay,410);
                 animations.push({sprite:fading,fromX:previous.x,fromY:previous.y,
-                    toX:vanishes?previous.x:260,toY:vanishes?previous.y-32:previous.side==1?748:398,
-                    fade:true,remove:true,duration:vanishes?300:400,arc:vanishes?0:28,
-                    delay:activeCue&&activeCue.kind==17?Math.min(320,previous.x%400)*.65:0,
-                    fromScaleX:1,fromScaleY:1,toScaleX:vanishes?0.5:0.25,toScaleY:vanishes?0.5:0.25});
+                    toX:260,toY:previous.side==1?748:398,
+                    fade:true,remove:true,duration:400,arc:28,
+                    delay:leaveDelay,
+                    fromScaleX:1,fromScaleY:1,toScaleX:0.25,toScaleY:0.25});
             }
-            // Once the card actually leaves the active rows, release its visual tombstone.
-            for(var consumedId:String in consumedVisualIds){
-                var stillOnField:Boolean=false;
-                for each(var liveCard:Object in cards)if(String(liveCard.id)==consumedId&&(liveCard.zone&7)!=0){stillOnField=true;break;}
-                if(!stillOnField||!consumedTombstone(consumedId))delete consumedVisualIds[consumedId];
-            }
+            // Consumed identities remain hidden through arbitrarily long trigger
+            // chains. Only a real summon/resurrection (or positive live power)
+            // releases them; elapsed animation time cannot revive a zero-power face.
             // Overlapping hand: stack left to right by slot, the chosen/focused card stays on top.
             for(var zi:int=0;zi<handSlots.length;zi++){var hs:Sprite=cardSprites[handSlots[zi].id] as Sprite;if(hs&&hs.parent==content&&handSlots[zi].id!=selected&&handSlots[zi].id!=keyboardFocusId)content.addChild(hs);}
             for each(var topId:int in [keyboardFocusId,selected]){var ts:Sprite=cardSprites[topId] as Sprite;if(ts&&ts.parent==content&&handRank[topId]!=null)content.addChild(ts);}
@@ -4649,6 +5468,17 @@ package
         }
         private function animateCards(e:Event):void
         {try{animateCardsBody(e);}catch(frameError:Error){reportUIError("animateCards",frameError);}}
+        private function queueCardFlip(oldFace:Sprite,newFace:Sprite,width:Number):void
+        {
+            var x:Number=newFace.x,y:Number=newFace.y;
+            // Finish closing before revealing the new face. The shared center
+            // stays fixed at every sample, including the narrow middle frame.
+            animations.push({sprite:oldFace,fromX:x,fromY:y,toX:x,toY:y,remove:true,
+                duration:180,fromScaleX:1,fromScaleY:1,toScaleX:.04,toScaleY:1,pivotX:width/2});
+            animations.push({sprite:newFace,fromX:x,fromY:y,toX:x,toY:y,appear:true,
+                duration:220,delay:180,hideBeforeDelay:true,fromScaleX:.04,fromScaleY:1,toScaleX:1,toScaleY:1,pivotX:width/2});
+            newFace.x=x+width*.48;newFace.scaleX=.04;newFace.alpha=0;
+        }
         private function animateCardsBody(e:Event):void
         {
             updateAimPreview();updateActionPreview();
@@ -4722,6 +5552,12 @@ package
                     for(var frameIndex:int=0;frameIndex<motion.hitFrames.length;frameIndex++)
                         motion.hitFrames[frameIndex].visible=frameIndex==cell;
                 }
+                if(motion.burn)BetaGwentBurn143(motion.burn).render(progress);
+                if(motion.dissolve)BetaGwentDissolve144(motion.dissolve).render(progress);
+                if(motion.element164){
+                    BetaGwentElement164(motion.element164).render(progress);
+                    sprite.alpha=elapsed<delay?0:1;
+                }
                 if(motion.coinFaces){
                     scaleX=Math.max(.03,Math.abs(Math.cos(progress*Math.PI)));
                     motion.coinFaces[0].visible=progress<.5;motion.coinFaces[1].visible=progress>=.5;
@@ -4736,6 +5572,7 @@ package
                     sprite.x+=(sprite.width/sprite.scaleX)*(motion.baseScaleX-scaleX)/2;
                     sprite.y+=(sprite.height/sprite.scaleY)*(motion.baseScaleY-scaleY)/2;
                 }
+                if(motion.pivotX!=null)sprite.x+=motion.pivotX*(1-scaleX);
                 sprite.scaleX=scaleX;sprite.scaleY=scaleY;sprite.rotation=angle;
                 if(motion.fade)sprite.alpha=(motion.fromAlpha!=null?motion.fromAlpha:1)*(1-progress);
                 else if(motion.appear)sprite.alpha=Math.min(1,progress*3);
@@ -4753,10 +5590,10 @@ package
         private function cueMinimumDuration(kind:int):Number
         {
             switch(kind){
-                case 1:return 700;case 2:return 930;case 3:return 460;
-                case 4:return 120+1000*Math.max(BetaGwentVisualTimings.FROST_INTRO,BetaGwentVisualTimings.FOG_INTRO,BetaGwentVisualTimings.RAIN_INTRO);case 5:return 380;case 6:return 1050;
+                case 1:return 900;case 2:return 930;case 3:var ks:int=activeCue?killEffectStyle(int(activeCue.templateId)):0;return ks==3?2200:ks==1?1500:ks==2?1500:740;
+                case 4:return 120+1000*Math.max(BetaGwentVisualTimings.FROST_INTRO,BetaGwentVisualTimings.FOG_INTRO,BetaGwentVisualTimings.RAIN_INTRO);case 5:return 1100;case 6:return 1050;
                 case 7:return 120+1000*Math.max(BetaGwentVisualTimings.FROST_INTRO,BetaGwentVisualTimings.FOG_INTRO,BetaGwentVisualTimings.RAIN_INTRO);case 8:return 440;case 9:return 460;
-                case 10:return 560;case 11:return 520;case 12:return 460;
+                case 10:return 560;case 11:return 1500;case 12:return activeCue&&int(activeCue.templateId)==201523&&int(activeCue.target)==0?2200:460;
                 case 13:return 520;case 14:return 420;case 15:case 16:return 620;
                 case 17:return 750;case 18:return 620;
             }
@@ -4765,8 +5602,16 @@ package
         private function cueImpactDelay():Number
         {
             if(reducedMotion||!activeCue)return 0;
-            var delay:Number=activeCue.kind==1?400:activeCue.kind==2?180:activeCue.kind==10?200:activeCue.kind==15||activeCue.kind==16?160:0;
+            var delay:Number=activeCue.kind==1?600:activeCue.kind==2?180:activeCue.kind==10?180:activeCue.kind==11?390:activeCue.kind==15||activeCue.kind==16?420:0;
+            if(activeCue.kind==2&&BetaGwentSpecialVfx.projectile(int(activeCue.templateId)))delay=380;
             return Math.min(delay/frameAnimationTempo,Math.max(0,animationBaseDuration-90/frameAnimationTempo))/animationRate;
+        }
+        private function cueImpactTime():Number
+        {
+            // Motion delays are in the source timeline; audio waits in real
+            // milliseconds. Undo both speed factors exactly once. Using only
+            // animationTempo made effects arrive early on subsequent fast frames.
+            return cueImpactDelay()*frameAnimationTempo*animationRate;
         }
         private function poseW(p:Object):Number{return p&&p.width>0?Number(p.width):80;}
         private function poseH(p:Object):Number{return p&&p.height>0?Number(p.height):84;}
@@ -4796,16 +5641,20 @@ package
                 return;
             }
             var fx:Sprite=new Sprite();fx.mouseEnabled=false;fx.mouseChildren=false;content.addChild(fx);
+            fx.alpha=BetaGwentUi138.intensity;
             var origin:Object=displayedCards[activeCue.source];
+            var leaderDefinition:Object=activeCue.kind==1?BetaGwentFullCatalog.find(int(activeCue.templateId)):null;
+            var leaderPlay:Boolean=leaderDefinition&&leaderDefinition.leader;
             if(!origin&&(activeCue.kind==13||activeCue.kind==16))origin=departedPoses[activeCue.source];
             var target:Object=displayedCards[activeCue.target];
-            drawChainCue(fx,origin,target);drawRecoveryCue(fx,target);drawLeaderScene(fx);
+            if(!leaderPlay)drawChainCue(fx,origin,target);drawRecoveryCue(fx,target);drawWeatherCast(fx);
             var sx:Number=origin?poseX(origin):960;var sy:Number=origin?poseY(origin):430;
             var tint:uint=target&&target.delta>0?0x8FE0AE:target&&target.delta<0?0xEE8B70:0xA7DCEE;
             if(activeCue.kind==1||activeCue.kind==2||activeCue.kind==4||activeCue.kind==8||activeCue.kind==9||activeCue.kind==10){
-                if(!origin&&activeCue.source>0&&activeCue.templateId>0){
-                    var spell:Sprite=panel(fx,892,312,136,204,0x101315,.97);
-                    paintArt(spell,activeCue.templateId,130,198);
+                if(activeCue.kind==1&&!origin&&activeCue.source>0&&activeCue.templateId>0){
+                    var spell:Sprite=new Sprite();fx.addChild(spell);spell.mouseEnabled=false;spell.mouseChildren=false;
+                    var spellView:Object={templateId:activeCue.templateId,power:0,tokens:0,side:activeCue.side,zone:0};
+                    paintPlacementCard(spell,spellView,136,204);
                     var prior:Object=previousPoses[activeCue.source];
                     var fromHand:Boolean=activeCue.kind==1&&prior&&prior.zone==8;
                     var fromX:Number=fromHand?prior.x:892;var fromY:Number=fromHand?prior.y:322;
@@ -4813,15 +5662,15 @@ package
                     var pileOrigin:Array=fromHand?null:cuePileOrigin(activeCue,int(activeCue.side));
                     if(pileOrigin){fromX=pileOrigin[0];fromY=pileOrigin[1];}
                     var flies:Boolean=fromHand||pileOrigin!=null;
-                    animations.push({sprite:spell,fromX:fromX,fromY:fromY,toX:892,toY:312,fade:false,appear:true,remove:false,duration:flies?(pileOrigin?460:400):140,arc:flies?32:0,betaFlight:flies,tilt:fromX<892?5:-5,fromScaleX:flies?0.59:1,fromScaleY:flies?0.68:1,toScaleX:1,toScaleY:1});
+                    animations.push({sprite:spell,fromX:fromX,fromY:fromY,toX:892,toY:312,scene:true,remove:true,duration:680,arc:flies?32:0,betaFlight:flies,tilt:fromX<892?5:-5,fromScaleX:flies?0.59:1,fromScaleY:flies?0.68:1,toScaleX:1,toScaleY:1});
                     spell.x=fromX;spell.y=fromY;spell.alpha=0;sx=960;sy=414;
                 }
-                if(origin){
+                if(origin&&!leaderPlay){
                     // Make the acting card obvious (turn-end / timer triggers have no hand play).
                     var actor:Sprite=new Sprite();actor.mouseEnabled=false;fx.addChild(actor);
-                    actor.graphics.lineStyle(4,0xFFE08A,1);actor.graphics.drawRect(origin.x-4,origin.y-4,poseW(origin)+8,poseH(origin)+8);
-                    actor.filters=[new GlowFilter(0xFFC24A,.95,22,22,3,2)];
-                    if(activeCue.title){
+                    actor.graphics.lineStyle(2,0xFFE08A,.55);actor.graphics.drawRect(origin.x-2,origin.y-2,poseW(origin)+4,poseH(origin)+4);
+                    animations.push({sprite:actor,fromX:0,fromY:0,toX:0,toY:0,fade:true,remove:true,duration:360});
+                    if(activeCue.title&&BetaGwentUi138.helpLabels){
                         var tag:TextField=betaLabel(fx,activeCue.title,origin.x+poseW(origin)/2-150,Math.max(4,origin.y-30),300,15,0xFFF1C8,BetaGwentFonts.BODY,false,"center");
                         tag.filters=[new GlowFilter(0x000000,1,6,6,4,2)];
                     }
@@ -4830,24 +5679,35 @@ package
                     var weather:Object=rowGeometry(activeCue.side,activeCue.row);
                     sx=weather.x+weather.w/2;sy=weather.y+weather.h/2;
                 }
-                var hits:Array=[];
+                var hits:Array=[];var elementHandled164:Object=null;
                 if(activeCue.kind==2){
-                    if(int(activeCue.attackCount)>1){for(var hitKey:String in displayedCards){var hitPose:Object=displayedCards[hitKey];if(hitPose&&(int(hitPose.delta)!=0||int(hitPose.armorDelta)!=0))hits.push(hitPose);}}
+                    if(activeCue.hitTargets){for each(var hitId:int in activeCue.hitTargets){var exactHit:Object=displayedCards[hitId];
+                        if(!exactHit&&activeCue.projectileDeaths&&previousPoses[hitId]){
+                            exactHit={};for(var poseKey:String in previousPoses[hitId])exactHit[poseKey]=previousPoses[hitId][poseKey];exactHit.delta=-Math.max(1,int(exactHit.power));
+                        }
+                        if(exactHit)hits.push(exactHit);}}
+                    else if(int(activeCue.attackCount)>1){for(var hitKey:String in displayedCards){var hitPose:Object=displayedCards[hitKey];if(hitPose&&(int(hitPose.delta)!=0||int(hitPose.armorDelta)!=0))hits.push(hitPose);}}
                     if(hits.length==0&&target)hits.push(target);
-                    if(hits.length>=3&&!reducedMotion)drawRowWaves(fx,hits,cueImpactDelay()*animationTempo);
+                    elementHandled164=drawElementCue164(fx,hits,sx,sy,origin);
+                    if(!elementHandled164||!elementHandled164.any){
+                        if(int(activeCue.templateId)==200224&&!reducedMotion)drawCrowProjectiles(fx,hits,sx,sy,cueImpactTime());
+                    }
                 }
                 for each(target in hits){
+                    if(elementHandled164&&elementHandled164[target.id])continue;
                     var hurting:Boolean=int(target.delta)<0||int(target.armorDelta)<0;
                     var weatherHit:Boolean=activeCue.source==0&&activeCue.row>0;
                     tint=hurting?0xEE8B70:int(target.delta)>0?0x8FE0AE:0xA7DCEE;
+                    var specialVfx:Object=BetaGwentSpecialVfx.profile(int(activeCue.templateId),hurting);
+                    if(specialVfx)tint=BetaGwentSpecialVfx.tint(int(specialVfx.element),tint);
                     var tx:Number=target.x+target.width/2;var ty:Number=target.y+target.height/2;
                     // A self-trigger has no incoming projectile. Selection arrows
                     // belong to aiming; resolving actions use a short, soft link.
                     // A special card played from hand has no board pose: its projectile
                     // starts at the card shown in the middle of the board.
-                    var incoming:Boolean=origin&&origin!=target||!origin&&activeCue.source>0&&activeCue.templateId>0;
-                    var impactDelay:Number=cueImpactDelay()*animationTempo;
-                    if(incoming&&!weatherHit){
+                    var incoming:Boolean=!activeCue.triggerBoost&&(origin&&origin!=target||!origin&&activeCue.source>0&&activeCue.templateId>0);
+                    var impactDelay:Number=cueImpactTime();
+                    if(incoming&&!weatherHit&&!specialVfx){
                         var link:Sprite=new Sprite();link.mouseEnabled=false;link.mouseChildren=false;fx.addChild(link);
                         link.graphics.lineStyle(1.5,tint,.38);link.graphics.moveTo(sx,sy);link.graphics.lineTo(tx,ty);
                         animations.push({sprite:link,fromX:0,fromY:0,toX:0,toY:0,fade:true,remove:true,duration:impactDelay+200});
@@ -4855,18 +5715,14 @@ package
                     if(!reducedMotion){
                         if(weatherHit)drawWeatherImpact(fx,target,impactDelay);
                         else if(hurting){
-                            drawBetaHit(fx,tx,ty,Math.max(60,poseW(target)*1.2),0xFFD5C1,impactDelay);
-                            if(incoming)drawDamageProjectile(fx,sx,sy,tx,ty,tint,impactDelay);
+                            var strikeElement:int=specialVfx?int(specialVfx.element):1;
+                            if(incoming&&int(activeCue.templateId)!=200224&&specialVfx&&specialVfx.method==1&&strikeElement!=1)
+                                drawSpecialProjectile(fx,sx,sy,tx,ty,specialVfx,strikeTint173(strikeElement),impactDelay,hits.indexOf(target));
+                            if(strikeElement!=64)drawStrike173(fx,target,strikeElement,impactDelay,hits.indexOf(target));
                         }else{
                             // Boost and armour are one arrival on the same card,
                             // rather than separate strength/armour projectiles.
-                            betaBurst(fx,-103,tx,ty,poseW(target)*1.2,tint,impactDelay,360);
-                            var aura:Sprite=betaVisual(-106,poseH(target)*.8,poseW(target)*.55,tint);
-                            if(aura){
-                                fx.addChild(aura);aura.x=tx;aura.y=ty+12;aura.rotation=-90;
-                                animations.push({sprite:aura,fromX:tx,fromY:ty+12,toX:tx,toY:ty-18,fade:true,remove:true,duration:440,
-                                    delay:impactDelay,hideBeforeDelay:true,fromScaleX:.8,fromScaleY:.6,toScaleX:1,toScaleY:1});
-                            }
+                            drawBoostCue(fx,target,impactDelay);
                         }
                     }
                 }
@@ -4874,39 +5730,18 @@ package
             if(activeCue.kind==18){
                 // An ability that found no target: grey smoke at its card and the reason.
                 var fizzX:Number=origin?poseX(origin):960,fizzY:Number=origin?poseY(origin):414;
-                if(!origin&&activeCue.templateId>0){
-                    var fizzCard:Sprite=panel(fx,892,312,136,204,0x101315,.97);paintArt(fizzCard,activeCue.templateId,130,198);
-                    fizzCard.transform.colorTransform=new ColorTransform(.55,.55,.55);
-                    animations.push({sprite:fizzCard,fromX:892,fromY:312,toX:892,toY:312,fade:true,remove:true,duration:620,delay:220});
-                }
                 for(var puff:int=0;puff<3;puff++)betaBurst(fx,-103,fizzX+(puff-1)*26,fizzY-puff*10,96,0x9AA3A8,puff*90,560);
                 var fizz:Sprite=new Sprite();fizz.mouseEnabled=false;fizz.mouseChildren=false;fx.addChild(fizz);
-                betaLabel(fizz,String(activeCue.title),-220,0,440,17,0xD8DDE0,BetaGwentFonts.BODY,false,"center").filters=[new GlowFilter(0,1,6,6,4,2)];
+                if(BetaGwentUi138.helpLabels)betaLabel(fizz,String(activeCue.title),-220,0,440,17,0xD8DDE0,BetaGwentFonts.BODY,false,"center").filters=[new GlowFilter(0,1,6,6,4,2)];
                 fizz.x=fizzX;fizz.y=fizzY-20;
                 if(!reducedMotion)animations.push({sprite:fizz,fromX:fizzX,fromY:fizzY-20,toX:fizzX,toY:fizzY-60,fade:true,remove:true,duration:620});
             }
-            if(activeCue.kind==1&&origin&&!reducedMotion){
+            if(activeCue.kind==1&&origin&&!reducedMotion&&!leaderPlay){
                 var definition:Object=cardDetails[activeCue.source];
                 var landingTint:uint=definition&&definition.tier==8?0xE9C46A:definition&&definition.tier==4?0xDDE8F1:0xACD9E2;
-                betaBurst(fx,definition&&definition.tier==8?-105:-103,poseX(origin),poseY(origin),100,landingTint,cueImpactDelay()*animationTempo,270);
-                var landing:Sprite=new Sprite();landing.mouseEnabled=false;landing.mouseChildren=false;fx.addChild(landing);
-                landing.x=poseX(origin);landing.y=poseY(origin);
-                landing.graphics.lineStyle(3,landingTint,.85);landing.graphics.drawEllipse(-40,-28,80,56);
-                for(var landingRay:int=0;landingRay<8;landingRay++){
-                    var theta:Number=landingRay*Math.PI/4;
-                    landing.graphics.moveTo(Math.cos(theta)*35,Math.sin(theta)*24);
-                    landing.graphics.lineTo(Math.cos(theta)*48,Math.sin(theta)*35);
-                }
-                animations.push({sprite:landing,fromX:landing.x,fromY:landing.y,toX:landing.x,toY:landing.y,fade:true,remove:true,duration:200,
-                    delay:cueImpactDelay()*animationTempo,hideBeforeDelay:true,fromScaleX:.7,fromScaleY:.7,toScaleX:1.25,toScaleY:1.25});
+                drawLandingCue(fx,origin,landingTint,cueImpactTime());
             }
             if(activeCue.kind==11&&!activeCue.massFollow)drawConsumeCue(fx,origin);
-            if(activeCue.kind==8&&target&&(activeCue.row==0)&&!reducedMotion){
-                var resilient:Sprite=new Sprite();resilient.mouseEnabled=false;resilient.mouseChildren=false;fx.addChild(resilient);
-                resilient.x=poseX(target)-18;resilient.y=target.y+poseH(target)*.6;
-                paintArt(resilient,-1890,36,38);
-                animations.push({sprite:resilient,fromX:resilient.x,fromY:resilient.y,toX:resilient.x,toY:resilient.y-18,fade:true,remove:true,duration:420});
-            }
             if(activeCue.kind==15||activeCue.kind==16)drawSummonCue(fx,origin,target);
             if(activeCue.kind==9&&target){
                 var locked:Boolean=false;
@@ -4926,38 +5761,25 @@ package
                     var victims:Array=[];
                     for(var vk:String in previousPoses){var vp:Object=previousPoses[vk];if(vp&&(int(vp.zone)&7)!=0&&!displayedCards[vk])victims.push(vp);}
                     if(victims.length==0&&departedPoses[activeCue.target])victims.push(departedPoses[activeCue.target]);
-                    if(killStyle==1&&int(activeCue.templateId)==113309)boardFlash(fx,0xFF7A1E);
-                    if(killStyle==1&&int(activeCue.templateId)==112102&&victims.length>0){
-                        // Igni burns along the whole row: one fire wave (drawRowWaves needs three hits).
-                        var igniRow:Array=[];for(var ir:int=0;ir<3;ir++)igniRow.push({zone:victims[0].zone,side:victims[0].side,delta:-1,armorDelta:0});
-                        drawRowWaves(fx,igniRow,0);
-                    }
+                    if(killStyle==3&&victims.length>0)drawIgniIgnition(fx,int(victims[0].side));
                     for each(var victim:Object in victims)drawKillEffect(fx,victim,killStyle);
                 }
             }
-            if(activeCue.kind==10&&target){
-                var shimmer:Sprite=new Sprite();shimmer.mouseEnabled=false;shimmer.mouseChildren=false;fx.addChild(shimmer);
-                shimmer.x=target.x;shimmer.y=target.y;
-                shimmer.graphics.beginFill(0x7BD6C4,.6);shimmer.graphics.drawRect(0,0,target.width,target.height);shimmer.graphics.endFill();
-                animations.push({sprite:shimmer,fromX:target.x,fromY:target.y,toX:target.x,toY:target.y,fade:true,remove:true,duration:440});
+            if(activeCue.kind==12&&int(activeCue.templateId)==201523&&!reducedMotion){
+                if(int(activeCue.target)==0)drawYrden(fx,int(activeCue.side),int(activeCue.row));
+                else if(displayedCards[activeCue.target])drawResetGlow(fx,displayedCards[activeCue.target]);
             }
-            if(activeCue.kind==13){
-                var departed:Object=previousPoses[activeCue.source]?previousPoses[activeCue.source]:departedPoses[activeCue.source];
-                if(departed){
-                    var omen:Sprite=new Sprite();omen.mouseEnabled=false;omen.mouseChildren=false;fx.addChild(omen);
-                    omen.x=poseX(departed);omen.y=poseY(departed);
-                    omen.graphics.lineStyle(3,0xDDB89C,.85);omen.graphics.drawCircle(0,0,28);
-                    for(var ray:int=0;ray<8;ray++){
-                        var angle:Number=ray*Math.PI/4;omen.graphics.moveTo(Math.cos(angle)*33,Math.sin(angle)*33);
-                        omen.graphics.lineTo(Math.cos(angle)*44,Math.sin(angle)*44);
-                    }
-                    animations.push({sprite:omen,fromX:omen.x,fromY:omen.y,toX:omen.x,toY:omen.y,fade:true,remove:true,
-                        duration:400,fromScaleX:.7,fromScaleY:.7,toScaleX:1.4,toScaleY:1.4});
-                }
+            if(activeCue.kind==10&&target){
+                var oldShape:Object=previousPoses[activeCue.target];
+                if(oldShape)drawPresentation178(fx,transformPrefab178(oldShape,target),target,0,96);
+            }
+            if((activeCue.kind==8||activeCue.kind==14)&&target){
+                var previousTarget:Object=previousPoses[activeCue.target];
+                if(previousTarget&&(int(previousTarget.zone)&7)!=0&&(int(target.zone)&7)!=0&&(previousTarget.zone!=target.zone||previousTarget.side!=target.side))drawLandingCue(fx,target,0,420);
             }
             if(activeCue.kind==8&&(activeCue.row==1||activeCue.row==2||activeCue.row==4)){
                 var abilityRow:Object=rowGeometry(activeCue.side,activeCue.row);
-                fx.graphics.lineStyle(3,0xE7AD68,.85);
+                fx.graphics.lineStyle(1.5,0xE7AD68,.4);
                 fx.graphics.drawRect(abilityRow.x,abilityRow.y,abilityRow.w,abilityRow.h);
             }
             // Beta weather's native entry layers already animate in drawRows.
@@ -4978,6 +5800,7 @@ package
                 }
             }
             if(activeCue.kind==5){
+                drawPassCue(fx);
                 var seat:Array=skin==3?betaLeaderRect(activeCue.side):null;
                 var y:Number=skin==3?seat[1]:(activeCue.side==1?575:225);
                 fx.graphics.lineStyle(4,0xCFB176,.95);fx.graphics.drawRoundRect(skin==3?seat[0]-2:98,y-2,skin==3?seat[2]+4:284,skin==3?seat[3]+4:229,8,8);
@@ -4990,12 +5813,20 @@ package
                 text(startBanner,"Победы: "+crowns[0]+" : "+crowns[1],24,108,600,18,0xC8C7BB);
                 animations.push({sprite:startBanner,fromX:650,fromY:420,toX:650,toY:396,appear:true,remove:false,duration:400});
                 startBanner.y=420;startBanner.alpha=0;
-            }else if(skin!=3){
+            }else if(skin!=3&&BetaGwentUi138.helpLabels){
                 var strip:Sprite=panel(fx,610,160,820,46,0x101619,.94);
                 var caption:String=activeCue.title;
                 if(activeCue.sequenceSize>1)caption+="  ·  изменение "+activeCue.sequence+" / "+activeCue.sequenceSize;
                 text(strip,caption,14,5,790,20,0xE9DBBE);
             }
+        }
+        private function drawPassCue(parent:Sprite):void
+        {
+            var banner:Sprite=panel(parent,640,466,640,104,0x11171B,.97);
+            banner.mouseEnabled=false;banner.mouseChildren=false;
+            banner.graphics.lineStyle(2,0xD2B474,.95);banner.graphics.drawRoundRect(0,0,640,104,12,12);
+            betaLabel(banner,activeCue.side==2?"Соперник спасовал.":"Вы спасовали.",40,27,560,30,0xF3D898,BetaGwentFonts.TITLE,true,"center");
+            if(!reducedMotion){animations.push({sprite:banner,fromX:640,fromY:486,toX:640,toY:466,appear:true,duration:240});banner.y=486;banner.alpha=0;}
         }
         private function paintRoundSeal(parent:Sprite,filled:Boolean,color:uint,r:Number):void
         {
@@ -5042,42 +5873,104 @@ package
                 banner.y=394;banner.alpha=0;
             }
         }
+        private function landingPrefab178(pose:Object):String
+        {
+            for each(var weather:Object in weatherRows)if(weather.side==pose.side&&weather.zone==pose.zone){
+                if(weather.token==1)return "CardFrostLandingEffect";
+                if(weather.token==2)return "CardMistLandingEffect";
+                if(weather.token==4||weather.token==64)return "CardRainLandingEffect";
+            }
+            return "CardLandingEffect";
+        }
+        private function transformPrefab178(before:Object,after:Object):String
+        {
+            // CardTransformAttackVFXHandlerData uses NatureTransform by default.
+            // Promote/Demote are separate attack operations, not a change of
+            // template rarity. No current ability graph issues those operations.
+            return "NatureTransform";
+        }
+        private function presentationDuration178(name:String):Number
+        {var preset:Object=BetaGwentElementData164.preset(name);return preset?Number(preset.duration)*1000:0;}
+        private function presentationFloor178(cue:Object,beforeCards:Array,afterCards:Array):Number
+        {
+            if(!cue||cue.massFollow||!beforeCards||!afterCards)return 0;
+            var definition:Object=BetaGwentFullCatalog.find(int(cue.templateId));
+            if(cue.kind==1){if(definition&&definition.leader)return 0;return 600+presentationDuration178(definition&&definition.tier==8?"GoldLanding":"CardLandingEffect")+30;}
+            if(cue.kind==15||cue.kind==16){
+                var summonedDefinition:Object=null;
+                for each(var summoned:Object in afterCards)if(summoned.id==cue.target)summonedDefinition=BetaGwentFullCatalog.find(int(summoned.templateId));
+                return 420+presentationDuration178(summonedDefinition&&summonedDefinition.tier==8?"GoldLanding":"CardLandingEffect")+30;
+            }
+            var before:Object=null,after:Object=null;
+            for each(var old:Object in beforeCards)if(old.id==cue.target)before=old;
+            for each(var currentCard:Object in afterCards)if(currentCard.id==cue.target)after=currentCard;
+            if(!before||!after)return 0;
+            if(cue.kind==10)return presentationDuration178(transformPrefab178(before,after))+30;
+            if((int(before.tokens)&8)!=0&&(int(after.tokens)&8)==0)return 180+presentationDuration178("AmbushEffect")+30;
+            if((cue.kind==8||cue.kind==14)&&(int(before.zone)&7)!=0&&(int(after.zone)&7)!=0&&(before.zone!=after.zone||before.side!=after.side))return 420+presentationDuration178("CardLandingEffect")+30;
+            return 0;
+        }
+        private function drawPresentation178(fx:Sprite,name:String,pose:Object,delay:Number,cap:int=80):void
+        {
+            if(reducedMotion||!pose||!activeCue)return;
+            drawElement164(fx,name,poseX(pose),poseY(pose),poseW(pose),poseH(pose),delay,{remaining:cap},cap);
+        }
+        private function queueTransformation178(oldFace:Sprite,newFace:Sprite):void
+        {
+            // A transformation keeps its registry identity and position. The
+            // source smoke covers a single face swap, with no mirrored card.
+            var x:Number=newFace.x,y:Number=newFace.y;
+            animations.push({sprite:oldFace,fromX:x,fromY:y,toX:x,toY:y,fade:true,remove:true,duration:260});
+            animations.push({sprite:newFace,fromX:x,fromY:y,toX:x,toY:y,appear:true,delay:160,duration:300,hideBeforeDelay:true});
+            newFace.alpha=0;
+        }
+
         private function drawSummonCue(fx:Sprite,source:Object,target:Object):void
         {
-            if(!target)return;
-            var fromDeck:Boolean=activeCue.kind==15;
-            var tint:uint=fromDeck?0xA6DCEB:0xDDB382;
-            var x:Number=target.x+target.width/2;var y:Number=target.y+target.height/2;
-            betaBurst(fx,-108,x,y,130,tint,140,390);
-            var gate:Sprite=new Sprite();gate.mouseEnabled=false;gate.mouseChildren=false;fx.addChild(gate);
-            gate.x=x;gate.y=y;
-            gate.graphics.lineStyle(3,tint,.9);gate.graphics.drawEllipse(-46,-20,92,40);
-            gate.graphics.lineStyle(1,tint,.6);gate.graphics.drawEllipse(-35,-14,70,28);
-            for(var spoke:int=0;spoke<6;spoke++){
-                var a:Number=spoke*Math.PI/3;
-                gate.graphics.moveTo(Math.cos(a)*38,Math.sin(a)*17);gate.graphics.lineTo(Math.cos(a)*51,Math.sin(a)*24);
-            }
-            gate.scaleX=gate.scaleY=.3;gate.alpha=0;
-            animations.push({sprite:gate,fromX:x,fromY:y,toX:x,toY:y,fade:true,remove:true,duration:400,delay:100,hideBeforeDelay:true,
-                fromScaleX:.3,fromScaleY:.3,toScaleX:1.35,toScaleY:1.35});
-            if(source&&activeCue.source!=activeCue.target){
-                fx.graphics.lineStyle(2,tint,.55);fx.graphics.moveTo(poseX(source),poseY(source));fx.graphics.lineTo(x,y);
-                fx.graphics.lineStyle(3,tint,.9);fx.graphics.drawRect(source.x-2,source.y-2,poseW(source)+4,poseH(source)+4);
-            }
-            if(!reducedMotion){
-                for(var sparkIndex:int=0;sparkIndex<6;sparkIndex++){
-                    var spark:Sprite=new Sprite();spark.mouseEnabled=false;fx.addChild(spark);
-                    spark.graphics.beginFill(tint,.95);spark.graphics.drawCircle(0,0,2);spark.graphics.endFill();
-                    var angle:Number=sparkIndex*Math.PI/3;
-                    animations.push({sprite:spark,fromX:x,fromY:y,toX:x+Math.cos(angle)*56,toY:y+Math.sin(angle)*35,
-                        fade:true,remove:true,duration:300,delay:150,hideBeforeDelay:true});spark.x=x;spark.y=y;
-                }
-            }
+            if(!target||(int(target.zone)&7)==0)return;
+            var arrival:Number=cueImpactTime();
+            drawPresentation178(fx,"SpawnBlink",target,arrival,48);
+            drawLandingCue(fx,target,0,arrival);
         }
-        // 1 = fire (Scorch, Geralt: Igni, Spoiled ale, Igni sign), 2 = plague (Epidemic).
+        private function drawLandingCue(fx:Sprite,pose:Object,tint:uint,arrival:Number):void
+        {
+            if(!pose||(int(pose.zone)&7)==0)return;
+            drawPresentation178(fx,landingPrefab178(pose),pose,arrival,48);
+            var definition:Object=BetaGwentFullCatalog.find(int(pose.templateId));
+            // A choice snapshot may already show the unit on the board.
+            // The play/summon cue, rather than its previous zone, owns landing.
+            if((activeCue.kind==1||activeCue.kind==15||activeCue.kind==16)&&definition&&definition.tier==8&&!definition.leader)drawPresentation178(fx,"GoldLanding",pose,arrival,100);
+        }
+        private function drawWeatherCast(fx:Sprite):void
+        {
+            if(reducedMotion||activeCue.kind!=4)return;
+            var id:int=int(activeCue.templateId),token:int=id==113206||id==113302?1:id==200018?16:id==113101?32:id==201749?128:id==113303||id==113401?-1:0;
+            if(token==0)return;
+            var lanes:Array=activeCue.weatherCastRows||[{side:activeCue.side,zone:activeCue.row}];
+            if(token==-1&&activeCue.row==0)lanes=[{side:activeCue.side,zone:1},{side:activeCue.side,zone:2},{side:activeCue.side,zone:4}];
+            var x:Number=2000,y:Number=1200,right:Number=0,bottom:Number=0;
+            for each(var lane:Object in lanes){var row:Object=rowGeometry(lane.side,lane.zone);x=Math.min(x,row.x);y=Math.min(y,row.y);right=Math.max(right,row.x+row.w);bottom=Math.max(bottom,row.y+row.h);}
+            if(right<=x||bottom<=y)return;
+            var w:Number=right-x,h:Number=bottom-y;
+            if(token==-1){
+                // Beta (Dawn footage): warm diagonal shafts over the whole screen.
+                drawElement164(fx,"BoardEffect_ClearWeather",960,540,2400,1080,0,{remaining:220},220);return;
+            }
+            if(token==128){
+                var brew:Sprite=killSprite(fx,BetaGwentKillArt144.SOFT_GLOW,w,0xE9B64D,x+w/2,y+h*.7,.16,h*.8);
+                killMotion(brew,x+w/2,y+h*.7,x+w/2,y+h*.5,0,800,.85,1,0,{fromAlpha:0.16});return;
+            }
+            var texture:int=token==1?BetaGwentWeather107.FROST_SPIKES:token==16?BetaGwentWeather107.DROUGHT_SAND:token==32?BetaGwentWeather107.RAGH_VEINS:BetaGwentWeather107.NOVA;
+            var cast:Sprite=betaVisual(texture,w,h);if(!cast)return;fx.addChild(cast);cast.x=x+w/2;cast.y=y+h/2;
+            animations.push({sprite:cast,fromX:cast.x,fromY:cast.y,toX:cast.x,toY:cast.y-(token==-1?18:0),fade:true,fromAlpha:.7,remove:true,
+                duration:token==1?800:650,delay:0,fromScaleX:.94,fromScaleY:.72,toScaleX:1.02,toScaleY:1.05});
+            if(token==-1)for(var ray:int=0;ray<8;ray++)betaBurst(fx,-106,x+w*(ray+.5)/8,y+h/2,80,0xFFF2B9,ray*18,420);
+        }
+        // Fire belongs only to Scorch, Igni and Villentretenmerth; Epidemic uses poison.
         private function killEffectStyle(templateId:int):int
         {
-            if(templateId==113309||templateId==112102||templateId==200530)return 1;
+            if(templateId==112102)return 3;
+            if(templateId==113309||templateId==112107)return 1;
             if(templateId==113308)return 2;
             return 0;
         }
@@ -5088,29 +5981,312 @@ package
             flash.graphics.beginFill(tint,.22);flash.graphics.drawRect(-WIDE_PAD,0,1920+2*WIDE_PAD,1080);flash.graphics.endFill();
             animations.push({sprite:flash,fromX:0,fromY:0,toX:0,toY:0,fade:true,fromAlpha:1,remove:true,duration:360});
         }
+        private function drawBoostCue(fx:Sprite,target:Object,delay:Number):void
+        {
+            var x:Number=poseX(target),y:Number=poseY(target),w:Number=poseW(target),h:Number=poseH(target);
+            var glow:Sprite=killSprite(fx,BetaGwentKillArt144.SOFT_GLOW,w*.9,0x8ED8A0,x,y,.18,h*.65);
+            killMotion(glow,x,y+h*.1,x,y-h*.06,delay,380,.65,.85,0,{fromAlpha:0.18});
+            for(var i:int=0;i<3;i++){
+                var px:Number=target.x+w*(i+1)/4;
+                var spark:Sprite=killSprite(fx,BetaGwentKillArt144.SOFT_DOT,4,0xB5F7C7,px,y+h*.3,.38,8);
+                killMotion(spark,px,y+h*.3,px,y-h*.2,delay+i*25,340,.65,.35,0,{fromAlpha:0.28});
+            }
+        }
+        // Beta DestroyDestroyFire / DestroyDestroyPoison particles around a dissolving card.
         private function drawKillEffect(fx:Sprite,pose:Object,style:int):void
         {
             var w:Number=poseW(pose),h:Number=poseH(pose),cx:Number=poseX(pose),cy:Number=poseY(pose);
-            var colors:Array=style==1?[0xFFF4B0,0xFF8A1E,0x9E1A00]:[0xD8F0A0,0x6E9E2E,0x1E2A10];
-            // Tinted glow over the dying card.
-            var glow:Sprite=new Sprite();glow.mouseEnabled=false;fx.addChild(glow);glow.x=cx;glow.y=cy;
-            var gm:Matrix=new Matrix();gm.createGradientBox(w*1.3,h*1.2,0,-w*.65,-h*.6);
-            glow.graphics.beginGradientFill(GradientType.RADIAL,[colors[1],colors[2]],[.75,0],[0,255],gm);
-            glow.graphics.drawEllipse(-w*.65,-h*.6,w*1.3,h*1.2);glow.graphics.endFill();
-            animations.push({sprite:glow,fromX:cx,fromY:cy,toX:cx,toY:cy,fade:true,fromAlpha:1,remove:true,duration:620,fromScaleX:.6,fromScaleY:.6,toScaleX:1.15,toScaleY:1.15});
-            // Rising tongues: flames for fire, slow miasma puffs for plague.
-            for(var i:int=0;i<7;i++){
-                var tongue:Shape=new Shape();var tw:Number=w*(.28+.08*(i%3)),th:Number=style==1?h*(.45+.1*(i%2)):tw;
-                var m:Matrix=new Matrix();m.createGradientBox(tw,th,Math.PI/2,-tw/2,-th);
-                tongue.graphics.beginGradientFill(GradientType.LINEAR,[colors[0],colors[1],colors[2]],[.95,.8,0],[0,110,255],m);
-                tongue.graphics.drawEllipse(-tw/2,-th,tw,th);tongue.graphics.endFill();
-                var holder:Sprite=new Sprite();holder.mouseEnabled=false;holder.addChild(tongue);fx.addChild(holder);
-                var sx:Number=cx-w*.4+w*.8*(i/6),sy:Number=cy+h*.35;
-                holder.x=sx;holder.y=sy;
-                animations.push({sprite:holder,fromX:sx,fromY:sy,toX:sx+(i%2?6:-6),toY:sy-h*(style==1?0.55:0.4),fade:true,fromAlpha:1,remove:true,
-                    duration:style==1?520:820,delay:i*45,hideBeforeDelay:true,fromScaleX:.5,fromScaleY:.4,toScaleX:1,toScaleY:1.2});
+            if(style==2){drawPoisonDestroy(fx,cx,cy,w,h);return;}
+            drawFireDestroy(fx,cx,cy,w,h,style==3?igniRowDelay(int(pose.zone))+100:0);
+        }
+        private function killSprite(fx:Sprite,index:int,size:Number,tint:int,x:Number,y:Number,alpha:Number=1,sizeY:Number=-1,light:int=-1):Sprite
+        {
+            var sprite:Sprite=BetaGwentKillArt144.cell(index,size,sizeY>0?sizeY:size,tint,alpha,light);if(!sprite)return null;
+            fx.addChild(sprite);sprite.x=x;sprite.y=y;return sprite;
+        }
+        private function killMotion(sprite:Sprite,x0:Number,y0:Number,x1:Number,y1:Number,delay:Number,duration:Number,s0:Number,s1:Number,rotation:Number=0,extra:Object=null):void
+        {
+            if(!sprite)return;
+            var m:Object={sprite:sprite,fromX:x0,fromY:y0,toX:x1,toY:y1,fade:true,fromAlpha:1,remove:true,duration:duration,delay:delay,hideBeforeDelay:true,
+                fromScaleX:s0,fromScaleY:s0,toScaleX:s1,toScaleY:s1,fromRotation:rotation,toRotation:rotation};
+            if(extra)for(var k:String in extra)m[k]=extra[k];
+            animations.push(m);
+        }
+        private function killFrames(fx:Sprite,first:int,count:int,stride:int,w:Number,h:Number,tint:int=-1,alpha:Number=1):Sprite
+        {
+            var holder:Sprite=new Sprite();holder.mouseEnabled=false;holder.mouseChildren=false;var frames:Array=[];
+            for(var f:int=0;f<count;f++){var cell:Sprite=BetaGwentKillArt144.cell(first+(f*stride)%8,w,h,tint,alpha);if(!cell)continue;cell.visible=f==0;holder.addChild(cell);frames.push(cell);}
+            if(frames.length==0)return null;
+            fx.addChild(holder);return holder;
+        }
+        private function childFrames(holder:Sprite):Array
+        {
+            var out:Array=[];for(var i:int=0;i<holder.numChildren;i++)out.push(holder.getChildAt(i));return out;
+        }
+        private function drawFireDestroy(fx:Sprite,cx:Number,cy:Number,w:Number,h:Number,d:Number):void
+        {
+            var size:Number=Math.max(w,h);var i:int;
+            // Flash: two bursts at 0 and 0.133 s.
+            for(i=0;i<2;i++)killMotion(killSprite(fx,BetaGwentKillArt144.GLOW,size*1.9,0xE57C4D,cx,cy),cx,cy,cx,cy,d+i*133,320,.57,1);
+            // FrameBright: the card frame glows while the card burns.
+            var frame:Sprite=BetaGwentSpellArt143.clip("frame",w*1.08,h*1.08);
+            if(frame){var holder:Sprite=new Sprite();holder.mouseEnabled=false;holder.mouseChildren=false;holder.addChild(frame);frame.x=-w*.54;frame.y=-h*.54;
+                holder.transform.colorTransform=new ColorTransform(1,.45,.12);holder.filters=[new GlowFilter(0xFF6A0A,.8,10,10,1.4,1)];
+                fx.addChild(holder);killMotion(holder,cx,cy,cx,cy,d,1000,1,1);}
+            // FireOutFlames: short-lived flame tongues over the card in the first 0.4 s.
+            for(i=0;i<9;i++){
+                var tongue:Sprite=new Sprite();tongue.mouseEnabled=false;tongue.mouseChildren=false;var frames:Array=[];
+                for(var f:int=0;f<5;f++){var fc:Sprite=BetaGwentSpellArt143.clip("fire",w*.62,w*.82,(i*3+f*5)%25);if(!fc)continue;fc.x=-w*.31;fc.y=-w*.62;fc.visible=f==0;tongue.addChild(fc);frames.push(fc);}
+                if(frames.length==0)continue;fx.addChild(tongue);
+                var fx0:Number=cx+(Math.random()-.5)*w*.85,fy0:Number=cy+(Math.random()-.2)*h*.6;
+                killMotion(tongue,fx0,fy0,fx0+(Math.random()-.5)*10,fy0-20-Math.random()*30,d+i*45,250+Math.random()*150,.55,.9,0,{hitFrames:frames});
             }
-            betaBurst(fx,style==1?-105:-103,cx,cy,Math.max(w,h)*1.1,colors[1],60,style==1?380:600);
+            // SparksGlowing: one burst at 0.033 s.
+            for(i=0;i<20;i++){
+                var dir:Number=Math.random()*Math.PI*2;var dist:Number=15+Math.random()*80;
+                var spark:Sprite=killSprite(fx,BetaGwentKillArt144.SPARK,14+Math.random()*10,Math.random()<.5?0xFFD27A:0xFF6A1A,cx,cy,1,5,1);
+                killMotion(spark,cx,cy,cx+Math.cos(dir)*dist,cy+Math.sin(dir)*dist-12,d+33,200+Math.random()*400,1,.3,dir*180/Math.PI);
+            }
+            // Ashes rise from the burning face; smoke rolls up after it.
+            for(i=0;i<10;i++){
+                var ax:Number=cx+(Math.random()-.5)*w*.9,ay:Number=cy+(Math.random()-.5)*h*.8;
+                killMotion(killSprite(fx,BetaGwentKillArt144.ASH+i%4,10+Math.random()*16,0xFF7A2A,ax,ay),ax,ay,ax+(Math.random()-.5)*20,ay-25-Math.random()*25,d+200+i*80,500+Math.random()*200,.3,1,Math.random()*360);
+            }
+            for(i=0;i<5;i++){
+                var sx:Number=cx+(Math.random()-.5)*w*.6,sy:Number=cy+(Math.random()-.3)*h*.5;
+                killMotion(killSprite(fx,BetaGwentKillArt144.SOFT_SMOKE,size*(.75+Math.random()*.2),0x4E423B,sx,sy,.55),sx,sy,sx+(Math.random()-.5)*16,sy-35-Math.random()*20,d+300+i*130,1000+Math.random()*200,.62,1,Math.random()*360);
+            }
+        }
+        private function drawPoisonDestroy(fx:Sprite,cx:Number,cy:Number,w:Number,h:Number):void
+        {
+            var size:Number=Math.max(w,h);var i:int;var holder:Sprite;
+            // Splash_02 / Splash_01: acid splashes rising from the card.
+            for(i=0;i<3;i++)killMotion(killSprite(fx,BetaGwentKillArt144.SPLASH,size*1.2,0x2FC010,cx,cy+h*.05,.95),cx,cy+h*.05,cx,cy-h*.02,i==2?200:30+i*40,i==2?600:950,0,1.3);
+            // GlowCenter + AfterGlow.
+            killMotion(killSprite(fx,BetaGwentKillArt144.MAGIC_SMOKE,size*1.3,0x12EC00,cx,cy,1,-1,1),cx,cy,cx,cy,150,450,0,1);
+            killMotion(killSprite(fx,BetaGwentKillArt144.MAGIC_SMOKE,size*1.6,0x12EC00,cx,cy,.78,-1,1),cx,cy,cx,cy,200,1100,.2,1);
+            // drops: 30 acid drops thrown out, falling back.
+            for(i=0;i<30;i++){
+                var dir:Number=Math.random()*Math.PI*2;var dist:Number=20+Math.random()*60;
+                var drop:Sprite=killSprite(fx,BetaGwentKillArt144.SPARK,8+Math.random()*6,Math.random()<.5?0x4CE020:0x0F6A06,cx,cy,1,6);
+                killMotion(drop,cx,cy,cx+Math.cos(dir)*dist,cy+Math.sin(dir)*dist*.6+18,200,600,1,.25,dir*180/Math.PI,{arc:22});
+            }
+            // Smoke_01 / Smoke_02: green dust puffs.
+            for(i=0;i<7;i++){
+                var px:Number=cx+(Math.random()-.5)*w*.8,py:Number=cy+(Math.random()-.5)*h*.6;
+                killMotion(killSprite(fx,BetaGwentKillArt144.SAND+i%2,size*(.45+Math.random()*.35),i%2?0x4BDB12:0x2EC81E,px,py,.5),px,py,px,py-10,300+i*25,600+Math.random()*300,0,1,Math.random()*360);
+            }
+            // Center_Smoke: animated white smoke, tinted green, from 0.4 s.
+            for(i=0;i<3;i++){
+                holder=killFrames(fx,BetaGwentKillArt144.WHITE_SMOKE,4,1,size*.9,size*.9,0x2A9A3A,.55);if(!holder)continue;
+                var mx:Number=cx+(i-1)*w*.25;
+                killMotion(holder,mx,cy,mx,cy-12,400+i*120,1000,.2,1,Math.random()*360,{hitFrames:childFrames(holder)});
+            }
+            // bubbles_mid (0.7 s) and bubbles_out (0.8 s) with the ring shockwave.
+            for(i=0;i<12;i++){
+                var bs:Number=12+Math.random()*12;
+                holder=killFrames(fx,BetaGwentKillArt144.BUBBLE,4,1,bs,bs,i%2?0x55E830:0x7AE80A);if(!holder)continue;
+                var bx:Number=cx+(Math.random()-.5)*w*(i<7? .6:1),by:Number=cy+(Math.random()-.5)*h*(i<7? .6:.9);
+                killMotion(holder,bx,by,bx,by-3,i<7?700+i*30:800+(i-7)*40,i<7?250:380,.4,.9,0,{hitFrames:childFrames(holder)});
+            }
+            killMotion(killSprite(fx,BetaGwentKillArt144.RING,size*1.1,0x72FF00,cx,cy),cx,cy,cx,cy,800,320,.18,1);
+        }
+        private function igniRowDelay(zone:int):Number{return 600;}
+        // Beta IgniIgnition: the Igni sign flares over the enemy side, then
+        // flames run along melee, ranged and siege rows in turn.
+        private function drawIgniIgnition(fx:Sprite,side:int):void
+        {
+            var targetRow:int=1;
+            for(var victimId:String in previousPoses){var victimPose:Object=previousPoses[victimId];
+                if(victimPose.side==side&&!displayedCards[victimId]&&(int(victimPose.zone)&7)!=0){targetRow=int(victimPose.zone);break;}}
+            var melee:Object=rowGeometry(side,targetRow);var i:int;
+            var cx:Number=melee.x+melee.w/2,cy:Number=melee.y+melee.h/2;
+            var sign:Sprite=killSprite(fx,BetaGwentKillArt144.IGNI_SIGN,150,0xFFE9C8,cx,cy);
+            if(sign){sign.filters=[new GlowFilter(0xFF7A1E,.9,16,16,2,1)];
+                animations.push({sprite:sign,fromX:cx,fromY:cy,toX:cx,toY:cy,appear:true,remove:true,duration:330,fromScaleX:.05,fromScaleY:.05,toScaleX:1,toScaleY:1});}
+            var hold:Sprite=killSprite(fx,BetaGwentKillArt144.IGNI_SIGN,150,0xE8B08A,cx,cy);
+            if(hold){hold.filters=[new GlowFilter(0xFF5A0A,.8,14,14,1.6,1)];killMotion(hold,cx,cy,cx,cy,330,800,1,.92);}
+            killMotion(killSprite(fx,BetaGwentKillArt144.GLOW,260,0x962600,cx,cy),cx,cy,cx,cy,0,1000,0,1);
+            killMotion(killSprite(fx,BetaGwentKillArt144.SOFT_GLOW,130,0xFFE0B0,cx,cy),cx,cy,cx,cy,0,500,0,1);
+            killMotion(killSprite(fx,BetaGwentKillArt144.SOFT_GLOW,420,0xFFC890,cx,cy),cx,cy,cx,cy,350,200,0,1);
+            killMotion(killSprite(fx,BetaGwentKillArt144.GLOW,520,0x821C00,cx,cy),cx,cy,cx,cy,400,500,.08,1);
+            for(i=0;i<30;i++){
+                var dir:Number=Math.random()*Math.PI*2;var dist:Number=60+Math.random()*110;
+                var spark:Sprite=killSprite(fx,BetaGwentKillArt144.SPARK,16+Math.random()*12,Math.random()<.5?0xFBE58E:0xCC4910,cx,cy,1,5,1);
+                killMotion(spark,cx,cy,cx+Math.cos(dir)*dist,cy+Math.sin(dir)*dist*.6,500+Math.random()*50,380+Math.random()*420,1,.4,dir*180/Math.PI);
+            }
+            for each(var zone:int in [targetRow]){
+                var row:Object=rowGeometry(side,zone);var d:Number=igniRowDelay(zone);
+                var count:int=Math.max(10,int(row.w/40));
+                for(i=0;i<count;i++){
+                    var fs:Number=40+Math.random()*32;
+                    var flame:Sprite=killFrames(fx,BetaGwentKillArt144.FLAME,4,2+i%3,fs,fs);if(!flame)continue;
+                    var x0:Number=row.x+row.w*(i+Math.random())/count,y0:Number=row.y+row.h*(.4+Math.random()*.4);
+                    killMotion(flame,x0,y0,x0+(Math.random()-.5)*8,y0-10-Math.random()*17,d+Math.random()*120,450+Math.random()*450,.1,1,0,{hitFrames:childFrames(flame)});
+                }
+                killMotion(killSprite(fx,BetaGwentKillArt144.GLOW,row.w*.9,0xB43C0A,row.x+row.w/2,row.y+row.h/2,.55,row.h*1.6),row.x+row.w/2,row.y+row.h/2,row.x+row.w/2,row.y+row.h/2,d,700,.3,1);
+                for(i=0;i<8;i++){
+                    var ax:Number=row.x+Math.random()*row.w,ay:Number=row.y+row.h*.6;
+                    killMotion(killSprite(fx,BetaGwentKillArt144.ASH+i%4,8+Math.random()*10,0xFF6A1A,ax,ay),ax,ay,ax+(Math.random()-.5)*20,ay-40-Math.random()*30,d+50+Math.random()*200,300+Math.random()*120,.2,1,Math.random()*360);
+                }
+            }
+            for(i=0;i<5;i++){
+                var sx:Number=cx+(Math.random()-.5)*melee.w*.6,sy:Number=cy;
+                killMotion(killSprite(fx,BetaGwentKillArt144.DUST,90+Math.random()*30,0x6E3A26,sx,sy,.7),sx,sy,sx+(Math.random()-.5)*40,sy-50-Math.random()*40,800+i*60,700+Math.random()*300,.3,1,Math.random()*360);
+            }
+        }
+        // Gwent 0.9.24 operations that banish a card: BanishOrdinary / weakened (kind 12)
+        // and every operation using the banish sound (audio cue 12, vfx_custom_banish).
+        // Yrden (201523) shares kind 12 but resets a unit that stays on the board.
+        private function banishCueTarget(cue:Object,id:int):Boolean
+        {
+            if(!cue||id==0)return false;
+            if(int(cue.audioKind)!=12&&!(cue.kind==12&&int(cue.templateId)!=201523))return false;
+            if(int(cue.target)==id)return true;
+            for each(var list:Object in [cue.hitTargets,cue.deathTargets])if(list is Array)for each(var t:Object in list)if((t is Number?int(t):t&&t.id!=null?int(t.id):0)==id)return true;
+            return false;
+        }
+        // Beta BanishCardEffect (tools/ui/build_banish160.py, docs/evidence/banish160.json):
+        // tokens removed, Banish_Small_Material dissolves the card for 1.2 s (linear),
+        // BackLines streaks at 0.03 s, EmissionElementMid shards at 0.18 s and Rim at 0.23 s.
+        // Unity units: the small card is 22 units wide. 2D adaptation of the 3D systems.
+        private function drawBanishDeparture(pose:Object,delay:Number):void
+        {
+            var bare:Object={};for(var key:String in pose)bare[key]=pose[key];bare.tokens=0;bare.timer=-1;bare.armor=0;
+            var w:Number=poseW(pose),h:Number=poseH(pose);
+            var face:Sprite=new Sprite();paintPlacementCard(face,bare,w,h);
+            var card:BetaGwentDissolve144=new BetaGwentDissolve144(face,w,h,BetaGwentDissolve144.BANISH);
+            content.addChild(card);card.x=pose.x;card.y=pose.y;
+            animations.push({sprite:card,dissolve:card,fromX:pose.x,fromY:pose.y,toX:pose.x,toY:pose.y,remove:true,
+                delay:reducedMotion?0:delay,duration:reducedMotion?200:BetaGwentDissolveData144.BANISH_MS});
+            if(reducedMotion)return;
+            var fx:Sprite=new Sprite();fx.mouseEnabled=false;fx.mouseChildren=false;content.addChild(fx);
+            var u:Number=w/22,cx:Number=pose.x+w/2,cy:Number=pose.y+h/2,i:int,a:Number,r:Number,size:Number,life:Number,sprite:Sprite;
+            // BackLines: 8 dark stretched streaks (2 x tint .006/0/.176 x grey 0..0.26), growing 0 -> 1.
+            for(i=0;i<8;i++){
+                a=Math.random()*Math.PI*2;r=Math.random()*3.2*u;size=(18+Math.random()*18)*u;life=180+Math.random()*120;
+                var grey:Number=Math.random()*.26;
+                sprite=BetaGwentBanish160.cell(BetaGwentBanish160.HIT,int(Math.random()*4),size*1.4,size,2*.006*grey,0,2*.176*grey,0);if(!sprite)continue;
+                fx.addChild(sprite);var lx:Number=cx+Math.cos(a)*r,ly:Number=cy+Math.sin(a)*r;
+                killMotion(sprite,lx,ly,lx,ly,delay+30,life,0,1,a*180/Math.PI,{fade:false,scene:true});
+            }
+            // EmissionElementMid (+0.8, +1.6, scale 1.088 x 1.585) and EmissionElementRim (child, same origin).
+            var ox:Number=cx+.8*u,oy:Number=cy-1.6*u;
+            banishShards(fx,ox,oy,u,delay+180,11,14,7.68,[.23,.5],[27,75],95,[.681,1],[.106,.147],[4.5,9],true);
+            banishShards(fx,ox,oy,u,delay+230,11,13,6.295,[.23,.6],[45,120],150,[.769,1],[.081,.117],[3.491,7.5],false);
+        }
+        private function banishShards(fx:Sprite,ox:Number,oy:Number,u:Number,start:Number,burst:int,stream:int,radius:Number,
+            life:Array,speed:Array,clamp:Number,clampStart:Array,clampEnd:Array,size:Array,randomDirection:Boolean):void
+        {
+            for(var i:int=0;i<burst+stream;i++){
+                // Burst at 0 s, the rest follows the rate curve (0,.336)-(.23,1)-(1,.007) over 0.33 s.
+                var at:Number=0;if(i>=burst){do{at=Math.random();}while(Math.random()>(at < 0.23 ? 0.336+(1-0.336)*at/0.23 : 1-(1-0.007)*(at-0.23)/0.77));}
+                var a:Number=Math.random()*Math.PI*2,p:Number=Math.sqrt(Math.random());
+                var sx:Number=ox+Math.cos(a)*p*radius*1.088*u,sy:Number=oy+Math.sin(a)*p*radius*1.585*u;
+                var seconds:Number=life[0]+Math.random()*(life[1]-life[0]);var v:Number=speed[0]+Math.random()*(speed[1]-speed[0]);
+                // Speed limit with dampen 1 between the two clamp curves (multiplied by the clamp scalar).
+                var k:Number=Math.random(),c0:Number=clamp*(clampStart[0]+k*(clampStart[1]-clampStart[0])),c1:Number=clamp*(clampEnd[0]+k*(clampEnd[1]-clampEnd[0]));
+                var travel:Number=0;for(var s:int=0;s<12;s++)travel+=Math.min(v,c0+(c1-c0)*(s+.5)/12)*seconds/12;
+                // Mid: random 3D direction projected on the board; Rim: cone 72.9 deg opening outward.
+                var dir:Number=a,plane:Number;
+                if(randomDirection){dir=Math.random()*Math.PI*2;var z:Number=Math.random()*2-1;plane=Math.sqrt(1-z*z);}
+                else plane=Math.sin(72.9*Math.PI/180*p);
+                var tx:Number=sx+Math.cos(dir)*travel*plane*u,ty:Number=sy+Math.sin(dir)*travel*plane*u;
+                var tint:Number=Math.random();
+                var cell:Sprite=BetaGwentBanish160.cell(BetaGwentBanish160.SHARD,int(Math.random()*9),64,64,1.87,1.764*(.82+.18*tint),2*(.66+.34*tint));if(!cell)continue;
+                fx.addChild(cell);var px:Number=(size[0]+Math.random()*(size[1]-size[0]))*u/64;var flat:Number=.35+.65*Math.random();
+                killMotion(cell,sx,sy,tx,ty,start+at*330,seconds*1000,px*.875,px*.308,Math.random()*360,
+                    {fade:false,scene:true,fromScaleX:px*.875*flat,toScaleX:px*.308*flat});
+            }
+        }
+        private function drawDissolveDeparture(pose:Object,kind:int,delay:Number,duration:Number):void
+        {
+            var face:Sprite=new Sprite();paintPlacementCard(face,pose,poseW(pose),poseH(pose));
+            var card:BetaGwentDissolve144=new BetaGwentDissolve144(face,poseW(pose),poseH(pose),kind);
+            content.addChild(card);card.x=pose.x;card.y=pose.y;
+            animations.push({sprite:card,dissolve:card,fromX:pose.x,fromY:pose.y,toX:pose.x,toY:pose.y,remove:true,delay:reducedMotion?0:delay,duration:reducedMotion?200:duration});
+        }
+        // Beta smootherstep flight easing inverted: when does the orb reach path fraction s?
+        private function lightningTimeAt(s:Number):Number
+        {
+            var lo:Number=0,hi:Number=1;
+            for(var i:int=0;i<18;i++){var m:Number=(lo+hi)/2;var e:Number=m*m*m*(m*(m*6-15)+10);if(e<s)lo=m;else hi=m;}
+            return (lo+hi)/2;
+        }
+        private function drawLightning143(fx:Sprite,sx:Number,sy:Number,tx:Number,ty:Number,delay:Number,branch:int=0):void
+        {
+            // Beta PowerLightningProjectile: a blue glow orb with crackling
+            // lighting3 bolts, a thin jagged white core trail and trailing sparks.
+            var dx:Number=tx-sx,dy:Number=ty-sy,len:Number=Math.max(1,Math.sqrt(dx*dx+dy*dy));
+            var nx:Number=-dy/len,ny:Number=dx/len;
+            var arc:Number=branch%2==0?26:-26;
+            var orb:Sprite=new Sprite();orb.mouseEnabled=false;orb.mouseChildren=false;fx.addChild(orb);orb.x=sx;orb.y=sy;
+            var rim:Sprite=BetaGwentLightning144.cell(BetaGwentLightning144.RIM,0,120,120);rim.alpha=.85;orb.addChild(rim);
+            var crackle:Array=[];
+            for(var f:int=0;f<10;f++){
+                var bolt:Sprite=BetaGwentLightning144.cell(BetaGwentLightning144.BOLT,f,44,88);bolt.rotation=f*137%360;if(f%2)bolt.scaleX=-1;
+                bolt.visible=f==0;orb.addChild(bolt);crackle.push(bolt);
+            }
+            var core:Sprite=BetaGwentLightning144.cell(BetaGwentLightning144.CORE,0,54,54);orb.addChild(core);
+            animations.push({sprite:orb,fromX:sx,fromY:sy,toX:tx,toY:ty,remove:true,duration:delay,betaFlight:true,arc:arc,tilt:0,
+                hitFrames:crackle,fromRotation:0,toRotation:0});
+            // Core trail and electric remnants are laid down where the orb passes.
+            var steps:int=Math.max(6,Math.min(22,int(len/34)));
+            var px:Number=sx,py:Number=sy;
+            for(var i:int=1;i<=steps;i++){
+                var s:Number=i/steps;
+                var qx:Number=sx+dx*s,qy:Number=sy+dy*s-Math.sin(Math.PI*s)*arc;
+                var at:Number=delay*lightningTimeAt(s);
+                var seg:Sprite=new Sprite();seg.mouseEnabled=false;seg.mouseChildren=false;fx.addChild(seg);
+                var jag:Number=(Math.random()-.5)*14;
+                var mx:Number=(px+qx)/2+nx*jag,my:Number=(py+qy)/2+ny*jag;
+                seg.graphics.lineStyle(3.2,0xFFFFFF,.95);seg.graphics.moveTo(px,py);seg.graphics.lineTo(mx,my);seg.graphics.lineTo(qx,qy);
+                seg.graphics.lineStyle(1.2,0xFFFFFF,1);seg.graphics.moveTo(mx,my);seg.graphics.lineTo(mx+nx*jag*.6+(qx-px)*.2,my+ny*jag*.6+(qy-py)*.2);
+                seg.filters=[new GlowFilter(0x5A7DFF,.95,9,9,2.2,1)];
+                animations.push({sprite:seg,fromX:0,fromY:0,toX:0,toY:0,fade:true,fromAlpha:1,remove:true,duration:260,delay:at,hideBeforeDelay:true});
+                if(i%2==0&&i<steps){
+                    var rem:Sprite=BetaGwentLightning144.cell(BetaGwentLightning144.BOLT,i,30,60);fx.addChild(rem);rem.rotation=Math.random()*360;rem.x=qx;rem.y=qy;
+                    animations.push({sprite:rem,fromX:qx,fromY:qy,toX:qx,toY:qy,fade:true,fromAlpha:.85,remove:true,duration:340,delay:at,hideBeforeDelay:true,
+                        fromScaleX:.45,fromScaleY:.45,toScaleX:.25,toScaleY:.25,fromRotation:rem.rotation,toRotation:rem.rotation+40});
+                }
+                if(i%3==1){
+                    var back:Number=Math.atan2(-dy,-dx)+(Math.random()-.5)*1.2;var reach:Number=24+Math.random()*30;
+                    var tail:Sprite=BetaGwentLightning144.cell(BetaGwentLightning144.SPARK,i,18,9);fx.addChild(tail);
+                    animations.push({sprite:tail,fromX:qx,fromY:qy,toX:qx+Math.cos(back)*reach,toY:qy+Math.sin(back)*reach,fade:true,fromAlpha:1,remove:true,
+                        duration:300,delay:at,hideBeforeDelay:true,fromRotation:back*180/Math.PI,toRotation:back*180/Math.PI});
+                }
+                px=qx;py=qy;
+            }
+            drawLightningImpact144(fx,tx,ty,delay);
+        }
+        private function drawLightningImpact144(fx:Sprite,tx:Number,ty:Number,delay:Number):void
+        {
+            // Beta PowerDirectLightning.
+            var rim:Sprite=BetaGwentLightning144.cell(BetaGwentLightning144.RIM,0,150,150);fx.addChild(rim);
+            animations.push({sprite:rim,fromX:tx,fromY:ty,toX:tx,toY:ty,fade:true,fromAlpha:1,remove:true,duration:420,delay:delay,hideBeforeDelay:true,
+                fromScaleX:.7,fromScaleY:.7,toScaleX:1.1,toScaleY:1.1});
+            var smoke:Sprite=BetaGwentLightning144.cell(BetaGwentLightning144.SMOKE,0,110,110);fx.addChild(smoke);
+            animations.push({sprite:smoke,fromX:tx,fromY:ty,toX:tx,toY:ty-14,fade:true,fromAlpha:1,remove:true,duration:480,delay:delay,hideBeforeDelay:true,
+                fromScaleX:.55,fromScaleY:.55,toScaleX:.95,toScaleY:.95});
+            for(var w:int=0;w<2;w++){
+                var shock:Sprite=new Sprite();shock.mouseEnabled=false;shock.mouseChildren=false;fx.addChild(shock);shock.rotation=w*90+Math.random()*30;
+                var frames:Array=[];
+                for(var c:int=0;c<4;c++){var cellSprite:Sprite=BetaGwentLightning144.cell(BetaGwentLightning144.SHOCK,(c+w*2)%4,175,88);cellSprite.visible=c==0;shock.addChild(cellSprite);frames.push(cellSprite);}
+                animations.push({sprite:shock,fromX:tx,fromY:ty,toX:tx,toY:ty,hitFrames:frames,fade:true,fromAlpha:1,remove:true,duration:300,delay:delay+w*60,hideBeforeDelay:true,
+                    fromScaleX:.2,fromScaleY:.2,toScaleX:1,toScaleY:1,fromRotation:shock.rotation,toRotation:shock.rotation});
+            }
+            for(var k:int=0;k<3;k++){
+                var flare:Sprite=BetaGwentLightning144.cell(BetaGwentLightning144.FLARE,0,120,120);fx.addChild(flare);
+                animations.push({sprite:flare,fromX:tx,fromY:ty,toX:tx,toY:ty,fade:true,fromAlpha:1,remove:true,duration:220,delay:delay+k*70,hideBeforeDelay:true,
+                    fromScaleX:.15,fromScaleY:.15,toScaleX:.8,toScaleY:.8});
+            }
+            for(var b:int=0;b<3;b++)for(var p:int=0;p<6+b*2;p++){
+                var dir:Number=Math.random()*Math.PI*2;var dist:Number=35+Math.random()*75;var big:Boolean=p<2+b;
+                var spark:Sprite=BetaGwentLightning144.cell(BetaGwentLightning144.SPARK,p,big?26:16,big?11:6);fx.addChild(spark);
+                animations.push({sprite:spark,fromX:tx,fromY:ty,toX:tx+Math.cos(dir)*dist,toY:ty+Math.sin(dir)*dist,fade:true,fromAlpha:1,remove:true,
+                    duration:big?300:420,delay:delay+b*90,hideBeforeDelay:true,fromRotation:dir*180/Math.PI,toRotation:dir*180/Math.PI,
+                    fromScaleX:1,fromScaleY:1,toScaleX:.35,toScaleY:.6});
+            }
         }
         // One wave per affected row for a sweep: the whole hit lands as a single beat.
         private function drawRowWaves(fx:Sprite,hits:Array,delay:Number):void
@@ -5129,19 +6305,147 @@ package
                     duration:320,delay:Math.max(0,delay-60),hideBeforeDelay:true});
             }
         }
+        private function drawCrowProjectiles(fx:Sprite,hits:Array,sx:Number,sy:Number,delay:Number):void
+        {
+            var rows:Object={},branch:int=0;
+            for each(var hit:Object in hits){
+                var key:String=hit.side+":"+hit.zone;if(rows[key])continue;rows[key]=true;
+                var row:Object=rowGeometry(int(hit.side),int(hit.zone));
+                drawSpecialProjectile(fx,sx,sy,row.x+row.w*.5,row.y+row.h*.5,{element:1024,method:1},0xD45BFF,delay,branch++);
+            }
+        }
+        private function elementCueFloor164(cue:Object):Number
+        {
+            if(cue&&cue.kind==4&&(cue.templateId==113303||cue.templateId==113401))return reducedMotion?0:2250;
+            if(!cue||cue.kind!=2||cue.source==0&&cue.row>0||reducedMotion)return 0;
+            if(cue.triggerBoost||cue.audioKind==21||cue.audioKind==22||cue.audioKind==23)return 620;
+            // Impact time (380 after a bound projectile, otherwise 180) plus the
+            // longest original Direct prefab this frame can show.
+            var duration:Number=0;
+            for each(var hurting:Boolean in [true,false]){
+                var binding:Object=BetaGwentSpecialVfx.prefabs(int(cue.templateId),hurting);
+                if(binding&&binding.element==64)continue;
+                var name:String=binding?(binding.attack=="AirTokenAttack"?"AirTokenAttack":binding.impact):(hurting?"PowerDirectPhysical":"PowerDirectLightMagic");
+                var preset:Object=name?BetaGwentElementData164.preset(name):null;
+                duration=Math.max(duration,preset?Number(preset.duration)*1000:240);
+            }
+            return duration+(BetaGwentSpecialVfx.projectile(int(cue.templateId))?380:180)+30;
+        }
+        private function elementRegion164(side:int,row:int,method:int):Object
+        {
+            if(method==2)return rowGeometry(side,row);
+            var left:Number=1e9,top:Number=1e9,right:Number=-1e9,bottom:Number=-1e9;
+            for each(var s:int in (method==4?[1,2]:[side]))for each(var r:int in [1,2,4]){
+                var g:Object=rowGeometry(s,r);left=Math.min(left,g.x);right=Math.max(right,g.x+g.w);top=Math.min(top,g.y);bottom=Math.max(bottom,g.y+g.h);
+            }
+            return {x:left,y:top,w:right-left,h:bottom-top};
+        }
+        private function drawElement164(fx:Sprite,name:String,x:Number,y:Number,w:Number,h:Number,delay:Number,budget:Object,cap:int=100,flight:Number=0,sx:Number=0,sy:Number=0,branch:int=0,soft:Boolean=false):Boolean
+        {
+            if(!name||!BetaGwentElementData164.preset(name)||budget.remaining<1)return false;
+            var travel:Number=Math.sqrt((x-sx)*(x-sx)+(y-sy)*(y-sy));
+            var effect:BetaGwentElement164=new BetaGwentElement164(name,w,h,uint(revision*7919+activeCue.source*31+branch*997),Math.min(cap,budget.remaining),flight,travel,reducedMotion,soft?0.45:1,soft?35:BetaGwentElement164.MAX_UNITS);
+            if(effect.durationMs<=0)return false;
+            budget.remaining-=effect.particleCount;fx.addChild(effect);
+            var duration:Number=activeCue.triggerBoost?Math.min(420,effect.durationMs):effect.durationMs;
+            if(flight>0){
+                var angle:Number=Math.atan2(y-sy,x-sx)*180/Math.PI;
+                animations.push({sprite:effect,element164:effect,fromX:sx,fromY:sy,toX:x,toY:y,delay:0,duration:flight,
+                    fromRotation:angle,toRotation:angle,betaFlight:true,tilt:0,arc:branch%2==0?20:-20,remove:true});
+            }else animations.push({sprite:effect,element164:effect,fromX:x,fromY:y,toX:x,toY:y,delay:delay,duration:duration,hideBeforeDelay:true,remove:true});
+            return true;
+        }
+        private function drawElementCue164(fx:Sprite,hits:Array,sx:Number,sy:Number,origin:Object):Object
+        {
+            if(!activeCue||activeCue.kind!=2||activeCue.source==0&&activeCue.row>0)return null;
+            // Stage 174, matched to Beta 0.9.24 footage: every changed card gets
+            // its own original Direct prefab (boost: a short green starburst;
+            // damage: a brief white flash with rays), drawn as light at source
+            // scale. Damage from another card first flies the original
+            // projectile (chevron + thin trail). Side/Row/Board prefabs are not
+            // stretched over the field; their per-card impact is used instead.
+            var handled:Object={any:false};var groups:Object={};var budget:Object={remaining:600};
+            var arrival:Number=cueImpactTime();var cap:int=Math.max(16,int(420/Math.max(1,hits.length)));
+            for(var i:int=0;i<hits.length;i++){
+                var hit:Object=hits[i];var hurting:Boolean=int(hit.delta)<0||int(hit.armorDelta)<0;
+                var binding:Object=BetaGwentSpecialVfx.prefabs(int(activeCue.templateId),hurting);
+                if(binding&&binding.element==64)continue;
+                if(!hurting&&reducedMotion){handled[hit.id]=true;handled.any=true;continue;}
+                var tx:Number=poseX(hit),ty:Number=poseY(hit);
+                var incoming:Boolean=!activeCue.triggerBoost&&activeCue.source>0&&int(activeCue.source)!=int(hit.id);
+                var attack:String=binding?(int(binding.method)==1?binding.attack:null):(hurting?"PowerPhysicalProjectile":null);
+                if(attack&&hurting&&incoming&&!reducedMotion&&BetaGwentElementData164.preset(attack)){
+                    var crow:Boolean=int(activeCue.templateId)==200224;
+                    var key:String=crow?attack+":"+hit.side+":"+hit.zone:attack+":"+hit.id;
+                    if(!groups[key]){
+                        var point:Object=crow?rowGeometry(int(hit.side),int(hit.zone)):null;
+                        groups[key]=drawElement164(fx,attack,point?point.x+point.w/2:tx,point?point.y+point.h/2:ty,
+                            poseW(hit),poseH(hit),0,budget,Math.min(110,cap),arrival,sx,sy,i);
+                    }
+                }
+                var impact:String=binding?(binding.attack=="AirTokenAttack"?"AirTokenAttack":binding.impact):(hurting?"PowerDirectPhysical":"PowerDirectLightMagic");
+                var drawn:Boolean=impact&&drawElement164(fx,impact,tx,ty,poseW(hit),poseH(hit),arrival,budget,cap,0,0,0,i+19,!hurting);
+                if(!drawn){
+                    if(hurting)drawStrike173(fx,hit,binding?int(binding.element):1,arrival,i);
+                    else drawBoostCue(fx,hit,arrival);
+                }
+                handled[hit.id]=true;handled.any=true;
+            }
+            return handled.any?handled:null;
+        }
+        private function compactProjectile173(name:String):Boolean
+        {
+            return name=="PowerLightMagicProjectile"||name=="PowerDarkMagicProjectile"||name=="PowerFireProjectile";
+        }
+        private function strikeTint173(element:int):uint
+        {
+            // Pale versions of the element colours: the cut reads as light, not paint.
+            switch(element){
+                case 16:return 0xFFC48A;case 32:return 0xD8F1FF;case 64:return 0xD3E2FF;case 256:return 0xE6F4F0;
+                case 512:return 0xFFF0C8;case 1024:return 0xE2B8F2;case 8192:return 0xC9E6A2;case 16384:return 0xF0A8A8;
+            }
+            return 0xFFE9DF;
+        }
+        private function drawStrike173(fx:Sprite,hit:Object,element:int,delay:Number,branch:int):void
+        {
+            if(reducedMotion||!hit)return;
+            // One cut from the original 2x2 impact sheet, inside the card,
+            // over a faint tinted bloom. No flare, glow filter or row band.
+            var w:Number=poseW(hit),h:Number=poseH(hit),x:Number=poseX(hit),y:Number=poseY(hit);
+            var tint:uint=strikeTint173(element);
+            var bloom:Sprite=killSprite(fx,BetaGwentKillArt144.SOFT_GLOW,w*.85,tint,x,y,.2,w*.85);
+            killMotion(bloom,x,y,x,y,delay,240,.7,1,0,{fromAlpha:0.2});
+            var size:Number=Math.min(w,h)*.9;var angle:Number=(branch%3-1)*18;
+            var root:Sprite=new Sprite();root.mouseEnabled=false;root.mouseChildren=false;
+            root.x=x;root.y=y;root.rotation=angle;root.alpha=0;fx.addChild(root);var frames:Array=[];
+            for(var i:int=0;i<4;i++){
+                var frame:Sprite=betaVisual(-250-i,size,size,tint);
+                if(frame){frame.visible=i==0;root.addChild(frame);frames.push(frame);}
+            }
+            if(frames.length==0){fx.removeChild(root);return;}
+            animations.push({sprite:root,fromX:x,fromY:y,toX:x,toY:y,hitFrames:frames,duration:240,delay:delay,hideBeforeDelay:true,
+                fade:true,fromAlpha:0.85,remove:true,fromRotation:angle,toRotation:angle});
+        }
+        private function drawSpecialProjectile(fx:Sprite,sx:Number,sy:Number,tx:Number,ty:Number,profile:Object,tint:uint,delay:Number,branch:int):void
+        {
+            // Direct/row/side effects have no flight; the strike is drawn at the target.
+            if(profile.method!=1)return;
+            if(profile.element==64){drawLightning143(fx,sx,sy,tx,ty,delay,branch);return;}
+            drawDamageProjectile(fx,sx,sy,tx,ty,tint,delay);
+        }
         private function drawDamageProjectile(fx:Sprite,sx:Number,sy:Number,tx:Number,ty:Number,tint:uint,delay:Number):void
         {
-            var bolt:Sprite=betaVisual(-106,48,14,tint);if(!bolt)return;
+            var bolt:Sprite=betaVisual(-106,40,9,tint);if(!bolt)return;
             var angle:Number=Math.atan2(ty-sy,tx-sx)*180/Math.PI;
             // Two fading ghosts trail the bolt so the path stays readable at speed.
             for(var ghost:int=2;ghost>=1;ghost--){
                 var lag:Number=ghost*Math.min(45,delay*.18);if(delay-lag<40)continue;
-                var trail:Sprite=betaVisual(-106,48-ghost*10,14-ghost*3,tint);if(!trail)continue;
-                fx.addChild(trail);trail.x=sx;trail.y=sy;
-                animations.push({sprite:trail,fromX:sx,fromY:sy,toX:tx,toY:ty,fade:true,fromAlpha:ghost==1?0.55:0.3,remove:true,
+                var trail:Sprite=betaVisual(-106,40-ghost*10,9-ghost*2,tint);if(!trail)continue;
+                trail.blendMode="add";fx.addChild(trail);trail.x=sx;trail.y=sy;
+                animations.push({sprite:trail,fromX:sx,fromY:sy,toX:tx,toY:ty,fade:true,fromAlpha:ghost==1?0.4:0.2,remove:true,
                     duration:delay-lag,delay:lag,hideBeforeDelay:true,betaFlight:true,tilt:0,fromRotation:angle,toRotation:angle});
             }
-            fx.addChild(bolt);bolt.x=sx;bolt.y=sy;
+            bolt.blendMode="add";fx.addChild(bolt);bolt.x=sx;bolt.y=sy;
             animations.push({sprite:bolt,fromX:sx,fromY:sy,toX:tx,toY:ty,fade:false,remove:true,
                 duration:delay,betaFlight:true,tilt:0,fromRotation:angle,toRotation:angle});
         }
@@ -5180,6 +6484,10 @@ package
             var token:int=0;
             for each(var hazard:Object in weatherRows)if(hazard.side==target.side&&hazard.zone==target.zone){token=hazard.token;break;}
             var x:Number=poseX(target),y:Number=poseY(target);
+            if(token==128){
+                drawBoostCue(fx,target,delay);
+                return;
+            }
             if(token==1){
                 betaBurst(fx,BetaGwentWeather107.FROST_SPIKES,x,y+poseH(target)*.25,poseW(target)*1.25,0xCDEFFF,delay,280);
                 betaBurst(fx,BetaGwentWeather107.SPARKLE,x,y,poseW(target),0xBDE9FF,delay,320);return;
@@ -5213,7 +6521,7 @@ package
         // Beta small card (SmallCardFull: 17.64 x 21.46 units). Banner 4.4 x 8.2 at (0.12,0.33).
         private static const BETA_CARD_ASPECT:Number=17.64/21.46;
         private function betaBannerRect(w:Number,h:Number):Array{return [w*.12/17.64,h*.33/21.46,w*4.4/17.64,h*8.2/21.46];}
-        private function paintBetaFace(p:Sprite,templateId:int,w:Number,h:Number,side:int=0,hover:Boolean=false):void
+        private function paintBetaFace(p:Sprite,templateId:int,w:Number,h:Number,side:int=0,hover:Boolean=false,motion:Boolean=true):void
         {
             var size:Array=BetaGwentHDArt.size(templateId);
             if(size){
@@ -5221,7 +6529,7 @@ package
                 var art:Sprite=BetaGwentHDArt.clip(templateId,w,h,(sw-cw)/2,(sh-ch)*.25,cw,ch);
                 if(art)p.addChild(art);else paintArt(p,templateId,w,h,0,0);
             }else paintArt(p,templateId,w,h,0,0);
-            attachLeaderMovie(p,templateId,w,h,hover);
+            if(motion)attachLeaderMovie(p,templateId,w,h,hover);
             var entry:Object=BetaGwentFullCatalog.find(templateId);
             var tier:int=entry?int(entry.tier):2;var faction:int=entry?int(entry.faction):1;
             // Beta: neutral cards wear the banner of the deck (owner's leader) faction.
@@ -5270,62 +6578,130 @@ package
             parent.graphics.lineStyle(1,0xC2A67C,.8);parent.graphics.drawRoundRect(4,4,Math.max(1,w-8),Math.max(1,h-8),3,3);
             parent.graphics.moveTo(w/2,h*.3);parent.graphics.lineTo(w*.7,h/2);parent.graphics.lineTo(w/2,h*.7);parent.graphics.lineTo(w*.3,h/2);parent.graphics.lineTo(w/2,h*.3);
         }
-        // A consumed card is hidden only while its swallow animation plays. The tombstone is
-        // time-limited: a unit that comes back at once (Olgerd's Deathwish resurrects it in the
-        // same place, with the same id) must not stay invisible while still holding its slot.
-        private static const CONSUME_TOMBSTONE_MS:int=900;
+        // Bounded by the match's card identities, cleared on new match/reset.
         private function consumedTombstone(id:*):Boolean
-        { var t:*=consumedVisualIds[id];return t!=null&&t!==false&&getTimer()-int(t)<CONSUME_TOMBSTONE_MS; }
-        private function renderAfterTombstone():void
-        { var any:Boolean=false;for(var k:String in consumedVisualIds){any=true;break;}if(any&&!dragging)render(); }
+        { return consumedVisualIds[id]!=null&&consumedVisualIds[id]!==false; }
+        private function consumePilePose(view:Object,index:int=0):Object
+        {
+            if(!view||int(view.templateId)<=0)return null;
+            var point:Array=skin==3?betaPilePoint(int(view.side),int(view.zone)!=16):[260,view.side==2?398:748];
+            var height:Number=Math.round(80/BETA_CARD_ASPECT);
+            return {x:point[0]+(index%8)*4,y:Math.max(8,Math.min(1072-height,point[1]+(view.side==2?70:-height)-int(index/8)*8)),
+                width:80,height:height,templateId:view.templateId,power:view.power,side:view.side,zone:view.zone,tokens:0};
+        }
+        private function isConsumeVictim(id:*):Boolean
+        {
+            if(!activeCue||activeCue.kind!=11)return false;
+            if(int(activeCue.target)==int(id))return true;
+            if(activeCue.massTargets)for each(var victim:Object in activeCue.massTargets)if(int(victim.id)==int(id))return true;
+            return false;
+        }
+        // Beta DestroyDestroyBlood: the consumed card is bitten in place three times
+        // (0, 0.2, 0.7 s), bleeds, then breaks into fragments (mask_fragments dissolve).
         private function drawConsumeCue(fx:Sprite,source:Object):void
         {
             if(activeCue.massTargets){drawMassConsume(fx,source);return;}
             var view:Object=activeCue.targetView;
             var target:Object=displayedCards[activeCue.target];
             var pose:Object=target?target:previousPoses[activeCue.target];
-            var sx:Number=source?source.x+source.width/2:960;
-            var sy:Number=source?source.y+source.height/2:430;
-            var morsel:Sprite=activeCue.kind==11?cardSprites[activeCue.target]:null;
-            var x:Number=pose?pose.x:260;var y:Number=pose?pose.y:view&&view.side==2?398:748;
-            if(!morsel&&view&&view.templateId>0){
-                morsel=panel(fx,x,y,80,110,0x1C3540,.96);paintArt(morsel,view.templateId,74,104);
-            }
-            if(morsel){
-                morsel.mouseEnabled=false;morsel.mouseChildren=false;
-                animations.push({sprite:morsel,fromX:x,fromY:y,toX:sx-6,toY:sy-6,fade:true,remove:true,
-                    duration:390,arc:20,fromScaleX:1,fromScaleY:1,toScaleX:.12,toScaleY:.12});
-                if(activeCue.kind==11){consumedVisualIds[activeCue.target]=getTimer()+1;setTimeout(renderAfterTombstone,CONSUME_TOMBSTONE_MS+50);}
-            }
-            var pulse:Sprite=new Sprite();pulse.mouseEnabled=false;pulse.mouseChildren=false;fx.addChild(pulse);
-            pulse.graphics.lineStyle(3,0xBCA2DF,.95);pulse.graphics.drawCircle(0,0,26);pulse.x=sx;pulse.y=sy;
-            animations.push({sprite:pulse,fromX:sx,fromY:sy,toX:sx,toY:sy,fade:true,remove:true,duration:390,
-                fromScaleX:.6,fromScaleY:.6,toScaleX:1.8,toScaleY:1.8});
-            if(!reducedMotion){
-                fx.graphics.lineStyle(4,0xBCA2DF,.4);fx.graphics.moveTo(x+(pose?poseW(pose):80)/2,y+(pose?poseH(pose):110)/2);fx.graphics.lineTo(sx,sy);
-            }
+            if(previousPoses[activeCue.target]&&int(previousPoses[activeCue.target].power)>0)pose=previousPoses[activeCue.target];
+            if(!pose)pose=consumePilePose(view);
+            var morsel:Sprite=cardSprites[activeCue.target] as Sprite;if(morsel)morsel.visible=false;
+            if(pose)drawBloodConsume(fx,pose,0);
+            consumedVisualIds[activeCue.target]=true;
         }
         private function drawMassConsume(fx:Sprite,source:Object):void
         {
-            var sx:Number=source?source.x+source.width/2:960;var sy:Number=source?source.y+source.height/2:430;
-            var list:Array=activeCue.massTargets;var step:Number=Math.min(35,420/Math.max(1,list.length));
+            var list:Array=activeCue.massTargets;var step:Number=Math.min(150,600/Math.max(1,list.length));
             for(var i:int=0;i<list.length;i++){
                 var id:int=int(list[i].id);var view:Object=list[i].view;
                 var target:Object=displayedCards[id];var pose:Object=target?target:previousPoses[id];
-                var x:Number=pose?pose.x:260;var y:Number=pose?pose.y:view&&view.side==2?398:748;
-                var morsel:Sprite=cardSprites[id] as Sprite;
-                if(!morsel&&view&&view.templateId>0){morsel=panel(fx,x,y,80,110,0x1C3540,.96);paintArt(morsel,view.templateId,74,104);}
-                if(!morsel)continue;
-                morsel.mouseEnabled=false;morsel.mouseChildren=false;
-                animations.push({sprite:morsel,fromX:x,fromY:y,toX:sx-6,toY:sy-6,fade:true,remove:true,
-                    duration:420,delay:reducedMotion?0:i*step,hideBeforeDelay:false,arc:20,fromScaleX:1,fromScaleY:1,toScaleX:.12,toScaleY:.12});
-                if(target){consumedVisualIds[id]=getTimer()+1;}
+                if(previousPoses[id]&&int(previousPoses[id].power)>0)pose=previousPoses[id];
+                if(!pose)pose=consumePilePose(view,i);
+                var morsel:Sprite=cardSprites[id] as Sprite;if(morsel)morsel.visible=false;
+                if(pose)drawBloodConsume(fx,pose,reducedMotion||activeCue.massGrouped?0:i*step);
+                consumedVisualIds[id]=true;
             }
-            setTimeout(renderAfterTombstone,CONSUME_TOMBSTONE_MS+50);
-            var pulse:Sprite=new Sprite();pulse.mouseEnabled=false;pulse.mouseChildren=false;fx.addChild(pulse);
-            pulse.graphics.lineStyle(4,0xBCA2DF,.95);pulse.graphics.drawCircle(0,0,30);pulse.x=sx;pulse.y=sy;
-            animations.push({sprite:pulse,fromX:sx,fromY:sy,toX:sx,toY:sy,fade:true,remove:true,duration:520,
-                fromScaleX:.6,fromScaleY:.6,toScaleX:2.4,toScaleY:2.4});
+        }
+        private function drawBloodConsume(fx:Sprite,pose:Object,d:Number):void
+        {
+            var w:Number=poseW(pose),h:Number=poseH(pose),cx:Number=pose.x+w/2,cy:Number=pose.y+h/2;
+            var u:Number=w/22;
+            drawDissolveDeparture(pose,BetaGwentDissolve144.BLOOD,d+750,650);
+            if(reducedMotion)return;
+            // bitting_01 / 02 / 03: offsets, start and decal size from the prefab.
+            var bites:Array=[[-5,-6,0,30,0,22,44],[1.64,4.55,200,30,1,44,122],[-.63,-.09,700,44,0,30,70]];
+            for(var b:int=0;b<bites.length;b++){
+                var bite:Array=bites[b];var bx:Number=cx+bite[0]*u,by:Number=cy-bite[1]*u,t:Number=d+bite[2];var i:int;
+                killMotion(killSprite(fx,BetaGwentKillArt144.BLOOD_SPLAT,bite[3]*u*1.1,-1,bx,by),bx,by,bx,by,t+50,b==2?1500:1700,.6,.92,Math.random()*360);
+                if(b<2){var border:Sprite=killSprite(fx,BetaGwentKillArt144.BLOOD_BORDER+b,w*.9,-1,cx,cy+(b==0?-h*.2:h*.22),1,h*.55);
+                    killMotion(border,cx,cy+(b==0?-h*.2:h*.22),cx,cy+(b==0?-h*.2:h*.22),t,1200,.9,1,b==0?0:180);}
+                killMotion(killSprite(fx,BetaGwentKillArt144.SPLASH,25*u*1.3,0x8A0A0A,bx,by),bx,by,bx,by-4,t,300,0,1);
+                for(i=0;i<16;i++){
+                    var dir:Number=Math.random()*Math.PI*2;var dist:Number=(11+Math.random()*55)*u*.45;
+                    killMotion(killSprite(fx,BetaGwentKillArt144.SPARK,5+Math.random()*5,i%2?0x5A0606:0x2A0000,bx,by,1,4),bx,by,bx+Math.cos(dir)*dist,by+Math.sin(dir)*dist*.6+10,t,300+Math.random()*500,1,.3,dir*180/Math.PI,{arc:12});
+                }
+                for(i=0;i<3;i++){
+                    var smoke:Sprite=killFrames(fx,BetaGwentKillArt144.WHITE_SMOKE,4,1,(6+Math.random()*18)*u,(6+Math.random()*18)*u,0x471010,.56);if(!smoke)continue;
+                    killMotion(smoke,bx,by,bx+(Math.random()-.5)*10,by-6,t,250+Math.random()*350,.2,1,Math.random()*360,{hitFrames:childFrames(smoke)});
+                }
+                for(i=0;i<(b==0?5:4);i++){
+                    var sd:Number=Math.random()*Math.PI*2;var sdist:Number=(bite[5]+Math.random()*(bite[6]-bite[5]))*u*.5;
+                    killMotion(killSprite(fx,BetaGwentKillArt144.BLOOD_SPARK+i%4,(6+Math.random()*3)*u,-1,bx,by),bx,by,bx+Math.cos(sd)*sdist,by+Math.sin(sd)*sdist,t,300+Math.random()*400,.4,1,Math.random()*360);
+                }
+            }
+        }
+        // Beta [201525]PowerBoardPhysical (Geralt: Yrden): sign, circles and triangle
+        // build up over the row, then a violet burst at 1.2 s.
+        private function yrdenPart(fx:Sprite,index:int,size:Number,tint:int,x:Number,y:Number,start:Number,grow:Number,hold:Number,alpha:Number=1,rotation:Number=0,sizeY:Number=-1):void
+        {
+            var a:Sprite=killSprite(fx,index,size,tint,x,y,alpha,sizeY);
+            if(a){a.rotation=rotation;animations.push({sprite:a,fromX:x,fromY:y,toX:x,toY:y,appear:true,remove:true,delay:start,hideBeforeDelay:true,duration:grow,
+                fromScaleX:.05,fromScaleY:.05,toScaleX:1,toScaleY:1,fromRotation:rotation,toRotation:rotation});}
+            killMotion(killSprite(fx,index,size,tint,x,y,alpha,sizeY),x,y,x,y,start+grow,hold,1,1.04,rotation);
+        }
+        private function drawYrden(fx:Sprite,side:int,zone:int):void
+        {
+            var row:Object=(zone&7)!=0&&side>0?rowGeometry(side,zone):{x:548,y:470,w:846,h:92};
+            var cx:Number=row.x+row.w/2,cy:Number=row.y+row.h/2,u:Number=row.w/133;var i:int;
+            var violet:int=0x7A4CFF,deep:int=0x4C1CD9;
+            yrdenPart(fx,BetaGwentKillArt144.VIGNETTE,row.w*.9,0x3203D9,cx,cy,150,500,1500,.45);
+            yrdenPart(fx,BetaGwentKillArt144.YRDEN_SIGN,36*u,0xA98CFF,cx,cy,150,320,1550);
+            yrdenPart(fx,BetaGwentKillArt144.YRDEN_CIRCLE,178*u*.5,violet,cx,cy,250,300,1700,.9);
+            yrdenPart(fx,BetaGwentKillArt144.YRDEN_CIRCLE,105*u*.5,violet,cx,cy,250,300,1700,.9);
+            yrdenPart(fx,BetaGwentKillArt144.YRDEN_TRIANGLE,130*u*.5,violet,cx,cy-12.4*u*.5,250,300,1700,.9);
+            yrdenPart(fx,BetaGwentKillArt144.YRDEN_LINE,130*u*.5,violet,cx,cy+46.6*u*.5,250,300,1700,.9);
+            for(i=0;i<24;i++){
+                var ang:Number=Math.random()*Math.PI*2;var rad:Number=(105+Math.random()*73)*u*.25;
+                var sx:Number=cx+Math.cos(ang)*rad,sy:Number=cy+Math.sin(ang)*rad;
+                yrdenPart(fx,BetaGwentKillArt144.YRDEN_SIGN,(7+Math.random()*9)*u,i%2?violet:0xA98CFF,sx,sy,250+Math.random()*120,300,1400,.8,Math.random()*360);
+                if(i%3==0)yrdenPart(fx,BetaGwentKillArt144.VIGNETTE,(17+Math.random()*33)*u,deep,sx,sy,250,300,1400,.55);
+            }
+            // 1.2 s: the sign discharges.
+            killMotion(killSprite(fx,BetaGwentKillArt144.GLOW,row.w*1.1,0x9D3EFD,cx,cy),cx,cy,cx,cy,1200,600,.1,1);
+            killMotion(killSprite(fx,BetaGwentKillArt144.GLOW,row.w*.8,0x5C3DFD,cx,cy),cx,cy,cx,cy,1200,1300,.14,1);
+            for(i=0;i<2;i++)killMotion(killSprite(fx,BetaGwentKillArt144.WAVE_RECT,row.w*1.25,0x6A1AD8,cx,cy,.75,row.h*1.6),cx,cy,cx,cy,1200+i*66,1000,.15,1);
+            for(i=0;i<18;i++){
+                var rd:Number=Math.random()*Math.PI*2;var rdist:Number=(60+Math.random()*40)*u*.9;
+                killMotion(killSprite(fx,BetaGwentKillArt144.LIGHT_SHAFT,(30+Math.random()*30)*u*.5,0x8A6AE8,cx,cy,.9,10*u*.5),cx,cy,cx+Math.cos(rd)*rdist,cy+Math.sin(rd)*rdist*.5,1300+Math.random()*350,300+Math.random()*400,.3,1,rd*180/Math.PI);
+            }
+            for(i=0;i<10;i++){
+                var mx:Number=row.x+row.w*(i+.5)/10,my:Number=cy+(Math.random()-.5)*row.h*.4;
+                killMotion(killSprite(fx,BetaGwentKillArt144.MAGIC_SMOKE,(20+Math.random()*20)*u,0x3A1478,mx,my,.7),mx,my,mx+(Math.random()-.5)*20,my-20-Math.random()*20,1350+i*25,600+Math.random()*200,.74,1,Math.random()*360);
+            }
+        }
+        // Beta ResetPhysicalBuff: white glow behind the card and short rising lines.
+        private function drawResetGlow(fx:Sprite,pose:Object):void
+        {
+            var w:Number=poseW(pose),h:Number=poseH(pose),cx:Number=pose.x+w/2,cy:Number=pose.y+h/2;var i:int;
+            var glow:Sprite=new Sprite();glow.mouseEnabled=false;glow.mouseChildren=false;fx.addChild(glow);
+            glow.graphics.lineStyle(4,0xFFFFFF,.86);glow.graphics.drawRoundRect(-w/2,-h/2,w,h,8,8);
+            glow.filters=[new GlowFilter(0xFFFFFF,.9,22,22,2.4,2)];
+            killMotion(glow,cx,cy,cx,cy,0,750,1,1.06);
+            for(i=0;i<20;i++){
+                var lx:Number=cx+(Math.random()-.5)*w*.9,ly:Number=cy+h*(.1+Math.random()*.4);
+                killMotion(killSprite(fx,BetaGwentKillArt144.SOFT_DOT,4+Math.random()*6,0xFFFFFF,lx,ly,1,14+Math.random()*12),lx,ly,lx,ly-25-Math.random()*30,100+Math.random()*350,450+Math.random()*100,1,.32);
+            }
         }
         // Continue original texture motion during clearing; no frozen weather frame.
         private function advanceWeatherTextures(fx:Object,now:int):void
@@ -5341,7 +6717,8 @@ package
                         }else if(part.kind=="frost-reveal"){
                             // Grow opacity across the whole row. A hard scrollRect
                             // wipe exposed a straight seam through cards/wood.
-                            var growth:Number=BetaGwentBetaMotion.sample("PREVIEW",Math.max(0,Math.min(1,(t-Number(part.offset||0))/BetaGwentVisualTimings.FROST_INTRO)));
+                            var frostProgress:Number=Math.max(0,Math.min(1,(t-Number(part.offset||0))/BetaGwentVisualTimings.FROST_INTRO));
+                            var growth:Number=1-Math.pow(1-frostProgress,3);
                             view.scrollRect=null;view.alpha=part.alpha*growth;
                         }else if(part.kind=="fog"){
                             view.x=(t*part.speed+part.phase)%(fx.w+part.width)-part.width;
@@ -5387,7 +6764,7 @@ package
             if(reducedMotion){
                 // Keep the weather state readable while disabling movement.
                 for each(var quiet:Object in weatherEffects){
-                    quiet.sprite.visible=true;quiet.sprite.alpha=1;quiet.sprite.graphics.clear();
+                    quiet.sprite.visible=true;quiet.sprite.alpha=BetaGwentUi138.intensity;quiet.sprite.graphics.clear();
                     if(quiet.accent)quiet.accent.graphics.clear();
                     for each(var still:Object in quiet.nativeParts){
                         still.sprite.visible=still.kind!="twinkle"&&still.kind!="fall"&&still.kind!="rise"&&still.kind!="snow"&&still.kind!="beta-fog-intro";
@@ -5405,7 +6782,7 @@ package
             for each(var fx:Object in weatherEffects){
                 var p:Sprite=fx.sprite;var t:Number=(now-fx.start)/1000;p.visible=true;
                 var intro:Number=fx.token==1?BetaGwentVisualTimings.FROST_INTRO:fx.token==2?BetaGwentVisualTimings.FOG_INTRO:BetaGwentVisualTimings.RAIN_INTRO;
-                p.alpha=BetaGwentBetaMotion.sample("PREVIEW",Math.min(1,t/intro));if(redraw)p.graphics.clear();
+                p.alpha=BetaGwentUi138.intensity*(fx.token==1?1:BetaGwentBetaMotion.sample("PREVIEW",Math.min(1,t/intro)));if(redraw)p.graphics.clear();
                 if(fx.nativeParts){
                     advanceWeatherTextures(fx,now);
                     if(fx.beta&&redraw)drawBetaWeatherAccents(fx,p,t);
@@ -5502,8 +6879,8 @@ package
                 part.frames[frame].visible=true;part.frame=frame;
             }
             part.sprite.x=part.x;
-            part.sprite.y=rowHeight*.62-progress*18;
-            part.sprite.alpha=reducedMotion ? .5 : .75*Math.min(1,(1-progress)*5);
+            part.sprite.y=rowHeight*.55-progress*12;
+            part.sprite.alpha=reducedMotion ? .4 : .55*Math.min(1,progress*7,(1-progress)*7);
         }
         private function prepareBetaWeather(fx:Object):void
         {
@@ -5513,18 +6890,17 @@ package
             var tintColor:uint=fx.token==1?0x163A55:fx.token==2?0x1C2226:fx.token==4?0x0E2B40:fx.token==16?0x3A2410:
                 fx.token==32?0x2A0E06:fx.token==64?0x0B2630:fx.token==128?0x4A3A0A:fx.token==256?0x1A2240:
                 fx.token==2048?0x3A0810:fx.token==1024?0x0E2A18:0x1E1A14;
-            base.graphics.beginFill(tintColor,fx.token==2?0.22:0.25);base.graphics.drawRect(0,0,W,H);base.graphics.endFill();
+            base.graphics.beginFill(tintColor,fx.token==1?0.12:fx.token==2?0.22:0.25);base.graphics.drawRect(0,0,W,H);base.graphics.endFill();
             if(fx.token==1){
-                betaWeatherLayer(fx,BetaGwentWeather107.FROST_RIM,0,0,W,H,.9,"pulse",{speed:.6,range:.06});
-                betaWeatherLayer(fx,BetaGwentWeather107.FROST_SPIKES,0,0,W,H,.95,"frost-reveal",{offset:0});
-                betaWeatherLayer(fx,BetaGwentWeather107.FROST_COVER,0,0,W,H,1,"frost-reveal",{offset:.08});
+                betaWeatherLayer(fx,BetaGwentWeather107.FROST_RIM,0,0,W,H,.65,"pulse",{speed:.6,range:.03});
+                betaWeatherLayer(fx,BetaGwentWeather107.FROST_SPIKES,0,0,W,H,.85,"frost-reveal",{offset:0});
+                betaWeatherLayer(fx,BetaGwentWeather107.FROST_COVER,0,0,W,H,.78,"frost-reveal",{offset:.08});
                 // Reuse the original Beta mist texture: a thin cold haze over the ice, below cards.
                 for(i=0;i<2;i++)betaWeatherLayer(fx,BetaGwentWeather107.FOG_BODY,-W*.6+i*W*.7,H*.16,W*.7,H*.68,.09,"fog",{width:W*.7,y:H*.16,speed:7+i*2,phase:i*W*.7});
-                for(i=0;i<10;i++)betaWeatherLayer(fx,BetaGwentWeather107.SPARKLE,(i*97+fx.phase)%(W-24),(i*37)%(H-24),22,22,.9,"twinkle",{speed:1.3+i%3*.4,phase:i*1.7});
+                for(i=0;i<6;i++)betaWeatherLayer(fx,BetaGwentWeather107.SPARKLE,(i*149+fx.phase)%(W-24),(i*37)%(H-24),16,16,.5,"twinkle",{speed:1.3+i%3*.4,phase:i*1.7});
             }else if(fx.token==2){
-                betaScroll(fx,BetaGwentWeather107.FOG_BODY,0,H,.65,14);
-                betaWeatherLayer(fx,BetaGwentWeather107.FOG_BODY,0,H*.15,W,H*.7,.25,"pulse",{speed:.35,range:.12});
-                betaWeatherLayer(fx,BetaGwentWeather107.FOG_BODY,0,H*.12,W*.55,H*.78,.28,"fog",{width:W*.55,y:H*.12,speed:19});
+                // One uninterrupted cloud sheet: repeated tiles exposed a vertical seam.
+                betaWeatherLayer(fx,BetaGwentWeather107.FOG_BODY,-24,0,W+48,H,.65,"pulse",{speed:.35,range:.04});
             }else if(fx.token==4){
                 betaWeatherLayer(fx,BetaGwentWeather107.RAIN_WET,-18,0,W+36,H,.6,"pulse",{speed:.4,range:.035});
                 for(i=0;i<20;i++){
@@ -5543,15 +6919,19 @@ package
             }else if(fx.token==128){
                 // Original 36-frame Beta foam, sharing one small atlas sheet.
                 // No per-frame bitmap allocations or clipped neighbouring tiles.
-                for(i=0;i<8;i++){
+                var brewMatrix:Matrix=new Matrix();brewMatrix.createGradientBox(W,H,Math.PI/2);
+                base.graphics.beginGradientFill(GradientType.LINEAR,[0xD3A03C,0xC49225,0xFFF0B5],[0,.18,.12],[0,170,255],brewMatrix);
+                base.graphics.drawRect(0,0,W,H);base.graphics.endFill();
+                for(i=0;i<14;i++){
                     var foam:Sprite=new Sprite();holder.addChild(foam);
-                    var foamFrames:Array=[];var foamSize:Number=44+i%3*6;
+                    var foamFrames:Array=[];var foamSize:Number=72+i%3*9;
                     for(var foamFrame:int=0;foamFrame<36;foamFrame++){
-                        var foamArt:Sprite=BetaGwentHDArt.clip(BetaGwentWeather107.FROTH_FOAM,foamSize,foamSize,(foamFrame%6)*64,int(foamFrame/6)*64,64,64);
+                        var foamArt:Sprite=BetaGwentHDArt.clip(BetaGwentWeather107.FROTH_FOAM,foamSize*1.65,foamSize*.7,(foamFrame%6)*64,int(foamFrame/6)*64,64,64);
+                        if(foamArt)foamArt.transform.colorTransform=new ColorTransform(1,.92,.7,.7);
                         if(foamArt){foamArt.visible=false;foam.addChild(foamArt);foamFrames.push(foamArt);}
                     }
                     if(foamFrames.length==36){
-                        var foamPart:Object={sprite:foam,kind:"beta-froth",frames:foamFrames,frame:-1,x:(i+.4)*W/8,phase:i*.31,alpha:.75};
+                        var foamPart:Object={sprite:foam,kind:"beta-froth",frames:foamFrames,frame:-1,x:(i-.5)*W/14,phase:i*.17,alpha:.55};
                         fx.nativeParts.push(foamPart);updateFroth(foamPart,0,H);
                     }
                 }
@@ -5963,7 +7343,7 @@ package
         }
         private function openCardDetail(c:Object,detail:Object,keepBack:Boolean=false):void
         {
-            if(!c||c.hidden||enemyAmbush(c))return;clearDrag();clearPlacementGhost();detailOpen=true;
+            if(!c||c.hidden||enemyAmbush(c))return;if(this.collectionNew&&collectionNew[c.templateId]&&(editingDeck||browsingCatalog))markCollectionSeen(int(c.templateId));clearDrag();clearPlacementGhost();detailOpen=true;
             if(!keepBack)detailBack=[];
             setChildIndex(detailLayer,numChildren-1);
             setChildIndex(controller,numChildren-1);
@@ -6001,13 +7381,15 @@ package
         {
             // GFx emits CLICK with buttonIdx=1; plain Flash events lack the
             // extension. Read it structurally without another SDK class load.
-            return e.type==RIGHT_CLICK_EVENT || ("buttonIdx" in Object(e))&&int(Object(e)["buttonIdx"])==1;
+            return e.type==RIGHT_CLICK_EVENT || e.type=="rightMouseDown" || e.type=="rightMouseUp" || ("buttonIdx" in Object(e))&&int(Object(e)["buttonIdx"])==1;
         }
         private function attachInspect(p:Sprite,c:Object,detail:Object,bodyWidth:Number=0,bodyHeight:Number=0):void
         {
+            if(editingDeck||browsingCatalog)paintCollectionNew(p,int(c.templateId),bodyWidth>0?bodyWidth:p.width/p.scaleX);
             // Stable card body bounds exclude text fields, halos and transient effects.
             var body:Rectangle=new Rectangle(0,0,bodyWidth>0?bodyWidth:p.width/p.scaleX,bodyHeight>0?bodyHeight:p.height/p.scaleY);
             var focusTitle:String=c.title;
+            if(!editingDeck&&!browsingCatalog){var reason:String=battleDisabledReason(c);if(reason)focusTitle+=" · "+reason;}
             if(editingDeck&&c.hasOwnProperty("canAdd")&&!c.canAdd)focusTitle+=" · "+disabledReason(c);
             controller.registerControl(p,focusTitle,null,c,detail,c.zone==8&&c.side==1?"hand":"card",null,body);
             var glow:Sprite=new Sprite();glow.mouseEnabled=false;glow.mouseChildren=false;
@@ -6017,6 +7399,7 @@ package
             p.addEventListener(MouseEvent.ROLL_OVER,function(e:MouseEvent):void{
                 if(dragging||detailOpen)return;
                 hoveredCard=c;hoveredDetail=detail;lastInspectedCard=c;
+                if(editingDeck||browsingCatalog)markCollectionSeen(int(c.templateId));
                 if(c.side==1&&c.zone==8)setHandHover(int(c.id));
                 uiTween(glow,"alpha",1);if(hoverCardId==(c.id!=null?c.id:c.templateId))return;hoverCardId=c.id!=null?c.id:c.templateId;
                 if(browsingCatalog){catalogPicked=c;redrawCatalogDetail();return;}
@@ -6257,8 +7640,8 @@ package
             var bar:Sprite=new Sprite();layer.addChild(bar);paintArt(bar,BetaGwentHud104.POPUP_TITLE,660,52,630,428);
             betaLabel(layer,title,610,436,700,26,0xEDE9E2,BetaGwentFonts.TITLE,true,"center",6);
             var text1:TextField=text(layer,body,650,502,620,20,0xE8E4DA);text1.height=60;betaFace(BetaGwentFonts.BODY,text1,20,0xE8E4DA,false,"center");
-            editorBetaButton(layer,"Нет",980,580,240,48,true,no,!mulliganAnswer);
-            editorBetaButton(layer,"Да",700,580,240,48,true,yes,mulliganAnswer);
+            editorBetaButton(layer,"Нет",980,580,240,48,true,no);
+            editorBetaButton(layer,"Да",700,580,240,48,true,yes);
         }
         private function drawChoices():void
         {

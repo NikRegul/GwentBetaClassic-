@@ -26,6 +26,8 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
     public var power : CBetaGwentDuelPower;
     public var game : CBetaGwentDuelSession;
     public var consumeAttackerId : int;
+    public var destroying : bool;
+    public var deathCue : SBetaGwentDuelCueContext;
     public var playedChild : CBetaGwentDuelCard;
     public var monsterStage, monsterRemaining, monsterStored, monsterOnce : int;
     public var playFromLocation, lastActiveRow : int;
@@ -112,13 +114,14 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
         cardState.controllerId = side;
         cardState.positionPlayerId = side; cardState.locationMask = zone; cardState.locationIndex = index;
     }
-    // CardTokens.Toggle is XOR only: unlike Add, it does not call HandleLockAdded.
+    // Lock exposes an ambush without executing its reveal ability. Morenn's
+    // card-play reaction has already resolved before the deploy target choice.
     public function ToggleLock() : bool
     {
         var old : int;
         old = cardState.tokenMask;
         if ((old & 4) != 0) cardState.tokenMask = old - 4;
-        else cardState.tokenMask = old + 4;
+        else { if ((old & 8) != 0) RevealAmbush(); cardState.tokenMask = cardState.tokenMask | 4; }
         game.RecordLockVisual(this, old); return true;
     }
     public function ResetCurrentPower() : bool
@@ -170,15 +173,17 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
     { return definition.header.typeMask == 4 && ((cardState.locationMask & 7) != 0 || cardState.isInExecutionStack); }
     public function Kill()
     {
-        if (cardState.isWaitingToDie) return;
+        if (cardState.isWaitingToDie || destroying) return;
+        destroying = true;
         if (definition.header.typeMask == 4 && power.GetCurrentPower() > 0) power.SetPower(0);
+        destroying = false;
         game.MarkDeath(this);
     }
     public function OnPowerChanged(oldPower : int, oldArmor : int)
     {
         BetaGwentLog("DUEL_POWER card=" + cardState.instanceId + " old=" + oldPower + "/" + oldArmor
             + " current=" + power.GetCurrentPower() + "/" + power.GetCurrentArmor());
-        game.RecordPowerVisual(this, oldPower, oldArmor);
+        if (!destroying) game.RecordPowerVisual(this, oldPower, oldArmor);
         if (oldArmor > 0 && power.GetCurrentArmor() == 0 && power.GetCurrentPower() > 0 && (cardState.locationMask & 7) != 0) game.NorthArmorBroken(this);
         if (power.GetCurrentPower() <= 0 && CanDie()) Kill();
     }

@@ -158,6 +158,16 @@ class CBetaGwentWeatherAI extends IScriptable
         for(side=1;side<=2;side+=1){ReadZone(side,32,cards);for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();if((s.runtimeTierMask&6)==0 || s.runtimeTemplate.typeMask!=4 || (s.tokenMask&264)!=0)continue;value=s.power.currentPower;if(!immediate && side==1)value+=Min(4,Threat(s)+2);best=Max(best,value);}}
         return best;
     }
+    public function Handles(d : SBetaGwentDuelDefinition) : bool
+    {
+        var id : int;id=d.header.templateId;
+        return d.weatherToken!=0 || d.effect==9 || d.effect==10 || d.effect==33
+            || d.effect==28 && (d.specialMode==14 || d.specialMode==15 || d.specialMode==37)
+            || d.effect==34 && (d.specialMode==105 || id==142202)
+            || id==132205 || id==132214 || id==132102 || id==132309 || id==132402 || id==113302
+            || id==132310 || id==200301 || id==132104 || id==200218 || id==112215 || id==112102
+            || id==201698 || id==132204 || id==200026 || id==131101 || id==131102;
+    }
     public function Gain(d : SBetaGwentDuelDefinition, power : int, optional shallow : bool, optional fromHand : bool, optional immediate : bool) : int
     {
         var cards : array<CBetaGwentDuelCard>;var s : SBetaGwentCardSnapshot;var option : SBetaGwentDuelDefinition;

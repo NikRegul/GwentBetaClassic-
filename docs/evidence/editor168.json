@@ -1,0 +1,11 @@
+{
+  "stage": 168,
+  "checks": 536,
+  "actualActionScript": true,
+  "actualNativeEvents": true,
+  "nativeGameTested": false,
+  "sources": {
+    "BetaGwent/ui/src/BetaGwentBoard.as": "2ee64704137ab95eaf667a28cd715335446b74428fdc28e18a4270db97d239e7",
+    "BetaGwent/development/scripts/game/betagwent/developmentBoardMenu.ws": "5b1934d041b715ffd137ce9e9606942f04db822e1c856892c6525bfe473acb54"
+  }
+}

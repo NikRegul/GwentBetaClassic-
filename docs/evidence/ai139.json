@@ -1,0 +1,18 @@
+{
+  "stage": 139,
+  "baseline": "0.6.2",
+  "candidate": "0.6.3",
+  "games": 184,
+  "wins": 92,
+  "losses": 92,
+  "draws": 0,
+  "errors": 0,
+  "scoreRate": 0.5,
+  "confirmedBetter": false,
+  "sharedBattleMechanics": true,
+  "candidateRules": "fcb6487747c09b4763245e202263b9c53e828aa3c494b98398139faef59a7eed",
+  "baselineRules": "a938a0b9e72343b5b1cff43056a0e4e1d2a878c19db260aea9f0d089ab541cea",
+  "report": "BetaGwent/build/audit139/compare/REPORT_RU.md",
+  "reportSha256": "e99f42d71b82ba9e24c52a7379fd27ec1054bc104617922533b6ae7d4f4a4c5d",
+  "nativeGameTested": false
+}

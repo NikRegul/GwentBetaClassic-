@@ -14,7 +14,7 @@ class CBetaGwentDuelSkellige extends IScriptable
         var cards : array<SBetaGwentDevelopmentCard>;var s : SBetaGwentCardSnapshot;var i : int;
         ids.Clear();game.GetCards(cards);
         for(i=0;i<cards.Size();i+=1){s=cards[i].card;if((side!=0 && s.positionPlayerId!=side) || (s.locationMask&zone)==0 || (s.runtimeTierMask&tier)==0 || (s.runtimeTemplate.typeMask&types)==0 || s.isWaitingToDie || (s.tokenMask&ignore)!=0)continue;
-         if(category>0 && !BetaGwentSkelligeCategory(s.runtimeTemplate.templateId,category))continue;if(source && source.monsterIds.Contains(s.instanceId))continue;ids.PushBack(s.instanceId);}
+         if(category>0 && !BetaGwentSkelligeCategory(s.runtimeTemplate.templateId,category))continue;if(source && (!game.CanDeployTarget(source,game.FindCard(s.instanceId)) || source.monsterIds.Contains(s.instanceId)))continue;ids.PushBack(s.instanceId);}
     }
     private function Request(source : CBetaGwentDuelCard, side : int, zone : int, tier : int, types : int, category : int, minimum : int)
     {var ids : array<int>;Query(side,zone,tier,types,category,BetaGwentNorthPick((zone&7)!=0,264,0),source,ids);game.MonsterRequest(source,ids,BetaGwentNorthPick((zone&7)!=0,0,2),minimum,1);}

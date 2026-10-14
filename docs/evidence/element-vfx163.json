@@ -1,0 +1,381 @@
+{
+  "stage": 163,
+  "source": "Gwent 0.9.24.3.432/Gwent_Data/sharedassets8.assets",
+  "sourceSha256": "9ff00d664be3dc613ab56d0b4353759ec4bda0cb22ef25bb674d9fee70076c93",
+  "requestedGenericPrefabs": 35,
+  "sourceUnchanged": true,
+  "lightningRenderingUnmodified": true,
+  "uniquePrefabRenderingComplete": false,
+  "manifest": "BetaGwent/build/element-vfx163/manifest.json",
+  "manifestSha256": "bd9055d75b83a89826dba218dbddea139a401764d0e1996b5eb3d8f3608aa28f",
+  "prefabs": [
+    {
+      "name": "AirTokenAttack",
+      "gameObject": 1162,
+      "element": "Air",
+      "particleSystems": 4,
+      "otherRenderers": []
+    },
+    {
+      "name": "AmbushEffect",
+      "gameObject": 1114,
+      "element": "Presentation",
+      "particleSystems": 2,
+      "otherRenderers": []
+    },
+    {
+      "name": "BoardEffect_ClearWeather",
+      "gameObject": 1069,
+      "element": "LightMagic",
+      "particleSystems": 2,
+      "otherRenderers": [
+        {
+          "pathId": 2664,
+          "type": "MeshRenderer",
+          "gameObjectName": "LayeredShaft"
+        }
+      ]
+    },
+    {
+      "name": "CardFrostLandingEffect",
+      "gameObject": 1121,
+      "element": "Presentation",
+      "particleSystems": 2,
+      "otherRenderers": []
+    },
+    {
+      "name": "CardLandingEffect",
+      "gameObject": 1166,
+      "element": "Presentation",
+      "particleSystems": 1,
+      "otherRenderers": []
+    },
+    {
+      "name": "CardMistLandingEffect",
+      "gameObject": 1167,
+      "element": "Presentation",
+      "particleSystems": 1,
+      "otherRenderers": []
+    },
+    {
+      "name": "CardRainLandingEffect",
+      "gameObject": 1107,
+      "element": "Presentation",
+      "particleSystems": 2,
+      "otherRenderers": []
+    },
+    {
+      "name": "DemoteParticleSimpleVFX",
+      "gameObject": 1077,
+      "element": "Presentation",
+      "particleSystems": 4,
+      "otherRenderers": [
+        {
+          "pathId": 2667,
+          "type": "MeshRenderer",
+          "gameObjectName": "HeroMask"
+        }
+      ]
+    },
+    {
+      "name": "GoldLanding",
+      "gameObject": 1079,
+      "element": "Presentation",
+      "particleSystems": 4,
+      "otherRenderers": [
+        {
+          "pathId": 2669,
+          "type": "MeshRenderer",
+          "gameObjectName": "HeroMask"
+        }
+      ]
+    },
+    {
+      "name": "NatureTransform",
+      "gameObject": 1165,
+      "element": "Presentation",
+      "particleSystems": 4,
+      "otherRenderers": [
+        {
+          "pathId": 2676,
+          "type": "MeshRenderer",
+          "gameObjectName": "transform_refraction_plane"
+        }
+      ]
+    },
+    {
+      "name": "PowerBoardDarkMagic",
+      "gameObject": 1836,
+      "element": "DarkMagic",
+      "particleSystems": 8,
+      "otherRenderers": []
+    },
+    {
+      "name": "PowerBoardIce",
+      "gameObject": 1479,
+      "element": "Ice",
+      "particleSystems": 18,
+      "otherRenderers": []
+    },
+    {
+      "name": "PowerBoardLightMagic",
+      "gameObject": 1747,
+      "element": "LightMagic",
+      "particleSystems": 10,
+      "otherRenderers": []
+    },
+    {
+      "name": "PowerDarkMagicProjectile",
+      "gameObject": 1359,
+      "element": "DarkMagic",
+      "particleSystems": 6,
+      "otherRenderers": [
+        {
+          "pathId": 2981,
+          "type": "SkinnedMeshRenderer",
+          "gameObjectName": "ProjectileMesh"
+        }
+      ]
+    },
+    {
+      "name": "PowerDirectDarkMagic",
+      "gameObject": 1751,
+      "element": "DarkMagic",
+      "particleSystems": 7,
+      "otherRenderers": []
+    },
+    {
+      "name": "PowerDirectEarth",
+      "gameObject": 1468,
+      "element": "Earth",
+      "particleSystems": 5,
+      "otherRenderers": []
+    },
+    {
+      "name": "PowerDirectFire",
+      "gameObject": 1286,
+      "element": "Fire",
+      "particleSystems": 6,
+      "otherRenderers": []
+    },
+    {
+      "name": "PowerDirectLightMagic",
+      "gameObject": 1752,
+      "element": "LightMagic",
+      "particleSystems": 7,
+      "otherRenderers": []
+    },
+    {
+      "name": "PowerDirectLightning",
+      "gameObject": 1753,
+      "element": "Lightning",
+      "particleSystems": 6,
+      "otherRenderers": []
+    },
+    {
+      "name": "PowerDirectPhysical",
+      "gameObject": 1252,
+      "element": "Physical",
+      "particleSystems": 5,
+      "otherRenderers": []
+    },
+    {
+      "name": "PowerFireProjectile",
+      "gameObject": 1301,
+      "element": "Fire",
+      "particleSystems": 5,
+      "otherRenderers": [
+        {
+          "pathId": 2983,
+          "type": "SkinnedMeshRenderer",
+          "gameObjectName": "ProjectileMeshFire"
+        }
+      ]
+    },
+    {
+      "name": "PowerLightMagicProjectile",
+      "gameObject": 1322,
+      "element": "LightMagic",
+      "particleSystems": 6,
+      "otherRenderers": [
+        {
+          "pathId": 2977,
+          "type": "TrailRenderer",
+          "gameObjectName": "TrailOne"
+        }
+      ]
+    },
+    {
+      "name": "PowerLightningProjectile",
+      "gameObject": 1360,
+      "element": "Lightning",
+      "particleSystems": 4,
+      "otherRenderers": [
+        {
+          "pathId": 2978,
+          "type": "TrailRenderer",
+          "gameObjectName": "CoreTrail_FX"
+        }
+      ]
+    },
+    {
+      "name": "PowerPhysicalProjectile",
+      "gameObject": 1675,
+      "element": "Physical",
+      "particleSystems": 0,
+      "otherRenderers": [
+        {
+          "pathId": 2759,
+          "type": "MeshRenderer",
+          "gameObjectName": "ArrowTipShape"
+        },
+        {
+          "pathId": 2979,
+          "type": "TrailRenderer",
+          "gameObjectName": "TrailOne"
+        },
+        {
+          "pathId": 2976,
+          "type": "TrailRenderer",
+          "gameObjectName": "TrailTwo"
+        }
+      ]
+    },
+    {
+      "name": "PowerRowAir",
+      "gameObject": 1748,
+      "element": "Air",
+      "particleSystems": 5,
+      "otherRenderers": []
+    },
+    {
+      "name": "PowerRowDarkMagic",
+      "gameObject": 1378,
+      "element": "DarkMagic",
+      "particleSystems": 8,
+      "otherRenderers": []
+    },
+    {
+      "name": "PowerRowIce",
+      "gameObject": 1714,
+      "element": "Ice",
+      "particleSystems": 12,
+      "otherRenderers": [
+        {
+          "pathId": 2700,
+          "type": "MeshRenderer",
+          "gameObjectName": "BackTint "
+        }
+      ]
+    },
+    {
+      "name": "PowerRowLightMagic",
+      "gameObject": 1749,
+      "element": "LightMagic",
+      "particleSystems": 13,
+      "otherRenderers": []
+    },
+    {
+      "name": "PowerRowPhysical",
+      "gameObject": 1353,
+      "element": "Physical",
+      "particleSystems": 5,
+      "otherRenderers": []
+    },
+    {
+      "name": "PowerSideDarkMagic",
+      "gameObject": 1683,
+      "element": "DarkMagic",
+      "particleSystems": 14,
+      "otherRenderers": []
+    },
+    {
+      "name": "PowerSideFire",
+      "gameObject": 1666,
+      "element": "Fire",
+      "particleSystems": 16,
+      "otherRenderers": []
+    },
+    {
+      "name": "PowerSideIce",
+      "gameObject": 1329,
+      "element": "Ice",
+      "particleSystems": 26,
+      "otherRenderers": [
+        {
+          "pathId": 2682,
+          "type": "MeshRenderer",
+          "gameObjectName": "BackTint 1"
+        },
+        {
+          "pathId": 2764,
+          "type": "MeshRenderer",
+          "gameObjectName": "BackTint 2"
+        },
+        {
+          "pathId": 2731,
+          "type": "MeshRenderer",
+          "gameObjectName": "BackTint 3"
+        },
+        {
+          "pathId": 2734,
+          "type": "MeshRenderer",
+          "gameObjectName": "BackTint 1 (1)"
+        },
+        {
+          "pathId": 2782,
+          "type": "MeshRenderer",
+          "gameObjectName": "BackTint 2 (1)"
+        },
+        {
+          "pathId": 2693,
+          "type": "MeshRenderer",
+          "gameObjectName": "BackTint 3 (1)"
+        }
+      ]
+    },
+    {
+      "name": "PowerSideLightMagic",
+      "gameObject": 1750,
+      "element": "LightMagic",
+      "particleSystems": 16,
+      "otherRenderers": []
+    },
+    {
+      "name": "PromoteSimpleVFX",
+      "gameObject": 1078,
+      "element": "Presentation",
+      "particleSystems": 4,
+      "otherRenderers": [
+        {
+          "pathId": 2668,
+          "type": "MeshRenderer",
+          "gameObjectName": "HeroMask"
+        }
+      ]
+    },
+    {
+      "name": "SpawnBlink",
+      "gameObject": 1278,
+      "element": "Presentation",
+      "particleSystems": 4,
+      "otherRenderers": []
+    },
+    {
+      "name": "[152402]PowerBoardFire",
+      "gameObject": 1070,
+      "element": null,
+      "particleSystems": 6,
+      "otherRenderers": []
+    },
+    {
+      "name": "[201525]PowerBoardPhysical",
+      "gameObject": 1682,
+      "element": null,
+      "particleSystems": 16,
+      "otherRenderers": []
+    }
+  ],
+  "materialCount": 209,
+  "textureCount": 116
+}

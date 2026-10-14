@@ -1,7 +1,65 @@
-﻿// Presentation only. Never consumes match RNG, executes rules or republishes UI.
+﻿// BEGIN GENERATED ELEMENT AUDIO 164
+function BetaGwentAudioElement164(templateId : int, kind : int, launch : bool) : string
+{
+    var hurting : bool;
+    if(kind!=20 && kind!=21 && kind!=22 && kind!=23)return "";
+    hurting=kind==20 || kind==22;
+    if(launch==false && hurting==false){
+        switch(templateId){
+        case 112104: case 112105: case 112110: case 112213: case 113201: case 113209: case 113310: case 113311: case 113315: case 113320: case 113401: case 122101: case 122107: case 122201: case 122202: case 122304: case 122306: case 122308: case 122309: case 122314: case 122317: case 123301: case 132107: case 132202: case 132212: case 132216: case 132302: case 132305: case 132306: case 132308: case 132309: case 132313: case 132316: case 133301: case 133302: case 142101: case 142103: case 142105: case 142205: case 142207: case 142209: case 142212: case 142213: case 142214: case 142301: case 142303: case 142305: case 142311: case 142312: case 142315: case 142316: case 142317: case 142401: case 152109: case 152203: case 152205: case 152207: case 152302: case 152309: case 152311: case 152312: case 152313: case 152401: case 162101: case 162106: case 162107: case 162203: case 162204: case 162211: case 162212: case 162303: case 162307: case 162309: case 162310: case 162312: case 162313: case 162315: case 200019: case 200020: case 200039: case 200040: case 200042: case 200052: case 200055: case 200062: case 200079: case 200080: case 200088: case 200098: case 200136: case 200154: case 200159: case 200160: case 200165: case 200223: case 200226: case 200227: case 200294: case 200296: case 200299: case 200519: case 200534: case 201573: case 201598: case 201600: case 201603: case 201606: case 201622: case 201623: case 201639: case 201642: case 201644: case 201646: case 201653: case 201657: case 201661: case 201682: case 201689: case 201692: case 201697: case 201698: case 201699: case 201701: case 201708: case 201731: case 201737: case 201743: case 201774: return "bg79_fx_1718236965";
+        case 112215: case 113303: case 122310: case 122312: case 132218: case 142201: case 142309: case 152308: case 200008: case 200046: case 200168: case 200222: case 201659: case 201660: return "bg79_fx_2462966547";
+        case 112401: return "bg79_fx_2767400572";
+        case 112403: case 113207: case 122213: case 142204: return "bg79_fx_244411016";
+        case 200198: case 201684: return "bg79_fx_1339391495";
+        case 200301: return "bg79_fx_316572471";
+        }
+    }
+    if(launch==false && hurting==true){
+        switch(templateId){
+        case 112104: case 113306: case 113315: case 113319: case 113320: case 132313: case 142105: case 200023: case 200055: case 200062: case 200073: case 200078: case 200223: case 200224: case 200226: case 200227: case 200530: case 201618: case 201630: case 201633: case 201657: case 201781: case 201817: return "bg79_fx_565602893";
+        case 112106: case 112205: case 122303: case 122315: case 132404: case 142101: case 143301: case 162306: case 162317: case 200041: case 200135: case 201648: case 201690: case 201725: case 201748: return "bg79_fx_1166539820";
+        case 112111: case 201759: return "bg79_fx_1131983382";
+        case 112113: case 113301: case 122104: return "bg79_fx_3403686934";
+        case 112206: case 201620: return "bg79_fx_1125901030";
+        case 112214: case 122102: case 122216: case 122301: case 122302: case 132102: case 132214: case 132303: case 132309: case 132314: case 132409: case 142103: case 142208: case 142209: case 142305: case 142310: case 142314: case 152106: case 152109: case 152202: case 152203: case 152207: case 152208: case 152210: case 152303: case 152304: case 152309: case 152314: case 152315: case 162102: case 162204: case 162209: case 162305: case 162308: case 162310: case 163101: case 163201: case 200028: case 200030: case 200031: case 200037: case 200038: case 200049: case 200052: case 200103: case 200105: case 200115: case 200124: case 200139: case 200161: case 200169: case 200191: case 200198: case 200218: case 200235: case 200300: case 200502: case 200528: case 200535: case 200540: case 201578: case 201599: case 201611: case 201612: case 201643: case 201645: case 201647: case 201656: case 201679: case 201682: case 201691: case 201707: case 201731: case 201737: case 201745: case 201772: return "bg79_fx_1339391495";
+        case 112402: return "bg79_fx_1076842722";
+        case 112404: case 152403: case 200295: case 201574: return "bg79_fx_3719213110";
+        case 113204: case 200009: case 201634: case 201662: return "bg79_fx_3675911539";
+        case 132408: case 153301: return "bg79_fx_3336903518";
+        case 200104: case 201632: return "bg79_fx_316572471";
+        }
+    }
+    if(launch==true && hurting==false){
+        switch(templateId){
+        case 113310: case 113311: case 113315: case 113320: case 122107: case 122202: case 122309: case 133301: case 142205: case 142207: case 142301: case 142303: case 142311: case 142312: case 142317: case 142401: case 152109: case 152205: case 152207: case 152311: case 162203: case 162204: case 162303: case 162309: case 162313: case 162315: case 200020: case 200062: case 200079: case 200154: case 200223: case 200226: case 200227: case 200294: case 200299: case 200519: case 201653: case 201657: case 201661: case 201692: case 201708: return "bg79_fx_1770486675";
+        case 200198: case 201684: return "bg79_fx_1525692561";
+        }
+    }
+    if(launch==true && hurting==true){
+        switch(templateId){
+        case 112104: case 113306: case 113315: case 113320: case 132313: case 200023: case 200055: case 200062: case 200073: case 200078: case 200223: case 200224: case 200226: case 200227: case 200530: case 201618: case 201630: case 201633: case 201657: case 201781: return "bg79_fx_2549828339";
+        case 112106: case 112205: case 122303: case 122315: case 132404: case 142101: case 162306: case 162317: case 200041: case 200135: case 201648: case 201690: case 201725: case 201748: return "bg79_fx_3389349734";
+        case 112113: case 113301: case 122104: return "bg79_fx_3688214988";
+        case 112214: case 122102: case 122216: case 122301: case 122302: case 132102: case 132214: case 132303: case 132309: case 132314: case 132409: case 142103: case 142208: case 142209: case 142305: case 142310: case 142314: case 152106: case 152109: case 152202: case 152203: case 152207: case 152210: case 152304: case 152309: case 152314: case 152315: case 162102: case 162204: case 162209: case 162305: case 162308: case 162310: case 163101: case 163201: case 200028: case 200030: case 200031: case 200037: case 200038: case 200049: case 200105: case 200115: case 200124: case 200139: case 200161: case 200169: case 200191: case 200198: case 200218: case 200235: case 200300: case 200502: case 200528: case 200535: case 200540: case 201578: case 201599: case 201611: case 201612: case 201643: case 201647: case 201656: case 201679: case 201682: case 201691: case 201731: case 201737: case 201745: case 201772: return "bg79_fx_1525692561";
+        }
+    }
+    return "";
+}
+// END GENERATED ELEMENT AUDIO 164
+// Presentation only. Never consumes match RNG, executes rules or republishes UI.
 // Original Beta row-hit events already included in both language sound banks.
 // Identity wins over row bits: overlapping weather tokens must not change the
 // sound of the effect that actually caused this tick.
+function BetaGwentAudioIsLeader(templateId : int) : bool
+{
+    switch(templateId){
+    case 131101: case 200055: case 200158: case 200159: case 200160:
+    case 200161: case 200162: case 200163: case 200164: case 200165:
+    case 200166: case 200167: case 200168: case 200169: case 200170:
+    case 201580: case 201587: case 201589: case 201595: case 201597: case 201743: return true;
+    default: return false;
+    }
+}
 function BetaGwentAudioWeatherImpact(templateId : int, rowToken : int) : string
 {
     if (templateId == 113302) return "bg79_fx_2638191190"; // PowerRowIce
@@ -26,6 +84,8 @@ class CBetaGwentDuelAudio extends IScriptable
     private var musicDucked : bool;
     private var queuedVoices : array<int>;
     private var queuedAt : array<float>;
+    private var introEnemyTemplate,introPlayerTemplate : int;
+    private var introEffectsPlayed : array<int>;
     // Stage 104: the menu pauses the world (MPT_FullPause), so engine time can stop
     // advancing while Gwent is open. Voice spacing and throttles use the Flash clock
     // delivered by the board every 250 ms instead (OnBetaGwentAudioTick).
@@ -68,7 +128,8 @@ class CBetaGwentDuelAudio extends IScriptable
     {
         var now : float; var eventName : string;
         if (!enabled) return;
-        now = Now(); if (now < nextClick) return;
+        // A confirmed replacement can arrive in the same tick as its click.
+        now = Now(); if (kind != 5 && now < nextClick) return;
         if (BetaReady()) eventName = BetaGwentAudioUi(kind);
         if (eventName == "") switch (kind)
         {
@@ -76,18 +137,29 @@ class CBetaGwentDuelAudio extends IScriptable
             case 2: eventName = "gui_global_panel_open"; break;
             case 3: eventName = "gui_gwint_cursor_movement"; break;
             case 4: eventName = "gui_global_cancel"; break;
+            case 5: eventName = "gui_gwint_draw_card"; break;
             default: return;
         }
         nextClick = now + 0.08f; theSound.SoundEvent(eventName);
     }
-    public function Cue(kind : int, templateId : int, flags : int, ownScore : int, enemyScore : int, rowToken : int, targetTokens : int)
+    public function SpellLaunch(templateId : int, kind : int)
     {
-        var eventName : string; var now : float; var voiceTrigger, cueKind : int;
+        var eventName : string;
+        if(!enabled || !BetaReady())return;
+        eventName=BetaGwentAudioElement164(templateId,kind,true);
+        if(templateId==113301)eventName="bg79_fx_3688214988";
+        if(eventName!="")theSound.SoundEvent(eventName);
+    }
+    public function Cue(kind : int, templateId : int, flags : int, ownScore : int, enemyScore : int, rowToken : int, targetTokens : int, optional goldLanding : bool)
+    {
+        var eventName, landingEvent : string; var now : float; var voiceTrigger, cueKind : int;
+        // A collapsed Crow hit can carry its last death snapshot's revision.
+        if(kind==3 && templateId==200224)kind=22;
         now = Now();
         if (kind == 1) voiceTrigger = 8;
         else if (kind == 24) voiceTrigger = 4;
         else if (kind == 25) voiceTrigger = 16;
-        if (voices && voiceTrigger != 0 && templateId > 0 && BetaReady() && (BetaGwentAudioVoiceTriggers(templateId) & voiceTrigger) != 0 && BetaGwentAudioVoice(templateId) != "")
+        if (voices && voiceTrigger != 0 && templateId > 0 && BetaReady() && ((templateId == 201743 && voiceTrigger == 8) || ((BetaGwentAudioVoiceTriggers(templateId) & voiceTrigger) != 0 && BetaGwentAudioVoice(templateId) != "")))
         {
             // Finish the current line. A bounded queue avoids long summon chatter.
             if(!IsIntroActive())introVoices=false;
@@ -96,6 +168,9 @@ class CBetaGwentDuelAudio extends IScriptable
         }
         if (!enabled || kind == 0 || kind == 8 || kind == 13 || kind == 14 && now < nextEffect) return;
         cueKind = kind;
+        if(BetaReady() && goldLanding && (kind==1 || kind==15 || kind==16)){
+            landingEvent=BetaGwentAudioCue(28);if(landingEvent!="")theSound.SoundEvent(landingEvent);
+        }
         if (BetaReady())
         {
             // DestroyBlood is the Beta consume sound. Ordinary deaths use a
@@ -103,13 +178,18 @@ class CBetaGwentDuelAudio extends IScriptable
             if (kind == 3)
             {
                 eventName = "bg79_fx_1339391495";
-                if (templateId == 113309 || templateId == 112102) eventName = "bg79_fx_1019252451";
+                if (templateId == 113309 || templateId == 112102 || templateId == 112107) eventName = "bg79_fx_1019252451";
             }
-            if (kind == 1) eventName = BetaGwentAudioEffect(templateId);
+            // Queen's original roar is queued on the voice bus. Do not double it
+            // with the identical play effect; effects-only still gets that sound.
+            if (kind == 1 && (templateId != 201743 || !voices)) eventName = BetaGwentAudioEffect(templateId);
+            if (kind == 1 && BetaGwentAudioIsLeader(templateId)) eventName=BetaGwentAudioCue(28);
             else if (kind == 24) eventName = BetaGwentAudioRevealEffect(templateId);
             else if (kind == 25) eventName = BetaGwentAudioTransformEffect(templateId);
             if (kind == 4) eventName = BetaGwentAudioWeather(rowToken);
             if (kind == 33) eventName = BetaGwentAudioWeatherImpact(templateId, rowToken);
+            if(kind==20 || kind==21 || kind==22 || kind==23)eventName=BetaGwentAudioElement164(templateId,kind,false);
+            if ((kind == 20 || kind == 22) && templateId == 113301) eventName="bg79_fx_3403686934"; // Original PowerDirectLightning.
             if (kind == 6)
             {
                 if ((flags & 16) != 0 && (flags & 32) == 0) cueKind = 30;
@@ -162,7 +242,7 @@ class CBetaGwentDuelAudio extends IScriptable
         }
         // Damage bursts keep their visuals, while sound has a short independent throttle.
         if ((kind == 2 || kind >= 20) && now < nextEffect) return;
-        nextEffect = now + 0.10f; theSound.SoundEvent(eventName);
+        nextEffect = now + 0.10f; if(eventName!=landingEvent)theSound.SoundEvent(eventName);
     }
     // Stage 104: match intro (UIGameIntroRootPrefab). Game-start sting, then the
     // opponent's and the player's leader lines, one after another.
@@ -170,6 +250,7 @@ class CBetaGwentDuelAudio extends IScriptable
     {
         var now : float; var eventName : string;
         now = Now();
+        introEnemyTemplate=opponent;introPlayerTemplate=player;introEffectsPlayed.Clear();
         if (enabled)
         {
             if (BetaReady()) eventName = BetaGwentAudioCue(7);
@@ -178,10 +259,21 @@ class CBetaGwentDuelAudio extends IScriptable
         }
         if (!voices || !BetaReady()) return;
         StopVoice(); introVoices=true;
-        if (opponent > 0 && BetaGwentAudioVoice(opponent) != "") { queuedVoices.PushBack(opponent); queuedAt.PushBack(now); }
-        if (player > 0 && BetaGwentAudioVoice(player) != "") { queuedVoices.PushBack(player); queuedAt.PushBack(now); }
+        if (opponent > 0 && (opponent == 201743 || BetaGwentAudioVoice(opponent) != "")) { queuedVoices.PushBack(opponent); queuedAt.PushBack(now); }
+        if (player > 0 && (player == 201743 || BetaGwentAudioVoice(player) != "")) { queuedVoices.PushBack(player); queuedAt.PushBack(now); }
         LogChannel('BetaGwent', "AUDIO_INTRO opponent=" + opponent + " player=" + player);
         Tick();
+    }
+    public function LeaderEntrance(templateId : int, side : int)
+    {
+        var eventName : string;
+        if(!enabled || !BetaReady() || !BetaGwentAudioIsLeader(templateId) || introEffectsPlayed.Contains(side))return;
+        if((side==1 && templateId!=introPlayerTemplate) || (side==2 && templateId!=introEnemyTemplate) || (side!=1 && side!=2))return;
+        introEffectsPlayed.PushBack(side);
+        // Queen's creature call is already her introductory voice; avoid doubling it.
+        if(templateId==201743 && voices)return;
+        eventName=BetaGwentAudioEffect(templateId);if(eventName=="")eventName=BetaGwentAudioCue(28);
+        theSound.SoundEvent(eventName);
     }
     public function Tick()
     {
@@ -209,9 +301,13 @@ class CBetaGwentDuelAudio extends IScriptable
             if (now < queuedAt[0]) return;
             if (!introVoices && now - queuedAt[0] > 1.5f) { queuedVoices.Erase(0); queuedAt.Erase(0); continue; }
             queuedVoices.Erase(0); queuedAt.Erase(0);
-            voiceRoll=RandRange(1000000);eventName=BetaGwentAudioVoiceVariant(id,voiceRoll);SetVoiceMix(true);theSound.SoundEvent(eventName);
+            voiceRoll=RandRange(1000000);eventName=BetaGwentAudioVoiceVariant(id,voiceRoll);
+            // CardAudio marks Queen's creature call as SFX, with no VO binding.
+            if(id==201743)eventName="bg79_vo_ArachasQueen";
+            SetVoiceMix(true);theSound.SoundEvent(eventName);
             LogChannel('BetaGwent', "AUDIO_VOICE_REQUEST template=" + id + " event=" + eventName);
             voiceUntil = now + BetaGwentAudioVoiceVariantDuration(id,voiceRoll) + 0.12f;
+            if(id==201743)voiceUntil=now+3.619f+0.12f;
             break;
         }
         if(now>=voiceUntil && queuedVoices.Size()==0){introVoices=false;SetVoiceMix(false);}

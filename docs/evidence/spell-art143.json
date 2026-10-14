@@ -1,0 +1,62 @@
+{
+  "stage": 143,
+  "originalMaterials": true,
+  "textures": [
+    {
+      "name": "fire",
+      "material": 211,
+      "texture": 728,
+      "source": "BetaGwent\\build\\special-vfx142\\textures\\sharedassets8.assets-728-fire_07_5x5.png",
+      "sourceSha256": "b424b989ac267d0b0a3a314a80a12a93f8e673c4828113f6ff790831b8856999",
+      "output": "BetaGwent\\ui\\assets\\special143\\fire.png",
+      "sha256": "b688b58e2aafd174151d17e5b7dc437c2468d4b0c47d1bed7a9da316f4dacbf7",
+      "conversion": "original-alpha",
+      "grid": [
+        5,
+        5
+      ]
+    },
+    {
+      "name": "frame",
+      "material": 214,
+      "texture": 631,
+      "source": "BetaGwent\\build\\special-vfx142\\textures\\sharedassets8.assets-631-DestroyFire_FX_CardFrame.png",
+      "sourceSha256": "01b18b574b198da864d40486ffa78b1c323bd1b2f76595523707ee44da351d1d",
+      "output": "BetaGwent\\ui\\assets\\special143\\frame.png",
+      "sha256": "e46f0b82a3461cd7a17ee0bd097c53769f0078376cf2117cad9ddf140d3d7569",
+      "conversion": "original-alpha",
+      "grid": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "lightning",
+      "material": 103,
+      "texture": 488,
+      "source": "BetaGwent\\build\\special-vfx142\\textures\\sharedassets8.assets-488-VFX_Lightning3Tiling.png",
+      "sourceSha256": "d4e45dd0ab56486ee4f94d4cc8bec69c893335beaa7591f6d2465d0cd169d8a7",
+      "output": "BetaGwent\\ui\\assets\\special143\\lightning.png",
+      "sha256": "2bf6180ccbf0d40f72c5453d628f8402b2110c1aa31f0c76a2b1aa38b4164dde",
+      "conversion": "additive-light-to-straight-alpha",
+      "grid": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "sparks",
+      "material": 251,
+      "texture": 735,
+      "source": "BetaGwent\\build\\special-vfx142\\textures\\sharedassets8.assets-735-SharpGlowaAtlas_grey.png",
+      "sourceSha256": "d585300a24f39c898d233dd2dd8edf53502342eb46a81e319fe7a96cb64714f7",
+      "output": "BetaGwent\\ui\\assets\\special143\\sparks.png",
+      "sha256": "bdd9869616aff076936e4d84e156ccbedae16098f41933e602ad247140c1c2e2",
+      "conversion": "additive-light-to-straight-alpha",
+      "grid": [
+        2,
+        2
+      ]
+    }
+  ]
+}

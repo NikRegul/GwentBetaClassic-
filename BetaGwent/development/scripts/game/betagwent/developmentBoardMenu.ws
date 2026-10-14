@@ -1,4 +1,9 @@
-﻿// Separate development menu; requires BetaGwentBoard CMenuResource registration.
+﻿struct SBetaGwentClearedDeck
+{
+    var cards : array<int>;
+    var faction : int;
+}
+// Separate development menu; requires BetaGwentBoard CMenuResource registration.
 class CR4BetaGwentBoardMenu extends CR4Menu
 {
     private var session : CBetaGwentDuelSession;
@@ -12,6 +17,9 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     // so placing a card never stalls on the AI's simulations.
     private var deferredOpponent : bool;
     private var deferredVoiceAt : float;
+    private var opponentPreparationBusy : bool;
+    private var opponentPreparationFinished : bool;
+    private var opponentPreparationMs, opponentPreparationPeakMs : int;
     private var requestFlow : CBetaGwentDevelopmentRequestFlow;
     private var setRequestHeader : CScriptedFlashFunction;
     private var setRequestSource : CScriptedFlashFunction;
@@ -36,7 +44,13 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     private var beginDeckEditor, pushEditorCard, finishDeckEditor, pushEditorCopies : CScriptedFlashFunction;
     private var pushTemplateDetails, pushTemplateRules, pushLiveStats : CScriptedFlashFunction;
     private var editorPublishedFaction : int;
+    private var deckClearHistory : array<SBetaGwentClearedDeck>;
+    private var finishKegChoice : CScriptedFlashFunction;
+    private var kegCanOpenNext : bool;
+    private var effectGallery : bool;
+    private var startEffectGallery : CScriptedFlashFunction;
     private var publishedTemplates : array<int>;
+    private var setCollectionNew : CScriptedFlashFunction;
     private var selectionPublished : bool;
     private var deckOptionCount : int;
     private var beginPileView, pushPileCard, pushPilePowerBase, finishPileView : CScriptedFlashFunction;
@@ -44,7 +58,10 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     private var audio : CBetaGwentDuelAudio;
     private var audioRevisions : array<int>;
     private var audioFrames : array<CBetaGwentDuelVisualFrame>;
+    private var spellLaunchRevisions : array<int>;
     private var setAudioStatus : CScriptedFlashFunction;
+    private var setLeaderMotion : CScriptedFlashFunction;
+    private var setBoardHelp : CScriptedFlashFunction;
     private var setIntroAudioState : CScriptedFlashFunction;
     private var introAudioSerial : int;
     private var setTutorialSeen : CScriptedFlashFunction;
@@ -107,11 +124,14 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         pushTemplateDetails = GetMenuFlash().GetMemberFlashFunction("pushTemplateDetails");
         pushTemplateRules = GetMenuFlash().GetMemberFlashFunction("pushTemplateRules");
         pushLiveStats = GetMenuFlash().GetMemberFlashFunction("pushLiveStats");
+        setCollectionNew=GetMenuFlash().GetMemberFlashFunction("setCollectionNew");
         beginPileView = GetMenuFlash().GetMemberFlashFunction("beginPileView");
         pushPileCard = GetMenuFlash().GetMemberFlashFunction("pushPileCard");
         pushPilePowerBase = GetMenuFlash().GetMemberFlashFunction("pushPilePowerBase");
         finishPileView = GetMenuFlash().GetMemberFlashFunction("finishPileView");
         setAudioStatus = GetMenuFlash().GetMemberFlashFunction("setAudioStatus");
+        setLeaderMotion = GetMenuFlash().GetMemberFlashFunction("setLeaderMotion");
+        setBoardHelp = GetMenuFlash().GetMemberFlashFunction("setBoardHelp");
         setIntroAudioState = GetMenuFlash().GetMemberFlashFunction("setIntroAudioState");
         setTutorialSeen = GetMenuFlash().GetMemberFlashFunction("setTutorialSeen");
         setTextLanguage = GetMenuFlash().GetMemberFlashFunction("setTextLanguage");
@@ -127,11 +147,14 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         deckLibrary = new CBetaGwentDeckLibrary in this;
         manager=theGame.GetGwintManager();nativePlayer=thePlayer;
         pendingBefore=manager.betaNpcPending;requestedBefore=manager.gameRequested;
+        effectGallery=(bool)((CBetaGwentEffectGalleryData)GetMenuInitData());
+        startEffectGallery=GetMenuFlash().GetMemberFlashFunction("startEffectGallery");
         kegInit=(CBetaGwentKegMenuData)GetMenuInitData();kegOnly=false;kegNested=false;if(kegInit)kegOnly=true;
         // Opened over the deck editor: the parent menu already owns input, audio state and the cursor.
         if(kegOnly && (CR4BetaGwentBoardMenu)GetParent())kegNested=true;
         entryMode=BetaGwentNativeEntryMode(GetMenuName(),pendingBefore,requestedBefore);
         if(kegOnly)entryMode=1;
+        if(effectGallery)entryMode=0;
         npcMatch=entryMode==2;libraryOnly=entryMode==1;
         deckLibrary.Initialize(entryMode==0);
         nativePlayer.betaPracticeRequested=false;
@@ -140,7 +163,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         ownLeader = 200055; enemyLeader = 200158;
         ownPreset = deckLibrary.Preferred();
         if (deckLibrary.Resolve(ownPreset, preferredCards, preferredLeader)) ownLeader = preferredLeader;
-        if(entryMode==0){
+        if(entryMode==0 && !effectGallery){
             enemyPreset=manager.betaDebugEnemyPreset;manager.betaDebugEnemyPreset=0;
             if(!BetaGwentDebugOpponentAllowed(enemyPreset))enemyPreset=BetaGwentAIRandomPreset();
             npcPreset=BetaGwentDuelPreset(enemyPreset);enemyLeader=npcPreset.leaderTemplateId;
@@ -157,6 +180,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         setOwnedCopies=GetMenuFlash().GetMemberFlashFunction("setOwnedCopies");
         setRewardMessage=GetMenuFlash().GetMemberFlashFunction("setRewardMessage");
         beginKegOpening=GetMenuFlash().GetMemberFlashFunction("beginKegOpening");
+        finishKegChoice=GetMenuFlash().GetMemberFlashFunction("finishKegChoice");
         pushKegCard=GetMenuFlash().GetMemberFlashFunction("pushKegCard");
         finishKegOpening=GetMenuFlash().GetMemberFlashFunction("finishKegOpening");
         setEditorName=GetMenuFlash().GetMemberFlashFunction("setEditorName");
@@ -166,6 +190,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         presentationPlayer=(W3PlayerWitcher)thePlayer;presentationTempo=10;presentationAiPause=1;presentationDifficulty=3;
         if(presentationPlayer){presentationTempo=presentationPlayer.BetaGwentAnimationTempo();presentationReduced=presentationPlayer.BetaGwentReducedEffects();presentationAiPause=presentationPlayer.BetaGwentAiPause();presentationDifficulty=presentationPlayer.BetaGwentDifficulty();}
         if (setAudioStatus) setAudioStatus.InvokeSelfSixArgs(FlashArgBool(BetaGwentAudioBankInstalled()), FlashArgBool(audio.IsBankReady()),FlashArgInt(presentationTempo),FlashArgBool(presentationReduced),FlashArgInt(presentationAiPause),FlashArgInt(presentationDifficulty));
+        if(setLeaderMotion)setLeaderMotion.InvokeSelfOneArg(FlashArgBool(FactsQueryLatestValue("bg_static_leaders")==0));
+        if(setBoardHelp)setBoardHelp.InvokeSelfOneArg(FlashArgBool(FactsQueryLatestValue("bg_hide_help")==0));
         // The tutorial is offered once before the first game; the flag lives in facts, so it survives saves made without the mod.
         if(setTextLanguage)setTextLanguage.InvokeSelfOneArg(FlashArgInt(FactsQueryLatestValue("bg_text_language")));
         if (setTutorialSeen) setTutorialSeen.InvokeSelfOneArg(FlashArgBool(FactsQueryLatestValue("bg_tutorial_seen") > 0));
@@ -187,7 +213,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         RefreshControllerDevice(theInput.LastUsedGamepad());
         LogChannel('BetaGwent', "BOARD_CONFIGURED schema=1 fixture=false previewDuel=true");
         LogChannel('BetaGwent', "BOARD_ENTRY name="+GetMenuName()+" editorOnly="+libraryOnly+" npc="+npcMatch+" pending="+pendingBefore+" requested="+requestedBefore+" lifecycle=81d");
-        PublishCollection();Publish(session.GetMessage());
+        if(effectGallery && startEffectGallery)startEffectGallery.InvokeSelfOneArg(FlashArgBool(true));
+        else {PublishCollection();Publish(session.GetMessage());}
         if(kegOnly && ((W3PlayerWitcher)thePlayer).BetaGwentKegPending())OnBetaGwentKegOpen(revision);
         // The pause-menu entry starts at the saved-deck library. Editing and
         // creating a draft are explicit player actions, never automatic.
@@ -266,9 +293,10 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         audioRevisions.Clear(); audioFrames.Clear();
         if (deckDraft) { PublishDeckEditor(status); return; }
         if (selectingDecks) { PublishDeckSelection(); return; }
-        if (duel.visualFrames.Size() > 0 && OpponentTurnWaiting())
+        if (OpponentTurnWaiting() && (duel.visualFrames.Size() > 0 || !duel.AiPreparationIsReady()))
         { deferredOpponent = true; LogChannel('BetaGwent', "AI_TURN_DEFERRED frames=" + duel.visualFrames.Size()); }
-        else duel.PumpOpponent();
+        else {duel.PumpOpponent();duel.ClearAiPreparation();}
+        if(OpponentTurnWaiting())deferredOpponent=true;
         if (!requestFlow.IsPending()) status = duel.GetMessage();
         duel.TakeVisualFrames(frames); visualBusy = frames.Size() > 0;
         beginVisualBatch.InvokeSelfOneArg(FlashArgInt(frames.Size() + 1));
@@ -284,9 +312,14 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         player=(W3PlayerWitcher)thePlayer;
         if(!configured || value!=revision || !player || !beginKegOpening || !pushKegCard || !finishKegOpening)return false;
         if(!player.BetaGwentKegPending()) {
-            if(!libraryOnly || npcMatch || player.IsInCombat())return false;
+            if(!libraryOnly || npcMatch || player.IsInCombat() || (kegOnly && !kegCanOpenNext))return false;
+            kegCanOpenNext=false;
             player.BetaGwentOpenKeg();
-            if(!player.BetaGwentKegPending()){Publish("Нет неоткрытых бочек.");return false;}
+            if(!player.BetaGwentKegPending()){
+                PublishKegInventory();
+                if(kegOnly && finishKegChoice)finishKegChoice.InvokeSelfTwoArgs(FlashArgInt(revision),FlashArgBool(true));
+                else Publish("Нет неоткрытых бочек.");return false;
+            }
         }
         if(!kegOnly) {
             // Stage 110: kegs open only from the deck editor. Two ~55 MiB menus cannot be
@@ -295,7 +328,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
             if(npcMatch)return false;
             kegSwitch=true;LogChannel('BetaGwent',"KEG_MENU_SWITCH from="+GetMenuName());CloseMenu();return true;
         }
-        PublishKegInventory();
+        revision+=1;kegCanOpenNext=false;player.BetaGwentBackupProfile();PublishCollection();
         player.BetaGwentKegContents(ordinary,offers);beginKegOpening.InvokeSelfOneArg(FlashArgInt(revision));
         for(i=0;i<ordinary.Size();i+=1)pushKegCard.InvokeSelfThreeArgs(FlashArgInt(ordinary[i]),FlashArgBool(true),FlashArgInt(player.BetaGwentKegReceivedScraps(i)));
         for(i=0;i<offers.Size();i+=1){kegScraps=0;if(player.BetaGwentOwned(offers[i])>=BetaGwentCollectionCap(offers[i]))kegScraps=BetaGwentMillValue(offers[i]);pushKegCard.InvokeSelfThreeArgs(FlashArgInt(offers[i]),FlashArgBool(false),FlashArgInt(kegScraps));}
@@ -304,8 +337,12 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     event OnBetaGwentKegChoose(value : int, id : int)
     {
         var player : W3PlayerWitcher;player=(W3PlayerWitcher)thePlayer;
-        if(!configured || value!=revision || !player || !player.BetaGwentChooseKeg(id)) { OnBetaGwentKegOpen(revision);return false; }
-        if(kegOnly){CloseMenu();return true;}
+        if(!configured || value!=revision || !player || !finishKegChoice || !player.BetaGwentKegPending())return false;
+        if(!player.BetaGwentChooseKeg(id)){
+            finishKegChoice.InvokeSelfTwoArgs(FlashArgInt(revision),FlashArgBool(false));return false;
+        }
+        revision+=1;kegCanOpenNext=true;player.BetaGwentBackupProfile();
+        if(kegOnly){PublishCollection();finishKegChoice.InvokeSelfTwoArgs(FlashArgInt(revision),FlashArgBool(true));return true;}
         ((W3PlayerWitcher)thePlayer).BetaGwentEnsureCollection();
         PublishCollection();Publish("Карта добавлена в коллекцию.");return true;
     }
@@ -316,11 +353,21 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         PublishKegInventory();
         BetaGwentDuelCollection(ids);BetaGwentDuelLeaders(leaders);
         for(i=0;i<leaders.Size();i+=1)ids.PushBack(leaders[i]);
-        for(i=0;i<ids.Size();i+=1)setOwnedCopies.InvokeSelfTwoArgs(FlashArgInt(ids[i]),FlashArgInt(player.BetaGwentOwned(ids[i])));
+        for(i=0;i<ids.Size();i+=1){
+            setOwnedCopies.InvokeSelfTwoArgs(FlashArgInt(ids[i]),FlashArgInt(player.BetaGwentOwned(ids[i])));
+            if(setCollectionNew)setCollectionNew.InvokeSelfTwoArgs(FlashArgInt(ids[i]),FlashArgBool(player.BetaGwentCardIsNew(ids[i])));
+        }
         // Id -1 carries the scraps balance; it is sent last so the catalog can refresh once.
         setOwnedCopies.InvokeSelfTwoArgs(FlashArgInt(-1),FlashArgInt(player.BetaGwentScraps()));
     }
     // Catalog crafting: create a card from scraps, or mill a spare copy into scraps.
+    event OnBetaGwentCollectionSeen(id : int)
+    {
+        var player : W3PlayerWitcher;player=(W3PlayerWitcher)thePlayer;
+        if(!configured || effectGallery || !selectingDecks || !player || !setCollectionNew)return false;
+        player.BetaGwentCardSeen(id);setCollectionNew.InvokeSelfTwoArgs(FlashArgInt(id),FlashArgBool(player.BetaGwentCardIsNew(id)));
+        return true;
+    }
     event OnBetaGwentCollectionCraft(id : int)
     {
         var player : W3PlayerWitcher;var d : SBetaGwentDuelDefinition;player=(W3PlayerWitcher)thePlayer;
@@ -483,10 +530,24 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if (status == "") status = validation.message;
         finishDeckEditor.InvokeSelfTwoArgs(FlashArgInt(revision), FlashArgString(status));
     }
+    event OnBetaGwentDeckCreate(value : int, id : int)
+    {
+        var d : SBetaGwentDuelDefinition; var player : W3PlayerWitcher;
+        if (!configured || !selectingDecks || deckDraft || value != revision || !BetaGwentDuelIsLeader(id)) return false;
+        player = (W3PlayerWitcher)thePlayer;
+        if ((libraryOnly || npcMatch) && (!player || player.BetaGwentOwned(id) < 1)) return false;
+        d = BetaGwentDuelDefinition(id);
+        if (npcMatch && forcedBetaFaction != 0 && d.header.factionMask != forcedBetaFaction) return false;
+        deckDraft = deckLibrary.Edit(0);
+        if (!deckDraft) { PublishDeckSelection(); return false; }
+        deckClearHistory.Clear(); editorPublishedFaction = 0;
+        deckDraft.leader = id; deckDraft.faction = d.header.factionMask;
+        PublishDeckEditor(""); return true;
+    }
     event OnBetaGwentDeckEditorOpen(value : int, id : int)
     {
         if (!configured || !selectingDecks || deckDraft || value != revision) return false;
-        editorPublishedFaction = 0; deckDraft = deckLibrary.Edit(id);
+        deckClearHistory.Clear();editorPublishedFaction = 0; deckDraft = deckLibrary.Edit(id);
         if (!deckDraft) { LogChannel('BetaGwent', "DECK_EDITOR_OPEN_REJECT fullOrInvalid=true"); PublishDeckSelection(); return false; }
         PublishDeckEditor(""); return true;
     }
@@ -519,7 +580,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
             for (i = deckDraft.cards.Size() - 1; i >= 0; i -= 1)
             { d = BetaGwentDuelDefinition(deckDraft.cards[i]); if (d.header.factionMask != 1 && d.header.factionMask != deckDraft.faction) deckDraft.cards.Erase(i); }
         }
-        deckDraft.leader = id; PublishDeckEditor(""); return true;
+        deckClearHistory.Clear();deckDraft.leader = id; PublishDeckEditor(""); return true;
     }
     event OnBetaGwentDeckRename(value : int, title : string)
     {
@@ -609,10 +670,29 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if (!configured || !deckDraft || value != revision) return false;
         deckDraft = NULL; selectingDecks = true; PublishDeckSelection(); return true;
     }
+    event OnBetaGwentDeckEditorLeave(value : int, save : bool, title : string, nextKeg : bool)
+    {
+        if(!configured || !deckDraft || value!=revision)return false;
+        if(save){if(!OnBetaGwentDeckEditorSave(value,title))return false;}
+        else if(!OnBetaGwentDeckEditorCancel(value))return false;
+        if(nextKeg)OnBetaGwentKegOpen(revision);
+        return true;
+    }
     event OnBetaGwentDeckEditorClear(value : int)
     {
-        if (!configured || !deckDraft || value != revision) return false;
+        var snapshot : SBetaGwentClearedDeck;
+        if (!configured || !deckDraft || value != revision || deckDraft.cards.Size()==0) return false;
+        snapshot.cards=deckDraft.cards;snapshot.faction=deckDraft.faction;
+        deckClearHistory.PushBack(snapshot);if(deckClearHistory.Size()>20)deckClearHistory.Erase(0);
         deckDraft.cards.Clear(); PublishDeckEditor(""); return true;
+    }
+    event OnBetaGwentDeckEditorRestore(value : int)
+    {
+        var snapshot : SBetaGwentClearedDeck;var index : int;
+        if(!configured || !deckDraft || value!=revision || deckDraft.cards.Size()!=0 || deckClearHistory.Size()==0)return false;
+        index=deckClearHistory.Size()-1;snapshot=deckClearHistory[index];
+        if(snapshot.faction!=deckDraft.faction)return false;
+        deckDraft.cards=snapshot.cards;deckClearHistory.Erase(index);PublishDeckEditor("");return true;
     }
     event OnBetaGwentDeckSelect(value : int, side : int, presetId : int)
     {
@@ -817,7 +897,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
                 FlashArgInt(requestView.templateId), FlashArgInt(requestView.factionId),
                 FlashArgBool(requestView.revealed), FlashArgBool(requestView.selected));
         }
-        setVisualCue.InvokeSelfNineArgs(FlashArgInt(revision), FlashArgInt(frame.kind + 256 * Min(255, Max(1, frame.attackCount))), FlashArgInt(frame.sourceId),
+        setVisualCue.InvokeSelfNineArgs(FlashArgInt(revision), FlashArgInt(frame.kind + 256 * Min(255, Max(1, frame.attackCount)) + 65536 * frame.audioKind), FlashArgInt(frame.sourceId),
             FlashArgInt(frame.targetId), FlashArgInt(frame.side), FlashArgInt(frame.row), FlashArgInt(frame.templateId),
             FlashArgInt(frame.duration), FlashArgString(frame.status));
         setVisualTarget.InvokeSelfFiveArgs(FlashArgInt(revision), FlashArgInt(frame.targetTemplateId), FlashArgInt(frame.targetPower),
@@ -840,17 +920,52 @@ class CR4BetaGwentBoardMenu extends CR4Menu
 
     private function ResumeOpponentAfterVoice()
     {
+        var prepared : bool;
         // A spoken card line delays the opponent briefly, never for its whole length:
         // after 1 s the turn continues and the line keeps playing over it.
-        if(!configured || visualBusy || !deferredOpponent)return;
+        if(!configured || visualBusy || !deferredOpponent || opponentPreparationBusy)return;
         if(audio && audio.IsVoiceActive() && audio.CurrentTime()-deferredVoiceAt<1.0f)return;
+        opponentPreparationBusy=true;prepared=duel.AiPreparationStep();
+        if(!prepared){opponentPreparationBusy=false;return;}
         deferredOpponent=false;
         if(!duel.IsPending())Publish(duel.GetMessage());
+        opponentPreparationFinished=true;opponentPreparationBusy=false;
     }
 
+    event OnBetaGwentAudioSpellLaunch(value : int, clock : int)
+    {
+        var i,j,kind : int;var frame : CBetaGwentDuelVisualFrame;var card : SBetaGwentCardSnapshot;
+        if(!configured || !audio || spellLaunchRevisions.Contains(value))return false;
+        for(i=0;i<audioRevisions.Size();i+=1)if(audioRevisions[i]==value){
+            frame=audioFrames[i];kind=frame.audioKind;if(kind==0)kind=22;
+            // Crow collapses power/death snapshots under the final death revision.
+            // The authoritative source/template still identifies the same spell.
+            if(frame.kind==3 && frame.templateId==200224)kind=22;
+            if(frame.kind!=2 && !(frame.kind==3 && frame.templateId==200224))return false;
+            if(frame.sourceId<=0 || frame.sourceId==frame.targetId)return false;
+            if(BetaGwentAudioElement164(frame.templateId,kind,true)=="")return false;
+            for(j=0;j<frame.cards.Size();j+=1){
+                card=frame.cards[j].card;
+                if(card.instanceId==frame.sourceId && card.positionPlayerId==2 && (card.tokenMask & 8)!=0)return false;
+            }
+            spellLaunchRevisions.PushBack(value);if(spellLaunchRevisions.Size()>64)spellLaunchRevisions.Erase(0);
+            if(clock>0)audio.SetClock(clock);audio.SpellLaunch(frame.templateId,kind);return true;
+        }
+        return false;
+    }
+    event OnBetaGwentEffectGalleryAudio(id : int, kind : int, token : int, clock : int)
+    {
+        var definition : SBetaGwentDuelDefinition;
+        if(!configured || !effectGallery || !audio || kind<1 || kind>133)return false;
+        definition=BetaGwentDuelDefinition(id);if(definition.header.templateId!=id)return false;
+        audio.SetClock(clock);
+        if(kind>=100)audio.SpellLaunch(id,kind-100);
+        else audio.Cue(kind,id,0,0,0,token,0,definition.header.typeMask==4 && definition.header.tierMask==8 && !BetaGwentAudioIsLeader(id));
+        return true;
+    }
     event OnBetaGwentAudioCue(value : int)
     {
-        var i, kind, id, j, token, targetTokens, rowIndex : int; var frame : CBetaGwentDuelVisualFrame; var s : SBetaGwentCardSnapshot;
+        var i, kind, id, j, token, targetTokens, rowIndex, landingTemplate : int; var frame : CBetaGwentDuelVisualFrame; var s : SBetaGwentCardSnapshot;var landing : SBetaGwentDuelDefinition;var goldLanding : bool;
         if (!configured || !audio) return false;
         for (i = 0; i < audioRevisions.Size(); i += 1)
         {
@@ -863,6 +978,9 @@ class CR4BetaGwentBoardMenu extends CR4Menu
             {
                 s = frame.cards[j].card;
                 if (s.instanceId == frame.targetId) targetTokens = s.tokenMask;
+                if((s.locationMask&7)!=0 && (s.tokenMask&8)==0
+                    && (frame.kind==1 && s.instanceId==frame.sourceId
+                        || (frame.kind==15 || frame.kind==16) && s.instanceId==frame.targetId))landingTemplate=s.runtimeTemplate.templateId;
                 if (s.instanceId == frame.sourceId && s.positionPlayerId == 2 && (s.tokenMask & 8) != 0) id = 0;
             }
             if (frame.side > 0 && frame.row > 0)
@@ -874,7 +992,9 @@ class CR4BetaGwentBoardMenu extends CR4Menu
             // Weather ticks have no unit source. Keep placement sounds separate
             // and include armour-only hits (the weather still landed).
             if (frame.kind == 2 && frame.sourceId == 0 && frame.row > 0 && token != 0 && (kind == 20 || kind == 22)) kind = 33;
-            audio.Cue(kind, id, frame.flags, frame.scoreOne, frame.scoreTwo, token, targetTokens); return true;
+            landing=BetaGwentDuelDefinition(landingTemplate);
+            goldLanding=landing.header.typeMask==4 && landing.header.tierMask==8 && !BetaGwentAudioIsLeader(landingTemplate);
+            audio.Cue(kind, id, frame.flags, frame.scoreOne, frame.scoreTwo, token, targetTokens, goldLanding); return true;
         }
         return false;
     }
@@ -890,6 +1010,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if(configured && audio)pending=audio.IsIntroActive();
         if(setIntroAudioState && introAudioSerial>0)setIntroAudioState.InvokeSelfTwoArgs(FlashArgInt(introAudioSerial),FlashArgBool(pending));
     }
+    event OnBetaGwentAudioLeaderEntrance(templateId : int, side : int, serial : int, clock : int)
+    { if(configured && audio && serial>0 && serial==introAudioSerial){audio.SetClock(clock);audio.LeaderEntrance(templateId,side);} }
     event OnBetaGwentAudioIntroCancel(serial : int)
     { if(serial==introAudioSerial){if(audio)audio.CancelIntro();introAudioSerial=0;} }
     event OnBetaGwentAudioKeg(kind : int)
@@ -899,7 +1021,18 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     event OnBetaGwentUIError(detail : string)
     { LogChannel('BetaGwent', "UI_ERROR " + detail); }
     event OnBetaGwentPerf(eventName : string, ms : int)
-    { if (configured && duel) duel.AiPerfFeedback(ms); }
+    {
+        if(!configured || !duel)return false;
+        // Flash getTimer measures the synchronous call, including the final play.
+        if(eventName=="OnBetaGwentAudioTick" || eventName=="OnBetaGwentVisualDone"){
+            opponentPreparationMs+=Max(0,ms);opponentPreparationPeakMs=Max(opponentPreparationPeakMs,ms);
+            if(opponentPreparationFinished){
+                duel.AiPerfFeedback(opponentPreparationMs);
+                LogChannel('BetaGwent',"AI_PREPARATION totalMs="+opponentPreparationMs+" peakStepMs="+opponentPreparationPeakMs);
+                opponentPreparationMs=0;opponentPreparationPeakMs=0;opponentPreparationFinished=false;
+            }
+        }else duel.AiPerfFeedback(ms);
+    }
     event OnBetaGwentAudioTick(clock : int)
     { if (configured && audio) { if (clock > 0) audio.SetClock(clock); audio.Tick(); PublishIntroAudio(); ResumeOpponentAfterVoice(); if(setAudioStatus)setAudioStatus.InvokeSelfSixArgs(FlashArgBool(BetaGwentAudioBankInstalled()),FlashArgBool(audio.IsBankReady()),FlashArgInt(presentationTempo),FlashArgBool(presentationReduced),FlashArgInt(presentationAiPause),FlashArgInt(presentationDifficulty)); } }
     event OnBetaGwentTextLanguage(language:int)
@@ -914,9 +1047,14 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     { var player : W3PlayerWitcher;if (configured && audio) audio.Configure(effects, voices);player=(W3PlayerWitcher)thePlayer;if(player && (tempo==10 || tempo==15 || tempo==20)){presentationTempo=tempo;presentationReduced=reduced;player.BetaGwentSetPresentation(tempo,reduced);}
       if(player && aiPause>=1 && aiPause<=4){presentationAiPause=aiPause;player.BetaGwentSetAiPause(aiPause);}
       if(player && difficulty>=1 && difficulty<=3){presentationDifficulty=difficulty;player.BetaGwentSetDifficulty(difficulty);LogChannel('BetaGwent',"AI_DIFFICULTY level="+difficulty);} }
+    event OnBetaGwentLeaderMotion(dynamic : bool)
+    { if(!configured)return false;if(dynamic)FactsSet("bg_static_leaders",0);else FactsSet("bg_static_leaders",1);return true; }
+    event OnBetaGwentBoardHelp(visible : bool)
+    { if(!configured)return false;if(visible)FactsSet("bg_hide_help",0);else FactsSet("bg_hide_help",1);return true; }
     event OnBetaGwentAudioCancel()
     {
         audioRevisions.Clear(); audioFrames.Clear();
+        spellLaunchRevisions.Clear();
         if (audio) audio.Cancel();
     }
 
@@ -1045,12 +1183,17 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     }
     event OnBetaGwentRequestSelect(value : int, requestId : int, playerId : int, kind : int, itemId : int)
     {
+        var swaps : int;
         LogChannel('BetaGwent', "UI_REQUEST_SELECT revision=" + value + " id=" + requestId + " kind=" + kind + " item=" + itemId);
         if (!AcceptRevision(value)) return false;
         if (duel.IsPending())
         {
             if (playerId != 1) return false;
-            if (duel.IsMulligan() && kind == 1) duel.SelectMulligan(requestId, itemId);
+            if (duel.IsMulligan() && kind == 1)
+            {
+                swaps=duel.MulliganSwapCount();duel.SelectMulligan(requestId, itemId);
+                if(audio && duel.MulliganSwapCount()>swaps)audio.Ui(5);
+            }
             else if (duel.IsTemplateChoice() && kind == 1) duel.SelectTemplateChoice(requestId, itemId);
             else if ((duel.IsGraveyardChoice() || duel.IsHandPowerChoice() || duel.IsPileChoice()) && kind == 1) duel.SelectTarget(requestId, itemId);
             else if (!duel.IsMulligan() && !duel.IsGraveyardChoice() && !duel.IsPileChoice() && kind == 2) duel.SelectTarget(requestId, itemId);
@@ -1129,7 +1272,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
             LogChannel('BetaGwent',"NATIVE_GWENT_RESULT deck="+manager.betaEnemyDeckName+" winner="+result.matchWinnerMask+" state="+thePlayer.GetGwintMinigameState());
         }
         // Mirror collection, scraps, kegs and decks into facts (survives a save made without the mod).
-        backupPlayer=(W3PlayerWitcher)thePlayer;if(backupPlayer)backupPlayer.BetaGwentBackupProfile();
+        backupPlayer=(W3PlayerWitcher)thePlayer;if(backupPlayer && !effectGallery)backupPlayer.BetaGwentBackupProfile();
         if (audio) audio.Close(); audio = NULL; audioRevisions.Clear(); audioFrames.Clear();
         if (configured)
         {
@@ -1162,6 +1305,15 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     }
 }
 
+class CBetaGwentEffectGalleryData extends IScriptable {}
+exec function bgboard_effects()
+{
+    var data : CBetaGwentEffectGalleryData;var nativePlayer : CR4Player;
+    if(theGame.GetGuiManager().IsAnyMenu())return;
+    data=new CBetaGwentEffectGalleryData in theGame;
+    nativePlayer=thePlayer;nativePlayer.betaPracticeRequested=true;
+    theGame.RequestMenu('BetaGwentBoard',data);
+}
 exec function bgboard_open(optional enemyPreset : int)
 {
     var nativePlayer : CR4Player;
@@ -1187,4 +1339,13 @@ exec function bgboard_close()
     var menu : CR4BetaGwentBoardMenu;
     menu = (CR4BetaGwentBoardMenu)theGame.GetGuiManager().GetRootMenu();
     if (menu) menu.CloseMenu();
+}
+
+exec function bg_allcards()
+{
+    var player : W3PlayerWitcher;var granted : int;
+    if(!theGame || theGame.GetGuiManager().IsAnyMenu())return;
+    player=(W3PlayerWitcher)thePlayer;if(!player)return;
+    granted=player.BetaGwentGrantAllCards();
+    LogChannel('BetaGwent',"bg_allcards result="+granted);
 }

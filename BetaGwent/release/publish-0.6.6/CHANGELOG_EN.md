@@ -1,0 +1,3 @@
+# Gwent Beta Classic 0.6.6
+
+RU test package: universal innkeeper kegs; first special VFX adaptation; grouped White Frost/Drought/Ragh nar Roog casts; simultaneous trigger boosts; softer landing without circles; no played-leader scene, gold landing sound; 12 one-shot leader entrances and nine existing-loop fallbacks; persistent hover portrait; expanded numerical history, target reasons and independent brightness. Includes the other agent's resilient-unit, spy-preservation and self-target fixes, plus the reproduced False Ciri regression. Native in-game acceptance remains pending. See UPDATE.md (Russian) for details.

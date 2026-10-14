@@ -62,7 +62,7 @@ function rich(){const p=player();check(p.BetaGwentEnsureCollection(),'source col
 // 1. Round trip of every mirrored field.
 let src=rich();src.BetaGwentBackupProfile();
 const cur1=facts.get('bg_b2_cur'),gen1=facts.get('bg_b2_gen');check((cur1===1||cur1===2)&&facts.get('bg_b2_'+cur1+'_done')===gen1,'current bank complete with latest generation');
-let w=player();check(w.BetaGwentEnsureCollection(),'empty profile restores from format 2');
+let w=player();check(w.BetaGwentEnsureCollection(),'empty profile restores from current bank format');
 check(S(w.betaGwentOwnedIds)===S(src.betaGwentOwnedIds)&&S(w.betaGwentOwnedCopies)===S(src.betaGwentOwnedCopies),'collection restored');
 check(w.betaGwentScraps===77&&w.betaGwentKegsUnopened===2,'scraps and kegs restored');
 check(w.betaGwentDifficulty===2&&w.betaGwentAiPause===3&&w.betaGwentAnimationTempo===15&&w.betaGwentReducedEffects===true,'settings restored');
@@ -88,7 +88,7 @@ function rewriteSum(bank){const p='bg_b2_'+bank+'_';let a=1,b=0;const mix=v=>{v=
  const n=facts.get(p+'cn');for(let i=0;i<n;i++){mix(facts.get(p+'ci'+i)||0);mix(facts.get(p+'cc'+i)||0);}
  for(let s=1;s<=13;s++){const d=p+'d'+s+'_';const m=facts.get(d+'n')||0;mix(m);if(!m)continue;mix(facts.get(d+'l'));mix(facts.get(d+'f'));for(let i=0;i<m;i++)mix(facts.get(d+i));}
  for(const k of ['ka','ks','ko','ob','or']){const m=facts.get(p+k)||0;mix(m);for(let i=0;i<m;i++)mix(facts.get(p+k+i)||0);}
- facts.set(p+'sa',a);facts.set(p+'sb',b);}
+ if(facts.get(p+'fm')===3&&facts.get(p+'fg')===facts.get(p+'gen')){mix(3);mix(facts.get(p+'fg'));const m=facts.get(p+'nc')||0;mix(m);for(let i=0;i<m;i++)mix(facts.get(p+'ni'+i)||0);} facts.set(p+'sa',a);facts.set(p+'sb',b);}
 rewriteSum(cur2);check(facts.get('bg_b2_'+cur2+'_sa')===good2.get('bg_b2_'+cur2+'_sa'),'test checksum model matches the script');
 facts.set('bg_b2_'+cur2+'_ci1',facts.get('bg_b2_'+cur2+'_ci0'));rewriteSum(cur2);
 facts.set('bg_b2_'+cur1+'_cc0',99);rewriteSum(cur1);
@@ -127,6 +127,29 @@ facts.clear();facts.set('bg_bkn_555',5);const fresh=player();fresh.BetaGwentEnsu
 const k3=fresh.BetaGwentRewardActorKey(actor('npc-other',555));check(fresh.betaGwentRewardActorWins[k3-1]===0,'mirror ignored in ordinary play');
 // 8. Existing profile is never overwritten.
 const kept=player();kept.BetaGwentEnsureCollection();kept.betaGwentScraps=5;check(!kept.BetaGwentRestoreProfile()&&kept.betaGwentScraps===5,'existing profile never overwritten');
+// Format 3: auxiliary unseen state migrates separately from ownership.
+facts.clear();let upgraded=player();upgraded.BetaGwentEnsureCollection();
+upgraded.betaGwentNewCardsSchema=0;
+check(upgraded.BetaGwentEnsureCollection()&&upgraded.betaGwentNewCardIds.length===0,'old saved collection upgrades without marking existing cards new');
+upgraded.betaGwentScraps=432;upgraded.betaGwentKegsUnopened=3;upgraded.betaGwentRewardedQuests.push('claimed');
+const oldClaims=S(upgraded.betaGwentRewardedQuests),oldWins=S(upgraded.betaGwentRewardedNpcs),seedBefore=upgraded.betaGwentProgressionSeed;
+const given=upgraded.BetaGwentGrantAllCards();
+check(given>0&&upgraded.betaGwentNewCardIds.length>0,'debug command fills missing cards and records unseen acquisitions');
+check(upgraded.betaGwentOwnedIds.every((id,i)=>upgraded.betaGwentOwnedCopies[i]===BetaGwentCollectionCap(id)),'debug command grants exactly the allowed number of copies');
+check(upgraded.betaGwentScraps===432&&upgraded.betaGwentKegsUnopened===3&&S(upgraded.betaGwentRewardedQuests)===oldClaims&&S(upgraded.betaGwentRewardedNpcs)===oldWins&&upgraded.betaGwentProgressionSeed===seedBefore,'debug grant preserves money, kegs, reward claims and progression RNG');
+const seenId=upgraded.betaGwentNewCardIds[0];check(upgraded.BetaGwentCardIsNew(seenId)&&upgraded.BetaGwentCardSeen(seenId)&&!upgraded.BetaGwentCardIsNew(seenId),'explicit inspection clears only its unseen template');
+const newBefore=S(upgraded.betaGwentNewCardIds);check(upgraded.BetaGwentGrantAllCards()===0&&S(upgraded.betaGwentNewCardIds)===newBefore&&!upgraded.BetaGwentCardIsNew(seenId),'repeated debug grant is idempotent and does not remark seen cards');
+upgraded.BetaGwentBackupProfile();const markerBank=facts.get('bg_b2_cur'),prefix='bg_b2_'+markerBank+'_';
+check(facts.get(prefix+'fm')===3&&facts.get(prefix+'fg')===facts.get(prefix+'gen'),'new format belongs to this completed bank generation');
+let restoredMarkers=player();check(restoredMarkers.BetaGwentRestoreProfile()&&S(restoredMarkers.betaGwentNewCardIds)===newBefore,'format 3 restores exactly the unseen templates');
+const markerFacts=new Map(facts);facts.set(prefix+'ni0',999999);
+let brokenMarkers=player();check(!brokenMarkers.BetaGwentRestoreBank(markerBank)&&brokenMarkers.betaGwentOwnedIds.length===0,'invalid new-card reference rejects the entire bank without partial ownership changes');
+facts.clear();markerFacts.forEach((v,k)=>facts.set(k,v));
+facts.set(prefix+'fg',0);rewriteSum(markerBank);
+let older=player();check(older.BetaGwentRestoreBank(markerBank)&&older.betaGwentNewCardIds.length===0&&S(older.betaGwentOwnedIds)===S(upgraded.betaGwentOwnedIds),'format 2 bank with stale extension keys restores all cards as seen');
+facts.clear();markerFacts.forEach((v,k)=>facts.set(k,v));facts.set(prefix+'nc',facts.get(prefix+'nc')+1);
+let interruptedMarkers=player();check(!interruptedMarkers.BetaGwentRestoreBank(markerBank)&&interruptedMarkers.betaGwentOwnedIds.length===0,'corrupt unseen length cannot be applied');
+
 console.log(JSON.stringify({stage:136,checks,nativeSerializationTested:false}));
 '''
 script = out/'checks.js'

@@ -1,0 +1,20 @@
+'use strict';
+const fs=require('fs'),path=require('path'),vm=require('vm');
+const snapshot=path.resolve(process.argv[2]),context=vm.createContext({console});
+const fixture=fs.readFileSync('tools/ai/check_consume_self.js','utf8').split('Host.strength=4;')[1].split('// Alone:')[0];
+vm.runInContext(['runtime.js','rules.js','harness.js'].map(f=>fs.readFileSync(path.join(snapshot,f),'utf8')).join('\n')+'\nHost.strength=4;'+fixture+String.raw`
+const g=fixture(1),a=add(g,142317,1,0,1,10),b=add(g,132314,1,0,2,13);
+g.recordVisuals=true;g.visualFrames=[];g.SetVisualSource(a.cardState.instanceId,a.TemplateId(),1,1);
+g.MonsterDuel(a,b,0,0);g.FlushEffects();g.FlushDeaths();
+const hits=g.visualFrames.filter(f=>f.kind===2);
+check(hits.length===3,'duel retains all three half-strikes');
+check(hits.map(f=>f.sourceId).join(',')===[a.cardState.instanceId,b.cardState.instanceId,a.cardState.instanceId].join(','),'visual attacker alternates for retaliation');
+check(hits.map(f=>f.targetId).join(',')===[b.cardState.instanceId,a.cardState.instanceId,b.cardState.instanceId].join(','),'retaliation targets the challenger');
+check(a.Snapshot().power.currentPower===7&&!alive(b)&&!g.IsFatal(),'visual attribution preserves duel rules');
+check(g.visualFrames.some(f=>f.kind===3&&f.sourceId===a.cardState.instanceId),'death keeps the actual final attacker');
+const h=fixture(1),challenger=add(h,142317,1,0,1,3),defender=add(h,112102,1,0,2,10);
+h.recordVisuals=true;h.visualFrames=[];h.SetVisualSource(challenger.cardState.instanceId,142317,1,1);
+h.MonsterDuel(challenger,defender,0,0);h.FlushEffects();h.FlushDeaths();
+check(h.visualFrames.some(f=>f.kind===3&&f.sourceId===defender.cardState.instanceId&&f.templateId===142317),'retaliation by Igni does not turn an ordinary duel into burning');
+`,context,{timeout:120000});
+console.log('PASS native duel animation attribution');

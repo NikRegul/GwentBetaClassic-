@@ -1,0 +1,682 @@
+{
+  "entry": "DeckBuilder",
+  "source": "D:\\w3mod\\BetaGwent\\ui\\build\\betagwent_decks.swf",
+  "sourceSha256": "b1d30a7395d501008c74b2c9fa7353d43b55896f3822f5130195822de186db36",
+  "target": "D:\\w3mod\\GwentB\\myproject1\\workspace\\betagwent\\betagwent_decks.redswf",
+  "updatedSha256": "d8c041feae78ec9e7f9247a973cc9874f914508506ff2f7703c72d94fefce5b4",
+  "updatedBytes": 226971503,
+  "originalSha256": "7c00abac51d803709a8af51d8d3d202121dd75017e79c274aea7d385d71a1f03",
+  "candidate": "D:\\w3mod\\BetaGwent\\build\\native-hd93-resource\\betagwent_decks.redswf",
+  "backup": "D:\\w3mod\\BetaGwent\\build\\resource-backups\\7c00abac51d803709a8af51d8d3d202121dd75017e79c274aea7d385d71a1f03.redswf",
+  "applied": true,
+  "nativeABCMatchesBuiltSWF": true,
+  "nativeSymbolsMatchBuiltSWF": true,
+  "headerTableChunkChecksumsVerified": true,
+  "nativeImageLinkagePrefixVerified": true,
+  "totalTextureChunks": 30,
+  "exportedBindings": 60,
+  "aliasTexturesDeduplicated": 30,
+  "bindings": [
+    {
+      "cid": 1,
+      "imageId": 0,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I1.dds",
+      "sha256": "fea0dcab0e8a8f56d4950dcb6382ec206e8c54782fe47a46bf1401b230ce87a1",
+      "size": [
+        256,
+        448
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 2,
+      "imageId": 1,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I2.dds",
+      "sha256": "5457feebee04beb7f2676cfa8a1940272f41e1f67b3efdcc961f6216a4fa794e",
+      "size": [
+        256,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 3,
+      "imageId": 2,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I3.dds",
+      "sha256": "093b70fcbfacf3d895e310d1327a6ca8e2118db1d76e76e29ab6e262ddab90a2",
+      "size": [
+        512,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 4,
+      "imageId": 3,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I4.dds",
+      "sha256": "f6239549b90759261c23842b256fed0b8e730a6d202e327951e04645953e7b67",
+      "size": [
+        500,
+        660
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 5,
+      "imageId": 4,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I5.dds",
+      "sha256": "16e7255d3bdf03a0060e5b33b67fe35789ca30950bd4e02d999ea1244908b4d7",
+      "size": [
+        256,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 6,
+      "imageId": 5,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I6.dds",
+      "sha256": "a8502c3181413def26a5f27196db54970092f3b596f769cdcae1b3393f1966b8",
+      "size": [
+        1024,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 7,
+      "imageId": 6,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I7.dds",
+      "sha256": "7686fd408dd607a945fa99f4f17532dcba0d5a204f168a8858a7ad31a6544aa8",
+      "size": [
+        1024,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 8,
+      "imageId": 7,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I8.dds",
+      "sha256": "d764f3f96346a8c0feb91f0ee50a9e020d84b1d010f06a8e8907e39abaaf0fad",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 9,
+      "imageId": 8,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I9.dds",
+      "sha256": "e02a2a2b98c00998c1db9c9e572be77b41078ead02d7038246f03f2b430ddb19",
+      "size": [
+        1024,
+        1216
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 10,
+      "imageId": 9,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_IA.dds",
+      "sha256": "8f2bc16afe77e76a379d76fba9dba012584a33857f8ffdefe9129bd11410de23",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 11,
+      "imageId": 10,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_IB.dds",
+      "sha256": "2db88a10d8bcbd74cfa7915d4069a21e1d39b61ea3cc12a0702b237fb265c26b",
+      "size": [
+        512,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 12,
+      "imageId": 11,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_IC.dds",
+      "sha256": "142c1536accb03f3a53d1f8aa89b37d40026bdd424e12e9f3cb0a91d1478b9f8",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 13,
+      "imageId": 12,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_ID.dds",
+      "sha256": "5eef1ceb34ac6e6fb0c769331571b42d45926ea71521c72509966e0ed533d245",
+      "size": [
+        1296,
+        2128
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 14,
+      "imageId": 13,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_IE.dds",
+      "sha256": "6736948cacc947ac68e09df977f1e355d91c200954e2bfa2c1658f49b3f40108",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 15,
+      "imageId": 14,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_IF.dds",
+      "sha256": "adff3b08671ad80624e3723fda8394dacddd198032d45524b9706690714b68e5",
+      "size": [
+        2048,
+        2032
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 16,
+      "imageId": 15,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I10.dds",
+      "sha256": "722b38e07931dbea8c56b4578eff018410a7802b0fccb3a786cc508d6358f9f8",
+      "size": [
+        1680,
+        2288
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 17,
+      "imageId": 16,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I11.dds",
+      "sha256": "f578b4ac600a83a3c1fd943c7700cee87ac9f257aafeac24ae2b34d34b4e778f",
+      "size": [
+        1584,
+        1348
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 18,
+      "imageId": 17,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I12.dds",
+      "sha256": "e9679a758d5190a588d69fb041bd47fb88394541ca3b2574084745c5acdfbe30",
+      "size": [
+        1024,
+        1988
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 19,
+      "imageId": 18,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I13.dds",
+      "sha256": "2f34c2f3868dfda80b01fbc3d1f82015637fc1bd752f713542c95884867d558e",
+      "size": [
+        2880,
+        408
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 20,
+      "imageId": 19,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I14.dds",
+      "sha256": "f5888e51e71803337cafaa2844321ec7bff3f95df4cdc999cee30b90007879e4",
+      "size": [
+        3072,
+        2656
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 21,
+      "imageId": 20,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I15.dds",
+      "sha256": "892be989719587163b0ec7bf21d59488a7196e5a4d7653873b77fd16a65173ff",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 22,
+      "imageId": 21,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I16.dds",
+      "sha256": "5776e6af8558597e26d84b954614e56be0822bb3f9959036cd0a2cdb8fb566d4",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 23,
+      "imageId": 22,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I17.dds",
+      "sha256": "c2822b0a686fda888bd71499659ca50941352bc53cbeebfcceb0c846daab4cfa",
+      "size": [
+        1024,
+        1288
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 24,
+      "imageId": 23,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I18.dds",
+      "sha256": "d9cc6840128ca0117285660110772056a68663d7fe47ba04df9a50a987cf0c2a",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 25,
+      "imageId": 24,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I19.dds",
+      "sha256": "ba77cef1dcae954b9c7b32e90716aed8ac432925433367b7715c1b718e4f5886",
+      "size": [
+        1400,
+        604
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 26,
+      "imageId": 25,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I1A.dds",
+      "sha256": "769e2ff11ea555de52da1354ac023ebc00adf8960b3a4fea315e57ad0fc4cc73",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 27,
+      "imageId": 26,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I1B.dds",
+      "sha256": "e9e7c1dcf32d4b1e8ac70b6047ff3e778f316751d990c57410be343ff2585011",
+      "size": [
+        512,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 28,
+      "imageId": 27,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I1C.dds",
+      "sha256": "fe1b05a618010c772580b0b45e43fe06491ef548b5decb5daf427ef9834092b8",
+      "size": [
+        1024,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 29,
+      "imageId": 28,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I1D.dds",
+      "sha256": "cf35d14faa50f8c9bf2edcc26a88d1d1ef38d7cb8c1809f8849c6cd94197980d",
+      "size": [
+        512,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 30,
+      "imageId": 29,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\betagwent_decks_I1E.dds",
+      "sha256": "811970bfbd60d6d7c050bc368d0a134fae5ffafd3cc7214a9ca3c143ecd60a9b",
+      "size": [
+        2048,
+        2752
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 31,
+      "imageId": 0,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\banish_beta_png$5ff9ac907de705ac37b15703fc1c34191539507094.dds",
+      "sha256": "fea0dcab0e8a8f56d4950dcb6382ec206e8c54782fe47a46bf1401b230ce87a1",
+      "size": [
+        256,
+        448
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 32,
+      "imageId": 26,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\battle_widgets101_png$cb9a1b3d05dd4e45926e1a9dce5fd889-906464346.dds",
+      "sha256": "e9e7c1dcf32d4b1e8ac70b6047ff3e778f316751d990c57410be343ff2585011",
+      "size": [
+        512,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 33,
+      "imageId": 19,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\boards_png$9f7a01af208f7160a8184d378c9471c81036787745.dds",
+      "sha256": "f5888e51e71803337cafaa2844321ec7bff3f95df4cdc999cee30b90007879e4",
+      "size": [
+        3072,
+        2656
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 34,
+      "imageId": 27,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\cardfaces104_png$f91c17cba59e4b4e26cdc8f8e3e589b7-220765944.dds",
+      "sha256": "fe1b05a618010c772580b0b45e43fe06491ef548b5decb5daf427ef9834092b8",
+      "size": [
+        1024,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 35,
+      "imageId": 9,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\cards-0_png$eba14a619be348639a4660f875d6591b2016346474.dds",
+      "sha256": "8f2bc16afe77e76a379d76fba9dba012584a33857f8ffdefe9129bd11410de23",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 36,
+      "imageId": 21,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\cards-1_png$f078b48500a174209f21bd9fa6102e952017012203.dds",
+      "sha256": "5776e6af8558597e26d84b954614e56be0822bb3f9959036cd0a2cdb8fb566d4",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 37,
+      "imageId": 11,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\cards-2_png$ec961152010adbe9162b60f6cc7749eb2014007916.dds",
+      "sha256": "142c1536accb03f3a53d1f8aa89b37d40026bdd424e12e9f3cb0a91d1478b9f8",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 38,
+      "imageId": 13,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\cards-3_png$75d5641beb58e2d8f6a3cb1356c5e58b2013625069.dds",
+      "sha256": "6736948cacc947ac68e09df977f1e355d91c200954e2bfa2c1658f49b3f40108",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 39,
+      "imageId": 23,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\cards-4_png$55fc3d14e09a8689fa953a468e9add622014798702.dds",
+      "sha256": "d9cc6840128ca0117285660110772056a68663d7fe47ba04df9a50a987cf0c2a",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 40,
+      "imageId": 20,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\cards-5_png$b60da670663d31284a4a4b14138846462028047343.dds",
+      "sha256": "892be989719587163b0ec7bf21d59488a7196e5a4d7653873b77fd16a65173ff",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 41,
+      "imageId": 7,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\cards-6_png$76d4ff84fc2b43db3291448f760837642029239408.dds",
+      "sha256": "d764f3f96346a8c0feb91f0ee50a9e020d84b1d010f06a8e8907e39abaaf0fad",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 42,
+      "imageId": 25,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\cards-7_png$f77bf5c78501273f311296dc3a5e71642026743025.dds",
+      "sha256": "769e2ff11ea555de52da1354ac023ebc00adf8960b3a4fea315e57ad0fc4cc73",
+      "size": [
+        2880,
+        2836
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 43,
+      "imageId": 18,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\cards-8_png$43c36b5851207a11c888b5c53faa69fa2027933042.dds",
+      "sha256": "2f34c2f3868dfda80b01fbc3d1f82015637fc1bd752f713542c95884867d558e",
+      "size": [
+        2880,
+        408
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 44,
+      "imageId": 14,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\cardslots104_png$b36929c2b852fbf361c90fcdf396d4d0-2074065239.dds",
+      "sha256": "adff3b08671ad80624e3723fda8394dacddd198032d45524b9706690714b68e5",
+      "size": [
+        2048,
+        2032
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 45,
+      "imageId": 12,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\covers107_png$65783845e3f3b24e844fd42ceadee72a-1376138946.dds",
+      "sha256": "5eef1ceb34ac6e6fb0c769331571b42d45926ea71521c72509966e0ed533d245",
+      "size": [
+        1296,
+        2128
+      ],
+      "format": "DXT1"
+    },
+    {
+      "cid": 46,
+      "imageId": 10,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\crowns103_png$a53fd6901110341868a11265337e31ce615516982.dds",
+      "sha256": "2db88a10d8bcbd74cfa7915d4069a21e1d39b61ea3cc12a0702b237fb265c26b",
+      "size": [
+        512,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 47,
+      "imageId": 22,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\deckscreens104_png$37758e6ea781e08914dc11720d341947-733490256.dds",
+      "sha256": "c2822b0a686fda888bd71499659ca50941352bc53cbeebfcceb0c846daab4cfa",
+      "size": [
+        1024,
+        1288
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 48,
+      "imageId": 3,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\fire_png$3fe18387505f10989c2aa11cdf8a700d-1580168103.dds",
+      "sha256": "f6239549b90759261c23842b256fed0b8e730a6d202e327951e04645953e7b67",
+      "size": [
+        500,
+        660
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 49,
+      "imageId": 1,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\frame_png$ea43a7b756be9a0f9233d12b65d10e141134754338.dds",
+      "sha256": "5457feebee04beb7f2676cfa8a1940272f41e1f67b3efdcc961f6216a4fa794e",
+      "size": [
+        256,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 50,
+      "imageId": 17,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\hud126_png$f00b9261d9aea0c93767f9854e5a8afd662709770.dds",
+      "sha256": "e9679a758d5190a588d69fb041bd47fb88394541ca3b2574084745c5acdfbe30",
+      "size": [
+        1024,
+        1988
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 51,
+      "imageId": 15,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\interface10-104_png$aba2094573565c9af8dc5f8f4f88fc6b1169526047.dds",
+      "sha256": "722b38e07931dbea8c56b4578eff018410a7802b0fccb3a786cc508d6358f9f8",
+      "size": [
+        1680,
+        2288
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 52,
+      "imageId": 16,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\interface11-108_png$6405aadcedab97fd466fcc640c535a4e441278375.dds",
+      "sha256": "f578b4ac600a83a3c1fd943c7700cee87ac9f257aafeac24ae2b34d34b4e778f",
+      "size": [
+        1584,
+        1348
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 53,
+      "imageId": 24,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\intro104_png$4439b33ae06a7ae8a03da182ff03ca7d140226306.dds",
+      "sha256": "ba77cef1dcae954b9c7b32e90716aed8ac432925433367b7715c1b718e4f5886",
+      "size": [
+        1400,
+        604
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 54,
+      "imageId": 5,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\kill2_beta_png$2c20403474a62d3ed58359f0afa55117174505469.dds",
+      "sha256": "a8502c3181413def26a5f27196db54970092f3b596f769cdcae1b3393f1966b8",
+      "size": [
+        1024,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 55,
+      "imageId": 6,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\kill_beta_png$6fa303834e2b2bf0b98add4afc241eee-131456601.dds",
+      "sha256": "7686fd408dd607a945fa99f4f17532dcba0d5a204f168a8858a7ad31a6544aa8",
+      "size": [
+        1024,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 56,
+      "imageId": 28,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\lightning_beta_png$d6bcd7c5b07a81b6d98f5194fbc7d197-573098617.dds",
+      "sha256": "cf35d14faa50f8c9bf2edcc26a88d1d1ef38d7cb8c1809f8849c6cd94197980d",
+      "size": [
+        512,
+        512
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 57,
+      "imageId": 2,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\lightning_png$ee1fe158288c57783a32c0ee1cdab3b11263285375.dds",
+      "sha256": "093b70fcbfacf3d895e310d1327a6ca8e2118db1d76e76e29ab6e262ddab90a2",
+      "size": [
+        512,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 58,
+      "imageId": 4,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\sparks_png$e6af912acb5358eb757be3f2f67d983c1317394073.dds",
+      "sha256": "16e7255d3bdf03a0060e5b33b67fe35789ca30950bd4e02d999ea1244908b4d7",
+      "size": [
+        256,
+        256
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 59,
+      "imageId": 8,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\weather107_png$3cab72023a8215b17ee3ce68ae706248834594138.dds",
+      "sha256": "e02a2a2b98c00998c1db9c9e572be77b41078ead02d7038246f03f2b430ddb19",
+      "size": [
+        1024,
+        1216
+      ],
+      "format": "DXT5"
+    },
+    {
+      "cid": 60,
+      "imageId": 29,
+      "source": "D:\\w3mod\\BetaGwent\\ui\\build\\native-atlas-DeckBuilder\\Elements_png$96c0adbca6e432461590ad6e68a6af4f1620558165.dds",
+      "sha256": "811970bfbd60d6d7c050bc368d0a134fae5ffafd3cc7214a9ca3c143ecd60a9b",
+      "size": [
+        2048,
+        2752
+      ],
+      "format": "DXT5"
+    }
+  ],
+  "nativeRuntimeVerified": false
+}

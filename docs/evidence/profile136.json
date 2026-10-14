@@ -1,11 +1,11 @@
 {
   "stage": 136,
-  "checks": 30,
+  "checks": 41,
   "nativeSerializationTested": false,
   "sources": {
-    "BetaGwent/development/scripts/game/betagwent/collectionProfile.ws": "a6a8f57958ff2ee152e0b76751da0219df5c88a25ef31c4dbf4ed748b89455be",
+    "BetaGwent/development/scripts/game/betagwent/collectionProfile.ws": "b885b099b7a5cd276b6416b4051455142d5ee890615a1de3fc507373acaf3102",
     "BetaGwent/development/scripts/game/betagwent/deckProfile.ws": "ecfc74696853638593ac35d2d628c8e082c97894a6f49c8b3e9871ef2b7c1e60",
-    "BetaGwent/development/scripts/game/betagwent/profileBackup.ws": "186daa38ebe3d33af9f7f2aeae1fb2c4be7f35770a6b0e8c7759a50604676689",
-    "tools/ai/check_profile136.py": "9cb7facd1bf68d210771edccc35f578249aca7cb70c7d6266f886a295d6b9e5c"
+    "BetaGwent/development/scripts/game/betagwent/profileBackup.ws": "4729916f4fbca5ef246f6917a106adbcd7837ea1e24dbae543e5c4ce037fd622",
+    "tools/ai/check_profile136.py": "e76d5906e9424691a1fd9a28c57472bd831b3b404979a980337d4882f1bae9a3"
   }
 }

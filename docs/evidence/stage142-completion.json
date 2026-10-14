@@ -1,0 +1,73 @@
+{
+  "stage": 142,
+  "nativeRuntimeVerified": false,
+  "installedGameModified": false,
+  "menus": [
+    {
+      "language": "ru",
+      "entry": "BetaGwentBoard",
+      "resource": "D:\\w3mod\\BetaGwent\\build\\stage142\\ru\\resources\\betagwent_board.redswf",
+      "sha256": "61ef691f4e51397ad1ea048c6d9f9ec19d3d4f15cb899b1bce7ab9a6121dee76",
+      "bindings": 51
+    },
+    {
+      "language": "ru",
+      "entry": "GwintGame",
+      "resource": "D:\\w3mod\\BetaGwent\\build\\stage142\\ru\\resources\\betagwent_npc00.redswf",
+      "sha256": "6b13b7fa30770461f51745587ddbdf6be0066e9fe159c08f4464036dcc086fc2",
+      "bindings": 51
+    },
+    {
+      "language": "ru",
+      "entry": "DeckBuilder",
+      "resource": "D:\\w3mod\\BetaGwent\\build\\stage142\\ru\\resources\\betagwent_decks.redswf",
+      "sha256": "fca7cbb46f0872e93b98ba651ffcb296d6d33fabf67b4ad519da4752f11f8e92",
+      "bindings": 51
+    },
+    {
+      "language": "ru",
+      "entry": "BetaGwentKeg",
+      "resource": "D:\\w3mod\\BetaGwent\\build\\stage142\\ru\\resources\\betagwent_kegop.redswf",
+      "sha256": "8c5eb3b526783353f8f20dee31b3b7ff14fa5417574e1f48ec779d9d7597ca2c",
+      "bindings": 51
+    }
+  ],
+  "firstReleaseUnmodified": true,
+  "atlasSha256": "02a1d110151e44a07d21a26f9b35a1fbc4f8eb6c518ad868777184874aaf38ba",
+  "sources": {
+    "BetaFontDin.as": "494e378dc29523e82454adadb7d7773ac840767bba1ac8be36ed78de879b1e10",
+    "BetaFontHalisBold.as": "ad32962df78d35668f74aa47d41598baa5398fc9819713424b5a6e3f2d2117fc",
+    "BetaFontHalisMedium.as": "ed24ebd314723a4e03282d1d3c59761affabb57e9c9284db01d99b83aa97b2f8",
+    "BetaFontNumbers.as": "42fd5ff4cb6d7d727d111c2462aee1f2d3c0128b525d024a31d21a562f44aac9",
+    "BetaGwentBetaMotion.as": "9c869f689c3e291dd70a3e7c527d6b4bcd5aa8142700c950a642e3976f6436ec",
+    "BetaGwentBoard.as": "95abcf253358500ce3911d921fbfd8a994f4c78c101de91c26267d2cb4c3a758",
+    "BetaGwentBoardDetails120.as": "7ba91bc7c429462c3930e7bb7d2b342d562a9a7858ef3393d179c4c73de107a7",
+    "BetaGwentBoardLayout.as": "2b6894427089317417c4842d3e69dc21abb367a04e842ef7b770685d7027d3a2",
+    "BetaGwentCardArt.as": "55f3fd8820d755d3bbe6a3a28c4a9c3f979b8d16b73c018b9137ef4ac7569da8",
+    "BetaGwentCardTags.as": "79d0086aaa3e1a4928425b4e4e021414a47a21fab068bc0ce037d586f78b7b50",
+    "BetaGwentCardText.as": "532de9e8b7d0b5fa61cdc921e6b2729fb08b85fb558e5372f97287dbd919b4b5",
+    "BetaGwentController.as": "4a3eebd9d8b5e1a48c2bc47e09fba8ff12bc008e64f6abc58389e0bd26c180f5",
+    "BetaGwentCovers107.as": "fc2b18675e12b91dcf7ef17dd0149f32bd86efa64e5b8c5c04af8668ed9ff3d0",
+    "BetaGwentDeckArt104.as": "3b23aa9f0351f4156eaf5817e8feffb491055dba4dd33b716325dfccbd20938f",
+    "BetaGwentDeckMenu.as": "870c2f4faa6349040a91bbca005e2bd9b866f96e7cc49d5b1a76c18003ab2f3f",
+    "BetaGwentFonts.as": "e7a391fc2d22b9dfe6c28d83c215ac31615fafc618b0819c5b1a138d56a220dc",
+    "BetaGwentFullCatalog.as": "9776028abca4491cf3a599742fa323a69e85fed0660fb8d4f708ad1c22fd143b",
+    "BetaGwentHDArt.as": "bc3debdb2155e468afe05efe4dde43bcba7be17d3627c7e97277d0f182fe8480",
+    "BetaGwentHud104.as": "dd96ba213f44219bae62cb481d89ebf360edfe4a8f87d8ecb620c662ccc20571",
+    "BetaGwentKeg109.as": "826c738d622b255f76cd1b9550fdc7b7e33317f0d29fa57f4f6a9e2520b58acf",
+    "BetaGwentKegMenu.as": "4e54f9526696aaf7af75429c0bf83304ab8c29306ce83819477ff7244914da69",
+    "BetaGwentLeaderCatalog.as": "ef9d224816b53bbc86a452e0547929a5079613ac63a757f176c0356a57e1a460",
+    "BetaGwentLeaderIntroCatalog.as": "6b72fca4ac6c3fde374d8a200c02da8437d49584d706e2c154c25abc5664ce0c",
+    "BetaGwentLeaderPreview.as": "0b18650fc91825a9ac8479dfc1862f55a7283af8ca70baf14e273420934efb0a",
+    "BetaGwentLock126.as": "12d10d698378ae2e255533b7ce58fca9ba91fe1610e835c0ba5352b546c1ce31",
+    "BetaGwentNpcMenu.as": "c8f291fd19b2f9b13afc0ca556f17d7466e9971c9306ffb5c91b5f1afdf6f0d7",
+    "BetaGwentSpecialVfx.as": "0f44f3ee859216a6a0796451ebec946b2bdc761df36fc4c123dbf07a9666303e",
+    "BetaGwentTextData.as": "e685d561a5e3a26c346b6757d46095fd5d5a55a58e6db5d7fe826a38f52007d1",
+    "BetaGwentTextLanguage.as": "aaed4ee37c6e7c4e10997565cba336d276199b947cae720b997c1bf194a3acaf",
+    "BetaGwentTextMetrics.as": "a1300f6eb253db35d848f80e7e02d7d66da2a69f23ab664a564338fb020f1105",
+    "BetaGwentUi138.as": "29b9da188b935f424f5b9dcc748e58c1648572df92f214ef4fe76523e3803c06",
+    "BetaGwentUiText142.as": "0e308aafeb51fd0cc5ff6f1dbd4bd9221f8d09a086836aeceb6dbd99a15c2114",
+    "BetaGwentVisualTimings.as": "6210de39fec65c020b8b5e5ea75d87105abf6701b11e203f3e3f4334cd5db714",
+    "BetaGwentWeather107.as": "a1ee5700193ce239c4d3f45b56e5671ec7afa2cc32ebb69c0abdda58b59c4c31"
+  }
+}

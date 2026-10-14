@@ -15,6 +15,7 @@ function extract(source,name){
 }
 let checks=0;function check(value,name){assert(value,name);checks++;}
 const c=vm.createContext({Math,String,Number,Object,int:n=>n|0,console});
+c.editorNewOnly=false;c.editorScroll178=0;c.deckScroll178=0;c.editorFeedbackOrigin178=null;c.editorFeedbackPoint178=()=>({x:0,y:0});
 const helperNames=['sceneDuration','publicCard','view','stateLines','effect','deckReasons','missingCost','handOffsets'];
 vm.runInContext(`var flashes=true,shake=true,scenes=1,chains=true,filters={};`+
  helperNames.map(n=>extract(helpers,n)).join('\n')+
@@ -55,7 +56,7 @@ vm.runInContext(`var clock=100,reducedMotion=false,uiMotions=[],buttonFeedback=[
  var BetaGwentFullCatalog={find(id){return id>0?{templateId:id,title:'Public '+id,power:8}:null;}};
  var editorState={slot:1,faction:2,total:25,golds:4,silvers:6,valid:true,status:''},editorCards=[],editorById={};
  var editorUndo=[],editorPending=null,editorUndoPending=false,editorFlight=null,ready=true,editingDeck=true,revision=7;
- var editorSearch='',editorTier=0,editorType=0,editorFactionOnly=false,editorOwnedOnly=false,editorPage=0;
+ var editorSearch='',editorTier=0,editorType=0,editorPosition=0,editorStrength=0,editorFactionOnly=false,editorOwnedOnly=false,editorPage=0;
  var sent=[];function send(name,args){sent.push({name,args});}var editorName='Deck';
  var kegPhase=1,kegAutomatic=[{}, {}, {}, {}],kegRevealed=[false,false,false,false],renders=0;
  function uiSound(){}function render(){renders++;}
@@ -75,14 +76,16 @@ c.noteHistory({kind:1,source:1,target:1,templateId:1,title:'Play'},[8,0],[card(1
 c.noteHistory({kind:2,source:1,target:2,templateId:1,title:'Sweep',attackCount:2},[8,12],[card(1),{...card(2),power:6},{...card(3),power:6}]);
 check(c.actionHistory.length===1,'trigger chain stays with its root play');
 check(c.actionHistory[0].events.some(e=>e.target?.id===2)&&c.actionHistory[0].events.some(e=>e.target?.id===3),'mass effect records every publicly changed target');
+c.noteHistory({kind:2,source:2,target:2,templateId:2,title:'Boost'},[10,12],[card(1),{...card(2),power:9,armor:2},card(3)]);
+check(c.actionHistory[0].events.at(-1).change==='Сила: 6 → 9 · Броня: 0 → 2','history records the public before/after values for each reaction');
 c.noteHistory({kind:2,source:0,target:3,row:1,title:'Weather'},[8,10],[card(3)]);
 check(c.actionHistory.length===2,'weather starts a separate history group');
 c.noteHistory({kind:1,source:9,target:9,templateId:0,title:'Ambush'},[8,10],[{...card(9,1,2),tokens:8}]);
 check(c.actionHistory[0].actor==null&&c.actionHistory[0].events.every(e=>!e.actor&&!e.target),'concealed ambush does not leak art into history');
-for(let i=0;i<40;i++)c.noteHistory({kind:1,title:'Play '+i},[i,0],[]);
-check(c.actionHistory.length===32,'history memory is bounded');
-for(let i=0;i<100;i++)c.noteHistory({kind:2,title:'Hit'},[i,0],[]);
-check(c.actionHistory[0].events.length===32,'history event memory is bounded');
+for(let i=0;i<80;i++)c.noteHistory({kind:1,title:'Play '+i},[i,0],[]);
+check(c.actionHistory.length===64,'history memory is bounded');
+for(let i=0;i<160;i++)c.noteHistory({kind:2,title:'Hit'},[i,0],[]);
+check(c.actionHistory[0].events.length===128,'history event memory is bounded');
 c.editorCards=[{templateId:1,copies:1,canAdd:true}];c.editorById={1:c.editorCards[0]};
 c.editorAction('OnBetaGwentDeckEditorChange',1,1)();
 check(!c.ready&&c.editorUndo.length===0&&c.editorPending.before[1]===1,'undo waits for native acknowledgement');

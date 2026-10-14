@@ -32,6 +32,7 @@ function dictionary(id){
  return {...d,...Object.fromEntries(Object.entries(d).map(([k,v])=>[k.toUpperCase(),v.toUpperCase()]))};
 }
 const c=vm.createContext({Object,BetaGwentFonts:{BODY:'B',TITLE:'T',NUMBERS:'N'}});
+c.BetaGwentUiText142=require('./vfx142_text_fixture')();
 vm.runInContext('var DEFAULT_LANGUAGE=1,language=1,pendingLanguage=0,fields=new Map(),maps,groups,protectedNames={},caches=[],cacheCount=0,resourceLoader=null,pendingLoader=null,bodyFont=null,titleFont=null,fontCharacters="",changed=null;var LABELS='+JSON.stringify(['','Русский','English','Deutsch','Français','Italiano','Polski','Español','Español (Latinoamérica)','Português (Brasil)','日本語','한국어','简体中文','繁體中文'])+';'+
  ['initialize','indexLanguage','longest','normalize','word','translate','track','forget','assign','sweep','loaded','update','hasGlyphs','refresh'].map(n=>extract(text,n)).join('\n')
  .replace(/fields\[(\w+)\]=/g,'fields.set($1,').replace(/fields\.set\((\w+),(\{[^;]*\});/g,'fields.set($1,$2);')

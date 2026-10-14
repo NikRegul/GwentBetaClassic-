@@ -11,6 +11,8 @@ REASONS={
     'chase_resource_budget':'Догон недостижим или слишком дорог по картам',
     'last_card_unreachable':'Последняя карта не позволяет догнать',
     'no_legal_hand_or_useful_chase':'Нет допустимого хода или полезного догона',
+    'no_positive_play_pass_keeps_lead':'Пас сохраняет преимущество после срабатывания таймеров, а оставшиеся ходы не дают положительного результата',
+    'remaining_tutor_chain_has_no_positive_tempo':'Оставшаяся цепочка розыгрыша из колоды не даёт положительного результата',
     'no_duel_target_and_other_card_available':'Нет цели для дуэли; в руке есть другой ход',
     'no_legal_row':'Нет допустимого ряда',
     'best_evaluation_or_reachable_chase':'Лучший итог оценки либо ход плана догона',

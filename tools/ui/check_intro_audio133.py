@@ -31,9 +31,9 @@ const variants={};for(const id of leaders){const seen=new Set();variants[id]=[];
 for(const opponent of leaders)for(const player of leaders)for(const opRoll of variants[opponent])for(const playerRoll of variants[player]){
  clock=0;events=[];requests=[];rolls=[opRoll,playerRoll];rollIndex=0;const a=new CBetaGwentDuelAudio();a.Initialize();a.SetClock(0);a.Intro(opponent,player);
  for(let t=1;t<=120&&a.IsIntroActive();t++){clock=t*.25;a.SetClock(clock*1000);a.Tick();}
- const count=[opponent,player].filter(id=>BetaGwentAudioVoice(id)!=='').length;
+ const count=[opponent,player].filter(id=>BetaGwentAudioVoice(id)!==''||(STAGE>=141&&id===201743)).length;
  check(requests.length===count,'both intro lines must survive long first voice '+opponent+'/'+player+'/'+opRoll+'/'+playerRoll);
- if(count===2)check(requests[1].time>=requests[0].time+BetaGwentAudioVoiceVariantDuration(opponent,opRoll),'intro voices must not overlap');
+ if(count===2)check(requests[1].time>=requests[0].time+(STAGE>=141&&opponent===201743?3.619:BetaGwentAudioVoiceVariantDuration(opponent,opRoll)),'intro voices must not overlap');
  check(!a.IsIntroActive(),'introduction must finish');pairs++;
 }
 clock=0;requests=[];const a=new CBetaGwentDuelAudio();a.Initialize();a.SetClock(0);a.Intro(leaders[0],leaders[1]);a.CancelIntro();
@@ -44,7 +44,7 @@ loaded=false;const d=new CBetaGwentDuelAudio();d.Initialize();d.Intro(leaders[0]
 loaded=true;clock=0;const e=new CBetaGwentDuelAudio();e.Initialize();e.SetClock(0);e.queuedVoices.push(leaders[0]);e.queuedAt.push(1);e.Tick();check(e.queuedVoices.length===1,'future ordinary cue is not played early');
 e.SetClock(3000);e.Tick();check(e.queuedVoices.length===0,'ordinary stale chatter still expires');
 console.log(JSON.stringify({checks,pairs,leaders:leaders.length,variantCounts:Object.fromEntries(leaders.map(id=>[id,variants[id].length])),exhaustiveLeaderVariantPairs:true,actualWitcherScript:true,nativeGameTested:false}));
-'''.replace('LEADERS',json.dumps(leaders)),'utf8')
+'''.replace('LEADERS',json.dumps(leaders)).replace('STAGE',str(a.stage)),'utf8')
   result=subprocess.run(['node',str(script)],capture_output=True,text=True,encoding='utf8')
   if result.returncode:raise RuntimeError(result.stdout+result.stderr)
   reports.append(dict(language=lang,**json.loads(result.stdout.strip().splitlines()[-1])))

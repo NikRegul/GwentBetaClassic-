@@ -147,6 +147,11 @@ def gen(prog):
         locs = set(); body = []
         names = {n for owner,n,t in fields}
         for owner, n, t in fields:
+            # Cooperative UI search progress is not gameplay state. Search clones
+            # must never inherit completed evaluations from their parent position.
+            if c.name=='CBetaGwentDuelSession' and n.startswith(('aiPreparation','aiPrepared')):
+                if isinstance(t,tuple):body.append(f'        dst.{n}.Clear();')
+                continue
             if (owner, n) in SKIP_FIELDS or (c.name, n) in SKIP_FIELDS:
                 body.append(f'        dst.{n}.Clear();'); continue
             other=counterpart(n,names)

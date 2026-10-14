@@ -1,0 +1,21 @@
+{
+  "duelSessionCurrentSha256": "091b7acf1de743d1dce6883c222231856078f356e64dcda8d825736a974bd470",
+  "assassinFunctions": {
+    "AiFringillaSetup": "a15c1a6e82a76d3dafe5c3aef37164211948a9229b12e15447479d8e5b445c08",
+    "EvaluateCardRow": "bec4f87268476195ecf8939521ce55b6a388364bbf5a82107fabe060f5b563c3"
+  },
+  "lightningSha256": "6947dbbbc1d85d1b928e95a503409c717eda85803ae0819d1409ae01098783be",
+  "baseArchiveSha256": "b887df0f8216b91038e87046792b3b7dd9729087968aec4459ce95147dc19aa5",
+  "rulesEqualRelease162": true,
+  "assassinFunctionsEqualRelease162": {
+    "AiFringillaSetup": true,
+    "EvaluateCardRow": true
+  },
+  "armorAgentSourceSha256": "eb28f021cc37cf57f9280cf39a1d1e6ac21aaa1d2418b30a53955038b39e742c",
+  "currentDuelSessionSha256": "eb28f021cc37cf57f9280cf39a1d1e6ac21aaa1d2418b30a53955038b39e742c",
+  "armorAgentSourceIncluded": true,
+  "assassinFunctionsStillPreserved": {
+    "AiFringillaSetup": true,
+    "EvaluateCardRow": true
+  }
+}

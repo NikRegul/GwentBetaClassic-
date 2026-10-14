@@ -1,14 +1,14 @@
 {
   "stage": 137,
   "passed": true,
-  "checks": 297,
+  "checks": 301,
   "nativeRuntimeVerified": false,
   "sources": {
-    "BetaGwent/ui/src/BetaGwentTextLanguage.as": "6c05620cdf6985b0cda787d43c16c9090b52396d26460373dbcee816a58299f3",
-    "BetaGwent/ui/src/BetaGwentLeaderPreview.as": "cd8f660b990d2e7e9ad213ff2dec23e61f2a30c63269e69209f680ea7ba1664a",
-    "BetaGwent/ui/src/BetaGwentBoard.as": "2f0716fc4e76e3ba70fcae3cf7c2fd586d379ea8c70e54aa831c1f1e62aefc9f",
-    "tools/ui/check_release137.js": "5adac9283869a9fd4965e0e7182c36a615bc22e423072007a6ddbabfe685302f",
+    "BetaGwent/ui/src/BetaGwentTextLanguage.as": "aaed4ee37c6e7c4e10997565cba336d276199b947cae720b997c1bf194a3acaf",
+    "BetaGwent/ui/src/BetaGwentLeaderPreview.as": "0b18650fc91825a9ac8479dfc1862f55a7283af8ca70baf14e273420934efb0a",
+    "BetaGwent/ui/src/BetaGwentBoard.as": "67370c9817eabace102f0716b211ea51a56ce4c5ad61f68ccf0df80110ca710d",
+    "tools/ui/check_release137.js": "eb6d8847bc9ce640987e57aeba10887493c636fb4d56f3383a61e9236187df91",
     "BetaGwent/ui/src/BetaGwentFonts.as": "e7a391fc2d22b9dfe6c28d83c215ac31615fafc618b0819c5b1a138d56a220dc",
-    "BetaGwent/development/scripts/game/betagwent/developmentBoardMenu.ws": "0108b86aff0d7bc8d20f6b3fa741c4e06a24917bbb4bb6e8e6183ada8b30287d"
+    "BetaGwent/development/scripts/game/betagwent/developmentBoardMenu.ws": "d1114a393f59570b92c8fbf3fa3427129d1e3e498636959425a28343528827e0"
   }
 }

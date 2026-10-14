@@ -48,6 +48,7 @@ if args.terms_already_accepted:
 started = time.time()
 timed_out = False
 completed_by_output = False
+shutdown_failure_after_success = False
 with (out / 'stdout.txt').open('wb') as stdout, (out / 'stderr.txt').open('wb') as stderr:
     process = subprocess.Popen(command, cwd=tool.parent, stdin=subprocess.DEVNULL, stdout=stdout, stderr=stderr,
                                creationflags=subprocess.CREATE_NO_WINDOW)
@@ -59,6 +60,12 @@ with (out / 'stdout.txt').open('wb') as stdout, (out / 'stderr.txt').open('wb') 
         size = blob.stat().st_size if blob.exists() else 0
         blob_signature = (size, hashlib.sha256(blob.read_bytes()).hexdigest()) if size else None
         transcript = (out / 'stdout.txt').read_text('utf8', errors='replace')
+        # Wcc can buffer stdout until its Wwise shutdown fails. Its explicit
+        # -wcclog file is flushed during compilation, so use both real logs.
+        # Keep the successful-compile, stable-blob and unchanged-source gates.
+        wcc_log = out / 'wcc.log'
+        if wcc_log.exists():
+            transcript += '\n' + wcc_log.read_text('utf8', errors='replace')
         success = 'Success! Patch scripts blob saved' in transcript and '[Script]: Error [' not in transcript
         if size > 0 and success:
             if blob_signature != previous_blob or stable_at is None:
@@ -79,6 +86,19 @@ with (out / 'stdout.txt').open('wb') as stdout, (out / 'stderr.txt').open('wb') 
             process.wait(timeout=10)
             break
         time.sleep(1)
+# Some Wcc versions flush their final stdout only while exiting, then fail in
+# shutdown with STATUS_INVALID_HANDLE. Apply the same explicit-success/stable
+# artifact gate after that specific exit; never accept a generic compiler crash.
+if not completed_by_output and not timed_out and process.returncode == 0xC0000008:
+    blob = out / 'compiled/blob.rsblob'
+    transcript = (out / 'stdout.txt').read_text('utf8', errors='replace')
+    expected = "Success! Patch scripts blob saved to '" + str(blob) + "'"
+    if expected in transcript and 'Script functions: successfully loaded.' in transcript and '[Script]: Error [' not in transcript and blob.is_file():
+        signature = (blob.stat().st_size, hashlib.sha256(blob.read_bytes()).hexdigest())
+        time.sleep(2)
+        if signature[0] > 0 and signature == (blob.stat().st_size, hashlib.sha256(blob.read_bytes()).hexdigest()):
+            completed_by_output = True
+            shutdown_failure_after_success = True
 patch_after = patch_snapshot()
 artifacts = []
 for path in out.rglob('*'):
@@ -87,6 +107,7 @@ for path in out.rglob('*'):
                           'sha256': hashlib.sha256(path.read_bytes()).hexdigest().upper()})
 report = {'command': command, 'workingDirectory': str(tool.parent), 'exitCode': 0 if completed_by_output else process.returncode,
           'processExitCode': process.returncode, 'completedByOutput': completed_by_output, 'timedOut': timed_out,
+          'shutdownFailureAfterSuccess': shutdown_failure_after_success,
           'humanReportedPriorLicenseAcceptance': args.terms_already_accepted,
           'elapsedSeconds': round(time.time() - started, 2), 'artifacts': artifacts,
           'patchSourcesBefore': patch_before, 'patchSourcesAfter': patch_after,

@@ -1,0 +1,38 @@
+{
+  "stage": 155,
+  "version": "0.6.9",
+  "language": "ru",
+  "passed": true,
+  "regressionSuites": 55,
+  "nativeScripts": 70,
+  "nativeMenus": 4,
+  "sourceFingerprint": "cd0340633189a9e166c2173b790430709075c779ff332e4476b5093dd15a4ef9",
+  "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.6.9-RU.zip",
+  "archiveSha256": "64fd53b203cbe433fc3af9593c3d87bf30542ac351bf8b11ddd911b258c4c994",
+  "bytes": 306910198,
+  "bundleEntries": 351,
+  "guiLimitMiB": 65,
+  "guiMenus": {
+    "betagwent_board.redswf": {
+      "bytes": 59289948,
+      "MiB": 56.54330062866211
+    },
+    "betagwent_npc00.redswf": {
+      "bytes": 59290054,
+      "MiB": 56.54340171813965
+    },
+    "betagwent_decks.redswf": {
+      "bytes": 59290040,
+      "MiB": 56.54338836669922
+    },
+    "betagwent_kegop.redswf": {
+      "bytes": 54273416,
+      "MiB": 51.75916290283203
+    }
+  },
+  "oneShotLeaders": 12,
+  "loopFallbackLeaders": 9,
+  "previousArchivesUnmodified": true,
+  "nativeGameTested": false,
+  "nextVersion": "0.6.10"
+}

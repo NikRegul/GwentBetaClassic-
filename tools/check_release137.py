@@ -24,7 +24,7 @@ def main():
                  'check_decisive127','check_ships127','check_concede127','check_tutor127',
                  'check_preventive127','check_clearrisk127','check_draug127','check_combo127',
                  'check_no_targets127','check_losing131','check_cavalry131','check_ciri131',
-                 'check_policy133','check_hidden_information133'):
+                 'check_policy133','check_hidden_information133','check_ciri_return062','check_deferred062'):
         commands.append(['node', f'tools/ai/{name}.js', str(SNAPSHOT), str(BASE/(name+'.json'))])
     commands.append(['node','tools/ai/check_deck_combos128.js',str(SNAPSHOT)])
     for name in ('check_controller123','check_catalog123','check_optional124',

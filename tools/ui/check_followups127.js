@@ -16,7 +16,7 @@ if(!cardAspect)throw Error('Production card aspect ratio is missing');
 vm.runInContext(`var actionHistory=[],historyScores=[0,0],playing=true,aiPauseIndex=2,aiTurnShown=false,reducedMotion=false;
 var cards=[],displayedCards={},departedPoses={},BetaGwentFullCatalog={find(){return null;}};
 var BETA_CARD_ASPECT=${Number(cardAspect[1])/Number(cardAspect[2])},heldPileMask=0,heldPileRequest=false,revision=10,pileView=null,pileOpen=false,draws=0;
-var ready=true,detailOpen=false,controllerMenuOpen=false,nameOpen=false,sends=[],renders=0,focusReads=0;
+var ready=true,detailOpen=false,controllerMenuOpen=false,nameOpen=false,sends=[],renders=0,focusReads=0,introStart=0,introInputUntil=0;
 var previewLayer={numChildren:0},controller={getFocus(){focusReads++;}};
 function int(v){return v|0;} function canInspectPile(){return ready&&!playing;}
 function closePileView(){pileView=null;pileOpen=false;}
@@ -42,8 +42,8 @@ b.noteHistory({title:'Frost',kind:2,source:0,row:1},[10,2]);
 b.noteHistory({title:'damage',kind:2,source:7,row:0},[10,4]);
 check(b.actionHistory[1].end[1]===0,'weather is not attributed to preceding card');
 check(b.historyLine(b.actionHistory[0]).includes('+4'),'weather entry includes all tick deltas');
-for(let i=0;i<40;i++)b.noteHistory({title:'play '+i,kind:1},[10+i,4]);
-check(b.actionHistory.length===32&&b.actionHistory[0].title==='play 39','history keeps latest 32');
+for(let i=0;i<80;i++)b.noteHistory({title:'play '+i,kind:1},[10+i,4]);
+check(b.actionHistory.length===64&&b.actionHistory[0].title==='play 79','history keeps latest 64');
 for(const reduced of [false,true])for(let setting=1;setting<=4;setting++){
  b.reducedMotion=reduced;b.aiPauseIndex=setting;
  check(b.aiTurnDelay({current:2,cue:{kind:1}})===(setting-1)*400,'AI pause independent of reduced effects '+setting+'/'+reduced);

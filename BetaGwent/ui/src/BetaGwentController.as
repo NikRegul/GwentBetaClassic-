@@ -1,4 +1,4 @@
-package
+﻿package
 {
     import flash.display.DisplayObject;
     import flash.display.Sprite;
@@ -244,6 +244,30 @@ package
                 result.push(owner.globalToLocal(n.sprite.localToGlobal(point)));
             return result;
         }
+        public function menuControl(sprite:DisplayObject,id:String,row:int,column:int):void
+        {
+            for each(var n:Object in nodes)if(n.sprite==sprite){
+                n.key="menu:"+id;n.menuRow=row;n.menuColumn=column;dirty=true;return;
+            }
+        }
+        public function focusKey(key:String):void
+        {getFocus();for each(var n:Object in candidates())if(n.key==key){select(n);return;}}
+        private function menuNeighbor(options:Array,current:Object,dir:int):Object
+        {
+            var best:Object=null,score:Number=Number.MAX_VALUE;
+            var vertical:Boolean=dir==38||dir==40;
+            for each(var other:Object in options){
+                if(other==current||other.menuRow==null)continue;
+                var forward:Number=vertical?int(other.menuRow)-int(current.menuRow):int(other.menuColumn)-int(current.menuColumn);
+                if(dir==38||dir==37)forward=-forward;
+                if(forward<=0)continue;
+                var across:Number=vertical?Math.abs(int(other.menuColumn)-int(current.menuColumn)):Math.abs(int(other.menuRow)-int(current.menuRow));
+                if(!vertical&&across!=0)continue;
+                var cost:Number=forward*100+across;
+                if(cost<score){score=cost;best=other;}
+            }
+            return best;
+        }
         private function bodyBounds(n:Object):Rectangle
         {
             if(!n.body)return n.sprite.getBounds(owner);
@@ -266,6 +290,7 @@ package
                 if(s.mode=="inspect"&&n.tag!="card"&&n.tag!="row"&&n.tag!="control")continue;
                 if(s.mode=="editor"&&(n.label=="+"||n.label=="−"))continue;
                 var r:Rectangle=bodyBounds(n);
+                if(n.card&&n.card.shelfClip){var clip:Object=n.card.shelfClip;r=r.intersection(new Rectangle(clip.x,clip.y,clip.w,clip.h));}
                 if(r.width<2||r.height<2||r.right<0||r.x>1920||r.bottom<0||r.y>1080)continue;
                 if(s.mode=="choice"&&(r.x+r.width/2<40||r.x+r.width/2>1880||r.y+r.height/2<135||r.y+r.height/2>1060))continue;
                 n.rect=r;result.push(n);
@@ -323,6 +348,18 @@ package
             var n:Object=getFocus();if(!n)return;
             var options:Array=candidates();var allOptions:Array=options.concat();var origin:Rectangle=n.rect;
             var mode:String=state().mode;
+            if((dir==38||dir==40)&&n.card&&n.card.shelfPane){
+                var shelves:Object=state().shelves;var shelf:Object=shelves?shelves[n.card.shelfPane]:null;
+                if(shelf){var target:int=int(n.card.shelfIndex)+(dir==40?shelf.columns:-shelf.columns);
+                    if(target>=0&&target<shelf.count){var row:Number=int(target/shelf.columns)*shelf.rowHeight;
+                        if(row<shelf.offset||row+shelf.rowHeight>shelf.offset+shelf.height){invoke("shelfSelect",{pane:n.card.shelfPane,index:target});dirty=true;return;}
+                    }
+                }
+            }
+            if(mode=="actions"&&n.menuRow!=null){
+                var menuPick:Object=menuNeighbor(options,n,dir);
+                if(menuPick){select(menuPick);invoke("tickSound");}return;
+            }
             // The match controls stay behind Start. Stick/D-pad navigation
             // follows cards -> placement -> targets, without jumping to a
             // graveyard/menu button merely because it is spatially closer.
@@ -483,11 +520,20 @@ package
             if(yStarted>0&&yCanPass&&!yCommitted&&!s.typing&&now-yStarted>=650&&s.pass) {yCommitted=true;invoke("pass");dirty=true;}
             // Redraw only on changes; animations still move the selected card.
             var n:Object=getFocus();var r:Rectangle=n?bodyBounds(n):null;
-            var line:String=s.typing?"Ввод текста в системной клавиатуре":s.hint+(n?"   ·   "+n.label:"");
+            var sideHint:Boolean=Boolean(s.hintSide);
+            var line:String=s.typing?"Ввод текста в системной клавиатуре":s.hint+(!sideHint&&n?"   ·   "+n.label:"");
             if(yStarted>0&&yCanPass&&s.pass&&!yCommitted)line="Удерживайте "+(device==1||device==6?"△":"Y")+" для паса… "+int(Math.min(100,100*(now-yStarted)/650))+"%";
+            hint.x=sideHint?1500:36;hint.width=sideHint?364:1848;hint.height=sideHint?88:29;
+            hint.multiline=sideHint;hint.wordWrap=sideHint;
+            if(sideHint){
+                var pieces:Array=line.split(" · ");line="";
+                for(var part:int=0;part<pieces.length;part++)line+=(part==0?"":part%2==0?"\n":"\t")+pieces[part];
+            }
             if(line!=lastHint){
-                lastHint=line;BetaGwentTextLanguage.assign(hint,line);var fontSize:int=18;
-                while(hint.textWidth>hint.width-12&&fontSize>14){fontSize--;hint.setTextFormat(new TextFormat("$NormalFont",fontSize,0xF5E6A7));}
+                lastHint=line;BetaGwentTextLanguage.assign(hint,line);var fontSize:int=sideHint?16:18;
+                var hintFormat:TextFormat=hint.getTextFormat();hintFormat.size=fontSize;hintFormat.tabStops=sideHint?[182]:[];hint.setTextFormat(hintFormat);
+                while(!sideHint&&hint.textWidth>hint.width-12&&fontSize>14){fontSize--;hint.setTextFormat(new TextFormat("$NormalFont",fontSize,0xF5E6A7));}
+                while(sideHint&&hint.textHeight>hint.height-4&&fontSize>14){fontSize--;hint.setTextFormat(new TextFormat("$NormalFont",fontSize,0xF5E6A7));}
                 if(fontSize==18)hint.setTextFormat(new TextFormat("$NormalFont",18,0xF5E6A7));
                 dirty=true;
             }
@@ -495,11 +541,12 @@ package
             if(visualKey!=focusVisualKey){focusVisualKey=visualKey;focusVisualAt=now;}
             var focusProgress:Number=reducedMotion?1:Math.min(1,(now-focusVisualAt)/140);
             if(!dirty&&r&&lastRect&&r.equals(lastRect)&&focusProgress>=1)return;
-            dirty=false;graphics.clear();hint.visible=!s.typing;hint.y=s.hintY;
-            graphics.beginFill(0x10191F,.95);graphics.drawRoundRect(24,s.hintY-2,1872,31,6,6);graphics.endFill();
-            graphics.lineStyle(1,0x92784E,.8);graphics.moveTo(32,s.hintY+29);graphics.lineTo(1888,s.hintY+29);
+            dirty=false;graphics.clear();hint.visible=!s.typing&&s.hintVisible!==false;hint.y=sideHint?766:s.hintY;
+            var hx:Number=sideHint?1488:24,hy:Number=hint.y-2,hw:Number=sideHint?388:1872,hh:Number=sideHint?94:31;
+            if(hint.visible){graphics.beginFill(0x10191F,.95);graphics.drawRoundRect(hx,hy,hw,hh,6,6);graphics.endFill();
+            graphics.lineStyle(1,0x92784E,.8);graphics.moveTo(hx+8,hy+hh);graphics.lineTo(hx+hw-8,hy+hh);}
             if(yStarted>0&&yCanPass&&s.pass&&!yCommitted){
-                graphics.beginFill(0xF0D18C,.9);graphics.drawRect(32,s.hintY+26,1856*Math.min(1,(now-yStarted)/650),3);graphics.endFill();dirty=true;
+                graphics.beginFill(0xF0D18C,.9);graphics.drawRect(hx+8,hy+hh-3,(hw-16)*Math.min(1,(now-yStarted)/650),3);graphics.endFill();dirty=true;
             }
             if(n&&!s.typing){
                 lastRect=r.clone();lastKey=n.key;

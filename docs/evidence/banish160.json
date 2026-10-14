@@ -1,0 +1,210 @@
+{
+  "source": "sharedassets8.assets",
+  "prefab": "BanishCardEffect",
+  "material": "Banish_Small_Material",
+  "dissolveSeconds": 1.2000000476837158,
+  "curve": "linear 0..1",
+  "emissionMulti": 1.8600000143051147,
+  "outline": [
+    0.265,
+    0.254,
+    0.934
+  ],
+  "ramp": [
+    "#7900CD",
+    "#FFC5FF",
+    "#FFFFFF",
+    "#FFFFFF",
+    "#FF8FFF",
+    "#7300C7"
+  ],
+  "noiseGrid": [
+    44,
+    60
+  ],
+  "particles": {
+    "backLines": {
+      "delay": 0.03,
+      "burst": 8,
+      "life": [
+        0.18,
+        0.3
+      ],
+      "size": [
+        18,
+        36
+      ],
+      "sizeOverLife": [
+        0,
+        1
+      ],
+      "lengthScale": 1.4,
+      "pivotY": 0.2,
+      "shape": "cone r3.2 a90",
+      "spin": [
+        -5.236,
+        0
+      ],
+      "color": "AlphaBlended 2*tint(0.006,0,0.176)*grey[0..0.26]",
+      "alphaKeys": [
+        [
+          0,
+          0
+        ],
+        [
+          0.071,
+          1
+        ],
+        [
+          0.635,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "sheet": [
+        2,
+        2
+      ]
+    },
+    "mid": {
+      "delay": 0.18,
+      "offset": [
+        0.8,
+        1.6
+      ],
+      "scale": [
+        1.088,
+        1.585
+      ],
+      "burst": 11,
+      "rate": 79,
+      "duration": 0.33,
+      "rateCurve": [
+        [
+          0,
+          0.336
+        ],
+        [
+          0.23,
+          1
+        ],
+        [
+          1,
+          0.007
+        ]
+      ],
+      "life": [
+        0.23,
+        0.5
+      ],
+      "speed": [
+        27,
+        75
+      ],
+      "clamp": [
+        95,
+        [
+          1,
+          0.147
+        ],
+        [
+          0.681,
+          0.106
+        ]
+      ],
+      "size": [
+        4.5,
+        9
+      ],
+      "sizeOverLife": [
+        0.875,
+        0.308
+      ],
+      "shape": "cone r7.68 a41.24 random direction",
+      "color": "AlphaBlended 2*tint(0.935,0.882,1)*start[(1,0.82,0.66)..white]",
+      "alphaKeys": [
+        [
+          0,
+          0
+        ],
+        [
+          0.071,
+          1
+        ],
+        [
+          0.782,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "sheet": [
+        3,
+        3
+      ]
+    },
+    "rim": {
+      "delay": 0.23,
+      "burst": 11,
+      "rate": 70,
+      "duration": 0.33,
+      "life": [
+        0.23,
+        0.6
+      ],
+      "speed": [
+        45,
+        120
+      ],
+      "clamp": [
+        150,
+        [
+          1,
+          0.117
+        ],
+        [
+          0.769,
+          0.081
+        ]
+      ],
+      "size": [
+        3.491,
+        7.5
+      ],
+      "sizeOverLife": [
+        0.875,
+        0.308
+      ],
+      "shape": "cone r6.295 a72.9",
+      "alphaKeys": [
+        [
+          0,
+          0
+        ],
+        [
+          0.071,
+          1
+        ],
+        [
+          0.782,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "sheet": [
+        3,
+        3
+      ]
+    },
+    "fragments": "ExplosionFragments: rate 0, no bursts (inactive)"
+  },
+  "audio": "vfx_custom_banish (3040005591) = BetaGwentAudioCue 12"
+}

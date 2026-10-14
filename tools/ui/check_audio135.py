@@ -14,6 +14,9 @@ def main():
     gate.write_text('''class CBetaOpponentGate extends IScriptable {
 public var configured,visualBusy,deferredOpponent : bool;
 public var deferredVoiceAt : float;
+public var opponentPreparationBusy : bool;
+public var opponentPreparationFinished : bool;
+public var opponentPreparationMs,opponentPreparationPeakMs : int;
 public var audio : CBetaGwentDuelAudio;
 public var publications : int;
 public var duel : CBetaFakeDuel;
@@ -45,7 +48,8 @@ check(!events.some(e=>e.name==='bg79_stop_voice'),'next card cannot cut off the 
 check(a.voiceUntil===deadline,'new cue preserves the current voice deadline');
 for(let i=0;i<20;i++)a.Cue(1,second,0,0,0,0,0);
 check(a.queuedVoices.length<=2,'summon chatter stays bounded');
-const gate=new CBetaOpponentGate();gate.configured=true;gate.visualBusy=false;gate.deferredOpponent=true;gate.audio=a;gate.duel={IsPending(){return false;},GetMessage(){return '';}};
+function fakeDuel(){return {IsPending(){return false;},GetMessage(){return '';},AiPreparationStep(){return true;},AiPerfFeedback(){}};}
+const gate=new CBetaOpponentGate();gate.configured=true;gate.visualBusy=false;gate.deferredOpponent=true;gate.audio=a;gate.duel=fakeDuel();
 gate.ResumeOpponentAfterVoice();check(gate.publications===0&&gate.deferredOpponent,'opponent waits while the player line plays');
 clock=30;a.SetClock(30000);a.Tick();gate.ResumeOpponentAfterVoice();
 check(gate.publications===1&&!gate.deferredOpponent,'opponent resumes when voice and stale queue finish');
@@ -71,11 +75,18 @@ check(!transition.IsVoiceActive()&&transition.queuedVoices.length===0,'ordinary 
 clock=100;const cap=new CBetaGwentDuelAudio();cap.Initialize();cap.SetClock(100000);cap.Cue(1,first,0,0,0,0,0);cap.Tick();
 check(cap.IsVoiceActive(),'capped-wait fixture starts a line');const longLine=cap.voiceUntil>101.3;
 const capGate=new CBetaOpponentGate();capGate.configured=true;capGate.visualBusy=false;capGate.deferredOpponent=true;capGate.audio=cap;
-capGate.duel={IsPending(){return false;},GetMessage(){return '';}};capGate.deferredVoiceAt=cap.CurrentTime();
+capGate.duel=fakeDuel();capGate.deferredVoiceAt=cap.CurrentTime();
 clock=100.5;cap.SetClock(100500);capGate.ResumeOpponentAfterVoice();check(capGate.publications===0&&capGate.deferredOpponent,'opponent still waits during the first second of a line');
 clock=101.25;cap.SetClock(101250);capGate.ResumeOpponentAfterVoice();
 check(capGate.publications===1&&!capGate.deferredOpponent,'opponent continues after one second');
 check(!longLine||cap.IsVoiceActive(),'the line keeps playing over the opponent turn');
+// Cooperative preparation yields without publishing or losing the pending turn.
+const staged=new CBetaOpponentGate();staged.configured=true;staged.deferredOpponent=true;
+let jobs=0;staged.duel=fakeDuel();staged.duel.AiPreparationStep=()=>++jobs>=3;
+staged.ResumeOpponentAfterVoice();staged.ResumeOpponentAfterVoice();
+check(staged.publications===0&&staged.deferredOpponent&&!staged.opponentPreparationBusy,'unfinished search yields and preserves the deferred turn');
+staged.ResumeOpponentAfterVoice();staged.ResumeOpponentAfterVoice();
+check(staged.publications===1&&!staged.deferredOpponent&&jobs===3,'ready search publishes exactly once');
 console.log(JSON.stringify({checks,actualWitcherScript:true,nativePlaybackVerified:false}));
 ''','utf8')
         result=subprocess.run(['node',str(script)],capture_output=True,text=True,encoding='utf8')

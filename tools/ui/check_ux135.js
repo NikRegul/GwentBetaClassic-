@@ -34,7 +34,7 @@ const c=vm.createContext({Sprite,TextField,Math,Number,String,console,
  BlurFilter:class{constructor(x,y,quality){Object.assign(this,{x,y,quality});}},GlowFilter:class{},TextFormat:class{constructor(font,size,color){Object.assign(this,{font,size,color});}},
  Event:{ENTER_FRAME:1},MouseEvent:{CLICK:1,MOUSE_WHEEL:2},BetaGwentFonts:{BODY:'body',TITLE:'title'},
  BetaGwentFullCatalog:{all(){return cards;},find(id){return cards.find(c=>c.templateId===id);}},
- BetaGwentCardText:{find(id){return cards.find(c=>c.templateId===id);}},BetaGwentCardTags:{text(){return '';}}
+ BetaGwentCardText:{find(id){return cards.find(c=>c.templateId===id);}},BetaGwentCardTags:{text(){return '';}},BetaGwentUi138:{helpLabels:true}
 });
 const cards=JSON.parse(fs.readFileSync('data/beta924/duel/slice.json','utf8')).cards.map(n=>({...n,power:n.fields.Power,typeMask:n.fields.Type,glossary:[],flavor:''}));
 vm.runInContext(`

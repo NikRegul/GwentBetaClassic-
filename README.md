@@ -1,8 +1,10 @@
-# Gwent Beta Classic 0.6.2
+# Gwent Beta Classic
+
+RU test build **0.6.6 / Stage 142** is ready: [archive](BetaGwent/release/GwentBetaClassic-0.6.6-RU.zip), [changes and game checks](docs/PRESENTATION142_RU.md), [effect catalog](docs/SPECIAL_VFX_0.6.6_RU.md), [build](docs/BUILD_0.6.6_RU.md). Includes special-card effects, unified weather casts, simultaneous triggered boosts, 12 original leader entrance clips with nine animated loop fallbacks, a stable leader preview, history/target hints, kegs at all innkeepers and the combined AI fixes. 50 regression suites, native compilation of 70 scripts and four menus, and archive/source/resource/audio checks passed (`docs/evidence/validation142.json`). In-game acceptance is pending. The complete five-voice release remains 0.6.3.
 
 Gwent Beta 0.9.24 inside The Witcher 3: 479 collectible cards including 21 leaders, five factions, 46 opponent archetypes, saved custom decks, crafting, kegs, NPC rewards, and mouse/keyboard/controller support. The current target is PC Next-Gen 5.01; a separate 1.32 version is planned for 1.0 and is not yet supported.
 
-0.6.2 adds action history, ability-chain highlights, smoother hand and controller focus, a large 2D leader scene, deck-editor explanations and undo, faster keg reveals, and session effect settings. It restores the Cursed Ships and Foltest deck-boost rosters and adjusts draw-spy scoring. The release retains 13 selectable text languages and animated portraits for 21 leaders. Ordinary card portraits remain static; original 3D leader entrances are still planned. The user confirmed the preceding 0.6.1 leader crash fix on RU.
+0.6.3 fixes the AI spending a rare card after a pass when a cheap winning answer was excluded by the search cap. Card movement between rows and sides now follows an arc; flips keep a fixed center, departing cards retain their frames, and arrival effects, numbers and audio share the correct timing during accelerated chains. Text, voices, rosters and card rules are unchanged from 0.6.2, which passed the user's initial in-game check. The release retains animated portraits for 21 leaders; ordinary card artwork remains static.
 
 ## Languages and packages
 
@@ -15,22 +17,23 @@ Official beta card texts are used where available. New UI translations are a pre
 From a configured local workspace, after any current build has finished:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\Build-All-0.6.2.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\Build-0.6.3.ps1 -Language all
 ```
 
-Use `Build-0.6.2.ps1 -Language ru` for RU only. The full pipeline freezes source inputs, runs regressions, compiles native scripts and menus, packages the selected voices, and validates fresh archives, CRC, manifest and SHA-256. Existing selected archives and staging projects are preserved before rebuilding. Concurrent builds are locked. The script does not install or publish the mod.
+Use `-Language ru` for RU only, or `-Step verify -Language all` to check existing packages. This pipeline requires the prepared stage139 snapshots and regression reports; run `tools/check_work139.py` separately when preparing them. It checks those inputs, compiles native scripts and menus, packages the selected voices, and validates archives, CRC, manifest and SHA-256. Existing 0.6.3 archives cannot be overwritten; a new revision needs a new version. Concurrent builds are locked. The script does not install or publish the mod.
 
-- [Build instructions (RU)](docs/BUILD_0.6.2_RU.md)
-- [New UI and manual checks (RU)](docs/UI_0.6.2_RU.md)
+- [Build instructions (RU)](docs/BUILD_0.6.3_RU.md)
+- [AI, animation changes and manual checks (RU)](docs/AI_ANIMATIONS_0.6.3_RU.md)
 - [Manual acceptance checklist (RU)](docs/TESTING_0.6.1_RU.md)
-- [Installation and controls (EN)](BetaGwent/release/publish-0.6.2/README_EN.md) / [RU](BetaGwent/release/publish-0.6.2/README_RU.md)
+- [Installation and controls (EN)](BetaGwent/release/publish-0.6.3/README_EN.md) / [RU](BetaGwent/release/publish-0.6.3/README_RU.md)
+- [0.6.3 changelog (EN)](BetaGwent/release/publish-0.6.3/CHANGELOG_EN.md) / [RU](BetaGwent/release/publish-0.6.3/CHANGELOG_RU.md)
 - [Changelog since 0.4.5 (EN)](BetaGwent/release/publish-0.6.2/CHANGELOG_0.4.5_to_0.6.2_EN.md) / [RU](BetaGwent/release/publish-0.6.2/CHANGELOG_0.4.5_to_0.6.2_RU.md)
-- [Nexus description, 13 languages](BetaGwent/release/publish-0.6.2/NEXUS_DESCRIPTION_0.6.2.txt)
+- [Historical 0.6.2 Nexus description, 13 languages](BetaGwent/release/publish-0.6.2/NEXUS_DESCRIPTION_0.6.2.txt)
 - [Leader crash diagnosis and retest (RU)](docs/reviews/2026-10-12-crash061-hotfix.md)
 - [Roadmap (EN)](docs/ROADMAP.md) / [RU](docs/ROADMAP_1.0_RU.md)
 - [Documentation index](docs/README.md)
 
-The completed 0.6.2 RU build passed 52 regression suites, native compilation of 70 scripts and four menus, and ZIP/manifest/SHA-256 verification. The other four 0.6.2 voice packages have not yet been verified. In-game acceptance and comparison of the old and new AI remain separate work; no AI strength improvement is established by these build checks. Do not distribute quarantined archives. The obsolete Redux compatibility layer is excluded.
+0.6.3 passed 39 regression suites, including 1,070 animation checks and 36 checks of the reproduced AI defect. A paired comparison across 184 games and all 46 archetypes ended 92:92 with no errors; it does not establish an overall AI strength improvement. Native compilation passed for all five sets of 70 scripts and four menus. All five packages passed ZIP/manifest/SHA-256 and source/resource verification; the completed report is `docs/evidence/validation139.json`. Previous 0.6.2 archives are unchanged. In-game acceptance of the new visual behavior remains open. The obsolete Redux compatibility layer is excluded.
 
 ## Repository scope
 

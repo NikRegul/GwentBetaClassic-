@@ -18,7 +18,8 @@ class CBetaGwentMonsterDuelAction extends CBetaGwentManagedAction
     protected function BeforeApplyImpl() { runtime.RecordBefore(); }
     protected function ApplyImpl() : bool
     {
-        var a, b, before, after : SBetaGwentCardSnapshot; var attacking, defending : CBetaGwentDuelCard; var damage : int;
+        var a, b, before, after, attackerState : SBetaGwentCardSnapshot; var attacking, defending : CBetaGwentDuelCard; var damage : int;
+        var previous : SBetaGwentDuelCueContext;
         a = source.Snapshot(); b = target.Snapshot();
         if ((a.locationMask & 7) == 0 || a.isWaitingToDie || a.power.currentPower <= 0) return true;
         if ((b.locationMask & 7) == 0 || b.isWaitingToDie || b.power.currentPower <= 0)
@@ -26,10 +27,16 @@ class CBetaGwentMonsterDuelAction extends CBetaGwentManagedAction
         attacking = source; defending = target; damage = a.power.currentPower;
         if (retaliation) { attacking = target; defending = source; damage = b.power.currentPower; }
         else if (a.runtimeTemplate.templateId == 200502 && game.WeatherToken(b.positionPlayerId, b.locationMask) == 1) damage *= 2;
-        before = defending.Snapshot(); if (!defending.ChangePower(-damage, false)) return false; after = defending.Snapshot();
+        previous=game.GetVisualSource();attackerState=attacking.Snapshot();
+        // Direction follows the current attacker; the cause remains the duel ability.
+        game.SetVisualSource(attackerState.instanceId,previous.templateId,attackerState.positionPlayerId,attackerState.locationMask);
+        before = defending.Snapshot();
+        if (!defending.ChangePower(-damage, false)) {game.SetVisualSource(previous.id,previous.templateId,previous.side,previous.row);return false;}
+        after = defending.Snapshot();
         game.NilfPowerChanged(attacking,defending,before,after,1);
         if (after.power.currentPower + after.power.basePower < before.power.currentPower + before.power.basePower)
             game.MonsterDamaged(attacking, defending);
+        game.SetVisualSource(previous.id,previous.templateId,previous.side,previous.row);
         // Original graph reads live power between strikes; armor and triggered damage are respected.
         if (!runtime.EnqueueMonsterDuel(source, target, !retaliation, heal, armor)) return false;
         runtime.RecordApplied(); return true;

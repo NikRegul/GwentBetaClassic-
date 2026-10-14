@@ -18,6 +18,7 @@ class Loader{constructor(){this.contentLoaderInfo=new EventSource();this.content
 const common={Loader,Object,URLRequest:class{constructor(url){this.url=url;}},Event:{COMPLETE:'complete'},IOErrorEvent:{IO_ERROR:'io'},SecurityErrorEvent:{SECURITY_ERROR:'security'},
  BetaGwentFonts:{BODY:'PF Din Text Cond Pro',TITLE:'Halis GR',NUMBERS:'Gwent Numbers'}};
 const c=vm.createContext({...common,console,trace(){}});
+c.BetaGwentUiText142=require('./vfx142_text_fixture')();
 vm.runInContext('var DEFAULT_LANGUAGE=1,language=1,pendingLanguage=0,fields={},maps,groups,protectedNames={},caches=[],cacheCount=0,resourceLoader=null,pendingLoader=null,bodyFont=null,titleFont=null,fontCharacters="",changed=null;var CODES='+JSON.stringify(codes)+',LABELS='+JSON.stringify(codes)+';'+
  ['initialize','indexLanguage','longest','normalize','word','translate','protect','track','forget','assign','sweep','loaded','update','font','hasGlyphs','refresh','select','languageLoaded','languageFailed','label','search'].map(n=>extract(text,n)).join('\n'),c);
 for(let id=1;id<=13;id++){
@@ -93,8 +94,14 @@ function playback(){
  check(a.rendered[0]===b.rendered[0]&&a.rendered[0]!==0,'recreated hover owner preserves playback phase');
 }
 const boardPath='BetaGwent/ui/src/BetaGwentBoard.as',board=fs.readFileSync(boardPath,'utf8');
+{
+ const p=playback(),x=p.ctx;x.BetaGwentLeaderPreview(131101,100,122);
+ x.metadata={duration:2,frames:48,pages:2,once:true};x.playbackStart=1000;
+ check(x.frameAt(0)===0&&x.frameAt(1000)===0,'entrance waits for its scheduled visual start');
+ check(x.frameAt(2000)===24&&x.frameAt(3000)===47&&x.frameAt(9000)===47,'one-shot entrance reaches and holds its last frame without looping');
+}
 class Owner{constructor(id){this.cardId=id;this.used=false;}resize(){}dispose(){this.disposed=true;if(this.parent)this.parent.removeChild(this);}}
-const b=vm.createContext({BetaGwentLeaderPreview:Owner,BetaGwentLeaderCatalog:{info:id=>id>0?{}:null}});
+const b=vm.createContext({BetaGwentUi138:{dynamicLeaders:true},BetaGwentLeaderPreview:Owner,BetaGwentLeaderCatalog:{info:id=>id>0?{}:null}});
 vm.runInContext('var leaderPreview=null,boardLeaderMovies=[],reducedMotion=false,selectingDecks=false,editingDeck=false,browsingCatalog=false,kegOpen=false,pileOpen=false,tutorialPage=-1,detailOpen=false;'+
  ['clearLeaderPreview','clearLeaderMovies','beginLeaderRender','finishLeaderRender','canAnimateLeader','attachLeaderMovie'].map(n=>extract(board,n)).join('\n'),b);
 const parent={addChild(m){m.parent=this;},removeChild(m){m.parent=null;}};
@@ -103,7 +110,11 @@ const originals=[...b.boardLeaderMovies];b.beginLeaderRender();for(let id=1;id<=
 check(originals.every((o,i)=>o===b.boardLeaderMovies[i]&&!o.disposed),'board redraw retains all leader owners');
 b.attachLeaderMovie(parent,4,100,122);check(b.boardLeaderMovies.length===3,'three board owners maximum');
 b.attachLeaderMovie(parent,1,312,380,true);check(b.leaderPreview&&b.boardLeaderMovies.length===3,'separate fourth hover owner');
-b.reducedMotion=true;b.beginLeaderRender();check(b.boardLeaderMovies.length===0&&!b.leaderPreview,'reduced motion releases all pages');
+const hover=b.leaderPreview;
+for(let n=0;n<40;n++){b.beginLeaderRender();for(let id=1;id<=3;id++)b.attachLeaderMovie(parent,id,100,122);b.attachLeaderMovie(parent,1,312,380,true);b.finishLeaderRender();}
+check(b.leaderPreview===hover&&!hover.disposed,'hover portrait retains the same loaded owner across every field update');
+b.reducedMotion=true;b.beginLeaderRender();check(b.boardLeaderMovies.length===3&&b.leaderPreview,'leader setting is independent of reduced combat effects');
+b.BetaGwentUi138.dynamicLeaders=false;b.beginLeaderRender();check(b.boardLeaderMovies.length===0&&!b.leaderPreview,'static leader setting releases all pages');
 check(!fs.readFileSync('tools/ui/leaders060/BetaLeaderMovie137.as','utf8').includes('getTimer'),'page movie cannot reset its own clock');
 for(const locale of ['fr_fr','es_es','es_mx']){
  const map=JSON.parse(fs.readFileSync('BetaGwent/build/languages137/ui/'+locale+'.json','utf8'));

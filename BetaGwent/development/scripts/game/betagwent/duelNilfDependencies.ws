@@ -9,7 +9,10 @@ class CBetaGwentNilfDependencies extends IScriptable
     private function Query(side : int, zone : int, tier : int, types : int, flags : int, source : CBetaGwentDuelCard, out ids : array<int>)
     {nilf.DepQuery(side,zone,tier,types,flags,source,ids);}
     private function Request(source : CBetaGwentDuelCard, side : int, zone : int, tier : int, types : int, flags : int)
-    {var ids : array<int>;var i : int;var s : SBetaGwentCardSnapshot;Query(side,zone,tier,types,flags,source,ids);for(i=ids.Size()-1;i>=0;i-=1){s=game.FindCard(ids[i]).Snapshot();if((s.locationMask&7)!=0 && (s.tokenMask&256)!=0)ids.Erase(i);}game.MonsterRequest(source,ids,BetaGwentNorthPick((zone&7)!=0,0,2),BetaGwentNilfMinimum(source.TemplateId()),1);}
+    {var ids : array<int>;var i,f : int;var s : SBetaGwentCardSnapshot;
+     // Beta Ignore=256: board targets of these abilities never include the card itself.
+     f=flags;if((zone&7)!=0)f=f|16;
+     Query(side,zone,tier,types,f,source,ids);for(i=ids.Size()-1;i>=0;i-=1){s=game.FindCard(ids[i]).Snapshot();if((s.locationMask&7)!=0 && (s.tokenMask&256)!=0)ids.Erase(i);}game.MonsterRequest(source,ids,BetaGwentNorthPick((zone&7)!=0,0,2),BetaGwentNilfMinimum(source.TemplateId()),1);}
     public function Played(source : CBetaGwentDuelCard)
     {
         var id,side,enemy,i,j,count : int;var s,t : SBetaGwentCardSnapshot;var ids,valid,rows : array<int>;

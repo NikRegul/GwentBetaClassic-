@@ -3,16 +3,48 @@
   "passed": true,
   "packages": [
     {
+      "language": "en",
+      "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.6.2-EN.zip",
+      "bytes": 292884145,
+      "sha256": "333afc8c77a4609c1a203c5f59527d959f8ed8879ad7283bcabeda29a754e1e8",
+      "freshNativeScripts": 70,
+      "textLanguages": 13
+    },
+    {
       "language": "ru",
       "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.6.2-RU.zip",
       "bytes": 293897803,
-      "sha256": "aae26c22031d61c201f7a98cbece9c54f1bd2e31c41788ba1956bbdf8cada54b",
+      "sha256": "7694c4e3505c7c5f1b7ce5d57e9dee041f9cc2541be5936da87343fcc839cdea",
+      "freshNativeScripts": 70,
+      "textLanguages": 13
+    },
+    {
+      "language": "de",
+      "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.6.2-DE.zip",
+      "bytes": 291092795,
+      "sha256": "e35a04dd2fdb2b7ffb6617695d9bf40b255c548f37cd6b5d59c87830a08d4cf3",
+      "freshNativeScripts": 70,
+      "textLanguages": 13
+    },
+    {
+      "language": "it",
+      "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.6.2-IT.zip",
+      "bytes": 289365747,
+      "sha256": "4c45a7ddff851b50ee1ca57198394a773dd7c03a6a24cfd218dac117d40e4be2",
+      "freshNativeScripts": 70,
+      "textLanguages": 13
+    },
+    {
+      "language": "pt-br",
+      "archive": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.6.2-PT-BR.zip",
+      "bytes": 292442744,
+      "sha256": "13bd9dd5302b59e896bd7921eacbe8b6b386704345164016a06cbafde36b5d33",
       "freshNativeScripts": 70,
       "textLanguages": 13
     }
   ],
   "menus": 4,
-  "voicePackages": 1,
+  "voicePackages": 5,
   "textLanguages": 13,
   "leaderCards": 21,
   "leaderPages": 282,
@@ -23,5 +55,5 @@
   "installedGameModified": false,
   "nativeAtlasDisposeRemovedFromAll282Pages": true,
   "inGameLeaderIntroductionRetestRequired": true,
-  "verifiedAtUtc": "2026-10-12T13:31:33.947339+00:00"
+  "verifiedAtUtc": "2026-10-12T14:06:03.237711+00:00"
 }

@@ -1,0 +1,4444 @@
+{
+  "stage": 142,
+  "source": "Gwent 0.9.24.3.432\\Gwent_Data\\sharedassets8.assets",
+  "sourceSha256": "9ff00d664be3dc613ab56d0b4353759ec4bda0cb22ef25bb674d9fee70076c93",
+  "schemaSource": "Gwent_Data/Managed/Assembly-CSharp.dll: ACardAttackVFXHandlerData, CardElementVisualEffectsContainer, CardAttackVisualEffectOverride",
+  "registry": {
+    "AttackApplyMethodData": {
+      "pathId": 3925,
+      "rows": [
+        {
+          "method": 1,
+          "effects": {
+            "0": {
+              "pathId": 4082,
+              "prefab": "PowerPhysicalProjectile",
+              "component": "BezierProjectileVisualEffect"
+            },
+            "4": {
+              "pathId": 4097,
+              "prefab": "PowerFireProjectile",
+              "component": "BezierProjectileVisualEffect"
+            },
+            "6": {
+              "pathId": 4127,
+              "prefab": "PowerLightningProjectile",
+              "component": "BezierProjectileVisualEffect"
+            },
+            "9": {
+              "pathId": 4059,
+              "prefab": "PowerLightMagicProjectile",
+              "component": "BezierProjectileVisualEffect"
+            },
+            "10": {
+              "pathId": 4126,
+              "prefab": "PowerDarkMagicProjectile",
+              "component": "BezierProjectileVisualEffect"
+            }
+          },
+          "overrides": {}
+        },
+        {
+          "method": 2,
+          "effects": {
+            "0": {
+              "pathId": 4144,
+              "prefab": "PowerRowPhysical",
+              "component": "LocationAttackVisualEffect"
+            },
+            "5": {
+              "pathId": 4203,
+              "prefab": "PowerRowIce",
+              "component": "LocationAttackVisualEffect"
+            },
+            "8": {
+              "pathId": 4228,
+              "prefab": "PowerRowAir",
+              "component": "LocationAttackVisualEffect"
+            },
+            "9": {
+              "pathId": 4229,
+              "prefab": "PowerRowLightMagic",
+              "component": "LocationAttackVisualEffect"
+            },
+            "10": {
+              "pathId": 4230,
+              "prefab": "PowerRowDarkMagic",
+              "component": "LocationAttackVisualEffect"
+            }
+          },
+          "overrides": {}
+        },
+        {
+          "method": 3,
+          "effects": {
+            "4": {
+              "pathId": 4194,
+              "prefab": "PowerSideFire",
+              "component": "LocationAttackVisualEffect"
+            },
+            "5": {
+              "pathId": 4221,
+              "prefab": "PowerSideIce",
+              "component": "LocationAttackVisualEffect"
+            },
+            "9": {
+              "pathId": 4119,
+              "prefab": "PowerSideLightMagic",
+              "component": "LocationAttackVisualEffect"
+            },
+            "10": {
+              "pathId": 4259,
+              "prefab": "PowerSideDarkMagic",
+              "component": "LocationAttackVisualEffect"
+            }
+          },
+          "overrides": {
+            "4": {
+              "112102": {
+                "pathId": 4198,
+                "prefab": "IgniIgnition",
+                "component": "LocationAttackVisualEffect"
+              },
+              "201759": {
+                "pathId": 4198,
+                "prefab": "IgniIgnition",
+                "component": "LocationAttackVisualEffect"
+              },
+              "201693": {
+                "pathId": 4198,
+                "prefab": "IgniIgnition",
+                "component": "LocationAttackVisualEffect"
+              }
+            },
+            "8": {
+              "112111": {
+                "pathId": 4253,
+                "prefab": "Aard",
+                "component": "LocationAttackVisualEffect"
+              },
+              "201759": {
+                "pathId": 4253,
+                "prefab": "Aard",
+                "component": "LocationAttackVisualEffect"
+              }
+            }
+          }
+        },
+        {
+          "method": 4,
+          "effects": {
+            "5": {
+              "pathId": 4128,
+              "prefab": "PowerBoardIce",
+              "component": "LocationAttackVisualEffect"
+            },
+            "9": {
+              "pathId": 4240,
+              "prefab": "PowerBoardLightMagic",
+              "component": "LocationAttackVisualEffect"
+            },
+            "10": {
+              "pathId": 4255,
+              "prefab": "PowerBoardDarkMagic",
+              "component": "LocationAttackVisualEffect"
+            }
+          },
+          "overrides": {
+            "0": {
+              "201523": {
+                "pathId": 4258,
+                "prefab": "[201525]PowerBoardPhysical",
+                "component": "LocationAttackVisualEffect"
+              },
+              "201759": {
+                "pathId": 4258,
+                "prefab": "[201525]PowerBoardPhysical",
+                "component": "LocationAttackVisualEffect"
+              }
+            },
+            "4": {
+              "152402": {
+                "pathId": 4079,
+                "prefab": "[152402]PowerBoardFire",
+                "component": "LocationAttackVisualEffect"
+              }
+            }
+          }
+        }
+      ],
+      "decodedBytes": 16828,
+      "trailingBytes": 0
+    },
+    "CardBanishAttackVFXHandlerData": {
+      "pathId": 3927,
+      "rows": [
+        {
+          "method": 0,
+          "effects": {
+            "0": {
+              "pathId": 4266,
+              "prefab": "BanishCardEffect",
+              "component": "CardBanishVisualEffect"
+            }
+          },
+          "overrides": {}
+        }
+      ],
+      "decodedBytes": 16688,
+      "trailingBytes": 0
+    },
+    "CardTokenAttackVFXHandlerData": {
+      "pathId": 3929,
+      "rows": [],
+      "decodedBytes": 16696,
+      "trailingBytes": 0
+    },
+    "CardDestroyAttackVFXHandlerData": {
+      "pathId": 3935,
+      "rows": [
+        {
+          "method": 0,
+          "effects": {
+            "4": {
+              "pathId": 4247,
+              "prefab": "DestroyDestroyFire",
+              "component": "CardDestroyVisualEffect"
+            },
+            "11": {
+              "pathId": 4067,
+              "prefab": "DestroyDestroyBlood",
+              "component": "CardDestroyVisualEffect"
+            },
+            "13": {
+              "pathId": 4068,
+              "prefab": "DestroyDestroyPoison",
+              "component": "CardDestroyVisualEffect"
+            },
+            "14": {
+              "pathId": 4067,
+              "prefab": "DestroyDestroyBlood",
+              "component": "CardDestroyVisualEffect"
+            }
+          },
+          "overrides": {}
+        },
+        {
+          "method": 1,
+          "effects": {
+            "14": {
+              "pathId": 4067,
+              "prefab": "DestroyDestroyBlood",
+              "component": "CardDestroyVisualEffect"
+            }
+          },
+          "overrides": {}
+        }
+      ],
+      "decodedBytes": 16688,
+      "trailingBytes": 0
+    },
+    "CardPowerAttackVFXHandlerData": {
+      "pathId": 3936,
+      "rows": [
+        {
+          "method": 0,
+          "effects": {
+            "0": {
+              "pathId": 4252,
+              "prefab": "PowerDirectPhysical",
+              "component": "CardPowerAttackVisualEffect"
+            },
+            "4": {
+              "pathId": 4158,
+              "prefab": "PowerDirectFire",
+              "component": "CardPowerAttackVisualEffect"
+            },
+            "6": {
+              "pathId": 4103,
+              "prefab": "PowerDirectLightning",
+              "component": "CardPowerAttackVisualEffect"
+            },
+            "7": {
+              "pathId": 4115,
+              "prefab": "PowerDirectEarth",
+              "component": "CardPowerAttackVisualEffect"
+            },
+            "9": {
+              "pathId": 4084,
+              "prefab": "PowerDirectLightMagic",
+              "component": "CardPowerAttackVisualEffect"
+            },
+            "10": {
+              "pathId": 4102,
+              "prefab": "PowerDirectDarkMagic",
+              "component": "CardPowerAttackVisualEffect"
+            },
+            "15": {
+              "pathId": 4133,
+              "prefab": "GoldenFrothCardEffect",
+              "component": "CardPowerAttackVisualEffect"
+            }
+          },
+          "overrides": {
+            "0": {
+              "201749": {
+                "pathId": 4133,
+                "prefab": "GoldenFrothCardEffect",
+                "component": "CardPowerAttackVisualEffect"
+              }
+            },
+            "8": {
+              "113305": {
+                "pathId": 4279,
+                "prefab": "Fog_Damage",
+                "component": "CardPowerAttackVisualEffect"
+              }
+            }
+          }
+        }
+      ],
+      "decodedBytes": 16724,
+      "trailingBytes": 24
+    },
+    "CardPromoteAttackVFXHandlerData": {
+      "pathId": 3938,
+      "rows": [
+        {
+          "method": 0,
+          "effects": {
+            "0": {
+              "pathId": 4100,
+              "prefab": "PromoteSimpleVFX",
+              "component": "CardPromoteVisualEffect"
+            }
+          },
+          "overrides": {}
+        },
+        {
+          "method": 1,
+          "effects": {
+            "0": {
+              "pathId": 4078,
+              "prefab": "DemoteParticleSimpleVFX",
+              "component": "CardPromoteVisualEffect"
+            }
+          },
+          "overrides": {}
+        }
+      ],
+      "decodedBytes": 16696,
+      "trailingBytes": 0
+    },
+    "CardResetAttackVFXHandlerData": {
+      "pathId": 3940,
+      "rows": [
+        {
+          "method": 0,
+          "effects": {
+            "0": {
+              "pathId": 4131,
+              "prefab": "ResetPhysicalBuff",
+              "component": "CardResetVisualEffect"
+            }
+          },
+          "overrides": {}
+        }
+      ],
+      "decodedBytes": 16692,
+      "trailingBytes": 0
+    },
+    "CardTransformAttackVFXHandlerData": {
+      "pathId": 3942,
+      "rows": [
+        {
+          "method": 0,
+          "effects": {
+            "0": {
+              "pathId": 4269,
+              "prefab": "NatureTransform",
+              "component": "CardTransformVisualEffect"
+            },
+            "11": {
+              "pathId": 4269,
+              "prefab": "NatureTransform",
+              "component": "CardTransformVisualEffect"
+            }
+          },
+          "overrides": {}
+        },
+        {
+          "method": 5,
+          "effects": {
+            "0": {
+              "pathId": 4269,
+              "prefab": "NatureTransform",
+              "component": "CardTransformVisualEffect"
+            }
+          },
+          "overrides": {}
+        }
+      ],
+      "decodedBytes": 16696,
+      "trailingBytes": 0
+    },
+    "CardMovementVFXHandlerData": {
+      "pathId": 3946,
+      "rows": [],
+      "decodedBytes": 16688,
+      "trailingBytes": 76
+    },
+    "LocationTokenVFXHandlerData": {
+      "pathId": 3952,
+      "rows": [
+        {
+          "method": 0,
+          "effects": {
+            "4": {
+              "pathId": 4184,
+              "prefab": "RaghNarRoogInitializationEffect",
+              "component": "LocationTokenAttackVisualEffect"
+            }
+          },
+          "overrides": {}
+        },
+        {
+          "method": 1,
+          "effects": {
+            "0": {
+              "pathId": 4071,
+              "prefab": "BoardEffect_ClearWeather",
+              "component": "LocationTokenAttackVisualEffect"
+            },
+            "4": {
+              "pathId": 4071,
+              "prefab": "BoardEffect_ClearWeather",
+              "component": "LocationTokenAttackVisualEffect"
+            },
+            "5": {
+              "pathId": 4071,
+              "prefab": "BoardEffect_ClearWeather",
+              "component": "LocationTokenAttackVisualEffect"
+            },
+            "6": {
+              "pathId": 4071,
+              "prefab": "BoardEffect_ClearWeather",
+              "component": "LocationTokenAttackVisualEffect"
+            },
+            "7": {
+              "pathId": 4071,
+              "prefab": "BoardEffect_ClearWeather",
+              "component": "LocationTokenAttackVisualEffect"
+            },
+            "8": {
+              "pathId": 4061,
+              "prefab": "AirTokenAttack",
+              "component": "LocationTokenAttackVisualEffect"
+            },
+            "9": {
+              "pathId": 4071,
+              "prefab": "BoardEffect_ClearWeather",
+              "component": "LocationTokenAttackVisualEffect"
+            },
+            "10": {
+              "pathId": 4071,
+              "prefab": "BoardEffect_ClearWeather",
+              "component": "LocationTokenAttackVisualEffect"
+            },
+            "11": {
+              "pathId": 4071,
+              "prefab": "BoardEffect_ClearWeather",
+              "component": "LocationTokenAttackVisualEffect"
+            },
+            "12": {
+              "pathId": 4071,
+              "prefab": "BoardEffect_ClearWeather",
+              "component": "LocationTokenAttackVisualEffect"
+            },
+            "13": {
+              "pathId": 4071,
+              "prefab": "BoardEffect_ClearWeather",
+              "component": "LocationTokenAttackVisualEffect"
+            },
+            "14": {
+              "pathId": 4071,
+              "prefab": "BoardEffect_ClearWeather",
+              "component": "LocationTokenAttackVisualEffect"
+            },
+            "15": {
+              "pathId": 4071,
+              "prefab": "BoardEffect_ClearWeather",
+              "component": "LocationTokenAttackVisualEffect"
+            }
+          },
+          "overrides": {}
+        }
+      ],
+      "decodedBytes": 16696,
+      "trailingBytes": 388,
+      "tokenEffects": {
+        "1": {
+          "pathId": 4260,
+          "prefab": "FrostTokenEffect",
+          "component": "LocationTokenVisualEffect"
+        },
+        "2": {
+          "pathId": 4110,
+          "prefab": "FogTokenEffect",
+          "component": "LocationTokenVisualEffect"
+        },
+        "4": {
+          "pathId": 4064,
+          "prefab": "RainTokenEffect",
+          "component": "LocationTokenVisualEffect"
+        },
+        "16": {
+          "pathId": 4179,
+          "prefab": "DroughtTokenEffect",
+          "component": "LocationTokenVisualEffect"
+        },
+        "32": {
+          "pathId": 4101,
+          "prefab": "RaghNarRoogTokenEffect",
+          "component": "LocationTokenVisualEffect"
+        },
+        "64": {
+          "pathId": 4202,
+          "prefab": "SkelligeStormTokenEffect",
+          "component": "LocationTokenVisualEffect"
+        },
+        "128": {
+          "pathId": 4153,
+          "prefab": "GoldenFrothTokenEffect",
+          "component": "LocationTokenVisualEffect"
+        },
+        "256": {
+          "pathId": 4271,
+          "prefab": "Moonlight",
+          "component": "LocationTokenVisualEffect"
+        },
+        "512": {
+          "pathId": 4156,
+          "prefab": "PitfallTrapTokenEffect",
+          "component": "LocationTokenVisualEffect"
+        },
+        "1024": {
+          "pathId": 4086,
+          "prefab": "RowEffect_DragonsDreamSmoke",
+          "component": "LocationTokenVisualEffect"
+        },
+        "2048": {
+          "pathId": 4106,
+          "prefab": "BloodMoon",
+          "component": "LocationTokenVisualEffect"
+        },
+        "4096": {
+          "pathId": 4122,
+          "prefab": "RowEffect_Fire",
+          "component": "LocationTokenVisualEffect"
+        }
+      }
+    }
+  },
+  "specials": [
+    {
+      "templateId": 113101,
+      "name": "Ragh nar Roog",
+      "title": "Рагнарек",
+      "effects": [
+        {
+          "nodeId": 20,
+          "node": "ChangeLocationTokensNode",
+          "fields": {
+            "ElementType": 16,
+            "Operation": 2,
+            "Tokens": 32
+          },
+          "elementName": "Fire",
+          "attack": null,
+          "impact": null,
+          "rowEffect": {
+            "pathId": 4101,
+            "prefab": "RaghNarRoogTokenEffect",
+            "component": "LocationTokenVisualEffect"
+          }
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 113102,
+      "name": "The Last Wish",
+      "title": "Последнее желание",
+      "effects": [],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 113201,
+      "name": "Decoy",
+      "title": "Чучело",
+      "effects": [
+        {
+          "nodeId": 68,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 0,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": null,
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 113202,
+      "name": "Hailstorm",
+      "title": "Градобитие Меригольд",
+      "effects": [
+        {
+          "nodeId": 54,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 32,
+            "AttackMethod": 2,
+            "Operation": 3
+          },
+          "elementName": "Ice",
+          "attack": {
+            "pathId": 4203,
+            "prefab": "PowerRowIce",
+            "component": "LocationAttackVisualEffect"
+          },
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 113203,
+      "name": "Skellige Storm",
+      "title": "Шторм Скеллиге",
+      "effects": [
+        {
+          "nodeId": 20,
+          "node": "ChangeLocationTokensNode",
+          "fields": {
+            "ElementType": 4096,
+            "Operation": 2,
+            "Tokens": 64
+          },
+          "elementName": "Water",
+          "attack": null,
+          "impact": null,
+          "rowEffect": {
+            "pathId": 4202,
+            "prefab": "SkelligeStormTokenEffect",
+            "component": "LocationTokenVisualEffect"
+          }
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 113204,
+      "name": "Tremors",
+      "title": "Землетрясение",
+      "effects": [
+        {
+          "nodeId": 14,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 3,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": {
+            "pathId": 4259,
+            "prefab": "PowerSideDarkMagic",
+            "component": "LocationAttackVisualEffect"
+          },
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 113205,
+      "name": "Dimeritium Bomb",
+      "title": "Двимеритовая бомба",
+      "effects": [
+        {
+          "nodeId": 319,
+          "node": "ResetCardsNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 113206,
+      "name": "White Frost",
+      "title": "Белый Хлад",
+      "effects": [
+        {
+          "nodeId": 159,
+          "node": "ChangeLocationTokensNode",
+          "fields": {
+            "ElementType": 32,
+            "Operation": 0,
+            "Tokens": 1
+          },
+          "elementName": "Ice",
+          "attack": null,
+          "impact": null,
+          "rowEffect": {
+            "pathId": 4260,
+            "prefab": "FrostTokenEffect",
+            "component": "LocationTokenVisualEffect"
+          }
+        },
+        {
+          "nodeId": 170,
+          "node": "ChangeLocationTokensNode",
+          "fields": {
+            "ElementType": 32,
+            "Operation": 0,
+            "Tokens": 1
+          },
+          "elementName": "Ice",
+          "attack": null,
+          "impact": null,
+          "rowEffect": {
+            "pathId": 4260,
+            "prefab": "FrostTokenEffect",
+            "component": "LocationTokenVisualEffect"
+          }
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 113207,
+      "name": "Commander's Horn",
+      "title": "Командирский рог",
+      "effects": [
+        {
+          "nodeId": 98,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 2,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4229,
+            "prefab": "PowerRowLightMagic",
+            "component": "LocationAttackVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 231,
+          "node": "FilterCardTokensNode",
+          "fields": {
+            "Tokens": 8
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 113209,
+      "name": "Alzur's Double Cross",
+      "title": "Альзур: Двойной крест",
+      "effects": [
+        {
+          "nodeId": 7,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 0,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": null,
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 113301,
+      "name": "Alzur's Thunder",
+      "title": "Альзур: Гром",
+      "effects": [
+        {
+          "nodeId": 31,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 64,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "Lightning",
+          "attack": {
+            "pathId": 4127,
+            "prefab": "PowerLightningProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4103,
+            "prefab": "PowerDirectLightning",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 113302,
+      "name": "Frost",
+      "title": "Трескучий мороз",
+      "effects": [
+        {
+          "nodeId": 20,
+          "node": "ChangeLocationTokensNode",
+          "fields": {
+            "ElementType": 32,
+            "Operation": 2,
+            "Tokens": 1
+          },
+          "elementName": "Ice",
+          "attack": null,
+          "impact": null,
+          "rowEffect": {
+            "pathId": 4260,
+            "prefab": "FrostTokenEffect",
+            "component": "LocationTokenVisualEffect"
+          }
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 113303,
+      "name": "First Light",
+      "title": "Рассвет",
+      "effects": [
+        {
+          "nodeId": 276,
+          "node": "ChangeLocationTokensNode",
+          "fields": {
+            "ElementType": 1,
+            "Operation": 1,
+            "Tokens": 2687
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 370,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 3,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4119,
+            "prefab": "PowerSideLightMagic",
+            "component": "LocationAttackVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 113305,
+      "name": "Fog",
+      "title": "Густой туман",
+      "effects": [
+        {
+          "nodeId": 20,
+          "node": "ChangeLocationTokensNode",
+          "fields": {
+            "ElementType": 256,
+            "Operation": 2,
+            "Tokens": 2
+          },
+          "elementName": "Air",
+          "attack": null,
+          "impact": null,
+          "rowEffect": {
+            "pathId": 4110,
+            "prefab": "FogTokenEffect",
+            "component": "LocationTokenVisualEffect"
+          }
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 113306,
+      "name": "Manticore Venom",
+      "title": "Яд мантикоры",
+      "effects": [
+        {
+          "nodeId": 31,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": {
+            "pathId": 4126,
+            "prefab": "PowerDarkMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 113307,
+      "name": "Adrenaline",
+      "title": "Выброс адреналина",
+      "effects": [
+        {
+          "nodeId": 16,
+          "node": "ChangeTokensNode",
+          "fields": {
+            "ElementType": 2048,
+            "AttackMethod": 0,
+            "Operation": 3,
+            "Tokens": 1
+          },
+          "elementName": "Nature",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 113308,
+      "name": "Epidemic",
+      "title": "Эпидемия",
+      "effects": [
+        {
+          "nodeId": 87,
+          "node": "DestroyCardsNode",
+          "fields": {
+            "ElementType": 8192,
+            "AttackMethod": 0,
+            "RemovalType": 0
+          },
+          "elementName": "Poison",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 113309,
+      "name": "Scorch",
+      "title": "Казнь",
+      "effects": [
+        {
+          "nodeId": 87,
+          "node": "DestroyCardsNode",
+          "fields": {
+            "ElementType": 16,
+            "AttackMethod": 0,
+            "RemovalType": 0
+          },
+          "elementName": "Fire",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 113310,
+      "name": "Swallow",
+      "title": "Ласточка",
+      "effects": [
+        {
+          "nodeId": 98,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 1,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4059,
+            "prefab": "PowerLightMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 113311,
+      "name": "Thunderbolt",
+      "title": "Гром",
+      "effects": [
+        {
+          "nodeId": 98,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 1,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4059,
+            "prefab": "PowerLightMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 192,
+          "node": "ChangeArmorNode",
+          "fields": {
+            "ElementType": 0,
+            "AttackMethod": 0,
+            "Operation": 0
+          },
+          "elementName": null,
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 246,
+          "node": "FilterCardTokensNode",
+          "fields": {
+            "Tokens": 8
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 113312,
+      "name": "Rain",
+      "title": "Проливной дождь",
+      "effects": [
+        {
+          "nodeId": 47,
+          "node": "ChangeLocationTokensNode",
+          "fields": {
+            "ElementType": 4096,
+            "Operation": 0,
+            "Tokens": 4
+          },
+          "elementName": "Water",
+          "attack": null,
+          "impact": null,
+          "rowEffect": {
+            "pathId": 4064,
+            "prefab": "RainTokenEffect",
+            "component": "LocationTokenVisualEffect"
+          }
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 113315,
+      "name": "Twisted Mirror ",
+      "title": "Зеркало Беккера",
+      "effects": [
+        {
+          "nodeId": 72,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": {
+            "pathId": 4126,
+            "prefab": "PowerDarkMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 266,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 1,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4059,
+            "prefab": "PowerLightMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 113316,
+      "name": "Renew",
+      "title": "Возрождение",
+      "effects": [],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 113319,
+      "name": "Dimeritium Shackles",
+      "title": "Двимеритовые кандалы",
+      "effects": [
+        {
+          "nodeId": 40,
+          "node": "ChangeTokensNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 1,
+            "Operation": 3,
+            "Tokens": 4
+          },
+          "elementName": "Physical",
+          "attack": {
+            "pathId": 4082,
+            "prefab": "PowerPhysicalProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 69,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 0,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": null,
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 113320,
+      "name": "Mushrooms",
+      "title": "Мардрём",
+      "effects": [
+        {
+          "nodeId": 241,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 1,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4059,
+            "prefab": "PowerLightMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 252,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": {
+            "pathId": 4126,
+            "prefab": "PowerDarkMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 276,
+          "node": "ResetCardsNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 123201,
+      "name": "Reinforcement",
+      "title": "Подкрепление",
+      "effects": [],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 133301,
+      "name": "Wyvern Shield",
+      "title": "Щит из чешуи виверны",
+      "effects": [
+        {
+          "nodeId": 57,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 1,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4059,
+            "prefab": "PowerLightMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 133302,
+      "name": "Monster Nest",
+      "title": "Гнездо чудовищ",
+      "effects": [
+        {
+          "nodeId": 124,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 352,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 0,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": null,
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 143201,
+      "name": "Natures Gift",
+      "title": "Дар природы",
+      "effects": [],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 153201,
+      "name": "Restore",
+      "title": "Восстановление",
+      "effects": [
+        {
+          "nodeId": 60,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 0,
+            "Operation": 2
+          },
+          "elementName": "LightMagic",
+          "attack": null,
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 218,
+          "node": "ChangeTokensNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 0,
+            "Operation": 0,
+            "Tokens": 512
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 232,
+          "node": "ChangeCategoriesNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 0,
+            "Operation": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 153301,
+      "name": "Lacerate",
+      "title": "На куски",
+      "effects": [
+        {
+          "nodeId": 130,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 2,
+            "Operation": 1
+          },
+          "elementName": "Physical",
+          "attack": {
+            "pathId": 4144,
+            "prefab": "PowerRowPhysical",
+            "component": "LocationAttackVisualEffect"
+          },
+          "impact": {
+            "pathId": 4252,
+            "prefab": "PowerDirectPhysical",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 163101,
+      "name": "Assassination",
+      "title": "Убийство",
+      "effects": [
+        {
+          "nodeId": 59,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "Physical",
+          "attack": {
+            "pathId": 4082,
+            "prefab": "PowerPhysicalProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4252,
+            "prefab": "PowerDirectPhysical",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 163201,
+      "name": "Treason",
+      "title": "Измена",
+      "effects": [
+        {
+          "nodeId": 237,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "Physical",
+          "attack": {
+            "pathId": 4082,
+            "prefab": "PowerPhysicalProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4252,
+            "prefab": "PowerDirectPhysical",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 263,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "Physical",
+          "attack": {
+            "pathId": 4082,
+            "prefab": "PowerPhysicalProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4252,
+            "prefab": "PowerDirectPhysical",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 482,
+          "node": "FilterCardTokensNode",
+          "fields": {
+            "Tokens": 264
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 548,
+          "node": "FilterCardTokensNode",
+          "fields": {
+            "Tokens": 264
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 565,
+          "node": "FilterCardTokensNode",
+          "fields": {
+            "Tokens": 264
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 200008,
+      "name": "Petri's Philter",
+      "title": "Зелье Петри",
+      "effects": [
+        {
+          "nodeId": 98,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 3,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4119,
+            "prefab": "PowerSideLightMagic",
+            "component": "LocationAttackVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 200009,
+      "name": "Overdose",
+      "title": "Сорокопутка",
+      "effects": [
+        {
+          "nodeId": 98,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 3,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": {
+            "pathId": 4259,
+            "prefab": "PowerSideDarkMagic",
+            "component": "LocationAttackVisualEffect"
+          },
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 200018,
+      "name": "Drought",
+      "title": "Коратская жара",
+      "effects": [
+        {
+          "nodeId": 7,
+          "node": "ChangeLocationTokensNode",
+          "fields": {
+            "ElementType": 1,
+            "Operation": 0,
+            "Tokens": 16
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": {
+            "pathId": 4179,
+            "prefab": "DroughtTokenEffect",
+            "component": "LocationTokenVisualEffect"
+          }
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 200019,
+      "name": "Marching Orders",
+      "title": "Приказ о выступлении",
+      "effects": [
+        {
+          "nodeId": 7,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 0,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": null,
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 200020,
+      "name": "Necromancy",
+      "title": "Некромантия",
+      "effects": [
+        {
+          "nodeId": 78,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 1,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4059,
+            "prefab": "PowerLightMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 93,
+          "node": "BanishCardsNode",
+          "fields": {
+            "AttackMethod": 1
+          },
+          "elementName": "Physical",
+          "attack": {
+            "pathId": 4082,
+            "prefab": "PowerPhysicalProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 200021,
+      "name": "Roar",
+      "title": "Леденящий кровь рык",
+      "effects": [
+        {
+          "nodeId": 35,
+          "node": "DestroyCardsNode",
+          "fields": {
+            "ElementType": 16,
+            "AttackMethod": 0,
+            "RemovalType": 0
+          },
+          "elementName": "Fire",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 81,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 200022,
+      "name": "Summoning Circle",
+      "title": "Круг призыва",
+      "effects": [
+        {
+          "nodeId": 58,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 436,
+          "node": "FilterCardTokensNode",
+          "fields": {
+            "Tokens": 8
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 200023,
+      "name": "Arachas Venom",
+      "title": "Яд главоглаза",
+      "effects": [
+        {
+          "nodeId": 98,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": {
+            "pathId": 4126,
+            "prefab": "PowerDarkMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 229,
+          "node": "FilterCardTokensNode",
+          "fields": {
+            "Tokens": 8
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 200053,
+      "name": "Artefact Compression",
+      "title": "Компрессия",
+      "effects": [
+        {
+          "nodeId": 31,
+          "node": "TransformCardsNode",
+          "fields": {
+            "ElementType": 2048,
+            "AttackMethod": 0
+          },
+          "elementName": "Nature",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 200058,
+      "name": "Uma's Curse",
+      "title": "Проклятие Умы",
+      "effects": [
+        {
+          "nodeId": 29,
+          "node": "GetCardsDefinitionsNode",
+          "fields": {
+            "Tokens": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 190,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 200067,
+      "name": "Moonlight",
+      "title": "Лунный свет",
+      "effects": [
+        {
+          "nodeId": 507,
+          "node": "ChangeLocationTokensNode",
+          "fields": {
+            "ElementType": 1,
+            "Operation": 2,
+            "Tokens": 256
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": {
+            "pathId": 4271,
+            "prefab": "Moonlight",
+            "component": "LocationTokenVisualEffect"
+          }
+        },
+        {
+          "nodeId": 533,
+          "node": "ChangeLocationTokensNode",
+          "fields": {
+            "ElementType": 1,
+            "Operation": 2,
+            "Tokens": 2048
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": {
+            "pathId": 4106,
+            "prefab": "BloodMoon",
+            "component": "LocationTokenVisualEffect"
+          }
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 200078,
+      "name": "Trial of the Grasses",
+      "title": "Испытание Травами",
+      "effects": [
+        {
+          "nodeId": 31,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": {
+            "pathId": 4126,
+            "prefab": "PowerDarkMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 48,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 1,
+            "Operation": 2
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4059,
+            "prefab": "PowerLightMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 137,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 0,
+            "Operation": 2
+          },
+          "elementName": "LightMagic",
+          "attack": null,
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 200079,
+      "name": "Blue Dream",
+      "title": "Сон Ханмарвина",
+      "effects": [
+        {
+          "nodeId": 35,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 76,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 1,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4059,
+            "prefab": "PowerLightMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 200154,
+      "name": "Royal Decree",
+      "title": "Королевский указ",
+      "effects": [
+        {
+          "nodeId": 58,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 1,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4059,
+            "prefab": "PowerLightMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 200223,
+      "name": "Mandrake",
+      "title": "Мандрагора",
+      "effects": [
+        {
+          "nodeId": 241,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 1,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4059,
+            "prefab": "PowerLightMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 252,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": {
+            "pathId": 4126,
+            "prefab": "PowerDarkMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 291,
+          "node": "ResetCardsNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 303,
+          "node": "ResetCardsNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 200224,
+      "name": "Crow's Eye",
+      "title": "Вороний глаз",
+      "effects": [
+        {
+          "nodeId": 194,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": {
+            "pathId": 4126,
+            "prefab": "PowerDarkMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 291,
+          "node": "FilterCardTokensNode",
+          "fields": {
+            "Tokens": 8
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 200225,
+      "name": "Muzzle",
+      "title": "Намордник",
+      "effects": [
+        {
+          "nodeId": 178,
+          "node": "FilterCardTokensNode",
+          "fields": {
+            "Tokens": 264
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 200226,
+      "name": "Wolfsbane",
+      "title": "Волкобой",
+      "effects": [
+        {
+          "nodeId": 82,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 1,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4059,
+            "prefab": "PowerLightMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 111,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": {
+            "pathId": 4126,
+            "prefab": "PowerDarkMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 132,
+          "node": "ChangeCardTimerNode",
+          "fields": {
+            "Operation": 2
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 163,
+          "node": "ChangeCardTimerNode",
+          "fields": {
+            "Operation": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 200228,
+      "name": "Pit Trap",
+      "title": "Волчья яма",
+      "effects": [
+        {
+          "nodeId": 20,
+          "node": "ChangeLocationTokensNode",
+          "fields": {
+            "ElementType": 1,
+            "Operation": 2,
+            "Tokens": 512
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": {
+            "pathId": 4156,
+            "prefab": "PitfallTrapTokenEffect",
+            "component": "LocationTokenVisualEffect"
+          }
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 200519,
+      "name": "Mahakam Ale",
+      "title": "Махакамский эль",
+      "effects": [
+        {
+          "nodeId": 58,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 1,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4059,
+            "prefab": "PowerLightMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 98,
+          "node": "FilterCardTokensNode",
+          "fields": {
+            "Tokens": 8
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 200530,
+      "name": "Expired Ale",
+      "title": "Испорченный эль",
+      "effects": [
+        {
+          "nodeId": 58,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": {
+            "pathId": 4126,
+            "prefab": "PowerDarkMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 117,
+          "node": "FilterCardTokensNode",
+          "fields": {
+            "Tokens": 8
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201581,
+      "name": "Stribog Runestone",
+      "title": "Руна Стрибог",
+      "effects": [
+        {
+          "nodeId": 130,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 225,
+          "node": "GetCardsDefinitionsNode",
+          "fields": {
+            "Tokens": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 201582,
+      "name": "Zoria Runestone",
+      "title": "Руна Зоря",
+      "effects": [
+        {
+          "nodeId": 130,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 225,
+          "node": "GetCardsDefinitionsNode",
+          "fields": {
+            "Tokens": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 201583,
+      "name": "Dazhbog Runestone",
+      "title": "Руна Даждьбог",
+      "effects": [
+        {
+          "nodeId": 130,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 225,
+          "node": "GetCardsDefinitionsNode",
+          "fields": {
+            "Tokens": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 201584,
+      "name": "Devana Runestone",
+      "title": "Руна Девана",
+      "effects": [
+        {
+          "nodeId": 130,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 225,
+          "node": "GetCardsDefinitionsNode",
+          "fields": {
+            "Tokens": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 201585,
+      "name": "Morana Runestone",
+      "title": "Руна Марена",
+      "effects": [
+        {
+          "nodeId": 130,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 225,
+          "node": "GetCardsDefinitionsNode",
+          "fields": {
+            "Tokens": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 201598,
+      "name": "Bone Talisman",
+      "title": "Костяной талисман",
+      "effects": [
+        {
+          "nodeId": 252,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 1,
+            "Operation": 4
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4059,
+            "prefab": "PowerLightMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 423,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 0,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": null,
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201619,
+      "name": "Ointment",
+      "title": "Притирка",
+      "effects": [],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 201627,
+      "name": "Shupe's Bizzare Adventure",
+      "title": "Выходной день Лавка",
+      "effects": [
+        {
+          "nodeId": 661,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 706,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 721,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 806,
+          "node": "GetInitialDeckDefinitions",
+          "fields": {
+            "Tokens": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 201631,
+      "name": "Doppler",
+      "title": "Допплер",
+      "effects": [
+        {
+          "nodeId": 29,
+          "node": "GetCardsDefinitionsNode",
+          "fields": {
+            "Tokens": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 210,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 201632,
+      "name": "Sihil",
+      "title": "Сигилль",
+      "effects": [
+        {
+          "nodeId": 666,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 32,
+            "AttackMethod": 3,
+            "Operation": 1
+          },
+          "elementName": "Ice",
+          "attack": {
+            "pathId": 4221,
+            "prefab": "PowerSideIce",
+            "component": "LocationAttackVisualEffect"
+          },
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 721,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 32,
+            "AttackMethod": 3,
+            "Operation": 1
+          },
+          "elementName": "Ice",
+          "attack": {
+            "pathId": 4221,
+            "prefab": "PowerSideIce",
+            "component": "LocationAttackVisualEffect"
+          },
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201633,
+      "name": "Bloody Flail",
+      "title": "Кровавый бич",
+      "effects": [
+        {
+          "nodeId": 21,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": {
+            "pathId": 4126,
+            "prefab": "PowerDarkMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 68,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201634,
+      "name": "Rockslide",
+      "title": "Обрушение Беккера",
+      "effects": [
+        {
+          "nodeId": 8,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 3,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": {
+            "pathId": 4259,
+            "prefab": "PowerSideDarkMagic",
+            "component": "LocationAttackVisualEffect"
+          },
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201635,
+      "name": "Glorious Hunt",
+      "title": "Славная охота",
+      "effects": [
+        {
+          "nodeId": 99,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 154,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 201637,
+      "name": "Dragon's Dream",
+      "title": "Мечта дракона",
+      "effects": [
+        {
+          "nodeId": 20,
+          "node": "ChangeLocationTokensNode",
+          "fields": {
+            "ElementType": 1,
+            "Operation": 2,
+            "Tokens": 1024
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": {
+            "pathId": 4086,
+            "prefab": "RowEffect_DragonsDreamSmoke",
+            "component": "LocationTokenVisualEffect"
+          }
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 201639,
+      "name": "Portcullis",
+      "title": "Гарнизон",
+      "effects": [
+        {
+          "nodeId": 60,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 93,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 0,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": null,
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 118,
+          "node": "GetInitialDeckDefinitions",
+          "fields": {
+            "Tokens": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201642,
+      "name": "Ornamental Sword",
+      "title": "Инкрустированный меч",
+      "effects": [
+        {
+          "nodeId": 14,
+          "node": "GetCardsDefinitionsNode",
+          "fields": {
+            "Tokens": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 54,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 92,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 0,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": null,
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201643,
+      "name": "Elven Blade",
+      "title": "Эльфская сабля",
+      "effects": [
+        {
+          "nodeId": 34,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "Physical",
+          "attack": {
+            "pathId": 4082,
+            "prefab": "PowerPhysicalProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4252,
+            "prefab": "PowerDirectPhysical",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201645,
+      "name": "Crushing Trap",
+      "title": "Ловушка-давилка",
+      "effects": [
+        {
+          "nodeId": 106,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 0,
+            "Operation": 1
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": {
+            "pathId": 4252,
+            "prefab": "PowerDirectPhysical",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 150,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 0,
+            "Operation": 1
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": {
+            "pathId": 4252,
+            "prefab": "PowerDirectPhysical",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 183,
+          "node": "FilterCardTokensNode",
+          "fields": {
+            "Tokens": 8
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 198,
+          "node": "FilterCardTokensNode",
+          "fields": {
+            "Tokens": 8
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201647,
+      "name": "Boulder",
+      "title": "Каменный вал",
+      "effects": [
+        {
+          "nodeId": 84,
+          "node": "DestroyCardsNode",
+          "fields": {
+            "ElementType": 16,
+            "AttackMethod": 0,
+            "RemovalType": 0
+          },
+          "elementName": "Fire",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 159,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "Physical",
+          "attack": {
+            "pathId": 4082,
+            "prefab": "PowerPhysicalProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4252,
+            "prefab": "PowerDirectPhysical",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201648,
+      "name": "Vandergrift's Blade",
+      "title": "Меч Вандергрифта",
+      "effects": [
+        {
+          "nodeId": 78,
+          "node": "DestroyCardsNode",
+          "fields": {
+            "ElementType": 16,
+            "AttackMethod": 0,
+            "RemovalType": 0
+          },
+          "elementName": "Fire",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 110,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 16,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "Fire",
+          "attack": {
+            "pathId": 4097,
+            "prefab": "PowerFireProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4158,
+            "prefab": "PowerDirectFire",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 159,
+          "node": "BanishCardsNode",
+          "fields": {
+            "AttackMethod": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201653,
+      "name": "Mahakam Horn",
+      "title": "Махакамский рог",
+      "effects": [
+        {
+          "nodeId": 241,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 1,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4059,
+            "prefab": "PowerLightMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 362,
+          "node": "GetCardsDefinitionsNode",
+          "fields": {
+            "Tokens": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 401,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201656,
+      "name": "Spear",
+      "title": "Мастерское копье",
+      "effects": [
+        {
+          "nodeId": 57,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "Physical",
+          "attack": {
+            "pathId": 4082,
+            "prefab": "PowerPhysicalProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4252,
+            "prefab": "PowerDirectPhysical",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201657,
+      "name": "Parasite",
+      "title": "Паразит",
+      "effects": [
+        {
+          "nodeId": 8,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 1,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4059,
+            "prefab": "PowerLightMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 19,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 1,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": {
+            "pathId": 4126,
+            "prefab": "PowerDarkMagicProjectile",
+            "component": "BezierProjectileVisualEffect"
+          },
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201659,
+      "name": "Winch",
+      "title": "Лебедка",
+      "effects": [
+        {
+          "nodeId": 174,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 3,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": {
+            "pathId": 4119,
+            "prefab": "PowerSideLightMagic",
+            "component": "LocationAttackVisualEffect"
+          },
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201662,
+      "name": "Cadaverine",
+      "title": "Трупный яд",
+      "effects": [
+        {
+          "nodeId": 107,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 1024,
+            "AttackMethod": 3,
+            "Operation": 1
+          },
+          "elementName": "DarkMagic",
+          "attack": {
+            "pathId": 4259,
+            "prefab": "PowerSideDarkMagic",
+            "component": "LocationAttackVisualEffect"
+          },
+          "impact": {
+            "pathId": 4102,
+            "prefab": "PowerDirectDarkMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        },
+        {
+          "nodeId": 182,
+          "node": "DestroyCardsNode",
+          "fields": {
+            "ElementType": 16,
+            "AttackMethod": 0,
+            "RemovalType": 0
+          },
+          "elementName": "Fire",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201697,
+      "name": "Black Blood",
+      "title": "Черная кровь",
+      "effects": [
+        {
+          "nodeId": 362,
+          "node": "GetCardsDefinitionsNode",
+          "fields": {
+            "Tokens": 0
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 401,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 562,
+          "node": "DestroyCardsNode",
+          "fields": {
+            "ElementType": 16,
+            "AttackMethod": 0,
+            "RemovalType": 0
+          },
+          "elementName": "Fire",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 583,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 0,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": null,
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201699,
+      "name": "Nilfgaardian Gate",
+      "title": "Ворота Нильфгаарда",
+      "effects": [
+        {
+          "nodeId": 93,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 512,
+            "AttackMethod": 0,
+            "Operation": 0
+          },
+          "elementName": "LightMagic",
+          "attack": null,
+          "impact": {
+            "pathId": 4084,
+            "prefab": "PowerDirectLightMagic",
+            "component": "CardPowerAttackVisualEffect"
+          },
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-and-registry"
+    },
+    {
+      "templateId": 201704,
+      "name": "Reconnaissance",
+      "title": "Разведка",
+      "effects": [],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 201744,
+      "name": "Spores",
+      "title": "Споры",
+      "effects": [
+        {
+          "nodeId": 41,
+          "node": "ChangePowerNode",
+          "fields": {
+            "ElementType": 8192,
+            "AttackMethod": 2,
+            "Operation": 1
+          },
+          "elementName": "Poison",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        },
+        {
+          "nodeId": 61,
+          "node": "ChangeLocationTokensNode",
+          "fields": {
+            "ElementType": 256,
+            "Operation": 1,
+            "Tokens": 384
+          },
+          "elementName": "Air",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 201749,
+      "name": "Golden Froth",
+      "title": "Золотая пена",
+      "effects": [
+        {
+          "nodeId": 18,
+          "node": "ChangeLocationTokensNode",
+          "fields": {
+            "ElementType": 1,
+            "Operation": 0,
+            "Tokens": 128
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": {
+            "pathId": 4153,
+            "prefab": "GoldenFrothTokenEffect",
+            "component": "LocationTokenVisualEffect"
+          }
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    },
+    {
+      "templateId": 201753,
+      "name": "Peasant Militia",
+      "title": "Ополчение крестьян",
+      "effects": [
+        {
+          "nodeId": 23,
+          "node": "SpawnCardNode",
+          "fields": {
+            "SpawnType": 3
+          },
+          "elementName": "Physical",
+          "attack": null,
+          "impact": null,
+          "rowEffect": null
+        }
+      ],
+      "status": "graph-or-token-runtime"
+    }
+  ],
+  "specialCount": 85,
+  "prefabs": [
+    {
+      "gameObject": 1060,
+      "name": "DroughtTokenEffect",
+      "components": [
+        {
+          "pathId": 4179,
+          "component": "LocationTokenVisualEffect"
+        },
+        {
+          "pathId": 4217,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1061,
+      "name": "FrostTokenEffect",
+      "components": [
+        {
+          "pathId": 4107,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4260,
+          "component": "LocationTokenVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1062,
+      "name": "SkelligeStormTokenEffect",
+      "components": [
+        {
+          "pathId": 4202,
+          "component": "LocationTokenVisualEffect"
+        },
+        {
+          "pathId": 4275,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1065,
+      "name": "RainTokenEffect",
+      "components": [
+        {
+          "pathId": 4064,
+          "component": "LocationTokenVisualEffect"
+        },
+        {
+          "pathId": 4108,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1069,
+      "name": "BoardEffect_ClearWeather",
+      "components": [
+        {
+          "pathId": 4071,
+          "component": "LocationTokenAttackVisualEffect"
+        },
+        {
+          "pathId": 4233,
+          "component": "AkDragDropHelper"
+        },
+        {
+          "pathId": 4276,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1070,
+      "name": "[152402]PowerBoardFire",
+      "components": [
+        {
+          "pathId": 4079,
+          "component": "LocationAttackVisualEffect"
+        },
+        {
+          "pathId": 4218,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1073,
+      "name": "FogTokenEffect",
+      "components": [
+        {
+          "pathId": 4110,
+          "component": "LocationTokenVisualEffect"
+        },
+        {
+          "pathId": 4135,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1077,
+      "name": "DemoteParticleSimpleVFX",
+      "components": [
+        {
+          "pathId": 4078,
+          "component": "CardPromoteVisualEffect"
+        },
+        {
+          "pathId": 4167,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1078,
+      "name": "PromoteSimpleVFX",
+      "components": [
+        {
+          "pathId": 4098,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4100,
+          "component": "CardPromoteVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1079,
+      "name": "GoldLanding",
+      "components": [
+        {
+          "pathId": 4099,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4205,
+          "component": "PrimitiveVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1086,
+      "name": "Fog_Damage",
+      "components": [
+        {
+          "pathId": 4279,
+          "component": "CardPowerAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1089,
+      "name": "GoldenFrothTokenEffect",
+      "components": [
+        {
+          "pathId": 4072,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4153,
+          "component": "LocationTokenVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1107,
+      "name": "CardRainLandingEffect",
+      "components": [
+        {
+          "pathId": 4188,
+          "component": "PrimitiveVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1114,
+      "name": "AmbushEffect",
+      "components": [
+        {
+          "pathId": 4060,
+          "component": "PrimitiveVisualEffect"
+        },
+        {
+          "pathId": 4063,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1121,
+      "name": "CardFrostLandingEffect",
+      "components": [
+        {
+          "pathId": 4174,
+          "component": "PrimitiveVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1150,
+      "name": "BanishCardEffect",
+      "components": [
+        {
+          "pathId": 4249,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4266,
+          "component": "CardBanishVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1151,
+      "name": "CardTimerVFX",
+      "components": [
+        {
+          "pathId": 4104,
+          "component": "CardTimerTextureHelper"
+        },
+        {
+          "pathId": 4130,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4215,
+          "component": "PrimitiveVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1162,
+      "name": "AirTokenAttack",
+      "components": [
+        {
+          "pathId": 4061,
+          "component": "LocationTokenAttackVisualEffect"
+        },
+        {
+          "pathId": 4195,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1165,
+      "name": "NatureTransform",
+      "components": [
+        {
+          "pathId": 4015,
+          "component": "ParticleSystemQualityController"
+        },
+        {
+          "pathId": 4232,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4269,
+          "component": "CardTransformVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1166,
+      "name": "CardLandingEffect",
+      "components": [
+        {
+          "pathId": 4081,
+          "component": "PrimitiveVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1167,
+      "name": "CardMistLandingEffect",
+      "components": [
+        {
+          "pathId": 4163,
+          "component": "PrimitiveVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1185,
+      "name": "ResilienceToken",
+      "components": [
+        {
+          "pathId": 4114,
+          "component": "CardTokenVisualEffectAnimatorEventHandler"
+        },
+        {
+          "pathId": 4193,
+          "component": "CardTokenVisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4222,
+          "component": "CardTokenVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1198,
+      "name": "Aard",
+      "components": [
+        {
+          "pathId": 4150,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4253,
+          "component": "LocationAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1212,
+      "name": "ArmorIncrease",
+      "components": [
+        {
+          "pathId": 4066,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4192,
+          "component": "PrimitiveVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1213,
+      "name": "RowEffect_Fire",
+      "components": [
+        {
+          "pathId": 4122,
+          "component": "LocationTokenVisualEffect"
+        },
+        {
+          "pathId": 4139,
+          "component": "EventBasedAnimatorDisable"
+        }
+      ]
+    },
+    {
+      "gameObject": 1222,
+      "name": "PitfallTrapTokenEffect",
+      "components": [
+        {
+          "pathId": 4149,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4156,
+          "component": "LocationTokenVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1230,
+      "name": "PowerUp",
+      "components": [
+        {
+          "pathId": 4129,
+          "component": "CardPowerAttackVisualEffect"
+        },
+        {
+          "pathId": 4264,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1252,
+      "name": "PowerDirectPhysical",
+      "components": [
+        {
+          "pathId": 4186,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4252,
+          "component": "CardPowerAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1271,
+      "name": "ArmorDecrease",
+      "components": [
+        {
+          "pathId": 4152,
+          "component": "PrimitiveVisualEffect"
+        },
+        {
+          "pathId": 4212,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1278,
+      "name": "SpawnBlink",
+      "components": [
+        {
+          "pathId": 4096,
+          "component": "CardSpawnVisualEffect"
+        },
+        {
+          "pathId": 4123,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1283,
+      "name": "PowerDown",
+      "components": [
+        {
+          "pathId": 4062,
+          "component": "CardPowerAttackVisualEffect"
+        },
+        {
+          "pathId": 4093,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1286,
+      "name": "PowerDirectFire",
+      "components": [
+        {
+          "pathId": 4146,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4158,
+          "component": "CardPowerAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1301,
+      "name": "PowerFireProjectile",
+      "components": [
+        {
+          "pathId": 4097,
+          "component": "BezierProjectileVisualEffect"
+        },
+        {
+          "pathId": 4138,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1302,
+      "name": "CardPowerChangeIndicator",
+      "components": [
+        {
+          "pathId": 4178,
+          "component": "CardPowerIndicatorVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1322,
+      "name": "PowerLightMagicProjectile",
+      "components": [
+        {
+          "pathId": 4059,
+          "component": "BezierProjectileVisualEffect"
+        },
+        {
+          "pathId": 4112,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1329,
+      "name": "PowerSideIce",
+      "components": [
+        {
+          "pathId": 4177,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4221,
+          "component": "LocationAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1353,
+      "name": "PowerRowPhysical",
+      "components": [
+        {
+          "pathId": 4144,
+          "component": "LocationAttackVisualEffect"
+        },
+        {
+          "pathId": 4191,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1355,
+      "name": "RaghNarRoogTokenEffect",
+      "components": [
+        {
+          "pathId": 4101,
+          "component": "LocationTokenVisualEffect"
+        },
+        {
+          "pathId": 4235,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4236,
+          "component": "AddWiggle"
+        },
+        {
+          "pathId": 4273,
+          "component": "RandomizeMaterialOffsetOnStart"
+        }
+      ]
+    },
+    {
+      "gameObject": 1359,
+      "name": "PowerDarkMagicProjectile",
+      "components": [
+        {
+          "pathId": 4126,
+          "component": "BezierProjectileVisualEffect"
+        },
+        {
+          "pathId": 4213,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1360,
+      "name": "PowerLightningProjectile",
+      "components": [
+        {
+          "pathId": 4127,
+          "component": "BezierProjectileVisualEffect"
+        },
+        {
+          "pathId": 4147,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1378,
+      "name": "PowerRowDarkMagic",
+      "components": [
+        {
+          "pathId": 4142,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4230,
+          "component": "LocationAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1435,
+      "name": "IgniIgnition",
+      "components": [
+        {
+          "pathId": 4198,
+          "component": "LocationAttackVisualEffect"
+        },
+        {
+          "pathId": 4206,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1460,
+      "name": "LockToken",
+      "components": [
+        {
+          "pathId": 4159,
+          "component": "CardTokenVisualEffectAnimatorEventHandler"
+        },
+        {
+          "pathId": 4242,
+          "component": "CardTokenVisualEffect"
+        },
+        {
+          "pathId": 4245,
+          "component": "CardTokenVisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1468,
+      "name": "PowerDirectEarth",
+      "components": [
+        {
+          "pathId": 4115,
+          "component": "CardPowerAttackVisualEffect"
+        },
+        {
+          "pathId": 4155,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1479,
+      "name": "PowerBoardIce",
+      "components": [
+        {
+          "pathId": 4128,
+          "component": "LocationAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1502,
+      "name": "RowEffect_DragonsDreamSmoke",
+      "components": [
+        {
+          "pathId": 4086,
+          "component": "LocationTokenVisualEffect"
+        },
+        {
+          "pathId": 4109,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1540,
+      "name": "DestroyDestroyFire",
+      "components": [
+        {
+          "pathId": 4091,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4247,
+          "component": "CardDestroyVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1565,
+      "name": "ResetPhysicalBuff",
+      "components": [
+        {
+          "pathId": 4131,
+          "component": "CardResetVisualEffect"
+        },
+        {
+          "pathId": 4226,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1572,
+      "name": "RaghNarRoogInitializationEffect",
+      "components": [
+        {
+          "pathId": 4184,
+          "component": "LocationTokenAttackVisualEffect"
+        },
+        {
+          "pathId": 4187,
+          "component": "RandomizePlacementAndRotation"
+        }
+      ]
+    },
+    {
+      "gameObject": 1574,
+      "name": "GoldenFrothCardEffect",
+      "components": [
+        {
+          "pathId": 4133,
+          "component": "CardPowerAttackVisualEffect"
+        },
+        {
+          "pathId": 4166,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1666,
+      "name": "PowerSideFire",
+      "components": [
+        {
+          "pathId": 4168,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4194,
+          "component": "LocationAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1675,
+      "name": "PowerPhysicalProjectile",
+      "components": [
+        {
+          "pathId": 4082,
+          "component": "BezierProjectileVisualEffect"
+        },
+        {
+          "pathId": 4270,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1677,
+      "name": "BloodMoon",
+      "components": [
+        {
+          "pathId": 4069,
+          "component": "ClearMaterialPropertyBlock"
+        },
+        {
+          "pathId": 4106,
+          "component": "LocationTokenVisualEffect"
+        },
+        {
+          "pathId": 4210,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1678,
+      "name": "Moonlight",
+      "components": [
+        {
+          "pathId": 4176,
+          "component": "ClearMaterialPropertyBlock"
+        },
+        {
+          "pathId": 4196,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4271,
+          "component": "LocationTokenVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1682,
+      "name": "[201525]PowerBoardPhysical",
+      "components": [
+        {
+          "pathId": 4256,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4258,
+          "component": "LocationAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1683,
+      "name": "PowerSideDarkMagic",
+      "components": [
+        {
+          "pathId": 4257,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4259,
+          "component": "LocationAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1714,
+      "name": "PowerRowIce",
+      "components": [
+        {
+          "pathId": 4088,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4203,
+          "component": "LocationAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1747,
+      "name": "PowerBoardLightMagic",
+      "components": [
+        {
+          "pathId": 4169,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4240,
+          "component": "LocationAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1748,
+      "name": "PowerRowAir",
+      "components": [
+        {
+          "pathId": 4228,
+          "component": "LocationAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1749,
+      "name": "PowerRowLightMagic",
+      "components": [
+        {
+          "pathId": 4125,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4229,
+          "component": "LocationAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1750,
+      "name": "PowerSideLightMagic",
+      "components": [
+        {
+          "pathId": 4119,
+          "component": "LocationAttackVisualEffect"
+        },
+        {
+          "pathId": 4164,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1751,
+      "name": "PowerDirectDarkMagic",
+      "components": [
+        {
+          "pathId": 4102,
+          "component": "CardPowerAttackVisualEffect"
+        },
+        {
+          "pathId": 4214,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1752,
+      "name": "PowerDirectLightMagic",
+      "components": [
+        {
+          "pathId": 4073,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4084,
+          "component": "CardPowerAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1753,
+      "name": "PowerDirectLightning",
+      "components": [
+        {
+          "pathId": 4103,
+          "component": "CardPowerAttackVisualEffect"
+        },
+        {
+          "pathId": 4183,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1762,
+      "name": "SpyingToken",
+      "components": [
+        {
+          "pathId": 4095,
+          "component": "CardTokenVisualEffectAnimatorEventHandler"
+        },
+        {
+          "pathId": 4151,
+          "component": "CardTokenVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1764,
+      "name": "DestroyDestroyBlood",
+      "components": [
+        {
+          "pathId": 4067,
+          "component": "CardDestroyVisualEffect"
+        },
+        {
+          "pathId": 4274,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1765,
+      "name": "DestroyDestroyPoison",
+      "components": [
+        {
+          "pathId": 4068,
+          "component": "CardDestroyVisualEffect"
+        },
+        {
+          "pathId": 4092,
+          "component": "VisualEffectSoundHandler"
+        }
+      ]
+    },
+    {
+      "gameObject": 1792,
+      "name": "Fire",
+      "components": [
+        {
+          "pathId": 4140,
+          "component": "LocationTokenVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1836,
+      "name": "PowerBoardDarkMagic",
+      "components": [
+        {
+          "pathId": 4219,
+          "component": "VisualEffectSoundHandler"
+        },
+        {
+          "pathId": 4255,
+          "component": "LocationAttackVisualEffect"
+        }
+      ]
+    },
+    {
+      "gameObject": 1837,
+      "name": "RevealToken",
+      "components": [
+        {
+          "pathId": 4105,
+          "component": "CardTokenVisualEffect"
+        },
+        {
+          "pathId": 4162,
+          "component": "CardTokenVisualEffectAnimatorEventHandler"
+        }
+      ]
+    }
+  ],
+  "sourceUnchanged": true,
+  "nativeGameTested": false
+}

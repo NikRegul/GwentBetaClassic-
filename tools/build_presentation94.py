@@ -38,7 +38,9 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--stage',type=int,default=94)
     parser.add_argument('--language',choices=['ru','en'],help='Build only the requested language')
+    parser.add_argument('--source-dir',type=Path,help='Isolated RU UI profile; requires --language ru')
     options=parser.parse_args()
+    if options.source_dir and options.language!='ru':parser.error('--source-dir requires --language ru')
     BASE=ROOT/f'BetaGwent/build/stage{options.stage}'
     BASE.mkdir(parents=True,exist_ok=True)
     dictionary=ROOT/'data/beta924/design/english89.json'
@@ -68,6 +70,7 @@ def main():
                 print('Building',language.upper(),entry,flush=True)
                 args=[str(ROOT/'tools/ui/build_board.py'),'--reuse-assets','--native-only','--entry',entry]
                 if language=='en':args+=['--source-dir',str(english/'ui')]
+                elif options.source_dir:args+=['--source-dir',str(options.source_dir.resolve())]
                 job(language+'-'+entry+'-build',args)
                 job(language+'-'+entry+'-bridge',[str(ROOT/'tools/ui/check_board_bridge.py'),'--entry',entry])
                 job(language+'-'+entry+'-native',[str(ROOT/'tools/ui/install_native_hd93.py'),'--apply','--entry',entry])
@@ -103,7 +106,7 @@ def main():
               if m['language']!=options.language and Path(m['resource']).exists() and sha(Path(m['resource']))==m['sha256']]
         report['menus']=kept+report['menus']
     report['atlasSha256']=sha(ROOT/'BetaGwent/ui/assets/card_atlas.png')
-    report['sources']={p.name:sha(p) for p in (ROOT/'BetaGwent/ui/src').glob('*.as')}
+    report['sources']={p.name:sha(p) for p in (options.source_dir.resolve() if options.source_dir else ROOT/'BetaGwent/ui/src').glob('*.as')}
     (EVIDENCE/f'stage{options.stage}-completion.json').write_text(json.dumps(report,indent=2)+'\n','utf8')
     print(str(len(report['menus']))+' native movies validated. Resources installed into REDkit; first-release ZIPs unchanged.',flush=True)
 
