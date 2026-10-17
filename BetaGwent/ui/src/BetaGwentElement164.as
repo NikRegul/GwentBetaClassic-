@@ -223,6 +223,11 @@
                 var now:Number=Math.max(0,Math.min(1,time/Math.max(.001,p.flight))),born:Number=Math.max(0,Math.min(1,p.birth/Math.max(.001,p.flight)));
                 now=now*now*now*(now*(now*6-15)+10);born=born*born*born*(born*(born*6-15)+10);out.x-=(now-born)*p.travel;
             }
+            if(e.raghPath&&e.world){
+                var nowPath:Number=Math.max(0,Math.min(1,time/e.raghPath.seconds));
+                var birthPath:Number=Math.max(0,Math.min(1,p.birth/e.raghPath.seconds));
+                out.y+=sample(e.raghPath.z,birthPath)-sample(e.raghPath.z,nowPath)-.35*(sample(e.raghPath.y,birthPath)-sample(e.raghPath.y,nowPath));
+            }
             var scale:Number=Math.max(Math.abs(e.sizeScale[0]),Math.abs(e.sizeScale[1]),Math.abs(e.sizeScale[2]));
             var size:Number=Math.abs(pick(e.size,p.phase,r[3])*pick(e.sizeOver,t,r[4])*scale);
             out.w=Math.max(.02,size);out.h=e.sizeY?Math.max(.02,Math.abs(pick(e.sizeY,p.phase,r[3])*pick(e.sizeOver,t,r[4])*scale)):out.w;

@@ -16,17 +16,21 @@ function OnConfigUI()
             inventory.UpdateLoot();inventory.GetAllItems(items);
             // All innkeepers, including DLC and already saved inventories. This
             // migration runs once per NPC; reopening a sold-out shop is not a refill.
-            if(merchant && merchant.GetMapPinType()=='Innkeeper' && !npc.betaGwentInnkeeperKegsStocked) {
+            if(merchant && merchant.GetMapPinType()=='Innkeeper' && (!npc.betaGwentInnkeeperKegsStocked || (FactsQuerySum("NewGamePlus")>0 && !npc.betaGwentNgKegs080))) {
                 stockCount=inventory.GetItemQuantityByName('betagwent_keg');
-                if(stockCount<5)inventory.AddAnItem('betagwent_keg',5-stockCount,true,true);
-                npc.betaGwentInnkeeperKegsStocked=true;
+                if(stockCount<5 && !npc.betaGwentInnkeeperKegsStocked || stockCount==0)inventory.AddAnItem('betagwent_keg',5-stockCount,true,true);
+                // Failed AddAnItem must remain retryable; old NG+ saves may
+                // already contain the erroneous stocked=true flag.
+                stockCount=inventory.GetItemQuantityByName('betagwent_keg');
+                if(stockCount>0){npc.betaGwentInnkeeperKegsStocked=true;npc.betaGwentNgKegs080=true;}
+                LogChannel('BetaGwent',"SHOP_KEG_STOCK npc="+npc.GetGuidHash()+" ngplus="+FactsQuerySum("NewGamePlus")+" quantity="+stockCount);
             }
             // Expand the old single-keg stock once on existing merchant saves.
             // Fresh/replenished stock comes from the 5-keg loot overlay.
             if(!npc.betaGwentBulkKegStockMigrated && inventory.GetItemQuantityByName('betagwent_keg')>0) {
                 stockCount=inventory.GetItemQuantityByName('betagwent_keg');
                 if(stockCount<5)inventory.AddAnItem('betagwent_keg',5-stockCount,true,true);
-                npc.betaGwentBulkKegStockMigrated=true;
+                if(inventory.GetItemQuantityByName('betagwent_keg')>=5)npc.betaGwentBulkKegStockMigrated=true;
             }
             for(i=0;i<items.Size();i+=1) {
                 id=BetaGwentLegacyShopCard(inventory.GetItemName(items[i]));if(id==0)continue;
@@ -98,6 +102,9 @@ public saved var betaGwentBulkKegStockMigrated : bool;
 
 @addField(CNewNPC)
 public saved var betaGwentInnkeeperKegsStocked : bool;
+
+@addField(CNewNPC)
+public saved var betaGwentNgKegs080 : bool;
 
 // Native inventory supplies quantity controls; keep their displayed price exact.
 @wrapMethod(CR4InventoryMenu)

@@ -5,6 +5,9 @@ class CBetaGwentPublicResponseAI extends IScriptable
     public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
     public var templates, weights : array<int>;
     public var evaluated, rejected, eligibleProfiles, penalty : int;
+    public var applyIndex, applyTotal, applySum, applyBestSupport, applyPassChance : int;
+    public var applyBest : CBetaGwentDuelSession;
+    public var applyDone : bool;
     public function Initialize(game : CBetaGwentDuelSession, limit : int)
     {
         var profiles, deck, pool, mass, seen : array<int>;
@@ -53,40 +56,48 @@ class CBetaGwentPublicResponseAI extends IScriptable
     // All mutations occur in disposable clones; no real turn/request/RNG moves.
     public function Apply(root : CBetaGwentDuelSession) : CBetaGwentDuelSession
     {
-        var h,best : CBetaGwentDuelSession; var c,slot : CBetaGwentDuelCard;
-        var m : SBetaGwentMatchSnapshot; var s : SBetaGwentCardSnapshot;
-        var d : SBetaGwentDuelDefinition; var i,j,id,gain,extra,worst,total,sum,w,bestSupport,passChance : int;
-        evaluated=0;rejected=0;penalty=0;m=root.match.Snapshot();worst=-2147483647;
-        if(m.playerOne.hasPassed || m.currentPlayerId!=1 || !m.turnActive)return NULL;
-        passChance=BetaGwentAIReplyPassChance(m.roundNumber,m.playerOne.crowns,m.playerTwo.crowns,root.Score(1)-root.Score(2),root.CountLocation(1,8),root.CountLocation(2,8),root.LeaderAvailable(1));
-        for(i=0;i<=templates.Size();i+=1){
-            if(i==templates.Size() && !root.LeaderAvailable(1))continue;
-            if(i<templates.Size() && root.CountLocation(1,8)==0)continue;
-            h=root.AiReverseClone();if(!h){rejected+=1;continue;}c=NULL;slot=NULL;
-            if(i==templates.Size()) {c=h.Leader(2);w=1;}
-            else {
-                for(j=0;j<h.live.Size();j+=1){
-                    s=h.live[j].Snapshot();if(s.positionPlayerId!=2 || s.locationMask!=8)continue;
-                    if((s.tokenMask&64)!=0 && s.runtimeTemplate.templateId==templates[i]){c=h.live[j];break;}
-                    if((s.tokenMask&64)==0 && !slot)slot=h.live[j];
-                }
-                if(!c && slot){
-                    slot.Move(2,512,0);h.registry.Allocate(id);c=new CBetaGwentDuelCard in h;
-                    c.Setup(h,id,templates[i],2,8,0);h.registry.Put(id,c);h.live.PushBack(c);
-                }
-                w=weights[i];
+        BeginApply(root);while(!ApplyStep(root)){}return FinishApply();
+    }
+    public function BeginApply(root : CBetaGwentDuelSession)
+    {
+        var m : SBetaGwentMatchSnapshot;
+        evaluated=0;rejected=0;penalty=0;applyIndex=0;applyTotal=0;applySum=0;applyBestSupport=0;applyBest=NULL;
+        m=root.match.Snapshot();applyDone=m.playerOne.hasPassed || m.currentPlayerId!=1 || !m.turnActive;
+        applyPassChance=BetaGwentAIReplyPassChance(m.roundNumber,m.playerOne.crowns,m.playerTwo.crowns,root.Score(1)-root.Score(2),root.CountLocation(1,8),root.CountLocation(2,8),root.LeaderAvailable(1));
+    }
+    public function ApplyStep(root : CBetaGwentDuelSession) : bool
+    {
+        var h : CBetaGwentDuelSession;var c,slot : CBetaGwentDuelCard;
+        var s : SBetaGwentCardSnapshot;var d : SBetaGwentDuelDefinition;
+        var i,j,id,gain,extra,w : int;
+        if(applyDone)return true;
+        if(applyIndex>templates.Size()){applyDone=true;return true;}
+        i=applyIndex;applyIndex+=1;
+        if(i==templates.Size() && !root.LeaderAvailable(1) || i<templates.Size() && root.CountLocation(1,8)==0)return false;
+        h=root.AiReverseClone();if(!h){rejected+=1;return false;}
+        if(i==templates.Size()){c=h.Leader(2);w=1;}
+        else {
+            for(j=0;j<h.live.Size();j+=1){
+                s=h.live[j].Snapshot();if(s.positionPlayerId!=2 || s.locationMask!=8)continue;
+                if((s.tokenMask&64)!=0 && s.runtimeTemplate.templateId==templates[i]){c=h.live[j];break;}
+                if((s.tokenMask&64)==0 && !slot)slot=h.live[j];
             }
-            if(!c){rejected+=1;continue;}s=c.Snapshot();d=c.Definition();gain=h.AiSimPlay(s.instanceId);
-            if(gain==-2147483647 || h.IsFatal() || h.IsPending()){rejected+=1;continue;}
-            // Ordinary body tempo is common to all our choices. Penalize the
-            // extra control/engine swing instead of treating it as scored points.
-            extra=Max(0,gain-d.header.power);evaluated+=1;total+=w;sum+=extra*w;
-            if(!best || extra*w>bestSupport){worst=extra;bestSupport=extra*w;best=h;}
+            if(!c && slot){
+                slot.Move(2,512,0);h.registry.Allocate(id);c=new CBetaGwentDuelCard in h;
+                c.Setup(h,id,templates[i],2,8,0);h.registry.Put(id,c);h.live.PushBack(c);
+            }
+            w=weights[i];
         }
-        // Expected control loss is discounted by a pass. A rare worst reply no
-        // longer substitutes for every opponent's next play in the sequence.
-        if(total>0)penalty=Min(12,(sum/total)*(100-passChance)/200);
-        if(passChance==100)return NULL;
-        if(!best)return NULL;return best.AiReverseClone();
+        if(!c){rejected+=1;return false;}s=c.Snapshot();d=c.Definition();gain=h.AiSimPlay(s.instanceId);
+        if(gain==-2147483647 || h.IsFatal() || h.IsPending()){rejected+=1;return false;}
+        extra=Max(0,gain-d.header.power);evaluated+=1;applyTotal+=w;applySum+=extra*w;
+        if(!applyBest || extra*w>applyBestSupport){applyBestSupport=extra*w;applyBest=h;}
+        return false;
+    }
+    public function FinishApply() : CBetaGwentDuelSession
+    {
+        if(applyTotal>0)penalty=Min(12,(applySum/applyTotal)*(100-applyPassChance)/200);
+        if(applyPassChance==100 || !applyBest)return NULL;
+        return applyBest.AiReverseClone();
     }
 }

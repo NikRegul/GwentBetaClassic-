@@ -1,18 +1,18 @@
 ﻿// Generated from pinned CardAudio.xml. Source banks128 are not runtime banks.
 
-function BetaGwentAudioBankInstalled() : bool { return true; }
+function BetaGwentAudioBankInstalled_Universal_ru() : bool { return true; }
 
-function BetaGwentAudioVoice(id : int) : string
+function BetaGwentAudioVoice_Universal_ru(id : int) : string
 {
-    if (id <= 122313) return BetaGwentAudioVoice0(id);
-    if (id <= 142401) return BetaGwentAudioVoice1(id);
-    if (id <= 162308) return BetaGwentAudioVoice2(id);
-    if (id <= 200169) return BetaGwentAudioVoice3(id);
-    if (id <= 201753) return BetaGwentAudioVoice4(id);
-    if (id <= 201781) return BetaGwentAudioVoice5(id);
+    if (id <= 122313) return BetaGwentAudioVoice0_Universal_ru(id);
+    if (id <= 142401) return BetaGwentAudioVoice1_Universal_ru(id);
+    if (id <= 162308) return BetaGwentAudioVoice2_Universal_ru(id);
+    if (id <= 200169) return BetaGwentAudioVoice3_Universal_ru(id);
+    if (id <= 201753) return BetaGwentAudioVoice4_Universal_ru(id);
+    if (id <= 201781) return BetaGwentAudioVoice5_Universal_ru(id);
     return "";
 }
-function BetaGwentAudioVoice0(id : int) : string
+function BetaGwentAudioVoice0_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -80,7 +80,7 @@ function BetaGwentAudioVoice0(id : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoice1(id : int) : string
+function BetaGwentAudioVoice1_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -148,7 +148,7 @@ function BetaGwentAudioVoice1(id : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoice2(id : int) : string
+function BetaGwentAudioVoice2_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -216,7 +216,7 @@ function BetaGwentAudioVoice2(id : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoice3(id : int) : string
+function BetaGwentAudioVoice3_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -284,7 +284,7 @@ function BetaGwentAudioVoice3(id : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoice4(id : int) : string
+function BetaGwentAudioVoice4_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -352,7 +352,7 @@ function BetaGwentAudioVoice4(id : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoice5(id : int) : string
+function BetaGwentAudioVoice5_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -370,17 +370,17 @@ function BetaGwentAudioVoice5(id : int) : string
     return "";
 }
 
-function BetaGwentAudioVoiceDuration(id : int) : float
+function BetaGwentAudioVoiceDuration_Universal_ru(id : int) : float
 {
-    if (id <= 122313) return BetaGwentAudioVoiceDuration0(id);
-    if (id <= 142401) return BetaGwentAudioVoiceDuration1(id);
-    if (id <= 162308) return BetaGwentAudioVoiceDuration2(id);
-    if (id <= 200169) return BetaGwentAudioVoiceDuration3(id);
-    if (id <= 201753) return BetaGwentAudioVoiceDuration4(id);
-    if (id <= 201781) return BetaGwentAudioVoiceDuration5(id);
+    if (id <= 122313) return BetaGwentAudioVoiceDuration0_Universal_ru(id);
+    if (id <= 142401) return BetaGwentAudioVoiceDuration1_Universal_ru(id);
+    if (id <= 162308) return BetaGwentAudioVoiceDuration2_Universal_ru(id);
+    if (id <= 200169) return BetaGwentAudioVoiceDuration3_Universal_ru(id);
+    if (id <= 201753) return BetaGwentAudioVoiceDuration4_Universal_ru(id);
+    if (id <= 201781) return BetaGwentAudioVoiceDuration5_Universal_ru(id);
     return 0.0f;
 }
-function BetaGwentAudioVoiceDuration0(id : int) : float
+function BetaGwentAudioVoiceDuration0_Universal_ru(id : int) : float
 {
     switch (id)
     {
@@ -448,7 +448,7 @@ function BetaGwentAudioVoiceDuration0(id : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceDuration1(id : int) : float
+function BetaGwentAudioVoiceDuration1_Universal_ru(id : int) : float
 {
     switch (id)
     {
@@ -516,7 +516,7 @@ function BetaGwentAudioVoiceDuration1(id : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceDuration2(id : int) : float
+function BetaGwentAudioVoiceDuration2_Universal_ru(id : int) : float
 {
     switch (id)
     {
@@ -584,7 +584,7 @@ function BetaGwentAudioVoiceDuration2(id : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceDuration3(id : int) : float
+function BetaGwentAudioVoiceDuration3_Universal_ru(id : int) : float
 {
     switch (id)
     {
@@ -652,7 +652,7 @@ function BetaGwentAudioVoiceDuration3(id : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceDuration4(id : int) : float
+function BetaGwentAudioVoiceDuration4_Universal_ru(id : int) : float
 {
     switch (id)
     {
@@ -720,7 +720,7 @@ function BetaGwentAudioVoiceDuration4(id : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceDuration5(id : int) : float
+function BetaGwentAudioVoiceDuration5_Universal_ru(id : int) : float
 {
     switch (id)
     {
@@ -738,19 +738,19 @@ function BetaGwentAudioVoiceDuration5(id : int) : float
     return 0.0f;
 }
 
-function BetaGwentAudioEffect(id : int) : string
+function BetaGwentAudioEffect_Universal_ru(id : int) : string
 {
-    if (id <= 122208) return BetaGwentAudioEffect0(id);
-    if (id <= 132304) return BetaGwentAudioEffect1(id);
-    if (id <= 152103) return BetaGwentAudioEffect2(id);
-    if (id <= 162211) return BetaGwentAudioEffect3(id);
-    if (id <= 200098) return BetaGwentAudioEffect4(id);
-    if (id <= 200457) return BetaGwentAudioEffect5(id);
-    if (id <= 201633) return BetaGwentAudioEffect6(id);
-    if (id <= 201817) return BetaGwentAudioEffect7(id);
+    if (id <= 122208) return BetaGwentAudioEffect0_Universal_ru(id);
+    if (id <= 132304) return BetaGwentAudioEffect1_Universal_ru(id);
+    if (id <= 152103) return BetaGwentAudioEffect2_Universal_ru(id);
+    if (id <= 162211) return BetaGwentAudioEffect3_Universal_ru(id);
+    if (id <= 200098) return BetaGwentAudioEffect4_Universal_ru(id);
+    if (id <= 200457) return BetaGwentAudioEffect5_Universal_ru(id);
+    if (id <= 201633) return BetaGwentAudioEffect6_Universal_ru(id);
+    if (id <= 201817) return BetaGwentAudioEffect7_Universal_ru(id);
     return "";
 }
-function BetaGwentAudioEffect0(id : int) : string
+function BetaGwentAudioEffect0_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -818,7 +818,7 @@ function BetaGwentAudioEffect0(id : int) : string
     }
     return "";
 }
-function BetaGwentAudioEffect1(id : int) : string
+function BetaGwentAudioEffect1_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -886,7 +886,7 @@ function BetaGwentAudioEffect1(id : int) : string
     }
     return "";
 }
-function BetaGwentAudioEffect2(id : int) : string
+function BetaGwentAudioEffect2_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -954,7 +954,7 @@ function BetaGwentAudioEffect2(id : int) : string
     }
     return "";
 }
-function BetaGwentAudioEffect3(id : int) : string
+function BetaGwentAudioEffect3_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -1022,7 +1022,7 @@ function BetaGwentAudioEffect3(id : int) : string
     }
     return "";
 }
-function BetaGwentAudioEffect4(id : int) : string
+function BetaGwentAudioEffect4_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -1090,7 +1090,7 @@ function BetaGwentAudioEffect4(id : int) : string
     }
     return "";
 }
-function BetaGwentAudioEffect5(id : int) : string
+function BetaGwentAudioEffect5_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -1158,7 +1158,7 @@ function BetaGwentAudioEffect5(id : int) : string
     }
     return "";
 }
-function BetaGwentAudioEffect6(id : int) : string
+function BetaGwentAudioEffect6_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -1226,7 +1226,7 @@ function BetaGwentAudioEffect6(id : int) : string
     }
     return "";
 }
-function BetaGwentAudioEffect7(id : int) : string
+function BetaGwentAudioEffect7_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -1281,32 +1281,32 @@ function BetaGwentAudioEffect7(id : int) : string
     return "";
 }
 
-function BetaGwentAudioVoiceVariant(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariant_Universal_ru(id : int, roll : int) : string
 {
-    if(id <= 112203)return BetaGwentAudioVoiceVariantPart0(id,roll);
-    if(id <= 122101)return BetaGwentAudioVoiceVariantPart1(id,roll);
-    if(id <= 122208)return BetaGwentAudioVoiceVariantPart2(id,roll);
-    if(id <= 122313)return BetaGwentAudioVoiceVariantPart3(id,roll);
-    if(id <= 132207)return BetaGwentAudioVoiceVariantPart4(id,roll);
-    if(id <= 142108)return BetaGwentAudioVoiceVariantPart5(id,roll);
-    if(id <= 142302)return BetaGwentAudioVoiceVariantPart6(id,roll);
-    if(id <= 142401)return BetaGwentAudioVoiceVariantPart7(id,roll);
-    if(id <= 152211)return BetaGwentAudioVoiceVariantPart8(id,roll);
-    if(id <= 152316)return BetaGwentAudioVoiceVariantPart9(id,roll);
-    if(id <= 162204)return BetaGwentAudioVoiceVariantPart10(id,roll);
-    if(id <= 162308)return BetaGwentAudioVoiceVariantPart11(id,roll);
-    if(id <= 200032)return BetaGwentAudioVoiceVariantPart12(id,roll);
-    if(id <= 200081)return BetaGwentAudioVoiceVariantPart13(id,roll);
-    if(id <= 200144)return BetaGwentAudioVoiceVariantPart14(id,roll);
-    if(id <= 200169)return BetaGwentAudioVoiceVariantPart15(id,roll);
-    if(id <= 200294)return BetaGwentAudioVoiceVariantPart16(id,roll);
-    if(id <= 201587)return BetaGwentAudioVoiceVariantPart17(id,roll);
-    if(id <= 201622)return BetaGwentAudioVoiceVariantPart18(id,roll);
-    if(id <= 201753)return BetaGwentAudioVoiceVariantPart19(id,roll);
-    if(id <= 201781)return BetaGwentAudioVoiceVariantPart20(id,roll);
+    if(id <= 112203)return BetaGwentAudioVoiceVariantPart0_Universal_ru(id,roll);
+    if(id <= 122101)return BetaGwentAudioVoiceVariantPart1_Universal_ru(id,roll);
+    if(id <= 122208)return BetaGwentAudioVoiceVariantPart2_Universal_ru(id,roll);
+    if(id <= 122313)return BetaGwentAudioVoiceVariantPart3_Universal_ru(id,roll);
+    if(id <= 132207)return BetaGwentAudioVoiceVariantPart4_Universal_ru(id,roll);
+    if(id <= 142108)return BetaGwentAudioVoiceVariantPart5_Universal_ru(id,roll);
+    if(id <= 142302)return BetaGwentAudioVoiceVariantPart6_Universal_ru(id,roll);
+    if(id <= 142401)return BetaGwentAudioVoiceVariantPart7_Universal_ru(id,roll);
+    if(id <= 152211)return BetaGwentAudioVoiceVariantPart8_Universal_ru(id,roll);
+    if(id <= 152316)return BetaGwentAudioVoiceVariantPart9_Universal_ru(id,roll);
+    if(id <= 162204)return BetaGwentAudioVoiceVariantPart10_Universal_ru(id,roll);
+    if(id <= 162308)return BetaGwentAudioVoiceVariantPart11_Universal_ru(id,roll);
+    if(id <= 200032)return BetaGwentAudioVoiceVariantPart12_Universal_ru(id,roll);
+    if(id <= 200081)return BetaGwentAudioVoiceVariantPart13_Universal_ru(id,roll);
+    if(id <= 200144)return BetaGwentAudioVoiceVariantPart14_Universal_ru(id,roll);
+    if(id <= 200169)return BetaGwentAudioVoiceVariantPart15_Universal_ru(id,roll);
+    if(id <= 200294)return BetaGwentAudioVoiceVariantPart16_Universal_ru(id,roll);
+    if(id <= 201587)return BetaGwentAudioVoiceVariantPart17_Universal_ru(id,roll);
+    if(id <= 201622)return BetaGwentAudioVoiceVariantPart18_Universal_ru(id,roll);
+    if(id <= 201753)return BetaGwentAudioVoiceVariantPart19_Universal_ru(id,roll);
+    if(id <= 201781)return BetaGwentAudioVoiceVariantPart20_Universal_ru(id,roll);
     return "";
 }
-function BetaGwentAudioVoiceVariantPart0(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart0_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -1402,7 +1402,7 @@ function BetaGwentAudioVoiceVariantPart0(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart1(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart1_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -1487,7 +1487,7 @@ function BetaGwentAudioVoiceVariantPart1(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart2(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart2_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -1581,7 +1581,7 @@ function BetaGwentAudioVoiceVariantPart2(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart3(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart3_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -1664,7 +1664,7 @@ function BetaGwentAudioVoiceVariantPart3(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart4(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart4_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -1747,7 +1747,7 @@ function BetaGwentAudioVoiceVariantPart4(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart5(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart5_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -1833,7 +1833,7 @@ function BetaGwentAudioVoiceVariantPart5(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart6(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart6_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -1915,7 +1915,7 @@ function BetaGwentAudioVoiceVariantPart6(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart7(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart7_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -1997,7 +1997,7 @@ function BetaGwentAudioVoiceVariantPart7(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart8(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart8_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -2076,7 +2076,7 @@ function BetaGwentAudioVoiceVariantPart8(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart9(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart9_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -2160,7 +2160,7 @@ function BetaGwentAudioVoiceVariantPart9(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart10(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart10_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -2244,7 +2244,7 @@ function BetaGwentAudioVoiceVariantPart10(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart11(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart11_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -2327,7 +2327,7 @@ function BetaGwentAudioVoiceVariantPart11(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart12(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart12_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -2410,7 +2410,7 @@ function BetaGwentAudioVoiceVariantPart12(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart13(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart13_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -2493,7 +2493,7 @@ function BetaGwentAudioVoiceVariantPart13(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart14(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart14_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -2580,7 +2580,7 @@ function BetaGwentAudioVoiceVariantPart14(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart15(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart15_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -2665,7 +2665,7 @@ function BetaGwentAudioVoiceVariantPart15(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart16(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart16_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -2755,7 +2755,7 @@ function BetaGwentAudioVoiceVariantPart16(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart17(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart17_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -2845,7 +2845,7 @@ function BetaGwentAudioVoiceVariantPart17(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart18(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart18_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -2940,7 +2940,7 @@ function BetaGwentAudioVoiceVariantPart18(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart19(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart19_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -3041,7 +3041,7 @@ function BetaGwentAudioVoiceVariantPart19(id : int, roll : int) : string
     }
     return "";
 }
-function BetaGwentAudioVoiceVariantPart20(id : int, roll : int) : string
+function BetaGwentAudioVoiceVariantPart20_Universal_ru(id : int, roll : int) : string
 {
     switch(id)
     {
@@ -3107,32 +3107,32 @@ function BetaGwentAudioVoiceVariantPart20(id : int, roll : int) : string
     return "";
 }
 
-function BetaGwentAudioVoiceVariantDuration(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDuration_Universal_ru(id : int, roll : int) : float
 {
-    if(id <= 112203)return BetaGwentAudioVoiceVariantDurationPart0(id,roll);
-    if(id <= 122101)return BetaGwentAudioVoiceVariantDurationPart1(id,roll);
-    if(id <= 122208)return BetaGwentAudioVoiceVariantDurationPart2(id,roll);
-    if(id <= 122313)return BetaGwentAudioVoiceVariantDurationPart3(id,roll);
-    if(id <= 132207)return BetaGwentAudioVoiceVariantDurationPart4(id,roll);
-    if(id <= 142108)return BetaGwentAudioVoiceVariantDurationPart5(id,roll);
-    if(id <= 142302)return BetaGwentAudioVoiceVariantDurationPart6(id,roll);
-    if(id <= 142401)return BetaGwentAudioVoiceVariantDurationPart7(id,roll);
-    if(id <= 152211)return BetaGwentAudioVoiceVariantDurationPart8(id,roll);
-    if(id <= 152316)return BetaGwentAudioVoiceVariantDurationPart9(id,roll);
-    if(id <= 162204)return BetaGwentAudioVoiceVariantDurationPart10(id,roll);
-    if(id <= 162308)return BetaGwentAudioVoiceVariantDurationPart11(id,roll);
-    if(id <= 200032)return BetaGwentAudioVoiceVariantDurationPart12(id,roll);
-    if(id <= 200081)return BetaGwentAudioVoiceVariantDurationPart13(id,roll);
-    if(id <= 200144)return BetaGwentAudioVoiceVariantDurationPart14(id,roll);
-    if(id <= 200169)return BetaGwentAudioVoiceVariantDurationPart15(id,roll);
-    if(id <= 200294)return BetaGwentAudioVoiceVariantDurationPart16(id,roll);
-    if(id <= 201587)return BetaGwentAudioVoiceVariantDurationPart17(id,roll);
-    if(id <= 201622)return BetaGwentAudioVoiceVariantDurationPart18(id,roll);
-    if(id <= 201753)return BetaGwentAudioVoiceVariantDurationPart19(id,roll);
-    if(id <= 201781)return BetaGwentAudioVoiceVariantDurationPart20(id,roll);
+    if(id <= 112203)return BetaGwentAudioVoiceVariantDurationPart0_Universal_ru(id,roll);
+    if(id <= 122101)return BetaGwentAudioVoiceVariantDurationPart1_Universal_ru(id,roll);
+    if(id <= 122208)return BetaGwentAudioVoiceVariantDurationPart2_Universal_ru(id,roll);
+    if(id <= 122313)return BetaGwentAudioVoiceVariantDurationPart3_Universal_ru(id,roll);
+    if(id <= 132207)return BetaGwentAudioVoiceVariantDurationPart4_Universal_ru(id,roll);
+    if(id <= 142108)return BetaGwentAudioVoiceVariantDurationPart5_Universal_ru(id,roll);
+    if(id <= 142302)return BetaGwentAudioVoiceVariantDurationPart6_Universal_ru(id,roll);
+    if(id <= 142401)return BetaGwentAudioVoiceVariantDurationPart7_Universal_ru(id,roll);
+    if(id <= 152211)return BetaGwentAudioVoiceVariantDurationPart8_Universal_ru(id,roll);
+    if(id <= 152316)return BetaGwentAudioVoiceVariantDurationPart9_Universal_ru(id,roll);
+    if(id <= 162204)return BetaGwentAudioVoiceVariantDurationPart10_Universal_ru(id,roll);
+    if(id <= 162308)return BetaGwentAudioVoiceVariantDurationPart11_Universal_ru(id,roll);
+    if(id <= 200032)return BetaGwentAudioVoiceVariantDurationPart12_Universal_ru(id,roll);
+    if(id <= 200081)return BetaGwentAudioVoiceVariantDurationPart13_Universal_ru(id,roll);
+    if(id <= 200144)return BetaGwentAudioVoiceVariantDurationPart14_Universal_ru(id,roll);
+    if(id <= 200169)return BetaGwentAudioVoiceVariantDurationPart15_Universal_ru(id,roll);
+    if(id <= 200294)return BetaGwentAudioVoiceVariantDurationPart16_Universal_ru(id,roll);
+    if(id <= 201587)return BetaGwentAudioVoiceVariantDurationPart17_Universal_ru(id,roll);
+    if(id <= 201622)return BetaGwentAudioVoiceVariantDurationPart18_Universal_ru(id,roll);
+    if(id <= 201753)return BetaGwentAudioVoiceVariantDurationPart19_Universal_ru(id,roll);
+    if(id <= 201781)return BetaGwentAudioVoiceVariantDurationPart20_Universal_ru(id,roll);
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart0(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart0_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -3228,7 +3228,7 @@ function BetaGwentAudioVoiceVariantDurationPart0(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart1(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart1_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -3261,7 +3261,7 @@ function BetaGwentAudioVoiceVariantDurationPart1(id : int, roll : int) : float
         break;
     case 112211:
         if(roll%100<30)return 4.812f;
-        if(roll%100<65)return 2.644f;
+        if(roll%100<65)return 2.643f;
         if(roll%100<100)return 3.348f;
         break;
     case 112212:
@@ -3313,7 +3313,7 @@ function BetaGwentAudioVoiceVariantDurationPart1(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart2(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart2_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -3359,7 +3359,7 @@ function BetaGwentAudioVoiceVariantDurationPart2(id : int, roll : int) : float
         break;
     case 122201:
         if(roll%100<15)return 2.954f;
-        if(roll%100<29)return 2.064f;
+        if(roll%100<29)return 2.063f;
         if(roll%100<44)return 4.122f;
         if(roll%100<58)return 1.774f;
         if(roll%100<73)return 1.991f;
@@ -3407,7 +3407,7 @@ function BetaGwentAudioVoiceVariantDurationPart2(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart3(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart3_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -3433,7 +3433,7 @@ function BetaGwentAudioVoiceVariantDurationPart3(id : int, roll : int) : float
         break;
     case 122213:
         if(roll%100<33)return 1.632f;
-        if(roll%100<66)return 2.866f;
+        if(roll%100<66)return 2.865f;
         if(roll%100<100)return 4.252f;
         break;
     case 122214:
@@ -3490,7 +3490,7 @@ function BetaGwentAudioVoiceVariantDurationPart3(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart4(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart4_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -3573,7 +3573,7 @@ function BetaGwentAudioVoiceVariantDurationPart4(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart5(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart5_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -3659,7 +3659,7 @@ function BetaGwentAudioVoiceVariantDurationPart5(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart6(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart6_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -3679,8 +3679,8 @@ function BetaGwentAudioVoiceVariantDurationPart6(id : int, roll : int) : float
         break;
     case 142204:
         if(roll%100<33)return 2.829f;
-        if(roll%100<73)return 3.698f;
-        if(roll%100<100)return 3.070f;
+        if(roll%100<73)return 3.699f;
+        if(roll%100<100)return 3.071f;
         break;
     case 142206:
         if(roll%100<33)return 2.306f;
@@ -3741,7 +3741,7 @@ function BetaGwentAudioVoiceVariantDurationPart6(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart7(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart7_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -3796,7 +3796,7 @@ function BetaGwentAudioVoiceVariantDurationPart7(id : int, roll : int) : float
         break;
     case 142314:
         if(roll%100<33)return 2.230f;
-        if(roll%100<67)return 2.586f;
+        if(roll%100<67)return 2.587f;
         if(roll%100<100)return 2.237f;
         break;
     case 142315:
@@ -3823,7 +3823,7 @@ function BetaGwentAudioVoiceVariantDurationPart7(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart8(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart8_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -3902,7 +3902,7 @@ function BetaGwentAudioVoiceVariantDurationPart8(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart9(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart9_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -3986,7 +3986,7 @@ function BetaGwentAudioVoiceVariantDurationPart9(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart10(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart10_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -4070,7 +4070,7 @@ function BetaGwentAudioVoiceVariantDurationPart10(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart11(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart11_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -4153,7 +4153,7 @@ function BetaGwentAudioVoiceVariantDurationPart11(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart12(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart12_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -4236,7 +4236,7 @@ function BetaGwentAudioVoiceVariantDurationPart12(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart13(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart13_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -4319,7 +4319,7 @@ function BetaGwentAudioVoiceVariantDurationPart13(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart14(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart14_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -4406,7 +4406,7 @@ function BetaGwentAudioVoiceVariantDurationPart14(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart15(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart15_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -4491,7 +4491,7 @@ function BetaGwentAudioVoiceVariantDurationPart15(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart16(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart16_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -4581,7 +4581,7 @@ function BetaGwentAudioVoiceVariantDurationPart16(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart17(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart17_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -4671,7 +4671,7 @@ function BetaGwentAudioVoiceVariantDurationPart17(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart18(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart18_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -4766,7 +4766,7 @@ function BetaGwentAudioVoiceVariantDurationPart18(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart19(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart19_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -4867,7 +4867,7 @@ function BetaGwentAudioVoiceVariantDurationPart19(id : int, roll : int) : float
     }
     return 0.0f;
 }
-function BetaGwentAudioVoiceVariantDurationPart20(id : int, roll : int) : float
+function BetaGwentAudioVoiceVariantDurationPart20_Universal_ru(id : int, roll : int) : float
 {
     switch(id)
     {
@@ -4888,7 +4888,7 @@ function BetaGwentAudioVoiceVariantDurationPart20(id : int, roll : int) : float
         break;
     case 201774:
         if(roll%100<14)return 2.954f;
-        if(roll%100<28)return 2.064f;
+        if(roll%100<28)return 2.063f;
         if(roll%100<42)return 4.122f;
         if(roll%100<58)return 1.774f;
         if(roll%100<72)return 1.991f;
@@ -4897,7 +4897,7 @@ function BetaGwentAudioVoiceVariantDurationPart20(id : int, roll : int) : float
         break;
     case 201776:
         if(roll%100<16)return 2.954f;
-        if(roll%100<30)return 2.064f;
+        if(roll%100<30)return 2.063f;
         if(roll%100<44)return 4.122f;
         if(roll%100<58)return 1.774f;
         if(roll%100<72)return 1.991f;
@@ -4933,12 +4933,12 @@ function BetaGwentAudioVoiceVariantDurationPart20(id : int, roll : int) : float
     return 0.0f;
 }
 
-function BetaGwentAudioRevealEffect(id : int) : string
+function BetaGwentAudioRevealEffect_Universal_ru(id : int) : string
 {
-    if (id <= 201779) return BetaGwentAudioRevealEffect0(id);
+    if (id <= 201779) return BetaGwentAudioRevealEffect0_Universal_ru(id);
     return "";
 }
-function BetaGwentAudioRevealEffect0(id : int) : string
+function BetaGwentAudioRevealEffect0_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -4952,12 +4952,12 @@ function BetaGwentAudioRevealEffect0(id : int) : string
     return "";
 }
 
-function BetaGwentAudioTransformEffect(id : int) : string
+function BetaGwentAudioTransformEffect_Universal_ru(id : int) : string
 {
-    if (id <= 112105) return BetaGwentAudioTransformEffect0(id);
+    if (id <= 112105) return BetaGwentAudioTransformEffect0_Universal_ru(id);
     return "";
 }
-function BetaGwentAudioTransformEffect0(id : int) : string
+function BetaGwentAudioTransformEffect0_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -4967,20 +4967,20 @@ function BetaGwentAudioTransformEffect0(id : int) : string
     return "";
 }
 
-function BetaGwentAudioVoiceTriggers(id : int) : int
+function BetaGwentAudioVoiceTriggers_Universal_ru(id : int) : int
 {
-    if (id <= 113401) return BetaGwentAudioVoiceTriggers0(id);
-    if (id <= 132204) return BetaGwentAudioVoiceTriggers1(id);
-    if (id <= 142301) return BetaGwentAudioVoiceTriggers2(id);
-    if (id <= 152406) return BetaGwentAudioVoiceTriggers3(id);
-    if (id <= 200036) return BetaGwentAudioVoiceTriggers4(id);
-    if (id <= 200166) return BetaGwentAudioVoiceTriggers5(id);
-    if (id <= 201584) return BetaGwentAudioVoiceTriggers6(id);
-    if (id <= 201697) return BetaGwentAudioVoiceTriggers7(id);
-    if (id <= 201817) return BetaGwentAudioVoiceTriggers8(id);
+    if (id <= 113401) return BetaGwentAudioVoiceTriggers0_Universal_ru(id);
+    if (id <= 132204) return BetaGwentAudioVoiceTriggers1_Universal_ru(id);
+    if (id <= 142301) return BetaGwentAudioVoiceTriggers2_Universal_ru(id);
+    if (id <= 152406) return BetaGwentAudioVoiceTriggers3_Universal_ru(id);
+    if (id <= 200036) return BetaGwentAudioVoiceTriggers4_Universal_ru(id);
+    if (id <= 200166) return BetaGwentAudioVoiceTriggers5_Universal_ru(id);
+    if (id <= 201584) return BetaGwentAudioVoiceTriggers6_Universal_ru(id);
+    if (id <= 201697) return BetaGwentAudioVoiceTriggers7_Universal_ru(id);
+    if (id <= 201817) return BetaGwentAudioVoiceTriggers8_Universal_ru(id);
     return 0;
 }
-function BetaGwentAudioVoiceTriggers0(id : int) : int
+function BetaGwentAudioVoiceTriggers0_Universal_ru(id : int) : int
 {
     switch (id)
     {
@@ -5048,7 +5048,7 @@ function BetaGwentAudioVoiceTriggers0(id : int) : int
     }
     return 0;
 }
-function BetaGwentAudioVoiceTriggers1(id : int) : int
+function BetaGwentAudioVoiceTriggers1_Universal_ru(id : int) : int
 {
     switch (id)
     {
@@ -5116,7 +5116,7 @@ function BetaGwentAudioVoiceTriggers1(id : int) : int
     }
     return 0;
 }
-function BetaGwentAudioVoiceTriggers2(id : int) : int
+function BetaGwentAudioVoiceTriggers2_Universal_ru(id : int) : int
 {
     switch (id)
     {
@@ -5184,7 +5184,7 @@ function BetaGwentAudioVoiceTriggers2(id : int) : int
     }
     return 0;
 }
-function BetaGwentAudioVoiceTriggers3(id : int) : int
+function BetaGwentAudioVoiceTriggers3_Universal_ru(id : int) : int
 {
     switch (id)
     {
@@ -5252,7 +5252,7 @@ function BetaGwentAudioVoiceTriggers3(id : int) : int
     }
     return 0;
 }
-function BetaGwentAudioVoiceTriggers4(id : int) : int
+function BetaGwentAudioVoiceTriggers4_Universal_ru(id : int) : int
 {
     switch (id)
     {
@@ -5320,7 +5320,7 @@ function BetaGwentAudioVoiceTriggers4(id : int) : int
     }
     return 0;
 }
-function BetaGwentAudioVoiceTriggers5(id : int) : int
+function BetaGwentAudioVoiceTriggers5_Universal_ru(id : int) : int
 {
     switch (id)
     {
@@ -5388,7 +5388,7 @@ function BetaGwentAudioVoiceTriggers5(id : int) : int
     }
     return 0;
 }
-function BetaGwentAudioVoiceTriggers6(id : int) : int
+function BetaGwentAudioVoiceTriggers6_Universal_ru(id : int) : int
 {
     switch (id)
     {
@@ -5456,7 +5456,7 @@ function BetaGwentAudioVoiceTriggers6(id : int) : int
     }
     return 0;
 }
-function BetaGwentAudioVoiceTriggers7(id : int) : int
+function BetaGwentAudioVoiceTriggers7_Universal_ru(id : int) : int
 {
     switch (id)
     {
@@ -5524,7 +5524,7 @@ function BetaGwentAudioVoiceTriggers7(id : int) : int
     }
     return 0;
 }
-function BetaGwentAudioVoiceTriggers8(id : int) : int
+function BetaGwentAudioVoiceTriggers8_Universal_ru(id : int) : int
 {
     switch (id)
     {
@@ -5557,12 +5557,12 @@ function BetaGwentAudioVoiceTriggers8(id : int) : int
     return 0;
 }
 
-function BetaGwentAudioUi(id : int) : string
+function BetaGwentAudioUi_Universal_ru(id : int) : string
 {
-    if (id <= 5) return BetaGwentAudioUi0(id);
+    if (id <= 5) return BetaGwentAudioUi0_Universal_ru(id);
     return "";
 }
-function BetaGwentAudioUi0(id : int) : string
+function BetaGwentAudioUi0_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -5576,12 +5576,12 @@ function BetaGwentAudioUi0(id : int) : string
     return "";
 }
 
-function BetaGwentAudioCue(id : int) : string
+function BetaGwentAudioCue_Universal_ru(id : int) : string
 {
-    if (id <= 32) return BetaGwentAudioCue0(id);
+    if (id <= 32) return BetaGwentAudioCue0_Universal_ru(id);
     return "";
 }
-function BetaGwentAudioCue0(id : int) : string
+function BetaGwentAudioCue0_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -5615,12 +5615,12 @@ function BetaGwentAudioCue0(id : int) : string
     return "";
 }
 
-function BetaGwentAudioWeather(id : int) : string
+function BetaGwentAudioWeather_Universal_ru(id : int) : string
 {
-    if (id <= 2048) return BetaGwentAudioWeather0(id);
+    if (id <= 2048) return BetaGwentAudioWeather0_Universal_ru(id);
     return "";
 }
-function BetaGwentAudioWeather0(id : int) : string
+function BetaGwentAudioWeather0_Universal_ru(id : int) : string
 {
     switch (id)
     {
@@ -5639,4 +5639,23269 @@ function BetaGwentAudioWeather0(id : int) : string
         default: break;
     }
     return "";
+}
+
+// Generated from pinned CardAudio.xml. Source banks128 are not runtime banks.
+
+function BetaGwentAudioBankInstalled_Universal_en() : bool { return true; }
+
+function BetaGwentAudioVoice_Universal_en(id : int) : string
+{
+    if (id <= 122313) return BetaGwentAudioVoice0_Universal_en(id);
+    if (id <= 142401) return BetaGwentAudioVoice1_Universal_en(id);
+    if (id <= 162308) return BetaGwentAudioVoice2_Universal_en(id);
+    if (id <= 200169) return BetaGwentAudioVoice3_Universal_en(id);
+    if (id <= 201753) return BetaGwentAudioVoice4_Universal_en(id);
+    if (id <= 201781) return BetaGwentAudioVoice5_Universal_en(id);
+    return "";
+}
+function BetaGwentAudioVoice0_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 112101: return "bg79_vo_CIRI_CIRILLA_01040512";
+        case 112102: return "bg79_vo_SAY_Battlecries_1";
+        case 112103: return "bg79_vo_SAY_Battlecries_1";
+        case 112104: return "bg79_vo_REGI_Q702_01155230";
+        case 112105: return "bg79_vo_katakan_taunt_short_003";
+        case 112106: return "bg79_vo_TRSS_Q310_00545347";
+        case 112108: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 112109: return "bg79_vo_ZOLT_Q310_01062198";
+        case 112110: return "bg79_vo_CIRI_CIRILLA_01040512";
+        case 112111: return "bg79_vo_SAY_Battlecries_1";
+        case 112112: return "bg79_vo_AVLC_Q311_00454814";
+        case 112113: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 112201: return "bg79_vo_SAY_Battlecries_816";
+        case 112202: return "bg79_vo_SAY_Battlecries_21";
+        case 112203: return "bg79_vo_VSMR_Q001_00546725";
+        case 112204: return "bg79_vo_LMBT_Q401_00523875";
+        case 112205: return "bg79_vo_wyvern_v2_vo_ADD_008";
+        case 112206: return "bg79_vo_wyvern_v2_vo_ADD_008";
+        case 112207: return "bg79_vo_OLGD_Q603_01101145";
+        case 112208: return "bg79_vo_VO_OPRT_204113_0001";
+        case 112211: return "bg79_vo_GJHN_Q105_00417768";
+        case 112212: return "bg79_vo_GSAR_Q301_00484178";
+        case 112213: return "bg79_vo_KGBG_Q301_00486502";
+        case 112214: return "bg79_vo_WILY_Q302_00443324";
+        case 112215: return "bg79_vo_IRIS_Q604_01106159";
+        case 112403: return "bg79_vo_SAY_Battlecries_25";
+        case 112404: return "bg79_vo_SAY_Battlecries_25";
+        case 113208: return "bg79_vo_SAY_Battlecries_821";
+        case 113313: return "bg79_vo_SAY_Battlecries_part5_326";
+        case 122101: return "bg79_vo_BARN_Q102_00408798";
+        case 122102: return "bg79_vo_ROCH_MQ3035_01064844";
+        case 122103: return "bg79_vo_VO_JANT_300862_0253";
+        case 122104: return "bg79_vo_PHIL_PHILIPPA_01041424";
+        case 122105: return "bg79_vo_DJKS_MQ3035_01067766";
+        case 122106: return "bg79_vo_SHNI_Q602_01119358";
+        case 122107: return "bg79_vo_TRSS_Q310_00545347";
+        case 122108: return "bg79_vo_KEIR_KEIRA_00475332";
+        case 122201: return "bg79_vo_SAY_Battlecries_5";
+        case 122202: return "bg79_vo_SAY_Battlecries_9";
+        case 122203: return "bg79_vo_TALA_SQ315_01067599";
+        case 122204: return "bg79_vo_VESS_MQ3035_01064809";
+        case 122205: return "bg79_vo_SAY_Battlecries_29";
+        case 122206: return "bg79_vo_VO_SABR_200216_0037";
+        case 122207: return "bg79_vo_VO_DETM_200182_0001";
+        case 122208: return "bg79_vo_VO_STEN_200098_0258";
+        case 122209: return "bg79_vo_TRL1_MQ1022_00466604";
+        case 122210: return "bg79_vo_SAY_Battlecries_37";
+        case 122211: return "bg79_vo_MGLA_MARGARITTA_01012961";
+        case 122212: return "bg79_vo_SAY_Battlecries_42";
+        case 122213: return "bg79_vo_VO_ODRI_200481_0002";
+        case 122214: return "bg79_vo_SAY_Battlecries_46";
+        case 122216: return "bg79_vo_SAY_Battlecries_part3_21";
+        case 122306: return "bg79_vo_VO_ZDZI_003478_0007";
+        case 122307: return "bg79_vo_VO_NG01_003478_0008";
+        case 122308: return "bg79_vo_RES1_VSET_00508237";
+        case 122309: return "bg79_vo_VO_KG01_200564_0001";
+        case 122310: return "bg79_vo_VO_RS01_101992_0004";
+        case 122311: return "bg79_vo_VO_RS03_106543_0003";
+        case 122312: return "bg79_vo_NCIW1_VSET_00564889";
+        case 122313: return "bg79_vo_VO_KG06_200420_0005";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice1_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 122314: return "bg79_vo_VO_KG02_200565_0005";
+        case 122316: return "bg79_vo_TBAN2_VSET_00591990";
+        case 122317: return "bg79_vo_REOF1_VSET_00516089";
+        case 122318: return "bg79_vo_VO_KE01_203352_0004";
+        case 122403: return "bg79_vo_SAY_Battlecries_819";
+        case 123301: return "bg79_vo_SAY_Battlecries_part5_320";
+        case 131101: return "bg79_vo_ERDN_EREDIN_01040754";
+        case 131102: return "bg79_vo_GEEL_Q311_00312236";
+        case 132101: return "bg79_vo_VO_DRUG_200317_0011";
+        case 132102: return "bg79_vo_IMLR_Q111_01062046";
+        case 132104: return "bg79_vo_SAY_Battlecries_189";
+        case 132105: return "bg79_vo_AVLC_Q311_00454814";
+        case 132108: return "bg79_vo_SCC3_VSET_01053091";
+        case 132206: return "bg79_vo_WHSP_Q105_00382577";
+        case 132207: return "bg79_vo_BREW_Q105_00531820";
+        case 132208: return "bg79_vo_WEAV_Q105_00531814";
+        case 132211: return "bg79_vo_nekker_scream_006";
+        case 132212: return "bg79_vo_ice_giant_aggro06";
+        case 132214: return "bg79_vo_WHW1_Q104_00555148";
+        case 132215: return "bg79_vo_MRRR_Q602_01116657";
+        case 132305: return "bg79_vo_nekker_attack_004";
+        case 132309: return "bg79_vo_SAY_Battlecries_792";
+        case 132310: return "bg79_vo_SAY_Battlecries_796";
+        case 142102: return "bg79_vo_SAY_Battlecries_139";
+        case 142103: return "bg79_vo_VO_IORW_100241_4474";
+        case 142104: return "bg79_vo_SAY_Battlecries_142";
+        case 142105: return "bg79_vo_ZOLT_Q310_01062198";
+        case 142106: return "bg79_vo_SAY_Battlecries_152";
+        case 142107: return "bg79_vo_SAY_Battlecries_170";
+        case 142108: return "bg79_vo_SAY_Battlecries_186";
+        case 142201: return "bg79_vo_SAY_Battlecries_155";
+        case 142202: return "bg79_vo_IDEM_Q401_00532088";
+        case 142203: return "bg79_vo_SAY_Battlecries_771";
+        case 142204: return "bg79_vo_SAY_Battlecries_776";
+        case 142206: return "bg79_vo_SAY_Battlecries_160";
+        case 142207: return "bg79_vo_SAY_Battlecries_161";
+        case 142208: return "bg79_vo_SAY_Battlecries_164";
+        case 142209: return "bg79_vo_SAY_Battlecries_167";
+        case 142210: return "bg79_vo_VO_MALN_106817_0005";
+        case 142211: return "bg79_vo_SAY_Battlecries_183";
+        case 142212: return "bg79_vo_SAY_Battlecries_33";
+        case 142213: return "bg79_vo_SAY_Battlecries_784";
+        case 142214: return "bg79_vo_SAY_Battlecries_831";
+        case 142301: return "bg79_vo_VSCF2_VSET_00523670";
+        case 142302: return "bg79_vo_VO_SF01_102746_0038";
+        case 142303: return "bg79_vo_VO_SF02_101662_0066";
+        case 142304: return "bg79_vo_VO_SWF1_100532_0009";
+        case 142306: return "bg79_vo_SCD1_VSET_00525279";
+        case 142307: return "bg79_vo_VO_SMV2_202544_0022";
+        case 142308: return "bg79_vo_VO_SWV2_202544_0023";
+        case 142309: return "bg79_vo_VO_SF01_107685_0001";
+        case 142310: return "bg79_vo_SAY_Battlecries_801";
+        case 142311: return "bg79_vo_SCD1_VSET_00526102";
+        case 142312: return "bg79_vo_VBAN1_MQ1005_00358151";
+        case 142313: return "bg79_vo_SAY_Battlecries_part2_2";
+        case 142314: return "bg79_vo_VO_SWV1_202968_0006";
+        case 142315: return "bg79_vo_SAY_Battlecries_part2_5";
+        case 142316: return "bg79_vo_VO_SWV5_202972_0007";
+        case 142317: return "bg79_vo_SCD34_VSET_01013381";
+        case 142401: return "bg79_vo_SAY_Battlecries_788";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice2_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 152101: return "bg79_vo_HJAL_HJALMAR_01037900";
+        case 152103: return "bg79_vo_MOUS_Q210_00558067";
+        case 152105: return "bg79_vo_SAY_Battlecries_205";
+        case 152106: return "bg79_vo_LUTM_LUGOS_00437813";
+        case 152107: return "bg79_vo_SAY_Battlecries_202";
+        case 152201: return "bg79_vo_LUTG_LUGOS_01038779";
+        case 152202: return "bg79_vo_TRL3_FF205_01053125";
+        case 152203: return "bg79_vo_SAY_Battlecries_804";
+        case 152204: return "bg79_vo_DONR_DONAR_01037055";
+        case 152205: return "bg79_vo_SBR1_VSET_00527986";
+        case 152206: return "bg79_vo_SAY_Battlecries_828";
+        case 152207: return "bg79_vo_HOLG_HOLGER_01038014";
+        case 152208: return "bg79_vo_SWO4_MQ2038_00507987";
+        case 152209: return "bg79_vo_MRKV_SQ201_00499647";
+        case 152211: return "bg79_vo_SPR1_SHOP_00437650";
+        case 152213: return "bg79_vo_SAY_Battlecries_208";
+        case 152214: return "bg79_vo_UDAL_Q201_00166303";
+        case 152301: return "bg79_vo_SBE2_VSET_00536513";
+        case 152302: return "bg79_vo_SBE1_Q206_00413021";
+        case 152303: return "bg79_vo_SGD2_CHAT2_00165312";
+        case 152304: return "bg79_vo_SGD6_VSET_00544491";
+        case 152305: return "bg79_vo_SBD3_MQ2034_01013429";
+        case 152306: return "bg79_vo_SBD1_MQ2002_00442097";
+        case 152308: return "bg79_vo_DROG_BARD_01036857";
+        case 152310: return "bg79_vo_SPR2_VSET_00553534";
+        case 152311: return "bg79_vo_SAR3_CHAT_01050115";
+        case 152312: return "bg79_vo_SAY_Battlecries_807";
+        case 152313: return "bg79_vo_SGD2_VSET_00526547";
+        case 152315: return "bg79_vo_SWR5_VSET_00535924";
+        case 152316: return "bg79_vo_SGD1_CHAT_01024106";
+        case 152317: return "bg79_vo_SAR1_SHOP_00422532";
+        case 152318: return "bg79_vo_SAY_Battlecries_part3_1";
+        case 152402: return "bg79_vo_SAY_Battlecries_199";
+        case 162101: return "bg79_vo_LETO_LETHO_01038588";
+        case 162102: return "bg79_vo_SAY_Battlecries_58";
+        case 162103: return "bg79_vo_SAY_Battlecries_106";
+        case 162104: return "bg79_vo_SAY_Battlecries_69";
+        case 162105: return "bg79_vo_SAY_Battlecries_72";
+        case 162106: return "bg79_vo_SAY_Battlecries_97";
+        case 162107: return "bg79_vo_SAY_Battlecries_67";
+        case 162108: return "bg79_vo_SAY_Battlecries_118";
+        case 162201: return "bg79_vo_SAY_Battlecries_78";
+        case 162202: return "bg79_vo_SAY_Battlecries_75";
+        case 162203: return "bg79_vo_VO_CNTH_303653_0335";
+        case 162204: return "bg79_vo_SAY_Battlecries_part3_426";
+        case 162205: return "bg79_vo_SAY_Battlecries_88";
+        case 162206: return "bg79_vo_SAY_Battlecries_100";
+        case 162207: return "bg79_vo_VO_NM01_200057_0187";
+        case 162208: return "bg79_vo_SAY_Battlecries_112";
+        case 162209: return "bg79_vo_SAY_Battlecries_115";
+        case 162210: return "bg79_vo_SAY_Battlecries_127";
+        case 162211: return "bg79_vo_SAY_Battlecries_part3_17";
+        case 162212: return "bg79_vo_SAY_Battlecries_part3_105";
+        case 162213: return "bg79_vo_SAY_Battlecries_part3_109";
+        case 162301: return "bg79_vo_SAY_Battlecries_part3_417";
+        case 162303: return "bg79_vo_NILF4_CHAT_01051421";
+        case 162304: return "bg79_vo_SAY_Battlecries_part3_429";
+        case 162305: return "bg79_vo_NILF3_VSET_00514109";
+        case 162307: return "bg79_vo_NILFP2_VSET_00592094";
+        case 162308: return "bg79_vo_NIOF1_VSET_00524263";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice3_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 162309: return "bg79_vo_SAY_Battlecries_part3_438";
+        case 162310: return "bg79_vo_NILF2_VSET_00513914";
+        case 162311: return "bg79_vo_NILF3_VSET_00514091";
+        case 162312: return "bg79_vo_NILF2_Q505_00576169";
+        case 162313: return "bg79_vo_NILF2_VSET_00513907";
+        case 162314: return "bg79_vo_NIS1_Q002_01048548";
+        case 162315: return "bg79_vo_NIN4_VSET_01049576";
+        case 162316: return "bg79_vo_MAG1_SHOP_00423227";
+        case 162318: return "bg79_vo_SAY_Battlecries_part3_441";
+        case 162401: return "bg79_vo_SAY_Battlecries_part3_385";
+        case 200026: return "bg79_vo_SAY_Battlecries_part3_43";
+        case 200028: return "bg79_vo_SAY_Battlecries_211";
+        case 200030: return "bg79_vo_SAY_Battlecries_220";
+        case 200031: return "bg79_vo_SAY_Battlecries_13";
+        case 200032: return "bg79_vo_SAY_Battlecries_91";
+        case 200033: return "bg79_vo_SAY_Battlecries_part3_376";
+        case 200036: return "bg79_vo_SAY_Battlecries_part3_5";
+        case 200039: return "bg79_vo_SAY_Battlecries_part3_310";
+        case 200040: return "bg79_vo_SAY_Battlecries_part3_314";
+        case 200042: return "bg79_vo_SAY_Battlecries_part3_39";
+        case 200043: return "bg79_vo_SAY_Battlecries_part3_129";
+        case 200044: return "bg79_vo_SAY_Battlecries_part3_35";
+        case 200046: return "bg79_vo_SAY_Battlecries_part3_410";
+        case 200048: return "bg79_vo_SAY_Battlecries_part3_13";
+        case 200050: return "bg79_vo_SAY_Battlecries_109";
+        case 200055: return "bg79_vo_SAY_Battlecries_part3_255";
+        case 200062: return "bg79_vo_SAY_Battlecries_part3_154";
+        case 200071: return "bg79_vo_SAY_Battlecries_96";
+        case 200080: return "bg79_vo_SAY_Battlecries_part3_290";
+        case 200081: return "bg79_vo_SAY_Battlecries_part3_121";
+        case 200083: return "bg79_vo_SAY_Battlecries_part3_264";
+        case 200087: return "bg79_vo_SAY_Battlecries_part3_184";
+        case 200088: return "bg79_vo_SAY_Battlecries_part3_175";
+        case 200089: return "bg79_vo_SAY_Battlecries_part3_167";
+        case 200091: return "bg79_vo_SAY_Battlecries_part3_162";
+        case 200098: return "bg79_vo_SAY_Battlecries_part3_201";
+        case 200112: return "bg79_vo_SAY_Battlecries_part3_93";
+        case 200115: return "bg79_vo_SAY_Battlecries_part3_362";
+        case 200118: return "bg79_vo_SAY_Battlecries_part3_356";
+        case 200124: return "bg79_vo_SAY_Battlecries_part3_337";
+        case 200132: return "bg79_vo_SAY_Battlecries_part3_223";
+        case 200135: return "bg79_vo_SAY_Battlecries_part3_318";
+        case 200136: return "bg79_vo_SAY_Battlecries_part3_322";
+        case 200138: return "bg79_vo_SAY_Battlecries_part3_326";
+        case 200144: return "bg79_vo_SAY_Battlecries_part5_26";
+        case 200145: return "bg79_vo_SAY_Battlecries_part3_71";
+        case 200146: return "bg79_vo_SAY_Battlecries_part3_75";
+        case 200147: return "bg79_vo_SAY_Battlecries_part3_87";
+        case 200149: return "bg79_vo_SAY_Battlecries_part3_79";
+        case 200159: return "bg79_vo_SAY_Battlecries_193";
+        case 200160: return "bg79_vo_CRCH_CRACH_01001923";
+        case 200161: return "bg79_vo_SAY_Battlecries_196";
+        case 200162: return "bg79_vo_SAY_Battlecries_236";
+        case 200163: return "bg79_vo_SAY_Battlecries_52";
+        case 200164: return "bg79_vo_SAY_Battlecries_55";
+        case 200165: return "bg79_vo_SAY_Battlecries_130";
+        case 200166: return "bg79_vo_SAY_Battlecries_133";
+        case 200167: return "bg79_vo_SAY_Battlecries_136";
+        case 200168: return "bg79_vo_VO_FLTS_000811_0001";
+        case 200169: return "bg79_vo_RADV_MQ3035_01064716";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice4_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 200170: return "bg79_vo_VO_HSLT_200098_0254";
+        case 200171: return "bg79_vo_SAY_Battlecries_226";
+        case 200177: return "bg79_vo_BECC_BECCA_01040275";
+        case 200209: return "bg79_vo_VO_TARM_200154_0192";
+        case 200212: return "bg79_vo_SAY_Battlecries_822";
+        case 200219: return "bg79_vo_SAY_Battlecries_part3_385";
+        case 200220: return "bg79_vo_WHSP_Q105_00419061";
+        case 200221: return "bg79_vo_BREW_Q105_00531820";
+        case 200222: return "bg79_vo_WEAV_Q503_00578937";
+        case 200227: return "bg79_vo_SAY_Battlecries_part3_435";
+        case 200235: return "bg79_vo_LMBT_Q401_00523875";
+        case 200236: return "bg79_vo_SAY_Battlecries_21";
+        case 200237: return "bg79_vo_VSMR_Q001_00546725";
+        case 200293: return "bg79_vo_SAY_Battlecries_part4_93";
+        case 200294: return "bg79_vo_SAY_Battlecries_part5_338";
+        case 200296: return "bg79_vo_SAY_Battlecries_part3_379";
+        case 200299: return "bg79_vo_SAY_Battlecries_part3_407";
+        case 200518: return "bg79_vo_SAY_Battlecries_part3_382";
+        case 200520: return "bg79_vo_HTRI_HATTORI_01032235";
+        case 200523: return "bg79_vo_SAY_Battlecries_part4_244";
+        case 200528: return "bg79_vo_SAY_Battlecries_part3_83";
+        case 200529: return "bg79_vo_SAY_Battlecries_part3_401";
+        case 200534: return "bg79_vo_SAY_Battlecries_part3_404";
+        case 200535: return "bg79_vo_SAY_Battlecries_part3_398";
+        case 200540: return "bg79_vo_SAY_Battlecries_part4_78";
+        case 201523: return "bg79_vo_SAY_Battlecries_1";
+        case 201559: return "bg79_vo_SAY_Battlecries_part4_98";
+        case 201578: return "bg79_vo_SAY_Battlecries_part3_395";
+        case 201580: return "bg79_vo_SAY_Battlecries_part3_432";
+        case 201587: return "bg79_vo_SAY_Battlecries_part5_1";
+        case 201589: return "bg79_vo_SAY_Battlecries_part3_278";
+        case 201595: return "bg79_vo_SAY_Battlecries_part3_193";
+        case 201597: return "bg79_vo_SAY_Battlecries_part3_47";
+        case 201601: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 201603: return "bg79_vo_LETO_SQ102_00590678";
+        case 201609: return "bg79_vo_SAY_Battlecries_part4_103";
+        case 201611: return "bg79_vo_VO_IORW_100241_4474";
+        case 201612: return "bg79_vo_SAY_Battlecries_part4_113";
+        case 201615: return "bg79_vo_SAY_Battlecries_139";
+        case 201616: return "bg79_vo_SAY_Battlecries_part3_359";
+        case 201617: return "bg79_vo_SAY_Battlecries_part5_32";
+        case 201618: return "bg79_vo_SAY_Battlecries_part3_117";
+        case 201620: return "bg79_vo_SAY_Battlecries_part5_7";
+        case 201621: return "bg79_vo_SAY_Battlecries_part5_14";
+        case 201622: return "bg79_vo_SAY_Battlecries_part3_9";
+        case 201624: return "bg79_vo_SAY_Battlecries_part5_38";
+        case 201625: return "bg79_vo_SAY_Battlecries_part5_44";
+        case 201626: return "bg79_vo_CIRI_CIRILLA_01040548";
+        case 201627: return "bg79_vo_SAY_Battlecries_part4_168";
+        case 201628: return "bg79_vo_SAY_Battlecries_part5_56";
+        case 201630: return "bg79_vo_SAY_Battlecries_part5_50";
+        case 201636: return "bg79_vo_SAY_Battlecries_part5_68";
+        case 201638: return "bg79_vo_SAY_Battlecries_part4_88";
+        case 201644: return "bg79_vo_SAY_Battlecries_part5_20";
+        case 201646: return "bg79_vo_SAY_Battlecries_232";
+        case 201650: return "bg79_vo_VO_SABR_200216_0101";
+        case 201664: return "bg79_vo_SAY_Battlecries_part4_256";
+        case 201676: return "bg79_vo_SAY_Battlecries_part4_34";
+        case 201677: return "bg79_vo_SAY_Battlecries_part4_86";
+        case 201753: return "bg79_vo_SAY_Battlecries_part4_86";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice5_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 201772: return "bg79_vo_SAY_Battlecries_1";
+        case 201773: return "bg79_vo_SAY_Battlecries_17";
+        case 201774: return "bg79_vo_SAY_Battlecries_5";
+        case 201776: return "bg79_vo_SAY_Battlecries_5";
+        case 201777: return "bg79_vo_ROCH_ROCHE_00541126";
+        case 201778: return "bg79_vo_BECC_BECCA_01040275";
+        case 201779: return "bg79_vo_SAY_Battlecries_164";
+        case 201780: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 201781: return "bg79_vo_SAY_Battlecries_851";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceDuration_Universal_en(id : int) : float
+{
+    if (id <= 122313) return BetaGwentAudioVoiceDuration0_Universal_en(id);
+    if (id <= 142401) return BetaGwentAudioVoiceDuration1_Universal_en(id);
+    if (id <= 162308) return BetaGwentAudioVoiceDuration2_Universal_en(id);
+    if (id <= 200169) return BetaGwentAudioVoiceDuration3_Universal_en(id);
+    if (id <= 201753) return BetaGwentAudioVoiceDuration4_Universal_en(id);
+    if (id <= 201781) return BetaGwentAudioVoiceDuration5_Universal_en(id);
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration0_Universal_en(id : int) : float
+{
+    switch (id)
+    {
+        case 112101: return 1.954f;
+        case 112102: return 3.207f;
+        case 112103: return 3.207f;
+        case 112104: return 3.484f;
+        case 112105: return 3.115f;
+        case 112106: return 2.040f;
+        case 112108: return 3.025f;
+        case 112109: return 1.848f;
+        case 112110: return 1.954f;
+        case 112111: return 3.207f;
+        case 112112: return 1.321f;
+        case 112113: return 3.025f;
+        case 112201: return 3.134f;
+        case 112202: return 1.195f;
+        case 112203: return 2.072f;
+        case 112204: return 3.087f;
+        case 112205: return 1.430f;
+        case 112206: return 1.430f;
+        case 112207: return 2.161f;
+        case 112208: return 2.127f;
+        case 112211: return 4.812f;
+        case 112212: return 1.580f;
+        case 112213: return 2.087f;
+        case 112214: return 3.647f;
+        case 112215: return 1.841f;
+        case 112403: return 2.342f;
+        case 112404: return 2.342f;
+        case 113208: return 2.682f;
+        case 113313: return 2.396f;
+        case 122101: return 2.657f;
+        case 122102: return 1.971f;
+        case 122103: return 2.994f;
+        case 122104: return 2.373f;
+        case 122105: return 2.054f;
+        case 122106: return 1.804f;
+        case 122107: return 2.040f;
+        case 122108: return 1.946f;
+        case 122201: return 2.655f;
+        case 122202: return 1.439f;
+        case 122203: return 4.497f;
+        case 122204: return 2.616f;
+        case 122205: return 1.934f;
+        case 122206: return 1.822f;
+        case 122207: return 2.189f;
+        case 122208: return 1.764f;
+        case 122209: return 4.213f;
+        case 122210: return 5.458f;
+        case 122211: return 1.199f;
+        case 122212: return 2.642f;
+        case 122213: return 3.561f;
+        case 122214: return 3.000f;
+        case 122216: return 1.560f;
+        case 122306: return 2.024f;
+        case 122307: return 1.773f;
+        case 122308: return 2.544f;
+        case 122309: return 1.094f;
+        case 122310: return 1.805f;
+        case 122311: return 2.220f;
+        case 122312: return 1.808f;
+        case 122313: return 1.301f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration1_Universal_en(id : int) : float
+{
+    switch (id)
+    {
+        case 122314: return 1.836f;
+        case 122316: return 1.804f;
+        case 122317: return 2.085f;
+        case 122318: return 2.693f;
+        case 122403: return 1.979f;
+        case 123301: return 2.343f;
+        case 131101: return 2.851f;
+        case 131102: return 2.500f;
+        case 132101: return 2.848f;
+        case 132102: return 4.388f;
+        case 132104: return 2.831f;
+        case 132105: return 1.321f;
+        case 132108: return 3.916f;
+        case 132206: return 5.319f;
+        case 132207: return 5.688f;
+        case 132208: return 5.907f;
+        case 132211: return 1.467f;
+        case 132212: return 1.894f;
+        case 132214: return 2.408f;
+        case 132215: return 1.661f;
+        case 132305: return 1.250f;
+        case 132309: return 2.231f;
+        case 132310: return 1.955f;
+        case 142102: return 2.008f;
+        case 142103: return 1.576f;
+        case 142104: return 3.096f;
+        case 142105: return 1.848f;
+        case 142106: return 1.800f;
+        case 142107: return 3.275f;
+        case 142108: return 2.165f;
+        case 142201: return 4.149f;
+        case 142202: return 4.084f;
+        case 142203: return 3.032f;
+        case 142204: return 2.721f;
+        case 142206: return 2.359f;
+        case 142207: return 1.681f;
+        case 142208: return 1.690f;
+        case 142209: return 3.706f;
+        case 142210: return 3.584f;
+        case 142211: return 1.971f;
+        case 142212: return 2.984f;
+        case 142213: return 5.105f;
+        case 142214: return 2.179f;
+        case 142301: return 1.875f;
+        case 142302: return 4.592f;
+        case 142303: return 1.510f;
+        case 142304: return 2.600f;
+        case 142306: return 1.801f;
+        case 142307: return 1.894f;
+        case 142308: return 1.959f;
+        case 142309: return 2.667f;
+        case 142310: return 2.168f;
+        case 142311: return 2.654f;
+        case 142312: return 5.469f;
+        case 142313: return 2.086f;
+        case 142314: return 2.150f;
+        case 142315: return 1.727f;
+        case 142316: return 2.639f;
+        case 142317: return 1.426f;
+        case 142401: return 2.010f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration2_Universal_en(id : int) : float
+{
+    switch (id)
+    {
+        case 152101: return 2.457f;
+        case 152103: return 2.564f;
+        case 152105: return 3.119f;
+        case 152106: return 1.756f;
+        case 152107: return 2.649f;
+        case 152201: return 3.406f;
+        case 152202: return 1.627f;
+        case 152203: return 2.999f;
+        case 152204: return 2.760f;
+        case 152205: return 1.237f;
+        case 152206: return 2.284f;
+        case 152207: return 2.479f;
+        case 152208: return 3.872f;
+        case 152209: return 4.544f;
+        case 152211: return 1.614f;
+        case 152213: return 1.849f;
+        case 152214: return 1.479f;
+        case 152301: return 3.103f;
+        case 152302: return 3.719f;
+        case 152303: return 3.121f;
+        case 152304: return 1.674f;
+        case 152305: return 4.155f;
+        case 152306: return 1.578f;
+        case 152308: return 2.068f;
+        case 152310: return 2.151f;
+        case 152311: return 2.616f;
+        case 152312: return 1.497f;
+        case 152313: return 3.021f;
+        case 152315: return 2.200f;
+        case 152316: return 2.479f;
+        case 152317: return 2.612f;
+        case 152318: return 2.747f;
+        case 152402: return 3.657f;
+        case 162101: return 2.054f;
+        case 162102: return 2.157f;
+        case 162103: return 2.123f;
+        case 162104: return 2.094f;
+        case 162105: return 4.106f;
+        case 162106: return 2.191f;
+        case 162107: return 2.264f;
+        case 162108: return 3.228f;
+        case 162201: return 2.052f;
+        case 162202: return 1.992f;
+        case 162203: return 1.687f;
+        case 162204: return 2.516f;
+        case 162205: return 2.687f;
+        case 162206: return 1.825f;
+        case 162207: return 2.015f;
+        case 162208: return 1.615f;
+        case 162209: return 2.632f;
+        case 162210: return 2.081f;
+        case 162211: return 2.430f;
+        case 162212: return 3.488f;
+        case 162213: return 2.738f;
+        case 162301: return 3.543f;
+        case 162303: return 1.936f;
+        case 162304: return 3.156f;
+        case 162305: return 0.899f;
+        case 162307: return 1.344f;
+        case 162308: return 2.333f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration3_Universal_en(id : int) : float
+{
+    switch (id)
+    {
+        case 162309: return 2.117f;
+        case 162310: return 2.099f;
+        case 162311: return 1.172f;
+        case 162312: return 1.295f;
+        case 162313: return 1.689f;
+        case 162314: return 3.315f;
+        case 162315: return 1.920f;
+        case 162316: return 3.301f;
+        case 162318: return 3.095f;
+        case 162401: return 3.950f;
+        case 200026: return 5.598f;
+        case 200028: return 2.192f;
+        case 200030: return 1.653f;
+        case 200031: return 2.484f;
+        case 200032: return 1.882f;
+        case 200033: return 1.372f;
+        case 200036: return 3.013f;
+        case 200039: return 2.230f;
+        case 200040: return 1.519f;
+        case 200042: return 2.732f;
+        case 200043: return 3.940f;
+        case 200044: return 1.309f;
+        case 200046: return 3.841f;
+        case 200048: return 2.005f;
+        case 200050: return 2.355f;
+        case 200055: return 3.181f;
+        case 200062: return 2.301f;
+        case 200071: return 2.836f;
+        case 200080: return 2.778f;
+        case 200081: return 2.732f;
+        case 200083: return 2.009f;
+        case 200087: return 2.989f;
+        case 200088: return 3.482f;
+        case 200089: return 3.460f;
+        case 200091: return 1.456f;
+        case 200098: return 2.164f;
+        case 200112: return 2.624f;
+        case 200115: return 1.424f;
+        case 200118: return 2.921f;
+        case 200124: return 2.216f;
+        case 200132: return 2.487f;
+        case 200135: return 2.518f;
+        case 200136: return 2.572f;
+        case 200138: return 4.110f;
+        case 200144: return 4.280f;
+        case 200145: return 2.745f;
+        case 200146: return 4.169f;
+        case 200147: return 2.842f;
+        case 200149: return 1.950f;
+        case 200159: return 3.009f;
+        case 200160: return 2.797f;
+        case 200161: return 2.398f;
+        case 200162: return 3.467f;
+        case 200163: return 3.703f;
+        case 200164: return 4.027f;
+        case 200165: return 2.159f;
+        case 200166: return 2.999f;
+        case 200167: return 3.402f;
+        case 200168: return 2.607f;
+        case 200169: return 1.613f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration4_Universal_en(id : int) : float
+{
+    switch (id)
+    {
+        case 200170: return 2.552f;
+        case 200171: return 2.902f;
+        case 200177: return 1.750f;
+        case 200209: return 2.258f;
+        case 200212: return 2.220f;
+        case 200219: return 3.950f;
+        case 200220: return 5.203f;
+        case 200221: return 5.688f;
+        case 200222: return 4.571f;
+        case 200227: return 3.079f;
+        case 200235: return 3.087f;
+        case 200236: return 1.195f;
+        case 200237: return 2.072f;
+        case 200293: return 4.123f;
+        case 200294: return 3.716f;
+        case 200296: return 3.587f;
+        case 200299: return 3.567f;
+        case 200518: return 1.760f;
+        case 200520: return 1.562f;
+        case 200523: return 1.943f;
+        case 200528: return 3.005f;
+        case 200529: return 2.568f;
+        case 200534: return 2.141f;
+        case 200535: return 2.956f;
+        case 200540: return 1.791f;
+        case 201523: return 3.207f;
+        case 201559: return 3.244f;
+        case 201578: return 1.563f;
+        case 201580: return 3.832f;
+        case 201587: return 1.606f;
+        case 201589: return 1.975f;
+        case 201595: return 3.092f;
+        case 201597: return 3.689f;
+        case 201601: return 3.025f;
+        case 201603: return 1.677f;
+        case 201609: return 1.550f;
+        case 201611: return 1.576f;
+        case 201612: return 1.951f;
+        case 201615: return 2.008f;
+        case 201616: return 4.267f;
+        case 201617: return 3.357f;
+        case 201618: return 2.828f;
+        case 201620: return 2.630f;
+        case 201621: return 4.178f;
+        case 201622: return 3.226f;
+        case 201624: return 2.036f;
+        case 201625: return 3.666f;
+        case 201626: return 2.485f;
+        case 201627: return 4.626f;
+        case 201628: return 3.430f;
+        case 201630: return 4.155f;
+        case 201636: return 0.759f;
+        case 201638: return 1.835f;
+        case 201644: return 1.756f;
+        case 201646: return 3.006f;
+        case 201650: return 1.184f;
+        case 201664: return 3.911f;
+        case 201676: return 0.750f;
+        case 201677: return 1.183f;
+        case 201753: return 1.183f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration5_Universal_en(id : int) : float
+{
+    switch (id)
+    {
+        case 201772: return 3.207f;
+        case 201773: return 1.352f;
+        case 201774: return 2.655f;
+        case 201776: return 2.655f;
+        case 201777: return 2.331f;
+        case 201778: return 1.750f;
+        case 201779: return 1.690f;
+        case 201780: return 3.025f;
+        case 201781: return 4.388f;
+        default: break;
+    }
+    return 0.0f;
+}
+
+function BetaGwentAudioEffect_Universal_en(id : int) : string
+{
+    if (id <= 122208) return BetaGwentAudioEffect0_Universal_en(id);
+    if (id <= 132304) return BetaGwentAudioEffect1_Universal_en(id);
+    if (id <= 152103) return BetaGwentAudioEffect2_Universal_en(id);
+    if (id <= 162211) return BetaGwentAudioEffect3_Universal_en(id);
+    if (id <= 200098) return BetaGwentAudioEffect4_Universal_en(id);
+    if (id <= 200457) return BetaGwentAudioEffect5_Universal_en(id);
+    if (id <= 201633) return BetaGwentAudioEffect6_Universal_en(id);
+    if (id <= 201817) return BetaGwentAudioEffect7_Universal_en(id);
+    return "";
+}
+function BetaGwentAudioEffect0_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 112101: return "bg79_fx_3395652692";
+        case 112102: return "bg79_fx_843060712";
+        case 112103: return "bg79_fx_3417224824";
+        case 112104: return "bg79_fx_898277553";
+        case 112105: return "bg79_fx_729252324";
+        case 112106: return "bg79_fx_1860557250";
+        case 112107: return "bg79_fx_714510181";
+        case 112108: return "bg79_fx_2626105800";
+        case 112109: return "bg79_fx_1852040582";
+        case 112110: return "bg79_fx_2541689051";
+        case 112111: return "bg79_fx_2362012063";
+        case 112112: return "bg79_fx_2524626359";
+        case 112113: return "bg79_fx_2942292010";
+        case 112201: return "bg79_fx_514482875";
+        case 112202: return "bg79_fx_1947806633";
+        case 112203: return "bg79_fx_1162524532";
+        case 112204: return "bg79_fx_514936602";
+        case 112205: return "bg79_fx_742380909";
+        case 112206: return "bg79_fx_2646226735";
+        case 112207: return "bg79_fx_4165426977";
+        case 112208: return "bg79_fx_1790304243";
+        case 112209: return "bg79_fx_1337068796";
+        case 112210: return "bg79_fx_2296117142";
+        case 112211: return "bg79_fx_3709520491";
+        case 112212: return "bg79_fx_2972894628";
+        case 112213: return "bg79_fx_3716756108";
+        case 112214: return "bg79_fx_519474258";
+        case 112215: return "bg79_fx_1630758310";
+        case 112401: return "bg79_fx_2790050995";
+        case 112402: return "bg79_fx_4262988425";
+        case 112403: return "bg79_fx_3108142615";
+        case 112404: return "bg79_fx_1144630390";
+        case 112405: return "bg79_fx_3695214425";
+        case 113102: return "bg79_fx_1574600827";
+        case 113201: return "bg79_fx_4222650809";
+        case 113206: return "bg79_fx_2231847513";
+        case 113207: return "bg79_fx_9080078";
+        case 113208: return "bg79_fx_3535926620";
+        case 113303: return "bg79_fx_4187462094";
+        case 113313: return "bg79_fx_1003645445";
+        case 113316: return "bg79_fx_3937828061";
+        case 113320: return "bg79_fx_4053812673";
+        case 113401: return "bg79_fx_4187462094";
+        case 113402: return "bg79_fx_4187462094";
+        case 122101: return "bg79_fx_3580922927";
+        case 122102: return "bg79_fx_1725897413";
+        case 122103: return "bg79_fx_2226063920";
+        case 122104: return "bg79_fx_7794445";
+        case 122105: return "bg79_fx_1081955402";
+        case 122106: return "bg79_fx_1612137249";
+        case 122107: return "bg79_fx_1395734064";
+        case 122108: return "bg79_fx_1929368006";
+        case 122201: return "bg79_fx_3953354843";
+        case 122202: return "bg79_fx_3773668558";
+        case 122203: return "bg79_fx_3562005998";
+        case 122204: return "bg79_fx_797142454";
+        case 122205: return "bg79_fx_718436193";
+        case 122206: return "bg79_fx_1837007562";
+        case 122207: return "bg79_fx_1769973425";
+        case 122208: return "bg79_fx_3312738020";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect1_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 122209: return "bg79_fx_2429636229";
+        case 122210: return "bg79_fx_300052383";
+        case 122211: return "bg79_fx_697011446";
+        case 122212: return "bg79_fx_607530292";
+        case 122213: return "bg79_fx_2058031734";
+        case 122214: return "bg79_fx_3465870946";
+        case 122216: return "bg79_fx_599458487";
+        case 122301: return "bg79_fx_3746294386";
+        case 122302: return "bg79_fx_1793989314";
+        case 122303: return "bg79_fx_3354855694";
+        case 122304: return "bg79_fx_1276046663";
+        case 122306: return "bg79_fx_1316872214";
+        case 122307: return "bg79_fx_1014180088";
+        case 122308: return "bg79_fx_4170618816";
+        case 122309: return "bg79_fx_3348587284";
+        case 122310: return "bg79_fx_4198348460";
+        case 122311: return "bg79_fx_1810880940";
+        case 122312: return "bg79_fx_1333662702";
+        case 122313: return "bg79_fx_1245156552";
+        case 122314: return "bg79_fx_3683057321";
+        case 122315: return "bg79_fx_3268082076";
+        case 122316: return "bg79_fx_1547581519";
+        case 122317: return "bg79_fx_1866548680";
+        case 122318: return "bg79_fx_4098545935";
+        case 122401: return "bg79_fx_3606443419";
+        case 122402: return "bg79_fx_3695318591";
+        case 122403: return "bg79_fx_1635422172";
+        case 123201: return "bg79_fx_1194450298";
+        case 123301: return "bg79_fx_3334557791";
+        case 131101: return "bg79_fx_2945270290";
+        case 131102: return "bg79_fx_2737476773";
+        case 132101: return "bg79_fx_3386564296";
+        case 132102: return "bg79_fx_2628887005";
+        case 132103: return "bg79_fx_170458611";
+        case 132104: return "bg79_fx_2388737177";
+        case 132105: return "bg79_fx_3025942366";
+        case 132106: return "bg79_fx_3026324263";
+        case 132107: return "bg79_fx_2226889185";
+        case 132108: return "bg79_fx_1434419550";
+        case 132201: return "bg79_fx_1260139933";
+        case 132202: return "bg79_fx_1046228664";
+        case 132203: return "bg79_fx_3422587878";
+        case 132204: return "bg79_fx_1406685045";
+        case 132205: return "bg79_fx_4173224394";
+        case 132206: return "bg79_fx_2245065751";
+        case 132207: return "bg79_fx_3120725056";
+        case 132208: return "bg79_fx_1735544563";
+        case 132209: return "bg79_fx_790759647";
+        case 132211: return "bg79_fx_3758437398";
+        case 132212: return "bg79_fx_2936760412";
+        case 132213: return "bg79_fx_4235389783";
+        case 132214: return "bg79_fx_763257575";
+        case 132215: return "bg79_fx_1377090531";
+        case 132216: return "bg79_fx_2129505533";
+        case 132217: return "bg79_fx_2142835913";
+        case 132218: return "bg79_fx_420309497";
+        case 132301: return "bg79_fx_3036675114";
+        case 132302: return "bg79_fx_890517457";
+        case 132303: return "bg79_fx_314595938";
+        case 132304: return "bg79_fx_455735080";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect2_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 132305: return "bg79_fx_3210037717";
+        case 132306: return "bg79_fx_3450648124";
+        case 132307: return "bg79_fx_1044570009";
+        case 132308: return "bg79_fx_2850556323";
+        case 132309: return "bg79_fx_3540597125";
+        case 132310: return "bg79_fx_3313104602";
+        case 132312: return "bg79_fx_4278347594";
+        case 132313: return "bg79_fx_1742122634";
+        case 132314: return "bg79_fx_2744585176";
+        case 132315: return "bg79_fx_2833673135";
+        case 132316: return "bg79_fx_798399388";
+        case 132402: return "bg79_fx_2054496824";
+        case 132403: return "bg79_fx_1602950149";
+        case 132404: return "bg79_fx_2624758006";
+        case 132405: return "bg79_fx_2361434004";
+        case 132406: return "bg79_fx_783529319";
+        case 132407: return "bg79_fx_2304783865";
+        case 132408: return "bg79_fx_65010424";
+        case 132409: return "bg79_fx_2384069016";
+        case 133301: return "bg79_fx_2335519656";
+        case 133302: return "bg79_fx_3082327472";
+        case 142101: return "bg79_fx_3603721956";
+        case 142102: return "bg79_fx_1531303984";
+        case 142103: return "bg79_fx_2825748729";
+        case 142104: return "bg79_fx_74233409";
+        case 142105: return "bg79_fx_1825710439";
+        case 142106: return "bg79_fx_1094876401";
+        case 142107: return "bg79_fx_3822054485";
+        case 142108: return "bg79_fx_2991740440";
+        case 142201: return "bg79_fx_1485513089";
+        case 142202: return "bg79_fx_1879690864";
+        case 142203: return "bg79_fx_2518805740";
+        case 142206: return "bg79_fx_526114196";
+        case 142207: return "bg79_fx_3218830508";
+        case 142209: return "bg79_fx_2982000626";
+        case 142211: return "bg79_fx_743392900";
+        case 142212: return "bg79_fx_2818418645";
+        case 142213: return "bg79_fx_1414677961";
+        case 142214: return "bg79_fx_1779347853";
+        case 142301: return "bg79_fx_1113233163";
+        case 142302: return "bg79_fx_210311833";
+        case 142303: return "bg79_fx_3326672827";
+        case 142304: return "bg79_fx_1839290106";
+        case 142306: return "bg79_fx_2611321864";
+        case 142307: return "bg79_fx_438751169";
+        case 142308: return "bg79_fx_115159051";
+        case 142309: return "bg79_fx_2597020897";
+        case 142310: return "bg79_fx_2763610169";
+        case 142311: return "bg79_fx_960997288";
+        case 142312: return "bg79_fx_1507469969";
+        case 142313: return "bg79_fx_2858722056";
+        case 142314: return "bg79_fx_1188458162";
+        case 142315: return "bg79_fx_2059381696";
+        case 142316: return "bg79_fx_3812338627";
+        case 142317: return "bg79_fx_660494302";
+        case 142401: return "bg79_fx_370542386";
+        case 143201: return "bg79_fx_54701386";
+        case 143301: return "bg79_fx_3099162218";
+        case 152101: return "bg79_fx_4175951973";
+        case 152103: return "bg79_fx_1303041810";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect3_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 152104: return "bg79_fx_2566025232";
+        case 152105: return "bg79_fx_218930060";
+        case 152106: return "bg79_fx_743515151";
+        case 152107: return "bg79_fx_3552589037";
+        case 152109: return "bg79_fx_553152945";
+        case 152201: return "bg79_fx_305236487";
+        case 152202: return "bg79_fx_1661743351";
+        case 152203: return "bg79_fx_4167522615";
+        case 152204: return "bg79_fx_1516696404";
+        case 152205: return "bg79_fx_2007746145";
+        case 152206: return "bg79_fx_4260849741";
+        case 152207: return "bg79_fx_3101408448";
+        case 152208: return "bg79_fx_4059346259";
+        case 152209: return "bg79_fx_212947329";
+        case 152210: return "bg79_fx_1560462341";
+        case 152211: return "bg79_fx_4116062743";
+        case 152213: return "bg79_fx_3124783719";
+        case 152214: return "bg79_fx_1927858084";
+        case 152301: return "bg79_fx_3679954868";
+        case 152302: return "bg79_fx_235803829";
+        case 152303: return "bg79_fx_1698235724";
+        case 152304: return "bg79_fx_4066851032";
+        case 152305: return "bg79_fx_2080899675";
+        case 152306: return "bg79_fx_2308834113";
+        case 152308: return "bg79_fx_1712563289";
+        case 152309: return "bg79_fx_1243862547";
+        case 152310: return "bg79_fx_1196562944";
+        case 152311: return "bg79_fx_2012880390";
+        case 152312: return "bg79_fx_1849620901";
+        case 152313: return "bg79_fx_62872992";
+        case 152314: return "bg79_fx_2260915605";
+        case 152315: return "bg79_fx_211889999";
+        case 152316: return "bg79_fx_4019434355";
+        case 152317: return "bg79_fx_668038284";
+        case 152318: return "bg79_fx_460332697";
+        case 152401: return "bg79_fx_2759789487";
+        case 152402: return "bg79_fx_13642409";
+        case 152403: return "bg79_fx_3058600845";
+        case 152405: return "bg79_fx_1611020239";
+        case 152406: return "bg79_fx_2359930005";
+        case 153201: return "bg79_fx_1192221305";
+        case 162101: return "bg79_fx_2572655564";
+        case 162102: return "bg79_fx_2090593881";
+        case 162103: return "bg79_fx_459365841";
+        case 162104: return "bg79_fx_2852011005";
+        case 162105: return "bg79_fx_610559508";
+        case 162106: return "bg79_fx_2091470217";
+        case 162107: return "bg79_fx_1251964638";
+        case 162108: return "bg79_fx_3699137582";
+        case 162201: return "bg79_fx_1656765553";
+        case 162202: return "bg79_fx_3621920039";
+        case 162203: return "bg79_fx_3113802096";
+        case 162204: return "bg79_fx_3150303364";
+        case 162205: return "bg79_fx_956497982";
+        case 162206: return "bg79_fx_2322591249";
+        case 162207: return "bg79_fx_2117936302";
+        case 162208: return "bg79_fx_3250806960";
+        case 162209: return "bg79_fx_3843277547";
+        case 162210: return "bg79_fx_3115686636";
+        case 162211: return "bg79_fx_1135117597";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect4_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 162212: return "bg79_fx_2629806217";
+        case 162213: return "bg79_fx_2352033111";
+        case 162301: return "bg79_fx_511855046";
+        case 162302: return "bg79_fx_3851131680";
+        case 162303: return "bg79_fx_876020117";
+        case 162304: return "bg79_fx_615450887";
+        case 162305: return "bg79_fx_2117257051";
+        case 162306: return "bg79_fx_3039358424";
+        case 162307: return "bg79_fx_4088214341";
+        case 162308: return "bg79_fx_2462400718";
+        case 162309: return "bg79_fx_2290784264";
+        case 162310: return "bg79_fx_3737210697";
+        case 162311: return "bg79_fx_3524423994";
+        case 162312: return "bg79_fx_3192994382";
+        case 162313: return "bg79_fx_3001399220";
+        case 162314: return "bg79_fx_2698371145";
+        case 162315: return "bg79_fx_3945861007";
+        case 162316: return "bg79_fx_2620476933";
+        case 162317: return "bg79_fx_2622121347";
+        case 162318: return "bg79_fx_1727178084";
+        case 162401: return "bg79_fx_3934557805";
+        case 162402: return "bg79_fx_3157388991";
+        case 200020: return "bg79_fx_1059850726";
+        case 200022: return "bg79_fx_4187523245";
+        case 200026: return "bg79_fx_1182087113";
+        case 200028: return "bg79_fx_3118774416";
+        case 200030: return "bg79_fx_1549498878";
+        case 200031: return "bg79_fx_1066386275";
+        case 200032: return "bg79_fx_2778933433";
+        case 200033: return "bg79_fx_1594434705";
+        case 200036: return "bg79_fx_3913679887";
+        case 200037: return "bg79_fx_3677776796";
+        case 200038: return "bg79_fx_3364093792";
+        case 200039: return "bg79_fx_2280701854";
+        case 200040: return "bg79_fx_1315577947";
+        case 200041: return "bg79_fx_1975983488";
+        case 200042: return "bg79_fx_2129747007";
+        case 200043: return "bg79_fx_199111628";
+        case 200044: return "bg79_fx_2309540397";
+        case 200046: return "bg79_fx_3290737338";
+        case 200048: return "bg79_fx_2470625356";
+        case 200049: return "bg79_fx_2653839007";
+        case 200050: return "bg79_fx_1845083974";
+        case 200052: return "bg79_fx_2096972889";
+        case 200055: return "bg79_fx_3144355508";
+        case 200056: return "bg79_fx_3183373472";
+        case 200058: return "bg79_fx_3004523106";
+        case 200062: return "bg79_fx_4056401408";
+        case 200067: return "bg79_fx_2993996216";
+        case 200071: return "bg79_fx_3506695817";
+        case 200073: return "bg79_fx_1168520071";
+        case 200079: return "bg79_fx_1145845125";
+        case 200080: return "bg79_fx_145034249";
+        case 200081: return "bg79_fx_3485594715";
+        case 200083: return "bg79_fx_2849822196";
+        case 200087: return "bg79_fx_2492269067";
+        case 200088: return "bg79_fx_2027970317";
+        case 200089: return "bg79_fx_1431788866";
+        case 200091: return "bg79_fx_3326742544";
+        case 200098: return "bg79_fx_3455889460";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect5_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 200102: return "bg79_fx_3896640832";
+        case 200103: return "bg79_fx_698833918";
+        case 200104: return "bg79_fx_3697941869";
+        case 200105: return "bg79_fx_2477921360";
+        case 200112: return "bg79_fx_827673070";
+        case 200114: return "bg79_fx_1347151243";
+        case 200115: return "bg79_fx_59578087";
+        case 200118: return "bg79_fx_1462724796";
+        case 200124: return "bg79_fx_1245425858";
+        case 200132: return "bg79_fx_3451911606";
+        case 200135: return "bg79_fx_271085077";
+        case 200136: return "bg79_fx_2095947162";
+        case 200138: return "bg79_fx_1208904748";
+        case 200139: return "bg79_fx_2810674676";
+        case 200144: return "bg79_fx_4221182000";
+        case 200145: return "bg79_fx_2712173473";
+        case 200146: return "bg79_fx_151260701";
+        case 200147: return "bg79_fx_3523608578";
+        case 200149: return "bg79_fx_2745495503";
+        case 200154: return "bg79_fx_1408793683";
+        case 200158: return "bg79_fx_2932762600";
+        case 200159: return "bg79_fx_2643703843";
+        case 200160: return "bg79_fx_2681268150";
+        case 200161: return "bg79_fx_758500920";
+        case 200162: return "bg79_fx_168363967";
+        case 200163: return "bg79_fx_3314643367";
+        case 200164: return "bg79_fx_551784047";
+        case 200165: return "bg79_fx_3914426836";
+        case 200166: return "bg79_fx_654382569";
+        case 200167: return "bg79_fx_694443607";
+        case 200168: return "bg79_fx_376634067";
+        case 200169: return "bg79_fx_1669805897";
+        case 200170: return "bg79_fx_1323369845";
+        case 200171: return "bg79_fx_2823476682";
+        case 200177: return "bg79_fx_4152133840";
+        case 200209: return "bg79_fx_2540682936";
+        case 200212: return "bg79_fx_3578640335";
+        case 200218: return "bg79_fx_2759789487";
+        case 200219: return "bg79_fx_3934557805";
+        case 200220: return "bg79_fx_1861355436";
+        case 200221: return "bg79_fx_509805234";
+        case 200222: return "bg79_fx_734756496";
+        case 200223: return "bg79_fx_2648271288";
+        case 200227: return "bg79_fx_2763233827";
+        case 200228: return "bg79_fx_4263307925";
+        case 200233: return "bg79_fx_3244471482";
+        case 200235: return "bg79_fx_893102762";
+        case 200236: return "bg79_fx_1249031769";
+        case 200237: return "bg79_fx_3905627684";
+        case 200293: return "bg79_fx_302707243";
+        case 200294: return "bg79_fx_1855197648";
+        case 200295: return "bg79_fx_3428553790";
+        case 200296: return "bg79_fx_3283491899";
+        case 200299: return "bg79_fx_3410258784";
+        case 200300: return "bg79_fx_4225939140";
+        case 200301: return "bg79_fx_2646552586";
+        case 200307: return "bg79_fx_705079428";
+        case 200308: return "bg79_fx_2098895937";
+        case 200320: return "bg79_fx_2148182659";
+        case 200457: return "bg79_fx_1602253521";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect6_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 200502: return "bg79_fx_2189560840";
+        case 200518: return "bg79_fx_2826842583";
+        case 200519: return "bg79_fx_3149355844";
+        case 200520: return "bg79_fx_3870582423";
+        case 200523: return "bg79_fx_2638787903";
+        case 200528: return "bg79_fx_2733297292";
+        case 200529: return "bg79_fx_2044411266";
+        case 200530: return "bg79_fx_3218657141";
+        case 200532: return "bg79_fx_3467493194";
+        case 200534: return "bg79_fx_3649892210";
+        case 200535: return "bg79_fx_2301585369";
+        case 200539: return "bg79_fx_2057664872";
+        case 200540: return "bg79_fx_4078195304";
+        case 201523: return "bg79_fx_1738240167";
+        case 201559: return "bg79_fx_383348813";
+        case 201572: return "bg79_fx_928093079";
+        case 201573: return "bg79_fx_928093079";
+        case 201574: return "bg79_fx_928093079";
+        case 201576: return "bg79_fx_3257280898";
+        case 201578: return "bg79_fx_426366733";
+        case 201579: return "bg79_fx_2552033768";
+        case 201580: return "bg79_fx_4215366690";
+        case 201581: return "bg79_fx_264214796";
+        case 201582: return "bg79_fx_1705643005";
+        case 201583: return "bg79_fx_3301666287";
+        case 201584: return "bg79_fx_1772301427";
+        case 201585: return "bg79_fx_1092174218";
+        case 201587: return "bg79_fx_2153263156";
+        case 201589: return "bg79_fx_886436088";
+        case 201595: return "bg79_fx_2005942592";
+        case 201597: return "bg79_fx_2197086276";
+        case 201598: return "bg79_fx_130834792";
+        case 201599: return "bg79_fx_808785438";
+        case 201600: return "bg79_fx_2208595502";
+        case 201601: return "bg79_fx_1133501108";
+        case 201603: return "bg79_fx_2076616595";
+        case 201606: return "bg79_fx_3340179963";
+        case 201609: return "bg79_fx_3100197490";
+        case 201610: return "bg79_fx_2204062891";
+        case 201611: return "bg79_fx_3847358238";
+        case 201612: return "bg79_fx_598700268";
+        case 201613: return "bg79_fx_3457594024";
+        case 201615: return "bg79_fx_3356290799";
+        case 201616: return "bg79_fx_2969179751";
+        case 201617: return "bg79_fx_1681003615";
+        case 201618: return "bg79_fx_242626593";
+        case 201619: return "bg79_fx_4049938297";
+        case 201620: return "bg79_fx_828451047";
+        case 201621: return "bg79_fx_6420008";
+        case 201622: return "bg79_fx_2944625364";
+        case 201623: return "bg79_fx_995383832";
+        case 201624: return "bg79_fx_1133083862";
+        case 201625: return "bg79_fx_152104257";
+        case 201626: return "bg79_fx_539939818";
+        case 201627: return "bg79_fx_1811396259";
+        case 201628: return "bg79_fx_4276764203";
+        case 201630: return "bg79_fx_1596833807";
+        case 201631: return "bg79_fx_3668370841";
+        case 201632: return "bg79_fx_774960951";
+        case 201633: return "bg79_fx_3707205680";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect7_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 201635: return "bg79_fx_1965642969";
+        case 201636: return "bg79_fx_1305507018";
+        case 201638: return "bg79_fx_2465089435";
+        case 201639: return "bg79_fx_1885398964";
+        case 201642: return "bg79_fx_3032433713";
+        case 201643: return "bg79_fx_3139012559";
+        case 201644: return "bg79_fx_467976388";
+        case 201645: return "bg79_fx_2800663406";
+        case 201646: return "bg79_fx_569627432";
+        case 201647: return "bg79_fx_498171762";
+        case 201648: return "bg79_fx_41143281";
+        case 201650: return "bg79_fx_4133624602";
+        case 201653: return "bg79_fx_37523589";
+        case 201656: return "bg79_fx_2434224223";
+        case 201657: return "bg79_fx_1555453165";
+        case 201659: return "bg79_fx_1431587589";
+        case 201660: return "bg79_fx_2775893284";
+        case 201661: return "bg79_fx_3032580174";
+        case 201662: return "bg79_fx_2339672278";
+        case 201664: return "bg79_fx_37145074";
+        case 201676: return "bg79_fx_4230839019";
+        case 201677: return "bg79_fx_596493021";
+        case 201696: return "bg79_fx_2121222704";
+        case 201697: return "bg79_fx_3141758510";
+        case 201698: return "bg79_fx_1748759717";
+        case 201699: return "bg79_fx_2163368424";
+        case 201700: return "bg79_fx_3100370955";
+        case 201701: return "bg79_fx_2374244000";
+        case 201704: return "bg79_fx_2672669793";
+        case 201725: return "bg79_fx_4211756470";
+        case 201731: return "bg79_fx_1077351896";
+        case 201737: return "bg79_fx_189803036";
+        case 201743: return "bg79_fx_1985436563";
+        case 201748: return "bg79_fx_2067274392";
+        case 201749: return "bg79_fx_2488424434";
+        case 201753: return "bg79_fx_596493021";
+        case 201758: return "bg79_fx_1602253521";
+        case 201772: return "bg79_fx_1212383624";
+        case 201773: return "bg79_fx_2496638614";
+        case 201774: return "bg79_fx_3044471817";
+        case 201776: return "bg79_fx_3044471816";
+        case 201777: return "bg79_fx_416157938";
+        case 201778: return "bg79_fx_2347161295";
+        case 201780: return "bg79_fx_562867060";
+        case 201781: return "bg79_fx_3468192666";
+        case 201817: return "bg79_fx_6172555";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceVariant_Universal_en(id : int, roll : int) : string
+{
+    if(id <= 112203)return BetaGwentAudioVoiceVariantPart0_Universal_en(id,roll);
+    if(id <= 122101)return BetaGwentAudioVoiceVariantPart1_Universal_en(id,roll);
+    if(id <= 122208)return BetaGwentAudioVoiceVariantPart2_Universal_en(id,roll);
+    if(id <= 122313)return BetaGwentAudioVoiceVariantPart3_Universal_en(id,roll);
+    if(id <= 132207)return BetaGwentAudioVoiceVariantPart4_Universal_en(id,roll);
+    if(id <= 142108)return BetaGwentAudioVoiceVariantPart5_Universal_en(id,roll);
+    if(id <= 142302)return BetaGwentAudioVoiceVariantPart6_Universal_en(id,roll);
+    if(id <= 142401)return BetaGwentAudioVoiceVariantPart7_Universal_en(id,roll);
+    if(id <= 152211)return BetaGwentAudioVoiceVariantPart8_Universal_en(id,roll);
+    if(id <= 152316)return BetaGwentAudioVoiceVariantPart9_Universal_en(id,roll);
+    if(id <= 162204)return BetaGwentAudioVoiceVariantPart10_Universal_en(id,roll);
+    if(id <= 162308)return BetaGwentAudioVoiceVariantPart11_Universal_en(id,roll);
+    if(id <= 200032)return BetaGwentAudioVoiceVariantPart12_Universal_en(id,roll);
+    if(id <= 200081)return BetaGwentAudioVoiceVariantPart13_Universal_en(id,roll);
+    if(id <= 200144)return BetaGwentAudioVoiceVariantPart14_Universal_en(id,roll);
+    if(id <= 200169)return BetaGwentAudioVoiceVariantPart15_Universal_en(id,roll);
+    if(id <= 200294)return BetaGwentAudioVoiceVariantPart16_Universal_en(id,roll);
+    if(id <= 201587)return BetaGwentAudioVoiceVariantPart17_Universal_en(id,roll);
+    if(id <= 201622)return BetaGwentAudioVoiceVariantPart18_Universal_en(id,roll);
+    if(id <= 201753)return BetaGwentAudioVoiceVariantPart19_Universal_en(id,roll);
+    if(id <= 201781)return BetaGwentAudioVoiceVariantPart20_Universal_en(id,roll);
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart0_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 112101:
+        if(roll%100<25)return "bg79_vo_CIRI_CIRILLA_01040512";
+        if(roll%100<50)return "bg79_vo_CIRI_CIRILLA_01040548";
+        if(roll%100<75)return "bg79_vo_CIRI_Q111_00536478";
+        if(roll%100<100)return "bg79_vo_CIRI_Q310_00579530";
+        break;
+    case 112102:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 112103:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 112104:
+        if(roll%100<40)return "bg79_vo_REGI_Q702_01155230";
+        if(roll%100<60)return "bg79_vo_REGI_Q702_01155490";
+        if(roll%100<100)return "bg79_vo_REGI_Q702_01178597";
+        break;
+    case 112105:
+        if(roll%100<100)return "bg79_vo_katakan_taunt_short_003";
+        break;
+    case 112106:
+        if(roll%100<17)return "bg79_vo_TRSS_Q310_00545347";
+        if(roll%100<33)return "bg79_vo_VO_TRIS_100285_0008";
+        if(roll%100<50)return "bg79_vo_VO_TRIS_104122_2446";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_17";
+        if(roll%100<84)return "bg79_vo_SAY_Battlecries_18";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_19";
+        break;
+    case 112108:
+        if(roll%100<33)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<66)return "bg79_vo_YENN_YENNEFER_01041493";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041495";
+        break;
+    case 112109:
+        if(roll%100<24)return "bg79_vo_ZOLT_Q310_01062198";
+        if(roll%100<48)return "bg79_vo_ZOLT_Q403_00575678";
+        if(roll%100<72)return "bg79_vo_ZOLT_ZOLTAN_01040657";
+        if(roll%100<96)return "bg79_vo_ZOLT_ZOLTAN_01040651";
+        if(roll%100<100)return "bg79_vo_ZOLT_ZOLTAN_01040649";
+        break;
+    case 112110:
+        if(roll%100<25)return "bg79_vo_CIRI_CIRILLA_01040512";
+        if(roll%100<50)return "bg79_vo_CIRI_CIRILLA_01040548";
+        if(roll%100<75)return "bg79_vo_CIRI_Q111_00536478";
+        if(roll%100<100)return "bg79_vo_CIRI_Q310_00579530";
+        break;
+    case 112111:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 112112:
+        if(roll%100<25)return "bg79_vo_AVLC_Q311_00454814";
+        if(roll%100<50)return "bg79_vo_AVLC_Q311_00584753";
+        if(roll%100<75)return "bg79_vo_AVLC_Q311_01022646";
+        if(roll%100<100)return "bg79_vo_AVLC_Q311_00312745";
+        break;
+    case 112113:
+        if(roll%100<33)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<66)return "bg79_vo_YENN_YENNEFER_01041493";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041495";
+        break;
+    case 112201:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_816";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_817";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_818";
+        break;
+    case 112202:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_21";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_22";
+        if(roll%100<92)return "bg79_vo_SAY_Battlecries_23";
+        if(roll%100<100)return "bg79_vo_ESKL_ESKEL_01037262";
+        break;
+    case 112203:
+        if(roll%100<33)return "bg79_vo_VSMR_Q001_00546725";
+        if(roll%100<66)return "bg79_vo_VSMR_VESEMIR_01000012";
+        if(roll%100<100)return "bg79_vo_VSMR_VESEMIR_01040765";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart1_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 112204:
+        if(roll%100<17)return "bg79_vo_LMBT_Q401_00523875";
+        if(roll%100<34)return "bg79_vo_LMBT_Q401_00531130";
+        if(roll%100<51)return "bg79_vo_LMBT_Q401_01058899";
+        if(roll%100<68)return "bg79_vo_LMBT_Q403_00550012";
+        if(roll%100<85)return "bg79_vo_LMBT_SQ106_00586496";
+        if(roll%100<100)return "bg79_vo_LMBT_Q403_00572964";
+        break;
+    case 112205:
+        if(roll%100<33)return "bg79_vo_wyvern_v2_vo_ADD_008";
+        if(roll%100<66)return "bg79_vo_wyvern_v2_vo_ADD_009";
+        if(roll%100<100)return "bg79_vo_wyvern_v2_vo_ADD_010";
+        break;
+    case 112206:
+        if(roll%100<33)return "bg79_vo_wyvern_v2_vo_ADD_008";
+        if(roll%100<66)return "bg79_vo_wyvern_v2_vo_ADD_009";
+        if(roll%100<100)return "bg79_vo_wyvern_v2_vo_ADD_010";
+        break;
+    case 112207:
+        if(roll%100<33)return "bg79_vo_OLGD_Q603_01101145";
+        if(roll%100<66)return "bg79_vo_OLGD_Q603_01101591";
+        if(roll%100<100)return "bg79_vo_OLGD_Q604_01137773";
+        break;
+    case 112208:
+        if(roll%100<50)return "bg79_vo_VO_OPRT_204113_0001";
+        if(roll%100<100)return "bg79_vo_VO_OPRT_204113_0012";
+        break;
+    case 112211:
+        if(roll%100<30)return "bg79_vo_GJHN_Q105_00417768";
+        if(roll%100<65)return "bg79_vo_GJHN_Q105_00420525";
+        if(roll%100<100)return "bg79_vo_GJHN_Q111_01011367";
+        break;
+    case 112212:
+        if(roll%100<33)return "bg79_vo_GSAR_Q301_00484178";
+        if(roll%100<66)return "bg79_vo_GSAR_Q301_00493632";
+        if(roll%100<100)return "bg79_vo_GSAR_GODLING_01059640";
+        break;
+    case 112213:
+        if(roll%100<25)return "bg79_vo_KGBG_Q301_00486502";
+        if(roll%100<50)return "bg79_vo_KGBG_Q301_00487409";
+        if(roll%100<75)return "bg79_vo_KGBG_Q301_00499725";
+        if(roll%100<100)return "bg79_vo_KGBG_Q302_00487960";
+        break;
+    case 112214:
+        if(roll%100<33)return "bg79_vo_WILY_Q302_00443324";
+        if(roll%100<66)return "bg79_vo_WILY_Q302_00514329";
+        if(roll%100<100)return "bg79_vo_WILY_Q302_00547590";
+        break;
+    case 112215:
+        if(roll%100<33)return "bg79_vo_IRIS_Q604_01106159";
+        if(roll%100<66)return "bg79_vo_IRIS_Q604_01106875";
+        if(roll%100<100)return "bg79_vo_IRIS_Q604_01106944";
+        break;
+    case 112403:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_25";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_26";
+        break;
+    case 112404:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_25";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_26";
+        break;
+    case 113208:
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_821";
+        break;
+    case 113313:
+        if(roll%300<33)return "bg79_vo_SAY_Battlecries_part5_326";
+        if(roll%300<66)return "bg79_vo_SAY_Battlecries_part5_327";
+        if(roll%300<100)return "bg79_vo_SAY_Battlecries_part5_328";
+        if(roll%300<200)return "bg79_vo_SAY_Battlecries_part5_329";
+        if(roll%300<300)return "bg79_vo_SAY_Battlecries_part5_330";
+        break;
+    case 122101:
+        if(roll%100<25)return "bg79_vo_BARN_Q102_00408798";
+        if(roll%100<50)return "bg79_vo_BARN_Q103_00473473";
+        if(roll%100<75)return "bg79_vo_BARN_Q107_00515406";
+        if(roll%100<100)return "bg79_vo_BARN_BARON_00402523";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart2_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 122102:
+        if(roll%100<50)return "bg79_vo_ROCH_MQ3035_01064844";
+        if(roll%100<100)return "bg79_vo_ROCH_ROCHE_00541126";
+        break;
+    case 122103:
+        if(roll%100<50)return "bg79_vo_VO_JANT_300862_0253";
+        if(roll%100<100)return "bg79_vo_VO_JANT_900381_0141";
+        break;
+    case 122104:
+        if(roll%100<21)return "bg79_vo_PHIL_PHILIPPA_01041424";
+        if(roll%100<44)return "bg79_vo_PHIL_PHILIPPA_01041426";
+        if(roll%100<66)return "bg79_vo_PHIL_Q310_00533376";
+        if(roll%100<78)return "bg79_vo_PHIL_Q502_00555967";
+        if(roll%100<100)return "bg79_vo_VO_FLPA_300358_0012";
+        break;
+    case 122105:
+        if(roll%100<25)return "bg79_vo_DJKS_MQ3035_01067766";
+        if(roll%100<50)return "bg79_vo_DJKS_Q303_00486613";
+        if(roll%100<75)return "bg79_vo_DJKS_Q303_00417640";
+        if(roll%100<100)return "bg79_vo_DJKS_Q303_00378559";
+        break;
+    case 122106:
+        if(roll%100<33)return "bg79_vo_SHNI_Q602_01119358";
+        if(roll%100<66)return "bg79_vo_SHNI_Q601_01101942";
+        if(roll%100<100)return "bg79_vo_SHNI_SHANI_01130725";
+        break;
+    case 122107:
+        if(roll%100<16)return "bg79_vo_TRSS_Q310_00545347";
+        if(roll%100<33)return "bg79_vo_VO_TRIS_100285_0008";
+        if(roll%100<50)return "bg79_vo_VO_TRIS_104122_2446";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_17";
+        if(roll%100<84)return "bg79_vo_SAY_Battlecries_18";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_19";
+        break;
+    case 122108:
+        if(roll%100<25)return "bg79_vo_KEIR_KEIRA_00475332";
+        if(roll%100<50)return "bg79_vo_KEIR_KEIRA_01040781";
+        if(roll%100<75)return "bg79_vo_KEIR_SQ101_00565661";
+        if(roll%100<100)return "bg79_vo_KEIR_SQ101_00590073";
+        break;
+    case 122201:
+        if(roll%100<15)return "bg79_vo_SAY_Battlecries_5";
+        if(roll%100<29)return "bg79_vo_SAY_Battlecries_7";
+        if(roll%100<44)return "bg79_vo_SAY_Battlecries_6";
+        if(roll%100<58)return "bg79_vo_DAND_DANDELION_00429307";
+        if(roll%100<73)return "bg79_vo_DAND_Q302_00489393";
+        if(roll%100<86)return "bg79_vo_DAND_Q302_00490269";
+        if(roll%100<100)return "bg79_vo_VO_JSKR_100926_0188";
+        break;
+    case 122202:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_9";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_10";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_11";
+        if(roll%100<100)return "bg79_vo_PRIS_Q305_00489643";
+        break;
+    case 122203:
+        if(roll%100<33)return "bg79_vo_TALA_SQ315_01067599";
+        if(roll%100<66)return "bg79_vo_TALA_SQ315_01067657";
+        if(roll%100<100)return "bg79_vo_TALA_SQ315_01067677";
+        break;
+    case 122204:
+        if(roll%100<25)return "bg79_vo_VESS_MQ3035_01064809";
+        if(roll%100<50)return "bg79_vo_VESS_MQ3035_01071150";
+        if(roll%100<75)return "bg79_vo_VESS_Q403_00546798";
+        if(roll%100<100)return "bg79_vo_VESS_VES_01070698";
+        break;
+    case 122205:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_29";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_30";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_31";
+        break;
+    case 122206:
+        if(roll%100<33)return "bg79_vo_VO_SABR_200216_0037";
+        if(roll%100<53)return "bg79_vo_VO_SABR_200216_0064";
+        if(roll%100<100)return "bg79_vo_VO_SABR_200216_0101";
+        break;
+    case 122207:
+        if(roll%100<33)return "bg79_vo_VO_DETM_200182_0001";
+        if(roll%100<66)return "bg79_vo_VO_DETM_200219_0001";
+        if(roll%100<100)return "bg79_vo_VO_DETM_200338_0412";
+        break;
+    case 122208:
+        if(roll%100<33)return "bg79_vo_VO_STEN_200098_0258";
+        if(roll%100<66)return "bg79_vo_VO_STEN_200046_0316";
+        if(roll%100<100)return "bg79_vo_VO_STEN_200046_0302";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart3_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 122209:
+        if(roll%100<65)return "bg79_vo_TRL1_MQ1022_00466604";
+        if(roll%100<100)return "bg79_vo_TRL1_MQ1022_00468246";
+        break;
+    case 122210:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_37";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_38";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_39";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_40";
+        break;
+    case 122211:
+        if(roll%100<33)return "bg79_vo_MGLA_MARGARITTA_01012961";
+        if(roll%100<66)return "bg79_vo_MGLA_Q210_00584250";
+        if(roll%100<100)return "bg79_vo_MGLA_Q310_00562485";
+        break;
+    case 122212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_42";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_43";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_44";
+        break;
+    case 122213:
+        if(roll%100<33)return "bg79_vo_VO_ODRI_200481_0002";
+        if(roll%100<66)return "bg79_vo_VO_ODRI_200546_0001";
+        if(roll%100<100)return "bg79_vo_VO_ODRI_200559_0001";
+        break;
+    case 122214:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_46";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_48";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_47";
+        break;
+    case 122216:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_21";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_23";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_22";
+        break;
+    case 122306:
+        if(roll%100<33)return "bg79_vo_VO_ZDZI_003478_0007";
+        if(roll%100<66)return "bg79_vo_VO_ZDZI_003478_0049";
+        if(roll%100<100)return "bg79_vo_VO_ZDZI_003478_0097";
+        break;
+    case 122307:
+        if(roll%100<33)return "bg79_vo_VO_NG01_003478_0008";
+        if(roll%100<66)return "bg79_vo_VO_NG01_003478_0060";
+        if(roll%100<100)return "bg79_vo_VO_NG01_003478_0126";
+        break;
+    case 122308:
+        if(roll%100<33)return "bg79_vo_RES1_VSET_00508237";
+        if(roll%100<66)return "bg79_vo_RES1_VSET_00508445";
+        if(roll%100<100)return "bg79_vo_RES1_VSET_00508451";
+        break;
+    case 122309:
+        if(roll%100<33)return "bg79_vo_VO_KG01_200564_0001";
+        if(roll%100<66)return "bg79_vo_VO_KG01_202928_0014";
+        if(roll%100<100)return "bg79_vo_VO_KG01_202928_0016";
+        break;
+    case 122310:
+        if(roll%100<33)return "bg79_vo_VO_RS01_101992_0004";
+        if(roll%100<66)return "bg79_vo_VO_RS01_106541_0014";
+        if(roll%100<100)return "bg79_vo_VO_ROS1_102779_0005";
+        break;
+    case 122311:
+        if(roll%100<33)return "bg79_vo_VO_RS03_106543_0003";
+        if(roll%100<67)return "bg79_vo_VO_RS03_106543_0004";
+        if(roll%100<100)return "bg79_vo_VO_ROS3_102779_0003";
+        break;
+    case 122312:
+        if(roll%100<33)return "bg79_vo_NCIW1_VSET_00564889";
+        if(roll%100<66)return "bg79_vo_NCIW1_VSET_00564891";
+        if(roll%100<100)return "bg79_vo_NCIW1_VSET_00566917";
+        break;
+    case 122313:
+        if(roll%100<33)return "bg79_vo_VO_KG06_200420_0005";
+        if(roll%100<66)return "bg79_vo_VO_KG06_202931_0005";
+        if(roll%100<100)return "bg79_vo_VO_KG06_202931_0012";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart4_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 122314:
+        if(roll%100<33)return "bg79_vo_VO_KG02_200565_0005";
+        if(roll%100<66)return "bg79_vo_VO_KG02_202929_0003";
+        if(roll%100<100)return "bg79_vo_VO_KG02_202929_0004";
+        break;
+    case 122316:
+        if(roll%100<33)return "bg79_vo_TBAN2_VSET_00591990";
+        if(roll%100<66)return "bg79_vo_TBAN2_VSET_00591997";
+        if(roll%100<100)return "bg79_vo_TBAN2_VSET_01044560";
+        break;
+    case 122317:
+        if(roll%100<33)return "bg79_vo_REOF1_VSET_00516089";
+        if(roll%100<66)return "bg79_vo_REOF1_VSET_00516091";
+        if(roll%100<100)return "bg79_vo_REOF1_VSET_00516093";
+        break;
+    case 122318:
+        if(roll%100<50)return "bg79_vo_VO_KE01_203352_0004";
+        if(roll%100<100)return "bg79_vo_VO_KE01_203352_0006";
+        break;
+    case 122403:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_819";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_820";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_821";
+        break;
+    case 123301:
+        if(roll%300<33)return "bg79_vo_SAY_Battlecries_part5_320";
+        if(roll%300<66)return "bg79_vo_SAY_Battlecries_part5_321";
+        if(roll%300<100)return "bg79_vo_SAY_Battlecries_part5_322";
+        if(roll%300<200)return "bg79_vo_SAY_Battlecries_part5_323";
+        if(roll%300<300)return "bg79_vo_SAY_Battlecries_part5_324";
+        break;
+    case 131101:
+        if(roll%100<33)return "bg79_vo_ERDN_EREDIN_01040754";
+        if(roll%100<66)return "bg79_vo_ERDN_EREDIN_01040841";
+        if(roll%100<100)return "bg79_vo_ERDN_Q501_00534051";
+        break;
+    case 131102:
+        if(roll%100<65)return "bg79_vo_GEEL_Q311_00312236";
+        if(roll%100<100)return "bg79_vo_GEEL_Q311_00312005";
+        break;
+    case 132101:
+        if(roll%100<33)return "bg79_vo_VO_DRUG_200317_0011";
+        if(roll%100<66)return "bg79_vo_VO_DRUG_200216_0078";
+        if(roll%100<100)return "bg79_vo_VO_DRUG_200216_0079";
+        break;
+    case 132102:
+        if(roll%100<33)return "bg79_vo_IMLR_Q111_01062046";
+        if(roll%100<66)return "bg79_vo_IMLR_Q403_00524739";
+        if(roll%100<100)return "bg79_vo_IMLR_Q403_00524776";
+        break;
+    case 132104:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_189";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_192";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_191";
+        break;
+    case 132105:
+        if(roll%100<25)return "bg79_vo_AVLC_Q311_00454814";
+        if(roll%100<50)return "bg79_vo_AVLC_Q311_00584753";
+        if(roll%100<75)return "bg79_vo_AVLC_Q311_01022646";
+        if(roll%100<100)return "bg79_vo_AVLC_Q311_00312745";
+        break;
+    case 132108:
+        if(roll%100<33)return "bg79_vo_SCC3_VSET_01053091";
+        if(roll%100<66)return "bg79_vo_SCC3_VSET_01053077";
+        if(roll%100<100)return "bg79_vo_SCC3_VSET_01053075";
+        break;
+    case 132206:
+        if(roll%100<33)return "bg79_vo_WHSP_Q105_00382577";
+        if(roll%100<66)return "bg79_vo_WHSP_Q105_00419057";
+        if(roll%100<100)return "bg79_vo_WHSP_Q105_00419061";
+        break;
+    case 132207:
+        if(roll%100<50)return "bg79_vo_BREW_Q105_00531820";
+        if(roll%100<100)return "bg79_vo_BREW_Q111_00576135";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart5_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 132208:
+        if(roll%100<33)return "bg79_vo_WEAV_Q105_00531814";
+        if(roll%100<66)return "bg79_vo_WEAV_Q503_00578937";
+        if(roll%100<100)return "bg79_vo_WEAV_Q503_00579064";
+        break;
+    case 132211:
+        if(roll%100<50)return "bg79_vo_nekker_scream_006";
+        if(roll%100<100)return "bg79_vo_nekker_scream_004";
+        break;
+    case 132212:
+        if(roll%100<50)return "bg79_vo_ice_giant_aggro06";
+        if(roll%100<100)return "bg79_vo_ice_giant_aggro07";
+        break;
+    case 132214:
+        if(roll%100<40)return "bg79_vo_WHW1_Q104_00555148";
+        if(roll%100<70)return "bg79_vo_WHW1_Q104_00555150";
+        if(roll%100<100)return "bg79_vo_WHW1_Q104_00555151";
+        break;
+    case 132215:
+        if(roll%100<20)return "bg79_vo_MRRR_Q602_01116657";
+        if(roll%100<40)return "bg79_vo_MRRR_Q605_01108152";
+        if(roll%100<60)return "bg79_vo_MRRR_Q605_01108178";
+        if(roll%100<80)return "bg79_vo_MRRR_Q605_01110505";
+        if(roll%100<100)return "bg79_vo_MRRR_Q605_01132010";
+        break;
+    case 132305:
+        if(roll%100<45)return "bg79_vo_nekker_attack_004";
+        if(roll%100<90)return "bg79_vo_nekker_attack_009";
+        if(roll%100<100)return "bg79_vo_nekker_mumble_003";
+        break;
+    case 132309:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_792";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_793";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_794";
+        break;
+    case 132310:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_796";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_797";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_798";
+        break;
+    case 142102:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_139";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_140";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_141";
+        break;
+    case 142103:
+        if(roll%100<30)return "bg79_vo_VO_IORW_100241_4474";
+        if(roll%100<60)return "bg79_vo_VO_IORW_101048_0181";
+        if(roll%100<90)return "bg79_vo_VO_IORW_101064_0046";
+        if(roll%100<100)return "bg79_vo_VO_IORW_102216_0006";
+        break;
+    case 142104:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_142";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_143";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_144";
+        break;
+    case 142105:
+        if(roll%100<24)return "bg79_vo_ZOLT_Q310_01062198";
+        if(roll%100<48)return "bg79_vo_ZOLT_Q403_00575678";
+        if(roll%100<72)return "bg79_vo_ZOLT_ZOLTAN_01040657";
+        if(roll%100<96)return "bg79_vo_ZOLT_ZOLTAN_01040651";
+        if(roll%100<100)return "bg79_vo_ZOLT_ZOLTAN_01040649";
+        break;
+    case 142106:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_152";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_153";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_154";
+        break;
+    case 142107:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_170";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_171";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_172";
+        break;
+    case 142108:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_186";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_187";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_188";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart6_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 142201:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_155";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_156";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_157";
+        break;
+    case 142202:
+        if(roll%100<40)return "bg79_vo_IDEM_Q401_00532088";
+        if(roll%100<100)return "bg79_vo_IDEM_Q401_00517579";
+        break;
+    case 142203:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_771";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_772";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_773";
+        break;
+    case 142204:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_776";
+        if(roll%100<73)return "bg79_vo_SAY_Battlecries_775";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_777";
+        break;
+    case 142206:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_160";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_159";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_158";
+        break;
+    case 142207:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_161";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_162";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_163";
+        break;
+    case 142208:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_164";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_165";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_166";
+        break;
+    case 142209:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_167";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_168";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_169";
+        break;
+    case 142210:
+        if(roll%100<33)return "bg79_vo_VO_MALN_106817_0005";
+        if(roll%100<66)return "bg79_vo_VO_MALN_106657_0009";
+        if(roll%100<100)return "bg79_vo_VO_MALN_106745_0017";
+        break;
+    case 142211:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_183";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_185";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_184";
+        break;
+    case 142212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_33";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_35";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_34";
+        break;
+    case 142213:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_784";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_785";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_786";
+        break;
+    case 142214:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_831";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_832";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_833";
+        break;
+    case 142301:
+        if(roll%100<33)return "bg79_vo_VSCF2_VSET_00523670";
+        if(roll%100<66)return "bg79_vo_VSCF2_VSET_00523672";
+        if(roll%100<100)return "bg79_vo_VSCF2_VSET_00523680";
+        break;
+    case 142302:
+        if(roll%100<33)return "bg79_vo_VO_SF01_102746_0038";
+        if(roll%100<67)return "bg79_vo_VO_SF01_102780_0001";
+        if(roll%100<100)return "bg79_vo_VO_SF01_102746_0035";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart7_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 142303:
+        if(roll%100<50)return "bg79_vo_VO_SF02_101662_0066";
+        if(roll%100<100)return "bg79_vo_VO_SF02_108969_0001";
+        break;
+    case 142304:
+        if(roll%100<33)return "bg79_vo_VO_SWF1_100532_0009";
+        if(roll%100<66)return "bg79_vo_VO_SWF1_109383_0001";
+        if(roll%100<100)return "bg79_vo_VO_SWF1_107697_0003";
+        break;
+    case 142306:
+        if(roll%100<33)return "bg79_vo_SCD1_VSET_00525279";
+        if(roll%100<66)return "bg79_vo_SCD1_VSET_00525429";
+        if(roll%100<100)return "bg79_vo_SCD1_VSET_00525431";
+        break;
+    case 142307:
+        if(roll%100<30)return "bg79_vo_VO_SMV2_202544_0022";
+        if(roll%100<65)return "bg79_vo_VO_SMV2_202963_0006";
+        if(roll%100<100)return "bg79_vo_VO_SMV2_202963_0007";
+        break;
+    case 142308:
+        if(roll%100<33)return "bg79_vo_VO_SWV2_202544_0023";
+        if(roll%100<66)return "bg79_vo_VO_SWV2_202544_0046";
+        if(roll%100<100)return "bg79_vo_VO_SWV2_202969_0004";
+        break;
+    case 142309:
+        if(roll%100<20)return "bg79_vo_VO_SF01_107685_0001";
+        if(roll%100<60)return "bg79_vo_VO_SF01_102746_0054";
+        if(roll%100<100)return "bg79_vo_VO_SF01_102746_0042";
+        break;
+    case 142310:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_801";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_802";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_803";
+        break;
+    case 142311:
+        if(roll%100<33)return "bg79_vo_SCD1_VSET_00526102";
+        if(roll%100<66)return "bg79_vo_SCD1_VSET_00526104";
+        if(roll%100<100)return "bg79_vo_SCD1_VSET_00525272";
+        break;
+    case 142312:
+        if(roll%100<15)return "bg79_vo_VBAN1_MQ1005_00358151";
+        if(roll%100<57)return "bg79_vo_VBAN1_MQ1005_00357973";
+        if(roll%100<100)return "bg79_vo_VBAN1_VSET_00592242";
+        break;
+    case 142313:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part2_2";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part2_3";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part2_4";
+        break;
+    case 142314:
+        if(roll%100<33)return "bg79_vo_VO_SWV1_202968_0006";
+        if(roll%100<67)return "bg79_vo_VO_SWV1_202968_0007";
+        if(roll%100<100)return "bg79_vo_VO_SWV1_202968_0012";
+        break;
+    case 142315:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part2_5";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part2_7";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part2_6";
+        break;
+    case 142316:
+        if(roll%100<33)return "bg79_vo_VO_SWV5_202972_0007";
+        if(roll%100<66)return "bg79_vo_VO_SWV5_202972_0006";
+        if(roll%100<100)return "bg79_vo_VO_SWV5_202972_0004";
+        break;
+    case 142317:
+        if(roll%100<33)return "bg79_vo_SCD34_VSET_01013381";
+        if(roll%100<66)return "bg79_vo_SCD34_VSET_01013371";
+        if(roll%100<100)return "bg79_vo_SCD34_VSET_01013385";
+        break;
+    case 142401:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_788";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_789";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_790";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart8_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 152101:
+        if(roll%100<25)return "bg79_vo_HJAL_HJALMAR_01037900";
+        if(roll%100<50)return "bg79_vo_HJAL_HJALMAR_01037904";
+        if(roll%100<75)return "bg79_vo_HJAL_HJALMAR_01037912";
+        if(roll%100<100)return "bg79_vo_HJAL_Q501_00568598";
+        break;
+    case 152103:
+        if(roll%100<50)return "bg79_vo_MOUS_Q210_00558067";
+        if(roll%100<100)return "bg79_vo_MOUS_Q403_00566059";
+        break;
+    case 152105:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_205";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_206";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_207";
+        break;
+    case 152106:
+        if(roll%100<50)return "bg79_vo_LUTM_LUGOS_00437813";
+        if(roll%100<100)return "bg79_vo_LUTM_SQ209_00593785";
+        break;
+    case 152107:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_202";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_203";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_204";
+        break;
+    case 152201:
+        if(roll%100<50)return "bg79_vo_LUTG_LUGOS_01038779";
+        if(roll%100<100)return "bg79_vo_LUTG_SQ209_00594723";
+        break;
+    case 152202:
+        if(roll%100<50)return "bg79_vo_TRL3_FF205_01053125";
+        if(roll%100<100)return "bg79_vo_TRL3_FF205_01053127";
+        break;
+    case 152203:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_804";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_805";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_806";
+        break;
+    case 152204:
+        if(roll%100<33)return "bg79_vo_DONR_DONAR_01037055";
+        if(roll%100<66)return "bg79_vo_DONR_DONAR_01037057";
+        if(roll%100<100)return "bg79_vo_DONR_Q206_00587479";
+        break;
+    case 152205:
+        if(roll%100<100)return "bg79_vo_SBR1_VSET_00527986";
+        break;
+    case 152206:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_828";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_829";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_830";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_834";
+        break;
+    case 152207:
+        if(roll%100<20)return "bg79_vo_HOLG_HOLGER_01038014";
+        if(roll%100<80)return "bg79_vo_HOLG_HOLGER_01038016";
+        if(roll%100<100)return "bg79_vo_HOLG_Q201_00387298";
+        break;
+    case 152208:
+        if(roll%100<33)return "bg79_vo_SWO4_MQ2038_00507987";
+        if(roll%100<66)return "bg79_vo_SWO4_MQ2038_00509565";
+        if(roll%100<100)return "bg79_vo_SWO4_MQ2038_00509731";
+        break;
+    case 152209:
+        if(roll%100<33)return "bg79_vo_MRKV_SQ201_00499647";
+        if(roll%100<66)return "bg79_vo_MRKV_SQ201_00501979";
+        if(roll%100<100)return "bg79_vo_MRKV_SQ201_00504630";
+        break;
+    case 152211:
+        if(roll%100<33)return "bg79_vo_SPR1_SHOP_00437650";
+        if(roll%100<66)return "bg79_vo_SPR1_SQ201_00499249";
+        if(roll%100<100)return "bg79_vo_SPR1_VSET_00553157";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart9_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 152213:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_208";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_209";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_210";
+        if(roll%100<80)return "bg79_vo_SVAN_Q210_00558425";
+        if(roll%100<100)return "bg79_vo_SVAN_Q210_01069128";
+        break;
+    case 152214:
+        if(roll%100<40)return "bg79_vo_UDAL_Q201_00166303";
+        if(roll%100<80)return "bg79_vo_UDAL_Q203_00501235";
+        if(roll%100<100)return "bg79_vo_UDAL_UDALRYK_01039823";
+        break;
+    case 152301:
+        if(roll%100<34)return "bg79_vo_SBE2_VSET_00536513";
+        if(roll%100<67)return "bg79_vo_SBE2_VSET_00536507";
+        if(roll%100<100)return "bg79_vo_SBE2_VSET_00536587";
+        break;
+    case 152302:
+        if(roll%100<34)return "bg79_vo_SBE1_Q206_00413021";
+        if(roll%100<67)return "bg79_vo_SBE1_VSET_00536089";
+        if(roll%100<100)return "bg79_vo_SBE1_VSET_00536097";
+        break;
+    case 152303:
+        if(roll%100<34)return "bg79_vo_SGD2_CHAT2_00165312";
+        if(roll%100<67)return "bg79_vo_SGD2_VSET_00541769";
+        if(roll%100<100)return "bg79_vo_SGD2_Q208_01071227";
+        break;
+    case 152304:
+        if(roll%100<33)return "bg79_vo_SGD6_VSET_00544491";
+        if(roll%100<66)return "bg79_vo_SGD6_VSET_00544501";
+        if(roll%100<100)return "bg79_vo_SGD6_VSET_00544569";
+        break;
+    case 152305:
+        if(roll%100<34)return "bg79_vo_SBD3_MQ2034_01013429";
+        if(roll%100<67)return "bg79_vo_SBD3_VSET_00526925";
+        if(roll%100<100)return "bg79_vo_SBD3_VSET_00527400";
+        break;
+    case 152306:
+        if(roll%100<33)return "bg79_vo_SBD1_MQ2002_00442097";
+        if(roll%100<66)return "bg79_vo_SBD1_Q202_00307483";
+        if(roll%100<100)return "bg79_vo_SBD1_MQ2034_01028167";
+        break;
+    case 152308:
+        if(roll%100<42)return "bg79_vo_DROG_BARD_01036857";
+        if(roll%100<84)return "bg79_vo_DROG_Q206_00329460";
+        if(roll%100<100)return "bg79_vo_DROG_Q206_01072830";
+        break;
+    case 152310:
+        if(roll%100<33)return "bg79_vo_SPR2_VSET_00553534";
+        if(roll%100<66)return "bg79_vo_SPR2_VSET_00553573";
+        if(roll%100<100)return "bg79_vo_SPR2_VSET_00553583";
+        break;
+    case 152311:
+        if(roll%100<33)return "bg79_vo_SAR3_CHAT_01050115";
+        if(roll%100<66)return "bg79_vo_SAR3_VSET_00550859";
+        if(roll%100<100)return "bg79_vo_SAR3_VSET_00550878";
+        break;
+    case 152312:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_807";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_808";
+        break;
+    case 152313:
+        if(roll%100<33)return "bg79_vo_SGD2_VSET_00526547";
+        if(roll%100<66)return "bg79_vo_SGD2_CHAT2_00165400";
+        if(roll%100<100)return "bg79_vo_SGD2_VSET_00165758";
+        break;
+    case 152315:
+        if(roll%100<34)return "bg79_vo_SWR5_VSET_00535924";
+        if(roll%100<67)return "bg79_vo_SWR5_VSET_00535938";
+        if(roll%100<100)return "bg79_vo_SWR5_VSET_00535926";
+        break;
+    case 152316:
+        if(roll%100<33)return "bg79_vo_SGD1_CHAT_01024106";
+        if(roll%100<66)return "bg79_vo_SGD1_FF204_00523558";
+        if(roll%100<100)return "bg79_vo_SGD1_VSET_00541470";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart10_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 152317:
+        if(roll%100<33)return "bg79_vo_SAR1_SHOP_00422532";
+        if(roll%100<66)return "bg79_vo_SAR1_SHOP_00434397";
+        if(roll%100<100)return "bg79_vo_SAR1_VSET_00550731";
+        break;
+    case 152318:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_1";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_3";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_2";
+        break;
+    case 152402:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_199";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_200";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_201";
+        break;
+    case 162101:
+        if(roll%100<25)return "bg79_vo_LETO_LETHO_01038588";
+        if(roll%100<50)return "bg79_vo_LETO_Q403_00319901";
+        if(roll%100<75)return "bg79_vo_LETO_SQ102_00590678";
+        if(roll%100<100)return "bg79_vo_LETO_SQ102_00593857";
+        break;
+    case 162102:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_58";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_59";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_60";
+        break;
+    case 162103:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_106";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_107";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_108";
+        break;
+    case 162104:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_69";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_70";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_71";
+        break;
+    case 162105:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_72";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_73";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_74";
+        break;
+    case 162106:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_97";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_98";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_99";
+        break;
+    case 162107:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_67";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_66";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_68";
+        break;
+    case 162108:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_118";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_119";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_120";
+        break;
+    case 162201:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_78";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_79";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_80";
+        break;
+    case 162202:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_75";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_76";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_77";
+        break;
+    case 162203:
+        if(roll%100<33)return "bg79_vo_VO_CNTH_303653_0335";
+        if(roll%100<66)return "bg79_vo_VO_CNTH_303656_0001";
+        if(roll%100<100)return "bg79_vo_VO_CNTH_303743_0002";
+        break;
+    case 162204:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_426";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_428";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_427";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart11_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 162205:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_88";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_89";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_90";
+        break;
+    case 162206:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_100";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_101";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_102";
+        break;
+    case 162207:
+        if(roll%100<33)return "bg79_vo_VO_NM01_200057_0187";
+        if(roll%100<66)return "bg79_vo_VO_NM01_200049_0007";
+        if(roll%100<100)return "bg79_vo_VO_NM01_200996_0005";
+        break;
+    case 162208:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_112";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_113";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_114";
+        break;
+    case 162209:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_115";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_116";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_117";
+        break;
+    case 162210:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_127";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_128";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_129";
+        break;
+    case 162211:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_17";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_19";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_18";
+        break;
+    case 162212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_105";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_107";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_106";
+        break;
+    case 162213:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_109";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_111";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_110";
+        break;
+    case 162301:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_417";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_419";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_418";
+        break;
+    case 162303:
+        if(roll%100<33)return "bg79_vo_NILF4_CHAT_01051421";
+        if(roll%100<66)return "bg79_vo_NILF4_CHAT_01051417";
+        if(roll%100<100)return "bg79_vo_NILF4_VSET_00514238";
+        break;
+    case 162304:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_429";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_431";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_430";
+        break;
+    case 162305:
+        if(roll%100<33)return "bg79_vo_NILF3_VSET_00514109";
+        if(roll%100<66)return "bg79_vo_NILF3_VSET_00514105";
+        if(roll%100<100)return "bg79_vo_NILF3_SQ102_00591494";
+        break;
+    case 162307:
+        if(roll%100<33)return "bg79_vo_NILFP2_VSET_00592094";
+        if(roll%100<66)return "bg79_vo_NILFP2_VSET_00592104";
+        if(roll%100<100)return "bg79_vo_NILFP2_VSET_00592092";
+        break;
+    case 162308:
+        if(roll%100<33)return "bg79_vo_NIOF1_VSET_00524263";
+        if(roll%100<66)return "bg79_vo_NIOF1_VSET_00524259";
+        if(roll%100<100)return "bg79_vo_NIOF1_VSET_00524273";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart12_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 162309:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_438";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_440";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_439";
+        break;
+    case 162310:
+        if(roll%100<33)return "bg79_vo_NILF2_VSET_00513914";
+        if(roll%100<66)return "bg79_vo_NILF2_VSET_00513916";
+        if(roll%100<100)return "bg79_vo_NILF2_VSET_00513922";
+        break;
+    case 162311:
+        if(roll%100<33)return "bg79_vo_NILF3_VSET_00514091";
+        if(roll%100<66)return "bg79_vo_NILF3_VSET_00514113";
+        if(roll%100<100)return "bg79_vo_NILF3_VSET_00514121";
+        break;
+    case 162312:
+        if(roll%100<33)return "bg79_vo_NILF2_Q505_00576169";
+        if(roll%100<66)return "bg79_vo_NILF2_Q502_00554667";
+        if(roll%100<100)return "bg79_vo_NILF2_Q210_01070432";
+        break;
+    case 162313:
+        if(roll%100<33)return "bg79_vo_NILF2_VSET_00513907";
+        if(roll%100<66)return "bg79_vo_NILF2_VSET_01072393";
+        if(roll%100<100)return "bg79_vo_NILF2_Q502_00556520";
+        break;
+    case 162314:
+        if(roll%100<33)return "bg79_vo_NIS1_Q002_01048548";
+        if(roll%100<66)return "bg79_vo_NIS1_VSET_00526356";
+        if(roll%100<100)return "bg79_vo_NIS1_VSET_00526372";
+        break;
+    case 162315:
+        if(roll%100<33)return "bg79_vo_NIN4_VSET_01049576";
+        if(roll%100<66)return "bg79_vo_NIN4_VSET_01049574";
+        if(roll%100<100)return "bg79_vo_NIN4_VSET_01049578";
+        break;
+    case 162316:
+        if(roll%100<33)return "bg79_vo_MAG1_SHOP_00423227";
+        if(roll%100<66)return "bg79_vo_MAG1_SHOP_00423237";
+        if(roll%100<100)return "bg79_vo_MAG1_SHOP_00459610";
+        break;
+    case 162318:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_441";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_442";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_443";
+        break;
+    case 162401:
+        if(roll%100<42)return "bg79_vo_SAY_Battlecries_part3_385";
+        if(roll%100<85)return "bg79_vo_SAY_Battlecries_part3_387";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_386";
+        break;
+    case 200026:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_43";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_44";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_45";
+        break;
+    case 200028:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_211";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_213";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_214";
+        break;
+    case 200030:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_220";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_221";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_222";
+        break;
+    case 200031:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_13";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_14";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_15";
+        break;
+    case 200032:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_91";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_92";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_93";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart13_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200033:
+        if(roll%100<45)return "bg79_vo_SAY_Battlecries_part3_376";
+        if(roll%100<65)return "bg79_vo_SAY_Battlecries_part3_378";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_377";
+        break;
+    case 200036:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_5";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_7";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_6";
+        break;
+    case 200039:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_310";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_311";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_312";
+        break;
+    case 200040:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_314";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_316";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_315";
+        break;
+    case 200042:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_39";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_41";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_40";
+        break;
+    case 200043:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_129";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_131";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_130";
+        break;
+    case 200044:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_35";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_37";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_36";
+        break;
+    case 200046:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_410";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_412";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_411";
+        break;
+    case 200048:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_13";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_15";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_14";
+        break;
+    case 200050:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_109";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_110";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_111";
+        break;
+    case 200055:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_255";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_256";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_257";
+        break;
+    case 200062:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_154";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_156";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_155";
+        break;
+    case 200071:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_96";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_95";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_94";
+        break;
+    case 200080:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_290";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_292";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_291";
+        break;
+    case 200081:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_121";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_123";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_122";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart14_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200083:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part3_264";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_265";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part3_267";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_268";
+        break;
+    case 200087:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part3_184";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_187";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part3_186";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_185";
+        break;
+    case 200088:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_175";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_176";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_177";
+        break;
+    case 200089:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_167";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_169";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_168";
+        break;
+    case 200091:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part3_162";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_164";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part3_165";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_163";
+        break;
+    case 200098:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_201";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_203";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_202";
+        break;
+    case 200112:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_93";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_92";
+        break;
+    case 200115:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_362";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_364";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_363";
+        break;
+    case 200118:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_356";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_358";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_357";
+        break;
+    case 200124:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_337";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_338";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_339";
+        break;
+    case 200132:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_223";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_225";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_224";
+        break;
+    case 200135:
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_318";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_320";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_319";
+        break;
+    case 200136:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_322";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_324";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_323";
+        break;
+    case 200138:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_326";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_328";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_327";
+        break;
+    case 200144:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_26";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_27";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_28";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_29";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_30";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart15_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200145:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_71";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_73";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_72";
+        break;
+    case 200146:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_75";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_77";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_76";
+        break;
+    case 200147:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_87";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_89";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_88";
+        break;
+    case 200149:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_79";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_81";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_80";
+        break;
+    case 200159:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_193";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_194";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_195";
+        break;
+    case 200160:
+        if(roll%100<33)return "bg79_vo_CRCH_CRACH_01001923";
+        if(roll%100<66)return "bg79_vo_CRCH_CRACH_01040579";
+        if(roll%100<100)return "bg79_vo_CRCH_CRACH_01040591";
+        break;
+    case 200161:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_196";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_197";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_198";
+        break;
+    case 200162:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_236";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_237";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_238";
+        break;
+    case 200163:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_52";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_53";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_54";
+        break;
+    case 200164:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_55";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_56";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_57";
+        break;
+    case 200165:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_130";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_131";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_132";
+        break;
+    case 200166:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_133";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_134";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_135";
+        break;
+    case 200167:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_136";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_137";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_138";
+        break;
+    case 200168:
+        if(roll%100<33)return "bg79_vo_VO_FLTS_000811_0001";
+        if(roll%100<67)return "bg79_vo_VO_FLTS_000811_0002";
+        if(roll%100<100)return "bg79_vo_VO_FLTS_000811_0004";
+        break;
+    case 200169:
+        if(roll%100<20)return "bg79_vo_RADV_MQ3035_01064716";
+        if(roll%100<40)return "bg79_vo_RADV_MQ3035_01064777";
+        if(roll%100<60)return "bg79_vo_RADV_MQ3035_01064783";
+        if(roll%100<80)return "bg79_vo_RADV_Q302_00512777";
+        if(roll%100<100)return "bg79_vo_RADV_RADOVID_01040720";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart16_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200170:
+        if(roll%100<50)return "bg79_vo_VO_HSLT_200098_0254";
+        if(roll%100<100)return "bg79_vo_VO_HSLT_200497_0001";
+        break;
+    case 200171:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_226";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_230";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_231";
+        break;
+    case 200177:
+        if(roll%100<33)return "bg79_vo_BECC_BECCA_01040275";
+        if(roll%100<66)return "bg79_vo_BECC_BECCA_01040277";
+        if(roll%100<100)return "bg79_vo_BECC_Q201_00500712";
+        break;
+    case 200209:
+        if(roll%100<25)return "bg79_vo_VO_TARM_200154_0192";
+        if(roll%100<50)return "bg79_vo_VO_TARM_200423_0023";
+        if(roll%100<75)return "bg79_vo_VO_TARM_200423_0024";
+        if(roll%100<100)return "bg79_vo_VO_TARM_200423_0011";
+        break;
+    case 200212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_822";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_823";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_824";
+        break;
+    case 200219:
+        if(roll%100<42)return "bg79_vo_SAY_Battlecries_part3_385";
+        if(roll%100<85)return "bg79_vo_SAY_Battlecries_part3_387";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_386";
+        break;
+    case 200220:
+        if(roll%300<100)return "bg79_vo_WHSP_Q105_00419061";
+        if(roll%300<200)return "bg79_vo_WHSP_Q105_00419057";
+        if(roll%300<300)return "bg79_vo_WHSP_Q105_00382577";
+        break;
+    case 200221:
+        if(roll%100<50)return "bg79_vo_BREW_Q105_00531820";
+        if(roll%100<100)return "bg79_vo_BREW_Q111_00576135";
+        break;
+    case 200222:
+        if(roll%100<34)return "bg79_vo_WEAV_Q503_00578937";
+        if(roll%100<67)return "bg79_vo_WEAV_Q105_00531814";
+        if(roll%100<100)return "bg79_vo_WEAV_Q503_00579064";
+        break;
+    case 200227:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_435";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_436";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_437";
+        break;
+    case 200235:
+        if(roll%100<17)return "bg79_vo_LMBT_Q401_00523875";
+        if(roll%100<34)return "bg79_vo_LMBT_Q401_00531130";
+        if(roll%100<51)return "bg79_vo_LMBT_Q401_01058899";
+        if(roll%100<68)return "bg79_vo_LMBT_Q403_00550012";
+        if(roll%100<85)return "bg79_vo_LMBT_SQ106_00586496";
+        if(roll%100<100)return "bg79_vo_LMBT_Q403_00572964";
+        break;
+    case 200236:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_21";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_22";
+        if(roll%100<92)return "bg79_vo_SAY_Battlecries_23";
+        if(roll%100<100)return "bg79_vo_ESKL_ESKEL_01037262";
+        break;
+    case 200237:
+        if(roll%100<33)return "bg79_vo_VSMR_Q001_00546725";
+        if(roll%100<66)return "bg79_vo_VSMR_VESEMIR_01000012";
+        if(roll%100<100)return "bg79_vo_VSMR_VESEMIR_01040765";
+        break;
+    case 200293:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_93";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_94";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_95";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_96";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_97";
+        break;
+    case 200294:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_338";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_339";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_340";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_341";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_342";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart17_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200296:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_379";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_381";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_380";
+        break;
+    case 200299:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_407";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_409";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_408";
+        break;
+    case 200518:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_382";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_384";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_383";
+        break;
+    case 200520:
+        if(roll%100<33)return "bg79_vo_HTRI_HATTORI_01032235";
+        if(roll%100<66)return "bg79_vo_HTRI_HATTORI_00507925";
+        if(roll%100<100)return "bg79_vo_HTRI_SQ304_00539954";
+        break;
+    case 200523:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part4_244";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part4_262";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part4_261";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_260";
+        break;
+    case 200528:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_83";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_85";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_84";
+        break;
+    case 200529:
+        if(roll%100<39)return "bg79_vo_SAY_Battlecries_part3_401";
+        if(roll%100<61)return "bg79_vo_SAY_Battlecries_part3_403";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_402";
+        break;
+    case 200534:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_404";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_406";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_405";
+        break;
+    case 200535:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_398";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_400";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_399";
+        break;
+    case 200540:
+        if(roll%100<41)return "bg79_vo_SAY_Battlecries_part4_78";
+        if(roll%100<82)return "bg79_vo_SAY_Battlecries_part4_79";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_82";
+        break;
+    case 201523:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 201559:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_98";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_99";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_100";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_101";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_102";
+        break;
+    case 201578:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_395";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_397";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_396";
+        break;
+    case 201580:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_432";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_434";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_433";
+        break;
+    case 201587:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_4";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_3";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_2";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_5";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart18_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 201589:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_278";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_280";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_279";
+        break;
+    case 201595:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_193";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_195";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_194";
+        break;
+    case 201597:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_47";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_49";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_48";
+        break;
+    case 201601:
+        if(roll%100<34)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<67)return "bg79_vo_YENN_YENNEFER_01041495";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041493";
+        break;
+    case 201603:
+        if(roll%100<25)return "bg79_vo_LETO_SQ102_00590678";
+        if(roll%100<50)return "bg79_vo_LETO_SQ102_00593857";
+        if(roll%100<75)return "bg79_vo_LETO_LETHO_01038588";
+        if(roll%100<100)return "bg79_vo_LETO_Q403_00319901";
+        break;
+    case 201609:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_103";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_104";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_105";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_106";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_107";
+        break;
+    case 201611:
+        if(roll%100<25)return "bg79_vo_VO_IORW_100241_4474";
+        if(roll%100<50)return "bg79_vo_VO_IORW_101048_0181";
+        if(roll%100<75)return "bg79_vo_VO_IORW_101064_0046";
+        if(roll%100<100)return "bg79_vo_VO_IORW_102216_0006";
+        break;
+    case 201612:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_113";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_114";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_115";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_116";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_117";
+        break;
+    case 201615:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_139";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_141";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_140";
+        break;
+    case 201616:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_359";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_360";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_361";
+        break;
+    case 201617:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_32";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_33";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_34";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_35";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_36";
+        break;
+    case 201618:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_117";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_119";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_118";
+        break;
+    case 201620:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_7";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_8";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_9";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_10";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_11";
+        break;
+    case 201621:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_14";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_15";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_16";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_17";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_18";
+        break;
+    case 201622:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_9";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_10";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_11";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart19_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 201624:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_38";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_39";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_40";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_41";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_42";
+        break;
+    case 201625:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_44";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_45";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_46";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_47";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_48";
+        break;
+    case 201626:
+        if(roll%100<25)return "bg79_vo_CIRI_CIRILLA_01040548";
+        if(roll%100<50)return "bg79_vo_CIRI_CIRILLA_01040512";
+        if(roll%100<75)return "bg79_vo_CIRI_Q111_00536478";
+        if(roll%100<100)return "bg79_vo_CIRI_Q310_00579530";
+        break;
+    case 201627:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_168";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_169";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_170";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_171";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_172";
+        break;
+    case 201628:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_56";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_57";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_58";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_59";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_60";
+        break;
+    case 201630:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_50";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_51";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_52";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_53";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_54";
+        break;
+    case 201636:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_68";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_69";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_70";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_71";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_72";
+        break;
+    case 201638:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_88";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_89";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_90";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_91";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_92";
+        break;
+    case 201644:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_20";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_21";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_22";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_24";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_23";
+        break;
+    case 201646:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_232";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_233";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_234";
+        break;
+    case 201650:
+        if(roll%100<33)return "bg79_vo_VO_SABR_200216_0101";
+        if(roll%100<67)return "bg79_vo_VO_SABR_200216_0037";
+        if(roll%100<100)return "bg79_vo_VO_SABR_200216_0064";
+        break;
+    case 201664:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part4_256";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part4_255";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part4_254";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_253";
+        break;
+    case 201676:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part4_34";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part4_31";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_32";
+        break;
+    case 201677:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part4_86";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part4_85";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_84";
+        break;
+    case 201753:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part4_86";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part4_85";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_84";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart20_Universal_en(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 201772:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 201773:
+        if(roll%100<17)return "bg79_vo_SAY_Battlecries_17";
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_19";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_18";
+        if(roll%100<67)return "bg79_vo_VO_TRIS_100285_0008";
+        if(roll%100<84)return "bg79_vo_VO_TRIS_104122_2446";
+        if(roll%100<100)return "bg79_vo_TRSS_Q310_00545347";
+        break;
+    case 201774:
+        if(roll%100<14)return "bg79_vo_SAY_Battlecries_5";
+        if(roll%100<28)return "bg79_vo_SAY_Battlecries_7";
+        if(roll%100<42)return "bg79_vo_SAY_Battlecries_6";
+        if(roll%100<58)return "bg79_vo_DAND_DANDELION_00429307";
+        if(roll%100<72)return "bg79_vo_DAND_Q302_00489393";
+        if(roll%100<86)return "bg79_vo_DAND_Q302_00490269";
+        if(roll%100<100)return "bg79_vo_VO_JSKR_100926_0188";
+        break;
+    case 201776:
+        if(roll%100<16)return "bg79_vo_SAY_Battlecries_5";
+        if(roll%100<30)return "bg79_vo_SAY_Battlecries_7";
+        if(roll%100<44)return "bg79_vo_SAY_Battlecries_6";
+        if(roll%100<58)return "bg79_vo_DAND_DANDELION_00429307";
+        if(roll%100<72)return "bg79_vo_DAND_Q302_00489393";
+        if(roll%100<86)return "bg79_vo_DAND_Q302_00490269";
+        if(roll%100<100)return "bg79_vo_VO_JSKR_100926_0188";
+        break;
+    case 201777:
+        if(roll%100<50)return "bg79_vo_ROCH_ROCHE_00541126";
+        if(roll%100<100)return "bg79_vo_ROCH_MQ3035_01064844";
+        break;
+    case 201778:
+        if(roll%100<33)return "bg79_vo_BECC_BECCA_01040275";
+        if(roll%100<67)return "bg79_vo_BECC_BECCA_01040277";
+        if(roll%100<100)return "bg79_vo_BECC_Q201_00500712";
+        break;
+    case 201779:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_164";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_166";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_165";
+        break;
+    case 201780:
+        if(roll%100<33)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<67)return "bg79_vo_YENN_YENNEFER_01041495";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041493";
+        break;
+    case 201781:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_851";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_852";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_853";
+        break;
+    default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceVariantDuration_Universal_en(id : int, roll : int) : float
+{
+    if(id <= 112203)return BetaGwentAudioVoiceVariantDurationPart0_Universal_en(id,roll);
+    if(id <= 122101)return BetaGwentAudioVoiceVariantDurationPart1_Universal_en(id,roll);
+    if(id <= 122208)return BetaGwentAudioVoiceVariantDurationPart2_Universal_en(id,roll);
+    if(id <= 122313)return BetaGwentAudioVoiceVariantDurationPart3_Universal_en(id,roll);
+    if(id <= 132207)return BetaGwentAudioVoiceVariantDurationPart4_Universal_en(id,roll);
+    if(id <= 142108)return BetaGwentAudioVoiceVariantDurationPart5_Universal_en(id,roll);
+    if(id <= 142302)return BetaGwentAudioVoiceVariantDurationPart6_Universal_en(id,roll);
+    if(id <= 142401)return BetaGwentAudioVoiceVariantDurationPart7_Universal_en(id,roll);
+    if(id <= 152211)return BetaGwentAudioVoiceVariantDurationPart8_Universal_en(id,roll);
+    if(id <= 152316)return BetaGwentAudioVoiceVariantDurationPart9_Universal_en(id,roll);
+    if(id <= 162204)return BetaGwentAudioVoiceVariantDurationPart10_Universal_en(id,roll);
+    if(id <= 162308)return BetaGwentAudioVoiceVariantDurationPart11_Universal_en(id,roll);
+    if(id <= 200032)return BetaGwentAudioVoiceVariantDurationPart12_Universal_en(id,roll);
+    if(id <= 200081)return BetaGwentAudioVoiceVariantDurationPart13_Universal_en(id,roll);
+    if(id <= 200144)return BetaGwentAudioVoiceVariantDurationPart14_Universal_en(id,roll);
+    if(id <= 200169)return BetaGwentAudioVoiceVariantDurationPart15_Universal_en(id,roll);
+    if(id <= 200294)return BetaGwentAudioVoiceVariantDurationPart16_Universal_en(id,roll);
+    if(id <= 201587)return BetaGwentAudioVoiceVariantDurationPart17_Universal_en(id,roll);
+    if(id <= 201622)return BetaGwentAudioVoiceVariantDurationPart18_Universal_en(id,roll);
+    if(id <= 201753)return BetaGwentAudioVoiceVariantDurationPart19_Universal_en(id,roll);
+    if(id <= 201781)return BetaGwentAudioVoiceVariantDurationPart20_Universal_en(id,roll);
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart0_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 112101:
+        if(roll%100<25)return 1.954f;
+        if(roll%100<50)return 2.485f;
+        if(roll%100<75)return 1.734f;
+        if(roll%100<100)return 2.398f;
+        break;
+    case 112102:
+        if(roll%100<20)return 3.207f;
+        if(roll%100<40)return 1.021f;
+        if(roll%100<60)return 2.148f;
+        if(roll%100<80)return 1.935f;
+        if(roll%100<100)return 1.584f;
+        break;
+    case 112103:
+        if(roll%100<20)return 3.207f;
+        if(roll%100<40)return 1.021f;
+        if(roll%100<60)return 2.148f;
+        if(roll%100<80)return 1.935f;
+        if(roll%100<100)return 1.584f;
+        break;
+    case 112104:
+        if(roll%100<40)return 3.484f;
+        if(roll%100<60)return 3.158f;
+        if(roll%100<100)return 2.233f;
+        break;
+    case 112105:
+        if(roll%100<100)return 3.115f;
+        break;
+    case 112106:
+        if(roll%100<17)return 2.040f;
+        if(roll%100<33)return 1.877f;
+        if(roll%100<50)return 3.524f;
+        if(roll%100<67)return 1.352f;
+        if(roll%100<84)return 3.003f;
+        if(roll%100<100)return 1.514f;
+        break;
+    case 112108:
+        if(roll%100<33)return 3.025f;
+        if(roll%100<66)return 2.203f;
+        if(roll%100<100)return 3.617f;
+        break;
+    case 112109:
+        if(roll%100<24)return 1.848f;
+        if(roll%100<48)return 2.130f;
+        if(roll%100<72)return 3.079f;
+        if(roll%100<96)return 2.329f;
+        if(roll%100<100)return 2.409f;
+        break;
+    case 112110:
+        if(roll%100<25)return 1.954f;
+        if(roll%100<50)return 2.485f;
+        if(roll%100<75)return 1.734f;
+        if(roll%100<100)return 2.398f;
+        break;
+    case 112111:
+        if(roll%100<20)return 3.207f;
+        if(roll%100<40)return 1.021f;
+        if(roll%100<60)return 2.148f;
+        if(roll%100<80)return 1.935f;
+        if(roll%100<100)return 1.584f;
+        break;
+    case 112112:
+        if(roll%100<25)return 1.321f;
+        if(roll%100<50)return 1.128f;
+        if(roll%100<75)return 2.471f;
+        if(roll%100<100)return 3.004f;
+        break;
+    case 112113:
+        if(roll%100<33)return 3.025f;
+        if(roll%100<66)return 2.203f;
+        if(roll%100<100)return 3.617f;
+        break;
+    case 112201:
+        if(roll%100<33)return 3.134f;
+        if(roll%100<66)return 2.918f;
+        if(roll%100<100)return 2.510f;
+        break;
+    case 112202:
+        if(roll%100<25)return 1.195f;
+        if(roll%100<67)return 2.140f;
+        if(roll%100<92)return 1.269f;
+        if(roll%100<100)return 2.600f;
+        break;
+    case 112203:
+        if(roll%100<33)return 2.072f;
+        if(roll%100<66)return 2.623f;
+        if(roll%100<100)return 2.381f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart1_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 112204:
+        if(roll%100<17)return 3.087f;
+        if(roll%100<34)return 2.573f;
+        if(roll%100<51)return 2.474f;
+        if(roll%100<68)return 1.487f;
+        if(roll%100<85)return 2.432f;
+        if(roll%100<100)return 1.754f;
+        break;
+    case 112205:
+        if(roll%100<33)return 1.430f;
+        if(roll%100<66)return 1.350f;
+        if(roll%100<100)return 1.728f;
+        break;
+    case 112206:
+        if(roll%100<33)return 1.430f;
+        if(roll%100<66)return 1.350f;
+        if(roll%100<100)return 1.728f;
+        break;
+    case 112207:
+        if(roll%100<33)return 2.161f;
+        if(roll%100<66)return 1.857f;
+        if(roll%100<100)return 2.594f;
+        break;
+    case 112208:
+        if(roll%100<50)return 2.127f;
+        if(roll%100<100)return 3.764f;
+        break;
+    case 112211:
+        if(roll%100<30)return 4.812f;
+        if(roll%100<65)return 2.643f;
+        if(roll%100<100)return 3.348f;
+        break;
+    case 112212:
+        if(roll%100<33)return 1.580f;
+        if(roll%100<66)return 0.946f;
+        if(roll%100<100)return 2.229f;
+        break;
+    case 112213:
+        if(roll%100<25)return 2.087f;
+        if(roll%100<50)return 1.959f;
+        if(roll%100<75)return 3.233f;
+        if(roll%100<100)return 2.131f;
+        break;
+    case 112214:
+        if(roll%100<33)return 3.647f;
+        if(roll%100<66)return 3.429f;
+        if(roll%100<100)return 2.330f;
+        break;
+    case 112215:
+        if(roll%100<33)return 1.841f;
+        if(roll%100<66)return 3.066f;
+        if(roll%100<100)return 2.755f;
+        break;
+    case 112403:
+        if(roll%100<50)return 2.342f;
+        if(roll%100<100)return 3.550f;
+        break;
+    case 112404:
+        if(roll%100<50)return 2.342f;
+        if(roll%100<100)return 3.550f;
+        break;
+    case 113208:
+        if(roll%100<100)return 2.682f;
+        break;
+    case 113313:
+        if(roll%300<33)return 2.396f;
+        if(roll%300<66)return 1.973f;
+        if(roll%300<100)return 1.934f;
+        if(roll%300<200)return 1.767f;
+        if(roll%300<300)return 3.917f;
+        break;
+    case 122101:
+        if(roll%100<25)return 2.657f;
+        if(roll%100<50)return 4.593f;
+        if(roll%100<75)return 1.486f;
+        if(roll%100<100)return 2.527f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart2_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 122102:
+        if(roll%100<50)return 1.971f;
+        if(roll%100<100)return 2.331f;
+        break;
+    case 122103:
+        if(roll%100<50)return 2.994f;
+        if(roll%100<100)return 2.499f;
+        break;
+    case 122104:
+        if(roll%100<21)return 2.373f;
+        if(roll%100<44)return 2.284f;
+        if(roll%100<66)return 2.007f;
+        if(roll%100<78)return 2.990f;
+        if(roll%100<100)return 3.073f;
+        break;
+    case 122105:
+        if(roll%100<25)return 2.054f;
+        if(roll%100<50)return 1.640f;
+        if(roll%100<75)return 3.177f;
+        if(roll%100<100)return 4.160f;
+        break;
+    case 122106:
+        if(roll%100<33)return 1.804f;
+        if(roll%100<66)return 3.989f;
+        if(roll%100<100)return 3.382f;
+        break;
+    case 122107:
+        if(roll%100<16)return 2.040f;
+        if(roll%100<33)return 1.877f;
+        if(roll%100<50)return 3.524f;
+        if(roll%100<67)return 1.352f;
+        if(roll%100<84)return 3.003f;
+        if(roll%100<100)return 1.514f;
+        break;
+    case 122108:
+        if(roll%100<25)return 1.946f;
+        if(roll%100<50)return 2.516f;
+        if(roll%100<75)return 2.633f;
+        if(roll%100<100)return 2.530f;
+        break;
+    case 122201:
+        if(roll%100<15)return 2.655f;
+        if(roll%100<29)return 1.262f;
+        if(roll%100<44)return 3.035f;
+        if(roll%100<58)return 1.774f;
+        if(roll%100<73)return 1.991f;
+        if(roll%100<86)return 2.122f;
+        if(roll%100<100)return 2.120f;
+        break;
+    case 122202:
+        if(roll%100<25)return 1.439f;
+        if(roll%100<50)return 3.070f;
+        if(roll%100<75)return 2.703f;
+        if(roll%100<100)return 2.184f;
+        break;
+    case 122203:
+        if(roll%100<33)return 4.497f;
+        if(roll%100<66)return 3.149f;
+        if(roll%100<100)return 3.132f;
+        break;
+    case 122204:
+        if(roll%100<25)return 2.616f;
+        if(roll%100<50)return 2.114f;
+        if(roll%100<75)return 2.065f;
+        if(roll%100<100)return 2.164f;
+        break;
+    case 122205:
+        if(roll%100<33)return 1.934f;
+        if(roll%100<66)return 2.642f;
+        if(roll%100<100)return 3.942f;
+        break;
+    case 122206:
+        if(roll%100<33)return 1.822f;
+        if(roll%100<53)return 4.062f;
+        if(roll%100<100)return 1.184f;
+        break;
+    case 122207:
+        if(roll%100<33)return 2.189f;
+        if(roll%100<66)return 2.000f;
+        if(roll%100<100)return 1.761f;
+        break;
+    case 122208:
+        if(roll%100<33)return 1.764f;
+        if(roll%100<66)return 2.811f;
+        if(roll%100<100)return 1.194f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart3_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 122209:
+        if(roll%100<65)return 4.213f;
+        if(roll%100<100)return 4.704f;
+        break;
+    case 122210:
+        if(roll%100<25)return 5.458f;
+        if(roll%100<50)return 2.697f;
+        if(roll%100<75)return 2.782f;
+        if(roll%100<100)return 3.031f;
+        break;
+    case 122211:
+        if(roll%100<33)return 1.199f;
+        if(roll%100<66)return 1.876f;
+        if(roll%100<100)return 3.162f;
+        break;
+    case 122212:
+        if(roll%100<33)return 2.642f;
+        if(roll%100<66)return 2.112f;
+        if(roll%100<100)return 2.770f;
+        break;
+    case 122213:
+        if(roll%100<33)return 3.561f;
+        if(roll%100<66)return 2.774f;
+        if(roll%100<100)return 3.464f;
+        break;
+    case 122214:
+        if(roll%100<33)return 3.000f;
+        if(roll%100<66)return 2.310f;
+        if(roll%100<100)return 2.031f;
+        break;
+    case 122216:
+        if(roll%100<33)return 1.560f;
+        if(roll%100<66)return 2.536f;
+        if(roll%100<100)return 2.306f;
+        break;
+    case 122306:
+        if(roll%100<33)return 2.024f;
+        if(roll%100<66)return 2.468f;
+        if(roll%100<100)return 1.066f;
+        break;
+    case 122307:
+        if(roll%100<33)return 1.773f;
+        if(roll%100<66)return 1.852f;
+        if(roll%100<100)return 2.297f;
+        break;
+    case 122308:
+        if(roll%100<33)return 2.544f;
+        if(roll%100<66)return 1.807f;
+        if(roll%100<100)return 2.386f;
+        break;
+    case 122309:
+        if(roll%100<33)return 1.094f;
+        if(roll%100<66)return 1.709f;
+        if(roll%100<100)return 2.565f;
+        break;
+    case 122310:
+        if(roll%100<33)return 1.805f;
+        if(roll%100<66)return 1.150f;
+        if(roll%100<100)return 1.818f;
+        break;
+    case 122311:
+        if(roll%100<33)return 2.220f;
+        if(roll%100<67)return 2.192f;
+        if(roll%100<100)return 1.845f;
+        break;
+    case 122312:
+        if(roll%100<33)return 1.808f;
+        if(roll%100<66)return 2.382f;
+        if(roll%100<100)return 1.490f;
+        break;
+    case 122313:
+        if(roll%100<33)return 1.301f;
+        if(roll%100<66)return 1.678f;
+        if(roll%100<100)return 1.988f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart4_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 122314:
+        if(roll%100<33)return 1.836f;
+        if(roll%100<66)return 1.832f;
+        if(roll%100<100)return 1.808f;
+        break;
+    case 122316:
+        if(roll%100<33)return 1.804f;
+        if(roll%100<66)return 1.632f;
+        if(roll%100<100)return 1.906f;
+        break;
+    case 122317:
+        if(roll%100<33)return 2.085f;
+        if(roll%100<66)return 1.885f;
+        if(roll%100<100)return 2.579f;
+        break;
+    case 122318:
+        if(roll%100<50)return 2.693f;
+        if(roll%100<100)return 3.378f;
+        break;
+    case 122403:
+        if(roll%100<33)return 1.979f;
+        if(roll%100<66)return 2.193f;
+        if(roll%100<100)return 2.682f;
+        break;
+    case 123301:
+        if(roll%300<33)return 2.343f;
+        if(roll%300<66)return 1.871f;
+        if(roll%300<100)return 2.186f;
+        if(roll%300<200)return 3.244f;
+        if(roll%300<300)return 3.046f;
+        break;
+    case 131101:
+        if(roll%100<33)return 2.851f;
+        if(roll%100<66)return 3.603f;
+        if(roll%100<100)return 2.828f;
+        break;
+    case 131102:
+        if(roll%100<65)return 2.500f;
+        if(roll%100<100)return 3.600f;
+        break;
+    case 132101:
+        if(roll%100<33)return 2.848f;
+        if(roll%100<66)return 3.533f;
+        if(roll%100<100)return 2.993f;
+        break;
+    case 132102:
+        if(roll%100<33)return 4.388f;
+        if(roll%100<66)return 2.522f;
+        if(roll%100<100)return 1.773f;
+        break;
+    case 132104:
+        if(roll%100<33)return 2.831f;
+        if(roll%100<66)return 2.556f;
+        if(roll%100<100)return 2.554f;
+        break;
+    case 132105:
+        if(roll%100<25)return 1.321f;
+        if(roll%100<50)return 1.128f;
+        if(roll%100<75)return 2.471f;
+        if(roll%100<100)return 3.004f;
+        break;
+    case 132108:
+        if(roll%100<33)return 3.916f;
+        if(roll%100<66)return 3.047f;
+        if(roll%100<100)return 1.867f;
+        break;
+    case 132206:
+        if(roll%100<33)return 5.319f;
+        if(roll%100<66)return 6.043f;
+        if(roll%100<100)return 5.203f;
+        break;
+    case 132207:
+        if(roll%100<50)return 5.688f;
+        if(roll%100<100)return 4.677f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart5_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 132208:
+        if(roll%100<33)return 5.907f;
+        if(roll%100<66)return 4.571f;
+        if(roll%100<100)return 5.782f;
+        break;
+    case 132211:
+        if(roll%100<50)return 1.467f;
+        if(roll%100<100)return 1.769f;
+        break;
+    case 132212:
+        if(roll%100<50)return 1.894f;
+        if(roll%100<100)return 1.870f;
+        break;
+    case 132214:
+        if(roll%100<40)return 2.408f;
+        if(roll%100<70)return 1.742f;
+        if(roll%100<100)return 1.629f;
+        break;
+    case 132215:
+        if(roll%100<20)return 1.661f;
+        if(roll%100<40)return 3.417f;
+        if(roll%100<60)return 1.982f;
+        if(roll%100<80)return 4.178f;
+        if(roll%100<100)return 2.038f;
+        break;
+    case 132305:
+        if(roll%100<45)return 1.250f;
+        if(roll%100<90)return 1.148f;
+        if(roll%100<100)return 1.188f;
+        break;
+    case 132309:
+        if(roll%100<33)return 2.231f;
+        if(roll%100<66)return 2.328f;
+        if(roll%100<100)return 2.244f;
+        break;
+    case 132310:
+        if(roll%100<33)return 1.955f;
+        if(roll%100<66)return 3.509f;
+        if(roll%100<100)return 2.512f;
+        break;
+    case 142102:
+        if(roll%100<33)return 2.008f;
+        if(roll%100<66)return 3.190f;
+        if(roll%100<100)return 1.756f;
+        break;
+    case 142103:
+        if(roll%100<30)return 1.576f;
+        if(roll%100<60)return 2.645f;
+        if(roll%100<90)return 3.446f;
+        if(roll%100<100)return 1.419f;
+        break;
+    case 142104:
+        if(roll%100<33)return 3.096f;
+        if(roll%100<66)return 1.191f;
+        if(roll%100<100)return 2.439f;
+        break;
+    case 142105:
+        if(roll%100<24)return 1.848f;
+        if(roll%100<48)return 2.130f;
+        if(roll%100<72)return 3.079f;
+        if(roll%100<96)return 2.329f;
+        if(roll%100<100)return 2.409f;
+        break;
+    case 142106:
+        if(roll%100<33)return 1.800f;
+        if(roll%100<66)return 3.666f;
+        if(roll%100<100)return 2.424f;
+        break;
+    case 142107:
+        if(roll%100<33)return 3.275f;
+        if(roll%100<66)return 4.585f;
+        if(roll%100<100)return 4.381f;
+        break;
+    case 142108:
+        if(roll%100<33)return 2.165f;
+        if(roll%100<66)return 3.755f;
+        if(roll%100<100)return 2.428f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart6_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 142201:
+        if(roll%100<33)return 4.149f;
+        if(roll%100<66)return 2.777f;
+        if(roll%100<100)return 2.286f;
+        break;
+    case 142202:
+        if(roll%100<40)return 4.084f;
+        if(roll%100<100)return 1.877f;
+        break;
+    case 142203:
+        if(roll%100<33)return 3.032f;
+        if(roll%100<66)return 2.955f;
+        if(roll%100<100)return 3.078f;
+        break;
+    case 142204:
+        if(roll%100<33)return 2.721f;
+        if(roll%100<73)return 3.077f;
+        if(roll%100<100)return 3.188f;
+        break;
+    case 142206:
+        if(roll%100<33)return 2.359f;
+        if(roll%100<66)return 2.127f;
+        if(roll%100<100)return 1.780f;
+        break;
+    case 142207:
+        if(roll%100<33)return 1.681f;
+        if(roll%100<66)return 3.336f;
+        if(roll%100<100)return 2.480f;
+        break;
+    case 142208:
+        if(roll%100<33)return 1.690f;
+        if(roll%100<66)return 2.483f;
+        if(roll%100<100)return 2.295f;
+        break;
+    case 142209:
+        if(roll%100<33)return 3.706f;
+        if(roll%100<66)return 1.378f;
+        if(roll%100<100)return 1.407f;
+        break;
+    case 142210:
+        if(roll%100<33)return 3.584f;
+        if(roll%100<66)return 3.594f;
+        if(roll%100<100)return 1.631f;
+        break;
+    case 142211:
+        if(roll%100<33)return 1.971f;
+        if(roll%100<66)return 2.310f;
+        if(roll%100<100)return 3.295f;
+        break;
+    case 142212:
+        if(roll%100<33)return 2.984f;
+        if(roll%100<66)return 2.168f;
+        if(roll%100<100)return 4.713f;
+        break;
+    case 142213:
+        if(roll%100<33)return 5.105f;
+        if(roll%100<66)return 3.294f;
+        if(roll%100<100)return 3.573f;
+        break;
+    case 142214:
+        if(roll%100<33)return 2.179f;
+        if(roll%100<66)return 3.680f;
+        if(roll%100<100)return 2.091f;
+        break;
+    case 142301:
+        if(roll%100<33)return 1.875f;
+        if(roll%100<66)return 2.013f;
+        if(roll%100<100)return 1.036f;
+        break;
+    case 142302:
+        if(roll%100<33)return 4.592f;
+        if(roll%100<67)return 1.846f;
+        if(roll%100<100)return 1.188f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart7_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 142303:
+        if(roll%100<50)return 1.510f;
+        if(roll%100<100)return 3.251f;
+        break;
+    case 142304:
+        if(roll%100<33)return 2.600f;
+        if(roll%100<66)return 2.460f;
+        if(roll%100<100)return 1.848f;
+        break;
+    case 142306:
+        if(roll%100<33)return 1.801f;
+        if(roll%100<66)return 2.020f;
+        if(roll%100<100)return 2.315f;
+        break;
+    case 142307:
+        if(roll%100<30)return 1.894f;
+        if(roll%100<65)return 2.345f;
+        if(roll%100<100)return 2.094f;
+        break;
+    case 142308:
+        if(roll%100<33)return 1.959f;
+        if(roll%100<66)return 3.545f;
+        if(roll%100<100)return 1.364f;
+        break;
+    case 142309:
+        if(roll%100<20)return 2.667f;
+        if(roll%100<60)return 2.741f;
+        if(roll%100<100)return 2.086f;
+        break;
+    case 142310:
+        if(roll%100<33)return 2.168f;
+        if(roll%100<66)return 1.675f;
+        if(roll%100<100)return 2.934f;
+        break;
+    case 142311:
+        if(roll%100<33)return 2.654f;
+        if(roll%100<66)return 3.000f;
+        if(roll%100<100)return 1.969f;
+        break;
+    case 142312:
+        if(roll%100<15)return 5.469f;
+        if(roll%100<57)return 2.445f;
+        if(roll%100<100)return 3.166f;
+        break;
+    case 142313:
+        if(roll%100<33)return 2.086f;
+        if(roll%100<66)return 2.048f;
+        if(roll%100<100)return 2.237f;
+        break;
+    case 142314:
+        if(roll%100<33)return 2.150f;
+        if(roll%100<67)return 2.115f;
+        if(roll%100<100)return 1.795f;
+        break;
+    case 142315:
+        if(roll%100<33)return 1.727f;
+        if(roll%100<66)return 3.206f;
+        if(roll%100<100)return 2.223f;
+        break;
+    case 142316:
+        if(roll%100<33)return 2.639f;
+        if(roll%100<66)return 3.481f;
+        if(roll%100<100)return 1.942f;
+        break;
+    case 142317:
+        if(roll%100<33)return 1.426f;
+        if(roll%100<66)return 2.858f;
+        if(roll%100<100)return 1.591f;
+        break;
+    case 142401:
+        if(roll%100<33)return 2.010f;
+        if(roll%100<66)return 2.223f;
+        if(roll%100<100)return 2.460f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart8_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 152101:
+        if(roll%100<25)return 2.457f;
+        if(roll%100<50)return 1.504f;
+        if(roll%100<75)return 2.803f;
+        if(roll%100<100)return 2.783f;
+        break;
+    case 152103:
+        if(roll%100<50)return 2.564f;
+        if(roll%100<100)return 1.956f;
+        break;
+    case 152105:
+        if(roll%100<33)return 3.119f;
+        if(roll%100<66)return 1.572f;
+        if(roll%100<100)return 2.413f;
+        break;
+    case 152106:
+        if(roll%100<50)return 1.756f;
+        if(roll%100<100)return 1.844f;
+        break;
+    case 152107:
+        if(roll%100<33)return 2.649f;
+        if(roll%100<66)return 2.793f;
+        if(roll%100<100)return 2.845f;
+        break;
+    case 152201:
+        if(roll%100<50)return 3.406f;
+        if(roll%100<100)return 2.977f;
+        break;
+    case 152202:
+        if(roll%100<50)return 1.627f;
+        if(roll%100<100)return 1.598f;
+        break;
+    case 152203:
+        if(roll%100<33)return 2.999f;
+        if(roll%100<66)return 3.111f;
+        if(roll%100<100)return 1.856f;
+        break;
+    case 152204:
+        if(roll%100<33)return 2.760f;
+        if(roll%100<66)return 1.796f;
+        if(roll%100<100)return 1.879f;
+        break;
+    case 152205:
+        if(roll%100<100)return 1.237f;
+        break;
+    case 152206:
+        if(roll%100<25)return 2.284f;
+        if(roll%100<50)return 3.261f;
+        if(roll%100<75)return 2.390f;
+        if(roll%100<100)return 2.719f;
+        break;
+    case 152207:
+        if(roll%100<20)return 2.479f;
+        if(roll%100<80)return 2.091f;
+        if(roll%100<100)return 1.635f;
+        break;
+    case 152208:
+        if(roll%100<33)return 3.872f;
+        if(roll%100<66)return 2.206f;
+        if(roll%100<100)return 2.356f;
+        break;
+    case 152209:
+        if(roll%100<33)return 4.544f;
+        if(roll%100<66)return 4.051f;
+        if(roll%100<100)return 3.466f;
+        break;
+    case 152211:
+        if(roll%100<33)return 1.614f;
+        if(roll%100<66)return 3.199f;
+        if(roll%100<100)return 2.681f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart9_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 152213:
+        if(roll%100<20)return 1.849f;
+        if(roll%100<40)return 2.066f;
+        if(roll%100<60)return 1.708f;
+        if(roll%100<80)return 1.585f;
+        if(roll%100<100)return 1.802f;
+        break;
+    case 152214:
+        if(roll%100<40)return 1.479f;
+        if(roll%100<80)return 2.053f;
+        if(roll%100<100)return 3.530f;
+        break;
+    case 152301:
+        if(roll%100<34)return 3.103f;
+        if(roll%100<67)return 1.945f;
+        if(roll%100<100)return 3.455f;
+        break;
+    case 152302:
+        if(roll%100<34)return 3.719f;
+        if(roll%100<67)return 3.059f;
+        if(roll%100<100)return 1.850f;
+        break;
+    case 152303:
+        if(roll%100<34)return 3.121f;
+        if(roll%100<67)return 1.658f;
+        if(roll%100<100)return 3.148f;
+        break;
+    case 152304:
+        if(roll%100<33)return 1.674f;
+        if(roll%100<66)return 2.013f;
+        if(roll%100<100)return 2.060f;
+        break;
+    case 152305:
+        if(roll%100<34)return 4.155f;
+        if(roll%100<67)return 1.710f;
+        if(roll%100<100)return 3.830f;
+        break;
+    case 152306:
+        if(roll%100<33)return 1.578f;
+        if(roll%100<66)return 1.868f;
+        if(roll%100<100)return 4.300f;
+        break;
+    case 152308:
+        if(roll%100<42)return 2.068f;
+        if(roll%100<84)return 2.923f;
+        if(roll%100<100)return 3.395f;
+        break;
+    case 152310:
+        if(roll%100<33)return 2.151f;
+        if(roll%100<66)return 3.621f;
+        if(roll%100<100)return 4.079f;
+        break;
+    case 152311:
+        if(roll%100<33)return 2.616f;
+        if(roll%100<66)return 3.340f;
+        if(roll%100<100)return 2.549f;
+        break;
+    case 152312:
+        if(roll%100<50)return 1.497f;
+        if(roll%100<100)return 1.652f;
+        break;
+    case 152313:
+        if(roll%100<33)return 3.021f;
+        if(roll%100<66)return 4.124f;
+        if(roll%100<100)return 2.475f;
+        break;
+    case 152315:
+        if(roll%100<34)return 2.200f;
+        if(roll%100<67)return 2.394f;
+        if(roll%100<100)return 1.522f;
+        break;
+    case 152316:
+        if(roll%100<33)return 2.479f;
+        if(roll%100<66)return 1.882f;
+        if(roll%100<100)return 1.863f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart10_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 152317:
+        if(roll%100<33)return 2.612f;
+        if(roll%100<66)return 1.888f;
+        if(roll%100<100)return 3.164f;
+        break;
+    case 152318:
+        if(roll%100<34)return 2.747f;
+        if(roll%100<67)return 3.197f;
+        if(roll%100<100)return 3.003f;
+        break;
+    case 152402:
+        if(roll%100<33)return 3.657f;
+        if(roll%100<66)return 4.914f;
+        if(roll%100<100)return 3.663f;
+        break;
+    case 162101:
+        if(roll%100<25)return 2.054f;
+        if(roll%100<50)return 2.205f;
+        if(roll%100<75)return 1.677f;
+        if(roll%100<100)return 2.156f;
+        break;
+    case 162102:
+        if(roll%100<33)return 2.157f;
+        if(roll%100<66)return 2.024f;
+        if(roll%100<100)return 2.746f;
+        break;
+    case 162103:
+        if(roll%100<33)return 2.123f;
+        if(roll%100<66)return 2.761f;
+        if(roll%100<100)return 1.851f;
+        break;
+    case 162104:
+        if(roll%100<33)return 2.094f;
+        if(roll%100<66)return 1.977f;
+        if(roll%100<100)return 1.233f;
+        break;
+    case 162105:
+        if(roll%100<33)return 4.106f;
+        if(roll%100<66)return 2.136f;
+        if(roll%100<100)return 3.237f;
+        break;
+    case 162106:
+        if(roll%100<33)return 2.191f;
+        if(roll%100<66)return 3.190f;
+        if(roll%100<100)return 4.383f;
+        break;
+    case 162107:
+        if(roll%100<33)return 2.264f;
+        if(roll%100<66)return 2.516f;
+        if(roll%100<100)return 2.006f;
+        break;
+    case 162108:
+        if(roll%100<33)return 3.228f;
+        if(roll%100<66)return 3.369f;
+        if(roll%100<100)return 3.242f;
+        break;
+    case 162201:
+        if(roll%100<33)return 2.052f;
+        if(roll%100<66)return 2.928f;
+        if(roll%100<100)return 3.275f;
+        break;
+    case 162202:
+        if(roll%100<33)return 1.992f;
+        if(roll%100<66)return 2.250f;
+        if(roll%100<100)return 3.616f;
+        break;
+    case 162203:
+        if(roll%100<33)return 1.687f;
+        if(roll%100<66)return 1.402f;
+        if(roll%100<100)return 1.804f;
+        break;
+    case 162204:
+        if(roll%100<33)return 2.516f;
+        if(roll%100<66)return 3.236f;
+        if(roll%100<100)return 2.886f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart11_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 162205:
+        if(roll%100<33)return 2.687f;
+        if(roll%100<66)return 3.391f;
+        if(roll%100<100)return 2.122f;
+        break;
+    case 162206:
+        if(roll%100<33)return 1.825f;
+        if(roll%100<66)return 2.393f;
+        if(roll%100<100)return 2.598f;
+        break;
+    case 162207:
+        if(roll%100<33)return 2.015f;
+        if(roll%100<66)return 2.226f;
+        if(roll%100<100)return 1.910f;
+        break;
+    case 162208:
+        if(roll%100<33)return 1.615f;
+        if(roll%100<66)return 2.774f;
+        if(roll%100<100)return 1.708f;
+        break;
+    case 162209:
+        if(roll%100<33)return 2.632f;
+        if(roll%100<66)return 1.456f;
+        if(roll%100<100)return 1.651f;
+        break;
+    case 162210:
+        if(roll%100<33)return 2.081f;
+        if(roll%100<66)return 1.641f;
+        if(roll%100<100)return 2.175f;
+        break;
+    case 162211:
+        if(roll%100<33)return 2.430f;
+        if(roll%100<66)return 2.137f;
+        if(roll%100<100)return 2.760f;
+        break;
+    case 162212:
+        if(roll%100<33)return 3.488f;
+        if(roll%100<66)return 2.661f;
+        if(roll%100<100)return 3.999f;
+        break;
+    case 162213:
+        if(roll%100<33)return 2.738f;
+        if(roll%100<66)return 3.602f;
+        if(roll%100<100)return 2.224f;
+        break;
+    case 162301:
+        if(roll%100<33)return 3.543f;
+        if(roll%100<66)return 2.082f;
+        if(roll%100<100)return 2.773f;
+        break;
+    case 162303:
+        if(roll%100<33)return 1.936f;
+        if(roll%100<66)return 1.860f;
+        if(roll%100<100)return 2.725f;
+        break;
+    case 162304:
+        if(roll%100<33)return 3.156f;
+        if(roll%100<66)return 3.764f;
+        if(roll%100<100)return 2.917f;
+        break;
+    case 162305:
+        if(roll%100<33)return 0.899f;
+        if(roll%100<66)return 2.001f;
+        if(roll%100<100)return 1.477f;
+        break;
+    case 162307:
+        if(roll%100<33)return 1.344f;
+        if(roll%100<66)return 2.169f;
+        if(roll%100<100)return 2.785f;
+        break;
+    case 162308:
+        if(roll%100<33)return 2.333f;
+        if(roll%100<66)return 1.874f;
+        if(roll%100<100)return 2.843f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart12_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 162309:
+        if(roll%100<33)return 2.117f;
+        if(roll%100<66)return 3.421f;
+        if(roll%100<100)return 3.327f;
+        break;
+    case 162310:
+        if(roll%100<33)return 2.099f;
+        if(roll%100<66)return 1.674f;
+        if(roll%100<100)return 2.255f;
+        break;
+    case 162311:
+        if(roll%100<33)return 1.172f;
+        if(roll%100<66)return 0.945f;
+        if(roll%100<100)return 1.962f;
+        break;
+    case 162312:
+        if(roll%100<33)return 1.295f;
+        if(roll%100<66)return 1.332f;
+        if(roll%100<100)return 3.775f;
+        break;
+    case 162313:
+        if(roll%100<33)return 1.689f;
+        if(roll%100<66)return 1.692f;
+        if(roll%100<100)return 2.933f;
+        break;
+    case 162314:
+        if(roll%100<33)return 3.315f;
+        if(roll%100<66)return 2.104f;
+        if(roll%100<100)return 2.616f;
+        break;
+    case 162315:
+        if(roll%100<33)return 1.920f;
+        if(roll%100<66)return 1.547f;
+        if(roll%100<100)return 1.179f;
+        break;
+    case 162316:
+        if(roll%100<33)return 3.301f;
+        if(roll%100<66)return 2.670f;
+        if(roll%100<100)return 3.405f;
+        break;
+    case 162318:
+        if(roll%100<33)return 3.095f;
+        if(roll%100<66)return 3.288f;
+        if(roll%100<100)return 2.751f;
+        break;
+    case 162401:
+        if(roll%100<42)return 3.950f;
+        if(roll%100<85)return 3.025f;
+        if(roll%100<100)return 4.118f;
+        break;
+    case 200026:
+        if(roll%100<33)return 5.598f;
+        if(roll%100<66)return 3.747f;
+        if(roll%100<100)return 4.979f;
+        break;
+    case 200028:
+        if(roll%100<33)return 2.192f;
+        if(roll%100<66)return 3.965f;
+        if(roll%100<100)return 2.381f;
+        break;
+    case 200030:
+        if(roll%100<33)return 1.653f;
+        if(roll%100<66)return 1.303f;
+        if(roll%100<100)return 2.641f;
+        break;
+    case 200031:
+        if(roll%100<33)return 2.484f;
+        if(roll%100<66)return 3.321f;
+        if(roll%100<100)return 2.987f;
+        break;
+    case 200032:
+        if(roll%100<33)return 1.882f;
+        if(roll%100<66)return 2.421f;
+        if(roll%100<100)return 3.036f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart13_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200033:
+        if(roll%100<45)return 1.372f;
+        if(roll%100<65)return 2.792f;
+        if(roll%100<100)return 3.900f;
+        break;
+    case 200036:
+        if(roll%100<33)return 3.013f;
+        if(roll%100<66)return 3.409f;
+        if(roll%100<100)return 4.295f;
+        break;
+    case 200039:
+        if(roll%100<33)return 2.230f;
+        if(roll%100<66)return 3.053f;
+        if(roll%100<100)return 1.745f;
+        break;
+    case 200040:
+        if(roll%100<33)return 1.519f;
+        if(roll%100<66)return 3.224f;
+        if(roll%100<100)return 2.185f;
+        break;
+    case 200042:
+        if(roll%100<33)return 2.732f;
+        if(roll%100<66)return 3.779f;
+        if(roll%100<100)return 3.514f;
+        break;
+    case 200043:
+        if(roll%100<33)return 3.940f;
+        if(roll%100<67)return 2.564f;
+        if(roll%100<100)return 3.450f;
+        break;
+    case 200044:
+        if(roll%100<33)return 1.309f;
+        if(roll%100<67)return 3.487f;
+        if(roll%100<100)return 3.947f;
+        break;
+    case 200046:
+        if(roll%100<33)return 3.841f;
+        if(roll%100<66)return 2.450f;
+        if(roll%100<100)return 3.917f;
+        break;
+    case 200048:
+        if(roll%100<33)return 2.005f;
+        if(roll%100<66)return 2.113f;
+        if(roll%100<100)return 3.478f;
+        break;
+    case 200050:
+        if(roll%100<33)return 2.355f;
+        if(roll%100<67)return 3.544f;
+        if(roll%100<100)return 2.786f;
+        break;
+    case 200055:
+        if(roll%100<33)return 3.181f;
+        if(roll%100<66)return 4.205f;
+        if(roll%100<100)return 3.736f;
+        break;
+    case 200062:
+        if(roll%100<34)return 2.301f;
+        if(roll%100<67)return 1.873f;
+        if(roll%100<100)return 1.730f;
+        break;
+    case 200071:
+        if(roll%100<33)return 2.836f;
+        if(roll%100<67)return 2.995f;
+        if(roll%100<100)return 2.952f;
+        break;
+    case 200080:
+        if(roll%100<33)return 2.778f;
+        if(roll%100<66)return 2.408f;
+        if(roll%100<100)return 2.912f;
+        break;
+    case 200081:
+        if(roll%100<33)return 2.732f;
+        if(roll%100<67)return 2.842f;
+        if(roll%100<100)return 2.984f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart14_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200083:
+        if(roll%100<25)return 2.009f;
+        if(roll%100<50)return 3.145f;
+        if(roll%100<75)return 3.169f;
+        if(roll%100<100)return 2.970f;
+        break;
+    case 200087:
+        if(roll%100<25)return 2.989f;
+        if(roll%100<50)return 4.085f;
+        if(roll%100<75)return 3.220f;
+        if(roll%100<100)return 4.106f;
+        break;
+    case 200088:
+        if(roll%100<33)return 3.482f;
+        if(roll%100<67)return 2.285f;
+        if(roll%100<100)return 3.198f;
+        break;
+    case 200089:
+        if(roll%100<34)return 3.460f;
+        if(roll%100<67)return 3.348f;
+        if(roll%100<100)return 3.780f;
+        break;
+    case 200091:
+        if(roll%100<25)return 1.456f;
+        if(roll%100<50)return 3.799f;
+        if(roll%100<75)return 3.178f;
+        if(roll%100<100)return 3.463f;
+        break;
+    case 200098:
+        if(roll%100<33)return 2.164f;
+        if(roll%100<66)return 1.961f;
+        if(roll%100<100)return 4.146f;
+        break;
+    case 200112:
+        if(roll%100<50)return 2.624f;
+        if(roll%100<100)return 3.413f;
+        break;
+    case 200115:
+        if(roll%100<33)return 1.424f;
+        if(roll%100<67)return 1.955f;
+        if(roll%100<100)return 1.380f;
+        break;
+    case 200118:
+        if(roll%100<33)return 2.921f;
+        if(roll%100<67)return 2.084f;
+        if(roll%100<100)return 2.999f;
+        break;
+    case 200124:
+        if(roll%100<33)return 2.216f;
+        if(roll%100<67)return 2.367f;
+        if(roll%100<100)return 1.577f;
+        break;
+    case 200132:
+        if(roll%100<33)return 2.487f;
+        if(roll%100<67)return 2.432f;
+        if(roll%100<100)return 3.238f;
+        break;
+    case 200135:
+        if(roll%100<100)return 2.518f;
+        if(roll%100<100)return 2.646f;
+        if(roll%100<100)return 1.145f;
+        break;
+    case 200136:
+        if(roll%100<33)return 2.572f;
+        if(roll%100<66)return 2.810f;
+        if(roll%100<100)return 2.099f;
+        break;
+    case 200138:
+        if(roll%100<33)return 4.110f;
+        if(roll%100<66)return 2.967f;
+        if(roll%100<100)return 3.495f;
+        break;
+    case 200144:
+        if(roll%100<20)return 4.280f;
+        if(roll%100<40)return 1.801f;
+        if(roll%100<60)return 1.476f;
+        if(roll%100<80)return 3.826f;
+        if(roll%100<100)return 1.442f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart15_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200145:
+        if(roll%100<34)return 2.745f;
+        if(roll%100<67)return 3.132f;
+        if(roll%100<100)return 3.944f;
+        break;
+    case 200146:
+        if(roll%100<34)return 4.169f;
+        if(roll%100<67)return 4.218f;
+        if(roll%100<100)return 2.442f;
+        break;
+    case 200147:
+        if(roll%100<33)return 2.842f;
+        if(roll%100<66)return 3.228f;
+        if(roll%100<100)return 3.310f;
+        break;
+    case 200149:
+        if(roll%100<34)return 1.950f;
+        if(roll%100<67)return 3.472f;
+        if(roll%100<100)return 4.373f;
+        break;
+    case 200159:
+        if(roll%100<33)return 3.009f;
+        if(roll%100<66)return 3.336f;
+        if(roll%100<100)return 3.215f;
+        break;
+    case 200160:
+        if(roll%100<33)return 2.797f;
+        if(roll%100<66)return 2.438f;
+        if(roll%100<100)return 3.272f;
+        break;
+    case 200161:
+        if(roll%100<33)return 2.398f;
+        if(roll%100<66)return 4.450f;
+        if(roll%100<100)return 3.648f;
+        break;
+    case 200162:
+        if(roll%100<33)return 3.467f;
+        if(roll%100<66)return 2.927f;
+        if(roll%100<100)return 3.068f;
+        break;
+    case 200163:
+        if(roll%100<33)return 3.703f;
+        if(roll%100<66)return 3.178f;
+        if(roll%100<100)return 3.333f;
+        break;
+    case 200164:
+        if(roll%100<33)return 4.027f;
+        if(roll%100<66)return 3.223f;
+        if(roll%100<100)return 3.145f;
+        break;
+    case 200165:
+        if(roll%100<33)return 2.159f;
+        if(roll%100<66)return 2.013f;
+        if(roll%100<100)return 2.101f;
+        break;
+    case 200166:
+        if(roll%100<33)return 2.999f;
+        if(roll%100<66)return 1.920f;
+        if(roll%100<100)return 2.796f;
+        break;
+    case 200167:
+        if(roll%100<33)return 3.402f;
+        if(roll%100<66)return 2.291f;
+        if(roll%100<100)return 3.618f;
+        break;
+    case 200168:
+        if(roll%100<33)return 2.607f;
+        if(roll%100<67)return 1.482f;
+        if(roll%100<100)return 1.970f;
+        break;
+    case 200169:
+        if(roll%100<20)return 1.613f;
+        if(roll%100<40)return 3.043f;
+        if(roll%100<60)return 2.220f;
+        if(roll%100<80)return 1.315f;
+        if(roll%100<100)return 3.144f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart16_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200170:
+        if(roll%100<50)return 2.552f;
+        if(roll%100<100)return 3.425f;
+        break;
+    case 200171:
+        if(roll%100<33)return 2.902f;
+        if(roll%100<66)return 1.743f;
+        if(roll%100<100)return 1.543f;
+        break;
+    case 200177:
+        if(roll%100<33)return 1.750f;
+        if(roll%100<66)return 1.746f;
+        if(roll%100<100)return 1.267f;
+        break;
+    case 200209:
+        if(roll%100<25)return 2.258f;
+        if(roll%100<50)return 1.638f;
+        if(roll%100<75)return 1.196f;
+        if(roll%100<100)return 1.275f;
+        break;
+    case 200212:
+        if(roll%100<33)return 2.220f;
+        if(roll%100<67)return 2.387f;
+        if(roll%100<100)return 1.823f;
+        break;
+    case 200219:
+        if(roll%100<42)return 3.950f;
+        if(roll%100<85)return 3.025f;
+        if(roll%100<100)return 4.118f;
+        break;
+    case 200220:
+        if(roll%300<100)return 5.203f;
+        if(roll%300<200)return 6.043f;
+        if(roll%300<300)return 5.319f;
+        break;
+    case 200221:
+        if(roll%100<50)return 5.688f;
+        if(roll%100<100)return 4.677f;
+        break;
+    case 200222:
+        if(roll%100<34)return 4.571f;
+        if(roll%100<67)return 5.907f;
+        if(roll%100<100)return 5.782f;
+        break;
+    case 200227:
+        if(roll%100<33)return 3.079f;
+        if(roll%100<67)return 4.176f;
+        if(roll%100<100)return 4.236f;
+        break;
+    case 200235:
+        if(roll%100<17)return 3.087f;
+        if(roll%100<34)return 2.573f;
+        if(roll%100<51)return 2.474f;
+        if(roll%100<68)return 1.487f;
+        if(roll%100<85)return 2.432f;
+        if(roll%100<100)return 1.754f;
+        break;
+    case 200236:
+        if(roll%100<25)return 1.195f;
+        if(roll%100<67)return 2.140f;
+        if(roll%100<92)return 1.269f;
+        if(roll%100<100)return 2.600f;
+        break;
+    case 200237:
+        if(roll%100<33)return 2.072f;
+        if(roll%100<66)return 2.623f;
+        if(roll%100<100)return 2.381f;
+        break;
+    case 200293:
+        if(roll%100<20)return 4.123f;
+        if(roll%100<40)return 3.194f;
+        if(roll%100<60)return 3.327f;
+        if(roll%100<80)return 2.466f;
+        if(roll%100<100)return 5.254f;
+        break;
+    case 200294:
+        if(roll%100<20)return 3.716f;
+        if(roll%100<40)return 2.522f;
+        if(roll%100<60)return 2.246f;
+        if(roll%100<80)return 2.051f;
+        if(roll%100<100)return 1.880f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart17_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200296:
+        if(roll%100<33)return 3.587f;
+        if(roll%100<66)return 3.700f;
+        if(roll%100<100)return 2.415f;
+        break;
+    case 200299:
+        if(roll%100<33)return 3.567f;
+        if(roll%100<66)return 3.551f;
+        if(roll%100<100)return 2.821f;
+        break;
+    case 200518:
+        if(roll%100<33)return 1.760f;
+        if(roll%100<66)return 2.340f;
+        if(roll%100<100)return 2.115f;
+        break;
+    case 200520:
+        if(roll%100<33)return 1.562f;
+        if(roll%100<66)return 2.932f;
+        if(roll%100<100)return 1.643f;
+        break;
+    case 200523:
+        if(roll%100<25)return 1.943f;
+        if(roll%100<50)return 3.457f;
+        if(roll%100<75)return 2.942f;
+        if(roll%100<100)return 2.169f;
+        break;
+    case 200528:
+        if(roll%100<33)return 3.005f;
+        if(roll%100<66)return 2.491f;
+        if(roll%100<100)return 3.116f;
+        break;
+    case 200529:
+        if(roll%100<39)return 2.568f;
+        if(roll%100<61)return 4.406f;
+        if(roll%100<100)return 3.435f;
+        break;
+    case 200534:
+        if(roll%100<33)return 2.141f;
+        if(roll%100<66)return 2.952f;
+        if(roll%100<100)return 4.356f;
+        break;
+    case 200535:
+        if(roll%100<33)return 2.956f;
+        if(roll%100<66)return 2.457f;
+        if(roll%100<100)return 3.787f;
+        break;
+    case 200540:
+        if(roll%100<41)return 1.791f;
+        if(roll%100<82)return 1.793f;
+        if(roll%100<100)return 3.155f;
+        break;
+    case 201523:
+        if(roll%100<20)return 3.207f;
+        if(roll%100<40)return 1.021f;
+        if(roll%100<60)return 2.148f;
+        if(roll%100<80)return 1.935f;
+        if(roll%100<100)return 1.584f;
+        break;
+    case 201559:
+        if(roll%100<20)return 3.244f;
+        if(roll%100<40)return 2.396f;
+        if(roll%100<60)return 3.698f;
+        if(roll%100<80)return 4.126f;
+        if(roll%100<100)return 2.983f;
+        break;
+    case 201578:
+        if(roll%100<34)return 1.563f;
+        if(roll%100<67)return 3.186f;
+        if(roll%100<100)return 2.444f;
+        break;
+    case 201580:
+        if(roll%100<33)return 3.832f;
+        if(roll%100<66)return 3.307f;
+        if(roll%100<100)return 3.409f;
+        break;
+    case 201587:
+        if(roll%100<20)return 1.606f;
+        if(roll%100<40)return 2.241f;
+        if(roll%100<60)return 2.879f;
+        if(roll%100<80)return 2.137f;
+        if(roll%100<100)return 3.179f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart18_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 201589:
+        if(roll%100<34)return 1.975f;
+        if(roll%100<67)return 2.736f;
+        if(roll%100<100)return 2.460f;
+        break;
+    case 201595:
+        if(roll%100<34)return 3.092f;
+        if(roll%100<67)return 4.865f;
+        if(roll%100<100)return 4.277f;
+        break;
+    case 201597:
+        if(roll%100<33)return 3.689f;
+        if(roll%100<66)return 2.861f;
+        if(roll%100<100)return 3.012f;
+        break;
+    case 201601:
+        if(roll%100<34)return 3.025f;
+        if(roll%100<67)return 3.617f;
+        if(roll%100<100)return 2.203f;
+        break;
+    case 201603:
+        if(roll%100<25)return 1.677f;
+        if(roll%100<50)return 2.156f;
+        if(roll%100<75)return 2.054f;
+        if(roll%100<100)return 2.205f;
+        break;
+    case 201609:
+        if(roll%100<20)return 1.550f;
+        if(roll%100<40)return 2.896f;
+        if(roll%100<60)return 2.979f;
+        if(roll%100<80)return 4.577f;
+        if(roll%100<100)return 3.965f;
+        break;
+    case 201611:
+        if(roll%100<25)return 1.576f;
+        if(roll%100<50)return 2.645f;
+        if(roll%100<75)return 3.446f;
+        if(roll%100<100)return 1.419f;
+        break;
+    case 201612:
+        if(roll%100<20)return 1.951f;
+        if(roll%100<40)return 0.683f;
+        if(roll%100<60)return 3.425f;
+        if(roll%100<80)return 1.103f;
+        if(roll%100<100)return 2.829f;
+        break;
+    case 201615:
+        if(roll%100<34)return 2.008f;
+        if(roll%100<67)return 1.756f;
+        if(roll%100<100)return 3.190f;
+        break;
+    case 201616:
+        if(roll%100<33)return 4.267f;
+        if(roll%100<67)return 2.769f;
+        if(roll%100<100)return 3.791f;
+        break;
+    case 201617:
+        if(roll%100<20)return 3.357f;
+        if(roll%100<40)return 3.705f;
+        if(roll%100<60)return 3.575f;
+        if(roll%100<80)return 3.936f;
+        if(roll%100<100)return 3.362f;
+        break;
+    case 201618:
+        if(roll%100<33)return 2.828f;
+        if(roll%100<66)return 2.762f;
+        if(roll%100<100)return 2.292f;
+        break;
+    case 201620:
+        if(roll%100<20)return 2.630f;
+        if(roll%100<40)return 1.768f;
+        if(roll%100<60)return 3.417f;
+        if(roll%100<80)return 1.899f;
+        if(roll%100<100)return 3.241f;
+        break;
+    case 201621:
+        if(roll%100<20)return 4.178f;
+        if(roll%100<40)return 1.629f;
+        if(roll%100<60)return 2.694f;
+        if(roll%100<80)return 2.305f;
+        if(roll%100<100)return 2.669f;
+        break;
+    case 201622:
+        if(roll%100<33)return 3.226f;
+        if(roll%100<67)return 2.155f;
+        if(roll%100<100)return 2.554f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart19_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 201624:
+        if(roll%100<20)return 2.036f;
+        if(roll%100<40)return 3.716f;
+        if(roll%100<60)return 2.630f;
+        if(roll%100<80)return 3.398f;
+        if(roll%100<100)return 2.109f;
+        break;
+    case 201625:
+        if(roll%100<20)return 3.666f;
+        if(roll%100<40)return 2.559f;
+        if(roll%100<60)return 2.069f;
+        if(roll%100<80)return 2.204f;
+        if(roll%100<100)return 3.323f;
+        break;
+    case 201626:
+        if(roll%100<25)return 2.485f;
+        if(roll%100<50)return 1.954f;
+        if(roll%100<75)return 1.734f;
+        if(roll%100<100)return 2.398f;
+        break;
+    case 201627:
+        if(roll%100<20)return 4.626f;
+        if(roll%100<40)return 4.292f;
+        if(roll%100<60)return 4.674f;
+        if(roll%100<80)return 2.036f;
+        if(roll%100<100)return 8.728f;
+        break;
+    case 201628:
+        if(roll%100<20)return 3.430f;
+        if(roll%100<40)return 2.733f;
+        if(roll%100<60)return 2.968f;
+        if(roll%100<80)return 2.975f;
+        if(roll%100<100)return 3.649f;
+        break;
+    case 201630:
+        if(roll%100<20)return 4.155f;
+        if(roll%100<40)return 4.537f;
+        if(roll%100<60)return 1.895f;
+        if(roll%100<80)return 2.405f;
+        if(roll%100<100)return 2.108f;
+        break;
+    case 201636:
+        if(roll%100<20)return 0.759f;
+        if(roll%100<40)return 0.543f;
+        if(roll%100<60)return 1.629f;
+        if(roll%100<80)return 1.105f;
+        if(roll%100<100)return 0.968f;
+        break;
+    case 201638:
+        if(roll%100<20)return 1.835f;
+        if(roll%100<40)return 2.266f;
+        if(roll%100<60)return 2.642f;
+        if(roll%100<80)return 1.410f;
+        if(roll%100<100)return 1.804f;
+        break;
+    case 201644:
+        if(roll%100<20)return 1.756f;
+        if(roll%100<40)return 3.156f;
+        if(roll%100<60)return 3.645f;
+        if(roll%100<80)return 2.183f;
+        if(roll%100<100)return 3.264f;
+        break;
+    case 201646:
+        if(roll%100<33)return 3.006f;
+        if(roll%100<66)return 4.084f;
+        if(roll%100<100)return 1.921f;
+        break;
+    case 201650:
+        if(roll%100<33)return 1.184f;
+        if(roll%100<67)return 1.822f;
+        if(roll%100<100)return 4.062f;
+        break;
+    case 201664:
+        if(roll%100<25)return 3.911f;
+        if(roll%100<50)return 5.107f;
+        if(roll%100<75)return 4.496f;
+        if(roll%100<100)return 3.656f;
+        break;
+    case 201676:
+        if(roll%100<33)return 0.750f;
+        if(roll%100<67)return 3.039f;
+        if(roll%100<100)return 2.914f;
+        break;
+    case 201677:
+        if(roll%100<34)return 1.183f;
+        if(roll%100<67)return 4.121f;
+        if(roll%100<100)return 4.219f;
+        break;
+    case 201753:
+        if(roll%100<34)return 1.183f;
+        if(roll%100<67)return 4.121f;
+        if(roll%100<100)return 4.219f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart20_Universal_en(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 201772:
+        if(roll%100<20)return 3.207f;
+        if(roll%100<40)return 1.021f;
+        if(roll%100<60)return 2.148f;
+        if(roll%100<80)return 1.935f;
+        if(roll%100<100)return 1.584f;
+        break;
+    case 201773:
+        if(roll%100<17)return 1.352f;
+        if(roll%100<33)return 1.514f;
+        if(roll%100<50)return 3.003f;
+        if(roll%100<67)return 1.877f;
+        if(roll%100<84)return 3.524f;
+        if(roll%100<100)return 2.040f;
+        break;
+    case 201774:
+        if(roll%100<14)return 2.655f;
+        if(roll%100<28)return 1.262f;
+        if(roll%100<42)return 3.035f;
+        if(roll%100<58)return 1.774f;
+        if(roll%100<72)return 1.991f;
+        if(roll%100<86)return 2.122f;
+        if(roll%100<100)return 2.120f;
+        break;
+    case 201776:
+        if(roll%100<16)return 2.655f;
+        if(roll%100<30)return 1.262f;
+        if(roll%100<44)return 3.035f;
+        if(roll%100<58)return 1.774f;
+        if(roll%100<72)return 1.991f;
+        if(roll%100<86)return 2.122f;
+        if(roll%100<100)return 2.120f;
+        break;
+    case 201777:
+        if(roll%100<50)return 2.331f;
+        if(roll%100<100)return 1.971f;
+        break;
+    case 201778:
+        if(roll%100<33)return 1.750f;
+        if(roll%100<67)return 1.746f;
+        if(roll%100<100)return 1.267f;
+        break;
+    case 201779:
+        if(roll%100<33)return 1.690f;
+        if(roll%100<66)return 2.295f;
+        if(roll%100<100)return 2.483f;
+        break;
+    case 201780:
+        if(roll%100<33)return 3.025f;
+        if(roll%100<67)return 3.617f;
+        if(roll%100<100)return 2.203f;
+        break;
+    case 201781:
+        if(roll%100<33)return 4.388f;
+        if(roll%100<67)return 2.522f;
+        if(roll%100<100)return 1.773f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+
+function BetaGwentAudioRevealEffect_Universal_en(id : int) : string
+{
+    if (id <= 201779) return BetaGwentAudioRevealEffect0_Universal_en(id);
+    return "";
+}
+function BetaGwentAudioRevealEffect0_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 142204: return "bg79_fx_2095867680";
+        case 142208: return "bg79_fx_181319135";
+        case 142210: return "bg79_fx_1115677916";
+        case 142307: return "bg79_fx_35814593";
+        case 201779: return "bg79_fx_3157478180";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioTransformEffect_Universal_en(id : int) : string
+{
+    if (id <= 112105) return BetaGwentAudioTransformEffect0_Universal_en(id);
+    return "";
+}
+function BetaGwentAudioTransformEffect0_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 112105: return "bg79_fx_729252324";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceTriggers_Universal_en(id : int) : int
+{
+    if (id <= 113401) return BetaGwentAudioVoiceTriggers0_Universal_en(id);
+    if (id <= 132204) return BetaGwentAudioVoiceTriggers1_Universal_en(id);
+    if (id <= 142301) return BetaGwentAudioVoiceTriggers2_Universal_en(id);
+    if (id <= 152406) return BetaGwentAudioVoiceTriggers3_Universal_en(id);
+    if (id <= 200036) return BetaGwentAudioVoiceTriggers4_Universal_en(id);
+    if (id <= 200166) return BetaGwentAudioVoiceTriggers5_Universal_en(id);
+    if (id <= 201584) return BetaGwentAudioVoiceTriggers6_Universal_en(id);
+    if (id <= 201697) return BetaGwentAudioVoiceTriggers7_Universal_en(id);
+    if (id <= 201817) return BetaGwentAudioVoiceTriggers8_Universal_en(id);
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers0_Universal_en(id : int) : int
+{
+    switch (id)
+    {
+        case 112101: return 8;
+        case 112102: return 8;
+        case 112103: return 8;
+        case 112104: return 8;
+        case 112105: return 24;
+        case 112106: return 8;
+        case 112107: return 8;
+        case 112108: return 8;
+        case 112109: return 8;
+        case 112110: return 8;
+        case 112111: return 8;
+        case 112112: return 8;
+        case 112113: return 8;
+        case 112201: return 8;
+        case 112202: return 8;
+        case 112203: return 8;
+        case 112204: return 8;
+        case 112205: return 8;
+        case 112206: return 8;
+        case 112207: return 8;
+        case 112208: return 8;
+        case 112209: return 8;
+        case 112210: return 8;
+        case 112211: return 8;
+        case 112212: return 8;
+        case 112213: return 8;
+        case 112214: return 8;
+        case 112215: return 8;
+        case 112401: return 8;
+        case 112402: return 8;
+        case 112403: return 8;
+        case 112404: return 8;
+        case 112405: return 0;
+        case 113101: return 8;
+        case 113102: return 0;
+        case 113201: return 0;
+        case 113202: return 0;
+        case 113203: return 0;
+        case 113204: return 8;
+        case 113205: return 8;
+        case 113206: return 0;
+        case 113207: return 0;
+        case 113208: return 8;
+        case 113209: return 0;
+        case 113301: return 8;
+        case 113302: return 8;
+        case 113303: return 0;
+        case 113305: return 8;
+        case 113306: return 0;
+        case 113307: return 0;
+        case 113308: return 8;
+        case 113309: return 0;
+        case 113310: return 0;
+        case 113311: return 0;
+        case 113312: return 8;
+        case 113313: return 8;
+        case 113315: return 0;
+        case 113316: return 0;
+        case 113320: return 0;
+        case 113401: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers1_Universal_en(id : int) : int
+{
+    switch (id)
+    {
+        case 113402: return 0;
+        case 122101: return 8;
+        case 122102: return 8;
+        case 122103: return 8;
+        case 122104: return 8;
+        case 122105: return 8;
+        case 122106: return 8;
+        case 122107: return 8;
+        case 122108: return 8;
+        case 122201: return 8;
+        case 122202: return 8;
+        case 122203: return 8;
+        case 122204: return 8;
+        case 122205: return 8;
+        case 122206: return 8;
+        case 122207: return 8;
+        case 122208: return 8;
+        case 122209: return 8;
+        case 122210: return 8;
+        case 122211: return 8;
+        case 122212: return 8;
+        case 122213: return 8;
+        case 122214: return 8;
+        case 122216: return 8;
+        case 122301: return 0;
+        case 122302: return 0;
+        case 122303: return 0;
+        case 122304: return 0;
+        case 122306: return 8;
+        case 122307: return 8;
+        case 122308: return 8;
+        case 122309: return 8;
+        case 122310: return 8;
+        case 122311: return 8;
+        case 122312: return 8;
+        case 122313: return 8;
+        case 122314: return 8;
+        case 122315: return 0;
+        case 122316: return 8;
+        case 122317: return 8;
+        case 122318: return 8;
+        case 122401: return 0;
+        case 122402: return 0;
+        case 122403: return 8;
+        case 123201: return 0;
+        case 123301: return 8;
+        case 131101: return 8;
+        case 131102: return 8;
+        case 132101: return 8;
+        case 132102: return 8;
+        case 132103: return 0;
+        case 132104: return 8;
+        case 132105: return 8;
+        case 132106: return 0;
+        case 132107: return 8;
+        case 132108: return 8;
+        case 132201: return 0;
+        case 132202: return 0;
+        case 132203: return 0;
+        case 132204: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers2_Universal_en(id : int) : int
+{
+    switch (id)
+    {
+        case 132205: return 0;
+        case 132206: return 8;
+        case 132207: return 8;
+        case 132208: return 8;
+        case 132209: return 0;
+        case 132211: return 8;
+        case 132212: return 8;
+        case 132213: return 0;
+        case 132214: return 8;
+        case 132215: return 8;
+        case 132216: return 0;
+        case 132217: return 0;
+        case 132218: return 0;
+        case 132301: return 0;
+        case 132302: return 0;
+        case 132303: return 0;
+        case 132304: return 0;
+        case 132305: return 8;
+        case 132306: return 0;
+        case 132307: return 0;
+        case 132308: return 0;
+        case 132309: return 8;
+        case 132310: return 8;
+        case 132312: return 0;
+        case 132313: return 0;
+        case 132314: return 0;
+        case 132315: return 0;
+        case 132316: return 0;
+        case 132402: return 0;
+        case 132403: return 0;
+        case 132404: return 0;
+        case 132405: return 0;
+        case 132406: return 0;
+        case 132407: return 8;
+        case 132408: return 0;
+        case 132409: return 8;
+        case 133301: return 0;
+        case 133302: return 0;
+        case 142101: return 0;
+        case 142102: return 8;
+        case 142103: return 8;
+        case 142104: return 8;
+        case 142105: return 8;
+        case 142106: return 8;
+        case 142107: return 8;
+        case 142108: return 8;
+        case 142201: return 8;
+        case 142202: return 8;
+        case 142203: return 8;
+        case 142204: return 4;
+        case 142206: return 8;
+        case 142207: return 8;
+        case 142208: return 4;
+        case 142209: return 8;
+        case 142210: return 4;
+        case 142211: return 8;
+        case 142212: return 8;
+        case 142213: return 8;
+        case 142214: return 8;
+        case 142301: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers3_Universal_en(id : int) : int
+{
+    switch (id)
+    {
+        case 142302: return 8;
+        case 142303: return 8;
+        case 142304: return 8;
+        case 142306: return 8;
+        case 142307: return 4;
+        case 142308: return 8;
+        case 142309: return 8;
+        case 142310: return 8;
+        case 142311: return 8;
+        case 142312: return 8;
+        case 142313: return 8;
+        case 142314: return 8;
+        case 142315: return 8;
+        case 142316: return 8;
+        case 142317: return 8;
+        case 142401: return 8;
+        case 143201: return 0;
+        case 143301: return 0;
+        case 152101: return 8;
+        case 152103: return 8;
+        case 152104: return 0;
+        case 152105: return 8;
+        case 152106: return 8;
+        case 152107: return 8;
+        case 152109: return 0;
+        case 152201: return 8;
+        case 152202: return 8;
+        case 152203: return 8;
+        case 152204: return 8;
+        case 152205: return 8;
+        case 152206: return 8;
+        case 152207: return 8;
+        case 152208: return 8;
+        case 152209: return 8;
+        case 152210: return 0;
+        case 152211: return 8;
+        case 152213: return 8;
+        case 152214: return 8;
+        case 152301: return 8;
+        case 152302: return 8;
+        case 152303: return 8;
+        case 152304: return 8;
+        case 152305: return 8;
+        case 152306: return 8;
+        case 152308: return 8;
+        case 152309: return 0;
+        case 152310: return 8;
+        case 152311: return 8;
+        case 152312: return 8;
+        case 152313: return 8;
+        case 152314: return 8;
+        case 152315: return 8;
+        case 152316: return 8;
+        case 152317: return 8;
+        case 152318: return 8;
+        case 152401: return 0;
+        case 152402: return 8;
+        case 152403: return 0;
+        case 152405: return 0;
+        case 152406: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers4_Universal_en(id : int) : int
+{
+    switch (id)
+    {
+        case 153201: return 0;
+        case 153301: return 8;
+        case 162101: return 8;
+        case 162102: return 8;
+        case 162103: return 8;
+        case 162104: return 8;
+        case 162105: return 8;
+        case 162106: return 8;
+        case 162107: return 8;
+        case 162108: return 8;
+        case 162201: return 8;
+        case 162202: return 8;
+        case 162203: return 8;
+        case 162204: return 8;
+        case 162205: return 8;
+        case 162206: return 8;
+        case 162207: return 8;
+        case 162208: return 8;
+        case 162209: return 8;
+        case 162210: return 8;
+        case 162211: return 8;
+        case 162212: return 8;
+        case 162213: return 8;
+        case 162301: return 8;
+        case 162302: return 0;
+        case 162303: return 8;
+        case 162304: return 8;
+        case 162305: return 8;
+        case 162306: return 0;
+        case 162307: return 8;
+        case 162308: return 8;
+        case 162309: return 8;
+        case 162310: return 8;
+        case 162311: return 8;
+        case 162312: return 8;
+        case 162313: return 8;
+        case 162314: return 8;
+        case 162315: return 8;
+        case 162316: return 8;
+        case 162317: return 0;
+        case 162318: return 8;
+        case 162401: return 8;
+        case 162402: return 0;
+        case 163101: return 0;
+        case 163201: return 0;
+        case 200008: return 0;
+        case 200009: return 0;
+        case 200018: return 0;
+        case 200019: return 0;
+        case 200020: return 0;
+        case 200021: return 0;
+        case 200022: return 0;
+        case 200023: return 0;
+        case 200026: return 8;
+        case 200028: return 8;
+        case 200030: return 8;
+        case 200031: return 8;
+        case 200032: return 8;
+        case 200033: return 8;
+        case 200036: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers5_Universal_en(id : int) : int
+{
+    switch (id)
+    {
+        case 200037: return 0;
+        case 200038: return 0;
+        case 200039: return 8;
+        case 200040: return 8;
+        case 200041: return 0;
+        case 200042: return 8;
+        case 200043: return 8;
+        case 200044: return 8;
+        case 200046: return 8;
+        case 200048: return 8;
+        case 200049: return 0;
+        case 200050: return 8;
+        case 200052: return 0;
+        case 200053: return 0;
+        case 200055: return 8;
+        case 200056: return 8;
+        case 200058: return 0;
+        case 200062: return 8;
+        case 200067: return 0;
+        case 200071: return 8;
+        case 200073: return 0;
+        case 200078: return 0;
+        case 200079: return 0;
+        case 200080: return 8;
+        case 200081: return 8;
+        case 200083: return 8;
+        case 200087: return 8;
+        case 200088: return 8;
+        case 200089: return 8;
+        case 200091: return 8;
+        case 200098: return 8;
+        case 200102: return 0;
+        case 200103: return 0;
+        case 200104: return 0;
+        case 200105: return 0;
+        case 200112: return 8;
+        case 200114: return 0;
+        case 200115: return 8;
+        case 200118: return 8;
+        case 200124: return 8;
+        case 200132: return 8;
+        case 200135: return 8;
+        case 200136: return 8;
+        case 200138: return 8;
+        case 200139: return 0;
+        case 200144: return 8;
+        case 200145: return 8;
+        case 200146: return 8;
+        case 200147: return 8;
+        case 200149: return 8;
+        case 200154: return 0;
+        case 200158: return 0;
+        case 200159: return 8;
+        case 200160: return 8;
+        case 200161: return 8;
+        case 200162: return 8;
+        case 200163: return 8;
+        case 200164: return 8;
+        case 200165: return 8;
+        case 200166: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers6_Universal_en(id : int) : int
+{
+    switch (id)
+    {
+        case 200167: return 8;
+        case 200168: return 8;
+        case 200169: return 8;
+        case 200170: return 8;
+        case 200171: return 8;
+        case 200177: return 8;
+        case 200209: return 8;
+        case 200212: return 8;
+        case 200218: return 0;
+        case 200219: return 8;
+        case 200220: return 8;
+        case 200221: return 8;
+        case 200222: return 8;
+        case 200223: return 0;
+        case 200224: return 0;
+        case 200225: return 0;
+        case 200226: return 0;
+        case 200227: return 8;
+        case 200228: return 0;
+        case 200233: return 0;
+        case 200235: return 8;
+        case 200236: return 8;
+        case 200237: return 8;
+        case 200293: return 8;
+        case 200294: return 8;
+        case 200295: return 0;
+        case 200296: return 8;
+        case 200299: return 8;
+        case 200300: return 0;
+        case 200301: return 0;
+        case 200307: return 0;
+        case 200308: return 0;
+        case 200320: return 8;
+        case 200457: return 0;
+        case 200502: return 0;
+        case 200518: return 8;
+        case 200519: return 0;
+        case 200520: return 8;
+        case 200523: return 8;
+        case 200528: return 8;
+        case 200529: return 8;
+        case 200530: return 0;
+        case 200532: return 0;
+        case 200534: return 8;
+        case 200535: return 8;
+        case 200539: return 0;
+        case 200540: return 8;
+        case 201523: return 8;
+        case 201559: return 8;
+        case 201572: return 0;
+        case 201573: return 0;
+        case 201574: return 0;
+        case 201576: return 0;
+        case 201578: return 8;
+        case 201579: return 0;
+        case 201580: return 8;
+        case 201581: return 0;
+        case 201582: return 0;
+        case 201583: return 0;
+        case 201584: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers7_Universal_en(id : int) : int
+{
+    switch (id)
+    {
+        case 201585: return 0;
+        case 201587: return 8;
+        case 201589: return 8;
+        case 201595: return 8;
+        case 201597: return 8;
+        case 201598: return 0;
+        case 201599: return 0;
+        case 201600: return 0;
+        case 201601: return 8;
+        case 201603: return 8;
+        case 201606: return 0;
+        case 201609: return 8;
+        case 201610: return 0;
+        case 201611: return 8;
+        case 201612: return 8;
+        case 201613: return 0;
+        case 201615: return 8;
+        case 201616: return 8;
+        case 201617: return 8;
+        case 201618: return 8;
+        case 201619: return 0;
+        case 201620: return 8;
+        case 201621: return 8;
+        case 201622: return 8;
+        case 201623: return 0;
+        case 201624: return 8;
+        case 201625: return 8;
+        case 201626: return 8;
+        case 201627: return 8;
+        case 201628: return 8;
+        case 201630: return 8;
+        case 201631: return 0;
+        case 201632: return 0;
+        case 201633: return 0;
+        case 201634: return 0;
+        case 201635: return 0;
+        case 201636: return 8;
+        case 201637: return 0;
+        case 201638: return 8;
+        case 201639: return 0;
+        case 201642: return 0;
+        case 201643: return 0;
+        case 201644: return 8;
+        case 201645: return 0;
+        case 201646: return 8;
+        case 201647: return 0;
+        case 201648: return 0;
+        case 201650: return 8;
+        case 201653: return 0;
+        case 201656: return 0;
+        case 201657: return 0;
+        case 201659: return 0;
+        case 201660: return 0;
+        case 201661: return 8;
+        case 201662: return 0;
+        case 201664: return 8;
+        case 201676: return 8;
+        case 201677: return 8;
+        case 201696: return 0;
+        case 201697: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers8_Universal_en(id : int) : int
+{
+    switch (id)
+    {
+        case 201698: return 0;
+        case 201699: return 0;
+        case 201700: return 0;
+        case 201701: return 0;
+        case 201704: return 0;
+        case 201725: return 0;
+        case 201731: return 0;
+        case 201737: return 0;
+        case 201743: return 0;
+        case 201744: return 0;
+        case 201748: return 0;
+        case 201749: return 0;
+        case 201753: return 8;
+        case 201758: return 0;
+        case 201772: return 8;
+        case 201773: return 8;
+        case 201774: return 8;
+        case 201776: return 8;
+        case 201777: return 8;
+        case 201778: return 8;
+        case 201779: return 4;
+        case 201780: return 8;
+        case 201781: return 8;
+        case 201817: return 0;
+        default: break;
+    }
+    return 0;
+}
+
+function BetaGwentAudioUi_Universal_en(id : int) : string
+{
+    if (id <= 5) return BetaGwentAudioUi0_Universal_en(id);
+    return "";
+}
+function BetaGwentAudioUi0_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 1: return "bg79_fx_1126876212";
+        case 2: return "bg79_fx_2909756106";
+        case 3: return "bg79_fx_310403972";
+        case 4: return "bg79_fx_3558782073";
+        case 5: return "bg79_fx_331755273";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioCue_Universal_en(id : int) : string
+{
+    if (id <= 32) return BetaGwentAudioCue0_Universal_en(id);
+    return "";
+}
+function BetaGwentAudioCue0_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 3: return "bg79_fx_1345484733";
+        case 5: return "bg79_fx_443750925";
+        case 6: return "bg79_fx_1274376343";
+        case 7: return "bg79_fx_3429050723";
+        case 32: return "bg79_fx_3756236359";
+        case 9: return "bg79_fx_914497199";
+        case 10: return "bg79_fx_174406704";
+        case 11: return "bg79_fx_1345484733";
+        case 12: return "bg79_fx_3040005591";
+        case 14: return "bg79_fx_331755273";
+        case 15: return "bg79_fx_1271393020";
+        case 16: return "bg79_fx_1271393020";
+        case 17: return "bg79_fx_443750925";
+        case 20: return "bg79_fx_1339391495";
+        case 21: return "bg79_fx_1359220433";
+        case 22: return "bg79_fx_2876994866";
+        case 23: return "bg79_fx_2994650242";
+        case 24: return "bg79_fx_3432162846";
+        case 25: return "bg79_fx_174406704";
+        case 26: return "bg79_fx_3655100537";
+        case 27: return "bg79_fx_2122169205";
+        case 28: return "bg79_fx_1979737770";
+        case 29: return "bg79_fx_3983713265";
+        case 30: return "bg79_fx_3128640595";
+        case 31: return "bg79_fx_111986461";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioWeather_Universal_en(id : int) : string
+{
+    if (id <= 2048) return BetaGwentAudioWeather0_Universal_en(id);
+    return "";
+}
+function BetaGwentAudioWeather0_Universal_en(id : int) : string
+{
+    switch (id)
+    {
+        case 0: return "bg79_fx_3426459189";
+        case 1: return "bg79_fx_1182743257";
+        case 2: return "bg79_fx_3376847707";
+        case 4: return "bg79_fx_4022788383";
+        case 16: return "bg79_fx_586097054";
+        case 32: return "bg79_fx_3202917663";
+        case 64: return "bg79_fx_1515030783";
+        case 128: return "bg79_fx_3419056088";
+        case 256: return "bg79_fx_206487326";
+        case 512: return "bg79_fx_2066849046";
+        case 1024: return "bg79_fx_656469391";
+        case 2048: return "bg79_fx_206487326";
+        default: break;
+    }
+    return "";
+}
+
+// Generated from pinned CardAudio.xml. Source banks128 are not runtime banks.
+
+function BetaGwentAudioBankInstalled_Universal_de() : bool { return true; }
+
+function BetaGwentAudioVoice_Universal_de(id : int) : string
+{
+    if (id <= 122313) return BetaGwentAudioVoice0_Universal_de(id);
+    if (id <= 142401) return BetaGwentAudioVoice1_Universal_de(id);
+    if (id <= 162308) return BetaGwentAudioVoice2_Universal_de(id);
+    if (id <= 200169) return BetaGwentAudioVoice3_Universal_de(id);
+    if (id <= 201753) return BetaGwentAudioVoice4_Universal_de(id);
+    if (id <= 201781) return BetaGwentAudioVoice5_Universal_de(id);
+    return "";
+}
+function BetaGwentAudioVoice0_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 112101: return "bg79_vo_CIRI_CIRILLA_01040512";
+        case 112102: return "bg79_vo_SAY_Battlecries_1";
+        case 112103: return "bg79_vo_SAY_Battlecries_1";
+        case 112104: return "bg79_vo_REGI_Q702_01155230";
+        case 112105: return "bg79_vo_katakan_taunt_short_003";
+        case 112106: return "bg79_vo_TRSS_Q310_00545347";
+        case 112108: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 112109: return "bg79_vo_ZOLT_Q310_01062198";
+        case 112110: return "bg79_vo_CIRI_CIRILLA_01040512";
+        case 112111: return "bg79_vo_SAY_Battlecries_1";
+        case 112112: return "bg79_vo_AVLC_Q311_00454814";
+        case 112113: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 112201: return "bg79_vo_SAY_Battlecries_816";
+        case 112202: return "bg79_vo_SAY_Battlecries_21";
+        case 112203: return "bg79_vo_VSMR_Q001_00546725";
+        case 112204: return "bg79_vo_LMBT_Q401_00523875";
+        case 112205: return "bg79_vo_wyvern_v2_vo_ADD_008";
+        case 112206: return "bg79_vo_wyvern_v2_vo_ADD_008";
+        case 112207: return "bg79_vo_OLGD_Q603_01101145";
+        case 112208: return "bg79_vo_VO_OPRT_204113_0001";
+        case 112211: return "bg79_vo_GJHN_Q105_00417768";
+        case 112212: return "bg79_vo_GSAR_Q301_00484178";
+        case 112213: return "bg79_vo_KGBG_Q301_00486502";
+        case 112214: return "bg79_vo_WILY_Q302_00443324";
+        case 112215: return "bg79_vo_IRIS_Q604_01106159";
+        case 112403: return "bg79_vo_SAY_Battlecries_25";
+        case 112404: return "bg79_vo_SAY_Battlecries_25";
+        case 113208: return "bg79_vo_SAY_Battlecries_821";
+        case 113313: return "bg79_vo_SAY_Battlecries_part5_326";
+        case 122101: return "bg79_vo_BARN_Q102_00408798";
+        case 122102: return "bg79_vo_ROCH_MQ3035_01064844";
+        case 122103: return "bg79_vo_VO_JANT_300862_0253";
+        case 122104: return "bg79_vo_PHIL_PHILIPPA_01041424";
+        case 122105: return "bg79_vo_DJKS_MQ3035_01067766";
+        case 122106: return "bg79_vo_SHNI_Q602_01119358";
+        case 122107: return "bg79_vo_TRSS_Q310_00545347";
+        case 122108: return "bg79_vo_KEIR_KEIRA_00475332";
+        case 122201: return "bg79_vo_SAY_Battlecries_5";
+        case 122202: return "bg79_vo_SAY_Battlecries_9";
+        case 122203: return "bg79_vo_TALA_SQ315_01067599";
+        case 122204: return "bg79_vo_VESS_MQ3035_01064809";
+        case 122205: return "bg79_vo_SAY_Battlecries_29";
+        case 122206: return "bg79_vo_VO_SABR_200216_0037";
+        case 122207: return "bg79_vo_VO_DETM_200182_0001";
+        case 122208: return "bg79_vo_VO_STEN_200098_0258";
+        case 122209: return "bg79_vo_TRL1_MQ1022_00466604";
+        case 122210: return "bg79_vo_SAY_Battlecries_37";
+        case 122211: return "bg79_vo_MGLA_MARGARITTA_01012961";
+        case 122212: return "bg79_vo_SAY_Battlecries_42";
+        case 122213: return "bg79_vo_VO_ODRI_200481_0002";
+        case 122214: return "bg79_vo_SAY_Battlecries_46";
+        case 122216: return "bg79_vo_SAY_Battlecries_part3_21";
+        case 122306: return "bg79_vo_VO_ZDZI_003478_0007";
+        case 122307: return "bg79_vo_VO_NG01_003478_0008";
+        case 122308: return "bg79_vo_RES1_VSET_00508237";
+        case 122309: return "bg79_vo_VO_KG01_200564_0001";
+        case 122310: return "bg79_vo_VO_RS01_101992_0004";
+        case 122311: return "bg79_vo_VO_RS03_106543_0003";
+        case 122312: return "bg79_vo_NCIW1_VSET_00564889";
+        case 122313: return "bg79_vo_VO_KG06_200420_0005";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice1_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 122314: return "bg79_vo_VO_KG02_200565_0005";
+        case 122316: return "bg79_vo_TBAN2_VSET_00591990";
+        case 122317: return "bg79_vo_REOF1_VSET_00516089";
+        case 122318: return "bg79_vo_VO_KE01_203352_0004";
+        case 122403: return "bg79_vo_SAY_Battlecries_819";
+        case 123301: return "bg79_vo_SAY_Battlecries_part5_320";
+        case 131101: return "bg79_vo_ERDN_EREDIN_01040754";
+        case 131102: return "bg79_vo_GEEL_Q311_00312236";
+        case 132101: return "bg79_vo_VO_DRUG_200317_0011";
+        case 132102: return "bg79_vo_IMLR_Q111_01062046";
+        case 132104: return "bg79_vo_SAY_Battlecries_189";
+        case 132105: return "bg79_vo_AVLC_Q311_00454814";
+        case 132108: return "bg79_vo_SCC3_VSET_01053091";
+        case 132206: return "bg79_vo_WHSP_Q105_00382577";
+        case 132207: return "bg79_vo_BREW_Q105_00531820";
+        case 132208: return "bg79_vo_WEAV_Q105_00531814";
+        case 132211: return "bg79_vo_nekker_scream_006";
+        case 132212: return "bg79_vo_ice_giant_aggro06";
+        case 132214: return "bg79_vo_WHW1_Q104_00555148";
+        case 132215: return "bg79_vo_MRRR_Q602_01116657";
+        case 132305: return "bg79_vo_nekker_attack_004";
+        case 132309: return "bg79_vo_SAY_Battlecries_792";
+        case 132310: return "bg79_vo_SAY_Battlecries_796";
+        case 142102: return "bg79_vo_SAY_Battlecries_139";
+        case 142103: return "bg79_vo_VO_IORW_100241_4474";
+        case 142104: return "bg79_vo_SAY_Battlecries_142";
+        case 142105: return "bg79_vo_ZOLT_Q310_01062198";
+        case 142106: return "bg79_vo_SAY_Battlecries_152";
+        case 142107: return "bg79_vo_SAY_Battlecries_170";
+        case 142108: return "bg79_vo_SAY_Battlecries_186";
+        case 142201: return "bg79_vo_SAY_Battlecries_155";
+        case 142202: return "bg79_vo_IDEM_Q401_00532088";
+        case 142203: return "bg79_vo_SAY_Battlecries_771";
+        case 142204: return "bg79_vo_SAY_Battlecries_776";
+        case 142206: return "bg79_vo_SAY_Battlecries_160";
+        case 142207: return "bg79_vo_SAY_Battlecries_161";
+        case 142208: return "bg79_vo_SAY_Battlecries_164";
+        case 142209: return "bg79_vo_SAY_Battlecries_167";
+        case 142210: return "bg79_vo_VO_MALN_106817_0005";
+        case 142211: return "bg79_vo_SAY_Battlecries_183";
+        case 142212: return "bg79_vo_SAY_Battlecries_33";
+        case 142213: return "bg79_vo_SAY_Battlecries_784";
+        case 142214: return "bg79_vo_SAY_Battlecries_831";
+        case 142301: return "bg79_vo_VSCF2_VSET_00523670";
+        case 142302: return "bg79_vo_VO_SF01_102746_0038";
+        case 142303: return "bg79_vo_VO_SF02_101662_0066";
+        case 142304: return "bg79_vo_VO_SWF1_100532_0009";
+        case 142306: return "bg79_vo_SCD1_VSET_00525279";
+        case 142307: return "bg79_vo_VO_SMV2_202544_0022";
+        case 142308: return "bg79_vo_VO_SWV2_202544_0023";
+        case 142309: return "bg79_vo_VO_SF01_107685_0001";
+        case 142310: return "bg79_vo_SAY_Battlecries_801";
+        case 142311: return "bg79_vo_SCD1_VSET_00526102";
+        case 142312: return "bg79_vo_VBAN1_MQ1005_00358151";
+        case 142313: return "bg79_vo_SAY_Battlecries_part2_2";
+        case 142314: return "bg79_vo_VO_SWV1_202968_0006";
+        case 142315: return "bg79_vo_SAY_Battlecries_part2_5";
+        case 142316: return "bg79_vo_VO_SWV5_202972_0007";
+        case 142317: return "bg79_vo_SCD34_VSET_01013381";
+        case 142401: return "bg79_vo_SAY_Battlecries_788";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice2_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 152101: return "bg79_vo_HJAL_HJALMAR_01037900";
+        case 152103: return "bg79_vo_MOUS_Q210_00558067";
+        case 152105: return "bg79_vo_SAY_Battlecries_205";
+        case 152106: return "bg79_vo_LUTM_LUGOS_00437813";
+        case 152107: return "bg79_vo_SAY_Battlecries_202";
+        case 152201: return "bg79_vo_LUTG_LUGOS_01038779";
+        case 152202: return "bg79_vo_TRL3_FF205_01053125";
+        case 152203: return "bg79_vo_SAY_Battlecries_804";
+        case 152204: return "bg79_vo_DONR_DONAR_01037055";
+        case 152205: return "bg79_vo_SBR1_VSET_00527986";
+        case 152206: return "bg79_vo_SAY_Battlecries_828";
+        case 152207: return "bg79_vo_HOLG_HOLGER_01038014";
+        case 152208: return "bg79_vo_SWO4_MQ2038_00507987";
+        case 152209: return "bg79_vo_MRKV_SQ201_00499647";
+        case 152211: return "bg79_vo_SPR1_SHOP_00437650";
+        case 152213: return "bg79_vo_SAY_Battlecries_208";
+        case 152214: return "bg79_vo_UDAL_Q201_00166303";
+        case 152301: return "bg79_vo_SBE2_VSET_00536513";
+        case 152302: return "bg79_vo_SBE1_Q206_00413021";
+        case 152303: return "bg79_vo_SGD2_CHAT2_00165312";
+        case 152304: return "bg79_vo_SGD6_VSET_00544491";
+        case 152305: return "bg79_vo_SBD3_MQ2034_01013429";
+        case 152306: return "bg79_vo_SBD1_MQ2002_00442097";
+        case 152308: return "bg79_vo_DROG_BARD_01036857";
+        case 152310: return "bg79_vo_SPR2_VSET_00553534";
+        case 152311: return "bg79_vo_SAR3_CHAT_01050115";
+        case 152312: return "bg79_vo_SAY_Battlecries_807";
+        case 152313: return "bg79_vo_SGD2_VSET_00526547";
+        case 152315: return "bg79_vo_SWR5_VSET_00535924";
+        case 152316: return "bg79_vo_SGD1_CHAT_01024106";
+        case 152317: return "bg79_vo_SAR1_SHOP_00422532";
+        case 152318: return "bg79_vo_SAY_Battlecries_part3_1";
+        case 152402: return "bg79_vo_SAY_Battlecries_199";
+        case 162101: return "bg79_vo_LETO_LETHO_01038588";
+        case 162102: return "bg79_vo_SAY_Battlecries_58";
+        case 162103: return "bg79_vo_SAY_Battlecries_106";
+        case 162104: return "bg79_vo_SAY_Battlecries_69";
+        case 162105: return "bg79_vo_SAY_Battlecries_72";
+        case 162106: return "bg79_vo_SAY_Battlecries_97";
+        case 162107: return "bg79_vo_SAY_Battlecries_67";
+        case 162108: return "bg79_vo_SAY_Battlecries_118";
+        case 162201: return "bg79_vo_SAY_Battlecries_78";
+        case 162202: return "bg79_vo_SAY_Battlecries_75";
+        case 162203: return "bg79_vo_VO_CNTH_303653_0335";
+        case 162204: return "bg79_vo_SAY_Battlecries_part3_426";
+        case 162205: return "bg79_vo_SAY_Battlecries_88";
+        case 162206: return "bg79_vo_SAY_Battlecries_100";
+        case 162207: return "bg79_vo_VO_NM01_200057_0187";
+        case 162208: return "bg79_vo_SAY_Battlecries_112";
+        case 162209: return "bg79_vo_SAY_Battlecries_115";
+        case 162210: return "bg79_vo_SAY_Battlecries_127";
+        case 162211: return "bg79_vo_SAY_Battlecries_part3_17";
+        case 162212: return "bg79_vo_SAY_Battlecries_part3_105";
+        case 162213: return "bg79_vo_SAY_Battlecries_part3_109";
+        case 162301: return "bg79_vo_SAY_Battlecries_part3_417";
+        case 162303: return "bg79_vo_NILF4_CHAT_01051421";
+        case 162304: return "bg79_vo_SAY_Battlecries_part3_429";
+        case 162305: return "bg79_vo_NILF3_VSET_00514109";
+        case 162307: return "bg79_vo_NILFP2_VSET_00592094";
+        case 162308: return "bg79_vo_NIOF1_VSET_00524263";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice3_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 162309: return "bg79_vo_SAY_Battlecries_part3_438";
+        case 162310: return "bg79_vo_NILF2_VSET_00513914";
+        case 162311: return "bg79_vo_NILF3_VSET_00514091";
+        case 162312: return "bg79_vo_NILF2_Q505_00576169";
+        case 162313: return "bg79_vo_NILF2_VSET_00513907";
+        case 162314: return "bg79_vo_NIS1_Q002_01048548";
+        case 162315: return "bg79_vo_NIN4_VSET_01049576";
+        case 162316: return "bg79_vo_MAG1_SHOP_00423227";
+        case 162318: return "bg79_vo_SAY_Battlecries_part3_441";
+        case 162401: return "bg79_vo_SAY_Battlecries_part3_385";
+        case 200026: return "bg79_vo_SAY_Battlecries_part3_43";
+        case 200028: return "bg79_vo_SAY_Battlecries_211";
+        case 200030: return "bg79_vo_SAY_Battlecries_220";
+        case 200031: return "bg79_vo_SAY_Battlecries_13";
+        case 200032: return "bg79_vo_SAY_Battlecries_91";
+        case 200033: return "bg79_vo_SAY_Battlecries_part3_376";
+        case 200036: return "bg79_vo_SAY_Battlecries_part3_5";
+        case 200039: return "bg79_vo_SAY_Battlecries_part3_310";
+        case 200040: return "bg79_vo_SAY_Battlecries_part3_314";
+        case 200042: return "bg79_vo_SAY_Battlecries_part3_39";
+        case 200043: return "bg79_vo_SAY_Battlecries_part3_129";
+        case 200044: return "bg79_vo_SAY_Battlecries_part3_35";
+        case 200046: return "bg79_vo_SAY_Battlecries_part3_410";
+        case 200048: return "bg79_vo_SAY_Battlecries_part3_13";
+        case 200050: return "bg79_vo_SAY_Battlecries_109";
+        case 200055: return "bg79_vo_SAY_Battlecries_part3_255";
+        case 200062: return "bg79_vo_SAY_Battlecries_part3_154";
+        case 200071: return "bg79_vo_SAY_Battlecries_96";
+        case 200080: return "bg79_vo_SAY_Battlecries_part3_290";
+        case 200081: return "bg79_vo_SAY_Battlecries_part3_121";
+        case 200083: return "bg79_vo_SAY_Battlecries_part3_264";
+        case 200087: return "bg79_vo_SAY_Battlecries_part3_184";
+        case 200088: return "bg79_vo_SAY_Battlecries_part3_175";
+        case 200089: return "bg79_vo_SAY_Battlecries_part3_167";
+        case 200091: return "bg79_vo_SAY_Battlecries_part3_162";
+        case 200098: return "bg79_vo_SAY_Battlecries_part3_201";
+        case 200112: return "bg79_vo_SAY_Battlecries_part3_93";
+        case 200115: return "bg79_vo_SAY_Battlecries_part3_362";
+        case 200118: return "bg79_vo_SAY_Battlecries_part3_356";
+        case 200124: return "bg79_vo_SAY_Battlecries_part3_337";
+        case 200132: return "bg79_vo_SAY_Battlecries_part3_223";
+        case 200135: return "bg79_vo_SAY_Battlecries_part3_318";
+        case 200136: return "bg79_vo_SAY_Battlecries_part3_322";
+        case 200138: return "bg79_vo_SAY_Battlecries_part3_326";
+        case 200144: return "bg79_vo_SAY_Battlecries_part5_26";
+        case 200145: return "bg79_vo_SAY_Battlecries_part3_71";
+        case 200146: return "bg79_vo_SAY_Battlecries_part3_75";
+        case 200147: return "bg79_vo_SAY_Battlecries_part3_87";
+        case 200149: return "bg79_vo_SAY_Battlecries_part3_79";
+        case 200159: return "bg79_vo_SAY_Battlecries_193";
+        case 200160: return "bg79_vo_CRCH_CRACH_01001923";
+        case 200161: return "bg79_vo_SAY_Battlecries_196";
+        case 200162: return "bg79_vo_SAY_Battlecries_236";
+        case 200163: return "bg79_vo_SAY_Battlecries_52";
+        case 200164: return "bg79_vo_SAY_Battlecries_55";
+        case 200165: return "bg79_vo_SAY_Battlecries_130";
+        case 200166: return "bg79_vo_SAY_Battlecries_133";
+        case 200167: return "bg79_vo_SAY_Battlecries_136";
+        case 200168: return "bg79_vo_VO_FLTS_000811_0001";
+        case 200169: return "bg79_vo_RADV_MQ3035_01064716";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice4_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 200170: return "bg79_vo_VO_HSLT_200098_0254";
+        case 200171: return "bg79_vo_SAY_Battlecries_226";
+        case 200177: return "bg79_vo_BECC_BECCA_01040275";
+        case 200209: return "bg79_vo_VO_TARM_200154_0192";
+        case 200212: return "bg79_vo_SAY_Battlecries_822";
+        case 200219: return "bg79_vo_SAY_Battlecries_part3_385";
+        case 200220: return "bg79_vo_WHSP_Q105_00419061";
+        case 200221: return "bg79_vo_BREW_Q105_00531820";
+        case 200222: return "bg79_vo_WEAV_Q503_00578937";
+        case 200227: return "bg79_vo_SAY_Battlecries_part3_435";
+        case 200235: return "bg79_vo_LMBT_Q401_00523875";
+        case 200236: return "bg79_vo_SAY_Battlecries_21";
+        case 200237: return "bg79_vo_VSMR_Q001_00546725";
+        case 200293: return "bg79_vo_SAY_Battlecries_part4_93";
+        case 200294: return "bg79_vo_SAY_Battlecries_part5_338";
+        case 200296: return "bg79_vo_SAY_Battlecries_part3_379";
+        case 200299: return "bg79_vo_SAY_Battlecries_part3_407";
+        case 200518: return "bg79_vo_SAY_Battlecries_part3_382";
+        case 200520: return "bg79_vo_HTRI_HATTORI_01032235";
+        case 200523: return "bg79_vo_SAY_Battlecries_part4_244";
+        case 200528: return "bg79_vo_SAY_Battlecries_part3_83";
+        case 200529: return "bg79_vo_SAY_Battlecries_part3_401";
+        case 200534: return "bg79_vo_SAY_Battlecries_part3_404";
+        case 200535: return "bg79_vo_SAY_Battlecries_part3_398";
+        case 200540: return "bg79_vo_SAY_Battlecries_part4_78";
+        case 201523: return "bg79_vo_SAY_Battlecries_1";
+        case 201559: return "bg79_vo_SAY_Battlecries_part4_98";
+        case 201578: return "bg79_vo_SAY_Battlecries_part3_395";
+        case 201580: return "bg79_vo_SAY_Battlecries_part3_432";
+        case 201587: return "bg79_vo_SAY_Battlecries_part5_1";
+        case 201589: return "bg79_vo_SAY_Battlecries_part3_278";
+        case 201595: return "bg79_vo_SAY_Battlecries_part3_193";
+        case 201597: return "bg79_vo_SAY_Battlecries_part3_47";
+        case 201601: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 201603: return "bg79_vo_LETO_SQ102_00590678";
+        case 201609: return "bg79_vo_SAY_Battlecries_part4_103";
+        case 201611: return "bg79_vo_VO_IORW_100241_4474";
+        case 201612: return "bg79_vo_SAY_Battlecries_part4_113";
+        case 201615: return "bg79_vo_SAY_Battlecries_139";
+        case 201616: return "bg79_vo_SAY_Battlecries_part3_359";
+        case 201617: return "bg79_vo_SAY_Battlecries_part5_32";
+        case 201618: return "bg79_vo_SAY_Battlecries_part3_117";
+        case 201620: return "bg79_vo_SAY_Battlecries_part5_7";
+        case 201621: return "bg79_vo_SAY_Battlecries_part5_14";
+        case 201622: return "bg79_vo_SAY_Battlecries_part3_9";
+        case 201624: return "bg79_vo_SAY_Battlecries_part5_38";
+        case 201625: return "bg79_vo_SAY_Battlecries_part5_44";
+        case 201626: return "bg79_vo_CIRI_CIRILLA_01040548";
+        case 201627: return "bg79_vo_SAY_Battlecries_part4_168";
+        case 201628: return "bg79_vo_SAY_Battlecries_part5_56";
+        case 201630: return "bg79_vo_SAY_Battlecries_part5_50";
+        case 201636: return "bg79_vo_SAY_Battlecries_part5_68";
+        case 201638: return "bg79_vo_SAY_Battlecries_part4_88";
+        case 201644: return "bg79_vo_SAY_Battlecries_part5_20";
+        case 201646: return "bg79_vo_SAY_Battlecries_232";
+        case 201650: return "bg79_vo_VO_SABR_200216_0101";
+        case 201664: return "bg79_vo_SAY_Battlecries_part4_256";
+        case 201676: return "bg79_vo_SAY_Battlecries_part4_34";
+        case 201677: return "bg79_vo_SAY_Battlecries_part4_86";
+        case 201753: return "bg79_vo_SAY_Battlecries_part4_86";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice5_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 201772: return "bg79_vo_SAY_Battlecries_1";
+        case 201773: return "bg79_vo_SAY_Battlecries_17";
+        case 201774: return "bg79_vo_SAY_Battlecries_5";
+        case 201776: return "bg79_vo_SAY_Battlecries_5";
+        case 201777: return "bg79_vo_ROCH_ROCHE_00541126";
+        case 201778: return "bg79_vo_BECC_BECCA_01040275";
+        case 201779: return "bg79_vo_SAY_Battlecries_164";
+        case 201780: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 201781: return "bg79_vo_SAY_Battlecries_851";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceDuration_Universal_de(id : int) : float
+{
+    if (id <= 122313) return BetaGwentAudioVoiceDuration0_Universal_de(id);
+    if (id <= 142401) return BetaGwentAudioVoiceDuration1_Universal_de(id);
+    if (id <= 162308) return BetaGwentAudioVoiceDuration2_Universal_de(id);
+    if (id <= 200169) return BetaGwentAudioVoiceDuration3_Universal_de(id);
+    if (id <= 201753) return BetaGwentAudioVoiceDuration4_Universal_de(id);
+    if (id <= 201781) return BetaGwentAudioVoiceDuration5_Universal_de(id);
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration0_Universal_de(id : int) : float
+{
+    switch (id)
+    {
+        case 112101: return 1.179f;
+        case 112102: return 2.805f;
+        case 112103: return 2.805f;
+        case 112104: return 3.692f;
+        case 112105: return 3.115f;
+        case 112106: return 2.164f;
+        case 112108: return 2.850f;
+        case 112109: return 1.666f;
+        case 112110: return 1.179f;
+        case 112111: return 2.805f;
+        case 112112: return 0.994f;
+        case 112113: return 2.850f;
+        case 112201: return 2.875f;
+        case 112202: return 1.759f;
+        case 112203: return 1.822f;
+        case 112204: return 3.087f;
+        case 112205: return 1.430f;
+        case 112206: return 1.430f;
+        case 112207: return 2.340f;
+        case 112208: return 3.229f;
+        case 112211: return 4.812f;
+        case 112212: return 1.506f;
+        case 112213: return 1.843f;
+        case 112214: return 3.148f;
+        case 112215: return 1.058f;
+        case 112403: return 3.862f;
+        case 112404: return 3.862f;
+        case 113208: return 3.642f;
+        case 113313: return 1.999f;
+        case 122101: return 3.650f;
+        case 122102: return 2.588f;
+        case 122103: return 2.683f;
+        case 122104: return 1.814f;
+        case 122105: return 1.795f;
+        case 122106: return 1.685f;
+        case 122107: return 2.164f;
+        case 122108: return 1.691f;
+        case 122201: return 3.091f;
+        case 122202: return 1.511f;
+        case 122203: return 4.591f;
+        case 122204: return 2.375f;
+        case 122205: return 1.993f;
+        case 122206: return 2.035f;
+        case 122207: return 1.838f;
+        case 122208: return 2.834f;
+        case 122209: return 3.700f;
+        case 122210: return 3.442f;
+        case 122211: return 1.461f;
+        case 122212: return 3.834f;
+        case 122213: return 2.351f;
+        case 122214: return 2.820f;
+        case 122216: return 1.650f;
+        case 122306: return 1.609f;
+        case 122307: return 2.691f;
+        case 122308: return 2.466f;
+        case 122309: return 1.216f;
+        case 122310: return 1.876f;
+        case 122311: return 1.859f;
+        case 122312: return 1.466f;
+        case 122313: return 0.914f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration1_Universal_de(id : int) : float
+{
+    switch (id)
+    {
+        case 122314: return 1.787f;
+        case 122316: return 1.120f;
+        case 122317: return 1.774f;
+        case 122318: return 2.678f;
+        case 122403: return 2.737f;
+        case 123301: return 1.616f;
+        case 131101: return 1.635f;
+        case 131102: return 2.500f;
+        case 132101: return 2.809f;
+        case 132102: return 3.035f;
+        case 132104: return 2.130f;
+        case 132105: return 0.994f;
+        case 132108: return 2.196f;
+        case 132206: return 5.271f;
+        case 132207: return 5.849f;
+        case 132208: return 5.705f;
+        case 132211: return 1.467f;
+        case 132212: return 1.894f;
+        case 132214: return 2.381f;
+        case 132215: return 1.654f;
+        case 132305: return 1.250f;
+        case 132309: return 2.333f;
+        case 132310: return 2.012f;
+        case 142102: return 2.950f;
+        case 142103: return 1.576f;
+        case 142104: return 2.765f;
+        case 142105: return 1.666f;
+        case 142106: return 1.485f;
+        case 142107: return 4.667f;
+        case 142108: return 1.238f;
+        case 142201: return 3.538f;
+        case 142202: return 3.560f;
+        case 142203: return 3.106f;
+        case 142204: return 2.097f;
+        case 142206: return 2.224f;
+        case 142207: return 2.162f;
+        case 142208: return 1.606f;
+        case 142209: return 2.341f;
+        case 142210: return 3.636f;
+        case 142211: return 2.023f;
+        case 142212: return 3.094f;
+        case 142213: return 4.719f;
+        case 142214: return 1.812f;
+        case 142301: return 1.458f;
+        case 142302: return 4.389f;
+        case 142303: return 1.364f;
+        case 142304: return 3.570f;
+        case 142306: return 3.063f;
+        case 142307: return 2.096f;
+        case 142308: return 1.669f;
+        case 142309: return 1.530f;
+        case 142310: return 1.650f;
+        case 142311: return 2.508f;
+        case 142312: return 4.533f;
+        case 142313: return 1.754f;
+        case 142314: return 1.560f;
+        case 142315: return 1.871f;
+        case 142316: return 1.846f;
+        case 142317: return 2.036f;
+        case 142401: return 1.924f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration2_Universal_de(id : int) : float
+{
+    switch (id)
+    {
+        case 152101: return 2.046f;
+        case 152103: return 3.121f;
+        case 152105: return 3.065f;
+        case 152106: return 1.088f;
+        case 152107: return 2.526f;
+        case 152201: return 2.334f;
+        case 152202: return 1.373f;
+        case 152203: return 3.201f;
+        case 152204: return 1.285f;
+        case 152205: return 2.333f;
+        case 152206: return 2.496f;
+        case 152207: return 1.978f;
+        case 152208: return 1.945f;
+        case 152209: return 4.340f;
+        case 152211: return 1.603f;
+        case 152213: return 2.250f;
+        case 152214: return 1.852f;
+        case 152301: return 2.274f;
+        case 152302: return 2.972f;
+        case 152303: return 3.472f;
+        case 152304: return 1.275f;
+        case 152305: return 5.203f;
+        case 152306: return 1.735f;
+        case 152308: return 1.642f;
+        case 152310: return 2.210f;
+        case 152311: return 2.129f;
+        case 152312: return 2.308f;
+        case 152313: return 3.765f;
+        case 152315: return 2.494f;
+        case 152316: return 2.150f;
+        case 152317: return 2.612f;
+        case 152318: return 1.776f;
+        case 152402: return 2.837f;
+        case 162101: return 1.357f;
+        case 162102: return 1.779f;
+        case 162103: return 2.443f;
+        case 162104: return 2.104f;
+        case 162105: return 3.629f;
+        case 162106: return 1.917f;
+        case 162107: return 1.922f;
+        case 162108: return 2.846f;
+        case 162201: return 2.250f;
+        case 162202: return 1.574f;
+        case 162203: return 1.255f;
+        case 162204: return 2.512f;
+        case 162205: return 3.142f;
+        case 162206: return 1.483f;
+        case 162207: return 1.877f;
+        case 162208: return 1.776f;
+        case 162209: return 2.527f;
+        case 162210: return 2.480f;
+        case 162211: return 3.620f;
+        case 162212: return 4.223f;
+        case 162213: return 2.138f;
+        case 162301: return 3.962f;
+        case 162303: return 1.311f;
+        case 162304: return 2.450f;
+        case 162305: return 0.806f;
+        case 162307: return 1.890f;
+        case 162308: return 2.807f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration3_Universal_de(id : int) : float
+{
+    switch (id)
+    {
+        case 162309: return 2.258f;
+        case 162310: return 1.924f;
+        case 162311: return 1.446f;
+        case 162312: return 1.228f;
+        case 162313: return 1.462f;
+        case 162314: return 3.661f;
+        case 162315: return 1.507f;
+        case 162316: return 3.449f;
+        case 162318: return 2.053f;
+        case 162401: return 3.680f;
+        case 200026: return 4.287f;
+        case 200028: return 2.608f;
+        case 200030: return 1.889f;
+        case 200031: return 2.283f;
+        case 200032: return 1.786f;
+        case 200033: return 1.853f;
+        case 200036: return 2.403f;
+        case 200039: return 0.922f;
+        case 200040: return 1.933f;
+        case 200042: return 2.688f;
+        case 200043: return 2.938f;
+        case 200044: return 1.172f;
+        case 200046: return 3.025f;
+        case 200048: return 2.329f;
+        case 200050: return 1.511f;
+        case 200055: return 4.062f;
+        case 200062: return 3.772f;
+        case 200071: return 2.277f;
+        case 200080: return 2.522f;
+        case 200081: return 2.550f;
+        case 200083: return 1.838f;
+        case 200087: return 2.550f;
+        case 200088: return 3.746f;
+        case 200089: return 2.364f;
+        case 200091: return 2.450f;
+        case 200098: return 2.508f;
+        case 200112: return 2.545f;
+        case 200115: return 1.519f;
+        case 200118: return 2.473f;
+        case 200124: return 1.567f;
+        case 200132: return 2.806f;
+        case 200135: return 2.939f;
+        case 200136: return 3.791f;
+        case 200138: return 3.570f;
+        case 200144: return 3.690f;
+        case 200145: return 3.050f;
+        case 200146: return 3.150f;
+        case 200147: return 2.591f;
+        case 200149: return 1.807f;
+        case 200159: return 2.783f;
+        case 200160: return 2.402f;
+        case 200161: return 2.132f;
+        case 200162: return 2.862f;
+        case 200163: return 2.815f;
+        case 200164: return 2.760f;
+        case 200165: return 2.396f;
+        case 200166: return 2.956f;
+        case 200167: return 3.702f;
+        case 200168: return 2.857f;
+        case 200169: return 1.378f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration4_Universal_de(id : int) : float
+{
+    switch (id)
+    {
+        case 200170: return 3.530f;
+        case 200171: return 1.373f;
+        case 200177: return 1.629f;
+        case 200209: return 2.317f;
+        case 200212: return 1.831f;
+        case 200219: return 3.680f;
+        case 200220: return 5.203f;
+        case 200221: return 5.849f;
+        case 200222: return 5.102f;
+        case 200227: return 3.777f;
+        case 200235: return 3.087f;
+        case 200236: return 1.759f;
+        case 200237: return 1.822f;
+        case 200293: return 2.904f;
+        case 200294: return 2.474f;
+        case 200296: return 2.107f;
+        case 200299: return 4.479f;
+        case 200518: return 2.227f;
+        case 200520: return 1.562f;
+        case 200523: return 1.958f;
+        case 200528: return 3.250f;
+        case 200529: return 2.914f;
+        case 200534: return 1.787f;
+        case 200535: return 1.945f;
+        case 200540: return 1.783f;
+        case 201523: return 2.805f;
+        case 201559: return 2.464f;
+        case 201578: return 1.771f;
+        case 201580: return 2.519f;
+        case 201587: return 2.202f;
+        case 201589: return 2.010f;
+        case 201595: return 3.420f;
+        case 201597: return 3.875f;
+        case 201601: return 2.850f;
+        case 201603: return 1.677f;
+        case 201609: return 1.350f;
+        case 201611: return 1.576f;
+        case 201612: return 1.550f;
+        case 201615: return 2.950f;
+        case 201616: return 3.193f;
+        case 201617: return 4.176f;
+        case 201618: return 2.286f;
+        case 201620: return 1.350f;
+        case 201621: return 3.250f;
+        case 201622: return 2.155f;
+        case 201624: return 2.375f;
+        case 201625: return 3.019f;
+        case 201626: return 1.955f;
+        case 201627: return 4.171f;
+        case 201628: return 3.813f;
+        case 201630: return 2.969f;
+        case 201636: return 1.373f;
+        case 201638: return 1.916f;
+        case 201644: return 1.550f;
+        case 201646: return 3.362f;
+        case 201650: return 1.515f;
+        case 201664: return 1.803f;
+        case 201676: return 4.291f;
+        case 201677: return 0.675f;
+        case 201753: return 0.675f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration5_Universal_de(id : int) : float
+{
+    switch (id)
+    {
+        case 201772: return 2.805f;
+        case 201773: return 1.360f;
+        case 201774: return 3.091f;
+        case 201776: return 3.091f;
+        case 201777: return 2.331f;
+        case 201778: return 1.629f;
+        case 201779: return 1.606f;
+        case 201780: return 2.850f;
+        case 201781: return 3.035f;
+        default: break;
+    }
+    return 0.0f;
+}
+
+function BetaGwentAudioEffect_Universal_de(id : int) : string
+{
+    if (id <= 122208) return BetaGwentAudioEffect0_Universal_de(id);
+    if (id <= 132304) return BetaGwentAudioEffect1_Universal_de(id);
+    if (id <= 152103) return BetaGwentAudioEffect2_Universal_de(id);
+    if (id <= 162211) return BetaGwentAudioEffect3_Universal_de(id);
+    if (id <= 200098) return BetaGwentAudioEffect4_Universal_de(id);
+    if (id <= 200457) return BetaGwentAudioEffect5_Universal_de(id);
+    if (id <= 201633) return BetaGwentAudioEffect6_Universal_de(id);
+    if (id <= 201817) return BetaGwentAudioEffect7_Universal_de(id);
+    return "";
+}
+function BetaGwentAudioEffect0_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 112101: return "bg79_fx_3395652692";
+        case 112102: return "bg79_fx_843060712";
+        case 112103: return "bg79_fx_3417224824";
+        case 112104: return "bg79_fx_898277553";
+        case 112105: return "bg79_fx_729252324";
+        case 112106: return "bg79_fx_1860557250";
+        case 112107: return "bg79_fx_714510181";
+        case 112108: return "bg79_fx_2626105800";
+        case 112109: return "bg79_fx_1852040582";
+        case 112110: return "bg79_fx_2541689051";
+        case 112111: return "bg79_fx_2362012063";
+        case 112112: return "bg79_fx_2524626359";
+        case 112113: return "bg79_fx_2942292010";
+        case 112201: return "bg79_fx_514482875";
+        case 112202: return "bg79_fx_1947806633";
+        case 112203: return "bg79_fx_1162524532";
+        case 112204: return "bg79_fx_514936602";
+        case 112205: return "bg79_fx_742380909";
+        case 112206: return "bg79_fx_2646226735";
+        case 112207: return "bg79_fx_4165426977";
+        case 112208: return "bg79_fx_1790304243";
+        case 112209: return "bg79_fx_1337068796";
+        case 112210: return "bg79_fx_2296117142";
+        case 112211: return "bg79_fx_3709520491";
+        case 112212: return "bg79_fx_2972894628";
+        case 112213: return "bg79_fx_3716756108";
+        case 112214: return "bg79_fx_519474258";
+        case 112215: return "bg79_fx_1630758310";
+        case 112401: return "bg79_fx_2790050995";
+        case 112402: return "bg79_fx_4262988425";
+        case 112403: return "bg79_fx_3108142615";
+        case 112404: return "bg79_fx_1144630390";
+        case 112405: return "bg79_fx_3695214425";
+        case 113102: return "bg79_fx_1574600827";
+        case 113201: return "bg79_fx_4222650809";
+        case 113206: return "bg79_fx_2231847513";
+        case 113207: return "bg79_fx_9080078";
+        case 113208: return "bg79_fx_3535926620";
+        case 113303: return "bg79_fx_4187462094";
+        case 113313: return "bg79_fx_1003645445";
+        case 113316: return "bg79_fx_3937828061";
+        case 113320: return "bg79_fx_4053812673";
+        case 113401: return "bg79_fx_4187462094";
+        case 113402: return "bg79_fx_4187462094";
+        case 122101: return "bg79_fx_3580922927";
+        case 122102: return "bg79_fx_1725897413";
+        case 122103: return "bg79_fx_2226063920";
+        case 122104: return "bg79_fx_7794445";
+        case 122105: return "bg79_fx_1081955402";
+        case 122106: return "bg79_fx_1612137249";
+        case 122107: return "bg79_fx_1395734064";
+        case 122108: return "bg79_fx_1929368006";
+        case 122201: return "bg79_fx_3953354843";
+        case 122202: return "bg79_fx_3773668558";
+        case 122203: return "bg79_fx_3562005998";
+        case 122204: return "bg79_fx_797142454";
+        case 122205: return "bg79_fx_718436193";
+        case 122206: return "bg79_fx_1837007562";
+        case 122207: return "bg79_fx_1769973425";
+        case 122208: return "bg79_fx_3312738020";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect1_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 122209: return "bg79_fx_2429636229";
+        case 122210: return "bg79_fx_300052383";
+        case 122211: return "bg79_fx_697011446";
+        case 122212: return "bg79_fx_607530292";
+        case 122213: return "bg79_fx_2058031734";
+        case 122214: return "bg79_fx_3465870946";
+        case 122216: return "bg79_fx_599458487";
+        case 122301: return "bg79_fx_3746294386";
+        case 122302: return "bg79_fx_1793989314";
+        case 122303: return "bg79_fx_3354855694";
+        case 122304: return "bg79_fx_1276046663";
+        case 122306: return "bg79_fx_1316872214";
+        case 122307: return "bg79_fx_1014180088";
+        case 122308: return "bg79_fx_4170618816";
+        case 122309: return "bg79_fx_3348587284";
+        case 122310: return "bg79_fx_4198348460";
+        case 122311: return "bg79_fx_1810880940";
+        case 122312: return "bg79_fx_1333662702";
+        case 122313: return "bg79_fx_1245156552";
+        case 122314: return "bg79_fx_3683057321";
+        case 122315: return "bg79_fx_3268082076";
+        case 122316: return "bg79_fx_1547581519";
+        case 122317: return "bg79_fx_1866548680";
+        case 122318: return "bg79_fx_4098545935";
+        case 122401: return "bg79_fx_3606443419";
+        case 122402: return "bg79_fx_3695318591";
+        case 122403: return "bg79_fx_1635422172";
+        case 123201: return "bg79_fx_1194450298";
+        case 123301: return "bg79_fx_3334557791";
+        case 131101: return "bg79_fx_2945270290";
+        case 131102: return "bg79_fx_2737476773";
+        case 132101: return "bg79_fx_3386564296";
+        case 132102: return "bg79_fx_2628887005";
+        case 132103: return "bg79_fx_170458611";
+        case 132104: return "bg79_fx_2388737177";
+        case 132105: return "bg79_fx_3025942366";
+        case 132106: return "bg79_fx_3026324263";
+        case 132107: return "bg79_fx_2226889185";
+        case 132108: return "bg79_fx_1434419550";
+        case 132201: return "bg79_fx_1260139933";
+        case 132202: return "bg79_fx_1046228664";
+        case 132203: return "bg79_fx_3422587878";
+        case 132204: return "bg79_fx_1406685045";
+        case 132205: return "bg79_fx_4173224394";
+        case 132206: return "bg79_fx_2245065751";
+        case 132207: return "bg79_fx_3120725056";
+        case 132208: return "bg79_fx_1735544563";
+        case 132209: return "bg79_fx_790759647";
+        case 132211: return "bg79_fx_3758437398";
+        case 132212: return "bg79_fx_2936760412";
+        case 132213: return "bg79_fx_4235389783";
+        case 132214: return "bg79_fx_763257575";
+        case 132215: return "bg79_fx_1377090531";
+        case 132216: return "bg79_fx_2129505533";
+        case 132217: return "bg79_fx_2142835913";
+        case 132218: return "bg79_fx_420309497";
+        case 132301: return "bg79_fx_3036675114";
+        case 132302: return "bg79_fx_890517457";
+        case 132303: return "bg79_fx_314595938";
+        case 132304: return "bg79_fx_455735080";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect2_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 132305: return "bg79_fx_3210037717";
+        case 132306: return "bg79_fx_3450648124";
+        case 132307: return "bg79_fx_1044570009";
+        case 132308: return "bg79_fx_2850556323";
+        case 132309: return "bg79_fx_3540597125";
+        case 132310: return "bg79_fx_3313104602";
+        case 132312: return "bg79_fx_4278347594";
+        case 132313: return "bg79_fx_1742122634";
+        case 132314: return "bg79_fx_2744585176";
+        case 132315: return "bg79_fx_2833673135";
+        case 132316: return "bg79_fx_798399388";
+        case 132402: return "bg79_fx_2054496824";
+        case 132403: return "bg79_fx_1602950149";
+        case 132404: return "bg79_fx_2624758006";
+        case 132405: return "bg79_fx_2361434004";
+        case 132406: return "bg79_fx_783529319";
+        case 132407: return "bg79_fx_2304783865";
+        case 132408: return "bg79_fx_65010424";
+        case 132409: return "bg79_fx_2384069016";
+        case 133301: return "bg79_fx_2335519656";
+        case 133302: return "bg79_fx_3082327472";
+        case 142101: return "bg79_fx_3603721956";
+        case 142102: return "bg79_fx_1531303984";
+        case 142103: return "bg79_fx_2825748729";
+        case 142104: return "bg79_fx_74233409";
+        case 142105: return "bg79_fx_1825710439";
+        case 142106: return "bg79_fx_1094876401";
+        case 142107: return "bg79_fx_3822054485";
+        case 142108: return "bg79_fx_2991740440";
+        case 142201: return "bg79_fx_1485513089";
+        case 142202: return "bg79_fx_1879690864";
+        case 142203: return "bg79_fx_2518805740";
+        case 142206: return "bg79_fx_526114196";
+        case 142207: return "bg79_fx_3218830508";
+        case 142209: return "bg79_fx_2982000626";
+        case 142211: return "bg79_fx_743392900";
+        case 142212: return "bg79_fx_2818418645";
+        case 142213: return "bg79_fx_1414677961";
+        case 142214: return "bg79_fx_1779347853";
+        case 142301: return "bg79_fx_1113233163";
+        case 142302: return "bg79_fx_210311833";
+        case 142303: return "bg79_fx_3326672827";
+        case 142304: return "bg79_fx_1839290106";
+        case 142306: return "bg79_fx_2611321864";
+        case 142307: return "bg79_fx_438751169";
+        case 142308: return "bg79_fx_115159051";
+        case 142309: return "bg79_fx_2597020897";
+        case 142310: return "bg79_fx_2763610169";
+        case 142311: return "bg79_fx_960997288";
+        case 142312: return "bg79_fx_1507469969";
+        case 142313: return "bg79_fx_2858722056";
+        case 142314: return "bg79_fx_1188458162";
+        case 142315: return "bg79_fx_2059381696";
+        case 142316: return "bg79_fx_3812338627";
+        case 142317: return "bg79_fx_660494302";
+        case 142401: return "bg79_fx_370542386";
+        case 143201: return "bg79_fx_54701386";
+        case 143301: return "bg79_fx_3099162218";
+        case 152101: return "bg79_fx_4175951973";
+        case 152103: return "bg79_fx_1303041810";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect3_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 152104: return "bg79_fx_2566025232";
+        case 152105: return "bg79_fx_218930060";
+        case 152106: return "bg79_fx_743515151";
+        case 152107: return "bg79_fx_3552589037";
+        case 152109: return "bg79_fx_553152945";
+        case 152201: return "bg79_fx_305236487";
+        case 152202: return "bg79_fx_1661743351";
+        case 152203: return "bg79_fx_4167522615";
+        case 152204: return "bg79_fx_1516696404";
+        case 152205: return "bg79_fx_2007746145";
+        case 152206: return "bg79_fx_4260849741";
+        case 152207: return "bg79_fx_3101408448";
+        case 152208: return "bg79_fx_4059346259";
+        case 152209: return "bg79_fx_212947329";
+        case 152210: return "bg79_fx_1560462341";
+        case 152211: return "bg79_fx_4116062743";
+        case 152213: return "bg79_fx_3124783719";
+        case 152214: return "bg79_fx_1927858084";
+        case 152301: return "bg79_fx_3679954868";
+        case 152302: return "bg79_fx_235803829";
+        case 152303: return "bg79_fx_1698235724";
+        case 152304: return "bg79_fx_4066851032";
+        case 152305: return "bg79_fx_2080899675";
+        case 152306: return "bg79_fx_2308834113";
+        case 152308: return "bg79_fx_1712563289";
+        case 152309: return "bg79_fx_1243862547";
+        case 152310: return "bg79_fx_1196562944";
+        case 152311: return "bg79_fx_2012880390";
+        case 152312: return "bg79_fx_1849620901";
+        case 152313: return "bg79_fx_62872992";
+        case 152314: return "bg79_fx_2260915605";
+        case 152315: return "bg79_fx_211889999";
+        case 152316: return "bg79_fx_4019434355";
+        case 152317: return "bg79_fx_668038284";
+        case 152318: return "bg79_fx_460332697";
+        case 152401: return "bg79_fx_2759789487";
+        case 152402: return "bg79_fx_13642409";
+        case 152403: return "bg79_fx_3058600845";
+        case 152405: return "bg79_fx_1611020239";
+        case 152406: return "bg79_fx_2359930005";
+        case 153201: return "bg79_fx_1192221305";
+        case 162101: return "bg79_fx_2572655564";
+        case 162102: return "bg79_fx_2090593881";
+        case 162103: return "bg79_fx_459365841";
+        case 162104: return "bg79_fx_2852011005";
+        case 162105: return "bg79_fx_610559508";
+        case 162106: return "bg79_fx_2091470217";
+        case 162107: return "bg79_fx_1251964638";
+        case 162108: return "bg79_fx_3699137582";
+        case 162201: return "bg79_fx_1656765553";
+        case 162202: return "bg79_fx_3621920039";
+        case 162203: return "bg79_fx_3113802096";
+        case 162204: return "bg79_fx_3150303364";
+        case 162205: return "bg79_fx_956497982";
+        case 162206: return "bg79_fx_2322591249";
+        case 162207: return "bg79_fx_2117936302";
+        case 162208: return "bg79_fx_3250806960";
+        case 162209: return "bg79_fx_3843277547";
+        case 162210: return "bg79_fx_3115686636";
+        case 162211: return "bg79_fx_1135117597";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect4_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 162212: return "bg79_fx_2629806217";
+        case 162213: return "bg79_fx_2352033111";
+        case 162301: return "bg79_fx_511855046";
+        case 162302: return "bg79_fx_3851131680";
+        case 162303: return "bg79_fx_876020117";
+        case 162304: return "bg79_fx_615450887";
+        case 162305: return "bg79_fx_2117257051";
+        case 162306: return "bg79_fx_3039358424";
+        case 162307: return "bg79_fx_4088214341";
+        case 162308: return "bg79_fx_2462400718";
+        case 162309: return "bg79_fx_2290784264";
+        case 162310: return "bg79_fx_3737210697";
+        case 162311: return "bg79_fx_3524423994";
+        case 162312: return "bg79_fx_3192994382";
+        case 162313: return "bg79_fx_3001399220";
+        case 162314: return "bg79_fx_2698371145";
+        case 162315: return "bg79_fx_3945861007";
+        case 162316: return "bg79_fx_2620476933";
+        case 162317: return "bg79_fx_2622121347";
+        case 162318: return "bg79_fx_1727178084";
+        case 162401: return "bg79_fx_3934557805";
+        case 162402: return "bg79_fx_3157388991";
+        case 200020: return "bg79_fx_1059850726";
+        case 200022: return "bg79_fx_4187523245";
+        case 200026: return "bg79_fx_1182087113";
+        case 200028: return "bg79_fx_3118774416";
+        case 200030: return "bg79_fx_1549498878";
+        case 200031: return "bg79_fx_1066386275";
+        case 200032: return "bg79_fx_2778933433";
+        case 200033: return "bg79_fx_1594434705";
+        case 200036: return "bg79_fx_3913679887";
+        case 200037: return "bg79_fx_3677776796";
+        case 200038: return "bg79_fx_3364093792";
+        case 200039: return "bg79_fx_2280701854";
+        case 200040: return "bg79_fx_1315577947";
+        case 200041: return "bg79_fx_1975983488";
+        case 200042: return "bg79_fx_2129747007";
+        case 200043: return "bg79_fx_199111628";
+        case 200044: return "bg79_fx_2309540397";
+        case 200046: return "bg79_fx_3290737338";
+        case 200048: return "bg79_fx_2470625356";
+        case 200049: return "bg79_fx_2653839007";
+        case 200050: return "bg79_fx_1845083974";
+        case 200052: return "bg79_fx_2096972889";
+        case 200055: return "bg79_fx_3144355508";
+        case 200056: return "bg79_fx_3183373472";
+        case 200058: return "bg79_fx_3004523106";
+        case 200062: return "bg79_fx_4056401408";
+        case 200067: return "bg79_fx_2993996216";
+        case 200071: return "bg79_fx_3506695817";
+        case 200073: return "bg79_fx_1168520071";
+        case 200079: return "bg79_fx_1145845125";
+        case 200080: return "bg79_fx_145034249";
+        case 200081: return "bg79_fx_3485594715";
+        case 200083: return "bg79_fx_2849822196";
+        case 200087: return "bg79_fx_2492269067";
+        case 200088: return "bg79_fx_2027970317";
+        case 200089: return "bg79_fx_1431788866";
+        case 200091: return "bg79_fx_3326742544";
+        case 200098: return "bg79_fx_3455889460";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect5_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 200102: return "bg79_fx_3896640832";
+        case 200103: return "bg79_fx_698833918";
+        case 200104: return "bg79_fx_3697941869";
+        case 200105: return "bg79_fx_2477921360";
+        case 200112: return "bg79_fx_827673070";
+        case 200114: return "bg79_fx_1347151243";
+        case 200115: return "bg79_fx_59578087";
+        case 200118: return "bg79_fx_1462724796";
+        case 200124: return "bg79_fx_1245425858";
+        case 200132: return "bg79_fx_3451911606";
+        case 200135: return "bg79_fx_271085077";
+        case 200136: return "bg79_fx_2095947162";
+        case 200138: return "bg79_fx_1208904748";
+        case 200139: return "bg79_fx_2810674676";
+        case 200144: return "bg79_fx_4221182000";
+        case 200145: return "bg79_fx_2712173473";
+        case 200146: return "bg79_fx_151260701";
+        case 200147: return "bg79_fx_3523608578";
+        case 200149: return "bg79_fx_2745495503";
+        case 200154: return "bg79_fx_1408793683";
+        case 200158: return "bg79_fx_2932762600";
+        case 200159: return "bg79_fx_2643703843";
+        case 200160: return "bg79_fx_2681268150";
+        case 200161: return "bg79_fx_758500920";
+        case 200162: return "bg79_fx_168363967";
+        case 200163: return "bg79_fx_3314643367";
+        case 200164: return "bg79_fx_551784047";
+        case 200165: return "bg79_fx_3914426836";
+        case 200166: return "bg79_fx_654382569";
+        case 200167: return "bg79_fx_694443607";
+        case 200168: return "bg79_fx_376634067";
+        case 200169: return "bg79_fx_1669805897";
+        case 200170: return "bg79_fx_1323369845";
+        case 200171: return "bg79_fx_2823476682";
+        case 200177: return "bg79_fx_4152133840";
+        case 200209: return "bg79_fx_2540682936";
+        case 200212: return "bg79_fx_3578640335";
+        case 200218: return "bg79_fx_2759789487";
+        case 200219: return "bg79_fx_3934557805";
+        case 200220: return "bg79_fx_1861355436";
+        case 200221: return "bg79_fx_509805234";
+        case 200222: return "bg79_fx_734756496";
+        case 200223: return "bg79_fx_2648271288";
+        case 200227: return "bg79_fx_2763233827";
+        case 200228: return "bg79_fx_4263307925";
+        case 200233: return "bg79_fx_3244471482";
+        case 200235: return "bg79_fx_893102762";
+        case 200236: return "bg79_fx_1249031769";
+        case 200237: return "bg79_fx_3905627684";
+        case 200293: return "bg79_fx_302707243";
+        case 200294: return "bg79_fx_1855197648";
+        case 200295: return "bg79_fx_3428553790";
+        case 200296: return "bg79_fx_3283491899";
+        case 200299: return "bg79_fx_3410258784";
+        case 200300: return "bg79_fx_4225939140";
+        case 200301: return "bg79_fx_2646552586";
+        case 200307: return "bg79_fx_705079428";
+        case 200308: return "bg79_fx_2098895937";
+        case 200320: return "bg79_fx_2148182659";
+        case 200457: return "bg79_fx_1602253521";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect6_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 200502: return "bg79_fx_2189560840";
+        case 200518: return "bg79_fx_2826842583";
+        case 200519: return "bg79_fx_3149355844";
+        case 200520: return "bg79_fx_3870582423";
+        case 200523: return "bg79_fx_2638787903";
+        case 200528: return "bg79_fx_2733297292";
+        case 200529: return "bg79_fx_2044411266";
+        case 200530: return "bg79_fx_3218657141";
+        case 200532: return "bg79_fx_3467493194";
+        case 200534: return "bg79_fx_3649892210";
+        case 200535: return "bg79_fx_2301585369";
+        case 200539: return "bg79_fx_2057664872";
+        case 200540: return "bg79_fx_4078195304";
+        case 201523: return "bg79_fx_1738240167";
+        case 201559: return "bg79_fx_383348813";
+        case 201572: return "bg79_fx_928093079";
+        case 201573: return "bg79_fx_928093079";
+        case 201574: return "bg79_fx_928093079";
+        case 201576: return "bg79_fx_3257280898";
+        case 201578: return "bg79_fx_426366733";
+        case 201579: return "bg79_fx_2552033768";
+        case 201580: return "bg79_fx_4215366690";
+        case 201581: return "bg79_fx_264214796";
+        case 201582: return "bg79_fx_1705643005";
+        case 201583: return "bg79_fx_3301666287";
+        case 201584: return "bg79_fx_1772301427";
+        case 201585: return "bg79_fx_1092174218";
+        case 201587: return "bg79_fx_2153263156";
+        case 201589: return "bg79_fx_886436088";
+        case 201595: return "bg79_fx_2005942592";
+        case 201597: return "bg79_fx_2197086276";
+        case 201598: return "bg79_fx_130834792";
+        case 201599: return "bg79_fx_808785438";
+        case 201600: return "bg79_fx_2208595502";
+        case 201601: return "bg79_fx_1133501108";
+        case 201603: return "bg79_fx_2076616595";
+        case 201606: return "bg79_fx_3340179963";
+        case 201609: return "bg79_fx_3100197490";
+        case 201610: return "bg79_fx_2204062891";
+        case 201611: return "bg79_fx_3847358238";
+        case 201612: return "bg79_fx_598700268";
+        case 201613: return "bg79_fx_3457594024";
+        case 201615: return "bg79_fx_3356290799";
+        case 201616: return "bg79_fx_2969179751";
+        case 201617: return "bg79_fx_1681003615";
+        case 201618: return "bg79_fx_242626593";
+        case 201619: return "bg79_fx_4049938297";
+        case 201620: return "bg79_fx_828451047";
+        case 201621: return "bg79_fx_6420008";
+        case 201622: return "bg79_fx_2944625364";
+        case 201623: return "bg79_fx_995383832";
+        case 201624: return "bg79_fx_1133083862";
+        case 201625: return "bg79_fx_152104257";
+        case 201626: return "bg79_fx_539939818";
+        case 201627: return "bg79_fx_1811396259";
+        case 201628: return "bg79_fx_4276764203";
+        case 201630: return "bg79_fx_1596833807";
+        case 201631: return "bg79_fx_3668370841";
+        case 201632: return "bg79_fx_774960951";
+        case 201633: return "bg79_fx_3707205680";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect7_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 201635: return "bg79_fx_1965642969";
+        case 201636: return "bg79_fx_1305507018";
+        case 201638: return "bg79_fx_2465089435";
+        case 201639: return "bg79_fx_1885398964";
+        case 201642: return "bg79_fx_3032433713";
+        case 201643: return "bg79_fx_3139012559";
+        case 201644: return "bg79_fx_467976388";
+        case 201645: return "bg79_fx_2800663406";
+        case 201646: return "bg79_fx_569627432";
+        case 201647: return "bg79_fx_498171762";
+        case 201648: return "bg79_fx_41143281";
+        case 201650: return "bg79_fx_4133624602";
+        case 201653: return "bg79_fx_37523589";
+        case 201656: return "bg79_fx_2434224223";
+        case 201657: return "bg79_fx_1555453165";
+        case 201659: return "bg79_fx_1431587589";
+        case 201660: return "bg79_fx_2775893284";
+        case 201661: return "bg79_fx_3032580174";
+        case 201662: return "bg79_fx_2339672278";
+        case 201664: return "bg79_fx_37145074";
+        case 201676: return "bg79_fx_4230839019";
+        case 201677: return "bg79_fx_596493021";
+        case 201696: return "bg79_fx_2121222704";
+        case 201697: return "bg79_fx_3141758510";
+        case 201698: return "bg79_fx_1748759717";
+        case 201699: return "bg79_fx_2163368424";
+        case 201700: return "bg79_fx_3100370955";
+        case 201701: return "bg79_fx_2374244000";
+        case 201704: return "bg79_fx_2672669793";
+        case 201725: return "bg79_fx_4211756470";
+        case 201731: return "bg79_fx_1077351896";
+        case 201737: return "bg79_fx_189803036";
+        case 201743: return "bg79_fx_1985436563";
+        case 201748: return "bg79_fx_2067274392";
+        case 201749: return "bg79_fx_2488424434";
+        case 201753: return "bg79_fx_596493021";
+        case 201758: return "bg79_fx_1602253521";
+        case 201772: return "bg79_fx_1212383624";
+        case 201773: return "bg79_fx_2496638614";
+        case 201774: return "bg79_fx_3044471817";
+        case 201776: return "bg79_fx_3044471816";
+        case 201777: return "bg79_fx_416157938";
+        case 201778: return "bg79_fx_2347161295";
+        case 201780: return "bg79_fx_562867060";
+        case 201781: return "bg79_fx_3468192666";
+        case 201817: return "bg79_fx_6172555";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceVariant_Universal_de(id : int, roll : int) : string
+{
+    if(id <= 112203)return BetaGwentAudioVoiceVariantPart0_Universal_de(id,roll);
+    if(id <= 122101)return BetaGwentAudioVoiceVariantPart1_Universal_de(id,roll);
+    if(id <= 122208)return BetaGwentAudioVoiceVariantPart2_Universal_de(id,roll);
+    if(id <= 122313)return BetaGwentAudioVoiceVariantPart3_Universal_de(id,roll);
+    if(id <= 132207)return BetaGwentAudioVoiceVariantPart4_Universal_de(id,roll);
+    if(id <= 142108)return BetaGwentAudioVoiceVariantPart5_Universal_de(id,roll);
+    if(id <= 142302)return BetaGwentAudioVoiceVariantPart6_Universal_de(id,roll);
+    if(id <= 142401)return BetaGwentAudioVoiceVariantPart7_Universal_de(id,roll);
+    if(id <= 152211)return BetaGwentAudioVoiceVariantPart8_Universal_de(id,roll);
+    if(id <= 152316)return BetaGwentAudioVoiceVariantPart9_Universal_de(id,roll);
+    if(id <= 162204)return BetaGwentAudioVoiceVariantPart10_Universal_de(id,roll);
+    if(id <= 162308)return BetaGwentAudioVoiceVariantPart11_Universal_de(id,roll);
+    if(id <= 200032)return BetaGwentAudioVoiceVariantPart12_Universal_de(id,roll);
+    if(id <= 200081)return BetaGwentAudioVoiceVariantPart13_Universal_de(id,roll);
+    if(id <= 200144)return BetaGwentAudioVoiceVariantPart14_Universal_de(id,roll);
+    if(id <= 200169)return BetaGwentAudioVoiceVariantPart15_Universal_de(id,roll);
+    if(id <= 200294)return BetaGwentAudioVoiceVariantPart16_Universal_de(id,roll);
+    if(id <= 201587)return BetaGwentAudioVoiceVariantPart17_Universal_de(id,roll);
+    if(id <= 201622)return BetaGwentAudioVoiceVariantPart18_Universal_de(id,roll);
+    if(id <= 201753)return BetaGwentAudioVoiceVariantPart19_Universal_de(id,roll);
+    if(id <= 201781)return BetaGwentAudioVoiceVariantPart20_Universal_de(id,roll);
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart0_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 112101:
+        if(roll%100<25)return "bg79_vo_CIRI_CIRILLA_01040512";
+        if(roll%100<50)return "bg79_vo_CIRI_CIRILLA_01040548";
+        if(roll%100<75)return "bg79_vo_CIRI_Q111_00536478";
+        if(roll%100<100)return "bg79_vo_CIRI_Q310_00579530";
+        break;
+    case 112102:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 112103:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 112104:
+        if(roll%100<40)return "bg79_vo_REGI_Q702_01155230";
+        if(roll%100<60)return "bg79_vo_REGI_Q702_01155490";
+        if(roll%100<100)return "bg79_vo_REGI_Q702_01178597";
+        break;
+    case 112105:
+        if(roll%100<100)return "bg79_vo_katakan_taunt_short_003";
+        break;
+    case 112106:
+        if(roll%100<17)return "bg79_vo_TRSS_Q310_00545347";
+        if(roll%100<33)return "bg79_vo_VO_TRIS_100285_0008";
+        if(roll%100<50)return "bg79_vo_VO_TRIS_104122_2446";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_17";
+        if(roll%100<84)return "bg79_vo_SAY_Battlecries_18";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_19";
+        break;
+    case 112108:
+        if(roll%100<33)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<66)return "bg79_vo_YENN_YENNEFER_01041493";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041495";
+        break;
+    case 112109:
+        if(roll%100<24)return "bg79_vo_ZOLT_Q310_01062198";
+        if(roll%100<48)return "bg79_vo_ZOLT_Q403_00575678";
+        if(roll%100<72)return "bg79_vo_ZOLT_ZOLTAN_01040657";
+        if(roll%100<96)return "bg79_vo_ZOLT_ZOLTAN_01040651";
+        if(roll%100<100)return "bg79_vo_ZOLT_ZOLTAN_01040649";
+        break;
+    case 112110:
+        if(roll%100<25)return "bg79_vo_CIRI_CIRILLA_01040512";
+        if(roll%100<50)return "bg79_vo_CIRI_CIRILLA_01040548";
+        if(roll%100<75)return "bg79_vo_CIRI_Q111_00536478";
+        if(roll%100<100)return "bg79_vo_CIRI_Q310_00579530";
+        break;
+    case 112111:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 112112:
+        if(roll%100<25)return "bg79_vo_AVLC_Q311_00454814";
+        if(roll%100<50)return "bg79_vo_AVLC_Q311_00584753";
+        if(roll%100<75)return "bg79_vo_AVLC_Q311_01022646";
+        if(roll%100<100)return "bg79_vo_AVLC_Q311_00312745";
+        break;
+    case 112113:
+        if(roll%100<33)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<66)return "bg79_vo_YENN_YENNEFER_01041493";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041495";
+        break;
+    case 112201:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_816";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_817";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_818";
+        break;
+    case 112202:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_21";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_22";
+        if(roll%100<92)return "bg79_vo_SAY_Battlecries_23";
+        if(roll%100<100)return "bg79_vo_ESKL_ESKEL_01037262";
+        break;
+    case 112203:
+        if(roll%100<33)return "bg79_vo_VSMR_Q001_00546725";
+        if(roll%100<66)return "bg79_vo_VSMR_VESEMIR_01000012";
+        if(roll%100<100)return "bg79_vo_VSMR_VESEMIR_01040765";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart1_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 112204:
+        if(roll%100<17)return "bg79_vo_LMBT_Q401_00523875";
+        if(roll%100<34)return "bg79_vo_LMBT_Q401_00531130";
+        if(roll%100<51)return "bg79_vo_LMBT_Q401_01058899";
+        if(roll%100<68)return "bg79_vo_LMBT_Q403_00550012";
+        if(roll%100<85)return "bg79_vo_LMBT_SQ106_00586496";
+        if(roll%100<100)return "bg79_vo_LMBT_Q403_00572964";
+        break;
+    case 112205:
+        if(roll%100<33)return "bg79_vo_wyvern_v2_vo_ADD_008";
+        if(roll%100<66)return "bg79_vo_wyvern_v2_vo_ADD_009";
+        if(roll%100<100)return "bg79_vo_wyvern_v2_vo_ADD_010";
+        break;
+    case 112206:
+        if(roll%100<33)return "bg79_vo_wyvern_v2_vo_ADD_008";
+        if(roll%100<66)return "bg79_vo_wyvern_v2_vo_ADD_009";
+        if(roll%100<100)return "bg79_vo_wyvern_v2_vo_ADD_010";
+        break;
+    case 112207:
+        if(roll%100<33)return "bg79_vo_OLGD_Q603_01101145";
+        if(roll%100<66)return "bg79_vo_OLGD_Q603_01101591";
+        if(roll%100<100)return "bg79_vo_OLGD_Q604_01137773";
+        break;
+    case 112208:
+        if(roll%100<50)return "bg79_vo_VO_OPRT_204113_0001";
+        if(roll%100<100)return "bg79_vo_VO_OPRT_204113_0012";
+        break;
+    case 112211:
+        if(roll%100<30)return "bg79_vo_GJHN_Q105_00417768";
+        if(roll%100<65)return "bg79_vo_GJHN_Q105_00420525";
+        if(roll%100<100)return "bg79_vo_GJHN_Q111_01011367";
+        break;
+    case 112212:
+        if(roll%100<33)return "bg79_vo_GSAR_Q301_00484178";
+        if(roll%100<66)return "bg79_vo_GSAR_Q301_00493632";
+        if(roll%100<100)return "bg79_vo_GSAR_GODLING_01059640";
+        break;
+    case 112213:
+        if(roll%100<25)return "bg79_vo_KGBG_Q301_00486502";
+        if(roll%100<50)return "bg79_vo_KGBG_Q301_00487409";
+        if(roll%100<75)return "bg79_vo_KGBG_Q301_00499725";
+        if(roll%100<100)return "bg79_vo_KGBG_Q302_00487960";
+        break;
+    case 112214:
+        if(roll%100<33)return "bg79_vo_WILY_Q302_00443324";
+        if(roll%100<66)return "bg79_vo_WILY_Q302_00514329";
+        if(roll%100<100)return "bg79_vo_WILY_Q302_00547590";
+        break;
+    case 112215:
+        if(roll%100<33)return "bg79_vo_IRIS_Q604_01106159";
+        if(roll%100<66)return "bg79_vo_IRIS_Q604_01106875";
+        if(roll%100<100)return "bg79_vo_IRIS_Q604_01106944";
+        break;
+    case 112403:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_25";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_26";
+        break;
+    case 112404:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_25";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_26";
+        break;
+    case 113208:
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_821";
+        break;
+    case 113313:
+        if(roll%300<33)return "bg79_vo_SAY_Battlecries_part5_326";
+        if(roll%300<66)return "bg79_vo_SAY_Battlecries_part5_327";
+        if(roll%300<100)return "bg79_vo_SAY_Battlecries_part5_328";
+        if(roll%300<200)return "bg79_vo_SAY_Battlecries_part5_329";
+        if(roll%300<300)return "bg79_vo_SAY_Battlecries_part5_330";
+        break;
+    case 122101:
+        if(roll%100<25)return "bg79_vo_BARN_Q102_00408798";
+        if(roll%100<50)return "bg79_vo_BARN_Q103_00473473";
+        if(roll%100<75)return "bg79_vo_BARN_Q107_00515406";
+        if(roll%100<100)return "bg79_vo_BARN_BARON_00402523";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart2_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 122102:
+        if(roll%100<50)return "bg79_vo_ROCH_MQ3035_01064844";
+        if(roll%100<100)return "bg79_vo_ROCH_ROCHE_00541126";
+        break;
+    case 122103:
+        if(roll%100<50)return "bg79_vo_VO_JANT_300862_0253";
+        if(roll%100<100)return "bg79_vo_VO_JANT_900381_0141";
+        break;
+    case 122104:
+        if(roll%100<21)return "bg79_vo_PHIL_PHILIPPA_01041424";
+        if(roll%100<44)return "bg79_vo_PHIL_PHILIPPA_01041426";
+        if(roll%100<66)return "bg79_vo_PHIL_Q310_00533376";
+        if(roll%100<78)return "bg79_vo_PHIL_Q502_00555967";
+        if(roll%100<100)return "bg79_vo_VO_FLPA_300358_0012";
+        break;
+    case 122105:
+        if(roll%100<25)return "bg79_vo_DJKS_MQ3035_01067766";
+        if(roll%100<50)return "bg79_vo_DJKS_Q303_00486613";
+        if(roll%100<75)return "bg79_vo_DJKS_Q303_00417640";
+        if(roll%100<100)return "bg79_vo_DJKS_Q303_00378559";
+        break;
+    case 122106:
+        if(roll%100<33)return "bg79_vo_SHNI_Q602_01119358";
+        if(roll%100<66)return "bg79_vo_SHNI_Q601_01101942";
+        if(roll%100<100)return "bg79_vo_SHNI_SHANI_01130725";
+        break;
+    case 122107:
+        if(roll%100<16)return "bg79_vo_TRSS_Q310_00545347";
+        if(roll%100<33)return "bg79_vo_VO_TRIS_100285_0008";
+        if(roll%100<50)return "bg79_vo_VO_TRIS_104122_2446";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_17";
+        if(roll%100<84)return "bg79_vo_SAY_Battlecries_18";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_19";
+        break;
+    case 122108:
+        if(roll%100<25)return "bg79_vo_KEIR_KEIRA_00475332";
+        if(roll%100<50)return "bg79_vo_KEIR_KEIRA_01040781";
+        if(roll%100<75)return "bg79_vo_KEIR_SQ101_00565661";
+        if(roll%100<100)return "bg79_vo_KEIR_SQ101_00590073";
+        break;
+    case 122201:
+        if(roll%100<15)return "bg79_vo_SAY_Battlecries_5";
+        if(roll%100<29)return "bg79_vo_SAY_Battlecries_7";
+        if(roll%100<44)return "bg79_vo_SAY_Battlecries_6";
+        if(roll%100<58)return "bg79_vo_DAND_DANDELION_00429307";
+        if(roll%100<73)return "bg79_vo_DAND_Q302_00489393";
+        if(roll%100<86)return "bg79_vo_DAND_Q302_00490269";
+        if(roll%100<100)return "bg79_vo_VO_JSKR_100926_0188";
+        break;
+    case 122202:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_9";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_10";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_11";
+        if(roll%100<100)return "bg79_vo_PRIS_Q305_00489643";
+        break;
+    case 122203:
+        if(roll%100<33)return "bg79_vo_TALA_SQ315_01067599";
+        if(roll%100<66)return "bg79_vo_TALA_SQ315_01067657";
+        if(roll%100<100)return "bg79_vo_TALA_SQ315_01067677";
+        break;
+    case 122204:
+        if(roll%100<25)return "bg79_vo_VESS_MQ3035_01064809";
+        if(roll%100<50)return "bg79_vo_VESS_MQ3035_01071150";
+        if(roll%100<75)return "bg79_vo_VESS_Q403_00546798";
+        if(roll%100<100)return "bg79_vo_VESS_VES_01070698";
+        break;
+    case 122205:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_29";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_30";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_31";
+        break;
+    case 122206:
+        if(roll%100<33)return "bg79_vo_VO_SABR_200216_0037";
+        if(roll%100<53)return "bg79_vo_VO_SABR_200216_0064";
+        if(roll%100<100)return "bg79_vo_VO_SABR_200216_0101";
+        break;
+    case 122207:
+        if(roll%100<33)return "bg79_vo_VO_DETM_200182_0001";
+        if(roll%100<66)return "bg79_vo_VO_DETM_200219_0001";
+        if(roll%100<100)return "bg79_vo_VO_DETM_200338_0412";
+        break;
+    case 122208:
+        if(roll%100<33)return "bg79_vo_VO_STEN_200098_0258";
+        if(roll%100<66)return "bg79_vo_VO_STEN_200046_0316";
+        if(roll%100<100)return "bg79_vo_VO_STEN_200046_0302";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart3_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 122209:
+        if(roll%100<65)return "bg79_vo_TRL1_MQ1022_00466604";
+        if(roll%100<100)return "bg79_vo_TRL1_MQ1022_00468246";
+        break;
+    case 122210:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_37";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_38";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_39";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_40";
+        break;
+    case 122211:
+        if(roll%100<33)return "bg79_vo_MGLA_MARGARITTA_01012961";
+        if(roll%100<66)return "bg79_vo_MGLA_Q210_00584250";
+        if(roll%100<100)return "bg79_vo_MGLA_Q310_00562485";
+        break;
+    case 122212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_42";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_43";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_44";
+        break;
+    case 122213:
+        if(roll%100<33)return "bg79_vo_VO_ODRI_200481_0002";
+        if(roll%100<66)return "bg79_vo_VO_ODRI_200546_0001";
+        if(roll%100<100)return "bg79_vo_VO_ODRI_200559_0001";
+        break;
+    case 122214:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_46";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_48";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_47";
+        break;
+    case 122216:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_21";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_23";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_22";
+        break;
+    case 122306:
+        if(roll%100<33)return "bg79_vo_VO_ZDZI_003478_0007";
+        if(roll%100<66)return "bg79_vo_VO_ZDZI_003478_0049";
+        if(roll%100<100)return "bg79_vo_VO_ZDZI_003478_0097";
+        break;
+    case 122307:
+        if(roll%100<33)return "bg79_vo_VO_NG01_003478_0008";
+        if(roll%100<66)return "bg79_vo_VO_NG01_003478_0060";
+        if(roll%100<100)return "bg79_vo_VO_NG01_003478_0126";
+        break;
+    case 122308:
+        if(roll%100<33)return "bg79_vo_RES1_VSET_00508237";
+        if(roll%100<66)return "bg79_vo_RES1_VSET_00508445";
+        if(roll%100<100)return "bg79_vo_RES1_VSET_00508451";
+        break;
+    case 122309:
+        if(roll%100<33)return "bg79_vo_VO_KG01_200564_0001";
+        if(roll%100<66)return "bg79_vo_VO_KG01_202928_0014";
+        if(roll%100<100)return "bg79_vo_VO_KG01_202928_0016";
+        break;
+    case 122310:
+        if(roll%100<33)return "bg79_vo_VO_RS01_101992_0004";
+        if(roll%100<66)return "bg79_vo_VO_RS01_106541_0014";
+        if(roll%100<100)return "bg79_vo_VO_ROS1_102779_0005";
+        break;
+    case 122311:
+        if(roll%100<33)return "bg79_vo_VO_RS03_106543_0003";
+        if(roll%100<67)return "bg79_vo_VO_RS03_106543_0004";
+        if(roll%100<100)return "bg79_vo_VO_ROS3_102779_0003";
+        break;
+    case 122312:
+        if(roll%100<33)return "bg79_vo_NCIW1_VSET_00564889";
+        if(roll%100<66)return "bg79_vo_NCIW1_VSET_00564891";
+        if(roll%100<100)return "bg79_vo_NCIW1_VSET_00566917";
+        break;
+    case 122313:
+        if(roll%100<33)return "bg79_vo_VO_KG06_200420_0005";
+        if(roll%100<66)return "bg79_vo_VO_KG06_202931_0005";
+        if(roll%100<100)return "bg79_vo_VO_KG06_202931_0012";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart4_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 122314:
+        if(roll%100<33)return "bg79_vo_VO_KG02_200565_0005";
+        if(roll%100<66)return "bg79_vo_VO_KG02_202929_0003";
+        if(roll%100<100)return "bg79_vo_VO_KG02_202929_0004";
+        break;
+    case 122316:
+        if(roll%100<33)return "bg79_vo_TBAN2_VSET_00591990";
+        if(roll%100<66)return "bg79_vo_TBAN2_VSET_00591997";
+        if(roll%100<100)return "bg79_vo_TBAN2_VSET_01044560";
+        break;
+    case 122317:
+        if(roll%100<33)return "bg79_vo_REOF1_VSET_00516089";
+        if(roll%100<66)return "bg79_vo_REOF1_VSET_00516091";
+        if(roll%100<100)return "bg79_vo_REOF1_VSET_00516093";
+        break;
+    case 122318:
+        if(roll%100<50)return "bg79_vo_VO_KE01_203352_0004";
+        if(roll%100<100)return "bg79_vo_VO_KE01_203352_0006";
+        break;
+    case 122403:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_819";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_820";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_821";
+        break;
+    case 123301:
+        if(roll%300<33)return "bg79_vo_SAY_Battlecries_part5_320";
+        if(roll%300<66)return "bg79_vo_SAY_Battlecries_part5_321";
+        if(roll%300<100)return "bg79_vo_SAY_Battlecries_part5_322";
+        if(roll%300<200)return "bg79_vo_SAY_Battlecries_part5_323";
+        if(roll%300<300)return "bg79_vo_SAY_Battlecries_part5_324";
+        break;
+    case 131101:
+        if(roll%100<33)return "bg79_vo_ERDN_EREDIN_01040754";
+        if(roll%100<66)return "bg79_vo_ERDN_EREDIN_01040841";
+        if(roll%100<100)return "bg79_vo_ERDN_Q501_00534051";
+        break;
+    case 131102:
+        if(roll%100<65)return "bg79_vo_GEEL_Q311_00312236";
+        if(roll%100<100)return "bg79_vo_GEEL_Q311_00312005";
+        break;
+    case 132101:
+        if(roll%100<33)return "bg79_vo_VO_DRUG_200317_0011";
+        if(roll%100<66)return "bg79_vo_VO_DRUG_200216_0078";
+        if(roll%100<100)return "bg79_vo_VO_DRUG_200216_0079";
+        break;
+    case 132102:
+        if(roll%100<33)return "bg79_vo_IMLR_Q111_01062046";
+        if(roll%100<66)return "bg79_vo_IMLR_Q403_00524739";
+        if(roll%100<100)return "bg79_vo_IMLR_Q403_00524776";
+        break;
+    case 132104:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_189";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_192";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_191";
+        break;
+    case 132105:
+        if(roll%100<25)return "bg79_vo_AVLC_Q311_00454814";
+        if(roll%100<50)return "bg79_vo_AVLC_Q311_00584753";
+        if(roll%100<75)return "bg79_vo_AVLC_Q311_01022646";
+        if(roll%100<100)return "bg79_vo_AVLC_Q311_00312745";
+        break;
+    case 132108:
+        if(roll%100<33)return "bg79_vo_SCC3_VSET_01053091";
+        if(roll%100<66)return "bg79_vo_SCC3_VSET_01053077";
+        if(roll%100<100)return "bg79_vo_SCC3_VSET_01053075";
+        break;
+    case 132206:
+        if(roll%100<33)return "bg79_vo_WHSP_Q105_00382577";
+        if(roll%100<66)return "bg79_vo_WHSP_Q105_00419057";
+        if(roll%100<100)return "bg79_vo_WHSP_Q105_00419061";
+        break;
+    case 132207:
+        if(roll%100<50)return "bg79_vo_BREW_Q105_00531820";
+        if(roll%100<100)return "bg79_vo_BREW_Q111_00576135";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart5_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 132208:
+        if(roll%100<33)return "bg79_vo_WEAV_Q105_00531814";
+        if(roll%100<66)return "bg79_vo_WEAV_Q503_00578937";
+        if(roll%100<100)return "bg79_vo_WEAV_Q503_00579064";
+        break;
+    case 132211:
+        if(roll%100<50)return "bg79_vo_nekker_scream_006";
+        if(roll%100<100)return "bg79_vo_nekker_scream_004";
+        break;
+    case 132212:
+        if(roll%100<50)return "bg79_vo_ice_giant_aggro06";
+        if(roll%100<100)return "bg79_vo_ice_giant_aggro07";
+        break;
+    case 132214:
+        if(roll%100<40)return "bg79_vo_WHW1_Q104_00555148";
+        if(roll%100<70)return "bg79_vo_WHW1_Q104_00555150";
+        if(roll%100<100)return "bg79_vo_WHW1_Q104_00555151";
+        break;
+    case 132215:
+        if(roll%100<20)return "bg79_vo_MRRR_Q602_01116657";
+        if(roll%100<40)return "bg79_vo_MRRR_Q605_01108152";
+        if(roll%100<60)return "bg79_vo_MRRR_Q605_01108178";
+        if(roll%100<80)return "bg79_vo_MRRR_Q605_01110505";
+        if(roll%100<100)return "bg79_vo_MRRR_Q605_01132010";
+        break;
+    case 132305:
+        if(roll%100<45)return "bg79_vo_nekker_attack_004";
+        if(roll%100<90)return "bg79_vo_nekker_attack_009";
+        if(roll%100<100)return "bg79_vo_nekker_mumble_003";
+        break;
+    case 132309:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_792";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_793";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_794";
+        break;
+    case 132310:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_796";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_797";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_798";
+        break;
+    case 142102:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_139";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_140";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_141";
+        break;
+    case 142103:
+        if(roll%100<30)return "bg79_vo_VO_IORW_100241_4474";
+        if(roll%100<60)return "bg79_vo_VO_IORW_101048_0181";
+        if(roll%100<90)return "bg79_vo_VO_IORW_101064_0046";
+        if(roll%100<100)return "bg79_vo_VO_IORW_102216_0006";
+        break;
+    case 142104:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_142";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_143";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_144";
+        break;
+    case 142105:
+        if(roll%100<24)return "bg79_vo_ZOLT_Q310_01062198";
+        if(roll%100<48)return "bg79_vo_ZOLT_Q403_00575678";
+        if(roll%100<72)return "bg79_vo_ZOLT_ZOLTAN_01040657";
+        if(roll%100<96)return "bg79_vo_ZOLT_ZOLTAN_01040651";
+        if(roll%100<100)return "bg79_vo_ZOLT_ZOLTAN_01040649";
+        break;
+    case 142106:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_152";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_153";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_154";
+        break;
+    case 142107:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_170";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_171";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_172";
+        break;
+    case 142108:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_186";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_187";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_188";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart6_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 142201:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_155";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_156";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_157";
+        break;
+    case 142202:
+        if(roll%100<40)return "bg79_vo_IDEM_Q401_00532088";
+        if(roll%100<100)return "bg79_vo_IDEM_Q401_00517579";
+        break;
+    case 142203:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_771";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_772";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_773";
+        break;
+    case 142204:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_776";
+        if(roll%100<73)return "bg79_vo_SAY_Battlecries_775";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_777";
+        break;
+    case 142206:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_160";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_159";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_158";
+        break;
+    case 142207:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_161";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_162";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_163";
+        break;
+    case 142208:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_164";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_165";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_166";
+        break;
+    case 142209:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_167";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_168";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_169";
+        break;
+    case 142210:
+        if(roll%100<33)return "bg79_vo_VO_MALN_106817_0005";
+        if(roll%100<66)return "bg79_vo_VO_MALN_106657_0009";
+        if(roll%100<100)return "bg79_vo_VO_MALN_106745_0017";
+        break;
+    case 142211:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_183";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_185";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_184";
+        break;
+    case 142212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_33";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_35";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_34";
+        break;
+    case 142213:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_784";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_785";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_786";
+        break;
+    case 142214:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_831";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_832";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_833";
+        break;
+    case 142301:
+        if(roll%100<33)return "bg79_vo_VSCF2_VSET_00523670";
+        if(roll%100<66)return "bg79_vo_VSCF2_VSET_00523672";
+        if(roll%100<100)return "bg79_vo_VSCF2_VSET_00523680";
+        break;
+    case 142302:
+        if(roll%100<33)return "bg79_vo_VO_SF01_102746_0038";
+        if(roll%100<67)return "bg79_vo_VO_SF01_102780_0001";
+        if(roll%100<100)return "bg79_vo_VO_SF01_102746_0035";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart7_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 142303:
+        if(roll%100<50)return "bg79_vo_VO_SF02_101662_0066";
+        if(roll%100<100)return "bg79_vo_VO_SF02_108969_0001";
+        break;
+    case 142304:
+        if(roll%100<33)return "bg79_vo_VO_SWF1_100532_0009";
+        if(roll%100<66)return "bg79_vo_VO_SWF1_109383_0001";
+        if(roll%100<100)return "bg79_vo_VO_SWF1_107697_0003";
+        break;
+    case 142306:
+        if(roll%100<33)return "bg79_vo_SCD1_VSET_00525279";
+        if(roll%100<66)return "bg79_vo_SCD1_VSET_00525429";
+        if(roll%100<100)return "bg79_vo_SCD1_VSET_00525431";
+        break;
+    case 142307:
+        if(roll%100<30)return "bg79_vo_VO_SMV2_202544_0022";
+        if(roll%100<65)return "bg79_vo_VO_SMV2_202963_0006";
+        if(roll%100<100)return "bg79_vo_VO_SMV2_202963_0007";
+        break;
+    case 142308:
+        if(roll%100<33)return "bg79_vo_VO_SWV2_202544_0023";
+        if(roll%100<66)return "bg79_vo_VO_SWV2_202544_0046";
+        if(roll%100<100)return "bg79_vo_VO_SWV2_202969_0004";
+        break;
+    case 142309:
+        if(roll%100<20)return "bg79_vo_VO_SF01_107685_0001";
+        if(roll%100<60)return "bg79_vo_VO_SF01_102746_0054";
+        if(roll%100<100)return "bg79_vo_VO_SF01_102746_0042";
+        break;
+    case 142310:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_801";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_802";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_803";
+        break;
+    case 142311:
+        if(roll%100<33)return "bg79_vo_SCD1_VSET_00526102";
+        if(roll%100<66)return "bg79_vo_SCD1_VSET_00526104";
+        if(roll%100<100)return "bg79_vo_SCD1_VSET_00525272";
+        break;
+    case 142312:
+        if(roll%100<15)return "bg79_vo_VBAN1_MQ1005_00358151";
+        if(roll%100<57)return "bg79_vo_VBAN1_MQ1005_00357973";
+        if(roll%100<100)return "bg79_vo_VBAN1_VSET_00592242";
+        break;
+    case 142313:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part2_2";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part2_3";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part2_4";
+        break;
+    case 142314:
+        if(roll%100<33)return "bg79_vo_VO_SWV1_202968_0006";
+        if(roll%100<67)return "bg79_vo_VO_SWV1_202968_0007";
+        if(roll%100<100)return "bg79_vo_VO_SWV1_202968_0012";
+        break;
+    case 142315:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part2_5";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part2_7";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part2_6";
+        break;
+    case 142316:
+        if(roll%100<33)return "bg79_vo_VO_SWV5_202972_0007";
+        if(roll%100<66)return "bg79_vo_VO_SWV5_202972_0006";
+        if(roll%100<100)return "bg79_vo_VO_SWV5_202972_0004";
+        break;
+    case 142317:
+        if(roll%100<33)return "bg79_vo_SCD34_VSET_01013381";
+        if(roll%100<66)return "bg79_vo_SCD34_VSET_01013371";
+        if(roll%100<100)return "bg79_vo_SCD34_VSET_01013385";
+        break;
+    case 142401:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_788";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_789";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_790";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart8_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 152101:
+        if(roll%100<25)return "bg79_vo_HJAL_HJALMAR_01037900";
+        if(roll%100<50)return "bg79_vo_HJAL_HJALMAR_01037904";
+        if(roll%100<75)return "bg79_vo_HJAL_HJALMAR_01037912";
+        if(roll%100<100)return "bg79_vo_HJAL_Q501_00568598";
+        break;
+    case 152103:
+        if(roll%100<50)return "bg79_vo_MOUS_Q210_00558067";
+        if(roll%100<100)return "bg79_vo_MOUS_Q403_00566059";
+        break;
+    case 152105:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_205";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_206";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_207";
+        break;
+    case 152106:
+        if(roll%100<50)return "bg79_vo_LUTM_LUGOS_00437813";
+        if(roll%100<100)return "bg79_vo_LUTM_SQ209_00593785";
+        break;
+    case 152107:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_202";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_203";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_204";
+        break;
+    case 152201:
+        if(roll%100<50)return "bg79_vo_LUTG_LUGOS_01038779";
+        if(roll%100<100)return "bg79_vo_LUTG_SQ209_00594723";
+        break;
+    case 152202:
+        if(roll%100<50)return "bg79_vo_TRL3_FF205_01053125";
+        if(roll%100<100)return "bg79_vo_TRL3_FF205_01053127";
+        break;
+    case 152203:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_804";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_805";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_806";
+        break;
+    case 152204:
+        if(roll%100<33)return "bg79_vo_DONR_DONAR_01037055";
+        if(roll%100<66)return "bg79_vo_DONR_DONAR_01037057";
+        if(roll%100<100)return "bg79_vo_DONR_Q206_00587479";
+        break;
+    case 152205:
+        if(roll%100<100)return "bg79_vo_SBR1_VSET_00527986";
+        break;
+    case 152206:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_828";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_829";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_830";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_834";
+        break;
+    case 152207:
+        if(roll%100<20)return "bg79_vo_HOLG_HOLGER_01038014";
+        if(roll%100<80)return "bg79_vo_HOLG_HOLGER_01038016";
+        if(roll%100<100)return "bg79_vo_HOLG_Q201_00387298";
+        break;
+    case 152208:
+        if(roll%100<33)return "bg79_vo_SWO4_MQ2038_00507987";
+        if(roll%100<66)return "bg79_vo_SWO4_MQ2038_00509565";
+        if(roll%100<100)return "bg79_vo_SWO4_MQ2038_00509731";
+        break;
+    case 152209:
+        if(roll%100<33)return "bg79_vo_MRKV_SQ201_00499647";
+        if(roll%100<66)return "bg79_vo_MRKV_SQ201_00501979";
+        if(roll%100<100)return "bg79_vo_MRKV_SQ201_00504630";
+        break;
+    case 152211:
+        if(roll%100<33)return "bg79_vo_SPR1_SHOP_00437650";
+        if(roll%100<66)return "bg79_vo_SPR1_SQ201_00499249";
+        if(roll%100<100)return "bg79_vo_SPR1_VSET_00553157";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart9_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 152213:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_208";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_209";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_210";
+        if(roll%100<80)return "bg79_vo_SVAN_Q210_00558425";
+        if(roll%100<100)return "bg79_vo_SVAN_Q210_01069128";
+        break;
+    case 152214:
+        if(roll%100<40)return "bg79_vo_UDAL_Q201_00166303";
+        if(roll%100<80)return "bg79_vo_UDAL_Q203_00501235";
+        if(roll%100<100)return "bg79_vo_UDAL_UDALRYK_01039823";
+        break;
+    case 152301:
+        if(roll%100<34)return "bg79_vo_SBE2_VSET_00536513";
+        if(roll%100<67)return "bg79_vo_SBE2_VSET_00536507";
+        if(roll%100<100)return "bg79_vo_SBE2_VSET_00536587";
+        break;
+    case 152302:
+        if(roll%100<34)return "bg79_vo_SBE1_Q206_00413021";
+        if(roll%100<67)return "bg79_vo_SBE1_VSET_00536089";
+        if(roll%100<100)return "bg79_vo_SBE1_VSET_00536097";
+        break;
+    case 152303:
+        if(roll%100<34)return "bg79_vo_SGD2_CHAT2_00165312";
+        if(roll%100<67)return "bg79_vo_SGD2_VSET_00541769";
+        if(roll%100<100)return "bg79_vo_SGD2_Q208_01071227";
+        break;
+    case 152304:
+        if(roll%100<33)return "bg79_vo_SGD6_VSET_00544491";
+        if(roll%100<66)return "bg79_vo_SGD6_VSET_00544501";
+        if(roll%100<100)return "bg79_vo_SGD6_VSET_00544569";
+        break;
+    case 152305:
+        if(roll%100<34)return "bg79_vo_SBD3_MQ2034_01013429";
+        if(roll%100<67)return "bg79_vo_SBD3_VSET_00526925";
+        if(roll%100<100)return "bg79_vo_SBD3_VSET_00527400";
+        break;
+    case 152306:
+        if(roll%100<33)return "bg79_vo_SBD1_MQ2002_00442097";
+        if(roll%100<66)return "bg79_vo_SBD1_Q202_00307483";
+        if(roll%100<100)return "bg79_vo_SBD1_MQ2034_01028167";
+        break;
+    case 152308:
+        if(roll%100<42)return "bg79_vo_DROG_BARD_01036857";
+        if(roll%100<84)return "bg79_vo_DROG_Q206_00329460";
+        if(roll%100<100)return "bg79_vo_DROG_Q206_01072830";
+        break;
+    case 152310:
+        if(roll%100<33)return "bg79_vo_SPR2_VSET_00553534";
+        if(roll%100<66)return "bg79_vo_SPR2_VSET_00553573";
+        if(roll%100<100)return "bg79_vo_SPR2_VSET_00553583";
+        break;
+    case 152311:
+        if(roll%100<33)return "bg79_vo_SAR3_CHAT_01050115";
+        if(roll%100<66)return "bg79_vo_SAR3_VSET_00550859";
+        if(roll%100<100)return "bg79_vo_SAR3_VSET_00550878";
+        break;
+    case 152312:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_807";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_808";
+        break;
+    case 152313:
+        if(roll%100<33)return "bg79_vo_SGD2_VSET_00526547";
+        if(roll%100<66)return "bg79_vo_SGD2_CHAT2_00165400";
+        if(roll%100<100)return "bg79_vo_SGD2_VSET_00165758";
+        break;
+    case 152315:
+        if(roll%100<34)return "bg79_vo_SWR5_VSET_00535924";
+        if(roll%100<67)return "bg79_vo_SWR5_VSET_00535938";
+        if(roll%100<100)return "bg79_vo_SWR5_VSET_00535926";
+        break;
+    case 152316:
+        if(roll%100<33)return "bg79_vo_SGD1_CHAT_01024106";
+        if(roll%100<66)return "bg79_vo_SGD1_FF204_00523558";
+        if(roll%100<100)return "bg79_vo_SGD1_VSET_00541470";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart10_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 152317:
+        if(roll%100<33)return "bg79_vo_SAR1_SHOP_00422532";
+        if(roll%100<66)return "bg79_vo_SAR1_SHOP_00434397";
+        if(roll%100<100)return "bg79_vo_SAR1_VSET_00550731";
+        break;
+    case 152318:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_1";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_3";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_2";
+        break;
+    case 152402:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_199";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_200";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_201";
+        break;
+    case 162101:
+        if(roll%100<25)return "bg79_vo_LETO_LETHO_01038588";
+        if(roll%100<50)return "bg79_vo_LETO_Q403_00319901";
+        if(roll%100<75)return "bg79_vo_LETO_SQ102_00590678";
+        if(roll%100<100)return "bg79_vo_LETO_SQ102_00593857";
+        break;
+    case 162102:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_58";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_59";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_60";
+        break;
+    case 162103:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_106";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_107";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_108";
+        break;
+    case 162104:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_69";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_70";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_71";
+        break;
+    case 162105:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_72";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_73";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_74";
+        break;
+    case 162106:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_97";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_98";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_99";
+        break;
+    case 162107:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_67";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_66";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_68";
+        break;
+    case 162108:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_118";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_119";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_120";
+        break;
+    case 162201:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_78";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_79";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_80";
+        break;
+    case 162202:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_75";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_76";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_77";
+        break;
+    case 162203:
+        if(roll%100<33)return "bg79_vo_VO_CNTH_303653_0335";
+        if(roll%100<66)return "bg79_vo_VO_CNTH_303656_0001";
+        if(roll%100<100)return "bg79_vo_VO_CNTH_303743_0002";
+        break;
+    case 162204:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_426";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_428";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_427";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart11_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 162205:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_88";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_89";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_90";
+        break;
+    case 162206:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_100";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_101";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_102";
+        break;
+    case 162207:
+        if(roll%100<33)return "bg79_vo_VO_NM01_200057_0187";
+        if(roll%100<66)return "bg79_vo_VO_NM01_200049_0007";
+        if(roll%100<100)return "bg79_vo_VO_NM01_200996_0005";
+        break;
+    case 162208:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_112";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_113";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_114";
+        break;
+    case 162209:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_115";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_116";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_117";
+        break;
+    case 162210:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_127";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_128";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_129";
+        break;
+    case 162211:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_17";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_19";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_18";
+        break;
+    case 162212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_105";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_107";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_106";
+        break;
+    case 162213:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_109";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_111";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_110";
+        break;
+    case 162301:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_417";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_419";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_418";
+        break;
+    case 162303:
+        if(roll%100<33)return "bg79_vo_NILF4_CHAT_01051421";
+        if(roll%100<66)return "bg79_vo_NILF4_CHAT_01051417";
+        if(roll%100<100)return "bg79_vo_NILF4_VSET_00514238";
+        break;
+    case 162304:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_429";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_431";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_430";
+        break;
+    case 162305:
+        if(roll%100<33)return "bg79_vo_NILF3_VSET_00514109";
+        if(roll%100<66)return "bg79_vo_NILF3_VSET_00514105";
+        if(roll%100<100)return "bg79_vo_NILF3_SQ102_00591494";
+        break;
+    case 162307:
+        if(roll%100<33)return "bg79_vo_NILFP2_VSET_00592094";
+        if(roll%100<66)return "bg79_vo_NILFP2_VSET_00592104";
+        if(roll%100<100)return "bg79_vo_NILFP2_VSET_00592092";
+        break;
+    case 162308:
+        if(roll%100<33)return "bg79_vo_NIOF1_VSET_00524263";
+        if(roll%100<66)return "bg79_vo_NIOF1_VSET_00524259";
+        if(roll%100<100)return "bg79_vo_NIOF1_VSET_00524273";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart12_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 162309:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_438";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_440";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_439";
+        break;
+    case 162310:
+        if(roll%100<33)return "bg79_vo_NILF2_VSET_00513914";
+        if(roll%100<66)return "bg79_vo_NILF2_VSET_00513916";
+        if(roll%100<100)return "bg79_vo_NILF2_VSET_00513922";
+        break;
+    case 162311:
+        if(roll%100<33)return "bg79_vo_NILF3_VSET_00514091";
+        if(roll%100<66)return "bg79_vo_NILF3_VSET_00514113";
+        if(roll%100<100)return "bg79_vo_NILF3_VSET_00514121";
+        break;
+    case 162312:
+        if(roll%100<33)return "bg79_vo_NILF2_Q505_00576169";
+        if(roll%100<66)return "bg79_vo_NILF2_Q502_00554667";
+        if(roll%100<100)return "bg79_vo_NILF2_Q210_01070432";
+        break;
+    case 162313:
+        if(roll%100<33)return "bg79_vo_NILF2_VSET_00513907";
+        if(roll%100<66)return "bg79_vo_NILF2_VSET_01072393";
+        if(roll%100<100)return "bg79_vo_NILF2_Q502_00556520";
+        break;
+    case 162314:
+        if(roll%100<33)return "bg79_vo_NIS1_Q002_01048548";
+        if(roll%100<66)return "bg79_vo_NIS1_VSET_00526356";
+        if(roll%100<100)return "bg79_vo_NIS1_VSET_00526372";
+        break;
+    case 162315:
+        if(roll%100<33)return "bg79_vo_NIN4_VSET_01049576";
+        if(roll%100<66)return "bg79_vo_NIN4_VSET_01049574";
+        if(roll%100<100)return "bg79_vo_NIN4_VSET_01049578";
+        break;
+    case 162316:
+        if(roll%100<33)return "bg79_vo_MAG1_SHOP_00423227";
+        if(roll%100<66)return "bg79_vo_MAG1_SHOP_00423237";
+        if(roll%100<100)return "bg79_vo_MAG1_SHOP_00459610";
+        break;
+    case 162318:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_441";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_442";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_443";
+        break;
+    case 162401:
+        if(roll%100<42)return "bg79_vo_SAY_Battlecries_part3_385";
+        if(roll%100<85)return "bg79_vo_SAY_Battlecries_part3_387";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_386";
+        break;
+    case 200026:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_43";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_44";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_45";
+        break;
+    case 200028:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_211";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_213";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_214";
+        break;
+    case 200030:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_220";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_221";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_222";
+        break;
+    case 200031:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_13";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_14";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_15";
+        break;
+    case 200032:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_91";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_92";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_93";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart13_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200033:
+        if(roll%100<45)return "bg79_vo_SAY_Battlecries_part3_376";
+        if(roll%100<65)return "bg79_vo_SAY_Battlecries_part3_378";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_377";
+        break;
+    case 200036:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_5";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_7";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_6";
+        break;
+    case 200039:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_310";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_311";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_312";
+        break;
+    case 200040:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_314";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_316";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_315";
+        break;
+    case 200042:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_39";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_41";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_40";
+        break;
+    case 200043:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_129";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_131";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_130";
+        break;
+    case 200044:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_35";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_37";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_36";
+        break;
+    case 200046:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_410";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_412";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_411";
+        break;
+    case 200048:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_13";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_15";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_14";
+        break;
+    case 200050:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_109";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_110";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_111";
+        break;
+    case 200055:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_255";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_256";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_257";
+        break;
+    case 200062:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_154";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_156";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_155";
+        break;
+    case 200071:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_96";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_95";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_94";
+        break;
+    case 200080:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_290";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_292";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_291";
+        break;
+    case 200081:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_121";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_123";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_122";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart14_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200083:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part3_264";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_265";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part3_267";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_268";
+        break;
+    case 200087:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part3_184";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_187";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part3_186";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_185";
+        break;
+    case 200088:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_175";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_176";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_177";
+        break;
+    case 200089:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_167";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_169";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_168";
+        break;
+    case 200091:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part3_162";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_164";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part3_165";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_163";
+        break;
+    case 200098:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_201";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_203";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_202";
+        break;
+    case 200112:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_93";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_92";
+        break;
+    case 200115:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_362";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_364";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_363";
+        break;
+    case 200118:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_356";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_358";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_357";
+        break;
+    case 200124:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_337";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_338";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_339";
+        break;
+    case 200132:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_223";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_225";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_224";
+        break;
+    case 200135:
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_318";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_320";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_319";
+        break;
+    case 200136:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_322";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_324";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_323";
+        break;
+    case 200138:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_326";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_328";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_327";
+        break;
+    case 200144:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_26";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_27";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_28";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_29";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_30";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart15_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200145:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_71";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_73";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_72";
+        break;
+    case 200146:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_75";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_77";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_76";
+        break;
+    case 200147:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_87";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_89";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_88";
+        break;
+    case 200149:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_79";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_81";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_80";
+        break;
+    case 200159:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_193";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_194";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_195";
+        break;
+    case 200160:
+        if(roll%100<33)return "bg79_vo_CRCH_CRACH_01001923";
+        if(roll%100<66)return "bg79_vo_CRCH_CRACH_01040579";
+        if(roll%100<100)return "bg79_vo_CRCH_CRACH_01040591";
+        break;
+    case 200161:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_196";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_197";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_198";
+        break;
+    case 200162:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_236";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_237";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_238";
+        break;
+    case 200163:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_52";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_53";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_54";
+        break;
+    case 200164:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_55";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_56";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_57";
+        break;
+    case 200165:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_130";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_131";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_132";
+        break;
+    case 200166:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_133";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_134";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_135";
+        break;
+    case 200167:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_136";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_137";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_138";
+        break;
+    case 200168:
+        if(roll%100<33)return "bg79_vo_VO_FLTS_000811_0001";
+        if(roll%100<67)return "bg79_vo_VO_FLTS_000811_0002";
+        if(roll%100<100)return "bg79_vo_VO_FLTS_000811_0004";
+        break;
+    case 200169:
+        if(roll%100<20)return "bg79_vo_RADV_MQ3035_01064716";
+        if(roll%100<40)return "bg79_vo_RADV_MQ3035_01064777";
+        if(roll%100<60)return "bg79_vo_RADV_MQ3035_01064783";
+        if(roll%100<80)return "bg79_vo_RADV_Q302_00512777";
+        if(roll%100<100)return "bg79_vo_RADV_RADOVID_01040720";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart16_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200170:
+        if(roll%100<50)return "bg79_vo_VO_HSLT_200098_0254";
+        if(roll%100<100)return "bg79_vo_VO_HSLT_200497_0001";
+        break;
+    case 200171:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_226";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_230";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_231";
+        break;
+    case 200177:
+        if(roll%100<33)return "bg79_vo_BECC_BECCA_01040275";
+        if(roll%100<66)return "bg79_vo_BECC_BECCA_01040277";
+        if(roll%100<100)return "bg79_vo_BECC_Q201_00500712";
+        break;
+    case 200209:
+        if(roll%100<25)return "bg79_vo_VO_TARM_200154_0192";
+        if(roll%100<50)return "bg79_vo_VO_TARM_200423_0023";
+        if(roll%100<75)return "bg79_vo_VO_TARM_200423_0024";
+        if(roll%100<100)return "bg79_vo_VO_TARM_200423_0011";
+        break;
+    case 200212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_822";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_823";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_824";
+        break;
+    case 200219:
+        if(roll%100<42)return "bg79_vo_SAY_Battlecries_part3_385";
+        if(roll%100<85)return "bg79_vo_SAY_Battlecries_part3_387";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_386";
+        break;
+    case 200220:
+        if(roll%300<100)return "bg79_vo_WHSP_Q105_00419061";
+        if(roll%300<200)return "bg79_vo_WHSP_Q105_00419057";
+        if(roll%300<300)return "bg79_vo_WHSP_Q105_00382577";
+        break;
+    case 200221:
+        if(roll%100<50)return "bg79_vo_BREW_Q105_00531820";
+        if(roll%100<100)return "bg79_vo_BREW_Q111_00576135";
+        break;
+    case 200222:
+        if(roll%100<34)return "bg79_vo_WEAV_Q503_00578937";
+        if(roll%100<67)return "bg79_vo_WEAV_Q105_00531814";
+        if(roll%100<100)return "bg79_vo_WEAV_Q503_00579064";
+        break;
+    case 200227:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_435";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_436";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_437";
+        break;
+    case 200235:
+        if(roll%100<17)return "bg79_vo_LMBT_Q401_00523875";
+        if(roll%100<34)return "bg79_vo_LMBT_Q401_00531130";
+        if(roll%100<51)return "bg79_vo_LMBT_Q401_01058899";
+        if(roll%100<68)return "bg79_vo_LMBT_Q403_00550012";
+        if(roll%100<85)return "bg79_vo_LMBT_SQ106_00586496";
+        if(roll%100<100)return "bg79_vo_LMBT_Q403_00572964";
+        break;
+    case 200236:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_21";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_22";
+        if(roll%100<92)return "bg79_vo_SAY_Battlecries_23";
+        if(roll%100<100)return "bg79_vo_ESKL_ESKEL_01037262";
+        break;
+    case 200237:
+        if(roll%100<33)return "bg79_vo_VSMR_Q001_00546725";
+        if(roll%100<66)return "bg79_vo_VSMR_VESEMIR_01000012";
+        if(roll%100<100)return "bg79_vo_VSMR_VESEMIR_01040765";
+        break;
+    case 200293:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_93";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_94";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_95";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_96";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_97";
+        break;
+    case 200294:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_338";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_339";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_340";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_341";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_342";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart17_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200296:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_379";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_381";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_380";
+        break;
+    case 200299:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_407";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_409";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_408";
+        break;
+    case 200518:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_382";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_384";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_383";
+        break;
+    case 200520:
+        if(roll%100<33)return "bg79_vo_HTRI_HATTORI_01032235";
+        if(roll%100<66)return "bg79_vo_HTRI_HATTORI_00507925";
+        if(roll%100<100)return "bg79_vo_HTRI_SQ304_00539954";
+        break;
+    case 200523:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part4_244";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part4_262";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part4_261";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_260";
+        break;
+    case 200528:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_83";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_85";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_84";
+        break;
+    case 200529:
+        if(roll%100<39)return "bg79_vo_SAY_Battlecries_part3_401";
+        if(roll%100<61)return "bg79_vo_SAY_Battlecries_part3_403";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_402";
+        break;
+    case 200534:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_404";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_406";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_405";
+        break;
+    case 200535:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_398";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_400";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_399";
+        break;
+    case 200540:
+        if(roll%100<41)return "bg79_vo_SAY_Battlecries_part4_78";
+        if(roll%100<82)return "bg79_vo_SAY_Battlecries_part4_79";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_82";
+        break;
+    case 201523:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 201559:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_98";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_99";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_100";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_101";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_102";
+        break;
+    case 201578:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_395";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_397";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_396";
+        break;
+    case 201580:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_432";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_434";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_433";
+        break;
+    case 201587:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_4";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_3";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_2";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_5";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart18_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 201589:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_278";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_280";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_279";
+        break;
+    case 201595:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_193";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_195";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_194";
+        break;
+    case 201597:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_47";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_49";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_48";
+        break;
+    case 201601:
+        if(roll%100<34)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<67)return "bg79_vo_YENN_YENNEFER_01041495";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041493";
+        break;
+    case 201603:
+        if(roll%100<25)return "bg79_vo_LETO_SQ102_00590678";
+        if(roll%100<50)return "bg79_vo_LETO_SQ102_00593857";
+        if(roll%100<75)return "bg79_vo_LETO_LETHO_01038588";
+        if(roll%100<100)return "bg79_vo_LETO_Q403_00319901";
+        break;
+    case 201609:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_103";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_104";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_105";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_106";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_107";
+        break;
+    case 201611:
+        if(roll%100<25)return "bg79_vo_VO_IORW_100241_4474";
+        if(roll%100<50)return "bg79_vo_VO_IORW_101048_0181";
+        if(roll%100<75)return "bg79_vo_VO_IORW_101064_0046";
+        if(roll%100<100)return "bg79_vo_VO_IORW_102216_0006";
+        break;
+    case 201612:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_113";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_114";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_115";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_116";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_117";
+        break;
+    case 201615:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_139";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_141";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_140";
+        break;
+    case 201616:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_359";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_360";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_361";
+        break;
+    case 201617:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_32";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_33";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_34";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_35";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_36";
+        break;
+    case 201618:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_117";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_119";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_118";
+        break;
+    case 201620:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_7";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_8";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_9";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_10";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_11";
+        break;
+    case 201621:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_14";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_15";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_16";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_17";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_18";
+        break;
+    case 201622:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_9";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_10";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_11";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart19_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 201624:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_38";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_39";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_40";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_41";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_42";
+        break;
+    case 201625:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_44";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_45";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_46";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_47";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_48";
+        break;
+    case 201626:
+        if(roll%100<25)return "bg79_vo_CIRI_CIRILLA_01040548";
+        if(roll%100<50)return "bg79_vo_CIRI_CIRILLA_01040512";
+        if(roll%100<75)return "bg79_vo_CIRI_Q111_00536478";
+        if(roll%100<100)return "bg79_vo_CIRI_Q310_00579530";
+        break;
+    case 201627:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_168";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_169";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_170";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_171";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_172";
+        break;
+    case 201628:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_56";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_57";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_58";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_59";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_60";
+        break;
+    case 201630:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_50";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_51";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_52";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_53";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_54";
+        break;
+    case 201636:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_68";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_69";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_70";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_71";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_72";
+        break;
+    case 201638:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_88";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_89";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_90";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_91";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_92";
+        break;
+    case 201644:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_20";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_21";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_22";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_24";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_23";
+        break;
+    case 201646:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_232";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_233";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_234";
+        break;
+    case 201650:
+        if(roll%100<33)return "bg79_vo_VO_SABR_200216_0101";
+        if(roll%100<67)return "bg79_vo_VO_SABR_200216_0037";
+        if(roll%100<100)return "bg79_vo_VO_SABR_200216_0064";
+        break;
+    case 201664:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part4_256";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part4_255";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part4_254";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_253";
+        break;
+    case 201676:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part4_34";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part4_31";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_32";
+        break;
+    case 201677:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part4_86";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part4_85";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_84";
+        break;
+    case 201753:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part4_86";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part4_85";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_84";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart20_Universal_de(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 201772:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 201773:
+        if(roll%100<17)return "bg79_vo_SAY_Battlecries_17";
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_19";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_18";
+        if(roll%100<67)return "bg79_vo_VO_TRIS_100285_0008";
+        if(roll%100<84)return "bg79_vo_VO_TRIS_104122_2446";
+        if(roll%100<100)return "bg79_vo_TRSS_Q310_00545347";
+        break;
+    case 201774:
+        if(roll%100<14)return "bg79_vo_SAY_Battlecries_5";
+        if(roll%100<28)return "bg79_vo_SAY_Battlecries_7";
+        if(roll%100<42)return "bg79_vo_SAY_Battlecries_6";
+        if(roll%100<58)return "bg79_vo_DAND_DANDELION_00429307";
+        if(roll%100<72)return "bg79_vo_DAND_Q302_00489393";
+        if(roll%100<86)return "bg79_vo_DAND_Q302_00490269";
+        if(roll%100<100)return "bg79_vo_VO_JSKR_100926_0188";
+        break;
+    case 201776:
+        if(roll%100<16)return "bg79_vo_SAY_Battlecries_5";
+        if(roll%100<30)return "bg79_vo_SAY_Battlecries_7";
+        if(roll%100<44)return "bg79_vo_SAY_Battlecries_6";
+        if(roll%100<58)return "bg79_vo_DAND_DANDELION_00429307";
+        if(roll%100<72)return "bg79_vo_DAND_Q302_00489393";
+        if(roll%100<86)return "bg79_vo_DAND_Q302_00490269";
+        if(roll%100<100)return "bg79_vo_VO_JSKR_100926_0188";
+        break;
+    case 201777:
+        if(roll%100<50)return "bg79_vo_ROCH_ROCHE_00541126";
+        if(roll%100<100)return "bg79_vo_ROCH_MQ3035_01064844";
+        break;
+    case 201778:
+        if(roll%100<33)return "bg79_vo_BECC_BECCA_01040275";
+        if(roll%100<67)return "bg79_vo_BECC_BECCA_01040277";
+        if(roll%100<100)return "bg79_vo_BECC_Q201_00500712";
+        break;
+    case 201779:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_164";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_166";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_165";
+        break;
+    case 201780:
+        if(roll%100<33)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<67)return "bg79_vo_YENN_YENNEFER_01041495";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041493";
+        break;
+    case 201781:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_851";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_852";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_853";
+        break;
+    default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceVariantDuration_Universal_de(id : int, roll : int) : float
+{
+    if(id <= 112203)return BetaGwentAudioVoiceVariantDurationPart0_Universal_de(id,roll);
+    if(id <= 122101)return BetaGwentAudioVoiceVariantDurationPart1_Universal_de(id,roll);
+    if(id <= 122208)return BetaGwentAudioVoiceVariantDurationPart2_Universal_de(id,roll);
+    if(id <= 122313)return BetaGwentAudioVoiceVariantDurationPart3_Universal_de(id,roll);
+    if(id <= 132207)return BetaGwentAudioVoiceVariantDurationPart4_Universal_de(id,roll);
+    if(id <= 142108)return BetaGwentAudioVoiceVariantDurationPart5_Universal_de(id,roll);
+    if(id <= 142302)return BetaGwentAudioVoiceVariantDurationPart6_Universal_de(id,roll);
+    if(id <= 142401)return BetaGwentAudioVoiceVariantDurationPart7_Universal_de(id,roll);
+    if(id <= 152211)return BetaGwentAudioVoiceVariantDurationPart8_Universal_de(id,roll);
+    if(id <= 152316)return BetaGwentAudioVoiceVariantDurationPart9_Universal_de(id,roll);
+    if(id <= 162204)return BetaGwentAudioVoiceVariantDurationPart10_Universal_de(id,roll);
+    if(id <= 162308)return BetaGwentAudioVoiceVariantDurationPart11_Universal_de(id,roll);
+    if(id <= 200032)return BetaGwentAudioVoiceVariantDurationPart12_Universal_de(id,roll);
+    if(id <= 200081)return BetaGwentAudioVoiceVariantDurationPart13_Universal_de(id,roll);
+    if(id <= 200144)return BetaGwentAudioVoiceVariantDurationPart14_Universal_de(id,roll);
+    if(id <= 200169)return BetaGwentAudioVoiceVariantDurationPart15_Universal_de(id,roll);
+    if(id <= 200294)return BetaGwentAudioVoiceVariantDurationPart16_Universal_de(id,roll);
+    if(id <= 201587)return BetaGwentAudioVoiceVariantDurationPart17_Universal_de(id,roll);
+    if(id <= 201622)return BetaGwentAudioVoiceVariantDurationPart18_Universal_de(id,roll);
+    if(id <= 201753)return BetaGwentAudioVoiceVariantDurationPart19_Universal_de(id,roll);
+    if(id <= 201781)return BetaGwentAudioVoiceVariantDurationPart20_Universal_de(id,roll);
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart0_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 112101:
+        if(roll%100<25)return 1.179f;
+        if(roll%100<50)return 1.955f;
+        if(roll%100<75)return 1.308f;
+        if(roll%100<100)return 2.398f;
+        break;
+    case 112102:
+        if(roll%100<20)return 2.805f;
+        if(roll%100<40)return 1.146f;
+        if(roll%100<60)return 2.038f;
+        if(roll%100<80)return 1.442f;
+        if(roll%100<100)return 1.873f;
+        break;
+    case 112103:
+        if(roll%100<20)return 2.805f;
+        if(roll%100<40)return 1.146f;
+        if(roll%100<60)return 2.038f;
+        if(roll%100<80)return 1.442f;
+        if(roll%100<100)return 1.873f;
+        break;
+    case 112104:
+        if(roll%100<40)return 3.692f;
+        if(roll%100<60)return 4.929f;
+        if(roll%100<100)return 2.090f;
+        break;
+    case 112105:
+        if(roll%100<100)return 3.115f;
+        break;
+    case 112106:
+        if(roll%100<17)return 2.164f;
+        if(roll%100<33)return 1.877f;
+        if(roll%100<50)return 3.524f;
+        if(roll%100<67)return 1.360f;
+        if(roll%100<84)return 2.120f;
+        if(roll%100<100)return 1.646f;
+        break;
+    case 112108:
+        if(roll%100<33)return 2.850f;
+        if(roll%100<66)return 1.770f;
+        if(roll%100<100)return 3.680f;
+        break;
+    case 112109:
+        if(roll%100<24)return 1.666f;
+        if(roll%100<48)return 2.132f;
+        if(roll%100<72)return 3.088f;
+        if(roll%100<96)return 1.457f;
+        if(roll%100<100)return 1.850f;
+        break;
+    case 112110:
+        if(roll%100<25)return 1.179f;
+        if(roll%100<50)return 1.955f;
+        if(roll%100<75)return 1.308f;
+        if(roll%100<100)return 2.398f;
+        break;
+    case 112111:
+        if(roll%100<20)return 2.805f;
+        if(roll%100<40)return 1.146f;
+        if(roll%100<60)return 2.038f;
+        if(roll%100<80)return 1.442f;
+        if(roll%100<100)return 1.873f;
+        break;
+    case 112112:
+        if(roll%100<25)return 0.994f;
+        if(roll%100<50)return 1.128f;
+        if(roll%100<75)return 1.723f;
+        if(roll%100<100)return 2.789f;
+        break;
+    case 112113:
+        if(roll%100<33)return 2.850f;
+        if(roll%100<66)return 1.770f;
+        if(roll%100<100)return 3.680f;
+        break;
+    case 112201:
+        if(roll%100<33)return 2.875f;
+        if(roll%100<66)return 2.892f;
+        if(roll%100<100)return 2.081f;
+        break;
+    case 112202:
+        if(roll%100<25)return 1.759f;
+        if(roll%100<67)return 1.969f;
+        if(roll%100<92)return 1.250f;
+        if(roll%100<100)return 1.934f;
+        break;
+    case 112203:
+        if(roll%100<33)return 1.822f;
+        if(roll%100<66)return 2.623f;
+        if(roll%100<100)return 2.150f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart1_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 112204:
+        if(roll%100<17)return 3.087f;
+        if(roll%100<34)return 3.049f;
+        if(roll%100<51)return 2.980f;
+        if(roll%100<68)return 1.487f;
+        if(roll%100<85)return 2.395f;
+        if(roll%100<100)return 2.056f;
+        break;
+    case 112205:
+        if(roll%100<33)return 1.430f;
+        if(roll%100<66)return 1.350f;
+        if(roll%100<100)return 1.728f;
+        break;
+    case 112206:
+        if(roll%100<33)return 1.430f;
+        if(roll%100<66)return 1.350f;
+        if(roll%100<100)return 1.728f;
+        break;
+    case 112207:
+        if(roll%100<33)return 2.340f;
+        if(roll%100<66)return 1.905f;
+        if(roll%100<100)return 2.582f;
+        break;
+    case 112208:
+        if(roll%100<50)return 3.229f;
+        if(roll%100<100)return 2.996f;
+        break;
+    case 112211:
+        if(roll%100<30)return 4.812f;
+        if(roll%100<65)return 2.643f;
+        if(roll%100<100)return 3.253f;
+        break;
+    case 112212:
+        if(roll%100<33)return 1.506f;
+        if(roll%100<66)return 0.726f;
+        if(roll%100<100)return 1.441f;
+        break;
+    case 112213:
+        if(roll%100<25)return 1.843f;
+        if(roll%100<50)return 1.805f;
+        if(roll%100<75)return 3.108f;
+        if(roll%100<100)return 1.580f;
+        break;
+    case 112214:
+        if(roll%100<33)return 3.148f;
+        if(roll%100<66)return 2.815f;
+        if(roll%100<100)return 2.423f;
+        break;
+    case 112215:
+        if(roll%100<33)return 1.058f;
+        if(roll%100<66)return 2.142f;
+        if(roll%100<100)return 2.676f;
+        break;
+    case 112403:
+        if(roll%100<50)return 3.862f;
+        if(roll%100<100)return 2.695f;
+        break;
+    case 112404:
+        if(roll%100<50)return 3.862f;
+        if(roll%100<100)return 2.695f;
+        break;
+    case 113208:
+        if(roll%100<100)return 3.642f;
+        break;
+    case 113313:
+        if(roll%300<33)return 1.999f;
+        if(roll%300<66)return 1.584f;
+        if(roll%300<100)return 1.973f;
+        if(roll%300<200)return 2.254f;
+        if(roll%300<300)return 3.411f;
+        break;
+    case 122101:
+        if(roll%100<25)return 3.650f;
+        if(roll%100<50)return 5.031f;
+        if(roll%100<75)return 1.430f;
+        if(roll%100<100)return 2.457f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart2_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 122102:
+        if(roll%100<50)return 2.588f;
+        if(roll%100<100)return 2.331f;
+        break;
+    case 122103:
+        if(roll%100<50)return 2.683f;
+        if(roll%100<100)return 2.564f;
+        break;
+    case 122104:
+        if(roll%100<21)return 1.814f;
+        if(roll%100<44)return 2.763f;
+        if(roll%100<66)return 2.638f;
+        if(roll%100<78)return 6.254f;
+        if(roll%100<100)return 3.069f;
+        break;
+    case 122105:
+        if(roll%100<25)return 1.795f;
+        if(roll%100<50)return 1.430f;
+        if(roll%100<75)return 2.928f;
+        if(roll%100<100)return 4.160f;
+        break;
+    case 122106:
+        if(roll%100<33)return 1.685f;
+        if(roll%100<66)return 4.505f;
+        if(roll%100<100)return 3.574f;
+        break;
+    case 122107:
+        if(roll%100<16)return 2.164f;
+        if(roll%100<33)return 1.877f;
+        if(roll%100<50)return 3.524f;
+        if(roll%100<67)return 1.360f;
+        if(roll%100<84)return 2.120f;
+        if(roll%100<100)return 1.646f;
+        break;
+    case 122108:
+        if(roll%100<25)return 1.691f;
+        if(roll%100<50)return 2.367f;
+        if(roll%100<75)return 3.192f;
+        if(roll%100<100)return 2.530f;
+        break;
+    case 122201:
+        if(roll%100<15)return 3.091f;
+        if(roll%100<29)return 1.348f;
+        if(roll%100<44)return 2.676f;
+        if(roll%100<58)return 1.680f;
+        if(roll%100<73)return 2.303f;
+        if(roll%100<86)return 1.971f;
+        if(roll%100<100)return 2.611f;
+        break;
+    case 122202:
+        if(roll%100<25)return 1.511f;
+        if(roll%100<50)return 2.552f;
+        if(roll%100<75)return 2.984f;
+        if(roll%100<100)return 2.298f;
+        break;
+    case 122203:
+        if(roll%100<33)return 4.591f;
+        if(roll%100<66)return 2.442f;
+        if(roll%100<100)return 3.010f;
+        break;
+    case 122204:
+        if(roll%100<25)return 2.375f;
+        if(roll%100<50)return 1.241f;
+        if(roll%100<75)return 1.954f;
+        if(roll%100<100)return 2.169f;
+        break;
+    case 122205:
+        if(roll%100<33)return 1.993f;
+        if(roll%100<66)return 2.413f;
+        if(roll%100<100)return 2.897f;
+        break;
+    case 122206:
+        if(roll%100<33)return 2.035f;
+        if(roll%100<53)return 4.062f;
+        if(roll%100<100)return 1.515f;
+        break;
+    case 122207:
+        if(roll%100<33)return 1.838f;
+        if(roll%100<66)return 2.757f;
+        if(roll%100<100)return 1.760f;
+        break;
+    case 122208:
+        if(roll%100<33)return 2.834f;
+        if(roll%100<66)return 2.566f;
+        if(roll%100<100)return 1.854f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart3_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 122209:
+        if(roll%100<65)return 3.700f;
+        if(roll%100<100)return 3.745f;
+        break;
+    case 122210:
+        if(roll%100<25)return 3.442f;
+        if(roll%100<50)return 2.379f;
+        if(roll%100<75)return 2.315f;
+        if(roll%100<100)return 2.306f;
+        break;
+    case 122211:
+        if(roll%100<33)return 1.461f;
+        if(roll%100<66)return 1.822f;
+        if(roll%100<100)return 2.859f;
+        break;
+    case 122212:
+        if(roll%100<33)return 3.834f;
+        if(roll%100<66)return 3.119f;
+        if(roll%100<100)return 3.522f;
+        break;
+    case 122213:
+        if(roll%100<33)return 2.351f;
+        if(roll%100<66)return 3.052f;
+        if(roll%100<100)return 2.661f;
+        break;
+    case 122214:
+        if(roll%100<33)return 2.820f;
+        if(roll%100<66)return 1.892f;
+        if(roll%100<100)return 2.767f;
+        break;
+    case 122216:
+        if(roll%100<33)return 1.650f;
+        if(roll%100<66)return 3.146f;
+        if(roll%100<100)return 2.575f;
+        break;
+    case 122306:
+        if(roll%100<33)return 1.609f;
+        if(roll%100<66)return 2.852f;
+        if(roll%100<100)return 1.280f;
+        break;
+    case 122307:
+        if(roll%100<33)return 2.691f;
+        if(roll%100<66)return 2.523f;
+        if(roll%100<100)return 3.444f;
+        break;
+    case 122308:
+        if(roll%100<33)return 2.466f;
+        if(roll%100<66)return 1.842f;
+        if(roll%100<100)return 1.588f;
+        break;
+    case 122309:
+        if(roll%100<33)return 1.216f;
+        if(roll%100<66)return 1.238f;
+        if(roll%100<100)return 1.540f;
+        break;
+    case 122310:
+        if(roll%100<33)return 1.876f;
+        if(roll%100<66)return 1.305f;
+        if(roll%100<100)return 2.527f;
+        break;
+    case 122311:
+        if(roll%100<33)return 1.859f;
+        if(roll%100<67)return 1.385f;
+        if(roll%100<100)return 1.596f;
+        break;
+    case 122312:
+        if(roll%100<33)return 1.466f;
+        if(roll%100<66)return 2.692f;
+        if(roll%100<100)return 1.960f;
+        break;
+    case 122313:
+        if(roll%100<33)return 0.914f;
+        if(roll%100<66)return 3.236f;
+        if(roll%100<100)return 2.312f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart4_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 122314:
+        if(roll%100<33)return 1.787f;
+        if(roll%100<66)return 1.345f;
+        if(roll%100<100)return 1.679f;
+        break;
+    case 122316:
+        if(roll%100<33)return 1.120f;
+        if(roll%100<66)return 2.022f;
+        if(roll%100<100)return 1.554f;
+        break;
+    case 122317:
+        if(roll%100<33)return 1.774f;
+        if(roll%100<66)return 1.328f;
+        if(roll%100<100)return 2.010f;
+        break;
+    case 122318:
+        if(roll%100<50)return 2.678f;
+        if(roll%100<100)return 3.429f;
+        break;
+    case 122403:
+        if(roll%100<33)return 2.737f;
+        if(roll%100<66)return 3.273f;
+        if(roll%100<100)return 3.642f;
+        break;
+    case 123301:
+        if(roll%300<33)return 1.616f;
+        if(roll%300<66)return 1.442f;
+        if(roll%300<100)return 1.504f;
+        if(roll%300<200)return 2.350f;
+        if(roll%300<300)return 1.650f;
+        break;
+    case 131101:
+        if(roll%100<33)return 1.635f;
+        if(roll%100<66)return 2.408f;
+        if(roll%100<100)return 2.131f;
+        break;
+    case 131102:
+        if(roll%100<65)return 2.500f;
+        if(roll%100<100)return 2.604f;
+        break;
+    case 132101:
+        if(roll%100<33)return 2.809f;
+        if(roll%100<66)return 3.673f;
+        if(roll%100<100)return 2.768f;
+        break;
+    case 132102:
+        if(roll%100<33)return 3.035f;
+        if(roll%100<66)return 1.406f;
+        if(roll%100<100)return 1.783f;
+        break;
+    case 132104:
+        if(roll%100<33)return 2.130f;
+        if(roll%100<66)return 1.922f;
+        if(roll%100<100)return 2.448f;
+        break;
+    case 132105:
+        if(roll%100<25)return 0.994f;
+        if(roll%100<50)return 1.128f;
+        if(roll%100<75)return 1.723f;
+        if(roll%100<100)return 2.789f;
+        break;
+    case 132108:
+        if(roll%100<33)return 2.196f;
+        if(roll%100<66)return 2.617f;
+        if(roll%100<100)return 1.020f;
+        break;
+    case 132206:
+        if(roll%100<33)return 5.271f;
+        if(roll%100<66)return 6.043f;
+        if(roll%100<100)return 5.203f;
+        break;
+    case 132207:
+        if(roll%100<50)return 5.849f;
+        if(roll%100<100)return 4.060f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart5_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 132208:
+        if(roll%100<33)return 5.705f;
+        if(roll%100<66)return 5.102f;
+        if(roll%100<100)return 5.943f;
+        break;
+    case 132211:
+        if(roll%100<50)return 1.467f;
+        if(roll%100<100)return 1.769f;
+        break;
+    case 132212:
+        if(roll%100<50)return 1.894f;
+        if(roll%100<100)return 1.870f;
+        break;
+    case 132214:
+        if(roll%100<40)return 2.381f;
+        if(roll%100<70)return 1.875f;
+        if(roll%100<100)return 1.894f;
+        break;
+    case 132215:
+        if(roll%100<20)return 1.654f;
+        if(roll%100<40)return 2.427f;
+        if(roll%100<60)return 3.142f;
+        if(roll%100<80)return 3.518f;
+        if(roll%100<100)return 1.665f;
+        break;
+    case 132305:
+        if(roll%100<45)return 1.250f;
+        if(roll%100<90)return 1.148f;
+        if(roll%100<100)return 1.188f;
+        break;
+    case 132309:
+        if(roll%100<33)return 2.333f;
+        if(roll%100<66)return 2.174f;
+        if(roll%100<100)return 2.201f;
+        break;
+    case 132310:
+        if(roll%100<33)return 2.012f;
+        if(roll%100<66)return 2.750f;
+        if(roll%100<100)return 2.375f;
+        break;
+    case 142102:
+        if(roll%100<33)return 2.950f;
+        if(roll%100<66)return 3.129f;
+        if(roll%100<100)return 1.487f;
+        break;
+    case 142103:
+        if(roll%100<30)return 1.576f;
+        if(roll%100<60)return 2.396f;
+        if(roll%100<90)return 3.524f;
+        if(roll%100<100)return 1.801f;
+        break;
+    case 142104:
+        if(roll%100<33)return 2.765f;
+        if(roll%100<66)return 1.325f;
+        if(roll%100<100)return 2.330f;
+        break;
+    case 142105:
+        if(roll%100<24)return 1.666f;
+        if(roll%100<48)return 2.132f;
+        if(roll%100<72)return 3.088f;
+        if(roll%100<96)return 1.457f;
+        if(roll%100<100)return 1.850f;
+        break;
+    case 142106:
+        if(roll%100<33)return 1.485f;
+        if(roll%100<66)return 2.475f;
+        if(roll%100<100)return 2.312f;
+        break;
+    case 142107:
+        if(roll%100<33)return 4.667f;
+        if(roll%100<66)return 5.085f;
+        if(roll%100<100)return 5.413f;
+        break;
+    case 142108:
+        if(roll%100<33)return 1.238f;
+        if(roll%100<66)return 3.787f;
+        if(roll%100<100)return 1.540f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart6_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 142201:
+        if(roll%100<33)return 3.538f;
+        if(roll%100<66)return 2.964f;
+        if(roll%100<100)return 1.840f;
+        break;
+    case 142202:
+        if(roll%100<40)return 3.560f;
+        if(roll%100<100)return 1.551f;
+        break;
+    case 142203:
+        if(roll%100<33)return 3.106f;
+        if(roll%100<66)return 2.734f;
+        if(roll%100<100)return 2.269f;
+        break;
+    case 142204:
+        if(roll%100<33)return 2.097f;
+        if(roll%100<73)return 2.524f;
+        if(roll%100<100)return 2.556f;
+        break;
+    case 142206:
+        if(roll%100<33)return 2.224f;
+        if(roll%100<66)return 2.216f;
+        if(roll%100<100)return 2.338f;
+        break;
+    case 142207:
+        if(roll%100<33)return 2.162f;
+        if(roll%100<66)return 2.475f;
+        if(roll%100<100)return 2.587f;
+        break;
+    case 142208:
+        if(roll%100<33)return 1.606f;
+        if(roll%100<66)return 1.946f;
+        if(roll%100<100)return 2.004f;
+        break;
+    case 142209:
+        if(roll%100<33)return 2.341f;
+        if(roll%100<66)return 1.506f;
+        if(roll%100<100)return 1.749f;
+        break;
+    case 142210:
+        if(roll%100<33)return 3.636f;
+        if(roll%100<66)return 3.480f;
+        if(roll%100<100)return 1.219f;
+        break;
+    case 142211:
+        if(roll%100<33)return 2.023f;
+        if(roll%100<66)return 2.715f;
+        if(roll%100<100)return 2.579f;
+        break;
+    case 142212:
+        if(roll%100<33)return 3.094f;
+        if(roll%100<66)return 1.858f;
+        if(roll%100<100)return 3.726f;
+        break;
+    case 142213:
+        if(roll%100<33)return 4.719f;
+        if(roll%100<66)return 3.694f;
+        if(roll%100<100)return 2.552f;
+        break;
+    case 142214:
+        if(roll%100<33)return 1.812f;
+        if(roll%100<66)return 4.003f;
+        if(roll%100<100)return 2.089f;
+        break;
+    case 142301:
+        if(roll%100<33)return 1.458f;
+        if(roll%100<66)return 1.573f;
+        if(roll%100<100)return 1.090f;
+        break;
+    case 142302:
+        if(roll%100<33)return 4.389f;
+        if(roll%100<67)return 1.645f;
+        if(roll%100<100)return 1.151f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart7_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 142303:
+        if(roll%100<50)return 1.364f;
+        if(roll%100<100)return 2.747f;
+        break;
+    case 142304:
+        if(roll%100<33)return 3.570f;
+        if(roll%100<66)return 1.936f;
+        if(roll%100<100)return 1.963f;
+        break;
+    case 142306:
+        if(roll%100<33)return 3.063f;
+        if(roll%100<66)return 1.751f;
+        if(roll%100<100)return 1.859f;
+        break;
+    case 142307:
+        if(roll%100<30)return 2.096f;
+        if(roll%100<65)return 1.689f;
+        if(roll%100<100)return 1.606f;
+        break;
+    case 142308:
+        if(roll%100<33)return 1.669f;
+        if(roll%100<66)return 3.592f;
+        if(roll%100<100)return 1.227f;
+        break;
+    case 142309:
+        if(roll%100<20)return 1.530f;
+        if(roll%100<60)return 2.837f;
+        if(roll%100<100)return 2.627f;
+        break;
+    case 142310:
+        if(roll%100<33)return 1.650f;
+        if(roll%100<66)return 1.423f;
+        if(roll%100<100)return 3.122f;
+        break;
+    case 142311:
+        if(roll%100<33)return 2.508f;
+        if(roll%100<66)return 3.576f;
+        if(roll%100<100)return 2.285f;
+        break;
+    case 142312:
+        if(roll%100<15)return 4.533f;
+        if(roll%100<57)return 2.338f;
+        if(roll%100<100)return 4.121f;
+        break;
+    case 142313:
+        if(roll%100<33)return 1.754f;
+        if(roll%100<66)return 1.880f;
+        if(roll%100<100)return 1.995f;
+        break;
+    case 142314:
+        if(roll%100<33)return 1.560f;
+        if(roll%100<67)return 1.541f;
+        if(roll%100<100)return 1.228f;
+        break;
+    case 142315:
+        if(roll%100<33)return 1.871f;
+        if(roll%100<66)return 3.156f;
+        if(roll%100<100)return 2.552f;
+        break;
+    case 142316:
+        if(roll%100<33)return 1.846f;
+        if(roll%100<66)return 3.142f;
+        if(roll%100<100)return 1.930f;
+        break;
+    case 142317:
+        if(roll%100<33)return 2.036f;
+        if(roll%100<66)return 2.186f;
+        if(roll%100<100)return 2.214f;
+        break;
+    case 142401:
+        if(roll%100<33)return 1.924f;
+        if(roll%100<66)return 2.286f;
+        if(roll%100<100)return 2.306f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart8_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 152101:
+        if(roll%100<25)return 2.046f;
+        if(roll%100<50)return 1.140f;
+        if(roll%100<75)return 1.985f;
+        if(roll%100<100)return 2.251f;
+        break;
+    case 152103:
+        if(roll%100<50)return 3.121f;
+        if(roll%100<100)return 1.815f;
+        break;
+    case 152105:
+        if(roll%100<33)return 3.065f;
+        if(roll%100<66)return 1.562f;
+        if(roll%100<100)return 2.552f;
+        break;
+    case 152106:
+        if(roll%100<50)return 1.088f;
+        if(roll%100<100)return 1.743f;
+        break;
+    case 152107:
+        if(roll%100<33)return 2.526f;
+        if(roll%100<66)return 2.497f;
+        if(roll%100<100)return 3.175f;
+        break;
+    case 152201:
+        if(roll%100<50)return 2.334f;
+        if(roll%100<100)return 3.232f;
+        break;
+    case 152202:
+        if(roll%100<50)return 1.373f;
+        if(roll%100<100)return 1.394f;
+        break;
+    case 152203:
+        if(roll%100<33)return 3.201f;
+        if(roll%100<66)return 3.467f;
+        if(roll%100<100)return 2.448f;
+        break;
+    case 152204:
+        if(roll%100<33)return 1.285f;
+        if(roll%100<66)return 1.539f;
+        if(roll%100<100)return 1.879f;
+        break;
+    case 152205:
+        if(roll%100<100)return 2.333f;
+        break;
+    case 152206:
+        if(roll%100<25)return 2.496f;
+        if(roll%100<50)return 3.534f;
+        if(roll%100<75)return 2.469f;
+        if(roll%100<100)return 4.600f;
+        break;
+    case 152207:
+        if(roll%100<20)return 1.978f;
+        if(roll%100<80)return 1.471f;
+        if(roll%100<100)return 1.635f;
+        break;
+    case 152208:
+        if(roll%100<33)return 1.945f;
+        if(roll%100<66)return 2.591f;
+        if(roll%100<100)return 1.607f;
+        break;
+    case 152209:
+        if(roll%100<33)return 4.340f;
+        if(roll%100<66)return 4.336f;
+        if(roll%100<100)return 3.466f;
+        break;
+    case 152211:
+        if(roll%100<33)return 1.603f;
+        if(roll%100<66)return 3.560f;
+        if(roll%100<100)return 3.579f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart9_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 152213:
+        if(roll%100<20)return 2.250f;
+        if(roll%100<40)return 1.630f;
+        if(roll%100<60)return 1.875f;
+        if(roll%100<80)return 1.629f;
+        if(roll%100<100)return 1.745f;
+        break;
+    case 152214:
+        if(roll%100<40)return 1.852f;
+        if(roll%100<80)return 2.180f;
+        if(roll%100<100)return 1.974f;
+        break;
+    case 152301:
+        if(roll%100<34)return 2.274f;
+        if(roll%100<67)return 1.744f;
+        if(roll%100<100)return 2.448f;
+        break;
+    case 152302:
+        if(roll%100<34)return 2.972f;
+        if(roll%100<67)return 2.210f;
+        if(roll%100<100)return 2.547f;
+        break;
+    case 152303:
+        if(roll%100<34)return 3.472f;
+        if(roll%100<67)return 1.380f;
+        if(roll%100<100)return 3.209f;
+        break;
+    case 152304:
+        if(roll%100<33)return 1.275f;
+        if(roll%100<66)return 3.003f;
+        if(roll%100<100)return 2.141f;
+        break;
+    case 152305:
+        if(roll%100<34)return 5.203f;
+        if(roll%100<67)return 2.192f;
+        if(roll%100<100)return 4.242f;
+        break;
+    case 152306:
+        if(roll%100<33)return 1.735f;
+        if(roll%100<66)return 2.620f;
+        if(roll%100<100)return 3.843f;
+        break;
+    case 152308:
+        if(roll%100<42)return 1.642f;
+        if(roll%100<84)return 3.142f;
+        if(roll%100<100)return 3.448f;
+        break;
+    case 152310:
+        if(roll%100<33)return 2.210f;
+        if(roll%100<66)return 3.787f;
+        if(roll%100<100)return 4.420f;
+        break;
+    case 152311:
+        if(roll%100<33)return 2.129f;
+        if(roll%100<66)return 3.282f;
+        if(roll%100<100)return 3.000f;
+        break;
+    case 152312:
+        if(roll%100<50)return 2.308f;
+        if(roll%100<100)return 2.792f;
+        break;
+    case 152313:
+        if(roll%100<33)return 3.765f;
+        if(roll%100<66)return 2.963f;
+        if(roll%100<100)return 2.822f;
+        break;
+    case 152315:
+        if(roll%100<34)return 2.494f;
+        if(roll%100<67)return 2.076f;
+        if(roll%100<100)return 1.649f;
+        break;
+    case 152316:
+        if(roll%100<33)return 2.150f;
+        if(roll%100<66)return 2.459f;
+        if(roll%100<100)return 1.833f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart10_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 152317:
+        if(roll%100<33)return 2.612f;
+        if(roll%100<66)return 1.888f;
+        if(roll%100<100)return 3.411f;
+        break;
+    case 152318:
+        if(roll%100<34)return 1.776f;
+        if(roll%100<67)return 2.724f;
+        if(roll%100<100)return 3.706f;
+        break;
+    case 152402:
+        if(roll%100<33)return 2.837f;
+        if(roll%100<66)return 3.381f;
+        if(roll%100<100)return 2.947f;
+        break;
+    case 162101:
+        if(roll%100<25)return 1.357f;
+        if(roll%100<50)return 2.590f;
+        if(roll%100<75)return 1.677f;
+        if(roll%100<100)return 2.156f;
+        break;
+    case 162102:
+        if(roll%100<33)return 1.779f;
+        if(roll%100<66)return 1.678f;
+        if(roll%100<100)return 1.996f;
+        break;
+    case 162103:
+        if(roll%100<33)return 2.443f;
+        if(roll%100<66)return 2.263f;
+        if(roll%100<100)return 1.464f;
+        break;
+    case 162104:
+        if(roll%100<33)return 2.104f;
+        if(roll%100<66)return 1.658f;
+        if(roll%100<100)return 1.352f;
+        break;
+    case 162105:
+        if(roll%100<33)return 3.629f;
+        if(roll%100<66)return 2.804f;
+        if(roll%100<100)return 3.301f;
+        break;
+    case 162106:
+        if(roll%100<33)return 1.917f;
+        if(roll%100<66)return 3.232f;
+        if(roll%100<100)return 4.434f;
+        break;
+    case 162107:
+        if(roll%100<33)return 1.922f;
+        if(roll%100<66)return 2.103f;
+        if(roll%100<100)return 1.987f;
+        break;
+    case 162108:
+        if(roll%100<33)return 2.846f;
+        if(roll%100<66)return 4.351f;
+        if(roll%100<100)return 2.841f;
+        break;
+    case 162201:
+        if(roll%100<33)return 2.250f;
+        if(roll%100<66)return 3.086f;
+        if(roll%100<100)return 3.228f;
+        break;
+    case 162202:
+        if(roll%100<33)return 1.574f;
+        if(roll%100<66)return 1.780f;
+        if(roll%100<100)return 3.769f;
+        break;
+    case 162203:
+        if(roll%100<33)return 1.255f;
+        if(roll%100<66)return 1.360f;
+        if(roll%100<100)return 1.840f;
+        break;
+    case 162204:
+        if(roll%100<33)return 2.512f;
+        if(roll%100<66)return 2.744f;
+        if(roll%100<100)return 2.623f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart11_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 162205:
+        if(roll%100<33)return 3.142f;
+        if(roll%100<66)return 3.156f;
+        if(roll%100<100)return 1.903f;
+        break;
+    case 162206:
+        if(roll%100<33)return 1.483f;
+        if(roll%100<66)return 2.805f;
+        if(roll%100<100)return 2.161f;
+        break;
+    case 162207:
+        if(roll%100<33)return 1.877f;
+        if(roll%100<66)return 2.432f;
+        if(roll%100<100)return 1.882f;
+        break;
+    case 162208:
+        if(roll%100<33)return 1.776f;
+        if(roll%100<66)return 2.751f;
+        if(roll%100<100)return 1.970f;
+        break;
+    case 162209:
+        if(roll%100<33)return 2.527f;
+        if(roll%100<66)return 2.014f;
+        if(roll%100<100)return 2.301f;
+        break;
+    case 162210:
+        if(roll%100<33)return 2.480f;
+        if(roll%100<66)return 1.400f;
+        if(roll%100<100)return 1.891f;
+        break;
+    case 162211:
+        if(roll%100<33)return 3.620f;
+        if(roll%100<66)return 2.520f;
+        if(roll%100<100)return 3.382f;
+        break;
+    case 162212:
+        if(roll%100<33)return 4.223f;
+        if(roll%100<66)return 3.699f;
+        if(roll%100<100)return 4.024f;
+        break;
+    case 162213:
+        if(roll%100<33)return 2.138f;
+        if(roll%100<66)return 4.242f;
+        if(roll%100<100)return 3.027f;
+        break;
+    case 162301:
+        if(roll%100<33)return 3.962f;
+        if(roll%100<66)return 3.191f;
+        if(roll%100<100)return 3.084f;
+        break;
+    case 162303:
+        if(roll%100<33)return 1.311f;
+        if(roll%100<66)return 1.602f;
+        if(roll%100<100)return 1.668f;
+        break;
+    case 162304:
+        if(roll%100<33)return 2.450f;
+        if(roll%100<66)return 3.509f;
+        if(roll%100<100)return 3.319f;
+        break;
+    case 162305:
+        if(roll%100<33)return 0.806f;
+        if(roll%100<66)return 1.611f;
+        if(roll%100<100)return 1.477f;
+        break;
+    case 162307:
+        if(roll%100<33)return 1.890f;
+        if(roll%100<66)return 2.308f;
+        if(roll%100<100)return 2.469f;
+        break;
+    case 162308:
+        if(roll%100<33)return 2.807f;
+        if(roll%100<66)return 1.919f;
+        if(roll%100<100)return 2.490f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart12_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 162309:
+        if(roll%100<33)return 2.258f;
+        if(roll%100<66)return 2.941f;
+        if(roll%100<100)return 2.034f;
+        break;
+    case 162310:
+        if(roll%100<33)return 1.924f;
+        if(roll%100<66)return 1.108f;
+        if(roll%100<100)return 1.630f;
+        break;
+    case 162311:
+        if(roll%100<33)return 1.446f;
+        if(roll%100<66)return 0.728f;
+        if(roll%100<100)return 1.421f;
+        break;
+    case 162312:
+        if(roll%100<33)return 1.228f;
+        if(roll%100<66)return 1.332f;
+        if(roll%100<100)return 2.701f;
+        break;
+    case 162313:
+        if(roll%100<33)return 1.462f;
+        if(roll%100<66)return 1.419f;
+        if(roll%100<100)return 2.452f;
+        break;
+    case 162314:
+        if(roll%100<33)return 3.661f;
+        if(roll%100<66)return 0.971f;
+        if(roll%100<100)return 2.081f;
+        break;
+    case 162315:
+        if(roll%100<33)return 1.507f;
+        if(roll%100<66)return 1.599f;
+        if(roll%100<100)return 0.875f;
+        break;
+    case 162316:
+        if(roll%100<33)return 3.449f;
+        if(roll%100<66)return 2.112f;
+        if(roll%100<100)return 3.371f;
+        break;
+    case 162318:
+        if(roll%100<33)return 2.053f;
+        if(roll%100<66)return 3.817f;
+        if(roll%100<100)return 2.269f;
+        break;
+    case 162401:
+        if(roll%100<42)return 3.680f;
+        if(roll%100<85)return 3.356f;
+        if(roll%100<100)return 3.289f;
+        break;
+    case 200026:
+        if(roll%100<33)return 4.287f;
+        if(roll%100<66)return 3.238f;
+        if(roll%100<100)return 3.821f;
+        break;
+    case 200028:
+        if(roll%100<33)return 2.608f;
+        if(roll%100<66)return 2.542f;
+        if(roll%100<100)return 2.395f;
+        break;
+    case 200030:
+        if(roll%100<33)return 1.889f;
+        if(roll%100<66)return 1.194f;
+        if(roll%100<100)return 2.327f;
+        break;
+    case 200031:
+        if(roll%100<33)return 2.283f;
+        if(roll%100<66)return 4.050f;
+        if(roll%100<100)return 2.581f;
+        break;
+    case 200032:
+        if(roll%100<33)return 1.786f;
+        if(roll%100<66)return 2.795f;
+        if(roll%100<100)return 2.174f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart13_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200033:
+        if(roll%100<45)return 1.853f;
+        if(roll%100<65)return 4.100f;
+        if(roll%100<100)return 3.557f;
+        break;
+    case 200036:
+        if(roll%100<33)return 2.403f;
+        if(roll%100<66)return 2.790f;
+        if(roll%100<100)return 2.974f;
+        break;
+    case 200039:
+        if(roll%100<33)return 0.922f;
+        if(roll%100<66)return 1.780f;
+        if(roll%100<100)return 1.831f;
+        break;
+    case 200040:
+        if(roll%100<33)return 1.933f;
+        if(roll%100<66)return 3.307f;
+        if(roll%100<100)return 1.958f;
+        break;
+    case 200042:
+        if(roll%100<33)return 2.688f;
+        if(roll%100<66)return 2.985f;
+        if(roll%100<100)return 2.728f;
+        break;
+    case 200043:
+        if(roll%100<33)return 2.938f;
+        if(roll%100<67)return 2.736f;
+        if(roll%100<100)return 3.823f;
+        break;
+    case 200044:
+        if(roll%100<33)return 1.172f;
+        if(roll%100<67)return 3.155f;
+        if(roll%100<100)return 3.129f;
+        break;
+    case 200046:
+        if(roll%100<33)return 3.025f;
+        if(roll%100<66)return 3.250f;
+        if(roll%100<100)return 3.584f;
+        break;
+    case 200048:
+        if(roll%100<33)return 2.329f;
+        if(roll%100<66)return 3.081f;
+        if(roll%100<100)return 4.317f;
+        break;
+    case 200050:
+        if(roll%100<33)return 1.511f;
+        if(roll%100<67)return 2.018f;
+        if(roll%100<100)return 3.344f;
+        break;
+    case 200055:
+        if(roll%100<33)return 4.062f;
+        if(roll%100<66)return 4.072f;
+        if(roll%100<100)return 3.645f;
+        break;
+    case 200062:
+        if(roll%100<34)return 3.772f;
+        if(roll%100<67)return 3.428f;
+        if(roll%100<100)return 1.773f;
+        break;
+    case 200071:
+        if(roll%100<33)return 2.277f;
+        if(roll%100<67)return 3.018f;
+        if(roll%100<100)return 3.253f;
+        break;
+    case 200080:
+        if(roll%100<33)return 2.522f;
+        if(roll%100<66)return 2.473f;
+        if(roll%100<100)return 2.567f;
+        break;
+    case 200081:
+        if(roll%100<33)return 2.550f;
+        if(roll%100<67)return 3.010f;
+        if(roll%100<100)return 3.386f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart14_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200083:
+        if(roll%100<25)return 1.838f;
+        if(roll%100<50)return 2.575f;
+        if(roll%100<75)return 2.870f;
+        if(roll%100<100)return 3.123f;
+        break;
+    case 200087:
+        if(roll%100<25)return 2.550f;
+        if(roll%100<50)return 3.665f;
+        if(roll%100<75)return 3.664f;
+        if(roll%100<100)return 3.754f;
+        break;
+    case 200088:
+        if(roll%100<33)return 3.746f;
+        if(roll%100<67)return 3.188f;
+        if(roll%100<100)return 3.659f;
+        break;
+    case 200089:
+        if(roll%100<34)return 2.364f;
+        if(roll%100<67)return 3.954f;
+        if(roll%100<100)return 3.075f;
+        break;
+    case 200091:
+        if(roll%100<25)return 2.450f;
+        if(roll%100<50)return 3.169f;
+        if(roll%100<75)return 2.945f;
+        if(roll%100<100)return 3.886f;
+        break;
+    case 200098:
+        if(roll%100<33)return 2.508f;
+        if(roll%100<66)return 2.657f;
+        if(roll%100<100)return 2.903f;
+        break;
+    case 200112:
+        if(roll%100<50)return 2.545f;
+        if(roll%100<100)return 3.476f;
+        break;
+    case 200115:
+        if(roll%100<33)return 1.519f;
+        if(roll%100<67)return 2.006f;
+        if(roll%100<100)return 1.815f;
+        break;
+    case 200118:
+        if(roll%100<33)return 2.473f;
+        if(roll%100<67)return 2.350f;
+        if(roll%100<100)return 3.328f;
+        break;
+    case 200124:
+        if(roll%100<33)return 1.567f;
+        if(roll%100<67)return 2.439f;
+        if(roll%100<100)return 1.674f;
+        break;
+    case 200132:
+        if(roll%100<33)return 2.806f;
+        if(roll%100<67)return 2.435f;
+        if(roll%100<100)return 3.529f;
+        break;
+    case 200135:
+        if(roll%100<100)return 2.939f;
+        if(roll%100<100)return 3.657f;
+        if(roll%100<100)return 1.393f;
+        break;
+    case 200136:
+        if(roll%100<33)return 3.791f;
+        if(roll%100<66)return 4.129f;
+        if(roll%100<100)return 2.506f;
+        break;
+    case 200138:
+        if(roll%100<33)return 3.570f;
+        if(roll%100<66)return 3.077f;
+        if(roll%100<100)return 4.177f;
+        break;
+    case 200144:
+        if(roll%100<20)return 3.690f;
+        if(roll%100<40)return 1.394f;
+        if(roll%100<60)return 1.717f;
+        if(roll%100<80)return 3.320f;
+        if(roll%100<100)return 1.384f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart15_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200145:
+        if(roll%100<34)return 3.050f;
+        if(roll%100<67)return 2.715f;
+        if(roll%100<100)return 3.105f;
+        break;
+    case 200146:
+        if(roll%100<34)return 3.150f;
+        if(roll%100<67)return 3.409f;
+        if(roll%100<100)return 2.110f;
+        break;
+    case 200147:
+        if(roll%100<33)return 2.591f;
+        if(roll%100<66)return 2.956f;
+        if(roll%100<100)return 3.715f;
+        break;
+    case 200149:
+        if(roll%100<34)return 1.807f;
+        if(roll%100<67)return 2.659f;
+        if(roll%100<100)return 2.849f;
+        break;
+    case 200159:
+        if(roll%100<33)return 2.783f;
+        if(roll%100<66)return 2.150f;
+        if(roll%100<100)return 2.396f;
+        break;
+    case 200160:
+        if(roll%100<33)return 2.402f;
+        if(roll%100<66)return 1.527f;
+        if(roll%100<100)return 2.373f;
+        break;
+    case 200161:
+        if(roll%100<33)return 2.132f;
+        if(roll%100<66)return 4.226f;
+        if(roll%100<100)return 4.051f;
+        break;
+    case 200162:
+        if(roll%100<33)return 2.862f;
+        if(roll%100<66)return 4.047f;
+        if(roll%100<100)return 3.157f;
+        break;
+    case 200163:
+        if(roll%100<33)return 2.815f;
+        if(roll%100<66)return 2.656f;
+        if(roll%100<100)return 2.547f;
+        break;
+    case 200164:
+        if(roll%100<33)return 2.760f;
+        if(roll%100<66)return 2.590f;
+        if(roll%100<100)return 2.920f;
+        break;
+    case 200165:
+        if(roll%100<33)return 2.396f;
+        if(roll%100<66)return 2.886f;
+        if(roll%100<100)return 2.831f;
+        break;
+    case 200166:
+        if(roll%100<33)return 2.956f;
+        if(roll%100<66)return 2.495f;
+        if(roll%100<100)return 2.402f;
+        break;
+    case 200167:
+        if(roll%100<33)return 3.702f;
+        if(roll%100<66)return 2.826f;
+        if(roll%100<100)return 2.484f;
+        break;
+    case 200168:
+        if(roll%100<33)return 2.857f;
+        if(roll%100<67)return 1.607f;
+        if(roll%100<100)return 2.200f;
+        break;
+    case 200169:
+        if(roll%100<20)return 1.378f;
+        if(roll%100<40)return 3.043f;
+        if(roll%100<60)return 2.356f;
+        if(roll%100<80)return 2.785f;
+        if(roll%100<100)return 2.072f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart16_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200170:
+        if(roll%100<50)return 3.530f;
+        if(roll%100<100)return 3.679f;
+        break;
+    case 200171:
+        if(roll%100<33)return 1.373f;
+        if(roll%100<66)return 1.931f;
+        if(roll%100<100)return 2.000f;
+        break;
+    case 200177:
+        if(roll%100<33)return 1.629f;
+        if(roll%100<66)return 1.341f;
+        if(roll%100<100)return 1.267f;
+        break;
+    case 200209:
+        if(roll%100<25)return 2.317f;
+        if(roll%100<50)return 1.843f;
+        if(roll%100<75)return 1.551f;
+        if(roll%100<100)return 1.053f;
+        break;
+    case 200212:
+        if(roll%100<33)return 1.831f;
+        if(roll%100<67)return 1.516f;
+        if(roll%100<100)return 1.964f;
+        break;
+    case 200219:
+        if(roll%100<42)return 3.680f;
+        if(roll%100<85)return 3.356f;
+        if(roll%100<100)return 3.289f;
+        break;
+    case 200220:
+        if(roll%300<100)return 5.203f;
+        if(roll%300<200)return 6.043f;
+        if(roll%300<300)return 5.271f;
+        break;
+    case 200221:
+        if(roll%100<50)return 5.849f;
+        if(roll%100<100)return 4.060f;
+        break;
+    case 200222:
+        if(roll%100<34)return 5.102f;
+        if(roll%100<67)return 5.705f;
+        if(roll%100<100)return 5.943f;
+        break;
+    case 200227:
+        if(roll%100<33)return 3.777f;
+        if(roll%100<67)return 3.407f;
+        if(roll%100<100)return 3.535f;
+        break;
+    case 200235:
+        if(roll%100<17)return 3.087f;
+        if(roll%100<34)return 3.049f;
+        if(roll%100<51)return 2.980f;
+        if(roll%100<68)return 1.487f;
+        if(roll%100<85)return 2.395f;
+        if(roll%100<100)return 2.056f;
+        break;
+    case 200236:
+        if(roll%100<25)return 1.759f;
+        if(roll%100<67)return 1.969f;
+        if(roll%100<92)return 1.250f;
+        if(roll%100<100)return 1.934f;
+        break;
+    case 200237:
+        if(roll%100<33)return 1.822f;
+        if(roll%100<66)return 2.623f;
+        if(roll%100<100)return 2.150f;
+        break;
+    case 200293:
+        if(roll%100<20)return 2.904f;
+        if(roll%100<40)return 3.259f;
+        if(roll%100<60)return 3.601f;
+        if(roll%100<80)return 2.389f;
+        if(roll%100<100)return 4.333f;
+        break;
+    case 200294:
+        if(roll%100<20)return 2.474f;
+        if(roll%100<40)return 2.390f;
+        if(roll%100<60)return 1.801f;
+        if(roll%100<80)return 2.036f;
+        if(roll%100<100)return 2.200f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart17_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200296:
+        if(roll%100<33)return 2.107f;
+        if(roll%100<66)return 2.669f;
+        if(roll%100<100)return 2.378f;
+        break;
+    case 200299:
+        if(roll%100<33)return 4.479f;
+        if(roll%100<66)return 3.190f;
+        if(roll%100<100)return 2.889f;
+        break;
+    case 200518:
+        if(roll%100<33)return 2.227f;
+        if(roll%100<66)return 2.456f;
+        if(roll%100<100)return 2.185f;
+        break;
+    case 200520:
+        if(roll%100<33)return 1.562f;
+        if(roll%100<66)return 4.092f;
+        if(roll%100<100)return 1.643f;
+        break;
+    case 200523:
+        if(roll%100<25)return 1.958f;
+        if(roll%100<50)return 3.588f;
+        if(roll%100<75)return 2.082f;
+        if(roll%100<100)return 2.001f;
+        break;
+    case 200528:
+        if(roll%100<33)return 3.250f;
+        if(roll%100<66)return 2.498f;
+        if(roll%100<100)return 2.238f;
+        break;
+    case 200529:
+        if(roll%100<39)return 2.914f;
+        if(roll%100<61)return 3.244f;
+        if(roll%100<100)return 3.701f;
+        break;
+    case 200534:
+        if(roll%100<33)return 1.787f;
+        if(roll%100<66)return 2.674f;
+        if(roll%100<100)return 3.655f;
+        break;
+    case 200535:
+        if(roll%100<33)return 1.945f;
+        if(roll%100<66)return 3.003f;
+        if(roll%100<100)return 3.045f;
+        break;
+    case 200540:
+        if(roll%100<41)return 1.783f;
+        if(roll%100<82)return 1.403f;
+        if(roll%100<100)return 3.281f;
+        break;
+    case 201523:
+        if(roll%100<20)return 2.805f;
+        if(roll%100<40)return 1.146f;
+        if(roll%100<60)return 2.038f;
+        if(roll%100<80)return 1.442f;
+        if(roll%100<100)return 1.873f;
+        break;
+    case 201559:
+        if(roll%100<20)return 2.464f;
+        if(roll%100<40)return 2.350f;
+        if(roll%100<60)return 2.630f;
+        if(roll%100<80)return 3.190f;
+        if(roll%100<100)return 1.942f;
+        break;
+    case 201578:
+        if(roll%100<34)return 1.771f;
+        if(roll%100<67)return 2.726f;
+        if(roll%100<100)return 2.598f;
+        break;
+    case 201580:
+        if(roll%100<33)return 2.519f;
+        if(roll%100<66)return 2.925f;
+        if(roll%100<100)return 3.288f;
+        break;
+    case 201587:
+        if(roll%100<20)return 2.202f;
+        if(roll%100<40)return 3.161f;
+        if(roll%100<60)return 2.810f;
+        if(roll%100<80)return 3.633f;
+        if(roll%100<100)return 4.156f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart18_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 201589:
+        if(roll%100<34)return 2.010f;
+        if(roll%100<67)return 3.121f;
+        if(roll%100<100)return 2.524f;
+        break;
+    case 201595:
+        if(roll%100<34)return 3.420f;
+        if(roll%100<67)return 3.882f;
+        if(roll%100<100)return 4.062f;
+        break;
+    case 201597:
+        if(roll%100<33)return 3.875f;
+        if(roll%100<66)return 2.287f;
+        if(roll%100<100)return 2.256f;
+        break;
+    case 201601:
+        if(roll%100<34)return 2.850f;
+        if(roll%100<67)return 3.680f;
+        if(roll%100<100)return 1.770f;
+        break;
+    case 201603:
+        if(roll%100<25)return 1.677f;
+        if(roll%100<50)return 2.156f;
+        if(roll%100<75)return 1.357f;
+        if(roll%100<100)return 2.590f;
+        break;
+    case 201609:
+        if(roll%100<20)return 1.350f;
+        if(roll%100<40)return 2.112f;
+        if(roll%100<60)return 2.250f;
+        if(roll%100<80)return 2.729f;
+        if(roll%100<100)return 2.669f;
+        break;
+    case 201611:
+        if(roll%100<25)return 1.576f;
+        if(roll%100<50)return 2.396f;
+        if(roll%100<75)return 3.524f;
+        if(roll%100<100)return 1.801f;
+        break;
+    case 201612:
+        if(roll%100<20)return 1.550f;
+        if(roll%100<40)return 0.983f;
+        if(roll%100<60)return 2.771f;
+        if(roll%100<80)return 1.150f;
+        if(roll%100<100)return 1.878f;
+        break;
+    case 201615:
+        if(roll%100<34)return 2.950f;
+        if(roll%100<67)return 1.487f;
+        if(roll%100<100)return 3.129f;
+        break;
+    case 201616:
+        if(roll%100<33)return 3.193f;
+        if(roll%100<67)return 2.133f;
+        if(roll%100<100)return 3.408f;
+        break;
+    case 201617:
+        if(roll%100<20)return 4.176f;
+        if(roll%100<40)return 4.331f;
+        if(roll%100<60)return 4.228f;
+        if(roll%100<80)return 4.553f;
+        if(roll%100<100)return 4.171f;
+        break;
+    case 201618:
+        if(roll%100<33)return 2.286f;
+        if(roll%100<66)return 2.256f;
+        if(roll%100<100)return 1.880f;
+        break;
+    case 201620:
+        if(roll%100<20)return 1.350f;
+        if(roll%100<40)return 1.360f;
+        if(roll%100<60)return 2.021f;
+        if(roll%100<80)return 1.946f;
+        if(roll%100<100)return 2.429f;
+        break;
+    case 201621:
+        if(roll%100<20)return 3.250f;
+        if(roll%100<40)return 1.533f;
+        if(roll%100<60)return 2.315f;
+        if(roll%100<80)return 2.472f;
+        if(roll%100<100)return 3.519f;
+        break;
+    case 201622:
+        if(roll%100<33)return 2.155f;
+        if(roll%100<67)return 1.899f;
+        if(roll%100<100)return 2.818f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart19_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 201624:
+        if(roll%100<20)return 2.375f;
+        if(roll%100<40)return 3.817f;
+        if(roll%100<60)return 2.608f;
+        if(roll%100<80)return 3.518f;
+        if(roll%100<100)return 2.575f;
+        break;
+    case 201625:
+        if(roll%100<20)return 3.019f;
+        if(roll%100<40)return 2.103f;
+        if(roll%100<60)return 2.112f;
+        if(roll%100<80)return 2.250f;
+        if(roll%100<100)return 2.233f;
+        break;
+    case 201626:
+        if(roll%100<25)return 1.955f;
+        if(roll%100<50)return 1.179f;
+        if(roll%100<75)return 1.308f;
+        if(roll%100<100)return 2.398f;
+        break;
+    case 201627:
+        if(roll%100<20)return 4.171f;
+        if(roll%100<40)return 3.168f;
+        if(roll%100<60)return 3.965f;
+        if(roll%100<80)return 2.450f;
+        if(roll%100<100)return 5.691f;
+        break;
+    case 201628:
+        if(roll%100<20)return 3.813f;
+        if(roll%100<40)return 2.482f;
+        if(roll%100<60)return 2.722f;
+        if(roll%100<80)return 2.019f;
+        if(roll%100<100)return 3.318f;
+        break;
+    case 201630:
+        if(roll%100<20)return 2.969f;
+        if(roll%100<40)return 3.517f;
+        if(roll%100<60)return 1.581f;
+        if(roll%100<80)return 1.750f;
+        if(roll%100<100)return 1.754f;
+        break;
+    case 201636:
+        if(roll%100<20)return 1.373f;
+        if(roll%100<40)return 0.691f;
+        if(roll%100<60)return 1.601f;
+        if(roll%100<80)return 1.310f;
+        if(roll%100<100)return 0.978f;
+        break;
+    case 201638:
+        if(roll%100<20)return 1.916f;
+        if(roll%100<40)return 2.480f;
+        if(roll%100<60)return 2.450f;
+        if(roll%100<80)return 1.283f;
+        if(roll%100<100)return 1.540f;
+        break;
+    case 201644:
+        if(roll%100<20)return 1.550f;
+        if(roll%100<40)return 2.897f;
+        if(roll%100<60)return 4.159f;
+        if(roll%100<80)return 2.150f;
+        if(roll%100<100)return 2.542f;
+        break;
+    case 201646:
+        if(roll%100<33)return 3.362f;
+        if(roll%100<66)return 5.591f;
+        if(roll%100<100)return 4.689f;
+        break;
+    case 201650:
+        if(roll%100<33)return 1.515f;
+        if(roll%100<67)return 2.035f;
+        if(roll%100<100)return 4.062f;
+        break;
+    case 201664:
+        if(roll%100<25)return 1.803f;
+        if(roll%100<50)return 3.401f;
+        if(roll%100<75)return 3.180f;
+        if(roll%100<100)return 1.601f;
+        break;
+    case 201676:
+        if(roll%100<33)return 4.291f;
+        if(roll%100<67)return 2.098f;
+        if(roll%100<100)return 3.726f;
+        break;
+    case 201677:
+        if(roll%100<34)return 0.675f;
+        if(roll%100<67)return 3.938f;
+        if(roll%100<100)return 4.021f;
+        break;
+    case 201753:
+        if(roll%100<34)return 0.675f;
+        if(roll%100<67)return 3.938f;
+        if(roll%100<100)return 4.021f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart20_Universal_de(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 201772:
+        if(roll%100<20)return 2.805f;
+        if(roll%100<40)return 1.146f;
+        if(roll%100<60)return 2.038f;
+        if(roll%100<80)return 1.442f;
+        if(roll%100<100)return 1.873f;
+        break;
+    case 201773:
+        if(roll%100<17)return 1.360f;
+        if(roll%100<33)return 1.646f;
+        if(roll%100<50)return 2.120f;
+        if(roll%100<67)return 1.877f;
+        if(roll%100<84)return 3.524f;
+        if(roll%100<100)return 2.164f;
+        break;
+    case 201774:
+        if(roll%100<14)return 3.091f;
+        if(roll%100<28)return 1.348f;
+        if(roll%100<42)return 2.676f;
+        if(roll%100<58)return 1.680f;
+        if(roll%100<72)return 2.303f;
+        if(roll%100<86)return 1.971f;
+        if(roll%100<100)return 2.611f;
+        break;
+    case 201776:
+        if(roll%100<16)return 3.091f;
+        if(roll%100<30)return 1.348f;
+        if(roll%100<44)return 2.676f;
+        if(roll%100<58)return 1.680f;
+        if(roll%100<72)return 2.303f;
+        if(roll%100<86)return 1.971f;
+        if(roll%100<100)return 2.611f;
+        break;
+    case 201777:
+        if(roll%100<50)return 2.331f;
+        if(roll%100<100)return 2.588f;
+        break;
+    case 201778:
+        if(roll%100<33)return 1.629f;
+        if(roll%100<67)return 1.341f;
+        if(roll%100<100)return 1.267f;
+        break;
+    case 201779:
+        if(roll%100<33)return 1.606f;
+        if(roll%100<66)return 2.004f;
+        if(roll%100<100)return 1.946f;
+        break;
+    case 201780:
+        if(roll%100<33)return 2.850f;
+        if(roll%100<67)return 3.680f;
+        if(roll%100<100)return 1.770f;
+        break;
+    case 201781:
+        if(roll%100<33)return 3.035f;
+        if(roll%100<67)return 1.406f;
+        if(roll%100<100)return 1.783f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+
+function BetaGwentAudioRevealEffect_Universal_de(id : int) : string
+{
+    if (id <= 201779) return BetaGwentAudioRevealEffect0_Universal_de(id);
+    return "";
+}
+function BetaGwentAudioRevealEffect0_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 142204: return "bg79_fx_2095867680";
+        case 142208: return "bg79_fx_181319135";
+        case 142210: return "bg79_fx_1115677916";
+        case 142307: return "bg79_fx_35814593";
+        case 201779: return "bg79_fx_3157478180";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioTransformEffect_Universal_de(id : int) : string
+{
+    if (id <= 112105) return BetaGwentAudioTransformEffect0_Universal_de(id);
+    return "";
+}
+function BetaGwentAudioTransformEffect0_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 112105: return "bg79_fx_729252324";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceTriggers_Universal_de(id : int) : int
+{
+    if (id <= 113401) return BetaGwentAudioVoiceTriggers0_Universal_de(id);
+    if (id <= 132204) return BetaGwentAudioVoiceTriggers1_Universal_de(id);
+    if (id <= 142301) return BetaGwentAudioVoiceTriggers2_Universal_de(id);
+    if (id <= 152406) return BetaGwentAudioVoiceTriggers3_Universal_de(id);
+    if (id <= 200036) return BetaGwentAudioVoiceTriggers4_Universal_de(id);
+    if (id <= 200166) return BetaGwentAudioVoiceTriggers5_Universal_de(id);
+    if (id <= 201584) return BetaGwentAudioVoiceTriggers6_Universal_de(id);
+    if (id <= 201697) return BetaGwentAudioVoiceTriggers7_Universal_de(id);
+    if (id <= 201817) return BetaGwentAudioVoiceTriggers8_Universal_de(id);
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers0_Universal_de(id : int) : int
+{
+    switch (id)
+    {
+        case 112101: return 8;
+        case 112102: return 8;
+        case 112103: return 8;
+        case 112104: return 8;
+        case 112105: return 24;
+        case 112106: return 8;
+        case 112107: return 8;
+        case 112108: return 8;
+        case 112109: return 8;
+        case 112110: return 8;
+        case 112111: return 8;
+        case 112112: return 8;
+        case 112113: return 8;
+        case 112201: return 8;
+        case 112202: return 8;
+        case 112203: return 8;
+        case 112204: return 8;
+        case 112205: return 8;
+        case 112206: return 8;
+        case 112207: return 8;
+        case 112208: return 8;
+        case 112209: return 8;
+        case 112210: return 8;
+        case 112211: return 8;
+        case 112212: return 8;
+        case 112213: return 8;
+        case 112214: return 8;
+        case 112215: return 8;
+        case 112401: return 8;
+        case 112402: return 8;
+        case 112403: return 8;
+        case 112404: return 8;
+        case 112405: return 0;
+        case 113101: return 8;
+        case 113102: return 0;
+        case 113201: return 0;
+        case 113202: return 0;
+        case 113203: return 0;
+        case 113204: return 8;
+        case 113205: return 8;
+        case 113206: return 0;
+        case 113207: return 0;
+        case 113208: return 8;
+        case 113209: return 0;
+        case 113301: return 8;
+        case 113302: return 8;
+        case 113303: return 0;
+        case 113305: return 8;
+        case 113306: return 0;
+        case 113307: return 0;
+        case 113308: return 8;
+        case 113309: return 0;
+        case 113310: return 0;
+        case 113311: return 0;
+        case 113312: return 8;
+        case 113313: return 8;
+        case 113315: return 0;
+        case 113316: return 0;
+        case 113320: return 0;
+        case 113401: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers1_Universal_de(id : int) : int
+{
+    switch (id)
+    {
+        case 113402: return 0;
+        case 122101: return 8;
+        case 122102: return 8;
+        case 122103: return 8;
+        case 122104: return 8;
+        case 122105: return 8;
+        case 122106: return 8;
+        case 122107: return 8;
+        case 122108: return 8;
+        case 122201: return 8;
+        case 122202: return 8;
+        case 122203: return 8;
+        case 122204: return 8;
+        case 122205: return 8;
+        case 122206: return 8;
+        case 122207: return 8;
+        case 122208: return 8;
+        case 122209: return 8;
+        case 122210: return 8;
+        case 122211: return 8;
+        case 122212: return 8;
+        case 122213: return 8;
+        case 122214: return 8;
+        case 122216: return 8;
+        case 122301: return 0;
+        case 122302: return 0;
+        case 122303: return 0;
+        case 122304: return 0;
+        case 122306: return 8;
+        case 122307: return 8;
+        case 122308: return 8;
+        case 122309: return 8;
+        case 122310: return 8;
+        case 122311: return 8;
+        case 122312: return 8;
+        case 122313: return 8;
+        case 122314: return 8;
+        case 122315: return 0;
+        case 122316: return 8;
+        case 122317: return 8;
+        case 122318: return 8;
+        case 122401: return 0;
+        case 122402: return 0;
+        case 122403: return 8;
+        case 123201: return 0;
+        case 123301: return 8;
+        case 131101: return 8;
+        case 131102: return 8;
+        case 132101: return 8;
+        case 132102: return 8;
+        case 132103: return 0;
+        case 132104: return 8;
+        case 132105: return 8;
+        case 132106: return 0;
+        case 132107: return 8;
+        case 132108: return 8;
+        case 132201: return 0;
+        case 132202: return 0;
+        case 132203: return 0;
+        case 132204: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers2_Universal_de(id : int) : int
+{
+    switch (id)
+    {
+        case 132205: return 0;
+        case 132206: return 8;
+        case 132207: return 8;
+        case 132208: return 8;
+        case 132209: return 0;
+        case 132211: return 8;
+        case 132212: return 8;
+        case 132213: return 0;
+        case 132214: return 8;
+        case 132215: return 8;
+        case 132216: return 0;
+        case 132217: return 0;
+        case 132218: return 0;
+        case 132301: return 0;
+        case 132302: return 0;
+        case 132303: return 0;
+        case 132304: return 0;
+        case 132305: return 8;
+        case 132306: return 0;
+        case 132307: return 0;
+        case 132308: return 0;
+        case 132309: return 8;
+        case 132310: return 8;
+        case 132312: return 0;
+        case 132313: return 0;
+        case 132314: return 0;
+        case 132315: return 0;
+        case 132316: return 0;
+        case 132402: return 0;
+        case 132403: return 0;
+        case 132404: return 0;
+        case 132405: return 0;
+        case 132406: return 0;
+        case 132407: return 8;
+        case 132408: return 0;
+        case 132409: return 8;
+        case 133301: return 0;
+        case 133302: return 0;
+        case 142101: return 0;
+        case 142102: return 8;
+        case 142103: return 8;
+        case 142104: return 8;
+        case 142105: return 8;
+        case 142106: return 8;
+        case 142107: return 8;
+        case 142108: return 8;
+        case 142201: return 8;
+        case 142202: return 8;
+        case 142203: return 8;
+        case 142204: return 4;
+        case 142206: return 8;
+        case 142207: return 8;
+        case 142208: return 4;
+        case 142209: return 8;
+        case 142210: return 4;
+        case 142211: return 8;
+        case 142212: return 8;
+        case 142213: return 8;
+        case 142214: return 8;
+        case 142301: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers3_Universal_de(id : int) : int
+{
+    switch (id)
+    {
+        case 142302: return 8;
+        case 142303: return 8;
+        case 142304: return 8;
+        case 142306: return 8;
+        case 142307: return 4;
+        case 142308: return 8;
+        case 142309: return 8;
+        case 142310: return 8;
+        case 142311: return 8;
+        case 142312: return 8;
+        case 142313: return 8;
+        case 142314: return 8;
+        case 142315: return 8;
+        case 142316: return 8;
+        case 142317: return 8;
+        case 142401: return 8;
+        case 143201: return 0;
+        case 143301: return 0;
+        case 152101: return 8;
+        case 152103: return 8;
+        case 152104: return 0;
+        case 152105: return 8;
+        case 152106: return 8;
+        case 152107: return 8;
+        case 152109: return 0;
+        case 152201: return 8;
+        case 152202: return 8;
+        case 152203: return 8;
+        case 152204: return 8;
+        case 152205: return 8;
+        case 152206: return 8;
+        case 152207: return 8;
+        case 152208: return 8;
+        case 152209: return 8;
+        case 152210: return 0;
+        case 152211: return 8;
+        case 152213: return 8;
+        case 152214: return 8;
+        case 152301: return 8;
+        case 152302: return 8;
+        case 152303: return 8;
+        case 152304: return 8;
+        case 152305: return 8;
+        case 152306: return 8;
+        case 152308: return 8;
+        case 152309: return 0;
+        case 152310: return 8;
+        case 152311: return 8;
+        case 152312: return 8;
+        case 152313: return 8;
+        case 152314: return 8;
+        case 152315: return 8;
+        case 152316: return 8;
+        case 152317: return 8;
+        case 152318: return 8;
+        case 152401: return 0;
+        case 152402: return 8;
+        case 152403: return 0;
+        case 152405: return 0;
+        case 152406: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers4_Universal_de(id : int) : int
+{
+    switch (id)
+    {
+        case 153201: return 0;
+        case 153301: return 8;
+        case 162101: return 8;
+        case 162102: return 8;
+        case 162103: return 8;
+        case 162104: return 8;
+        case 162105: return 8;
+        case 162106: return 8;
+        case 162107: return 8;
+        case 162108: return 8;
+        case 162201: return 8;
+        case 162202: return 8;
+        case 162203: return 8;
+        case 162204: return 8;
+        case 162205: return 8;
+        case 162206: return 8;
+        case 162207: return 8;
+        case 162208: return 8;
+        case 162209: return 8;
+        case 162210: return 8;
+        case 162211: return 8;
+        case 162212: return 8;
+        case 162213: return 8;
+        case 162301: return 8;
+        case 162302: return 0;
+        case 162303: return 8;
+        case 162304: return 8;
+        case 162305: return 8;
+        case 162306: return 0;
+        case 162307: return 8;
+        case 162308: return 8;
+        case 162309: return 8;
+        case 162310: return 8;
+        case 162311: return 8;
+        case 162312: return 8;
+        case 162313: return 8;
+        case 162314: return 8;
+        case 162315: return 8;
+        case 162316: return 8;
+        case 162317: return 0;
+        case 162318: return 8;
+        case 162401: return 8;
+        case 162402: return 0;
+        case 163101: return 0;
+        case 163201: return 0;
+        case 200008: return 0;
+        case 200009: return 0;
+        case 200018: return 0;
+        case 200019: return 0;
+        case 200020: return 0;
+        case 200021: return 0;
+        case 200022: return 0;
+        case 200023: return 0;
+        case 200026: return 8;
+        case 200028: return 8;
+        case 200030: return 8;
+        case 200031: return 8;
+        case 200032: return 8;
+        case 200033: return 8;
+        case 200036: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers5_Universal_de(id : int) : int
+{
+    switch (id)
+    {
+        case 200037: return 0;
+        case 200038: return 0;
+        case 200039: return 8;
+        case 200040: return 8;
+        case 200041: return 0;
+        case 200042: return 8;
+        case 200043: return 8;
+        case 200044: return 8;
+        case 200046: return 8;
+        case 200048: return 8;
+        case 200049: return 0;
+        case 200050: return 8;
+        case 200052: return 0;
+        case 200053: return 0;
+        case 200055: return 8;
+        case 200056: return 8;
+        case 200058: return 0;
+        case 200062: return 8;
+        case 200067: return 0;
+        case 200071: return 8;
+        case 200073: return 0;
+        case 200078: return 0;
+        case 200079: return 0;
+        case 200080: return 8;
+        case 200081: return 8;
+        case 200083: return 8;
+        case 200087: return 8;
+        case 200088: return 8;
+        case 200089: return 8;
+        case 200091: return 8;
+        case 200098: return 8;
+        case 200102: return 0;
+        case 200103: return 0;
+        case 200104: return 0;
+        case 200105: return 0;
+        case 200112: return 8;
+        case 200114: return 0;
+        case 200115: return 8;
+        case 200118: return 8;
+        case 200124: return 8;
+        case 200132: return 8;
+        case 200135: return 8;
+        case 200136: return 8;
+        case 200138: return 8;
+        case 200139: return 0;
+        case 200144: return 8;
+        case 200145: return 8;
+        case 200146: return 8;
+        case 200147: return 8;
+        case 200149: return 8;
+        case 200154: return 0;
+        case 200158: return 0;
+        case 200159: return 8;
+        case 200160: return 8;
+        case 200161: return 8;
+        case 200162: return 8;
+        case 200163: return 8;
+        case 200164: return 8;
+        case 200165: return 8;
+        case 200166: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers6_Universal_de(id : int) : int
+{
+    switch (id)
+    {
+        case 200167: return 8;
+        case 200168: return 8;
+        case 200169: return 8;
+        case 200170: return 8;
+        case 200171: return 8;
+        case 200177: return 8;
+        case 200209: return 8;
+        case 200212: return 8;
+        case 200218: return 0;
+        case 200219: return 8;
+        case 200220: return 8;
+        case 200221: return 8;
+        case 200222: return 8;
+        case 200223: return 0;
+        case 200224: return 0;
+        case 200225: return 0;
+        case 200226: return 0;
+        case 200227: return 8;
+        case 200228: return 0;
+        case 200233: return 0;
+        case 200235: return 8;
+        case 200236: return 8;
+        case 200237: return 8;
+        case 200293: return 8;
+        case 200294: return 8;
+        case 200295: return 0;
+        case 200296: return 8;
+        case 200299: return 8;
+        case 200300: return 0;
+        case 200301: return 0;
+        case 200307: return 0;
+        case 200308: return 0;
+        case 200320: return 8;
+        case 200457: return 0;
+        case 200502: return 0;
+        case 200518: return 8;
+        case 200519: return 0;
+        case 200520: return 8;
+        case 200523: return 8;
+        case 200528: return 8;
+        case 200529: return 8;
+        case 200530: return 0;
+        case 200532: return 0;
+        case 200534: return 8;
+        case 200535: return 8;
+        case 200539: return 0;
+        case 200540: return 8;
+        case 201523: return 8;
+        case 201559: return 8;
+        case 201572: return 0;
+        case 201573: return 0;
+        case 201574: return 0;
+        case 201576: return 0;
+        case 201578: return 8;
+        case 201579: return 0;
+        case 201580: return 8;
+        case 201581: return 0;
+        case 201582: return 0;
+        case 201583: return 0;
+        case 201584: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers7_Universal_de(id : int) : int
+{
+    switch (id)
+    {
+        case 201585: return 0;
+        case 201587: return 8;
+        case 201589: return 8;
+        case 201595: return 8;
+        case 201597: return 8;
+        case 201598: return 0;
+        case 201599: return 0;
+        case 201600: return 0;
+        case 201601: return 8;
+        case 201603: return 8;
+        case 201606: return 0;
+        case 201609: return 8;
+        case 201610: return 0;
+        case 201611: return 8;
+        case 201612: return 8;
+        case 201613: return 0;
+        case 201615: return 8;
+        case 201616: return 8;
+        case 201617: return 8;
+        case 201618: return 8;
+        case 201619: return 0;
+        case 201620: return 8;
+        case 201621: return 8;
+        case 201622: return 8;
+        case 201623: return 0;
+        case 201624: return 8;
+        case 201625: return 8;
+        case 201626: return 8;
+        case 201627: return 8;
+        case 201628: return 8;
+        case 201630: return 8;
+        case 201631: return 0;
+        case 201632: return 0;
+        case 201633: return 0;
+        case 201634: return 0;
+        case 201635: return 0;
+        case 201636: return 8;
+        case 201637: return 0;
+        case 201638: return 8;
+        case 201639: return 0;
+        case 201642: return 0;
+        case 201643: return 0;
+        case 201644: return 8;
+        case 201645: return 0;
+        case 201646: return 8;
+        case 201647: return 0;
+        case 201648: return 0;
+        case 201650: return 8;
+        case 201653: return 0;
+        case 201656: return 0;
+        case 201657: return 0;
+        case 201659: return 0;
+        case 201660: return 0;
+        case 201661: return 8;
+        case 201662: return 0;
+        case 201664: return 8;
+        case 201676: return 8;
+        case 201677: return 8;
+        case 201696: return 0;
+        case 201697: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers8_Universal_de(id : int) : int
+{
+    switch (id)
+    {
+        case 201698: return 0;
+        case 201699: return 0;
+        case 201700: return 0;
+        case 201701: return 0;
+        case 201704: return 0;
+        case 201725: return 0;
+        case 201731: return 0;
+        case 201737: return 0;
+        case 201743: return 0;
+        case 201744: return 0;
+        case 201748: return 0;
+        case 201749: return 0;
+        case 201753: return 8;
+        case 201758: return 0;
+        case 201772: return 8;
+        case 201773: return 8;
+        case 201774: return 8;
+        case 201776: return 8;
+        case 201777: return 8;
+        case 201778: return 8;
+        case 201779: return 4;
+        case 201780: return 8;
+        case 201781: return 8;
+        case 201817: return 0;
+        default: break;
+    }
+    return 0;
+}
+
+function BetaGwentAudioUi_Universal_de(id : int) : string
+{
+    if (id <= 5) return BetaGwentAudioUi0_Universal_de(id);
+    return "";
+}
+function BetaGwentAudioUi0_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 1: return "bg79_fx_1126876212";
+        case 2: return "bg79_fx_2909756106";
+        case 3: return "bg79_fx_310403972";
+        case 4: return "bg79_fx_3558782073";
+        case 5: return "bg79_fx_331755273";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioCue_Universal_de(id : int) : string
+{
+    if (id <= 32) return BetaGwentAudioCue0_Universal_de(id);
+    return "";
+}
+function BetaGwentAudioCue0_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 3: return "bg79_fx_1345484733";
+        case 5: return "bg79_fx_443750925";
+        case 6: return "bg79_fx_1274376343";
+        case 7: return "bg79_fx_3429050723";
+        case 32: return "bg79_fx_3756236359";
+        case 9: return "bg79_fx_914497199";
+        case 10: return "bg79_fx_174406704";
+        case 11: return "bg79_fx_1345484733";
+        case 12: return "bg79_fx_3040005591";
+        case 14: return "bg79_fx_331755273";
+        case 15: return "bg79_fx_1271393020";
+        case 16: return "bg79_fx_1271393020";
+        case 17: return "bg79_fx_443750925";
+        case 20: return "bg79_fx_1339391495";
+        case 21: return "bg79_fx_1359220433";
+        case 22: return "bg79_fx_2876994866";
+        case 23: return "bg79_fx_2994650242";
+        case 24: return "bg79_fx_3432162846";
+        case 25: return "bg79_fx_174406704";
+        case 26: return "bg79_fx_3655100537";
+        case 27: return "bg79_fx_2122169205";
+        case 28: return "bg79_fx_1979737770";
+        case 29: return "bg79_fx_3983713265";
+        case 30: return "bg79_fx_3128640595";
+        case 31: return "bg79_fx_111986461";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioWeather_Universal_de(id : int) : string
+{
+    if (id <= 2048) return BetaGwentAudioWeather0_Universal_de(id);
+    return "";
+}
+function BetaGwentAudioWeather0_Universal_de(id : int) : string
+{
+    switch (id)
+    {
+        case 0: return "bg79_fx_3426459189";
+        case 1: return "bg79_fx_1182743257";
+        case 2: return "bg79_fx_3376847707";
+        case 4: return "bg79_fx_4022788383";
+        case 16: return "bg79_fx_586097054";
+        case 32: return "bg79_fx_3202917663";
+        case 64: return "bg79_fx_1515030783";
+        case 128: return "bg79_fx_3419056088";
+        case 256: return "bg79_fx_206487326";
+        case 512: return "bg79_fx_2066849046";
+        case 1024: return "bg79_fx_656469391";
+        case 2048: return "bg79_fx_206487326";
+        default: break;
+    }
+    return "";
+}
+
+// Generated from pinned CardAudio.xml. Source banks128 are not runtime banks.
+
+function BetaGwentAudioBankInstalled_Universal_it() : bool { return true; }
+
+function BetaGwentAudioVoice_Universal_it(id : int) : string
+{
+    if (id <= 122313) return BetaGwentAudioVoice0_Universal_it(id);
+    if (id <= 142401) return BetaGwentAudioVoice1_Universal_it(id);
+    if (id <= 162308) return BetaGwentAudioVoice2_Universal_it(id);
+    if (id <= 200169) return BetaGwentAudioVoice3_Universal_it(id);
+    if (id <= 201753) return BetaGwentAudioVoice4_Universal_it(id);
+    if (id <= 201781) return BetaGwentAudioVoice5_Universal_it(id);
+    return "";
+}
+function BetaGwentAudioVoice0_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 112101: return "bg79_vo_CIRI_CIRILLA_01040512";
+        case 112102: return "bg79_vo_SAY_Battlecries_1";
+        case 112103: return "bg79_vo_SAY_Battlecries_1";
+        case 112104: return "bg79_vo_REGI_Q702_01155230";
+        case 112105: return "bg79_vo_katakan_taunt_short_003";
+        case 112106: return "bg79_vo_TRSS_Q310_00545347";
+        case 112108: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 112109: return "bg79_vo_ZOLT_Q310_01062198";
+        case 112110: return "bg79_vo_CIRI_CIRILLA_01040512";
+        case 112111: return "bg79_vo_SAY_Battlecries_1";
+        case 112112: return "bg79_vo_AVLC_Q311_00454814";
+        case 112113: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 112201: return "bg79_vo_SAY_Battlecries_816";
+        case 112202: return "bg79_vo_SAY_Battlecries_21";
+        case 112203: return "bg79_vo_VSMR_Q001_00546725";
+        case 112204: return "bg79_vo_LMBT_Q401_00523875";
+        case 112205: return "bg79_vo_wyvern_v2_vo_ADD_008";
+        case 112206: return "bg79_vo_wyvern_v2_vo_ADD_008";
+        case 112207: return "bg79_vo_OLGD_Q603_01101145";
+        case 112208: return "bg79_vo_VO_OPRT_204113_0001";
+        case 112211: return "bg79_vo_GJHN_Q105_00417768";
+        case 112212: return "bg79_vo_GSAR_Q301_00484178";
+        case 112213: return "bg79_vo_KGBG_Q301_00486502";
+        case 112214: return "bg79_vo_WILY_Q302_00443324";
+        case 112215: return "bg79_vo_IRIS_Q604_01106159";
+        case 112403: return "bg79_vo_SAY_Battlecries_25";
+        case 112404: return "bg79_vo_SAY_Battlecries_25";
+        case 113208: return "bg79_vo_SAY_Battlecries_821";
+        case 113313: return "bg79_vo_SAY_Battlecries_part5_326";
+        case 122101: return "bg79_vo_BARN_Q102_00408798";
+        case 122102: return "bg79_vo_ROCH_MQ3035_01064844";
+        case 122103: return "bg79_vo_VO_JANT_300862_0253";
+        case 122104: return "bg79_vo_PHIL_PHILIPPA_01041424";
+        case 122105: return "bg79_vo_DJKS_MQ3035_01067766";
+        case 122106: return "bg79_vo_SHNI_Q602_01119358";
+        case 122107: return "bg79_vo_TRSS_Q310_00545347";
+        case 122108: return "bg79_vo_KEIR_KEIRA_00475332";
+        case 122201: return "bg79_vo_SAY_Battlecries_5";
+        case 122202: return "bg79_vo_SAY_Battlecries_9";
+        case 122203: return "bg79_vo_TALA_SQ315_01067599";
+        case 122204: return "bg79_vo_VESS_MQ3035_01064809";
+        case 122205: return "bg79_vo_SAY_Battlecries_29";
+        case 122206: return "bg79_vo_VO_SABR_200216_0037";
+        case 122207: return "bg79_vo_VO_DETM_200182_0001";
+        case 122208: return "bg79_vo_VO_STEN_200098_0258";
+        case 122209: return "bg79_vo_TRL1_MQ1022_00466604";
+        case 122210: return "bg79_vo_SAY_Battlecries_37";
+        case 122211: return "bg79_vo_MGLA_MARGARITTA_01012961";
+        case 122212: return "bg79_vo_SAY_Battlecries_42";
+        case 122213: return "bg79_vo_VO_ODRI_200481_0002";
+        case 122214: return "bg79_vo_SAY_Battlecries_46";
+        case 122216: return "bg79_vo_SAY_Battlecries_part3_21";
+        case 122306: return "bg79_vo_VO_ZDZI_003478_0007";
+        case 122307: return "bg79_vo_VO_NG01_003478_0008";
+        case 122308: return "bg79_vo_RES1_VSET_00508237";
+        case 122309: return "bg79_vo_VO_KG01_200564_0001";
+        case 122310: return "bg79_vo_VO_RS01_101992_0004";
+        case 122311: return "bg79_vo_VO_RS03_106543_0003";
+        case 122312: return "bg79_vo_NCIW1_VSET_00564889";
+        case 122313: return "bg79_vo_VO_KG06_200420_0005";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice1_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 122314: return "bg79_vo_VO_KG02_200565_0005";
+        case 122316: return "bg79_vo_TBAN2_VSET_00591990";
+        case 122317: return "bg79_vo_REOF1_VSET_00516089";
+        case 122318: return "bg79_vo_VO_KE01_203352_0004";
+        case 122403: return "bg79_vo_SAY_Battlecries_819";
+        case 123301: return "bg79_vo_SAY_Battlecries_part5_320";
+        case 131101: return "bg79_vo_ERDN_EREDIN_01040754";
+        case 131102: return "bg79_vo_GEEL_Q311_00312236";
+        case 132101: return "bg79_vo_VO_DRUG_200317_0011";
+        case 132102: return "bg79_vo_IMLR_Q111_01062046";
+        case 132104: return "bg79_vo_SAY_Battlecries_189";
+        case 132105: return "bg79_vo_AVLC_Q311_00454814";
+        case 132108: return "bg79_vo_SCC3_VSET_01053091";
+        case 132206: return "bg79_vo_WHSP_Q105_00382577";
+        case 132207: return "bg79_vo_BREW_Q105_00531820";
+        case 132208: return "bg79_vo_WEAV_Q105_00531814";
+        case 132211: return "bg79_vo_nekker_scream_006";
+        case 132212: return "bg79_vo_ice_giant_aggro06";
+        case 132214: return "bg79_vo_WHW1_Q104_00555148";
+        case 132215: return "bg79_vo_MRRR_Q602_01116657";
+        case 132305: return "bg79_vo_nekker_attack_004";
+        case 132309: return "bg79_vo_SAY_Battlecries_792";
+        case 132310: return "bg79_vo_SAY_Battlecries_796";
+        case 142102: return "bg79_vo_SAY_Battlecries_139";
+        case 142103: return "bg79_vo_VO_IORW_100241_4474";
+        case 142104: return "bg79_vo_SAY_Battlecries_142";
+        case 142105: return "bg79_vo_ZOLT_Q310_01062198";
+        case 142106: return "bg79_vo_SAY_Battlecries_152";
+        case 142107: return "bg79_vo_SAY_Battlecries_170";
+        case 142108: return "bg79_vo_SAY_Battlecries_186";
+        case 142201: return "bg79_vo_SAY_Battlecries_155";
+        case 142202: return "bg79_vo_IDEM_Q401_00532088";
+        case 142203: return "bg79_vo_SAY_Battlecries_771";
+        case 142204: return "bg79_vo_SAY_Battlecries_776";
+        case 142206: return "bg79_vo_SAY_Battlecries_160";
+        case 142207: return "bg79_vo_SAY_Battlecries_161";
+        case 142208: return "bg79_vo_SAY_Battlecries_164";
+        case 142209: return "bg79_vo_SAY_Battlecries_167";
+        case 142210: return "bg79_vo_VO_MALN_106817_0005";
+        case 142211: return "bg79_vo_SAY_Battlecries_183";
+        case 142212: return "bg79_vo_SAY_Battlecries_33";
+        case 142213: return "bg79_vo_SAY_Battlecries_784";
+        case 142214: return "bg79_vo_SAY_Battlecries_831";
+        case 142301: return "bg79_vo_VSCF2_VSET_00523670";
+        case 142302: return "bg79_vo_VO_SF01_102746_0038";
+        case 142303: return "bg79_vo_VO_SF02_101662_0066";
+        case 142304: return "bg79_vo_VO_SWF1_100532_0009";
+        case 142306: return "bg79_vo_SCD1_VSET_00525279";
+        case 142307: return "bg79_vo_VO_SMV2_202544_0022";
+        case 142308: return "bg79_vo_VO_SWV2_202544_0023";
+        case 142309: return "bg79_vo_VO_SF01_107685_0001";
+        case 142310: return "bg79_vo_SAY_Battlecries_801";
+        case 142311: return "bg79_vo_SCD1_VSET_00526102";
+        case 142312: return "bg79_vo_VBAN1_MQ1005_00358151";
+        case 142313: return "bg79_vo_SAY_Battlecries_part2_2";
+        case 142314: return "bg79_vo_VO_SWV1_202968_0006";
+        case 142315: return "bg79_vo_SAY_Battlecries_part2_5";
+        case 142316: return "bg79_vo_VO_SWV5_202972_0007";
+        case 142317: return "bg79_vo_SCD34_VSET_01013381";
+        case 142401: return "bg79_vo_SAY_Battlecries_788";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice2_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 152101: return "bg79_vo_HJAL_HJALMAR_01037900";
+        case 152103: return "bg79_vo_MOUS_Q210_00558067";
+        case 152105: return "bg79_vo_SAY_Battlecries_205";
+        case 152106: return "bg79_vo_LUTM_LUGOS_00437813";
+        case 152107: return "bg79_vo_SAY_Battlecries_202";
+        case 152201: return "bg79_vo_LUTG_LUGOS_01038779";
+        case 152202: return "bg79_vo_TRL3_FF205_01053125";
+        case 152203: return "bg79_vo_SAY_Battlecries_804";
+        case 152204: return "bg79_vo_DONR_DONAR_01037055";
+        case 152205: return "bg79_vo_SBR1_VSET_00527986";
+        case 152206: return "bg79_vo_SAY_Battlecries_828";
+        case 152207: return "bg79_vo_HOLG_HOLGER_01038014";
+        case 152208: return "bg79_vo_SWO4_MQ2038_00507987";
+        case 152209: return "bg79_vo_MRKV_SQ201_00499647";
+        case 152211: return "bg79_vo_SPR1_SHOP_00437650";
+        case 152213: return "bg79_vo_SAY_Battlecries_208";
+        case 152214: return "bg79_vo_UDAL_Q201_00166303";
+        case 152301: return "bg79_vo_SBE2_VSET_00536513";
+        case 152302: return "bg79_vo_SBE1_Q206_00413021";
+        case 152303: return "bg79_vo_SGD2_CHAT2_00165312";
+        case 152304: return "bg79_vo_SGD6_VSET_00544491";
+        case 152305: return "bg79_vo_SBD3_MQ2034_01013429";
+        case 152306: return "bg79_vo_SBD1_MQ2002_00442097";
+        case 152308: return "bg79_vo_DROG_BARD_01036857";
+        case 152310: return "bg79_vo_SPR2_VSET_00553534";
+        case 152311: return "bg79_vo_SAR3_CHAT_01050115";
+        case 152312: return "bg79_vo_SAY_Battlecries_807";
+        case 152313: return "bg79_vo_SGD2_VSET_00526547";
+        case 152315: return "bg79_vo_SWR5_VSET_00535924";
+        case 152316: return "bg79_vo_SGD1_CHAT_01024106";
+        case 152317: return "bg79_vo_SAR1_SHOP_00422532";
+        case 152318: return "bg79_vo_SAY_Battlecries_part3_1";
+        case 152402: return "bg79_vo_SAY_Battlecries_199";
+        case 162101: return "bg79_vo_LETO_LETHO_01038588";
+        case 162102: return "bg79_vo_SAY_Battlecries_58";
+        case 162103: return "bg79_vo_SAY_Battlecries_106";
+        case 162104: return "bg79_vo_SAY_Battlecries_69";
+        case 162105: return "bg79_vo_SAY_Battlecries_72";
+        case 162106: return "bg79_vo_SAY_Battlecries_97";
+        case 162107: return "bg79_vo_SAY_Battlecries_67";
+        case 162108: return "bg79_vo_SAY_Battlecries_118";
+        case 162201: return "bg79_vo_SAY_Battlecries_78";
+        case 162202: return "bg79_vo_SAY_Battlecries_75";
+        case 162203: return "bg79_vo_VO_CNTH_303653_0335";
+        case 162204: return "bg79_vo_SAY_Battlecries_part3_426";
+        case 162205: return "bg79_vo_SAY_Battlecries_88";
+        case 162206: return "bg79_vo_SAY_Battlecries_100";
+        case 162207: return "bg79_vo_VO_NM01_200057_0187";
+        case 162208: return "bg79_vo_SAY_Battlecries_112";
+        case 162209: return "bg79_vo_SAY_Battlecries_115";
+        case 162210: return "bg79_vo_SAY_Battlecries_127";
+        case 162211: return "bg79_vo_SAY_Battlecries_part3_17";
+        case 162212: return "bg79_vo_SAY_Battlecries_part3_105";
+        case 162213: return "bg79_vo_SAY_Battlecries_part3_109";
+        case 162301: return "bg79_vo_SAY_Battlecries_part3_417";
+        case 162303: return "bg79_vo_NILF4_CHAT_01051421";
+        case 162304: return "bg79_vo_SAY_Battlecries_part3_429";
+        case 162305: return "bg79_vo_NILF3_VSET_00514109";
+        case 162307: return "bg79_vo_NILFP2_VSET_00592094";
+        case 162308: return "bg79_vo_NIOF1_VSET_00524263";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice3_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 162309: return "bg79_vo_SAY_Battlecries_part3_438";
+        case 162310: return "bg79_vo_NILF2_VSET_00513914";
+        case 162311: return "bg79_vo_NILF3_VSET_00514091";
+        case 162312: return "bg79_vo_NILF2_Q505_00576169";
+        case 162313: return "bg79_vo_NILF2_VSET_00513907";
+        case 162314: return "bg79_vo_NIS1_Q002_01048548";
+        case 162315: return "bg79_vo_NIN4_VSET_01049576";
+        case 162316: return "bg79_vo_MAG1_SHOP_00423227";
+        case 162318: return "bg79_vo_SAY_Battlecries_part3_441";
+        case 162401: return "bg79_vo_SAY_Battlecries_part3_385";
+        case 200026: return "bg79_vo_SAY_Battlecries_part3_43";
+        case 200028: return "bg79_vo_SAY_Battlecries_211";
+        case 200030: return "bg79_vo_SAY_Battlecries_220";
+        case 200031: return "bg79_vo_SAY_Battlecries_13";
+        case 200032: return "bg79_vo_SAY_Battlecries_91";
+        case 200033: return "bg79_vo_SAY_Battlecries_part3_376";
+        case 200036: return "bg79_vo_SAY_Battlecries_part3_5";
+        case 200039: return "bg79_vo_SAY_Battlecries_part3_310";
+        case 200040: return "bg79_vo_SAY_Battlecries_part3_314";
+        case 200042: return "bg79_vo_SAY_Battlecries_part3_39";
+        case 200043: return "bg79_vo_SAY_Battlecries_part3_129";
+        case 200044: return "bg79_vo_SAY_Battlecries_part3_35";
+        case 200046: return "bg79_vo_SAY_Battlecries_part3_410";
+        case 200048: return "bg79_vo_SAY_Battlecries_part3_13";
+        case 200050: return "bg79_vo_SAY_Battlecries_109";
+        case 200055: return "bg79_vo_SAY_Battlecries_part3_255";
+        case 200062: return "bg79_vo_SAY_Battlecries_part3_154";
+        case 200071: return "bg79_vo_SAY_Battlecries_96";
+        case 200080: return "bg79_vo_SAY_Battlecries_part3_290";
+        case 200081: return "bg79_vo_SAY_Battlecries_part3_121";
+        case 200083: return "bg79_vo_SAY_Battlecries_part3_264";
+        case 200087: return "bg79_vo_SAY_Battlecries_part3_184";
+        case 200088: return "bg79_vo_SAY_Battlecries_part3_175";
+        case 200089: return "bg79_vo_SAY_Battlecries_part3_167";
+        case 200091: return "bg79_vo_SAY_Battlecries_part3_162";
+        case 200098: return "bg79_vo_SAY_Battlecries_part3_201";
+        case 200112: return "bg79_vo_SAY_Battlecries_part3_93";
+        case 200115: return "bg79_vo_SAY_Battlecries_part3_362";
+        case 200118: return "bg79_vo_SAY_Battlecries_part3_356";
+        case 200124: return "bg79_vo_SAY_Battlecries_part3_337";
+        case 200132: return "bg79_vo_SAY_Battlecries_part3_223";
+        case 200135: return "bg79_vo_SAY_Battlecries_part3_318";
+        case 200136: return "bg79_vo_SAY_Battlecries_part3_322";
+        case 200138: return "bg79_vo_SAY_Battlecries_part3_326";
+        case 200144: return "bg79_vo_SAY_Battlecries_part5_26";
+        case 200145: return "bg79_vo_SAY_Battlecries_part3_71";
+        case 200146: return "bg79_vo_SAY_Battlecries_part3_75";
+        case 200147: return "bg79_vo_SAY_Battlecries_part3_87";
+        case 200149: return "bg79_vo_SAY_Battlecries_part3_79";
+        case 200159: return "bg79_vo_SAY_Battlecries_193";
+        case 200160: return "bg79_vo_CRCH_CRACH_01001923";
+        case 200161: return "bg79_vo_SAY_Battlecries_196";
+        case 200162: return "bg79_vo_SAY_Battlecries_236";
+        case 200163: return "bg79_vo_SAY_Battlecries_52";
+        case 200164: return "bg79_vo_SAY_Battlecries_55";
+        case 200165: return "bg79_vo_SAY_Battlecries_130";
+        case 200166: return "bg79_vo_SAY_Battlecries_133";
+        case 200167: return "bg79_vo_SAY_Battlecries_136";
+        case 200168: return "bg79_vo_VO_FLTS_000811_0001";
+        case 200169: return "bg79_vo_RADV_MQ3035_01064716";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice4_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 200170: return "bg79_vo_VO_HSLT_200098_0254";
+        case 200171: return "bg79_vo_SAY_Battlecries_226";
+        case 200177: return "bg79_vo_BECC_BECCA_01040275";
+        case 200209: return "bg79_vo_VO_TARM_200154_0192";
+        case 200212: return "bg79_vo_SAY_Battlecries_822";
+        case 200219: return "bg79_vo_SAY_Battlecries_part3_385";
+        case 200220: return "bg79_vo_WHSP_Q105_00419061";
+        case 200221: return "bg79_vo_BREW_Q105_00531820";
+        case 200222: return "bg79_vo_WEAV_Q503_00578937";
+        case 200227: return "bg79_vo_SAY_Battlecries_part3_435";
+        case 200235: return "bg79_vo_LMBT_Q401_00523875";
+        case 200236: return "bg79_vo_SAY_Battlecries_21";
+        case 200237: return "bg79_vo_VSMR_Q001_00546725";
+        case 200293: return "bg79_vo_SAY_Battlecries_part4_93";
+        case 200294: return "bg79_vo_SAY_Battlecries_part5_338";
+        case 200296: return "bg79_vo_SAY_Battlecries_part3_379";
+        case 200299: return "bg79_vo_SAY_Battlecries_part3_407";
+        case 200518: return "bg79_vo_SAY_Battlecries_part3_382";
+        case 200520: return "bg79_vo_HTRI_HATTORI_01032235";
+        case 200523: return "bg79_vo_SAY_Battlecries_part4_244";
+        case 200528: return "bg79_vo_SAY_Battlecries_part3_83";
+        case 200529: return "bg79_vo_SAY_Battlecries_part3_401";
+        case 200534: return "bg79_vo_SAY_Battlecries_part3_404";
+        case 200535: return "bg79_vo_SAY_Battlecries_part3_398";
+        case 200540: return "bg79_vo_SAY_Battlecries_part4_78";
+        case 201523: return "bg79_vo_SAY_Battlecries_1";
+        case 201559: return "bg79_vo_SAY_Battlecries_part4_98";
+        case 201578: return "bg79_vo_SAY_Battlecries_part3_395";
+        case 201580: return "bg79_vo_SAY_Battlecries_part3_432";
+        case 201587: return "bg79_vo_SAY_Battlecries_part5_1";
+        case 201589: return "bg79_vo_SAY_Battlecries_part3_278";
+        case 201595: return "bg79_vo_SAY_Battlecries_part3_193";
+        case 201597: return "bg79_vo_SAY_Battlecries_part3_47";
+        case 201601: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 201603: return "bg79_vo_LETO_SQ102_00590678";
+        case 201609: return "bg79_vo_SAY_Battlecries_part4_103";
+        case 201611: return "bg79_vo_VO_IORW_100241_4474";
+        case 201612: return "bg79_vo_SAY_Battlecries_part4_113";
+        case 201615: return "bg79_vo_SAY_Battlecries_139";
+        case 201616: return "bg79_vo_SAY_Battlecries_part3_359";
+        case 201617: return "bg79_vo_SAY_Battlecries_part5_32";
+        case 201618: return "bg79_vo_SAY_Battlecries_part3_117";
+        case 201620: return "bg79_vo_SAY_Battlecries_part5_7";
+        case 201621: return "bg79_vo_SAY_Battlecries_part5_14";
+        case 201622: return "bg79_vo_SAY_Battlecries_part3_9";
+        case 201624: return "bg79_vo_SAY_Battlecries_part5_38";
+        case 201625: return "bg79_vo_SAY_Battlecries_part5_44";
+        case 201626: return "bg79_vo_CIRI_CIRILLA_01040548";
+        case 201627: return "bg79_vo_SAY_Battlecries_part4_168";
+        case 201628: return "bg79_vo_SAY_Battlecries_part5_56";
+        case 201630: return "bg79_vo_SAY_Battlecries_part5_50";
+        case 201636: return "bg79_vo_SAY_Battlecries_part5_68";
+        case 201638: return "bg79_vo_SAY_Battlecries_part4_88";
+        case 201644: return "bg79_vo_SAY_Battlecries_part5_20";
+        case 201646: return "bg79_vo_SAY_Battlecries_232";
+        case 201650: return "bg79_vo_VO_SABR_200216_0101";
+        case 201664: return "bg79_vo_SAY_Battlecries_part4_256";
+        case 201676: return "bg79_vo_SAY_Battlecries_part4_34";
+        case 201677: return "bg79_vo_SAY_Battlecries_part4_86";
+        case 201753: return "bg79_vo_SAY_Battlecries_part4_86";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice5_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 201772: return "bg79_vo_SAY_Battlecries_1";
+        case 201773: return "bg79_vo_SAY_Battlecries_17";
+        case 201774: return "bg79_vo_SAY_Battlecries_5";
+        case 201776: return "bg79_vo_SAY_Battlecries_5";
+        case 201777: return "bg79_vo_ROCH_ROCHE_00541126";
+        case 201778: return "bg79_vo_BECC_BECCA_01040275";
+        case 201779: return "bg79_vo_SAY_Battlecries_164";
+        case 201780: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 201781: return "bg79_vo_SAY_Battlecries_851";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceDuration_Universal_it(id : int) : float
+{
+    if (id <= 122313) return BetaGwentAudioVoiceDuration0_Universal_it(id);
+    if (id <= 142401) return BetaGwentAudioVoiceDuration1_Universal_it(id);
+    if (id <= 162308) return BetaGwentAudioVoiceDuration2_Universal_it(id);
+    if (id <= 200169) return BetaGwentAudioVoiceDuration3_Universal_it(id);
+    if (id <= 201753) return BetaGwentAudioVoiceDuration4_Universal_it(id);
+    if (id <= 201781) return BetaGwentAudioVoiceDuration5_Universal_it(id);
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration0_Universal_it(id : int) : float
+{
+    switch (id)
+    {
+        case 112101: return 1.589f;
+        case 112102: return 2.613f;
+        case 112103: return 2.613f;
+        case 112104: return 2.903f;
+        case 112105: return 3.115f;
+        case 112106: return 2.000f;
+        case 112108: return 2.757f;
+        case 112109: return 1.471f;
+        case 112110: return 1.589f;
+        case 112111: return 2.613f;
+        case 112112: return 1.614f;
+        case 112113: return 2.757f;
+        case 112201: return 2.976f;
+        case 112202: return 1.325f;
+        case 112203: return 1.898f;
+        case 112204: return 2.707f;
+        case 112205: return 1.430f;
+        case 112206: return 1.430f;
+        case 112207: return 2.054f;
+        case 112208: return 2.429f;
+        case 112211: return 2.926f;
+        case 112212: return 1.352f;
+        case 112213: return 1.843f;
+        case 112214: return 3.105f;
+        case 112215: return 1.729f;
+        case 112403: return 2.091f;
+        case 112404: return 2.091f;
+        case 113208: return 2.151f;
+        case 113313: return 2.437f;
+        case 122101: return 2.003f;
+        case 122102: return 2.411f;
+        case 122103: return 2.235f;
+        case 122104: return 2.122f;
+        case 122105: return 2.657f;
+        case 122106: return 1.873f;
+        case 122107: return 2.000f;
+        case 122108: return 1.976f;
+        case 122201: return 2.569f;
+        case 122202: return 1.744f;
+        case 122203: return 3.268f;
+        case 122204: return 2.690f;
+        case 122205: return 1.909f;
+        case 122206: return 1.980f;
+        case 122207: return 2.234f;
+        case 122208: return 1.696f;
+        case 122209: return 3.090f;
+        case 122210: return 4.031f;
+        case 122211: return 1.527f;
+        case 122212: return 2.843f;
+        case 122213: return 3.310f;
+        case 122214: return 2.330f;
+        case 122216: return 1.646f;
+        case 122306: return 2.810f;
+        case 122307: return 1.268f;
+        case 122308: return 2.243f;
+        case 122309: return 0.883f;
+        case 122310: return 1.708f;
+        case 122311: return 1.436f;
+        case 122312: return 1.576f;
+        case 122313: return 0.913f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration1_Universal_it(id : int) : float
+{
+    switch (id)
+    {
+        case 122314: return 2.250f;
+        case 122316: return 2.173f;
+        case 122317: return 1.812f;
+        case 122318: return 2.603f;
+        case 122403: return 1.946f;
+        case 123301: return 2.828f;
+        case 131101: return 2.638f;
+        case 131102: return 2.347f;
+        case 132101: return 2.730f;
+        case 132102: return 3.264f;
+        case 132104: return 2.451f;
+        case 132105: return 1.614f;
+        case 132108: return 2.540f;
+        case 132206: return 3.643f;
+        case 132207: return 3.671f;
+        case 132208: return 3.653f;
+        case 132211: return 1.467f;
+        case 132212: return 1.894f;
+        case 132214: return 2.685f;
+        case 132215: return 1.501f;
+        case 132305: return 1.250f;
+        case 132309: return 2.126f;
+        case 132310: return 1.398f;
+        case 142102: return 2.128f;
+        case 142103: return 1.011f;
+        case 142104: return 2.549f;
+        case 142105: return 1.471f;
+        case 142106: return 1.261f;
+        case 142107: return 2.725f;
+        case 142108: return 1.632f;
+        case 142201: return 2.240f;
+        case 142202: return 2.889f;
+        case 142203: return 2.618f;
+        case 142204: return 1.487f;
+        case 142206: return 2.248f;
+        case 142207: return 2.439f;
+        case 142208: return 2.098f;
+        case 142209: return 2.446f;
+        case 142210: return 2.742f;
+        case 142211: return 1.573f;
+        case 142212: return 2.862f;
+        case 142213: return 3.108f;
+        case 142214: return 1.856f;
+        case 142301: return 1.753f;
+        case 142302: return 3.185f;
+        case 142303: return 1.367f;
+        case 142304: return 2.336f;
+        case 142306: return 2.004f;
+        case 142307: return 1.812f;
+        case 142308: return 1.860f;
+        case 142309: return 2.739f;
+        case 142310: return 1.903f;
+        case 142311: return 2.126f;
+        case 142312: return 3.198f;
+        case 142313: return 1.848f;
+        case 142314: return 1.756f;
+        case 142315: return 1.398f;
+        case 142316: return 2.319f;
+        case 142317: return 1.138f;
+        case 142401: return 1.517f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration2_Universal_it(id : int) : float
+{
+    switch (id)
+    {
+        case 152101: return 2.008f;
+        case 152103: return 2.843f;
+        case 152105: return 2.904f;
+        case 152106: return 1.754f;
+        case 152107: return 2.400f;
+        case 152201: return 3.170f;
+        case 152202: return 2.059f;
+        case 152203: return 2.863f;
+        case 152204: return 2.317f;
+        case 152205: return 1.471f;
+        case 152206: return 2.143f;
+        case 152207: return 2.265f;
+        case 152208: return 2.285f;
+        case 152209: return 3.522f;
+        case 152211: return 1.292f;
+        case 152213: return 1.811f;
+        case 152214: return 1.086f;
+        case 152301: return 2.699f;
+        case 152302: return 3.044f;
+        case 152303: return 3.179f;
+        case 152304: return 1.159f;
+        case 152305: return 3.448f;
+        case 152306: return 1.245f;
+        case 152308: return 1.945f;
+        case 152310: return 2.479f;
+        case 152311: return 2.086f;
+        case 152312: return 1.246f;
+        case 152313: return 2.488f;
+        case 152315: return 2.178f;
+        case 152316: return 2.091f;
+        case 152317: return 2.327f;
+        case 152318: return 2.634f;
+        case 152402: return 4.576f;
+        case 162101: return 2.192f;
+        case 162102: return 1.644f;
+        case 162103: return 2.273f;
+        case 162104: return 1.786f;
+        case 162105: return 2.268f;
+        case 162106: return 1.614f;
+        case 162107: return 2.233f;
+        case 162108: return 2.804f;
+        case 162201: return 2.239f;
+        case 162202: return 1.766f;
+        case 162203: return 1.467f;
+        case 162204: return 2.156f;
+        case 162205: return 2.063f;
+        case 162206: return 1.445f;
+        case 162207: return 1.993f;
+        case 162208: return 1.486f;
+        case 162209: return 2.700f;
+        case 162210: return 2.196f;
+        case 162211: return 2.667f;
+        case 162212: return 2.606f;
+        case 162213: return 2.562f;
+        case 162301: return 3.250f;
+        case 162303: return 1.669f;
+        case 162304: return 1.736f;
+        case 162305: return 0.741f;
+        case 162307: return 1.291f;
+        case 162308: return 2.332f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration3_Universal_it(id : int) : float
+{
+    switch (id)
+    {
+        case 162309: return 2.473f;
+        case 162310: return 1.614f;
+        case 162311: return 1.370f;
+        case 162312: return 1.150f;
+        case 162313: return 1.356f;
+        case 162314: return 2.445f;
+        case 162315: return 1.788f;
+        case 162316: return 3.023f;
+        case 162318: return 2.406f;
+        case 162401: return 3.328f;
+        case 200026: return 4.264f;
+        case 200028: return 1.627f;
+        case 200030: return 1.457f;
+        case 200031: return 2.631f;
+        case 200032: return 2.134f;
+        case 200033: return 1.592f;
+        case 200036: return 2.276f;
+        case 200039: return 1.052f;
+        case 200040: return 1.869f;
+        case 200042: return 2.048f;
+        case 200043: return 3.514f;
+        case 200044: return 0.957f;
+        case 200046: return 2.213f;
+        case 200048: return 2.003f;
+        case 200050: return 2.137f;
+        case 200055: return 2.654f;
+        case 200062: return 2.313f;
+        case 200071: return 2.490f;
+        case 200080: return 2.255f;
+        case 200081: return 2.494f;
+        case 200083: return 1.616f;
+        case 200087: return 2.603f;
+        case 200088: return 2.027f;
+        case 200089: return 2.909f;
+        case 200091: return 1.702f;
+        case 200098: return 2.215f;
+        case 200112: return 1.968f;
+        case 200115: return 1.363f;
+        case 200118: return 2.153f;
+        case 200124: return 1.885f;
+        case 200132: return 2.325f;
+        case 200135: return 2.446f;
+        case 200136: return 3.053f;
+        case 200138: return 3.866f;
+        case 200144: return 3.235f;
+        case 200145: return 2.588f;
+        case 200146: return 3.844f;
+        case 200147: return 1.749f;
+        case 200149: return 1.877f;
+        case 200159: return 2.901f;
+        case 200160: return 2.644f;
+        case 200161: return 2.178f;
+        case 200162: return 3.308f;
+        case 200163: return 3.162f;
+        case 200164: return 3.136f;
+        case 200165: return 2.318f;
+        case 200166: return 2.302f;
+        case 200167: return 2.905f;
+        case 200168: return 2.061f;
+        case 200169: return 2.217f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration4_Universal_it(id : int) : float
+{
+    switch (id)
+    {
+        case 200170: return 2.680f;
+        case 200171: return 3.010f;
+        case 200177: return 1.328f;
+        case 200209: return 1.469f;
+        case 200212: return 1.912f;
+        case 200219: return 3.328f;
+        case 200220: return 3.939f;
+        case 200221: return 3.671f;
+        case 200222: return 3.723f;
+        case 200227: return 3.223f;
+        case 200235: return 2.707f;
+        case 200236: return 1.325f;
+        case 200237: return 1.898f;
+        case 200293: return 3.849f;
+        case 200294: return 2.691f;
+        case 200296: return 3.690f;
+        case 200299: return 2.881f;
+        case 200518: return 1.150f;
+        case 200520: return 1.806f;
+        case 200523: return 1.773f;
+        case 200528: return 2.343f;
+        case 200529: return 2.296f;
+        case 200534: return 1.217f;
+        case 200535: return 2.045f;
+        case 200540: return 1.730f;
+        case 201523: return 2.613f;
+        case 201559: return 3.101f;
+        case 201578: return 2.276f;
+        case 201580: return 2.954f;
+        case 201587: return 1.619f;
+        case 201589: return 1.482f;
+        case 201595: return 2.782f;
+        case 201597: return 2.714f;
+        case 201601: return 2.757f;
+        case 201603: return 2.306f;
+        case 201609: return 1.169f;
+        case 201611: return 1.011f;
+        case 201612: return 1.883f;
+        case 201615: return 2.128f;
+        case 201616: return 2.169f;
+        case 201617: return 2.202f;
+        case 201618: return 2.217f;
+        case 201620: return 2.303f;
+        case 201621: return 2.844f;
+        case 201622: return 2.035f;
+        case 201624: return 2.097f;
+        case 201625: return 3.318f;
+        case 201626: return 2.401f;
+        case 201627: return 5.267f;
+        case 201628: return 2.703f;
+        case 201630: return 3.536f;
+        case 201636: return 0.679f;
+        case 201638: return 1.908f;
+        case 201644: return 2.215f;
+        case 201646: return 2.692f;
+        case 201650: return 0.982f;
+        case 201664: return 1.880f;
+        case 201676: return 0.601f;
+        case 201677: return 0.566f;
+        case 201753: return 0.566f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration5_Universal_it(id : int) : float
+{
+    switch (id)
+    {
+        case 201772: return 2.613f;
+        case 201773: return 1.225f;
+        case 201774: return 2.569f;
+        case 201776: return 2.569f;
+        case 201777: return 2.760f;
+        case 201778: return 1.328f;
+        case 201779: return 2.098f;
+        case 201780: return 2.757f;
+        case 201781: return 3.264f;
+        default: break;
+    }
+    return 0.0f;
+}
+
+function BetaGwentAudioEffect_Universal_it(id : int) : string
+{
+    if (id <= 122208) return BetaGwentAudioEffect0_Universal_it(id);
+    if (id <= 132304) return BetaGwentAudioEffect1_Universal_it(id);
+    if (id <= 152103) return BetaGwentAudioEffect2_Universal_it(id);
+    if (id <= 162211) return BetaGwentAudioEffect3_Universal_it(id);
+    if (id <= 200098) return BetaGwentAudioEffect4_Universal_it(id);
+    if (id <= 200457) return BetaGwentAudioEffect5_Universal_it(id);
+    if (id <= 201633) return BetaGwentAudioEffect6_Universal_it(id);
+    if (id <= 201817) return BetaGwentAudioEffect7_Universal_it(id);
+    return "";
+}
+function BetaGwentAudioEffect0_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 112101: return "bg79_fx_3395652692";
+        case 112102: return "bg79_fx_843060712";
+        case 112103: return "bg79_fx_3417224824";
+        case 112104: return "bg79_fx_898277553";
+        case 112105: return "bg79_fx_729252324";
+        case 112106: return "bg79_fx_1860557250";
+        case 112107: return "bg79_fx_714510181";
+        case 112108: return "bg79_fx_2626105800";
+        case 112109: return "bg79_fx_1852040582";
+        case 112110: return "bg79_fx_2541689051";
+        case 112111: return "bg79_fx_2362012063";
+        case 112112: return "bg79_fx_2524626359";
+        case 112113: return "bg79_fx_2942292010";
+        case 112201: return "bg79_fx_514482875";
+        case 112202: return "bg79_fx_1947806633";
+        case 112203: return "bg79_fx_1162524532";
+        case 112204: return "bg79_fx_514936602";
+        case 112205: return "bg79_fx_742380909";
+        case 112206: return "bg79_fx_2646226735";
+        case 112207: return "bg79_fx_4165426977";
+        case 112208: return "bg79_fx_1790304243";
+        case 112209: return "bg79_fx_1337068796";
+        case 112210: return "bg79_fx_2296117142";
+        case 112211: return "bg79_fx_3709520491";
+        case 112212: return "bg79_fx_2972894628";
+        case 112213: return "bg79_fx_3716756108";
+        case 112214: return "bg79_fx_519474258";
+        case 112215: return "bg79_fx_1630758310";
+        case 112401: return "bg79_fx_2790050995";
+        case 112402: return "bg79_fx_4262988425";
+        case 112403: return "bg79_fx_3108142615";
+        case 112404: return "bg79_fx_1144630390";
+        case 112405: return "bg79_fx_3695214425";
+        case 113102: return "bg79_fx_1574600827";
+        case 113201: return "bg79_fx_4222650809";
+        case 113206: return "bg79_fx_2231847513";
+        case 113207: return "bg79_fx_9080078";
+        case 113208: return "bg79_fx_3535926620";
+        case 113303: return "bg79_fx_4187462094";
+        case 113313: return "bg79_fx_1003645445";
+        case 113316: return "bg79_fx_3937828061";
+        case 113320: return "bg79_fx_4053812673";
+        case 113401: return "bg79_fx_4187462094";
+        case 113402: return "bg79_fx_4187462094";
+        case 122101: return "bg79_fx_3580922927";
+        case 122102: return "bg79_fx_1725897413";
+        case 122103: return "bg79_fx_2226063920";
+        case 122104: return "bg79_fx_7794445";
+        case 122105: return "bg79_fx_1081955402";
+        case 122106: return "bg79_fx_1612137249";
+        case 122107: return "bg79_fx_1395734064";
+        case 122108: return "bg79_fx_1929368006";
+        case 122201: return "bg79_fx_3953354843";
+        case 122202: return "bg79_fx_3773668558";
+        case 122203: return "bg79_fx_3562005998";
+        case 122204: return "bg79_fx_797142454";
+        case 122205: return "bg79_fx_718436193";
+        case 122206: return "bg79_fx_1837007562";
+        case 122207: return "bg79_fx_1769973425";
+        case 122208: return "bg79_fx_3312738020";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect1_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 122209: return "bg79_fx_2429636229";
+        case 122210: return "bg79_fx_300052383";
+        case 122211: return "bg79_fx_697011446";
+        case 122212: return "bg79_fx_607530292";
+        case 122213: return "bg79_fx_2058031734";
+        case 122214: return "bg79_fx_3465870946";
+        case 122216: return "bg79_fx_599458487";
+        case 122301: return "bg79_fx_3746294386";
+        case 122302: return "bg79_fx_1793989314";
+        case 122303: return "bg79_fx_3354855694";
+        case 122304: return "bg79_fx_1276046663";
+        case 122306: return "bg79_fx_1316872214";
+        case 122307: return "bg79_fx_1014180088";
+        case 122308: return "bg79_fx_4170618816";
+        case 122309: return "bg79_fx_3348587284";
+        case 122310: return "bg79_fx_4198348460";
+        case 122311: return "bg79_fx_1810880940";
+        case 122312: return "bg79_fx_1333662702";
+        case 122313: return "bg79_fx_1245156552";
+        case 122314: return "bg79_fx_3683057321";
+        case 122315: return "bg79_fx_3268082076";
+        case 122316: return "bg79_fx_1547581519";
+        case 122317: return "bg79_fx_1866548680";
+        case 122318: return "bg79_fx_4098545935";
+        case 122401: return "bg79_fx_3606443419";
+        case 122402: return "bg79_fx_3695318591";
+        case 122403: return "bg79_fx_1635422172";
+        case 123201: return "bg79_fx_1194450298";
+        case 123301: return "bg79_fx_3334557791";
+        case 131101: return "bg79_fx_2945270290";
+        case 131102: return "bg79_fx_2737476773";
+        case 132101: return "bg79_fx_3386564296";
+        case 132102: return "bg79_fx_2628887005";
+        case 132103: return "bg79_fx_170458611";
+        case 132104: return "bg79_fx_2388737177";
+        case 132105: return "bg79_fx_3025942366";
+        case 132106: return "bg79_fx_3026324263";
+        case 132107: return "bg79_fx_2226889185";
+        case 132108: return "bg79_fx_1434419550";
+        case 132201: return "bg79_fx_1260139933";
+        case 132202: return "bg79_fx_1046228664";
+        case 132203: return "bg79_fx_3422587878";
+        case 132204: return "bg79_fx_1406685045";
+        case 132205: return "bg79_fx_4173224394";
+        case 132206: return "bg79_fx_2245065751";
+        case 132207: return "bg79_fx_3120725056";
+        case 132208: return "bg79_fx_1735544563";
+        case 132209: return "bg79_fx_790759647";
+        case 132211: return "bg79_fx_3758437398";
+        case 132212: return "bg79_fx_2936760412";
+        case 132213: return "bg79_fx_4235389783";
+        case 132214: return "bg79_fx_763257575";
+        case 132215: return "bg79_fx_1377090531";
+        case 132216: return "bg79_fx_2129505533";
+        case 132217: return "bg79_fx_2142835913";
+        case 132218: return "bg79_fx_420309497";
+        case 132301: return "bg79_fx_3036675114";
+        case 132302: return "bg79_fx_890517457";
+        case 132303: return "bg79_fx_314595938";
+        case 132304: return "bg79_fx_455735080";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect2_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 132305: return "bg79_fx_3210037717";
+        case 132306: return "bg79_fx_3450648124";
+        case 132307: return "bg79_fx_1044570009";
+        case 132308: return "bg79_fx_2850556323";
+        case 132309: return "bg79_fx_3540597125";
+        case 132310: return "bg79_fx_3313104602";
+        case 132312: return "bg79_fx_4278347594";
+        case 132313: return "bg79_fx_1742122634";
+        case 132314: return "bg79_fx_2744585176";
+        case 132315: return "bg79_fx_2833673135";
+        case 132316: return "bg79_fx_798399388";
+        case 132402: return "bg79_fx_2054496824";
+        case 132403: return "bg79_fx_1602950149";
+        case 132404: return "bg79_fx_2624758006";
+        case 132405: return "bg79_fx_2361434004";
+        case 132406: return "bg79_fx_783529319";
+        case 132407: return "bg79_fx_2304783865";
+        case 132408: return "bg79_fx_65010424";
+        case 132409: return "bg79_fx_2384069016";
+        case 133301: return "bg79_fx_2335519656";
+        case 133302: return "bg79_fx_3082327472";
+        case 142101: return "bg79_fx_3603721956";
+        case 142102: return "bg79_fx_1531303984";
+        case 142103: return "bg79_fx_2825748729";
+        case 142104: return "bg79_fx_74233409";
+        case 142105: return "bg79_fx_1825710439";
+        case 142106: return "bg79_fx_1094876401";
+        case 142107: return "bg79_fx_3822054485";
+        case 142108: return "bg79_fx_2991740440";
+        case 142201: return "bg79_fx_1485513089";
+        case 142202: return "bg79_fx_1879690864";
+        case 142203: return "bg79_fx_2518805740";
+        case 142206: return "bg79_fx_526114196";
+        case 142207: return "bg79_fx_3218830508";
+        case 142209: return "bg79_fx_2982000626";
+        case 142211: return "bg79_fx_743392900";
+        case 142212: return "bg79_fx_2818418645";
+        case 142213: return "bg79_fx_1414677961";
+        case 142214: return "bg79_fx_1779347853";
+        case 142301: return "bg79_fx_1113233163";
+        case 142302: return "bg79_fx_210311833";
+        case 142303: return "bg79_fx_3326672827";
+        case 142304: return "bg79_fx_1839290106";
+        case 142306: return "bg79_fx_2611321864";
+        case 142307: return "bg79_fx_438751169";
+        case 142308: return "bg79_fx_115159051";
+        case 142309: return "bg79_fx_2597020897";
+        case 142310: return "bg79_fx_2763610169";
+        case 142311: return "bg79_fx_960997288";
+        case 142312: return "bg79_fx_1507469969";
+        case 142313: return "bg79_fx_2858722056";
+        case 142314: return "bg79_fx_1188458162";
+        case 142315: return "bg79_fx_2059381696";
+        case 142316: return "bg79_fx_3812338627";
+        case 142317: return "bg79_fx_660494302";
+        case 142401: return "bg79_fx_370542386";
+        case 143201: return "bg79_fx_54701386";
+        case 143301: return "bg79_fx_3099162218";
+        case 152101: return "bg79_fx_4175951973";
+        case 152103: return "bg79_fx_1303041810";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect3_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 152104: return "bg79_fx_2566025232";
+        case 152105: return "bg79_fx_218930060";
+        case 152106: return "bg79_fx_743515151";
+        case 152107: return "bg79_fx_3552589037";
+        case 152109: return "bg79_fx_553152945";
+        case 152201: return "bg79_fx_305236487";
+        case 152202: return "bg79_fx_1661743351";
+        case 152203: return "bg79_fx_4167522615";
+        case 152204: return "bg79_fx_1516696404";
+        case 152205: return "bg79_fx_2007746145";
+        case 152206: return "bg79_fx_4260849741";
+        case 152207: return "bg79_fx_3101408448";
+        case 152208: return "bg79_fx_4059346259";
+        case 152209: return "bg79_fx_212947329";
+        case 152210: return "bg79_fx_1560462341";
+        case 152211: return "bg79_fx_4116062743";
+        case 152213: return "bg79_fx_3124783719";
+        case 152214: return "bg79_fx_1927858084";
+        case 152301: return "bg79_fx_3679954868";
+        case 152302: return "bg79_fx_235803829";
+        case 152303: return "bg79_fx_1698235724";
+        case 152304: return "bg79_fx_4066851032";
+        case 152305: return "bg79_fx_2080899675";
+        case 152306: return "bg79_fx_2308834113";
+        case 152308: return "bg79_fx_1712563289";
+        case 152309: return "bg79_fx_1243862547";
+        case 152310: return "bg79_fx_1196562944";
+        case 152311: return "bg79_fx_2012880390";
+        case 152312: return "bg79_fx_1849620901";
+        case 152313: return "bg79_fx_62872992";
+        case 152314: return "bg79_fx_2260915605";
+        case 152315: return "bg79_fx_211889999";
+        case 152316: return "bg79_fx_4019434355";
+        case 152317: return "bg79_fx_668038284";
+        case 152318: return "bg79_fx_460332697";
+        case 152401: return "bg79_fx_2759789487";
+        case 152402: return "bg79_fx_13642409";
+        case 152403: return "bg79_fx_3058600845";
+        case 152405: return "bg79_fx_1611020239";
+        case 152406: return "bg79_fx_2359930005";
+        case 153201: return "bg79_fx_1192221305";
+        case 162101: return "bg79_fx_2572655564";
+        case 162102: return "bg79_fx_2090593881";
+        case 162103: return "bg79_fx_459365841";
+        case 162104: return "bg79_fx_2852011005";
+        case 162105: return "bg79_fx_610559508";
+        case 162106: return "bg79_fx_2091470217";
+        case 162107: return "bg79_fx_1251964638";
+        case 162108: return "bg79_fx_3699137582";
+        case 162201: return "bg79_fx_1656765553";
+        case 162202: return "bg79_fx_3621920039";
+        case 162203: return "bg79_fx_3113802096";
+        case 162204: return "bg79_fx_3150303364";
+        case 162205: return "bg79_fx_956497982";
+        case 162206: return "bg79_fx_2322591249";
+        case 162207: return "bg79_fx_2117936302";
+        case 162208: return "bg79_fx_3250806960";
+        case 162209: return "bg79_fx_3843277547";
+        case 162210: return "bg79_fx_3115686636";
+        case 162211: return "bg79_fx_1135117597";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect4_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 162212: return "bg79_fx_2629806217";
+        case 162213: return "bg79_fx_2352033111";
+        case 162301: return "bg79_fx_511855046";
+        case 162302: return "bg79_fx_3851131680";
+        case 162303: return "bg79_fx_876020117";
+        case 162304: return "bg79_fx_615450887";
+        case 162305: return "bg79_fx_2117257051";
+        case 162306: return "bg79_fx_3039358424";
+        case 162307: return "bg79_fx_4088214341";
+        case 162308: return "bg79_fx_2462400718";
+        case 162309: return "bg79_fx_2290784264";
+        case 162310: return "bg79_fx_3737210697";
+        case 162311: return "bg79_fx_3524423994";
+        case 162312: return "bg79_fx_3192994382";
+        case 162313: return "bg79_fx_3001399220";
+        case 162314: return "bg79_fx_2698371145";
+        case 162315: return "bg79_fx_3945861007";
+        case 162316: return "bg79_fx_2620476933";
+        case 162317: return "bg79_fx_2622121347";
+        case 162318: return "bg79_fx_1727178084";
+        case 162401: return "bg79_fx_3934557805";
+        case 162402: return "bg79_fx_3157388991";
+        case 200020: return "bg79_fx_1059850726";
+        case 200022: return "bg79_fx_4187523245";
+        case 200026: return "bg79_fx_1182087113";
+        case 200028: return "bg79_fx_3118774416";
+        case 200030: return "bg79_fx_1549498878";
+        case 200031: return "bg79_fx_1066386275";
+        case 200032: return "bg79_fx_2778933433";
+        case 200033: return "bg79_fx_1594434705";
+        case 200036: return "bg79_fx_3913679887";
+        case 200037: return "bg79_fx_3677776796";
+        case 200038: return "bg79_fx_3364093792";
+        case 200039: return "bg79_fx_2280701854";
+        case 200040: return "bg79_fx_1315577947";
+        case 200041: return "bg79_fx_1975983488";
+        case 200042: return "bg79_fx_2129747007";
+        case 200043: return "bg79_fx_199111628";
+        case 200044: return "bg79_fx_2309540397";
+        case 200046: return "bg79_fx_3290737338";
+        case 200048: return "bg79_fx_2470625356";
+        case 200049: return "bg79_fx_2653839007";
+        case 200050: return "bg79_fx_1845083974";
+        case 200052: return "bg79_fx_2096972889";
+        case 200055: return "bg79_fx_3144355508";
+        case 200056: return "bg79_fx_3183373472";
+        case 200058: return "bg79_fx_3004523106";
+        case 200062: return "bg79_fx_4056401408";
+        case 200067: return "bg79_fx_2993996216";
+        case 200071: return "bg79_fx_3506695817";
+        case 200073: return "bg79_fx_1168520071";
+        case 200079: return "bg79_fx_1145845125";
+        case 200080: return "bg79_fx_145034249";
+        case 200081: return "bg79_fx_3485594715";
+        case 200083: return "bg79_fx_2849822196";
+        case 200087: return "bg79_fx_2492269067";
+        case 200088: return "bg79_fx_2027970317";
+        case 200089: return "bg79_fx_1431788866";
+        case 200091: return "bg79_fx_3326742544";
+        case 200098: return "bg79_fx_3455889460";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect5_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 200102: return "bg79_fx_3896640832";
+        case 200103: return "bg79_fx_698833918";
+        case 200104: return "bg79_fx_3697941869";
+        case 200105: return "bg79_fx_2477921360";
+        case 200112: return "bg79_fx_827673070";
+        case 200114: return "bg79_fx_1347151243";
+        case 200115: return "bg79_fx_59578087";
+        case 200118: return "bg79_fx_1462724796";
+        case 200124: return "bg79_fx_1245425858";
+        case 200132: return "bg79_fx_3451911606";
+        case 200135: return "bg79_fx_271085077";
+        case 200136: return "bg79_fx_2095947162";
+        case 200138: return "bg79_fx_1208904748";
+        case 200139: return "bg79_fx_2810674676";
+        case 200144: return "bg79_fx_4221182000";
+        case 200145: return "bg79_fx_2712173473";
+        case 200146: return "bg79_fx_151260701";
+        case 200147: return "bg79_fx_3523608578";
+        case 200149: return "bg79_fx_2745495503";
+        case 200154: return "bg79_fx_1408793683";
+        case 200158: return "bg79_fx_2932762600";
+        case 200159: return "bg79_fx_2643703843";
+        case 200160: return "bg79_fx_2681268150";
+        case 200161: return "bg79_fx_758500920";
+        case 200162: return "bg79_fx_168363967";
+        case 200163: return "bg79_fx_3314643367";
+        case 200164: return "bg79_fx_551784047";
+        case 200165: return "bg79_fx_3914426836";
+        case 200166: return "bg79_fx_654382569";
+        case 200167: return "bg79_fx_694443607";
+        case 200168: return "bg79_fx_376634067";
+        case 200169: return "bg79_fx_1669805897";
+        case 200170: return "bg79_fx_1323369845";
+        case 200171: return "bg79_fx_2823476682";
+        case 200177: return "bg79_fx_4152133840";
+        case 200209: return "bg79_fx_2540682936";
+        case 200212: return "bg79_fx_3578640335";
+        case 200218: return "bg79_fx_2759789487";
+        case 200219: return "bg79_fx_3934557805";
+        case 200220: return "bg79_fx_1861355436";
+        case 200221: return "bg79_fx_509805234";
+        case 200222: return "bg79_fx_734756496";
+        case 200223: return "bg79_fx_2648271288";
+        case 200227: return "bg79_fx_2763233827";
+        case 200228: return "bg79_fx_4263307925";
+        case 200233: return "bg79_fx_3244471482";
+        case 200235: return "bg79_fx_893102762";
+        case 200236: return "bg79_fx_1249031769";
+        case 200237: return "bg79_fx_3905627684";
+        case 200293: return "bg79_fx_302707243";
+        case 200294: return "bg79_fx_1855197648";
+        case 200295: return "bg79_fx_3428553790";
+        case 200296: return "bg79_fx_3283491899";
+        case 200299: return "bg79_fx_3410258784";
+        case 200300: return "bg79_fx_4225939140";
+        case 200301: return "bg79_fx_2646552586";
+        case 200307: return "bg79_fx_705079428";
+        case 200308: return "bg79_fx_2098895937";
+        case 200320: return "bg79_fx_2148182659";
+        case 200457: return "bg79_fx_1602253521";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect6_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 200502: return "bg79_fx_2189560840";
+        case 200518: return "bg79_fx_2826842583";
+        case 200519: return "bg79_fx_3149355844";
+        case 200520: return "bg79_fx_3870582423";
+        case 200523: return "bg79_fx_2638787903";
+        case 200528: return "bg79_fx_2733297292";
+        case 200529: return "bg79_fx_2044411266";
+        case 200530: return "bg79_fx_3218657141";
+        case 200532: return "bg79_fx_3467493194";
+        case 200534: return "bg79_fx_3649892210";
+        case 200535: return "bg79_fx_2301585369";
+        case 200539: return "bg79_fx_2057664872";
+        case 200540: return "bg79_fx_4078195304";
+        case 201523: return "bg79_fx_1738240167";
+        case 201559: return "bg79_fx_383348813";
+        case 201572: return "bg79_fx_928093079";
+        case 201573: return "bg79_fx_928093079";
+        case 201574: return "bg79_fx_928093079";
+        case 201576: return "bg79_fx_3257280898";
+        case 201578: return "bg79_fx_426366733";
+        case 201579: return "bg79_fx_2552033768";
+        case 201580: return "bg79_fx_4215366690";
+        case 201581: return "bg79_fx_264214796";
+        case 201582: return "bg79_fx_1705643005";
+        case 201583: return "bg79_fx_3301666287";
+        case 201584: return "bg79_fx_1772301427";
+        case 201585: return "bg79_fx_1092174218";
+        case 201587: return "bg79_fx_2153263156";
+        case 201589: return "bg79_fx_886436088";
+        case 201595: return "bg79_fx_2005942592";
+        case 201597: return "bg79_fx_2197086276";
+        case 201598: return "bg79_fx_130834792";
+        case 201599: return "bg79_fx_808785438";
+        case 201600: return "bg79_fx_2208595502";
+        case 201601: return "bg79_fx_1133501108";
+        case 201603: return "bg79_fx_2076616595";
+        case 201606: return "bg79_fx_3340179963";
+        case 201609: return "bg79_fx_3100197490";
+        case 201610: return "bg79_fx_2204062891";
+        case 201611: return "bg79_fx_3847358238";
+        case 201612: return "bg79_fx_598700268";
+        case 201613: return "bg79_fx_3457594024";
+        case 201615: return "bg79_fx_3356290799";
+        case 201616: return "bg79_fx_2969179751";
+        case 201617: return "bg79_fx_1681003615";
+        case 201618: return "bg79_fx_242626593";
+        case 201619: return "bg79_fx_4049938297";
+        case 201620: return "bg79_fx_828451047";
+        case 201621: return "bg79_fx_6420008";
+        case 201622: return "bg79_fx_2944625364";
+        case 201623: return "bg79_fx_995383832";
+        case 201624: return "bg79_fx_1133083862";
+        case 201625: return "bg79_fx_152104257";
+        case 201626: return "bg79_fx_539939818";
+        case 201627: return "bg79_fx_1811396259";
+        case 201628: return "bg79_fx_4276764203";
+        case 201630: return "bg79_fx_1596833807";
+        case 201631: return "bg79_fx_3668370841";
+        case 201632: return "bg79_fx_774960951";
+        case 201633: return "bg79_fx_3707205680";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect7_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 201635: return "bg79_fx_1965642969";
+        case 201636: return "bg79_fx_1305507018";
+        case 201638: return "bg79_fx_2465089435";
+        case 201639: return "bg79_fx_1885398964";
+        case 201642: return "bg79_fx_3032433713";
+        case 201643: return "bg79_fx_3139012559";
+        case 201644: return "bg79_fx_467976388";
+        case 201645: return "bg79_fx_2800663406";
+        case 201646: return "bg79_fx_569627432";
+        case 201647: return "bg79_fx_498171762";
+        case 201648: return "bg79_fx_41143281";
+        case 201650: return "bg79_fx_4133624602";
+        case 201653: return "bg79_fx_37523589";
+        case 201656: return "bg79_fx_2434224223";
+        case 201657: return "bg79_fx_1555453165";
+        case 201659: return "bg79_fx_1431587589";
+        case 201660: return "bg79_fx_2775893284";
+        case 201661: return "bg79_fx_3032580174";
+        case 201662: return "bg79_fx_2339672278";
+        case 201664: return "bg79_fx_37145074";
+        case 201676: return "bg79_fx_4230839019";
+        case 201677: return "bg79_fx_596493021";
+        case 201696: return "bg79_fx_2121222704";
+        case 201697: return "bg79_fx_3141758510";
+        case 201698: return "bg79_fx_1748759717";
+        case 201699: return "bg79_fx_2163368424";
+        case 201700: return "bg79_fx_3100370955";
+        case 201701: return "bg79_fx_2374244000";
+        case 201704: return "bg79_fx_2672669793";
+        case 201725: return "bg79_fx_4211756470";
+        case 201731: return "bg79_fx_1077351896";
+        case 201737: return "bg79_fx_189803036";
+        case 201743: return "bg79_fx_1985436563";
+        case 201748: return "bg79_fx_2067274392";
+        case 201749: return "bg79_fx_2488424434";
+        case 201753: return "bg79_fx_596493021";
+        case 201758: return "bg79_fx_1602253521";
+        case 201772: return "bg79_fx_1212383624";
+        case 201773: return "bg79_fx_2496638614";
+        case 201774: return "bg79_fx_3044471817";
+        case 201776: return "bg79_fx_3044471816";
+        case 201777: return "bg79_fx_416157938";
+        case 201778: return "bg79_fx_2347161295";
+        case 201780: return "bg79_fx_562867060";
+        case 201781: return "bg79_fx_3468192666";
+        case 201817: return "bg79_fx_6172555";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceVariant_Universal_it(id : int, roll : int) : string
+{
+    if(id <= 112203)return BetaGwentAudioVoiceVariantPart0_Universal_it(id,roll);
+    if(id <= 122101)return BetaGwentAudioVoiceVariantPart1_Universal_it(id,roll);
+    if(id <= 122208)return BetaGwentAudioVoiceVariantPart2_Universal_it(id,roll);
+    if(id <= 122313)return BetaGwentAudioVoiceVariantPart3_Universal_it(id,roll);
+    if(id <= 132207)return BetaGwentAudioVoiceVariantPart4_Universal_it(id,roll);
+    if(id <= 142108)return BetaGwentAudioVoiceVariantPart5_Universal_it(id,roll);
+    if(id <= 142302)return BetaGwentAudioVoiceVariantPart6_Universal_it(id,roll);
+    if(id <= 142401)return BetaGwentAudioVoiceVariantPart7_Universal_it(id,roll);
+    if(id <= 152211)return BetaGwentAudioVoiceVariantPart8_Universal_it(id,roll);
+    if(id <= 152316)return BetaGwentAudioVoiceVariantPart9_Universal_it(id,roll);
+    if(id <= 162204)return BetaGwentAudioVoiceVariantPart10_Universal_it(id,roll);
+    if(id <= 162308)return BetaGwentAudioVoiceVariantPart11_Universal_it(id,roll);
+    if(id <= 200032)return BetaGwentAudioVoiceVariantPart12_Universal_it(id,roll);
+    if(id <= 200081)return BetaGwentAudioVoiceVariantPart13_Universal_it(id,roll);
+    if(id <= 200144)return BetaGwentAudioVoiceVariantPart14_Universal_it(id,roll);
+    if(id <= 200169)return BetaGwentAudioVoiceVariantPart15_Universal_it(id,roll);
+    if(id <= 200294)return BetaGwentAudioVoiceVariantPart16_Universal_it(id,roll);
+    if(id <= 201587)return BetaGwentAudioVoiceVariantPart17_Universal_it(id,roll);
+    if(id <= 201622)return BetaGwentAudioVoiceVariantPart18_Universal_it(id,roll);
+    if(id <= 201753)return BetaGwentAudioVoiceVariantPart19_Universal_it(id,roll);
+    if(id <= 201781)return BetaGwentAudioVoiceVariantPart20_Universal_it(id,roll);
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart0_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 112101:
+        if(roll%100<25)return "bg79_vo_CIRI_CIRILLA_01040512";
+        if(roll%100<50)return "bg79_vo_CIRI_CIRILLA_01040548";
+        if(roll%100<75)return "bg79_vo_CIRI_Q111_00536478";
+        if(roll%100<100)return "bg79_vo_CIRI_Q310_00579530";
+        break;
+    case 112102:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 112103:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 112104:
+        if(roll%100<40)return "bg79_vo_REGI_Q702_01155230";
+        if(roll%100<60)return "bg79_vo_REGI_Q702_01155490";
+        if(roll%100<100)return "bg79_vo_REGI_Q702_01178597";
+        break;
+    case 112105:
+        if(roll%100<100)return "bg79_vo_katakan_taunt_short_003";
+        break;
+    case 112106:
+        if(roll%100<17)return "bg79_vo_TRSS_Q310_00545347";
+        if(roll%100<33)return "bg79_vo_VO_TRIS_100285_0008";
+        if(roll%100<50)return "bg79_vo_VO_TRIS_104122_2446";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_17";
+        if(roll%100<84)return "bg79_vo_SAY_Battlecries_18";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_19";
+        break;
+    case 112108:
+        if(roll%100<33)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<66)return "bg79_vo_YENN_YENNEFER_01041493";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041495";
+        break;
+    case 112109:
+        if(roll%100<24)return "bg79_vo_ZOLT_Q310_01062198";
+        if(roll%100<48)return "bg79_vo_ZOLT_Q403_00575678";
+        if(roll%100<72)return "bg79_vo_ZOLT_ZOLTAN_01040657";
+        if(roll%100<96)return "bg79_vo_ZOLT_ZOLTAN_01040651";
+        if(roll%100<100)return "bg79_vo_ZOLT_ZOLTAN_01040649";
+        break;
+    case 112110:
+        if(roll%100<25)return "bg79_vo_CIRI_CIRILLA_01040512";
+        if(roll%100<50)return "bg79_vo_CIRI_CIRILLA_01040548";
+        if(roll%100<75)return "bg79_vo_CIRI_Q111_00536478";
+        if(roll%100<100)return "bg79_vo_CIRI_Q310_00579530";
+        break;
+    case 112111:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 112112:
+        if(roll%100<25)return "bg79_vo_AVLC_Q311_00454814";
+        if(roll%100<50)return "bg79_vo_AVLC_Q311_00584753";
+        if(roll%100<75)return "bg79_vo_AVLC_Q311_01022646";
+        if(roll%100<100)return "bg79_vo_AVLC_Q311_00312745";
+        break;
+    case 112113:
+        if(roll%100<33)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<66)return "bg79_vo_YENN_YENNEFER_01041493";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041495";
+        break;
+    case 112201:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_816";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_817";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_818";
+        break;
+    case 112202:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_21";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_22";
+        if(roll%100<92)return "bg79_vo_SAY_Battlecries_23";
+        if(roll%100<100)return "bg79_vo_ESKL_ESKEL_01037262";
+        break;
+    case 112203:
+        if(roll%100<33)return "bg79_vo_VSMR_Q001_00546725";
+        if(roll%100<66)return "bg79_vo_VSMR_VESEMIR_01000012";
+        if(roll%100<100)return "bg79_vo_VSMR_VESEMIR_01040765";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart1_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 112204:
+        if(roll%100<17)return "bg79_vo_LMBT_Q401_00523875";
+        if(roll%100<34)return "bg79_vo_LMBT_Q401_00531130";
+        if(roll%100<51)return "bg79_vo_LMBT_Q401_01058899";
+        if(roll%100<68)return "bg79_vo_LMBT_Q403_00550012";
+        if(roll%100<85)return "bg79_vo_LMBT_SQ106_00586496";
+        if(roll%100<100)return "bg79_vo_LMBT_Q403_00572964";
+        break;
+    case 112205:
+        if(roll%100<33)return "bg79_vo_wyvern_v2_vo_ADD_008";
+        if(roll%100<66)return "bg79_vo_wyvern_v2_vo_ADD_009";
+        if(roll%100<100)return "bg79_vo_wyvern_v2_vo_ADD_010";
+        break;
+    case 112206:
+        if(roll%100<33)return "bg79_vo_wyvern_v2_vo_ADD_008";
+        if(roll%100<66)return "bg79_vo_wyvern_v2_vo_ADD_009";
+        if(roll%100<100)return "bg79_vo_wyvern_v2_vo_ADD_010";
+        break;
+    case 112207:
+        if(roll%100<33)return "bg79_vo_OLGD_Q603_01101145";
+        if(roll%100<66)return "bg79_vo_OLGD_Q603_01101591";
+        if(roll%100<100)return "bg79_vo_OLGD_Q604_01137773";
+        break;
+    case 112208:
+        if(roll%100<50)return "bg79_vo_VO_OPRT_204113_0001";
+        if(roll%100<100)return "bg79_vo_VO_OPRT_204113_0012";
+        break;
+    case 112211:
+        if(roll%100<30)return "bg79_vo_GJHN_Q105_00417768";
+        if(roll%100<65)return "bg79_vo_GJHN_Q105_00420525";
+        if(roll%100<100)return "bg79_vo_GJHN_Q111_01011367";
+        break;
+    case 112212:
+        if(roll%100<33)return "bg79_vo_GSAR_Q301_00484178";
+        if(roll%100<66)return "bg79_vo_GSAR_Q301_00493632";
+        if(roll%100<100)return "bg79_vo_GSAR_GODLING_01059640";
+        break;
+    case 112213:
+        if(roll%100<25)return "bg79_vo_KGBG_Q301_00486502";
+        if(roll%100<50)return "bg79_vo_KGBG_Q301_00487409";
+        if(roll%100<75)return "bg79_vo_KGBG_Q301_00499725";
+        if(roll%100<100)return "bg79_vo_KGBG_Q302_00487960";
+        break;
+    case 112214:
+        if(roll%100<33)return "bg79_vo_WILY_Q302_00443324";
+        if(roll%100<66)return "bg79_vo_WILY_Q302_00514329";
+        if(roll%100<100)return "bg79_vo_WILY_Q302_00547590";
+        break;
+    case 112215:
+        if(roll%100<33)return "bg79_vo_IRIS_Q604_01106159";
+        if(roll%100<66)return "bg79_vo_IRIS_Q604_01106875";
+        if(roll%100<100)return "bg79_vo_IRIS_Q604_01106944";
+        break;
+    case 112403:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_25";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_26";
+        break;
+    case 112404:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_25";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_26";
+        break;
+    case 113208:
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_821";
+        break;
+    case 113313:
+        if(roll%300<33)return "bg79_vo_SAY_Battlecries_part5_326";
+        if(roll%300<66)return "bg79_vo_SAY_Battlecries_part5_327";
+        if(roll%300<100)return "bg79_vo_SAY_Battlecries_part5_328";
+        if(roll%300<200)return "bg79_vo_SAY_Battlecries_part5_329";
+        if(roll%300<300)return "bg79_vo_SAY_Battlecries_part5_330";
+        break;
+    case 122101:
+        if(roll%100<25)return "bg79_vo_BARN_Q102_00408798";
+        if(roll%100<50)return "bg79_vo_BARN_Q103_00473473";
+        if(roll%100<75)return "bg79_vo_BARN_Q107_00515406";
+        if(roll%100<100)return "bg79_vo_BARN_BARON_00402523";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart2_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 122102:
+        if(roll%100<50)return "bg79_vo_ROCH_MQ3035_01064844";
+        if(roll%100<100)return "bg79_vo_ROCH_ROCHE_00541126";
+        break;
+    case 122103:
+        if(roll%100<50)return "bg79_vo_VO_JANT_300862_0253";
+        if(roll%100<100)return "bg79_vo_VO_JANT_900381_0141";
+        break;
+    case 122104:
+        if(roll%100<21)return "bg79_vo_PHIL_PHILIPPA_01041424";
+        if(roll%100<44)return "bg79_vo_PHIL_PHILIPPA_01041426";
+        if(roll%100<66)return "bg79_vo_PHIL_Q310_00533376";
+        if(roll%100<78)return "bg79_vo_PHIL_Q502_00555967";
+        if(roll%100<100)return "bg79_vo_VO_FLPA_300358_0012";
+        break;
+    case 122105:
+        if(roll%100<25)return "bg79_vo_DJKS_MQ3035_01067766";
+        if(roll%100<50)return "bg79_vo_DJKS_Q303_00486613";
+        if(roll%100<75)return "bg79_vo_DJKS_Q303_00417640";
+        if(roll%100<100)return "bg79_vo_DJKS_Q303_00378559";
+        break;
+    case 122106:
+        if(roll%100<33)return "bg79_vo_SHNI_Q602_01119358";
+        if(roll%100<66)return "bg79_vo_SHNI_Q601_01101942";
+        if(roll%100<100)return "bg79_vo_SHNI_SHANI_01130725";
+        break;
+    case 122107:
+        if(roll%100<16)return "bg79_vo_TRSS_Q310_00545347";
+        if(roll%100<33)return "bg79_vo_VO_TRIS_100285_0008";
+        if(roll%100<50)return "bg79_vo_VO_TRIS_104122_2446";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_17";
+        if(roll%100<84)return "bg79_vo_SAY_Battlecries_18";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_19";
+        break;
+    case 122108:
+        if(roll%100<25)return "bg79_vo_KEIR_KEIRA_00475332";
+        if(roll%100<50)return "bg79_vo_KEIR_KEIRA_01040781";
+        if(roll%100<75)return "bg79_vo_KEIR_SQ101_00565661";
+        if(roll%100<100)return "bg79_vo_KEIR_SQ101_00590073";
+        break;
+    case 122201:
+        if(roll%100<15)return "bg79_vo_SAY_Battlecries_5";
+        if(roll%100<29)return "bg79_vo_SAY_Battlecries_7";
+        if(roll%100<44)return "bg79_vo_SAY_Battlecries_6";
+        if(roll%100<58)return "bg79_vo_DAND_DANDELION_00429307";
+        if(roll%100<73)return "bg79_vo_DAND_Q302_00489393";
+        if(roll%100<86)return "bg79_vo_DAND_Q302_00490269";
+        if(roll%100<100)return "bg79_vo_VO_JSKR_100926_0188";
+        break;
+    case 122202:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_9";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_10";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_11";
+        if(roll%100<100)return "bg79_vo_PRIS_Q305_00489643";
+        break;
+    case 122203:
+        if(roll%100<33)return "bg79_vo_TALA_SQ315_01067599";
+        if(roll%100<66)return "bg79_vo_TALA_SQ315_01067657";
+        if(roll%100<100)return "bg79_vo_TALA_SQ315_01067677";
+        break;
+    case 122204:
+        if(roll%100<25)return "bg79_vo_VESS_MQ3035_01064809";
+        if(roll%100<50)return "bg79_vo_VESS_MQ3035_01071150";
+        if(roll%100<75)return "bg79_vo_VESS_Q403_00546798";
+        if(roll%100<100)return "bg79_vo_VESS_VES_01070698";
+        break;
+    case 122205:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_29";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_30";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_31";
+        break;
+    case 122206:
+        if(roll%100<33)return "bg79_vo_VO_SABR_200216_0037";
+        if(roll%100<53)return "bg79_vo_VO_SABR_200216_0064";
+        if(roll%100<100)return "bg79_vo_VO_SABR_200216_0101";
+        break;
+    case 122207:
+        if(roll%100<33)return "bg79_vo_VO_DETM_200182_0001";
+        if(roll%100<66)return "bg79_vo_VO_DETM_200219_0001";
+        if(roll%100<100)return "bg79_vo_VO_DETM_200338_0412";
+        break;
+    case 122208:
+        if(roll%100<33)return "bg79_vo_VO_STEN_200098_0258";
+        if(roll%100<66)return "bg79_vo_VO_STEN_200046_0316";
+        if(roll%100<100)return "bg79_vo_VO_STEN_200046_0302";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart3_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 122209:
+        if(roll%100<65)return "bg79_vo_TRL1_MQ1022_00466604";
+        if(roll%100<100)return "bg79_vo_TRL1_MQ1022_00468246";
+        break;
+    case 122210:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_37";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_38";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_39";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_40";
+        break;
+    case 122211:
+        if(roll%100<33)return "bg79_vo_MGLA_MARGARITTA_01012961";
+        if(roll%100<66)return "bg79_vo_MGLA_Q210_00584250";
+        if(roll%100<100)return "bg79_vo_MGLA_Q310_00562485";
+        break;
+    case 122212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_42";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_43";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_44";
+        break;
+    case 122213:
+        if(roll%100<33)return "bg79_vo_VO_ODRI_200481_0002";
+        if(roll%100<66)return "bg79_vo_VO_ODRI_200546_0001";
+        if(roll%100<100)return "bg79_vo_VO_ODRI_200559_0001";
+        break;
+    case 122214:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_46";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_48";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_47";
+        break;
+    case 122216:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_21";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_23";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_22";
+        break;
+    case 122306:
+        if(roll%100<33)return "bg79_vo_VO_ZDZI_003478_0007";
+        if(roll%100<66)return "bg79_vo_VO_ZDZI_003478_0049";
+        if(roll%100<100)return "bg79_vo_VO_ZDZI_003478_0097";
+        break;
+    case 122307:
+        if(roll%100<33)return "bg79_vo_VO_NG01_003478_0008";
+        if(roll%100<66)return "bg79_vo_VO_NG01_003478_0060";
+        if(roll%100<100)return "bg79_vo_VO_NG01_003478_0126";
+        break;
+    case 122308:
+        if(roll%100<33)return "bg79_vo_RES1_VSET_00508237";
+        if(roll%100<66)return "bg79_vo_RES1_VSET_00508445";
+        if(roll%100<100)return "bg79_vo_RES1_VSET_00508451";
+        break;
+    case 122309:
+        if(roll%100<33)return "bg79_vo_VO_KG01_200564_0001";
+        if(roll%100<66)return "bg79_vo_VO_KG01_202928_0014";
+        if(roll%100<100)return "bg79_vo_VO_KG01_202928_0016";
+        break;
+    case 122310:
+        if(roll%100<33)return "bg79_vo_VO_RS01_101992_0004";
+        if(roll%100<66)return "bg79_vo_VO_RS01_106541_0014";
+        if(roll%100<100)return "bg79_vo_VO_ROS1_102779_0005";
+        break;
+    case 122311:
+        if(roll%100<33)return "bg79_vo_VO_RS03_106543_0003";
+        if(roll%100<67)return "bg79_vo_VO_RS03_106543_0004";
+        if(roll%100<100)return "bg79_vo_VO_ROS3_102779_0003";
+        break;
+    case 122312:
+        if(roll%100<33)return "bg79_vo_NCIW1_VSET_00564889";
+        if(roll%100<66)return "bg79_vo_NCIW1_VSET_00564891";
+        if(roll%100<100)return "bg79_vo_NCIW1_VSET_00566917";
+        break;
+    case 122313:
+        if(roll%100<33)return "bg79_vo_VO_KG06_200420_0005";
+        if(roll%100<66)return "bg79_vo_VO_KG06_202931_0005";
+        if(roll%100<100)return "bg79_vo_VO_KG06_202931_0012";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart4_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 122314:
+        if(roll%100<33)return "bg79_vo_VO_KG02_200565_0005";
+        if(roll%100<66)return "bg79_vo_VO_KG02_202929_0003";
+        if(roll%100<100)return "bg79_vo_VO_KG02_202929_0004";
+        break;
+    case 122316:
+        if(roll%100<33)return "bg79_vo_TBAN2_VSET_00591990";
+        if(roll%100<66)return "bg79_vo_TBAN2_VSET_00591997";
+        if(roll%100<100)return "bg79_vo_TBAN2_VSET_01044560";
+        break;
+    case 122317:
+        if(roll%100<33)return "bg79_vo_REOF1_VSET_00516089";
+        if(roll%100<66)return "bg79_vo_REOF1_VSET_00516091";
+        if(roll%100<100)return "bg79_vo_REOF1_VSET_00516093";
+        break;
+    case 122318:
+        if(roll%100<50)return "bg79_vo_VO_KE01_203352_0004";
+        if(roll%100<100)return "bg79_vo_VO_KE01_203352_0006";
+        break;
+    case 122403:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_819";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_820";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_821";
+        break;
+    case 123301:
+        if(roll%300<33)return "bg79_vo_SAY_Battlecries_part5_320";
+        if(roll%300<66)return "bg79_vo_SAY_Battlecries_part5_321";
+        if(roll%300<100)return "bg79_vo_SAY_Battlecries_part5_322";
+        if(roll%300<200)return "bg79_vo_SAY_Battlecries_part5_323";
+        if(roll%300<300)return "bg79_vo_SAY_Battlecries_part5_324";
+        break;
+    case 131101:
+        if(roll%100<33)return "bg79_vo_ERDN_EREDIN_01040754";
+        if(roll%100<66)return "bg79_vo_ERDN_EREDIN_01040841";
+        if(roll%100<100)return "bg79_vo_ERDN_Q501_00534051";
+        break;
+    case 131102:
+        if(roll%100<65)return "bg79_vo_GEEL_Q311_00312236";
+        if(roll%100<100)return "bg79_vo_GEEL_Q311_00312005";
+        break;
+    case 132101:
+        if(roll%100<33)return "bg79_vo_VO_DRUG_200317_0011";
+        if(roll%100<66)return "bg79_vo_VO_DRUG_200216_0078";
+        if(roll%100<100)return "bg79_vo_VO_DRUG_200216_0079";
+        break;
+    case 132102:
+        if(roll%100<33)return "bg79_vo_IMLR_Q111_01062046";
+        if(roll%100<66)return "bg79_vo_IMLR_Q403_00524739";
+        if(roll%100<100)return "bg79_vo_IMLR_Q403_00524776";
+        break;
+    case 132104:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_189";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_192";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_191";
+        break;
+    case 132105:
+        if(roll%100<25)return "bg79_vo_AVLC_Q311_00454814";
+        if(roll%100<50)return "bg79_vo_AVLC_Q311_00584753";
+        if(roll%100<75)return "bg79_vo_AVLC_Q311_01022646";
+        if(roll%100<100)return "bg79_vo_AVLC_Q311_00312745";
+        break;
+    case 132108:
+        if(roll%100<33)return "bg79_vo_SCC3_VSET_01053091";
+        if(roll%100<66)return "bg79_vo_SCC3_VSET_01053077";
+        if(roll%100<100)return "bg79_vo_SCC3_VSET_01053075";
+        break;
+    case 132206:
+        if(roll%100<33)return "bg79_vo_WHSP_Q105_00382577";
+        if(roll%100<66)return "bg79_vo_WHSP_Q105_00419057";
+        if(roll%100<100)return "bg79_vo_WHSP_Q105_00419061";
+        break;
+    case 132207:
+        if(roll%100<50)return "bg79_vo_BREW_Q105_00531820";
+        if(roll%100<100)return "bg79_vo_BREW_Q111_00576135";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart5_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 132208:
+        if(roll%100<33)return "bg79_vo_WEAV_Q105_00531814";
+        if(roll%100<66)return "bg79_vo_WEAV_Q503_00578937";
+        if(roll%100<100)return "bg79_vo_WEAV_Q503_00579064";
+        break;
+    case 132211:
+        if(roll%100<50)return "bg79_vo_nekker_scream_006";
+        if(roll%100<100)return "bg79_vo_nekker_scream_004";
+        break;
+    case 132212:
+        if(roll%100<50)return "bg79_vo_ice_giant_aggro06";
+        if(roll%100<100)return "bg79_vo_ice_giant_aggro07";
+        break;
+    case 132214:
+        if(roll%100<40)return "bg79_vo_WHW1_Q104_00555148";
+        if(roll%100<70)return "bg79_vo_WHW1_Q104_00555150";
+        if(roll%100<100)return "bg79_vo_WHW1_Q104_00555151";
+        break;
+    case 132215:
+        if(roll%100<20)return "bg79_vo_MRRR_Q602_01116657";
+        if(roll%100<40)return "bg79_vo_MRRR_Q605_01108152";
+        if(roll%100<60)return "bg79_vo_MRRR_Q605_01108178";
+        if(roll%100<80)return "bg79_vo_MRRR_Q605_01110505";
+        if(roll%100<100)return "bg79_vo_MRRR_Q605_01132010";
+        break;
+    case 132305:
+        if(roll%100<45)return "bg79_vo_nekker_attack_004";
+        if(roll%100<90)return "bg79_vo_nekker_attack_009";
+        if(roll%100<100)return "bg79_vo_nekker_mumble_003";
+        break;
+    case 132309:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_792";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_793";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_794";
+        break;
+    case 132310:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_796";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_797";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_798";
+        break;
+    case 142102:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_139";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_140";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_141";
+        break;
+    case 142103:
+        if(roll%100<30)return "bg79_vo_VO_IORW_100241_4474";
+        if(roll%100<60)return "bg79_vo_VO_IORW_101048_0181";
+        if(roll%100<90)return "bg79_vo_VO_IORW_101064_0046";
+        if(roll%100<100)return "bg79_vo_VO_IORW_102216_0006";
+        break;
+    case 142104:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_142";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_143";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_144";
+        break;
+    case 142105:
+        if(roll%100<24)return "bg79_vo_ZOLT_Q310_01062198";
+        if(roll%100<48)return "bg79_vo_ZOLT_Q403_00575678";
+        if(roll%100<72)return "bg79_vo_ZOLT_ZOLTAN_01040657";
+        if(roll%100<96)return "bg79_vo_ZOLT_ZOLTAN_01040651";
+        if(roll%100<100)return "bg79_vo_ZOLT_ZOLTAN_01040649";
+        break;
+    case 142106:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_152";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_153";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_154";
+        break;
+    case 142107:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_170";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_171";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_172";
+        break;
+    case 142108:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_186";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_187";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_188";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart6_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 142201:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_155";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_156";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_157";
+        break;
+    case 142202:
+        if(roll%100<40)return "bg79_vo_IDEM_Q401_00532088";
+        if(roll%100<100)return "bg79_vo_IDEM_Q401_00517579";
+        break;
+    case 142203:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_771";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_772";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_773";
+        break;
+    case 142204:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_776";
+        if(roll%100<73)return "bg79_vo_SAY_Battlecries_775";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_777";
+        break;
+    case 142206:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_160";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_159";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_158";
+        break;
+    case 142207:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_161";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_162";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_163";
+        break;
+    case 142208:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_164";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_165";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_166";
+        break;
+    case 142209:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_167";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_168";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_169";
+        break;
+    case 142210:
+        if(roll%100<33)return "bg79_vo_VO_MALN_106817_0005";
+        if(roll%100<66)return "bg79_vo_VO_MALN_106657_0009";
+        if(roll%100<100)return "bg79_vo_VO_MALN_106745_0017";
+        break;
+    case 142211:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_183";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_185";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_184";
+        break;
+    case 142212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_33";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_35";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_34";
+        break;
+    case 142213:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_784";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_785";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_786";
+        break;
+    case 142214:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_831";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_832";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_833";
+        break;
+    case 142301:
+        if(roll%100<33)return "bg79_vo_VSCF2_VSET_00523670";
+        if(roll%100<66)return "bg79_vo_VSCF2_VSET_00523672";
+        if(roll%100<100)return "bg79_vo_VSCF2_VSET_00523680";
+        break;
+    case 142302:
+        if(roll%100<33)return "bg79_vo_VO_SF01_102746_0038";
+        if(roll%100<67)return "bg79_vo_VO_SF01_102780_0001";
+        if(roll%100<100)return "bg79_vo_VO_SF01_102746_0035";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart7_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 142303:
+        if(roll%100<50)return "bg79_vo_VO_SF02_101662_0066";
+        if(roll%100<100)return "bg79_vo_VO_SF02_108969_0001";
+        break;
+    case 142304:
+        if(roll%100<33)return "bg79_vo_VO_SWF1_100532_0009";
+        if(roll%100<66)return "bg79_vo_VO_SWF1_109383_0001";
+        if(roll%100<100)return "bg79_vo_VO_SWF1_107697_0003";
+        break;
+    case 142306:
+        if(roll%100<33)return "bg79_vo_SCD1_VSET_00525279";
+        if(roll%100<66)return "bg79_vo_SCD1_VSET_00525429";
+        if(roll%100<100)return "bg79_vo_SCD1_VSET_00525431";
+        break;
+    case 142307:
+        if(roll%100<30)return "bg79_vo_VO_SMV2_202544_0022";
+        if(roll%100<65)return "bg79_vo_VO_SMV2_202963_0006";
+        if(roll%100<100)return "bg79_vo_VO_SMV2_202963_0007";
+        break;
+    case 142308:
+        if(roll%100<33)return "bg79_vo_VO_SWV2_202544_0023";
+        if(roll%100<66)return "bg79_vo_VO_SWV2_202544_0046";
+        if(roll%100<100)return "bg79_vo_VO_SWV2_202969_0004";
+        break;
+    case 142309:
+        if(roll%100<20)return "bg79_vo_VO_SF01_107685_0001";
+        if(roll%100<60)return "bg79_vo_VO_SF01_102746_0054";
+        if(roll%100<100)return "bg79_vo_VO_SF01_102746_0042";
+        break;
+    case 142310:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_801";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_802";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_803";
+        break;
+    case 142311:
+        if(roll%100<33)return "bg79_vo_SCD1_VSET_00526102";
+        if(roll%100<66)return "bg79_vo_SCD1_VSET_00526104";
+        if(roll%100<100)return "bg79_vo_SCD1_VSET_00525272";
+        break;
+    case 142312:
+        if(roll%100<15)return "bg79_vo_VBAN1_MQ1005_00358151";
+        if(roll%100<57)return "bg79_vo_VBAN1_MQ1005_00357973";
+        if(roll%100<100)return "bg79_vo_VBAN1_VSET_00592242";
+        break;
+    case 142313:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part2_2";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part2_3";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part2_4";
+        break;
+    case 142314:
+        if(roll%100<33)return "bg79_vo_VO_SWV1_202968_0006";
+        if(roll%100<67)return "bg79_vo_VO_SWV1_202968_0007";
+        if(roll%100<100)return "bg79_vo_VO_SWV1_202968_0012";
+        break;
+    case 142315:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part2_5";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part2_7";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part2_6";
+        break;
+    case 142316:
+        if(roll%100<33)return "bg79_vo_VO_SWV5_202972_0007";
+        if(roll%100<66)return "bg79_vo_VO_SWV5_202972_0006";
+        if(roll%100<100)return "bg79_vo_VO_SWV5_202972_0004";
+        break;
+    case 142317:
+        if(roll%100<33)return "bg79_vo_SCD34_VSET_01013381";
+        if(roll%100<66)return "bg79_vo_SCD34_VSET_01013371";
+        if(roll%100<100)return "bg79_vo_SCD34_VSET_01013385";
+        break;
+    case 142401:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_788";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_789";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_790";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart8_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 152101:
+        if(roll%100<25)return "bg79_vo_HJAL_HJALMAR_01037900";
+        if(roll%100<50)return "bg79_vo_HJAL_HJALMAR_01037904";
+        if(roll%100<75)return "bg79_vo_HJAL_HJALMAR_01037912";
+        if(roll%100<100)return "bg79_vo_HJAL_Q501_00568598";
+        break;
+    case 152103:
+        if(roll%100<50)return "bg79_vo_MOUS_Q210_00558067";
+        if(roll%100<100)return "bg79_vo_MOUS_Q403_00566059";
+        break;
+    case 152105:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_205";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_206";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_207";
+        break;
+    case 152106:
+        if(roll%100<50)return "bg79_vo_LUTM_LUGOS_00437813";
+        if(roll%100<100)return "bg79_vo_LUTM_SQ209_00593785";
+        break;
+    case 152107:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_202";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_203";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_204";
+        break;
+    case 152201:
+        if(roll%100<50)return "bg79_vo_LUTG_LUGOS_01038779";
+        if(roll%100<100)return "bg79_vo_LUTG_SQ209_00594723";
+        break;
+    case 152202:
+        if(roll%100<50)return "bg79_vo_TRL3_FF205_01053125";
+        if(roll%100<100)return "bg79_vo_TRL3_FF205_01053127";
+        break;
+    case 152203:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_804";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_805";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_806";
+        break;
+    case 152204:
+        if(roll%100<33)return "bg79_vo_DONR_DONAR_01037055";
+        if(roll%100<66)return "bg79_vo_DONR_DONAR_01037057";
+        if(roll%100<100)return "bg79_vo_DONR_Q206_00587479";
+        break;
+    case 152205:
+        if(roll%100<100)return "bg79_vo_SBR1_VSET_00527986";
+        break;
+    case 152206:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_828";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_829";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_830";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_834";
+        break;
+    case 152207:
+        if(roll%100<20)return "bg79_vo_HOLG_HOLGER_01038014";
+        if(roll%100<80)return "bg79_vo_HOLG_HOLGER_01038016";
+        if(roll%100<100)return "bg79_vo_HOLG_Q201_00387298";
+        break;
+    case 152208:
+        if(roll%100<33)return "bg79_vo_SWO4_MQ2038_00507987";
+        if(roll%100<66)return "bg79_vo_SWO4_MQ2038_00509565";
+        if(roll%100<100)return "bg79_vo_SWO4_MQ2038_00509731";
+        break;
+    case 152209:
+        if(roll%100<33)return "bg79_vo_MRKV_SQ201_00499647";
+        if(roll%100<66)return "bg79_vo_MRKV_SQ201_00501979";
+        if(roll%100<100)return "bg79_vo_MRKV_SQ201_00504630";
+        break;
+    case 152211:
+        if(roll%100<33)return "bg79_vo_SPR1_SHOP_00437650";
+        if(roll%100<66)return "bg79_vo_SPR1_SQ201_00499249";
+        if(roll%100<100)return "bg79_vo_SPR1_VSET_00553157";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart9_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 152213:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_208";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_209";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_210";
+        if(roll%100<80)return "bg79_vo_SVAN_Q210_00558425";
+        if(roll%100<100)return "bg79_vo_SVAN_Q210_01069128";
+        break;
+    case 152214:
+        if(roll%100<40)return "bg79_vo_UDAL_Q201_00166303";
+        if(roll%100<80)return "bg79_vo_UDAL_Q203_00501235";
+        if(roll%100<100)return "bg79_vo_UDAL_UDALRYK_01039823";
+        break;
+    case 152301:
+        if(roll%100<34)return "bg79_vo_SBE2_VSET_00536513";
+        if(roll%100<67)return "bg79_vo_SBE2_VSET_00536507";
+        if(roll%100<100)return "bg79_vo_SBE2_VSET_00536587";
+        break;
+    case 152302:
+        if(roll%100<34)return "bg79_vo_SBE1_Q206_00413021";
+        if(roll%100<67)return "bg79_vo_SBE1_VSET_00536089";
+        if(roll%100<100)return "bg79_vo_SBE1_VSET_00536097";
+        break;
+    case 152303:
+        if(roll%100<34)return "bg79_vo_SGD2_CHAT2_00165312";
+        if(roll%100<67)return "bg79_vo_SGD2_VSET_00541769";
+        if(roll%100<100)return "bg79_vo_SGD2_Q208_01071227";
+        break;
+    case 152304:
+        if(roll%100<33)return "bg79_vo_SGD6_VSET_00544491";
+        if(roll%100<66)return "bg79_vo_SGD6_VSET_00544501";
+        if(roll%100<100)return "bg79_vo_SGD6_VSET_00544569";
+        break;
+    case 152305:
+        if(roll%100<34)return "bg79_vo_SBD3_MQ2034_01013429";
+        if(roll%100<67)return "bg79_vo_SBD3_VSET_00526925";
+        if(roll%100<100)return "bg79_vo_SBD3_VSET_00527400";
+        break;
+    case 152306:
+        if(roll%100<33)return "bg79_vo_SBD1_MQ2002_00442097";
+        if(roll%100<66)return "bg79_vo_SBD1_Q202_00307483";
+        if(roll%100<100)return "bg79_vo_SBD1_MQ2034_01028167";
+        break;
+    case 152308:
+        if(roll%100<42)return "bg79_vo_DROG_BARD_01036857";
+        if(roll%100<84)return "bg79_vo_DROG_Q206_00329460";
+        if(roll%100<100)return "bg79_vo_DROG_Q206_01072830";
+        break;
+    case 152310:
+        if(roll%100<33)return "bg79_vo_SPR2_VSET_00553534";
+        if(roll%100<66)return "bg79_vo_SPR2_VSET_00553573";
+        if(roll%100<100)return "bg79_vo_SPR2_VSET_00553583";
+        break;
+    case 152311:
+        if(roll%100<33)return "bg79_vo_SAR3_CHAT_01050115";
+        if(roll%100<66)return "bg79_vo_SAR3_VSET_00550859";
+        if(roll%100<100)return "bg79_vo_SAR3_VSET_00550878";
+        break;
+    case 152312:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_807";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_808";
+        break;
+    case 152313:
+        if(roll%100<33)return "bg79_vo_SGD2_VSET_00526547";
+        if(roll%100<66)return "bg79_vo_SGD2_CHAT2_00165400";
+        if(roll%100<100)return "bg79_vo_SGD2_VSET_00165758";
+        break;
+    case 152315:
+        if(roll%100<34)return "bg79_vo_SWR5_VSET_00535924";
+        if(roll%100<67)return "bg79_vo_SWR5_VSET_00535938";
+        if(roll%100<100)return "bg79_vo_SWR5_VSET_00535926";
+        break;
+    case 152316:
+        if(roll%100<33)return "bg79_vo_SGD1_CHAT_01024106";
+        if(roll%100<66)return "bg79_vo_SGD1_FF204_00523558";
+        if(roll%100<100)return "bg79_vo_SGD1_VSET_00541470";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart10_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 152317:
+        if(roll%100<33)return "bg79_vo_SAR1_SHOP_00422532";
+        if(roll%100<66)return "bg79_vo_SAR1_SHOP_00434397";
+        if(roll%100<100)return "bg79_vo_SAR1_VSET_00550731";
+        break;
+    case 152318:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_1";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_3";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_2";
+        break;
+    case 152402:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_199";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_200";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_201";
+        break;
+    case 162101:
+        if(roll%100<25)return "bg79_vo_LETO_LETHO_01038588";
+        if(roll%100<50)return "bg79_vo_LETO_Q403_00319901";
+        if(roll%100<75)return "bg79_vo_LETO_SQ102_00590678";
+        if(roll%100<100)return "bg79_vo_LETO_SQ102_00593857";
+        break;
+    case 162102:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_58";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_59";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_60";
+        break;
+    case 162103:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_106";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_107";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_108";
+        break;
+    case 162104:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_69";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_70";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_71";
+        break;
+    case 162105:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_72";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_73";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_74";
+        break;
+    case 162106:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_97";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_98";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_99";
+        break;
+    case 162107:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_67";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_66";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_68";
+        break;
+    case 162108:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_118";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_119";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_120";
+        break;
+    case 162201:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_78";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_79";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_80";
+        break;
+    case 162202:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_75";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_76";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_77";
+        break;
+    case 162203:
+        if(roll%100<33)return "bg79_vo_VO_CNTH_303653_0335";
+        if(roll%100<66)return "bg79_vo_VO_CNTH_303656_0001";
+        if(roll%100<100)return "bg79_vo_VO_CNTH_303743_0002";
+        break;
+    case 162204:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_426";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_428";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_427";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart11_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 162205:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_88";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_89";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_90";
+        break;
+    case 162206:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_100";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_101";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_102";
+        break;
+    case 162207:
+        if(roll%100<33)return "bg79_vo_VO_NM01_200057_0187";
+        if(roll%100<66)return "bg79_vo_VO_NM01_200049_0007";
+        if(roll%100<100)return "bg79_vo_VO_NM01_200996_0005";
+        break;
+    case 162208:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_112";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_113";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_114";
+        break;
+    case 162209:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_115";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_116";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_117";
+        break;
+    case 162210:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_127";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_128";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_129";
+        break;
+    case 162211:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_17";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_19";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_18";
+        break;
+    case 162212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_105";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_107";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_106";
+        break;
+    case 162213:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_109";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_111";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_110";
+        break;
+    case 162301:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_417";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_419";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_418";
+        break;
+    case 162303:
+        if(roll%100<33)return "bg79_vo_NILF4_CHAT_01051421";
+        if(roll%100<66)return "bg79_vo_NILF4_CHAT_01051417";
+        if(roll%100<100)return "bg79_vo_NILF4_VSET_00514238";
+        break;
+    case 162304:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_429";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_431";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_430";
+        break;
+    case 162305:
+        if(roll%100<33)return "bg79_vo_NILF3_VSET_00514109";
+        if(roll%100<66)return "bg79_vo_NILF3_VSET_00514105";
+        if(roll%100<100)return "bg79_vo_NILF3_SQ102_00591494";
+        break;
+    case 162307:
+        if(roll%100<33)return "bg79_vo_NILFP2_VSET_00592094";
+        if(roll%100<66)return "bg79_vo_NILFP2_VSET_00592104";
+        if(roll%100<100)return "bg79_vo_NILFP2_VSET_00592092";
+        break;
+    case 162308:
+        if(roll%100<33)return "bg79_vo_NIOF1_VSET_00524263";
+        if(roll%100<66)return "bg79_vo_NIOF1_VSET_00524259";
+        if(roll%100<100)return "bg79_vo_NIOF1_VSET_00524273";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart12_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 162309:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_438";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_440";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_439";
+        break;
+    case 162310:
+        if(roll%100<33)return "bg79_vo_NILF2_VSET_00513914";
+        if(roll%100<66)return "bg79_vo_NILF2_VSET_00513916";
+        if(roll%100<100)return "bg79_vo_NILF2_VSET_00513922";
+        break;
+    case 162311:
+        if(roll%100<33)return "bg79_vo_NILF3_VSET_00514091";
+        if(roll%100<66)return "bg79_vo_NILF3_VSET_00514113";
+        if(roll%100<100)return "bg79_vo_NILF3_VSET_00514121";
+        break;
+    case 162312:
+        if(roll%100<33)return "bg79_vo_NILF2_Q505_00576169";
+        if(roll%100<66)return "bg79_vo_NILF2_Q502_00554667";
+        if(roll%100<100)return "bg79_vo_NILF2_Q210_01070432";
+        break;
+    case 162313:
+        if(roll%100<33)return "bg79_vo_NILF2_VSET_00513907";
+        if(roll%100<66)return "bg79_vo_NILF2_VSET_01072393";
+        if(roll%100<100)return "bg79_vo_NILF2_Q502_00556520";
+        break;
+    case 162314:
+        if(roll%100<33)return "bg79_vo_NIS1_Q002_01048548";
+        if(roll%100<66)return "bg79_vo_NIS1_VSET_00526356";
+        if(roll%100<100)return "bg79_vo_NIS1_VSET_00526372";
+        break;
+    case 162315:
+        if(roll%100<33)return "bg79_vo_NIN4_VSET_01049576";
+        if(roll%100<66)return "bg79_vo_NIN4_VSET_01049574";
+        if(roll%100<100)return "bg79_vo_NIN4_VSET_01049578";
+        break;
+    case 162316:
+        if(roll%100<33)return "bg79_vo_MAG1_SHOP_00423227";
+        if(roll%100<66)return "bg79_vo_MAG1_SHOP_00423237";
+        if(roll%100<100)return "bg79_vo_MAG1_SHOP_00459610";
+        break;
+    case 162318:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_441";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_442";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_443";
+        break;
+    case 162401:
+        if(roll%100<42)return "bg79_vo_SAY_Battlecries_part3_385";
+        if(roll%100<85)return "bg79_vo_SAY_Battlecries_part3_387";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_386";
+        break;
+    case 200026:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_43";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_44";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_45";
+        break;
+    case 200028:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_211";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_213";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_214";
+        break;
+    case 200030:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_220";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_221";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_222";
+        break;
+    case 200031:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_13";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_14";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_15";
+        break;
+    case 200032:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_91";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_92";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_93";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart13_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200033:
+        if(roll%100<45)return "bg79_vo_SAY_Battlecries_part3_376";
+        if(roll%100<65)return "bg79_vo_SAY_Battlecries_part3_378";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_377";
+        break;
+    case 200036:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_5";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_7";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_6";
+        break;
+    case 200039:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_310";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_311";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_312";
+        break;
+    case 200040:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_314";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_316";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_315";
+        break;
+    case 200042:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_39";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_41";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_40";
+        break;
+    case 200043:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_129";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_131";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_130";
+        break;
+    case 200044:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_35";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_37";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_36";
+        break;
+    case 200046:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_410";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_412";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_411";
+        break;
+    case 200048:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_13";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_15";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_14";
+        break;
+    case 200050:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_109";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_110";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_111";
+        break;
+    case 200055:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_255";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_256";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_257";
+        break;
+    case 200062:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_154";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_156";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_155";
+        break;
+    case 200071:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_96";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_95";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_94";
+        break;
+    case 200080:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_290";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_292";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_291";
+        break;
+    case 200081:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_121";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_123";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_122";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart14_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200083:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part3_264";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_265";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part3_267";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_268";
+        break;
+    case 200087:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part3_184";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_187";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part3_186";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_185";
+        break;
+    case 200088:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_175";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_176";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_177";
+        break;
+    case 200089:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_167";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_169";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_168";
+        break;
+    case 200091:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part3_162";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_164";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part3_165";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_163";
+        break;
+    case 200098:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_201";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_203";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_202";
+        break;
+    case 200112:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_93";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_92";
+        break;
+    case 200115:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_362";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_364";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_363";
+        break;
+    case 200118:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_356";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_358";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_357";
+        break;
+    case 200124:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_337";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_338";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_339";
+        break;
+    case 200132:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_223";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_225";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_224";
+        break;
+    case 200135:
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_318";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_320";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_319";
+        break;
+    case 200136:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_322";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_324";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_323";
+        break;
+    case 200138:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_326";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_328";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_327";
+        break;
+    case 200144:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_26";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_27";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_28";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_29";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_30";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart15_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200145:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_71";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_73";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_72";
+        break;
+    case 200146:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_75";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_77";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_76";
+        break;
+    case 200147:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_87";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_89";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_88";
+        break;
+    case 200149:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_79";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_81";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_80";
+        break;
+    case 200159:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_193";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_194";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_195";
+        break;
+    case 200160:
+        if(roll%100<33)return "bg79_vo_CRCH_CRACH_01001923";
+        if(roll%100<66)return "bg79_vo_CRCH_CRACH_01040579";
+        if(roll%100<100)return "bg79_vo_CRCH_CRACH_01040591";
+        break;
+    case 200161:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_196";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_197";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_198";
+        break;
+    case 200162:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_236";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_237";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_238";
+        break;
+    case 200163:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_52";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_53";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_54";
+        break;
+    case 200164:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_55";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_56";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_57";
+        break;
+    case 200165:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_130";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_131";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_132";
+        break;
+    case 200166:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_133";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_134";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_135";
+        break;
+    case 200167:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_136";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_137";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_138";
+        break;
+    case 200168:
+        if(roll%100<33)return "bg79_vo_VO_FLTS_000811_0001";
+        if(roll%100<67)return "bg79_vo_VO_FLTS_000811_0002";
+        if(roll%100<100)return "bg79_vo_VO_FLTS_000811_0004";
+        break;
+    case 200169:
+        if(roll%100<20)return "bg79_vo_RADV_MQ3035_01064716";
+        if(roll%100<40)return "bg79_vo_RADV_MQ3035_01064777";
+        if(roll%100<60)return "bg79_vo_RADV_MQ3035_01064783";
+        if(roll%100<80)return "bg79_vo_RADV_Q302_00512777";
+        if(roll%100<100)return "bg79_vo_RADV_RADOVID_01040720";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart16_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200170:
+        if(roll%100<50)return "bg79_vo_VO_HSLT_200098_0254";
+        if(roll%100<100)return "bg79_vo_VO_HSLT_200497_0001";
+        break;
+    case 200171:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_226";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_230";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_231";
+        break;
+    case 200177:
+        if(roll%100<33)return "bg79_vo_BECC_BECCA_01040275";
+        if(roll%100<66)return "bg79_vo_BECC_BECCA_01040277";
+        if(roll%100<100)return "bg79_vo_BECC_Q201_00500712";
+        break;
+    case 200209:
+        if(roll%100<25)return "bg79_vo_VO_TARM_200154_0192";
+        if(roll%100<50)return "bg79_vo_VO_TARM_200423_0023";
+        if(roll%100<75)return "bg79_vo_VO_TARM_200423_0024";
+        if(roll%100<100)return "bg79_vo_VO_TARM_200423_0011";
+        break;
+    case 200212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_822";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_823";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_824";
+        break;
+    case 200219:
+        if(roll%100<42)return "bg79_vo_SAY_Battlecries_part3_385";
+        if(roll%100<85)return "bg79_vo_SAY_Battlecries_part3_387";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_386";
+        break;
+    case 200220:
+        if(roll%300<100)return "bg79_vo_WHSP_Q105_00419061";
+        if(roll%300<200)return "bg79_vo_WHSP_Q105_00419057";
+        if(roll%300<300)return "bg79_vo_WHSP_Q105_00382577";
+        break;
+    case 200221:
+        if(roll%100<50)return "bg79_vo_BREW_Q105_00531820";
+        if(roll%100<100)return "bg79_vo_BREW_Q111_00576135";
+        break;
+    case 200222:
+        if(roll%100<34)return "bg79_vo_WEAV_Q503_00578937";
+        if(roll%100<67)return "bg79_vo_WEAV_Q105_00531814";
+        if(roll%100<100)return "bg79_vo_WEAV_Q503_00579064";
+        break;
+    case 200227:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_435";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_436";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_437";
+        break;
+    case 200235:
+        if(roll%100<17)return "bg79_vo_LMBT_Q401_00523875";
+        if(roll%100<34)return "bg79_vo_LMBT_Q401_00531130";
+        if(roll%100<51)return "bg79_vo_LMBT_Q401_01058899";
+        if(roll%100<68)return "bg79_vo_LMBT_Q403_00550012";
+        if(roll%100<85)return "bg79_vo_LMBT_SQ106_00586496";
+        if(roll%100<100)return "bg79_vo_LMBT_Q403_00572964";
+        break;
+    case 200236:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_21";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_22";
+        if(roll%100<92)return "bg79_vo_SAY_Battlecries_23";
+        if(roll%100<100)return "bg79_vo_ESKL_ESKEL_01037262";
+        break;
+    case 200237:
+        if(roll%100<33)return "bg79_vo_VSMR_Q001_00546725";
+        if(roll%100<66)return "bg79_vo_VSMR_VESEMIR_01000012";
+        if(roll%100<100)return "bg79_vo_VSMR_VESEMIR_01040765";
+        break;
+    case 200293:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_93";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_94";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_95";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_96";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_97";
+        break;
+    case 200294:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_338";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_339";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_340";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_341";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_342";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart17_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200296:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_379";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_381";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_380";
+        break;
+    case 200299:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_407";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_409";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_408";
+        break;
+    case 200518:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_382";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_384";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_383";
+        break;
+    case 200520:
+        if(roll%100<33)return "bg79_vo_HTRI_HATTORI_01032235";
+        if(roll%100<66)return "bg79_vo_HTRI_HATTORI_00507925";
+        if(roll%100<100)return "bg79_vo_HTRI_SQ304_00539954";
+        break;
+    case 200523:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part4_244";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part4_262";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part4_261";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_260";
+        break;
+    case 200528:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_83";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_85";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_84";
+        break;
+    case 200529:
+        if(roll%100<39)return "bg79_vo_SAY_Battlecries_part3_401";
+        if(roll%100<61)return "bg79_vo_SAY_Battlecries_part3_403";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_402";
+        break;
+    case 200534:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_404";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_406";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_405";
+        break;
+    case 200535:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_398";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_400";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_399";
+        break;
+    case 200540:
+        if(roll%100<41)return "bg79_vo_SAY_Battlecries_part4_78";
+        if(roll%100<82)return "bg79_vo_SAY_Battlecries_part4_79";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_82";
+        break;
+    case 201523:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 201559:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_98";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_99";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_100";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_101";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_102";
+        break;
+    case 201578:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_395";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_397";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_396";
+        break;
+    case 201580:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_432";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_434";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_433";
+        break;
+    case 201587:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_4";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_3";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_2";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_5";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart18_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 201589:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_278";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_280";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_279";
+        break;
+    case 201595:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_193";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_195";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_194";
+        break;
+    case 201597:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_47";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_49";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_48";
+        break;
+    case 201601:
+        if(roll%100<34)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<67)return "bg79_vo_YENN_YENNEFER_01041495";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041493";
+        break;
+    case 201603:
+        if(roll%100<25)return "bg79_vo_LETO_SQ102_00590678";
+        if(roll%100<50)return "bg79_vo_LETO_SQ102_00593857";
+        if(roll%100<75)return "bg79_vo_LETO_LETHO_01038588";
+        if(roll%100<100)return "bg79_vo_LETO_Q403_00319901";
+        break;
+    case 201609:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_103";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_104";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_105";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_106";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_107";
+        break;
+    case 201611:
+        if(roll%100<25)return "bg79_vo_VO_IORW_100241_4474";
+        if(roll%100<50)return "bg79_vo_VO_IORW_101048_0181";
+        if(roll%100<75)return "bg79_vo_VO_IORW_101064_0046";
+        if(roll%100<100)return "bg79_vo_VO_IORW_102216_0006";
+        break;
+    case 201612:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_113";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_114";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_115";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_116";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_117";
+        break;
+    case 201615:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_139";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_141";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_140";
+        break;
+    case 201616:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_359";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_360";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_361";
+        break;
+    case 201617:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_32";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_33";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_34";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_35";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_36";
+        break;
+    case 201618:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_117";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_119";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_118";
+        break;
+    case 201620:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_7";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_8";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_9";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_10";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_11";
+        break;
+    case 201621:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_14";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_15";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_16";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_17";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_18";
+        break;
+    case 201622:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_9";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_10";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_11";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart19_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 201624:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_38";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_39";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_40";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_41";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_42";
+        break;
+    case 201625:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_44";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_45";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_46";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_47";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_48";
+        break;
+    case 201626:
+        if(roll%100<25)return "bg79_vo_CIRI_CIRILLA_01040548";
+        if(roll%100<50)return "bg79_vo_CIRI_CIRILLA_01040512";
+        if(roll%100<75)return "bg79_vo_CIRI_Q111_00536478";
+        if(roll%100<100)return "bg79_vo_CIRI_Q310_00579530";
+        break;
+    case 201627:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_168";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_169";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_170";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_171";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_172";
+        break;
+    case 201628:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_56";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_57";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_58";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_59";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_60";
+        break;
+    case 201630:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_50";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_51";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_52";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_53";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_54";
+        break;
+    case 201636:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_68";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_69";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_70";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_71";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_72";
+        break;
+    case 201638:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_88";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_89";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_90";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_91";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_92";
+        break;
+    case 201644:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_20";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_21";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_22";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_24";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_23";
+        break;
+    case 201646:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_232";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_233";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_234";
+        break;
+    case 201650:
+        if(roll%100<33)return "bg79_vo_VO_SABR_200216_0101";
+        if(roll%100<67)return "bg79_vo_VO_SABR_200216_0037";
+        if(roll%100<100)return "bg79_vo_VO_SABR_200216_0064";
+        break;
+    case 201664:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part4_256";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part4_255";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part4_254";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_253";
+        break;
+    case 201676:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part4_34";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part4_31";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_32";
+        break;
+    case 201677:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part4_86";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part4_85";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_84";
+        break;
+    case 201753:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part4_86";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part4_85";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_84";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart20_Universal_it(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 201772:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 201773:
+        if(roll%100<17)return "bg79_vo_SAY_Battlecries_17";
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_19";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_18";
+        if(roll%100<67)return "bg79_vo_VO_TRIS_100285_0008";
+        if(roll%100<84)return "bg79_vo_VO_TRIS_104122_2446";
+        if(roll%100<100)return "bg79_vo_TRSS_Q310_00545347";
+        break;
+    case 201774:
+        if(roll%100<14)return "bg79_vo_SAY_Battlecries_5";
+        if(roll%100<28)return "bg79_vo_SAY_Battlecries_7";
+        if(roll%100<42)return "bg79_vo_SAY_Battlecries_6";
+        if(roll%100<58)return "bg79_vo_DAND_DANDELION_00429307";
+        if(roll%100<72)return "bg79_vo_DAND_Q302_00489393";
+        if(roll%100<86)return "bg79_vo_DAND_Q302_00490269";
+        if(roll%100<100)return "bg79_vo_VO_JSKR_100926_0188";
+        break;
+    case 201776:
+        if(roll%100<16)return "bg79_vo_SAY_Battlecries_5";
+        if(roll%100<30)return "bg79_vo_SAY_Battlecries_7";
+        if(roll%100<44)return "bg79_vo_SAY_Battlecries_6";
+        if(roll%100<58)return "bg79_vo_DAND_DANDELION_00429307";
+        if(roll%100<72)return "bg79_vo_DAND_Q302_00489393";
+        if(roll%100<86)return "bg79_vo_DAND_Q302_00490269";
+        if(roll%100<100)return "bg79_vo_VO_JSKR_100926_0188";
+        break;
+    case 201777:
+        if(roll%100<50)return "bg79_vo_ROCH_ROCHE_00541126";
+        if(roll%100<100)return "bg79_vo_ROCH_MQ3035_01064844";
+        break;
+    case 201778:
+        if(roll%100<33)return "bg79_vo_BECC_BECCA_01040275";
+        if(roll%100<67)return "bg79_vo_BECC_BECCA_01040277";
+        if(roll%100<100)return "bg79_vo_BECC_Q201_00500712";
+        break;
+    case 201779:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_164";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_166";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_165";
+        break;
+    case 201780:
+        if(roll%100<33)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<67)return "bg79_vo_YENN_YENNEFER_01041495";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041493";
+        break;
+    case 201781:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_851";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_852";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_853";
+        break;
+    default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceVariantDuration_Universal_it(id : int, roll : int) : float
+{
+    if(id <= 112203)return BetaGwentAudioVoiceVariantDurationPart0_Universal_it(id,roll);
+    if(id <= 122101)return BetaGwentAudioVoiceVariantDurationPart1_Universal_it(id,roll);
+    if(id <= 122208)return BetaGwentAudioVoiceVariantDurationPart2_Universal_it(id,roll);
+    if(id <= 122313)return BetaGwentAudioVoiceVariantDurationPart3_Universal_it(id,roll);
+    if(id <= 132207)return BetaGwentAudioVoiceVariantDurationPart4_Universal_it(id,roll);
+    if(id <= 142108)return BetaGwentAudioVoiceVariantDurationPart5_Universal_it(id,roll);
+    if(id <= 142302)return BetaGwentAudioVoiceVariantDurationPart6_Universal_it(id,roll);
+    if(id <= 142401)return BetaGwentAudioVoiceVariantDurationPart7_Universal_it(id,roll);
+    if(id <= 152211)return BetaGwentAudioVoiceVariantDurationPart8_Universal_it(id,roll);
+    if(id <= 152316)return BetaGwentAudioVoiceVariantDurationPart9_Universal_it(id,roll);
+    if(id <= 162204)return BetaGwentAudioVoiceVariantDurationPart10_Universal_it(id,roll);
+    if(id <= 162308)return BetaGwentAudioVoiceVariantDurationPart11_Universal_it(id,roll);
+    if(id <= 200032)return BetaGwentAudioVoiceVariantDurationPart12_Universal_it(id,roll);
+    if(id <= 200081)return BetaGwentAudioVoiceVariantDurationPart13_Universal_it(id,roll);
+    if(id <= 200144)return BetaGwentAudioVoiceVariantDurationPart14_Universal_it(id,roll);
+    if(id <= 200169)return BetaGwentAudioVoiceVariantDurationPart15_Universal_it(id,roll);
+    if(id <= 200294)return BetaGwentAudioVoiceVariantDurationPart16_Universal_it(id,roll);
+    if(id <= 201587)return BetaGwentAudioVoiceVariantDurationPart17_Universal_it(id,roll);
+    if(id <= 201622)return BetaGwentAudioVoiceVariantDurationPart18_Universal_it(id,roll);
+    if(id <= 201753)return BetaGwentAudioVoiceVariantDurationPart19_Universal_it(id,roll);
+    if(id <= 201781)return BetaGwentAudioVoiceVariantDurationPart20_Universal_it(id,roll);
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart0_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 112101:
+        if(roll%100<25)return 1.589f;
+        if(roll%100<50)return 2.401f;
+        if(roll%100<75)return 1.932f;
+        if(roll%100<100)return 2.584f;
+        break;
+    case 112102:
+        if(roll%100<20)return 2.613f;
+        if(roll%100<40)return 1.220f;
+        if(roll%100<60)return 1.613f;
+        if(roll%100<80)return 2.500f;
+        if(roll%100<100)return 1.789f;
+        break;
+    case 112103:
+        if(roll%100<20)return 2.613f;
+        if(roll%100<40)return 1.220f;
+        if(roll%100<60)return 1.613f;
+        if(roll%100<80)return 2.500f;
+        if(roll%100<100)return 1.789f;
+        break;
+    case 112104:
+        if(roll%100<40)return 2.903f;
+        if(roll%100<60)return 2.738f;
+        if(roll%100<100)return 2.218f;
+        break;
+    case 112105:
+        if(roll%100<100)return 3.115f;
+        break;
+    case 112106:
+        if(roll%100<17)return 2.000f;
+        if(roll%100<33)return 1.610f;
+        if(roll%100<50)return 3.862f;
+        if(roll%100<67)return 1.225f;
+        if(roll%100<84)return 2.057f;
+        if(roll%100<100)return 1.378f;
+        break;
+    case 112108:
+        if(roll%100<33)return 2.757f;
+        if(roll%100<66)return 1.805f;
+        if(roll%100<100)return 2.874f;
+        break;
+    case 112109:
+        if(roll%100<24)return 1.471f;
+        if(roll%100<48)return 1.495f;
+        if(roll%100<72)return 3.113f;
+        if(roll%100<96)return 2.005f;
+        if(roll%100<100)return 2.277f;
+        break;
+    case 112110:
+        if(roll%100<25)return 1.589f;
+        if(roll%100<50)return 2.401f;
+        if(roll%100<75)return 1.932f;
+        if(roll%100<100)return 2.584f;
+        break;
+    case 112111:
+        if(roll%100<20)return 2.613f;
+        if(roll%100<40)return 1.220f;
+        if(roll%100<60)return 1.613f;
+        if(roll%100<80)return 2.500f;
+        if(roll%100<100)return 1.789f;
+        break;
+    case 112112:
+        if(roll%100<25)return 1.614f;
+        if(roll%100<50)return 1.068f;
+        if(roll%100<75)return 2.271f;
+        if(roll%100<100)return 2.280f;
+        break;
+    case 112113:
+        if(roll%100<33)return 2.757f;
+        if(roll%100<66)return 1.805f;
+        if(roll%100<100)return 2.874f;
+        break;
+    case 112201:
+        if(roll%100<33)return 2.976f;
+        if(roll%100<66)return 2.933f;
+        if(roll%100<100)return 2.741f;
+        break;
+    case 112202:
+        if(roll%100<25)return 1.325f;
+        if(roll%100<67)return 2.059f;
+        if(roll%100<92)return 1.279f;
+        if(roll%100<100)return 2.513f;
+        break;
+    case 112203:
+        if(roll%100<33)return 1.898f;
+        if(roll%100<66)return 2.876f;
+        if(roll%100<100)return 2.422f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart1_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 112204:
+        if(roll%100<17)return 2.707f;
+        if(roll%100<34)return 2.533f;
+        if(roll%100<51)return 2.169f;
+        if(roll%100<68)return 1.379f;
+        if(roll%100<85)return 2.298f;
+        if(roll%100<100)return 1.420f;
+        break;
+    case 112205:
+        if(roll%100<33)return 1.430f;
+        if(roll%100<66)return 1.350f;
+        if(roll%100<100)return 1.728f;
+        break;
+    case 112206:
+        if(roll%100<33)return 1.430f;
+        if(roll%100<66)return 1.350f;
+        if(roll%100<100)return 1.728f;
+        break;
+    case 112207:
+        if(roll%100<33)return 2.054f;
+        if(roll%100<66)return 1.798f;
+        if(roll%100<100)return 2.679f;
+        break;
+    case 112208:
+        if(roll%100<50)return 2.429f;
+        if(roll%100<100)return 2.928f;
+        break;
+    case 112211:
+        if(roll%100<30)return 2.926f;
+        if(roll%100<65)return 2.204f;
+        if(roll%100<100)return 3.054f;
+        break;
+    case 112212:
+        if(roll%100<33)return 1.352f;
+        if(roll%100<66)return 0.749f;
+        if(roll%100<100)return 2.073f;
+        break;
+    case 112213:
+        if(roll%100<25)return 1.843f;
+        if(roll%100<50)return 1.907f;
+        if(roll%100<75)return 3.122f;
+        if(roll%100<100)return 3.112f;
+        break;
+    case 112214:
+        if(roll%100<33)return 3.105f;
+        if(roll%100<66)return 3.527f;
+        if(roll%100<100)return 2.742f;
+        break;
+    case 112215:
+        if(roll%100<33)return 1.729f;
+        if(roll%100<66)return 2.473f;
+        if(roll%100<100)return 2.878f;
+        break;
+    case 112403:
+        if(roll%100<50)return 2.091f;
+        if(roll%100<100)return 2.708f;
+        break;
+    case 112404:
+        if(roll%100<50)return 2.091f;
+        if(roll%100<100)return 2.708f;
+        break;
+    case 113208:
+        if(roll%100<100)return 2.151f;
+        break;
+    case 113313:
+        if(roll%300<33)return 2.437f;
+        if(roll%300<66)return 1.711f;
+        if(roll%300<100)return 2.327f;
+        if(roll%300<200)return 1.789f;
+        if(roll%300<300)return 3.981f;
+        break;
+    case 122101:
+        if(roll%100<25)return 2.003f;
+        if(roll%100<50)return 3.056f;
+        if(roll%100<75)return 1.582f;
+        if(roll%100<100)return 2.185f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart2_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 122102:
+        if(roll%100<50)return 2.411f;
+        if(roll%100<100)return 2.760f;
+        break;
+    case 122103:
+        if(roll%100<50)return 2.235f;
+        if(roll%100<100)return 2.394f;
+        break;
+    case 122104:
+        if(roll%100<21)return 2.122f;
+        if(roll%100<44)return 2.386f;
+        if(roll%100<66)return 3.376f;
+        if(roll%100<78)return 3.682f;
+        if(roll%100<100)return 2.806f;
+        break;
+    case 122105:
+        if(roll%100<25)return 2.657f;
+        if(roll%100<50)return 1.798f;
+        if(roll%100<75)return 2.963f;
+        if(roll%100<100)return 2.957f;
+        break;
+    case 122106:
+        if(roll%100<33)return 1.873f;
+        if(roll%100<66)return 3.185f;
+        if(roll%100<100)return 2.263f;
+        break;
+    case 122107:
+        if(roll%100<16)return 2.000f;
+        if(roll%100<33)return 1.610f;
+        if(roll%100<50)return 3.862f;
+        if(roll%100<67)return 1.225f;
+        if(roll%100<84)return 2.057f;
+        if(roll%100<100)return 1.378f;
+        break;
+    case 122108:
+        if(roll%100<25)return 1.976f;
+        if(roll%100<50)return 2.819f;
+        if(roll%100<75)return 2.898f;
+        if(roll%100<100)return 2.493f;
+        break;
+    case 122201:
+        if(roll%100<15)return 2.569f;
+        if(roll%100<29)return 1.093f;
+        if(roll%100<44)return 2.753f;
+        if(roll%100<58)return 1.983f;
+        if(roll%100<73)return 1.730f;
+        if(roll%100<86)return 1.685f;
+        if(roll%100<100)return 1.333f;
+        break;
+    case 122202:
+        if(roll%100<25)return 1.744f;
+        if(roll%100<50)return 2.664f;
+        if(roll%100<75)return 2.450f;
+        if(roll%100<100)return 2.667f;
+        break;
+    case 122203:
+        if(roll%100<33)return 3.268f;
+        if(roll%100<66)return 3.007f;
+        if(roll%100<100)return 3.363f;
+        break;
+    case 122204:
+        if(roll%100<25)return 2.690f;
+        if(roll%100<50)return 1.773f;
+        if(roll%100<75)return 1.778f;
+        if(roll%100<100)return 2.221f;
+        break;
+    case 122205:
+        if(roll%100<33)return 1.909f;
+        if(roll%100<66)return 2.628f;
+        if(roll%100<100)return 3.138f;
+        break;
+    case 122206:
+        if(roll%100<33)return 1.980f;
+        if(roll%100<53)return 3.216f;
+        if(roll%100<100)return 0.982f;
+        break;
+    case 122207:
+        if(roll%100<33)return 2.234f;
+        if(roll%100<66)return 2.157f;
+        if(roll%100<100)return 1.910f;
+        break;
+    case 122208:
+        if(roll%100<33)return 1.696f;
+        if(roll%100<66)return 3.044f;
+        if(roll%100<100)return 2.238f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart3_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 122209:
+        if(roll%100<65)return 3.090f;
+        if(roll%100<100)return 3.536f;
+        break;
+    case 122210:
+        if(roll%100<25)return 4.031f;
+        if(roll%100<50)return 2.285f;
+        if(roll%100<75)return 1.991f;
+        if(roll%100<100)return 2.376f;
+        break;
+    case 122211:
+        if(roll%100<33)return 1.527f;
+        if(roll%100<66)return 2.344f;
+        if(roll%100<100)return 3.213f;
+        break;
+    case 122212:
+        if(roll%100<33)return 2.843f;
+        if(roll%100<66)return 2.384f;
+        if(roll%100<100)return 2.282f;
+        break;
+    case 122213:
+        if(roll%100<33)return 3.310f;
+        if(roll%100<66)return 1.946f;
+        if(roll%100<100)return 3.187f;
+        break;
+    case 122214:
+        if(roll%100<33)return 2.330f;
+        if(roll%100<66)return 2.094f;
+        if(roll%100<100)return 2.343f;
+        break;
+    case 122216:
+        if(roll%100<33)return 1.646f;
+        if(roll%100<66)return 2.357f;
+        if(roll%100<100)return 2.093f;
+        break;
+    case 122306:
+        if(roll%100<33)return 2.810f;
+        if(roll%100<66)return 2.632f;
+        if(roll%100<100)return 1.016f;
+        break;
+    case 122307:
+        if(roll%100<33)return 1.268f;
+        if(roll%100<66)return 1.860f;
+        if(roll%100<100)return 1.641f;
+        break;
+    case 122308:
+        if(roll%100<33)return 2.243f;
+        if(roll%100<66)return 1.710f;
+        if(roll%100<100)return 1.990f;
+        break;
+    case 122309:
+        if(roll%100<33)return 0.883f;
+        if(roll%100<66)return 0.979f;
+        if(roll%100<100)return 2.239f;
+        break;
+    case 122310:
+        if(roll%100<33)return 1.708f;
+        if(roll%100<66)return 1.179f;
+        if(roll%100<100)return 1.713f;
+        break;
+    case 122311:
+        if(roll%100<33)return 1.436f;
+        if(roll%100<67)return 1.911f;
+        if(roll%100<100)return 1.558f;
+        break;
+    case 122312:
+        if(roll%100<33)return 1.576f;
+        if(roll%100<66)return 2.310f;
+        if(roll%100<100)return 1.676f;
+        break;
+    case 122313:
+        if(roll%100<33)return 0.913f;
+        if(roll%100<66)return 1.579f;
+        if(roll%100<100)return 1.656f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart4_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 122314:
+        if(roll%100<33)return 2.250f;
+        if(roll%100<66)return 1.790f;
+        if(roll%100<100)return 1.545f;
+        break;
+    case 122316:
+        if(roll%100<33)return 2.173f;
+        if(roll%100<66)return 1.744f;
+        if(roll%100<100)return 1.915f;
+        break;
+    case 122317:
+        if(roll%100<33)return 1.812f;
+        if(roll%100<66)return 2.002f;
+        if(roll%100<100)return 2.269f;
+        break;
+    case 122318:
+        if(roll%100<50)return 2.603f;
+        if(roll%100<100)return 2.800f;
+        break;
+    case 122403:
+        if(roll%100<33)return 1.946f;
+        if(roll%100<66)return 2.322f;
+        if(roll%100<100)return 2.151f;
+        break;
+    case 123301:
+        if(roll%300<33)return 2.828f;
+        if(roll%300<66)return 1.543f;
+        if(roll%300<100)return 1.319f;
+        if(roll%300<200)return 2.256f;
+        if(roll%300<300)return 2.138f;
+        break;
+    case 131101:
+        if(roll%100<33)return 2.638f;
+        if(roll%100<66)return 3.189f;
+        if(roll%100<100)return 2.721f;
+        break;
+    case 131102:
+        if(roll%100<65)return 2.347f;
+        if(roll%100<100)return 2.738f;
+        break;
+    case 132101:
+        if(roll%100<33)return 2.730f;
+        if(roll%100<66)return 2.758f;
+        if(roll%100<100)return 2.784f;
+        break;
+    case 132102:
+        if(roll%100<33)return 3.264f;
+        if(roll%100<66)return 2.557f;
+        if(roll%100<100)return 2.026f;
+        break;
+    case 132104:
+        if(roll%100<33)return 2.451f;
+        if(roll%100<66)return 2.693f;
+        if(roll%100<100)return 2.615f;
+        break;
+    case 132105:
+        if(roll%100<25)return 1.614f;
+        if(roll%100<50)return 1.068f;
+        if(roll%100<75)return 2.271f;
+        if(roll%100<100)return 2.280f;
+        break;
+    case 132108:
+        if(roll%100<33)return 2.540f;
+        if(roll%100<66)return 2.779f;
+        if(roll%100<100)return 1.584f;
+        break;
+    case 132206:
+        if(roll%100<33)return 3.643f;
+        if(roll%100<66)return 3.784f;
+        if(roll%100<100)return 3.939f;
+        break;
+    case 132207:
+        if(roll%100<50)return 3.671f;
+        if(roll%100<100)return 3.439f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart5_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 132208:
+        if(roll%100<33)return 3.653f;
+        if(roll%100<66)return 3.723f;
+        if(roll%100<100)return 3.692f;
+        break;
+    case 132211:
+        if(roll%100<50)return 1.467f;
+        if(roll%100<100)return 1.769f;
+        break;
+    case 132212:
+        if(roll%100<50)return 1.894f;
+        if(roll%100<100)return 1.870f;
+        break;
+    case 132214:
+        if(roll%100<40)return 2.685f;
+        if(roll%100<70)return 1.696f;
+        if(roll%100<100)return 1.462f;
+        break;
+    case 132215:
+        if(roll%100<20)return 1.501f;
+        if(roll%100<40)return 2.954f;
+        if(roll%100<60)return 2.291f;
+        if(roll%100<80)return 3.128f;
+        if(roll%100<100)return 2.239f;
+        break;
+    case 132305:
+        if(roll%100<45)return 1.250f;
+        if(roll%100<90)return 1.148f;
+        if(roll%100<100)return 1.188f;
+        break;
+    case 132309:
+        if(roll%100<33)return 2.126f;
+        if(roll%100<66)return 2.421f;
+        if(roll%100<100)return 2.026f;
+        break;
+    case 132310:
+        if(roll%100<33)return 1.398f;
+        if(roll%100<66)return 2.956f;
+        if(roll%100<100)return 2.215f;
+        break;
+    case 142102:
+        if(roll%100<33)return 2.128f;
+        if(roll%100<66)return 2.865f;
+        if(roll%100<100)return 1.620f;
+        break;
+    case 142103:
+        if(roll%100<30)return 1.011f;
+        if(roll%100<60)return 1.930f;
+        if(roll%100<90)return 2.837f;
+        if(roll%100<100)return 1.493f;
+        break;
+    case 142104:
+        if(roll%100<33)return 2.549f;
+        if(roll%100<66)return 1.039f;
+        if(roll%100<100)return 2.446f;
+        break;
+    case 142105:
+        if(roll%100<24)return 1.471f;
+        if(roll%100<48)return 1.495f;
+        if(roll%100<72)return 3.113f;
+        if(roll%100<96)return 2.005f;
+        if(roll%100<100)return 2.277f;
+        break;
+    case 142106:
+        if(roll%100<33)return 1.261f;
+        if(roll%100<66)return 2.359f;
+        if(roll%100<100)return 2.018f;
+        break;
+    case 142107:
+        if(roll%100<33)return 2.725f;
+        if(roll%100<66)return 3.242f;
+        if(roll%100<100)return 2.806f;
+        break;
+    case 142108:
+        if(roll%100<33)return 1.632f;
+        if(roll%100<66)return 3.001f;
+        if(roll%100<100)return 1.617f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart6_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 142201:
+        if(roll%100<33)return 2.240f;
+        if(roll%100<66)return 2.741f;
+        if(roll%100<100)return 2.669f;
+        break;
+    case 142202:
+        if(roll%100<40)return 2.889f;
+        if(roll%100<100)return 2.018f;
+        break;
+    case 142203:
+        if(roll%100<33)return 2.618f;
+        if(roll%100<66)return 2.790f;
+        if(roll%100<100)return 2.521f;
+        break;
+    case 142204:
+        if(roll%100<33)return 1.487f;
+        if(roll%100<73)return 2.708f;
+        if(roll%100<100)return 2.602f;
+        break;
+    case 142206:
+        if(roll%100<33)return 2.248f;
+        if(roll%100<66)return 2.630f;
+        if(roll%100<100)return 1.752f;
+        break;
+    case 142207:
+        if(roll%100<33)return 2.439f;
+        if(roll%100<66)return 3.211f;
+        if(roll%100<100)return 2.386f;
+        break;
+    case 142208:
+        if(roll%100<33)return 2.098f;
+        if(roll%100<66)return 2.077f;
+        if(roll%100<100)return 2.055f;
+        break;
+    case 142209:
+        if(roll%100<33)return 2.446f;
+        if(roll%100<66)return 1.418f;
+        if(roll%100<100)return 1.197f;
+        break;
+    case 142210:
+        if(roll%100<33)return 2.742f;
+        if(roll%100<66)return 2.415f;
+        if(roll%100<100)return 1.268f;
+        break;
+    case 142211:
+        if(roll%100<33)return 1.573f;
+        if(roll%100<66)return 2.312f;
+        if(roll%100<100)return 2.124f;
+        break;
+    case 142212:
+        if(roll%100<33)return 2.862f;
+        if(roll%100<66)return 2.289f;
+        if(roll%100<100)return 3.046f;
+        break;
+    case 142213:
+        if(roll%100<33)return 3.108f;
+        if(roll%100<66)return 2.979f;
+        if(roll%100<100)return 3.041f;
+        break;
+    case 142214:
+        if(roll%100<33)return 1.856f;
+        if(roll%100<66)return 2.437f;
+        if(roll%100<100)return 2.264f;
+        break;
+    case 142301:
+        if(roll%100<33)return 1.753f;
+        if(roll%100<66)return 1.990f;
+        if(roll%100<100)return 1.046f;
+        break;
+    case 142302:
+        if(roll%100<33)return 3.185f;
+        if(roll%100<67)return 2.017f;
+        if(roll%100<100)return 1.299f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart7_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 142303:
+        if(roll%100<50)return 1.367f;
+        if(roll%100<100)return 2.926f;
+        break;
+    case 142304:
+        if(roll%100<33)return 2.336f;
+        if(roll%100<66)return 2.433f;
+        if(roll%100<100)return 1.788f;
+        break;
+    case 142306:
+        if(roll%100<33)return 2.004f;
+        if(roll%100<66)return 2.039f;
+        if(roll%100<100)return 2.539f;
+        break;
+    case 142307:
+        if(roll%100<30)return 1.812f;
+        if(roll%100<65)return 2.101f;
+        if(roll%100<100)return 1.775f;
+        break;
+    case 142308:
+        if(roll%100<33)return 1.860f;
+        if(roll%100<66)return 2.723f;
+        if(roll%100<100)return 1.134f;
+        break;
+    case 142309:
+        if(roll%100<20)return 2.739f;
+        if(roll%100<60)return 2.551f;
+        if(roll%100<100)return 1.995f;
+        break;
+    case 142310:
+        if(roll%100<33)return 1.903f;
+        if(roll%100<66)return 1.454f;
+        if(roll%100<100)return 2.787f;
+        break;
+    case 142311:
+        if(roll%100<33)return 2.126f;
+        if(roll%100<66)return 2.563f;
+        if(roll%100<100)return 2.095f;
+        break;
+    case 142312:
+        if(roll%100<15)return 3.198f;
+        if(roll%100<57)return 2.033f;
+        if(roll%100<100)return 2.602f;
+        break;
+    case 142313:
+        if(roll%100<33)return 1.848f;
+        if(roll%100<66)return 2.051f;
+        if(roll%100<100)return 1.986f;
+        break;
+    case 142314:
+        if(roll%100<33)return 1.756f;
+        if(roll%100<67)return 2.107f;
+        if(roll%100<100)return 2.202f;
+        break;
+    case 142315:
+        if(roll%100<33)return 1.398f;
+        if(roll%100<66)return 2.116f;
+        if(roll%100<100)return 2.089f;
+        break;
+    case 142316:
+        if(roll%100<33)return 2.319f;
+        if(roll%100<66)return 3.023f;
+        if(roll%100<100)return 2.440f;
+        break;
+    case 142317:
+        if(roll%100<33)return 1.138f;
+        if(roll%100<66)return 2.733f;
+        if(roll%100<100)return 1.526f;
+        break;
+    case 142401:
+        if(roll%100<33)return 1.517f;
+        if(roll%100<66)return 2.082f;
+        if(roll%100<100)return 2.105f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart8_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 152101:
+        if(roll%100<25)return 2.008f;
+        if(roll%100<50)return 1.506f;
+        if(roll%100<75)return 2.394f;
+        if(roll%100<100)return 2.591f;
+        break;
+    case 152103:
+        if(roll%100<50)return 2.843f;
+        if(roll%100<100)return 2.014f;
+        break;
+    case 152105:
+        if(roll%100<33)return 2.904f;
+        if(roll%100<66)return 1.512f;
+        if(roll%100<100)return 1.803f;
+        break;
+    case 152106:
+        if(roll%100<50)return 1.754f;
+        if(roll%100<100)return 2.294f;
+        break;
+    case 152107:
+        if(roll%100<33)return 2.400f;
+        if(roll%100<66)return 2.589f;
+        if(roll%100<100)return 2.299f;
+        break;
+    case 152201:
+        if(roll%100<50)return 3.170f;
+        if(roll%100<100)return 2.700f;
+        break;
+    case 152202:
+        if(roll%100<50)return 2.059f;
+        if(roll%100<100)return 1.404f;
+        break;
+    case 152203:
+        if(roll%100<33)return 2.863f;
+        if(roll%100<66)return 3.070f;
+        if(roll%100<100)return 1.716f;
+        break;
+    case 152204:
+        if(roll%100<33)return 2.317f;
+        if(roll%100<66)return 1.258f;
+        if(roll%100<100)return 1.228f;
+        break;
+    case 152205:
+        if(roll%100<100)return 1.471f;
+        break;
+    case 152206:
+        if(roll%100<25)return 2.143f;
+        if(roll%100<50)return 2.835f;
+        if(roll%100<75)return 2.040f;
+        if(roll%100<100)return 2.808f;
+        break;
+    case 152207:
+        if(roll%100<20)return 2.265f;
+        if(roll%100<80)return 1.656f;
+        if(roll%100<100)return 1.533f;
+        break;
+    case 152208:
+        if(roll%100<33)return 2.285f;
+        if(roll%100<66)return 2.372f;
+        if(roll%100<100)return 1.612f;
+        break;
+    case 152209:
+        if(roll%100<33)return 3.522f;
+        if(roll%100<66)return 3.421f;
+        if(roll%100<100)return 3.514f;
+        break;
+    case 152211:
+        if(roll%100<33)return 1.292f;
+        if(roll%100<66)return 1.917f;
+        if(roll%100<100)return 2.383f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart9_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 152213:
+        if(roll%100<20)return 1.811f;
+        if(roll%100<40)return 1.167f;
+        if(roll%100<60)return 1.518f;
+        if(roll%100<80)return 1.665f;
+        if(roll%100<100)return 1.582f;
+        break;
+    case 152214:
+        if(roll%100<40)return 1.086f;
+        if(roll%100<80)return 1.729f;
+        if(roll%100<100)return 2.669f;
+        break;
+    case 152301:
+        if(roll%100<34)return 2.699f;
+        if(roll%100<67)return 2.381f;
+        if(roll%100<100)return 3.119f;
+        break;
+    case 152302:
+        if(roll%100<34)return 3.044f;
+        if(roll%100<67)return 2.983f;
+        if(roll%100<100)return 1.537f;
+        break;
+    case 152303:
+        if(roll%100<34)return 3.179f;
+        if(roll%100<67)return 1.829f;
+        if(roll%100<100)return 2.100f;
+        break;
+    case 152304:
+        if(roll%100<33)return 1.159f;
+        if(roll%100<66)return 1.677f;
+        if(roll%100<100)return 2.001f;
+        break;
+    case 152305:
+        if(roll%100<34)return 3.448f;
+        if(roll%100<67)return 1.697f;
+        if(roll%100<100)return 3.135f;
+        break;
+    case 152306:
+        if(roll%100<33)return 1.245f;
+        if(roll%100<66)return 2.227f;
+        if(roll%100<100)return 2.969f;
+        break;
+    case 152308:
+        if(roll%100<42)return 1.945f;
+        if(roll%100<84)return 1.700f;
+        if(roll%100<100)return 2.689f;
+        break;
+    case 152310:
+        if(roll%100<33)return 2.479f;
+        if(roll%100<66)return 3.240f;
+        if(roll%100<100)return 2.933f;
+        break;
+    case 152311:
+        if(roll%100<33)return 2.086f;
+        if(roll%100<66)return 2.458f;
+        if(roll%100<100)return 2.604f;
+        break;
+    case 152312:
+        if(roll%100<50)return 1.246f;
+        if(roll%100<100)return 1.299f;
+        break;
+    case 152313:
+        if(roll%100<33)return 2.488f;
+        if(roll%100<66)return 2.589f;
+        if(roll%100<100)return 2.182f;
+        break;
+    case 152315:
+        if(roll%100<34)return 2.178f;
+        if(roll%100<67)return 2.545f;
+        if(roll%100<100)return 1.660f;
+        break;
+    case 152316:
+        if(roll%100<33)return 2.091f;
+        if(roll%100<66)return 1.695f;
+        if(roll%100<100)return 2.071f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart10_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 152317:
+        if(roll%100<33)return 2.327f;
+        if(roll%100<66)return 2.000f;
+        if(roll%100<100)return 2.168f;
+        break;
+    case 152318:
+        if(roll%100<34)return 2.634f;
+        if(roll%100<67)return 2.724f;
+        if(roll%100<100)return 2.933f;
+        break;
+    case 152402:
+        if(roll%100<33)return 4.576f;
+        if(roll%100<66)return 4.587f;
+        if(roll%100<100)return 4.266f;
+        break;
+    case 162101:
+        if(roll%100<25)return 2.192f;
+        if(roll%100<50)return 2.481f;
+        if(roll%100<75)return 2.306f;
+        if(roll%100<100)return 2.319f;
+        break;
+    case 162102:
+        if(roll%100<33)return 1.644f;
+        if(roll%100<66)return 2.012f;
+        if(roll%100<100)return 2.140f;
+        break;
+    case 162103:
+        if(roll%100<33)return 2.273f;
+        if(roll%100<66)return 2.715f;
+        if(roll%100<100)return 1.746f;
+        break;
+    case 162104:
+        if(roll%100<33)return 1.786f;
+        if(roll%100<66)return 1.771f;
+        if(roll%100<100)return 1.501f;
+        break;
+    case 162105:
+        if(roll%100<33)return 2.268f;
+        if(roll%100<66)return 1.833f;
+        if(roll%100<100)return 3.281f;
+        break;
+    case 162106:
+        if(roll%100<33)return 1.614f;
+        if(roll%100<66)return 3.255f;
+        if(roll%100<100)return 2.856f;
+        break;
+    case 162107:
+        if(roll%100<33)return 2.233f;
+        if(roll%100<66)return 2.455f;
+        if(roll%100<100)return 2.189f;
+        break;
+    case 162108:
+        if(roll%100<33)return 2.804f;
+        if(roll%100<66)return 3.210f;
+        if(roll%100<100)return 3.075f;
+        break;
+    case 162201:
+        if(roll%100<33)return 2.239f;
+        if(roll%100<66)return 2.233f;
+        if(roll%100<100)return 2.923f;
+        break;
+    case 162202:
+        if(roll%100<33)return 1.766f;
+        if(roll%100<66)return 1.679f;
+        if(roll%100<100)return 2.993f;
+        break;
+    case 162203:
+        if(roll%100<33)return 1.467f;
+        if(roll%100<66)return 1.351f;
+        if(roll%100<100)return 1.761f;
+        break;
+    case 162204:
+        if(roll%100<33)return 2.156f;
+        if(roll%100<66)return 2.885f;
+        if(roll%100<100)return 2.329f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart11_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 162205:
+        if(roll%100<33)return 2.063f;
+        if(roll%100<66)return 2.420f;
+        if(roll%100<100)return 1.887f;
+        break;
+    case 162206:
+        if(roll%100<33)return 1.445f;
+        if(roll%100<66)return 2.273f;
+        if(roll%100<100)return 2.234f;
+        break;
+    case 162207:
+        if(roll%100<33)return 1.993f;
+        if(roll%100<66)return 2.755f;
+        if(roll%100<100)return 2.316f;
+        break;
+    case 162208:
+        if(roll%100<33)return 1.486f;
+        if(roll%100<66)return 2.603f;
+        if(roll%100<100)return 1.466f;
+        break;
+    case 162209:
+        if(roll%100<33)return 2.700f;
+        if(roll%100<66)return 1.572f;
+        if(roll%100<100)return 1.966f;
+        break;
+    case 162210:
+        if(roll%100<33)return 2.196f;
+        if(roll%100<66)return 1.376f;
+        if(roll%100<100)return 1.870f;
+        break;
+    case 162211:
+        if(roll%100<33)return 2.667f;
+        if(roll%100<66)return 2.546f;
+        if(roll%100<100)return 2.665f;
+        break;
+    case 162212:
+        if(roll%100<33)return 2.606f;
+        if(roll%100<66)return 2.145f;
+        if(roll%100<100)return 2.195f;
+        break;
+    case 162213:
+        if(roll%100<33)return 2.562f;
+        if(roll%100<66)return 2.855f;
+        if(roll%100<100)return 2.884f;
+        break;
+    case 162301:
+        if(roll%100<33)return 3.250f;
+        if(roll%100<66)return 2.258f;
+        if(roll%100<100)return 2.256f;
+        break;
+    case 162303:
+        if(roll%100<33)return 1.669f;
+        if(roll%100<66)return 1.450f;
+        if(roll%100<100)return 2.416f;
+        break;
+    case 162304:
+        if(roll%100<33)return 1.736f;
+        if(roll%100<66)return 3.100f;
+        if(roll%100<100)return 2.834f;
+        break;
+    case 162305:
+        if(roll%100<33)return 0.741f;
+        if(roll%100<66)return 2.091f;
+        if(roll%100<100)return 1.482f;
+        break;
+    case 162307:
+        if(roll%100<33)return 1.291f;
+        if(roll%100<66)return 2.004f;
+        if(roll%100<100)return 2.377f;
+        break;
+    case 162308:
+        if(roll%100<33)return 2.332f;
+        if(roll%100<66)return 1.537f;
+        if(roll%100<100)return 2.634f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart12_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 162309:
+        if(roll%100<33)return 2.473f;
+        if(roll%100<66)return 2.526f;
+        if(roll%100<100)return 2.293f;
+        break;
+    case 162310:
+        if(roll%100<33)return 1.614f;
+        if(roll%100<66)return 1.607f;
+        if(roll%100<100)return 1.737f;
+        break;
+    case 162311:
+        if(roll%100<33)return 1.370f;
+        if(roll%100<66)return 0.872f;
+        if(roll%100<100)return 1.872f;
+        break;
+    case 162312:
+        if(roll%100<33)return 1.150f;
+        if(roll%100<66)return 0.910f;
+        if(roll%100<100)return 2.953f;
+        break;
+    case 162313:
+        if(roll%100<33)return 1.356f;
+        if(roll%100<66)return 1.568f;
+        if(roll%100<100)return 2.329f;
+        break;
+    case 162314:
+        if(roll%100<33)return 2.445f;
+        if(roll%100<66)return 1.645f;
+        if(roll%100<100)return 2.063f;
+        break;
+    case 162315:
+        if(roll%100<33)return 1.788f;
+        if(roll%100<66)return 1.415f;
+        if(roll%100<100)return 1.162f;
+        break;
+    case 162316:
+        if(roll%100<33)return 3.023f;
+        if(roll%100<66)return 2.160f;
+        if(roll%100<100)return 2.684f;
+        break;
+    case 162318:
+        if(roll%100<33)return 2.406f;
+        if(roll%100<66)return 2.516f;
+        if(roll%100<100)return 2.111f;
+        break;
+    case 162401:
+        if(roll%100<42)return 3.328f;
+        if(roll%100<85)return 3.363f;
+        if(roll%100<100)return 3.256f;
+        break;
+    case 200026:
+        if(roll%100<33)return 4.264f;
+        if(roll%100<66)return 3.337f;
+        if(roll%100<100)return 3.563f;
+        break;
+    case 200028:
+        if(roll%100<33)return 1.627f;
+        if(roll%100<66)return 2.968f;
+        if(roll%100<100)return 2.042f;
+        break;
+    case 200030:
+        if(roll%100<33)return 1.457f;
+        if(roll%100<66)return 1.168f;
+        if(roll%100<100)return 2.171f;
+        break;
+    case 200031:
+        if(roll%100<33)return 2.631f;
+        if(roll%100<66)return 3.169f;
+        if(roll%100<100)return 3.025f;
+        break;
+    case 200032:
+        if(roll%100<33)return 2.134f;
+        if(roll%100<66)return 2.577f;
+        if(roll%100<100)return 2.573f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart13_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200033:
+        if(roll%100<45)return 1.592f;
+        if(roll%100<65)return 2.633f;
+        if(roll%100<100)return 2.581f;
+        break;
+    case 200036:
+        if(roll%100<33)return 2.276f;
+        if(roll%100<66)return 2.474f;
+        if(roll%100<100)return 3.137f;
+        break;
+    case 200039:
+        if(roll%100<33)return 1.052f;
+        if(roll%100<66)return 2.287f;
+        if(roll%100<100)return 1.677f;
+        break;
+    case 200040:
+        if(roll%100<33)return 1.869f;
+        if(roll%100<66)return 2.804f;
+        if(roll%100<100)return 2.040f;
+        break;
+    case 200042:
+        if(roll%100<33)return 2.048f;
+        if(roll%100<66)return 2.049f;
+        if(roll%100<100)return 1.800f;
+        break;
+    case 200043:
+        if(roll%100<33)return 3.514f;
+        if(roll%100<67)return 2.273f;
+        if(roll%100<100)return 3.058f;
+        break;
+    case 200044:
+        if(roll%100<33)return 0.957f;
+        if(roll%100<67)return 1.991f;
+        if(roll%100<100)return 2.107f;
+        break;
+    case 200046:
+        if(roll%100<33)return 2.213f;
+        if(roll%100<66)return 3.130f;
+        if(roll%100<100)return 3.046f;
+        break;
+    case 200048:
+        if(roll%100<33)return 2.003f;
+        if(roll%100<66)return 2.223f;
+        if(roll%100<100)return 2.390f;
+        break;
+    case 200050:
+        if(roll%100<33)return 2.137f;
+        if(roll%100<67)return 3.030f;
+        if(roll%100<100)return 2.086f;
+        break;
+    case 200055:
+        if(roll%100<33)return 2.654f;
+        if(roll%100<66)return 2.562f;
+        if(roll%100<100)return 2.851f;
+        break;
+    case 200062:
+        if(roll%100<34)return 2.313f;
+        if(roll%100<67)return 1.388f;
+        if(roll%100<100)return 1.851f;
+        break;
+    case 200071:
+        if(roll%100<33)return 2.490f;
+        if(roll%100<67)return 3.225f;
+        if(roll%100<100)return 3.069f;
+        break;
+    case 200080:
+        if(roll%100<33)return 2.255f;
+        if(roll%100<66)return 2.274f;
+        if(roll%100<100)return 3.184f;
+        break;
+    case 200081:
+        if(roll%100<33)return 2.494f;
+        if(roll%100<67)return 2.278f;
+        if(roll%100<100)return 2.505f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart14_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200083:
+        if(roll%100<25)return 1.616f;
+        if(roll%100<50)return 1.914f;
+        if(roll%100<75)return 3.008f;
+        if(roll%100<100)return 2.864f;
+        break;
+    case 200087:
+        if(roll%100<25)return 2.603f;
+        if(roll%100<50)return 2.324f;
+        if(roll%100<75)return 3.082f;
+        if(roll%100<100)return 2.507f;
+        break;
+    case 200088:
+        if(roll%100<33)return 2.027f;
+        if(roll%100<67)return 1.831f;
+        if(roll%100<100)return 2.277f;
+        break;
+    case 200089:
+        if(roll%100<34)return 2.909f;
+        if(roll%100<67)return 2.263f;
+        if(roll%100<100)return 4.344f;
+        break;
+    case 200091:
+        if(roll%100<25)return 1.702f;
+        if(roll%100<50)return 2.591f;
+        if(roll%100<75)return 1.888f;
+        if(roll%100<100)return 2.267f;
+        break;
+    case 200098:
+        if(roll%100<33)return 2.215f;
+        if(roll%100<66)return 2.114f;
+        if(roll%100<100)return 2.530f;
+        break;
+    case 200112:
+        if(roll%100<50)return 1.968f;
+        if(roll%100<100)return 2.326f;
+        break;
+    case 200115:
+        if(roll%100<33)return 1.363f;
+        if(roll%100<67)return 1.666f;
+        if(roll%100<100)return 1.452f;
+        break;
+    case 200118:
+        if(roll%100<33)return 2.153f;
+        if(roll%100<67)return 1.631f;
+        if(roll%100<100)return 2.090f;
+        break;
+    case 200124:
+        if(roll%100<33)return 1.885f;
+        if(roll%100<67)return 2.091f;
+        if(roll%100<100)return 2.056f;
+        break;
+    case 200132:
+        if(roll%100<33)return 2.325f;
+        if(roll%100<67)return 2.517f;
+        if(roll%100<100)return 2.931f;
+        break;
+    case 200135:
+        if(roll%100<100)return 2.446f;
+        if(roll%100<100)return 2.680f;
+        if(roll%100<100)return 0.849f;
+        break;
+    case 200136:
+        if(roll%100<33)return 3.053f;
+        if(roll%100<66)return 2.101f;
+        if(roll%100<100)return 1.709f;
+        break;
+    case 200138:
+        if(roll%100<33)return 3.866f;
+        if(roll%100<66)return 2.614f;
+        if(roll%100<100)return 3.150f;
+        break;
+    case 200144:
+        if(roll%100<20)return 3.235f;
+        if(roll%100<40)return 2.525f;
+        if(roll%100<60)return 2.055f;
+        if(roll%100<80)return 3.249f;
+        if(roll%100<100)return 1.636f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart15_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200145:
+        if(roll%100<34)return 2.588f;
+        if(roll%100<67)return 2.429f;
+        if(roll%100<100)return 2.684f;
+        break;
+    case 200146:
+        if(roll%100<34)return 3.844f;
+        if(roll%100<67)return 2.138f;
+        if(roll%100<100)return 2.414f;
+        break;
+    case 200147:
+        if(roll%100<33)return 1.749f;
+        if(roll%100<66)return 2.325f;
+        if(roll%100<100)return 3.104f;
+        break;
+    case 200149:
+        if(roll%100<34)return 1.877f;
+        if(roll%100<67)return 2.327f;
+        if(roll%100<100)return 3.239f;
+        break;
+    case 200159:
+        if(roll%100<33)return 2.901f;
+        if(roll%100<66)return 3.105f;
+        if(roll%100<100)return 3.245f;
+        break;
+    case 200160:
+        if(roll%100<33)return 2.644f;
+        if(roll%100<66)return 2.839f;
+        if(roll%100<100)return 2.638f;
+        break;
+    case 200161:
+        if(roll%100<33)return 2.178f;
+        if(roll%100<66)return 3.229f;
+        if(roll%100<100)return 2.969f;
+        break;
+    case 200162:
+        if(roll%100<33)return 3.308f;
+        if(roll%100<66)return 2.615f;
+        if(roll%100<100)return 3.214f;
+        break;
+    case 200163:
+        if(roll%100<33)return 3.162f;
+        if(roll%100<66)return 2.891f;
+        if(roll%100<100)return 2.675f;
+        break;
+    case 200164:
+        if(roll%100<33)return 3.136f;
+        if(roll%100<66)return 3.226f;
+        if(roll%100<100)return 2.863f;
+        break;
+    case 200165:
+        if(roll%100<33)return 2.318f;
+        if(roll%100<66)return 2.222f;
+        if(roll%100<100)return 1.865f;
+        break;
+    case 200166:
+        if(roll%100<33)return 2.302f;
+        if(roll%100<66)return 1.747f;
+        if(roll%100<100)return 1.870f;
+        break;
+    case 200167:
+        if(roll%100<33)return 2.905f;
+        if(roll%100<66)return 2.346f;
+        if(roll%100<100)return 2.941f;
+        break;
+    case 200168:
+        if(roll%100<33)return 2.061f;
+        if(roll%100<67)return 1.349f;
+        if(roll%100<100)return 1.818f;
+        break;
+    case 200169:
+        if(roll%100<20)return 2.217f;
+        if(roll%100<40)return 2.416f;
+        if(roll%100<60)return 2.757f;
+        if(roll%100<80)return 1.519f;
+        if(roll%100<100)return 2.521f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart16_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200170:
+        if(roll%100<50)return 2.680f;
+        if(roll%100<100)return 3.219f;
+        break;
+    case 200171:
+        if(roll%100<33)return 3.010f;
+        if(roll%100<66)return 1.357f;
+        if(roll%100<100)return 1.464f;
+        break;
+    case 200177:
+        if(roll%100<33)return 1.328f;
+        if(roll%100<66)return 1.506f;
+        if(roll%100<100)return 1.280f;
+        break;
+    case 200209:
+        if(roll%100<25)return 1.469f;
+        if(roll%100<50)return 1.736f;
+        if(roll%100<75)return 1.138f;
+        if(roll%100<100)return 1.019f;
+        break;
+    case 200212:
+        if(roll%100<33)return 1.912f;
+        if(roll%100<67)return 2.080f;
+        if(roll%100<100)return 1.773f;
+        break;
+    case 200219:
+        if(roll%100<42)return 3.328f;
+        if(roll%100<85)return 3.363f;
+        if(roll%100<100)return 3.256f;
+        break;
+    case 200220:
+        if(roll%300<100)return 3.939f;
+        if(roll%300<200)return 3.784f;
+        if(roll%300<300)return 3.643f;
+        break;
+    case 200221:
+        if(roll%100<50)return 3.671f;
+        if(roll%100<100)return 3.439f;
+        break;
+    case 200222:
+        if(roll%100<34)return 3.723f;
+        if(roll%100<67)return 3.653f;
+        if(roll%100<100)return 3.692f;
+        break;
+    case 200227:
+        if(roll%100<33)return 3.223f;
+        if(roll%100<67)return 2.746f;
+        if(roll%100<100)return 3.162f;
+        break;
+    case 200235:
+        if(roll%100<17)return 2.707f;
+        if(roll%100<34)return 2.533f;
+        if(roll%100<51)return 2.169f;
+        if(roll%100<68)return 1.379f;
+        if(roll%100<85)return 2.298f;
+        if(roll%100<100)return 1.420f;
+        break;
+    case 200236:
+        if(roll%100<25)return 1.325f;
+        if(roll%100<67)return 2.059f;
+        if(roll%100<92)return 1.279f;
+        if(roll%100<100)return 2.513f;
+        break;
+    case 200237:
+        if(roll%100<33)return 1.898f;
+        if(roll%100<66)return 2.876f;
+        if(roll%100<100)return 2.422f;
+        break;
+    case 200293:
+        if(roll%100<20)return 3.849f;
+        if(roll%100<40)return 2.956f;
+        if(roll%100<60)return 3.197f;
+        if(roll%100<80)return 2.318f;
+        if(roll%100<100)return 4.928f;
+        break;
+    case 200294:
+        if(roll%100<20)return 2.691f;
+        if(roll%100<40)return 2.680f;
+        if(roll%100<60)return 1.962f;
+        if(roll%100<80)return 2.175f;
+        if(roll%100<100)return 1.670f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart17_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200296:
+        if(roll%100<33)return 3.690f;
+        if(roll%100<66)return 3.764f;
+        if(roll%100<100)return 2.762f;
+        break;
+    case 200299:
+        if(roll%100<33)return 2.881f;
+        if(roll%100<66)return 3.075f;
+        if(roll%100<100)return 2.372f;
+        break;
+    case 200518:
+        if(roll%100<33)return 1.150f;
+        if(roll%100<66)return 1.679f;
+        if(roll%100<100)return 1.655f;
+        break;
+    case 200520:
+        if(roll%100<33)return 1.806f;
+        if(roll%100<66)return 2.317f;
+        if(roll%100<100)return 1.469f;
+        break;
+    case 200523:
+        if(roll%100<25)return 1.773f;
+        if(roll%100<50)return 2.461f;
+        if(roll%100<75)return 1.626f;
+        if(roll%100<100)return 1.495f;
+        break;
+    case 200528:
+        if(roll%100<33)return 2.343f;
+        if(roll%100<66)return 2.137f;
+        if(roll%100<100)return 1.583f;
+        break;
+    case 200529:
+        if(roll%100<39)return 2.296f;
+        if(roll%100<61)return 2.612f;
+        if(roll%100<100)return 2.979f;
+        break;
+    case 200534:
+        if(roll%100<33)return 1.217f;
+        if(roll%100<66)return 2.373f;
+        if(roll%100<100)return 2.951f;
+        break;
+    case 200535:
+        if(roll%100<33)return 2.045f;
+        if(roll%100<66)return 2.240f;
+        if(roll%100<100)return 2.682f;
+        break;
+    case 200540:
+        if(roll%100<41)return 1.730f;
+        if(roll%100<82)return 1.588f;
+        if(roll%100<100)return 3.155f;
+        break;
+    case 201523:
+        if(roll%100<20)return 2.613f;
+        if(roll%100<40)return 1.220f;
+        if(roll%100<60)return 1.613f;
+        if(roll%100<80)return 2.500f;
+        if(roll%100<100)return 1.789f;
+        break;
+    case 201559:
+        if(roll%100<20)return 3.101f;
+        if(roll%100<40)return 2.664f;
+        if(roll%100<60)return 3.689f;
+        if(roll%100<80)return 4.056f;
+        if(roll%100<100)return 3.216f;
+        break;
+    case 201578:
+        if(roll%100<34)return 2.276f;
+        if(roll%100<67)return 2.685f;
+        if(roll%100<100)return 2.375f;
+        break;
+    case 201580:
+        if(roll%100<33)return 2.954f;
+        if(roll%100<66)return 2.826f;
+        if(roll%100<100)return 2.866f;
+        break;
+    case 201587:
+        if(roll%100<20)return 1.619f;
+        if(roll%100<40)return 1.689f;
+        if(roll%100<60)return 1.689f;
+        if(roll%100<80)return 2.525f;
+        if(roll%100<100)return 2.965f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart18_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 201589:
+        if(roll%100<34)return 1.482f;
+        if(roll%100<67)return 2.287f;
+        if(roll%100<100)return 2.024f;
+        break;
+    case 201595:
+        if(roll%100<34)return 2.782f;
+        if(roll%100<67)return 3.012f;
+        if(roll%100<100)return 3.328f;
+        break;
+    case 201597:
+        if(roll%100<33)return 2.714f;
+        if(roll%100<66)return 2.284f;
+        if(roll%100<100)return 1.835f;
+        break;
+    case 201601:
+        if(roll%100<34)return 2.757f;
+        if(roll%100<67)return 2.874f;
+        if(roll%100<100)return 1.805f;
+        break;
+    case 201603:
+        if(roll%100<25)return 2.306f;
+        if(roll%100<50)return 2.319f;
+        if(roll%100<75)return 2.192f;
+        if(roll%100<100)return 2.481f;
+        break;
+    case 201609:
+        if(roll%100<20)return 1.169f;
+        if(roll%100<40)return 1.726f;
+        if(roll%100<60)return 1.819f;
+        if(roll%100<80)return 3.002f;
+        if(roll%100<100)return 2.519f;
+        break;
+    case 201611:
+        if(roll%100<25)return 1.011f;
+        if(roll%100<50)return 1.930f;
+        if(roll%100<75)return 2.837f;
+        if(roll%100<100)return 1.493f;
+        break;
+    case 201612:
+        if(roll%100<20)return 1.883f;
+        if(roll%100<40)return 1.078f;
+        if(roll%100<60)return 3.291f;
+        if(roll%100<80)return 1.120f;
+        if(roll%100<100)return 2.855f;
+        break;
+    case 201615:
+        if(roll%100<34)return 2.128f;
+        if(roll%100<67)return 1.620f;
+        if(roll%100<100)return 2.865f;
+        break;
+    case 201616:
+        if(roll%100<33)return 2.169f;
+        if(roll%100<67)return 2.450f;
+        if(roll%100<100)return 2.067f;
+        break;
+    case 201617:
+        if(roll%100<20)return 2.202f;
+        if(roll%100<40)return 3.064f;
+        if(roll%100<60)return 3.505f;
+        if(roll%100<80)return 3.665f;
+        if(roll%100<100)return 3.537f;
+        break;
+    case 201618:
+        if(roll%100<33)return 2.217f;
+        if(roll%100<66)return 2.171f;
+        if(roll%100<100)return 2.263f;
+        break;
+    case 201620:
+        if(roll%100<20)return 2.303f;
+        if(roll%100<40)return 1.416f;
+        if(roll%100<60)return 3.185f;
+        if(roll%100<80)return 1.922f;
+        if(roll%100<100)return 2.790f;
+        break;
+    case 201621:
+        if(roll%100<20)return 2.844f;
+        if(roll%100<40)return 1.592f;
+        if(roll%100<60)return 2.475f;
+        if(roll%100<80)return 2.124f;
+        if(roll%100<100)return 2.608f;
+        break;
+    case 201622:
+        if(roll%100<33)return 2.035f;
+        if(roll%100<67)return 1.518f;
+        if(roll%100<100)return 2.294f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart19_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 201624:
+        if(roll%100<20)return 2.097f;
+        if(roll%100<40)return 3.980f;
+        if(roll%100<60)return 2.732f;
+        if(roll%100<80)return 3.500f;
+        if(roll%100<100)return 2.107f;
+        break;
+    case 201625:
+        if(roll%100<20)return 3.318f;
+        if(roll%100<40)return 2.454f;
+        if(roll%100<60)return 2.132f;
+        if(roll%100<80)return 2.604f;
+        if(roll%100<100)return 2.084f;
+        break;
+    case 201626:
+        if(roll%100<25)return 2.401f;
+        if(roll%100<50)return 1.589f;
+        if(roll%100<75)return 1.932f;
+        if(roll%100<100)return 2.584f;
+        break;
+    case 201627:
+        if(roll%100<20)return 5.267f;
+        if(roll%100<40)return 3.697f;
+        if(roll%100<60)return 5.069f;
+        if(roll%100<80)return 4.064f;
+        if(roll%100<100)return 5.198f;
+        break;
+    case 201628:
+        if(roll%100<20)return 2.703f;
+        if(roll%100<40)return 1.944f;
+        if(roll%100<60)return 1.830f;
+        if(roll%100<80)return 1.964f;
+        if(roll%100<100)return 3.192f;
+        break;
+    case 201630:
+        if(roll%100<20)return 3.536f;
+        if(roll%100<40)return 3.370f;
+        if(roll%100<60)return 2.038f;
+        if(roll%100<80)return 2.220f;
+        if(roll%100<100)return 2.307f;
+        break;
+    case 201636:
+        if(roll%100<20)return 0.679f;
+        if(roll%100<40)return 0.604f;
+        if(roll%100<60)return 1.664f;
+        if(roll%100<80)return 1.475f;
+        if(roll%100<100)return 0.864f;
+        break;
+    case 201638:
+        if(roll%100<20)return 1.908f;
+        if(roll%100<40)return 2.485f;
+        if(roll%100<60)return 2.602f;
+        if(roll%100<80)return 1.449f;
+        if(roll%100<100)return 1.808f;
+        break;
+    case 201644:
+        if(roll%100<20)return 2.215f;
+        if(roll%100<40)return 3.260f;
+        if(roll%100<60)return 3.276f;
+        if(roll%100<80)return 2.201f;
+        if(roll%100<100)return 3.384f;
+        break;
+    case 201646:
+        if(roll%100<33)return 2.692f;
+        if(roll%100<66)return 3.264f;
+        if(roll%100<100)return 1.906f;
+        break;
+    case 201650:
+        if(roll%100<33)return 0.982f;
+        if(roll%100<67)return 1.980f;
+        if(roll%100<100)return 3.216f;
+        break;
+    case 201664:
+        if(roll%100<25)return 1.880f;
+        if(roll%100<50)return 3.507f;
+        if(roll%100<75)return 2.613f;
+        if(roll%100<100)return 1.918f;
+        break;
+    case 201676:
+        if(roll%100<33)return 0.601f;
+        if(roll%100<67)return 2.714f;
+        if(roll%100<100)return 2.681f;
+        break;
+    case 201677:
+        if(roll%100<34)return 0.566f;
+        if(roll%100<67)return 4.542f;
+        if(roll%100<100)return 3.624f;
+        break;
+    case 201753:
+        if(roll%100<34)return 0.566f;
+        if(roll%100<67)return 4.542f;
+        if(roll%100<100)return 3.624f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart20_Universal_it(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 201772:
+        if(roll%100<20)return 2.613f;
+        if(roll%100<40)return 1.220f;
+        if(roll%100<60)return 1.613f;
+        if(roll%100<80)return 2.500f;
+        if(roll%100<100)return 1.789f;
+        break;
+    case 201773:
+        if(roll%100<17)return 1.225f;
+        if(roll%100<33)return 1.378f;
+        if(roll%100<50)return 2.057f;
+        if(roll%100<67)return 1.610f;
+        if(roll%100<84)return 3.862f;
+        if(roll%100<100)return 2.000f;
+        break;
+    case 201774:
+        if(roll%100<14)return 2.569f;
+        if(roll%100<28)return 1.093f;
+        if(roll%100<42)return 2.753f;
+        if(roll%100<58)return 1.983f;
+        if(roll%100<72)return 1.730f;
+        if(roll%100<86)return 1.685f;
+        if(roll%100<100)return 1.333f;
+        break;
+    case 201776:
+        if(roll%100<16)return 2.569f;
+        if(roll%100<30)return 1.093f;
+        if(roll%100<44)return 2.753f;
+        if(roll%100<58)return 1.983f;
+        if(roll%100<72)return 1.730f;
+        if(roll%100<86)return 1.685f;
+        if(roll%100<100)return 1.333f;
+        break;
+    case 201777:
+        if(roll%100<50)return 2.760f;
+        if(roll%100<100)return 2.411f;
+        break;
+    case 201778:
+        if(roll%100<33)return 1.328f;
+        if(roll%100<67)return 1.506f;
+        if(roll%100<100)return 1.280f;
+        break;
+    case 201779:
+        if(roll%100<33)return 2.098f;
+        if(roll%100<66)return 2.055f;
+        if(roll%100<100)return 2.077f;
+        break;
+    case 201780:
+        if(roll%100<33)return 2.757f;
+        if(roll%100<67)return 2.874f;
+        if(roll%100<100)return 1.805f;
+        break;
+    case 201781:
+        if(roll%100<33)return 3.264f;
+        if(roll%100<67)return 2.557f;
+        if(roll%100<100)return 2.026f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+
+function BetaGwentAudioRevealEffect_Universal_it(id : int) : string
+{
+    if (id <= 201779) return BetaGwentAudioRevealEffect0_Universal_it(id);
+    return "";
+}
+function BetaGwentAudioRevealEffect0_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 142204: return "bg79_fx_2095867680";
+        case 142208: return "bg79_fx_181319135";
+        case 142210: return "bg79_fx_1115677916";
+        case 142307: return "bg79_fx_35814593";
+        case 201779: return "bg79_fx_3157478180";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioTransformEffect_Universal_it(id : int) : string
+{
+    if (id <= 112105) return BetaGwentAudioTransformEffect0_Universal_it(id);
+    return "";
+}
+function BetaGwentAudioTransformEffect0_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 112105: return "bg79_fx_729252324";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceTriggers_Universal_it(id : int) : int
+{
+    if (id <= 113401) return BetaGwentAudioVoiceTriggers0_Universal_it(id);
+    if (id <= 132204) return BetaGwentAudioVoiceTriggers1_Universal_it(id);
+    if (id <= 142301) return BetaGwentAudioVoiceTriggers2_Universal_it(id);
+    if (id <= 152406) return BetaGwentAudioVoiceTriggers3_Universal_it(id);
+    if (id <= 200036) return BetaGwentAudioVoiceTriggers4_Universal_it(id);
+    if (id <= 200166) return BetaGwentAudioVoiceTriggers5_Universal_it(id);
+    if (id <= 201584) return BetaGwentAudioVoiceTriggers6_Universal_it(id);
+    if (id <= 201697) return BetaGwentAudioVoiceTriggers7_Universal_it(id);
+    if (id <= 201817) return BetaGwentAudioVoiceTriggers8_Universal_it(id);
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers0_Universal_it(id : int) : int
+{
+    switch (id)
+    {
+        case 112101: return 8;
+        case 112102: return 8;
+        case 112103: return 8;
+        case 112104: return 8;
+        case 112105: return 24;
+        case 112106: return 8;
+        case 112107: return 8;
+        case 112108: return 8;
+        case 112109: return 8;
+        case 112110: return 8;
+        case 112111: return 8;
+        case 112112: return 8;
+        case 112113: return 8;
+        case 112201: return 8;
+        case 112202: return 8;
+        case 112203: return 8;
+        case 112204: return 8;
+        case 112205: return 8;
+        case 112206: return 8;
+        case 112207: return 8;
+        case 112208: return 8;
+        case 112209: return 8;
+        case 112210: return 8;
+        case 112211: return 8;
+        case 112212: return 8;
+        case 112213: return 8;
+        case 112214: return 8;
+        case 112215: return 8;
+        case 112401: return 8;
+        case 112402: return 8;
+        case 112403: return 8;
+        case 112404: return 8;
+        case 112405: return 0;
+        case 113101: return 8;
+        case 113102: return 0;
+        case 113201: return 0;
+        case 113202: return 0;
+        case 113203: return 0;
+        case 113204: return 8;
+        case 113205: return 8;
+        case 113206: return 0;
+        case 113207: return 0;
+        case 113208: return 8;
+        case 113209: return 0;
+        case 113301: return 8;
+        case 113302: return 8;
+        case 113303: return 0;
+        case 113305: return 8;
+        case 113306: return 0;
+        case 113307: return 0;
+        case 113308: return 8;
+        case 113309: return 0;
+        case 113310: return 0;
+        case 113311: return 0;
+        case 113312: return 8;
+        case 113313: return 8;
+        case 113315: return 0;
+        case 113316: return 0;
+        case 113320: return 0;
+        case 113401: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers1_Universal_it(id : int) : int
+{
+    switch (id)
+    {
+        case 113402: return 0;
+        case 122101: return 8;
+        case 122102: return 8;
+        case 122103: return 8;
+        case 122104: return 8;
+        case 122105: return 8;
+        case 122106: return 8;
+        case 122107: return 8;
+        case 122108: return 8;
+        case 122201: return 8;
+        case 122202: return 8;
+        case 122203: return 8;
+        case 122204: return 8;
+        case 122205: return 8;
+        case 122206: return 8;
+        case 122207: return 8;
+        case 122208: return 8;
+        case 122209: return 8;
+        case 122210: return 8;
+        case 122211: return 8;
+        case 122212: return 8;
+        case 122213: return 8;
+        case 122214: return 8;
+        case 122216: return 8;
+        case 122301: return 0;
+        case 122302: return 0;
+        case 122303: return 0;
+        case 122304: return 0;
+        case 122306: return 8;
+        case 122307: return 8;
+        case 122308: return 8;
+        case 122309: return 8;
+        case 122310: return 8;
+        case 122311: return 8;
+        case 122312: return 8;
+        case 122313: return 8;
+        case 122314: return 8;
+        case 122315: return 0;
+        case 122316: return 8;
+        case 122317: return 8;
+        case 122318: return 8;
+        case 122401: return 0;
+        case 122402: return 0;
+        case 122403: return 8;
+        case 123201: return 0;
+        case 123301: return 8;
+        case 131101: return 8;
+        case 131102: return 8;
+        case 132101: return 8;
+        case 132102: return 8;
+        case 132103: return 0;
+        case 132104: return 8;
+        case 132105: return 8;
+        case 132106: return 0;
+        case 132107: return 8;
+        case 132108: return 8;
+        case 132201: return 0;
+        case 132202: return 0;
+        case 132203: return 0;
+        case 132204: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers2_Universal_it(id : int) : int
+{
+    switch (id)
+    {
+        case 132205: return 0;
+        case 132206: return 8;
+        case 132207: return 8;
+        case 132208: return 8;
+        case 132209: return 0;
+        case 132211: return 8;
+        case 132212: return 8;
+        case 132213: return 0;
+        case 132214: return 8;
+        case 132215: return 8;
+        case 132216: return 0;
+        case 132217: return 0;
+        case 132218: return 0;
+        case 132301: return 0;
+        case 132302: return 0;
+        case 132303: return 0;
+        case 132304: return 0;
+        case 132305: return 8;
+        case 132306: return 0;
+        case 132307: return 0;
+        case 132308: return 0;
+        case 132309: return 8;
+        case 132310: return 8;
+        case 132312: return 0;
+        case 132313: return 0;
+        case 132314: return 0;
+        case 132315: return 0;
+        case 132316: return 0;
+        case 132402: return 0;
+        case 132403: return 0;
+        case 132404: return 0;
+        case 132405: return 0;
+        case 132406: return 0;
+        case 132407: return 8;
+        case 132408: return 0;
+        case 132409: return 8;
+        case 133301: return 0;
+        case 133302: return 0;
+        case 142101: return 0;
+        case 142102: return 8;
+        case 142103: return 8;
+        case 142104: return 8;
+        case 142105: return 8;
+        case 142106: return 8;
+        case 142107: return 8;
+        case 142108: return 8;
+        case 142201: return 8;
+        case 142202: return 8;
+        case 142203: return 8;
+        case 142204: return 4;
+        case 142206: return 8;
+        case 142207: return 8;
+        case 142208: return 4;
+        case 142209: return 8;
+        case 142210: return 4;
+        case 142211: return 8;
+        case 142212: return 8;
+        case 142213: return 8;
+        case 142214: return 8;
+        case 142301: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers3_Universal_it(id : int) : int
+{
+    switch (id)
+    {
+        case 142302: return 8;
+        case 142303: return 8;
+        case 142304: return 8;
+        case 142306: return 8;
+        case 142307: return 4;
+        case 142308: return 8;
+        case 142309: return 8;
+        case 142310: return 8;
+        case 142311: return 8;
+        case 142312: return 8;
+        case 142313: return 8;
+        case 142314: return 8;
+        case 142315: return 8;
+        case 142316: return 8;
+        case 142317: return 8;
+        case 142401: return 8;
+        case 143201: return 0;
+        case 143301: return 0;
+        case 152101: return 8;
+        case 152103: return 8;
+        case 152104: return 0;
+        case 152105: return 8;
+        case 152106: return 8;
+        case 152107: return 8;
+        case 152109: return 0;
+        case 152201: return 8;
+        case 152202: return 8;
+        case 152203: return 8;
+        case 152204: return 8;
+        case 152205: return 8;
+        case 152206: return 8;
+        case 152207: return 8;
+        case 152208: return 8;
+        case 152209: return 8;
+        case 152210: return 0;
+        case 152211: return 8;
+        case 152213: return 8;
+        case 152214: return 8;
+        case 152301: return 8;
+        case 152302: return 8;
+        case 152303: return 8;
+        case 152304: return 8;
+        case 152305: return 8;
+        case 152306: return 8;
+        case 152308: return 8;
+        case 152309: return 0;
+        case 152310: return 8;
+        case 152311: return 8;
+        case 152312: return 8;
+        case 152313: return 8;
+        case 152314: return 8;
+        case 152315: return 8;
+        case 152316: return 8;
+        case 152317: return 8;
+        case 152318: return 8;
+        case 152401: return 0;
+        case 152402: return 8;
+        case 152403: return 0;
+        case 152405: return 0;
+        case 152406: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers4_Universal_it(id : int) : int
+{
+    switch (id)
+    {
+        case 153201: return 0;
+        case 153301: return 8;
+        case 162101: return 8;
+        case 162102: return 8;
+        case 162103: return 8;
+        case 162104: return 8;
+        case 162105: return 8;
+        case 162106: return 8;
+        case 162107: return 8;
+        case 162108: return 8;
+        case 162201: return 8;
+        case 162202: return 8;
+        case 162203: return 8;
+        case 162204: return 8;
+        case 162205: return 8;
+        case 162206: return 8;
+        case 162207: return 8;
+        case 162208: return 8;
+        case 162209: return 8;
+        case 162210: return 8;
+        case 162211: return 8;
+        case 162212: return 8;
+        case 162213: return 8;
+        case 162301: return 8;
+        case 162302: return 0;
+        case 162303: return 8;
+        case 162304: return 8;
+        case 162305: return 8;
+        case 162306: return 0;
+        case 162307: return 8;
+        case 162308: return 8;
+        case 162309: return 8;
+        case 162310: return 8;
+        case 162311: return 8;
+        case 162312: return 8;
+        case 162313: return 8;
+        case 162314: return 8;
+        case 162315: return 8;
+        case 162316: return 8;
+        case 162317: return 0;
+        case 162318: return 8;
+        case 162401: return 8;
+        case 162402: return 0;
+        case 163101: return 0;
+        case 163201: return 0;
+        case 200008: return 0;
+        case 200009: return 0;
+        case 200018: return 0;
+        case 200019: return 0;
+        case 200020: return 0;
+        case 200021: return 0;
+        case 200022: return 0;
+        case 200023: return 0;
+        case 200026: return 8;
+        case 200028: return 8;
+        case 200030: return 8;
+        case 200031: return 8;
+        case 200032: return 8;
+        case 200033: return 8;
+        case 200036: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers5_Universal_it(id : int) : int
+{
+    switch (id)
+    {
+        case 200037: return 0;
+        case 200038: return 0;
+        case 200039: return 8;
+        case 200040: return 8;
+        case 200041: return 0;
+        case 200042: return 8;
+        case 200043: return 8;
+        case 200044: return 8;
+        case 200046: return 8;
+        case 200048: return 8;
+        case 200049: return 0;
+        case 200050: return 8;
+        case 200052: return 0;
+        case 200053: return 0;
+        case 200055: return 8;
+        case 200056: return 8;
+        case 200058: return 0;
+        case 200062: return 8;
+        case 200067: return 0;
+        case 200071: return 8;
+        case 200073: return 0;
+        case 200078: return 0;
+        case 200079: return 0;
+        case 200080: return 8;
+        case 200081: return 8;
+        case 200083: return 8;
+        case 200087: return 8;
+        case 200088: return 8;
+        case 200089: return 8;
+        case 200091: return 8;
+        case 200098: return 8;
+        case 200102: return 0;
+        case 200103: return 0;
+        case 200104: return 0;
+        case 200105: return 0;
+        case 200112: return 8;
+        case 200114: return 0;
+        case 200115: return 8;
+        case 200118: return 8;
+        case 200124: return 8;
+        case 200132: return 8;
+        case 200135: return 8;
+        case 200136: return 8;
+        case 200138: return 8;
+        case 200139: return 0;
+        case 200144: return 8;
+        case 200145: return 8;
+        case 200146: return 8;
+        case 200147: return 8;
+        case 200149: return 8;
+        case 200154: return 0;
+        case 200158: return 0;
+        case 200159: return 8;
+        case 200160: return 8;
+        case 200161: return 8;
+        case 200162: return 8;
+        case 200163: return 8;
+        case 200164: return 8;
+        case 200165: return 8;
+        case 200166: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers6_Universal_it(id : int) : int
+{
+    switch (id)
+    {
+        case 200167: return 8;
+        case 200168: return 8;
+        case 200169: return 8;
+        case 200170: return 8;
+        case 200171: return 8;
+        case 200177: return 8;
+        case 200209: return 8;
+        case 200212: return 8;
+        case 200218: return 0;
+        case 200219: return 8;
+        case 200220: return 8;
+        case 200221: return 8;
+        case 200222: return 8;
+        case 200223: return 0;
+        case 200224: return 0;
+        case 200225: return 0;
+        case 200226: return 0;
+        case 200227: return 8;
+        case 200228: return 0;
+        case 200233: return 0;
+        case 200235: return 8;
+        case 200236: return 8;
+        case 200237: return 8;
+        case 200293: return 8;
+        case 200294: return 8;
+        case 200295: return 0;
+        case 200296: return 8;
+        case 200299: return 8;
+        case 200300: return 0;
+        case 200301: return 0;
+        case 200307: return 0;
+        case 200308: return 0;
+        case 200320: return 8;
+        case 200457: return 0;
+        case 200502: return 0;
+        case 200518: return 8;
+        case 200519: return 0;
+        case 200520: return 8;
+        case 200523: return 8;
+        case 200528: return 8;
+        case 200529: return 8;
+        case 200530: return 0;
+        case 200532: return 0;
+        case 200534: return 8;
+        case 200535: return 8;
+        case 200539: return 0;
+        case 200540: return 8;
+        case 201523: return 8;
+        case 201559: return 8;
+        case 201572: return 0;
+        case 201573: return 0;
+        case 201574: return 0;
+        case 201576: return 0;
+        case 201578: return 8;
+        case 201579: return 0;
+        case 201580: return 8;
+        case 201581: return 0;
+        case 201582: return 0;
+        case 201583: return 0;
+        case 201584: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers7_Universal_it(id : int) : int
+{
+    switch (id)
+    {
+        case 201585: return 0;
+        case 201587: return 8;
+        case 201589: return 8;
+        case 201595: return 8;
+        case 201597: return 8;
+        case 201598: return 0;
+        case 201599: return 0;
+        case 201600: return 0;
+        case 201601: return 8;
+        case 201603: return 8;
+        case 201606: return 0;
+        case 201609: return 8;
+        case 201610: return 0;
+        case 201611: return 8;
+        case 201612: return 8;
+        case 201613: return 0;
+        case 201615: return 8;
+        case 201616: return 8;
+        case 201617: return 8;
+        case 201618: return 8;
+        case 201619: return 0;
+        case 201620: return 8;
+        case 201621: return 8;
+        case 201622: return 8;
+        case 201623: return 0;
+        case 201624: return 8;
+        case 201625: return 8;
+        case 201626: return 8;
+        case 201627: return 8;
+        case 201628: return 8;
+        case 201630: return 8;
+        case 201631: return 0;
+        case 201632: return 0;
+        case 201633: return 0;
+        case 201634: return 0;
+        case 201635: return 0;
+        case 201636: return 8;
+        case 201637: return 0;
+        case 201638: return 8;
+        case 201639: return 0;
+        case 201642: return 0;
+        case 201643: return 0;
+        case 201644: return 8;
+        case 201645: return 0;
+        case 201646: return 8;
+        case 201647: return 0;
+        case 201648: return 0;
+        case 201650: return 8;
+        case 201653: return 0;
+        case 201656: return 0;
+        case 201657: return 0;
+        case 201659: return 0;
+        case 201660: return 0;
+        case 201661: return 8;
+        case 201662: return 0;
+        case 201664: return 8;
+        case 201676: return 8;
+        case 201677: return 8;
+        case 201696: return 0;
+        case 201697: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers8_Universal_it(id : int) : int
+{
+    switch (id)
+    {
+        case 201698: return 0;
+        case 201699: return 0;
+        case 201700: return 0;
+        case 201701: return 0;
+        case 201704: return 0;
+        case 201725: return 0;
+        case 201731: return 0;
+        case 201737: return 0;
+        case 201743: return 0;
+        case 201744: return 0;
+        case 201748: return 0;
+        case 201749: return 0;
+        case 201753: return 8;
+        case 201758: return 0;
+        case 201772: return 8;
+        case 201773: return 8;
+        case 201774: return 8;
+        case 201776: return 8;
+        case 201777: return 8;
+        case 201778: return 8;
+        case 201779: return 4;
+        case 201780: return 8;
+        case 201781: return 8;
+        case 201817: return 0;
+        default: break;
+    }
+    return 0;
+}
+
+function BetaGwentAudioUi_Universal_it(id : int) : string
+{
+    if (id <= 5) return BetaGwentAudioUi0_Universal_it(id);
+    return "";
+}
+function BetaGwentAudioUi0_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 1: return "bg79_fx_1126876212";
+        case 2: return "bg79_fx_2909756106";
+        case 3: return "bg79_fx_310403972";
+        case 4: return "bg79_fx_3558782073";
+        case 5: return "bg79_fx_331755273";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioCue_Universal_it(id : int) : string
+{
+    if (id <= 32) return BetaGwentAudioCue0_Universal_it(id);
+    return "";
+}
+function BetaGwentAudioCue0_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 3: return "bg79_fx_1345484733";
+        case 5: return "bg79_fx_443750925";
+        case 6: return "bg79_fx_1274376343";
+        case 7: return "bg79_fx_3429050723";
+        case 32: return "bg79_fx_3756236359";
+        case 9: return "bg79_fx_914497199";
+        case 10: return "bg79_fx_174406704";
+        case 11: return "bg79_fx_1345484733";
+        case 12: return "bg79_fx_3040005591";
+        case 14: return "bg79_fx_331755273";
+        case 15: return "bg79_fx_1271393020";
+        case 16: return "bg79_fx_1271393020";
+        case 17: return "bg79_fx_443750925";
+        case 20: return "bg79_fx_1339391495";
+        case 21: return "bg79_fx_1359220433";
+        case 22: return "bg79_fx_2876994866";
+        case 23: return "bg79_fx_2994650242";
+        case 24: return "bg79_fx_3432162846";
+        case 25: return "bg79_fx_174406704";
+        case 26: return "bg79_fx_3655100537";
+        case 27: return "bg79_fx_2122169205";
+        case 28: return "bg79_fx_1979737770";
+        case 29: return "bg79_fx_3983713265";
+        case 30: return "bg79_fx_3128640595";
+        case 31: return "bg79_fx_111986461";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioWeather_Universal_it(id : int) : string
+{
+    if (id <= 2048) return BetaGwentAudioWeather0_Universal_it(id);
+    return "";
+}
+function BetaGwentAudioWeather0_Universal_it(id : int) : string
+{
+    switch (id)
+    {
+        case 0: return "bg79_fx_3426459189";
+        case 1: return "bg79_fx_1182743257";
+        case 2: return "bg79_fx_3376847707";
+        case 4: return "bg79_fx_4022788383";
+        case 16: return "bg79_fx_586097054";
+        case 32: return "bg79_fx_3202917663";
+        case 64: return "bg79_fx_1515030783";
+        case 128: return "bg79_fx_3419056088";
+        case 256: return "bg79_fx_206487326";
+        case 512: return "bg79_fx_2066849046";
+        case 1024: return "bg79_fx_656469391";
+        case 2048: return "bg79_fx_206487326";
+        default: break;
+    }
+    return "";
+}
+
+// Generated from pinned CardAudio.xml. Source banks128 are not runtime banks.
+
+function BetaGwentAudioBankInstalled_Universal_pt_br() : bool { return true; }
+
+function BetaGwentAudioVoice_Universal_pt_br(id : int) : string
+{
+    if (id <= 122313) return BetaGwentAudioVoice0_Universal_pt_br(id);
+    if (id <= 142401) return BetaGwentAudioVoice1_Universal_pt_br(id);
+    if (id <= 162308) return BetaGwentAudioVoice2_Universal_pt_br(id);
+    if (id <= 200169) return BetaGwentAudioVoice3_Universal_pt_br(id);
+    if (id <= 201753) return BetaGwentAudioVoice4_Universal_pt_br(id);
+    if (id <= 201781) return BetaGwentAudioVoice5_Universal_pt_br(id);
+    return "";
+}
+function BetaGwentAudioVoice0_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 112101: return "bg79_vo_CIRI_CIRILLA_01040512";
+        case 112102: return "bg79_vo_SAY_Battlecries_1";
+        case 112103: return "bg79_vo_SAY_Battlecries_1";
+        case 112104: return "bg79_vo_REGI_Q702_01155230";
+        case 112105: return "bg79_vo_katakan_taunt_short_003";
+        case 112106: return "bg79_vo_TRSS_Q310_00545347";
+        case 112108: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 112109: return "bg79_vo_ZOLT_Q310_01062198";
+        case 112110: return "bg79_vo_CIRI_CIRILLA_01040512";
+        case 112111: return "bg79_vo_SAY_Battlecries_1";
+        case 112112: return "bg79_vo_AVLC_Q311_00454814";
+        case 112113: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 112201: return "bg79_vo_SAY_Battlecries_816";
+        case 112202: return "bg79_vo_SAY_Battlecries_21";
+        case 112203: return "bg79_vo_VSMR_Q001_00546725";
+        case 112204: return "bg79_vo_LMBT_Q401_00523875";
+        case 112205: return "bg79_vo_wyvern_v2_vo_ADD_008";
+        case 112206: return "bg79_vo_wyvern_v2_vo_ADD_008";
+        case 112207: return "bg79_vo_OLGD_Q603_01101145";
+        case 112208: return "bg79_vo_VO_OPRT_204113_0001";
+        case 112211: return "bg79_vo_GJHN_Q105_00417768";
+        case 112212: return "bg79_vo_GSAR_Q301_00484178";
+        case 112213: return "bg79_vo_KGBG_Q301_00486502";
+        case 112214: return "bg79_vo_WILY_Q302_00443324";
+        case 112215: return "bg79_vo_IRIS_Q604_01106159";
+        case 112403: return "bg79_vo_SAY_Battlecries_25";
+        case 112404: return "bg79_vo_SAY_Battlecries_25";
+        case 113208: return "bg79_vo_SAY_Battlecries_821";
+        case 113313: return "bg79_vo_SAY_Battlecries_part5_326";
+        case 122101: return "bg79_vo_BARN_Q102_00408798";
+        case 122102: return "bg79_vo_ROCH_MQ3035_01064844";
+        case 122103: return "bg79_vo_VO_JANT_300862_0253";
+        case 122104: return "bg79_vo_PHIL_PHILIPPA_01041424";
+        case 122105: return "bg79_vo_DJKS_MQ3035_01067766";
+        case 122106: return "bg79_vo_SHNI_Q602_01119358";
+        case 122107: return "bg79_vo_TRSS_Q310_00545347";
+        case 122108: return "bg79_vo_KEIR_KEIRA_00475332";
+        case 122201: return "bg79_vo_SAY_Battlecries_5";
+        case 122202: return "bg79_vo_SAY_Battlecries_9";
+        case 122203: return "bg79_vo_TALA_SQ315_01067599";
+        case 122204: return "bg79_vo_VESS_MQ3035_01064809";
+        case 122205: return "bg79_vo_SAY_Battlecries_29";
+        case 122206: return "bg79_vo_VO_SABR_200216_0037";
+        case 122207: return "bg79_vo_VO_DETM_200182_0001";
+        case 122208: return "bg79_vo_VO_STEN_200098_0258";
+        case 122209: return "bg79_vo_TRL1_MQ1022_00466604";
+        case 122210: return "bg79_vo_SAY_Battlecries_37";
+        case 122211: return "bg79_vo_MGLA_MARGARITTA_01012961";
+        case 122212: return "bg79_vo_SAY_Battlecries_42";
+        case 122213: return "bg79_vo_VO_ODRI_200481_0002";
+        case 122214: return "bg79_vo_SAY_Battlecries_46";
+        case 122216: return "bg79_vo_SAY_Battlecries_part3_21";
+        case 122306: return "bg79_vo_VO_ZDZI_003478_0007";
+        case 122307: return "bg79_vo_VO_NG01_003478_0008";
+        case 122308: return "bg79_vo_RES1_VSET_00508237";
+        case 122309: return "bg79_vo_VO_KG01_200564_0001";
+        case 122310: return "bg79_vo_VO_RS01_101992_0004";
+        case 122311: return "bg79_vo_VO_RS03_106543_0003";
+        case 122312: return "bg79_vo_NCIW1_VSET_00564889";
+        case 122313: return "bg79_vo_VO_KG06_200420_0005";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice1_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 122314: return "bg79_vo_VO_KG02_200565_0005";
+        case 122316: return "bg79_vo_TBAN2_VSET_00591990";
+        case 122317: return "bg79_vo_REOF1_VSET_00516089";
+        case 122318: return "bg79_vo_VO_KE01_203352_0004";
+        case 122403: return "bg79_vo_SAY_Battlecries_819";
+        case 123301: return "bg79_vo_SAY_Battlecries_part5_320";
+        case 131101: return "bg79_vo_ERDN_EREDIN_01040754";
+        case 131102: return "bg79_vo_GEEL_Q311_00312236";
+        case 132101: return "bg79_vo_VO_DRUG_200317_0011";
+        case 132102: return "bg79_vo_IMLR_Q111_01062046";
+        case 132104: return "bg79_vo_SAY_Battlecries_189";
+        case 132105: return "bg79_vo_AVLC_Q311_00454814";
+        case 132108: return "bg79_vo_SCC3_VSET_01053091";
+        case 132206: return "bg79_vo_WHSP_Q105_00382577";
+        case 132207: return "bg79_vo_BREW_Q105_00531820";
+        case 132208: return "bg79_vo_WEAV_Q105_00531814";
+        case 132211: return "bg79_vo_nekker_scream_006";
+        case 132212: return "bg79_vo_ice_giant_aggro06";
+        case 132214: return "bg79_vo_WHW1_Q104_00555148";
+        case 132215: return "bg79_vo_MRRR_Q602_01116657";
+        case 132305: return "bg79_vo_nekker_attack_004";
+        case 132309: return "bg79_vo_SAY_Battlecries_792";
+        case 132310: return "bg79_vo_SAY_Battlecries_796";
+        case 142102: return "bg79_vo_SAY_Battlecries_139";
+        case 142103: return "bg79_vo_VO_IORW_100241_4474";
+        case 142104: return "bg79_vo_SAY_Battlecries_142";
+        case 142105: return "bg79_vo_ZOLT_Q310_01062198";
+        case 142106: return "bg79_vo_SAY_Battlecries_152";
+        case 142107: return "bg79_vo_SAY_Battlecries_170";
+        case 142108: return "bg79_vo_SAY_Battlecries_186";
+        case 142201: return "bg79_vo_SAY_Battlecries_155";
+        case 142202: return "bg79_vo_IDEM_Q401_00532088";
+        case 142203: return "bg79_vo_SAY_Battlecries_771";
+        case 142204: return "bg79_vo_SAY_Battlecries_776";
+        case 142206: return "bg79_vo_SAY_Battlecries_160";
+        case 142207: return "bg79_vo_SAY_Battlecries_161";
+        case 142208: return "bg79_vo_SAY_Battlecries_164";
+        case 142209: return "bg79_vo_SAY_Battlecries_167";
+        case 142210: return "bg79_vo_VO_MALN_106817_0005";
+        case 142211: return "bg79_vo_SAY_Battlecries_183";
+        case 142212: return "bg79_vo_SAY_Battlecries_33";
+        case 142213: return "bg79_vo_SAY_Battlecries_784";
+        case 142214: return "bg79_vo_SAY_Battlecries_831";
+        case 142301: return "bg79_vo_VSCF2_VSET_00523670";
+        case 142302: return "bg79_vo_VO_SF01_102746_0038";
+        case 142303: return "bg79_vo_VO_SF02_101662_0066";
+        case 142304: return "bg79_vo_VO_SWF1_100532_0009";
+        case 142306: return "bg79_vo_SCD1_VSET_00525279";
+        case 142307: return "bg79_vo_VO_SMV2_202544_0022";
+        case 142308: return "bg79_vo_VO_SWV2_202544_0023";
+        case 142309: return "bg79_vo_VO_SF01_107685_0001";
+        case 142310: return "bg79_vo_SAY_Battlecries_801";
+        case 142311: return "bg79_vo_SCD1_VSET_00526102";
+        case 142312: return "bg79_vo_VBAN1_MQ1005_00358151";
+        case 142313: return "bg79_vo_SAY_Battlecries_part2_2";
+        case 142314: return "bg79_vo_VO_SWV1_202968_0006";
+        case 142315: return "bg79_vo_SAY_Battlecries_part2_5";
+        case 142316: return "bg79_vo_VO_SWV5_202972_0007";
+        case 142317: return "bg79_vo_SCD34_VSET_01013381";
+        case 142401: return "bg79_vo_SAY_Battlecries_788";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice2_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 152101: return "bg79_vo_HJAL_HJALMAR_01037900";
+        case 152103: return "bg79_vo_MOUS_Q210_00558067";
+        case 152105: return "bg79_vo_SAY_Battlecries_205";
+        case 152106: return "bg79_vo_LUTM_LUGOS_00437813";
+        case 152107: return "bg79_vo_SAY_Battlecries_202";
+        case 152201: return "bg79_vo_LUTG_LUGOS_01038779";
+        case 152202: return "bg79_vo_TRL3_FF205_01053125";
+        case 152203: return "bg79_vo_SAY_Battlecries_804";
+        case 152204: return "bg79_vo_DONR_DONAR_01037055";
+        case 152205: return "bg79_vo_SBR1_VSET_00527986";
+        case 152206: return "bg79_vo_SAY_Battlecries_828";
+        case 152207: return "bg79_vo_HOLG_HOLGER_01038014";
+        case 152208: return "bg79_vo_SWO4_MQ2038_00507987";
+        case 152209: return "bg79_vo_MRKV_SQ201_00499647";
+        case 152211: return "bg79_vo_SPR1_SHOP_00437650";
+        case 152213: return "bg79_vo_SAY_Battlecries_208";
+        case 152214: return "bg79_vo_UDAL_Q201_00166303";
+        case 152301: return "bg79_vo_SBE2_VSET_00536513";
+        case 152302: return "bg79_vo_SBE1_Q206_00413021";
+        case 152303: return "bg79_vo_SGD2_CHAT2_00165312";
+        case 152304: return "bg79_vo_SGD6_VSET_00544491";
+        case 152305: return "bg79_vo_SBD3_MQ2034_01013429";
+        case 152306: return "bg79_vo_SBD1_MQ2002_00442097";
+        case 152308: return "bg79_vo_DROG_BARD_01036857";
+        case 152310: return "bg79_vo_SPR2_VSET_00553534";
+        case 152311: return "bg79_vo_SAR3_CHAT_01050115";
+        case 152312: return "bg79_vo_SAY_Battlecries_807";
+        case 152313: return "bg79_vo_SGD2_VSET_00526547";
+        case 152315: return "bg79_vo_SWR5_VSET_00535924";
+        case 152316: return "bg79_vo_SGD1_CHAT_01024106";
+        case 152317: return "bg79_vo_SAR1_SHOP_00422532";
+        case 152318: return "bg79_vo_SAY_Battlecries_part3_1";
+        case 152402: return "bg79_vo_SAY_Battlecries_199";
+        case 162101: return "bg79_vo_LETO_LETHO_01038588";
+        case 162102: return "bg79_vo_SAY_Battlecries_58";
+        case 162103: return "bg79_vo_SAY_Battlecries_106";
+        case 162104: return "bg79_vo_SAY_Battlecries_69";
+        case 162105: return "bg79_vo_SAY_Battlecries_72";
+        case 162106: return "bg79_vo_SAY_Battlecries_97";
+        case 162107: return "bg79_vo_SAY_Battlecries_67";
+        case 162108: return "bg79_vo_SAY_Battlecries_118";
+        case 162201: return "bg79_vo_SAY_Battlecries_78";
+        case 162202: return "bg79_vo_SAY_Battlecries_75";
+        case 162203: return "bg79_vo_VO_CNTH_303653_0335";
+        case 162204: return "bg79_vo_SAY_Battlecries_part3_426";
+        case 162205: return "bg79_vo_SAY_Battlecries_88";
+        case 162206: return "bg79_vo_SAY_Battlecries_100";
+        case 162207: return "bg79_vo_VO_NM01_200057_0187";
+        case 162208: return "bg79_vo_SAY_Battlecries_112";
+        case 162209: return "bg79_vo_SAY_Battlecries_115";
+        case 162210: return "bg79_vo_SAY_Battlecries_127";
+        case 162211: return "bg79_vo_SAY_Battlecries_part3_17";
+        case 162212: return "bg79_vo_SAY_Battlecries_part3_105";
+        case 162213: return "bg79_vo_SAY_Battlecries_part3_109";
+        case 162301: return "bg79_vo_SAY_Battlecries_part3_417";
+        case 162303: return "bg79_vo_NILF4_CHAT_01051421";
+        case 162304: return "bg79_vo_SAY_Battlecries_part3_429";
+        case 162305: return "bg79_vo_NILF3_VSET_00514109";
+        case 162307: return "bg79_vo_NILFP2_VSET_00592094";
+        case 162308: return "bg79_vo_NIOF1_VSET_00524263";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice3_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 162309: return "bg79_vo_SAY_Battlecries_part3_438";
+        case 162310: return "bg79_vo_NILF2_VSET_00513914";
+        case 162311: return "bg79_vo_NILF3_VSET_00514091";
+        case 162312: return "bg79_vo_NILF2_Q505_00576169";
+        case 162313: return "bg79_vo_NILF2_VSET_00513907";
+        case 162314: return "bg79_vo_NIS1_Q002_01048548";
+        case 162315: return "bg79_vo_NIN4_VSET_01049576";
+        case 162316: return "bg79_vo_MAG1_SHOP_00423227";
+        case 162318: return "bg79_vo_SAY_Battlecries_part3_441";
+        case 162401: return "bg79_vo_SAY_Battlecries_part3_385";
+        case 200026: return "bg79_vo_SAY_Battlecries_part3_43";
+        case 200028: return "bg79_vo_SAY_Battlecries_211";
+        case 200030: return "bg79_vo_SAY_Battlecries_220";
+        case 200031: return "bg79_vo_SAY_Battlecries_13";
+        case 200032: return "bg79_vo_SAY_Battlecries_91";
+        case 200033: return "bg79_vo_SAY_Battlecries_part3_376";
+        case 200036: return "bg79_vo_SAY_Battlecries_part3_5";
+        case 200039: return "bg79_vo_SAY_Battlecries_part3_310";
+        case 200040: return "bg79_vo_SAY_Battlecries_part3_314";
+        case 200042: return "bg79_vo_SAY_Battlecries_part3_39";
+        case 200043: return "bg79_vo_SAY_Battlecries_part3_129";
+        case 200044: return "bg79_vo_SAY_Battlecries_part3_35";
+        case 200046: return "bg79_vo_SAY_Battlecries_part3_410";
+        case 200048: return "bg79_vo_SAY_Battlecries_part3_13";
+        case 200050: return "bg79_vo_SAY_Battlecries_109";
+        case 200055: return "bg79_vo_SAY_Battlecries_part3_255";
+        case 200062: return "bg79_vo_SAY_Battlecries_part3_154";
+        case 200071: return "bg79_vo_SAY_Battlecries_96";
+        case 200080: return "bg79_vo_SAY_Battlecries_part3_290";
+        case 200081: return "bg79_vo_SAY_Battlecries_part3_121";
+        case 200083: return "bg79_vo_SAY_Battlecries_part3_264";
+        case 200087: return "bg79_vo_SAY_Battlecries_part3_184";
+        case 200088: return "bg79_vo_SAY_Battlecries_part3_175";
+        case 200089: return "bg79_vo_SAY_Battlecries_part3_167";
+        case 200091: return "bg79_vo_SAY_Battlecries_part3_162";
+        case 200098: return "bg79_vo_SAY_Battlecries_part3_201";
+        case 200112: return "bg79_vo_SAY_Battlecries_part3_93";
+        case 200115: return "bg79_vo_SAY_Battlecries_part3_362";
+        case 200118: return "bg79_vo_SAY_Battlecries_part3_356";
+        case 200124: return "bg79_vo_SAY_Battlecries_part3_337";
+        case 200132: return "bg79_vo_SAY_Battlecries_part3_223";
+        case 200135: return "bg79_vo_SAY_Battlecries_part3_318";
+        case 200136: return "bg79_vo_SAY_Battlecries_part3_322";
+        case 200138: return "bg79_vo_SAY_Battlecries_part3_326";
+        case 200144: return "bg79_vo_SAY_Battlecries_part5_26";
+        case 200145: return "bg79_vo_SAY_Battlecries_part3_71";
+        case 200146: return "bg79_vo_SAY_Battlecries_part3_75";
+        case 200147: return "bg79_vo_SAY_Battlecries_part3_87";
+        case 200149: return "bg79_vo_SAY_Battlecries_part3_79";
+        case 200159: return "bg79_vo_SAY_Battlecries_193";
+        case 200160: return "bg79_vo_CRCH_CRACH_01001923";
+        case 200161: return "bg79_vo_SAY_Battlecries_196";
+        case 200162: return "bg79_vo_SAY_Battlecries_236";
+        case 200163: return "bg79_vo_SAY_Battlecries_52";
+        case 200164: return "bg79_vo_SAY_Battlecries_55";
+        case 200165: return "bg79_vo_SAY_Battlecries_130";
+        case 200166: return "bg79_vo_SAY_Battlecries_133";
+        case 200167: return "bg79_vo_SAY_Battlecries_136";
+        case 200168: return "bg79_vo_VO_FLTS_000811_0001";
+        case 200169: return "bg79_vo_RADV_MQ3035_01064716";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice4_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 200170: return "bg79_vo_VO_HSLT_200098_0254";
+        case 200171: return "bg79_vo_SAY_Battlecries_226";
+        case 200177: return "bg79_vo_BECC_BECCA_01040275";
+        case 200209: return "bg79_vo_VO_TARM_200154_0192";
+        case 200212: return "bg79_vo_SAY_Battlecries_822";
+        case 200219: return "bg79_vo_SAY_Battlecries_part3_385";
+        case 200220: return "bg79_vo_WHSP_Q105_00419061";
+        case 200221: return "bg79_vo_BREW_Q105_00531820";
+        case 200222: return "bg79_vo_WEAV_Q503_00578937";
+        case 200227: return "bg79_vo_SAY_Battlecries_part3_435";
+        case 200235: return "bg79_vo_LMBT_Q401_00523875";
+        case 200236: return "bg79_vo_SAY_Battlecries_21";
+        case 200237: return "bg79_vo_VSMR_Q001_00546725";
+        case 200293: return "bg79_vo_SAY_Battlecries_part4_93";
+        case 200294: return "bg79_vo_SAY_Battlecries_part5_338";
+        case 200296: return "bg79_vo_SAY_Battlecries_part3_379";
+        case 200299: return "bg79_vo_SAY_Battlecries_part3_407";
+        case 200518: return "bg79_vo_SAY_Battlecries_part3_382";
+        case 200520: return "bg79_vo_HTRI_HATTORI_01032235";
+        case 200523: return "bg79_vo_SAY_Battlecries_part4_244";
+        case 200528: return "bg79_vo_SAY_Battlecries_part3_83";
+        case 200529: return "bg79_vo_SAY_Battlecries_part3_401";
+        case 200534: return "bg79_vo_SAY_Battlecries_part3_404";
+        case 200535: return "bg79_vo_SAY_Battlecries_part3_398";
+        case 200540: return "bg79_vo_SAY_Battlecries_part4_78";
+        case 201523: return "bg79_vo_SAY_Battlecries_1";
+        case 201559: return "bg79_vo_SAY_Battlecries_part4_98";
+        case 201578: return "bg79_vo_SAY_Battlecries_part3_395";
+        case 201580: return "bg79_vo_SAY_Battlecries_part3_432";
+        case 201587: return "bg79_vo_SAY_Battlecries_part5_1";
+        case 201589: return "bg79_vo_SAY_Battlecries_part3_278";
+        case 201595: return "bg79_vo_SAY_Battlecries_part3_193";
+        case 201597: return "bg79_vo_SAY_Battlecries_part3_47";
+        case 201601: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 201603: return "bg79_vo_LETO_SQ102_00590678";
+        case 201609: return "bg79_vo_SAY_Battlecries_part4_103";
+        case 201611: return "bg79_vo_VO_IORW_100241_4474";
+        case 201612: return "bg79_vo_SAY_Battlecries_part4_113";
+        case 201615: return "bg79_vo_SAY_Battlecries_139";
+        case 201616: return "bg79_vo_SAY_Battlecries_part3_359";
+        case 201617: return "bg79_vo_SAY_Battlecries_part5_32";
+        case 201618: return "bg79_vo_SAY_Battlecries_part3_117";
+        case 201620: return "bg79_vo_SAY_Battlecries_part5_7";
+        case 201621: return "bg79_vo_SAY_Battlecries_part5_14";
+        case 201622: return "bg79_vo_SAY_Battlecries_part3_9";
+        case 201624: return "bg79_vo_SAY_Battlecries_part5_38";
+        case 201625: return "bg79_vo_SAY_Battlecries_part5_44";
+        case 201626: return "bg79_vo_CIRI_CIRILLA_01040548";
+        case 201627: return "bg79_vo_SAY_Battlecries_part4_168";
+        case 201628: return "bg79_vo_SAY_Battlecries_part5_56";
+        case 201630: return "bg79_vo_SAY_Battlecries_part5_50";
+        case 201636: return "bg79_vo_SAY_Battlecries_part5_68";
+        case 201638: return "bg79_vo_SAY_Battlecries_part4_88";
+        case 201644: return "bg79_vo_SAY_Battlecries_part5_20";
+        case 201646: return "bg79_vo_SAY_Battlecries_232";
+        case 201650: return "bg79_vo_VO_SABR_200216_0101";
+        case 201664: return "bg79_vo_SAY_Battlecries_part4_256";
+        case 201676: return "bg79_vo_SAY_Battlecries_part4_34";
+        case 201677: return "bg79_vo_SAY_Battlecries_part4_86";
+        case 201753: return "bg79_vo_SAY_Battlecries_part4_86";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoice5_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 201772: return "bg79_vo_SAY_Battlecries_1";
+        case 201773: return "bg79_vo_SAY_Battlecries_17";
+        case 201774: return "bg79_vo_SAY_Battlecries_5";
+        case 201776: return "bg79_vo_SAY_Battlecries_5";
+        case 201777: return "bg79_vo_ROCH_ROCHE_00541126";
+        case 201778: return "bg79_vo_BECC_BECCA_01040275";
+        case 201779: return "bg79_vo_SAY_Battlecries_164";
+        case 201780: return "bg79_vo_YENN_YENNEFER_01041488";
+        case 201781: return "bg79_vo_SAY_Battlecries_851";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceDuration_Universal_pt_br(id : int) : float
+{
+    if (id <= 122313) return BetaGwentAudioVoiceDuration0_Universal_pt_br(id);
+    if (id <= 142401) return BetaGwentAudioVoiceDuration1_Universal_pt_br(id);
+    if (id <= 162308) return BetaGwentAudioVoiceDuration2_Universal_pt_br(id);
+    if (id <= 200169) return BetaGwentAudioVoiceDuration3_Universal_pt_br(id);
+    if (id <= 201753) return BetaGwentAudioVoiceDuration4_Universal_pt_br(id);
+    if (id <= 201781) return BetaGwentAudioVoiceDuration5_Universal_pt_br(id);
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration0_Universal_pt_br(id : int) : float
+{
+    switch (id)
+    {
+        case 112101: return 1.310f;
+        case 112102: return 2.817f;
+        case 112103: return 2.817f;
+        case 112104: return 2.606f;
+        case 112105: return 3.115f;
+        case 112106: return 2.535f;
+        case 112108: return 2.249f;
+        case 112109: return 1.848f;
+        case 112110: return 1.310f;
+        case 112111: return 2.817f;
+        case 112112: return 1.199f;
+        case 112113: return 2.249f;
+        case 112201: return 3.313f;
+        case 112202: return 1.244f;
+        case 112203: return 1.997f;
+        case 112204: return 3.087f;
+        case 112205: return 1.430f;
+        case 112206: return 1.430f;
+        case 112207: return 3.848f;
+        case 112208: return 2.919f;
+        case 112211: return 4.812f;
+        case 112212: return 1.012f;
+        case 112213: return 1.992f;
+        case 112214: return 3.718f;
+        case 112215: return 1.767f;
+        case 112403: return 1.939f;
+        case 112404: return 1.939f;
+        case 113208: return 2.744f;
+        case 113313: return 1.451f;
+        case 122101: return 2.707f;
+        case 122102: return 2.094f;
+        case 122103: return 3.027f;
+        case 122104: return 1.706f;
+        case 122105: return 2.149f;
+        case 122106: return 2.639f;
+        case 122107: return 2.535f;
+        case 122108: return 1.742f;
+        case 122201: return 2.509f;
+        case 122202: return 1.695f;
+        case 122203: return 3.717f;
+        case 122204: return 2.616f;
+        case 122205: return 1.909f;
+        case 122206: return 1.954f;
+        case 122207: return 2.130f;
+        case 122208: return 1.596f;
+        case 122209: return 3.108f;
+        case 122210: return 4.742f;
+        case 122211: return 1.492f;
+        case 122212: return 3.319f;
+        case 122213: return 3.325f;
+        case 122214: return 2.398f;
+        case 122216: return 1.566f;
+        case 122306: return 1.712f;
+        case 122307: return 1.555f;
+        case 122308: return 2.069f;
+        case 122309: return 1.168f;
+        case 122310: return 1.559f;
+        case 122311: return 1.897f;
+        case 122312: return 1.268f;
+        case 122313: return 1.157f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration1_Universal_pt_br(id : int) : float
+{
+    switch (id)
+    {
+        case 122314: return 1.661f;
+        case 122316: return 1.571f;
+        case 122317: return 1.848f;
+        case 122318: return 2.377f;
+        case 122403: return 1.893f;
+        case 123301: return 3.824f;
+        case 131101: return 1.994f;
+        case 131102: return 2.500f;
+        case 132101: return 2.934f;
+        case 132102: return 2.751f;
+        case 132104: return 2.464f;
+        case 132105: return 1.199f;
+        case 132108: return 4.292f;
+        case 132206: return 3.881f;
+        case 132207: return 3.448f;
+        case 132208: return 5.155f;
+        case 132211: return 1.467f;
+        case 132212: return 1.894f;
+        case 132214: return 2.527f;
+        case 132215: return 1.621f;
+        case 132305: return 1.250f;
+        case 132309: return 2.503f;
+        case 132310: return 1.955f;
+        case 142102: return 2.404f;
+        case 142103: return 1.355f;
+        case 142104: return 2.950f;
+        case 142105: return 1.848f;
+        case 142106: return 1.619f;
+        case 142107: return 3.955f;
+        case 142108: return 2.121f;
+        case 142201: return 3.795f;
+        case 142202: return 3.431f;
+        case 142203: return 2.400f;
+        case 142204: return 2.519f;
+        case 142206: return 2.660f;
+        case 142207: return 2.227f;
+        case 142208: return 2.941f;
+        case 142209: return 4.577f;
+        case 142210: return 3.489f;
+        case 142211: return 1.842f;
+        case 142212: return 4.777f;
+        case 142213: return 4.911f;
+        case 142214: return 1.556f;
+        case 142301: return 1.833f;
+        case 142302: return 4.421f;
+        case 142303: return 1.250f;
+        case 142304: return 2.356f;
+        case 142306: return 2.453f;
+        case 142307: return 1.674f;
+        case 142308: return 1.724f;
+        case 142309: return 2.189f;
+        case 142310: return 2.008f;
+        case 142311: return 2.198f;
+        case 142312: return 5.469f;
+        case 142313: return 1.955f;
+        case 142314: return 2.256f;
+        case 142315: return 1.379f;
+        case 142316: return 2.437f;
+        case 142317: return 0.809f;
+        case 142401: return 1.835f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration2_Universal_pt_br(id : int) : float
+{
+    switch (id)
+    {
+        case 152101: return 2.100f;
+        case 152103: return 2.564f;
+        case 152105: return 2.889f;
+        case 152106: return 1.626f;
+        case 152107: return 3.508f;
+        case 152201: return 3.066f;
+        case 152202: return 2.658f;
+        case 152203: return 2.776f;
+        case 152204: return 1.154f;
+        case 152205: return 1.643f;
+        case 152206: return 2.364f;
+        case 152207: return 2.036f;
+        case 152208: return 3.260f;
+        case 152209: return 3.556f;
+        case 152211: return 1.775f;
+        case 152213: return 1.871f;
+        case 152214: return 1.400f;
+        case 152301: return 2.907f;
+        case 152302: return 3.763f;
+        case 152303: return 3.357f;
+        case 152304: return 0.895f;
+        case 152305: return 4.292f;
+        case 152306: return 1.372f;
+        case 152308: return 1.617f;
+        case 152310: return 2.233f;
+        case 152311: return 2.586f;
+        case 152312: return 3.248f;
+        case 152313: return 3.253f;
+        case 152315: return 2.209f;
+        case 152316: return 2.168f;
+        case 152317: return 2.152f;
+        case 152318: return 2.855f;
+        case 152402: return 3.597f;
+        case 162101: return 1.788f;
+        case 162102: return 1.832f;
+        case 162103: return 2.981f;
+        case 162104: return 2.041f;
+        case 162105: return 4.273f;
+        case 162106: return 2.245f;
+        case 162107: return 2.169f;
+        case 162108: return 2.704f;
+        case 162201: return 2.372f;
+        case 162202: return 1.729f;
+        case 162203: return 1.860f;
+        case 162204: return 3.086f;
+        case 162205: return 2.246f;
+        case 162206: return 2.258f;
+        case 162207: return 1.513f;
+        case 162208: return 1.266f;
+        case 162209: return 2.605f;
+        case 162210: return 1.751f;
+        case 162211: return 2.855f;
+        case 162212: return 3.431f;
+        case 162213: return 2.378f;
+        case 162301: return 2.283f;
+        case 162303: return 2.033f;
+        case 162304: return 1.971f;
+        case 162305: return 0.916f;
+        case 162307: return 1.268f;
+        case 162308: return 1.753f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration3_Universal_pt_br(id : int) : float
+{
+    switch (id)
+    {
+        case 162309: return 1.981f;
+        case 162310: return 2.388f;
+        case 162311: return 1.081f;
+        case 162312: return 1.263f;
+        case 162313: return 1.545f;
+        case 162314: return 3.595f;
+        case 162315: return 1.263f;
+        case 162316: return 3.052f;
+        case 162318: return 2.365f;
+        case 162401: return 3.488f;
+        case 200026: return 4.171f;
+        case 200028: return 2.065f;
+        case 200030: return 1.473f;
+        case 200031: return 1.917f;
+        case 200032: return 1.569f;
+        case 200033: return 1.611f;
+        case 200036: return 2.729f;
+        case 200039: return 0.912f;
+        case 200040: return 1.898f;
+        case 200042: return 1.916f;
+        case 200043: return 3.864f;
+        case 200044: return 1.307f;
+        case 200046: return 2.622f;
+        case 200048: return 2.489f;
+        case 200050: return 1.977f;
+        case 200055: return 2.804f;
+        case 200062: return 3.231f;
+        case 200071: return 2.591f;
+        case 200080: return 2.528f;
+        case 200081: return 2.328f;
+        case 200083: return 2.400f;
+        case 200087: return 2.620f;
+        case 200088: return 3.975f;
+        case 200089: return 2.729f;
+        case 200091: return 2.335f;
+        case 200098: return 2.173f;
+        case 200112: return 1.801f;
+        case 200115: return 1.204f;
+        case 200118: return 2.643f;
+        case 200124: return 1.982f;
+        case 200132: return 2.996f;
+        case 200135: return 2.247f;
+        case 200136: return 2.673f;
+        case 200138: return 4.108f;
+        case 200144: return 5.960f;
+        case 200145: return 3.047f;
+        case 200146: return 2.661f;
+        case 200147: return 2.491f;
+        case 200149: return 2.455f;
+        case 200159: return 2.338f;
+        case 200160: return 2.678f;
+        case 200161: return 2.603f;
+        case 200162: return 3.717f;
+        case 200163: return 3.625f;
+        case 200164: return 3.490f;
+        case 200165: return 2.024f;
+        case 200166: return 3.061f;
+        case 200167: return 3.580f;
+        case 200168: return 2.200f;
+        case 200169: return 1.595f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration4_Universal_pt_br(id : int) : float
+{
+    switch (id)
+    {
+        case 200170: return 2.447f;
+        case 200171: return 2.998f;
+        case 200177: return 1.774f;
+        case 200209: return 2.180f;
+        case 200212: return 1.418f;
+        case 200219: return 3.488f;
+        case 200220: return 3.354f;
+        case 200221: return 3.448f;
+        case 200222: return 5.372f;
+        case 200227: return 2.998f;
+        case 200235: return 3.087f;
+        case 200236: return 1.244f;
+        case 200237: return 1.997f;
+        case 200293: return 3.747f;
+        case 200294: return 2.685f;
+        case 200296: return 4.098f;
+        case 200299: return 2.855f;
+        case 200518: return 1.594f;
+        case 200520: return 1.562f;
+        case 200523: return 2.058f;
+        case 200528: return 2.468f;
+        case 200529: return 2.238f;
+        case 200534: return 1.612f;
+        case 200535: return 3.040f;
+        case 200540: return 1.809f;
+        case 201523: return 2.817f;
+        case 201559: return 3.673f;
+        case 201578: return 1.692f;
+        case 201580: return 4.847f;
+        case 201587: return 1.395f;
+        case 201589: return 2.447f;
+        case 201595: return 2.412f;
+        case 201597: return 3.359f;
+        case 201601: return 2.249f;
+        case 201603: return 1.677f;
+        case 201609: return 1.709f;
+        case 201611: return 1.355f;
+        case 201612: return 3.690f;
+        case 201615: return 2.404f;
+        case 201616: return 2.912f;
+        case 201617: return 4.385f;
+        case 201618: return 2.866f;
+        case 201620: return 2.397f;
+        case 201621: return 3.032f;
+        case 201622: return 3.782f;
+        case 201624: return 2.999f;
+        case 201625: return 3.774f;
+        case 201626: return 1.999f;
+        case 201627: return 4.418f;
+        case 201628: return 3.539f;
+        case 201630: return 3.643f;
+        case 201636: return 1.538f;
+        case 201638: return 2.370f;
+        case 201644: return 2.223f;
+        case 201646: return 2.815f;
+        case 201650: return 1.241f;
+        case 201664: return 2.225f;
+        case 201676: return 0.750f;
+        case 201677: return 0.703f;
+        case 201753: return 0.703f;
+        default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceDuration5_Universal_pt_br(id : int) : float
+{
+    switch (id)
+    {
+        case 201772: return 2.817f;
+        case 201773: return 1.429f;
+        case 201774: return 2.509f;
+        case 201776: return 2.509f;
+        case 201777: return 2.001f;
+        case 201778: return 1.774f;
+        case 201779: return 2.941f;
+        case 201780: return 2.249f;
+        case 201781: return 2.751f;
+        default: break;
+    }
+    return 0.0f;
+}
+
+function BetaGwentAudioEffect_Universal_pt_br(id : int) : string
+{
+    if (id <= 122208) return BetaGwentAudioEffect0_Universal_pt_br(id);
+    if (id <= 132304) return BetaGwentAudioEffect1_Universal_pt_br(id);
+    if (id <= 152103) return BetaGwentAudioEffect2_Universal_pt_br(id);
+    if (id <= 162211) return BetaGwentAudioEffect3_Universal_pt_br(id);
+    if (id <= 200098) return BetaGwentAudioEffect4_Universal_pt_br(id);
+    if (id <= 200457) return BetaGwentAudioEffect5_Universal_pt_br(id);
+    if (id <= 201633) return BetaGwentAudioEffect6_Universal_pt_br(id);
+    if (id <= 201817) return BetaGwentAudioEffect7_Universal_pt_br(id);
+    return "";
+}
+function BetaGwentAudioEffect0_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 112101: return "bg79_fx_3395652692";
+        case 112102: return "bg79_fx_843060712";
+        case 112103: return "bg79_fx_3417224824";
+        case 112104: return "bg79_fx_898277553";
+        case 112105: return "bg79_fx_729252324";
+        case 112106: return "bg79_fx_1860557250";
+        case 112107: return "bg79_fx_714510181";
+        case 112108: return "bg79_fx_2626105800";
+        case 112109: return "bg79_fx_1852040582";
+        case 112110: return "bg79_fx_2541689051";
+        case 112111: return "bg79_fx_2362012063";
+        case 112112: return "bg79_fx_2524626359";
+        case 112113: return "bg79_fx_2942292010";
+        case 112201: return "bg79_fx_514482875";
+        case 112202: return "bg79_fx_1947806633";
+        case 112203: return "bg79_fx_1162524532";
+        case 112204: return "bg79_fx_514936602";
+        case 112205: return "bg79_fx_742380909";
+        case 112206: return "bg79_fx_2646226735";
+        case 112207: return "bg79_fx_4165426977";
+        case 112208: return "bg79_fx_1790304243";
+        case 112209: return "bg79_fx_1337068796";
+        case 112210: return "bg79_fx_2296117142";
+        case 112211: return "bg79_fx_3709520491";
+        case 112212: return "bg79_fx_2972894628";
+        case 112213: return "bg79_fx_3716756108";
+        case 112214: return "bg79_fx_519474258";
+        case 112215: return "bg79_fx_1630758310";
+        case 112401: return "bg79_fx_2790050995";
+        case 112402: return "bg79_fx_4262988425";
+        case 112403: return "bg79_fx_3108142615";
+        case 112404: return "bg79_fx_1144630390";
+        case 112405: return "bg79_fx_3695214425";
+        case 113102: return "bg79_fx_1574600827";
+        case 113201: return "bg79_fx_4222650809";
+        case 113206: return "bg79_fx_2231847513";
+        case 113207: return "bg79_fx_9080078";
+        case 113208: return "bg79_fx_3535926620";
+        case 113303: return "bg79_fx_4187462094";
+        case 113313: return "bg79_fx_1003645445";
+        case 113316: return "bg79_fx_3937828061";
+        case 113320: return "bg79_fx_4053812673";
+        case 113401: return "bg79_fx_4187462094";
+        case 113402: return "bg79_fx_4187462094";
+        case 122101: return "bg79_fx_3580922927";
+        case 122102: return "bg79_fx_1725897413";
+        case 122103: return "bg79_fx_2226063920";
+        case 122104: return "bg79_fx_7794445";
+        case 122105: return "bg79_fx_1081955402";
+        case 122106: return "bg79_fx_1612137249";
+        case 122107: return "bg79_fx_1395734064";
+        case 122108: return "bg79_fx_1929368006";
+        case 122201: return "bg79_fx_3953354843";
+        case 122202: return "bg79_fx_3773668558";
+        case 122203: return "bg79_fx_3562005998";
+        case 122204: return "bg79_fx_797142454";
+        case 122205: return "bg79_fx_718436193";
+        case 122206: return "bg79_fx_1837007562";
+        case 122207: return "bg79_fx_1769973425";
+        case 122208: return "bg79_fx_3312738020";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect1_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 122209: return "bg79_fx_2429636229";
+        case 122210: return "bg79_fx_300052383";
+        case 122211: return "bg79_fx_697011446";
+        case 122212: return "bg79_fx_607530292";
+        case 122213: return "bg79_fx_2058031734";
+        case 122214: return "bg79_fx_3465870946";
+        case 122216: return "bg79_fx_599458487";
+        case 122301: return "bg79_fx_3746294386";
+        case 122302: return "bg79_fx_1793989314";
+        case 122303: return "bg79_fx_3354855694";
+        case 122304: return "bg79_fx_1276046663";
+        case 122306: return "bg79_fx_1316872214";
+        case 122307: return "bg79_fx_1014180088";
+        case 122308: return "bg79_fx_4170618816";
+        case 122309: return "bg79_fx_3348587284";
+        case 122310: return "bg79_fx_4198348460";
+        case 122311: return "bg79_fx_1810880940";
+        case 122312: return "bg79_fx_1333662702";
+        case 122313: return "bg79_fx_1245156552";
+        case 122314: return "bg79_fx_3683057321";
+        case 122315: return "bg79_fx_3268082076";
+        case 122316: return "bg79_fx_1547581519";
+        case 122317: return "bg79_fx_1866548680";
+        case 122318: return "bg79_fx_4098545935";
+        case 122401: return "bg79_fx_3606443419";
+        case 122402: return "bg79_fx_3695318591";
+        case 122403: return "bg79_fx_1635422172";
+        case 123201: return "bg79_fx_1194450298";
+        case 123301: return "bg79_fx_3334557791";
+        case 131101: return "bg79_fx_2945270290";
+        case 131102: return "bg79_fx_2737476773";
+        case 132101: return "bg79_fx_3386564296";
+        case 132102: return "bg79_fx_2628887005";
+        case 132103: return "bg79_fx_170458611";
+        case 132104: return "bg79_fx_2388737177";
+        case 132105: return "bg79_fx_3025942366";
+        case 132106: return "bg79_fx_3026324263";
+        case 132107: return "bg79_fx_2226889185";
+        case 132108: return "bg79_fx_1434419550";
+        case 132201: return "bg79_fx_1260139933";
+        case 132202: return "bg79_fx_1046228664";
+        case 132203: return "bg79_fx_3422587878";
+        case 132204: return "bg79_fx_1406685045";
+        case 132205: return "bg79_fx_4173224394";
+        case 132206: return "bg79_fx_2245065751";
+        case 132207: return "bg79_fx_3120725056";
+        case 132208: return "bg79_fx_1735544563";
+        case 132209: return "bg79_fx_790759647";
+        case 132211: return "bg79_fx_3758437398";
+        case 132212: return "bg79_fx_2936760412";
+        case 132213: return "bg79_fx_4235389783";
+        case 132214: return "bg79_fx_763257575";
+        case 132215: return "bg79_fx_1377090531";
+        case 132216: return "bg79_fx_2129505533";
+        case 132217: return "bg79_fx_2142835913";
+        case 132218: return "bg79_fx_420309497";
+        case 132301: return "bg79_fx_3036675114";
+        case 132302: return "bg79_fx_890517457";
+        case 132303: return "bg79_fx_314595938";
+        case 132304: return "bg79_fx_455735080";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect2_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 132305: return "bg79_fx_3210037717";
+        case 132306: return "bg79_fx_3450648124";
+        case 132307: return "bg79_fx_1044570009";
+        case 132308: return "bg79_fx_2850556323";
+        case 132309: return "bg79_fx_3540597125";
+        case 132310: return "bg79_fx_3313104602";
+        case 132312: return "bg79_fx_4278347594";
+        case 132313: return "bg79_fx_1742122634";
+        case 132314: return "bg79_fx_2744585176";
+        case 132315: return "bg79_fx_2833673135";
+        case 132316: return "bg79_fx_798399388";
+        case 132402: return "bg79_fx_2054496824";
+        case 132403: return "bg79_fx_1602950149";
+        case 132404: return "bg79_fx_2624758006";
+        case 132405: return "bg79_fx_2361434004";
+        case 132406: return "bg79_fx_783529319";
+        case 132407: return "bg79_fx_2304783865";
+        case 132408: return "bg79_fx_65010424";
+        case 132409: return "bg79_fx_2384069016";
+        case 133301: return "bg79_fx_2335519656";
+        case 133302: return "bg79_fx_3082327472";
+        case 142101: return "bg79_fx_3603721956";
+        case 142102: return "bg79_fx_1531303984";
+        case 142103: return "bg79_fx_2825748729";
+        case 142104: return "bg79_fx_74233409";
+        case 142105: return "bg79_fx_1825710439";
+        case 142106: return "bg79_fx_1094876401";
+        case 142107: return "bg79_fx_3822054485";
+        case 142108: return "bg79_fx_2991740440";
+        case 142201: return "bg79_fx_1485513089";
+        case 142202: return "bg79_fx_1879690864";
+        case 142203: return "bg79_fx_2518805740";
+        case 142206: return "bg79_fx_526114196";
+        case 142207: return "bg79_fx_3218830508";
+        case 142209: return "bg79_fx_2982000626";
+        case 142211: return "bg79_fx_743392900";
+        case 142212: return "bg79_fx_2818418645";
+        case 142213: return "bg79_fx_1414677961";
+        case 142214: return "bg79_fx_1779347853";
+        case 142301: return "bg79_fx_1113233163";
+        case 142302: return "bg79_fx_210311833";
+        case 142303: return "bg79_fx_3326672827";
+        case 142304: return "bg79_fx_1839290106";
+        case 142306: return "bg79_fx_2611321864";
+        case 142307: return "bg79_fx_438751169";
+        case 142308: return "bg79_fx_115159051";
+        case 142309: return "bg79_fx_2597020897";
+        case 142310: return "bg79_fx_2763610169";
+        case 142311: return "bg79_fx_960997288";
+        case 142312: return "bg79_fx_1507469969";
+        case 142313: return "bg79_fx_2858722056";
+        case 142314: return "bg79_fx_1188458162";
+        case 142315: return "bg79_fx_2059381696";
+        case 142316: return "bg79_fx_3812338627";
+        case 142317: return "bg79_fx_660494302";
+        case 142401: return "bg79_fx_370542386";
+        case 143201: return "bg79_fx_54701386";
+        case 143301: return "bg79_fx_3099162218";
+        case 152101: return "bg79_fx_4175951973";
+        case 152103: return "bg79_fx_1303041810";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect3_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 152104: return "bg79_fx_2566025232";
+        case 152105: return "bg79_fx_218930060";
+        case 152106: return "bg79_fx_743515151";
+        case 152107: return "bg79_fx_3552589037";
+        case 152109: return "bg79_fx_553152945";
+        case 152201: return "bg79_fx_305236487";
+        case 152202: return "bg79_fx_1661743351";
+        case 152203: return "bg79_fx_4167522615";
+        case 152204: return "bg79_fx_1516696404";
+        case 152205: return "bg79_fx_2007746145";
+        case 152206: return "bg79_fx_4260849741";
+        case 152207: return "bg79_fx_3101408448";
+        case 152208: return "bg79_fx_4059346259";
+        case 152209: return "bg79_fx_212947329";
+        case 152210: return "bg79_fx_1560462341";
+        case 152211: return "bg79_fx_4116062743";
+        case 152213: return "bg79_fx_3124783719";
+        case 152214: return "bg79_fx_1927858084";
+        case 152301: return "bg79_fx_3679954868";
+        case 152302: return "bg79_fx_235803829";
+        case 152303: return "bg79_fx_1698235724";
+        case 152304: return "bg79_fx_4066851032";
+        case 152305: return "bg79_fx_2080899675";
+        case 152306: return "bg79_fx_2308834113";
+        case 152308: return "bg79_fx_1712563289";
+        case 152309: return "bg79_fx_1243862547";
+        case 152310: return "bg79_fx_1196562944";
+        case 152311: return "bg79_fx_2012880390";
+        case 152312: return "bg79_fx_1849620901";
+        case 152313: return "bg79_fx_62872992";
+        case 152314: return "bg79_fx_2260915605";
+        case 152315: return "bg79_fx_211889999";
+        case 152316: return "bg79_fx_4019434355";
+        case 152317: return "bg79_fx_668038284";
+        case 152318: return "bg79_fx_460332697";
+        case 152401: return "bg79_fx_2759789487";
+        case 152402: return "bg79_fx_13642409";
+        case 152403: return "bg79_fx_3058600845";
+        case 152405: return "bg79_fx_1611020239";
+        case 152406: return "bg79_fx_2359930005";
+        case 153201: return "bg79_fx_1192221305";
+        case 162101: return "bg79_fx_2572655564";
+        case 162102: return "bg79_fx_2090593881";
+        case 162103: return "bg79_fx_459365841";
+        case 162104: return "bg79_fx_2852011005";
+        case 162105: return "bg79_fx_610559508";
+        case 162106: return "bg79_fx_2091470217";
+        case 162107: return "bg79_fx_1251964638";
+        case 162108: return "bg79_fx_3699137582";
+        case 162201: return "bg79_fx_1656765553";
+        case 162202: return "bg79_fx_3621920039";
+        case 162203: return "bg79_fx_3113802096";
+        case 162204: return "bg79_fx_3150303364";
+        case 162205: return "bg79_fx_956497982";
+        case 162206: return "bg79_fx_2322591249";
+        case 162207: return "bg79_fx_2117936302";
+        case 162208: return "bg79_fx_3250806960";
+        case 162209: return "bg79_fx_3843277547";
+        case 162210: return "bg79_fx_3115686636";
+        case 162211: return "bg79_fx_1135117597";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect4_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 162212: return "bg79_fx_2629806217";
+        case 162213: return "bg79_fx_2352033111";
+        case 162301: return "bg79_fx_511855046";
+        case 162302: return "bg79_fx_3851131680";
+        case 162303: return "bg79_fx_876020117";
+        case 162304: return "bg79_fx_615450887";
+        case 162305: return "bg79_fx_2117257051";
+        case 162306: return "bg79_fx_3039358424";
+        case 162307: return "bg79_fx_4088214341";
+        case 162308: return "bg79_fx_2462400718";
+        case 162309: return "bg79_fx_2290784264";
+        case 162310: return "bg79_fx_3737210697";
+        case 162311: return "bg79_fx_3524423994";
+        case 162312: return "bg79_fx_3192994382";
+        case 162313: return "bg79_fx_3001399220";
+        case 162314: return "bg79_fx_2698371145";
+        case 162315: return "bg79_fx_3945861007";
+        case 162316: return "bg79_fx_2620476933";
+        case 162317: return "bg79_fx_2622121347";
+        case 162318: return "bg79_fx_1727178084";
+        case 162401: return "bg79_fx_3934557805";
+        case 162402: return "bg79_fx_3157388991";
+        case 200020: return "bg79_fx_1059850726";
+        case 200022: return "bg79_fx_4187523245";
+        case 200026: return "bg79_fx_1182087113";
+        case 200028: return "bg79_fx_3118774416";
+        case 200030: return "bg79_fx_1549498878";
+        case 200031: return "bg79_fx_1066386275";
+        case 200032: return "bg79_fx_2778933433";
+        case 200033: return "bg79_fx_1594434705";
+        case 200036: return "bg79_fx_3913679887";
+        case 200037: return "bg79_fx_3677776796";
+        case 200038: return "bg79_fx_3364093792";
+        case 200039: return "bg79_fx_2280701854";
+        case 200040: return "bg79_fx_1315577947";
+        case 200041: return "bg79_fx_1975983488";
+        case 200042: return "bg79_fx_2129747007";
+        case 200043: return "bg79_fx_199111628";
+        case 200044: return "bg79_fx_2309540397";
+        case 200046: return "bg79_fx_3290737338";
+        case 200048: return "bg79_fx_2470625356";
+        case 200049: return "bg79_fx_2653839007";
+        case 200050: return "bg79_fx_1845083974";
+        case 200052: return "bg79_fx_2096972889";
+        case 200055: return "bg79_fx_3144355508";
+        case 200056: return "bg79_fx_3183373472";
+        case 200058: return "bg79_fx_3004523106";
+        case 200062: return "bg79_fx_4056401408";
+        case 200067: return "bg79_fx_2993996216";
+        case 200071: return "bg79_fx_3506695817";
+        case 200073: return "bg79_fx_1168520071";
+        case 200079: return "bg79_fx_1145845125";
+        case 200080: return "bg79_fx_145034249";
+        case 200081: return "bg79_fx_3485594715";
+        case 200083: return "bg79_fx_2849822196";
+        case 200087: return "bg79_fx_2492269067";
+        case 200088: return "bg79_fx_2027970317";
+        case 200089: return "bg79_fx_1431788866";
+        case 200091: return "bg79_fx_3326742544";
+        case 200098: return "bg79_fx_3455889460";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect5_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 200102: return "bg79_fx_3896640832";
+        case 200103: return "bg79_fx_698833918";
+        case 200104: return "bg79_fx_3697941869";
+        case 200105: return "bg79_fx_2477921360";
+        case 200112: return "bg79_fx_827673070";
+        case 200114: return "bg79_fx_1347151243";
+        case 200115: return "bg79_fx_59578087";
+        case 200118: return "bg79_fx_1462724796";
+        case 200124: return "bg79_fx_1245425858";
+        case 200132: return "bg79_fx_3451911606";
+        case 200135: return "bg79_fx_271085077";
+        case 200136: return "bg79_fx_2095947162";
+        case 200138: return "bg79_fx_1208904748";
+        case 200139: return "bg79_fx_2810674676";
+        case 200144: return "bg79_fx_4221182000";
+        case 200145: return "bg79_fx_2712173473";
+        case 200146: return "bg79_fx_151260701";
+        case 200147: return "bg79_fx_3523608578";
+        case 200149: return "bg79_fx_2745495503";
+        case 200154: return "bg79_fx_1408793683";
+        case 200158: return "bg79_fx_2932762600";
+        case 200159: return "bg79_fx_2643703843";
+        case 200160: return "bg79_fx_2681268150";
+        case 200161: return "bg79_fx_758500920";
+        case 200162: return "bg79_fx_168363967";
+        case 200163: return "bg79_fx_3314643367";
+        case 200164: return "bg79_fx_551784047";
+        case 200165: return "bg79_fx_3914426836";
+        case 200166: return "bg79_fx_654382569";
+        case 200167: return "bg79_fx_694443607";
+        case 200168: return "bg79_fx_376634067";
+        case 200169: return "bg79_fx_1669805897";
+        case 200170: return "bg79_fx_1323369845";
+        case 200171: return "bg79_fx_2823476682";
+        case 200177: return "bg79_fx_4152133840";
+        case 200209: return "bg79_fx_2540682936";
+        case 200212: return "bg79_fx_3578640335";
+        case 200218: return "bg79_fx_2759789487";
+        case 200219: return "bg79_fx_3934557805";
+        case 200220: return "bg79_fx_1861355436";
+        case 200221: return "bg79_fx_509805234";
+        case 200222: return "bg79_fx_734756496";
+        case 200223: return "bg79_fx_2648271288";
+        case 200227: return "bg79_fx_2763233827";
+        case 200228: return "bg79_fx_4263307925";
+        case 200233: return "bg79_fx_3244471482";
+        case 200235: return "bg79_fx_893102762";
+        case 200236: return "bg79_fx_1249031769";
+        case 200237: return "bg79_fx_3905627684";
+        case 200293: return "bg79_fx_302707243";
+        case 200294: return "bg79_fx_1855197648";
+        case 200295: return "bg79_fx_3428553790";
+        case 200296: return "bg79_fx_3283491899";
+        case 200299: return "bg79_fx_3410258784";
+        case 200300: return "bg79_fx_4225939140";
+        case 200301: return "bg79_fx_2646552586";
+        case 200307: return "bg79_fx_705079428";
+        case 200308: return "bg79_fx_2098895937";
+        case 200320: return "bg79_fx_2148182659";
+        case 200457: return "bg79_fx_1602253521";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect6_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 200502: return "bg79_fx_2189560840";
+        case 200518: return "bg79_fx_2826842583";
+        case 200519: return "bg79_fx_3149355844";
+        case 200520: return "bg79_fx_3870582423";
+        case 200523: return "bg79_fx_2638787903";
+        case 200528: return "bg79_fx_2733297292";
+        case 200529: return "bg79_fx_2044411266";
+        case 200530: return "bg79_fx_3218657141";
+        case 200532: return "bg79_fx_3467493194";
+        case 200534: return "bg79_fx_3649892210";
+        case 200535: return "bg79_fx_2301585369";
+        case 200539: return "bg79_fx_2057664872";
+        case 200540: return "bg79_fx_4078195304";
+        case 201523: return "bg79_fx_1738240167";
+        case 201559: return "bg79_fx_383348813";
+        case 201572: return "bg79_fx_928093079";
+        case 201573: return "bg79_fx_928093079";
+        case 201574: return "bg79_fx_928093079";
+        case 201576: return "bg79_fx_3257280898";
+        case 201578: return "bg79_fx_426366733";
+        case 201579: return "bg79_fx_2552033768";
+        case 201580: return "bg79_fx_4215366690";
+        case 201581: return "bg79_fx_264214796";
+        case 201582: return "bg79_fx_1705643005";
+        case 201583: return "bg79_fx_3301666287";
+        case 201584: return "bg79_fx_1772301427";
+        case 201585: return "bg79_fx_1092174218";
+        case 201587: return "bg79_fx_2153263156";
+        case 201589: return "bg79_fx_886436088";
+        case 201595: return "bg79_fx_2005942592";
+        case 201597: return "bg79_fx_2197086276";
+        case 201598: return "bg79_fx_130834792";
+        case 201599: return "bg79_fx_808785438";
+        case 201600: return "bg79_fx_2208595502";
+        case 201601: return "bg79_fx_1133501108";
+        case 201603: return "bg79_fx_2076616595";
+        case 201606: return "bg79_fx_3340179963";
+        case 201609: return "bg79_fx_3100197490";
+        case 201610: return "bg79_fx_2204062891";
+        case 201611: return "bg79_fx_3847358238";
+        case 201612: return "bg79_fx_598700268";
+        case 201613: return "bg79_fx_3457594024";
+        case 201615: return "bg79_fx_3356290799";
+        case 201616: return "bg79_fx_2969179751";
+        case 201617: return "bg79_fx_1681003615";
+        case 201618: return "bg79_fx_242626593";
+        case 201619: return "bg79_fx_4049938297";
+        case 201620: return "bg79_fx_828451047";
+        case 201621: return "bg79_fx_6420008";
+        case 201622: return "bg79_fx_2944625364";
+        case 201623: return "bg79_fx_995383832";
+        case 201624: return "bg79_fx_1133083862";
+        case 201625: return "bg79_fx_152104257";
+        case 201626: return "bg79_fx_539939818";
+        case 201627: return "bg79_fx_1811396259";
+        case 201628: return "bg79_fx_4276764203";
+        case 201630: return "bg79_fx_1596833807";
+        case 201631: return "bg79_fx_3668370841";
+        case 201632: return "bg79_fx_774960951";
+        case 201633: return "bg79_fx_3707205680";
+        default: break;
+    }
+    return "";
+}
+function BetaGwentAudioEffect7_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 201635: return "bg79_fx_1965642969";
+        case 201636: return "bg79_fx_1305507018";
+        case 201638: return "bg79_fx_2465089435";
+        case 201639: return "bg79_fx_1885398964";
+        case 201642: return "bg79_fx_3032433713";
+        case 201643: return "bg79_fx_3139012559";
+        case 201644: return "bg79_fx_467976388";
+        case 201645: return "bg79_fx_2800663406";
+        case 201646: return "bg79_fx_569627432";
+        case 201647: return "bg79_fx_498171762";
+        case 201648: return "bg79_fx_41143281";
+        case 201650: return "bg79_fx_4133624602";
+        case 201653: return "bg79_fx_37523589";
+        case 201656: return "bg79_fx_2434224223";
+        case 201657: return "bg79_fx_1555453165";
+        case 201659: return "bg79_fx_1431587589";
+        case 201660: return "bg79_fx_2775893284";
+        case 201661: return "bg79_fx_3032580174";
+        case 201662: return "bg79_fx_2339672278";
+        case 201664: return "bg79_fx_37145074";
+        case 201676: return "bg79_fx_4230839019";
+        case 201677: return "bg79_fx_596493021";
+        case 201696: return "bg79_fx_2121222704";
+        case 201697: return "bg79_fx_3141758510";
+        case 201698: return "bg79_fx_1748759717";
+        case 201699: return "bg79_fx_2163368424";
+        case 201700: return "bg79_fx_3100370955";
+        case 201701: return "bg79_fx_2374244000";
+        case 201704: return "bg79_fx_2672669793";
+        case 201725: return "bg79_fx_4211756470";
+        case 201731: return "bg79_fx_1077351896";
+        case 201737: return "bg79_fx_189803036";
+        case 201743: return "bg79_fx_1985436563";
+        case 201748: return "bg79_fx_2067274392";
+        case 201749: return "bg79_fx_2488424434";
+        case 201753: return "bg79_fx_596493021";
+        case 201758: return "bg79_fx_1602253521";
+        case 201772: return "bg79_fx_1212383624";
+        case 201773: return "bg79_fx_2496638614";
+        case 201774: return "bg79_fx_3044471817";
+        case 201776: return "bg79_fx_3044471816";
+        case 201777: return "bg79_fx_416157938";
+        case 201778: return "bg79_fx_2347161295";
+        case 201780: return "bg79_fx_562867060";
+        case 201781: return "bg79_fx_3468192666";
+        case 201817: return "bg79_fx_6172555";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceVariant_Universal_pt_br(id : int, roll : int) : string
+{
+    if(id <= 112203)return BetaGwentAudioVoiceVariantPart0_Universal_pt_br(id,roll);
+    if(id <= 122101)return BetaGwentAudioVoiceVariantPart1_Universal_pt_br(id,roll);
+    if(id <= 122208)return BetaGwentAudioVoiceVariantPart2_Universal_pt_br(id,roll);
+    if(id <= 122313)return BetaGwentAudioVoiceVariantPart3_Universal_pt_br(id,roll);
+    if(id <= 132207)return BetaGwentAudioVoiceVariantPart4_Universal_pt_br(id,roll);
+    if(id <= 142108)return BetaGwentAudioVoiceVariantPart5_Universal_pt_br(id,roll);
+    if(id <= 142302)return BetaGwentAudioVoiceVariantPart6_Universal_pt_br(id,roll);
+    if(id <= 142401)return BetaGwentAudioVoiceVariantPart7_Universal_pt_br(id,roll);
+    if(id <= 152211)return BetaGwentAudioVoiceVariantPart8_Universal_pt_br(id,roll);
+    if(id <= 152316)return BetaGwentAudioVoiceVariantPart9_Universal_pt_br(id,roll);
+    if(id <= 162204)return BetaGwentAudioVoiceVariantPart10_Universal_pt_br(id,roll);
+    if(id <= 162308)return BetaGwentAudioVoiceVariantPart11_Universal_pt_br(id,roll);
+    if(id <= 200032)return BetaGwentAudioVoiceVariantPart12_Universal_pt_br(id,roll);
+    if(id <= 200081)return BetaGwentAudioVoiceVariantPart13_Universal_pt_br(id,roll);
+    if(id <= 200144)return BetaGwentAudioVoiceVariantPart14_Universal_pt_br(id,roll);
+    if(id <= 200169)return BetaGwentAudioVoiceVariantPart15_Universal_pt_br(id,roll);
+    if(id <= 200294)return BetaGwentAudioVoiceVariantPart16_Universal_pt_br(id,roll);
+    if(id <= 201587)return BetaGwentAudioVoiceVariantPart17_Universal_pt_br(id,roll);
+    if(id <= 201622)return BetaGwentAudioVoiceVariantPart18_Universal_pt_br(id,roll);
+    if(id <= 201753)return BetaGwentAudioVoiceVariantPart19_Universal_pt_br(id,roll);
+    if(id <= 201781)return BetaGwentAudioVoiceVariantPart20_Universal_pt_br(id,roll);
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart0_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 112101:
+        if(roll%100<25)return "bg79_vo_CIRI_CIRILLA_01040512";
+        if(roll%100<50)return "bg79_vo_CIRI_CIRILLA_01040548";
+        if(roll%100<75)return "bg79_vo_CIRI_Q111_00536478";
+        if(roll%100<100)return "bg79_vo_CIRI_Q310_00579530";
+        break;
+    case 112102:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 112103:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 112104:
+        if(roll%100<40)return "bg79_vo_REGI_Q702_01155230";
+        if(roll%100<60)return "bg79_vo_REGI_Q702_01155490";
+        if(roll%100<100)return "bg79_vo_REGI_Q702_01178597";
+        break;
+    case 112105:
+        if(roll%100<100)return "bg79_vo_katakan_taunt_short_003";
+        break;
+    case 112106:
+        if(roll%100<17)return "bg79_vo_TRSS_Q310_00545347";
+        if(roll%100<33)return "bg79_vo_VO_TRIS_100285_0008";
+        if(roll%100<50)return "bg79_vo_VO_TRIS_104122_2446";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_17";
+        if(roll%100<84)return "bg79_vo_SAY_Battlecries_18";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_19";
+        break;
+    case 112108:
+        if(roll%100<33)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<66)return "bg79_vo_YENN_YENNEFER_01041493";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041495";
+        break;
+    case 112109:
+        if(roll%100<24)return "bg79_vo_ZOLT_Q310_01062198";
+        if(roll%100<48)return "bg79_vo_ZOLT_Q403_00575678";
+        if(roll%100<72)return "bg79_vo_ZOLT_ZOLTAN_01040657";
+        if(roll%100<96)return "bg79_vo_ZOLT_ZOLTAN_01040651";
+        if(roll%100<100)return "bg79_vo_ZOLT_ZOLTAN_01040649";
+        break;
+    case 112110:
+        if(roll%100<25)return "bg79_vo_CIRI_CIRILLA_01040512";
+        if(roll%100<50)return "bg79_vo_CIRI_CIRILLA_01040548";
+        if(roll%100<75)return "bg79_vo_CIRI_Q111_00536478";
+        if(roll%100<100)return "bg79_vo_CIRI_Q310_00579530";
+        break;
+    case 112111:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 112112:
+        if(roll%100<25)return "bg79_vo_AVLC_Q311_00454814";
+        if(roll%100<50)return "bg79_vo_AVLC_Q311_00584753";
+        if(roll%100<75)return "bg79_vo_AVLC_Q311_01022646";
+        if(roll%100<100)return "bg79_vo_AVLC_Q311_00312745";
+        break;
+    case 112113:
+        if(roll%100<33)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<66)return "bg79_vo_YENN_YENNEFER_01041493";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041495";
+        break;
+    case 112201:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_816";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_817";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_818";
+        break;
+    case 112202:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_21";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_22";
+        if(roll%100<92)return "bg79_vo_SAY_Battlecries_23";
+        if(roll%100<100)return "bg79_vo_ESKL_ESKEL_01037262";
+        break;
+    case 112203:
+        if(roll%100<33)return "bg79_vo_VSMR_Q001_00546725";
+        if(roll%100<66)return "bg79_vo_VSMR_VESEMIR_01000012";
+        if(roll%100<100)return "bg79_vo_VSMR_VESEMIR_01040765";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart1_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 112204:
+        if(roll%100<17)return "bg79_vo_LMBT_Q401_00523875";
+        if(roll%100<34)return "bg79_vo_LMBT_Q401_00531130";
+        if(roll%100<51)return "bg79_vo_LMBT_Q401_01058899";
+        if(roll%100<68)return "bg79_vo_LMBT_Q403_00550012";
+        if(roll%100<85)return "bg79_vo_LMBT_SQ106_00586496";
+        if(roll%100<100)return "bg79_vo_LMBT_Q403_00572964";
+        break;
+    case 112205:
+        if(roll%100<33)return "bg79_vo_wyvern_v2_vo_ADD_008";
+        if(roll%100<66)return "bg79_vo_wyvern_v2_vo_ADD_009";
+        if(roll%100<100)return "bg79_vo_wyvern_v2_vo_ADD_010";
+        break;
+    case 112206:
+        if(roll%100<33)return "bg79_vo_wyvern_v2_vo_ADD_008";
+        if(roll%100<66)return "bg79_vo_wyvern_v2_vo_ADD_009";
+        if(roll%100<100)return "bg79_vo_wyvern_v2_vo_ADD_010";
+        break;
+    case 112207:
+        if(roll%100<33)return "bg79_vo_OLGD_Q603_01101145";
+        if(roll%100<66)return "bg79_vo_OLGD_Q603_01101591";
+        if(roll%100<100)return "bg79_vo_OLGD_Q604_01137773";
+        break;
+    case 112208:
+        if(roll%100<50)return "bg79_vo_VO_OPRT_204113_0001";
+        if(roll%100<100)return "bg79_vo_VO_OPRT_204113_0012";
+        break;
+    case 112211:
+        if(roll%100<30)return "bg79_vo_GJHN_Q105_00417768";
+        if(roll%100<65)return "bg79_vo_GJHN_Q105_00420525";
+        if(roll%100<100)return "bg79_vo_GJHN_Q111_01011367";
+        break;
+    case 112212:
+        if(roll%100<33)return "bg79_vo_GSAR_Q301_00484178";
+        if(roll%100<66)return "bg79_vo_GSAR_Q301_00493632";
+        if(roll%100<100)return "bg79_vo_GSAR_GODLING_01059640";
+        break;
+    case 112213:
+        if(roll%100<25)return "bg79_vo_KGBG_Q301_00486502";
+        if(roll%100<50)return "bg79_vo_KGBG_Q301_00487409";
+        if(roll%100<75)return "bg79_vo_KGBG_Q301_00499725";
+        if(roll%100<100)return "bg79_vo_KGBG_Q302_00487960";
+        break;
+    case 112214:
+        if(roll%100<33)return "bg79_vo_WILY_Q302_00443324";
+        if(roll%100<66)return "bg79_vo_WILY_Q302_00514329";
+        if(roll%100<100)return "bg79_vo_WILY_Q302_00547590";
+        break;
+    case 112215:
+        if(roll%100<33)return "bg79_vo_IRIS_Q604_01106159";
+        if(roll%100<66)return "bg79_vo_IRIS_Q604_01106875";
+        if(roll%100<100)return "bg79_vo_IRIS_Q604_01106944";
+        break;
+    case 112403:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_25";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_26";
+        break;
+    case 112404:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_25";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_26";
+        break;
+    case 113208:
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_821";
+        break;
+    case 113313:
+        if(roll%300<33)return "bg79_vo_SAY_Battlecries_part5_326";
+        if(roll%300<66)return "bg79_vo_SAY_Battlecries_part5_327";
+        if(roll%300<100)return "bg79_vo_SAY_Battlecries_part5_328";
+        if(roll%300<200)return "bg79_vo_SAY_Battlecries_part5_329";
+        if(roll%300<300)return "bg79_vo_SAY_Battlecries_part5_330";
+        break;
+    case 122101:
+        if(roll%100<25)return "bg79_vo_BARN_Q102_00408798";
+        if(roll%100<50)return "bg79_vo_BARN_Q103_00473473";
+        if(roll%100<75)return "bg79_vo_BARN_Q107_00515406";
+        if(roll%100<100)return "bg79_vo_BARN_BARON_00402523";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart2_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 122102:
+        if(roll%100<50)return "bg79_vo_ROCH_MQ3035_01064844";
+        if(roll%100<100)return "bg79_vo_ROCH_ROCHE_00541126";
+        break;
+    case 122103:
+        if(roll%100<50)return "bg79_vo_VO_JANT_300862_0253";
+        if(roll%100<100)return "bg79_vo_VO_JANT_900381_0141";
+        break;
+    case 122104:
+        if(roll%100<21)return "bg79_vo_PHIL_PHILIPPA_01041424";
+        if(roll%100<44)return "bg79_vo_PHIL_PHILIPPA_01041426";
+        if(roll%100<66)return "bg79_vo_PHIL_Q310_00533376";
+        if(roll%100<78)return "bg79_vo_PHIL_Q502_00555967";
+        if(roll%100<100)return "bg79_vo_VO_FLPA_300358_0012";
+        break;
+    case 122105:
+        if(roll%100<25)return "bg79_vo_DJKS_MQ3035_01067766";
+        if(roll%100<50)return "bg79_vo_DJKS_Q303_00486613";
+        if(roll%100<75)return "bg79_vo_DJKS_Q303_00417640";
+        if(roll%100<100)return "bg79_vo_DJKS_Q303_00378559";
+        break;
+    case 122106:
+        if(roll%100<33)return "bg79_vo_SHNI_Q602_01119358";
+        if(roll%100<66)return "bg79_vo_SHNI_Q601_01101942";
+        if(roll%100<100)return "bg79_vo_SHNI_SHANI_01130725";
+        break;
+    case 122107:
+        if(roll%100<16)return "bg79_vo_TRSS_Q310_00545347";
+        if(roll%100<33)return "bg79_vo_VO_TRIS_100285_0008";
+        if(roll%100<50)return "bg79_vo_VO_TRIS_104122_2446";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_17";
+        if(roll%100<84)return "bg79_vo_SAY_Battlecries_18";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_19";
+        break;
+    case 122108:
+        if(roll%100<25)return "bg79_vo_KEIR_KEIRA_00475332";
+        if(roll%100<50)return "bg79_vo_KEIR_KEIRA_01040781";
+        if(roll%100<75)return "bg79_vo_KEIR_SQ101_00565661";
+        if(roll%100<100)return "bg79_vo_KEIR_SQ101_00590073";
+        break;
+    case 122201:
+        if(roll%100<15)return "bg79_vo_SAY_Battlecries_5";
+        if(roll%100<29)return "bg79_vo_SAY_Battlecries_7";
+        if(roll%100<44)return "bg79_vo_SAY_Battlecries_6";
+        if(roll%100<58)return "bg79_vo_DAND_DANDELION_00429307";
+        if(roll%100<73)return "bg79_vo_DAND_Q302_00489393";
+        if(roll%100<86)return "bg79_vo_DAND_Q302_00490269";
+        if(roll%100<100)return "bg79_vo_VO_JSKR_100926_0188";
+        break;
+    case 122202:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_9";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_10";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_11";
+        if(roll%100<100)return "bg79_vo_PRIS_Q305_00489643";
+        break;
+    case 122203:
+        if(roll%100<33)return "bg79_vo_TALA_SQ315_01067599";
+        if(roll%100<66)return "bg79_vo_TALA_SQ315_01067657";
+        if(roll%100<100)return "bg79_vo_TALA_SQ315_01067677";
+        break;
+    case 122204:
+        if(roll%100<25)return "bg79_vo_VESS_MQ3035_01064809";
+        if(roll%100<50)return "bg79_vo_VESS_MQ3035_01071150";
+        if(roll%100<75)return "bg79_vo_VESS_Q403_00546798";
+        if(roll%100<100)return "bg79_vo_VESS_VES_01070698";
+        break;
+    case 122205:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_29";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_30";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_31";
+        break;
+    case 122206:
+        if(roll%100<33)return "bg79_vo_VO_SABR_200216_0037";
+        if(roll%100<53)return "bg79_vo_VO_SABR_200216_0064";
+        if(roll%100<100)return "bg79_vo_VO_SABR_200216_0101";
+        break;
+    case 122207:
+        if(roll%100<33)return "bg79_vo_VO_DETM_200182_0001";
+        if(roll%100<66)return "bg79_vo_VO_DETM_200219_0001";
+        if(roll%100<100)return "bg79_vo_VO_DETM_200338_0412";
+        break;
+    case 122208:
+        if(roll%100<33)return "bg79_vo_VO_STEN_200098_0258";
+        if(roll%100<66)return "bg79_vo_VO_STEN_200046_0316";
+        if(roll%100<100)return "bg79_vo_VO_STEN_200046_0302";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart3_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 122209:
+        if(roll%100<65)return "bg79_vo_TRL1_MQ1022_00466604";
+        if(roll%100<100)return "bg79_vo_TRL1_MQ1022_00468246";
+        break;
+    case 122210:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_37";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_38";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_39";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_40";
+        break;
+    case 122211:
+        if(roll%100<33)return "bg79_vo_MGLA_MARGARITTA_01012961";
+        if(roll%100<66)return "bg79_vo_MGLA_Q210_00584250";
+        if(roll%100<100)return "bg79_vo_MGLA_Q310_00562485";
+        break;
+    case 122212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_42";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_43";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_44";
+        break;
+    case 122213:
+        if(roll%100<33)return "bg79_vo_VO_ODRI_200481_0002";
+        if(roll%100<66)return "bg79_vo_VO_ODRI_200546_0001";
+        if(roll%100<100)return "bg79_vo_VO_ODRI_200559_0001";
+        break;
+    case 122214:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_46";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_48";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_47";
+        break;
+    case 122216:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_21";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_23";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_22";
+        break;
+    case 122306:
+        if(roll%100<33)return "bg79_vo_VO_ZDZI_003478_0007";
+        if(roll%100<66)return "bg79_vo_VO_ZDZI_003478_0049";
+        if(roll%100<100)return "bg79_vo_VO_ZDZI_003478_0097";
+        break;
+    case 122307:
+        if(roll%100<33)return "bg79_vo_VO_NG01_003478_0008";
+        if(roll%100<66)return "bg79_vo_VO_NG01_003478_0060";
+        if(roll%100<100)return "bg79_vo_VO_NG01_003478_0126";
+        break;
+    case 122308:
+        if(roll%100<33)return "bg79_vo_RES1_VSET_00508237";
+        if(roll%100<66)return "bg79_vo_RES1_VSET_00508445";
+        if(roll%100<100)return "bg79_vo_RES1_VSET_00508451";
+        break;
+    case 122309:
+        if(roll%100<33)return "bg79_vo_VO_KG01_200564_0001";
+        if(roll%100<66)return "bg79_vo_VO_KG01_202928_0014";
+        if(roll%100<100)return "bg79_vo_VO_KG01_202928_0016";
+        break;
+    case 122310:
+        if(roll%100<33)return "bg79_vo_VO_RS01_101992_0004";
+        if(roll%100<66)return "bg79_vo_VO_RS01_106541_0014";
+        if(roll%100<100)return "bg79_vo_VO_ROS1_102779_0005";
+        break;
+    case 122311:
+        if(roll%100<33)return "bg79_vo_VO_RS03_106543_0003";
+        if(roll%100<67)return "bg79_vo_VO_RS03_106543_0004";
+        if(roll%100<100)return "bg79_vo_VO_ROS3_102779_0003";
+        break;
+    case 122312:
+        if(roll%100<33)return "bg79_vo_NCIW1_VSET_00564889";
+        if(roll%100<66)return "bg79_vo_NCIW1_VSET_00564891";
+        if(roll%100<100)return "bg79_vo_NCIW1_VSET_00566917";
+        break;
+    case 122313:
+        if(roll%100<33)return "bg79_vo_VO_KG06_200420_0005";
+        if(roll%100<66)return "bg79_vo_VO_KG06_202931_0005";
+        if(roll%100<100)return "bg79_vo_VO_KG06_202931_0012";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart4_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 122314:
+        if(roll%100<33)return "bg79_vo_VO_KG02_200565_0005";
+        if(roll%100<66)return "bg79_vo_VO_KG02_202929_0003";
+        if(roll%100<100)return "bg79_vo_VO_KG02_202929_0004";
+        break;
+    case 122316:
+        if(roll%100<33)return "bg79_vo_TBAN2_VSET_00591990";
+        if(roll%100<66)return "bg79_vo_TBAN2_VSET_00591997";
+        if(roll%100<100)return "bg79_vo_TBAN2_VSET_01044560";
+        break;
+    case 122317:
+        if(roll%100<33)return "bg79_vo_REOF1_VSET_00516089";
+        if(roll%100<66)return "bg79_vo_REOF1_VSET_00516091";
+        if(roll%100<100)return "bg79_vo_REOF1_VSET_00516093";
+        break;
+    case 122318:
+        if(roll%100<50)return "bg79_vo_VO_KE01_203352_0004";
+        if(roll%100<100)return "bg79_vo_VO_KE01_203352_0006";
+        break;
+    case 122403:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_819";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_820";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_821";
+        break;
+    case 123301:
+        if(roll%300<33)return "bg79_vo_SAY_Battlecries_part5_320";
+        if(roll%300<66)return "bg79_vo_SAY_Battlecries_part5_321";
+        if(roll%300<100)return "bg79_vo_SAY_Battlecries_part5_322";
+        if(roll%300<200)return "bg79_vo_SAY_Battlecries_part5_323";
+        if(roll%300<300)return "bg79_vo_SAY_Battlecries_part5_324";
+        break;
+    case 131101:
+        if(roll%100<33)return "bg79_vo_ERDN_EREDIN_01040754";
+        if(roll%100<66)return "bg79_vo_ERDN_EREDIN_01040841";
+        if(roll%100<100)return "bg79_vo_ERDN_Q501_00534051";
+        break;
+    case 131102:
+        if(roll%100<65)return "bg79_vo_GEEL_Q311_00312236";
+        if(roll%100<100)return "bg79_vo_GEEL_Q311_00312005";
+        break;
+    case 132101:
+        if(roll%100<33)return "bg79_vo_VO_DRUG_200317_0011";
+        if(roll%100<66)return "bg79_vo_VO_DRUG_200216_0078";
+        if(roll%100<100)return "bg79_vo_VO_DRUG_200216_0079";
+        break;
+    case 132102:
+        if(roll%100<33)return "bg79_vo_IMLR_Q111_01062046";
+        if(roll%100<66)return "bg79_vo_IMLR_Q403_00524739";
+        if(roll%100<100)return "bg79_vo_IMLR_Q403_00524776";
+        break;
+    case 132104:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_189";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_192";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_191";
+        break;
+    case 132105:
+        if(roll%100<25)return "bg79_vo_AVLC_Q311_00454814";
+        if(roll%100<50)return "bg79_vo_AVLC_Q311_00584753";
+        if(roll%100<75)return "bg79_vo_AVLC_Q311_01022646";
+        if(roll%100<100)return "bg79_vo_AVLC_Q311_00312745";
+        break;
+    case 132108:
+        if(roll%100<33)return "bg79_vo_SCC3_VSET_01053091";
+        if(roll%100<66)return "bg79_vo_SCC3_VSET_01053077";
+        if(roll%100<100)return "bg79_vo_SCC3_VSET_01053075";
+        break;
+    case 132206:
+        if(roll%100<33)return "bg79_vo_WHSP_Q105_00382577";
+        if(roll%100<66)return "bg79_vo_WHSP_Q105_00419057";
+        if(roll%100<100)return "bg79_vo_WHSP_Q105_00419061";
+        break;
+    case 132207:
+        if(roll%100<50)return "bg79_vo_BREW_Q105_00531820";
+        if(roll%100<100)return "bg79_vo_BREW_Q111_00576135";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart5_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 132208:
+        if(roll%100<33)return "bg79_vo_WEAV_Q105_00531814";
+        if(roll%100<66)return "bg79_vo_WEAV_Q503_00578937";
+        if(roll%100<100)return "bg79_vo_WEAV_Q503_00579064";
+        break;
+    case 132211:
+        if(roll%100<50)return "bg79_vo_nekker_scream_006";
+        if(roll%100<100)return "bg79_vo_nekker_scream_004";
+        break;
+    case 132212:
+        if(roll%100<50)return "bg79_vo_ice_giant_aggro06";
+        if(roll%100<100)return "bg79_vo_ice_giant_aggro07";
+        break;
+    case 132214:
+        if(roll%100<40)return "bg79_vo_WHW1_Q104_00555148";
+        if(roll%100<70)return "bg79_vo_WHW1_Q104_00555150";
+        if(roll%100<100)return "bg79_vo_WHW1_Q104_00555151";
+        break;
+    case 132215:
+        if(roll%100<20)return "bg79_vo_MRRR_Q602_01116657";
+        if(roll%100<40)return "bg79_vo_MRRR_Q605_01108152";
+        if(roll%100<60)return "bg79_vo_MRRR_Q605_01108178";
+        if(roll%100<80)return "bg79_vo_MRRR_Q605_01110505";
+        if(roll%100<100)return "bg79_vo_MRRR_Q605_01132010";
+        break;
+    case 132305:
+        if(roll%100<45)return "bg79_vo_nekker_attack_004";
+        if(roll%100<90)return "bg79_vo_nekker_attack_009";
+        if(roll%100<100)return "bg79_vo_nekker_mumble_003";
+        break;
+    case 132309:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_792";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_793";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_794";
+        break;
+    case 132310:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_796";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_797";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_798";
+        break;
+    case 142102:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_139";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_140";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_141";
+        break;
+    case 142103:
+        if(roll%100<30)return "bg79_vo_VO_IORW_100241_4474";
+        if(roll%100<60)return "bg79_vo_VO_IORW_101048_0181";
+        if(roll%100<90)return "bg79_vo_VO_IORW_101064_0046";
+        if(roll%100<100)return "bg79_vo_VO_IORW_102216_0006";
+        break;
+    case 142104:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_142";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_143";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_144";
+        break;
+    case 142105:
+        if(roll%100<24)return "bg79_vo_ZOLT_Q310_01062198";
+        if(roll%100<48)return "bg79_vo_ZOLT_Q403_00575678";
+        if(roll%100<72)return "bg79_vo_ZOLT_ZOLTAN_01040657";
+        if(roll%100<96)return "bg79_vo_ZOLT_ZOLTAN_01040651";
+        if(roll%100<100)return "bg79_vo_ZOLT_ZOLTAN_01040649";
+        break;
+    case 142106:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_152";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_153";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_154";
+        break;
+    case 142107:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_170";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_171";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_172";
+        break;
+    case 142108:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_186";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_187";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_188";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart6_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 142201:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_155";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_156";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_157";
+        break;
+    case 142202:
+        if(roll%100<40)return "bg79_vo_IDEM_Q401_00532088";
+        if(roll%100<100)return "bg79_vo_IDEM_Q401_00517579";
+        break;
+    case 142203:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_771";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_772";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_773";
+        break;
+    case 142204:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_776";
+        if(roll%100<73)return "bg79_vo_SAY_Battlecries_775";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_777";
+        break;
+    case 142206:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_160";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_159";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_158";
+        break;
+    case 142207:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_161";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_162";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_163";
+        break;
+    case 142208:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_164";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_165";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_166";
+        break;
+    case 142209:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_167";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_168";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_169";
+        break;
+    case 142210:
+        if(roll%100<33)return "bg79_vo_VO_MALN_106817_0005";
+        if(roll%100<66)return "bg79_vo_VO_MALN_106657_0009";
+        if(roll%100<100)return "bg79_vo_VO_MALN_106745_0017";
+        break;
+    case 142211:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_183";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_185";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_184";
+        break;
+    case 142212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_33";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_35";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_34";
+        break;
+    case 142213:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_784";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_785";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_786";
+        break;
+    case 142214:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_831";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_832";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_833";
+        break;
+    case 142301:
+        if(roll%100<33)return "bg79_vo_VSCF2_VSET_00523670";
+        if(roll%100<66)return "bg79_vo_VSCF2_VSET_00523672";
+        if(roll%100<100)return "bg79_vo_VSCF2_VSET_00523680";
+        break;
+    case 142302:
+        if(roll%100<33)return "bg79_vo_VO_SF01_102746_0038";
+        if(roll%100<67)return "bg79_vo_VO_SF01_102780_0001";
+        if(roll%100<100)return "bg79_vo_VO_SF01_102746_0035";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart7_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 142303:
+        if(roll%100<50)return "bg79_vo_VO_SF02_101662_0066";
+        if(roll%100<100)return "bg79_vo_VO_SF02_108969_0001";
+        break;
+    case 142304:
+        if(roll%100<33)return "bg79_vo_VO_SWF1_100532_0009";
+        if(roll%100<66)return "bg79_vo_VO_SWF1_109383_0001";
+        if(roll%100<100)return "bg79_vo_VO_SWF1_107697_0003";
+        break;
+    case 142306:
+        if(roll%100<33)return "bg79_vo_SCD1_VSET_00525279";
+        if(roll%100<66)return "bg79_vo_SCD1_VSET_00525429";
+        if(roll%100<100)return "bg79_vo_SCD1_VSET_00525431";
+        break;
+    case 142307:
+        if(roll%100<30)return "bg79_vo_VO_SMV2_202544_0022";
+        if(roll%100<65)return "bg79_vo_VO_SMV2_202963_0006";
+        if(roll%100<100)return "bg79_vo_VO_SMV2_202963_0007";
+        break;
+    case 142308:
+        if(roll%100<33)return "bg79_vo_VO_SWV2_202544_0023";
+        if(roll%100<66)return "bg79_vo_VO_SWV2_202544_0046";
+        if(roll%100<100)return "bg79_vo_VO_SWV2_202969_0004";
+        break;
+    case 142309:
+        if(roll%100<20)return "bg79_vo_VO_SF01_107685_0001";
+        if(roll%100<60)return "bg79_vo_VO_SF01_102746_0054";
+        if(roll%100<100)return "bg79_vo_VO_SF01_102746_0042";
+        break;
+    case 142310:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_801";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_802";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_803";
+        break;
+    case 142311:
+        if(roll%100<33)return "bg79_vo_SCD1_VSET_00526102";
+        if(roll%100<66)return "bg79_vo_SCD1_VSET_00526104";
+        if(roll%100<100)return "bg79_vo_SCD1_VSET_00525272";
+        break;
+    case 142312:
+        if(roll%100<15)return "bg79_vo_VBAN1_MQ1005_00358151";
+        if(roll%100<57)return "bg79_vo_VBAN1_MQ1005_00357973";
+        if(roll%100<100)return "bg79_vo_VBAN1_VSET_00592242";
+        break;
+    case 142313:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part2_2";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part2_3";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part2_4";
+        break;
+    case 142314:
+        if(roll%100<33)return "bg79_vo_VO_SWV1_202968_0006";
+        if(roll%100<67)return "bg79_vo_VO_SWV1_202968_0007";
+        if(roll%100<100)return "bg79_vo_VO_SWV1_202968_0012";
+        break;
+    case 142315:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part2_5";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part2_7";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part2_6";
+        break;
+    case 142316:
+        if(roll%100<33)return "bg79_vo_VO_SWV5_202972_0007";
+        if(roll%100<66)return "bg79_vo_VO_SWV5_202972_0006";
+        if(roll%100<100)return "bg79_vo_VO_SWV5_202972_0004";
+        break;
+    case 142317:
+        if(roll%100<33)return "bg79_vo_SCD34_VSET_01013381";
+        if(roll%100<66)return "bg79_vo_SCD34_VSET_01013371";
+        if(roll%100<100)return "bg79_vo_SCD34_VSET_01013385";
+        break;
+    case 142401:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_788";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_789";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_790";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart8_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 152101:
+        if(roll%100<25)return "bg79_vo_HJAL_HJALMAR_01037900";
+        if(roll%100<50)return "bg79_vo_HJAL_HJALMAR_01037904";
+        if(roll%100<75)return "bg79_vo_HJAL_HJALMAR_01037912";
+        if(roll%100<100)return "bg79_vo_HJAL_Q501_00568598";
+        break;
+    case 152103:
+        if(roll%100<50)return "bg79_vo_MOUS_Q210_00558067";
+        if(roll%100<100)return "bg79_vo_MOUS_Q403_00566059";
+        break;
+    case 152105:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_205";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_206";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_207";
+        break;
+    case 152106:
+        if(roll%100<50)return "bg79_vo_LUTM_LUGOS_00437813";
+        if(roll%100<100)return "bg79_vo_LUTM_SQ209_00593785";
+        break;
+    case 152107:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_202";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_203";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_204";
+        break;
+    case 152201:
+        if(roll%100<50)return "bg79_vo_LUTG_LUGOS_01038779";
+        if(roll%100<100)return "bg79_vo_LUTG_SQ209_00594723";
+        break;
+    case 152202:
+        if(roll%100<50)return "bg79_vo_TRL3_FF205_01053125";
+        if(roll%100<100)return "bg79_vo_TRL3_FF205_01053127";
+        break;
+    case 152203:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_804";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_805";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_806";
+        break;
+    case 152204:
+        if(roll%100<33)return "bg79_vo_DONR_DONAR_01037055";
+        if(roll%100<66)return "bg79_vo_DONR_DONAR_01037057";
+        if(roll%100<100)return "bg79_vo_DONR_Q206_00587479";
+        break;
+    case 152205:
+        if(roll%100<100)return "bg79_vo_SBR1_VSET_00527986";
+        break;
+    case 152206:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_828";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_829";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_830";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_834";
+        break;
+    case 152207:
+        if(roll%100<20)return "bg79_vo_HOLG_HOLGER_01038014";
+        if(roll%100<80)return "bg79_vo_HOLG_HOLGER_01038016";
+        if(roll%100<100)return "bg79_vo_HOLG_Q201_00387298";
+        break;
+    case 152208:
+        if(roll%100<33)return "bg79_vo_SWO4_MQ2038_00507987";
+        if(roll%100<66)return "bg79_vo_SWO4_MQ2038_00509565";
+        if(roll%100<100)return "bg79_vo_SWO4_MQ2038_00509731";
+        break;
+    case 152209:
+        if(roll%100<33)return "bg79_vo_MRKV_SQ201_00499647";
+        if(roll%100<66)return "bg79_vo_MRKV_SQ201_00501979";
+        if(roll%100<100)return "bg79_vo_MRKV_SQ201_00504630";
+        break;
+    case 152211:
+        if(roll%100<33)return "bg79_vo_SPR1_SHOP_00437650";
+        if(roll%100<66)return "bg79_vo_SPR1_SQ201_00499249";
+        if(roll%100<100)return "bg79_vo_SPR1_VSET_00553157";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart9_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 152213:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_208";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_209";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_210";
+        if(roll%100<80)return "bg79_vo_SVAN_Q210_00558425";
+        if(roll%100<100)return "bg79_vo_SVAN_Q210_01069128";
+        break;
+    case 152214:
+        if(roll%100<40)return "bg79_vo_UDAL_Q201_00166303";
+        if(roll%100<80)return "bg79_vo_UDAL_Q203_00501235";
+        if(roll%100<100)return "bg79_vo_UDAL_UDALRYK_01039823";
+        break;
+    case 152301:
+        if(roll%100<34)return "bg79_vo_SBE2_VSET_00536513";
+        if(roll%100<67)return "bg79_vo_SBE2_VSET_00536507";
+        if(roll%100<100)return "bg79_vo_SBE2_VSET_00536587";
+        break;
+    case 152302:
+        if(roll%100<34)return "bg79_vo_SBE1_Q206_00413021";
+        if(roll%100<67)return "bg79_vo_SBE1_VSET_00536089";
+        if(roll%100<100)return "bg79_vo_SBE1_VSET_00536097";
+        break;
+    case 152303:
+        if(roll%100<34)return "bg79_vo_SGD2_CHAT2_00165312";
+        if(roll%100<67)return "bg79_vo_SGD2_VSET_00541769";
+        if(roll%100<100)return "bg79_vo_SGD2_Q208_01071227";
+        break;
+    case 152304:
+        if(roll%100<33)return "bg79_vo_SGD6_VSET_00544491";
+        if(roll%100<66)return "bg79_vo_SGD6_VSET_00544501";
+        if(roll%100<100)return "bg79_vo_SGD6_VSET_00544569";
+        break;
+    case 152305:
+        if(roll%100<34)return "bg79_vo_SBD3_MQ2034_01013429";
+        if(roll%100<67)return "bg79_vo_SBD3_VSET_00526925";
+        if(roll%100<100)return "bg79_vo_SBD3_VSET_00527400";
+        break;
+    case 152306:
+        if(roll%100<33)return "bg79_vo_SBD1_MQ2002_00442097";
+        if(roll%100<66)return "bg79_vo_SBD1_Q202_00307483";
+        if(roll%100<100)return "bg79_vo_SBD1_MQ2034_01028167";
+        break;
+    case 152308:
+        if(roll%100<42)return "bg79_vo_DROG_BARD_01036857";
+        if(roll%100<84)return "bg79_vo_DROG_Q206_00329460";
+        if(roll%100<100)return "bg79_vo_DROG_Q206_01072830";
+        break;
+    case 152310:
+        if(roll%100<33)return "bg79_vo_SPR2_VSET_00553534";
+        if(roll%100<66)return "bg79_vo_SPR2_VSET_00553573";
+        if(roll%100<100)return "bg79_vo_SPR2_VSET_00553583";
+        break;
+    case 152311:
+        if(roll%100<33)return "bg79_vo_SAR3_CHAT_01050115";
+        if(roll%100<66)return "bg79_vo_SAR3_VSET_00550859";
+        if(roll%100<100)return "bg79_vo_SAR3_VSET_00550878";
+        break;
+    case 152312:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_807";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_808";
+        break;
+    case 152313:
+        if(roll%100<33)return "bg79_vo_SGD2_VSET_00526547";
+        if(roll%100<66)return "bg79_vo_SGD2_CHAT2_00165400";
+        if(roll%100<100)return "bg79_vo_SGD2_VSET_00165758";
+        break;
+    case 152315:
+        if(roll%100<34)return "bg79_vo_SWR5_VSET_00535924";
+        if(roll%100<67)return "bg79_vo_SWR5_VSET_00535938";
+        if(roll%100<100)return "bg79_vo_SWR5_VSET_00535926";
+        break;
+    case 152316:
+        if(roll%100<33)return "bg79_vo_SGD1_CHAT_01024106";
+        if(roll%100<66)return "bg79_vo_SGD1_FF204_00523558";
+        if(roll%100<100)return "bg79_vo_SGD1_VSET_00541470";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart10_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 152317:
+        if(roll%100<33)return "bg79_vo_SAR1_SHOP_00422532";
+        if(roll%100<66)return "bg79_vo_SAR1_SHOP_00434397";
+        if(roll%100<100)return "bg79_vo_SAR1_VSET_00550731";
+        break;
+    case 152318:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_1";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_3";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_2";
+        break;
+    case 152402:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_199";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_200";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_201";
+        break;
+    case 162101:
+        if(roll%100<25)return "bg79_vo_LETO_LETHO_01038588";
+        if(roll%100<50)return "bg79_vo_LETO_Q403_00319901";
+        if(roll%100<75)return "bg79_vo_LETO_SQ102_00590678";
+        if(roll%100<100)return "bg79_vo_LETO_SQ102_00593857";
+        break;
+    case 162102:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_58";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_59";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_60";
+        break;
+    case 162103:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_106";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_107";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_108";
+        break;
+    case 162104:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_69";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_70";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_71";
+        break;
+    case 162105:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_72";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_73";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_74";
+        break;
+    case 162106:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_97";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_98";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_99";
+        break;
+    case 162107:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_67";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_66";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_68";
+        break;
+    case 162108:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_118";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_119";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_120";
+        break;
+    case 162201:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_78";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_79";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_80";
+        break;
+    case 162202:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_75";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_76";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_77";
+        break;
+    case 162203:
+        if(roll%100<33)return "bg79_vo_VO_CNTH_303653_0335";
+        if(roll%100<66)return "bg79_vo_VO_CNTH_303656_0001";
+        if(roll%100<100)return "bg79_vo_VO_CNTH_303743_0002";
+        break;
+    case 162204:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_426";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_428";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_427";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart11_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 162205:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_88";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_89";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_90";
+        break;
+    case 162206:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_100";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_101";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_102";
+        break;
+    case 162207:
+        if(roll%100<33)return "bg79_vo_VO_NM01_200057_0187";
+        if(roll%100<66)return "bg79_vo_VO_NM01_200049_0007";
+        if(roll%100<100)return "bg79_vo_VO_NM01_200996_0005";
+        break;
+    case 162208:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_112";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_113";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_114";
+        break;
+    case 162209:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_115";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_116";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_117";
+        break;
+    case 162210:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_127";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_128";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_129";
+        break;
+    case 162211:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_17";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_19";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_18";
+        break;
+    case 162212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_105";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_107";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_106";
+        break;
+    case 162213:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_109";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_111";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_110";
+        break;
+    case 162301:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_417";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_419";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_418";
+        break;
+    case 162303:
+        if(roll%100<33)return "bg79_vo_NILF4_CHAT_01051421";
+        if(roll%100<66)return "bg79_vo_NILF4_CHAT_01051417";
+        if(roll%100<100)return "bg79_vo_NILF4_VSET_00514238";
+        break;
+    case 162304:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_429";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_431";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_430";
+        break;
+    case 162305:
+        if(roll%100<33)return "bg79_vo_NILF3_VSET_00514109";
+        if(roll%100<66)return "bg79_vo_NILF3_VSET_00514105";
+        if(roll%100<100)return "bg79_vo_NILF3_SQ102_00591494";
+        break;
+    case 162307:
+        if(roll%100<33)return "bg79_vo_NILFP2_VSET_00592094";
+        if(roll%100<66)return "bg79_vo_NILFP2_VSET_00592104";
+        if(roll%100<100)return "bg79_vo_NILFP2_VSET_00592092";
+        break;
+    case 162308:
+        if(roll%100<33)return "bg79_vo_NIOF1_VSET_00524263";
+        if(roll%100<66)return "bg79_vo_NIOF1_VSET_00524259";
+        if(roll%100<100)return "bg79_vo_NIOF1_VSET_00524273";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart12_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 162309:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_438";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_440";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_439";
+        break;
+    case 162310:
+        if(roll%100<33)return "bg79_vo_NILF2_VSET_00513914";
+        if(roll%100<66)return "bg79_vo_NILF2_VSET_00513916";
+        if(roll%100<100)return "bg79_vo_NILF2_VSET_00513922";
+        break;
+    case 162311:
+        if(roll%100<33)return "bg79_vo_NILF3_VSET_00514091";
+        if(roll%100<66)return "bg79_vo_NILF3_VSET_00514113";
+        if(roll%100<100)return "bg79_vo_NILF3_VSET_00514121";
+        break;
+    case 162312:
+        if(roll%100<33)return "bg79_vo_NILF2_Q505_00576169";
+        if(roll%100<66)return "bg79_vo_NILF2_Q502_00554667";
+        if(roll%100<100)return "bg79_vo_NILF2_Q210_01070432";
+        break;
+    case 162313:
+        if(roll%100<33)return "bg79_vo_NILF2_VSET_00513907";
+        if(roll%100<66)return "bg79_vo_NILF2_VSET_01072393";
+        if(roll%100<100)return "bg79_vo_NILF2_Q502_00556520";
+        break;
+    case 162314:
+        if(roll%100<33)return "bg79_vo_NIS1_Q002_01048548";
+        if(roll%100<66)return "bg79_vo_NIS1_VSET_00526356";
+        if(roll%100<100)return "bg79_vo_NIS1_VSET_00526372";
+        break;
+    case 162315:
+        if(roll%100<33)return "bg79_vo_NIN4_VSET_01049576";
+        if(roll%100<66)return "bg79_vo_NIN4_VSET_01049574";
+        if(roll%100<100)return "bg79_vo_NIN4_VSET_01049578";
+        break;
+    case 162316:
+        if(roll%100<33)return "bg79_vo_MAG1_SHOP_00423227";
+        if(roll%100<66)return "bg79_vo_MAG1_SHOP_00423237";
+        if(roll%100<100)return "bg79_vo_MAG1_SHOP_00459610";
+        break;
+    case 162318:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_441";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_442";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_443";
+        break;
+    case 162401:
+        if(roll%100<42)return "bg79_vo_SAY_Battlecries_part3_385";
+        if(roll%100<85)return "bg79_vo_SAY_Battlecries_part3_387";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_386";
+        break;
+    case 200026:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_43";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_44";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_45";
+        break;
+    case 200028:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_211";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_213";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_214";
+        break;
+    case 200030:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_220";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_221";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_222";
+        break;
+    case 200031:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_13";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_14";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_15";
+        break;
+    case 200032:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_91";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_92";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_93";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart13_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200033:
+        if(roll%100<45)return "bg79_vo_SAY_Battlecries_part3_376";
+        if(roll%100<65)return "bg79_vo_SAY_Battlecries_part3_378";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_377";
+        break;
+    case 200036:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_5";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_7";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_6";
+        break;
+    case 200039:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_310";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_311";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_312";
+        break;
+    case 200040:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_314";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_316";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_315";
+        break;
+    case 200042:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_39";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_41";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_40";
+        break;
+    case 200043:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_129";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_131";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_130";
+        break;
+    case 200044:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_35";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_37";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_36";
+        break;
+    case 200046:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_410";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_412";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_411";
+        break;
+    case 200048:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_13";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_15";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_14";
+        break;
+    case 200050:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_109";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_110";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_111";
+        break;
+    case 200055:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_255";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_256";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_257";
+        break;
+    case 200062:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_154";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_156";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_155";
+        break;
+    case 200071:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_96";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_95";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_94";
+        break;
+    case 200080:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_290";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_292";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_291";
+        break;
+    case 200081:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_121";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_123";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_122";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart14_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200083:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part3_264";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_265";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part3_267";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_268";
+        break;
+    case 200087:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part3_184";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_187";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part3_186";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_185";
+        break;
+    case 200088:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_175";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_176";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_177";
+        break;
+    case 200089:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_167";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_169";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_168";
+        break;
+    case 200091:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part3_162";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_164";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part3_165";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_163";
+        break;
+    case 200098:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_201";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_203";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_202";
+        break;
+    case 200112:
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part3_93";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_92";
+        break;
+    case 200115:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_362";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_364";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_363";
+        break;
+    case 200118:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_356";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_358";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_357";
+        break;
+    case 200124:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_337";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_338";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_339";
+        break;
+    case 200132:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_223";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_225";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_224";
+        break;
+    case 200135:
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_318";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_320";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_319";
+        break;
+    case 200136:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_322";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_324";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_323";
+        break;
+    case 200138:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_326";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_328";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_327";
+        break;
+    case 200144:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_26";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_27";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_28";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_29";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_30";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart15_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200145:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_71";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_73";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_72";
+        break;
+    case 200146:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_75";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_77";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_76";
+        break;
+    case 200147:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_87";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_89";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_88";
+        break;
+    case 200149:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_79";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_81";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_80";
+        break;
+    case 200159:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_193";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_194";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_195";
+        break;
+    case 200160:
+        if(roll%100<33)return "bg79_vo_CRCH_CRACH_01001923";
+        if(roll%100<66)return "bg79_vo_CRCH_CRACH_01040579";
+        if(roll%100<100)return "bg79_vo_CRCH_CRACH_01040591";
+        break;
+    case 200161:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_196";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_197";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_198";
+        break;
+    case 200162:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_236";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_237";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_238";
+        break;
+    case 200163:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_52";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_53";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_54";
+        break;
+    case 200164:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_55";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_56";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_57";
+        break;
+    case 200165:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_130";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_131";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_132";
+        break;
+    case 200166:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_133";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_134";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_135";
+        break;
+    case 200167:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_136";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_137";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_138";
+        break;
+    case 200168:
+        if(roll%100<33)return "bg79_vo_VO_FLTS_000811_0001";
+        if(roll%100<67)return "bg79_vo_VO_FLTS_000811_0002";
+        if(roll%100<100)return "bg79_vo_VO_FLTS_000811_0004";
+        break;
+    case 200169:
+        if(roll%100<20)return "bg79_vo_RADV_MQ3035_01064716";
+        if(roll%100<40)return "bg79_vo_RADV_MQ3035_01064777";
+        if(roll%100<60)return "bg79_vo_RADV_MQ3035_01064783";
+        if(roll%100<80)return "bg79_vo_RADV_Q302_00512777";
+        if(roll%100<100)return "bg79_vo_RADV_RADOVID_01040720";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart16_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200170:
+        if(roll%100<50)return "bg79_vo_VO_HSLT_200098_0254";
+        if(roll%100<100)return "bg79_vo_VO_HSLT_200497_0001";
+        break;
+    case 200171:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_226";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_230";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_231";
+        break;
+    case 200177:
+        if(roll%100<33)return "bg79_vo_BECC_BECCA_01040275";
+        if(roll%100<66)return "bg79_vo_BECC_BECCA_01040277";
+        if(roll%100<100)return "bg79_vo_BECC_Q201_00500712";
+        break;
+    case 200209:
+        if(roll%100<25)return "bg79_vo_VO_TARM_200154_0192";
+        if(roll%100<50)return "bg79_vo_VO_TARM_200423_0023";
+        if(roll%100<75)return "bg79_vo_VO_TARM_200423_0024";
+        if(roll%100<100)return "bg79_vo_VO_TARM_200423_0011";
+        break;
+    case 200212:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_822";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_823";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_824";
+        break;
+    case 200219:
+        if(roll%100<42)return "bg79_vo_SAY_Battlecries_part3_385";
+        if(roll%100<85)return "bg79_vo_SAY_Battlecries_part3_387";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_386";
+        break;
+    case 200220:
+        if(roll%300<100)return "bg79_vo_WHSP_Q105_00419061";
+        if(roll%300<200)return "bg79_vo_WHSP_Q105_00419057";
+        if(roll%300<300)return "bg79_vo_WHSP_Q105_00382577";
+        break;
+    case 200221:
+        if(roll%100<50)return "bg79_vo_BREW_Q105_00531820";
+        if(roll%100<100)return "bg79_vo_BREW_Q111_00576135";
+        break;
+    case 200222:
+        if(roll%100<34)return "bg79_vo_WEAV_Q503_00578937";
+        if(roll%100<67)return "bg79_vo_WEAV_Q105_00531814";
+        if(roll%100<100)return "bg79_vo_WEAV_Q503_00579064";
+        break;
+    case 200227:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_435";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_436";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_437";
+        break;
+    case 200235:
+        if(roll%100<17)return "bg79_vo_LMBT_Q401_00523875";
+        if(roll%100<34)return "bg79_vo_LMBT_Q401_00531130";
+        if(roll%100<51)return "bg79_vo_LMBT_Q401_01058899";
+        if(roll%100<68)return "bg79_vo_LMBT_Q403_00550012";
+        if(roll%100<85)return "bg79_vo_LMBT_SQ106_00586496";
+        if(roll%100<100)return "bg79_vo_LMBT_Q403_00572964";
+        break;
+    case 200236:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_21";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_22";
+        if(roll%100<92)return "bg79_vo_SAY_Battlecries_23";
+        if(roll%100<100)return "bg79_vo_ESKL_ESKEL_01037262";
+        break;
+    case 200237:
+        if(roll%100<33)return "bg79_vo_VSMR_Q001_00546725";
+        if(roll%100<66)return "bg79_vo_VSMR_VESEMIR_01000012";
+        if(roll%100<100)return "bg79_vo_VSMR_VESEMIR_01040765";
+        break;
+    case 200293:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_93";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_94";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_95";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_96";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_97";
+        break;
+    case 200294:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_338";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_339";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_340";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_341";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_342";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart17_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 200296:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_379";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_381";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_380";
+        break;
+    case 200299:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_407";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_409";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_408";
+        break;
+    case 200518:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_382";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_384";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_383";
+        break;
+    case 200520:
+        if(roll%100<33)return "bg79_vo_HTRI_HATTORI_01032235";
+        if(roll%100<66)return "bg79_vo_HTRI_HATTORI_00507925";
+        if(roll%100<100)return "bg79_vo_HTRI_SQ304_00539954";
+        break;
+    case 200523:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part4_244";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part4_262";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part4_261";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_260";
+        break;
+    case 200528:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_83";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_85";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_84";
+        break;
+    case 200529:
+        if(roll%100<39)return "bg79_vo_SAY_Battlecries_part3_401";
+        if(roll%100<61)return "bg79_vo_SAY_Battlecries_part3_403";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_402";
+        break;
+    case 200534:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_404";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_406";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_405";
+        break;
+    case 200535:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_398";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_400";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_399";
+        break;
+    case 200540:
+        if(roll%100<41)return "bg79_vo_SAY_Battlecries_part4_78";
+        if(roll%100<82)return "bg79_vo_SAY_Battlecries_part4_79";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_82";
+        break;
+    case 201523:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 201559:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_98";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_99";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_100";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_101";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_102";
+        break;
+    case 201578:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_395";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_397";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_396";
+        break;
+    case 201580:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_432";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_434";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_433";
+        break;
+    case 201587:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_4";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_3";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_2";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_5";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart18_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 201589:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_278";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_280";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_279";
+        break;
+    case 201595:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part3_193";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_195";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_194";
+        break;
+    case 201597:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_47";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_49";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_48";
+        break;
+    case 201601:
+        if(roll%100<34)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<67)return "bg79_vo_YENN_YENNEFER_01041495";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041493";
+        break;
+    case 201603:
+        if(roll%100<25)return "bg79_vo_LETO_SQ102_00590678";
+        if(roll%100<50)return "bg79_vo_LETO_SQ102_00593857";
+        if(roll%100<75)return "bg79_vo_LETO_LETHO_01038588";
+        if(roll%100<100)return "bg79_vo_LETO_Q403_00319901";
+        break;
+    case 201609:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_103";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_104";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_105";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_106";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_107";
+        break;
+    case 201611:
+        if(roll%100<25)return "bg79_vo_VO_IORW_100241_4474";
+        if(roll%100<50)return "bg79_vo_VO_IORW_101048_0181";
+        if(roll%100<75)return "bg79_vo_VO_IORW_101064_0046";
+        if(roll%100<100)return "bg79_vo_VO_IORW_102216_0006";
+        break;
+    case 201612:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_113";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_114";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_115";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_116";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_117";
+        break;
+    case 201615:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_139";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_141";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_140";
+        break;
+    case 201616:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_359";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_360";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_361";
+        break;
+    case 201617:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_32";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_33";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_34";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_35";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_36";
+        break;
+    case 201618:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_117";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_part3_119";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_118";
+        break;
+    case 201620:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_7";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_8";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_9";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_10";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_11";
+        break;
+    case 201621:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_14";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_15";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_16";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_17";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_18";
+        break;
+    case 201622:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part3_9";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part3_10";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part3_11";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart19_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 201624:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_38";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_39";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_40";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_41";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_42";
+        break;
+    case 201625:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_44";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_45";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_46";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_47";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_48";
+        break;
+    case 201626:
+        if(roll%100<25)return "bg79_vo_CIRI_CIRILLA_01040548";
+        if(roll%100<50)return "bg79_vo_CIRI_CIRILLA_01040512";
+        if(roll%100<75)return "bg79_vo_CIRI_Q111_00536478";
+        if(roll%100<100)return "bg79_vo_CIRI_Q310_00579530";
+        break;
+    case 201627:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_168";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_169";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_170";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_171";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_172";
+        break;
+    case 201628:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_56";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_57";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_58";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_59";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_60";
+        break;
+    case 201630:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_50";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_51";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_52";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_53";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_54";
+        break;
+    case 201636:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_68";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_69";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_70";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_71";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_72";
+        break;
+    case 201638:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part4_88";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part4_89";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part4_90";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part4_91";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_92";
+        break;
+    case 201644:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_part5_20";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_part5_21";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_part5_22";
+        if(roll%100<80)return "bg79_vo_SAY_Battlecries_part5_24";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part5_23";
+        break;
+    case 201646:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_232";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_233";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_234";
+        break;
+    case 201650:
+        if(roll%100<33)return "bg79_vo_VO_SABR_200216_0101";
+        if(roll%100<67)return "bg79_vo_VO_SABR_200216_0037";
+        if(roll%100<100)return "bg79_vo_VO_SABR_200216_0064";
+        break;
+    case 201664:
+        if(roll%100<25)return "bg79_vo_SAY_Battlecries_part4_256";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_part4_255";
+        if(roll%100<75)return "bg79_vo_SAY_Battlecries_part4_254";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_253";
+        break;
+    case 201676:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_part4_34";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part4_31";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_32";
+        break;
+    case 201677:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part4_86";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part4_85";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_84";
+        break;
+    case 201753:
+        if(roll%100<34)return "bg79_vo_SAY_Battlecries_part4_86";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_part4_85";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_part4_84";
+        break;
+    default: break;
+    }
+    return "";
+}
+function BetaGwentAudioVoiceVariantPart20_Universal_pt_br(id : int, roll : int) : string
+{
+    switch(id)
+    {
+    case 201772:
+        if(roll%100<20)return "bg79_vo_SAY_Battlecries_1";
+        if(roll%100<40)return "bg79_vo_SAY_Battlecries_2";
+        if(roll%100<60)return "bg79_vo_SAY_Battlecries_3";
+        if(roll%100<80)return "bg79_vo_GRLT_GERALT_01054169";
+        if(roll%100<100)return "bg79_vo_GRLT_GERALT_01129033";
+        break;
+    case 201773:
+        if(roll%100<17)return "bg79_vo_SAY_Battlecries_17";
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_19";
+        if(roll%100<50)return "bg79_vo_SAY_Battlecries_18";
+        if(roll%100<67)return "bg79_vo_VO_TRIS_100285_0008";
+        if(roll%100<84)return "bg79_vo_VO_TRIS_104122_2446";
+        if(roll%100<100)return "bg79_vo_TRSS_Q310_00545347";
+        break;
+    case 201774:
+        if(roll%100<14)return "bg79_vo_SAY_Battlecries_5";
+        if(roll%100<28)return "bg79_vo_SAY_Battlecries_7";
+        if(roll%100<42)return "bg79_vo_SAY_Battlecries_6";
+        if(roll%100<58)return "bg79_vo_DAND_DANDELION_00429307";
+        if(roll%100<72)return "bg79_vo_DAND_Q302_00489393";
+        if(roll%100<86)return "bg79_vo_DAND_Q302_00490269";
+        if(roll%100<100)return "bg79_vo_VO_JSKR_100926_0188";
+        break;
+    case 201776:
+        if(roll%100<16)return "bg79_vo_SAY_Battlecries_5";
+        if(roll%100<30)return "bg79_vo_SAY_Battlecries_7";
+        if(roll%100<44)return "bg79_vo_SAY_Battlecries_6";
+        if(roll%100<58)return "bg79_vo_DAND_DANDELION_00429307";
+        if(roll%100<72)return "bg79_vo_DAND_Q302_00489393";
+        if(roll%100<86)return "bg79_vo_DAND_Q302_00490269";
+        if(roll%100<100)return "bg79_vo_VO_JSKR_100926_0188";
+        break;
+    case 201777:
+        if(roll%100<50)return "bg79_vo_ROCH_ROCHE_00541126";
+        if(roll%100<100)return "bg79_vo_ROCH_MQ3035_01064844";
+        break;
+    case 201778:
+        if(roll%100<33)return "bg79_vo_BECC_BECCA_01040275";
+        if(roll%100<67)return "bg79_vo_BECC_BECCA_01040277";
+        if(roll%100<100)return "bg79_vo_BECC_Q201_00500712";
+        break;
+    case 201779:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_164";
+        if(roll%100<66)return "bg79_vo_SAY_Battlecries_166";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_165";
+        break;
+    case 201780:
+        if(roll%100<33)return "bg79_vo_YENN_YENNEFER_01041488";
+        if(roll%100<67)return "bg79_vo_YENN_YENNEFER_01041495";
+        if(roll%100<100)return "bg79_vo_YENN_YENNEFER_01041493";
+        break;
+    case 201781:
+        if(roll%100<33)return "bg79_vo_SAY_Battlecries_851";
+        if(roll%100<67)return "bg79_vo_SAY_Battlecries_852";
+        if(roll%100<100)return "bg79_vo_SAY_Battlecries_853";
+        break;
+    default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceVariantDuration_Universal_pt_br(id : int, roll : int) : float
+{
+    if(id <= 112203)return BetaGwentAudioVoiceVariantDurationPart0_Universal_pt_br(id,roll);
+    if(id <= 122101)return BetaGwentAudioVoiceVariantDurationPart1_Universal_pt_br(id,roll);
+    if(id <= 122208)return BetaGwentAudioVoiceVariantDurationPart2_Universal_pt_br(id,roll);
+    if(id <= 122313)return BetaGwentAudioVoiceVariantDurationPart3_Universal_pt_br(id,roll);
+    if(id <= 132207)return BetaGwentAudioVoiceVariantDurationPart4_Universal_pt_br(id,roll);
+    if(id <= 142108)return BetaGwentAudioVoiceVariantDurationPart5_Universal_pt_br(id,roll);
+    if(id <= 142302)return BetaGwentAudioVoiceVariantDurationPart6_Universal_pt_br(id,roll);
+    if(id <= 142401)return BetaGwentAudioVoiceVariantDurationPart7_Universal_pt_br(id,roll);
+    if(id <= 152211)return BetaGwentAudioVoiceVariantDurationPart8_Universal_pt_br(id,roll);
+    if(id <= 152316)return BetaGwentAudioVoiceVariantDurationPart9_Universal_pt_br(id,roll);
+    if(id <= 162204)return BetaGwentAudioVoiceVariantDurationPart10_Universal_pt_br(id,roll);
+    if(id <= 162308)return BetaGwentAudioVoiceVariantDurationPart11_Universal_pt_br(id,roll);
+    if(id <= 200032)return BetaGwentAudioVoiceVariantDurationPart12_Universal_pt_br(id,roll);
+    if(id <= 200081)return BetaGwentAudioVoiceVariantDurationPart13_Universal_pt_br(id,roll);
+    if(id <= 200144)return BetaGwentAudioVoiceVariantDurationPart14_Universal_pt_br(id,roll);
+    if(id <= 200169)return BetaGwentAudioVoiceVariantDurationPart15_Universal_pt_br(id,roll);
+    if(id <= 200294)return BetaGwentAudioVoiceVariantDurationPart16_Universal_pt_br(id,roll);
+    if(id <= 201587)return BetaGwentAudioVoiceVariantDurationPart17_Universal_pt_br(id,roll);
+    if(id <= 201622)return BetaGwentAudioVoiceVariantDurationPart18_Universal_pt_br(id,roll);
+    if(id <= 201753)return BetaGwentAudioVoiceVariantDurationPart19_Universal_pt_br(id,roll);
+    if(id <= 201781)return BetaGwentAudioVoiceVariantDurationPart20_Universal_pt_br(id,roll);
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart0_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 112101:
+        if(roll%100<25)return 1.310f;
+        if(roll%100<50)return 1.999f;
+        if(roll%100<75)return 1.734f;
+        if(roll%100<100)return 2.398f;
+        break;
+    case 112102:
+        if(roll%100<20)return 2.817f;
+        if(roll%100<40)return 0.907f;
+        if(roll%100<60)return 1.798f;
+        if(roll%100<80)return 1.764f;
+        if(roll%100<100)return 1.704f;
+        break;
+    case 112103:
+        if(roll%100<20)return 2.817f;
+        if(roll%100<40)return 0.907f;
+        if(roll%100<60)return 1.798f;
+        if(roll%100<80)return 1.764f;
+        if(roll%100<100)return 1.704f;
+        break;
+    case 112104:
+        if(roll%100<40)return 2.606f;
+        if(roll%100<60)return 4.144f;
+        if(roll%100<100)return 2.158f;
+        break;
+    case 112105:
+        if(roll%100<100)return 3.115f;
+        break;
+    case 112106:
+        if(roll%100<17)return 2.535f;
+        if(roll%100<33)return 2.596f;
+        if(roll%100<50)return 2.341f;
+        if(roll%100<67)return 1.429f;
+        if(roll%100<84)return 3.382f;
+        if(roll%100<100)return 1.560f;
+        break;
+    case 112108:
+        if(roll%100<33)return 2.249f;
+        if(roll%100<66)return 1.970f;
+        if(roll%100<100)return 3.108f;
+        break;
+    case 112109:
+        if(roll%100<24)return 1.848f;
+        if(roll%100<48)return 1.947f;
+        if(roll%100<72)return 1.980f;
+        if(roll%100<96)return 1.872f;
+        if(roll%100<100)return 3.249f;
+        break;
+    case 112110:
+        if(roll%100<25)return 1.310f;
+        if(roll%100<50)return 1.999f;
+        if(roll%100<75)return 1.734f;
+        if(roll%100<100)return 2.398f;
+        break;
+    case 112111:
+        if(roll%100<20)return 2.817f;
+        if(roll%100<40)return 0.907f;
+        if(roll%100<60)return 1.798f;
+        if(roll%100<80)return 1.764f;
+        if(roll%100<100)return 1.704f;
+        break;
+    case 112112:
+        if(roll%100<25)return 1.199f;
+        if(roll%100<50)return 1.128f;
+        if(roll%100<75)return 1.900f;
+        if(roll%100<100)return 3.004f;
+        break;
+    case 112113:
+        if(roll%100<33)return 2.249f;
+        if(roll%100<66)return 1.970f;
+        if(roll%100<100)return 3.108f;
+        break;
+    case 112201:
+        if(roll%100<33)return 3.313f;
+        if(roll%100<66)return 4.227f;
+        if(roll%100<100)return 3.198f;
+        break;
+    case 112202:
+        if(roll%100<25)return 1.244f;
+        if(roll%100<67)return 2.073f;
+        if(roll%100<92)return 1.091f;
+        if(roll%100<100)return 2.948f;
+        break;
+    case 112203:
+        if(roll%100<33)return 1.997f;
+        if(roll%100<66)return 2.623f;
+        if(roll%100<100)return 2.019f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart1_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 112204:
+        if(roll%100<17)return 3.087f;
+        if(roll%100<34)return 2.682f;
+        if(roll%100<51)return 2.335f;
+        if(roll%100<68)return 1.487f;
+        if(roll%100<85)return 2.432f;
+        if(roll%100<100)return 1.670f;
+        break;
+    case 112205:
+        if(roll%100<33)return 1.430f;
+        if(roll%100<66)return 1.350f;
+        if(roll%100<100)return 1.728f;
+        break;
+    case 112206:
+        if(roll%100<33)return 1.430f;
+        if(roll%100<66)return 1.350f;
+        if(roll%100<100)return 1.728f;
+        break;
+    case 112207:
+        if(roll%100<33)return 3.848f;
+        if(roll%100<66)return 2.217f;
+        if(roll%100<100)return 3.149f;
+        break;
+    case 112208:
+        if(roll%100<50)return 2.919f;
+        if(roll%100<100)return 2.518f;
+        break;
+    case 112211:
+        if(roll%100<30)return 4.812f;
+        if(roll%100<65)return 2.643f;
+        if(roll%100<100)return 3.348f;
+        break;
+    case 112212:
+        if(roll%100<33)return 1.012f;
+        if(roll%100<66)return 0.751f;
+        if(roll%100<100)return 2.003f;
+        break;
+    case 112213:
+        if(roll%100<25)return 1.992f;
+        if(roll%100<50)return 1.588f;
+        if(roll%100<75)return 3.233f;
+        if(roll%100<100)return 1.987f;
+        break;
+    case 112214:
+        if(roll%100<33)return 3.718f;
+        if(roll%100<66)return 3.429f;
+        if(roll%100<100)return 2.851f;
+        break;
+    case 112215:
+        if(roll%100<33)return 1.767f;
+        if(roll%100<66)return 4.327f;
+        if(roll%100<100)return 3.232f;
+        break;
+    case 112403:
+        if(roll%100<50)return 1.939f;
+        if(roll%100<100)return 2.820f;
+        break;
+    case 112404:
+        if(roll%100<50)return 1.939f;
+        if(roll%100<100)return 2.820f;
+        break;
+    case 113208:
+        if(roll%100<100)return 2.744f;
+        break;
+    case 113313:
+        if(roll%300<33)return 1.451f;
+        if(roll%300<66)return 1.227f;
+        if(roll%300<100)return 2.301f;
+        if(roll%300<200)return 3.004f;
+        if(roll%300<300)return 4.002f;
+        break;
+    case 122101:
+        if(roll%100<25)return 2.707f;
+        if(roll%100<50)return 4.485f;
+        if(roll%100<75)return 1.594f;
+        if(roll%100<100)return 2.527f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart2_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 122102:
+        if(roll%100<50)return 2.094f;
+        if(roll%100<100)return 2.001f;
+        break;
+    case 122103:
+        if(roll%100<50)return 3.027f;
+        if(roll%100<100)return 2.641f;
+        break;
+    case 122104:
+        if(roll%100<21)return 1.706f;
+        if(roll%100<44)return 2.655f;
+        if(roll%100<66)return 1.763f;
+        if(roll%100<78)return 6.222f;
+        if(roll%100<100)return 4.169f;
+        break;
+    case 122105:
+        if(roll%100<25)return 2.149f;
+        if(roll%100<50)return 1.826f;
+        if(roll%100<75)return 3.114f;
+        if(roll%100<100)return 4.160f;
+        break;
+    case 122106:
+        if(roll%100<33)return 2.639f;
+        if(roll%100<66)return 3.957f;
+        if(roll%100<100)return 4.188f;
+        break;
+    case 122107:
+        if(roll%100<16)return 2.535f;
+        if(roll%100<33)return 2.596f;
+        if(roll%100<50)return 2.341f;
+        if(roll%100<67)return 1.429f;
+        if(roll%100<84)return 3.382f;
+        if(roll%100<100)return 1.560f;
+        break;
+    case 122108:
+        if(roll%100<25)return 1.742f;
+        if(roll%100<50)return 2.307f;
+        if(roll%100<75)return 3.739f;
+        if(roll%100<100)return 2.530f;
+        break;
+    case 122201:
+        if(roll%100<15)return 2.509f;
+        if(roll%100<29)return 1.015f;
+        if(roll%100<44)return 3.172f;
+        if(roll%100<58)return 1.774f;
+        if(roll%100<73)return 1.991f;
+        if(roll%100<86)return 2.251f;
+        if(roll%100<100)return 1.149f;
+        break;
+    case 122202:
+        if(roll%100<25)return 1.695f;
+        if(roll%100<50)return 3.311f;
+        if(roll%100<75)return 2.924f;
+        if(roll%100<100)return 2.184f;
+        break;
+    case 122203:
+        if(roll%100<33)return 3.717f;
+        if(roll%100<66)return 2.752f;
+        if(roll%100<100)return 3.285f;
+        break;
+    case 122204:
+        if(roll%100<25)return 2.616f;
+        if(roll%100<50)return 1.903f;
+        if(roll%100<75)return 2.157f;
+        if(roll%100<100)return 1.956f;
+        break;
+    case 122205:
+        if(roll%100<33)return 1.909f;
+        if(roll%100<66)return 2.491f;
+        if(roll%100<100)return 3.660f;
+        break;
+    case 122206:
+        if(roll%100<33)return 1.954f;
+        if(roll%100<53)return 4.657f;
+        if(roll%100<100)return 1.241f;
+        break;
+    case 122207:
+        if(roll%100<33)return 2.130f;
+        if(roll%100<66)return 2.052f;
+        if(roll%100<100)return 1.567f;
+        break;
+    case 122208:
+        if(roll%100<33)return 1.596f;
+        if(roll%100<66)return 2.820f;
+        if(roll%100<100)return 3.997f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart3_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 122209:
+        if(roll%100<65)return 3.108f;
+        if(roll%100<100)return 4.337f;
+        break;
+    case 122210:
+        if(roll%100<25)return 4.742f;
+        if(roll%100<50)return 5.025f;
+        if(roll%100<75)return 2.789f;
+        if(roll%100<100)return 2.980f;
+        break;
+    case 122211:
+        if(roll%100<33)return 1.492f;
+        if(roll%100<66)return 2.270f;
+        if(roll%100<100)return 3.162f;
+        break;
+    case 122212:
+        if(roll%100<33)return 3.319f;
+        if(roll%100<66)return 2.364f;
+        if(roll%100<100)return 2.874f;
+        break;
+    case 122213:
+        if(roll%100<33)return 3.325f;
+        if(roll%100<66)return 2.444f;
+        if(roll%100<100)return 2.671f;
+        break;
+    case 122214:
+        if(roll%100<33)return 2.398f;
+        if(roll%100<66)return 1.967f;
+        if(roll%100<100)return 2.123f;
+        break;
+    case 122216:
+        if(roll%100<33)return 1.566f;
+        if(roll%100<66)return 2.268f;
+        if(roll%100<100)return 2.399f;
+        break;
+    case 122306:
+        if(roll%100<33)return 1.712f;
+        if(roll%100<66)return 2.129f;
+        if(roll%100<100)return 1.108f;
+        break;
+    case 122307:
+        if(roll%100<33)return 1.555f;
+        if(roll%100<66)return 3.020f;
+        if(roll%100<100)return 2.169f;
+        break;
+    case 122308:
+        if(roll%100<33)return 2.069f;
+        if(roll%100<66)return 1.548f;
+        if(roll%100<100)return 1.182f;
+        break;
+    case 122309:
+        if(roll%100<33)return 1.168f;
+        if(roll%100<66)return 1.350f;
+        if(roll%100<100)return 2.466f;
+        break;
+    case 122310:
+        if(roll%100<33)return 1.559f;
+        if(roll%100<66)return 1.161f;
+        if(roll%100<100)return 1.775f;
+        break;
+    case 122311:
+        if(roll%100<33)return 1.897f;
+        if(roll%100<67)return 2.311f;
+        if(roll%100<100)return 1.554f;
+        break;
+    case 122312:
+        if(roll%100<33)return 1.268f;
+        if(roll%100<66)return 2.320f;
+        if(roll%100<100)return 1.583f;
+        break;
+    case 122313:
+        if(roll%100<33)return 1.157f;
+        if(roll%100<66)return 1.693f;
+        if(roll%100<100)return 2.097f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart4_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 122314:
+        if(roll%100<33)return 1.661f;
+        if(roll%100<66)return 1.627f;
+        if(roll%100<100)return 1.431f;
+        break;
+    case 122316:
+        if(roll%100<33)return 1.571f;
+        if(roll%100<66)return 1.119f;
+        if(roll%100<100)return 1.562f;
+        break;
+    case 122317:
+        if(roll%100<33)return 1.848f;
+        if(roll%100<66)return 1.779f;
+        if(roll%100<100)return 2.451f;
+        break;
+    case 122318:
+        if(roll%100<50)return 2.377f;
+        if(roll%100<100)return 2.882f;
+        break;
+    case 122403:
+        if(roll%100<33)return 1.893f;
+        if(roll%100<66)return 2.775f;
+        if(roll%100<100)return 2.744f;
+        break;
+    case 123301:
+        if(roll%300<33)return 3.824f;
+        if(roll%300<66)return 2.989f;
+        if(roll%300<100)return 2.536f;
+        if(roll%300<200)return 4.607f;
+        if(roll%300<300)return 2.664f;
+        break;
+    case 131101:
+        if(roll%100<33)return 1.994f;
+        if(roll%100<66)return 3.145f;
+        if(roll%100<100)return 2.305f;
+        break;
+    case 131102:
+        if(roll%100<65)return 2.500f;
+        if(roll%100<100)return 3.231f;
+        break;
+    case 132101:
+        if(roll%100<33)return 2.934f;
+        if(roll%100<66)return 4.022f;
+        if(roll%100<100)return 2.824f;
+        break;
+    case 132102:
+        if(roll%100<33)return 2.751f;
+        if(roll%100<66)return 1.261f;
+        if(roll%100<100)return 2.039f;
+        break;
+    case 132104:
+        if(roll%100<33)return 2.464f;
+        if(roll%100<66)return 2.274f;
+        if(roll%100<100)return 2.129f;
+        break;
+    case 132105:
+        if(roll%100<25)return 1.199f;
+        if(roll%100<50)return 1.128f;
+        if(roll%100<75)return 1.900f;
+        if(roll%100<100)return 3.004f;
+        break;
+    case 132108:
+        if(roll%100<33)return 4.292f;
+        if(roll%100<66)return 2.772f;
+        if(roll%100<100)return 1.538f;
+        break;
+    case 132206:
+        if(roll%100<33)return 3.881f;
+        if(roll%100<66)return 4.007f;
+        if(roll%100<100)return 3.354f;
+        break;
+    case 132207:
+        if(roll%100<50)return 3.448f;
+        if(roll%100<100)return 4.408f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart5_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 132208:
+        if(roll%100<33)return 5.155f;
+        if(roll%100<66)return 5.372f;
+        if(roll%100<100)return 6.551f;
+        break;
+    case 132211:
+        if(roll%100<50)return 1.467f;
+        if(roll%100<100)return 1.769f;
+        break;
+    case 132212:
+        if(roll%100<50)return 1.894f;
+        if(roll%100<100)return 1.870f;
+        break;
+    case 132214:
+        if(roll%100<40)return 2.527f;
+        if(roll%100<70)return 2.532f;
+        if(roll%100<100)return 2.001f;
+        break;
+    case 132215:
+        if(roll%100<20)return 1.621f;
+        if(roll%100<40)return 2.905f;
+        if(roll%100<60)return 2.897f;
+        if(roll%100<80)return 3.417f;
+        if(roll%100<100)return 1.796f;
+        break;
+    case 132305:
+        if(roll%100<45)return 1.250f;
+        if(roll%100<90)return 1.148f;
+        if(roll%100<100)return 1.188f;
+        break;
+    case 132309:
+        if(roll%100<33)return 2.503f;
+        if(roll%100<66)return 2.394f;
+        if(roll%100<100)return 2.268f;
+        break;
+    case 132310:
+        if(roll%100<33)return 1.955f;
+        if(roll%100<66)return 1.852f;
+        if(roll%100<100)return 2.512f;
+        break;
+    case 142102:
+        if(roll%100<33)return 2.404f;
+        if(roll%100<66)return 3.271f;
+        if(roll%100<100)return 2.240f;
+        break;
+    case 142103:
+        if(roll%100<30)return 1.355f;
+        if(roll%100<60)return 2.247f;
+        if(roll%100<90)return 3.505f;
+        if(roll%100<100)return 1.721f;
+        break;
+    case 142104:
+        if(roll%100<33)return 2.950f;
+        if(roll%100<66)return 1.291f;
+        if(roll%100<100)return 2.480f;
+        break;
+    case 142105:
+        if(roll%100<24)return 1.848f;
+        if(roll%100<48)return 1.947f;
+        if(roll%100<72)return 1.980f;
+        if(roll%100<96)return 1.872f;
+        if(roll%100<100)return 3.249f;
+        break;
+    case 142106:
+        if(roll%100<33)return 1.619f;
+        if(roll%100<66)return 3.348f;
+        if(roll%100<100)return 2.333f;
+        break;
+    case 142107:
+        if(roll%100<33)return 3.955f;
+        if(roll%100<66)return 4.642f;
+        if(roll%100<100)return 4.471f;
+        break;
+    case 142108:
+        if(roll%100<33)return 2.121f;
+        if(roll%100<66)return 3.330f;
+        if(roll%100<100)return 2.958f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart6_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 142201:
+        if(roll%100<33)return 3.795f;
+        if(roll%100<66)return 3.508f;
+        if(roll%100<100)return 2.111f;
+        break;
+    case 142202:
+        if(roll%100<40)return 3.431f;
+        if(roll%100<100)return 1.580f;
+        break;
+    case 142203:
+        if(roll%100<33)return 2.400f;
+        if(roll%100<66)return 3.625f;
+        if(roll%100<100)return 2.433f;
+        break;
+    case 142204:
+        if(roll%100<33)return 2.519f;
+        if(roll%100<73)return 2.492f;
+        if(roll%100<100)return 3.209f;
+        break;
+    case 142206:
+        if(roll%100<33)return 2.660f;
+        if(roll%100<66)return 2.379f;
+        if(roll%100<100)return 1.883f;
+        break;
+    case 142207:
+        if(roll%100<33)return 2.227f;
+        if(roll%100<66)return 3.831f;
+        if(roll%100<100)return 2.568f;
+        break;
+    case 142208:
+        if(roll%100<33)return 2.941f;
+        if(roll%100<66)return 3.441f;
+        if(roll%100<100)return 3.209f;
+        break;
+    case 142209:
+        if(roll%100<33)return 4.577f;
+        if(roll%100<66)return 1.740f;
+        if(roll%100<100)return 1.605f;
+        break;
+    case 142210:
+        if(roll%100<33)return 3.489f;
+        if(roll%100<66)return 3.736f;
+        if(roll%100<100)return 1.307f;
+        break;
+    case 142211:
+        if(roll%100<33)return 1.842f;
+        if(roll%100<66)return 2.719f;
+        if(roll%100<100)return 3.315f;
+        break;
+    case 142212:
+        if(roll%100<33)return 4.777f;
+        if(roll%100<66)return 2.459f;
+        if(roll%100<100)return 4.844f;
+        break;
+    case 142213:
+        if(roll%100<33)return 4.911f;
+        if(roll%100<66)return 2.884f;
+        if(roll%100<100)return 4.319f;
+        break;
+    case 142214:
+        if(roll%100<33)return 1.556f;
+        if(roll%100<66)return 4.287f;
+        if(roll%100<100)return 1.625f;
+        break;
+    case 142301:
+        if(roll%100<33)return 1.833f;
+        if(roll%100<66)return 1.881f;
+        if(roll%100<100)return 1.049f;
+        break;
+    case 142302:
+        if(roll%100<33)return 4.421f;
+        if(roll%100<67)return 2.138f;
+        if(roll%100<100)return 0.832f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart7_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 142303:
+        if(roll%100<50)return 1.250f;
+        if(roll%100<100)return 2.689f;
+        break;
+    case 142304:
+        if(roll%100<33)return 2.356f;
+        if(roll%100<66)return 2.363f;
+        if(roll%100<100)return 1.832f;
+        break;
+    case 142306:
+        if(roll%100<33)return 2.453f;
+        if(roll%100<66)return 1.913f;
+        if(roll%100<100)return 2.002f;
+        break;
+    case 142307:
+        if(roll%100<30)return 1.674f;
+        if(roll%100<65)return 2.906f;
+        if(roll%100<100)return 1.535f;
+        break;
+    case 142308:
+        if(roll%100<33)return 1.724f;
+        if(roll%100<66)return 1.551f;
+        if(roll%100<100)return 1.175f;
+        break;
+    case 142309:
+        if(roll%100<20)return 2.189f;
+        if(roll%100<60)return 2.231f;
+        if(roll%100<100)return 1.981f;
+        break;
+    case 142310:
+        if(roll%100<33)return 2.008f;
+        if(roll%100<66)return 1.674f;
+        if(roll%100<100)return 4.060f;
+        break;
+    case 142311:
+        if(roll%100<33)return 2.198f;
+        if(roll%100<66)return 2.932f;
+        if(roll%100<100)return 2.121f;
+        break;
+    case 142312:
+        if(roll%100<15)return 5.469f;
+        if(roll%100<57)return 2.436f;
+        if(roll%100<100)return 3.279f;
+        break;
+    case 142313:
+        if(roll%100<33)return 1.955f;
+        if(roll%100<66)return 2.042f;
+        if(roll%100<100)return 2.036f;
+        break;
+    case 142314:
+        if(roll%100<33)return 2.256f;
+        if(roll%100<67)return 2.186f;
+        if(roll%100<100)return 1.727f;
+        break;
+    case 142315:
+        if(roll%100<33)return 1.379f;
+        if(roll%100<66)return 2.343f;
+        if(roll%100<100)return 1.891f;
+        break;
+    case 142316:
+        if(roll%100<33)return 2.437f;
+        if(roll%100<66)return 4.826f;
+        if(roll%100<100)return 2.168f;
+        break;
+    case 142317:
+        if(roll%100<33)return 0.809f;
+        if(roll%100<66)return 1.913f;
+        if(roll%100<100)return 1.679f;
+        break;
+    case 142401:
+        if(roll%100<33)return 1.835f;
+        if(roll%100<66)return 2.317f;
+        if(roll%100<100)return 2.298f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart8_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 152101:
+        if(roll%100<25)return 2.100f;
+        if(roll%100<50)return 1.191f;
+        if(roll%100<75)return 2.622f;
+        if(roll%100<100)return 2.789f;
+        break;
+    case 152103:
+        if(roll%100<50)return 2.564f;
+        if(roll%100<100)return 1.956f;
+        break;
+    case 152105:
+        if(roll%100<33)return 2.889f;
+        if(roll%100<66)return 1.649f;
+        if(roll%100<100)return 2.959f;
+        break;
+    case 152106:
+        if(roll%100<50)return 1.626f;
+        if(roll%100<100)return 1.844f;
+        break;
+    case 152107:
+        if(roll%100<33)return 3.508f;
+        if(roll%100<66)return 2.983f;
+        if(roll%100<100)return 3.271f;
+        break;
+    case 152201:
+        if(roll%100<50)return 3.066f;
+        if(roll%100<100)return 2.977f;
+        break;
+    case 152202:
+        if(roll%100<50)return 2.658f;
+        if(roll%100<100)return 2.434f;
+        break;
+    case 152203:
+        if(roll%100<33)return 2.776f;
+        if(roll%100<66)return 3.151f;
+        if(roll%100<100)return 1.815f;
+        break;
+    case 152204:
+        if(roll%100<33)return 1.154f;
+        if(roll%100<66)return 1.450f;
+        if(roll%100<100)return 1.574f;
+        break;
+    case 152205:
+        if(roll%100<100)return 1.643f;
+        break;
+    case 152206:
+        if(roll%100<25)return 2.364f;
+        if(roll%100<50)return 2.370f;
+        if(roll%100<75)return 1.644f;
+        if(roll%100<100)return 2.464f;
+        break;
+    case 152207:
+        if(roll%100<20)return 2.036f;
+        if(roll%100<80)return 1.344f;
+        if(roll%100<100)return 1.664f;
+        break;
+    case 152208:
+        if(roll%100<33)return 3.260f;
+        if(roll%100<66)return 2.116f;
+        if(roll%100<100)return 2.356f;
+        break;
+    case 152209:
+        if(roll%100<33)return 3.556f;
+        if(roll%100<66)return 4.523f;
+        if(roll%100<100)return 3.265f;
+        break;
+    case 152211:
+        if(roll%100<33)return 1.775f;
+        if(roll%100<66)return 2.781f;
+        if(roll%100<100)return 3.101f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart9_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 152213:
+        if(roll%100<20)return 1.871f;
+        if(roll%100<40)return 1.937f;
+        if(roll%100<60)return 1.896f;
+        if(roll%100<80)return 1.585f;
+        if(roll%100<100)return 1.972f;
+        break;
+    case 152214:
+        if(roll%100<40)return 1.400f;
+        if(roll%100<80)return 2.433f;
+        if(roll%100<100)return 3.650f;
+        break;
+    case 152301:
+        if(roll%100<34)return 2.907f;
+        if(roll%100<67)return 1.728f;
+        if(roll%100<100)return 2.975f;
+        break;
+    case 152302:
+        if(roll%100<34)return 3.763f;
+        if(roll%100<67)return 2.778f;
+        if(roll%100<100)return 1.985f;
+        break;
+    case 152303:
+        if(roll%100<34)return 3.357f;
+        if(roll%100<67)return 1.105f;
+        if(roll%100<100)return 2.996f;
+        break;
+    case 152304:
+        if(roll%100<33)return 0.895f;
+        if(roll%100<66)return 2.484f;
+        if(roll%100<100)return 1.860f;
+        break;
+    case 152305:
+        if(roll%100<34)return 4.292f;
+        if(roll%100<67)return 1.819f;
+        if(roll%100<100)return 4.156f;
+        break;
+    case 152306:
+        if(roll%100<33)return 1.372f;
+        if(roll%100<66)return 1.709f;
+        if(roll%100<100)return 4.150f;
+        break;
+    case 152308:
+        if(roll%100<42)return 1.617f;
+        if(roll%100<84)return 2.655f;
+        if(roll%100<100)return 3.460f;
+        break;
+    case 152310:
+        if(roll%100<33)return 2.233f;
+        if(roll%100<66)return 3.295f;
+        if(roll%100<100)return 4.009f;
+        break;
+    case 152311:
+        if(roll%100<33)return 2.586f;
+        if(roll%100<66)return 3.272f;
+        if(roll%100<100)return 2.368f;
+        break;
+    case 152312:
+        if(roll%100<50)return 3.248f;
+        if(roll%100<100)return 1.363f;
+        break;
+    case 152313:
+        if(roll%100<33)return 3.253f;
+        if(roll%100<66)return 4.313f;
+        if(roll%100<100)return 2.964f;
+        break;
+    case 152315:
+        if(roll%100<34)return 2.209f;
+        if(roll%100<67)return 2.154f;
+        if(roll%100<100)return 1.288f;
+        break;
+    case 152316:
+        if(roll%100<33)return 2.168f;
+        if(roll%100<66)return 1.983f;
+        if(roll%100<100)return 2.319f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart10_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 152317:
+        if(roll%100<33)return 2.152f;
+        if(roll%100<66)return 2.036f;
+        if(roll%100<100)return 3.022f;
+        break;
+    case 152318:
+        if(roll%100<34)return 2.855f;
+        if(roll%100<67)return 3.042f;
+        if(roll%100<100)return 3.056f;
+        break;
+    case 152402:
+        if(roll%100<33)return 3.597f;
+        if(roll%100<66)return 4.989f;
+        if(roll%100<100)return 3.980f;
+        break;
+    case 162101:
+        if(roll%100<25)return 1.788f;
+        if(roll%100<50)return 2.175f;
+        if(roll%100<75)return 1.677f;
+        if(roll%100<100)return 2.156f;
+        break;
+    case 162102:
+        if(roll%100<33)return 1.832f;
+        if(roll%100<66)return 2.089f;
+        if(roll%100<100)return 2.700f;
+        break;
+    case 162103:
+        if(roll%100<33)return 2.981f;
+        if(roll%100<66)return 2.383f;
+        if(roll%100<100)return 1.783f;
+        break;
+    case 162104:
+        if(roll%100<33)return 2.041f;
+        if(roll%100<66)return 1.559f;
+        if(roll%100<100)return 1.278f;
+        break;
+    case 162105:
+        if(roll%100<33)return 4.273f;
+        if(roll%100<66)return 2.364f;
+        if(roll%100<100)return 1.768f;
+        break;
+    case 162106:
+        if(roll%100<33)return 2.245f;
+        if(roll%100<66)return 3.148f;
+        if(roll%100<100)return 4.084f;
+        break;
+    case 162107:
+        if(roll%100<33)return 2.169f;
+        if(roll%100<66)return 2.438f;
+        if(roll%100<100)return 1.765f;
+        break;
+    case 162108:
+        if(roll%100<33)return 2.704f;
+        if(roll%100<66)return 3.469f;
+        if(roll%100<100)return 3.151f;
+        break;
+    case 162201:
+        if(roll%100<33)return 2.372f;
+        if(roll%100<66)return 3.276f;
+        if(roll%100<100)return 3.970f;
+        break;
+    case 162202:
+        if(roll%100<33)return 1.729f;
+        if(roll%100<66)return 1.912f;
+        if(roll%100<100)return 3.957f;
+        break;
+    case 162203:
+        if(roll%100<33)return 1.860f;
+        if(roll%100<66)return 1.956f;
+        if(roll%100<100)return 1.700f;
+        break;
+    case 162204:
+        if(roll%100<33)return 3.086f;
+        if(roll%100<66)return 3.672f;
+        if(roll%100<100)return 2.889f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart11_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 162205:
+        if(roll%100<33)return 2.246f;
+        if(roll%100<66)return 3.058f;
+        if(roll%100<100)return 1.660f;
+        break;
+    case 162206:
+        if(roll%100<33)return 2.258f;
+        if(roll%100<66)return 2.805f;
+        if(roll%100<100)return 2.936f;
+        break;
+    case 162207:
+        if(roll%100<33)return 1.513f;
+        if(roll%100<66)return 2.422f;
+        if(roll%100<100)return 1.553f;
+        break;
+    case 162208:
+        if(roll%100<33)return 1.266f;
+        if(roll%100<66)return 2.465f;
+        if(roll%100<100)return 1.671f;
+        break;
+    case 162209:
+        if(roll%100<33)return 2.605f;
+        if(roll%100<66)return 1.409f;
+        if(roll%100<100)return 1.638f;
+        break;
+    case 162210:
+        if(roll%100<33)return 1.751f;
+        if(roll%100<66)return 1.385f;
+        if(roll%100<100)return 2.053f;
+        break;
+    case 162211:
+        if(roll%100<33)return 2.855f;
+        if(roll%100<66)return 2.167f;
+        if(roll%100<100)return 2.734f;
+        break;
+    case 162212:
+        if(roll%100<33)return 3.431f;
+        if(roll%100<66)return 2.830f;
+        if(roll%100<100)return 3.684f;
+        break;
+    case 162213:
+        if(roll%100<33)return 2.378f;
+        if(roll%100<66)return 2.949f;
+        if(roll%100<100)return 2.458f;
+        break;
+    case 162301:
+        if(roll%100<33)return 2.283f;
+        if(roll%100<66)return 1.888f;
+        if(roll%100<100)return 3.009f;
+        break;
+    case 162303:
+        if(roll%100<33)return 2.033f;
+        if(roll%100<66)return 1.535f;
+        if(roll%100<100)return 2.100f;
+        break;
+    case 162304:
+        if(roll%100<33)return 1.971f;
+        if(roll%100<66)return 2.985f;
+        if(roll%100<100)return 2.762f;
+        break;
+    case 162305:
+        if(roll%100<33)return 0.916f;
+        if(roll%100<66)return 1.823f;
+        if(roll%100<100)return 1.477f;
+        break;
+    case 162307:
+        if(roll%100<33)return 1.268f;
+        if(roll%100<66)return 2.181f;
+        if(roll%100<100)return 2.552f;
+        break;
+    case 162308:
+        if(roll%100<33)return 1.753f;
+        if(roll%100<66)return 1.807f;
+        if(roll%100<100)return 2.703f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart12_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 162309:
+        if(roll%100<33)return 1.981f;
+        if(roll%100<66)return 3.113f;
+        if(roll%100<100)return 3.098f;
+        break;
+    case 162310:
+        if(roll%100<33)return 2.388f;
+        if(roll%100<66)return 1.919f;
+        if(roll%100<100)return 2.143f;
+        break;
+    case 162311:
+        if(roll%100<33)return 1.081f;
+        if(roll%100<66)return 0.713f;
+        if(roll%100<100)return 1.673f;
+        break;
+    case 162312:
+        if(roll%100<33)return 1.263f;
+        if(roll%100<66)return 1.332f;
+        if(roll%100<100)return 3.435f;
+        break;
+    case 162313:
+        if(roll%100<33)return 1.545f;
+        if(roll%100<66)return 1.380f;
+        if(roll%100<100)return 2.507f;
+        break;
+    case 162314:
+        if(roll%100<33)return 3.595f;
+        if(roll%100<66)return 1.415f;
+        if(roll%100<100)return 1.709f;
+        break;
+    case 162315:
+        if(roll%100<33)return 1.263f;
+        if(roll%100<66)return 1.956f;
+        if(roll%100<100)return 0.825f;
+        break;
+    case 162316:
+        if(roll%100<33)return 3.052f;
+        if(roll%100<66)return 2.589f;
+        if(roll%100<100)return 3.405f;
+        break;
+    case 162318:
+        if(roll%100<33)return 2.365f;
+        if(roll%100<66)return 3.234f;
+        if(roll%100<100)return 2.995f;
+        break;
+    case 162401:
+        if(roll%100<42)return 3.488f;
+        if(roll%100<85)return 3.287f;
+        if(roll%100<100)return 2.784f;
+        break;
+    case 200026:
+        if(roll%100<33)return 4.171f;
+        if(roll%100<66)return 4.257f;
+        if(roll%100<100)return 3.713f;
+        break;
+    case 200028:
+        if(roll%100<33)return 2.065f;
+        if(roll%100<66)return 3.867f;
+        if(roll%100<100)return 2.641f;
+        break;
+    case 200030:
+        if(roll%100<33)return 1.473f;
+        if(roll%100<66)return 1.079f;
+        if(roll%100<100)return 3.145f;
+        break;
+    case 200031:
+        if(roll%100<33)return 1.917f;
+        if(roll%100<66)return 3.465f;
+        if(roll%100<100)return 3.197f;
+        break;
+    case 200032:
+        if(roll%100<33)return 1.569f;
+        if(roll%100<66)return 2.368f;
+        if(roll%100<100)return 3.340f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart13_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200033:
+        if(roll%100<45)return 1.611f;
+        if(roll%100<65)return 3.007f;
+        if(roll%100<100)return 2.896f;
+        break;
+    case 200036:
+        if(roll%100<33)return 2.729f;
+        if(roll%100<66)return 3.409f;
+        if(roll%100<100)return 4.295f;
+        break;
+    case 200039:
+        if(roll%100<33)return 0.912f;
+        if(roll%100<66)return 2.055f;
+        if(roll%100<100)return 1.983f;
+        break;
+    case 200040:
+        if(roll%100<33)return 1.898f;
+        if(roll%100<66)return 3.794f;
+        if(roll%100<100)return 2.234f;
+        break;
+    case 200042:
+        if(roll%100<33)return 1.916f;
+        if(roll%100<66)return 2.141f;
+        if(roll%100<100)return 1.980f;
+        break;
+    case 200043:
+        if(roll%100<33)return 3.864f;
+        if(roll%100<67)return 2.775f;
+        if(roll%100<100)return 4.108f;
+        break;
+    case 200044:
+        if(roll%100<33)return 1.307f;
+        if(roll%100<67)return 2.544f;
+        if(roll%100<100)return 2.767f;
+        break;
+    case 200046:
+        if(roll%100<33)return 2.622f;
+        if(roll%100<66)return 3.135f;
+        if(roll%100<100)return 3.056f;
+        break;
+    case 200048:
+        if(roll%100<33)return 2.489f;
+        if(roll%100<66)return 2.020f;
+        if(roll%100<100)return 3.313f;
+        break;
+    case 200050:
+        if(roll%100<33)return 1.977f;
+        if(roll%100<67)return 3.589f;
+        if(roll%100<100)return 3.118f;
+        break;
+    case 200055:
+        if(roll%100<33)return 2.804f;
+        if(roll%100<66)return 3.035f;
+        if(roll%100<100)return 3.273f;
+        break;
+    case 200062:
+        if(roll%100<34)return 3.231f;
+        if(roll%100<67)return 2.546f;
+        if(roll%100<100)return 1.731f;
+        break;
+    case 200071:
+        if(roll%100<33)return 2.591f;
+        if(roll%100<67)return 4.020f;
+        if(roll%100<100)return 2.919f;
+        break;
+    case 200080:
+        if(roll%100<33)return 2.528f;
+        if(roll%100<66)return 2.097f;
+        if(roll%100<100)return 2.631f;
+        break;
+    case 200081:
+        if(roll%100<33)return 2.328f;
+        if(roll%100<67)return 3.050f;
+        if(roll%100<100)return 2.824f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart14_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200083:
+        if(roll%100<25)return 2.400f;
+        if(roll%100<50)return 2.935f;
+        if(roll%100<75)return 2.576f;
+        if(roll%100<100)return 2.319f;
+        break;
+    case 200087:
+        if(roll%100<25)return 2.620f;
+        if(roll%100<50)return 2.900f;
+        if(roll%100<75)return 3.092f;
+        if(roll%100<100)return 3.914f;
+        break;
+    case 200088:
+        if(roll%100<33)return 3.975f;
+        if(roll%100<67)return 3.192f;
+        if(roll%100<100)return 2.816f;
+        break;
+    case 200089:
+        if(roll%100<34)return 2.729f;
+        if(roll%100<67)return 3.903f;
+        if(roll%100<100)return 4.044f;
+        break;
+    case 200091:
+        if(roll%100<25)return 2.335f;
+        if(roll%100<50)return 3.039f;
+        if(roll%100<75)return 2.759f;
+        if(roll%100<100)return 2.696f;
+        break;
+    case 200098:
+        if(roll%100<33)return 2.173f;
+        if(roll%100<66)return 1.920f;
+        if(roll%100<100)return 3.347f;
+        break;
+    case 200112:
+        if(roll%100<50)return 1.801f;
+        if(roll%100<100)return 3.033f;
+        break;
+    case 200115:
+        if(roll%100<33)return 1.204f;
+        if(roll%100<67)return 1.555f;
+        if(roll%100<100)return 1.138f;
+        break;
+    case 200118:
+        if(roll%100<33)return 2.643f;
+        if(roll%100<67)return 1.964f;
+        if(roll%100<100)return 2.713f;
+        break;
+    case 200124:
+        if(roll%100<33)return 1.982f;
+        if(roll%100<67)return 1.995f;
+        if(roll%100<100)return 1.553f;
+        break;
+    case 200132:
+        if(roll%100<33)return 2.996f;
+        if(roll%100<67)return 2.337f;
+        if(roll%100<100)return 2.766f;
+        break;
+    case 200135:
+        if(roll%100<100)return 2.247f;
+        if(roll%100<100)return 2.386f;
+        if(roll%100<100)return 1.175f;
+        break;
+    case 200136:
+        if(roll%100<33)return 2.673f;
+        if(roll%100<66)return 2.386f;
+        if(roll%100<100)return 2.612f;
+        break;
+    case 200138:
+        if(roll%100<33)return 4.108f;
+        if(roll%100<66)return 3.195f;
+        if(roll%100<100)return 3.161f;
+        break;
+    case 200144:
+        if(roll%100<20)return 5.960f;
+        if(roll%100<40)return 1.963f;
+        if(roll%100<60)return 2.004f;
+        if(roll%100<80)return 5.099f;
+        if(roll%100<100)return 1.496f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart15_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200145:
+        if(roll%100<34)return 3.047f;
+        if(roll%100<67)return 3.174f;
+        if(roll%100<100)return 2.650f;
+        break;
+    case 200146:
+        if(roll%100<34)return 2.661f;
+        if(roll%100<67)return 3.678f;
+        if(roll%100<100)return 2.455f;
+        break;
+    case 200147:
+        if(roll%100<33)return 2.491f;
+        if(roll%100<66)return 3.102f;
+        if(roll%100<100)return 3.067f;
+        break;
+    case 200149:
+        if(roll%100<34)return 2.455f;
+        if(roll%100<67)return 2.957f;
+        if(roll%100<100)return 3.052f;
+        break;
+    case 200159:
+        if(roll%100<33)return 2.338f;
+        if(roll%100<66)return 3.091f;
+        if(roll%100<100)return 2.383f;
+        break;
+    case 200160:
+        if(roll%100<33)return 2.678f;
+        if(roll%100<66)return 2.228f;
+        if(roll%100<100)return 2.719f;
+        break;
+    case 200161:
+        if(roll%100<33)return 2.603f;
+        if(roll%100<66)return 3.554f;
+        if(roll%100<100)return 4.243f;
+        break;
+    case 200162:
+        if(roll%100<33)return 3.717f;
+        if(roll%100<66)return 3.177f;
+        if(roll%100<100)return 3.318f;
+        break;
+    case 200163:
+        if(roll%100<33)return 3.625f;
+        if(roll%100<66)return 3.017f;
+        if(roll%100<100)return 3.577f;
+        break;
+    case 200164:
+        if(roll%100<33)return 3.490f;
+        if(roll%100<66)return 3.602f;
+        if(roll%100<100)return 3.501f;
+        break;
+    case 200165:
+        if(roll%100<33)return 2.024f;
+        if(roll%100<66)return 1.903f;
+        if(roll%100<100)return 2.251f;
+        break;
+    case 200166:
+        if(roll%100<33)return 3.061f;
+        if(roll%100<66)return 2.170f;
+        if(roll%100<100)return 3.046f;
+        break;
+    case 200167:
+        if(roll%100<33)return 3.580f;
+        if(roll%100<66)return 2.541f;
+        if(roll%100<100)return 3.195f;
+        break;
+    case 200168:
+        if(roll%100<33)return 2.200f;
+        if(roll%100<67)return 1.582f;
+        if(roll%100<100)return 2.393f;
+        break;
+    case 200169:
+        if(roll%100<20)return 1.595f;
+        if(roll%100<40)return 2.429f;
+        if(roll%100<60)return 2.220f;
+        if(roll%100<80)return 1.128f;
+        if(roll%100<100)return 1.803f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart16_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200170:
+        if(roll%100<50)return 2.447f;
+        if(roll%100<100)return 3.242f;
+        break;
+    case 200171:
+        if(roll%100<33)return 2.998f;
+        if(roll%100<66)return 2.310f;
+        if(roll%100<100)return 2.189f;
+        break;
+    case 200177:
+        if(roll%100<33)return 1.774f;
+        if(roll%100<66)return 2.135f;
+        if(roll%100<100)return 1.151f;
+        break;
+    case 200209:
+        if(roll%100<25)return 2.180f;
+        if(roll%100<50)return 1.775f;
+        if(roll%100<75)return 1.132f;
+        if(roll%100<100)return 1.132f;
+        break;
+    case 200212:
+        if(roll%100<33)return 1.418f;
+        if(roll%100<67)return 2.673f;
+        if(roll%100<100)return 1.955f;
+        break;
+    case 200219:
+        if(roll%100<42)return 3.488f;
+        if(roll%100<85)return 3.287f;
+        if(roll%100<100)return 2.784f;
+        break;
+    case 200220:
+        if(roll%300<100)return 3.354f;
+        if(roll%300<200)return 4.007f;
+        if(roll%300<300)return 3.881f;
+        break;
+    case 200221:
+        if(roll%100<50)return 3.448f;
+        if(roll%100<100)return 4.408f;
+        break;
+    case 200222:
+        if(roll%100<34)return 5.372f;
+        if(roll%100<67)return 5.155f;
+        if(roll%100<100)return 6.551f;
+        break;
+    case 200227:
+        if(roll%100<33)return 2.998f;
+        if(roll%100<67)return 2.857f;
+        if(roll%100<100)return 3.199f;
+        break;
+    case 200235:
+        if(roll%100<17)return 3.087f;
+        if(roll%100<34)return 2.682f;
+        if(roll%100<51)return 2.335f;
+        if(roll%100<68)return 1.487f;
+        if(roll%100<85)return 2.432f;
+        if(roll%100<100)return 1.670f;
+        break;
+    case 200236:
+        if(roll%100<25)return 1.244f;
+        if(roll%100<67)return 2.073f;
+        if(roll%100<92)return 1.091f;
+        if(roll%100<100)return 2.948f;
+        break;
+    case 200237:
+        if(roll%100<33)return 1.997f;
+        if(roll%100<66)return 2.623f;
+        if(roll%100<100)return 2.019f;
+        break;
+    case 200293:
+        if(roll%100<20)return 3.747f;
+        if(roll%100<40)return 3.101f;
+        if(roll%100<60)return 3.241f;
+        if(roll%100<80)return 2.396f;
+        if(roll%100<100)return 4.368f;
+        break;
+    case 200294:
+        if(roll%100<20)return 2.685f;
+        if(roll%100<40)return 2.163f;
+        if(roll%100<60)return 1.950f;
+        if(roll%100<80)return 2.352f;
+        if(roll%100<100)return 1.896f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart17_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 200296:
+        if(roll%100<33)return 4.098f;
+        if(roll%100<66)return 3.701f;
+        if(roll%100<100)return 2.874f;
+        break;
+    case 200299:
+        if(roll%100<33)return 2.855f;
+        if(roll%100<66)return 3.280f;
+        if(roll%100<100)return 2.495f;
+        break;
+    case 200518:
+        if(roll%100<33)return 1.594f;
+        if(roll%100<66)return 1.998f;
+        if(roll%100<100)return 1.874f;
+        break;
+    case 200520:
+        if(roll%100<33)return 1.562f;
+        if(roll%100<66)return 3.003f;
+        if(roll%100<100)return 2.987f;
+        break;
+    case 200523:
+        if(roll%100<25)return 2.058f;
+        if(roll%100<50)return 2.986f;
+        if(roll%100<75)return 2.624f;
+        if(roll%100<100)return 2.698f;
+        break;
+    case 200528:
+        if(roll%100<33)return 2.468f;
+        if(roll%100<66)return 2.240f;
+        if(roll%100<100)return 2.521f;
+        break;
+    case 200529:
+        if(roll%100<39)return 2.238f;
+        if(roll%100<61)return 3.229f;
+        if(roll%100<100)return 3.240f;
+        break;
+    case 200534:
+        if(roll%100<33)return 1.612f;
+        if(roll%100<66)return 2.669f;
+        if(roll%100<100)return 3.749f;
+        break;
+    case 200535:
+        if(roll%100<33)return 3.040f;
+        if(roll%100<66)return 2.550f;
+        if(roll%100<100)return 3.236f;
+        break;
+    case 200540:
+        if(roll%100<41)return 1.809f;
+        if(roll%100<82)return 1.355f;
+        if(roll%100<100)return 3.154f;
+        break;
+    case 201523:
+        if(roll%100<20)return 2.817f;
+        if(roll%100<40)return 0.907f;
+        if(roll%100<60)return 1.798f;
+        if(roll%100<80)return 1.764f;
+        if(roll%100<100)return 1.704f;
+        break;
+    case 201559:
+        if(roll%100<20)return 3.673f;
+        if(roll%100<40)return 2.314f;
+        if(roll%100<60)return 3.589f;
+        if(roll%100<80)return 3.475f;
+        if(roll%100<100)return 4.029f;
+        break;
+    case 201578:
+        if(roll%100<34)return 1.692f;
+        if(roll%100<67)return 4.526f;
+        if(roll%100<100)return 2.009f;
+        break;
+    case 201580:
+        if(roll%100<33)return 4.847f;
+        if(roll%100<66)return 4.004f;
+        if(roll%100<100)return 4.320f;
+        break;
+    case 201587:
+        if(roll%100<20)return 1.395f;
+        if(roll%100<40)return 1.749f;
+        if(roll%100<60)return 2.137f;
+        if(roll%100<80)return 2.604f;
+        if(roll%100<100)return 2.669f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart18_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 201589:
+        if(roll%100<34)return 2.447f;
+        if(roll%100<67)return 2.520f;
+        if(roll%100<100)return 2.306f;
+        break;
+    case 201595:
+        if(roll%100<34)return 2.412f;
+        if(roll%100<67)return 4.054f;
+        if(roll%100<100)return 4.052f;
+        break;
+    case 201597:
+        if(roll%100<33)return 3.359f;
+        if(roll%100<66)return 2.228f;
+        if(roll%100<100)return 2.780f;
+        break;
+    case 201601:
+        if(roll%100<34)return 2.249f;
+        if(roll%100<67)return 3.108f;
+        if(roll%100<100)return 1.970f;
+        break;
+    case 201603:
+        if(roll%100<25)return 1.677f;
+        if(roll%100<50)return 2.156f;
+        if(roll%100<75)return 1.788f;
+        if(roll%100<100)return 2.175f;
+        break;
+    case 201609:
+        if(roll%100<20)return 1.709f;
+        if(roll%100<40)return 3.322f;
+        if(roll%100<60)return 3.794f;
+        if(roll%100<80)return 3.630f;
+        if(roll%100<100)return 2.510f;
+        break;
+    case 201611:
+        if(roll%100<25)return 1.355f;
+        if(roll%100<50)return 2.247f;
+        if(roll%100<75)return 3.505f;
+        if(roll%100<100)return 1.721f;
+        break;
+    case 201612:
+        if(roll%100<20)return 3.690f;
+        if(roll%100<40)return 2.210f;
+        if(roll%100<60)return 4.250f;
+        if(roll%100<80)return 2.207f;
+        if(roll%100<100)return 3.900f;
+        break;
+    case 201615:
+        if(roll%100<34)return 2.404f;
+        if(roll%100<67)return 2.240f;
+        if(roll%100<100)return 3.271f;
+        break;
+    case 201616:
+        if(roll%100<33)return 2.912f;
+        if(roll%100<67)return 2.787f;
+        if(roll%100<100)return 2.376f;
+        break;
+    case 201617:
+        if(roll%100<20)return 4.385f;
+        if(roll%100<40)return 4.831f;
+        if(roll%100<60)return 4.229f;
+        if(roll%100<80)return 4.288f;
+        if(roll%100<100)return 4.351f;
+        break;
+    case 201618:
+        if(roll%100<33)return 2.866f;
+        if(roll%100<66)return 2.492f;
+        if(roll%100<100)return 2.227f;
+        break;
+    case 201620:
+        if(roll%100<20)return 2.397f;
+        if(roll%100<40)return 2.637f;
+        if(roll%100<60)return 3.849f;
+        if(roll%100<80)return 2.261f;
+        if(roll%100<100)return 3.451f;
+        break;
+    case 201621:
+        if(roll%100<20)return 3.032f;
+        if(roll%100<40)return 2.059f;
+        if(roll%100<60)return 3.296f;
+        if(roll%100<80)return 1.822f;
+        if(roll%100<100)return 3.749f;
+        break;
+    case 201622:
+        if(roll%100<33)return 3.782f;
+        if(roll%100<67)return 1.534f;
+        if(roll%100<100)return 2.719f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart19_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 201624:
+        if(roll%100<20)return 2.999f;
+        if(roll%100<40)return 4.225f;
+        if(roll%100<60)return 3.571f;
+        if(roll%100<80)return 5.036f;
+        if(roll%100<100)return 3.023f;
+        break;
+    case 201625:
+        if(roll%100<20)return 3.774f;
+        if(roll%100<40)return 2.338f;
+        if(roll%100<60)return 2.546f;
+        if(roll%100<80)return 2.824f;
+        if(roll%100<100)return 2.491f;
+        break;
+    case 201626:
+        if(roll%100<25)return 1.999f;
+        if(roll%100<50)return 1.310f;
+        if(roll%100<75)return 1.734f;
+        if(roll%100<100)return 2.398f;
+        break;
+    case 201627:
+        if(roll%100<20)return 4.418f;
+        if(roll%100<40)return 2.477f;
+        if(roll%100<60)return 4.419f;
+        if(roll%100<80)return 2.021f;
+        if(roll%100<100)return 5.419f;
+        break;
+    case 201628:
+        if(roll%100<20)return 3.539f;
+        if(roll%100<40)return 1.944f;
+        if(roll%100<60)return 2.288f;
+        if(roll%100<80)return 1.701f;
+        if(roll%100<100)return 3.036f;
+        break;
+    case 201630:
+        if(roll%100<20)return 3.643f;
+        if(roll%100<40)return 5.103f;
+        if(roll%100<60)return 2.079f;
+        if(roll%100<80)return 2.083f;
+        if(roll%100<100)return 2.429f;
+        break;
+    case 201636:
+        if(roll%100<20)return 1.538f;
+        if(roll%100<40)return 0.585f;
+        if(roll%100<60)return 0.835f;
+        if(roll%100<80)return 1.687f;
+        if(roll%100<100)return 0.716f;
+        break;
+    case 201638:
+        if(roll%100<20)return 2.370f;
+        if(roll%100<40)return 3.012f;
+        if(roll%100<60)return 2.975f;
+        if(roll%100<80)return 2.026f;
+        if(roll%100<100)return 2.412f;
+        break;
+    case 201644:
+        if(roll%100<20)return 2.223f;
+        if(roll%100<40)return 4.099f;
+        if(roll%100<60)return 4.530f;
+        if(roll%100<80)return 2.487f;
+        if(roll%100<100)return 4.069f;
+        break;
+    case 201646:
+        if(roll%100<33)return 2.815f;
+        if(roll%100<66)return 4.394f;
+        if(roll%100<100)return 1.921f;
+        break;
+    case 201650:
+        if(roll%100<33)return 1.241f;
+        if(roll%100<67)return 1.954f;
+        if(roll%100<100)return 4.657f;
+        break;
+    case 201664:
+        if(roll%100<25)return 2.225f;
+        if(roll%100<50)return 2.503f;
+        if(roll%100<75)return 2.441f;
+        if(roll%100<100)return 2.189f;
+        break;
+    case 201676:
+        if(roll%100<33)return 0.750f;
+        if(roll%100<67)return 3.039f;
+        if(roll%100<100)return 2.914f;
+        break;
+    case 201677:
+        if(roll%100<34)return 0.703f;
+        if(roll%100<67)return 3.508f;
+        if(roll%100<100)return 4.100f;
+        break;
+    case 201753:
+        if(roll%100<34)return 0.703f;
+        if(roll%100<67)return 3.508f;
+        if(roll%100<100)return 4.100f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+function BetaGwentAudioVoiceVariantDurationPart20_Universal_pt_br(id : int, roll : int) : float
+{
+    switch(id)
+    {
+    case 201772:
+        if(roll%100<20)return 2.817f;
+        if(roll%100<40)return 0.907f;
+        if(roll%100<60)return 1.798f;
+        if(roll%100<80)return 1.764f;
+        if(roll%100<100)return 1.704f;
+        break;
+    case 201773:
+        if(roll%100<17)return 1.429f;
+        if(roll%100<33)return 1.560f;
+        if(roll%100<50)return 3.382f;
+        if(roll%100<67)return 2.596f;
+        if(roll%100<84)return 2.341f;
+        if(roll%100<100)return 2.535f;
+        break;
+    case 201774:
+        if(roll%100<14)return 2.509f;
+        if(roll%100<28)return 1.015f;
+        if(roll%100<42)return 3.172f;
+        if(roll%100<58)return 1.774f;
+        if(roll%100<72)return 1.991f;
+        if(roll%100<86)return 2.251f;
+        if(roll%100<100)return 1.149f;
+        break;
+    case 201776:
+        if(roll%100<16)return 2.509f;
+        if(roll%100<30)return 1.015f;
+        if(roll%100<44)return 3.172f;
+        if(roll%100<58)return 1.774f;
+        if(roll%100<72)return 1.991f;
+        if(roll%100<86)return 2.251f;
+        if(roll%100<100)return 1.149f;
+        break;
+    case 201777:
+        if(roll%100<50)return 2.001f;
+        if(roll%100<100)return 2.094f;
+        break;
+    case 201778:
+        if(roll%100<33)return 1.774f;
+        if(roll%100<67)return 2.135f;
+        if(roll%100<100)return 1.151f;
+        break;
+    case 201779:
+        if(roll%100<33)return 2.941f;
+        if(roll%100<66)return 3.209f;
+        if(roll%100<100)return 3.441f;
+        break;
+    case 201780:
+        if(roll%100<33)return 2.249f;
+        if(roll%100<67)return 3.108f;
+        if(roll%100<100)return 1.970f;
+        break;
+    case 201781:
+        if(roll%100<33)return 2.751f;
+        if(roll%100<67)return 1.261f;
+        if(roll%100<100)return 2.039f;
+        break;
+    default: break;
+    }
+    return 0.0f;
+}
+
+function BetaGwentAudioRevealEffect_Universal_pt_br(id : int) : string
+{
+    if (id <= 201779) return BetaGwentAudioRevealEffect0_Universal_pt_br(id);
+    return "";
+}
+function BetaGwentAudioRevealEffect0_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 142204: return "bg79_fx_2095867680";
+        case 142208: return "bg79_fx_181319135";
+        case 142210: return "bg79_fx_1115677916";
+        case 142307: return "bg79_fx_35814593";
+        case 201779: return "bg79_fx_3157478180";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioTransformEffect_Universal_pt_br(id : int) : string
+{
+    if (id <= 112105) return BetaGwentAudioTransformEffect0_Universal_pt_br(id);
+    return "";
+}
+function BetaGwentAudioTransformEffect0_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 112105: return "bg79_fx_729252324";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioVoiceTriggers_Universal_pt_br(id : int) : int
+{
+    if (id <= 113401) return BetaGwentAudioVoiceTriggers0_Universal_pt_br(id);
+    if (id <= 132204) return BetaGwentAudioVoiceTriggers1_Universal_pt_br(id);
+    if (id <= 142301) return BetaGwentAudioVoiceTriggers2_Universal_pt_br(id);
+    if (id <= 152406) return BetaGwentAudioVoiceTriggers3_Universal_pt_br(id);
+    if (id <= 200036) return BetaGwentAudioVoiceTriggers4_Universal_pt_br(id);
+    if (id <= 200166) return BetaGwentAudioVoiceTriggers5_Universal_pt_br(id);
+    if (id <= 201584) return BetaGwentAudioVoiceTriggers6_Universal_pt_br(id);
+    if (id <= 201697) return BetaGwentAudioVoiceTriggers7_Universal_pt_br(id);
+    if (id <= 201817) return BetaGwentAudioVoiceTriggers8_Universal_pt_br(id);
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers0_Universal_pt_br(id : int) : int
+{
+    switch (id)
+    {
+        case 112101: return 8;
+        case 112102: return 8;
+        case 112103: return 8;
+        case 112104: return 8;
+        case 112105: return 24;
+        case 112106: return 8;
+        case 112107: return 8;
+        case 112108: return 8;
+        case 112109: return 8;
+        case 112110: return 8;
+        case 112111: return 8;
+        case 112112: return 8;
+        case 112113: return 8;
+        case 112201: return 8;
+        case 112202: return 8;
+        case 112203: return 8;
+        case 112204: return 8;
+        case 112205: return 8;
+        case 112206: return 8;
+        case 112207: return 8;
+        case 112208: return 8;
+        case 112209: return 8;
+        case 112210: return 8;
+        case 112211: return 8;
+        case 112212: return 8;
+        case 112213: return 8;
+        case 112214: return 8;
+        case 112215: return 8;
+        case 112401: return 8;
+        case 112402: return 8;
+        case 112403: return 8;
+        case 112404: return 8;
+        case 112405: return 0;
+        case 113101: return 8;
+        case 113102: return 0;
+        case 113201: return 0;
+        case 113202: return 0;
+        case 113203: return 0;
+        case 113204: return 8;
+        case 113205: return 8;
+        case 113206: return 0;
+        case 113207: return 0;
+        case 113208: return 8;
+        case 113209: return 0;
+        case 113301: return 8;
+        case 113302: return 8;
+        case 113303: return 0;
+        case 113305: return 8;
+        case 113306: return 0;
+        case 113307: return 0;
+        case 113308: return 8;
+        case 113309: return 0;
+        case 113310: return 0;
+        case 113311: return 0;
+        case 113312: return 8;
+        case 113313: return 8;
+        case 113315: return 0;
+        case 113316: return 0;
+        case 113320: return 0;
+        case 113401: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers1_Universal_pt_br(id : int) : int
+{
+    switch (id)
+    {
+        case 113402: return 0;
+        case 122101: return 8;
+        case 122102: return 8;
+        case 122103: return 8;
+        case 122104: return 8;
+        case 122105: return 8;
+        case 122106: return 8;
+        case 122107: return 8;
+        case 122108: return 8;
+        case 122201: return 8;
+        case 122202: return 8;
+        case 122203: return 8;
+        case 122204: return 8;
+        case 122205: return 8;
+        case 122206: return 8;
+        case 122207: return 8;
+        case 122208: return 8;
+        case 122209: return 8;
+        case 122210: return 8;
+        case 122211: return 8;
+        case 122212: return 8;
+        case 122213: return 8;
+        case 122214: return 8;
+        case 122216: return 8;
+        case 122301: return 0;
+        case 122302: return 0;
+        case 122303: return 0;
+        case 122304: return 0;
+        case 122306: return 8;
+        case 122307: return 8;
+        case 122308: return 8;
+        case 122309: return 8;
+        case 122310: return 8;
+        case 122311: return 8;
+        case 122312: return 8;
+        case 122313: return 8;
+        case 122314: return 8;
+        case 122315: return 0;
+        case 122316: return 8;
+        case 122317: return 8;
+        case 122318: return 8;
+        case 122401: return 0;
+        case 122402: return 0;
+        case 122403: return 8;
+        case 123201: return 0;
+        case 123301: return 8;
+        case 131101: return 8;
+        case 131102: return 8;
+        case 132101: return 8;
+        case 132102: return 8;
+        case 132103: return 0;
+        case 132104: return 8;
+        case 132105: return 8;
+        case 132106: return 0;
+        case 132107: return 8;
+        case 132108: return 8;
+        case 132201: return 0;
+        case 132202: return 0;
+        case 132203: return 0;
+        case 132204: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers2_Universal_pt_br(id : int) : int
+{
+    switch (id)
+    {
+        case 132205: return 0;
+        case 132206: return 8;
+        case 132207: return 8;
+        case 132208: return 8;
+        case 132209: return 0;
+        case 132211: return 8;
+        case 132212: return 8;
+        case 132213: return 0;
+        case 132214: return 8;
+        case 132215: return 8;
+        case 132216: return 0;
+        case 132217: return 0;
+        case 132218: return 0;
+        case 132301: return 0;
+        case 132302: return 0;
+        case 132303: return 0;
+        case 132304: return 0;
+        case 132305: return 8;
+        case 132306: return 0;
+        case 132307: return 0;
+        case 132308: return 0;
+        case 132309: return 8;
+        case 132310: return 8;
+        case 132312: return 0;
+        case 132313: return 0;
+        case 132314: return 0;
+        case 132315: return 0;
+        case 132316: return 0;
+        case 132402: return 0;
+        case 132403: return 0;
+        case 132404: return 0;
+        case 132405: return 0;
+        case 132406: return 0;
+        case 132407: return 8;
+        case 132408: return 0;
+        case 132409: return 8;
+        case 133301: return 0;
+        case 133302: return 0;
+        case 142101: return 0;
+        case 142102: return 8;
+        case 142103: return 8;
+        case 142104: return 8;
+        case 142105: return 8;
+        case 142106: return 8;
+        case 142107: return 8;
+        case 142108: return 8;
+        case 142201: return 8;
+        case 142202: return 8;
+        case 142203: return 8;
+        case 142204: return 4;
+        case 142206: return 8;
+        case 142207: return 8;
+        case 142208: return 4;
+        case 142209: return 8;
+        case 142210: return 4;
+        case 142211: return 8;
+        case 142212: return 8;
+        case 142213: return 8;
+        case 142214: return 8;
+        case 142301: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers3_Universal_pt_br(id : int) : int
+{
+    switch (id)
+    {
+        case 142302: return 8;
+        case 142303: return 8;
+        case 142304: return 8;
+        case 142306: return 8;
+        case 142307: return 4;
+        case 142308: return 8;
+        case 142309: return 8;
+        case 142310: return 8;
+        case 142311: return 8;
+        case 142312: return 8;
+        case 142313: return 8;
+        case 142314: return 8;
+        case 142315: return 8;
+        case 142316: return 8;
+        case 142317: return 8;
+        case 142401: return 8;
+        case 143201: return 0;
+        case 143301: return 0;
+        case 152101: return 8;
+        case 152103: return 8;
+        case 152104: return 0;
+        case 152105: return 8;
+        case 152106: return 8;
+        case 152107: return 8;
+        case 152109: return 0;
+        case 152201: return 8;
+        case 152202: return 8;
+        case 152203: return 8;
+        case 152204: return 8;
+        case 152205: return 8;
+        case 152206: return 8;
+        case 152207: return 8;
+        case 152208: return 8;
+        case 152209: return 8;
+        case 152210: return 0;
+        case 152211: return 8;
+        case 152213: return 8;
+        case 152214: return 8;
+        case 152301: return 8;
+        case 152302: return 8;
+        case 152303: return 8;
+        case 152304: return 8;
+        case 152305: return 8;
+        case 152306: return 8;
+        case 152308: return 8;
+        case 152309: return 0;
+        case 152310: return 8;
+        case 152311: return 8;
+        case 152312: return 8;
+        case 152313: return 8;
+        case 152314: return 8;
+        case 152315: return 8;
+        case 152316: return 8;
+        case 152317: return 8;
+        case 152318: return 8;
+        case 152401: return 0;
+        case 152402: return 8;
+        case 152403: return 0;
+        case 152405: return 0;
+        case 152406: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers4_Universal_pt_br(id : int) : int
+{
+    switch (id)
+    {
+        case 153201: return 0;
+        case 153301: return 8;
+        case 162101: return 8;
+        case 162102: return 8;
+        case 162103: return 8;
+        case 162104: return 8;
+        case 162105: return 8;
+        case 162106: return 8;
+        case 162107: return 8;
+        case 162108: return 8;
+        case 162201: return 8;
+        case 162202: return 8;
+        case 162203: return 8;
+        case 162204: return 8;
+        case 162205: return 8;
+        case 162206: return 8;
+        case 162207: return 8;
+        case 162208: return 8;
+        case 162209: return 8;
+        case 162210: return 8;
+        case 162211: return 8;
+        case 162212: return 8;
+        case 162213: return 8;
+        case 162301: return 8;
+        case 162302: return 0;
+        case 162303: return 8;
+        case 162304: return 8;
+        case 162305: return 8;
+        case 162306: return 0;
+        case 162307: return 8;
+        case 162308: return 8;
+        case 162309: return 8;
+        case 162310: return 8;
+        case 162311: return 8;
+        case 162312: return 8;
+        case 162313: return 8;
+        case 162314: return 8;
+        case 162315: return 8;
+        case 162316: return 8;
+        case 162317: return 0;
+        case 162318: return 8;
+        case 162401: return 8;
+        case 162402: return 0;
+        case 163101: return 0;
+        case 163201: return 0;
+        case 200008: return 0;
+        case 200009: return 0;
+        case 200018: return 0;
+        case 200019: return 0;
+        case 200020: return 0;
+        case 200021: return 0;
+        case 200022: return 0;
+        case 200023: return 0;
+        case 200026: return 8;
+        case 200028: return 8;
+        case 200030: return 8;
+        case 200031: return 8;
+        case 200032: return 8;
+        case 200033: return 8;
+        case 200036: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers5_Universal_pt_br(id : int) : int
+{
+    switch (id)
+    {
+        case 200037: return 0;
+        case 200038: return 0;
+        case 200039: return 8;
+        case 200040: return 8;
+        case 200041: return 0;
+        case 200042: return 8;
+        case 200043: return 8;
+        case 200044: return 8;
+        case 200046: return 8;
+        case 200048: return 8;
+        case 200049: return 0;
+        case 200050: return 8;
+        case 200052: return 0;
+        case 200053: return 0;
+        case 200055: return 8;
+        case 200056: return 8;
+        case 200058: return 0;
+        case 200062: return 8;
+        case 200067: return 0;
+        case 200071: return 8;
+        case 200073: return 0;
+        case 200078: return 0;
+        case 200079: return 0;
+        case 200080: return 8;
+        case 200081: return 8;
+        case 200083: return 8;
+        case 200087: return 8;
+        case 200088: return 8;
+        case 200089: return 8;
+        case 200091: return 8;
+        case 200098: return 8;
+        case 200102: return 0;
+        case 200103: return 0;
+        case 200104: return 0;
+        case 200105: return 0;
+        case 200112: return 8;
+        case 200114: return 0;
+        case 200115: return 8;
+        case 200118: return 8;
+        case 200124: return 8;
+        case 200132: return 8;
+        case 200135: return 8;
+        case 200136: return 8;
+        case 200138: return 8;
+        case 200139: return 0;
+        case 200144: return 8;
+        case 200145: return 8;
+        case 200146: return 8;
+        case 200147: return 8;
+        case 200149: return 8;
+        case 200154: return 0;
+        case 200158: return 0;
+        case 200159: return 8;
+        case 200160: return 8;
+        case 200161: return 8;
+        case 200162: return 8;
+        case 200163: return 8;
+        case 200164: return 8;
+        case 200165: return 8;
+        case 200166: return 8;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers6_Universal_pt_br(id : int) : int
+{
+    switch (id)
+    {
+        case 200167: return 8;
+        case 200168: return 8;
+        case 200169: return 8;
+        case 200170: return 8;
+        case 200171: return 8;
+        case 200177: return 8;
+        case 200209: return 8;
+        case 200212: return 8;
+        case 200218: return 0;
+        case 200219: return 8;
+        case 200220: return 8;
+        case 200221: return 8;
+        case 200222: return 8;
+        case 200223: return 0;
+        case 200224: return 0;
+        case 200225: return 0;
+        case 200226: return 0;
+        case 200227: return 8;
+        case 200228: return 0;
+        case 200233: return 0;
+        case 200235: return 8;
+        case 200236: return 8;
+        case 200237: return 8;
+        case 200293: return 8;
+        case 200294: return 8;
+        case 200295: return 0;
+        case 200296: return 8;
+        case 200299: return 8;
+        case 200300: return 0;
+        case 200301: return 0;
+        case 200307: return 0;
+        case 200308: return 0;
+        case 200320: return 8;
+        case 200457: return 0;
+        case 200502: return 0;
+        case 200518: return 8;
+        case 200519: return 0;
+        case 200520: return 8;
+        case 200523: return 8;
+        case 200528: return 8;
+        case 200529: return 8;
+        case 200530: return 0;
+        case 200532: return 0;
+        case 200534: return 8;
+        case 200535: return 8;
+        case 200539: return 0;
+        case 200540: return 8;
+        case 201523: return 8;
+        case 201559: return 8;
+        case 201572: return 0;
+        case 201573: return 0;
+        case 201574: return 0;
+        case 201576: return 0;
+        case 201578: return 8;
+        case 201579: return 0;
+        case 201580: return 8;
+        case 201581: return 0;
+        case 201582: return 0;
+        case 201583: return 0;
+        case 201584: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers7_Universal_pt_br(id : int) : int
+{
+    switch (id)
+    {
+        case 201585: return 0;
+        case 201587: return 8;
+        case 201589: return 8;
+        case 201595: return 8;
+        case 201597: return 8;
+        case 201598: return 0;
+        case 201599: return 0;
+        case 201600: return 0;
+        case 201601: return 8;
+        case 201603: return 8;
+        case 201606: return 0;
+        case 201609: return 8;
+        case 201610: return 0;
+        case 201611: return 8;
+        case 201612: return 8;
+        case 201613: return 0;
+        case 201615: return 8;
+        case 201616: return 8;
+        case 201617: return 8;
+        case 201618: return 8;
+        case 201619: return 0;
+        case 201620: return 8;
+        case 201621: return 8;
+        case 201622: return 8;
+        case 201623: return 0;
+        case 201624: return 8;
+        case 201625: return 8;
+        case 201626: return 8;
+        case 201627: return 8;
+        case 201628: return 8;
+        case 201630: return 8;
+        case 201631: return 0;
+        case 201632: return 0;
+        case 201633: return 0;
+        case 201634: return 0;
+        case 201635: return 0;
+        case 201636: return 8;
+        case 201637: return 0;
+        case 201638: return 8;
+        case 201639: return 0;
+        case 201642: return 0;
+        case 201643: return 0;
+        case 201644: return 8;
+        case 201645: return 0;
+        case 201646: return 8;
+        case 201647: return 0;
+        case 201648: return 0;
+        case 201650: return 8;
+        case 201653: return 0;
+        case 201656: return 0;
+        case 201657: return 0;
+        case 201659: return 0;
+        case 201660: return 0;
+        case 201661: return 8;
+        case 201662: return 0;
+        case 201664: return 8;
+        case 201676: return 8;
+        case 201677: return 8;
+        case 201696: return 0;
+        case 201697: return 0;
+        default: break;
+    }
+    return 0;
+}
+function BetaGwentAudioVoiceTriggers8_Universal_pt_br(id : int) : int
+{
+    switch (id)
+    {
+        case 201698: return 0;
+        case 201699: return 0;
+        case 201700: return 0;
+        case 201701: return 0;
+        case 201704: return 0;
+        case 201725: return 0;
+        case 201731: return 0;
+        case 201737: return 0;
+        case 201743: return 0;
+        case 201744: return 0;
+        case 201748: return 0;
+        case 201749: return 0;
+        case 201753: return 8;
+        case 201758: return 0;
+        case 201772: return 8;
+        case 201773: return 8;
+        case 201774: return 8;
+        case 201776: return 8;
+        case 201777: return 8;
+        case 201778: return 8;
+        case 201779: return 4;
+        case 201780: return 8;
+        case 201781: return 8;
+        case 201817: return 0;
+        default: break;
+    }
+    return 0;
+}
+
+function BetaGwentAudioUi_Universal_pt_br(id : int) : string
+{
+    if (id <= 5) return BetaGwentAudioUi0_Universal_pt_br(id);
+    return "";
+}
+function BetaGwentAudioUi0_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 1: return "bg79_fx_1126876212";
+        case 2: return "bg79_fx_2909756106";
+        case 3: return "bg79_fx_310403972";
+        case 4: return "bg79_fx_3558782073";
+        case 5: return "bg79_fx_331755273";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioCue_Universal_pt_br(id : int) : string
+{
+    if (id <= 32) return BetaGwentAudioCue0_Universal_pt_br(id);
+    return "";
+}
+function BetaGwentAudioCue0_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 3: return "bg79_fx_1345484733";
+        case 5: return "bg79_fx_443750925";
+        case 6: return "bg79_fx_1274376343";
+        case 7: return "bg79_fx_3429050723";
+        case 32: return "bg79_fx_3756236359";
+        case 9: return "bg79_fx_914497199";
+        case 10: return "bg79_fx_174406704";
+        case 11: return "bg79_fx_1345484733";
+        case 12: return "bg79_fx_3040005591";
+        case 14: return "bg79_fx_331755273";
+        case 15: return "bg79_fx_1271393020";
+        case 16: return "bg79_fx_1271393020";
+        case 17: return "bg79_fx_443750925";
+        case 20: return "bg79_fx_1339391495";
+        case 21: return "bg79_fx_1359220433";
+        case 22: return "bg79_fx_2876994866";
+        case 23: return "bg79_fx_2994650242";
+        case 24: return "bg79_fx_3432162846";
+        case 25: return "bg79_fx_174406704";
+        case 26: return "bg79_fx_3655100537";
+        case 27: return "bg79_fx_2122169205";
+        case 28: return "bg79_fx_1979737770";
+        case 29: return "bg79_fx_3983713265";
+        case 30: return "bg79_fx_3128640595";
+        case 31: return "bg79_fx_111986461";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioWeather_Universal_pt_br(id : int) : string
+{
+    if (id <= 2048) return BetaGwentAudioWeather0_Universal_pt_br(id);
+    return "";
+}
+function BetaGwentAudioWeather0_Universal_pt_br(id : int) : string
+{
+    switch (id)
+    {
+        case 0: return "bg79_fx_3426459189";
+        case 1: return "bg79_fx_1182743257";
+        case 2: return "bg79_fx_3376847707";
+        case 4: return "bg79_fx_4022788383";
+        case 16: return "bg79_fx_586097054";
+        case 32: return "bg79_fx_3202917663";
+        case 64: return "bg79_fx_1515030783";
+        case 128: return "bg79_fx_3419056088";
+        case 256: return "bg79_fx_206487326";
+        case 512: return "bg79_fx_2066849046";
+        case 1024: return "bg79_fx_656469391";
+        case 2048: return "bg79_fx_206487326";
+        default: break;
+    }
+    return "";
+}
+
+function BetaGwentAudioBankInstalled() : bool
+{
+    return BetaGwentAudioBankInstalled_Universal_ru();
+}
+function BetaGwentAudioVoice(id : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice_Universal_de(id));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice_Universal_it(id));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice_Universal_pt_br(id));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice_Universal_en(id));
+    return BetaGwentAudioVoice_Universal_ru(id);
+}
+function BetaGwentAudioVoice0(id : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice0_Universal_de(id));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice0_Universal_it(id));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice0_Universal_pt_br(id));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice0_Universal_en(id));
+    return BetaGwentAudioVoice0_Universal_ru(id);
+}
+function BetaGwentAudioVoice1(id : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice1_Universal_de(id));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice1_Universal_it(id));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice1_Universal_pt_br(id));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice1_Universal_en(id));
+    return BetaGwentAudioVoice1_Universal_ru(id);
+}
+function BetaGwentAudioVoice2(id : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice2_Universal_de(id));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice2_Universal_it(id));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice2_Universal_pt_br(id));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice2_Universal_en(id));
+    return BetaGwentAudioVoice2_Universal_ru(id);
+}
+function BetaGwentAudioVoice3(id : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice3_Universal_de(id));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice3_Universal_it(id));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice3_Universal_pt_br(id));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice3_Universal_en(id));
+    return BetaGwentAudioVoice3_Universal_ru(id);
+}
+function BetaGwentAudioVoice4(id : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice4_Universal_de(id));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice4_Universal_it(id));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice4_Universal_pt_br(id));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice4_Universal_en(id));
+    return BetaGwentAudioVoice4_Universal_ru(id);
+}
+function BetaGwentAudioVoice5(id : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice5_Universal_de(id));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice5_Universal_it(id));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice5_Universal_pt_br(id));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoice5_Universal_en(id));
+    return BetaGwentAudioVoice5_Universal_ru(id);
+}
+function BetaGwentAudioVoiceDuration(id : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceDuration_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceDuration_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceDuration_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceDuration_Universal_en(id);
+    return BetaGwentAudioVoiceDuration_Universal_ru(id);
+}
+function BetaGwentAudioVoiceDuration0(id : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceDuration0_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceDuration0_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceDuration0_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceDuration0_Universal_en(id);
+    return BetaGwentAudioVoiceDuration0_Universal_ru(id);
+}
+function BetaGwentAudioVoiceDuration1(id : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceDuration1_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceDuration1_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceDuration1_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceDuration1_Universal_en(id);
+    return BetaGwentAudioVoiceDuration1_Universal_ru(id);
+}
+function BetaGwentAudioVoiceDuration2(id : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceDuration2_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceDuration2_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceDuration2_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceDuration2_Universal_en(id);
+    return BetaGwentAudioVoiceDuration2_Universal_ru(id);
+}
+function BetaGwentAudioVoiceDuration3(id : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceDuration3_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceDuration3_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceDuration3_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceDuration3_Universal_en(id);
+    return BetaGwentAudioVoiceDuration3_Universal_ru(id);
+}
+function BetaGwentAudioVoiceDuration4(id : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceDuration4_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceDuration4_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceDuration4_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceDuration4_Universal_en(id);
+    return BetaGwentAudioVoiceDuration4_Universal_ru(id);
+}
+function BetaGwentAudioVoiceDuration5(id : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceDuration5_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceDuration5_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceDuration5_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceDuration5_Universal_en(id);
+    return BetaGwentAudioVoiceDuration5_Universal_ru(id);
+}
+function BetaGwentAudioEffect(id : int) : string
+{
+    return BetaGwentAudioEffect_Universal_ru(id);
+}
+function BetaGwentAudioEffect0(id : int) : string
+{
+    return BetaGwentAudioEffect0_Universal_ru(id);
+}
+function BetaGwentAudioEffect1(id : int) : string
+{
+    return BetaGwentAudioEffect1_Universal_ru(id);
+}
+function BetaGwentAudioEffect2(id : int) : string
+{
+    return BetaGwentAudioEffect2_Universal_ru(id);
+}
+function BetaGwentAudioEffect3(id : int) : string
+{
+    return BetaGwentAudioEffect3_Universal_ru(id);
+}
+function BetaGwentAudioEffect4(id : int) : string
+{
+    return BetaGwentAudioEffect4_Universal_ru(id);
+}
+function BetaGwentAudioEffect5(id : int) : string
+{
+    return BetaGwentAudioEffect5_Universal_ru(id);
+}
+function BetaGwentAudioEffect6(id : int) : string
+{
+    return BetaGwentAudioEffect6_Universal_ru(id);
+}
+function BetaGwentAudioEffect7(id : int) : string
+{
+    return BetaGwentAudioEffect7_Universal_ru(id);
+}
+function BetaGwentAudioVoiceVariant(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariant_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariant_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariant_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariant_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariant_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart0(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart0_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart0_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart0_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart0_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart0_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart1(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart1_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart1_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart1_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart1_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart1_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart2(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart2_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart2_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart2_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart2_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart2_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart3(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart3_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart3_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart3_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart3_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart3_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart4(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart4_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart4_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart4_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart4_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart4_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart5(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart5_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart5_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart5_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart5_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart5_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart6(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart6_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart6_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart6_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart6_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart6_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart7(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart7_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart7_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart7_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart7_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart7_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart8(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart8_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart8_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart8_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart8_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart8_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart9(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart9_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart9_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart9_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart9_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart9_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart10(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart10_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart10_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart10_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart10_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart10_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart11(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart11_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart11_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart11_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart11_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart11_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart12(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart12_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart12_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart12_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart12_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart12_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart13(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart13_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart13_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart13_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart13_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart13_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart14(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart14_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart14_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart14_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart14_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart14_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart15(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart15_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart15_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart15_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart15_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart15_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart16(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart16_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart16_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart16_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart16_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart16_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart17(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart17_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart17_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart17_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart17_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart17_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart18(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart18_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart18_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart18_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart18_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart18_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart19(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart19_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart19_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart19_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart19_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart19_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantPart20(id : int, roll : int) : string
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart20_Universal_de(id, roll));
+    if(language==4)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart20_Universal_it(id, roll));
+    if(language==5)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart20_Universal_pt_br(id, roll));
+    if(language==2)return BetaGwentUniversalEvent(language,BetaGwentAudioVoiceVariantPart20_Universal_en(id, roll));
+    return BetaGwentAudioVoiceVariantPart20_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDuration(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDuration_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDuration_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDuration_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDuration_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDuration_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart0(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart0_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart0_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart0_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart0_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart0_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart1(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart1_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart1_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart1_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart1_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart1_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart2(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart2_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart2_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart2_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart2_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart2_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart3(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart3_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart3_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart3_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart3_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart3_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart4(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart4_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart4_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart4_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart4_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart4_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart5(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart5_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart5_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart5_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart5_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart5_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart6(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart6_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart6_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart6_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart6_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart6_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart7(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart7_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart7_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart7_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart7_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart7_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart8(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart8_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart8_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart8_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart8_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart8_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart9(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart9_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart9_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart9_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart9_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart9_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart10(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart10_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart10_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart10_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart10_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart10_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart11(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart11_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart11_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart11_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart11_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart11_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart12(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart12_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart12_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart12_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart12_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart12_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart13(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart13_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart13_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart13_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart13_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart13_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart14(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart14_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart14_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart14_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart14_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart14_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart15(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart15_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart15_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart15_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart15_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart15_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart16(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart16_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart16_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart16_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart16_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart16_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart17(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart17_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart17_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart17_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart17_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart17_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart18(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart18_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart18_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart18_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart18_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart18_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart19(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart19_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart19_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart19_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart19_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart19_Universal_ru(id, roll);
+}
+function BetaGwentAudioVoiceVariantDurationPart20(id : int, roll : int) : float
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceVariantDurationPart20_Universal_de(id, roll);
+    if(language==4)return BetaGwentAudioVoiceVariantDurationPart20_Universal_it(id, roll);
+    if(language==5)return BetaGwentAudioVoiceVariantDurationPart20_Universal_pt_br(id, roll);
+    if(language==2)return BetaGwentAudioVoiceVariantDurationPart20_Universal_en(id, roll);
+    return BetaGwentAudioVoiceVariantDurationPart20_Universal_ru(id, roll);
+}
+function BetaGwentAudioRevealEffect(id : int) : string
+{
+    return BetaGwentAudioRevealEffect_Universal_ru(id);
+}
+function BetaGwentAudioRevealEffect0(id : int) : string
+{
+    return BetaGwentAudioRevealEffect0_Universal_ru(id);
+}
+function BetaGwentAudioTransformEffect(id : int) : string
+{
+    return BetaGwentAudioTransformEffect_Universal_ru(id);
+}
+function BetaGwentAudioTransformEffect0(id : int) : string
+{
+    return BetaGwentAudioTransformEffect0_Universal_ru(id);
+}
+function BetaGwentAudioVoiceTriggers(id : int) : int
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceTriggers_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceTriggers_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceTriggers_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceTriggers_Universal_en(id);
+    return BetaGwentAudioVoiceTriggers_Universal_ru(id);
+}
+function BetaGwentAudioVoiceTriggers0(id : int) : int
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceTriggers0_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceTriggers0_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceTriggers0_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceTriggers0_Universal_en(id);
+    return BetaGwentAudioVoiceTriggers0_Universal_ru(id);
+}
+function BetaGwentAudioVoiceTriggers1(id : int) : int
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceTriggers1_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceTriggers1_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceTriggers1_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceTriggers1_Universal_en(id);
+    return BetaGwentAudioVoiceTriggers1_Universal_ru(id);
+}
+function BetaGwentAudioVoiceTriggers2(id : int) : int
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceTriggers2_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceTriggers2_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceTriggers2_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceTriggers2_Universal_en(id);
+    return BetaGwentAudioVoiceTriggers2_Universal_ru(id);
+}
+function BetaGwentAudioVoiceTriggers3(id : int) : int
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceTriggers3_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceTriggers3_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceTriggers3_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceTriggers3_Universal_en(id);
+    return BetaGwentAudioVoiceTriggers3_Universal_ru(id);
+}
+function BetaGwentAudioVoiceTriggers4(id : int) : int
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceTriggers4_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceTriggers4_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceTriggers4_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceTriggers4_Universal_en(id);
+    return BetaGwentAudioVoiceTriggers4_Universal_ru(id);
+}
+function BetaGwentAudioVoiceTriggers5(id : int) : int
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceTriggers5_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceTriggers5_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceTriggers5_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceTriggers5_Universal_en(id);
+    return BetaGwentAudioVoiceTriggers5_Universal_ru(id);
+}
+function BetaGwentAudioVoiceTriggers6(id : int) : int
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceTriggers6_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceTriggers6_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceTriggers6_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceTriggers6_Universal_en(id);
+    return BetaGwentAudioVoiceTriggers6_Universal_ru(id);
+}
+function BetaGwentAudioVoiceTriggers7(id : int) : int
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceTriggers7_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceTriggers7_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceTriggers7_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceTriggers7_Universal_en(id);
+    return BetaGwentAudioVoiceTriggers7_Universal_ru(id);
+}
+function BetaGwentAudioVoiceTriggers8(id : int) : int
+{
+    var language : int;language=BetaGwentVoiceLanguage();
+    if(language==3)return BetaGwentAudioVoiceTriggers8_Universal_de(id);
+    if(language==4)return BetaGwentAudioVoiceTriggers8_Universal_it(id);
+    if(language==5)return BetaGwentAudioVoiceTriggers8_Universal_pt_br(id);
+    if(language==2)return BetaGwentAudioVoiceTriggers8_Universal_en(id);
+    return BetaGwentAudioVoiceTriggers8_Universal_ru(id);
+}
+function BetaGwentAudioUi(id : int) : string
+{
+    return BetaGwentAudioUi_Universal_ru(id);
+}
+function BetaGwentAudioUi0(id : int) : string
+{
+    return BetaGwentAudioUi0_Universal_ru(id);
+}
+function BetaGwentAudioCue(id : int) : string
+{
+    return BetaGwentAudioCue_Universal_ru(id);
+}
+function BetaGwentAudioCue0(id : int) : string
+{
+    return BetaGwentAudioCue0_Universal_ru(id);
+}
+function BetaGwentAudioWeather(id : int) : string
+{
+    return BetaGwentAudioWeather_Universal_ru(id);
+}
+function BetaGwentAudioWeather0(id : int) : string
+{
+    return BetaGwentAudioWeather0_Universal_ru(id);
 }

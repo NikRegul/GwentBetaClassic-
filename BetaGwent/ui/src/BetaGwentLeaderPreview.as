@@ -1,4 +1,4 @@
-package {
+﻿package {
     import flash.display.Loader;
     import flash.display.Sprite;
     import flash.events.Event;
@@ -136,7 +136,8 @@ package {
                 if(loader.parent)loader.parent.removeChild(loader);
                 if(grave.done){
                     try{if(loader.content)Object(loader.content).release();}catch(releaseError:Error){}
-                    try{loader.unloadAndStop(true);}catch(unloadError:Error){}
+                    // Avoid forcing a global collection while another movie initializes.
+                    try{loader.unloadAndStop(false);}catch(unloadError:Error){}
                     livePages--;
                 }
                 // Keep unfinished loads counted against the global cap. Never

@@ -13,6 +13,8 @@
                 [200218,8,"move"],[132407,15,"summon"],[201624,16,"create"],
                 [132205,9,"lock"],[113311,2,"armor"],[112101,8,"resilience"],
                 [162101,8,"reveal"],[142204,8,"ambush"],[112107,8,"timer"],
+                [112101,8,"resilienceHide"],[200118,8,"spy"],[200118,9,"spyHide"],
+                [162101,8,"revealHide"],[113311,2,"armorHit"],[113311,2,"armorBreak"],
                 [200053,10,"transform"],[112101,1,"play"],
                 [132308,1,"playBronze"],[132308,1,"playFrost"],[132308,1,"playFog"],[132308,1,"playRain"],
                 [200055,1,"playLeader"]];
@@ -68,7 +70,17 @@
             if(mode=="move"){before[1].zone=2;before[1].index=1;after[1].zone=1;after[1].index=0;cue.hitTargets=[];}
             if(mode=="lock")after[1].tokens=4;
             if(mode=="resilience")after[1].tokens=1;
-            if(mode=="reveal")after[1].tokens=64;
+            if(mode=="resilienceHide")before[1].tokens=1;
+            if(mode=="spy")after[1].tokens=128;
+            if(mode=="spyHide"){before[1].tokens=128;after[1].tokens=4;}
+            if(mode=="reveal"||mode=="revealHide"){
+                before[1].zone=8;after[1].zone=8;before[1].side=1;after[1].side=1;
+                if(mode=="reveal")after[1].tokens=64;else before[1].tokens=64;
+            }
+            if(mode=="armorHit"||mode=="armorBreak"){
+                before[1].armor=4;after[1].armor=mode=="armorHit"?2:0;after[1].power=8;
+                cue.audioKind=22;cue.hitTargets=[2];
+            }
             if(mode=="ambush"){before[1].templateId=142204;after[1].templateId=142204;before[1].tokens=8;}
             if(mode=="timer"){before[1].timer=2;after[1].timer=1;cue.audioKind=32;}
             if(mode=="transform"){before[1].templateId=132308;after[1].templateId=200307;var transformed:Object=BetaGwentFullCatalog.find(200307);if(transformed){after[1].title=transformed.title;after[1].power=transformed.power;after[1].normalPower=transformed.power;}}

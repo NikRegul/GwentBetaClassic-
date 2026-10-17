@@ -66,6 +66,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     private var introAudioSerial : int;
     private var setTutorialSeen : CScriptedFlashFunction;
     private var setTextLanguage : CScriptedFlashFunction;
+    private var setLanguageSettings : CScriptedFlashFunction;
     private var presentationTempo : int;
     private var presentationReduced : bool;
     private var presentationAiPause : int;
@@ -89,6 +90,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         var entryMode : int;var pendingBefore, requestedBefore : bool;var kegInit : CBetaGwentKegMenuData;
         var manager : CR4GwintManager; var npcPreset : SBetaGwentDuelPreset; var nativePlayer : CR4Player; var entryDefinition : SBetaGwentDuelDefinition;
         if (configured) return false;
+        LogChannel('BetaGwent', "MENU_CONFIG_BEGIN menu="+GetMenuName());
         setHeader = GetMenuFlash().GetMemberFlashFunction("setBoardHeader");
         setControllerDevice = GetMenuFlash().GetMemberFlashFunction("setControllerDevice");
         setControllerInput = GetMenuFlash().GetMemberFlashFunction("setControllerInput");
@@ -135,6 +137,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         setIntroAudioState = GetMenuFlash().GetMemberFlashFunction("setIntroAudioState");
         setTutorialSeen = GetMenuFlash().GetMemberFlashFunction("setTutorialSeen");
         setTextLanguage = GetMenuFlash().GetMemberFlashFunction("setTextLanguage");
+        setLanguageSettings = GetMenuFlash().GetMemberFlashFunction("setLanguageSettings");
         if (!setControllerDevice || !setControllerInput || !beginPileView || !pushPileCard || !pushPilePowerBase || !finishPileView || !pushEditorCopies || !pushTemplateDetails || !pushTemplateRules || !pushLiveStats || !beginDeckEditor || !pushEditorCard || !finishDeckEditor || !setVisualTarget || !pushPlayRules || !setPlacementCard || !setHeader || !setCounts || !pushCard || !finishState || !setRequestHeader || !pushRequestCard || !setDetails || !pushDetails || !pushStatus || !pushTimer || !setWeather || !beginVisualBatch || !setVisualCue || !beginDeckSelection || !pushDeckOption || !pushDeckCard || !finishDeckSelection || !pushLeaderOption || !setBoardLeaders)
         {
             LogChannel('BetaGwent', "BOARD_MISSING_FLASH_FUNCTION");
@@ -193,7 +196,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if(setLeaderMotion)setLeaderMotion.InvokeSelfOneArg(FlashArgBool(FactsQueryLatestValue("bg_static_leaders")==0));
         if(setBoardHelp)setBoardHelp.InvokeSelfOneArg(FlashArgBool(FactsQueryLatestValue("bg_hide_help")==0));
         // The tutorial is offered once before the first game; the flag lives in facts, so it survives saves made without the mod.
-        if(setTextLanguage)setTextLanguage.InvokeSelfOneArg(FlashArgInt(FactsQueryLatestValue("bg_text_language")));
+        BetaGwentInitializeLanguages();
+        PublishLanguageSettings();
         if (setTutorialSeen) setTutorialSeen.InvokeSelfOneArg(FlashArgBool(FactsQueryLatestValue("bg_tutorial_seen") > 0));
 
         // Beta Gwent owns the game audio state for the whole lifetime of this menu,
@@ -286,14 +290,15 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if (duel.IsPending() || duel.IsWaitingRound() || duel.IsFatal()) return false;
         m = duel.Snapshot(); return m.currentPlayerId == 2 && m.matchWinnerMask == 0;
     }
-    private function Publish(status : string)
+    private function Publish(status : string, optional opponentPumped : bool)
     {
         var frames : array<CBetaGwentDuelVisualFrame>; var frame : CBetaGwentDuelVisualFrame; var i : int;
         if (!configured) return;
         audioRevisions.Clear(); audioFrames.Clear();
         if (deckDraft) { PublishDeckEditor(status); return; }
         if (selectingDecks) { PublishDeckSelection(); return; }
-        if (OpponentTurnWaiting() && (duel.visualFrames.Size() > 0 || !duel.AiPreparationIsReady()))
+        if(opponentPumped)duel.ClearAiPreparation();
+        else if (OpponentTurnWaiting() && (duel.visualFrames.Size() > 0 || !duel.AiPreparationIsReady()))
         { deferredOpponent = true; LogChannel('BetaGwent', "AI_TURN_DEFERRED frames=" + duel.visualFrames.Size()); }
         else {duel.PumpOpponent();duel.ClearAiPreparation();}
         if(OpponentTurnWaiting())deferredOpponent=true;
@@ -927,8 +932,10 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if(audio && audio.IsVoiceActive() && audio.CurrentTime()-deferredVoiceAt<1.0f)return;
         opponentPreparationBusy=true;prepared=duel.AiPreparationStep();
         if(!prepared){opponentPreparationBusy=false;return;}
+        duel.PumpOpponent();
+        if(duel.aiPreparationStage==7 && !duel.aiPreparationReady){opponentPreparationBusy=false;return;}
         deferredOpponent=false;
-        if(!duel.IsPending())Publish(duel.GetMessage());
+        if(!duel.IsPending())Publish(duel.GetMessage(),true);
         opponentPreparationFinished=true;opponentPreparationBusy=false;
     }
 
@@ -1027,7 +1034,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if(eventName=="OnBetaGwentAudioTick" || eventName=="OnBetaGwentVisualDone"){
             opponentPreparationMs+=Max(0,ms);opponentPreparationPeakMs=Max(opponentPreparationPeakMs,ms);
             if(opponentPreparationFinished){
-                duel.AiPerfFeedback(opponentPreparationMs);
+                duel.AiPerfFeedback(opponentPreparationMs,opponentPreparationPeakMs);
                 LogChannel('BetaGwent',"AI_PREPARATION totalMs="+opponentPreparationMs+" peakStepMs="+opponentPreparationPeakMs);
                 opponentPreparationMs=0;opponentPreparationPeakMs=0;opponentPreparationFinished=false;
             }
@@ -1037,9 +1044,21 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     { if (configured && audio) { if (clock > 0) audio.SetClock(clock); audio.Tick(); PublishIntroAudio(); ResumeOpponentAfterVoice(); if(setAudioStatus)setAudioStatus.InvokeSelfSixArgs(FlashArgBool(BetaGwentAudioBankInstalled()),FlashArgBool(audio.IsBankReady()),FlashArgInt(presentationTempo),FlashArgBool(presentationReduced),FlashArgInt(presentationAiPause),FlashArgInt(presentationDifficulty)); } }
     event OnBetaGwentTextLanguage(language:int)
     {
-        if(language<1||language>13)return false;
+        if(language<0||language>13)return false;
         FactsSet("bg_text_language",language);
-        if(setTextLanguage)setTextLanguage.InvokeSelfOneArg(FlashArgInt(language));
+        PublishLanguageSettings();
+    }
+    private function PublishLanguageSettings()
+    {
+        if(setLanguageSettings)setLanguageSettings.InvokeSelfSixArgs(FlashArgInt(BetaGwentTextPreference()),FlashArgInt(BetaGwentVoicePreference()),FlashArgInt(BetaGwentVoiceLanguage()),FlashArgInt(BetaGwentGameTextLanguage()),FlashArgInt(BetaGwentResolvedTextLanguage()),FlashArgString(BetaGwentGameVoiceName()));
+    }
+    event OnBetaGwentVoiceLanguage(language : int)
+    {
+        if(language<0 || language>5)return false;
+        if(audio)audio.Cancel();
+        FactsSet("bg_voice_language",language);
+        PublishLanguageSettings();
+        LogChannel('BetaGwent',"AUDIO_LANGUAGE requested="+language+" resolved="+BetaGwentVoiceLanguage());
     }
     event OnBetaGwentTutorialSeen()
     { FactsSet("bg_tutorial_seen", 1); LogChannel('BetaGwent', "TUTORIAL_OFFERED"); }
@@ -1348,4 +1367,11 @@ exec function bg_allcards()
     player=(W3PlayerWitcher)thePlayer;if(!player)return;
     granted=player.BetaGwentGrantAllCards();
     LogChannel('BetaGwent',"bg_allcards result="+granted);
+}
+
+function BetaGwentTextLanguage137(value:int):int
+{
+    if(FactsQueryLatestValue("bg_text_language_package")!=1002)
+    { FactsSet("bg_text_language_package",1002);FactsSet("bg_text_language",1);LogChannel('BetaGwent',"TEXT_LANGUAGE_PACKAGE_DEFAULT package=1002 language=1");return 1; }
+    if(value>=1&&value<=13)return value;return 1;
 }

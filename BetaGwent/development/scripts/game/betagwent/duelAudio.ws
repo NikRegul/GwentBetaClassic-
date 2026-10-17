@@ -303,7 +303,7 @@ class CBetaGwentDuelAudio extends IScriptable
             queuedVoices.Erase(0); queuedAt.Erase(0);
             voiceRoll=RandRange(1000000);eventName=BetaGwentAudioVoiceVariant(id,voiceRoll);
             // CardAudio marks Queen's creature call as SFX, with no VO binding.
-            if(id==201743)eventName="bg79_vo_ArachasQueen";
+            if(id==201743)eventName=BetaGwentUniversalEvent(BetaGwentVoiceLanguage(),"bg79_vo_ArachasQueen");
             SetVoiceMix(true);theSound.SoundEvent(eventName);
             LogChannel('BetaGwent', "AUDIO_VOICE_REQUEST template=" + id + " event=" + eventName);
             voiceUntil = now + BetaGwentAudioVoiceVariantDuration(id,voiceRoll) + 0.12f;
@@ -323,7 +323,7 @@ class CBetaGwentDuelAudio extends IScriptable
         introVoices=false;
         queuedVoices.Clear(); queuedAt.Clear(); voiceUntil = 0.0f;
         SetVoiceMix(false);
-        if (BetaReady()) theSound.SoundEvent("bg79_stop_voice");
+        if (BetaReady()) theSound.SoundEvent(BetaGwentUniversalEvent(BetaGwentVoiceLanguage(),"bg79_stop_voice"));
     }
     // Stage 109: shop troll (Beta keg opening). 1 smash, 2 common, 3 rare, 4 epic, 5 legendary,
     // 6 choice made, 7 final reveal, 8 before smash. Events from tools/ui/add_keg_audio109.py.
@@ -340,7 +340,7 @@ class CBetaGwentDuelAudio extends IScriptable
         if (kind == 7) { names.PushBack("bg79_vo_keg_TrollShopDialoguesP3_40"); names.PushBack("bg79_vo_keg_TrollShopDialoguesP3_41"); names.PushBack("bg79_vo_keg_TrollShopDialoguesP3_30"); }
         if (kind == 8) { names.PushBack("bg79_vo_keg_ShopTrollDialogues_29"); names.PushBack("bg79_vo_keg_ShopTrollDialogues_30"); names.PushBack("bg79_vo_keg_ShopTrollDialogues_31"); }
         if (names.Size() == 0) return;
-        StopVoice(); eventName = names[RandRange(names.Size())];
+        StopVoice(); eventName = BetaGwentUniversalEvent(BetaGwentVoiceLanguage(),names[RandRange(names.Size())]);
         theSound.SoundEvent(eventName); LogChannel('BetaGwent', "AUDIO_KEG kind=" + kind + " event=" + eventName);
     }
     public function Cancel()
