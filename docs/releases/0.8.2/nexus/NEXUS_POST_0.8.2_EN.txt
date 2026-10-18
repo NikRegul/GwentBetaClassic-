@@ -1,0 +1,13 @@
+﻿[size=5][color=#e0b354][b]Gwent Beta Classic 0.8.2[/b][/color][/size]
+
+Share your decks in 0.8.2: Export copies a BG1 code to the clipboard, and Import builds a draft from it. Missing cards are listed with their crafting cost. Crafting is a separate action, and the deck is saved with the usual button. Invalid codes change nothing.
+
+New console commands cover card search, collections, kegs, scraps and innkeeper keg stock. Start with bg_help().
+
+Menu spacing and the deck editor footer have been improved, and exchange messages are translated into all 13 text languages. Controllers can move down from the visible card row to Save and return with Up. Dead cards and resolved special cards fly to their graveyard; leader portraits keep moving after VS, and Arachas Queen's entrance follows her voice playback.
+
+Classic 1.32 includes frost and attack effect fixes. Legacy Redux item definitions are integrated for loading an older save after switching mods. They do not restore inventory already lost: use a backup from before the loss.
+
+Choose the separate package for 1.32 or 5.0+. Each contains all 13 text languages and five voice languages. Back up your saves and previous mod folders before updating; Classic also needs its included DLC folder updated.
+
+Thanks for your bug reports and suggestions! Include the game version, text/voice languages, involved cards and reproduction steps; a screenshot or video and a save from before the problem are helpful.

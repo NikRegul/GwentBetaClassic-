@@ -26,6 +26,25 @@
         private var portraitWidth:Number;
         private var portraitHeight:Number;
         private var playbackStart:int=0;
+        private var waitingForSignal:Boolean=false;
+        private var idle:BetaGwentLeaderPreview;
+        private var loopOrigin:int=0;
+        public function waitForVoice():void { waitingForSignal=true; }
+        public function startAt(clock:int):void { waitingForSignal=false;playbackStart=clock; }
+        public function hasFrame():Boolean { return shown!=null||(idle!=null&&idle.hasFrame()); }
+        private function continueIdle():void {
+            if(!idle){
+                // Free the prefetched page before asking for the idle page; retain the visible frame.
+                var obsolete:Array=[];for(var key:String in slots)if(slots[key].loader!=shown)obsolete.push(int(key));
+                for each(var page:int in obsolete)releasePage(page);
+                idle=new BetaGwentLeaderPreview(cardId,192,234);idle.loopOrigin=getTimer();addChild(idle);
+            }
+            if(idle.hasFrame()){
+                var keys:Array=[];for(key in slots)keys.push(int(key));
+                for each(page in keys)releasePage(page);
+                removeEventListener(Event.ENTER_FRAME,tick);
+            }
+        }
 
         private static var graveyard:Array=[];
         private static var reaper:Timer;
@@ -46,8 +65,9 @@
         public function resize(w:Number,h:Number):void {portraitWidth=w;portraitHeight=h;scaleX=w/192;scaleY=h/234;}
         public function frameAt(milliseconds:Number):int {
             var duration:Number=metadata.duration*1000;
+            if(waitingForSignal)return 0;
             if(metadata.once)return Math.min(metadata.frames-1,int(Math.max(0,milliseconds-playbackStart)/duration*metadata.frames));
-            return int(((milliseconds%duration)+duration)%duration/duration*metadata.frames);
+            return int((((milliseconds-loopOrigin)%duration)+duration)%duration/duration*metadata.frames);
         }
         private function stopDelay():void {if(delay){delay.stop();delay.removeEventListener(TimerEvent.TIMER_COMPLETE,begin);delay=null;}}
         private function begin(e:TimerEvent):void {
@@ -57,7 +77,7 @@
         private function added(e:Event):void {if(started&&!disposed){addEventListener(Event.ENTER_FRAME,tick);tick(null);}}
         private function removed(e:Event):void {removeEventListener(Event.ENTER_FRAME,tick);}
         private function request(page:int):void {
-            if(slots[page]||failedPages[page]||disposed||livePages>=MAX_LIVE_PAGES)return;
+            if(slots[page]||(failedPages[page]&&getTimer()<Number(failedPages[page]))||disposed||livePages>=MAX_LIVE_PAGES)return;
             var path:String=metadata.once?BetaGwentLeaderIntroCatalog.path(cardId,page):BetaGwentLeaderCatalog.path(cardId,page);if(!path)return;
             var loader:Loader=new Loader();loader.visible=false;
             livePages++;
@@ -66,14 +86,15 @@
             loader.contentLoaderInfo.addEventListener(Event.COMPLETE,loaded);
             loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,failed);
             loader.contentLoaderInfo.addEventListener(SecurityErrorEvent.SECURITY_ERROR,failed);
-            try{loader.load(new URLRequest(path));}catch(error:Error){entry.done=true;entry.failed=true;failedPages[page]=true;}
+            try{loader.load(new URLRequest(path));}catch(error:Error){entry.done=true;entry.failed=true;failedPages[page]=getTimer()+500;}
         }
         // Runs only from ENTER_FRAME or the start/add path, never from a loader event.
         private function tick(e:Event):void {
             if(disposed||!stage||!metadata)return;
+            if(metadata.once&&!waitingForSignal&&getTimer()>=playbackStart+metadata.duration*1000){continueIdle();return;}
             var frame:int=frameAt(getTimer()),page:int=int(frame/24),next:int=metadata.once?Math.min(metadata.pages-1,page+1):(page+1)%metadata.pages;
             var entry:Object=slots[page];var key:String;var drop:Array=[];
-            if(entry&&entry.failed){failedPages[page]=true;drop.push(page);entry=null;}
+            if(entry&&entry.failed){failedPages[page]=getTimer()+500;drop.push(page);entry=null;}
             if(entry&&entry.ready&&entry.loader.content){
                 if(shown&&shown!=entry.loader)shown.visible=false;
                 shown=entry.loader;
@@ -105,6 +126,7 @@
         }
         public function dispose():void {
             if(disposed)return;disposed=true;stopDelay();
+            if(idle){idle.dispose();idle=null;}
             removeEventListener(Event.ADDED_TO_STAGE,added);removeEventListener(Event.REMOVED_FROM_STAGE,removed);removeEventListener(Event.ENTER_FRAME,tick);
             var keys:Array=[];for(var key:String in slots)keys.push(int(key));
             for each(var p:int in keys)releasePage(p);

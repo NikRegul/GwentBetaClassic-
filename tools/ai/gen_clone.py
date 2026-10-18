@@ -172,6 +172,10 @@ def gen(prog):
                     body.append(f'        for (i = 0; i < dst.{n}.Size(); i += 1) dst.{n}[i] = Struct{el}(dst.{n}[i]);')
                 elif isinstance(el, tuple):
                     raise ValueError('nested arrays unsupported: %s.%s' % (c.name, n))
+                elif el == 'int' and n == 'destinationSides':
+                    locs.add('i')
+                    if source: body.append(f'        dst.{n} = src.{n};')
+                    body.append(f'        for (i = 0; i < dst.{n}.Size(); i += 1) dst.{n}[i] = Seat(src.{n}[i]);')
                 else:
                     if source: body.append(f'        dst.{n} = src.{n};')
             else:

@@ -239,3 +239,31 @@ public function BetaGwentGrantAllCards() : int
     BetaGwentUpdateCollectionProgress();BetaGwentSyncTournamentAccess();BetaGwentBackupProfile();
     LogChannel('BetaGwent',"COLLECTION_DEBUG_ALL granted="+total+" distinct="+betaGwentOwnedIds.Size());return total;
 }
+
+// Console grants use the same ownership caps, progress and profile backup.
+@addMethod(W3PlayerWitcher)
+public function BetaGwentConsoleGrant(id : int, count : int) : int
+{
+    var i,granted : int;
+    if(count<1 || count>1000 || BetaGwentCollectionCap(id)<1 || !BetaGwentEnsureCollection())return -1;
+    for(i=0;i<count && BetaGwentOwned(id)<BetaGwentCollectionCap(id);i+=1)
+        if(BetaGwentGrant(id))granted+=1;else break;
+    BetaGwentUpdateCollectionProgress();BetaGwentSyncTournamentAccess();BetaGwentBackupProfile();return granted;
+}
+@addMethod(W3PlayerWitcher)
+public function BetaGwentConsoleFaction(faction : int, leadersOnly : bool) : int
+{
+    var ids,leaders : array<int>;var d : SBetaGwentDuelDefinition;var i,n,total : int;
+    if(!BetaGwentEnsureCollection())return -1;
+    if(!leadersOnly)BetaGwentDuelCollection(ids);
+    BetaGwentDuelLeaders(leaders);
+    for(i=0;i<leaders.Size();i+=1)if(!ids.Contains(leaders[i]))ids.PushBack(leaders[i]);
+    for(i=0;i<ids.Size();i+=1) {
+        d=BetaGwentDuelDefinition(ids[i]);
+        if(faction!=0 && d.header.factionMask!=faction)continue;
+        while(BetaGwentOwned(ids[i])<BetaGwentCollectionCap(ids[i])) {
+            if(!BetaGwentGrant(ids[i]))break;total+=1;
+        }
+    }
+    BetaGwentUpdateCollectionProgress();BetaGwentSyncTournamentAccess();BetaGwentBackupProfile();return total;
+}

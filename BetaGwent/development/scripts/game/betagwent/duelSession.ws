@@ -304,6 +304,9 @@ class CBetaGwentDuelSession extends IScriptable
             v.card = live[i].Snapshot(); side = v.card.positionPlayerId;
             if ((v.card.locationMask & 7) != 0 && (v.card.tokenMask & 8) == 0)
             { if (side == 1) frame.scoreOne += v.card.power.currentPower; if (side == 2) frame.scoreTwo += v.card.power.currentPower; }
+            // Public destinations only: never expose hidden hand/deck identities.
+            if (v.card.locationMask == 32 || v.card.locationMask == 512)
+            { frame.destinationIds.PushBack(v.card.instanceId); frame.destinationSides.PushBack(side); frame.destinationZones.PushBack(v.card.locationMask); }
             if (v.card.locationMask == 8 && side == 2) frame.enemyHand += 1;
             if (v.card.locationMask == 32) { if (side == 1) frame.graveOne += 1; if (side == 2) frame.graveTwo += 1; }
             if (v.card.locationMask == 16) { if (side == 1) frame.deckOne += 1; if (side == 2) frame.deckTwo += 1; }
@@ -338,7 +341,7 @@ class CBetaGwentDuelSession extends IScriptable
         }
         // Same attack, same kind: the original applies all targets at once. Keep one
         // frame (first cue, latest snapshot) instead of one frame per target.
-        if (kind != 11 && visualAttack != 0 && visualFrames.Size() > 0)
+        if (kind != 11 && kind != 19 && visualAttack != 0 && visualFrames.Size() > 0)
         {
             merged = visualFrames[visualFrames.Size() - 1];
             if (merged.attackId == visualAttack && merged.kind == kind && merged.sourceId == visualSourceId)
@@ -2019,7 +2022,11 @@ class CBetaGwentDuelSession extends IScriptable
         if (s.runtimeTemplate.typeMask == 2 && !(nilfJob && nilfJob.source==card && nilfJob.kind!=8))
         {
             if((s.tokenMask&512)!=0)card.Move(s.positionPlayerId,512,0);
-            else card.Move(s.positionPlayerId,32,CountLocation(s.positionPlayerId,32));
+            else
+            {
+                card.Move(s.positionPlayerId,32,CountLocation(s.positionPlayerId,32));
+                RecordVisual(19,s.instanceId,"",440);
+            }
         }
         playStack.Erase(playStack.Size() - 1);
         if(nilfJob && nilfJob.source==card && playStack.Size()==0)

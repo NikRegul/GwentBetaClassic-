@@ -893,6 +893,10 @@ class CBetaGwentCloner extends IScriptable
         dst.matchState = StructSBetaGwentMatchSnapshot(src.matchState);
         dst.cards = src.cards;
         for (i = 0; i < dst.cards.Size(); i += 1) dst.cards[i] = StructSBetaGwentDevelopmentCard(dst.cards[i]);
+        dst.destinationIds = src.destinationIds;
+        dst.destinationSides = src.destinationSides;
+        dst.destinationZones = src.destinationZones;
+        for (i = 0; i < dst.destinationSides.Size(); i += 1) dst.destinationSides[i] = Seat(src.destinationSides[i]);
         dst.weatherTokens = src.weatherTokens;
         dst.weatherDamage = src.weatherDamage;
         if (flipSeats) { dst.scoreOne = src.scoreTwo; } else { dst.scoreOne = src.scoreOne; }

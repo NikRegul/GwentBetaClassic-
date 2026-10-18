@@ -45,6 +45,7 @@
         private var scrollNext:int=0;
         private var movementAt:int=-1000;
         private var navigationColumn:Number=NaN;
+        private var editorReturnKey:String="";
         private var yStarted:int=0;
         private var yCommitted:Boolean=false;
         private var yCanPass:Boolean=false;
@@ -340,6 +341,16 @@
             var index:int=ordered.indexOf(current);if(index<0||ordered.length<2)return null;
             return ordered[(index+(dir==39?1:-1)+ordered.length)%ordered.length];
         }
+        private function editorFooter(options:Array,current:Object):Object
+        {
+            var best:Object=null,distance:Number=Number.MAX_VALUE;
+            var x:Number=current.rect.x+current.rect.width/2;
+            for each(var node:Object in options)if(node.tag=="control"&&node.rect.y>=984){
+                var d:Number=Math.abs(node.rect.x+node.rect.width/2-x);
+                if(d<distance){distance=d;best=node;}
+            }
+            return best;
+        }
         private function navigate(dir:int):void
         {
             // Some hosts emit both analog and synthesized stick key events.
@@ -348,11 +359,24 @@
             var n:Object=getFocus();if(!n)return;
             var options:Array=candidates();var allOptions:Array=options.concat();var origin:Rectangle=n.rect;
             var mode:String=state().mode;
+            if(mode=="editor"&&dir==38&&n.tag=="control"&&origin.y>=984){
+                var returnCard:Object=null,returnScore:Number=Number.MAX_VALUE;
+                for each(var visible:Object in allOptions)if(visible.tag=="card"){
+                    if(visible.key==editorReturnKey){returnCard=visible;break;}
+                    var returnCost:Number=(1080-visible.rect.y-visible.rect.height)*10+Math.abs(visible.rect.x-origin.x);
+                    if(returnCost<returnScore){returnScore=returnCost;returnCard=visible;}
+                }
+                if(returnCard){select(returnCard);invoke("tickSound");return;}
+            }
             if((dir==38||dir==40)&&n.card&&n.card.shelfPane){
                 var shelves:Object=state().shelves;var shelf:Object=shelves?shelves[n.card.shelfPane]:null;
                 if(shelf){var target:int=int(n.card.shelfIndex)+(dir==40?shelf.columns:-shelf.columns);
                     if(target>=0&&target<shelf.count){var row:Number=int(target/shelf.columns)*shelf.rowHeight;
-                        if(row<shelf.offset||row+shelf.rowHeight>shelf.offset+shelf.height){invoke("shelfSelect",{pane:n.card.shelfPane,index:target});dirty=true;return;}
+                        if(row<shelf.offset||row+shelf.rowHeight>shelf.offset+shelf.height){
+                            // The visible viewport is a navigation region. LB/RB and the right stick scroll it.
+                            if(mode=="editor"&&dir==40){var footer:Object=editorFooter(allOptions,n);if(footer){editorReturnKey=n.key;select(footer);invoke("tickSound");return;}}
+                            invoke("shelfSelect",{pane:n.card.shelfPane,index:target});dirty=true;return;
+                        }
                     }
                 }
             }
@@ -523,7 +547,7 @@
             var sideHint:Boolean=Boolean(s.hintSide);
             var line:String=s.typing?"Ввод текста в системной клавиатуре":s.hint+(!sideHint&&n?"   ·   "+n.label:"");
             if(yStarted>0&&yCanPass&&s.pass&&!yCommitted)line="Удерживайте "+(device==1||device==6?"△":"Y")+" для паса… "+int(Math.min(100,100*(now-yStarted)/650))+"%";
-            hint.x=sideHint?1500:36;hint.width=sideHint?364:1848;hint.height=sideHint?88:29;
+            hint.x=sideHint?1500:36;hint.width=sideHint?364:1848;hint.height=sideHint?88:26;
             hint.multiline=sideHint;hint.wordWrap=sideHint;
             if(sideHint){
                 var pieces:Array=line.split(" · ");line="";

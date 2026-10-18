@@ -183,3 +183,94 @@ function BetaGwentDifficultyLevel() : int
     if (player) return player.BetaGwentDifficulty();
     return 3;
 }
+
+// Public exchange format: BG1:<faction mask>:<leader ID>:<25-40 card IDs>.
+// ASCII only, stable Beta catalog IDs, no save-slot or localized-name dependency.
+struct SBetaGwentDeckExchange
+{
+    var valid : bool;
+    var message : string;
+    var cards : array<int>;
+    var faction, leader : int;
+}
+function BetaGwentExchangeNumber(token : string) : int
+{
+    var i,digit,value : int;
+    if(StrLen(token)<1 || StrLen(token)>6)return 0;
+    if(StrLeft(token,1)=="0")return 0;
+    for(i=0;i<StrLen(token);i+=1) {
+        digit=StrFindFirst("0123456789",StrMid(token,i,1));
+        if(digit<0)return 0;
+        value=value*10+digit;
+    }
+    return value;
+}
+function BetaGwentParseDeckExchange(code : string) : SBetaGwentDeckExchange
+{
+    var result : SBetaGwentDeckExchange;
+    var field,token : string;var i,start,part,id : int;
+    var validation : SBetaGwentDeckValidation;
+    result.message="Некорректный код BG1.";
+    if(StrLen(code)<10 || StrLen(code)>320 || StrLeft(code,4)!="BG1:")return result;
+    // Parse all fields strictly before any profile/collection operation.
+    start=4;
+    for(i=4;i<=StrLen(code);i+=1) {
+        if(i<StrLen(code) && StrMid(code,i,1)!=":" && StrMid(code,i,1)!=",")continue;
+        token=StrMid(code,start,i-start);id=BetaGwentExchangeNumber(token);
+        if(id==0)return result;
+        if(part<2) {
+            if(i==StrLen(code) || StrMid(code,i,1)!=":")return result;
+            if(part==0)result.faction=id;else result.leader=id;
+        }else {
+            if(i<StrLen(code) && StrMid(code,i,1)!=",")return result;
+            result.cards.PushBack(id);if(result.cards.Size()>40)return result;
+        }
+        part+=1;start=i+1;
+    }
+    if(result.faction!=2 && result.faction!=4 && result.faction!=8 && result.faction!=16 && result.faction!=32)return result;
+    validation=BetaGwentValidateDeck(result.cards,result.faction,result.leader);
+    if(!validation.valid){result.message=validation.message;return result;}
+    result.valid=true;result.message="Код распознан.";return result;
+}
+function BetaGwentExportDeckExchange(cards : array<int>, faction : int, leader : int) : string
+{
+    var validation : SBetaGwentDeckValidation;var code : string;var i,j,temp : int;
+    var ordered : array<int>;
+    validation=BetaGwentValidateDeck(cards,faction,leader);if(!validation.valid)return "";
+    // Canonical order: identical compositions produce identical strings.
+    ordered=cards;
+    for(i=1;i<ordered.Size();i+=1)for(j=i;j>0 && ordered[j]<ordered[j-1];j-=1) {
+        temp=ordered[j];ordered[j]=ordered[j-1];ordered[j-1]=temp;
+    }
+    code="BG1:"+faction+":"+leader+":";
+    for(i=0;i<ordered.Size();i+=1){if(i>0)code+=",";code+=IntToString(ordered[i]);}
+    return code;
+}
+@addMethod(W3PlayerWitcher)
+public function BetaGwentExchangeMissing(cards : array<int>, leader : int, out missing : array<int>, out counts : array<int>) : int
+{
+    var ids : array<int>;var i,j,needed,cost : int;
+    missing.Clear();counts.Clear();ids=cards;ids.PushBack(leader);
+    for(i=0;i<ids.Size();i+=1) {
+        if(missing.Contains(ids[i]))continue;
+        needed=0;for(j=0;j<ids.Size();j+=1)if(ids[j]==ids[i])needed+=1;
+        needed=Max(0,needed-BetaGwentOwned(ids[i]));
+        if(needed>0){missing.PushBack(ids[i]);counts.PushBack(needed);cost+=needed*BetaGwentCraftCost(ids[i]);}
+    }
+    return cost;
+}
+@addMethod(W3PlayerWitcher)
+public function BetaGwentCraftExchange(cards : array<int>, faction : int, leader : int) : bool
+{
+    var validation : SBetaGwentDeckValidation;var missing,counts : array<int>;var cost,i,j : int;
+    validation=BetaGwentValidateDeck(cards,faction,leader);
+    if(!validation.valid || BetaGwentKegPending() || !BetaGwentEnsureCollection())return false;
+    cost=BetaGwentExchangeMissing(cards,leader,missing,counts);
+    if(cost>BetaGwentScraps())return false;
+    for(i=0;i<missing.Size();i+=1)
+        if(BetaGwentOwned(missing[i])+counts[i]>BetaGwentCollectionCap(missing[i]))return false;
+    // No latent calls: the full price/caps were checked before the first craft.
+    for(i=0;i<missing.Size();i+=1)for(j=0;j<counts[i];j+=1)
+        if(!BetaGwentCraft(missing[i])){BetaGwentBackupProfile();return false;}
+    BetaGwentUpdateCollectionProgress();BetaGwentSyncTournamentAccess();BetaGwentBackupProfile();return true;
+}

@@ -1,0 +1,337 @@
+{
+  "root": "D:\\w3mod",
+  "status": "complete",
+  "files": [
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-205441-786316\\normal\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-205441-786316/normal/failure-self-test.dmp",
+      "bytes": 44088180,
+      "modifiedNs": 1792173281943384200,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-205441-786316\\late-snapshot\\state-rendered-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-205441-786316/late-snapshot/state-rendered-self-test.dmp",
+      "bytes": 44221722,
+      "modifiedNs": 1792173285105481900,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-205441-786316\\late-snapshot\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-205441-786316/late-snapshot/failure-self-test.dmp",
+      "bytes": 44079898,
+      "modifiedNs": 1792173284821545600,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-205441-786316\\interruption\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-205441-786316/interruption/failure-self-test.dmp",
+      "bytes": 44088090,
+      "modifiedNs": 1792173286008128800,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-205441-786316\\detach\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-205441-786316/detach/failure-self-test.dmp",
+      "bytes": 44080036,
+      "modifiedNs": 1792173282162876700,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-205441-786316\\console-cancel\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-205441-786316/console-cancel/failure-self-test.dmp",
+      "bytes": 44104516,
+      "modifiedNs": 1792173286196737900,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-205441-786316\\concurrent-attach\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-205441-786316/concurrent-attach/failure-self-test.dmp",
+      "bytes": 44112772,
+      "modifiedNs": 1792173284420567200,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-205427-345020\\normal\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-205427-345020/normal/failure-self-test.dmp",
+      "bytes": 44088146,
+      "modifiedNs": 1792173267505623300,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-205427-345020\\late-snapshot\\state-rendered-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-205427-345020/late-snapshot/state-rendered-self-test.dmp",
+      "bytes": 44225922,
+      "modifiedNs": 1792173270542349500,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-205427-345020\\late-snapshot\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-205427-345020/late-snapshot/failure-self-test.dmp",
+      "bytes": 44084098,
+      "modifiedNs": 1792173270265224800,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-205427-345020\\detach\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-205427-345020/detach/failure-self-test.dmp",
+      "bytes": 44088092,
+      "modifiedNs": 1792173267685184900,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-205427-345020\\concurrent-attach\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-205427-345020/concurrent-attach/failure-self-test.dmp",
+      "bytes": 44465458,
+      "modifiedNs": 1792173269872584700,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-161442-793664\\normal\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-161442-793664/normal/failure-self-test.dmp",
+      "bytes": 43670346,
+      "modifiedNs": 1792156482937621700,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-161442-793664\\interruption\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-161442-793664/interruption/failure-self-test.dmp",
+      "bytes": 43670346,
+      "modifiedNs": 1792156485700492900,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-161442-793664\\detach\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-161442-793664/detach/failure-self-test.dmp",
+      "bytes": 43674484,
+      "modifiedNs": 1792156483146317600,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-161442-793664\\console-cancel\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-161442-793664/console-cancel/failure-self-test.dmp",
+      "bytes": 43690826,
+      "modifiedNs": 1792156485889770700,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-161442-793664\\concurrent-attach\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-161442-793664/concurrent-attach/failure-self-test.dmp",
+      "bytes": 44051706,
+      "modifiedNs": 1792156485323487900,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-161326-016514\\normal\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-161326-016514/normal/failure-self-test.dmp",
+      "bytes": 43670316,
+      "modifiedNs": 1792156406276192800,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-161326-016514\\interruption\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-161326-016514/interruption/failure-self-test.dmp",
+      "bytes": 43666226,
+      "modifiedNs": 1792156409709061500,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-161326-016514\\detach\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-161326-016514/detach/failure-self-test.dmp",
+      "bytes": 43666226,
+      "modifiedNs": 1792156406486827800,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-161326-016514\\concurrent-attach\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-161326-016514/concurrent-attach/failure-self-test.dmp",
+      "bytes": 44047586,
+      "modifiedNs": 1792156408742849000,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-155140-448839\\normal\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-155140-448839/normal/failure-self-test.dmp",
+      "bytes": 45034162,
+      "modifiedNs": 1792155100692670800,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-155140-448839\\interruption\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-155140-448839/interruption/failure-self-test.dmp",
+      "bytes": 45030066,
+      "modifiedNs": 1792155103100822600,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-155140-448839\\detach\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-155140-448839/detach/failure-self-test.dmp",
+      "bytes": 45034268,
+      "modifiedNs": 1792155100892634700,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-154846-707400\\normal\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-154846-707400/normal/failure-self-test.dmp",
+      "bytes": 135976,
+      "modifiedNs": 1792154926852178900,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-154846-707400\\interruption\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-154846-707400/interruption/failure-self-test.dmp",
+      "bytes": 137224,
+      "modifiedNs": 1792154929620069500,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-154846-707400\\detach\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-154846-707400/detach/failure-self-test.dmp",
+      "bytes": 136018,
+      "modifiedNs": 1792154927214527900,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-154632-565212\\normal\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-154632-565212/normal/failure-self-test.dmp",
+      "bytes": 137161,
+      "modifiedNs": 1792154792714904700,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\self-test-20261016-154632-565212\\detach\\failure-self-test.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/self-test-20261016-154632-565212/detach/failure-self-test.dmp",
+      "bytes": 137257,
+      "modifiedNs": 1792154793071773300,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\20261018-004415-297166\\state-rendered-26654.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/20261018-004415-297166/state-rendered-26654.dmp",
+      "bytes": 7238657173,
+      "modifiedNs": 1792273699451301700,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\20261018-004415-297166\\state-loaded-26654.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/20261018-004415-297166/state-loaded-26654.dmp",
+      "bytes": 7195941398,
+      "modifiedNs": 1792273679214654500,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\20261018-003312-783146\\state-rendered-26654.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/20261018-003312-783146/state-rendered-26654.dmp",
+      "bytes": 7170848197,
+      "modifiedNs": 1792272920731363000,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\20261018-003312-783146\\state-loaded-26654.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/20261018-003312-783146/state-loaded-26654.dmp",
+      "bytes": 7082873644,
+      "modifiedNs": 1792272905734842300,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\20261016-231718-476173\\state-rendered-26654.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/20261016-231718-476173/state-rendered-26654.dmp",
+      "bytes": 7208109120,
+      "modifiedNs": 1792181975577652400,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\build\\classic132-full-feedback\\20261016-231718-476173\\state-loaded-26654.dmp",
+      "relative": "BetaGwent/build/classic132-full-feedback/20261016-231718-476173/state-loaded-26654.dmp",
+      "bytes": 7096588997,
+      "modifiedNs": 1792181953768761900,
+      "reason": "obsolete-memory-dump; user authorized fresh captures if needed"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.8.2-rc1-1.32-AllLanguages.zip",
+      "relative": "BetaGwent/release/GwentBetaClassic-0.8.2-rc1-1.32-AllLanguages.zip",
+      "bytes": 622517759,
+      "modifiedNs": 1792275332172683500,
+      "reason": "superseded by verified full 0.8.2 archive"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.8.2-rc1-1.32-AllLanguages.zip.sha256",
+      "relative": "BetaGwent/release/GwentBetaClassic-0.8.2-rc1-1.32-AllLanguages.zip.sha256",
+      "bytes": 116,
+      "modifiedNs": 1792275336421277100,
+      "reason": "superseded by verified full 0.8.2 archive"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.8.2-rc1-5.0+-AllLanguages.zip",
+      "relative": "BetaGwent/release/GwentBetaClassic-0.8.2-rc1-5.0+-AllLanguages.zip",
+      "bytes": 448195875,
+      "modifiedNs": 1792275307452757300,
+      "reason": "superseded by verified full 0.8.2 archive"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.8.2-rc1-5.0+-AllLanguages.zip.sha256",
+      "relative": "BetaGwent/release/GwentBetaClassic-0.8.2-rc1-5.0+-AllLanguages.zip.sha256",
+      "bytes": 116,
+      "modifiedNs": 1792275310105657800,
+      "reason": "superseded by verified full 0.8.2 archive"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.8.2-rc2-1.32-AllLanguages.zip",
+      "relative": "BetaGwent/release/GwentBetaClassic-0.8.2-rc2-1.32-AllLanguages.zip",
+      "bytes": 622518445,
+      "modifiedNs": 1792276322100409100,
+      "reason": "superseded by verified full 0.8.2 archive"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.8.2-rc2-1.32-AllLanguages.zip.sha256",
+      "relative": "BetaGwent/release/GwentBetaClassic-0.8.2-rc2-1.32-AllLanguages.zip.sha256",
+      "bytes": 116,
+      "modifiedNs": 1792276326463093800,
+      "reason": "superseded by verified full 0.8.2 archive"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.8.2-rc2-5.0+-AllLanguages.zip",
+      "relative": "BetaGwent/release/GwentBetaClassic-0.8.2-rc2-5.0+-AllLanguages.zip",
+      "bytes": 448195804,
+      "modifiedNs": 1792276295381227600,
+      "reason": "superseded by verified full 0.8.2 archive"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.8.2-rc2-5.0+-AllLanguages.zip.sha256",
+      "relative": "BetaGwent/release/GwentBetaClassic-0.8.2-rc2-5.0+-AllLanguages.zip.sha256",
+      "bytes": 116,
+      "modifiedNs": 1792276298049546400,
+      "reason": "superseded by verified full 0.8.2 archive"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.8.2-rc3-1.32-AllLanguages.zip",
+      "relative": "BetaGwent/release/GwentBetaClassic-0.8.2-rc3-1.32-AllLanguages.zip",
+      "bytes": 622568506,
+      "modifiedNs": 1792295978454865100,
+      "reason": "superseded by verified full 0.8.2 archive"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.8.2-rc3-1.32-AllLanguages.zip.sha256",
+      "relative": "BetaGwent/release/GwentBetaClassic-0.8.2-rc3-1.32-AllLanguages.zip.sha256",
+      "bytes": 116,
+      "modifiedNs": 1792295982736602400,
+      "reason": "superseded by verified full 0.8.2 archive"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.8.2-rc3-5.0+-AllLanguages.zip",
+      "relative": "BetaGwent/release/GwentBetaClassic-0.8.2-rc3-5.0+-AllLanguages.zip",
+      "bytes": 448238285,
+      "modifiedNs": 1792295960428649600,
+      "reason": "superseded by verified full 0.8.2 archive"
+    },
+    {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.8.2-rc3-5.0+-AllLanguages.zip.sha256",
+      "relative": "BetaGwent/release/GwentBetaClassic-0.8.2-rc3-5.0+-AllLanguages.zip.sha256",
+      "bytes": 116,
+      "modifiedNs": 1792295963153207600,
+      "reason": "superseded by verified full 0.8.2 archive"
+    }
+  ],
+  "totalBytes": 47264571023,
+  "sourceAndSaveFilesIncluded": false
+}

@@ -1,4 +1,4 @@
-package
+﻿package
 {
     import flash.text.TextField;
     import flash.text.TextFormat;
@@ -43,6 +43,7 @@ package
         {
             initialize();
             data=BetaGwentUiText142.extend(value,data);
+            data=BetaGwentExchangeText082.extend(value,data);
             for(var old:int=1;old<=13;old++){maps[old]={};groups[old]={};}
             maps[value]=data;caches=[];cacheCount=0;
                 for(var key:String in data){

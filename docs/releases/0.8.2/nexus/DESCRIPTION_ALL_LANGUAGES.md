@@ -1,0 +1,1465 @@
+﻿# Gwent Beta Classic 0.8.2 — English
+
+> Version 0.8.2 — separate packages for Classic 1.32 and Next-Gen 5.0+.
+
+## Important
+
+Back up your saves before installing and before every update. The mod is in active development, so use a separate save for your first matches.
+
+Card texts use the official Beta localization. The mod interface includes AI-assisted translations and may contain wording errors. Deck exchange messages are available in all 13 text languages; some older hints still fall back to English. Suggestions for better translations are welcome.
+
+## About the mod
+
+Gwent Beta Classic replaces vanilla Gwent in The Witcher 3 with the cards, rules and board of standalone Gwent Beta 0.9.24. Matches stay part of the Witcher world: play against NPCs, finish quests, buy kegs and build your own decks.
+
+## Features
+
+- 479 collectible cards, including 21 leaders, across all five factions
+- Beta board, HUD, fonts, card frames, weather and effects; animated leaders
+- Deck builder: five editable starter decks plus eight custom slots, filters and search
+- Opponents with 46 Beta deck archetypes and three AI difficulty levels
+- Kegs for 200 crowns from every innkeeper, opened Beta-style
+- Scraps: craft cards for 30 / 80 / 200 / 800 by rarity; extra copies are milled automatically
+- Tutorial, mulligan, graveyard and deck viewers, full card inspection
+- Mouse, keyboard and controller support
+
+## New in 0.8.2
+
+- Import and export decks as BG1 text codes through the clipboard, with a list of missing cards and an explicit crafting action.
+- Console commands for collection resources, card lookup, faction collections and innkeeper keg stock.
+- Cards sent to the graveyard now fly toward their actual graveyard; resolved special cards do the same. Banish and dissolve effects are preserved.
+- Built-in definitions for legacy Redux inventory items help prevent inventory/body loss when loading an older save after switching mods. They cannot recover inventory already lost and saved.
+- Reworked menu spacing, deck status text and action buttons; controller navigation can reach Save from the visible card shelf and return to cards.
+- Leader portraits continue animating after their VS entrance. Arachas Queen's entrance starts with her voice playback. Classic 1.32 includes the frost and attack effect fixes.
+
+## Sharing decks
+
+Open Export in the deck editor to copy the BG1 code, then share it as text. Import is available in both the deck list and editor. Paste the complete code; an invalid code changes nothing. If clipboard access is unavailable, use Ctrl+C/Ctrl+V in the text field. BG1 codes belong to this mod and are independent of the interface language.
+
+Missing cards, including the leader, are listed with the total scrap cost. Crafting requires a separate confirmation and enough scraps. Import builds a draft: use Save Deck to keep it. Import from the deck list uses a free custom slot and does not overwrite occupied slots. In training, the existing unrestricted collection is used.
+
+## Console commands
+
+Use bg_help() for help and bg_status() for your collection, kegs and scraps. bg_find('Imlerith') searches card names and IDs; bg_card(132102,1) grants a card, bg_faction('monsters') grants a faction, and bg_leaders() / bg_allcards() fill the leader/full collection up to normal copy limits. bg_kegs(10) and bg_scraps(1000) add resources. Resource grants require a loaded save outside menus and matches; save the game normally afterward. With an innkeeper's shop open, bg_shopcheck() diagnoses keg stock and bg_shoprefill(5) brings it up to five rather than adding five on every call. The game console must already be enabled.
+
+```text
+bg_help()
+bg_status()
+bg_find('Imlerith')
+bg_card(132102,1)
+bg_faction('monsters')
+bg_leaders()
+bg_allcards()
+bg_kegs(10)
+bg_scraps(1000)
+bg_shopcheck()
+bg_shoprefill(5)
+```
+
+## Languages
+
+Text: English, Russian, German, French, Italian, Polish, Spanish (Spain), Spanish (Latin America), Portuguese (Brazil), Japanese, Korean, Simplified Chinese and Traditional Chinese. Switch any time with the text language button at the top left of the deck and collection menus or in the battle settings; your choice is saved.
+
+Each package includes RU, EN, DE, IT and PT-BR voices. Select Text and Voice independently using the two separate buttons in the mod's deck/collection menu; the choices are also available in the match settings. Switching voices does not require reinstalling files. Auto follows the game's current text and speech languages separately; if a language is unavailable, English is used. Save the game normally after choosing: preferences belong to that save and remain when the mod files are updated. An existing manual text choice is preserved. In DE and IT, some keg-troll lines retain the Russian fallback from the source recordings. Native item names still follow the game language, and some notifications outside the mod UI remain RU/EN.
+
+## Installation
+
+1. Close the game and back up your saves. Download the package for your game branch: 1.32 or Next-Gen (5.0+). Install only one Beta Gwent version.
+
+2. When updating, move the previous Beta Gwent mod folder outside Mods first. Do not remove the entire Mods folder or mix files from different versions.
+
+3. Copy Mods from the archive into the game directory, next to bin and content. For Classic 1.32, also copy the included DLC folder. Paths: Mods/modBetaGwentClassic132/content and DLC/dlcBetaGwentClassic132Assets for 1.32; Mods/modBetaGwent0924/content for Next-Gen. Replace only this mod's previous folders, keeping your other mods and DLC.
+
+4. Load your save. Open the normal Gwent deck menu to edit decks and choose text/voices, or talk to a Gwent-playing NPC to start a match. Save normally to retain your preferences.
+
+## Requirements
+
+The Witcher 3 on PC. Choose the separate build for Classic 1.32 or Next-Gen (package labelled 5.0+). REDkit, Wwise and an EXE installer are not needed to play.
+
+## Compatibility
+
+Legacy Redux item definitions are included for save loading; remove the obsolete modBetaGwentReduxCompat folder. When switching from Redux, use a backed-up save from before any inventory/body loss: definitions cannot restore data already lost. Redux cards are not converted into the Beta collection, and this is not a promise of compatibility with every Redux/Redo Expansion feature. Other Gwent overhauls and mods changing its menus, trading or rewards may conflict. After changing mods, rebuild conflicting script merges with Script Merger.
+
+## Bug reports
+
+Found a problem? Please include the mod and exact game versions, selected text and voice languages (including Auto), whether this is New Game+, other mods, the cards/leaders and steps to reproduce. A screenshot and a save from before the problem are helpful. For a translation issue, name the language and screen and suggest a better wording.
+
+### How to enable the log
+
+1. Add -debugscripts after the closing quote in the shortcut target for the actual witcher3.exe. In Steam, use Properties → General → Launch Options. For GOG you can use a direct shortcut to witcher3.exe.
+
+2. Start the game, reproduce the problem and close it. Copy scriptslog.txt immediately: the next launch overwrites it. If it contains only a header, mention that; extra logging configuration may be needed for that build.
+
+3. If Windows created a crash dump, attach the latest relevant .dmp as well.
+
+```text
+%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
+```
+
+```text
+%LOCALAPPDATA%\CrashDumps
+```
+
+## Credits
+
+Thanks to CD Projekt for The Witcher and Gwent, LegacyGwent DIY for card and board assets, the Beta Gwent community for preserving historical material and archetype ideas, and everyone who tests the mod and sends detailed reports.
+
+Unofficial fan project. Original mod code is GPL-3.0-only; original game assets belong to their owners.
+
+[GitHub — Gwent Beta Classic](https://github.com/NikRegul/GwentBetaClassic-)
+
+
+---
+
+# Gwent Beta Classic 0.8.2 — Русский
+
+> Версия 0.8.2 — отдельные пакеты для Classic 1.32 и Next-Gen 5.0+.
+
+## Важно
+
+Перед установкой и перед каждым обновлением делайте резервную копию сохранений. Мод в активной разработке, для первых партий используйте отдельное сохранение.
+
+Тексты карт взяты из официальной локализации беты. Интерфейс переведён с помощью ИИ и может содержать неточные формулировки. Сообщения обмена колодами есть на всех 13 языках текста; часть старых подсказок использует английский резервный вариант. Предложения по улучшению перевода приветствуются.
+
+## О моде
+
+Gwent Beta Classic заменяет встроенный гвинт в The Witcher 3 картами, правилами и полем самостоятельного Gwent Beta 0.9.24. Партии остаются частью мира Ведьмака: играйте с NPC, проходите квесты, покупайте бочки и собирайте свои колоды.
+
+## Возможности
+
+- 479 коллекционных карт, включая 21 лидера, все пять фракций
+- Поле, интерфейс, шрифты, рамки карт, погода и эффекты беты; анимированные лидеры
+- Редактор колод: пять стартовых колод, которые можно менять, и восемь своих слотов, фильтры и поиск
+- Соперники с 46 архетипами колод беты и три уровня сложности ИИ
+- Бочки за 200 крон у всех корчмарей, открываются как в бете
+- Осколки: создание карт за 30 / 80 / 200 / 800 по редкости; лишние копии распыляются сами
+- Обучение, замена карт, просмотр сбросов и колоды, подробный просмотр карт
+- Мышь, клавиатура и контроллер
+
+## Новое в 0.8.2
+
+- Импорт и экспорт колод через буфер обмена в виде BG1-кода, список недостающих карт и отдельное действие для их создания.
+- Консольные команды для ресурсов коллекции, поиска карт, выдачи фракций и запаса бочек у корчмаря.
+- Карты, уходящие по правилам в сброс, визуально летят к своему сбросу; сыгранные особые карты — после разрешения. Эффекты изгнания и растворения сохранены.
+- Встроены определения старых предметов Redux для предотвращения потери инвентаря/тела при загрузке сохранения после перехода. Уже потерянный и сохранённый инвентарь они не восстанавливают.
+- Улучшены отступы меню, подписи состояния колоды и кнопки действий; с контроллера можно перейти с видимой карточной полки к сохранению и обратно.
+- Портреты лидеров продолжают двигаться после появления на VS. Вход королевы главоглазов начинается вместе с её озвучкой. В Classic 1.32 включены исправления мороза и эффектов ударов.
+
+## Обмен колодами
+
+Откройте экспорт в редакторе колоды, скопируйте BG1-код и отправьте его как текст. Импорт доступен в списке колод и редакторе. Вставляйте код целиком; неверная строка ничего не меняет. Если доступ к буферу недоступен, используйте Ctrl+C/Ctrl+V в текстовом поле. BG1 — формат этого мода, он не зависит от языка интерфейса.
+
+Недостающие карты, включая лидера, показываются списком с общей стоимостью в осколках. Создание требует отдельного подтверждения и достаточного баланса. Импорт собирает черновик: нажмите «Сохранить колоду». В списке колод используется свободный пользовательский слот, занятые слоты не перезаписываются. В тренировке действует существующая неограниченная коллекция.
+
+## Консольные команды
+
+bg_help() показывает справку, bg_status() — коллекцию, бочки и осколки. bg_find('Имлерих') ищет названия и ID; bg_card(132102,1) выдаёт карту, bg_faction('monsters') — фракцию, bg_leaders() / bg_allcards() дополняют лидеров/всю коллекцию до штатного лимита копий. bg_kegs(10) и bg_scraps(1000) добавляют ресурсы. Выдача работает при загруженном сохранении вне меню и партии; затем штатно сохраните игру. В открытом магазине корчмаря bg_shopcheck() показывает запас бочек, bg_shoprefill(5) доводит его до пяти, а не добавляет пять при каждом вызове. Консоль игры должна быть включена заранее.
+
+```text
+bg_help()
+bg_status()
+bg_find('Imlerith')
+bg_card(132102,1)
+bg_faction('monsters')
+bg_leaders()
+bg_allcards()
+bg_kegs(10)
+bg_scraps(1000)
+bg_shopcheck()
+bg_shoprefill(5)
+```
+
+## Языки
+
+Текст: английский, русский, немецкий, французский, итальянский, польский, испанский (Испания), испанский (Латинская Америка), португальский (Бразилия), японский, корейский, упрощённый и традиционный китайский. Язык меняется в любой момент кнопкой языка текста в левом верхнем углу меню колод и коллекции или в настройках боя; выбор сохраняется.
+
+В каждом пакете есть озвучки RU, EN, DE, IT и PT-BR. Текст и голоса выбираются независимо двумя отдельными кнопками в меню колод/коллекции мода; настройки также доступны в меню партии. Для смены голоса переустановка не нужна. «Авто» отдельно следует текущим языкам текста и речи игры; если язык не поддерживается, используется английский. После выбора штатно сохраните игру: настройки принадлежат этому сохранению и остаются при обновлении файлов мода. Старый ручной язык текста сохраняется. В DE и IT некоторые реплики тролля у бочек используют прежний русский резервный вариант исходных записей. Нативные названия предметов зависят от языка игры, часть уведомлений вне интерфейса мода остаётся на RU/EN.
+
+## Установка
+
+1. Закройте игру и сделайте резервную копию сохранений. Скачайте пакет для своей ветки: 1.32 или Next-Gen (5.0+). Устанавливайте только одну версию Beta Gwent.
+
+2. При обновлении сначала перенесите прежнюю папку мода Beta Gwent за пределы Mods. Не удаляйте всю папку Mods и не смешивайте файлы разных версий.
+
+3. Скопируйте Mods из архива в корень игры, рядом с bin и content. Для Classic 1.32 также скопируйте входящую в архив папку DLC. Пути: Mods/modBetaGwentClassic132/content и DLC/dlcBetaGwentClassic132Assets для 1.32; Mods/modBetaGwent0924/content для Next-Gen. Заменяйте только прежние папки этого мода, сохраняя остальные моды и DLC.
+
+4. Загрузите сохранение. Обычное меню колоды гвинта открывает редактор и выбор текста/озвучки; разговор с играющим NPC запускает партию. Для сохранения настроек штатно сохраните игру.
+
+## Требования
+
+The Witcher 3 на PC. Выберите отдельную сборку для Classic 1.32 или Next-Gen (пакет с обозначением 5.0+). Для игры не нужны REDkit, Wwise и установщик EXE.
+
+## Совместимость
+
+Определения старых предметов Redux встроены для загрузки сохранений; удалите устаревшую папку modBetaGwentReduxCompat. При переходе с Redux используйте резервную копию сохранения до потери инвентаря/тела: уже утраченные данные определения не восстановят. Карты Redux не превращаются в коллекцию Beta Gwent; это не обещание совместимости со всеми возможностями Redux/Redo Expansion. Другие переработки гвинта и моды, меняющие его меню, торговлю или награды, могут конфликтовать. После изменения набора модов заново объедините конфликтующие скрипты в Script Merger.
+
+## Сообщения об ошибках
+
+Есть проблема? Укажите версии мода и самой игры, выбранные текст и озвучку (в том числе режим «Авто»), обычное прохождение или НГ+, другие моды, карты/лидеров и шаги повторения. Помогут скриншот и сохранение перед ошибкой. Для замечания по переводу укажите язык и экран, предложите лучший вариант.
+
+### Как включить лог
+
+1. Добавьте -debugscripts после закрывающей кавычки в поле «Объект» ярлыка самого witcher3.exe. В Steam: Свойства → Общие → Параметры запуска. Для GOG можно использовать прямой ярлык witcher3.exe.
+
+2. Запустите игру, повторите ошибку и закройте её. Сразу скопируйте scriptslog.txt: следующий запуск перезапишет файл. Если в нём только заголовок, сообщите об этом — для этой сборки может потребоваться дополнительная настройка логирования.
+
+3. Если Windows создала дамп падения, приложите также последний относящийся к ошибке файл .dmp.
+
+```text
+%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
+```
+
+```text
+%LOCALAPPDATA%\CrashDumps
+```
+
+## Благодарности
+
+Спасибо CD Projekt за The Witcher и Gwent, LegacyGwent DIY за материалы карт и поля, сообществу Beta Gwent за сохранённые материалы и идеи архетипов, и всем, кто тестирует мод и присылает подробные отчёты.
+
+Неофициальный фанатский проект. Авторский код мода распространяется по GPL-3.0-only; оригинальные игровые материалы принадлежат их владельцам.
+
+[GitHub — Gwent Beta Classic](https://github.com/NikRegul/GwentBetaClassic-)
+
+
+---
+
+# Gwent Beta Classic 0.8.2 — Deutsch
+
+> Version 0.8.2 — separate Pakete für Classic 1.32 und Next-Gen 5.0+.
+
+## Wichtig
+
+Sichere vor der Installation und vor jedem Update deine Spielstände. Die Mod befindet sich in aktiver Entwicklung, nutze für die ersten Partien einen separaten Spielstand.
+
+Kartentexte stammen aus der offiziellen Beta-Lokalisierung. Die Oberfläche wurde mit KI-Unterstützung übersetzt und kann sprachliche Fehler enthalten. Meldungen zum Deckaustausch gibt es in allen 13 Textsprachen; einige ältere Hinweise erscheinen ersatzweise auf Englisch. Verbesserungsvorschläge sind willkommen.
+
+## Über die Mod
+
+Gwent Beta Classic ersetzt das Gwint aus The Witcher 3 durch die Karten, Regeln und das Spielbrett der eigenständigen Gwent Beta 0.9.24. Die Partien bleiben Teil der Witcher-Welt: Spiele gegen NPCs, erledige Quests, kaufe Fässer und baue deine eigenen Decks.
+
+## Funktionen
+
+- 479 Sammelkarten, darunter 21 Anführer, alle fünf Fraktionen
+- Spielbrett, HUD, Schriften, Kartenrahmen, Wetter und Effekte der Beta; animierte Anführer
+- Deck-Editor: fünf veränderbare Startdecks und acht eigene Plätze, Filter und Suche
+- Gegner mit 46 Deck-Archetypen der Beta und drei KI-Schwierigkeitsstufen
+- Fässer für 200 Kronen bei allen Wirten, geöffnet wie in der Beta
+- Fetzen: Karten für 30 / 80 / 200 / 800 je nach Seltenheit herstellen; überzählige Exemplare werden automatisch zermahlen
+- Tutorial, Mulligan, Ansicht von Friedhöfen und Deck, ausführliche Kartenansicht
+- Maus, Tastatur und Controller
+
+## Neu in 0.8.2
+
+- Decks als BG1-Textcodes über die Zwischenablage importieren und exportieren, einschließlich einer Liste fehlender Karten und einer gesonderten Herstellungsaktion.
+- Konsolenbefehle für Sammlungsressourcen, Kartensuche, Fraktionssammlungen und den Fassbestand beim Gastwirt.
+- Karten, die auf den Friedhof kommen, fliegen nun zum tatsächlichen Friedhof; ausgespielte Spezialkarten ebenso nach ihrer Auflösung. Verbannung und Auflösungseffekte bleiben erhalten.
+- Integrierte Definitionen alter Redux-Gegenstände helfen, Inventar- und Körperverlust beim Laden älterer Spielstände nach dem Wechsel zu verhindern. Bereits verlorene und gespeicherte Inventardaten werden nicht wiederhergestellt.
+- Überarbeitete Menüabstände, Deckstatus und Aktionsschaltflächen; mit dem Controller gelangt man vom sichtbaren Kartenregal zu Speichern und zurück.
+- Anführerporträts bleiben nach ihrem VS-Auftritt animiert. Der Auftritt der Krabbspinnenkönigin beginnt mit ihrer Sprachausgabe. Classic 1.32 enthält Korrekturen für Frost und Angriffseffekte.
+
+## Decks teilen
+
+Im Deckeditor kopiert Export den BG1-Code zum Teilen als Text. Import steht in der Deckliste und im Editor bereit. Den vollständigen Code einfügen; ungültige Codes ändern nichts. Ohne direkten Zugriff auf die Zwischenablage Ctrl+C/Ctrl+V im Textfeld verwenden. BG1 gehört zu dieser Mod und ist unabhängig von der Oberflächensprache.
+
+Fehlende Karten einschließlich Anführer werden mit den gesamten Herstellungskosten angezeigt. Herstellung benötigt eine gesonderte Bestätigung und genügend Scraps. Der Import erstellt einen Entwurf: anschließend das Deck speichern. In der Deckliste wird ein freier eigener Platz verwendet, belegte Plätze werden nicht überschrieben. Im Training gilt die vorhandene unbegrenzte Sammlung.
+
+## Konsolenbefehle
+
+bg_help() zeigt die Hilfe, bg_status() Sammlung, Fässer und Scraps. bg_find('Imlerith') sucht Namen und IDs; bg_card(132102,1) gibt eine Karte, bg_faction('monsters') eine Fraktion. bg_leaders() / bg_allcards() ergänzen Anführer bzw. die gesamte Sammlung bis zum normalen Kopienlimit. bg_kegs(10) und bg_scraps(1000) fügen Ressourcen hinzu. Dafür muss ein Spielstand geladen und jedes Menü sowie jede Partie geschlossen sein; danach regulär speichern. Im geöffneten Gastwirtladen prüft bg_shopcheck() den Fassbestand, bg_shoprefill(5) füllt ihn auf fünf auf, statt jedes Mal fünf hinzuzufügen. Die Spielkonsole muss bereits aktiviert sein.
+
+```text
+bg_help()
+bg_status()
+bg_find('Imlerith')
+bg_card(132102,1)
+bg_faction('monsters')
+bg_leaders()
+bg_allcards()
+bg_kegs(10)
+bg_scraps(1000)
+bg_shopcheck()
+bg_shoprefill(5)
+```
+
+## Sprachen
+
+Text: Englisch, Russisch, Deutsch, Französisch, Italienisch, Polnisch, Spanisch (Spanien), Spanisch (Lateinamerika), Portugiesisch (Brasilien), Japanisch, Koreanisch, vereinfachtes und traditionelles Chinesisch. Jederzeit umschaltbar über die Textsprache-Schaltfläche oben links in den Deck- und Sammlungsmenüs oder in den Kampfeinstellungen; die Wahl wird gespeichert.
+
+Jedes Paket enthält RU, EN, DE, IT und PT-BR. Text und Stimmen lassen sich unabhängig über zwei benachbarte Schaltflächen im Deck-/Sammlungsmenü der Mod wählen, auch in den Kampfeinstellungen. Ein Wechsel erfordert keine Neuinstallation. Automatisch folgt getrennt den aktuellen Text- und Spracheinstellungen des Spiels; fehlt eine Sprache, wird Englisch verwendet. Speichere danach regulär: Die Auswahl gehört zum Spielstand und bleibt beim Austausch der Mod-Dateien erhalten. Eine alte manuelle Textauswahl bleibt bestehen. Einige Fass-Troll-Zeilen in DE/IT behalten die russische Ersatzaufnahme. Native Gegenstandsnamen folgen der Spielsprache; manche Meldungen außerhalb der Mod-Oberfläche bleiben RU/EN.
+
+## Installation
+
+1. Schließe das Spiel und sichere die Spielstände. Lade das Paket für 1.32 oder Next-Gen (5.0+) herunter. Installiere nur eine Beta-Gwent-Version.
+
+2. Verschiebe beim Update zuerst den bisherigen Beta-Gwent-Modordner aus Mods heraus. Entferne nicht den gesamten Mods-Ordner und mische keine Versionsdateien.
+
+3. Mods aus dem Archiv ins Spielverzeichnis neben bin und content kopieren. Für Classic 1.32 auch den enthaltenen DLC-Ordner kopieren. Pfade: Mods/modBetaGwentClassic132/content und DLC/dlcBetaGwentClassic132Assets für 1.32; Mods/modBetaGwent0924/content für Next-Gen. Nur die bisherigen Ordner dieser Mod ersetzen; andere Mods und DLC behalten.
+
+4. Lade deinen Spielstand. Das normale Gwint-Deckmenü öffnet den Editor und die Sprachauswahl; bei Gwint-NPCs startest du Partien. Speichere regulär, um die Auswahl zu behalten.
+
+## Voraussetzungen
+
+The Witcher 3 auf PC. Wähle den separaten Build für Classic 1.32 oder Next-Gen (Paketbezeichnung 5.0+). REDkit, Wwise und ein EXE-Installationsprogramm werden zum Spielen nicht benötigt.
+
+## Kompatibilität
+
+Definitionen alter Redux-Gegenstände sind zum Laden von Spielständen integriert; den veralteten Ordner modBetaGwentReduxCompat entfernen. Beim Wechsel von Redux eine Sicherung vor dem Inventar-/Körperverlust laden: verlorene Daten lassen sich damit nicht wiederherstellen. Redux-Karten werden nicht in die Beta-Sammlung umgewandelt; eine umfassende Kompatibilität mit Redux/Redo Expansion wird nicht zugesichert. Andere Gwent-Überarbeitungen und Änderungen an Menüs, Handel oder Belohnungen können kollidieren. Konfliktbehaftete Skripte nach Änderungen erneut mit Script Merger zusammenführen.
+
+## Fehlermeldungen
+
+Problem gefunden? Nenne Mod-Version, genaue Spielversion, gewählte Textsprache und Sprachausgabe (auch Automatisch), Neues Spiel +, weitere Mods, Karten/Anführer und Schritte zum Nachstellen. Screenshot und Spielstand vor dem Fehler helfen. Bei Übersetzungsfehlern bitte Sprache, Bildschirm und eine bessere Formulierung angeben.
+
+### Protokoll aktivieren
+
+1. Füge -debugscripts hinter dem schließenden Anführungszeichen im Ziel eines direkten witcher3.exe-Shortcuts hinzu. Steam: Eigenschaften → Allgemein → Startoptionen. Bei GOG funktioniert ein direkter Shortcut zu witcher3.exe.
+
+2. Starte das Spiel, stelle den Fehler nach und beende es. Kopiere scriptslog.txt sofort: Der nächste Start überschreibt die Datei. Enthält sie nur eine Kopfzeile, melde das; zusätzliche Protokolleinstellungen können nötig sein.
+
+3. Falls Windows einen Absturzbericht erstellt hat, füge die passende neueste .dmp-Datei bei.
+
+```text
+%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
+```
+
+```text
+%LOCALAPPDATA%\CrashDumps
+```
+
+## Danksagung
+
+Danke an CD Projekt für The Witcher und Gwent, an LegacyGwent DIY für Karten- und Spielbrettmaterial, an die Beta-Gwent-Community für bewahrtes Material und Archetyp-Ideen und an alle, die die Mod testen und ausführliche Berichte schicken.
+
+Inoffizielles Fanprojekt. Der eigene Code der Mod steht unter GPL-3.0-only; die Originalinhalte des Spiels gehören ihren Rechteinhabern.
+
+[GitHub — Gwent Beta Classic](https://github.com/NikRegul/GwentBetaClassic-)
+
+
+---
+
+# Gwent Beta Classic 0.8.2 — Français
+
+> Version 0.8.2 — deux archives distinctes pour Classic 1.32 et Next-Gen 5.0+.
+
+## Important
+
+Sauvegardez vos parties avant l'installation et avant chaque mise à jour. Le mod est en développement actif : utilisez une sauvegarde séparée pour vos premières parties.
+
+Les textes des cartes proviennent de la traduction officielle de la bêta. L’interface a été traduite avec l’aide de l’IA et peut contenir des erreurs. Les messages d’échange de decks existent dans les 13 langues ; certaines anciennes aides utilisent encore l’anglais par défaut. Vos propositions de correction sont les bienvenues.
+
+## À propos
+
+Gwent Beta Classic remplace le Gwynt de The Witcher 3 par les cartes, les règles et le plateau de Gwent Beta 0.9.24 autonome. Les parties restent intégrées au monde du Sorceleur : affrontez des PNJ, accomplissez des quêtes, achetez des tonneaux et construisez vos decks.
+
+## Fonctionnalités
+
+- 479 cartes à collectionner, dont 21 chefs, pour les cinq factions
+- Plateau, interface, polices, cadres de cartes, météo et effets de la bêta ; chefs animés
+- Éditeur de decks : cinq decks de départ modifiables et huit emplacements personnels, filtres et recherche
+- Adversaires avec 46 archétypes de decks de la bêta et trois niveaux de difficulté de l'IA
+- Tonneaux à 200 couronnes chez tous les aubergistes, ouverts comme dans la bêta
+- Fragments : fabriquez des cartes pour 30 / 80 / 200 / 800 selon la rareté ; les exemplaires en trop sont recyclés automatiquement
+- Tutoriel, mulligan, consultation des cimetières et du deck, fiche détaillée des cartes
+- Souris, clavier et manette
+
+## Nouveautés de la 0.8.2
+
+- Importation et exportation de decks par codes BG1 via le presse-papiers, avec liste des cartes manquantes et fabrication sur demande.
+- Commandes de console pour les ressources, la recherche de cartes, les collections de faction et le stock de barils des aubergistes.
+- Les cartes envoyées au cimetière s’envolent vers leur véritable cimetière ; les cartes spéciales font de même après leur résolution. Les effets de bannissement et de dissolution sont conservés.
+- Des définitions d’anciens objets Redux sont intégrées pour éviter la perte d’inventaire ou du corps au chargement après migration. Elles ne restaurent pas un inventaire déjà perdu puis sauvegardé.
+- Espacements des menus, état du deck et boutons réorganisés ; la manette permet de passer des cartes visibles à Enregistrer, puis de revenir aux cartes.
+- Les portraits des chefs restent animés après leur entrée sur l’écran VS. L’entrée de la reine des Arachas commence avec sa réplique. Classic 1.32 comprend les corrections du gel et des effets d’attaque.
+
+## Partager des decks
+
+Dans l’éditeur, Exporter copie le code BG1 à partager sous forme de texte. Importer est disponible dans la liste des decks et l’éditeur. Collez le code complet ; un code invalide ne change rien. Si le presse-papiers n’est pas accessible directement, utilisez Ctrl+C/Ctrl+V dans le champ. BG1 est propre à ce mod et indépendant de la langue de l’interface.
+
+Les cartes manquantes, chef compris, sont affichées avec le coût total en fragments. Leur fabrication demande une confirmation distincte et assez de fragments. L’importation crée un brouillon : enregistrez ensuite le deck. Depuis la liste, un emplacement personnalisé libre est utilisé sans écraser les autres. L’entraînement utilise la collection illimitée existante.
+
+## Commandes de console
+
+bg_help() affiche l’aide et bg_status() la collection, les barils et les fragments. bg_find('Imlerith') recherche noms et identifiants ; bg_card(132102,1) donne une carte, bg_faction('monsters') une faction. bg_leaders() / bg_allcards() complètent les chefs ou la collection jusqu’aux limites normales. bg_kegs(10) et bg_scraps(1000) ajoutent des ressources. Les ajouts nécessitent une sauvegarde chargée, hors menus et parties ; sauvegardez normalement ensuite. Dans la boutique ouverte d’un aubergiste, bg_shopcheck() vérifie les barils et bg_shoprefill(5) porte le stock à cinq au lieu d’en ajouter cinq à chaque appel. La console du jeu doit déjà être activée.
+
+```text
+bg_help()
+bg_status()
+bg_find('Imlerith')
+bg_card(132102,1)
+bg_faction('monsters')
+bg_leaders()
+bg_allcards()
+bg_kegs(10)
+bg_scraps(1000)
+bg_shopcheck()
+bg_shoprefill(5)
+```
+
+## Langues
+
+Texte : anglais, russe, allemand, français, italien, polonais, espagnol (Espagne), espagnol (Amérique latine), portugais (Brésil), japonais, coréen, chinois simplifié et chinois traditionnel. Changez-la à tout moment avec le bouton de langue du texte en haut à gauche des menus des decks et de la collection, ou dans les paramètres de combat ; le choix est enregistré.
+
+Chaque paquet comprend les voix RU, EN, DE, IT et PT-BR. Choisissez séparément texte et voix avec deux boutons voisins dans le menu des decks/de la collection du mod, ou dans les paramètres de combat. Changer de voix ne demande aucune réinstallation. Automatique suit séparément les langues actuelles du texte et des voix du jeu ; si une langue manque, l’anglais est utilisé. Sauvegardez normalement après le choix : les préférences appartiennent à cette sauvegarde et restent après mise à jour des fichiers. L’ancien choix manuel du texte est conservé. Certaines répliques du troll des tonneaux en DE/IT gardent leur remplacement russe d’origine. Les noms natifs des objets suivent la langue du jeu ; certaines notifications hors de l’interface restent RU/EN.
+
+## Installation
+
+1. Fermez le jeu et sauvegardez vos parties. Téléchargez le paquet pour 1.32 ou Next-Gen (5.0+). N’installez qu’une version de Beta Gwent.
+
+2. Pour une mise à jour, déplacez d’abord l’ancien dossier Beta Gwent hors de Mods. Ne supprimez pas tout le dossier Mods et ne mélangez pas les versions.
+
+3. Copiez Mods depuis l’archive dans le dossier du jeu, à côté de bin et content. Pour Classic 1.32, copiez aussi le dossier DLC fourni. Chemins : Mods/modBetaGwentClassic132/content et DLC/dlcBetaGwentClassic132Assets pour 1.32 ; Mods/modBetaGwent0924/content pour Next-Gen. Remplacez uniquement les anciens dossiers de ce mod, en conservant les autres mods et DLC.
+
+4. Chargez une sauvegarde. Le menu habituel des decks de Gwynt ouvre l’éditeur et les langues ; parlez à un PNJ joueur pour lancer une partie. Sauvegardez normalement pour conserver vos choix.
+
+## Configuration requise
+
+The Witcher 3 sur PC. Choisissez la version distincte pour Classic 1.32 ou Next-Gen (paquet nommé 5.0+). REDkit, Wwise et un installateur EXE ne sont pas nécessaires pour jouer.
+
+## Compatibilité
+
+Les définitions d’anciens objets Redux sont intégrées pour charger les sauvegardes ; retirez l’ancien dossier modBetaGwentReduxCompat. Pour migrer depuis Redux, partez d’une copie antérieure à la perte de l’inventaire ou du corps : les données perdues ne sont pas récupérées. Les cartes Redux ne sont pas converties en collection Beta, et la compatibilité avec toutes les fonctions de Redux/Redo Expansion n’est pas garantie. Les autres refontes du Gwynt et modifications de ses menus, échanges ou récompenses peuvent entrer en conflit. Refaites les fusions de scripts conflictuels avec Script Merger après avoir changé les mods.
+
+## Signaler un bug
+
+Un problème ? Indiquez les versions du mod et du jeu, les langues choisies pour texte et voix (y compris Automatique), Nouvelle partie + ou non, les autres mods, les cartes/chefs et les étapes de reproduction. Une capture et une sauvegarde avant le problème sont utiles. Pour une traduction, précisez langue et écran et proposez une meilleure formulation.
+
+### Activer le journal
+
+1. Ajoutez -debugscripts après le guillemet fermant de la cible d’un raccourci vers witcher3.exe. Steam : Propriétés → Général → Options de lancement. Pour GOG, utilisez un raccourci direct vers witcher3.exe.
+
+2. Lancez le jeu, reproduisez le problème puis fermez-le. Copiez immédiatement scriptslog.txt : le lancement suivant l’écrase. S’il ne contient qu’un en-tête, signalez-le ; une configuration supplémentaire peut être nécessaire.
+
+3. Si Windows a créé un fichier de crash, joignez aussi le dernier .dmp correspondant.
+
+```text
+%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
+```
+
+```text
+%LOCALAPPDATA%\CrashDumps
+```
+
+## Remerciements
+
+Merci à CD Projekt pour The Witcher et Gwent, à LegacyGwent DIY pour les ressources des cartes et du plateau, à la communauté Beta Gwent pour la préservation des archives et les idées d'archétypes, et à tous ceux qui testent le mod et envoient des rapports détaillés.
+
+Projet de fan non officiel. Le code original du mod est sous licence GPL-3.0-only ; les contenus originaux du jeu appartiennent à leurs propriétaires.
+
+[GitHub — Gwent Beta Classic](https://github.com/NikRegul/GwentBetaClassic-)
+
+
+---
+
+# Gwent Beta Classic 0.8.2 — Italiano
+
+> Versione 0.8.2 — pacchetti separati per Classic 1.32 e Next-Gen 5.0+.
+
+## Importante
+
+Esegui un backup dei salvataggi prima dell'installazione e prima di ogni aggiornamento. La mod è in sviluppo attivo: per le prime partite usa un salvataggio separato.
+
+I testi delle carte provengono dalla localizzazione ufficiale della beta. L’interfaccia è stata tradotta con l’aiuto dell’IA e può contenere imprecisioni. I messaggi di scambio dei mazzi sono disponibili in tutte le 13 lingue; alcuni suggerimenti precedenti usano ancora l’inglese come alternativa. I suggerimenti di traduzione sono benvenuti.
+
+## La mod
+
+Gwent Beta Classic sostituisce il Gwent di The Witcher 3 con le carte, le regole e il tabellone di Gwent Beta 0.9.24 standalone. Le partite restano parte del mondo di The Witcher: sfida i PNG, completa missioni, compra barili e costruisci i tuoi mazzi.
+
+## Caratteristiche
+
+- 479 carte collezionabili, tra cui 21 comandanti, per tutte e cinque le fazioni
+- Tabellone, interfaccia, caratteri, cornici delle carte, clima ed effetti della beta; comandanti animati
+- Editor dei mazzi: cinque mazzi iniziali modificabili e otto slot personali, filtri e ricerca
+- Avversari con 46 archetipi di mazzi della beta e tre livelli di difficoltà dell'IA
+- Barili da 200 corone da tutti i locandieri, aperti come nella beta
+- Frammenti: crea carte per 30 / 80 / 200 / 800 in base alla rarità; le copie in eccesso vengono macinate automaticamente
+- Tutorial, mulligan, visualizzazione dei cimiteri e del mazzo, scheda dettagliata delle carte
+- Mouse, tastiera e controller
+
+## Novità della 0.8.2
+
+- Importazione ed esportazione dei mazzi tramite codici BG1 negli appunti, con elenco delle carte mancanti e creazione su richiesta.
+- Comandi della console per risorse, ricerca delle carte, collezioni di fazione e scorte di barili degli osti.
+- Le carte destinate al cimitero volano verso il cimitero corretto; lo stesso vale per le carte speciali dopo la risoluzione. Restano gli effetti di esilio e dissoluzione.
+- Definizioni integrate dei vecchi oggetti Redux aiutano a evitare la perdita di inventario e corpo caricando salvataggi dopo il passaggio. Non recuperano dati già persi e salvati.
+- Spaziature dei menu, stato del mazzo e pulsanti rivisti; con il controller si passa dalle carte visibili a Salva e si torna alle carte.
+- I ritratti dei leader continuano ad animarsi dopo l’ingresso nella schermata VS. L’ingresso della regina delle aracne comincia insieme alla sua battuta. Classic 1.32 include le correzioni del gelo e degli effetti d’attacco.
+
+## Condividere i mazzi
+
+Nell’editor, Esporta copia il codice BG1 da condividere come testo. Importa è disponibile nell’elenco dei mazzi e nell’editor. Incolla il codice completo: se non è valido, non cambia nulla. Se l’accesso diretto agli appunti non funziona, usa Ctrl+C/Ctrl+V nel campo di testo. BG1 è il formato di questa mod e non dipende dalla lingua dell’interfaccia.
+
+Le carte mancanti, leader incluso, sono elencate con il costo totale in frammenti. Per crearle servono una conferma separata e abbastanza frammenti. L’importazione prepara una bozza: salva poi il mazzo. Dall’elenco viene usato uno spazio personalizzato libero, senza sovrascrivere quelli occupati. In allenamento si usa la collezione illimitata esistente.
+
+## Comandi della console
+
+bg_help() mostra la guida e bg_status() collezione, barili e frammenti. bg_find('Imlerith') cerca nomi e ID; bg_card(132102,1) assegna una carta, bg_faction('monsters') una fazione. bg_leaders() / bg_allcards() completano leader o collezione entro i normali limiti di copie. bg_kegs(10) e bg_scraps(1000) aggiungono risorse. Le assegnazioni richiedono un salvataggio caricato, fuori dai menu e dalle partite; poi salva normalmente. Nel negozio aperto di un oste, bg_shopcheck() controlla i barili e bg_shoprefill(5) porta le scorte a cinque, senza aggiungerne cinque a ogni chiamata. La console del gioco deve essere già abilitata.
+
+```text
+bg_help()
+bg_status()
+bg_find('Imlerith')
+bg_card(132102,1)
+bg_faction('monsters')
+bg_leaders()
+bg_allcards()
+bg_kegs(10)
+bg_scraps(1000)
+bg_shopcheck()
+bg_shoprefill(5)
+```
+
+## Lingue
+
+Testo: inglese, russo, tedesco, francese, italiano, polacco, spagnolo (Spagna), spagnolo (America Latina), portoghese (Brasile), giapponese, coreano, cinese semplificato e cinese tradizionale. Cambiala in qualsiasi momento con il pulsante della lingua del testo in alto a sinistra nei menu dei mazzi e della collezione, oppure nelle impostazioni di battaglia; la scelta viene salvata.
+
+Ogni pacchetto contiene le voci RU, EN, DE, IT e PT-BR. Testo e voci si scelgono separatamente con due pulsanti affiancati nel menu dei mazzi/della collezione della mod o nelle impostazioni della partita. Non serve reinstallare per cambiare voci. Automatico segue separatamente le lingue attuali del testo e del parlato del gioco; se una lingua manca, usa l’inglese. Salva normalmente dopo la scelta: le preferenze appartengono al salvataggio e restano aggiornando i file della mod. La vecchia scelta manuale del testo viene mantenuta. Alcune battute del troll dei barili in DE/IT mantengono il russo sostitutivo delle registrazioni originali. I nomi nativi degli oggetti seguono la lingua del gioco; alcune notifiche esterne restano RU/EN.
+
+## Installazione
+
+1. Chiudi il gioco e fai un backup dei salvataggi. Scarica il pacchetto per 1.32 o Next-Gen (5.0+). Installa una sola versione di Beta Gwent.
+
+2. Per aggiornare, sposta prima la vecchia cartella della mod Beta Gwent fuori da Mods. Non eliminare tutta Mods e non mescolare versioni diverse.
+
+3. Copia Mods dall’archivio nella cartella del gioco, accanto a bin e content. Per Classic 1.32 copia anche la cartella DLC inclusa. Percorsi: Mods/modBetaGwentClassic132/content e DLC/dlcBetaGwentClassic132Assets per 1.32; Mods/modBetaGwent0924/content per Next-Gen. Sostituisci solo le vecchie cartelle di questa mod, conservando gli altri mod e DLC.
+
+4. Carica un salvataggio. Il normale menu dei mazzi di Gwent apre editor e scelta delle lingue; parla con un PNG che gioca per iniziare una partita. Salva normalmente per mantenere le preferenze.
+
+## Requisiti
+
+The Witcher 3 su PC. Scegli la build separata per Classic 1.32 o Next-Gen (pacchetto indicato come 5.0+). Per giocare non servono REDkit, Wwise o un programma d’installazione EXE.
+
+## Compatibilità
+
+Le definizioni dei vecchi oggetti Redux sono integrate per caricare i salvataggi; elimina la vecchia cartella modBetaGwentReduxCompat. Per passare da Redux usa una copia del salvataggio precedente alla perdita dell’inventario o del corpo: i dati persi non vengono recuperati. Le carte Redux non vengono convertite nella collezione Beta e non è garantita la compatibilità con ogni funzione di Redux/Redo Expansion. Altre revisioni del Gwent e modifiche a menu, scambi o ricompense possono creare conflitti. Dopo aver cambiato i mod, unisci nuovamente gli script in conflitto con Script Merger.
+
+## Segnalazione bug
+
+Hai trovato un problema? Indica versioni di mod e gioco, lingue scelte per testo e voci (anche Automatico), uso di Nuova partita +, altre mod, carte/leader e passaggi per riprodurlo. Sono utili uno screenshot e un salvataggio precedente al problema. Per le traduzioni indica lingua e schermata e proponi una formulazione migliore.
+
+### Come attivare il log
+
+1. Aggiungi -debugscripts dopo le virgolette finali nella destinazione di un collegamento a witcher3.exe. Steam: Proprietà → Generali → Opzioni di avvio. Con GOG puoi usare un collegamento diretto a witcher3.exe.
+
+2. Avvia il gioco, riproduci il problema e chiudilo. Copia subito scriptslog.txt: l’avvio successivo lo sovrascrive. Se contiene solo l’intestazione, segnalalo; potrebbe servire una configurazione aggiuntiva.
+
+3. Se Windows ha creato un dump dell’arresto, allega anche l’ultimo .dmp pertinente.
+
+```text
+%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
+```
+
+```text
+%LOCALAPPDATA%\CrashDumps
+```
+
+## Ringraziamenti
+
+Grazie a CD Projekt per The Witcher e Gwent, a LegacyGwent DIY per le risorse di carte e tabellone, alla community di Beta Gwent per aver conservato il materiale storico e le idee per gli archetipi, e a tutti coloro che testano la mod e inviano segnalazioni dettagliate.
+
+Progetto amatoriale non ufficiale. Il codice originale della mod è distribuito con licenza GPL-3.0-only; i contenuti originali del gioco appartengono ai rispettivi proprietari.
+
+[GitHub — Gwent Beta Classic](https://github.com/NikRegul/GwentBetaClassic-)
+
+
+---
+
+# Gwent Beta Classic 0.8.2 — Polski
+
+> Wersja 0.8.2 — osobne paczki dla Classic 1.32 i Next-Gen 5.0+.
+
+## Ważne
+
+Przed instalacją i przed każdą aktualizacją zrób kopię zapasową zapisów. Mod jest w aktywnym rozwoju, więc do pierwszych partii użyj osobnego zapisu.
+
+Teksty kart pochodzą z oficjalnej lokalizacji bety. Interfejs przetłumaczono z pomocą AI i może zawierać błędy językowe. Komunikaty wymiany talii są dostępne we wszystkich 13 językach; część starszych wskazówek nadal korzysta z angielskiego. Propozycje poprawek są mile widziane.
+
+## O modzie
+
+Gwent Beta Classic zastępuje gwinta z Wiedźmina 3 kartami, zasadami i planszą samodzielnej wersji Gwent Beta 0.9.24. Partie pozostają częścią świata Wiedźmina: graj z NPC, wykonuj zadania, kupuj beczki i buduj własne talie.
+
+## Funkcje
+
+- 479 kart kolekcjonerskich, w tym 21 dowódców, wszystkie pięć frakcji
+- Plansza, interfejs, czcionki, ramki kart, pogoda i efekty z bety; animowani dowódcy
+- Edytor talii: pięć edytowalnych talii startowych i osiem własnych miejsc, filtry i wyszukiwanie
+- Przeciwnicy z 46 archetypami talii z bety i trzy poziomy trudności SI
+- Beczki za 200 koron u wszystkich karczmarzy, otwierane jak w becie
+- Skrawki: twórz karty za 30 / 80 / 200 / 800 zależnie od rzadkości; nadmiarowe kopie są mielone automatycznie
+- Samouczek, mulligan, podgląd cmentarzy i talii, szczegółowy podgląd kart
+- Mysz, klawiatura i kontroler
+
+## Nowości w 0.8.2
+
+- Import i eksport talii przez schowek jako kody BG1, z listą brakujących kart i osobnym poleceniem ich wytworzenia.
+- Polecenia konsoli dla zasobów kolekcji, wyszukiwania kart, kolekcji frakcji i zapasu beczek u karczmarzy.
+- Karty trafiające na cmentarz lecą do właściwego cmentarza; karty specjalne robią to po rozpatrzeniu efektu. Efekty wygnania i rozpuszczania pozostają.
+- Wbudowane definicje dawnych przedmiotów Redux pomagają zapobiegać utracie ekwipunku i ciała przy wczytywaniu zapisu po zmianie moda. Nie odzyskują danych już utraconych i zapisanych.
+- Poprawione odstępy menu, stan talii i przyciski; kontroler pozwala przejść z widocznej półki kart do zapisu i z powrotem.
+- Portrety dowódców poruszają się dalej po wejściu na ekranie VS. Wejście królowej krabopająków zaczyna się wraz z jej głosem. Classic 1.32 zawiera poprawki mrozu i efektów ataków.
+
+## Udostępnianie talii
+
+Eksport w edytorze kopiuje kod BG1, który można udostępnić jako tekst. Import jest dostępny na liście talii i w edytorze. Wklej cały kod; błędny kod niczego nie zmienia. Jeśli bezpośredni dostęp do schowka nie działa, użyj Ctrl+C/Ctrl+V w polu tekstowym. BG1 jest formatem tego moda i nie zależy od języka interfejsu.
+
+Brakujące karty, w tym dowódca, są wyświetlane z łącznym kosztem we fragmentach. Wytworzenie wymaga osobnego potwierdzenia i odpowiedniej liczby fragmentów. Import tworzy szkic: następnie zapisz talię. Import z listy wykorzystuje wolne własne miejsce, nie nadpisując zajętych. Trening korzysta z istniejącej nieograniczonej kolekcji.
+
+## Polecenia konsoli
+
+bg_help() pokazuje pomoc, a bg_status() kolekcję, beczki i fragmenty. bg_find('Imlerith') wyszukuje nazwy i ID; bg_card(132102,1) daje kartę, bg_faction('monsters') frakcję. bg_leaders() / bg_allcards() uzupełniają dowódców lub całą kolekcję do zwykłych limitów kopii. bg_kegs(10) i bg_scraps(1000) dodają zasoby. Wymaga to wczytanego zapisu, poza menu i partią; potem normalnie zapisz grę. W otwartym sklepie karczmarza bg_shopcheck() sprawdza beczki, a bg_shoprefill(5) uzupełnia zapas do pięciu, zamiast dodawać pięć za każdym razem. Konsola gry musi być wcześniej włączona.
+
+```text
+bg_help()
+bg_status()
+bg_find('Imlerith')
+bg_card(132102,1)
+bg_faction('monsters')
+bg_leaders()
+bg_allcards()
+bg_kegs(10)
+bg_scraps(1000)
+bg_shopcheck()
+bg_shoprefill(5)
+```
+
+## Języki
+
+Tekst: angielski, rosyjski, niemiecki, francuski, włoski, polski, hiszpański (Hiszpania), hiszpański (Ameryka Łacińska), portugalski (Brazylia), japoński, koreański, chiński uproszczony i chiński tradycyjny. Język zmienisz w każdej chwili przyciskiem języka tekstu w lewym górnym rogu menu talii i kolekcji lub w ustawieniach bitwy; wybór jest zapisywany.
+
+Każdy pakiet zawiera głosy RU, EN, DE, IT i PT-BR. Tekst i głosy wybierasz niezależnie dwoma sąsiednimi przyciskami w menu talii/kolekcji moda lub w ustawieniach partii. Zmiana nie wymaga ponownej instalacji. Automatycznie śledzi osobno bieżący język tekstu i mowy gry; brakujący język zastępuje angielskim. Po wyborze zapisz grę normalnie: ustawienia należą do tego zapisu i pozostają po aktualizacji plików moda. Poprzedni ręczny wybór tekstu jest zachowany. Niektóre kwestie trolla od beczek w DE/IT zachowują rosyjskie nagranie zastępcze. Natywne nazwy przedmiotów zależą od języka gry; część komunikatów poza interfejsem pozostaje RU/EN.
+
+## Instalacja
+
+1. Zamknij grę i wykonaj kopię zapisów. Pobierz pakiet dla 1.32 lub Next-Gen (5.0+). Instaluj tylko jedną wersję Beta Gwent.
+
+2. Przy aktualizacji najpierw przenieś poprzedni folder moda Beta Gwent poza Mods. Nie usuwaj całego Mods ani nie mieszaj plików wersji.
+
+3. Skopiuj Mods z archiwum do katalogu gry obok bin i content. Dla Classic 1.32 skopiuj też dołączony katalog DLC. Ścieżki: Mods/modBetaGwentClassic132/content i DLC/dlcBetaGwentClassic132Assets dla 1.32; Mods/modBetaGwent0924/content dla Next-Gen. Zastąp tylko poprzednie katalogi tego moda, zachowując inne mody i DLC.
+
+4. Wczytaj zapis. Zwykłe menu talii Gwinta otwiera edytor i wybór języków; rozmowa z grającym NPC rozpoczyna partię. Zapisz grę, aby zachować wybór.
+
+## Wymagania
+
+The Witcher 3 na PC. Wybierz osobną kompilację Classic 1.32 albo Next-Gen (pakiet oznaczony 5.0+). Do gry nie są potrzebne REDkit, Wwise ani instalator EXE.
+
+## Kompatybilność
+
+Definicje dawnych przedmiotów Redux są wbudowane na potrzeby wczytywania zapisów; usuń przestarzały katalog modBetaGwentReduxCompat. Przy przejściu z Redux użyj kopii zapisu sprzed utraty ekwipunku lub ciała: utracone dane nie zostaną odzyskane. Karty Redux nie są zamieniane na kolekcję Beta; nie gwarantujemy zgodności ze wszystkimi funkcjami Redux/Redo Expansion. Inne przebudowy Gwinta oraz zmiany jego menu, handlu lub nagród mogą powodować konflikty. Po zmianie modów ponownie scal kolidujące skrypty w Script Merger.
+
+## Zgłaszanie błędów
+
+Problem? Podaj wersję moda i dokładną wersję gry, wybrany tekst i głosy (także Automatycznie), informację o Nowej Grze +, inne mody, karty/dowódców i kroki odtworzenia. Pomogą zrzut ekranu i zapis sprzed problemu. Przy błędach tłumaczenia podaj język, ekran i propozycję poprawki.
+
+### Włączanie dziennika
+
+1. Dodaj -debugscripts po końcowym cudzysłowie w polu celu skrótu do witcher3.exe. Steam: Właściwości → Ogólne → Opcje uruchamiania. W GOG możesz użyć bezpośredniego skrótu do witcher3.exe.
+
+2. Uruchom grę, odtwórz błąd i zamknij ją. Od razu skopiuj scriptslog.txt: następny start nadpisze plik. Jeśli zawiera tylko nagłówek, zgłoś to; może być potrzebna dodatkowa konfiguracja.
+
+3. Jeżeli Windows utworzył zrzut awarii, dołącz też najnowszy pasujący plik .dmp.
+
+```text
+%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
+```
+
+```text
+%LOCALAPPDATA%\CrashDumps
+```
+
+## Podziękowania
+
+Dziękujemy CD Projekt za Wiedźmina i Gwinta, LegacyGwent DIY za materiały kart i planszy, społeczności Beta Gwent za zachowanie archiwalnych materiałów i pomysły na archetypy oraz wszystkim, którzy testują moda i przysyłają szczegółowe zgłoszenia.
+
+Nieoficjalny projekt fanowski. Oryginalny kod moda jest udostępniony na licencji GPL-3.0-only; oryginalne materiały z gry należą do ich właścicieli.
+
+[GitHub — Gwent Beta Classic](https://github.com/NikRegul/GwentBetaClassic-)
+
+
+---
+
+# Gwent Beta Classic 0.8.2 — Español (España)
+
+> Versión 0.8.2 — paquetes separados para Classic 1.32 y Next-Gen 5.0+.
+
+## Importante
+
+Haz una copia de seguridad de tus partidas guardadas antes de instalar y antes de cada actualización. El mod está en desarrollo activo: usa una partida aparte para tus primeras partidas de Gwent.
+
+Los textos de las cartas proceden de la localización oficial de la beta. La interfaz se ha traducido con ayuda de IA y puede contener errores. Los mensajes de intercambio de mazos están en los 13 idiomas; algunas ayudas antiguas siguen usando el inglés como alternativa. Se agradecen las sugerencias de traducción.
+
+## Sobre el mod
+
+Gwent Beta Classic sustituye el Gwent de The Witcher 3 por las cartas, las reglas y el tablero de Gwent Beta 0.9.24 independiente. Las partidas siguen formando parte del mundo de The Witcher: juega contra PNJ, completa misiones, compra barriles y crea tus propios mazos.
+
+## Características
+
+- 479 cartas coleccionables, incluidos 21 líderes, de las cinco facciones
+- Tablero, interfaz, fuentes, marcos de cartas, clima y efectos de la beta; líderes animados
+- Editor de mazos: cinco mazos iniciales editables y ocho huecos propios, filtros y búsqueda
+- Rivales con 46 arquetipos de mazos de la beta y tres niveles de dificultad de la IA
+- Barriles por 200 coronas en todos los posaderos, que se abren como en la beta
+- Fragmentos: fabrica cartas por 30 / 80 / 200 / 800 según su rareza; las copias sobrantes se muelen automáticamente
+- Tutorial, mulligan, consulta de cementerios y del mazo, vista detallada de las cartas
+- Ratón, teclado y mando
+
+## Novedades de la 0.8.2
+
+- Importación y exportación de mazos mediante códigos BG1 en el portapapeles, con lista de cartas que faltan y una acción separada para crearlas.
+- Comandos de consola para recursos, búsqueda de cartas, colecciones de facción y existencias de barriles de los taberneros.
+- Las cartas enviadas al cementerio vuelan hacia el cementerio correspondiente; las cartas especiales hacen lo mismo tras resolverse. Se conservan los efectos de destierro y disolución.
+- Las definiciones integradas de objetos antiguos de Redux ayudan a evitar la pérdida de inventario o del cuerpo al cargar una partida tras cambiar de mod. No recuperan datos ya perdidos y guardados.
+- Espaciado de menús, estado del mazo y botones revisados; el mando permite pasar de las cartas visibles a Guardar y volver a las cartas.
+- Los retratos de los líderes siguen animados tras su entrada en VS. La entrada de la reina de las arachas comienza con su voz. Classic 1.32 incluye las correcciones de escarcha y efectos de ataque.
+
+## Compartir mazos
+
+Exportar en el editor copia el código BG1 para compartirlo como texto. Importar está disponible en la lista de mazos y en el editor. Pega el código completo; uno incorrecto no cambia nada. Si no hay acceso directo al portapapeles, utiliza Ctrl+C/Ctrl+V en el campo de texto. BG1 es el formato de este mod y no depende del idioma de la interfaz.
+
+Se muestran las cartas que faltan, incluido el líder, con el coste total en fragmentos. Crearlas requiere una confirmación aparte y suficientes fragmentos. La importación prepara un borrador: guarda después el mazo. Desde la lista se usa un espacio personalizado libre, sin sobrescribir los ocupados. El entrenamiento utiliza la colección ilimitada existente.
+
+## Comandos de consola
+
+bg_help() muestra la ayuda y bg_status() la colección, barriles y fragmentos. bg_find('Imlerith') busca nombres e ID; bg_card(132102,1) da una carta, bg_faction('monsters') una facción. bg_leaders() / bg_allcards() completan líderes o colección hasta los límites normales. bg_kegs(10) y bg_scraps(1000) añaden recursos. Se necesita una partida cargada, fuera de menús y partidas de cartas; guarda el juego después. En la tienda abierta de un tabernero, bg_shopcheck() comprueba los barriles y bg_shoprefill(5) repone las existencias hasta cinco, en vez de añadir cinco cada vez. La consola del juego debe estar activada previamente.
+
+```text
+bg_help()
+bg_status()
+bg_find('Imlerith')
+bg_card(132102,1)
+bg_faction('monsters')
+bg_leaders()
+bg_allcards()
+bg_kegs(10)
+bg_scraps(1000)
+bg_shopcheck()
+bg_shoprefill(5)
+```
+
+## Idiomas
+
+Texto: inglés, ruso, alemán, francés, italiano, polaco, español (España), español (Latinoamérica), portugués (Brasil), japonés, coreano, chino simplificado y chino tradicional. Cámbialo cuando quieras con el botón de idioma del texto, arriba a la izquierda en los menús de mazos y colección, o en los ajustes de combate; la elección se guarda.
+
+Cada paquete incluye voces RU, EN, DE, IT y PT-BR. El texto y las voces se eligen por separado con dos botones contiguos en el menú de mazos/colección del mod o en los ajustes de la partida. Cambiar las voces no requiere reinstalar archivos. Automático sigue por separado los idiomas actuales de texto y voz del juego; si falta un idioma, utiliza inglés. Guarda la partida normalmente después de elegir: las preferencias pertenecen a ese guardado y se mantienen al actualizar los archivos del mod. Se conserva la selección manual anterior del texto. Algunas frases del trol de los barriles en DE/IT mantienen el reemplazo ruso de las grabaciones originales. Los nombres nativos de objetos siguen el idioma del juego; algunas notificaciones externas siguen en RU/EN.
+
+## Instalación
+
+1. Cierra el juego y haz una copia de seguridad de las partidas. Descarga el paquete para 1.32 o Next-Gen (5.0+). Instala una sola versión de Beta Gwent.
+
+2. Al actualizar, mueve primero la carpeta anterior del mod Beta Gwent fuera de Mods. No elimines toda la carpeta Mods ni mezcles versiones.
+
+3. Copia Mods del archivo a la carpeta del juego, junto a bin y content. Para Classic 1.32, copia también la carpeta DLC incluida. Rutas: Mods/modBetaGwentClassic132/content y DLC/dlcBetaGwentClassic132Assets para 1.32; Mods/modBetaGwent0924/content para Next-Gen. Sustituye solo las carpetas anteriores de este mod, conservando los demás mods y DLC.
+
+4. Carga una partida. El menú habitual de mazos de Gwynt abre el editor y los idiomas; habla con un PNJ que juegue para comenzar una partida. Guarda normalmente para conservar tus preferencias.
+
+## Requisitos
+
+The Witcher 3 para PC. Elige la compilación separada de Classic 1.32 o Next-Gen (paquete marcado 5.0+). No necesitas REDkit, Wwise ni un instalador EXE para jugar.
+
+## Compatibilidad
+
+Las definiciones de objetos antiguos de Redux están integradas para cargar partidas; elimina la carpeta obsoleta modBetaGwentReduxCompat. Al cambiar desde Redux, usa una copia de la partida anterior a la pérdida del inventario o cuerpo: no se recuperan datos perdidos. Las cartas Redux no se convierten en la colección Beta y no se garantiza compatibilidad con todas las funciones de Redux/Redo Expansion. Otras revisiones de Gwent y cambios en menús, comercio o recompensas pueden entrar en conflicto. Tras cambiar los mods, vuelve a fusionar los scripts afectados con Script Merger.
+
+## Informar de errores
+
+¿Has encontrado un problema? Indica las versiones del mod y del juego, los idiomas elegidos para texto y voces (incluido Automático), si usas Nueva partida +, otros mods, cartas/líderes y los pasos para reproducirlo. Ayudan una captura y un guardado anterior al problema. Para traducciones, indica idioma y pantalla y sugiere una redacción mejor.
+
+### Cómo activar el registro
+
+1. Añade -debugscripts después de las comillas de cierre del destino de un acceso directo a witcher3.exe. Steam: Propiedades → General → Parámetros de lanzamiento. En GOG puedes usar un acceso directo al propio witcher3.exe.
+
+2. Inicia el juego, reproduce el problema y ciérralo. Copia scriptslog.txt inmediatamente: el siguiente inicio lo sobrescribe. Si solo contiene una cabecera, indícalo; puede hacer falta una configuración adicional.
+
+3. Si Windows ha creado un volcado del fallo, adjunta también el último archivo .dmp correspondiente.
+
+```text
+%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
+```
+
+```text
+%LOCALAPPDATA%\CrashDumps
+```
+
+## Agradecimientos
+
+Gracias a CD Projekt por The Witcher y Gwent, a LegacyGwent DIY por los recursos de cartas y tablero, a la comunidad de Beta Gwent por conservar el material histórico y las ideas de arquetipos, y a todos los que prueban el mod y envían informes detallados.
+
+Proyecto de fans no oficial. El código original del mod se distribuye bajo GPL-3.0-only; los recursos originales del juego pertenecen a sus propietarios.
+
+[GitHub — Gwent Beta Classic](https://github.com/NikRegul/GwentBetaClassic-)
+
+
+---
+
+# Gwent Beta Classic 0.8.2 — Español (Latinoamérica)
+
+> Versión 0.8.2 — paquetes separados para Classic 1.32 y Next-Gen 5.0+.
+
+## Importante
+
+Haz un respaldo de tus partidas guardadas antes de instalar y antes de cada actualización. El mod está en desarrollo activo: usa una partida aparte para tus primeros juegos de Gwent.
+
+Los textos de las cartas vienen de la localización oficial de la beta. La interfaz se tradujo con ayuda de IA y puede contener errores. Los mensajes para compartir mazos están en los 13 idiomas; algunas ayudas anteriores todavía usan el inglés como alternativa. Tus sugerencias de traducción son bienvenidas.
+
+## Acerca del mod
+
+Gwent Beta Classic reemplaza el Gwent de The Witcher 3 con las cartas, las reglas y el tablero de Gwent Beta 0.9.24 independiente. Las partidas siguen siendo parte del mundo de The Witcher: juega contra NPC, completa misiones, compra barriles y arma tus propios mazos.
+
+## Características
+
+- 479 cartas coleccionables, incluidos 21 líderes, de las cinco facciones
+- Tablero, interfaz, fuentes, marcos de cartas, clima y efectos de la beta; líderes animados
+- Editor de mazos: cinco mazos iniciales editables y ocho espacios propios, filtros y búsqueda
+- Rivales con 46 arquetipos de mazos de la beta y tres niveles de dificultad de la IA
+- Barriles por 200 coronas con todos los posaderos, que se abren como en la beta
+- Fragmentos: fabrica cartas por 30 / 80 / 200 / 800 según su rareza; las copias sobrantes se muelen automáticamente
+- Tutorial, mulligan, consulta de cementerios y del mazo, vista detallada de las cartas
+- Mouse, teclado y control
+
+## Novedades de la 0.8.2
+
+- Importa y exporta mazos como códigos BG1 desde el portapapeles, con una lista de cartas faltantes y una acción independiente para crearlas.
+- Comandos de consola para recursos, búsqueda de cartas, colecciones de facción y existencias de barriles de los taberneros.
+- Las cartas enviadas al cementerio vuelan al cementerio que les corresponde; las cartas especiales lo hacen después de resolverse. Se mantienen los efectos de destierro y disolución.
+- Las definiciones integradas de objetos antiguos de Redux ayudan a evitar la pérdida del inventario o del cuerpo al cargar una partida después de cambiar de mod. No recuperan datos ya perdidos y guardados.
+- Mejor espaciado de menús, estado del mazo y botones; con el control puedes pasar de las cartas visibles a Guardar y volver a las cartas.
+- Los retratos de los líderes siguen animados después de su entrada en VS. La entrada de la reina de las arachas empieza junto con su voz. Classic 1.32 incluye las correcciones de escarcha y efectos de ataque.
+
+## Compartir mazos
+
+Exportar en el editor copia el código BG1 para compartirlo como texto. Puedes importar desde la lista de mazos o el editor. Pega el código completo; un código inválido no cambia nada. Si no funciona el acceso directo al portapapeles, usa Ctrl+C/Ctrl+V en el campo de texto. BG1 es el formato de este mod y no depende del idioma de la interfaz.
+
+Las cartas faltantes, incluido el líder, aparecen con el costo total en fragmentos. Crearlas requiere una confirmación aparte y suficientes fragmentos. La importación arma un borrador: guarda el mazo después. Desde la lista se usa un espacio personalizado libre, sin sobrescribir los ocupados. El entrenamiento usa la colección ilimitada existente.
+
+## Comandos de consola
+
+bg_help() muestra la ayuda y bg_status() tu colección, barriles y fragmentos. bg_find('Imlerith') busca nombres e ID; bg_card(132102,1) entrega una carta, bg_faction('monsters') una facción. bg_leaders() / bg_allcards() completan líderes o colección hasta los límites normales. bg_kegs(10) y bg_scraps(1000) agregan recursos. Necesitas una partida cargada y estar fuera de menús y partidas de cartas; después guarda el juego normalmente. En la tienda abierta de un tabernero, bg_shopcheck() revisa los barriles y bg_shoprefill(5) lleva las existencias a cinco, sin agregar cinco en cada llamada. La consola del juego debe estar activada de antemano.
+
+```text
+bg_help()
+bg_status()
+bg_find('Imlerith')
+bg_card(132102,1)
+bg_faction('monsters')
+bg_leaders()
+bg_allcards()
+bg_kegs(10)
+bg_scraps(1000)
+bg_shopcheck()
+bg_shoprefill(5)
+```
+
+## Idiomas
+
+Texto: inglés, ruso, alemán, francés, italiano, polaco, español (España), español (Latinoamérica), portugués (Brasil), japonés, coreano, chino simplificado y chino tradicional. Cámbialo cuando quieras con el botón de idioma del texto, arriba a la izquierda en los menús de mazos y colección, o en la configuración de combate; la elección se guarda.
+
+Cada paquete incluye voces RU, EN, DE, IT y PT-BR. El texto y las voces se eligen por separado con dos botones contiguos en el menú de mazos/colección del mod o en los ajustes de la partida. Cambiar las voces no requiere reinstalar archivos. Automático sigue por separado los idiomas actuales de texto y voz del juego; si falta un idioma, utiliza inglés. Guarda la partida normalmente después de elegir: las preferencias pertenecen a ese guardado y se mantienen al actualizar los archivos del mod. Se conserva la selección manual anterior del texto. Algunas frases del trol de los barriles en DE/IT mantienen el reemplazo ruso de las grabaciones originales. Los nombres nativos de objetos siguen el idioma del juego; algunas notificaciones externas siguen en RU/EN.
+
+## Instalación
+
+1. Cierra el juego y haz un respaldo de tus partidas. Descarga el paquete para 1.32 o Next-Gen (5.0+). Instala solo una versión de Beta Gwent.
+
+2. Para actualizar, mueve primero la carpeta anterior del mod Beta Gwent fuera de Mods. No borres toda la carpeta Mods ni mezcles archivos de versiones distintas.
+
+3. Copia Mods del archivo a la carpeta del juego, junto a bin y content. Para Classic 1.32, copia también la carpeta DLC incluida. Rutas: Mods/modBetaGwentClassic132/content y DLC/dlcBetaGwentClassic132Assets para 1.32; Mods/modBetaGwent0924/content para Next-Gen. Reemplaza únicamente las carpetas anteriores de este mod y conserva los demás mods y DLC.
+
+4. Carga tu partida. El menú normal de mazos de Gwent abre el editor y la selección de idiomas; habla con un NPC que juegue para iniciar una partida. Guarda normalmente para conservar tus preferencias.
+
+## Requisitos
+
+The Witcher 3 para PC. Elige la compilación separada de Classic 1.32 o Next-Gen (paquete marcado 5.0+). No necesitas REDkit, Wwise ni un instalador EXE para jugar.
+
+## Compatibilidad
+
+Las definiciones de objetos antiguos de Redux están integradas para cargar partidas; elimina la carpeta obsoleta modBetaGwentReduxCompat. Si vienes de Redux, usa una copia de la partida anterior a la pérdida del inventario o del cuerpo: los datos perdidos no se recuperan. Las cartas Redux no se convierten en la colección Beta y no se garantiza compatibilidad con todas las funciones de Redux/Redo Expansion. Otras modificaciones de Gwent y cambios en menús, comercio o recompensas pueden causar conflictos. Después de cambiar los mods, vuelve a combinar los scripts en conflicto con Script Merger.
+
+## Reportar errores
+
+¿Has encontrado un problema? Indica las versiones del mod y del juego, los idiomas elegidos para texto y voces (incluido Automático), si usas Nueva partida +, otros mods, cartas/líderes y los pasos para reproducirlo. Ayudan una captura y un guardado anterior al problema. Para traducciones, indica idioma y pantalla y sugiere una redacción mejor.
+
+### Cómo activar el registro
+
+1. Añade -debugscripts después de las comillas de cierre del destino de un acceso directo a witcher3.exe. Steam: Propiedades → General → Parámetros de lanzamiento. En GOG puedes usar un acceso directo al propio witcher3.exe.
+
+2. Inicia el juego, reproduce el problema y ciérralo. Copia scriptslog.txt inmediatamente: el siguiente inicio lo sobrescribe. Si solo contiene una cabecera, indícalo; puede hacer falta una configuración adicional.
+
+3. Si Windows ha creado un volcado del fallo, adjunta también el último archivo .dmp correspondiente.
+
+```text
+%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
+```
+
+```text
+%LOCALAPPDATA%\CrashDumps
+```
+
+## Agradecimientos
+
+Gracias a CD Projekt por The Witcher y Gwent, a LegacyGwent DIY por los recursos de cartas y tablero, a la comunidad de Beta Gwent por conservar el material histórico y las ideas de arquetipos, y a todos los que prueban el mod y mandan reportes detallados.
+
+Proyecto de fans no oficial. El código original del mod se distribuye bajo GPL-3.0-only; los recursos originales del juego pertenecen a sus dueños.
+
+[GitHub — Gwent Beta Classic](https://github.com/NikRegul/GwentBetaClassic-)
+
+
+---
+
+# Gwent Beta Classic 0.8.2 — Português (Brasil)
+
+> Versão 0.8.2 — pacotes separados para Classic 1.32 e Next-Gen 5.0+.
+
+## Importante
+
+Faça backup dos seus saves antes de instalar e antes de cada atualização. O mod está em desenvolvimento ativo, então use um save separado nas primeiras partidas.
+
+Os textos das cartas vêm da localização oficial da beta. A interface foi traduzida com auxílio de IA e pode conter erros. As mensagens de troca de decks estão nos 13 idiomas; algumas dicas antigas ainda usam o inglês como alternativa. Sugestões de tradução são bem-vindas.
+
+## Sobre o mod
+
+Gwent Beta Classic substitui o Gwent de The Witcher 3 pelas cartas, regras e tabuleiro do Gwent Beta 0.9.24 independente. As partidas continuam fazendo parte do mundo de The Witcher: jogue contra NPCs, conclua missões, compre barris e monte seus próprios baralhos.
+
+## Recursos
+
+- 479 cartas colecionáveis, incluindo 21 líderes, das cinco facções
+- Tabuleiro, interface, fontes, molduras de cartas, clima e efeitos do beta; líderes animados
+- Editor de baralhos: cinco baralhos iniciais editáveis e oito espaços próprios, filtros e busca
+- Oponentes com 46 arquétipos de baralho do beta e três níveis de dificuldade da IA
+- Barris por 200 coroas com todos os taverneiros, abertos como no beta
+- Fragmentos: crie cartas por 30 / 80 / 200 / 800 conforme a raridade; cópias excedentes são moídas automaticamente
+- Tutorial, mulligan, visualização dos cemitérios e do baralho, detalhes completos das cartas
+- Mouse, teclado e controle
+
+## Novidades da 0.8.2
+
+- Importação e exportação de decks por códigos BG1 na área de transferência, com lista de cartas ausentes e ação separada para criá-las.
+- Comandos de console para recursos, busca de cartas, coleções de facção e estoque de barris dos estalajadeiros.
+- Cartas enviadas ao cemitério voam para o cemitério correto; cartas especiais fazem o mesmo após a resolução. Os efeitos de banimento e dissolução foram mantidos.
+- Definições integradas de itens antigos do Redux ajudam a evitar a perda de inventário ou do corpo ao carregar um save após a troca de mod. Não recuperam dados já perdidos e salvos.
+- Espaçamento de menus, estado do deck e botões reorganizados; o controle permite passar das cartas visíveis para Salvar e voltar às cartas.
+- Os retratos dos líderes continuam animados após a entrada na tela VS. A entrada da rainha das aracnas começa junto com sua fala. Classic 1.32 inclui correções da geada e dos efeitos de ataque.
+
+## Compartilhamento de decks
+
+Exportar no editor copia o código BG1 para compartilhar como texto. Importar está disponível na lista de decks e no editor. Cole o código completo; um código inválido não altera nada. Se o acesso direto à área de transferência não funcionar, use Ctrl+C/Ctrl+V no campo de texto. BG1 é o formato deste mod e independe do idioma da interface.
+
+As cartas ausentes, incluindo o líder, aparecem com o custo total em fragmentos. Criá-las exige confirmação separada e fragmentos suficientes. A importação monta um rascunho: salve o deck depois. Pela lista, um espaço personalizado livre é usado sem sobrescrever os ocupados. O treino usa a coleção ilimitada existente.
+
+## Comandos de console
+
+bg_help() mostra a ajuda e bg_status() a coleção, os barris e os fragmentos. bg_find('Imlerith') busca nomes e IDs; bg_card(132102,1) concede uma carta, bg_faction('monsters') uma facção. bg_leaders() / bg_allcards() completam líderes ou coleção até os limites normais. bg_kegs(10) e bg_scraps(1000) adicionam recursos. É preciso ter um save carregado e estar fora dos menus e partidas; depois salve o jogo normalmente. Na loja aberta de um estalajadeiro, bg_shopcheck() verifica os barris e bg_shoprefill(5) completa o estoque até cinco, sem adicionar cinco a cada chamada. O console do jogo deve estar ativado previamente.
+
+```text
+bg_help()
+bg_status()
+bg_find('Imlerith')
+bg_card(132102,1)
+bg_faction('monsters')
+bg_leaders()
+bg_allcards()
+bg_kegs(10)
+bg_scraps(1000)
+bg_shopcheck()
+bg_shoprefill(5)
+```
+
+## Idiomas
+
+Texto: inglês, russo, alemão, francês, italiano, polonês, espanhol (Espanha), espanhol (América Latina), português (Brasil), japonês, coreano, chinês simplificado e chinês tradicional. Troque a qualquer momento pelo botão de idioma do texto no canto superior esquerdo dos menus de baralhos e coleção, ou nas configurações de batalha; a escolha fica salva.
+
+Cada pacote inclui vozes RU, EN, DE, IT e PT-BR. Texto e vozes são escolhidos separadamente por dois botões lado a lado no menu de baralhos/coleção do mod ou nas configurações da partida. Trocar as vozes não exige reinstalar arquivos. Automático segue separadamente os idiomas atuais de texto e fala do jogo; se um idioma não estiver disponível, usa inglês. Salve normalmente depois da escolha: as preferências pertencem a esse save e permanecem ao atualizar os arquivos do mod. A seleção manual anterior do texto é mantida. Algumas falas do troll dos barris em DE/IT continuam usando a substituição russa das gravações originais. Os nomes nativos dos itens seguem o idioma do jogo; algumas notificações externas continuam em RU/EN.
+
+## Instalação
+
+1. Feche o jogo e faça backup dos saves. Baixe o pacote para 1.32 ou Next-Gen (5.0+). Instale apenas uma versão de Beta Gwent.
+
+2. Ao atualizar, primeiro mova a pasta antiga do mod Beta Gwent para fora de Mods. Não apague toda a pasta Mods nem misture arquivos de versões diferentes.
+
+3. Copie Mods do arquivo para a pasta do jogo, ao lado de bin e content. Para Classic 1.32, copie também a pasta DLC incluída. Caminhos: Mods/modBetaGwentClassic132/content e DLC/dlcBetaGwentClassic132Assets para 1.32; Mods/modBetaGwent0924/content para Next-Gen. Substitua apenas as pastas anteriores deste mod, mantendo os outros mods e DLC.
+
+4. Carregue seu save. O menu normal de baralhos de Gwent abre o editor e os idiomas; converse com um NPC que joga para iniciar uma partida. Salve normalmente para manter suas preferências.
+
+## Requisitos
+
+The Witcher 3 para PC. Escolha a versão separada para Classic 1.32 ou Next-Gen (pacote identificado como 5.0+). REDkit, Wwise e instalador EXE não são necessários para jogar.
+
+## Compatibilidade
+
+As definições dos itens antigos do Redux estão integradas para carregar saves; remova a pasta obsoleta modBetaGwentReduxCompat. Ao migrar do Redux, use uma cópia do save anterior à perda do inventário ou do corpo: dados perdidos não são recuperados. As cartas Redux não são convertidas para a coleção Beta, e não há garantia de compatibilidade com todas as funções do Redux/Redo Expansion. Outras reformulações de Gwent e alterações em menus, comércio ou recompensas podem causar conflitos. Após mudar os mods, refaça as mesclagens dos scripts conflitantes no Script Merger.
+
+## Relatar bugs
+
+Encontrou um problema? Informe as versões do mod e do jogo, os idiomas escolhidos para texto e vozes (inclusive Automático), se é Novo Jogo +, outros mods, cartas/líderes e os passos para reproduzir. Uma captura e um save anterior ao problema ajudam. Para traduções, indique idioma, tela e uma sugestão de texto melhor.
+
+### Como ativar o log
+
+1. Adicione -debugscripts depois das aspas finais no destino de um atalho para witcher3.exe. Steam: Propriedades → Geral → Opções de inicialização. No GOG, use um atalho direto para witcher3.exe.
+
+2. Inicie o jogo, reproduza o problema e feche-o. Copie scriptslog.txt imediatamente: a próxima inicialização substitui o arquivo. Se houver apenas um cabeçalho, avise; pode ser necessária uma configuração adicional.
+
+3. Se o Windows criou um dump da falha, anexe também o último .dmp correspondente.
+
+```text
+%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
+```
+
+```text
+%LOCALAPPDATA%\CrashDumps
+```
+
+## Agradecimentos
+
+Obrigado à CD Projekt por The Witcher e Gwent, ao LegacyGwent DIY pelos recursos de cartas e tabuleiro, à comunidade do Beta Gwent por preservar o material histórico e as ideias de arquétipos, e a todos que testam o mod e enviam relatórios detalhados.
+
+Projeto de fã não oficial. O código original do mod é distribuído sob GPL-3.0-only; os recursos originais do jogo pertencem aos seus donos.
+
+[GitHub — Gwent Beta Classic](https://github.com/NikRegul/GwentBetaClassic-)
+
+
+---
+
+# Gwent Beta Classic 0.8.2 — 日本語
+
+> バージョン0.8.2 — Classic 1.32とNext-Gen 5.0+用の個別パッケージ。
+
+## 重要
+
+インストール前と毎回のアップデート前に、必ずセーブデータをバックアップしてください。MODは開発中のため、最初の数試合は別のセーブデータで遊ぶことをおすすめします。
+
+カードのテキストはベータ版の公式翻訳を使用しています。MODのインターフェースはAIを利用して翻訳しているため、不自然な表現が含まれる場合があります。デッキ共有のメッセージは全13言語に対応し、一部の古いヒントは英語で表示されます。翻訳の改善案を歓迎します。
+
+## MODについて
+
+Gwent Beta Classicは、The Witcher 3のグウェントを、単体版Gwent Beta 0.9.24のカード、ルール、盤面に置き換えるMODです。試合はウィッチャーの世界の一部のまま：NPCと対戦し、クエストをこなし、樽を買い、自分のデッキを組みましょう。
+
+## 主な機能
+
+- 全5勢力、リーダー21枚を含む収集カード479枚
+- ベータ版の盤面、HUD、フォント、カードフレーム、天候、エフェクト。リーダーはアニメーション付き
+- デッキエディター：編集可能なスターターデッキ5つと自由に使える8枠、フィルターと検索
+- ベータ版の46種類のデッキアーキタイプを使う対戦相手、AIの難易度は3段階
+- すべての宿屋の主人から200クラウンで買える樽。ベータ版と同じ演出で開封
+- スクラップ：レアリティに応じて30 / 80 / 200 / 800でカードを作成。余分な枚数は自動で分解
+- チュートリアル、マリガン、墓地とデッキの確認、カードの詳細表示
+- マウス、キーボード、コントローラーに対応
+
+## 0.8.2の新機能
+
+- クリップボードのBG1コードでデッキをインポート・エクスポートできます。不足カードの一覧と、個別の作成操作も追加しました。
+- コレクション資源、カード検索、勢力のカード一式、宿屋の樽在庫を扱うコンソールコマンドを追加しました。
+- 墓地へ送られるカードは実際の墓地へ飛び、スペシャルカードも効果の解決後に同様に移動します。追放・消滅エフェクトは維持しています。
+- 旧Reduxアイテムの定義を内蔵し、MOD移行後のロード時に所持品や身体が失われる問題を防ぐための対応を追加しました。すでに失われて保存されたデータは復元できません。
+- メニューの余白、デッキ状態表示、操作ボタンを調整しました。コントローラーで表示中のカード棚から保存ボタンへ移動し、カードに戻れます。
+- VS登場後もリーダーの肖像が動き続けます。アラキス・クイーンの登場は音声の再生に合わせて始まります。Classic 1.32には霜と攻撃エフェクトの修正を含みます。
+
+## デッキの共有
+
+エディターのエクスポートでBG1コードをコピーし、テキストとして共有できます。インポートはデッキ一覧とエディターで利用できます。コード全体を貼り付けてください。無効なコードでは何も変更されません。クリップボードに直接アクセスできない場合は入力欄でCtrl+C/Ctrl+Vを使用してください。BG1はこのMOD専用の形式で、表示言語には依存しません。
+
+リーダーを含む不足カードと作成に必要な紙片の合計が表示されます。作成には別の確認操作と十分な紙片が必要です。インポートは編集途中のデッキを作るため、その後デッキを保存してください。一覧からのインポートは空きカスタム枠を使い、使用中の枠を上書きしません。練習では既存の無制限コレクションを使用します。
+
+## コンソールコマンド
+
+bg_help()はヘルプ、bg_status()はコレクション・樽・紙片を表示します。bg_find('Imlerith')で名前とIDを検索し、bg_card(132102,1)でカード、bg_faction('monsters')で勢力のカードを入手できます。bg_leaders() / bg_allcards()は通常の枚数制限までリーダー／全カードを補います。bg_kegs(10)とbg_scraps(1000)で資源を追加できます。付与にはセーブのロードが必要で、メニューや対戦中は使用できません。その後通常どおりセーブしてください。宿屋の店を開いた状態でbg_shopcheck()は樽在庫を調べ、bg_shoprefill(5)は毎回5個追加するのではなく在庫を5個まで補充します。ゲームのコンソールはあらかじめ有効にしてください。
+
+```text
+bg_help()
+bg_status()
+bg_find('Imlerith')
+bg_card(132102,1)
+bg_faction('monsters')
+bg_leaders()
+bg_allcards()
+bg_kegs(10)
+bg_scraps(1000)
+bg_shopcheck()
+bg_shoprefill(5)
+```
+
+## 言語
+
+テキスト：英語、ロシア語、ドイツ語、フランス語、イタリア語、ポーランド語、スペイン語（スペイン）、スペイン語（中南米）、ポルトガル語（ブラジル）、日本語、韓国語、簡体字中国語、繁体字中国語。デッキ／コレクション画面の左上にあるテキスト言語ボタン、または対戦中の設定からいつでも切り替えられ、選択は保存されます。
+
+全パッケージにRU、EN、DE、IT、PT-BRの音声を収録しています。MODのデッキ／コレクションメニューで隣り合う2つのボタンから、テキストと音声を別々に選べます。対戦設定からも変更でき、音声を変えるための再インストールは不要です。「自動」はゲームの現在のテキスト言語と音声言語を個別に参照し、対応する言語がなければ英語を使用します。選択後は通常の方法でゲームを保存してください。設定はそのセーブデータに記録され、MODファイルを更新しても維持されます。以前の手動テキスト設定も引き継ぎます。DE／ITの樽トロールの一部の台詞は、元の音源にあるロシア語の代替音声を使用します。ゲーム本来のアイテム名はゲーム側の言語に従い、一部のMOD画面外の通知はRU／ENのままです。
+
+## インストール
+
+1. ゲームを終了し、セーブデータをバックアップします。1.32またはNext-Gen（5.0+）に合うパッケージを1つだけダウンロードしてください。Beta Gwentを複数同時に導入しないでください。
+
+2. 更新時は、古いBeta GwentのMODフォルダーを先にModsの外へ移動します。Mods全体を削除したり、異なるバージョンのファイルを混在させたりしないでください。
+
+3. アーカイブ内のModsを、binとcontentがあるゲームフォルダーにコピーします。Classic 1.32では同梱のDLCもコピーしてください。パスは1.32がMods/modBetaGwentClassic132/contentとDLC/dlcBetaGwentClassic132Assets、Next-GenがMods/modBetaGwent0924/contentです。このMODの旧フォルダーだけを置き換え、ほかのMODやDLCは残してください。
+
+4. セーブデータをロードします。通常のグウェントのデッキメニューから編集と言語選択ができ、グウェントを遊ぶNPCとの会話から対戦を始められます。設定を残すには通常の方法で保存してください。
+
+## 動作環境
+
+PC版The Witcher 3。Classic 1.32用またはNext-Gen用（5.0+表記）の別ビルドを選んでください。プレイにREDkit、Wwise、EXEインストーラーは不要です。
+
+## 互換性
+
+旧Reduxアイテムの定義はセーブ読み込み用に内蔵されています。古いmodBetaGwentReduxCompatフォルダーは削除してください。Reduxから移行する際は所持品や身体が失われる前のセーブのバックアップを使ってください。失われたデータは復元できません。ReduxカードはBetaコレクションへ変換されず、Redux/Redo Expansionの全機能との互換性を保証するものではありません。ほかのグウェント改変やメニュー・取引・報酬の変更とは競合する場合があります。MOD構成を変えた後はScript Mergerで競合するスクリプトを再マージしてください。
+
+## バグ報告
+
+問題を見つけた場合は、MODとゲームの正確なバージョン、選択したテキストと音声（自動も含む）、ニューゲーム＋かどうか、他のMOD、カード／リーダー、再現手順を教えてください。スクリーンショットと問題発生前のセーブデータがあると助かります。翻訳の問題は言語と画面、より自然な訳の提案を添えてください。
+
+### ログを有効にする方法
+
+1. witcher3.exeへの直接ショートカットのリンク先で、閉じ引用符の後に -debugscripts を追加します。Steamではプロパティ → 一般 → 起動オプションに追加できます。GOGでもwitcher3.exeへの直接ショートカットを使用できます。
+
+2. ゲームを起動して問題を再現し、終了します。次回の起動で上書きされるため、scriptslog.txtをすぐにコピーしてください。ヘッダーしか記録されていない場合は、その旨もお知らせください。追加のログ設定が必要なことがあります。
+
+3. Windowsがクラッシュダンプを作成した場合は、該当する最新の.dmpファイルも添付してください。
+
+```text
+%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
+```
+
+```text
+%LOCALAPPDATA%\CrashDumps
+```
+
+## クレジット
+
+The WitcherとGwentを生んだCD Projekt、カードと盤面の素材を提供してくれたLegacyGwent DIY、資料を保存しアーキタイプのアイデアを共有してくれたBeta Gwentコミュニティ、そしてテストと詳しい報告をしてくれるすべての方に感謝します。
+
+非公式のファンプロジェクトです。MOD独自のコードはGPL-3.0-onlyで公開しています。ゲームのオリジナル素材の権利は各権利者に帰属します。
+
+[GitHub — Gwent Beta Classic](https://github.com/NikRegul/GwentBetaClassic-)
+
+
+---
+
+# Gwent Beta Classic 0.8.2 — 한국어
+
+> 버전 0.8.2 — Classic 1.32와 Next-Gen 5.0+용 패키지가 각각 제공됩니다.
+
+## 중요
+
+설치 전과 업데이트할 때마다 반드시 세이브 파일을 백업하세요. 모드는 개발 중이므로 처음 몇 판은 별도의 세이브로 플레이하는 것을 권장합니다.
+
+카드 텍스트는 베타의 공식 번역을 사용합니다. 모드 인터페이스는 AI의 도움으로 번역되어 어색한 표현이 있을 수 있습니다. 덱 공유 메시지는 13개 언어로 제공되며 일부 이전 도움말은 영어로 표시됩니다. 번역 개선 제안을 환영합니다.
+
+## 모드 소개
+
+Gwent Beta Classic은 The Witcher 3의 궨트를 독립형 Gwent Beta 0.9.24의 카드, 규칙, 게임판으로 바꿉니다. 대결은 그대로 위쳐 세계의 일부입니다. NPC와 대결하고, 퀘스트를 진행하고, 통을 사고, 나만의 덱을 만들어 보세요.
+
+## 주요 기능
+
+- 다섯 진영 전부, 리더 21장을 포함한 수집 카드 479장
+- 베타의 게임판, HUD, 글꼴, 카드 테두리, 날씨와 효과, 움직이는 리더
+- 덱 편집기: 수정 가능한 시작 덱 5개와 개인 슬롯 8개, 필터와 검색
+- 베타의 덱 아키타입 46종을 사용하는 상대, AI 난이도 3단계
+- 모든 여관 주인에게서 200크라운에 사는 통, 베타처럼 개봉
+- 조각: 희귀도에 따라 30 / 80 / 200 / 800으로 카드 제작, 초과 사본은 자동으로 분쇄
+- 튜토리얼, 멀리건, 무덤과 덱 보기, 카드 상세 보기
+- 마우스, 키보드, 컨트롤러 지원
+
+## 0.8.2의 새로운 기능
+
+- 클립보드의 BG1 코드로 덱을 가져오고 내보낼 수 있습니다. 부족한 카드 목록과 별도의 제작 동작도 제공합니다.
+- 수집 자원, 카드 검색, 진영별 수집품, 여관 주인의 카드통 재고를 위한 콘솔 명령을 추가했습니다.
+- 무덤으로 보내지는 카드는 실제 해당 무덤으로 날아가며, 특수 카드도 효과 처리 후 동일하게 이동합니다. 추방과 소멸 효과는 유지됩니다.
+- 이전 Redux 아이템 정의를 내장하여 모드 전환 후 저장 파일을 불러올 때 인벤토리나 신체가 사라지는 문제를 방지하도록 했습니다. 이미 잃어버린 상태로 저장된 데이터는 복구하지 못합니다.
+- 메뉴 여백, 덱 상태 표시와 버튼을 정리했습니다. 컨트롤러로 현재 보이는 카드 선반에서 저장 버튼으로 이동하고 카드로 돌아올 수 있습니다.
+- VS 등장 이후에도 지도자 초상화가 계속 움직입니다. 아라카스 여왕의 등장은 음성 재생과 함께 시작됩니다. Classic 1.32에는 서리 및 공격 효과 수정이 포함됩니다.
+
+## 덱 공유
+
+덱 편집기의 내보내기로 BG1 코드를 복사해 텍스트로 공유하세요. 가져오기는 덱 목록과 편집기에서 사용할 수 있습니다. 코드 전체를 붙여 넣으세요. 잘못된 코드는 아무것도 변경하지 않습니다. 클립보드에 직접 접근할 수 없으면 입력란에서 Ctrl+C/Ctrl+V를 사용하세요. BG1은 이 모드 전용 형식이며 인터페이스 언어와 무관합니다.
+
+지도자를 포함한 부족한 카드와 총 조각 비용이 표시됩니다. 제작에는 별도의 확인과 충분한 조각이 필요합니다. 가져오기는 초안을 구성하므로 이후 덱을 저장하세요. 목록에서는 비어 있는 사용자 슬롯을 사용하며 기존 슬롯을 덮어쓰지 않습니다. 연습에서는 기존의 무제한 수집품을 사용합니다.
+
+## 콘솔 명령
+
+bg_help()는 도움말, bg_status()는 수집품·카드통·조각을 표시합니다. bg_find('Imlerith')는 이름과 ID를 검색하고, bg_card(132102,1)는 카드, bg_faction('monsters')는 진영 카드를 지급합니다. bg_leaders() / bg_allcards()는 일반 복사본 한도까지 지도자 또는 전체 수집품을 채웁니다. bg_kegs(10)와 bg_scraps(1000)는 자원을 추가합니다. 지급하려면 저장 파일이 로드되어야 하며 메뉴와 대전 밖에서 사용한 후 정상적으로 저장하세요. 여관 상점을 연 상태에서 bg_shopcheck()는 카드통 재고를 확인하고 bg_shoprefill(5)는 매번 다섯 개를 더하는 대신 재고를 다섯 개까지 채웁니다. 게임 콘솔은 미리 활성화해야 합니다.
+
+```text
+bg_help()
+bg_status()
+bg_find('Imlerith')
+bg_card(132102,1)
+bg_faction('monsters')
+bg_leaders()
+bg_allcards()
+bg_kegs(10)
+bg_scraps(1000)
+bg_shopcheck()
+bg_shoprefill(5)
+```
+
+## 언어
+
+텍스트: 영어, 러시아어, 독일어, 프랑스어, 이탈리아어, 폴란드어, 스페인어(스페인), 스페인어(중남미), 포르투갈어(브라질), 일본어, 한국어, 중국어 간체, 중국어 번체. 덱/컬렉션 메뉴 왼쪽 위의 텍스트 언어 버튼이나 전투 설정에서 언제든지 바꿀 수 있으며, 선택은 저장됩니다.
+
+각 패키지에는 RU, EN, DE, IT, PT-BR 음성이 모두 들어 있습니다. 모드의 덱/컬렉션 메뉴에 나란히 있는 두 버튼으로 텍스트와 음성을 각각 선택하며, 대결 설정에서도 변경할 수 있습니다. 음성을 바꾸려고 재설치할 필요는 없습니다. 자동은 게임의 현재 텍스트와 음성 언어를 따로 따르며, 지원하지 않는 언어는 영어를 사용합니다. 선택 후 정상적으로 게임을 저장하세요. 설정은 해당 세이브에 기록되어 모드 파일을 업데이트해도 유지됩니다. 기존 수동 텍스트 선택도 보존됩니다. DE/IT의 통 트롤 대사 일부는 원본 녹음의 러시아어 대체 음성을 유지합니다. 게임 기본 아이템 이름은 게임 언어를 따르고, 모드 화면 밖의 알림 일부는 RU/EN으로 남아 있습니다.
+
+## 설치
+
+1. 게임을 종료하고 세이브를 백업하세요. 1.32 또는 Next-Gen(5.0+)에 맞는 패키지를 받으세요. Beta Gwent는 한 버전만 설치하세요.
+
+2. 업데이트할 때는 이전 Beta Gwent 모드 폴더를 먼저 Mods 밖으로 옮기세요. Mods 전체를 삭제하거나 다른 버전의 파일을 섞지 마세요.
+
+3. 압축 파일의 Mods를 bin과 content가 있는 게임 폴더에 복사하세요. Classic 1.32는 포함된 DLC 폴더도 복사해야 합니다. 경로는 1.32의 경우 Mods/modBetaGwentClassic132/content와 DLC/dlcBetaGwentClassic132Assets, Next-Gen은 Mods/modBetaGwent0924/content입니다. 이 모드의 이전 폴더만 교체하고 다른 모드와 DLC는 유지하세요.
+
+4. 세이브를 불러오세요. 기존 궨트 덱 메뉴에서 편집과 언어 선택을 할 수 있고, 궨트를 하는 NPC와 대화하면 대결을 시작합니다. 설정을 유지하려면 정상적으로 저장하세요.
+
+## 요구 사항
+
+PC용 The Witcher 3. Classic 1.32 또는 Next-Gen(5.0+로 표시된 패키지)용 별도 빌드를 선택하세요. 플레이에 REDkit, Wwise, EXE 설치 프로그램은 필요하지 않습니다.
+
+## 호환성
+
+이전 Redux 아이템 정의는 저장 파일 로드를 위해 내장되어 있습니다. 오래된 modBetaGwentReduxCompat 폴더는 제거하세요. Redux에서 전환할 때는 인벤토리나 신체가 사라지기 전의 백업 저장 파일을 사용하세요. 잃어버린 데이터는 복구되지 않습니다. Redux 카드는 Beta 수집품으로 변환되지 않으며 Redux/Redo Expansion의 모든 기능과의 호환성을 보장하지 않습니다. 다른 궨트 개편이나 메뉴·거래·보상 변경 모드와 충돌할 수 있습니다. 모드 구성을 바꾼 후 Script Merger로 충돌하는 스크립트를 다시 병합하세요.
+
+## 버그 제보
+
+문제를 발견했나요? 모드와 게임의 정확한 버전, 선택한 텍스트/음성 언어(자동 포함), 새 게임 + 여부, 다른 모드, 카드/리더와 재현 절차를 알려 주세요. 스크린샷과 문제 발생 전 세이브가 도움이 됩니다. 번역 문제라면 언어와 화면, 더 나은 표현도 제안해 주세요.
+
+### 로그 활성화 방법
+
+1. witcher3.exe 바로가기의 대상에서 닫는 따옴표 뒤에 -debugscripts를 추가하세요. Steam은 속성 → 일반 → 시작 옵션을 사용합니다. GOG에서도 witcher3.exe에 직접 연결되는 바로가기를 사용할 수 있습니다.
+
+2. 게임을 실행해 문제를 재현하고 종료하세요. 다음 실행 때 덮어쓰므로 scriptslog.txt를 즉시 복사하세요. 헤더만 있다면 알려 주세요. 추가 로그 설정이 필요할 수 있습니다.
+
+3. Windows가 크래시 덤프를 생성했다면 해당하는 최신 .dmp 파일도 첨부하세요.
+
+```text
+%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
+```
+
+```text
+%LOCALAPPDATA%\CrashDumps
+```
+
+## 감사의 말
+
+The Witcher와 Gwent를 만든 CD Projekt, 카드와 게임판 자료를 제공한 LegacyGwent DIY, 자료를 보존하고 아키타입 아이디어를 나눠 준 Beta Gwent 커뮤니티, 그리고 모드를 테스트하고 자세한 제보를 보내 주시는 모든 분께 감사드립니다.
+
+비공식 팬 프로젝트입니다. 모드 고유 코드는 GPL-3.0-only로 배포되며, 게임 원본 자료의 권리는 각 소유자에게 있습니다.
+
+[GitHub — Gwent Beta Classic](https://github.com/NikRegul/GwentBetaClassic-)
+
+
+---
+
+# Gwent Beta Classic 0.8.2 — 简体中文
+
+> 版本 0.8.2 — 分别提供 Classic 1.32 与 Next-Gen 5.0+ 安装包。
+
+## 重要
+
+安装前以及每次更新前，请务必备份存档。模组仍在积极开发中，前几局建议使用单独的存档。
+
+卡牌文本采用贝塔版的官方本地化。模组界面借助 AI 翻译，可能存在措辞问题。牌组交换消息已支持全部 13 种文本语言；部分较早的提示仍以英语作为后备。欢迎提出翻译建议。
+
+## 关于模组
+
+Gwent Beta Classic 将《巫师 3》的昆特牌替换为独立版 Gwent Beta 0.9.24 的卡牌、规则和牌桌。对局依然是巫师世界的一部分：与 NPC 对战、完成任务、购买桶、组建自己的牌组。
+
+## 主要功能
+
+- 五大阵营共 479 张可收集卡牌，其中包括 21 张领袖牌
+- Beta 的牌桌、HUD、字体、卡框、天气和特效；领袖牌带动画
+- 牌组编辑器：五套可修改的初始牌组和八个自定义栏位，支持筛选和搜索
+- 对手使用 46 种 Beta 牌组原型，AI 难度分三档
+- 所有旅店老板出售 200 克朗的桶，开桶方式与 Beta 相同
+- 碎片：按稀有度花费 30 / 80 / 200 / 800 合成卡牌，多余副本会自动分解
+- 教程、调度、查看墓地和牌库、卡牌详情
+- 支持鼠标、键盘和手柄
+
+## 0.8.2 新增内容
+
+- 通过剪贴板中的 BG1 文本代码导入、导出牌组，并显示缺少的卡牌及单独的制作操作。
+- 新增控制台命令，可管理收藏资源、搜索卡牌、补齐阵营收藏及调整旅店老板的牌桶库存。
+- 按规则进入墓地的卡牌会飞向实际所属的墓地；特殊牌在效果结算后也会如此。保留放逐和溶解效果。
+- 内置旧 Redux 物品定义，帮助防止更换模组后读档时丢失物品栏或身体。无法恢复已经丢失并保存的数据。
+- 调整菜单间距、牌组状态文字及操作按钮；手柄可以从当前可见的卡牌架移至保存按钮，再返回卡牌。
+- 领袖在 VS 入场结束后仍会保持动态。蟹蜘蛛女王的入场与语音播放同时开始。Classic 1.32 包含冰霜和攻击特效修复。
+
+## 分享牌组
+
+在牌组编辑器中选择导出，复制 BG1 代码后即可作为文本分享。牌组列表和编辑器均可导入。请粘贴完整代码；无效代码不会改变任何内容。若无法直接访问剪贴板，可在文本框中使用 Ctrl+C/Ctrl+V。BG1 是本模组的格式，与界面语言无关。
+
+界面会列出缺少的卡牌（包括领袖）及所需布条总数。制作需要单独确认且布条足够。导入生成的是草稿，之后请保存牌组。从列表导入会使用空闲的自定义槽位，不会覆盖已占用槽位。训练使用原有的无限制收藏。
+
+## 控制台命令
+
+bg_help() 显示帮助，bg_status() 显示收藏、牌桶和布条。bg_find('Imlerith') 搜索名称和 ID；bg_card(132102,1) 发放卡牌，bg_faction('monsters') 发放阵营卡牌。bg_leaders() / bg_allcards() 按正常副本上限补齐领袖或全部收藏。bg_kegs(10) 和 bg_scraps(1000) 添加资源。发放资源需要已载入存档，且处于菜单与对局之外；操作后正常保存游戏。在旅店老板的商店打开时，bg_shopcheck() 检查牌桶库存，bg_shoprefill(5) 将库存补到五个，而非每次增加五个。请事先启用游戏控制台。
+
+```text
+bg_help()
+bg_status()
+bg_find('Imlerith')
+bg_card(132102,1)
+bg_faction('monsters')
+bg_leaders()
+bg_allcards()
+bg_kegs(10)
+bg_scraps(1000)
+bg_shopcheck()
+bg_shoprefill(5)
+```
+
+## 语言
+
+文字：英语、俄语、德语、法语、意大利语、波兰语、西班牙语（西班牙）、西班牙语（拉丁美洲）、葡萄牙语（巴西）、日语、韩语、简体中文、繁体中文。可随时通过牌组和收藏菜单左上角的文字语言按钮或战斗设置切换，选择会被保存。
+
+每个包都包含 RU、EN、DE、IT、PT-BR 语音。通过模组牌组／收藏菜单中并排的两个按钮，分别选择文字和语音；对局设置中也可更改。切换语音无须重新安装文件。自动模式分别跟随游戏当前的文字和语音语言；缺少相应语言时使用英语。选择后请正常保存游戏：设置属于该存档，更新模组文件后仍会保留，此前手动选择的文字语言也会继承。DE／IT 的酒桶巨魔部分台词仍使用原始录音中的俄语替代版本。游戏原生物品名称跟随游戏语言，部分模组界面外的通知仍为 RU／EN。
+
+## 安装
+
+1. 关闭游戏并备份存档。下载适合 1.32 或 Next-Gen（5.0+）的包，只安装一个 Beta Gwent 版本。
+
+2. 更新时，先将旧的 Beta Gwent 模组文件夹移到 Mods 之外。不要删除整个 Mods 文件夹，也不要混用不同版本的文件。
+
+3. 将压缩包中的 Mods 复制到游戏目录，与 bin、content 同级。Classic 1.32 还需复制包内的 DLC 文件夹。路径：1.32 为 Mods/modBetaGwentClassic132/content 和 DLC/dlcBetaGwentClassic132Assets；Next-Gen 为 Mods/modBetaGwent0924/content。只替换本模组的旧文件夹，保留其他模组和 DLC。
+
+4. 读取存档。原有昆特牌牌组菜单可打开编辑器和语言选择；与会玩昆特牌的 NPC 对话即可开始对局。正常保存游戏以保留设置。
+
+## 系统要求
+
+PC 版《巫师 3》。请选择 Classic 1.32 或 Next-Gen（标有 5.0+）对应的独立构建包。游玩不需要 REDkit、Wwise 或 EXE 安装程序。
+
+## 兼容性
+
+旧 Redux 物品定义已内置，用于读取存档；请移除过时的 modBetaGwentReduxCompat 文件夹。从 Redux 迁移时，请使用物品栏或身体丢失之前的备份存档：已丢失的数据无法恢复。Redux 卡牌不会转换为 Beta 收藏，这也不代表兼容 Redux/Redo Expansion 的所有功能。其他昆特牌大修以及修改菜单、交易或奖励的模组可能产生冲突。更改模组组合后，请使用 Script Merger 重新合并冲突脚本。
+
+## 反馈问题
+
+发现问题？请提供模组与游戏的准确版本、选择的文字和语音语言（包括自动模式）、是否为新游戏＋、其他模组、涉及的卡牌／领袖及复现步骤。截图和问题发生前的存档有助于排查。翻译问题请注明语言和界面，并提出更合适的表达。
+
+### 如何启用日志
+
+1. 在指向 witcher3.exe 的快捷方式目标中，结束引号后添加 -debugscripts。Steam：属性 → 通用 → 启动选项。GOG 也可使用直接指向 witcher3.exe 的快捷方式。
+
+2. 启动游戏，复现问题后关闭游戏。立即复制 scriptslog.txt，下次启动会覆盖它。如果文件只有标题，请说明；该构建可能还需要额外的日志设置。
+
+3. 如果 Windows 生成了崩溃转储，请同时附上最新的相关 .dmp 文件。
+
+```text
+%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
+```
+
+```text
+%LOCALAPPDATA%\CrashDumps
+```
+
+## 致谢
+
+感谢 CD Projekt 带来《巫师》和昆特牌，感谢 LegacyGwent DIY 提供卡牌和牌桌素材，感谢 Beta Gwent 社区保存历史资料并分享牌组原型思路，也感谢每一位测试模组并提交详细报告的玩家。
+
+非官方粉丝项目。模组原创代码以 GPL-3.0-only 许可发布；游戏原始素材归各自所有者所有。
+
+[GitHub — Gwent Beta Classic](https://github.com/NikRegul/GwentBetaClassic-)
+
+
+---
+
+# Gwent Beta Classic 0.8.2 — 繁體中文
+
+> 版本 0.8.2 — 分別提供 Classic 1.32 與 Next-Gen 5.0+ 安裝包。
+
+## 重要
+
+安裝前以及每次更新前，請務必備份存檔。模組仍在積極開發中，前幾局建議使用另外的存檔。
+
+卡牌文字採用測試版的官方在地化。模組介面借助 AI 翻譯，可能有措辭問題。牌組交換訊息已支援全部 13 種文字語言；部分較早的提示仍以英語作為備用。歡迎提供翻譯建議。
+
+## 關於模組
+
+Gwent Beta Classic 將《巫師 3》的昆特牌替換為獨立版 Gwent Beta 0.9.24 的卡牌、規則和牌桌。對局依然是巫師世界的一部分：與 NPC 對戰、完成任務、購買桶、組建自己的牌組。
+
+## 主要功能
+
+- 五大陣營共 479 張可收集卡牌，其中包括 21 張領導牌
+- Beta 的牌桌、HUD、字型、卡框、天氣和特效；領導牌附動畫
+- 牌組編輯器：五套可修改的初始牌組和八個自訂欄位，支援篩選和搜尋
+- 對手使用 46 種 Beta 牌組原型，AI 難度分三級
+- 所有旅店老闆販售 200 克朗的桶，開桶方式與 Beta 相同
+- 碎片：依稀有度花費 30 / 80 / 200 / 800 合成卡牌，多餘副本會自動分解
+- 教學、調度、檢視墓地和牌庫、卡牌詳情
+- 支援滑鼠、鍵盤和控制器
+
+## 0.8.2 新增內容
+
+- 透過剪貼簿中的 BG1 文字代碼匯入、匯出牌組，並顯示缺少的卡牌及獨立的製作操作。
+- 新增主控台指令，可管理收藏資源、搜尋卡牌、補齊陣營收藏及調整旅店老闆的牌桶庫存。
+- 依規則進入墓地的卡牌會飛向實際所屬的墓地；特殊牌在效果結算後也會如此。保留放逐與溶解效果。
+- 內建舊 Redux 物品定義，協助防止更換模組後讀檔時遺失物品欄或身體。無法恢復已經遺失並儲存的資料。
+- 調整選單間距、牌組狀態文字與操作按鈕；控制器可從目前可見的卡牌架移至儲存按鈕，再返回卡牌。
+- 領袖在 VS 入場結束後仍會保持動態。蟹蜘蛛女王的入場與語音播放同時開始。Classic 1.32 包含冰霜與攻擊特效修正。
+
+## 分享牌組
+
+在牌組編輯器選擇匯出，複製 BG1 代碼後即可作為文字分享。牌組清單與編輯器皆可匯入。請貼上完整代碼；無效代碼不會改變任何內容。若無法直接存取剪貼簿，可在文字欄使用 Ctrl+C/Ctrl+V。BG1 是本模組的格式，與介面語言無關。
+
+介面會列出缺少的卡牌（含領袖）與所需布條總數。製作需要獨立確認且布條充足。匯入產生的是草稿，之後請儲存牌組。從清單匯入會使用空閒的自訂欄位，不會覆寫已佔用的欄位。訓練使用既有的無限制收藏。
+
+## 主控台指令
+
+bg_help() 顯示說明，bg_status() 顯示收藏、牌桶與布條。bg_find('Imlerith') 搜尋名稱與 ID；bg_card(132102,1) 發放卡牌，bg_faction('monsters') 發放陣營卡牌。bg_leaders() / bg_allcards() 依正常副本上限補齊領袖或全部收藏。bg_kegs(10) 與 bg_scraps(1000) 新增資源。發放資源需要已載入存檔，且處於選單與對局之外；操作後正常儲存遊戲。在旅店老闆的商店開啟時，bg_shopcheck() 檢查牌桶庫存，bg_shoprefill(5) 將庫存補到五個，而非每次增加五個。請事先啟用遊戲主控台。
+
+```text
+bg_help()
+bg_status()
+bg_find('Imlerith')
+bg_card(132102,1)
+bg_faction('monsters')
+bg_leaders()
+bg_allcards()
+bg_kegs(10)
+bg_scraps(1000)
+bg_shopcheck()
+bg_shoprefill(5)
+```
+
+## 語言
+
+文字：英文、俄文、德文、法文、義大利文、波蘭文、西班牙文（西班牙）、西班牙文（拉丁美洲）、葡萄牙文（巴西）、日文、韓文、簡體中文、繁體中文。可隨時透過牌組和收藏選單左上角的文字語言按鈕或戰鬥設定切換，選擇會被保存。
+
+每個包都包含 RU、EN、DE、IT、PT-BR 語音。透過模組牌組／收藏選單中並排的兩個按鈕，分別選擇文字與語音；對局設定中也能變更。切換語音不必重新安裝檔案。自動模式分別跟隨遊戲目前的文字與語音語言；缺少對應語言時使用英語。選擇後請正常儲存遊戲：設定屬於該存檔，更新模組檔案後仍會保留，先前手動選擇的文字語言也會繼承。DE／IT 的酒桶巨魔部分台詞仍使用原始錄音中的俄語替代版本。遊戲原生物品名稱跟隨遊戲語言，部分模組介面外的通知仍為 RU／EN。
+
+## 安裝
+
+1. 關閉遊戲並備份存檔。下載適合 1.32 或 Next-Gen（5.0+）的包，只安裝一個 Beta Gwent 版本。
+
+2. 更新時，先將舊的 Beta Gwent 模組資料夾移到 Mods 之外。不要刪除整個 Mods 資料夾，也不要混用不同版本的檔案。
+
+3. 將壓縮檔中的 Mods 複製至遊戲目錄，與 bin、content 同層。Classic 1.32 還需複製包內的 DLC 資料夾。路徑：1.32 為 Mods/modBetaGwentClassic132/content 與 DLC/dlcBetaGwentClassic132Assets；Next-Gen 為 Mods/modBetaGwent0924/content。只替換本模組的舊資料夾，保留其他模組與 DLC。
+
+4. 讀取存檔。原有的昆特牌牌組選單可開啟編輯器與語言選擇；與會玩昆特牌的 NPC 對話即可開始對局。正常儲存遊戲以保留設定。
+
+## 系統需求
+
+PC 版《巫師 3》。請選擇 Classic 1.32 或 Next-Gen（標示 5.0+）對應的獨立建置包。遊玩不需要 REDkit、Wwise 或 EXE 安裝程式。
+
+## 相容性
+
+舊 Redux 物品定義已內建，用於讀取存檔；請移除過時的 modBetaGwentReduxCompat 資料夾。從 Redux 遷移時，請使用物品欄或身體遺失之前的備份存檔：已遺失的資料無法恢復。Redux 卡牌不會轉換為 Beta 收藏，這也不代表相容 Redux/Redo Expansion 的所有功能。其他昆特牌大改及修改選單、交易或獎勵的模組可能產生衝突。更改模組組合後，請使用 Script Merger 重新合併衝突指令碼。
+
+## 回報問題
+
+發現問題？請提供模組與遊戲的確切版本、選擇的文字與語音語言（包含自動模式）、是否為新遊戲＋、其他模組、涉及的卡牌／領導牌及重現步驟。截圖與問題發生前的存檔有助於排查。翻譯問題請註明語言與畫面，並提出更合適的表達。
+
+### 如何啟用日誌
+
+1. 在指向 witcher3.exe 的捷徑目標中，結尾引號後加入 -debugscripts。Steam：內容 → 一般 → 啟動選項。GOG 也能使用直接指向 witcher3.exe 的捷徑。
+
+2. 啟動遊戲，重現問題後關閉遊戲。立即複製 scriptslog.txt，下次啟動會覆寫它。如果檔案只有標題，請說明；該建置可能還需要額外的日誌設定。
+
+3. 若 Windows 產生了當機傾印，請同時附上最新的相關 .dmp 檔案。
+
+```text
+%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
+```
+
+```text
+%LOCALAPPDATA%\CrashDumps
+```
+
+## 致謝
+
+感謝 CD Projekt 帶來《巫師》和昆特牌，感謝 LegacyGwent DIY 提供卡牌和牌桌素材，感謝 Beta Gwent 社群保存歷史資料並分享牌組原型構想，也感謝每一位測試模組並提交詳細回報的玩家。
+
+非官方粉絲專案。模組原創程式碼以 GPL-3.0-only 授權發布；遊戲原始素材歸各自所有者所有。
+
+[GitHub — Gwent Beta Classic](https://github.com/NikRegul/GwentBetaClassic-)

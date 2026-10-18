@@ -1,0 +1,44 @@
+﻿[size=5][color=#e0b354][b]Gwent Beta Classic 0.8.2 — Changelog[/b][/color][/size]
+
+[size=4][color=#e0b354][b]Deck sharing[/b][/color][/size]
+
+[list]
+[*]Clipboard import and export using BG1 codes. Codes are language-independent and contain the faction, leader and card list for sharing between players.
+[*]Import from the deck list or editor; export from the editor. A text field supports Ctrl+C/Ctrl+V when direct clipboard access is unavailable.
+[*]Invalid codes leave decks, collection and balance unchanged. Validation covers card IDs, faction, leader, deck size and composition limits.
+[*]Missing cards, including the leader, are listed with copy counts and total scrap cost. Crafting is a separate action requiring enough scraps; an unfinished paid keg choice blocks crafting.
+[*]Import creates a draft. Save it with the usual button; occupied custom slots are never overwritten automatically.
+
+[/list]
+[size=4][color=#e0b354][b]Console[/b][/color][/size]
+
+[list]
+[*]Added help, collection status, card search, card/leader/faction grants, keg and scrap grants, and innkeeper keg stock diagnostics and refill.
+[*]Normal copy limits are enforced; invalid parameters and counter overflow are rejected. Resource grants are blocked in menus and matches; shop commands require an open shop.
+
+[/list]
+[size=4][color=#e0b354][b]Interface and controller[/b][/color][/size]
+
+[list]
+[*]New deck exchange labels and messages translated into all 13 text languages, with missing Japanese, Korean and Chinese font glyphs added.
+[*]Deck-list Import moved into the bottom action bar. Editor actions are aligned; deck status, counters and Undo have dedicated space and padding.
+[*]Updated spacing in match menus, exit and exchange dialogs, confirmation titles and controller hints.
+[*]Down from the bottom visible shelf row moves focus to actions, including Save; Up returns to cards. LB/RB and the right stick still scroll.
+[*]Fixed opening Import and Export directly from the deck editor.
+
+[/list]
+[size=4][color=#e0b354][b]Visuals and audio[/b][/color][/size]
+
+[list]
+[*]Dead cards that go to the graveyard now fly toward their actual side's graveyard; special cards do the same after resolution. Played units remain on the board as required by the rules. Banish, dissolve and consume effects are preserved.
+[*]Leader portraits continue their normal animation after the one-shot VS entrance. Temporary page-load failures can retry.
+[*]Arachas Queen's entrance is synchronized with the actual start of her voice, including seat order, queued lines, skipping and disabled voices.
+[*]Classic 1.32 includes the accepted fixes for persistent frost, visible projectiles and impacts.
+
+[/list]
+[size=4][color=#e0b354][b]Saves and compatibility[/b][/color][/size]
+
+[list]
+[*]Integrated 203 missing legacy Redux item definitions for normal games and New Game+, preserving 197 native definitions. This protects loading old inventory; it neither recovers already lost data nor converts Redux collections.
+[*]All 13 text languages, five voice languages and independent text/voice selection are retained. Classic 1.32 and Next-Gen 5.0+ use separate packages.
+[/list]

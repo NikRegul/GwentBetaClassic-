@@ -136,3 +136,36 @@ function OnConsumeItem(item : SItemUniqueId)
     showNotification("Бочку можно открыть в редакторе колод гвинта.");return false;
 }
 
+
+@addMethod(CR4InventoryMenu)
+public function BetaGwentShopDiagnostic(target : int, refill : bool) : string
+{
+    var inventory : CInventoryComponent;var items : array<SItemUniqueId>;var i,before,after : int;
+    var message : string;var merchant : W3MerchantComponent;
+    if(!_shopNpc)return "Откройте магазин продавца.";
+    inventory=_shopNpc.GetInventory();if(!inventory)return "Инвентарь продавца недоступен.";
+    merchant=(W3MerchantComponent)_shopNpc.GetComponentByClassName('W3MerchantComponent');
+    before=inventory.GetItemQuantityByName('betagwent_keg');
+    message="NG+="+FactsQuerySum("NewGamePlus")+" npc="+_shopNpc.GetGuidHash();
+    message+=" category="+theGame.GetDefinitionsManager().GetItemCategory('betagwent_keg');
+    message+=" stock="+before+" stocked="+_shopNpc.betaGwentInnkeeperKegsStocked;
+    message+=" ngStocked="+_shopNpc.betaGwentNgKegs080+" migrated="+_shopNpc.betaGwentBulkKegStockMigrated;
+    if(refill) {
+        if(target<1 || target>99)return "Запас бочек должен быть от 1 до 99.";
+        if(!merchant || merchant.GetMapPinType()!='Innkeeper')return message+" · Пополнение доступно у корчмаря.";
+        if(before<target)inventory.AddAnItem('betagwent_keg',target-before,true,true);
+        after=inventory.GetItemQuantityByName('betagwent_keg');
+        message+=" added="+Max(0,after-before)+" total="+after;
+        if(after<target)return message+" · Предмет не создан: проверьте установку DLC с определением бочки.";
+        _shopNpc.betaGwentInnkeeperKegsStocked=true;_shopNpc.betaGwentNgKegs080=true;
+        if(after>=5)_shopNpc.betaGwentBulkKegStockMigrated=true;
+        inventory.GetAllItems(items);
+        for(i=0;i<items.Size();i+=1)if(inventory.GetItemName(items[i])=='betagwent_keg')ShopUpdateItem(items[i]);
+        UpdateMerchantData();UpdateItemsCounter();
+    }
+    // Category lookup alone is not proof that AddAnItem can instantiate it.
+    // Read-only check reports actual stock; no diagnostic item is put on Geralt.
+    if(inventory.GetItemQuantityByName('betagwent_keg')<1)message+=" · Бочек в запасе нет; создание предмета не проверено.";
+    else message+=" · Предмет бочки присутствует в запасе.";
+    return message;
+}

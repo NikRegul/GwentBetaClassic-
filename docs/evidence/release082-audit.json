@@ -1,0 +1,28 @@
+[
+  {
+    "platform": "classic",
+    "bundleEntries": 390,
+    "metadataPathsAndHashesVerified": true,
+    "reduxItemsPerMode": 203,
+    "maximumResourceMiB": 31.278196334838867,
+    "archive": {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.8.2-1.32-AllLanguages.zip",
+      "bytes": 622577061,
+      "sha256": "70028f9e4e63f23912946a29e9bb9b1090a4af9536aa53d35704fdd72017f580"
+    },
+    "nativeGameplayVerified": false
+  },
+  {
+    "platform": "nextgen",
+    "bundleEntries": 354,
+    "metadataPathsAndHashesVerified": true,
+    "reduxItemsPerMode": 203,
+    "maximumResourceMiB": 62.8910026550293,
+    "archive": {
+      "path": "D:\\w3mod\\BetaGwent\\release\\GwentBetaClassic-0.8.2-5.0+-AllLanguages.zip",
+      "bytes": 448244321,
+      "sha256": "cb646ff3ac62bfbe22b5df7102b191483545d584d2aebe72c8057d97d5cd1089"
+    },
+    "nativeGameplayVerified": false
+  }
+]

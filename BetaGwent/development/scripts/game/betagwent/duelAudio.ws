@@ -86,6 +86,12 @@ class CBetaGwentDuelAudio extends IScriptable
     private var queuedAt : array<float>;
     private var introEnemyTemplate,introPlayerTemplate : int;
     private var introEffectsPlayed : array<int>;
+    private var introQueuedSides, introReadySides : array<int>;
+    private var introVoiceSide, introVoiceTemplate, introVoiceClock : int;
+    public function MarkIntroReady(side : int) { if((side==1 || side==2) && !introReadySides.Contains(side))introReadySides.PushBack(side); }
+    public function IntroVoiceSide() : int { return introVoiceSide; }
+    public function IntroVoiceTemplate() : int { return introVoiceTemplate; }
+    public function IntroVoiceClock() : int { return introVoiceClock; }
     // Stage 104: the menu pauses the world (MPT_FullPause), so engine time can stop
     // advancing while Gwent is open. Voice spacing and throttles use the Flash clock
     // delivered by the board every 250 ms instead (OnBetaGwentAudioTick).
@@ -250,7 +256,7 @@ class CBetaGwentDuelAudio extends IScriptable
     {
         var now : float; var eventName : string;
         now = Now();
-        introEnemyTemplate=opponent;introPlayerTemplate=player;introEffectsPlayed.Clear();
+        introEnemyTemplate=opponent;introPlayerTemplate=player;introEffectsPlayed.Clear();introQueuedSides.Clear();introReadySides.Clear();introVoiceSide=0;introVoiceTemplate=0;introVoiceClock=0;
         if (enabled)
         {
             if (BetaReady()) eventName = BetaGwentAudioCue(7);
@@ -259,8 +265,8 @@ class CBetaGwentDuelAudio extends IScriptable
         }
         if (!voices || !BetaReady()) return;
         StopVoice(); introVoices=true;
-        if (opponent > 0 && (opponent == 201743 || BetaGwentAudioVoice(opponent) != "")) { queuedVoices.PushBack(opponent); queuedAt.PushBack(now); }
-        if (player > 0 && (player == 201743 || BetaGwentAudioVoice(player) != "")) { queuedVoices.PushBack(player); queuedAt.PushBack(now); }
+        if (opponent > 0 && (opponent == 201743 || BetaGwentAudioVoice(opponent) != "")) { queuedVoices.PushBack(opponent); queuedAt.PushBack(now+0.3f); introQueuedSides.PushBack(2); }
+        if (player > 0 && (player == 201743 || BetaGwentAudioVoice(player) != "")) { queuedVoices.PushBack(player); queuedAt.PushBack(now+1.1f); introQueuedSides.PushBack(1); }
         LogChannel('BetaGwent', "AUDIO_INTRO opponent=" + opponent + " player=" + player);
         Tick();
     }
@@ -299,12 +305,17 @@ class CBetaGwentDuelAudio extends IScriptable
         {
             id = queuedVoices[0];
             if (now < queuedAt[0]) return;
+            if(introVoices && introQueuedSides.Size()>0 && !introReadySides.Contains(introQueuedSides[0]))return;
             if (!introVoices && now - queuedAt[0] > 1.5f) { queuedVoices.Erase(0); queuedAt.Erase(0); continue; }
             queuedVoices.Erase(0); queuedAt.Erase(0);
             voiceRoll=RandRange(1000000);eventName=BetaGwentAudioVoiceVariant(id,voiceRoll);
             // CardAudio marks Queen's creature call as SFX, with no VO binding.
             if(id==201743)eventName=BetaGwentUniversalEvent(BetaGwentVoiceLanguage(),"bg79_vo_ArachasQueen");
             SetVoiceMix(true);theSound.SoundEvent(eventName);
+            if(introVoices && introQueuedSides.Size()>0){
+                introVoiceSide=introQueuedSides[0];introQueuedSides.Erase(0);
+                introVoiceTemplate=id;introVoiceClock=(int)(now*1000.0f);
+            }
             LogChannel('BetaGwent', "AUDIO_VOICE_REQUEST template=" + id + " event=" + eventName);
             voiceUntil = now + BetaGwentAudioVoiceVariantDuration(id,voiceRoll) + 0.12f;
             if(id==201743)voiceUntil=now+3.619f+0.12f;
@@ -317,11 +328,11 @@ class CBetaGwentDuelAudio extends IScriptable
     public function IsIntroActive() : bool
     { return introVoices && voices && BetaReady() && (queuedVoices.Size()>0 || Now()<voiceUntil); }
     public function CancelIntro()
-    { if(introVoices)StopVoice(); }
+    { if(introVoices)StopVoice(); introVoiceSide=0;introVoiceTemplate=0;introVoiceClock=0;introQueuedSides.Clear();introReadySides.Clear(); }
     private function StopVoice()
     {
         introVoices=false;
-        queuedVoices.Clear(); queuedAt.Clear(); voiceUntil = 0.0f;
+        queuedVoices.Clear(); queuedAt.Clear(); voiceUntil = 0.0f;introQueuedSides.Clear();introReadySides.Clear();introVoiceSide=0;introVoiceTemplate=0;introVoiceClock=0;
         SetVoiceMix(false);
         if (BetaReady()) theSound.SoundEvent(BetaGwentUniversalEvent(BetaGwentVoiceLanguage(),"bg79_stop_voice"));
     }

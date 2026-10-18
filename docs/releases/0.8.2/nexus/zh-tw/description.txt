@@ -1,0 +1,117 @@
+﻿[size=5][color=#e0b354][b]Gwent Beta Classic 0.8.2 — 繁體中文[/b][/color][/size]
+
+[b]版本 0.8.2 — 分別提供 Classic 1.32 與 Next-Gen 5.0+ 安裝包。[/b]
+
+[size=4][color=#e0b354][b]重要[/b][/color][/size]
+
+安裝前以及每次更新前，請務必備份存檔。模組仍在積極開發中，前幾局建議使用另外的存檔。
+
+卡牌文字採用測試版的官方在地化。模組介面借助 AI 翻譯，可能有措辭問題。牌組交換訊息已支援全部 13 種文字語言；部分較早的提示仍以英語作為備用。歡迎提供翻譯建議。
+
+[size=4][color=#e0b354][b]關於模組[/b][/color][/size]
+
+Gwent Beta Classic 將《巫師 3》的昆特牌替換為獨立版 Gwent Beta 0.9.24 的卡牌、規則和牌桌。對局依然是巫師世界的一部分：與 NPC 對戰、完成任務、購買桶、組建自己的牌組。
+
+[size=4][color=#e0b354][b]主要功能[/b][/color][/size]
+
+[list]
+[*]五大陣營共 479 張可收集卡牌，其中包括 21 張領導牌
+[*]Beta 的牌桌、HUD、字型、卡框、天氣和特效；領導牌附動畫
+[*]牌組編輯器：五套可修改的初始牌組和八個自訂欄位，支援篩選和搜尋
+[*]對手使用 46 種 Beta 牌組原型，AI 難度分三級
+[*]所有旅店老闆販售 200 克朗的桶，開桶方式與 Beta 相同
+[*]碎片：依稀有度花費 30 / 80 / 200 / 800 合成卡牌，多餘副本會自動分解
+[*]教學、調度、檢視墓地和牌庫、卡牌詳情
+[*]支援滑鼠、鍵盤和控制器
+
+[/list]
+[size=4][color=#e0b354][b]0.8.2 新增內容[/b][/color][/size]
+
+[list]
+[*]透過剪貼簿中的 BG1 文字代碼匯入、匯出牌組，並顯示缺少的卡牌及獨立的製作操作。
+[*]新增主控台指令，可管理收藏資源、搜尋卡牌、補齊陣營收藏及調整旅店老闆的牌桶庫存。
+[*]依規則進入墓地的卡牌會飛向實際所屬的墓地；特殊牌在效果結算後也會如此。保留放逐與溶解效果。
+[*]內建舊 Redux 物品定義，協助防止更換模組後讀檔時遺失物品欄或身體。無法恢復已經遺失並儲存的資料。
+[*]調整選單間距、牌組狀態文字與操作按鈕；控制器可從目前可見的卡牌架移至儲存按鈕，再返回卡牌。
+[*]領袖在 VS 入場結束後仍會保持動態。蟹蜘蛛女王的入場與語音播放同時開始。Classic 1.32 包含冰霜與攻擊特效修正。
+
+[/list]
+[size=4][color=#e0b354][b]分享牌組[/b][/color][/size]
+
+在牌組編輯器選擇匯出，複製 BG1 代碼後即可作為文字分享。牌組清單與編輯器皆可匯入。請貼上完整代碼；無效代碼不會改變任何內容。若無法直接存取剪貼簿，可在文字欄使用 Ctrl+C/Ctrl+V。BG1 是本模組的格式，與介面語言無關。
+
+介面會列出缺少的卡牌（含領袖）與所需布條總數。製作需要獨立確認且布條充足。匯入產生的是草稿，之後請儲存牌組。從清單匯入會使用空閒的自訂欄位，不會覆寫已佔用的欄位。訓練使用既有的無限制收藏。
+
+[size=4][color=#e0b354][b]主控台指令[/b][/color][/size]
+
+bg_help() 顯示說明，bg_status() 顯示收藏、牌桶與布條。bg_find('Imlerith') 搜尋名稱與 ID；bg_card(132102,1) 發放卡牌，bg_faction('monsters') 發放陣營卡牌。bg_leaders() / bg_allcards() 依正常副本上限補齊領袖或全部收藏。bg_kegs(10) 與 bg_scraps(1000) 新增資源。發放資源需要已載入存檔，且處於選單與對局之外；操作後正常儲存遊戲。在旅店老闆的商店開啟時，bg_shopcheck() 檢查牌桶庫存，bg_shoprefill(5) 將庫存補到五個，而非每次增加五個。請事先啟用遊戲主控台。
+
+[code]
+bg_help()
+bg_status()
+bg_find('Imlerith')
+bg_card(132102,1)
+bg_faction('monsters')
+bg_leaders()
+bg_allcards()
+bg_kegs(10)
+bg_scraps(1000)
+bg_shopcheck()
+bg_shoprefill(5)
+[/code]
+
+[size=4][color=#e0b354][b]語言[/b][/color][/size]
+
+文字：英文、俄文、德文、法文、義大利文、波蘭文、西班牙文（西班牙）、西班牙文（拉丁美洲）、葡萄牙文（巴西）、日文、韓文、簡體中文、繁體中文。可隨時透過牌組和收藏選單左上角的文字語言按鈕或戰鬥設定切換，選擇會被保存。
+
+每個包都包含 RU、EN、DE、IT、PT-BR 語音。透過模組牌組／收藏選單中並排的兩個按鈕，分別選擇文字與語音；對局設定中也能變更。切換語音不必重新安裝檔案。自動模式分別跟隨遊戲目前的文字與語音語言；缺少對應語言時使用英語。選擇後請正常儲存遊戲：設定屬於該存檔，更新模組檔案後仍會保留，先前手動選擇的文字語言也會繼承。DE／IT 的酒桶巨魔部分台詞仍使用原始錄音中的俄語替代版本。遊戲原生物品名稱跟隨遊戲語言，部分模組介面外的通知仍為 RU／EN。
+
+[size=4][color=#e0b354][b]安裝[/b][/color][/size]
+
+[list=1]
+[*]關閉遊戲並備份存檔。下載適合 1.32 或 Next-Gen（5.0+）的包，只安裝一個 Beta Gwent 版本。
+
+[*]更新時，先將舊的 Beta Gwent 模組資料夾移到 Mods 之外。不要刪除整個 Mods 資料夾，也不要混用不同版本的檔案。
+
+[*]將壓縮檔中的 Mods 複製至遊戲目錄，與 bin、content 同層。Classic 1.32 還需複製包內的 DLC 資料夾。路徑：1.32 為 Mods/modBetaGwentClassic132/content 與 DLC/dlcBetaGwentClassic132Assets；Next-Gen 為 Mods/modBetaGwent0924/content。只替換本模組的舊資料夾，保留其他模組與 DLC。
+
+[*]讀取存檔。原有的昆特牌牌組選單可開啟編輯器與語言選擇；與會玩昆特牌的 NPC 對話即可開始對局。正常儲存遊戲以保留設定。
+
+[/list]
+[size=4][color=#e0b354][b]系統需求[/b][/color][/size]
+
+PC 版《巫師 3》。請選擇 Classic 1.32 或 Next-Gen（標示 5.0+）對應的獨立建置包。遊玩不需要 REDkit、Wwise 或 EXE 安裝程式。
+
+[size=4][color=#e0b354][b]相容性[/b][/color][/size]
+
+舊 Redux 物品定義已內建，用於讀取存檔；請移除過時的 modBetaGwentReduxCompat 資料夾。從 Redux 遷移時，請使用物品欄或身體遺失之前的備份存檔：已遺失的資料無法恢復。Redux 卡牌不會轉換為 Beta 收藏，這也不代表相容 Redux/Redo Expansion 的所有功能。其他昆特牌大改及修改選單、交易或獎勵的模組可能產生衝突。更改模組組合後，請使用 Script Merger 重新合併衝突指令碼。
+
+[size=4][color=#e0b354][b]回報問題[/b][/color][/size]
+
+發現問題？請提供模組與遊戲的確切版本、選擇的文字與語音語言（包含自動模式）、是否為新遊戲＋、其他模組、涉及的卡牌／領導牌及重現步驟。截圖與問題發生前的存檔有助於排查。翻譯問題請註明語言與畫面，並提出更合適的表達。
+
+[size=4][color=#e0b354][b]如何啟用日誌[/b][/color][/size]
+
+[list=1]
+[*]在指向 witcher3.exe 的捷徑目標中，結尾引號後加入 -debugscripts。Steam：內容 → 一般 → 啟動選項。GOG 也能使用直接指向 witcher3.exe 的捷徑。
+
+[*]啟動遊戲，重現問題後關閉遊戲。立即複製 scriptslog.txt，下次啟動會覆寫它。如果檔案只有標題，請說明；該建置可能還需要額外的日誌設定。
+
+[*]若 Windows 產生了當機傾印，請同時附上最新的相關 .dmp 檔案。
+
+[/list]
+[code]
+%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
+[/code]
+
+[code]
+%LOCALAPPDATA%\CrashDumps
+[/code]
+
+[size=4][color=#e0b354][b]致謝[/b][/color][/size]
+
+感謝 CD Projekt 帶來《巫師》和昆特牌，感謝 LegacyGwent DIY 提供卡牌和牌桌素材，感謝 Beta Gwent 社群保存歷史資料並分享牌組原型構想，也感謝每一位測試模組並提交詳細回報的玩家。
+
+非官方粉絲專案。模組原創程式碼以 GPL-3.0-only 授權發布；遊戲原始素材歸各自所有者所有。
+
+[url=https://github.com/NikRegul/GwentBetaClassic-]GitHub — Gwent Beta Classic[/url]

@@ -30,6 +30,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     private var setHeader : CScriptedFlashFunction;
     private var setCounts : CScriptedFlashFunction;
     private var pushCard : CScriptedFlashFunction;
+    private var pushDestination : CScriptedFlashFunction;
     private var finishState : CScriptedFlashFunction;
     private var beginDeckSelection, pushDeckOption, pushDeckCard, finishDeckSelection : CScriptedFlashFunction;
     private var markDeckEdited : CScriptedFlashFunction; // optional: starter deck has a saved override
@@ -63,6 +64,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     private var setLeaderMotion : CScriptedFlashFunction;
     private var setBoardHelp : CScriptedFlashFunction;
     private var setIntroAudioState : CScriptedFlashFunction;
+    private var setIntroVoiceStart : CScriptedFlashFunction;
     private var introAudioSerial : int;
     private var setTutorialSeen : CScriptedFlashFunction;
     private var setTextLanguage : CScriptedFlashFunction;
@@ -97,6 +99,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         setUnopenedKegs = GetMenuFlash().GetMemberFlashFunction("setUnopenedKegs");
         setCounts = GetMenuFlash().GetMemberFlashFunction("setBoardCounts");
         pushCard = GetMenuFlash().GetMemberFlashFunction("pushBoardCard");
+        pushDestination = GetMenuFlash().GetMemberFlashFunction("pushCardDestination");
         finishState = GetMenuFlash().GetMemberFlashFunction("finishBoardState");
         setRequestHeader = GetMenuFlash().GetMemberFlashFunction("setRequestHeader");
         setRequestSource = GetMenuFlash().GetMemberFlashFunction("setRequestSource");
@@ -135,10 +138,11 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         setLeaderMotion = GetMenuFlash().GetMemberFlashFunction("setLeaderMotion");
         setBoardHelp = GetMenuFlash().GetMemberFlashFunction("setBoardHelp");
         setIntroAudioState = GetMenuFlash().GetMemberFlashFunction("setIntroAudioState");
+        setIntroVoiceStart = GetMenuFlash().GetMemberFlashFunction("setIntroVoiceStart");
         setTutorialSeen = GetMenuFlash().GetMemberFlashFunction("setTutorialSeen");
         setTextLanguage = GetMenuFlash().GetMemberFlashFunction("setTextLanguage");
         setLanguageSettings = GetMenuFlash().GetMemberFlashFunction("setLanguageSettings");
-        if (!setControllerDevice || !setControllerInput || !beginPileView || !pushPileCard || !pushPilePowerBase || !finishPileView || !pushEditorCopies || !pushTemplateDetails || !pushTemplateRules || !pushLiveStats || !beginDeckEditor || !pushEditorCard || !finishDeckEditor || !setVisualTarget || !pushPlayRules || !setPlacementCard || !setHeader || !setCounts || !pushCard || !finishState || !setRequestHeader || !pushRequestCard || !setDetails || !pushDetails || !pushStatus || !pushTimer || !setWeather || !beginVisualBatch || !setVisualCue || !beginDeckSelection || !pushDeckOption || !pushDeckCard || !finishDeckSelection || !pushLeaderOption || !setBoardLeaders)
+        if (!setControllerDevice || !setControllerInput || !beginPileView || !pushPileCard || !pushPilePowerBase || !finishPileView || !pushEditorCopies || !pushTemplateDetails || !pushTemplateRules || !pushLiveStats || !beginDeckEditor || !pushEditorCard || !finishDeckEditor || !setVisualTarget || !pushPlayRules || !setPlacementCard || !setHeader || !setCounts || !pushCard || !pushDestination || !finishState || !setRequestHeader || !pushRequestCard || !setDetails || !pushDetails || !pushStatus || !pushTimer || !setWeather || !beginVisualBatch || !setVisualCue || !beginDeckSelection || !pushDeckOption || !pushDeckCard || !finishDeckSelection || !pushLeaderOption || !setBoardLeaders)
         {
             LogChannel('BetaGwent', "BOARD_MISSING_FLASH_FUNCTION");
             CloseMenu();
@@ -535,6 +539,54 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if (status == "") status = validation.message;
         finishDeckEditor.InvokeSelfTwoArgs(FlashArgInt(revision), FlashArgString(status));
     }
+    private function PublishDeckExchange(code : string, message : string, accepted : bool)
+    {
+        var reply : CScriptedFlashFunction;
+        reply=GetMenuFlash().GetMemberFlashFunction("setDeckExchange");
+        if(reply)reply.InvokeSelfFourArgs(FlashArgInt(revision),FlashArgString(code),FlashArgString(message),FlashArgBool(accepted));
+    }
+    event OnBetaGwentDeckExport(value : int)
+    {
+        var code : string;
+        if(!configured || !deckDraft || value!=revision)return false;
+        code=BetaGwentExportDeckExchange(deckDraft.cards,deckDraft.faction,deckDraft.leader);
+        if(code==""){PublishDeckExchange("","Нужна допустимая колода из 25–40 карт.",false);return false;}
+        PublishDeckExchange(code,"",false);return true;
+    }
+    event OnBetaGwentDeckImport(value : int, code : string, craft : bool)
+    {
+        var parsed : SBetaGwentDeckExchange;var player : W3PlayerWitcher;
+        var missing,counts : array<int>;var cost,i : int;var message : string;var d : SBetaGwentDuelDefinition;
+        if(!configured || !selectingDecks || value!=revision)return false;
+        parsed=BetaGwentParseDeckExchange(code);
+        if(!parsed.valid){PublishDeckExchange("",parsed.message,false);return false;}
+        if(npcMatch && forcedBetaFaction!=0 && parsed.faction!=forcedBetaFaction) {
+            PublishDeckExchange("","Для квеста нужна другая фракция.",false);return false;
+        }
+        if(!deckDraft && deckLibrary.FirstEmpty()==0){PublishDeckExchange("","Нет свободного слота. Откройте колоду для замены.",false);return false;}
+        player=(W3PlayerWitcher)thePlayer;
+        if((libraryOnly || npcMatch) && (!player || !player.BetaGwentEnsureCollection())) {
+            PublishDeckExchange("","Коллекция недоступна.",false);return false;
+        }
+        if(libraryOnly || npcMatch) {
+            cost=player.BetaGwentExchangeMissing(parsed.cards,parsed.leader,missing,counts);
+            if(missing.Size()>0) {
+                message="Недостающие карты ("+cost+" осколков; в наличии "+player.BetaGwentScraps()+"):\n";
+                for(i=0;i<missing.Size();i+=1){d=BetaGwentDuelDefinition(missing[i]);message+=d.title+" × "+counts[i]+"\n";}
+                if(player.BetaGwentKegPending())message+="Сначала завершите выбор бочки.";
+                if(!craft || !player.BetaGwentCraftExchange(parsed.cards,parsed.faction,parsed.leader)) {
+                    PublishDeckExchange("",message,false);return false;
+                }
+            }
+        }
+        if(!deckDraft)deckDraft=deckLibrary.Edit(0);
+        if(!deckDraft){PublishDeckExchange("","Нет свободного слота.",false);return false;}
+        deckDraft.cards=parsed.cards;deckDraft.faction=parsed.faction;deckDraft.leader=parsed.leader;
+        deckClearHistory.Clear();editorPublishedFaction=0;
+        PublishCollection();PublishDeckEditor("Колода импортирована. Сохраните изменения.");
+        PublishDeckExchange("","Колода импортирована.",true);return true;
+    }
+
     event OnBetaGwentDeckCreate(value : int, id : int)
     {
         var d : SBetaGwentDuelDefinition; var player : W3PlayerWitcher;
@@ -577,7 +629,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         }
         d = BetaGwentDuelDefinition(id);
         if(npcMatch && forcedBetaFaction!=0 && d.header.factionMask!=forcedBetaFaction) {
-            PublishDeckEditor("Этот квест требует колоду указанной фракции.");return false;
+            PublishDeckEditor("Для квеста нужна другая фракция.");return false;
         }
         if (d.header.factionMask != deckDraft.faction)
         {
@@ -814,6 +866,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
                     FlashArgInt(frame.weatherTokens[weatherIndex]), FlashArgInt(frame.weatherDamage[weatherIndex]));
                 weatherIndex += 1;
             }
+        for (i = 0; i < frame.destinationIds.Size(); i += 1)
+            pushDestination.InvokeSelfThreeArgs(FlashArgInt(frame.destinationIds[i]), FlashArgInt(frame.destinationSides[i]), FlashArgInt(frame.destinationZones[i]));
         entries = frame.cards;
         details = "Дуэль · перемешивание и замена 3/1/1";
         if (duel.IsRowRequest()) details = "Выбор ряда";
@@ -1016,9 +1070,11 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         var pending : bool;
         if(configured && audio)pending=audio.IsIntroActive();
         if(setIntroAudioState && introAudioSerial>0)setIntroAudioState.InvokeSelfTwoArgs(FlashArgInt(introAudioSerial),FlashArgBool(pending));
+        if(setIntroVoiceStart && introAudioSerial>0 && audio && audio.IntroVoiceSide()>0)
+            setIntroVoiceStart.InvokeSelfFourArgs(FlashArgInt(introAudioSerial),FlashArgInt(audio.IntroVoiceSide()),FlashArgInt(audio.IntroVoiceTemplate()),FlashArgInt(audio.IntroVoiceClock()));
     }
     event OnBetaGwentAudioLeaderEntrance(templateId : int, side : int, serial : int, clock : int)
-    { if(configured && audio && serial>0 && serial==introAudioSerial){audio.SetClock(clock);audio.LeaderEntrance(templateId,side);} }
+    { if(configured && audio && serial>0 && serial==introAudioSerial){audio.SetClock(clock);audio.MarkIntroReady(side);audio.LeaderEntrance(templateId,side);} }
     event OnBetaGwentAudioIntroCancel(serial : int)
     { if(serial==introAudioSerial){if(audio)audio.CancelIntro();introAudioSerial=0;} }
     event OnBetaGwentAudioKeg(kind : int)
@@ -1360,13 +1416,117 @@ exec function bgboard_close()
     if (menu) menu.CloseMenu();
 }
 
+function BetaGwentConsoleMessage(message : string)
+{
+    LogChannel('BetaGwent',message);
+    if(theGame)theGame.GetGuiManager().ShowNotification(message,8.0);
+}
+function BetaGwentConsolePlayer() : W3PlayerWitcher
+{
+    var player : W3PlayerWitcher;
+    if(!theGame)return NULL;
+    player=(W3PlayerWitcher)thePlayer;
+    if(!player){BetaGwentConsoleMessage("Загрузите сохранение игры.");return NULL;}
+    if(theGame.GetGuiManager().IsAnyMenu()){BetaGwentConsoleMessage("Закройте меню перед выдачей ресурсов.");return NULL;}
+    if(!player.BetaGwentEnsureCollection()){BetaGwentConsoleMessage("Коллекция недоступна.");return NULL;}
+    return player;
+}
 exec function bg_allcards()
 {
     var player : W3PlayerWitcher;var granted : int;
-    if(!theGame || theGame.GetGuiManager().IsAnyMenu())return;
-    player=(W3PlayerWitcher)thePlayer;if(!player)return;
+    player=BetaGwentConsolePlayer();if(!player)return;
     granted=player.BetaGwentGrantAllCards();
-    LogChannel('BetaGwent',"bg_allcards result="+granted);
+    BetaGwentConsoleMessage("bg_allcards: добавлено "+granted+" копий карт и лидеров.");
+}
+exec function bg_kegs(count : int)
+{
+    var player : W3PlayerWitcher;var before : int;
+    if(count<1 || count>1000000){BetaGwentConsoleMessage("bg_kegs(10): количество от 1 до 1000000.");return;}
+    player=BetaGwentConsolePlayer();if(!player)return;before=player.BetaGwentKegCount();
+    if(before<0 || before>2000000000-count){BetaGwentConsoleMessage("Переполнение счётчика бочек.");return;}
+    player.BetaGwentAddKegs(count);player.BetaGwentBackupProfile();
+    BetaGwentConsoleMessage("bg_kegs: добавлено "+(player.BetaGwentKegCount()-before)+", всего "+player.BetaGwentKegCount()+".");
+}
+exec function bg_scraps(count : int)
+{
+    var player : W3PlayerWitcher;var before : int;
+    if(count<1 || count>1000000){BetaGwentConsoleMessage("bg_scraps(1000): количество от 1 до 1000000.");return;}
+    player=BetaGwentConsolePlayer();if(!player)return;before=player.BetaGwentScraps();
+    if(before>2000000000-count){BetaGwentConsoleMessage("Переполнение счётчика осколков.");return;}
+    player.BetaGwentAddScraps(count);player.BetaGwentBackupProfile();
+    BetaGwentConsoleMessage("bg_scraps: добавлено "+(player.BetaGwentScraps()-before)+", всего "+player.BetaGwentScraps()+".");
+}
+exec function bg_card(id : int, count : int)
+{
+    var player : W3PlayerWitcher;var granted : int;var d : SBetaGwentDuelDefinition;
+    if(count<1 || count>1000 || BetaGwentCollectionCap(id)<1){BetaGwentConsoleMessage("bg_card(132102,1): нужен ID коллекционной карты/лидера и количество 1–1000.");return;}
+    player=BetaGwentConsolePlayer();if(!player)return;
+    granted=player.BetaGwentConsoleGrant(id,count);d=BetaGwentDuelDefinition(id);
+    BetaGwentConsoleMessage(d.title+" ("+id+"): добавлено "+granted+", в наличии "+player.BetaGwentOwned(id)+" / "+BetaGwentCollectionCap(id)+".");
+}
+exec function bg_find(query : string)
+{
+    var ids,leaders : array<int>;var i,total : int;var d : SBetaGwentDuelDefinition;var line,summary : string;
+    if(StrLen(query)<2 || StrLen(query)>80){BetaGwentConsoleMessage("bg_find('Имлерих'): введите от 2 до 80 символов.");return;}
+    BetaGwentDuelCollection(ids);BetaGwentDuelLeaders(leaders);
+    for(i=0;i<leaders.Size();i+=1)if(!ids.Contains(leaders[i]))ids.PushBack(leaders[i]);
+    query=StrLowerUTF(query);
+    for(i=0;i<ids.Size();i+=1) {
+        d=BetaGwentDuelDefinition(ids[i]);
+        if(StrFindFirst(StrLowerUTF(d.title),query)<0)continue;
+        line=d.title+" = "+ids[i];LogChannel('BetaGwent',line);total+=1;
+        if(total<=8)summary+=line+"\n";
+    }
+    BetaGwentConsoleMessage(summary+"Найдено: "+total+". Полный список — в журнале BetaGwent.");
+}
+function BetaGwentConsoleFactionMask(value : string) : int
+{
+    value=StrLower(value);
+    if(value=="neutral")return 1;if(value=="monsters")return 2;if(value=="nilfgaard")return 4;
+    if(value=="north")return 8;if(value=="scoiatael")return 16;if(value=="skellige")return 32;return 0;
+}
+exec function bg_faction(value : string)
+{
+    var player : W3PlayerWitcher;var faction,granted : int;
+    faction=BetaGwentConsoleFactionMask(value);
+    if(faction==0){BetaGwentConsoleMessage("Фракции: neutral, monsters, nilfgaard, north, scoiatael, skellige.");return;}
+    player=BetaGwentConsolePlayer();if(!player)return;
+    granted=player.BetaGwentConsoleFaction(faction,false);
+    BetaGwentConsoleMessage("bg_faction: добавлено "+granted+" копий до лимита фракции "+value+".");
+}
+exec function bg_leaders()
+{
+    var player : W3PlayerWitcher;var granted : int;
+    player=BetaGwentConsolePlayer();if(!player)return;granted=player.BetaGwentConsoleFaction(0,true);
+    BetaGwentConsoleMessage("bg_leaders: добавлено "+granted+" лидеров.");
+}
+exec function bg_status()
+{
+    var player : W3PlayerWitcher;var ids,leaders : array<int>;var i,distinct,total : int;
+    player=(W3PlayerWitcher)thePlayer;if(!theGame || !player)return;
+    BetaGwentDuelCollection(ids);BetaGwentDuelLeaders(leaders);
+    for(i=0;i<leaders.Size();i+=1)if(!ids.Contains(leaders[i]))ids.PushBack(leaders[i]);
+    for(i=0;i<ids.Size();i+=1){if(player.BetaGwentOwned(ids[i])>0)distinct+=1;total+=player.BetaGwentOwned(ids[i]);}
+    BetaGwentConsoleMessage("Коллекция: "+distinct+" / "+ids.Size()+", копий: "+total+"; бочки: "+player.BetaGwentKegCount()+"; осколки: "+player.BetaGwentScraps()+"; выбор бочки: "+player.BetaGwentKegPending()+"; NG+: "+FactsQuerySum("NewGamePlus"));
+}
+exec function bg_shopcheck()
+{
+    var menu : CR4InventoryMenu;
+    if(!theGame)return;menu=(CR4InventoryMenu)theGame.GetGuiManager().GetRootMenu();
+    if(!menu){BetaGwentConsoleMessage("Откройте магазин продавца.");return;}
+    BetaGwentConsoleMessage(menu.BetaGwentShopDiagnostic(0,false));
+}
+exec function bg_shoprefill(target : int)
+{
+    var menu : CR4InventoryMenu;
+    if(target<1 || target>99){BetaGwentConsoleMessage("bg_shoprefill(5): целевой запас от 1 до 99.");return;}
+    if(!theGame)return;menu=(CR4InventoryMenu)theGame.GetGuiManager().GetRootMenu();
+    if(!menu){BetaGwentConsoleMessage("Откройте магазин корчмаря.");return;}
+    BetaGwentConsoleMessage(menu.BetaGwentShopDiagnostic(target,true));
+}
+exec function bg_help()
+{
+    BetaGwentConsoleMessage("bg_kegs(10) · bg_scraps(1000) · bg_card(132102,1) · bg_find('Имлерих')\nbg_faction('monsters') · bg_leaders() · bg_allcards · bg_status()\nbg_shopcheck() · bg_shoprefill(5) · bg_help()\nФракции: neutral, monsters, nilfgaard, north, scoiatael, skellige. Выдача ресурсов — при закрытых меню; магазин — при открытом магазине.");
 }
 
 function BetaGwentTextLanguage137(value:int):int
