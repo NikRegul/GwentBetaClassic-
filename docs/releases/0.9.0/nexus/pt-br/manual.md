@@ -22,6 +22,7 @@ Os textos das cartas vêm da localização oficial da beta. A interface foi trad
 - Cole um código de baralho da área de transferência do Windows na tela de importação (botão Colar ou Ctrl+V; requer Optional-CopyButton).
 - Tutorial ampliado para 10 páginas: mulligan e compra, fileiras e vizinhos, status das cartas.
 - Cartas corrigidas como na beta: Myrgtabrakke causa 2 de dano três vezes e a habilidade de Harald, o Aleijado, atinge dez vezes.
+- Melhorado o gerenciamento dos backups da coleção e dos baralhos. Isso pode ajudar em alguns casos de perda de progresso; a recuperação depende dos dados disponíveis no backup.
 
 
 ## IA e interface
@@ -110,6 +111,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 São apagados coleção, baralhos, recursos, configurações, recompensas conhecidas, cópias de segurança e itens betagwent_* do inventário do jogador. Uma marca salva impede a restauração mesmo após carregar novamente. Salve em um NOVO espaço, feche o jogo, retire o mod e seu DLC Classic, atualize o Script Merger, carregue o novo espaço e salve outra vez. Missões, conquistas e coroas gastas permanecem. Comerciantes não carregados, baú e recipientes do mundo não são percorridos. Fatos antigos de recompensa órfãos podem exigir save_fact_index.py e bg_clean_keys('…') após a confirmação. Não há garantia de apagar fisicamente todo vestígio histórico. Se alguns itens Beta não puderem ser removidos, aparece INCOMPLETE em vez do sucesso: descarte ou venda esses itens e repita o comando. Ao desinstalar, apague também os arquivos de Optional-CopyButton se os instalou: bin\…\plugins\GwentBetaClipboard.asi e o dinput8.dll deste mod (não o de outro).
+
+**Depois de desinstalar:** copie a pasta Mods da pasta After-Uninstall do arquivo para o diretório do jogo (Mods/modBetaGwentKeepItems). Ela mantém definições ocultas dos itens do mod, para que mercadores, o baú e os contêineres que ainda tenham cartas ou barris da beta não percam todo o inventário. Não a instale junto com o mod.
 
 ## Até a 1.0
 

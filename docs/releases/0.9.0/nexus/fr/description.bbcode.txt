@@ -48,7 +48,7 @@ Préparez l’embuscade. Elfes, nains, échanges et renforcements en main transf
 
 Tirez parti de chaque perte. Défausse, résurrection et guerriers profitant des dégâts font du cimetière une ressource.
 
-[size=4][color=#e0b354][b]Prenez une chaise. Votre prochain deck commence ici.[/b][/color][/size]
+[size=4][color=#e0b354][b]Le contrat peut attendre. Votre prochain deck commence ici.[/b][/color][/size]
 
 Choisissez l’archive adaptée à votre jeu, ouvrez le menu habituel des decks de Gwynt et composez votre liste. Il ne reste qu’à trouver un partenaire. [b]Juste une partie…[/b]
 
@@ -117,6 +117,7 @@ Les textes des cartes proviennent de la traduction officielle de la bêta. L’i
 [*]Collez un code de deck depuis le presse-papiers Windows dans l'écran d'import (bouton Coller ou Ctrl+V ; nécessite Optional-CopyButton).
 [*]Tutoriel étendu à 10 pages : mulligan et pioche, rangées et voisins, états des cartes.
 [*]Cartes corrigées comme dans la bêta : Myrgtabrakke inflige 2 dégâts trois fois, la capacité de Harald l'Estropié frappe dix fois.
+[*]Amélioration de la gestion des sauvegardes de la collection et des decks. Cela peut aider dans certains cas de perte de progression ; la restauration dépend des données disponibles dans la copie de sauvegarde.
 
 
 [/list]
@@ -180,6 +181,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 [/code]
 
 Collection, decks, ressources, réglages, récompenses connues, miroirs de sauvegarde et objets betagwent_* de l’inventaire du joueur sont effacés. Un indicateur sauvegardé empêche leur restauration, même après rechargement. Sauvegardez dans un NOUVEL emplacement, quittez le jeu, retirez le mod et son DLC Classic, actualisez Script Merger, chargez ce nouvel emplacement et sauvegardez encore. Quêtes, succès et couronnes dépensées restent inchangés. Marchands non chargés, réserve et conteneurs du monde ne sont pas parcourus. Pour les anciens faits de récompense orphelins : save_fact_index.py puis bg_clean_keys('…') après confirmation. L’effacement physique de toute trace historique n’est pas garanti. Si certains objets Beta ne peuvent pas être retirés, le jeu affiche INCOMPLETE au lieu du succès : jetez-les ou vendez-les, puis relancez la commande. À la désinstallation, supprimez aussi les fichiers Optional-CopyButton s’ils sont installés : bin\…\plugins\GwentBetaClipboard.asi et le dinput8.dll de ce mod (pas celui d’un autre).
+
+[b]Après la désinstallation :[/b] copiez le dossier Mods du dossier After-Uninstall de l’archive dans le répertoire du jeu (Mods/modBetaGwentKeepItems). Il conserve des définitions cachées des objets du mod, afin que les marchands, la réserve et les conteneurs qui contiennent encore des cartes ou des barils de la bêta ne perdent pas tout leur inventaire. Ne l’installez pas en même temps que le mod.
 [/spoiler]
 
 

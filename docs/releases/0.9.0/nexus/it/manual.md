@@ -22,6 +22,7 @@ I testi delle carte provengono dalla localizzazione ufficiale della beta. L’in
 - Incolla un codice mazzo dagli appunti di Windows nella schermata di importazione (pulsante Incolla o Ctrl+V; richiede Optional-CopyButton).
 - Tutorial ampliato a 10 pagine: mulligan e pescate, file e vicini, stati delle carte.
 - Carte corrette come nella beta: Myrgtabrakke infligge 2 danni tre volte, l'abilità di Harald lo Storpio colpisce dieci volte.
+- Migliorata la gestione dei backup della collezione e dei mazzi. Questo può aiutare in alcuni casi di perdita dei progressi; il ripristino dipende dai dati disponibili nel backup.
 
 
 ## IA e interfaccia
@@ -110,6 +111,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 Vengono eliminati collezione, mazzi, risorse, impostazioni, ricompense note, copie di riserva e oggetti betagwent_* nell’inventario del giocatore. Un indicatore salvato impedisce il ripristino anche dopo un nuovo caricamento. Salva in un NUOVO slot, esci, rimuovi il mod e il suo DLC Classic, aggiorna Script Merger, carica lo slot nuovo e salva ancora. Missioni, obiettivi e corone spese rimangono. Mercanti non caricati, deposito e contenitori del mondo non vengono esaminati. Per vecchi fatti di ricompensa orfani: save_fact_index.py e bg_clean_keys('…') dopo la conferma. Non è garantita la cancellazione fisica di ogni traccia storica. Se alcuni oggetti Beta non possono essere rimossi, appare INCOMPLETE invece del successo: gettali o vendili e ripeti il comando. Disinstallando, elimina anche i file di Optional-CopyButton se li hai installati: bin\…\plugins\GwentBetaClipboard.asi e il dinput8.dll di questa mod (non di altre).
+
+**Dopo la disinstallazione:** copia la cartella Mods dalla cartella After-Uninstall dell’archivio nella cartella del gioco (Mods/modBetaGwentKeepItems). Conserva definizioni nascoste degli oggetti della mod, così mercanti, deposito e contenitori che contengono ancora carte o barili della beta non perdono l’intero inventario. Non installarla insieme alla mod.
 
 ## Verso la 1.0
 

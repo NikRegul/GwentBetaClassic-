@@ -22,6 +22,7 @@ Teksty kart pochodzą z oficjalnej lokalizacji bety. Interfejs przetłumaczono z
 - Wklejanie kodu talii ze schowka Windows na ekranie importu (przycisk Wklej lub Ctrl+V; wymaga Optional-CopyButton).
 - Samouczek rozszerzony do 10 stron: mulligan i dobieranie, rzędy i sąsiedzi, statusy kart.
 - Poprawione karty zgodnie z betą: Myrgtabrakke zadaje 2 obrażenia trzy razy, zdolność Haralda Kaleki trafia dziesięć razy.
+- Ulepszono obsługę kopii zapasowych kolekcji i talii. Może to pomóc w niektórych przypadkach utraty postępów; przywrócenie zależy od danych dostępnych w kopii zapasowej.
 
 
 ## SI i interfejs
@@ -110,6 +111,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 Usuwane są kolekcja, talie, zasoby, ustawienia, znane nagrody, kopie zapasowe i przedmioty betagwent_* z ekwipunku gracza. Zapisana blokada zapobiega odtworzeniu danych także po ponownym wczytaniu. Zapisz w NOWYM slocie, zamknij grę, usuń mod i jego DLC Classic, zaktualizuj Script Merger, wczytaj nowy slot i zapisz ponownie. Zadania, osiągnięcia i wydane korony pozostają. Niewczytani kupcy, schowek i pojemniki świata nie są przeszukiwane. Osierocone fakty nagród mogą wymagać save_fact_index.py i bg_clean_keys('…') po potwierdzeniu. Fizyczne usunięcie wszystkich historycznych śladów nie jest gwarantowane. Jeśli części przedmiotów Beta nie da się usunąć, zamiast sukcesu pojawi się INCOMPLETE: wyrzuć je lub sprzedaj i powtórz polecenie. Przy odinstalowaniu usuń też pliki Optional-CopyButton, jeśli je instalowano: bin\…\plugins\GwentBetaClipboard.asi oraz dinput8.dll z tego moda (nie z innego).
+
+**Po odinstalowaniu:** skopiuj folder Mods z folderu After-Uninstall archiwum do katalogu gry (Mods/modBetaGwentKeepItems). Zawiera ukryte definicje przedmiotów moda, dzięki czemu kupcy, skrytka i pojemniki, w których wciąż są karty lub beczki bety, nie tracą całego ekwipunku. Nie instaluj go razem z modem.
 
 ## Do wersji 1.0
 

@@ -22,6 +22,7 @@ Kartentexte stammen aus der offiziellen Beta-Lokalisierung. Die Oberfläche wurd
 - Deckcode aus der Windows-Zwischenablage im Import einfügen (Schaltfläche „Einfügen“ oder Strg+V; erfordert Optional-CopyButton).
 - Tutorial auf 10 Seiten erweitert: Mulligan und Nachziehen, Reihen und Nachbarn, Kartenstatus.
 - Kartenkorrekturen wie in der Beta: Myrgtabrakke verursacht dreimal 2 Schaden, die Fähigkeit von Harald dem Krüppel trifft zehnmal.
+- Die Verarbeitung von Sicherungen der Sammlung und Decks wurde verbessert. Dies kann in manchen Fällen von Fortschrittsverlust helfen; die Wiederherstellung hängt von den verfügbaren Sicherungsdaten ab.
 
 
 ## KI und Oberfläche
@@ -110,6 +111,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 Sammlung, Decks, Ressourcen, Einstellungen, bekannte Belohnungen, Sicherungsspiegel und betagwent_*-Gegenstände im Spielerinventar werden gelöscht. Eine gespeicherte Sperre verhindert die Wiederherstellung, auch nach erneutem Laden. In NEUEM Slot speichern, Spiel beenden, Mod samt Classic-DLC entfernen, Script Merger aktualisieren, neuen Slot laden und erneut speichern. Quests, Erfolge und ausgegebene Kronen bleiben. Unbeladene Händler, Lager und Weltbehälter werden nicht durchsucht. Für verwaiste Belohnungsfakten stehen save_fact_index.py und bg_clean_keys('…') nach Bestätigung bereit. Eine vollständige physische Löschung jeder historischen Speicherstelle wird nicht zugesichert. Lassen sich einige Beta-Gegenstände nicht entfernen, erscheint INCOMPLETE statt der Erfolgsmeldung: diese wegwerfen oder verkaufen und den Befehl wiederholen. Beim Deinstallieren auch die Optional-CopyButton-Dateien löschen, falls installiert: bin\…\plugins\GwentBetaClipboard.asi und die dinput8.dll dieses Mods (nicht die eines anderen).
+
+**Nach der Deinstallation:** Kopiere den Ordner Mods aus dem Ordner After-Uninstall des Archivs in das Spielverzeichnis (Mods/modBetaGwentKeepItems). Er enthält versteckte Definitionen der Mod-Gegenstände, damit Händler, Truhe und Behälter, die noch Beta-Karten oder Fässer enthalten, nicht ihr gesamtes Inventar verlieren. Nicht zusammen mit der Mod installieren.
 
 ## Bis 1.0
 

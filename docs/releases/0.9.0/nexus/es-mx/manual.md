@@ -22,6 +22,7 @@ Los textos de las cartas vienen de la localización oficial de la beta. La inter
 - Pega un código de mazo desde el portapapeles de Windows en la pantalla de importación (botón Pegar o Ctrl+V; requiere Optional-CopyButton).
 - Tutorial ampliado a 10 páginas: mulligan y robo, filas y vecinos, estados de las cartas.
 - Cartas corregidas como en la beta: Myrgtabrakke inflige 2 de daño tres veces y la habilidad de Harald el Lisiado golpea diez veces.
+- Se mejoró la gestión de las copias de seguridad de la colección y los mazos. Esto puede ayudar en algunos casos de pérdida de progreso; la recuperación depende de los datos disponibles en la copia de seguridad.
 
 
 ## IA e interfaz
@@ -110,6 +111,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 Se borran colección, mazos, recursos, ajustes, recompensas conocidas, copias de respaldo y objetos betagwent_* del inventario del jugador. Una marca guardada impide restaurarlos incluso al volver a cargar. Guarda en una ranura NUEVA, cierra el juego, retira el mod y su DLC Classic, actualiza Script Merger, carga la nueva ranura y guarda otra vez. Misiones, logros y coronas gastadas permanecen. No se recorren mercaderes sin cargar, el alijo ni contenedores del mundo. Los antiguos hechos de recompensa huérfanos pueden requerir save_fact_index.py y bg_clean_keys('…') después de confirmar. No se garantiza borrar físicamente todo rastro histórico. Si algunos objetos Beta no se pueden quitar, aparece INCOMPLETE en lugar del éxito: tíralos o véndelos y repite el comando. Al desinstalar, borra también los archivos de Optional-CopyButton si los instalaste: bin\…\plugins\GwentBetaClipboard.asi y el dinput8.dll de este mod (no el de otro).
+
+**Después de desinstalar:** copia la carpeta Mods de la carpeta After-Uninstall del archivo al directorio del juego (Mods/modBetaGwentKeepItems). Conserva definiciones ocultas de los objetos del mod para que los comerciantes, el alijo y los contenedores que aún tengan cartas o barriles de la beta no pierdan todo su inventario. No la instales junto con el mod.
 
 ## Hasta la 1.0
 

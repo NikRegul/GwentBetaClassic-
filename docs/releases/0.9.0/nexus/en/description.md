@@ -53,7 +53,7 @@ Prepare the ambush. Elves, dwarves, swaps and hand boosts turn patient setup int
 
 Make every loss count. Discard, resurrection and warriors who thrive amid damage keep the graveyard in your plans.
 
-## Pull up a chair. Your next deck starts here.
+## The contract can wait. Your next deck starts here.
 
 Choose the archive for your game, open the usual Gwent deck menu and make the first list your own. Then find someone willing to play. **Just one match…**
 
@@ -118,6 +118,7 @@ Card texts use the official Beta localization. The mod interface includes AI-ass
 - Paste a deck code from the Windows clipboard on the Import screen (Paste button or Ctrl+V; requires Optional-CopyButton).
 - Tutorial expanded to 10 pages: mulligan and draws, rows and neighbours, card statuses.
 - Card fixes matching Beta: Myrgtabrakke deals 2 damage three times, Harald the Cripple's ability hits ten times.
+- Improved backup handling for the collection and decks. This may help with some cases of lost progress; recovery depends on the data available in the backup.
 
 
 ## AI and interface
@@ -186,6 +187,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 This clears the Beta collection, decks, scraps, kegs, settings, known reward ledgers, both backup banks and betagwent_* items in the player's current inventory. A saved uninstall flag prevents starter grants and backup restoration, including after reloading with the mod still installed. Save to a NEW slot, exit the game, remove this mod's folders (including its Classic DLC), rebuild affected Script Merger merges, load the new slot and save again. To cancel, load your original backup. If some Beta item stacks cannot be removed, the game shows INCOMPLETE instead of success: drop or sell them and run the command again. When uninstalling, also delete the Optional-CopyButton files if you installed them: bin\…\plugins\GwentBetaClipboard.asi and the dinput8.dll from this mod (not another mod's).
+
+**After uninstalling:** copy the Mods folder from the archive's After-Uninstall folder into the game directory (Mods/modBetaGwentKeepItems). It keeps hidden definitions of the mod's items, so merchants, your stash and containers that still hold Beta cards or kegs don't lose their whole inventory. Do not install it together with the mod.
 
 Completed quests, achievements and spent crowns are not rolled back. The command does not traverse unloaded merchants, stash or world containers; retrieve Beta items first. Orphaned reward facts can require the included read-only save_fact_index.py and bg_clean_keys('…') after confirmation. See BetaGwentDocs/CLEANUP_EN.md. This is profile cleanup, not a certification that every historical byte of an arbitrary save has been erased.
 

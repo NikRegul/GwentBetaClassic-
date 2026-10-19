@@ -17,6 +17,7 @@
 [list]
 [*]Added help, collection status, card search, card/leader/faction grants, keg and scrap grants, and innkeeper keg stock diagnostics and refill.
 [*]Normal copy limits are enforced; invalid parameters and counter overflow are rejected. Resource grants are blocked in menus and matches; shop commands require an open shop.
+[*]Console command messages use the text language selected in the mod settings (13 languages).
 [/list]
 
 [size=4][color=#e0b354][b]Interface and controller[/b][/color][/size]
@@ -48,6 +49,9 @@
 [list]
 [*]Integrated 203 missing legacy Redux item definitions for normal games and New Game+, preserving 197 native definitions. This protects loading old inventory; it neither recovers already lost data nor converts Redux collections.
 [*]All 13 text languages, five voice languages and independent text/voice selection are retained. Classic 1.32 and Next-Gen 5.0+ use separate packages.
+[*]Improved backup handling for the collection and decks. This may help with some cases of lost progress; recovery depends on the data available in the backup.
+[*]Added an After-Uninstall folder with hidden item definitions: after removing the mod, merchants that still stock Beta cards or kegs no longer lose their whole inventory.
+[*]Classic 1.32: merchants no longer lose their stock with the mod installed. The mod's loot tables and item definitions now use the game's native UTF-16 XML format.
 [/list]
 
 [size=4][color=#e0b354][b]AI and interface update[/b][/color][/size]

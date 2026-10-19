@@ -22,6 +22,7 @@
 - 在匯入畫面從Windows剪貼簿貼上牌組代碼（貼上按鈕或Ctrl+V；需要Optional-CopyButton）。
 - 教學擴充為10頁：調度與抽牌、排與相鄰、卡牌狀態。
 - 依測試版修正卡牌：Myrgtabrakke造成三次2點傷害，Harald the Cripple的能力命中十次。
+- 改善了收藏與牌組的備份處理。這可能有助於解決部分進度遺失問題；能否恢復及可恢復的內容取決於備份中保留的資料。
 
 
 ## AI與介面
@@ -110,6 +111,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 清除收藏、牌組、資源、設定、已知獎勵紀錄、備份鏡像與玩家目前背包中的betagwent_*物品。存檔標記會阻止復原，即使仍裝著模組重新讀檔。儲存至新欄位，退出遊戲，移除模組及其Classic DLC，更新Script Merger，再讀取新欄位並儲存一次。任務、成就和已花費克朗不會回退。未載入商人、儲物箱與世界容器不會被遍歷。舊的孤立獎勵事實可能需要在確認後使用save_fact_index.py和bg_clean_keys('…')。不保證物理刪除任意存檔中的所有歷史痕跡。 若部分Beta物品無法移除，將顯示INCOMPLETE而非成功訊息：請丟棄或出售這些物品後再次執行指令。 解除安裝時，若安裝過Optional-CopyButton，也請刪除其檔案：bin\…\plugins\GwentBetaClipboard.asi以及本模組的dinput8.dll（勿刪除其他模組的）。
+
+**解除安裝後：** 將壓縮檔After-Uninstall資料夾中的Mods資料夾複製到遊戲目錄（Mods/modBetaGwentKeepItems）。它保留模組物品的隱藏定義，避免仍持有測試版卡牌或卡桶的商人、儲物箱與容器遺失全部物品。不要與模組同時安裝。
 
 ## 邁向1.0
 

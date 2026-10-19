@@ -57,7 +57,7 @@ Prepare the ambush. Elves, dwarves, swaps and hand boosts turn patient setup int
 
 Make every loss count. Discard, resurrection and warriors who thrive amid damage keep the graveyard in your plans.
 
-## Pull up a chair. Your next deck starts here.
+## The contract can wait. Your next deck starts here.
 
 Choose the archive for your game, open the usual Gwent deck menu and make the first list your own. Then find someone willing to play. **Just one match…**
 
@@ -122,6 +122,7 @@ Card texts use the official Beta localization. The mod interface includes AI-ass
 - Paste a deck code from the Windows clipboard on the Import screen (Paste button or Ctrl+V; requires Optional-CopyButton).
 - Tutorial expanded to 10 pages: mulligan and draws, rows and neighbours, card statuses.
 - Card fixes matching Beta: Myrgtabrakke deals 2 damage three times, Harald the Cripple's ability hits ten times.
+- Improved backup handling for the collection and decks. This may help with some cases of lost progress; recovery depends on the data available in the backup.
 
 
 ## AI and interface
@@ -190,6 +191,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 This clears the Beta collection, decks, scraps, kegs, settings, known reward ledgers, both backup banks and betagwent_* items in the player's current inventory. A saved uninstall flag prevents starter grants and backup restoration, including after reloading with the mod still installed. Save to a NEW slot, exit the game, remove this mod's folders (including its Classic DLC), rebuild affected Script Merger merges, load the new slot and save again. To cancel, load your original backup. If some Beta item stacks cannot be removed, the game shows INCOMPLETE instead of success: drop or sell them and run the command again. When uninstalling, also delete the Optional-CopyButton files if you installed them: bin\…\plugins\GwentBetaClipboard.asi and the dinput8.dll from this mod (not another mod's).
+
+**After uninstalling:** copy the Mods folder from the archive's After-Uninstall folder into the game directory (Mods/modBetaGwentKeepItems). It keeps hidden definitions of the mod's items, so merchants, your stash and containers that still hold Beta cards or kegs don't lose their whole inventory. Do not install it together with the mod.
 
 Completed quests, achievements and spent crowns are not rolled back. The command does not traverse unloaded merchants, stash or world containers; retrieve Beta items first. Orphaned reward facts can require the included read-only save_fact_index.py and bg_clean_keys('…') after confirmation. See BetaGwentDocs/CLEANUP_EN.md. This is profile cleanup, not a certification that every historical byte of an arbitrary save has been erased.
 
@@ -295,7 +298,7 @@ Unofficial fan project. Original mod code is GPL-3.0-only; original game assets 
 
 Извлеки пользу из каждой потери. Сброс, воскрешение и воины, которым на руку чужие раны: кладбище тоже входит в твой план.
 
-## Подвинь стул. Здесь начинается твоя следующая колода.
+## Заказ подождёт. Здесь начинается твоя следующая колода.
 
 Выбери архив для своей версии игры, открой привычное меню колоды гвинта и собери что-нибудь своё. Осталось найти того, кто согласится сыграть. **Всего одну партию…**
 
@@ -360,6 +363,7 @@ The Witcher 3 на PC. Выберите отдельную сборку для C
 - Вставка кода колоды из буфера Windows на экране импорта (кнопка «Вставить» или Ctrl+V; нужна папка Optional-CopyButton).
 - Обучение расширено до 10 страниц: муллиган и добор, ряды и соседи, статусы карт.
 - Исправлены карты по данным беты: Миргтабракке наносит 2 ед. урона три раза, способность Харальда Хромого бьёт десять раз.
+- Улучшена работа резервных копий коллекции и колод. Это может помочь в некоторых случаях сброса прогресса; восстановление зависит от данных, сохранившихся в резервной копии.
 
 
 ## ИИ и интерфейс
@@ -428,6 +432,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 Удаляются коллекция беты, колоды, осколки, бочки, настройки, известные наградные записи, оба банка резервных фактов и предметы betagwent_* из текущего инвентаря игрока. Сохраняемый флаг блокирует повторную выдачу стартовых колод и восстановление профиля даже после перезагрузки с установленным модом. Сохранитесь В НОВЫЙ СЛОТ, выйдите из игры, уберите папки мода (для Classic — также его DLC), обновите затронутые объединения Script Merger, загрузите новый слот и сохранитесь ещё раз. Для отмены загрузите исходную резервную копию. Если часть стопок предметов беты удалить не удалось, вместо успеха будет сообщение INCOMPLETE: выбросьте или продайте их и повторите команду. При удалении мода уберите и файлы Optional-CopyButton, если ставили их: bin\…\plugins\GwentBetaClipboard.asi и dinput8.dll из этого мода (не чужой).
+
+**После удаления:** скопируйте папку Mods из папки After-Uninstall архива в каталог игры (Mods/modBetaGwentKeepItems). Она хранит скрытые определения предметов мода, и торговцы, тайник и контейнеры, где ещё лежат карты или бочки беты, не теряют весь инвентарь. Не устанавливайте её вместе с модом.
 
 Завершённые квесты, достижения и потраченные кроны не откатываются. Команда не обходит выгруженных торговцев, тайник и контейнеры мира: сначала заберите оттуда предметы беты. Для старых наградных фактов может потребоваться приложенный сканер save_fact_index.py и bg_clean_keys('…') после подтверждения очистки. Подробности — BetaGwentDocs/CLEANUP_RU.md. Это очистка профиля, без обещания физического удаления каждой исторической записи произвольного сейва.
 
@@ -533,7 +539,7 @@ Bereite den Hinterhalt vor. Elfen, Zwerge, Kartentausch und Verstärkungen auf d
 
 Nutze jeden Verlust. Abwerfen, Wiederbelebung und Krieger, die von Schaden profitieren, machen den Friedhof zum Teil deines Plans.
 
-## Rück den Stuhl heran. Hier beginnt dein nächstes Deck.
+## Der Auftrag kann warten. Hier beginnt dein nächstes Deck.
 
 Wähle das Archiv für deine Spielversion, öffne das gewohnte Gwint-Deckmenü und gestalte dein erstes Deck. Dann fehlt nur noch jemand, der mitspielt. **Nur eine Partie …**
 
@@ -598,6 +604,7 @@ Kartentexte stammen aus der offiziellen Beta-Lokalisierung. Die Oberfläche wurd
 - Deckcode aus der Windows-Zwischenablage im Import einfügen (Schaltfläche „Einfügen“ oder Strg+V; erfordert Optional-CopyButton).
 - Tutorial auf 10 Seiten erweitert: Mulligan und Nachziehen, Reihen und Nachbarn, Kartenstatus.
 - Kartenkorrekturen wie in der Beta: Myrgtabrakke verursacht dreimal 2 Schaden, die Fähigkeit von Harald dem Krüppel trifft zehnmal.
+- Die Verarbeitung von Sicherungen der Sammlung und Decks wurde verbessert. Dies kann in manchen Fällen von Fortschrittsverlust helfen; die Wiederherstellung hängt von den verfügbaren Sicherungsdaten ab.
 
 
 ## KI und Oberfläche
@@ -662,6 +669,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 Sammlung, Decks, Ressourcen, Einstellungen, bekannte Belohnungen, Sicherungsspiegel und betagwent_*-Gegenstände im Spielerinventar werden gelöscht. Eine gespeicherte Sperre verhindert die Wiederherstellung, auch nach erneutem Laden. In NEUEM Slot speichern, Spiel beenden, Mod samt Classic-DLC entfernen, Script Merger aktualisieren, neuen Slot laden und erneut speichern. Quests, Erfolge und ausgegebene Kronen bleiben. Unbeladene Händler, Lager und Weltbehälter werden nicht durchsucht. Für verwaiste Belohnungsfakten stehen save_fact_index.py und bg_clean_keys('…') nach Bestätigung bereit. Eine vollständige physische Löschung jeder historischen Speicherstelle wird nicht zugesichert. Lassen sich einige Beta-Gegenstände nicht entfernen, erscheint INCOMPLETE statt der Erfolgsmeldung: diese wegwerfen oder verkaufen und den Befehl wiederholen. Beim Deinstallieren auch die Optional-CopyButton-Dateien löschen, falls installiert: bin\…\plugins\GwentBetaClipboard.asi und die dinput8.dll dieses Mods (nicht die eines anderen).
+
+**Nach der Deinstallation:** Kopiere den Ordner Mods aus dem Ordner After-Uninstall des Archivs in das Spielverzeichnis (Mods/modBetaGwentKeepItems). Er enthält versteckte Definitionen der Mod-Gegenstände, damit Händler, Truhe und Behälter, die noch Beta-Karten oder Fässer enthalten, nicht ihr gesamtes Inventar verlieren. Nicht zusammen mit der Mod installieren.
 
 
 </details>
@@ -765,7 +774,7 @@ Préparez l’embuscade. Elfes, nains, échanges et renforcements en main transf
 
 Tirez parti de chaque perte. Défausse, résurrection et guerriers profitant des dégâts font du cimetière une ressource.
 
-## Prenez une chaise. Votre prochain deck commence ici.
+## Le contrat peut attendre. Votre prochain deck commence ici.
 
 Choisissez l’archive adaptée à votre jeu, ouvrez le menu habituel des decks de Gwynt et composez votre liste. Il ne reste qu’à trouver un partenaire. **Juste une partie…**
 
@@ -830,6 +839,7 @@ Les textes des cartes proviennent de la traduction officielle de la bêta. L’i
 - Collez un code de deck depuis le presse-papiers Windows dans l'écran d'import (bouton Coller ou Ctrl+V ; nécessite Optional-CopyButton).
 - Tutoriel étendu à 10 pages : mulligan et pioche, rangées et voisins, états des cartes.
 - Cartes corrigées comme dans la bêta : Myrgtabrakke inflige 2 dégâts trois fois, la capacité de Harald l'Estropié frappe dix fois.
+- Amélioration de la gestion des sauvegardes de la collection et des decks. Cela peut aider dans certains cas de perte de progression ; la restauration dépend des données disponibles dans la copie de sauvegarde.
 
 
 ## IA et interface
@@ -894,6 +904,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 Collection, decks, ressources, réglages, récompenses connues, miroirs de sauvegarde et objets betagwent_* de l’inventaire du joueur sont effacés. Un indicateur sauvegardé empêche leur restauration, même après rechargement. Sauvegardez dans un NOUVEL emplacement, quittez le jeu, retirez le mod et son DLC Classic, actualisez Script Merger, chargez ce nouvel emplacement et sauvegardez encore. Quêtes, succès et couronnes dépensées restent inchangés. Marchands non chargés, réserve et conteneurs du monde ne sont pas parcourus. Pour les anciens faits de récompense orphelins : save_fact_index.py puis bg_clean_keys('…') après confirmation. L’effacement physique de toute trace historique n’est pas garanti. Si certains objets Beta ne peuvent pas être retirés, le jeu affiche INCOMPLETE au lieu du succès : jetez-les ou vendez-les, puis relancez la commande. À la désinstallation, supprimez aussi les fichiers Optional-CopyButton s’ils sont installés : bin\…\plugins\GwentBetaClipboard.asi et le dinput8.dll de ce mod (pas celui d’un autre).
+
+**Après la désinstallation :** copiez le dossier Mods du dossier After-Uninstall de l’archive dans le répertoire du jeu (Mods/modBetaGwentKeepItems). Il conserve des définitions cachées des objets du mod, afin que les marchands, la réserve et les conteneurs qui contiennent encore des cartes ou des barils de la bêta ne perdent pas tout leur inventaire. Ne l’installez pas en même temps que le mod.
 
 
 </details>
@@ -997,7 +1009,7 @@ Prepara l’imboscata. Elfi, nani, scambi e potenziamenti in mano trasformano l�
 
 Sfrutta ogni perdita. Scarto, resurrezione e guerrieri che prosperano tra i danni fanno del cimitero una risorsa.
 
-## Avvicina la sedia. Il tuo prossimo mazzo comincia qui.
+## Il contratto può aspettare. Il tuo prossimo mazzo comincia qui.
 
 Scegli l’archivio per la tua versione del gioco, apri il normale menu del mazzo di Gwent e crea la tua lista. Poi trova qualcuno disposto a giocare. **Solo una partita…**
 
@@ -1062,6 +1074,7 @@ I testi delle carte provengono dalla localizzazione ufficiale della beta. L’in
 - Incolla un codice mazzo dagli appunti di Windows nella schermata di importazione (pulsante Incolla o Ctrl+V; richiede Optional-CopyButton).
 - Tutorial ampliato a 10 pagine: mulligan e pescate, file e vicini, stati delle carte.
 - Carte corrette come nella beta: Myrgtabrakke infligge 2 danni tre volte, l'abilità di Harald lo Storpio colpisce dieci volte.
+- Migliorata la gestione dei backup della collezione e dei mazzi. Questo può aiutare in alcuni casi di perdita dei progressi; il ripristino dipende dai dati disponibili nel backup.
 
 
 ## IA e interfaccia
@@ -1126,6 +1139,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 Vengono eliminati collezione, mazzi, risorse, impostazioni, ricompense note, copie di riserva e oggetti betagwent_* nell’inventario del giocatore. Un indicatore salvato impedisce il ripristino anche dopo un nuovo caricamento. Salva in un NUOVO slot, esci, rimuovi il mod e il suo DLC Classic, aggiorna Script Merger, carica lo slot nuovo e salva ancora. Missioni, obiettivi e corone spese rimangono. Mercanti non caricati, deposito e contenitori del mondo non vengono esaminati. Per vecchi fatti di ricompensa orfani: save_fact_index.py e bg_clean_keys('…') dopo la conferma. Non è garantita la cancellazione fisica di ogni traccia storica. Se alcuni oggetti Beta non possono essere rimossi, appare INCOMPLETE invece del successo: gettali o vendili e ripeti il comando. Disinstallando, elimina anche i file di Optional-CopyButton se li hai installati: bin\…\plugins\GwentBetaClipboard.asi e il dinput8.dll di questa mod (non di altre).
+
+**Dopo la disinstallazione:** copia la cartella Mods dalla cartella After-Uninstall dell’archivio nella cartella del gioco (Mods/modBetaGwentKeepItems). Conserva definizioni nascoste degli oggetti della mod, così mercanti, deposito e contenitori che contengono ancora carte o barili della beta non perdono l’intero inventario. Non installarla insieme alla mod.
 
 
 </details>
@@ -1229,7 +1244,7 @@ Przygotuj zasadzkę. Elfy, krasnoludy, wymiany i wzmacnianie kart na ręce przek
 
 Wykorzystaj każdą stratę. Odrzucanie, wskrzeszanie i wojownicy korzystający z obrażeń włączają cmentarz do twojego planu.
 
-## Przysuń krzesło. Tu zaczyna się twoja następna talia.
+## Zlecenie może poczekać. Tu zaczyna się twoja następna talia.
 
 Wybierz archiwum dla swojej wersji gry, otwórz zwykłe menu talii Gwinta i ułóż własny zestaw. Potem znajdź kogoś chętnego do gry. **Tylko jedna partyjka…**
 
@@ -1294,6 +1309,7 @@ Teksty kart pochodzą z oficjalnej lokalizacji bety. Interfejs przetłumaczono z
 - Wklejanie kodu talii ze schowka Windows na ekranie importu (przycisk Wklej lub Ctrl+V; wymaga Optional-CopyButton).
 - Samouczek rozszerzony do 10 stron: mulligan i dobieranie, rzędy i sąsiedzi, statusy kart.
 - Poprawione karty zgodnie z betą: Myrgtabrakke zadaje 2 obrażenia trzy razy, zdolność Haralda Kaleki trafia dziesięć razy.
+- Ulepszono obsługę kopii zapasowych kolekcji i talii. Może to pomóc w niektórych przypadkach utraty postępów; przywrócenie zależy od danych dostępnych w kopii zapasowej.
 
 
 ## SI i interfejs
@@ -1358,6 +1374,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 Usuwane są kolekcja, talie, zasoby, ustawienia, znane nagrody, kopie zapasowe i przedmioty betagwent_* z ekwipunku gracza. Zapisana blokada zapobiega odtworzeniu danych także po ponownym wczytaniu. Zapisz w NOWYM slocie, zamknij grę, usuń mod i jego DLC Classic, zaktualizuj Script Merger, wczytaj nowy slot i zapisz ponownie. Zadania, osiągnięcia i wydane korony pozostają. Niewczytani kupcy, schowek i pojemniki świata nie są przeszukiwane. Osierocone fakty nagród mogą wymagać save_fact_index.py i bg_clean_keys('…') po potwierdzeniu. Fizyczne usunięcie wszystkich historycznych śladów nie jest gwarantowane. Jeśli części przedmiotów Beta nie da się usunąć, zamiast sukcesu pojawi się INCOMPLETE: wyrzuć je lub sprzedaj i powtórz polecenie. Przy odinstalowaniu usuń też pliki Optional-CopyButton, jeśli je instalowano: bin\…\plugins\GwentBetaClipboard.asi oraz dinput8.dll z tego moda (nie z innego).
+
+**Po odinstalowaniu:** skopiuj folder Mods z folderu After-Uninstall archiwum do katalogu gry (Mods/modBetaGwentKeepItems). Zawiera ukryte definicje przedmiotów moda, dzięki czemu kupcy, skrytka i pojemniki, w których wciąż są karty lub beczki bety, nie tracą całego ekwipunku. Nie instaluj go razem z modem.
 
 
 </details>
@@ -1461,7 +1479,7 @@ Prepara la emboscada. Elfos, enanos, intercambios y mejoras en la mano convierte
 
 Saca partido de cada pérdida. Descarte, resurrección y guerreros que aprovechan el daño hacen del cementerio un recurso.
 
-## Acerca una silla. Tu próximo mazo empieza aquí.
+## El contrato puede esperar. Tu próximo mazo empieza aquí.
 
 Elige el archivo para tu versión del juego, abre el menú habitual de mazos de gwynt y crea tu propia lista. Después, busca a alguien dispuesto a jugar. **Solo una partida…**
 
@@ -1526,6 +1544,7 @@ Los textos de las cartas proceden de la localización oficial de la beta. La int
 - Pega un código de mazo desde el portapapeles de Windows en la pantalla de importación (botón Pegar o Ctrl+V; requiere Optional-CopyButton).
 - Tutorial ampliado a 10 páginas: mulligan y robo, filas y vecinos, estados de las cartas.
 - Cartas corregidas como en la beta: Myrgtabrakke inflige 2 de daño tres veces y la habilidad de Harald el Lisiado golpea diez veces.
+- Mejorada la gestión de las copias de seguridad de la colección y los mazos. Esto puede ayudar en algunos casos de pérdida de progreso; la recuperación depende de los datos disponibles en la copia de seguridad.
 
 
 ## IA e interfaz
@@ -1590,6 +1609,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 Se borran colección, mazos, recursos, ajustes, recompensas conocidas, copias de respaldo y objetos betagwent_* del inventario del jugador. Una marca guardada impide restaurarlos incluso al volver a cargar. Guarda en una ranura NUEVA, cierra el juego, retira el mod y su DLC Classic, actualiza Script Merger, carga la nueva ranura y guarda otra vez. Misiones, logros y coronas gastadas permanecen. No se recorren mercaderes sin cargar, el alijo ni contenedores del mundo. Los antiguos hechos de recompensa huérfanos pueden requerir save_fact_index.py y bg_clean_keys('…') después de confirmar. No se garantiza borrar físicamente todo rastro histórico. Si algunos objetos Beta no se pueden quitar, aparece INCOMPLETE en lugar del éxito: tíralos o véndelos y repite el comando. Al desinstalar, borra también los archivos de Optional-CopyButton si los instalaste: bin\…\plugins\GwentBetaClipboard.asi y el dinput8.dll de este mod (no el de otro).
+
+**Después de desinstalar:** copia la carpeta Mods de la carpeta After-Uninstall del archivo al directorio del juego (Mods/modBetaGwentKeepItems). Conserva definiciones ocultas de los objetos del mod para que los comerciantes, el alijo y los contenedores que aún tengan cartas o barriles de la beta no pierdan todo su inventario. No la instales junto con el mod.
 
 
 </details>
@@ -1693,7 +1714,7 @@ Prepara la emboscada. Elfos, enanos, intercambios y mejoras en la mano convierte
 
 Aprovecha cada pérdida. Descarte, resurrección y guerreros que sacan partido del daño hacen del cementerio una herramienta.
 
-## Acerca una silla. Tu próximo mazo empieza aquí.
+## El contrato puede esperar. Tu próximo mazo empieza aquí.
 
 Elige el archivo para tu versión del juego, abre el menú de mazos de Gwent de siempre y arma tu propia lista. Luego encuentra a alguien que quiera jugar. **Solo una partida…**
 
@@ -1758,6 +1779,7 @@ Los textos de las cartas vienen de la localización oficial de la beta. La inter
 - Pega un código de mazo desde el portapapeles de Windows en la pantalla de importación (botón Pegar o Ctrl+V; requiere Optional-CopyButton).
 - Tutorial ampliado a 10 páginas: mulligan y robo, filas y vecinos, estados de las cartas.
 - Cartas corregidas como en la beta: Myrgtabrakke inflige 2 de daño tres veces y la habilidad de Harald el Lisiado golpea diez veces.
+- Se mejoró la gestión de las copias de seguridad de la colección y los mazos. Esto puede ayudar en algunos casos de pérdida de progreso; la recuperación depende de los datos disponibles en la copia de seguridad.
 
 
 ## IA e interfaz
@@ -1822,6 +1844,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 Se borran colección, mazos, recursos, ajustes, recompensas conocidas, copias de respaldo y objetos betagwent_* del inventario del jugador. Una marca guardada impide restaurarlos incluso al volver a cargar. Guarda en una ranura NUEVA, cierra el juego, retira el mod y su DLC Classic, actualiza Script Merger, carga la nueva ranura y guarda otra vez. Misiones, logros y coronas gastadas permanecen. No se recorren mercaderes sin cargar, el alijo ni contenedores del mundo. Los antiguos hechos de recompensa huérfanos pueden requerir save_fact_index.py y bg_clean_keys('…') después de confirmar. No se garantiza borrar físicamente todo rastro histórico. Si algunos objetos Beta no se pueden quitar, aparece INCOMPLETE en lugar del éxito: tíralos o véndelos y repite el comando. Al desinstalar, borra también los archivos de Optional-CopyButton si los instalaste: bin\…\plugins\GwentBetaClipboard.asi y el dinput8.dll de este mod (no el de otro).
+
+**Después de desinstalar:** copia la carpeta Mods de la carpeta After-Uninstall del archivo al directorio del juego (Mods/modBetaGwentKeepItems). Conserva definiciones ocultas de los objetos del mod para que los comerciantes, el alijo y los contenedores que aún tengan cartas o barriles de la beta no pierdan todo su inventario. No la instales junto con el mod.
 
 
 </details>
@@ -1925,7 +1949,7 @@ Prepare a emboscada. Elfos, anões, trocas e melhorias na mão transformam paci�
 
 Aproveite cada perda. Descarte, ressurreição e guerreiros que se beneficiam de dano fazem do cemitério parte do plano.
 
-## Puxe uma cadeira. Seu próximo deck começa aqui.
+## O contrato pode esperar. Seu próximo deck começa aqui.
 
 Escolha o arquivo para sua versão do jogo, abra o menu de decks de Gwent de sempre e monte sua lista. Depois, encontre alguém disposto a jogar. **Só uma partida…**
 
@@ -1990,6 +2014,7 @@ Os textos das cartas vêm da localização oficial da beta. A interface foi trad
 - Cole um código de baralho da área de transferência do Windows na tela de importação (botão Colar ou Ctrl+V; requer Optional-CopyButton).
 - Tutorial ampliado para 10 páginas: mulligan e compra, fileiras e vizinhos, status das cartas.
 - Cartas corrigidas como na beta: Myrgtabrakke causa 2 de dano três vezes e a habilidade de Harald, o Aleijado, atinge dez vezes.
+- Melhorado o gerenciamento dos backups da coleção e dos baralhos. Isso pode ajudar em alguns casos de perda de progresso; a recuperação depende dos dados disponíveis no backup.
 
 
 ## IA e interface
@@ -2054,6 +2079,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 São apagados coleção, baralhos, recursos, configurações, recompensas conhecidas, cópias de segurança e itens betagwent_* do inventário do jogador. Uma marca salva impede a restauração mesmo após carregar novamente. Salve em um NOVO espaço, feche o jogo, retire o mod e seu DLC Classic, atualize o Script Merger, carregue o novo espaço e salve outra vez. Missões, conquistas e coroas gastas permanecem. Comerciantes não carregados, baú e recipientes do mundo não são percorridos. Fatos antigos de recompensa órfãos podem exigir save_fact_index.py e bg_clean_keys('…') após a confirmação. Não há garantia de apagar fisicamente todo vestígio histórico. Se alguns itens Beta não puderem ser removidos, aparece INCOMPLETE em vez do sucesso: descarte ou venda esses itens e repita o comando. Ao desinstalar, apague também os arquivos de Optional-CopyButton se os instalou: bin\…\plugins\GwentBetaClipboard.asi e o dinput8.dll deste mod (não o de outro).
+
+**Depois de desinstalar:** copie a pasta Mods da pasta After-Uninstall do arquivo para o diretório do jogo (Mods/modBetaGwentKeepItems). Ela mantém definições ocultas dos itens do mod, para que mercadores, o baú e os contêineres que ainda tenham cartas ou barris da beta não percam todo o inventário. Não a instale junto com o mod.
 
 
 </details>
@@ -2157,7 +2184,7 @@ Projeto de fã não oficial. O código original do mod é distribuído sob GPL-3
 
 失ったものさえ力に。破棄、復活、ダメージを生かす戦士たちとともに、墓地も戦略に組み込みましょう。
 
-## 席にどうぞ。次のデッキは、ここから。
+## 依頼は後回し。次のデッキは、ここから。
 
 ゲームのバージョンに合うアーカイブを選び、いつものグウェントのデッキメニューから自分の構成を作りましょう。あとは対戦相手を探すだけ。**ほんの一勝負だけ……。**
 
@@ -2222,6 +2249,7 @@ PC版The Witcher 3。Classic 1.32用またはNext-Gen用（5.0+表記）の別�
 - インポート画面でWindowsのクリップボードからデッキコードを貼り付け（貼り付けボタンまたはCtrl+V。Optional-CopyButtonが必要）。
 - チュートリアルを10ページに拡張：マリガンとドロー、列と隣接、カードの状態。
 - ベータに合わせたカード修正：Myrgtabrakkeは2ダメージを3回、Harald the Crippleのアビリティは10回当たります。
+- コレクションとデッキのバックアップ処理を改善しました。進行状況が失われた一部のケースで役立つ可能性がありますが、復元できる内容はバックアップに残っているデータによって異なります。
 
 
 ## AIとインターフェース
@@ -2286,6 +2314,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 コレクション、デッキ、資源、設定、既知の報酬、予備データとプレイヤー所持品のbetagwent_*を消去します。保存されるフラグが、MODを残して再ロードした場合も復元を防ぎます。新しいスロットに保存して終了し、MODとClassic用DLCを削除してScript Mergerを更新し、そのスロットをロードして再保存してください。クエスト、実績、使用済みクラウンは戻しません。未ロードの商人、保管箱、世界の容器は走査しません。古い孤立した報酬フラグには、確認後にsave_fact_index.pyとbg_clean_keys('…')が必要な場合があります。すべての履歴データの物理的な完全消去は保証しません。 一部のベータアイテムを削除できなかった場合は成功ではなくINCOMPLETEと表示されます。それらを捨てるか売却してから、もう一度コマンドを実行してください。 アンインストール時は、Optional-CopyButtonを導入した場合そのファイル（bin\…\plugins\GwentBetaClipboard.asiとこのModのdinput8.dll。他のModのものは除く）も削除してください。
+
+**アンインストール後：** アーカイブのAfter-UninstallフォルダーにあるModsフォルダーをゲームのフォルダーにコピーしてください（Mods/modBetaGwentKeepItems）。Modのアイテムの非表示定義が残るため、ベータのカードやタルが残っている商人、収納箱、コンテナの所持品がすべて失われるのを防ぎます。Modと一緒にはインストールしないでください。
 
 
 </details>
@@ -2389,7 +2419,7 @@ The WitcherとGwentを生んだCD Projekt、カードと盤面の素材を提供
 
 모든 손실을 활용하세요. 버리기와 부활, 피해를 활용하는 전사들 덕에 무덤도 계획의 일부가 됩니다.
 
-## 의자를 당겨 앉으세요. 다음 덱은 여기서 시작됩니다.
+## 의뢰는 잠시 미뤄두세요. 다음 덱은 여기서 시작됩니다.
 
 게임 버전에 맞는 압축 파일을 받고, 평소의 궨트 덱 메뉴에서 나만의 구성을 만드세요. 이제 함께할 상대만 찾으면 됩니다. **딱 한 판만요…**
 
@@ -2454,6 +2484,7 @@ PC용 The Witcher 3. Classic 1.32 또는 Next-Gen(5.0+로 표시된 패키지)�
 - 가져오기 화면에서 Windows 클립보드의 덱 코드를 붙여넣기(붙여넣기 버튼 또는 Ctrl+V, Optional-CopyButton 필요).
 - 튜토리얼이 10페이지로 확장: 멀리건과 드로우, 열과 인접 카드, 카드 상태.
 - 베타와 같도록 카드 수정: Myrgtabrakke는 피해 2를 세 번, Harald the Cripple의 능력은 열 번 적중합니다.
+- 컬렉션과 덱의 백업 처리를 개선했습니다. 일부 진행 상황 손실 문제에 도움이 될 수 있지만, 복원 가능한 내용은 백업에 남아 있는 데이터에 따라 달라집니다.
 
 
 ## AI와 인터페이스
@@ -2518,6 +2549,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 수집 목록, 덱, 자원, 설정, 알려진 보상, 백업 데이터와 플레이어 인벤토리의 betagwent_* 아이템을 지웁니다. 저장되는 플래그가 모드 설치 상태에서 다시 불러와도 복원을 막습니다. 새 슬롯에 저장하고 게임을 종료한 다음 모드와 Classic DLC를 제거하고 Script Merger를 갱신하세요. 새 슬롯을 불러와 다시 저장하세요. 퀘스트, 도전 과제, 사용한 크라운은 되돌리지 않습니다. 로드되지 않은 상인, 보관함, 월드 용기는 검색하지 않습니다. 과거의 고아 보상 팩트에는 확인 후 save_fact_index.py와 bg_clean_keys('…')가 필요할 수 있습니다. 모든 역사적 기록의 물리적 완전 삭제를 보장하지 않습니다. 일부 베타 아이템을 제거하지 못하면 성공 대신 INCOMPLETE가 표시됩니다. 해당 아이템을 버리거나 판매한 뒤 명령을 다시 실행하세요. 제거할 때 Optional-CopyButton을 설치했다면 그 파일(bin\…\plugins\GwentBetaClipboard.asi와 이 모드의 dinput8.dll, 다른 모드의 것은 제외)도 삭제하세요.
+
+**제거 후:** 압축 파일의 After-Uninstall 폴더에 있는 Mods 폴더를 게임 폴더에 복사하세요(Mods/modBetaGwentKeepItems). 모드 아이템의 숨김 정의가 남아 있어, 베타 카드나 카드통이 남아 있는 상인, 보관함, 상자의 인벤토리 전체가 사라지는 것을 막습니다. 모드와 함께 설치하지 마세요.
 
 
 </details>
@@ -2621,7 +2654,7 @@ The Witcher와 Gwent를 만든 CD Projekt, 카드와 게임판 자료를 제공�
 
 让每次损失都有价值。弃牌、复活与善用伤害的战士，让墓场也成为计划的一部分。
 
-## 拉把椅子坐下。下一套牌组，从这里开始。
+## 委托先放一放。下一套牌组，从这里开始。
 
 选择对应游戏版本的压缩包，打开平常的昆特牌组菜单，组出自己的第一套牌。然后，找个愿意陪你打牌的人。**就一局……**
 
@@ -2686,6 +2719,7 @@ PC 版《巫师 3》。请选择 Classic 1.32 或 Next-Gen（标有 5.0+）对�
 - 在导入界面从Windows剪贴板粘贴卡组代码（粘贴按钮或Ctrl+V；需要Optional-CopyButton）。
 - 教程扩展为10页：调度与抽牌、排与相邻、卡牌状态。
 - 按测试版修正卡牌：Myrgtabrakke造成三次2点伤害，Harald the Cripple的能力命中十次。
+- 改进了收藏和卡组的备份处理。这可能有助于解决部分进度丢失问题；能否恢复以及可恢复的内容取决于备份中保留的数据。
 
 
 ## AI与界面
@@ -2750,6 +2784,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 清除收藏、牌组、资源、设置、已知奖励记录、备份镜像及玩家当前背包中的betagwent_*物品。存档标记会阻止恢复，即使仍装着模组重新读档。保存到新栏位，退出游戏，移除模组及其Classic DLC，更新Script Merger，再读取新栏位并保存一次。任务、成就和已花费克朗不会回退。未加载商人、储物箱及世界容器不会被遍历。旧的孤立奖励事实可能需要在确认后使用save_fact_index.py和bg_clean_keys('…')。不保证物理删除任意存档中的所有历史痕迹。 若部分Beta物品无法移除，将显示INCOMPLETE而不是成功信息：请丢弃或出售这些物品后再次执行命令。 卸载时，若安装过Optional-CopyButton，也请删除其文件：bin\…\plugins\GwentBetaClipboard.asi以及本模组的dinput8.dll（不要删除其他模组的）。
+
+**卸载后：** 将压缩包After-Uninstall文件夹中的Mods文件夹复制到游戏目录（Mods/modBetaGwentKeepItems）。它保留模组物品的隐藏定义，避免仍持有测试版卡牌或卡桶的商人、储物箱和容器丢失全部物品。不要与模组同时安装。
 
 
 </details>
@@ -2853,7 +2889,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 讓每次損失都有價值。棄牌、復活與善用傷害的戰士，讓墓場也成為計畫的一部分。
 
-## 拉張椅子坐下。下一套牌組，從這裡開始。
+## 委託先放一放。下一套牌組，從這裡開始。
 
 選擇對應遊戲版本的壓縮檔，打開平常的昆特牌組選單，組出自己的第一套牌。然後，找個願意陪你打牌的人。**就一局……**
 
@@ -2918,6 +2954,7 @@ PC 版《巫師 3》。請選擇 Classic 1.32 或 Next-Gen（標示 5.0+）對�
 - 在匯入畫面從Windows剪貼簿貼上牌組代碼（貼上按鈕或Ctrl+V；需要Optional-CopyButton）。
 - 教學擴充為10頁：調度與抽牌、排與相鄰、卡牌狀態。
 - 依測試版修正卡牌：Myrgtabrakke造成三次2點傷害，Harald the Cripple的能力命中十次。
+- 改善了收藏與牌組的備份處理。這可能有助於解決部分進度遺失問題；能否恢復及可恢復的內容取決於備份中保留的資料。
 
 
 ## AI與介面
@@ -2982,6 +3019,8 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 ```
 
 清除收藏、牌組、資源、設定、已知獎勵紀錄、備份鏡像與玩家目前背包中的betagwent_*物品。存檔標記會阻止復原，即使仍裝著模組重新讀檔。儲存至新欄位，退出遊戲，移除模組及其Classic DLC，更新Script Merger，再讀取新欄位並儲存一次。任務、成就和已花費克朗不會回退。未載入商人、儲物箱與世界容器不會被遍歷。舊的孤立獎勵事實可能需要在確認後使用save_fact_index.py和bg_clean_keys('…')。不保證物理刪除任意存檔中的所有歷史痕跡。 若部分Beta物品無法移除，將顯示INCOMPLETE而非成功訊息：請丟棄或出售這些物品後再次執行指令。 解除安裝時，若安裝過Optional-CopyButton，也請刪除其檔案：bin\…\plugins\GwentBetaClipboard.asi以及本模組的dinput8.dll（勿刪除其他模組的）。
+
+**解除安裝後：** 將壓縮檔After-Uninstall資料夾中的Mods資料夾複製到遊戲目錄（Mods/modBetaGwentKeepItems）。它保留模組物品的隱藏定義，避免仍持有測試版卡牌或卡桶的商人、儲物箱與容器遺失全部物品。不要與模組同時安裝。
 
 
 </details>
