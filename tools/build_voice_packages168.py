@@ -16,6 +16,12 @@ from build_release138 import presentation_lock
 from build_voice137 import language_bridge
 VOICES=('ru','en','de','it','pt-br')
 PHASES=('prepare','cook','strings','audio','dependencies','pack','metadata','archive')
+
+def gui_budget(requested, frozen=None):
+    budget=frozen if frozen is not None else requested if requested is not None else 63
+    if not 1<=budget<=65:raise ValueError('GUI budget must be 1..65 MiB')
+    if requested is not None and requested!=budget:raise ValueError('Frozen RU GUI budget differs from the requested target')
+    return budget
 def sha(p):
     with Path(p).open('rb') as stream:return hashlib.file_digest(stream,'sha256').hexdigest()
 def read(p):return json.loads(Path(p).read_text('utf-8-sig'))
@@ -42,26 +48,32 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--version',default='0.7.1');p.add_argument('--stage',type=int,default=0)
     p.add_argument('--verify',action='store_true');p.add_argument('--check-only',action='store_true')
+    p.add_argument('--gui-limit-mib',type=int,help='New batches default to 63 MiB; existing batches retain their frozen target')
     a=p.parse_args();assert re.fullmatch(r'[0-9A-Za-z.\-]+',a.version)
+    gui_budget(a.gui_limit_mib)
     banks=read(ROOT/'docs/evidence/voice141.json')
     for language in VOICES:
         item=banks[language];catalog=Path(item['patch'])/'game/betagwent/duelAudioCatalog.ws'
         assert sha(item['bank'])==item['sha256'] and sha(catalog)==item['catalogSha256'],language
     ru=ROOT/f'BetaGwent/release/GwentBetaClassic-{a.version}-RU.zip'
     if a.check_only:
-        print(json.dumps(dict(version=a.version,voices=list(VOICES),textLanguages=13,ruReady=ru.exists(),banksVerified=True,installsGame=False),indent=2));return
+        frozen_budget=None
+        if ru.exists():
+            with zipfile.ZipFile(ru) as archive:frozen_stage=json.loads(archive.read('manifest.json'))['stage']
+            if a.stage and frozen_stage!=a.stage:raise RuntimeError('RU archive belongs to a different stage')
+            frozen_budget=read(ROOT/f'BetaGwent/build/stage{frozen_stage}/gui-budget.json')['guiLimitMiB']
+        print(json.dumps(dict(version=a.version,voices=list(VOICES),textLanguages=13,ruReady=ru.exists(),banksVerified=True,guiLimitMiB=gui_budget(a.gui_limit_mib,frozen_budget),installsGame=False,buildStarted=False),indent=2));return
     if not ru.exists():
         if a.verify:raise RuntimeError('RU package has not been built')
         with presentation_lock():
             subprocess.run([sys.executable,'-X','utf8','tools/ui/build_ui_languages138.py'],cwd=ROOT,check=True,creationflags=subprocess.CREATE_NO_WINDOW)
-        command=[sys.executable,'-X','utf8','tools/build_from_source.py','--version',a.version,'--gui-limit-mib','65']
+        command=[sys.executable,'-X','utf8','tools/build_from_source.py','--version',a.version,'--gui-limit-mib',str(gui_budget(a.gui_limit_mib))]
         if a.stage:command+=['--stage',str(a.stage)]
         subprocess.run(command,cwd=ROOT,check=True,creationflags=subprocess.CREATE_NO_WINDOW)
     with zipfile.ZipFile(ru) as archive:stage=json.loads(archive.read('manifest.json'))['stage']
     if a.stage and stage!=a.stage:raise RuntimeError('RU archive belongs to a different stage')
     base=ROOT/f'BetaGwent/build/stage{stage}';logs=base/'voice-package-logs';logs.mkdir(exist_ok=True)
-    budget=read(base/'gui-budget.json')['guiLimitMiB']
-    if budget!=65:raise RuntimeError('0.7.1 batch requires the reviewed 65 MiB target')
+    budget=gui_budget(a.gui_limit_mib,read(base/'gui-budget.json')['guiLimitMiB'])
     def job(label,*args):
         print(label,flush=True);log=logs/(label+'.log')
         with log.open('wb') as output:
@@ -102,9 +114,21 @@ def main():
             assert (destination/'game/betagwent/developmentBoardMenu.ws').read_text('utf-8-sig')==language_bridge(frozen_bridge,language)
             compilation=base/language/'compile'
             if 'compile' not in done:
-                attempt=1;output=compilation
-                while output.exists():output=compilation.with_name('compile-retry'+str(attempt));attempt+=1
-                job(language+'-compile','tools/recon/run_redkit_compile.py','--out',output,'--patch',destination,'--timeout','300','--terms-already-accepted')
+                # wcc_lite occasionally stalls after loading scripts and never
+                # exits (stage 202 EN: no compile error, killed at 300 s). Only a
+                # timed-out run is retried, each time in a fresh directory; a
+                # real compile error or changed sources still stop the build.
+                for compile_try in range(1,4):
+                    attempt=1;output=compilation
+                    while output.exists():output=compilation.with_name('compile-retry'+str(attempt));attempt+=1
+                    label=language+'-compile'+('' if compile_try==1 else '-try'+str(compile_try))
+                    try:
+                        job(label,'tools/recon/run_redkit_compile.py','--out',output,'--patch',destination,'--timeout','300','--terms-already-accepted');break
+                    except RuntimeError:
+                        report=output/'result.json'
+                        stalled=report.exists() and read(report).get('timedOut') is True and read(report).get('patchSourcesUnchangedDuringCompile') is True
+                        if not stalled or compile_try==3:raise
+                        print(language+': wcc_lite stalled without a compile error; retrying in a fresh directory',flush=True)
                 (base/language/'voice-compile.json').write_text(json.dumps(dict(path=str(output),sources=expected),indent=2)+'\n','utf8')
                 done.append('compile');receipt.write_text(json.dumps(done)+'\n','utf8')
             record=read(base/language/'voice-compile.json');assert record['sources']==expected

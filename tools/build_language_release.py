@@ -106,6 +106,11 @@ if a.step=='prepare':
     current=ROOT/'GwentB/myproject1'
     for rel in ('workspace/betagwent','workspace/gameplay/gui_new','workspace/gameplay/items','workspace/gameplay/items_plus','workspace/gameplay/globals'):
         if (current/rel).exists():copy_release_tree(current/rel,PROJECT/rel)
+    # NG+ has its own item definition namespace, including custom shop items.
+    # Stock overlays alone cannot create a keg whose definition is missing.
+    ng_shop=WORK/'gameplay/items_plus/betagwent_shop.xml'
+    ng_shop.parent.mkdir(parents=True,exist_ok=True)
+    shutil.copy2(WORK/'gameplay/items/betagwent_shop.xml',ng_shop)
     if STAGE>=142 and (current/'workspace/dlc').exists():
         copy_release_tree(current/'workspace/dlc',WORK/'dlc')
     if STAGE>=161:

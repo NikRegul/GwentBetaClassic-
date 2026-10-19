@@ -31,7 +31,10 @@ import re as _re
 PAGES={'BetaGwentKeg':set(range(0,9))|{11,14,15}|set(range(21,40))}.get(args.entry,set(range(0,21)))
 def filtered_sources(source):
     target=source.parent/('src-'+args.entry)
-    if target.exists():shutil.rmtree(target)
+    if target.exists():
+        if not target.resolve().is_relative_to(ROOT.resolve()):raise RuntimeError('Source backup path escaped workspace')
+        backup=ROOT/'tmp'/('backup-ui-source-'+args.entry+'-'+str(time.time_ns()))
+        backup.parent.mkdir(parents=True,exist_ok=True);shutil.move(str(target),str(backup))
     shutil.copytree(source,target)
     art=target/'BetaGwentHDArt.as';raw=art.read_bytes();text=raw.decode('utf-8-sig')
     for page in map(int,_re.findall(r'private static var Page(\d+):Class;',text)):
@@ -47,9 +50,12 @@ DDS_BUILD = BUILD / ('native-atlas' if args.entry=='BetaGwentBoard' else 'native
 DDS_BUILD.mkdir(exist_ok=True)
 # Source ordering can change image IDs between language builds. Keep only this
 # build's DDS exports so a stale alias cannot be mistaken for current artwork.
+DDS_BACKUP=None
 for stale in DDS_BUILD.glob('*.dds'):
     if not stale.resolve().is_relative_to((UI/'build').resolve()):raise RuntimeError('DDS path escaped build directory')
-    stale.unlink()
+    if DDS_BACKUP is None:
+        DDS_BACKUP=DDS_BUILD.parent/(DDS_BUILD.name+'-before-'+str(time.time_ns()));DDS_BACKUP.mkdir(exist_ok=True)
+    shutil.move(str(stale),str(DDS_BACKUP/stale.name))
 EXPORTER = Path(r'D:\GOG Galaxy\Games\The Witcher 3 REDkit\bin\tools\GFx4\gfxexport_mult4fix.exe')
 if not args.reuse_assets:
     subprocess.run([sys.executable, str(ROOT / 'tools/build_full_catalog.py')],cwd=ROOT,check=True,timeout=60)

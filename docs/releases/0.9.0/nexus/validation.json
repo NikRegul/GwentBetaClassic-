@@ -1,0 +1,53 @@
+{
+  "version": "0.9.0",
+  "descriptionLanguages": 13,
+  "languageSpoilers": 12,
+  "detailSpoilersPerLanguage": 3,
+  "spoilers": 51,
+  "englishDefault": true,
+  "previewDefault": "ru",
+  "bbcodeBalanced": true,
+  "preservedManualSectionsPerLanguage": 16,
+  "manualSha256": {
+    "en": "b2f242e0059239552938c4079e3db183f00d63e5eb39873c332581df8426bcea",
+    "ru": "6b1c3a77cbc467b25fc4f6fe15b61d724eb5f78898d9bef6c1e9417e874db720",
+    "de": "37eb58d33db9d66748595f6995909a4a17bf2aaf695c5900b4ef3baf04fd95d1",
+    "fr": "d5c41b4b061bc2ec0f20601147dbc759dc00e66f857a1eb3050a241e123b958e",
+    "it": "c454ec1c331656bb691f796b8d131f24e9f9b720819c93cd769b487366529ce9",
+    "pl": "e06a128c994dcbb2c5885afbed37947bdf4bf596fb3c27fa92d1c7ba91b31975",
+    "es": "bba1d34beb839fdf6645884b4c496c88940da2d2630ac2dd4ee5f8a55b7b101f",
+    "es-mx": "df0f30484a6065272377f87456bf70a44cb919aea9ac8f00577aacaa79e21055",
+    "pt-br": "fa7228c98a8a03fbff6a643bcf1e24eb5f605cea9bed3af8b2d3efb429565eb4",
+    "ja": "38bd204fa192a719469e9e056f049b4f7d868e88ec75f38cf10234dd3b231000",
+    "ko": "d910dbaa33f5e1bb1341f50770e73b6b2663bc7b8dc688380a84b1477ac14279",
+    "zh-cn": "d76bfd071f8acd99df6317f1bf0cc6804a9db573fed1959764b6ef967b7c5a67",
+    "zh-tw": "ed3e36c0189a66ff760a66a0ce95d2cb03a419e48b02f65d68401ff677a77511"
+  },
+  "postLanguages": [
+    "en",
+    "ru"
+  ],
+  "embeddedCleaner": true,
+  "published": false,
+  "bbcodeFiles": [
+    "NEXUS_DESCRIPTION_0.9.0.bbcode.txt",
+    "NEXUS_POST_0.9.0_EN_RU.bbcode.txt",
+    "de/description.bbcode.txt",
+    "en/changelog.bbcode.txt",
+    "en/description.bbcode.txt",
+    "en/post.bbcode.txt",
+    "es-mx/description.bbcode.txt",
+    "es/description.bbcode.txt",
+    "fr/description.bbcode.txt",
+    "it/description.bbcode.txt",
+    "ja/description.bbcode.txt",
+    "ko/description.bbcode.txt",
+    "pl/description.bbcode.txt",
+    "pt-br/description.bbcode.txt",
+    "ru/changelog.bbcode.txt",
+    "ru/description.bbcode.txt",
+    "ru/post.bbcode.txt",
+    "zh-cn/description.bbcode.txt",
+    "zh-tw/description.bbcode.txt"
+  ]
+}

@@ -141,7 +141,7 @@ class CBetaGwentDuelNilf extends IScriptable
         if(id==201664){Request(source,side,16,2,4,0,256);return;}
         if(id==200159){source.monsterRemaining=3;Request(source,side,16,14,14,0,0);return;}
         if(id==200160){Query(side,16,6,4,0,8,source,ids);maxPower=-1;for(i=0;i<ids.Size();i+=1){t=game.FindCard(ids[i]).Snapshot();maxPower=Max(maxPower,t.power.currentPower);}for(i=0;i<ids.Size();i+=1){t=game.FindCard(ids[i]).Snapshot();if(t.power.currentPower==maxPower)valid.PushBack(ids[i]);}if(valid.Size()>0){i=valid[game.RandomIndex(valid.Size())];game.MonsterOperation(source,game.FindCard(i),12,2,31);game.FlushDeaths();game.MonsterPlayExisting(source,game.FindCard(i));}else game.MonsterComplete(source);return;}
-        if(id==200161){RandomDamage(source,enemy,s.locationMask,1,9);game.MonsterComplete(source);return;}
+        if(id==200161){RandomDamage(source,enemy,s.locationMask,1,10);game.MonsterComplete(source);return;}
         if(id==200165){Request(source,side,8,15,14,0,0);return;}
         if(id==200166){Request(source,side,32,6,2,0,0);return;}
         if(id==200167){Query(side,16,4,12,0,8,source,ids);Query(side,16,2,12,0,8192,source,valid);for(i=0;i<valid.Size();i+=1)ids.PushBack(valid[i]);game.MonsterRequest(source,ids,2,0,1);return;}

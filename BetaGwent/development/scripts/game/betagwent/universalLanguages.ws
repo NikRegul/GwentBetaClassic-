@@ -38,6 +38,7 @@ function BetaGwentSetupLanguage(voice : bool) : int
 }
 function BetaGwentInitializeLanguages()
 {
+    if(BetaGwentCleanupBlocked())return;
     if(FactsQueryLatestValue("bg_language_preferences_initialized")>0)return;
     // Preserve an existing text choice when upgrading an old save.
     if(FactsQueryLatestValue("bg_text_language")==0)FactsSet("bg_text_language",BetaGwentSetupLanguage(false));

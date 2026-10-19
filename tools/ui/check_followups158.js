@@ -11,7 +11,7 @@ class Graphics{constructor(){this.circles=[];}clear(){}lineStyle(){}drawRect(){}
 class Sprite{constructor(){this.graphics=new Graphics();this.children=[];}addChild(c){this.children.push(c);return c;}removeChildAt(i){this.children.splice(i,1);}removeEventListener(){}get numChildren(){return this.children.length;}}
 const c=vm.createContext({console,Math,String,Object,Sprite,int:v=>v|0,MouseEvent:{CLICK:'click'}});
 // The elemental engine has its own production-code regression (check_elements164).
-c.elementCueFloor164=()=>0;c.drawElementCue164=()=>null;
+c.elementCueFloor164=()=>0;c.statusBudget191={remaining:600};c.drawElementCue164=()=>null;
 let checks=0;function check(v,n){assert(v,n);checks++;}
 vm.runInContext(`var now=200,introStart=100,introSkipAt=0,introInputUntil=0,introSerial=1,introAudioPending=false,introParts=[],introLeaderMovies=[],introLayer=new Sprite();
 var BetaGwentUi138={helpLabels:true,intensity:1,chains:true};var actions=0,sends=[],owner={};

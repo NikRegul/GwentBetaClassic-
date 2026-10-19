@@ -20,7 +20,8 @@ public var opponentPreparationMs,opponentPreparationPeakMs : int;
 public var audio : CBetaGwentDuelAudio;
 public var publications : int;
 public var duel : CBetaFakeDuel;
-public function Publish(status : string) { publications += 1; }
+public function Publish(status : string, optional opponentPumped : bool) { publications += 1; }
+public function OpponentTurnWaiting() : bool { return deferredOpponent; }
 '''+source[start:end]+'\n}\n','utf8')
     reports=[]
     catalogs=[]
@@ -48,7 +49,7 @@ check(!events.some(e=>e.name==='bg79_stop_voice'),'next card cannot cut off the 
 check(a.voiceUntil===deadline,'new cue preserves the current voice deadline');
 for(let i=0;i<20;i++)a.Cue(1,second,0,0,0,0,0);
 check(a.queuedVoices.length<=2,'summon chatter stays bounded');
-function fakeDuel(){return {IsPending(){return false;},GetMessage(){return '';},AiPreparationStep(){return true;},AiPerfFeedback(){}};}
+function fakeDuel(){return {IsPending(){return false;},GetMessage(){return '';},AiPreparationStep(){return true;},AiPreparationIsReady(){return true;},PumpOpponent(){},AiPerfFeedback(){}};}
 const gate=new CBetaOpponentGate();gate.configured=true;gate.visualBusy=false;gate.deferredOpponent=true;gate.audio=a;gate.duel=fakeDuel();
 gate.ResumeOpponentAfterVoice();check(gate.publications===0&&gate.deferredOpponent,'opponent waits while the player line plays');
 clock=30;a.SetClock(30000);a.Tick();gate.ResumeOpponentAfterVoice();
@@ -87,6 +88,26 @@ staged.ResumeOpponentAfterVoice();staged.ResumeOpponentAfterVoice();
 check(staged.publications===0&&staged.deferredOpponent&&!staged.opponentPreparationBusy,'unfinished search yields and preserves the deferred turn');
 staged.ResumeOpponentAfterVoice();staged.ResumeOpponentAfterVoice();
 check(staged.publications===1&&!staged.deferredOpponent&&jobs===3,'ready search publishes exactly once');
+// A ready base evaluation can still yield while the chase planner runs.
+const chasing=new CBetaOpponentGate();chasing.configured=true;chasing.deferredOpponent=true;chasing.duel=fakeDuel();
+let chaseReady=true,pumps=0;chasing.duel.AiPreparationIsReady=()=>chaseReady;
+chasing.duel.PumpOpponent=()=>{pumps++;if(pumps===1){chaseReady=false;chasing.duel.aiPreparationStage=7;chasing.duel.aiPreparationReady=false;}};
+chasing.ResumeOpponentAfterVoice();
+check(chasing.publications===0&&chasing.deferredOpponent&&!chasing.opponentPreparationBusy,'chase yield preserves the pending turn without replaying a snapshot');
+chaseReady=true;chasing.duel.aiPreparationStage=6;chasing.duel.aiPreparationReady=true;chasing.ResumeOpponentAfterVoice();
+check(chasing.publications===1&&pumps===2&&!chasing.deferredOpponent,'completed chase publishes once without a second pump');
+const played=new CBetaOpponentGate();played.configured=true;played.deferredOpponent=true;played.duel=fakeDuel();
+played.duel.AiPreparationIsReady=()=>false;played.duel.aiPreparationStage=6;played.duel.aiPreparationReady=true;
+played.ResumeOpponentAfterVoice();check(played.publications===1&&!played.deferredOpponent,'a real AI play invalidating the turn cache still publishes its visual frames');
+// Gold landing is independent of voices and retains the original unit SFX.
+const gold=new CBetaGwentDuelAudio();gold.Initialize();gold.Configure(true,false);gold.SetClock(200000);events=[];
+gold.Cue(1,112101,0,0,0,0,0,true);
+check(events.filter(e=>e.name===BetaGwentAudioCue(28)).length===1,'gold play dispatches original GoldLanding exactly once');
+check(events.some(e=>e.name===BetaGwentAudioEffect(112101)),'gold preserves its own play effect');
+for(const kind of [15,16]){events=[];gold.Cue(kind,132304,0,0,0,0,0,true);check(events.filter(e=>e.name===BetaGwentAudioCue(28)).length===1,'gold summoned by a bronze uses landing audio '+kind);}
+events=[];gold.Cue(1,132304,0,0,0,0,0,false);check(!events.some(e=>e.name===BetaGwentAudioCue(28)),'bronze has no gold sound');
+gold.Configure(false,false);events=[];gold.Cue(1,112101,0,0,0,0,0,true);check(events.length===0,'effects toggle mutes gold landing');
+gold.Configure(true,false);loaded=false;events=[];gold.Cue(1,112101,0,0,0,0,0,true);check(!events.some(e=>e.name===BetaGwentAudioCue(28)),'missing bank uses only native fallback');loaded=true;
 console.log(JSON.stringify({checks,actualWitcherScript:true,nativePlaybackVerified:false}));
 ''','utf8')
         result=subprocess.run(['node',str(script)],capture_output=True,text=True,encoding='utf8')

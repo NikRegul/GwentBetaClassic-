@@ -99,7 +99,33 @@
             fields[field]={raw:raw,shown:raw,format:field.getTextFormat(),face:field.getTextFormat().font,embedded:field.embedFonts};
             update(field,fields[field]);
         }
+        // Refit after asynchronous font/dictionary loading as well as initial drawing.
+        public static function fitButton(field:TextField,size:Number,minimum:Number,height:Number,originY:Number=0,padding:Number=4):void
+        {
+            if(!fields[field])track(field);
+            fields[field].buttonFit={size:size,minimum:minimum,height:height,originY:originY,padding:padding};
+            layoutButton(field,fields[field]);
+        }
+        private static function layoutButton(field:TextField,state:Object):void
+        {
+            var spec:Object=state.buttonFit;if(!spec)return;
+            var f:TextFormat=field.getTextFormat();var size:Number=spec.size;
+            f.letterSpacing=0;f.size=size;f.align="center";field.multiline=false;field.wordWrap=false;
+            field.defaultTextFormat=f;field.setTextFormat(f);
+            while(field.textWidth>field.width-4&&size>spec.minimum){size=Math.max(Number(spec.minimum),size-1);f.size=size;field.defaultTextFormat=f;field.setTextFormat(f);}
+            if(field.textWidth>field.width-4){
+                field.multiline=true;field.wordWrap=true;size=spec.size;
+                f.size=size;field.defaultTextFormat=f;field.setTextFormat(f);
+                while(field.textHeight+4>spec.height-2*spec.padding&&size>spec.minimum){size=Math.max(Number(spec.minimum),size-1);f.size=size;field.defaultTextFormat=f;field.setTextFormat(f);}
+            }
+            while(field.textHeight+4>spec.height-2*spec.padding&&size>spec.minimum){size=Math.max(Number(spec.minimum),size-1);f.size=size;field.defaultTextFormat=f;field.setTextFormat(f);}
+            field.height=Math.min(spec.height-2*spec.padding,field.textHeight+4);
+            field.y=spec.originY+Math.round((spec.height-field.height)/2);
+        }
         public static function forget(field:TextField):void{delete fields[field];}
+        // Beta colours keyword phrases of a card ability; kept across translation refreshes.
+        public static function keywords(field:TextField,templateId:int):void
+        { if(!field||field.type=="input")return;if(!fields[field])track(field);fields[field].keywordCard=templateId;BetaGwentKeywords090.apply(field,templateId,language); }
         // Replace a tracked field's source text and show the translation in the same frame.
         public static function assign(field:TextField,value:String):void
         {
@@ -132,7 +158,10 @@
             }else if(bodyFont&&state.face!=BetaGwentFonts.NUMBERS){
                 format.font="$NormalFont";field.embedFonts=false;
             }
-            field.defaultTextFormat=format;field.setTextFormat(format);field.scrollV=scroll;
+            field.defaultTextFormat=format;field.setTextFormat(format);
+            if(state.keywordCard)BetaGwentKeywords090.apply(field,int(state.keywordCard),language);
+            field.scrollV=scroll;
+            layoutButton(field,state);
             state.shown=shown;state.seen=field.text;
         }
         public static function font(field:TextField,face:String):Boolean

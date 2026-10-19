@@ -242,7 +242,7 @@
             }
             editorDragGhost178.x=mouseX-50;editorDragGhost178.y=mouseY-70;
             var target:Object=editorDragTarget178();editorDragGhost178.alpha=target?0.95:0.6;dragLayer.graphics.clear();
-            if(target){dragLayer.graphics.lineStyle(2,0xB7D6C2,0.7);dragLayer.graphics.beginFill(0x95B7A2,0.08);dragLayer.graphics.drawRect(target.x,target.y,target.w,target.h);dragLayer.graphics.endFill();}
+            if(target){dragLayer.graphics.lineStyle();dragLayer.graphics.moveTo(target.x,target.y);dragLayer.graphics.lineStyle(2,0xB7D6C2,0.7);dragLayer.graphics.beginFill(0x95B7A2,0.08);dragLayer.graphics.drawRect(target.x,target.y,target.w,target.h);dragLayer.graphics.endFill();}
         }
         private function endEditorDrag178(e:MouseEvent):void
         {
@@ -569,10 +569,10 @@
                     betaLabel(box,ev.title||c.title,136+column*116,y+137,108,12,0xCFC8BA,BetaGwentFonts.BODY).height=24;column++;
                 }
             }
-            editorBetaButton(box,"Назад",40,824,220,48,true,closeCardDetail);
-            editorBetaButton(box,"‹",1030,824,76,48,historyPage>0,function():void{openHistory(historyPage-1);});
-            betaLabel(box,(historyPage+1)+" / "+Math.max(1,Math.ceil(actionHistory.length/4)),1116,834,140,20,0xCFC8BA,BetaGwentFonts.BODY,false,"center");
-            editorBetaButton(box,"›",1266,824,76,48,(historyPage+1)*4<actionHistory.length,function():void{openHistory(historyPage+1);});
+            editorBetaButton(box,"Назад",64,792,220,48,true,closeCardDetail);
+            editorBetaButton(box,"‹",1044,792,76,48,historyPage>0,function():void{openHistory(historyPage-1);});
+            betaLabel(box,(historyPage+1)+" / "+Math.max(1,Math.ceil(actionHistory.length/4)),1130,802,140,20,0xCFC8BA,BetaGwentFonts.BODY,false,"center");
+            editorBetaButton(box,"›",1280,792,76,48,(historyPage+1)*4<actionHistory.length,function():void{openHistory(historyPage+1);});
             controller.getFocus();
         }
         private function historyEntryAction(index:int):Function
@@ -587,17 +587,17 @@
             shade.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{openHistory(historyPage);});
             var box:Sprite=betaWindow(detailLayer,250,88,1420,904);
             box.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{e.stopPropagation();});
-            betaLabel(box,historyLine(entry),40,28,1340,26,0xF5D77F,BetaGwentFonts.TITLE,true).height=70;
+            betaLabel(box,historyLine(entry),64,52,1292,26,0xF5D77F,BetaGwentFonts.TITLE,true).height=70;
             for(var i:int=historyEventPage*6;i<Math.min(entry.events.length,(historyEventPage+1)*6);i++){
-                var ev:Object=entry.events[i],y:Number=120+(i-historyEventPage*6)*112;
-                historyCardButton(box,ev.actor,40,y,58,80);historyCardButton(box,ev.target,128,y,58,80);
+                var ev:Object=entry.events[i],y:Number=120+(i-historyEventPage*6)*104;
+                historyCardButton(box,ev.actor,64,y,58,80);historyCardButton(box,ev.target,146,y,58,80);
                 var who:String=(ev.actor?ev.actor.title:"")+(ev.target?" → "+ev.target.title:"");
-                betaLabel(box,who+"\n"+(ev.title||entry.title)+(ev.change?"\n"+ev.change:""),222,y+2,1110,18,0xF2EEE4,BetaGwentFonts.BODY).height=94;
+                betaLabel(box,who+"\n"+(ev.title||entry.title)+(ev.change?"\n"+ev.change:""),236,y+2,1120,18,0xF2EEE4,BetaGwentFonts.BODY).height=94;
             }
-            editorBetaButton(box,"Назад",40,824,220,48,true,function():void{openHistory(historyPage);});
-            editorBetaButton(box,"‹",1030,824,76,48,historyEventPage>0,function():void{openHistoryEntry(index,historyEventPage-1);});
-            betaLabel(box,(historyEventPage+1)+" / "+Math.max(1,Math.ceil(entry.events.length/6)),1116,834,140,20,0xCFC8BA,BetaGwentFonts.BODY,false,"center");
-            editorBetaButton(box,"›",1266,824,76,48,(historyEventPage+1)*6<entry.events.length,function():void{openHistoryEntry(index,historyEventPage+1);});
+            editorBetaButton(box,"Назад",64,792,220,48,true,function():void{openHistory(historyPage);});
+            editorBetaButton(box,"‹",1044,792,76,48,historyEventPage>0,function():void{openHistoryEntry(index,historyEventPage-1);});
+            betaLabel(box,(historyEventPage+1)+" / "+Math.max(1,Math.ceil(entry.events.length/6)),1130,802,140,20,0xCFC8BA,BetaGwentFonts.BODY,false,"center");
+            editorBetaButton(box,"›",1280,792,76,48,(historyEventPage+1)*6<entry.events.length,function():void{openHistoryEntry(index,historyEventPage+1);});
             controller.getFocus();
         }
         private function drawChainCue(fx:Sprite,origin:Object,target:Object):void
@@ -1363,8 +1363,8 @@
                 if(textPurpose>=3){
                     if(key==27){closeNameInput();e.preventDefault();e.stopImmediatePropagation();}
                     else if(key==13){if(exchangeImport)submitDeckExchange();e.preventDefault();e.stopImmediatePropagation();}
-                    else if(e.ctrlKey&&key==86&&exchangeImport){if(clipboardText().length>0){pasteExchange();e.preventDefault();e.stopImmediatePropagation();}}
-                    else if(e.ctrlKey&&key==67&&!exchangeImport){if(copyExchange()){e.preventDefault();e.stopImmediatePropagation();}}
+                    else if(e.ctrlKey&&key==86&&exchangeImport){pasteExchange();e.preventDefault();e.stopImmediatePropagation();}
+                    else if(e.ctrlKey&&key==67&&!exchangeImport){if(nameField&&keyboardStage){keyboardStage.focus=nameField;nameField.setSelection(0,nameField.text.length);}/* Keep the native copy event; API success need not mean Windows clipboard. */}
                     return;
                 }
                 if(key>=136&&key<256)return;
@@ -1392,7 +1392,7 @@
                 }
                 return;
             }
-            if(detailOpen){e.preventDefault();if(key==27||key==73)closeCardDetail();return;}
+            if(detailOpen){e.preventDefault();if(key==27||key==73)closeCardDetail();else if((key==37||key==39)&&detailNav)stepCardDetail(key==37?-1:1);return;}
             if(mulliganConfirm){
                 e.preventDefault();
                 if(heldKey==key)return;heldKey=key;
@@ -2049,8 +2049,13 @@
             if(leader){
                 paintArt(row,BetaGwentDeckArt104.DP_DIAMOND,h*.92,h*.92,4,h*.04);
                 paintArt(row,BetaGwentDeckArt104.DP_CROWN,h*.34,h*.34,4+h*.29,h*.06);
-                betaLabel(row,String(c.power),4,h*.36,h*.92,h*.36,0xF2EEE4,BetaGwentFonts.NUMBERS,false,"center");
-            }else if(unit)betaLabel(row,String(c.power),6,(h-h*.62*1.5)/2+2,32,h*.62,0xF2EEE4,BetaGwentFonts.NUMBERS,false,"center");
+                var leaderPower:TextField=betaLabel(row,String(c.power),4,h*.36,h*.92,Math.round(h*.36),0xF2EEE4,BetaGwentFonts.NUMBERS,false,"center");
+                centerBetaNumber(leaderPower,4+h*.46,h*.6,Math.round(h*.36));
+            }else if(unit){
+                // Same column centre for every row and digit count.
+                var rowPower:TextField=betaLabel(row,String(c.power),4,0,36,Math.round(h*.56),0xF2EEE4,BetaGwentFonts.NUMBERS,false,"center");
+                centerBetaNumber(rowPower,23,h/2,Math.round(h*.56));
+            }
             else paintArt(row,int(c.tier)==8?BetaGwentDeckArt104.DP_SPECIAL_GOLD:int(c.tier)==4?BetaGwentDeckArt104.DP_SPECIAL_SILVER:BetaGwentDeckArt104.DP_SPECIAL_BRONZE,h*.55,h*.55,10,h*.22);
             var nameX:Number=leader?h+8:42;
             var name:TextField=betaLabel(row,String(c.title).toUpperCase(),nameX,(h-27)/2,w-nameX-46,leader?19:16,0xF2EEE4,leader?BetaGwentFonts.TITLE:BetaGwentFonts.BODY,leader,null,1.5);
@@ -2253,6 +2258,7 @@
         }
         private function drawDeckExchangeButtons():void
         {
+            if(!hasNativeClipboard090())return;
             if(skin==3){
                 betaWideButton("Импорт колоды",editingDeck?946:966,1002,220,ready,function():void{openDeckExchange(true);});
                 if(editingDeck)betaWideButton("Экспорт колоды",1182,1002,220,ready,function():void{openDeckExchange(false);});
@@ -2690,78 +2696,194 @@
         private var exchangeImport:Boolean=false;
         private var exchangeMessage:TextField;
         private var exchangeQuotedCode:String="";
+        private function traceImport090(step:String):void
+        { send("OnBetaGwentControllerTrace",[0,"IMPORT_TRACE","ui8",step+" t="+getTimer()]); }
         private function clipboardText():String
         {
             try {
                 var clipboardClass:Object=getDefinitionByName("flash.desktop.Clipboard");
-                var value:Object=clipboardClass.generalClipboard.getData("air:text");
-                return value==null?"":String(value);
+                var clipboard:Object=clipboardClass.generalClipboard;
+                traceImport090("clip_probe");if(!clipboard.setData("betagwent:windows-paste-v1",""))return "";
+                traceImport090("clip_begin");if(!clipboard.setData("betagwent:windows-paste-begin-v1","")){traceImport090("clip_empty");return "";}traceImport090("clip_bits");
+                // One immutable Windows snapshot, decoded through the existing
+                // Boolean API. Never fall back to stale internal Flash text.
+                var alphabet:String="0123456789:,BG",value:String="";
+                for(var position:int=0;position<=320;position++){
+                    var symbol:int=0;
+                    for(var bit:int=0;bit<4;bit++)
+                        if(clipboard.setData("betagwent:windows-paste-bit-v1",position+":"+bit))symbol|=1<<bit;
+                    if(symbol==0)traceImport090("clip_done len="+value.length);
+                    if(symbol==0)return /^BG1:(2|4|8|16|32):[1-9][0-9]*:[1-9][0-9]*(,[1-9][0-9]*){24,39}$/.test(value)?value:"";
+                    if(symbol>alphabet.length)return "";
+                    value+=alphabet.charAt(symbol-1);
+                }
+                return "";
             }catch(error:Error){return "";}
+        }
+        private var nativeClipboard090:int=-1;
+        // Import/Export need the Optional-CopyButton bridge; without it both are hidden.
+        private function hasNativeClipboard090():Boolean
+        {
+            if(nativeClipboard090<0){
+                nativeClipboard090=0;
+                try{var probeClass:Object=getDefinitionByName("flash.desktop.Clipboard");if(probeClass.generalClipboard.setData("betagwent:windows-clipboard-v1",""))nativeClipboard090=1;}catch(probeError:Error){}
+            }
+            return nativeClipboard090==1;
         }
         private function copyExchange():Boolean
         {
             if(!nameField||!nameField.text.length)return false;
+            if(keyboardStage)keyboardStage.focus=nameField;
+            nameField.setSelection(0,nameField.text.length);
             try {
                 var clipboardClass:Object=getDefinitionByName("flash.desktop.Clipboard");
-                var copied:Boolean=clipboardClass.generalClipboard.setData("air:text",nameField.text);
-                if(!copied)throw new Error("clipboard unavailable");
+                // Unknown formats return false in the unmodified runtime. The
+                // native bridge answers this side-effect-free capability probe.
+                var clipboard:Object=clipboardClass.generalClipboard;
+                if(!clipboard.setData("betagwent:windows-clipboard-v1",""))throw new Error("native clipboard unavailable");
+                if(!clipboard.setData("air:text",nameField.text))throw new Error("Windows clipboard write failed");
                 BetaGwentTextLanguage.assign(exchangeMessage,"Код колоды скопирован.");return true;
-            }catch(error:Error){BetaGwentTextLanguage.assign(exchangeMessage,"Буфер недоступен. Используйте Ctrl+C.");return false;}
+            }catch(error:Error){BetaGwentTextLanguage.assign(exchangeMessage,"Копирование недоступно. Проверьте установку файлов bin.");return false;}
         }
+        private var exchangeMissing:Array=[];private var exchangeCost:int=0;private var exchangeBlocked:Boolean=false;
+        private var exchangeChecked:Boolean=false;private var exchangePage:int=0;
+        private var exchangeGrid:Sprite;private var exchangeActions:Sprite;
+        private function exchangeCode():String{return nameField?nameField.text.replace(/^\s+|\s+$/g,""):"";}
+        private function exchangeCurrent():Boolean{return exchangeChecked&&exchangeQuotedCode==exchangeCode()&&exchangeCode().length>0;}
         private function pasteExchange():void
         {
             if(!nameField)return;
             var value:String=clipboardText();
             if(value.length>320){BetaGwentTextLanguage.assign(exchangeMessage,"Максимум 320 символов.");return;}
-            if(!value.length){BetaGwentTextLanguage.assign(exchangeMessage,"Буфер пуст. Вставьте код вручную.");return;}
+            if(!value.length){BetaGwentTextLanguage.assign(exchangeMessage,"Не удалось вставить код BG1. Скопируйте код в Windows и проверьте файлы bin.");return;}
             nameField.text=value.replace(/^\s+|\s+$/g,"");exchangeQuotedCode="";
             nameField.setSelection(0,nameField.text.length);
+            if(exchangeImport)checkDeckExchange();
+        }
+        // Import never crafts and crafting never imports: both are separate, explicit steps.
+        private function checkDeckExchange():void
+        {
+            if(!ready||!nameOpen||!exchangeImport||!nameField||nameRevision!=revision)return;
+            var code:String=exchangeCode();if(!code.length)return;
+            exchangeQuotedCode=code;exchangeChecked=false;exchangeMissing=[];redrawExchange();
+            traceImport090("check_send");send("OnBetaGwentDeckImportCheck",[revision,code]);traceImport090("check_sent");
         }
         private function submitDeckExchange(craft:Boolean=false):void
         {
             if(!ready||!nameOpen||!exchangeImport||!nameField||nameRevision!=revision)return;
-            var code:String=nameField.text.replace(/^\s+|\s+$/g,"");
-            if(craft&&exchangeQuotedCode!=code){BetaGwentTextLanguage.assign(exchangeMessage,"Сначала проверьте код.");return;}
-            send("OnBetaGwentDeckImport",[revision,code,craft]);
+            if(!exchangeCurrent()){checkDeckExchange();return;}
+            if(craft){send("OnBetaGwentDeckImportCraft",[revision,exchangeQuotedCode,0]);return;}
+            if(exchangeMissing.length){BetaGwentTextLanguage.assign(exchangeMessage,"Сначала создайте недостающие карты.");return;}
+            traceImport090("import_send");send("OnBetaGwentDeckImport",[revision,exchangeQuotedCode,false]);traceImport090("import_sent");
+        }
+        private function exchangeCraft(id:int):Function
+        { return function():void{if(ready&&exchangeCurrent())send("OnBetaGwentDeckImportCraft",[revision,exchangeQuotedCode,id]);}; }
+        public function setDeckExchangeMissing(value:int,ids:String,counts:String,cost:int,balance:int,blocked:Boolean):void
+        {
+            traceImport090("missing_recv ids="+ids.length);
+            if(value!=revision||!nameOpen||!exchangeImport)return;
+            var a:Array=ids.length?ids.split(","):[],b:Array=counts.length?counts.split(","):[];
+            exchangeMissing=[];
+            for(var i:int=0;i<a.length;i++)exchangeMissing.push({id:int(a[i]),count:Math.max(1,int(b[i]))});
+            exchangeCost=cost;scraps=balance;exchangeBlocked=blocked;exchangeChecked=true;
+            redrawExchange();
+        }
+        private function redrawExchange():void
+        {
+            if(!exchangeGrid||!exchangeActions||!nameOpen||!exchangeImport)return;
+            while(exchangeGrid.numChildren)exchangeGrid.removeChildAt(0);
+            while(exchangeActions.numChildren)exchangeActions.removeChildAt(0);
+            var current:Boolean=exchangeCurrent();var total:int=0;var m:Object;
+            for each(m in exchangeMissing)total+=int(m.count);
+            var per:int=16,pages:int=Math.max(1,Math.ceil(exchangeMissing.length/per));
+            exchangePage=Math.max(0,Math.min(exchangePage,pages-1));
+            if(current){
+                var summary:String=exchangeMissing.length==0?"Все карты есть. Можно импортировать.":
+                    "Недостающие карты: "+total+" · создать все: "+exchangeCost+" осколков · у вас "+scraps;
+                if(exchangeMissing.length&&exchangeBlocked)summary+="\nЗавершите выбор награды из бочки, чтобы создавать карты.";
+                BetaGwentTextLanguage.assign(exchangeMessage,summary);
+            }
+            for(var i:int=exchangePage*per;current&&i<Math.min(exchangeMissing.length,(exchangePage+1)*per);i++){
+                var n:int=i-exchangePage*per;m=exchangeMissing[i];
+                var c:Object=BetaGwentFullCatalog.find(int(m.id));
+                var tile:Sprite=new Sprite();tile.x=(n%8)*196;tile.y=int(n/8)*326;exchangeGrid.addChild(tile);
+                paintBetaFace(tile,int(m.id),173,231,0);
+                if(c&&(c.typeMask==4||c.leader))betaPowerField(tile,String(c.power),173,231,0xFFFFFF);
+                var count:TextField=betaLabel(tile,"× "+m.count,113,6,54,22,0xFFE6A0,BetaGwentFonts.TITLE,true,"right");
+                count.background=true;count.backgroundColor=0x11191C;
+                var title:TextField=betaLabel(tile,c?c.title:String(m.id),0,236,173,17,0xEDE7D8,BetaGwentFonts.TITLE,false,"center");title.height=40;
+                var cost:int=c?craftCost(c):0;
+                editorBetaButton(tile,"Создать ("+cost+")",0,280,173,36,ready&&!exchangeBlocked&&c!=null&&scraps>=cost,exchangeCraft(int(m.id)));
+            }
+            var hasCode:Boolean=exchangeCode().length>0;
+            editorSmallButton(exchangeActions,"Вставить",48,924,184,48,true,pasteExchange);
+            editorSmallButton(exchangeActions,"Проверить",248,924,200,48,hasCode,checkDeckExchange);
+            editorSmallButton(exchangeActions,"Создать все ("+exchangeCost+")",464,924,380,48,
+                ready&&current&&exchangeMissing.length>0&&!exchangeBlocked&&scraps>=exchangeCost,function():void{submitDeckExchange(true);});
+            editorSmallButton(exchangeActions,"Импортировать",860,924,300,48,ready&&current&&exchangeMissing.length==0,function():void{submitDeckExchange();});
+            if(pages>1){
+                editorSmallButton(exchangeActions,"←",1176,924,72,48,exchangePage>0,function():void{exchangePage--;redrawExchange();});
+                editorSmallButton(exchangeActions,"→",1264,924,72,48,exchangePage+1<pages,function():void{exchangePage++;redrawExchange();});
+                text(exchangeActions,(exchangePage+1)+" / "+pages,1352,936,72,22,0xD6C6A8);
+            }
+            editorSmallButton(exchangeActions,"Закрыть",1432,924,248,48,true,closeNameInput);
         }
         private function openDeckExchange(importing:Boolean):void
         {
             if(!ready||nameOpen||!(selectingDecks||editingDeck)||(!importing&&!editingDeck))return;
+            if(!hasNativeClipboard090())return;
             closeControllerMenu();exchangeImport=importing;exchangeQuotedCode="";
             textPurpose=importing?3:4;textLimit=320;nameRevision=revision;nameOpen=true;
             panel(nameLayer,-WIDE_PAD,0,1920+2*WIDE_PAD,1080,0x080C10,.85);
+            if(importing){
+                var sheet:Sprite=panel(nameLayer,96,40,1728,1000,0x10191F,.99);
+                text(sheet,"ИМПОРТ КОЛОДЫ",48,28,1200,30,0xF5D77F);
+                nameField=text(sheet,"",48,84,1632,23);nameField.height=72;
+                BetaGwentTextLanguage.forget(nameField);nameField.type=TextFieldType.INPUT;
+                nameField.multiline=true;nameField.wordWrap=true;nameField.selectable=true;nameField.mouseEnabled=true;nameField.maxChars=320;
+                nameField.background=true;nameField.backgroundColor=0x233B45;
+                nameField.addEventListener(Event.CHANGE,function(e:Event):void{exchangeChecked=false;exchangeMissing=[];redrawExchange();});
+                exchangeMessage=text(sheet,"Вставьте код BG1. Импорт заменит черновик. Затем сохраните колоду.",48,168,1632,22);
+                exchangeMessage.height=64;
+                exchangeGrid=new Sprite();exchangeGrid.x=80;exchangeGrid.y=246;sheet.addChild(exchangeGrid);
+                exchangeActions=new Sprite();sheet.addChild(exchangeActions);
+                exchangeMissing=[];exchangeChecked=false;exchangePage=0;exchangeCost=0;exchangeBlocked=false;
+                traceImport090("open");var pasted:String=clipboardText();traceImport090("pasted len="+pasted.length);if(pasted.length>0&&pasted.length<=320)nameField.text=pasted.replace(/^\s+|\s+$/g,"");
+                redrawExchange();
+                controller.focusTag("control");
+                if(keyboardStage)keyboardStage.focus=nameField;
+                if(nameField.text.length)checkDeckExchange();
+                traceImport090("open_done");
+                return;
+            }
+            exchangeGrid=null;exchangeActions=null;
             var box:Sprite=panel(nameLayer,400,160,1120,760,0x10191F,.99);
-            text(box,importing?"ИМПОРТ КОЛОДЫ":"ЭКСПОРТ КОЛОДЫ",48,48,1024,30,0xF5D77F);
+            text(box,"ЭКСПОРТ КОЛОДЫ",48,48,1024,30,0xF5D77F);
             nameField=text(box,"",48,116,1024,23);nameField.height=100;
             BetaGwentTextLanguage.forget(nameField);nameField.type=TextFieldType.INPUT;
             nameField.multiline=true;nameField.wordWrap=true;nameField.selectable=true;nameField.mouseEnabled=true;nameField.maxChars=320;
             nameField.background=true;nameField.backgroundColor=0x233B45;
-            nameField.addEventListener(Event.CHANGE,function(e:Event):void{exchangeQuotedCode="";});
-            exchangeMessage=text(box,importing?"Вставьте код BG1. Импорт заменит черновик. Затем сохраните колоду.":"",48,252,1024,22);
+            exchangeMessage=text(box,"",48,252,1024,22);
             exchangeMessage.height=300;exchangeMessage.mouseEnabled=true;
             exchangeMessage.addEventListener(MouseEvent.MOUSE_WHEEL,function(e:MouseEvent):void{exchangeMessage.scrollV-=e.delta;e.stopPropagation();});
             editorSmallButton(box,"↑",964,568,44,40,true,function():void{exchangeMessage.scrollV--;});
             editorSmallButton(box,"↓",1028,568,44,40,true,function():void{exchangeMessage.scrollV++;});
-            if(importing){
-                editorSmallButton(box,"Вставить",48,642,184,48,true,pasteExchange);
-                editorSmallButton(box,"Импортировать",248,642,224,48,true,function():void{submitDeckExchange();});
-                editorSmallButton(box,"Создать недостающие",488,642,320,48,true,function():void{submitDeckExchange(true);});
-                var pasted:String=clipboardText();if(pasted.length>0&&pasted.length<=320)nameField.text=pasted.replace(/^\s+|\s+$/g,"");
-            }else{
-                editorSmallButton(box,"Копировать",48,642,280,48,true,copyExchange);
-                send("OnBetaGwentDeckExport",[revision]);
-            }
+            editorSmallButton(box,"Копировать",48,642,280,48,true,copyExchange);
+            send("OnBetaGwentDeckExport",[revision]);
             editorSmallButton(box,"Закрыть",824,642,248,48,true,closeNameInput);
-            if(keyboardStage)keyboardStage.focus=nameField;
             controller.focusTag("control");
+            if(keyboardStage)keyboardStage.focus=nameField;
         }
         public function setDeckExchange(value:int,code:String,message:String,accepted:Boolean):void
         {
             if(value!=revision||!nameOpen||textPurpose<3||!exchangeMessage)return;
-            if(accepted){closeNameInput();return;}
-            BetaGwentTextLanguage.assign(exchangeMessage,message);exchangeMessage.scrollV=1;
-            if(code.length){nameField.text=code;nameField.setSelection(0,code.length);copyExchange();}
-            else if(exchangeImport)exchangeQuotedCode=nameField.text.replace(/^\s+|\s+$/g,"");
+            traceImport090("exchange_recv accepted="+accepted);
+            if(accepted){closeNameInput();traceImport090("closed");return;}
+            // WitcherScript keeps "\n" as two characters.
+            message=message==null?"":message.split("\\n").join("\n");
+            if(message.length||!exchangeImport)BetaGwentTextLanguage.assign(exchangeMessage,message);
+            exchangeMessage.scrollV=1;
+            if(code.length){nameField.text=code;nameField.setSelection(0,code.length);copyExchange();if(keyboardStage)keyboardStage.focus=nameField;}
         }
 
         private function openNameInput():void {openTextInput(0,editorName);}
@@ -2771,16 +2893,16 @@
             textPurpose=purpose;textLimit=purpose==0?48:purpose==1?64:80;
             nameOpen=true;nameRevision=revision;
             panel(nameLayer,-WIDE_PAD,0,1920+2*WIDE_PAD,1080,0x080C10,.85);
-            var box:Sprite=panel(nameLayer,460,220,1000,650,0x10191F,.99);
-            text(box,purpose==0?"НАЗВАНИЕ КОЛОДЫ":"ПОИСК КАРТ",30,20,920,30,0xF5D77F);
-            nameField=text(box,value,30,82,940,28);nameField.height=48;
+            var box:Sprite=panel(nameLayer,460,180,1000,720,0x10191F,.99);
+            text(box,purpose==0?"НАЗВАНИЕ КОЛОДЫ":"ПОИСК КАРТ",48,48,904,30,0xF5D77F).height=48;
+            nameField=text(box,value,48,116,904,28);nameField.height=48;
             BetaGwentTextLanguage.forget(nameField);nameField.text=value;nameField.type=TextFieldType.INPUT;nameField.multiline=false;nameField.wordWrap=false;nameField.selectable=true;nameField.mouseEnabled=true;nameField.maxChars=textLimit;
             nameField.background=true;nameField.backgroundColor=0x233B45;
             nameField.addEventListener(TextEvent.TEXT_INPUT,function(e:TextEvent):void{
                 e.preventDefault();e.stopImmediatePropagation();
                 pendingText="";pendingTextAt=0;editName(e.text);
             });
-            nameCounter=text(box,"",30,140,940,20,0xB9B4A9);nameCounter.height=35;
+            nameCounter=text(box,"",48,180,904,20,0xB9B4A9);nameCounter.height=35;
             if(keyboardStage)keyboardStage.focus=nameField;
             nameField.setSelection(0,nameField.text.length);
             drawNameKeyboard();
@@ -2816,14 +2938,14 @@
             while(box.numChildren>3)box.removeChildAt(box.numChildren-1);
             var letters:String="1234567890"+(nameRussian?"йцукенгшщзхъфывапролджэячсмитьбюё":"qwertyuiopasdfghjklzxcvbnm")+"-_.";
             if(nameUpper)letters=letters.toUpperCase();
-            for(var i:int=0;i<letters.length;i++)editorSmallButton(box,letters.charAt(i),30+(i%11)*85,192+int(i/11)*64,76,54,true,nameLetter(letters.charAt(i)));
-            editorSmallButton(box,nameRussian?"RU → EN":"EN → RU",30,520,158,50,true,function():void{nameRussian=!nameRussian;drawNameKeyboard();});
-            editorSmallButton(box,nameUpper?"А → а":"а → А",200,520,116,50,true,function():void{nameUpper=!nameUpper;drawNameKeyboard();});
-            editorSmallButton(box,"Пробел",328,520,180,50,true,nameLetter(" "));
-            editorSmallButton(box,"← Стереть",520,520,180,50,true,function():void{editName("",true);});
-            editorSmallButton(box,"Принять",712,520,120,50,true,submitNameInput);
-            editorSmallButton(box,"Отмена",844,520,126,50,true,closeNameInput);
-            text(box,textPurpose==0?"Клавиатура или кнопки букв · RU / EN переключает язык ввода.\nПосле изменения названия сохраните колоду.":"Клавиатура или кнопки букв · RU / EN переключает язык ввода.\nПустая строка убирает поиск; Enter применяет фильтр.",30,580,940,20,0xB9B4A9).height=58;
+            for(var i:int=0;i<letters.length;i++)editorSmallButton(box,letters.charAt(i),48+(i%11)*82,230+int(i/11)*56,72,48,true,nameLetter(letters.charAt(i)));
+            editorSmallButton(box,nameRussian?"RU → EN":"EN → RU",48,536,148,48,true,function():void{nameRussian=!nameRussian;drawNameKeyboard();});
+            editorSmallButton(box,nameUpper?"А → а":"а → А",212,536,104,48,true,function():void{nameUpper=!nameUpper;drawNameKeyboard();});
+            editorSmallButton(box,"Пробел",332,536,160,48,true,nameLetter(" "));
+            editorSmallButton(box,"← Стереть",508,536,156,48,true,function():void{editName("",true);});
+            editorSmallButton(box,"Принять",680,536,128,48,true,submitNameInput);
+            editorSmallButton(box,"Отмена",824,536,128,48,true,closeNameInput);
+            text(box,textPurpose==0?"Клавиатура или кнопки букв · RU / EN переключает язык ввода.\nПосле изменения названия сохраните колоду.":"Клавиатура или кнопки букв · RU / EN переключает язык ввода.\nПустая строка убирает поиск; Enter применяет фильтр.",48,616,904,18,0xB9B4A9).height=58;
             BetaGwentTextLanguage.assign(nameCounter,nameField.text.length+" / "+textLimit+" · Enter — принять · Esc — отменить");
         }
         private function editorTierColor(tier:int):uint
@@ -2943,11 +3065,9 @@
             var hover:Sprite=betaNine(p,-1401,w,h);hover.alpha=0;
             p.alpha=enabled?1:.5;p.buttonMode=enabled;
             var label:TextField=text(p,title,12,Math.max(3,(h-26)/2),w-24,18,chosen?0xFFE6A0:0xE3D6BE);
-            label.multiline=false;label.wordWrap=false;label.height=h-label.y-3;
-            if(label.textWidth>w-24){if(skin==3)BetaGwentFonts.apply(label,BetaGwentFonts.BODY,Math.max(12,Math.floor(18*(w-24)/label.textWidth)),chosen?0xFFE6A0:0xE3D6BE);else label.setTextFormat(new TextFormat("$NormalFont",Math.max(12,Math.floor(18*(w-24)/label.textWidth)),chosen?0xFFE6A0:0xE3D6BE));}
             var buttonFormat:TextFormat=label.defaultTextFormat;buttonFormat.align="center";
             label.defaultTextFormat=buttonFormat;label.setTextFormat(buttonFormat);
-            label.y=Math.round((h-label.textHeight)/2)-2;label.height=label.textHeight+4;
+            BetaGwentTextLanguage.fitButton(label,18,12,h);
             if(enabled){
                 controller.registerControl(p,title,callback,null,null,"control",null,new Rectangle(0,0,w,h));
                 p.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{e.stopPropagation();uiSound();callback();});
@@ -4095,13 +4215,12 @@
             placementMotions.push({sprite:ghost,fromX:x,toX:x,fromY:g.y-10,toY:g.y+4,ghost:true});
             paintBetaCorners(ghost,width,g.h-8,0xD9FFF5);
             placementGhost.graphics.lineStyle(3,0xD9FFF5,1);placementGhost.graphics.drawRect(x,g.y+4,width,g.h-8);
-            placementGhost.graphics.moveTo(x+width/2,g.y-3);placementGhost.graphics.lineTo(x+width/2,g.y-15);
-            var rowName:String=target.zone==1?"Ближний ряд":target.zone==2?"Дальний ряд":"Осадный ряд";
+                        var rowName:String=target.zone==1?"Ближний ряд":target.zone==2?"Дальний ряд":"Осадный ряд";
             {var label:Sprite=panel(placementGhost,1536,842,332,58,0x10191F,.98);
             text(label,rowName+" · позиция "+(index+1)+" / "+(units.length+1)+" · "+c.title+" · нажмите, чтобы разместить",10,3,312,17,0xD9FFF5).height=54;}
             if(c.templateId==132104){
                 var frostRow:Object=rowGeometry(2,target.zone);
-                placementGhost.graphics.lineStyle(3,0xA3E9FF,.95);placementGhost.graphics.beginFill(0x8ED7FF,.18);
+                placementGhost.graphics.lineStyle();placementGhost.graphics.moveTo(frostRow.x,frostRow.y);placementGhost.graphics.lineStyle(3,0xA3E9FF,.95);placementGhost.graphics.beginFill(0x8ED7FF,.18);
                 placementGhost.graphics.drawRect(frostRow.x,frostRow.y,frostRow.w,frostRow.h);placementGhost.graphics.endFill();
                 text(placementGhost,"МОРОЗ КАРАНТИРА · ряд напротив",frostRow.x+8,frostRow.y+3,frostRow.w-16,17,0xD5F6FF);
             }
@@ -4238,7 +4357,7 @@
             if(!playing&&requestId>0&&!(skin==3&&requestKind==1)){
                 if(skin==3){
                     var prompt:TextField=text(content,requestKind==2&&!rowRequest&&!canPlacePending()?"Нажмите подсвеченную карту, чтобы применить способность.":requestInstruction(),1536,778,332,21,0xF5D77F);
-                    prompt.height=58;betaFace(BetaGwentFonts.BODY,prompt,21,0xF5D77F);prompt.mouseEnabled=false;
+                    prompt.height=58;betaFace(BetaGwentFonts.BODY,prompt,21,0xF5D77F);prompt.mouseEnabled=false;requestPrompt090=prompt;
                 }else{
                     betaNine(content,-1400,976,43,430,158);
                     var legacyPrompt:TextField=betaLabel(content,requestInstruction(),444,161,948,22,0xF5D77F,BetaGwentFonts.BODY,false,"center");legacyPrompt.height=28;legacyPrompt.mouseEnabled=false;
@@ -4408,9 +4527,11 @@
             animations.push({sprite:burst,fromX:x,fromY:y,toX:x,toY:y,fade:true,remove:true,duration:duration,
                 delay:delay,hideBeforeDelay:true,fromScaleX:.35,fromScaleY:.35,toScaleX:1.35,toScaleY:1.35});
         }
+        private var requestPrompt090:TextField;
         private function previewOutline(c:Object):void
         {
             var pose:Object=displayedCards[c.id];if(!pose)return;
+            actionPreviewLayer.graphics.lineStyle();actionPreviewLayer.graphics.moveTo(pose.x,pose.y);
             actionPreviewLayer.graphics.lineStyle(2,0x68DEEB,.95);
             actionPreviewLayer.graphics.beginFill(0x68DEEB,.10);
             actionPreviewLayer.graphics.drawRect(pose.x,pose.y,pose.width,pose.height);
@@ -4435,7 +4556,7 @@
             var rule:Object=requestId>0?templateRules[requestSourceTemplate]:playRules[selected];
             var key:String=revision+":"+available+":"+selected+":"+(c?c.id:0)+":"+side+":"+zone+":"+requestCount+":"+(placementPreview?placementPreview.anchor+":"+placementPreview.zone:"none");
             if(key==actionPreviewKey)return;actionPreviewKey=key;
-            actionPreviewLayer.graphics.clear();while(actionPreviewLayer.numChildren)actionPreviewLayer.removeChildAt(0);
+            actionPreviewLayer.graphics.clear();while(actionPreviewLayer.numChildren)actionPreviewLayer.removeChildAt(0);if(requestPrompt090)requestPrompt090.visible=true;
             if(!available)return;
             var affected:int=0;var summary:String="";var scope:int=rule?int(rule.scope):0;
             if(zone>0&&halfCastSide()>0){
@@ -4472,7 +4593,11 @@
                 summary+="Осталось выбрать: "+Math.max(0,requestMax-requestCount);
                 if(requestMin>requestCount)summary+=" · выбор обязателен";
             }
-            if(summary.length&&!placementPreview){var label:TextField=text(actionPreviewLayer,summary,1536,816,332,18,legal?0xA8EDF2:0xEACD91);label.height=104;label.mouseEnabled=false;}
+            if(summary.length&&!placementPreview){
+                var prompted:Boolean=skin==3&&requestId>0&&requestKind!=1&&requestPrompt090!=null&&requestPrompt090.parent!=null;
+                if(prompted){summary=summary.split("\nНажмите, чтобы подтвердить цель").join("").split(" · выбор обязателен").join("");requestPrompt090.visible=false;}
+                var label:TextField=text(actionPreviewLayer,summary,1536,prompted?778:816,332,prompted?17:18,legal?0xA8EDF2:0xEACD91);label.height=prompted?84:104;label.mouseEnabled=false;
+            }
         }
         private function rowCards(side:int,zone:int):Array
         {var result:Array=[];for each(var c:Object in cards)if(c.side==side&&c.zone==zone)result.push(c);return result;}
@@ -4798,7 +4923,7 @@
         }
         private function betaLabel(parent:Sprite,value:String,x:Number,y:Number,w:Number,size:Number,color:uint,face:String,bold:Boolean=false,align:String=null,spacing:Number=0):TextField
         {
-            var field:TextField=text(parent,value,x,y,w,int(size),color);field.multiline=false;field.wordWrap=false;field.height=size*1.6;
+            var field:TextField=text(parent,value,x,y,w,int(size),color);field.multiline=value!=null&&value.indexOf("\n")>=0;field.wordWrap=field.multiline;field.height=size*1.6;
             betaFace(face,field,size,color,bold,align,spacing);
             // Every label must fit its slot: drop tracking first, then shrink (never below 60%).
             if(value&&value.indexOf("\n")<0&&Math.max(field.textWidth,BetaGwentTextMetrics.width(value,face,size,spacing))>w-6){
@@ -4812,7 +4937,7 @@
         private function betaSlotLabel(parent:Sprite,value:String,x:Number,y:Number,w:Number,h:Number,size:Number,color:uint,face:String):TextField
         {
             var field:TextField=betaLabel(parent,value,x,y,w,size,color,face,false,"center");
-            field.y=y+(h-field.textHeight)/2-2;field.height=field.textHeight+4;return field;
+            BetaGwentTextLanguage.fitButton(field,size,Math.min(size,12),h,y,2);return field;
         }
         private function sideFaction(side:int):int
         { return editorFactionIndex(cardFaction(int(leaderIds[Math.max(0,side-1)]))); }
@@ -4885,7 +5010,7 @@
             var w:Number=Math.ceil(field.textWidth)+8;if(playing&&callback==accelerateReplay)w=Math.max(w,180);field.width=w;
             var iconW:Number=icon!=0?40:0;field.x=iconW;
             if(playing){
-                h.graphics.lineStyle(1,0xD7BC75,.85);h.graphics.beginFill(0x17180F,.9);
+                h.graphics.moveTo(-12,-5);h.graphics.lineStyle(1,0xD7BC75,.85);h.graphics.beginFill(0x17180F,.9);
                 h.graphics.drawRoundRect(-12,-5,iconW+w+24,48,8,8);h.graphics.endFill();
             }
             if(icon!=0)paintArt(h,icon,36,36,0,1);
@@ -4927,7 +5052,7 @@
             paintArt(b,BetaGwentHud104.WIDE_IDLE,w,48,0,0);
             var hover:Sprite=new Sprite();hover.mouseEnabled=false;paintArt(hover,BetaGwentHud104.WIDE_HOVER,w,48,0,0);hover.alpha=0;b.addChild(hover);
             if(title=="‹"||title=="›")paintChevron(b,w/2,24,title=="›");
-            else betaLabel(b,title.toUpperCase(),18,10,w-36,22,0xF2EEE4,BetaGwentFonts.TITLE,true,"center",2).mouseEnabled=false;
+            else {var caption:TextField=betaLabel(b,title.toUpperCase(),18,10,w-36,22,0xF2EEE4,BetaGwentFonts.TITLE,true,"center",2);caption.mouseEnabled=false;BetaGwentTextLanguage.fitButton(caption,22,12,48);}
             if(enabled){
                 b.buttonMode=true;b.mouseChildren=false;
                 buttonMotion(b,hover);
@@ -4998,13 +5123,14 @@
         {
             var parent:Sprite=previewParent||battlePreview;
             var side:int=int(c.side)||1;
-            var w:Number=312,h:Number=Math.round(312/BETA_CARD_ASPECT);
-            var previewX:Number=1477+(405-w)/2;
+            var big:Boolean=(selectingDecks||editingDeck||browsingCatalog)&&int(c.templateId)>0;
+            var w:Number=big?260:312,h:Number=Math.round(big?260/BETA_LARGE_CARD_ASPECT:312/BETA_CARD_ASPECT);
+            var previewX:Number=big?1580:1477+(405-w)/2;
             var card:Sprite=new Sprite();card.x=previewX;card.y=572-h;parent.addChild(card);
             if(c.templateId>0){
-                paintBetaFace(card,c.templateId,w,h,side,animatePortrait);
+                var sideFace:Object=paintBetaFace(card,c.templateId,w,h,side,animatePortrait,true,big);
                 var original:Object=BetaGwentCardText.find(c.templateId);
-                if(c.power!=null&&(!original||original.typeMask==4||int(c.power)>0))betaPowerField(card,String(c.power),w,h,powerColor(c));
+                if(c.power!=null&&(!original||original.typeMask==4||int(c.power)>0)){if(big)betaBigPowerField(card,String(c.power),w,h,powerColor(c),sideFace);else betaPowerField(card,String(c.power),w,h,powerColor(c));}
             }else paintCardBack(card,w,h,2);
             paintStaticCardState(card,c,w,h);
             card.filters=[new GlowFilter(side==2?0xE0402A:0x3AA8F0,.85,16,16,2,2)];
@@ -5027,6 +5153,7 @@
             if(c.timer!=null&&int(c.timer)>=0&&!enemyAmbush(c))reading+=(reading.length?"\n":"")+"Счётчик: "+int(c.timer);
             var info:Sprite=new Sprite();info.x=previewX;info.y=662;parent.addChild(info);
             var body:TextField=text(info,reading,14,10,284,18,0xEDEAE2);body.wordWrap=true;body.multiline=true;
+            if(!hidden)BetaGwentTextLanguage.keywords(body,int(c.templateId));
             body.height=Math.min(pileOpen?245:controller.active?88:330,body.textHeight+10);
             if(previewParent){mulliganReading=body;body.mouseEnabled=true;body.addEventListener(MouseEvent.MOUSE_WHEEL,function(e:MouseEvent):void{body.scrollV-=e.delta;e.stopPropagation();});}
             if(browsingCatalog)catalogAbility=body;
@@ -5036,35 +5163,56 @@
             var bg:Sprite=new Sprite();info.addChildAt(bg,0);paintArt(bg,BetaGwentHud104.infoBg(fi),312,bh,0,0);
             paintArt(info,BetaGwentHud104.titleLine(fi),312,4,0,bh-2);
         }
+        private function betaRoundCrownId(side:int,wins:int):int
+        {return wins>=2?(side==1?-1525:-1527):wins==1?(side==1?-1524:-1526):-1523;}
+        private var roundBannerFor:Object=null;private var roundBannerStart:int=0;
+        private static const ROUND_SCORE_MS:int=3000;
         private function drawBetaRoundBanner(parent:Sprite,animate:Boolean):void
         {
             var result:Object=lastRoundResult;if(!result)return;
+            if(roundBannerFor!==result){roundBannerFor=result;roundBannerStart=getTimer();}
             var matchWinner:int=int(result.flags)>>4;
             var winner:int=matchWinner>0?matchWinner:result.scores[0]>result.scores[1]?1:result.scores[0]<result.scores[1]?2:3;
             var title:String=matchWinner>0?(winner==1?"ПОБЕДА!":winner==2?"ПОРАЖЕНИЕ!":"НИЧЬЯ!"):(winner==1?"ВЫ ВЫИГРАЛИ РАУНД!":winner==2?"ПРОТИВНИК ВЫИГРАЛ РАУНД!":"НИЧЬЯ!");
             var next:int=int(result.round)+1;
             var line:String=matchWinner>0?"Партия завершена":next>=3?"Начало финального раунда!":"Начало второго раунда!";
             var root:Sprite=new Sprite();root.mouseEnabled=false;root.mouseChildren=false;parent.addChild(root);
-            root.graphics.beginFill(winner==1?0x02121E:winner==2?0x1E0303:0x0E0E0E,.78);root.graphics.drawRect(-WIDE_PAD,0,1920+2*WIDE_PAD,1080);root.graphics.endFill();
+            // Beta tints the whole screen: deep blue for your round, deep red for the opponent's.
+            root.graphics.beginFill(winner==1?0x020F1C:winner==2?0x1C0202:0x0C0C0C,.86);root.graphics.drawRect(-WIDE_PAD,0,1920+2*WIDE_PAD,1080);root.graphics.endFill();
             var box:Sprite=new Sprite();box.x=499;box.y=440;root.addChild(box);
             box.graphics.beginFill(0x000000,.94);box.graphics.drawRect(0,0,929,136);box.graphics.endFill();
             var bar:Sprite=new Sprite();box.addChild(bar);paintArt(bar,BetaGwentHud104.POPUP_TITLE,929,70,0,0);
-            bar.transform.colorTransform=winner==1?new ColorTransform(.35,.9,1.6,1,0,0,0,0):winner==2?new ColorTransform(1.9,.45,.35,1,0,0,0,0):new ColorTransform(1,1,1,1,0,0,0,0);
+            bar.transform.colorTransform=winner==1?new ColorTransform(.35,.9,1.6):winner==2?new ColorTransform(1.9,.45,.35):new ColorTransform(1,1,1);
             box.graphics.lineStyle(2,0x8C8C8C,.9);box.graphics.drawRect(0,0,929,136);
             box.graphics.lineStyle(1,0x5A5A5A,.9);box.graphics.moveTo(0,70);box.graphics.lineTo(929,70);
             for each(var corner:Array in [[0,0,1,1],[929,0,-1,1],[0,136,1,-1],[929,136,-1,-1]]){
                 box.graphics.lineStyle(2,0xBDBDBD,1);box.graphics.moveTo(corner[0],corner[1]+corner[3]*9);box.graphics.lineTo(corner[0],corner[1]);box.graphics.lineTo(corner[0]+corner[2]*9,corner[1]);
             }
-            betaLabel(box,title,0,12,929,36,0xEDE9E2,BetaGwentFonts.TITLE,true,"center",7);
-            betaLabel(box,line,0,88,929,20,0xF2F0EA,BetaGwentFonts.BODY,false,"center");
-            // Final round score in the lower band, clear of the title: yours left, opponent right.
-            var ownScore:TextField=betaLabel(box,String(result.scores[0]),24,78,150,34,winner==1?0xFFD52A:0xD8E6F0,BetaGwentFonts.NUMBERS,true,"center");
-            var enemyScore:TextField=betaLabel(box,String(result.scores[1]),755,78,150,34,winner==2?0xFFD52A:0xF0D8D8,BetaGwentFonts.NUMBERS,true,"center");
+            betaLabel(box,title,0,12,929,34,0xEDE9E2,BetaGwentFonts.TITLE,true,"center",7);
+            // Phase 1: round crowns around the score, "yours | theirs", winner's number in gold.
+            var scoreRow:Sprite=new Sprite();box.addChild(scoreRow);
+            var own:int=int(result.crowns?result.crowns[0]:0),enemy:int=int(result.crowns?result.crowns[1]:0);
+            paintArt(scoreRow,betaRoundCrownId(1,own),51,45,324,79);
+            paintArt(scoreRow,betaRoundCrownId(2,enemy),51,45,563,79);
+            var ownScore:TextField=betaLabel(scoreRow,String(result.scores[0]),380,82,100,30,winner==1?0xFFD52A:0xF2F0EA,BetaGwentFonts.NUMBERS,false,"center");
+            var enemyScore:TextField=betaLabel(scoreRow,String(result.scores[1]),448,82,100,30,winner==2?0xFFD52A:0xF2F0EA,BetaGwentFonts.NUMBERS,false,"center");
+            centerBetaNumber(ownScore,430,103,30);centerBetaNumber(enemyScore,498,103,30);
             ownScore.filters=enemyScore.filters=[new GlowFilter(0,1,4,4,4,1)];
-            if(animate&&!reducedMotion){
+            scoreRow.graphics.lineStyle(2,0x8C8C8C,.9);scoreRow.graphics.moveTo(464,86);scoreRow.graphics.lineTo(464,118);
+            // Phase 2: the next-round line replaces the score in the same lower band.
+            var lineField:TextField=betaLabel(box,line,0,90,929,20,0xF2F0EA,BetaGwentFonts.BODY,false,"center");
+            var phase:Function=function(e:Event=null):void{
+                var second:Boolean=getTimer()-roundBannerStart>=ROUND_SCORE_MS;
+                scoreRow.visible=!second;lineField.visible=second;
+            };
+            phase();
+            root.addEventListener(Event.ENTER_FRAME,phase);
+            root.addEventListener(Event.REMOVED_FROM_STAGE,function(e:Event):void{root.removeEventListener(Event.ENTER_FRAME,phase);});
+            if(animate&&!reducedMotion&&getTimer()-roundBannerStart<400){
                 animations.push({sprite:root,fromX:0,fromY:0,toX:0,toY:0,appear:true,remove:false,duration:380});root.alpha=0;
             }
         }
+
         private function drawYourTurnBanner():void
         {
             var b:Sprite=new Sprite();b.x=960;b.y=540;b.mouseEnabled=false;b.mouseChildren=false;betaOverlay.addChild(b);
@@ -5720,8 +5868,6 @@
                 }
                 drawCardStatuses191(p,before,c,cardWidth,cardHeight);
                 if((int(c.tokens)&512)!=0){
-                    var doomedBadge:Sprite=panel(p,3,39,20,19,0x271715,.9);doomedBadge.mouseEnabled=false;
-                    text(p,"×",6,38,18,18,0xF2AC86);
                 }
                 if(int(c.timer)>=0&&!enemyAmbush(c)){
                     var timerField191:TextField=paintTimer(p,3,40,int(c.timer),(int(c.tokens)&4)!=0);
@@ -5924,7 +6070,7 @@
         {
             switch(kind){
                 case 1:return 900;case 2:return 930;case 3:var ks:int=activeCue?killEffectStyle(int(activeCue.templateId)):0;return ks==3?2200:ks==1?1500:ks==2?1500:740;
-                case 4:if(activeCue&&activeCue.templateId==113101&&!reducedMotion)return BetaGwentBattle080.IMPACT_MS+2500;return 120+1000*Math.max(BetaGwentVisualTimings.FROST_INTRO,BetaGwentVisualTimings.FOG_INTRO,BetaGwentVisualTimings.RAIN_INTRO);case 5:return 1100;case 6:return 1050;
+                case 4:if(activeCue&&activeCue.templateId==113101&&!reducedMotion)return BetaGwentBattle080.IMPACT_MS+2500;return 120+1000*Math.max(BetaGwentVisualTimings.FROST_INTRO,BetaGwentVisualTimings.FOG_INTRO,BetaGwentVisualTimings.RAIN_INTRO);case 5:return 1100;case 6:return 6000;
                 case 7:return 120+1000*Math.max(BetaGwentVisualTimings.FROST_INTRO,BetaGwentVisualTimings.FOG_INTRO,BetaGwentVisualTimings.RAIN_INTRO);case 8:return 440;case 9:return 460;
                 case 10:return 560;case 11:return 1500;case 12:return activeCue&&int(activeCue.templateId)==201523&&int(activeCue.target)==0?2200:460;
                 case 13:return 520;case 14:return 420;case 15:case 16:return 620;
@@ -6890,8 +7036,9 @@
 
         // Beta small card (SmallCardFull: 17.64 x 21.46 units). Banner 4.4 x 8.2 at (0.12,0.33).
         private static const BETA_CARD_ASPECT:Number=17.64/21.46;
+        private static const BETA_LARGE_CARD_ASPECT:Number=15.85574533/22.7377556;
         private function betaBannerRect(w:Number,h:Number):Array{return [w*.12/17.64,h*.33/21.46,w*4.4/17.64,h*8.2/21.46];}
-        private function paintBetaFace(p:Sprite,templateId:int,w:Number,h:Number,side:int=0,hover:Boolean=false,motion:Boolean=true):void
+        private function paintBetaFace(p:Sprite,templateId:int,w:Number,h:Number,side:int=0,hover:Boolean=false,motion:Boolean=true,big:Boolean=false):Object
         {
             var size:Array=BetaGwentHDArt.size(templateId);
             if(size){
@@ -6906,7 +7053,38 @@
             if((faction&62)==0&&side>0&&leaderIds&&leaderIds.length>=side)faction=cardFaction(int(leaderIds[side-1]));
             paintArt(p,tier==8||tier==1?-1602:tier==4?-1601:-1600,w,h,0,0);
             var b:Array=betaBannerRect(w,h);
-            paintArt(p,-1610-(faction==2?0:faction==4?1:faction==8?2:faction==16?3:faction==32?4:5),b[2],b[3],b[0],b[1]);
+            var icon:int=-1610-(faction==2?0:faction==4?1:faction==8?2:faction==16?3:faction==32?4:5);
+            if(!big){paintArt(p,icon,b[2],b[3],b[0],b[1]);return null;}
+            // Keep a complete small face until the native banner is ready.
+            // This layer stays below power/status even when loading fails later.
+            var flag:Sprite=new Sprite();p.addChild(flag);
+            paintArt(flag,icon,b[2],b[3],b[0],b[1]);
+            var face:Object={large:false,power:null,color:0xFFFFFF,slot:BetaGwentBanners090.slot(entry?int(entry.faction):1,tier)};
+            var loaded:Function=function():void{
+                face.large=true;flag.visible=false;
+                if(face.power)layoutBigPower090(face.power,w,h,uint(face.color),face.slot);
+            };
+            var diagnose:Function=function():void{
+                // Log only: the complete small face stays as the fallback.
+                trace("UI_ERROR banner_fallback="+BetaGwentBanners090.lastError);
+            };
+            if(!BetaGwentBanners090.paint(p,entry?int(entry.faction):1,tier,w,h,diagnose,loaded))diagnose();
+            return face;
+        }
+        // Switch the power and banner together, only after successful loading.
+        private function layoutBigPower090(field:TextField,w:Number,h:Number,color:uint,slot:Array=null):void
+        {
+            if(!slot)slot=BetaGwentBanners090.slot(1,2);
+            var size:int=Math.max(16,Math.round(h*.115));
+            field.x=w*slot[0]-size;field.y=h*slot[1]-size*.85;field.width=size*2;field.height=size*1.7;
+            if(!BetaGwentFonts.apply(field,BetaGwentFonts.NUMBERS,size,color,true,"center")){field.defaultTextFormat=new TextFormat("$NormalFont",size,color,true,null,null,null,null,"center");field.setTextFormat(field.defaultTextFormat);}
+            centerBetaNumber(field,w*slot[0],h*slot[1],size);
+        }
+        private function betaBigPowerField(p:Sprite,value:String,w:Number,h:Number,color:uint,face:Object=null):TextField
+        {
+            var field:TextField=betaPowerField(p,value,w,h,color);
+            if(face){face.power=field;face.color=color;if(face.large)layoutBigPower090(field,w,h,color,face.slot);}
+            return field;
         }
         private function statusVisible191(card:Object,name:String):Boolean
         {
@@ -7497,7 +7675,7 @@
                 "Раскроется в начале вашего хода после окончания счётчика.";
             return "ЗАСАДА УСТАНОВЛЕНА\n"+hint+"\nПока закрыта, её сила не входит в счёт ряда.";
         }
-        private function cardReading(c:Object,detail:Object,complete:Boolean=false,skipHeader:Boolean=false):String
+        private function cardReading(c:Object,detail:Object,complete:Boolean=false,skipHeader:Boolean=false,withFlavor:Boolean=true,withState:Boolean=true):String
         {
             var hidden:Boolean=(c.zone&7)!=0&&(int(c.tokens)&8)!=0;
             if(hidden&&int(c.side)==2)return ambushReading(c);
@@ -7509,10 +7687,10 @@
             if(hidden)value+=ambushReading(c)+"\n\n";
             else if((c.zone&7)!=0&&isAmbush(c.templateId))value+="Засада уже раскрыта; её сила учитывается в счёте.\n\n";
             if(!skipHeader&&c.templateId>0)value+="Теги: "+(BetaGwentCardTags.text(c.templateId)||"—")+"\n\n";
-            if(complete){var state:String=BetaGwentUi138.stateLines(c,original);if(state)value+=state+"\n\n";}
+            if(complete&&withState){var state:String=BetaGwentUi138.stateLines(c,original);if(state)value+=state+"\n\n";}
             value+=readableText(complete&&original?original.description:detail?detail.description:c.description);
             if(complete&&original&&original.glossary.length)value+="\n\n"+original.glossary;
-            if(complete&&original&&original.flavor.length)value+="\n\n«"+original.flavor+"»";
+            if(complete&&withFlavor&&original&&original.flavor.length)value+="\n\n«"+original.flavor+"»";
             if((int(c.tokens)&1)!=0)value+="\n\nСтойкость: останется на поле в следующем раунде.";
             if(c.timer!=null&&int(c.timer)>=0&&!enemyAmbush(c))value+="\nСчётчик: "+int(c.timer)+((int(c.tokens)&4)!=0?" · остановлен блокировкой":" · уменьшается перед своим ходом");
             if((int(c.tokens)&4)!=0)value+="\nБлокировка: пассивные способности и Завещание отключены.";
@@ -7527,7 +7705,7 @@
             if(historyEntryIndex>=0){historyEntryIndex=-1;openHistory(historyPage);return;}
             if(tutorialReturn>=0){tutorialPage=tutorialReturn;tutorialReturn=-1;while(detailLayer.numChildren)detailLayer.removeChildAt(0);tutorialLayer.filters=[];tutorialLayer.mouseChildren=true;detailBody=tutorialBody;setChildIndex(controller,numChildren-1);controller.getFocus();return;}
             tutorialPage=-1;tutorialLayer.filters=[];while(tutorialLayer.numChildren)tutorialLayer.removeChildAt(0);
-            tutorialFirstRun=false;detailOpen=false;detailBody=null;while(detailLayer.numChildren)detailLayer.removeChildAt(0);
+            tutorialFirstRun=false;detailOpen=false;detailBody=null;detailNav=null;detailNavCard=null;while(detailLayer.numChildren)detailLayer.removeChildAt(0);
         }
         // Stage 131/0.5.2: tutorial pages with short recorded examples ("Попробовать").
         // Each example is a scripted mini-board, not a duel: cards, damage and weather are animated only.
@@ -7543,6 +7721,24 @@
                    {at:1500,op:"hit",k:"e1",n:2},{at:1600,op:"say",text:"Броня поглотила весь урон: сила оруженосца не изменилась, но брони больше нет."},
                    {at:3400,op:"hit",k:"e1",n:2},{at:3500,op:"say",text:"Следующий урон уже снижает силу. Счёт рядом с рядом — сумма силы ваших отрядов."},
                    {at:5600,op:"pass",side:2},{at:5700,op:"say",text:"Противник спасовал. Если у вас больше очков, раунд ваш — можно пасовать в ответ и сберечь карты."}]}},
+                {title:"МУЛЛИГАН И ДОБОР",body:"В начале партии вы берёте 10 карт и можете заменить до трёх из них. Заменённая карта уходит в колоду, и до конца замены карты с тем же названием вам не попадутся.\n\nВо втором раунде каждый игрок добирает 2 карты, в третьем — 1 карту, и перед раундом снова можно заменить одну карту. Другие карты придут только от способностей.\n\nПоэтому каждая карта на счету. Не тратьте три карты ради раунда, который можно отдать: в последнем раунде лишняя карта часто решает партию.",cards:["Талер","Аваллак'х"],
+                 demo:{setup:[{k:"e1",id:132301,side:2,slot:0},{k:"m1",id:122308,side:1,slot:0}],pile:"Колода",
+                  intro:"Посмотрите, сколько карт приходит в каждом раунде.",
+                  steps:[{at:0,op:"turn",text:"Раунд 1"},{at:300,op:"say",text:"Раунд 1: 10 карт в руке, до трёх замен."},
+                   {at:2600,op:"turn",text:"Раунд 2"},{at:2900,op:"say",text:"Раунд 2: +2 карты и одна замена."},
+                   {at:5200,op:"turn",text:"Раунд 3"},{at:5500,op:"say",text:"Раунд 3: +1 карта и одна замена. Сберегите карты к решающему раунду."}]}},
+                {title:"РЯДЫ И СОСЕДИ",body:"В каждом ряду помещается не больше девяти отрядов. Место в ряду важно: многие способности действуют на смежные отряды — соседей слева и справа.\n\nСтавя отряд, вы выбираете ряд и место между картами. Одни карты усиливают несколько смежных отрядов, другие бьют цель вместе с её соседями — расставляйте отряды с расчётом на это.\n\nРяды противника тоже важны: бедствия, урон по всему ряду и эффекты «в противоположном ряду» выбирают цели только в своём ряду. Иногда выгодно поставить отряд туда, где его не достанет погода.",cards:["Командирский рог","Требушет"],
+                 demo:{setup:[{k:"e1",id:132301,side:2,slot:0},{k:"e2",id:201748,side:2,slot:1},{k:"e3",id:122308,side:2,slot:2},{k:"m1",id:123301,side:1,slot:0}],
+                  intro:"У противника три отряда стоят рядом.",
+                  steps:[{at:0,op:"say",text:"Вы разыгрываете машину, которая бьёт выбранный отряд и двух его соседей."},{at:400,op:"play",k:"m2",id:122303,side:1,slot:1},
+                   {at:1600,op:"hit",k:"e1",n:1},{at:1600,op:"hit",k:"e2",n:1},{at:1600,op:"hit",k:"e3",n:1},{at:1700,op:"say",text:"Цель в центре — урон получают все три отряда."},
+                   {at:4000,op:"say",text:"Так же работают и усиления: ставьте свои отряды плотно, чтобы эффект задел больше карт."}]}},
+                {title:"СТАТУСЫ КАРТ",body:"Цвет силы подсказывает состояние отряда: зелёная — отряд усилен, красная — получил урон или ослаблен, белая — сила не менялась. Полный просмотр карты показывает базовую силу.\n\nБроня поглощает урон, пока не кончится. Блокировка отключает способность. Стойкий отряд остаётся на поле в следующем раунде. Неуязвимого нельзя выбрать целью. Обречённый отряд не уходит в сброс.\n\nСчётчик на карте показывает, через сколько ходов сработает её способность. Все статусы карты с пояснениями собраны в полном просмотре (ПКМ).",cards:["Реданский оруженосец","Выброс адреналина"],
+                 demo:{setup:[{k:"e1",id:132301,side:2,slot:0},{k:"m1",id:123301,side:1,slot:0,armor:2},{k:"m2",id:132402,side:1,slot:1}],
+                  intro:"Следите за цветом силы и бронёй.",
+                  steps:[{at:0,op:"boost",k:"m2",n:2},{at:100,op:"say",text:"Усиление делает силу зелёной."},
+                   {at:2200,op:"hit",k:"e1",n:2},{at:2300,op:"say",text:"Урон делает силу красной."},
+                   {at:4400,op:"hit",k:"m1",n:2},{at:4500,op:"say",text:"У оруженосца 2 ед. брони: первый удар снимает броню, а сила остаётся белой."}]}},
                 {title:"ТЮТОРЫ: КАРТЫ ИЗ КОЛОДЫ",body:"Тютор разыгрывает другую карту прямо из вашей колоды. Так колода становится тоньше, а нужная карта приходит без добора.\n\nТютор смотрит только на подходящие карты: «Подкрепление» берёт солдат, машины, офицеров и отряды поддержки, «Королевский указ» — золотой отряд. Если подходящих карт не осталось, способность ничего не сделает — на поле появится надпись «нет целей».\n\nСобирая колоду, следите, чтобы у тюторов было достаточно целей.",cards:["Подкрепление","Ян Наталис","Королевский указ"],
                  demo:{setup:[{k:"e1",id:201748,side:2,slot:0},{k:"m1",id:122308,side:1,slot:0}],pile:"Колода",
                   intro:"Справа — ваша колода. Нажмите «Попробовать».",
@@ -7608,38 +7804,46 @@
             while(previewLayer.numChildren)previewLayer.removeChildAt(0);
             while(detailLayer.numChildren)detailLayer.removeChildAt(0);
             while(tutorialLayer.numChildren)tutorialLayer.removeChildAt(0);
-            var shade:Sprite=panel(tutorialLayer,-WIDE_PAD,0,1920+2*WIDE_PAD,1080,0x080C10,.86);
+            var shade:Sprite=panel(tutorialLayer,-WIDE_PAD,0,1920+2*WIDE_PAD,1080,0x080C10,.94);
             shade.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{e.stopImmediatePropagation();});
             var box:Sprite=betaFrame(tutorialLayer,240,110,1440,860,-1414);
             var p:Object=pages[page];
-            betaLabel(box,"ОБУЧЕНИЕ · "+(page+1)+" / "+pages.length,56,40,1328,18,0xCFB176,BetaGwentFonts.BODY).height=30;
-            betaLabel(box,String(p.title),56,76,1328,30,0xF5F0E7,BetaGwentFonts.TITLE,true,null,2).height=50;
-            var body:TextField=text(box,String(p.body),56,140,768,20,0xEBE5D8);body.height=388;body.wordWrap=true;
+            betaLabel(box,"ОБУЧЕНИЕ · "+(page+1)+" / "+pages.length,96,64,1248,18,0xCFB176,BetaGwentFonts.BODY).height=30;
+            betaLabel(box,String(p.title),96,98,1248,30,0xF5F0E7,BetaGwentFonts.TITLE,true,null,2).height=50;
+            // One grid for all seven pages: 720 px reading column, 40 px gap,
+            // 568 px demo. Both start at 140 and finish above the shared footer.
+            var body:TextField=text(box,String(p.body),96,162,680,19,0xEBE5D8);body.height=362;body.wordWrap=true;
             detailBody=body;tutorialBody=body;
             var cards:Array=p.cards as Array;
-            betaLabel(box,"Карты страницы · нажмите, чтобы посмотреть",56,548,768,15,0xCFB176,BetaGwentFonts.BODY).height=24;
+            betaLabel(box,"Карты страницы · нажмите, чтобы посмотреть",96,530,680,15,0xCFB176,BetaGwentFonts.BODY,false,"center").height=24;
+            var thumbW:Number=104,thumbH:Number=thumbW/BETA_CARD_ASPECT;
+            var stripW:Number=cards.length*thumbW+Math.max(0,cards.length-1)*24;
+            var stripX:Number=96+(680-stripW)/2;
             for(var i:int=0;i<cards.length;i++){
                 var entry:Object=catalogByTitle(String(cards[i]));if(!entry)continue;
-                var tile:Sprite=new Sprite();tile.x=56+i*128;tile.y=580;box.addChild(tile);
-                paintBetaFace(tile,int(entry.templateId),104,146,1);
-                if(int(entry.typeMask)==4)betaPowerField(tile,String(entry.power),104,146,0xFFFFFF);
+                var tile:Sprite=new Sprite();tile.x=stripX+i*(thumbW+24);tile.y=558;box.addChild(tile);
+                paintBetaFace(tile,int(entry.templateId),thumbW,thumbH,1);
+                if(int(entry.typeMask)==4)betaPowerField(tile,String(entry.power),thumbW,thumbH,0xFFFFFF);
+                var caption:TextField=text(tile,String(entry.title),-4,thumbH+6,thumbW+8,13,0xD8D1C2);
+                betaFace(BetaGwentFonts.BODY,caption,13,0xD8D1C2,false,"center");caption.multiline=true;caption.wordWrap=true;caption.height=42;
                 var look:Function=tutorialCardOpener(entry,page);
-                attachEditorClick(tile,look);controller.registerControl(tile,String(entry.title),look,null,null,"control",null,new Rectangle(0,0,104,146));
+                attachEditorClick(tile,look);controller.registerControl(tile,String(entry.title),look,null,null,"control",null,new Rectangle(0,0,thumbW,thumbH));
             }
             if(p.demo)tutorialDemo(box,p.demo);
-            editorBetaButton(box,"‹ Назад",56,768,240,52,page>0,function():void{openTutorial(page-1);});
-            editorBetaButton(box,page+1<pages.length?"Далее ›":"Готово",312,768,240,52,true,function():void{if(page+1<pages.length)openTutorial(page+1);else{tutorialFirstRun=false;closeCardDetail();}});
-            editorBetaButton(box,tutorialFirstRun?"Пропустить обучение":"Закрыть",1084,768,300,52,true,function():void{tutorialFirstRun=false;closeCardDetail();});
+            editorBetaButton(box,"‹ Назад",96,744,240,52,page>0,function():void{openTutorial(page-1);});
+            editorBetaButton(box,page+1<pages.length?"Далее ›":"Готово",352,744,240,52,true,function():void{if(page+1<pages.length)openTutorial(page+1);else{tutorialFirstRun=false;closeCardDetail();}});
+            editorBetaButton(box,tutorialFirstRun?"Пропустить обучение":"Закрыть",1044,744,300,52,true,function():void{tutorialFirstRun=false;closeCardDetail();});
             controller.focusTag("control");
         }
-        private static const DEMO_W:Number=92,DEMO_H:Number=128;
+        private static const DEMO_W:Number=92,DEMO_H:Number=92*21.46/17.64;
         private function tutorialDemo(box:Sprite,demo:Object):void
         {
-            panel(box,872,140,512,516,0x0B1015,.92);
-            var stageView:Sprite=new Sprite();stageView.x=872;stageView.y=140;box.addChild(stageView);
+            panel(box,800,162,544,560,0x0B1015,.96);
+            var stageView:Sprite=new Sprite();stageView.x=800;stageView.y=162;box.addChild(stageView);
             var cards:Object,scores:Array,tweens:Array,steps:Array,next:int,started:int,running:Boolean,caption:TextField,pileView:Sprite,pileLeft:int;
-            var rowY:Function=function(side:int):Number{return side==2?40:236;};
-            var slotX:Function=function(slot:int):Number{return 60+slot*98;};
+            var rowX:Number=demo.pile?52:134;
+            var rowY:Function=function(side:int):Number{return side==2?52:258;};
+            var slotX:Function=function(slot:int):Number{return rowX+6+slot*98;};
             var basePower:Function=function(id:int):int{var e:Object=BetaGwentFullCatalog.find(id);return e?int(e.power):0;};
             var isUnit:Function=function(id:int):Boolean{var e:Object=BetaGwentFullCatalog.find(id);return e!=null&&int(e.typeMask)==4;};
             var paint:Function=function(c:Object):void{
@@ -7648,11 +7852,12 @@
                 paintBetaFace(sp,c.id,DEMO_W,DEMO_H,c.side);
                 if(isSpyCard(c.id)&&c.side==2&&c.spy!==false)paintSpyRibbon(sp,DEMO_W,DEMO_H);
                 if(isUnit(c.id))betaPowerField(sp,String(c.power),DEMO_W,DEMO_H,c.power>c.base?0x7DF07D:c.power<c.base?0xFF6A5A:0xFFFFFF);
-                if(c.armor>0){var a:Sprite=panel(sp,4,4,DEMO_W-8,20,0x0E2A3A,.85);text(a,"Броня "+c.armor,0,0,DEMO_W-8,12,0xBFE3FF).height=20;}
+                if(c.armor>0){var a:Sprite=panel(sp,4,DEMO_H-24,DEMO_W-8,20,0x0E2A3A,.94);betaLabel(a,"Броня "+c.armor,0,1,DEMO_W-8,12,0xBFE3FF,BetaGwentFonts.BODY,false,"center").height=20;}
             };
             var refreshScores:Function=function():void{
                 var s:Array=[0,0,0];for each(var c:Object in cards)if(!c.dead&&!c.hidden&&isUnit(c.id))s[c.side]+=c.power;
                 scores[1].text=String(s[1]);scores[2].text=String(s[2]);
+                for(var side:int=1;side<=2;side++)centerBetaNumber(scores[side],rowX-28,rowY(side)+DEMO_H/2,28);
             };
             var tween:Function=function(sp:Sprite,x1:Number,y1:Number,a1:Number,d:int,done:Function=null):void{
                 tweens.push({sp:sp,x0:sp.x,y0:sp.y,a0:sp.alpha,x1:x1,y1:y1,a1:a1,t0:getTimer(),d:d,done:done});
@@ -7671,7 +7876,7 @@
                 var x1:Number=slotX(c.slot),y1:Number=rowY(c.side);
                 if(setup){c.sp.x=x1;c.sp.y=y1;return c;}
                 c.sp.alpha=0;
-                if(step.from=="pile"){c.sp.x=400;c.sp.y=236;if(pileLeft>0){pileLeft--;drawPile();}}
+                if(step.from=="pile"){c.sp.x=448;c.sp.y=rowY(1);if(pileLeft>0){pileLeft--;drawPile();}}
                 else if(step.from=="enemy"){c.sp.x=x1;c.sp.y=-150;}
                 else {c.sp.x=x1;c.sp.y=420;}
                 tween(c.sp,x1,y1,1,420);return c;
@@ -7690,17 +7895,17 @@
             var reset:Function=function():void{
                 while(stageView.numChildren)stageView.removeChildAt(0);
                 cards={};tweens=[];bands=[];next=0;running=false;
-                betaLabel(stageView,"Противник",12,10,200,14,0xD48A7A,BetaGwentFonts.BODY).height=22;
-                betaLabel(stageView,"Вы",12,206,200,14,0x8FC6E0,BetaGwentFonts.BODY).height=22;
+                betaLabel(stageView,"Противник",rowX,20,300,14,0xD48A7A,BetaGwentFonts.BODY).height=22;
+                betaLabel(stageView,"Вы",rowX,226,300,14,0x8FC6E0,BetaGwentFonts.BODY).height=22;
                 scores=[null,null,null];
                 for(var side:int=1;side<=2;side++){
-                    var row:Sprite=panel(stageView,52,rowY(side)-6,300,DEMO_H+12,side==1?0x16303A:0x3A1E18,.45);
-                    var sc:TextField=text(stageView,"0",4,rowY(side)+44,44,26,0xF5F0E7);sc.height=40;scores[side]=sc;
+                    var row:Sprite=panel(stageView,rowX,rowY(side)-6,300,DEMO_H+12,side==1?0x16303A:0x3A1E18,.45);
+                    var sc:TextField=betaLabel(stageView,"0",rowX-50,rowY(side),44,28,0xF5F0E7,BetaGwentFonts.NUMBERS,false,"center");sc.height=48;scores[side]=sc;
                 }
                 pileLeft=demo.pile?(demo.pile=="Сброс"?2:demo.pile=="Лидер"?1:3):0;
-                if(demo.pile){pileView=new Sprite();pileView.x=400;pileView.y=236;stageView.addChild(pileView);drawPile();}else pileView=null;
+                if(demo.pile){pileView=new Sprite();pileView.x=448;pileView.y=rowY(1);stageView.addChild(pileView);drawPile();}else pileView=null;
                 for each(var s:Object in demo.setup)place(s,true);
-                caption=text(stageView,String(demo.intro),14,392,482,16,0xEBE5D8);caption.height=100;caption.wordWrap=true;
+                caption=text(stageView,String(demo.intro),20,404,504,16,0xEBE5D8);caption.height=86;caption.wordWrap=true;
                 refreshScores();
             };
             var hit:Function=function(c:Object,n:int):void{
@@ -7716,21 +7921,21 @@
                     case "say":BetaGwentTextLanguage.assign(caption,readableText(String(step.text)));break;
                     case "play":place(step,false);break;
                     case "spell":
-                        var sp:Sprite=new Sprite();paintBetaFace(sp,int(step.id),DEMO_W,DEMO_H,1);sp.x=158;sp.y=420;sp.alpha=0;stageView.addChild(sp);
-                        tween(sp,158,rowY(int(step.side)),1,450,function():void{tween(sp,158,rowY(int(step.side))-10,0,700,function():void{if(sp.parent)sp.parent.removeChild(sp);});});break;
+                        var sp:Sprite=new Sprite();paintBetaFace(sp,int(step.id),DEMO_W,DEMO_H,1);sp.x=rowX+106;sp.y=420;sp.alpha=0;stageView.addChild(sp);
+                        tween(sp,rowX+106,rowY(int(step.side)),1,450,function():void{tween(sp,rowX+106,rowY(int(step.side))-10,0,700,function():void{if(sp.parent)sp.parent.removeChild(sp);});});break;
                     case "weather":
-                        var band:Sprite=new Sprite();band.graphics.beginFill(0xB8C6D0,.28);band.graphics.drawRoundRect(52,rowY(int(step.side))-6,300,DEMO_H+12,8,8);band.graphics.endFill();
+                        var band:Sprite=new Sprite();band.graphics.beginFill(0xB8C6D0,.28);band.graphics.drawRoundRect(rowX,rowY(int(step.side))-6,300,DEMO_H+12,8,8);band.graphics.endFill();
                         band.alpha=0;stageView.addChildAt(band,Math.min(stageView.numChildren,6));tween(band,0,0,1,500);
-                        var wl:TextField=text(band,String(step.text),56,rowY(int(step.side))+DEMO_H-16,292,13,0xE6EEF4);wl.height=20;bands.push(band);break;
+                        var wl:TextField=text(band,String(step.text),rowX+4,rowY(int(step.side))+DEMO_H-16,292,13,0xE6EEF4);wl.height=20;bands.push(band);break;
                     case "hit":if(c)hit(c,int(step.n));break;
                     case "boost":if(c){c.power+=int(step.n);float(c,"+"+int(step.n),0x7DF07D);paint(c);}break;
                     case "set":if(c){var delta:int=int(step.n)-c.power;c.power=int(step.n);float(c,(delta>=0?"+":"")+delta,delta>=0?0x7DF07D:0xFF6A5A);paint(c);}break;
                     case "flip":if(c){c.hidden=false;paint(c);c.sp.alpha=.2;tween(c.sp,c.sp.x,c.sp.y,1,400);}break;
                     case "turn":case "pass":
-                        var banner:Sprite=panel(stageView,105,150,300,56,0x10151B,.94);
+                        var banner:Sprite=panel(stageView,134,194,300,48,0x10151B,.94);
                         var bt:TextField=text(banner,step.op=="pass"?"Противник пасует":String(step.text),0,12,300,22,0xF5D9A0);bt.height=34;
                         bt.defaultTextFormat=new TextFormat(bt.defaultTextFormat.font,22,0xF5D9A0,true,null,null,null,null,"center");bt.setTextFormat(bt.defaultTextFormat);
-                        tween(banner,105,150,1,900,function():void{tween(banner,105,150,0,400,function():void{if(banner.parent)banner.parent.removeChild(banner);});});break;
+                        tween(banner,134,194,1,900,function():void{tween(banner,134,194,0,400,function():void{if(banner.parent)banner.parent.removeChild(banner);});});break;
                 }
                 refreshScores();
             };
@@ -7746,7 +7951,7 @@
             };
             steps=(demo.steps as Array).concat();steps.sortOn("at",Array.NUMERIC);
             reset();stageView.addEventListener(Event.ENTER_FRAME,frame);
-            editorBetaButton(box,"Попробовать",1008,676,240,52,true,function():void{reset();started=getTimer();running=true;});
+            editorBetaButton(box,"Попробовать",952,658,240,52,true,function():void{reset();started=getTimer();running=true;});
         }
         private function tutorialCardOpener(entry:Object,page:int):Function
         {
@@ -7788,9 +7993,9 @@
         }
         private function drawRelatedCards(box:Sprite,c:Object,detail:Object,list:Array):void
         {
-            betaLabel(box,"Связанные карты · нажмите, чтобы посмотреть",220,700,750,18,0xD7C498,BetaGwentFonts.BODY).height=30;
+            betaLabel(box,"Связанные карты · нажмите, чтобы посмотреть",272,716,750,18,0xD7C498,BetaGwentFonts.BODY).height=30;
             for(var i:int=0;i<list.length;i++){
-                var r:Object=list[i];var tile:Sprite=new Sprite();tile.x=220+i*124;tile.y=732;box.addChild(tile);
+                var r:Object=list[i];var tile:Sprite=new Sprite();tile.x=272+i*124;tile.y=750;box.addChild(tile);
                 paintBetaFace(tile,int(r.templateId),104,146,int(c.side)||1);
                 if(int(r.typeMask)==4||r.leader)betaPowerField(tile,String(r.power),104,146,0xFFFFFF);
                 var name:TextField=betaLabel(tile,String(r.title),-8,148,120,13,0xEDE7D8,BetaGwentFonts.BODY,false,"center");name.height=34;name.wordWrap=true;
@@ -7805,40 +8010,104 @@
                 openCardDetail({templateId:int(r.templateId),title:r.title,power:r.power,side:int(c.side)||1,zone:0,tokens:0,description:r.description},{description:r.description},true);
             };
         }
-        private function openCardDetail(c:Object,detail:Object,keepBack:Boolean=false):void
+        private var detailNav:Array=null;private var detailNavCard:Object=null;
+        private function stepCardDetail(delta:int):void
+        {
+            if(!detailNav||!detailOpen||!detailNavCard)return;
+            var at:int=-1;for(var k:int=0;k<detailNav.length;k++)if(int(detailNav[k].templateId)==int(detailNavCard.templateId)){at=k;break;}
+            var next:int=at+delta;if(at<0||next<0||next>=detailNav.length)return;
+            var target:Object=detailNav[next];openCardDetail(target,{description:target.description},false,true);
+        }
+        private function detailArrow(parent:Sprite,left:Boolean,callback:Function):void
+        {
+            // Beta outline chevrons at the screen edges; only when browsing a card list.
+            var arrow:Sprite=new Sprite();parent.addChild(arrow);
+            arrow.graphics.beginFill(0,0);arrow.graphics.drawRect(0,0,200,220);arrow.graphics.endFill();
+            arrow.x=left?0:1720;arrow.y=430;
+            var shape:Sprite=new Sprite();shape.mouseEnabled=false;arrow.addChild(shape);
+            var tip:Number=left?24:176,back:Number=left?182:18,inner:Number=left?98:102;
+            shape.graphics.lineStyle(2,0x9A958A,.9);
+            shape.graphics.moveTo(back,30);shape.graphics.lineTo(tip,107);shape.graphics.lineTo(back,184);
+            shape.graphics.moveTo(back,46);shape.graphics.lineTo(inner,107);shape.graphics.lineTo(back,168);
+            arrow.buttonMode=true;
+            arrow.addEventListener(MouseEvent.ROLL_OVER,function(e:MouseEvent):void{shape.alpha=1;uiTween(shape,"alpha",1);});
+            arrow.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{e.stopImmediatePropagation();uiSound(3);callback();});
+            controller.registerControl(arrow,left?"Предыдущая карта":"Следующая карта",callback,null,null,"control",null,new Rectangle(0,0,200,220));
+        }
+        private function openCardDetail(c:Object,detail:Object,keepBack:Boolean=false,keepNav:Boolean=false):void
         {
             if(!c||c.hidden||enemyAmbush(c))return;if(this.collectionNew&&collectionNew[c.templateId]&&(editingDeck||browsingCatalog))markCollectionSeen(int(c.templateId));clearDrag();clearPlacementGhost();detailOpen=true;
             if(!keepBack)detailBack=[];
+            if(!keepNav){
+                detailNav=keepBack?null:browsingCatalog?shelfCards178.catalog:editingDeck?shelfCards178.collection:null;
+                if(detailNav){var listed:Boolean=false;for each(var item:Object in detailNav)if(int(item.templateId)==int(c.templateId)){listed=true;break;}if(!listed)detailNav=null;}
+            }
+            detailNavCard=c;
             setChildIndex(detailLayer,numChildren-1);
             setChildIndex(controller,numChildren-1);
             while(previewLayer.numChildren)previewLayer.removeChildAt(0);
             while(detailLayer.numChildren)detailLayer.removeChildAt(0);
-            var shade:Sprite=panel(detailLayer,-WIDE_PAD,0,1920+2*WIDE_PAD,1080,0x080C10,.82);
+            // UICardPreviewPrefab as in Beta 0.9.24: opaque dark screen, framed by two thin
+            // metal rules; name, tags, flavour, divider, power and ability on the left;
+            // the large card with its faction glow on the right; "Back" centred below.
+            var shade:Sprite=new Sprite();shade.x=-WIDE_PAD;detailLayer.addChild(shade);
+            shade.graphics.beginFill(0x0C0B09,1);shade.graphics.drawRect(0,0,1920+2*WIDE_PAD,1080);shade.graphics.endFill();
+            shade.graphics.beginFill(0x17130E,.9);shade.graphics.drawRect(0,0,1920+2*WIDE_PAD,113);shade.graphics.drawRect(0,971,1920+2*WIDE_PAD,109);shade.graphics.endFill();
+            shade.graphics.lineStyle(2,0x6B5A3E,.95);
+            shade.graphics.moveTo(WIDE_PAD+34,113);shade.graphics.lineTo(WIDE_PAD+1886,113);
+            shade.graphics.moveTo(WIDE_PAD+34,971);shade.graphics.lineTo(WIDE_PAD+1886,971);
             shade.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{e.stopImmediatePropagation();closeCardDetail();});
-            // UICardPreviewPrefab: full-screen dark backdrop, details on the left,
-            // large original card on the right. Reuse Beta textures/fonts, no extra atlas.
             var box:Sprite=new Sprite();detailLayer.addChild(box);
             box.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{e.stopImmediatePropagation();});
             var entry:Object=BetaGwentFullCatalog.find(c.templateId);
             var original:Object=BetaGwentCardText.find(c.templateId);
-            var side:int=int(c.side)||1,fi:int=entry?editorFactionIndex(entry.faction):sideFaction(side);
-            var picture:Sprite=new Sprite();picture.x=1110;picture.y=170;box.addChild(picture);
+            var side:int=int(c.side)||1;
+            var cw:Number=468,ch:Number=Math.round(468/BETA_LARGE_CARD_ASPECT);
+            var picture:Sprite=new Sprite();picture.x=1205;picture.y=Math.round(530-ch/2);box.addChild(picture);
+            var unit:Boolean=original&&(original.typeMask==4||entry&&entry.leader);
             if(c.templateId>0){
-                paintBetaFace(picture,c.templateId,440,616,side);
-                if(original&&(original.typeMask==4||entry&&entry.leader))betaPowerField(picture,String(original.power),440,616,0xFFFFFF);
-            }else paintCardBack(picture,440,616,2);
-            var name:TextField=betaLabel(box,readableText(c.title).toUpperCase(),220,216,750,40,0xF5F0E7,BetaGwentFonts.TITLE,true,null,2);
-            name.height=110;
-            betaLabel(box,c.templateId>0?(BetaGwentCardTags.text(c.templateId)||""):"",220,326,750,22,0xD0C8B6,BetaGwentFonts.BODY).height=52;
-            if(original&&original.typeMask==4&&c.power!=null&&int(c.power)!=int(original.power))
-                betaLabel(box,"Исходная сила: "+original.power+" · текущая: "+c.power,220,379,750,20,0xD7C498,BetaGwentFonts.BODY).height=34;
+                var face:Object=paintBetaFace(picture,c.templateId,cw,ch,side,false,true,true);
+                if(unit)betaBigPowerField(picture,String(original&&original.power!=null?original.power:c.power),cw,ch,0xFFFFFF,face);
+            }else paintCardBack(picture,cw,ch,2);
+            picture.filters=[new GlowFilter(side==2?0xE0402A:0x3AA8F0,.9,22,22,2,2)];
+            var name:TextField=betaLabel(box,readableText(c.title).toUpperCase(),272,150,880,40,0xF5F0E7,BetaGwentFonts.TITLE,true,null,8);
+            if(name.textWidth>860)betaFace(BetaGwentFonts.TITLE,name,Math.max(24,Math.floor(40*850/name.textWidth)),0xF5F0E7,true,null,5);
+            betaLabel(box,c.templateId>0?(BetaGwentCardTags.text(c.templateId)||""):"",272,210,760,22,0xD7D0C2,BetaGwentFonts.BODY);
+            var ruleY:Number=327;
+            if(original&&original.flavor.length){
+                var flavor:TextField=text(box,original.flavor,272,256,760,19,0x9C9585);
+                flavor.wordWrap=true;flavor.multiline=true;
+                var italic:TextFormat=flavor.getTextFormat();italic.italic=true;flavor.defaultTextFormat=italic;flavor.setTextFormat(italic);
+                flavor.height=Math.max(30,flavor.textHeight+10);
+                ruleY=Math.max(327,Math.round(256+flavor.textHeight+24));
+            }
+            var shift:Number=ruleY-327;
+            var rule:Sprite=new Sprite();rule.mouseEnabled=false;box.addChild(rule);
+            rule.graphics.lineStyle(3,0x3E3A33,1);rule.graphics.moveTo(250,ruleY);rule.graphics.lineTo(1022,ruleY);
+            rule.graphics.lineStyle(1,0x6A645A,.8);rule.graphics.moveTo(262,ruleY-2);rule.graphics.lineTo(1010,ruleY-2);
+            var top:Number=360+shift;
+            if(unit){
+                // Full view shows the printed (base) power in white, without boosts or damage.
+                var powerLine:TextField=betaLabel(box,String(original&&original.power!=null?original.power:c.power),264,360+shift,80,52,0xFFFFFF,BetaGwentFonts.NUMBERS,false,"center");
+                centerBetaNumber(powerLine,304,393+shift,52);
+                betaLabel(box,"СИЛА",346,377+shift,400,28,0xF5F0E7,BetaGwentFonts.TITLE,true,null,6);
+                top=450+shift;
+            }
             var related:Array=c.templateId>0?relatedCards(int(c.templateId),String(detail&&detail.description?detail.description:(entry?entry.description:c.description||""))):[];
-            var body:TextField=text(box,cardReading(c,detail,true,true),220,420,750,25,0xEBE5D8);body.height=related.length?270:442;
+            var body:TextField=text(box,cardReading(c,detail,true,true,false,false),272,top,760,24,0xEBE5D8);
+            body.height=(related.length?706:950)-top;
             if(related.length)drawRelatedCards(box,c,detail,related);
+            BetaGwentTextLanguage.keywords(body,int(c.templateId));
             detailBody=body;body.mouseEnabled=true;body.selectable=true;
             body.addEventListener(MouseEvent.MOUSE_WHEEL,function(e:MouseEvent):void{e.stopImmediatePropagation();e.preventDefault();body.scrollV=Math.max(1,Math.min(body.maxScrollV,body.scrollV-e.delta*3));});
-            betaLabel(box,"Колесо — прокрутить описание · Esc или I — закрыть",220,909,1050,19,0xB9B4A9,BetaGwentFonts.BODY).height=40;
-            editorBetaButton(box,detailBack.length?"Назад к карте":"Вернуться к игре",1110,909,440,52,true,closeCardDetail);
+            if(detailNav){
+                var at:int=-1;for(var k:int=0;k<detailNav.length;k++)if(int(detailNav[k].templateId)==int(c.templateId)){at=k;break;}
+                if(at>0)detailArrow(box,true,function():void{stepCardDetail(-1);});
+                if(at>=0&&at+1<detailNav.length)detailArrow(box,false,function():void{stepCardDetail(1);});
+            }
+            // Mod hint kept (UX additions not present in Beta stay), small in the lower band.
+            betaLabel(box,detailNav?"Колесо — прокрутить описание · ←/→ — соседние карты · Esc или I — закрыть":"Колесо — прокрутить описание · Esc или I — закрыть",48,1010,800,15,0x8C8679,BetaGwentFonts.BODY);
+            editorBetaButton(box,detailBack.length?"Назад к карте":"Назад",860,996,200,52,true,closeCardDetail);
         }
 
         private function isInspectMouse(e:MouseEvent):Boolean

@@ -1,0 +1,2201 @@
+{
+  "status": "proposed-only",
+  "root": "D:\\w3mod",
+  "filesDeleted": 0,
+  "sizesAreLogical": true,
+  "gitAndGameSourcesExcluded": true,
+  "protected": [
+    "BetaGwent/release/GwentBetaClassic-0.9.0",
+    "CleanBuild",
+    "GwentBeta-CleanBuild-20261018T211849Z-bd8cc4ef.zip",
+    "BetaGwent/scripts",
+    "BetaGwent/development",
+    "BetaGwent/ui",
+    "GwentB",
+    "depot",
+    "data",
+    "tools",
+    "docs",
+    ".git",
+    "GwentBetaClassic-0.8.2-1.32-AllLanguages.zip",
+    "GwentBetaClassic-0.8.2-5.0+-AllLanguages.zip"
+  ],
+  "warning": "Do not recursively delete all old BetaGwent/build stages: the current build references earlier prepared graphics, audio, fonts and compiles. Junction targets must never be traversed during removal.",
+  "portableComparison": {
+    "files": 9786,
+    "differences": []
+  },
+  "categories": {
+    "memory-dumps": 54274855289,
+    "historical-release-archives": 44524273799,
+    "duplicate-portable-test": 19163150818,
+    "staged-for-deletion": 1214302965
+  },
+  "totalBytes": 119176582871,
+  "candidates": [
+    {
+      "path": "BetaGwent/build/classic132-full-feedback/20261018-175445-491544/state-loaded-26654.dmp",
+      "bytes": 6770880579,
+      "links": 0,
+      "modifiedNs": 1792335397434824100,
+      "category": "memory-dumps",
+      "reason": "Old diagnostic capture, 18 October; keep textual crash analysis. Not required to build or run final9."
+    },
+    {
+      "path": "BetaGwent/build/classic132-full-feedback/20261018-175445-491544/state-rendered-26654.dmp",
+      "bytes": 6787269276,
+      "links": 0,
+      "modifiedNs": 1792335415312347200,
+      "category": "memory-dumps",
+      "reason": "Old diagnostic capture, 18 October; keep textual crash analysis. Not required to build or run final9."
+    },
+    {
+      "path": "BetaGwent/build/classic132-full-feedback/20261018-174231-955853/failure-exception.dmp",
+      "bytes": 6762594776,
+      "links": 0,
+      "modifiedNs": 1792334664751088100,
+      "category": "memory-dumps",
+      "reason": "Old diagnostic capture, 18 October; keep textual crash analysis. Not required to build or run final9."
+    },
+    {
+      "path": "BetaGwent/build/classic132-full-feedback/20261018-174231-955853/state-loaded-26654.dmp",
+      "bytes": 6759501506,
+      "links": 0,
+      "modifiedNs": 1792334659395623500,
+      "category": "memory-dumps",
+      "reason": "Old diagnostic capture, 18 October; keep textual crash analysis. Not required to build or run final9."
+    },
+    {
+      "path": "BetaGwent/build/classic132-full-feedback/20261018-174231-955853/state-rendered-26654.dmp",
+      "bytes": 6762622195,
+      "links": 0,
+      "modifiedNs": 1792334670092374300,
+      "category": "memory-dumps",
+      "reason": "Old diagnostic capture, 18 October; keep textual crash analysis. Not required to build or run final9."
+    },
+    {
+      "path": "BetaGwent/build/classic132-full-feedback/20261018-151434-514046/failure-exception.dmp",
+      "bytes": 6811013108,
+      "links": 0,
+      "modifiedNs": 1792325809261871100,
+      "category": "memory-dumps",
+      "reason": "Old diagnostic capture, 18 October; keep textual crash analysis. Not required to build or run final9."
+    },
+    {
+      "path": "BetaGwent/build/classic132-full-feedback/20261018-151434-514046/state-loaded-26654.dmp",
+      "bytes": 6809933306,
+      "links": 0,
+      "modifiedNs": 1792325800168173500,
+      "category": "memory-dumps",
+      "reason": "Old diagnostic capture, 18 October; keep textual crash analysis. Not required to build or run final9."
+    },
+    {
+      "path": "BetaGwent/build/classic132-full-feedback/20261018-151434-514046/state-rendered-26654.dmp",
+      "bytes": 6811040543,
+      "links": 0,
+      "modifiedNs": 1792325821604443500,
+      "category": "memory-dumps",
+      "reason": "Old diagnostic capture, 18 October; keep textual crash analysis. Not required to build or run final9."
+    },
+    {
+      "path": "BetaGwent/release/1GwentBetaClassic-0.7.3-RU.zip",
+      "bytes": 315645770,
+      "modifiedNs": 1791995247882437700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/1GwentBetaClassic-0.7.3-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791995254173129300,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.2.9-EN.zip",
+      "bytes": 155617308,
+      "modifiedNs": 1791319145906549200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.2.9-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791319147864757800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-EN.zip",
+      "bytes": 161089108,
+      "modifiedNs": 1791395431908979900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791395434228931100,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-RU.zip",
+      "bytes": 162256505,
+      "modifiedNs": 1791394930681126000,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791394932786946000,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test1-EN.zip",
+      "bytes": 157523015,
+      "modifiedNs": 1791354421387212600,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test1-EN.zip.sha256",
+      "bytes": 103,
+      "modifiedNs": 1791354423940138100,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test1-RU.zip",
+      "bytes": 158687880,
+      "modifiedNs": 1791353941212480000,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test1-RU.zip.sha256",
+      "bytes": 103,
+      "modifiedNs": 1791353943124846100,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test2-RU.zip",
+      "bytes": 158688635,
+      "modifiedNs": 1791357910120959200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test2-RU.zip.sha256",
+      "bytes": 103,
+      "modifiedNs": 1791357912482588200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test3-RU.zip",
+      "bytes": 158658273,
+      "modifiedNs": 1791367194514904300,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test3-RU.zip.sha256",
+      "bytes": 103,
+      "modifiedNs": 1791367196939502500,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test4-EN.zip",
+      "bytes": 157493889,
+      "modifiedNs": 1791368563888272600,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test4-EN.zip.sha256",
+      "bytes": 103,
+      "modifiedNs": 1791368565781828400,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test4-RU.zip",
+      "bytes": 158658493,
+      "modifiedNs": 1791368187069628000,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test4-RU.zip.sha256",
+      "bytes": 103,
+      "modifiedNs": 1791368189001905400,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test5-EN.zip",
+      "bytes": 158470543,
+      "modifiedNs": 1791379700940309100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test5-EN.zip.sha256",
+      "bytes": 103,
+      "modifiedNs": 1791379703299136700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test5-RU.zip",
+      "bytes": 159631811,
+      "modifiedNs": 1791379175043595600,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.0-test5-RU.zip.sha256",
+      "bytes": 103,
+      "modifiedNs": 1791379176953445700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.1-EN.zip",
+      "bytes": 199457351,
+      "modifiedNs": 1791456885291289900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.1-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791456888428169900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.1-RU.zip",
+      "bytes": 200546235,
+      "modifiedNs": 1791456126008281200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.1-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791456128714810900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.2-EN.zip",
+      "bytes": 198405187,
+      "modifiedNs": 1791492094631595200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.2-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791492097253275000,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.2-RU.zip",
+      "bytes": 199490692,
+      "modifiedNs": 1791492480778393900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.2-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791492483408163500,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.3-EN.zip",
+      "bytes": 198440684,
+      "modifiedNs": 1791495739377056300,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.3-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791495741996539200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.3-RU.zip",
+      "bytes": 199525535,
+      "modifiedNs": 1791495289589265000,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.3-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791495292596619400,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.4-EN.zip",
+      "bytes": 198454302,
+      "modifiedNs": 1791522286936426900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.4-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791522290255103700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.4-RU.zip",
+      "bytes": 199537941,
+      "modifiedNs": 1791520914501950900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.4-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791520917058594400,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.5-preview.1-RU.zip",
+      "bytes": 199539043,
+      "modifiedNs": 1791526016571163600,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.5-preview.1-RU.zip.sha256",
+      "bytes": 107,
+      "modifiedNs": 1791526019122872600,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.5-preview.2-RU.zip",
+      "bytes": 199541539,
+      "modifiedNs": 1791534847967277700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.5-preview.2-RU.zip.sha256",
+      "bytes": 107,
+      "modifiedNs": 1791534850563393800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.5-preview.3-RU.zip",
+      "bytes": 199551417,
+      "modifiedNs": 1791539370684716400,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.5-preview.3-RU.zip.sha256",
+      "bytes": 107,
+      "modifiedNs": 1791539373250003100,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.5-preview.4-RU.zip",
+      "bytes": 199552124,
+      "modifiedNs": 1791542200832235400,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.5-preview.4-RU.zip.sha256",
+      "bytes": 107,
+      "modifiedNs": 1791542203378181500,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.5-preview.5-RU.zip",
+      "bytes": 199562748,
+      "modifiedNs": 1791552257339256900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.3.5-preview.5-RU.zip.sha256",
+      "bytes": 107,
+      "modifiedNs": 1791552259909258600,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.0-EN.zip",
+      "bytes": 198484584,
+      "modifiedNs": 1791555605236580700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.0-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791555607899557200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.0-RU.zip",
+      "bytes": 199571804,
+      "modifiedNs": 1791555731608975100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.0-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791555734204433900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.1-EN.zip",
+      "bytes": 199134769,
+      "modifiedNs": 1791559313123102800,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.1-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791559316433809400,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.1-RU.zip",
+      "bytes": 200218144,
+      "modifiedNs": 1791558551981901200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.1-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791558554552137700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.2-EN.zip",
+      "bytes": 199216991,
+      "modifiedNs": 1791575972811116700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.2-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791575975376139900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.2-RU.zip",
+      "bytes": 200293353,
+      "modifiedNs": 1791575314188664500,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.2-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791575316773974100,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.3-EN.zip",
+      "bytes": 199230939,
+      "modifiedNs": 1791596203697085700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.3-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791596206261507200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.3-RU.zip",
+      "bytes": 200303622,
+      "modifiedNs": 1791595205046122500,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.3-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791595207655166800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.4-EN.zip",
+      "bytes": 199225558,
+      "modifiedNs": 1791616394921692400,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.4-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791616397943678800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.4-RU.zip",
+      "bytes": 200300675,
+      "modifiedNs": 1791615417795712000,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.4-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791615420941224000,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.5-EN.zip",
+      "bytes": 199231749,
+      "modifiedNs": 1791652700691387100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.5-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791652703787724800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.5-RU.zip",
+      "bytes": 200311287,
+      "modifiedNs": 1791651998331557600,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.5-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791652001142208000,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.6-EN.zip",
+      "bytes": 199285124,
+      "modifiedNs": 1791725117576197900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.6-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791725120505298700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.6-RU.zip",
+      "bytes": 200369025,
+      "modifiedNs": 1791730471160979700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.4.6-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791730474422308600,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.0-EN.zip",
+      "bytes": 199339889,
+      "modifiedNs": 1791742262290898400,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.0-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791742265347516200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.0-RU.zip",
+      "bytes": 200420503,
+      "modifiedNs": 1791741590965225200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.0-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791741594450367200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.1-EN.zip",
+      "bytes": 199356318,
+      "modifiedNs": 1791749619340482400,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.1-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791749622353571400,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.1-RU.zip",
+      "bytes": 200437827,
+      "modifiedNs": 1791748700772876800,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.1-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791748703504183300,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.3-EN.zip",
+      "bytes": 199378692,
+      "modifiedNs": 1791764100085325300,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.3-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791764102688662700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.3-RU.zip",
+      "bytes": 200463956,
+      "modifiedNs": 1791763144127544500,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.3-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791763146741881200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.4-EN.zip",
+      "bytes": 199379641,
+      "modifiedNs": 1791784361973959400,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.4-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791784364554647900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.4-RU.zip",
+      "bytes": 200467428,
+      "modifiedNs": 1791783595662429600,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.5.4-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791783598222168500,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.0-EN.zip",
+      "bytes": 219569841,
+      "modifiedNs": 1791790633516969700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.0-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791790637314564100,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.0-RU.zip",
+      "bytes": 220620287,
+      "modifiedNs": 1791790327842922100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.0-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791790331476511600,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.1-DE.zip",
+      "bytes": 291042621,
+      "modifiedNs": 1791806830657509100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.1-DE.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791806834647992800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.1-EN.zip",
+      "bytes": 292833971,
+      "modifiedNs": 1791806008584309700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.1-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791806013693594400,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.1-IT.zip",
+      "bytes": 289315570,
+      "modifiedNs": 1791807256380462500,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.1-IT.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791807261589319300,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.1-PT-BR.zip",
+      "bytes": 292392563,
+      "modifiedNs": 1791807679834551700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.1-PT-BR.zip.sha256",
+      "bytes": 100,
+      "modifiedNs": 1791807685030315200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.1-RU.zip",
+      "bytes": 293848280,
+      "modifiedNs": 1791806423786602000,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.1-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791806427797684400,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.10-RU.zip",
+      "bytes": 307119117,
+      "modifiedNs": 1791927856551460500,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.10-RU.zip.sha256",
+      "bytes": 98,
+      "modifiedNs": 1791927861156718200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.2-DE.zip",
+      "bytes": 291092795,
+      "modifiedNs": 1791813625627906100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.2-DE.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791813629602100500,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.2-EN.zip",
+      "bytes": 292884145,
+      "modifiedNs": 1791813223052990200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.2-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791813227027909000,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.2-IT.zip",
+      "bytes": 289365747,
+      "modifiedNs": 1791813771295769800,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.2-IT.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791813775275422200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.2-PT-BR.zip",
+      "bytes": 292442744,
+      "modifiedNs": 1791813918370789000,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.2-PT-BR.zip.sha256",
+      "bytes": 100,
+      "modifiedNs": 1791813922329155900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.2-RU.zip",
+      "bytes": 293897803,
+      "modifiedNs": 1791813076773262200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.2-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791813080719879500,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.3-DE.zip",
+      "bytes": 291093221,
+      "modifiedNs": 1791829232952799800,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.3-DE.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791829238043370300,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.3-EN.zip",
+      "bytes": 292884540,
+      "modifiedNs": 1791828571559307900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.3-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791828576646548700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.3-IT.zip",
+      "bytes": 289366165,
+      "modifiedNs": 1791829531092083700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.3-IT.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791829536175578900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.3-PT-BR.zip",
+      "bytes": 292443108,
+      "modifiedNs": 1791829952389092600,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.3-PT-BR.zip.sha256",
+      "bytes": 100,
+      "modifiedNs": 1791829957552703200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.3-RU.zip",
+      "bytes": 293898169,
+      "modifiedNs": 1791828274490836200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.3-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791828279541868700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.4-RU.zip",
+      "bytes": 293902737,
+      "modifiedNs": 1791833490972229500,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.4-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791833496850811500,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.5-DE.zip",
+      "bytes": 291097964,
+      "modifiedNs": 1791836134985550800,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.5-DE.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791836140063826900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.5-EN.zip",
+      "bytes": 292889299,
+      "modifiedNs": 1791835866971419200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.5-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791835872119574600,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.5-IT.zip",
+      "bytes": 289370907,
+      "modifiedNs": 1791836403948990300,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.5-IT.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791836409006249700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.5-PT-BR.zip",
+      "bytes": 292447887,
+      "modifiedNs": 1791836673862666700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.5-PT-BR.zip.sha256",
+      "bytes": 100,
+      "modifiedNs": 1791836678939282400,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.5-RU.zip",
+      "bytes": 293903156,
+      "modifiedNs": 1791834827168973900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.5-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791834831700290600,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.6-RU.zip",
+      "bytes": 304751126,
+      "modifiedNs": 1791891665087553700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.6-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791891669436169400,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.7-RU.zip",
+      "bytes": 305391680,
+      "modifiedNs": 1791896184362099200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.7-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791896188518258700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.8-RU.zip",
+      "bytes": 306905647,
+      "modifiedNs": 1791906408609707100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.8-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791906412913315200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.8b-RU.zip",
+      "bytes": 305870202,
+      "modifiedNs": 1791907194088021200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.8b-RU.zip.sha256",
+      "bytes": 98,
+      "modifiedNs": 1791907198406908900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.9-before-decoy-RU.zip",
+      "bytes": 306909090,
+      "modifiedNs": 1791918062878439900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.9-before-performance-RU.zip",
+      "bytes": 306910198,
+      "modifiedNs": 1791920096901468900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.9-before-performance-RU.zip.sha256",
+      "bytes": 116,
+      "modifiedNs": 1791921089635195900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.9-before-target-fixes-RU.zip",
+      "bytes": 306909496,
+      "modifiedNs": 1791918928072363000,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.9-before-target-fixes-RU.zip.sha256",
+      "bytes": 117,
+      "modifiedNs": 1791919635364335800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.9-RU.zip",
+      "bytes": 306910198,
+      "modifiedNs": 1791920096901468900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.6.9-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791924880676017400,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.0-vfx1-RU.zip",
+      "bytes": 314659975,
+      "modifiedNs": 1791957330204396700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.0-vfx1-RU.zip.sha256",
+      "bytes": 102,
+      "modifiedNs": 1791957334625775900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.1-local-20261014-194106-RU.zip",
+      "bytes": 315646076,
+      "modifiedNs": 1791996943426094000,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.1-local-20261014-194106-RU.zip.sha256",
+      "bytes": 119,
+      "modifiedNs": 1791996948806906600,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.1-RU.zip",
+      "bytes": 314570516,
+      "modifiedNs": 1791974155340365500,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.1-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791974159945567300,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.2-RU.zip",
+      "bytes": 314577640,
+      "modifiedNs": 1791980620969036100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.2-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791980625432020200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3-DE.zip",
+      "bytes": 312837883,
+      "modifiedNs": 1792002275538255500,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3-DE.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1792002280736127600,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3-EN.zip",
+      "bytes": 314629204,
+      "modifiedNs": 1792002037063679800,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1792002042450379700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3-IT.zip",
+      "bytes": 311110854,
+      "modifiedNs": 1792002497311783400,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3-IT.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1792002502163977400,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3-local-20261014-204847-RU.zip",
+      "bytes": 315646069,
+      "modifiedNs": 1792001160513256200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3-local-20261014-204847-RU.zip.sha256",
+      "bytes": 119,
+      "modifiedNs": 1792001165879736300,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3-PT-BR.zip",
+      "bytes": 314187771,
+      "modifiedNs": 1792002983486930000,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3-PT-BR.zip.sha256",
+      "bytes": 100,
+      "modifiedNs": 1792002988113543800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3-RU.zip",
+      "bytes": 315645857,
+      "modifiedNs": 1791999905096277900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1791999909816304900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3a-1.32-RU-test1.zip",
+      "bytes": 816412535,
+      "modifiedNs": 1792049423350685100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3a-1.32-RU-test1.zip.sha256",
+      "bytes": 109,
+      "modifiedNs": 1792049438406561800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3a-DE.zip",
+      "bytes": 312841533,
+      "modifiedNs": 1792010426500490700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3a-DE.zip.sha256",
+      "bytes": 98,
+      "modifiedNs": 1792010431393544100,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3a-EN.zip",
+      "bytes": 314632876,
+      "modifiedNs": 1792010036997033200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3a-EN.zip.sha256",
+      "bytes": 98,
+      "modifiedNs": 1792010043392468900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3a-IT.zip",
+      "bytes": 311114478,
+      "modifiedNs": 1792010858660683400,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3a-IT.zip.sha256",
+      "bytes": 98,
+      "modifiedNs": 1792010864039023500,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3a-PT-BR.zip",
+      "bytes": 314191442,
+      "modifiedNs": 1792011258407793800,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3a-PT-BR.zip.sha256",
+      "bytes": 101,
+      "modifiedNs": 1792011263847256000,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3a-RU.zip",
+      "bytes": 315646321,
+      "modifiedNs": 1792009538742002100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.3a-RU.zip.sha256",
+      "bytes": 98,
+      "modifiedNs": 1792009550394142800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.4-block1-RU.zip",
+      "bytes": 316316112,
+      "modifiedNs": 1792049117310307000,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.4-block1-RU.zip.sha256",
+      "bytes": 104,
+      "modifiedNs": 1792049121859954000,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.4-RU.zip",
+      "bytes": 317315530,
+      "modifiedNs": 1792066181935765600,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.4-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1792066186492887500,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.4a-RU.zip",
+      "bytes": 316504754,
+      "modifiedNs": 1792067764399081700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.4a-RU.zip.sha256",
+      "bytes": 98,
+      "modifiedNs": 1792067768920964800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.4b-RU.zip",
+      "bytes": 316504377,
+      "modifiedNs": 1792070178962300500,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.7.4b-RU.zip.sha256",
+      "bytes": 98,
+      "modifiedNs": 1792070183389438100,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-DE.zip",
+      "bytes": 811000423,
+      "modifiedNs": 1792087152707632100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-DE.zip.sha256",
+      "bytes": 102,
+      "modifiedNs": 1792087168559094900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-EN.zip",
+      "bytes": 815689039,
+      "modifiedNs": 1792086903463134100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-EN.zip.sha256",
+      "bytes": 102,
+      "modifiedNs": 1792086915653111100,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-IT.zip",
+      "bytes": 785194404,
+      "modifiedNs": 1792087453608889300,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-IT.zip.sha256",
+      "bytes": 102,
+      "modifiedNs": 1792087469760934700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-PT-BR.zip",
+      "bytes": 820378771,
+      "modifiedNs": 1792087721751186800,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-PT-BR.zip.sha256",
+      "bytes": 105,
+      "modifiedNs": 1792087737746178800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-RU.zip",
+      "bytes": 817278670,
+      "modifiedNs": 1792086677590162400,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-RU.zip.sha256",
+      "bytes": 102,
+      "modifiedNs": 1792086692307345900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-DE.zip",
+      "bytes": 313697106,
+      "modifiedNs": 1792075199235265600,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-DE.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1792075203736446500,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-EN.zip",
+      "bytes": 315488439,
+      "modifiedNs": 1792074741535368100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-EN.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1792074745991398900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-IT.zip",
+      "bytes": 311970053,
+      "modifiedNs": 1792075402192821100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-IT.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1792075406571035000,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-PT-BR.zip",
+      "bytes": 315047003,
+      "modifiedNs": 1792076149244151000,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-PT-BR.zip.sha256",
+      "bytes": 100,
+      "modifiedNs": 1792076155451777400,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-RU.zip",
+      "bytes": 316503544,
+      "modifiedNs": 1792073227607979200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.0-RU.zip.sha256",
+      "bytes": 97,
+      "modifiedNs": 1792073233081694700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix10-InlineUIPatch.zip",
+      "bytes": 258547329,
+      "modifiedNs": 1792158538552788100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix10-NativeResourcesPatch.zip",
+      "bytes": 362747328,
+      "modifiedNs": 1792162307311734300,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix11-BitmapPatch.zip",
+      "bytes": 362748744,
+      "modifiedNs": 1792172594245598600,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix12-SubimagesPatch.zip",
+      "bytes": 362870147,
+      "modifiedNs": 1792174937749668500,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix13-HandHudPatch.zip",
+      "bytes": 362875140,
+      "modifiedNs": 1792176345078003200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix14-BattlePatch.zip",
+      "bytes": 620636368,
+      "modifiedNs": 1792180020647486200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix15-VisualPatch.zip",
+      "bytes": 620642754,
+      "modifiedNs": 1792181620353840700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix16-EffectsLeadersPatch.zip",
+      "bytes": 621509332,
+      "modifiedNs": 1792183055964930900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix17-OpacityPatch.zip",
+      "bytes": 621512466,
+      "modifiedNs": 1792273378895735400,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix18-EffectsPatch.zip",
+      "bytes": 621525863,
+      "modifiedNs": 1792274131572495700,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix3-AllLanguages.zip",
+      "bytes": 517184949,
+      "modifiedNs": 1792126118098232100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix3-AllLanguages.zip.sha256",
+      "bytes": 117,
+      "modifiedNs": 1792126124969591800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix3-LanguageLayout-AllLanguages.zip",
+      "bytes": 517186129,
+      "modifiedNs": 1792126606991385600,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix3-LanguageLayout-AllLanguages.zip.sha256",
+      "bytes": 132,
+      "modifiedNs": 1792126610681270300,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix4-AllLanguages.zip",
+      "bytes": 517185953,
+      "modifiedNs": 1792127395049021000,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix4-AllLanguages.zip.sha256",
+      "bytes": 117,
+      "modifiedNs": 1792127399969906800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix5-AllLanguages.zip",
+      "bytes": 517185931,
+      "modifiedNs": 1792128770943464800,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix5-AllLanguages.zip.sha256",
+      "bytes": 117,
+      "modifiedNs": 1792128778134994200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix5-MetadataPatch.zip",
+      "bytes": 13838,
+      "modifiedNs": 1792128743978970900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix5-MetadataPatch.zip.sha256",
+      "bytes": 118,
+      "modifiedNs": 1792128770953714500,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix6-AllLanguages.zip",
+      "bytes": 517192197,
+      "modifiedNs": 1792146650176142900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix6-AllLanguages.zip.sha256",
+      "bytes": 117,
+      "modifiedNs": 1792146656913339700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix6-DependencyPatch.zip",
+      "bytes": 7301,
+      "modifiedNs": 1792146624498172500,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix6-DependencyPatch.zip.sha256",
+      "bytes": 120,
+      "modifiedNs": 1792146650187918200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix7-AllLanguages.zip",
+      "bytes": 517198954,
+      "modifiedNs": 1792148481374979800,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix7-AllLanguages.zip.sha256",
+      "bytes": 117,
+      "modifiedNs": 1792148495501190800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix7-BundleGuidPatch.zip",
+      "bytes": 258529554,
+      "modifiedNs": 1792148454396454600,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix7-BundleGuidPatch.zip.sha256",
+      "bytes": 120,
+      "modifiedNs": 1792148486076481500,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix8-StockPathsPatch.zip",
+      "bytes": 258528951,
+      "modifiedNs": 1792151202444165400,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix8-StockPathsPatch.zip.sha256",
+      "bytes": 120,
+      "modifiedNs": 1792151206739062500,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix9-StreamingPatch.zip",
+      "bytes": 258610789,
+      "modifiedNs": 1792157293448107900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-5.0+-LanguageLayout-AllLanguages.zip",
+      "bytes": 448172340,
+      "modifiedNs": 1792126633161801400,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-5.0+-LanguageLayout-AllLanguages.zip.sha256",
+      "bytes": 127,
+      "modifiedNs": 1792126635859913700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.1-Nexus-13-Languages.zip",
+      "bytes": 216277,
+      "modifiedNs": 1792126347061037200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.2-ai1-1.32-AllLanguages.zip",
+      "bytes": 622580692,
+      "modifiedNs": 1792314487834137300,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.2-ai1-1.32-AllLanguages.zip.sha256",
+      "bytes": 116,
+      "modifiedNs": 1792314492457724600,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.2-ai1-5.0+-AllLanguages.zip",
+      "bytes": 448249322,
+      "modifiedNs": 1792314470622908400,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.2-ai1-5.0+-AllLanguages.zip.sha256",
+      "bytes": 116,
+      "modifiedNs": 1792314473499897400,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.2-Nexus-Texts.zip",
+      "bytes": 211250,
+      "modifiedNs": 1792299839491948800,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.2-polish1-1.32-AllLanguages.zip",
+      "bytes": 622591317,
+      "modifiedNs": 1792315486346505900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.2-polish1-1.32-AllLanguages.zip.sha256",
+      "bytes": 120,
+      "modifiedNs": 1792315491451007800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.2-polish1-5.0+-AllLanguages.zip",
+      "bytes": 448253870,
+      "modifiedNs": 1792315466457575100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.2-polish1-5.0+-AllLanguages.zip.sha256",
+      "bytes": 120,
+      "modifiedNs": 1792315469476950600,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.2-polish2-1.32-AllLanguages.zip",
+      "bytes": 622592525,
+      "modifiedNs": 1792316547282488800,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.2-polish2-1.32-AllLanguages.zip.sha256",
+      "bytes": 120,
+      "modifiedNs": 1792316552460415900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.2-polish2-5.0+-AllLanguages.zip",
+      "bytes": 448255089,
+      "modifiedNs": 1792316523684650600,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.2-polish2-5.0+-AllLanguages.zip.sha256",
+      "bytes": 120,
+      "modifiedNs": 1792316526742154500,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.8.2-Regression-Pack.zip",
+      "bytes": 21440,
+      "modifiedNs": 1792300443547002200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.9.0-1.32-AllLanguages.zip",
+      "bytes": 622592471,
+      "modifiedNs": 1792323145214958300,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.9.0-1.32-AllLanguages.zip.sha256",
+      "bytes": 112,
+      "modifiedNs": 1792323161623122100,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.9.0-1.32-LocaleFix-Test.zip",
+      "bytes": 15555812,
+      "modifiedNs": 1792334189129014900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.9.0-1.32-LocaleFix-Test.zip.sha256",
+      "bytes": 114,
+      "modifiedNs": 1792334189180955800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.9.0-1.32-MenuFix-Test.zip",
+      "bytes": 64318872,
+      "modifiedNs": 1792335223908403800,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.9.0-1.32-MenuFix-Test.zip.sha256",
+      "bytes": 112,
+      "modifiedNs": 1792335224461563900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.9.0-5.0+-AllLanguages.zip",
+      "bytes": 448255046,
+      "modifiedNs": 1792323162326528100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.9.0-5.0+-AllLanguages.zip.sha256",
+      "bytes": 112,
+      "modifiedNs": 1792323171976501000,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.9.0-NativeClipboard-Test.zip",
+      "bytes": 218938931,
+      "modifiedNs": 1792337670887320000,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.9.0-NativeClipboard-Test.zip.sha256",
+      "bytes": 115,
+      "modifiedNs": 1792337672750906200,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-0.9.0-Nexus-Showcase-13-Languages.zip",
+      "bytes": 1372540,
+      "modifiedNs": 1792389888124653500,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-1.32-MinimalMenu-Probe.zip",
+      "bytes": 8046,
+      "modifiedNs": 1792128012951369900,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-1.32-MinimalMenu-Probe.zip.sha256",
+      "bytes": 111,
+      "modifiedNs": 1792128012962458100,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-1.32-MinimalMenu-Probe2.zip",
+      "bytes": 8058,
+      "modifiedNs": 1792129391705094100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-1.32-MinimalMenu-Probe2.zip.sha256",
+      "bytes": 112,
+      "modifiedNs": 1792129428291783700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-1.32-NativeMenu-Control.zip",
+      "bytes": 3966,
+      "modifiedNs": 1792131537927227300,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-1.32-NativeMenu-Control.zip.sha256",
+      "bytes": 112,
+      "modifiedNs": 1792131537941666700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-1.32-NativeMenu-CustomPath-Control.zip",
+      "bytes": 1304010,
+      "modifiedNs": 1792143877704722200,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-1.32-NativeMenu-CustomPath-Control.zip.sha256",
+      "bytes": 123,
+      "modifiedNs": 1792143877732929700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-1.32.zip",
+      "bytes": 92210,
+      "modifiedNs": 1792316187929125500,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-1.32.zip.sha256",
+      "bytes": 107,
+      "modifiedNs": 1792316187947127600,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-5.0+.zip",
+      "bytes": 19026,
+      "modifiedNs": 1792316188289297100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-5.0+.zip.sha256",
+      "bytes": 107,
+      "modifiedNs": 1792316188302296800,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-r2-1.32.zip",
+      "bytes": 92564,
+      "modifiedNs": 1792316940581023100,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-r2-1.32.zip.sha256",
+      "bytes": 110,
+      "modifiedNs": 1792316940615631900,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-r2-5.0+.zip",
+      "bytes": 19433,
+      "modifiedNs": 1792316940929186600,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-r2-5.0+.zip.sha256",
+      "bytes": 110,
+      "modifiedNs": 1792316940940185700,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-Cleaner-0.9.0-1.32.zip",
+      "bytes": 92557,
+      "modifiedNs": 1792323172259835500,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-Cleaner-0.9.0-1.32.zip.sha256",
+      "bytes": 107,
+      "modifiedNs": 1792323172310296000,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-Cleaner-0.9.0-5.0+.zip",
+      "bytes": 19422,
+      "modifiedNs": 1792323172312298800,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-Cleaner-0.9.0-5.0+.zip.sha256",
+      "bytes": 107,
+      "modifiedNs": 1792323172326157600,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-ReduxCompatibility-0.1.0.zip",
+      "bytes": 14704,
+      "modifiedNs": 1791738001274164300,
+      "category": "historical-release-archives",
+      "reason": "Superseded historical/test ZIP. Retain final9 hand-off and baseline 0.8.2 ZIPs; removes this local rollback option."
+    },
+    {
+      "path": "BetaGwent/release/GwentBetaClassic-ReduxCompatibility-0.1.0.zip.sha256",
+      "bytes": 113,
+      "modifiedNs": 1791738001290124600,
+      "category": "historical-release-archives",
+      "reason": "Hash sidecar for historical/test ZIP."
+    },
+    {
+      "path": "tmp/Portable Clean Build",
+      "bytes": 19163150818,
+      "category": "duplicate-portable-test",
+      "reason": "Temporary relocation test copy. Source/tools/inputs/docs verified against retained CleanBuild; generated results already documented.",
+      "containsJunctions": true,
+      "requiresLinkAwareRemoval": true
+    },
+    {
+      "path": "tmp/_to_delete",
+      "bytes": 1214302965,
+      "category": "staged-for-deletion",
+      "reason": "Already staged for deletion; inspect before applying."
+    }
+  ]
+}

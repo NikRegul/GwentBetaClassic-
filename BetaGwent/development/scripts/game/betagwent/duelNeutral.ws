@@ -36,7 +36,7 @@ class CBetaGwentDuelNeutral extends IScriptable
         else if(id==200226){if(s.timerValue==0){ExtremeOne(source,enemy,true,-6);ExtremeOne(source,side,false,6);}}
         else if(id==112105){Query(enemy,16,2,4,0,ids);game.ShuffleIds(ids);while(ids.Size()>3)ids.Erase(ids.Size()-1);game.MonsterRequest(source,ids,2,0,1);return;}
         else if(id==112108 || id==112109 || id==113208){Choices(source,false);return;}
-        else if(id==112111 || id==112205){source.monsterRemaining=BetaGwentNorthPick(id==112111,3,2);Request(source,enemy,7,15,4,BetaGwentNorthPick(id==112205,1,0));return;}
+        else if(id==112111 || id==112205){source.monsterRemaining=3;Request(source,enemy,7,15,4,BetaGwentNorthPick(id==112205,1,0));return;}
         else if(id==112112){Initial(source,enemy,12,4,ids);if(ids.Size()>0){source.monsterStored=ids[game.RandomIndex(ids.Size())];game.MonsterCreate(source,source.monsterStored);return;}}
         else if(id==112201 || id==200235 || id==201772){Request(source,enemy,7,15,4,BetaGwentNorthPick(id==112201,0,1));return;}
         else if(id==112202 || id==112203 || id==112204){for(i=112202;i<=112204;i+=1)if(i!=id)game.NorthSummonCopies(source,i);}

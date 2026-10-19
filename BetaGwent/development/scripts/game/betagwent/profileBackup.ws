@@ -36,6 +36,7 @@ private function BetaGwentBkGet(key : string) : int
 public function BetaGwentMirrorNpcWins(npcId : int, wins : int)
 {
     var key : string;
+    if(BetaGwentCleanupPending())return;
     if (npcId == 0) return;
     key = "bg_bkn_" + npcId;
     if (FactsQueryLatestValue(key) - 1 < Min(4, wins)) FactsSet(key, Min(4, wins) + 1);
@@ -48,7 +49,8 @@ public function BetaGwentMirroredNpcWins(npcId : int) : int
     return Clamp(FactsQueryLatestValue("bg_bkn_" + npcId) - 1, 0, 4);
 }
 @addMethod(W3PlayerWitcher)
-public function BetaGwentMirrorQuestReward(deck : name) { FactsSet("bg_bkq_" + NameToString(deck), 1); }
+public function BetaGwentMirrorQuestReward(deck : name) {
+    if(BetaGwentCleanupPending())return; FactsSet("bg_bkq_" + NameToString(deck), 1); }
 @addMethod(W3PlayerWitcher)
 public function BetaGwentMirroredQuestReward(deck : name) : bool { return FactsQueryLatestValue("bg_bkq_" + NameToString(deck)) > 0; }
 @addMethod(W3PlayerWitcher)
@@ -69,6 +71,7 @@ private function BetaGwentBackupRewardLedger()
 public function BetaGwentBackupProfile()
 {
     var ids : array<int>; var i, slot, faction, leader, bank, generation : int; var title, p, d : string;
+    if(BetaGwentCleanupPending())return;
     if (betaGwentCollectionSchema != 1 || betaGwentCollectionSeeding || betaGwentOwnedIds.Size() != betaGwentOwnedCopies.Size()) return;
     if (FactsQueryLatestValue("bg_b2_hold") > 0) { LogChannel('BetaGwent', "PROFILE_BACKUP_HELD reason=invalidMirrorKept"); return; }
     BetaGwentEnsureNewCards();
@@ -145,6 +148,7 @@ private function BetaGwentHoldBackup()
 public function BetaGwentRestoreProfile() : bool
 {
     var cur : int;
+    if(BetaGwentCleanupPending())return false;
     if (betaGwentCollectionSchema != 0 || betaGwentOwnedIds.Size() != 0 || betaGwentOwnedCopies.Size() != 0) return false;
     if (FactsQueryLatestValue("bg_b2_hold") > 0) return false;
     cur = FactsQueryLatestValue("bg_b2_cur");

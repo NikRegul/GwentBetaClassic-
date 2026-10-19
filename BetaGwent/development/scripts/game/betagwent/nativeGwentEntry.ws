@@ -33,6 +33,7 @@ public var betaAiSimDepth : int;
 function OnGwintGameRequested(deckName : name, forceFaction : eGwintFaction, additionalCards : array<name>)
 {
     var player : W3PlayerWitcher;var manager : CR4GwintManager;
+    if(BetaGwentCleanupBlocked()){BetaGwentCleanMessage("Beta Gwent was cleared. Save, exit and uninstall; load your original backup to keep playing.");return;}
     player=(W3PlayerWitcher)this;manager=theGame.GetGwintManager();
     if(player && player.BetaGwentEnsureCollection()) {
         // The original tutorial teaches TW3 rules and its Flash handlers are

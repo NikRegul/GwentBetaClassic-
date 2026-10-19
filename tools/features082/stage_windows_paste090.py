@@ -1,0 +1,7 @@
+"""Stage the Windows paste candidate with unchanged, verified gameplay scripts."""
+import stage_ui_review090 as stage
+stage.SOURCE=stage.ROOT/'BetaGwent/build/release090-final3'
+stage.OUT=stage.ROOT/'BetaGwent/build/release090-final4'
+stage.UI=stage.ROOT/'BetaGwent/build/release090-windows-paste'
+stage.NATIVE=stage.ROOT/'BetaGwent/build/clipboard090-r6b'
+if __name__=='__main__':stage.main()

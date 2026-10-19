@@ -21,11 +21,13 @@ public function BetaGwentKegPending() : bool { return betaGwentKegOffers.Size()>
 @addMethod(W3PlayerWitcher)
 public function BetaGwentKegCount() : int { BetaGwentMigrateInventoryKegs(); return betaGwentKegsUnopened; }
 @addMethod(W3PlayerWitcher)
-public function BetaGwentAddKegs(count : int) { if(count>0)betaGwentKegsUnopened+=count; }
+public function BetaGwentAddKegs(count : int) {
+    if(BetaGwentCleanupPending())return; if(count>0)betaGwentKegsUnopened+=count; }
 @addMethod(W3PlayerWitcher)
 public function BetaGwentMigrateInventoryKegs()
 {
     var items : array<SItemUniqueId>;var i,quantity,moved : int;
+    if(BetaGwentCleanupPending())return;
     if(!inv)return;
     quantity=inv.GetItemQuantityByName('betagwent_keg');if(quantity<=0)return;
     inv.GetAllItems(items);

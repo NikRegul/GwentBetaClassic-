@@ -26,6 +26,8 @@ function BetaGwentAIChasePassReason(reachable : bool, cards : int, spent : int,
     // round two can be conceded to preserve the hand for the deciding round.
     if (enemyCrowns >= 1) return 0;
     if (cards == 0) return 0;
+    // Net hand balance matters even when this is the first chase card.
+    if (ownHand - cards - enemyHand < -2) return 3;
     if (spent + cards <= 1) return 0;
     if (ownHand - cards < 3) return 3;
     if (spent + cards <= 2 && ownHand - cards >= 3 && ownHand - cards - enemyHand >= 1) return 0;

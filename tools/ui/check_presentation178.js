@@ -19,6 +19,8 @@ for(const [token,name] of [[0,'CardLandingEffect'],[1,'CardFrostLandingEffect'],
  check(recipes.presets[name].emitters.length>0&&recipes.presets[name].duration>.7,'step emission produces actual landing particles');
 }
 c.draws=[];c.drawLandingCue({},Object.assign({},pose,{templateId:112101}),0,600);check(c.draws.map(d=>d.name).includes('GoldLanding'),'gold adds its original landing overlay');
+c.previousPoses[1]={zone:1};c.draws=[];c.drawLandingCue({},Object.assign({},pose,{templateId:112101}),0,600);check(c.draws.filter(d=>d.name==='GoldLanding').length===1,'intermediate placed-card snapshot cannot suppress gold landing');
+c.activeCue={kind:8,source:1};c.draws=[];c.drawLandingCue({},Object.assign({},pose,{templateId:112101}),0,600);check(c.draws.every(d=>d.name!=='GoldLanding'),'gold timer/turn trigger never repeats landing');c.previousPoses={};
 c.activeCue={kind:1,source:1};c.draws=[];c.drawLandingCue({},Object.assign({},pose,{templateId:200055}),0,600);check(c.draws.every(d=>d.name!=='GoldLanding'),'leader never gets gold landing overlay');
 c.activeCue={kind:15,source:5,target:1};c.draws=[];c.drawSummonCue({},null,pose);check(c.draws[0].name==='SpawnBlink'&&c.draws[0].delay===420&&c.draws.length===2,'summon blink and landing share card arrival');
 c.reducedMotion=true;c.draws=[];c.drawSummonCue({},null,pose);check(c.draws.length===0,'reduced motion suppresses presentation particles');c.reducedMotion=false;

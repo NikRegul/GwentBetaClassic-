@@ -130,7 +130,11 @@ def wait_with_debug_output(process, timeout, destination, compiler_feedback=Fals
                 if file_handle not in (0, 0xFFFFFFFFFFFFFFFF):
                     kernel.CloseHandle(file_handle)
             kernel.ContinueDebugEvent(pid, tid, status)
-    process.wait(timeout=10)
+    # EXIT_PROCESS_DEBUG_EVENT already supplies the authoritative exit code.
+    # Waiting again on the handle can deadlock with injected exit handlers
+    # while this thread still owns the native debug object. Compilation still
+    # requires explicit successful compiler feedback AND a fresh script cache.
+    process.returncode = exit_code
     return timed_out, feedback
 
 

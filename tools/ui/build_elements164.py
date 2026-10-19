@@ -5,6 +5,7 @@ the pinned Unity extraction. Runtime projection/particle budgeting is the GFx
 adaptation; no spell uses a recolored generic burst as its new renderer.
 """
 from pathlib import Path
+import copy
 import gzip,hashlib,json,math,sys
 from PIL import Image,ImageChops
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'vendor/audio-python'))
@@ -71,6 +72,10 @@ def main():
  assert sha(ROOT/m['source'])==m['sourceSha256']
  mats={(v['asset'],v['pathId']):v for v in m['materials']}
  textures={(v['asset'],v['pathId']):v for v in m['textures']}
+ status_source=ROOT/'docs/evidence/status-source191.json'
+ status_rates=json.loads(status_source.read_text('utf8')).get('animatedEmission',{}) if status_source.exists() else {}
+ battle_path=ROOT/'docs/evidence/battle080.json'
+ battle_data=json.loads(battle_path.read_text('utf8'))['data'] if battle_path.exists() else None
  OUT.mkdir(parents=True,exist_ok=True)
  tiles=[{} for _ in FAMILIES];presets={};proof=[];unity=[None];unity_objects={}
  def source_mesh(renderer):
@@ -85,13 +90,17 @@ def main():
     if obj.type.name=='MeshFilter':return obj.read().m_Mesh.read()
   elif getattr(d,'m_Mesh',None) and d.m_Mesh.path_id:return d.m_Mesh.read()
   return None
- def tile(material,family,cols,rows,renderer=None):
-  main=next((t for t in material['textures'] if t['property']=='_MainTex'),None)
+ def tile(material,family,cols,rows,renderer=None,material_uv=False):
+  main=next((t for t in material['textures'] if t['property']=='_MainTex' or material['shader']=='VFX/Special/Unicorn/stone_ragnarroog' and t['property']=='_main_text'),None)
   if not main:return None
   mesh=source_mesh(renderer) if renderer else None
   key=(main['textureAsset'],main['texturePathId'],cols,rows,'Additive' in material['shader'],material['pathId'],mesh.m_Name if mesh else None)
   if key in tiles[family]:return tiles[family][key]['slot']
   src=textures[key[:2]];im=Image.open(ROOT/src['image']).convert('RGBA')
+  if material_uv and not mesh:
+   sx,sy=main['scale'];ox,oy=main['offset']
+   if [sx,sy,ox,oy]!=[1,1,0,0]:
+    im=im.crop((round(ox*im.width),round((1-oy-sy)*im.height),round((ox+sx)*im.width),round((1-oy)*im.height)))
   if material['shader']=='VFX/Special/ClearWeather/LightShaft':
    # Unity's shader turns this noise into luminous shafts. Its raw RGB on an
    # opaque quad is black; transfer source luminance into alpha before baking.
@@ -119,14 +128,30 @@ def main():
   slot=[family,start,cell,cell,cols*rows]
   tiles[family][key]=dict(slot=slot,frames=frames,source=src['image'],sha256=src['imageSha256'],grid=[cols,rows],shader=material['shader'])
   return slot
- for prefab in m['prefabs']:
+ jobs=list(m['prefabs'])
+ ragh=next((p for p in jobs if p['name']=='RaghNarRoogInitializationEffect'),None)
+ if ragh:
+  jobs.remove(ragh)
+  for phase in ['Flight','Impact']:
+   part=copy.deepcopy(ragh);part['name']='Ragnarok'+phase+'080';part['raghPhase']=phase;jobs.append(part)
+ resilience=next((p for p in jobs if p['name']=='ResilienceToken'),None)
+ if resilience:
+  hide=copy.deepcopy(resilience);hide['phase']='hide';jobs.append(hide)
+ for prefab in jobs:
   family_name=prefab.get('element')
+  status=family_name=='Status'
+  battle=family_name=='Battle080'
+  if battle:family_name='Presentation'
+  if status:family_name='Presentation' # Share the existing physical texture page.
   if family_name not in FAMILIES:continue # Approved lightning and already ported overrides stay unchanged.
   family=FAMILIES.index(family_name);projectile='Projectile' in prefab['name']
   # Unity stores step tangents as infinity. Preserve already accepted elemental
   # recipes; evaluate these correctly for the newly ported presentation family.
   SOURCE_STEP_CURVES=family_name=='Presentation'
   components=prefab['components'];trans={c['pathId']:tree(c) for c in components if c['type']=='Transform'}
+  if prefab.get('raghPhase')=='Flight':
+   # The sampled source animation supplies this displacement at runtime.
+   trans[2348]['m_LocalPosition']={k:0 for k in ('x','y','z')}
   by_go={c['gameObject']:c['pathId'] for c in components if c['type']=='Transform'}
   go_active={c['gameObject']:True for c in components}
   for c in m['objects']:
@@ -145,12 +170,22 @@ def main():
   for c in components:
    if c['type'] not in ('ParticleSystem','MeshRenderer','TrailRenderer'):continue
    position,scale,rotation,active=transform(by_go[c['gameObject']])
+   if prefab.get('raghPhase'):
+    selected={'Flight':{3340,3428,2681},'Impact':{3228,3245,3129,3126,3199,3351}}
+    active=c['pathId'] in selected[prefab['raghPhase']]
+   hide_status=status and prefab.get('phase')=='hide'
+   if hide_status:active=c['pathId'] in (3229,3361,3277,3337)
+   elif status and prefab['name'].endswith('Token'):active=c['pathId'] in (3376,3402,3288,3132,3389)
    if not active:continue
+   if status and c['type']!='ParticleSystem':continue # Persistent icons use the existing HUD atlas and sampled animation curves.
+   if status and not hide_status and prefab['name']=='ResilienceToken' and ('Splinters' in c['gameObjectName'] or c['gameObjectName'].startswith('End_')):continue
+   if status and prefab['name']=='CardTimerVFX' and c['gameObjectName']=='Icon':continue # CountDownNumber is set dynamically; never display the serialized default numeral.
    renderer=renderers.get(c['gameObject']);data=tree(c)
    if not renderer or not renderer.get('materials'):continue
    material=mats[tuple(renderer['materials'][0])];rd=tree(renderer);md=tree(material)['m_SavedProperties'];colors=dict(md['m_Colors']);floats=dict(md['m_Floats']);tint=colors.get('_TintColor',dict(r=1,g=1,b=1,a=1))
    mult=2 if 'VFX/' in material['shader'] else 1
    rgb=[rnd(tint[k]*mult) for k in ('r','g','b')];alpha=rnd(tint['a']*floats.get('_AlphaMultiplier',1))
+   if battle and material['shader']=='VFX/Special/Unicorn/stone_ragnarroog':rgb=[rnd(colors['_main_color'][k]) for k in ('r','g','b')]
    if prefab['name']=='BoardEffect_ClearWeather' and c['type']=='MeshRenderer':
     rgb=[rnd(colors['_node_2964'][k]) for k in ('r','g','b')];alpha=.7
    if c['type']!='ParticleSystem':
@@ -158,6 +193,9 @@ def main():
     if slot:
      width=28 if c['type']=='MeshRenderer' and projectile else 55 if projectile else 220
      height=14 if projectile else 30
+     if prefab.get('raghPhase')=='Flight':
+      mesh=source_mesh(renderer);bounds=mesh.m_LocalAABB.m_Extent
+      width=2*bounds.x*abs(scale[0]);height=2*bounds.y*abs(scale[1])
      static.append(dict(tile=slot,p=[0,0,0] if prefab['name']=='BoardEffect_ClearWeather' else list(map(rnd,position)),size=[1000,480] if prefab['name']=='BoardEffect_ClearWeather' else [width,height],rgb=rgb,alpha=alpha,trail=c['type']=='TrailRenderer',name=c['gameObjectName']))
     continue
    ini=data['InitialModule'];em=data['EmissionModule'];shape=data['ShapeModule'];uv=data['UVModule']
@@ -166,25 +204,53 @@ def main():
    # animation disabled. A GFx quad must sample one ice chip, not the whole grid.
    hail_sheet=family_name=='Ice' and c['gameObjectName'] in ('HailLeft','HailRight')
    cols,rows=(uv['tilesX'],uv['tilesY']) if uv.get('enabled') or hail_sheet else (1,1)
-   slot=tile(material,family,cols,rows,renderer if rd.get('m_RenderMode')==4 else None)
+   slot=tile(material,family,cols,rows,renderer if rd.get('m_RenderMode')==4 else None,material_uv=status)
    if not slot:continue
    delay=curve(data['startDelay'],0);duration=float(data['lengthInSec']);births=[];accumulator=0
    for burst in em['m_Bursts']:
     for cycle in range(max(1,int(burst['cycleCount']))):
      births.extend([float(burst['time'])+cycle*float(burst['repeatInterval'])]*min(512,round(value(burst['countCurve']))))
    dt=1/120
+   animated=status_rates.get(str(c['pathId'])) if status else None
+   if animated:duration=animated['seconds']
    for step in range(min(720,math.ceil(duration/dt))):
-    t=step*dt;accumulator+=max(0,value(em['rateOverTime'],min(1,t/max(.001,duration))))*dt
+    t=step*dt
+    if animated:
+     at=min(len(animated['rate'])-1,t/animated['seconds']*(len(animated['rate'])-1));lo=int(at);hi=min(len(animated['rate'])-1,lo+1)
+     rate=animated['rate'][lo]+(animated['rate'][hi]-animated['rate'][lo])*(at-lo)
+    else:rate=value(em['rateOverTime'],min(1,t/max(.001,duration)))
+    if prefab.get('raghPhase')=='Flight' and battle_data:
+     at=min(120,int(t/(battle_data['ms']/1000)*120));last=max(0,at-1)
+     distance=math.hypot(battle_data['z'][at]-battle_data['z'][last],battle_data['y'][at]-battle_data['y'][last])
+     rate+=value(em['rateOverDistance'])*distance/(battle_data['ms']/1000/120)
+     if t>=battle_data['impactMs']/1000:rate=0
+    accumulator+=max(0,rate)*dt
     while accumulator>=1 and len(births)<512:births.append(t);accumulator-=1
    if not births:continue
    births.sort()
    if data.get('looping') and births[0]>.001:births.insert(0,0)
+   if status or battle:
+    # Armor's three shield fragments emit at 100/s, but each original system
+    # allows ONE live particle. Respect that source cap rather than multiplying
+    # a fragment into a pile of complete shields.
+    kept=[];deaths=[]
+    for birth in births:
+     deaths=[end for end in deaths if end>birth]
+     if len(deaths)>=ini['maxNumParticles']:continue
+     kept.append(birth);deaths.append(birth+max(.02,value(ini['startLifetime'],min(1,birth/max(.001,duration)),.5)))
+    births=kept
    color=gradient(ini['startColor']);over=gradient(data['ColorModule']['gradient']) if data['ColorModule']['enabled'] else None
    size=data['SizeModule'];velocity=data['VelocityModule'];force=data['ForceModule'];clamp=data['ClampVelocityModule'];spin=data['RotationModule']
    sh=dict(enabled=shape['enabled'],type=shape['type'],radius=shape['radius']['value'],angle=shape['angle'],scale=vec(shape['m_Scale']),position=vec(shape['m_Position']),random=shape.get('randomDirectionAmount',0))
    # Disabled Unity shape modules may contain a NaN cone angle; it is unused.
    if not sh['enabled'] and not math.isfinite(sh['angle']):sh['angle']=0
    size_scale=[1,1,1] if data.get('scalingMode')==2 else vec(trans[by_go[c['gameObject']]]['m_LocalScale']) if data.get('scalingMode')==1 else scale
+   if battle and rd.get('m_RenderMode')==4:
+    mesh=source_mesh(renderer);bounds=mesh.m_LocalAABB.m_Extent
+    # Unity multiplies mesh geometry by startSize. Normalizing a 0.02-unit
+    # stone into a full-size quad otherwise produces enormous orange slabs.
+    extent=max(abs(bounds.x),abs(bounds.y),abs(bounds.z))*2
+    size_scale=[v*extent for v in size_scale]
    emitter=dict(id=c['pathId'],name=c['gameObjectName'],tile=slot,births=list(map(rnd,births)),delay=delay,duration=rnd(duration),loop=data['looping'],sizeScale=list(map(rnd,size_scale)),
      lifetime=curve(ini['startLifetime']),speed=curve(ini['startSpeed']),size=curve(ini['startSize']),sizeY=curve(ini['startSizeY']) if ini['size3D'] else None,
      rotation=curve(ini['startRotation']),color=color,over=over,sizeOver=curve(size['curve']) if size['enabled'] else [1,1],
@@ -199,11 +265,14 @@ def main():
      stretched=rd.get('m_RenderMode')==1,length=rnd(rd.get('m_LengthScale',1)),
      world=not bool(data.get('moveWithTransform',True)),maxParticles=ini['maxNumParticles'])
    emitters.append(emitter)
+   if prefab.get('raghPhase')=='Flight' and battle_data:
+    emitter['raghPath']=dict(y=battle_data['y'],z=battle_data['z'],seconds=battle_data['ms']/1000)
    end=max(end,max(births)+max(delay if isinstance(delay[0],(int,float)) else delay[1])+max(value(ini['startLifetime'],i/16,r) for i in range(17) for r in (0,1)))
    proof.append(dict(prefab=prefab['name'],particle=c['pathId'],material=material['pathId'],shader=material['shader'],rawSha256=c['sha256'],configurationSha256=c['configurationSha256']))
   emitters.sort(key=lambda e:e['p'][2],reverse=True)
   method=3 if prefab['name']=='BoardEffect_ClearWeather' else 1 if projectile else 4 if 'Board' in prefab['name'] else 3 if 'Side' in prefab['name'] else 2 if 'Row' in prefab['name'] else 0
-  presets[prefab['name']]=dict(family=family,method=method,projectile=projectile,emitters=emitters,static=static,duration=rnd(min(2.4,max(.4,end))),
+  preset_name=prefab['name']+('Hide' if hide_status else 'Show') if status and prefab['name'].endswith('Token') else prefab['name']
+  presets[preset_name]=dict(family=family,method=method,projectile=projectile,emitters=emitters,static=static,duration=rnd(min(2.4,max(.4,end))),
      extent=[1000,480] if prefab['name']=='BoardEffect_ClearWeather' else [220,32 if method==2 else 130 if method==3 else 280] if method>=2 else [22,32])
  # Pack variable cell sizes using a 1024px shelf per element. Every source
  # sheet retains all cells; half-texel inset in the quad renderer stops leaks.
@@ -221,16 +290,20 @@ def main():
   for frame,ax,ay in positions:atlas.paste(frame,(ax,ay))
   path=OUT/(FAMILIES[family]+'.png');atlas.save(path,optimize=True)
   assets.append(dict(element=FAMILIES[family],path=path.relative_to(ROOT).as_posix(),sha256=sha(path),size=list(atlas.size),ddsBytes=atlas.width*atlas.height))
- # Preserve seven logical family atlases, but embed one physical page. Keg
- # menus already use 31 textures, so seven new embeds would exceed the native
- # writer's existing 32-texture guard. Two 1024px columns need only 5.5 MiB.
- heights=[0,0];placements={}
- for family in sorted(range(len(assets)),key=lambda f:assets[f]['size'][1],reverse=True):
-  column=min(range(2),key=lambda i:heights[i]);placements[family]=(column*1024,heights[column]);heights[column]+=assets[family]['size'][1]
- combined=Image.new('RGBA',(2048,max(heights)))
- for family,asset in enumerate(assets):combined.paste(Image.open(ROOT/asset['path']),placements[family])
- for rect in rects:
-  ox,oy=placements[rect[0]];rect[0]=0;rect[1]+=ox;rect[2]+=oy
+ # Pack individual cells instead of whole family pages. Whole-page placement
+ # wasted 1.625 MiB and pushed the NPC movie past the observed 64 MiB boundary.
+ # Keep every cell and its pixels intact; only native atlas coordinates change.
+ logical=[Image.open(ROOT/asset['path']).convert('RGBA') for asset in assets]
+ placements={};x=y=shelf=0
+ for index in sorted(range(len(rects)),key=lambda i:rects[i][4],reverse=True):
+  family,ox,oy,w,h=rects[index]
+  if x+w>2048:x=0;y+=shelf;shelf=0
+  placements[index]=(x,y);x+=w;shelf=max(shelf,h)
+ combined=Image.new('RGBA',(2048,max(4,y+shelf)))
+ for index,rect in enumerate(rects):
+  family,ox,oy,w,h=rect;nx,ny=placements[index]
+  combined.paste(logical[family].crop((ox,oy,ox+w,oy+h)),(nx,ny))
+  rect[:3]=[0,nx,ny]
  page=OUT/'Elements.png';combined.save(page,optimize=True)
  embedded=[dict(path=page.relative_to(ROOT).as_posix(),sha256=sha(page),size=list(combined.size),ddsBytes=combined.width*combined.height)]
  # Slot arrays are shared references in recipes, so their rect offsets above
@@ -243,7 +316,15 @@ def main():
    if p['family']!=family:continue
    emitter_calls=[]
    for emitter in p['emitters']:
-    factories.append('        private static function emitter%d():Object { return %s; }'%(factory_index,json.dumps(emitter,separators=(',',':'))));emitter_calls.append('emitter%d()'%factory_index);factory_index+=1
+    if 'raghPath' in emitter:
+     plain={k:v for k,v in emitter.items() if k!='raghPath'};path=emitter['raghPath']
+     body='var e:Object=%s;e.raghPath={seconds:%s};'%(json.dumps(plain,separators=(',',':')),path['seconds'])
+     for axis in ['y','z']:
+      body+='e.raghPath.%s=[];'%axis
+      for at in range(0,len(path[axis]),16):body+='e.raghPath.%s.push(%s);'%(axis,','.join(map(str,path[axis][at:at+16])))
+     factories.append('        private static function emitter%d():Object { %sreturn e; }'%(factory_index,body))
+    else:factories.append('        private static function emitter%d():Object { return %s; }'%(factory_index,json.dumps(emitter,separators=(',',':'))))
+    emitter_calls.append('emitter%d()'%factory_index);factory_index+=1
    data={k:v for k,v in p.items() if k!='emitters'};data['emitters']='EMITTER_LIST'
    literal=json.dumps(data,separators=(',',':')).replace('"EMITTER_LIST"','['+','.join(emitter_calls)+']')
    factories.append('        private static function preset%d():Object { return %s; }'%(preset_index,literal))

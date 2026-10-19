@@ -29,7 +29,8 @@ def mask(text):
 def classes(scripts):
     index = {}
     for path in sorted(scripts.rglob('*.ws')):
-        text = path.read_text('utf-8-sig', errors='replace')
+        raw = path.read_bytes()
+        text = raw.decode('utf-16' if raw.startswith((b'\xff\xfe', b'\xfe\xff')) else 'utf-8-sig')
         code = mask(text)
         for match in re.finditer(r'\bclass\s+(\w+)(?:\s+extends\s+(\w+))?[^{};]*\{', code):
             start = match.end()
@@ -65,6 +66,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--game', type=Path, required=True)
     parser.add_argument('--source-stage', type=int, default=187)
+    parser.add_argument('--language', choices=('ru','en','de','it','pt-br'), default='ru')
     parser.add_argument('--out', type=Path, required=True)
     args = parser.parse_args()
     game, out = args.game.resolve(), args.out.resolve()
@@ -75,18 +77,25 @@ def main():
         parser.error('Output already exists; select a fresh directory')
     exe = game / 'bin/x64/witcher3.exe'
     base = game / 'content/content0/scripts'
-    source = ROOT / f'BetaGwent/build/stage{args.source_stage}/ru/sources/scripts'
+    source = ROOT / f'BetaGwent/build/stage{args.source_stage}/{args.language}/sources/scripts'
     if not exe.is_file() or not base.is_dir() or not source.is_dir():
         parser.error('Game executable, loose vanilla scripts and frozen stage scripts are required')
     versions = sorted(set(m.decode('ascii') for m in re.findall(rb'\bv 1\.\d{2}\b', exe.read_bytes())))
     if versions != ['v 1.32']:
         parser.error('Expected an unambiguous v 1.32 marker: ' + repr(versions))
     index = classes(base)
+    if len(index) < 100:
+        parser.error('Vanilla class index is unexpectedly small; check source encoding')
     sources = list(sorted(source.rglob('*.ws')))
     stage_report = json.loads((ROOT / f'docs/evidence/validation{args.source_stage}.json').read_text('utf-8-sig'))
     if not stage_report.get('passed'):
         parser.error('Selected source stage has no passed validation report')
-    compiled = json.loads((ROOT / f'BetaGwent/build/stage{args.source_stage}/compile/result.json').read_text('utf-8-sig'))
+    compile_dir=ROOT / f'BetaGwent/build/stage{args.source_stage}'
+    if args.language!='ru':
+        receipt=json.loads((compile_dir/args.language/'voice-compile.json').read_text('utf-8-sig'))
+        compile_dir=Path(receipt['path'])
+    else:compile_dir=compile_dir/'compile'
+    compiled = json.loads((compile_dir/'result.json').read_text('utf-8-sig'))
     expected = {item['path']: item['sha256'].lower() for item in compiled['patchSourcesBefore']}
     actual = {p.relative_to(source).as_posix(): sha(p) for p in sources}
     if actual != expected or not compiled['patchSourcesUnchangedDuringCompile']:
@@ -107,6 +116,11 @@ def main():
                         classPresent=target in index)
             if kind in ('wrapMethod', 'replaceMethod'):
                 item['classicMethod'] = lookup(index, target, member[1])
+                if item['classicMethod']:
+                    def parameters(signature):
+                        value = re.search(r'\(([^)]*)\)', signature)[1]
+                        return re.sub(r'\s+', '', value)
+                    item['parametersMatch'] = parameters(item['declaration']) == parameters(item['classicMethod']['signature'])
             annotations.append(item)
     unresolved = [x for x in annotations if not x['classPresent'] or
                   x['kind'] in ('wrapMethod', 'replaceMethod') and not x['classicMethod']]
@@ -122,9 +136,9 @@ def main():
     base_manifest = {p.relative_to(base).as_posix(): sha(p) for p in sorted(base.rglob('*.ws'))}
     report = dict(schema=1, createdUtc=datetime.now(timezone.utc).isoformat(),
                   game=str(game), gameVersion='1.32', versionMarkers=versions,
-                  executableSha256=sha(exe), sourceStage=args.source_stage,
+                  executableSha256=sha(exe), sourceStage=args.source_stage, sourceLanguage=args.language,
                   sourceValidationPassed=True, sourceScriptCount=len(sources),
-                  sourceScripts=actual, vanillaScriptCount=len(base_manifest), vanillaScripts=base_manifest,
+                  sourceScripts=actual, vanillaScriptCount=len(base_manifest), vanillaClassCount=len(index), vanillaScripts=base_manifest,
                   installedMods=mods, annotationCounts=dict(Counter(x['kind'] for x in annotations)),
                   targetClasses=sorted(set(x['target'] for x in annotations)),
                   annotations=annotations, unresolvedTargets=unresolved,
@@ -134,6 +148,10 @@ def main():
                                'Resources, audio and save round trips remain unverified.'])
     out.mkdir(parents=True)
     shutil.copytree(source, out / 'baseline/scripts')
+    copied = {p.relative_to(out / 'baseline/scripts').as_posix(): sha(p)
+              for p in sorted((out / 'baseline/scripts').rglob('*.ws'))}
+    if copied != actual:
+        raise RuntimeError('Copied baseline differs from the selected native compilation')
     # Retain exact vanilla inputs for the classes we must integrate with.
     for relative in sorted(set(index[name]['path'] for name in report['targetClasses'] if name in index)):
         destination = out / 'baseline/vanilla-targets' / relative
@@ -144,7 +162,8 @@ def main():
     (out / 'audit.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', 'utf8')
     print(json.dumps(dict(report=str(out / 'audit.json'), gameVersion='1.32',
                          scripts=len(sources), vanillaScripts=len(base_manifest),
-                         annotations=report['annotationCounts'], unresolvedTargets=unresolved,
+                         annotations=report['annotationCounts'], unresolvedTargetCount=len(unresolved),
+                         unresolvedTargets=[dict(target=x['target'], member=x['member']) for x in unresolved],
                          installedMods=mods, nativeCompilationRun=False), ensure_ascii=False, indent=2))
 
 

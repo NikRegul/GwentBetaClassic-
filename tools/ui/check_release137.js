@@ -1,6 +1,6 @@
 // Execute production AS functions with deterministic Flash stubs.
 'use strict';
-const fs=require('fs'),vm=require('vm'),crypto=require('crypto');
+const fs=require('fs'),vm=require('vm'),crypto=require('crypto'),assert=require('assert');
 let checks=0;function check(value,label){if(!value)throw Error(label);checks++;}
 function extract(source,name){
  const at=source.indexOf('function '+name+'(');if(at<0)throw Error(name);
@@ -54,7 +54,7 @@ check(bridge.includes('if(language<1||language>13)return false;')&&bridge.includ
 const previewPath='BetaGwent/ui/src/BetaGwentLeaderPreview.as',preview=fs.readFileSync(previewPath,'utf8');
 function playback(){
  let time=7500,loads=[],disposed=0,closed=0,rendered=[];
- class Page extends Loader{constructor(){super();this.content={renderAt:f=>rendered.push(f),release(){}};}load(r){loads.push(this);this.url=r.url;}close(){closed++;}unloadAndStop(){disposed++;}}
+ class Page extends Loader{constructor(){super();this.content={renderAt:f=>rendered.push(f),release(){}};}load(r){loads.push(this);this.url=r.url;}close(){closed++;}unloadAndStop(forceGC){assert.strictEqual(forceGC,false,'retiring a portrait never forces global GFx GC');disposed++;}}
  class Timer extends EventSource{start(){}stop(){}}
  const ctx=vm.createContext({...common,Loader:Page,Timer,TimerEvent:{TIMER_COMPLETE:'timer'},int:Math.trunc,getTimer:()=>time,
   Event:{ENTER_FRAME:'tick',ADDED_TO_STAGE:'added',REMOVED_FROM_STAGE:'removed',COMPLETE:'complete'},

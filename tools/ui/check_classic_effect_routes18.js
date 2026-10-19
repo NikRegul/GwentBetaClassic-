@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert');
-const root=path.resolve(__dirname,'../..'),base=path.join(root,'BetaGwent/build/classic081-effect-routes-fix18');
+const root=path.resolve(__dirname,'../..'),base=path.resolve(root,process.argv[2]||'BetaGwent/build/classic081-effect-routes-fix18');
 const previous=path.join(root,'BetaGwent/build/classic081-opacity-fix17');
 const read=(b,n)=>fs.readFileSync(path.join(b,'ui/src',n),'utf8');let checks=0;
 function check(v,s){assert(v,s);checks++;}
@@ -102,7 +102,8 @@ for(const name of ['classicWeatherOpacity','animateWeatherBody','advanceWeatherT
  check(extract(board,name)===extract(oldBoard,name),'accepted method retained '+name);
 for(const name of ['BetaGwentDissolve144.as','BetaGwentDissolveData144.as','BetaGwentStatus191.as','BetaGwentElementData164.as','BetaGwentElementBlend173.as'])
  check(fs.readFileSync(path.join(base,'ui/src',name)).equals(fs.readFileSync(path.join(previous,'ui/src',name))),'accepted data/source unchanged '+name);
-const changed=JSON.parse(fs.readFileSync(path.join(base,'route-source-audit.json'),'utf8')).changedExistingSources;
+const audit=fs.existsSync(path.join(base,'route-source-audit.json'))?base:path.join(root,'BetaGwent/build/classic081-effect-routes-fix18');
+const changed=JSON.parse(fs.readFileSync(path.join(audit,'route-source-audit.json'),'utf8')).changedExistingSources;
 for(const name of changed){const raw=fs.readFileSync(path.join(base,'ui/src',name));
  check(raw.subarray(0,3).equals(Buffer.from([239,187,191]))&&!raw.toString().replace(/\r\n/g,'').includes('\n'),'BOM/CRLF '+name);
  for(const folder of ['src-BetaGwentBoard','src-GwintGame','src-DeckBuilder','src-BetaGwentKeg'])check(raw.equals(fs.readFileSync(path.join(base,'ui',folder,name))),'five copies '+name+'/'+folder);}

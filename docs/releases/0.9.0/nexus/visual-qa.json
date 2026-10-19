@@ -1,0 +1,482 @@
+{
+  "checks": 39,
+  "viewports": [
+    1440,
+    390,
+    320
+  ],
+  "languages": 13,
+  "errors": [],
+  "languagePersistence": true,
+  "guideAnchor": true,
+  "results": [
+    {
+      "lang": "en",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "visible": [
+        "en"
+      ],
+      "heading": "The hunt can wait. One more round.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "ru",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "visible": [
+        "ru"
+      ],
+      "heading": "Охота подождёт. Ещё одну партию.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "de",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "visible": [
+        "de"
+      ],
+      "heading": "Die Jagd kann warten. Noch eine Runde.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "fr",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "visible": [
+        "fr"
+      ],
+      "heading": "La chasse peut attendre. Encore une partie.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "it",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "visible": [
+        "it"
+      ],
+      "heading": "La caccia può aspettare. Ancora una partita.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "pl",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "visible": [
+        "pl"
+      ],
+      "heading": "Polowanie zaczeka. Jeszcze jedna partyjka.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "es",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "visible": [
+        "es"
+      ],
+      "heading": "La caza puede esperar. Una partida más.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "es-MX",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "visible": [
+        "es-mx"
+      ],
+      "heading": "La cacería puede esperar. Una partida más.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "pt-BR",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "visible": [
+        "pt-br"
+      ],
+      "heading": "A caçada pode esperar. Só mais uma partida.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "ja",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "visible": [
+        "ja"
+      ],
+      "heading": "狩りは後でいい。もう一勝負だけ。",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "ko",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "visible": [
+        "ko"
+      ],
+      "heading": "사냥은 잠시 뒤로. 딱 한 판만 더.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "zh-Hans",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "visible": [
+        "zh-cn"
+      ],
+      "heading": "狩猎可以等等。再来一局。",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "zh-Hant",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "visible": [
+        "zh-tw"
+      ],
+      "heading": "狩獵可以等等。再來一局。",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "scrollWidth": 390,
+      "visible": [
+        "en"
+      ],
+      "heading": "The hunt can wait. One more round.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "ru",
+      "width": 390,
+      "scrollWidth": 390,
+      "visible": [
+        "ru"
+      ],
+      "heading": "Охота подождёт. Ещё одну партию.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "de",
+      "width": 390,
+      "scrollWidth": 390,
+      "visible": [
+        "de"
+      ],
+      "heading": "Die Jagd kann warten. Noch eine Runde.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "fr",
+      "width": 390,
+      "scrollWidth": 390,
+      "visible": [
+        "fr"
+      ],
+      "heading": "La chasse peut attendre. Encore une partie.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "it",
+      "width": 390,
+      "scrollWidth": 390,
+      "visible": [
+        "it"
+      ],
+      "heading": "La caccia può aspettare. Ancora una partita.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "pl",
+      "width": 390,
+      "scrollWidth": 390,
+      "visible": [
+        "pl"
+      ],
+      "heading": "Polowanie zaczeka. Jeszcze jedna partyjka.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "es",
+      "width": 390,
+      "scrollWidth": 390,
+      "visible": [
+        "es"
+      ],
+      "heading": "La caza puede esperar. Una partida más.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "es-MX",
+      "width": 390,
+      "scrollWidth": 390,
+      "visible": [
+        "es-mx"
+      ],
+      "heading": "La cacería puede esperar. Una partida más.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "pt-BR",
+      "width": 390,
+      "scrollWidth": 390,
+      "visible": [
+        "pt-br"
+      ],
+      "heading": "A caçada pode esperar. Só mais uma partida.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "ja",
+      "width": 390,
+      "scrollWidth": 390,
+      "visible": [
+        "ja"
+      ],
+      "heading": "狩りは後でいい。もう一勝負だけ。",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "ko",
+      "width": 390,
+      "scrollWidth": 390,
+      "visible": [
+        "ko"
+      ],
+      "heading": "사냥은 잠시 뒤로. 딱 한 판만 더.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "zh-Hans",
+      "width": 390,
+      "scrollWidth": 390,
+      "visible": [
+        "zh-cn"
+      ],
+      "heading": "狩猎可以等等。再来一局。",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "zh-Hant",
+      "width": 390,
+      "scrollWidth": 390,
+      "visible": [
+        "zh-tw"
+      ],
+      "heading": "狩獵可以等等。再來一局。",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "scrollWidth": 320,
+      "visible": [
+        "en"
+      ],
+      "heading": "The hunt can wait. One more round.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "ru",
+      "width": 320,
+      "scrollWidth": 320,
+      "visible": [
+        "ru"
+      ],
+      "heading": "Охота подождёт. Ещё одну партию.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "de",
+      "width": 320,
+      "scrollWidth": 320,
+      "visible": [
+        "de"
+      ],
+      "heading": "Die Jagd kann warten. Noch eine Runde.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "fr",
+      "width": 320,
+      "scrollWidth": 320,
+      "visible": [
+        "fr"
+      ],
+      "heading": "La chasse peut attendre. Encore une partie.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "it",
+      "width": 320,
+      "scrollWidth": 320,
+      "visible": [
+        "it"
+      ],
+      "heading": "La caccia può aspettare. Ancora una partita.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "pl",
+      "width": 320,
+      "scrollWidth": 320,
+      "visible": [
+        "pl"
+      ],
+      "heading": "Polowanie zaczeka. Jeszcze jedna partyjka.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "es",
+      "width": 320,
+      "scrollWidth": 320,
+      "visible": [
+        "es"
+      ],
+      "heading": "La caza puede esperar. Una partida más.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "es-MX",
+      "width": 320,
+      "scrollWidth": 320,
+      "visible": [
+        "es-mx"
+      ],
+      "heading": "La cacería puede esperar. Una partida más.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "pt-BR",
+      "width": 320,
+      "scrollWidth": 320,
+      "visible": [
+        "pt-br"
+      ],
+      "heading": "A caçada pode esperar. Só mais uma partida.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "ja",
+      "width": 320,
+      "scrollWidth": 320,
+      "visible": [
+        "ja"
+      ],
+      "heading": "狩りは後でいい。もう一勝負だけ。",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "ko",
+      "width": 320,
+      "scrollWidth": 320,
+      "visible": [
+        "ko"
+      ],
+      "heading": "사냥은 잠시 뒤로. 딱 한 판만 더.",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "zh-Hans",
+      "width": 320,
+      "scrollWidth": 320,
+      "visible": [
+        "zh-cn"
+      ],
+      "heading": "狩猎可以等等。再来一局。",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    },
+    {
+      "lang": "zh-Hant",
+      "width": 320,
+      "scrollWidth": 320,
+      "visible": [
+        "zh-tw"
+      ],
+      "heading": "狩獵可以等等。再來一局。",
+      "brokenImages": 0,
+      "placeholders": false,
+      "overflow": []
+    }
+  ]
+}

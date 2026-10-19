@@ -1,0 +1,180 @@
+{
+  "release": "release090-final9",
+  "ui": "release090-ui9",
+  "nativeBridge": "r7",
+  "packages": {
+    "releaseSource": "release090-final9",
+    "archives": [
+      {
+        "platform": "classic",
+        "archive": "GwentBetaClassic-0.9.0-1.32-AllLanguages.zip",
+        "files": 102,
+        "manifestHashesAndCRCs": true,
+        "bridgeR7": true,
+        "sourceCompileMatched": true,
+        "menuBytecodeMatches": {
+          "BetaGwentBoard": [
+            "betagwent\\betagwent_board.redswf"
+          ],
+          "GwintGame": [
+            "gameplay\\gui_new\\swf\\gwint\\gwint_game.redswf"
+          ],
+          "DeckBuilder": [
+            "gameplay\\gui_new\\swf\\gwint\\deck_builder.redswf"
+          ],
+          "BetaGwentKeg": [
+            "betagwent\\betagwent_kegop.redswf"
+          ]
+        },
+        "maximumResourceBytes": 32851399
+      },
+      {
+        "platform": "nextgen",
+        "archive": "GwentBetaClassic-0.9.0-5.0+-AllLanguages.zip",
+        "files": 45,
+        "manifestHashesAndCRCs": true,
+        "bridgeR7": true,
+        "sourceCompileMatched": true,
+        "menuBytecodeMatches": {
+          "BetaGwentBoard": [
+            "betagwent\\betagwent_board.redswf"
+          ],
+          "GwintGame": [
+            "betagwent\\betagwent_npc00.redswf"
+          ],
+          "DeckBuilder": [
+            "betagwent\\betagwent_decks.redswf"
+          ],
+          "BetaGwentKeg": [
+            "betagwent\\betagwent_kegop.redswf"
+          ]
+        },
+        "maximumResourceBytes": 65998381
+      }
+    ],
+    "texts": 10,
+    "nextgenSourceFiles": 72,
+    "classicCompilePassed": true,
+    "inGameVerified": false
+  },
+  "rawSuiteResult": {
+    "suites": 45,
+    "failed": [
+      "check_job_budget188",
+      "check_import090",
+      "check_windows_paste090",
+      "check_banner_runtime3_090",
+      "check_ui_layout",
+      "check_exchange_open",
+      "check_exchange_languages",
+      "check_ui_classic",
+      "check_ui_nextgen",
+      "check_features",
+      "native_r7"
+    ],
+    "sourceDrift": [],
+    "sourceFiles": 21228,
+    "inGameVerified": false
+  },
+  "tactics": {
+    "source": "D:\\w3mod\\BetaGwent\\build\\release090-final9",
+    "fingerprint": "bbff74a024f177159d3d880cd62cf35266d5d941e262e6ef66426a52f6b67250",
+    "total": 1426,
+    "passed": 1426,
+    "failed": 0,
+    "skipped": 0
+  },
+  "rows": {
+    "source": "D:\\w3mod\\BetaGwent\\build\\release090-final9",
+    "fingerprint": "bbff74a024f177159d3d880cd62cf35266d5d941e262e6ef66426a52f6b67250",
+    "summary": [
+      {
+        "id": "igni",
+        "title": "Игни: 20 против 30",
+        "total": 46,
+        "failed": 0,
+        "errors": 0
+      },
+      {
+        "id": "igni-threshold",
+        "title": "Игни: три слабых ниже порога против одного допустимого",
+        "total": 46,
+        "failed": 0,
+        "errors": 0
+      },
+      {
+        "id": "yrden-enemy",
+        "title": "Ирден: слабые усиления против одного огромного",
+        "total": 46,
+        "failed": 0,
+        "errors": 0
+      },
+      {
+        "id": "yrden-own",
+        "title": "Ирден: восстановить своих вместо исцеления врага",
+        "total": 46,
+        "failed": 0,
+        "errors": 0
+      },
+      {
+        "id": "birna-armour",
+        "title": "Бирна: плотный бронированный ряд против трёх уязвимых",
+        "total": 46,
+        "failed": 0,
+        "errors": 0
+      },
+      {
+        "id": "rot-full",
+        "title": "Разносчик заразы: заполненный ряд против свободного места",
+        "total": 46,
+        "failed": 0,
+        "errors": 0
+      },
+      {
+        "id": "trap-full",
+        "title": "Ловчий: заполненный ряд против свободного места",
+        "total": 46,
+        "failed": 0,
+        "errors": 0
+      },
+      {
+        "id": "nivellen-weather",
+        "title": "Нивеллен: не выводить врага из собственной погоды",
+        "total": 46,
+        "failed": 0,
+        "errors": 0
+      },
+      {
+        "id": "troll-overwrite",
+        "title": "Тролль: перенос не должен стирать полезную погоду",
+        "total": 46,
+        "failed": 0,
+        "errors": 0
+      }
+    ]
+  },
+  "selfplay": {
+    "source": "D:\\w3mod\\BetaGwent\\build\\release090-final9",
+    "fingerprint": "bbff74a024f177159d3d880cd62cf35266d5d941e262e6ef66426a52f6b67250",
+    "matches": 46,
+    "failures": []
+  },
+  "additionalPassed": {
+    "importWithHostTrace": 55,
+    "pasteWithHostTrace": 80,
+    "layoutWithInstalledBridgeHost": 24,
+    "nativeR7Isolated": 344,
+    "profileWithProductionCleanupMethod": 41,
+    "cleaner": 26,
+    "clipboardGate": 34,
+    "introAudio": 117,
+    "trial": 28
+  },
+  "findings": [
+    "CJK embedded fonts miss new tutorial glyphs: 13 strings on each platform",
+    "Standalone Verify defaults to release090-final rather than final9",
+    "CleanBuild source export remains older than final9"
+  ],
+  "inGameVerified": false,
+  "filesDeleted": 0
+}

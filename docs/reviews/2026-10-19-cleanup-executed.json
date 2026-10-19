@@ -1,0 +1,1553 @@
+﻿{
+    "status":  "completed",
+    "root":  "D:\\w3mod",
+    "startedUtc":  "2026-10-19T06:34:33.4091040Z",
+    "categories":  [
+                       "memory-dumps",
+                       "historical-release-archives"
+                   ],
+    "filesDeleted":  305,
+    "deletedBytes":  98797756548,
+    "freeBytesBefore":  null,
+    "protectedArchives":  {
+                              "BetaGwent\\release\\GwentBetaClassic-0.9.0\\GwentBetaClassic-0.9.0-5.0+-AllLanguages.zip":  "8b6b00878790752d81523de171b5f7bfe8cbf1ff659d2a0bebea05da5ea0a06b",
+                              "BetaGwent\\release\\GwentBetaClassic-0.9.0\\GwentBetaClassic-0.9.0-1.32-AllLanguages.zip":  "b7ace596e2ac3cc06890373e912b75defce29ef5d9bbc4fd0798cdd018fd8e6a",
+                              "BetaGwent\\release\\GwentBetaClassic-0.8.2-5.0+-AllLanguages.zip":  "cb646ff3ac62bfbe22b5df7102b191483545d584d2aebe72c8057d97d5cd1089",
+                              "BetaGwent\\release\\GwentBetaClassic-0.8.2-1.32-AllLanguages.zip":  "70028f9e4e63f23912946a29e9bb9b1090a4af9536aa53d35704fdd72017f580"
+                          },
+    "skippedCurrentShowcase":  [
+                                   "BetaGwent/release/GwentBetaClassic-0.9.0-Nexus-Showcase-13-Languages.zip"
+                               ],
+    "deleted":  [
+                    {
+                        "path":  "BetaGwent/build/classic132-full-feedback/20261018-151434-514046/failure-exception.dmp",
+                        "bytes":  6811013108,
+                        "category":  "memory-dumps"
+                    },
+                    {
+                        "path":  "BetaGwent/build/classic132-full-feedback/20261018-151434-514046/state-loaded-26654.dmp",
+                        "bytes":  6809933306,
+                        "category":  "memory-dumps"
+                    },
+                    {
+                        "path":  "BetaGwent/build/classic132-full-feedback/20261018-151434-514046/state-rendered-26654.dmp",
+                        "bytes":  6811040543,
+                        "category":  "memory-dumps"
+                    },
+                    {
+                        "path":  "BetaGwent/build/classic132-full-feedback/20261018-174231-955853/failure-exception.dmp",
+                        "bytes":  6762594776,
+                        "category":  "memory-dumps"
+                    },
+                    {
+                        "path":  "BetaGwent/build/classic132-full-feedback/20261018-174231-955853/state-loaded-26654.dmp",
+                        "bytes":  6759501506,
+                        "category":  "memory-dumps"
+                    },
+                    {
+                        "path":  "BetaGwent/build/classic132-full-feedback/20261018-174231-955853/state-rendered-26654.dmp",
+                        "bytes":  6762622195,
+                        "category":  "memory-dumps"
+                    },
+                    {
+                        "path":  "BetaGwent/build/classic132-full-feedback/20261018-175445-491544/state-loaded-26654.dmp",
+                        "bytes":  6770880579,
+                        "category":  "memory-dumps"
+                    },
+                    {
+                        "path":  "BetaGwent/build/classic132-full-feedback/20261018-175445-491544/state-rendered-26654.dmp",
+                        "bytes":  6787269276,
+                        "category":  "memory-dumps"
+                    },
+                    {
+                        "path":  "BetaGwent/release/1GwentBetaClassic-0.7.3-RU.zip",
+                        "bytes":  315645770,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/1GwentBetaClassic-0.7.3-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.2.9-EN.zip",
+                        "bytes":  155617308,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.2.9-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-EN.zip",
+                        "bytes":  161089108,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-RU.zip",
+                        "bytes":  162256505,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test1-EN.zip",
+                        "bytes":  157523015,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test1-EN.zip.sha256",
+                        "bytes":  103,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test1-RU.zip",
+                        "bytes":  158687880,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test1-RU.zip.sha256",
+                        "bytes":  103,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test2-RU.zip",
+                        "bytes":  158688635,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test2-RU.zip.sha256",
+                        "bytes":  103,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test3-RU.zip",
+                        "bytes":  158658273,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test3-RU.zip.sha256",
+                        "bytes":  103,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test4-EN.zip",
+                        "bytes":  157493889,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test4-EN.zip.sha256",
+                        "bytes":  103,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test4-RU.zip",
+                        "bytes":  158658493,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test4-RU.zip.sha256",
+                        "bytes":  103,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test5-EN.zip",
+                        "bytes":  158470543,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test5-EN.zip.sha256",
+                        "bytes":  103,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test5-RU.zip",
+                        "bytes":  159631811,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.0-test5-RU.zip.sha256",
+                        "bytes":  103,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.1-EN.zip",
+                        "bytes":  199457351,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.1-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.1-RU.zip",
+                        "bytes":  200546235,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.1-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.2-EN.zip",
+                        "bytes":  198405187,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.2-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.2-RU.zip",
+                        "bytes":  199490692,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.2-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.3-EN.zip",
+                        "bytes":  198440684,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.3-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.3-RU.zip",
+                        "bytes":  199525535,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.3-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.4-EN.zip",
+                        "bytes":  198454302,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.4-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.4-RU.zip",
+                        "bytes":  199537941,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.4-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.5-preview.1-RU.zip",
+                        "bytes":  199539043,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.5-preview.1-RU.zip.sha256",
+                        "bytes":  107,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.5-preview.2-RU.zip",
+                        "bytes":  199541539,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.5-preview.2-RU.zip.sha256",
+                        "bytes":  107,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.5-preview.3-RU.zip",
+                        "bytes":  199551417,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.5-preview.3-RU.zip.sha256",
+                        "bytes":  107,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.5-preview.4-RU.zip",
+                        "bytes":  199552124,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.5-preview.4-RU.zip.sha256",
+                        "bytes":  107,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.5-preview.5-RU.zip",
+                        "bytes":  199562748,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.3.5-preview.5-RU.zip.sha256",
+                        "bytes":  107,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.0-EN.zip",
+                        "bytes":  198484584,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.0-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.0-RU.zip",
+                        "bytes":  199571804,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.0-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.1-EN.zip",
+                        "bytes":  199134769,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.1-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.1-RU.zip",
+                        "bytes":  200218144,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.1-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.2-EN.zip",
+                        "bytes":  199216991,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.2-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.2-RU.zip",
+                        "bytes":  200293353,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.2-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.3-EN.zip",
+                        "bytes":  199230939,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.3-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.3-RU.zip",
+                        "bytes":  200303622,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.3-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.4-EN.zip",
+                        "bytes":  199225558,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.4-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.4-RU.zip",
+                        "bytes":  200300675,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.4-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.5-EN.zip",
+                        "bytes":  199231749,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.5-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.5-RU.zip",
+                        "bytes":  200311287,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.5-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.6-EN.zip",
+                        "bytes":  199285124,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.6-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.6-RU.zip",
+                        "bytes":  200369025,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.4.6-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.0-EN.zip",
+                        "bytes":  199339889,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.0-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.0-RU.zip",
+                        "bytes":  200420503,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.0-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.1-EN.zip",
+                        "bytes":  199356318,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.1-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.1-RU.zip",
+                        "bytes":  200437827,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.1-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.3-EN.zip",
+                        "bytes":  199378692,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.3-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.3-RU.zip",
+                        "bytes":  200463956,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.3-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.4-EN.zip",
+                        "bytes":  199379641,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.4-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.4-RU.zip",
+                        "bytes":  200467428,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.5.4-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.0-EN.zip",
+                        "bytes":  219569841,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.0-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.0-RU.zip",
+                        "bytes":  220620287,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.0-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.10-RU.zip",
+                        "bytes":  307119117,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.10-RU.zip.sha256",
+                        "bytes":  98,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.1-DE.zip",
+                        "bytes":  291042621,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.1-DE.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.1-EN.zip",
+                        "bytes":  292833971,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.1-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.1-IT.zip",
+                        "bytes":  289315570,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.1-IT.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.1-PT-BR.zip",
+                        "bytes":  292392563,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.1-PT-BR.zip.sha256",
+                        "bytes":  100,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.1-RU.zip",
+                        "bytes":  293848280,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.1-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.2-DE.zip",
+                        "bytes":  291092795,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.2-DE.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.2-EN.zip",
+                        "bytes":  292884145,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.2-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.2-IT.zip",
+                        "bytes":  289365747,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.2-IT.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.2-PT-BR.zip",
+                        "bytes":  292442744,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.2-PT-BR.zip.sha256",
+                        "bytes":  100,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.2-RU.zip",
+                        "bytes":  293897803,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.2-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.3-DE.zip",
+                        "bytes":  291093221,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.3-DE.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.3-EN.zip",
+                        "bytes":  292884540,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.3-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.3-IT.zip",
+                        "bytes":  289366165,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.3-IT.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.3-PT-BR.zip",
+                        "bytes":  292443108,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.3-PT-BR.zip.sha256",
+                        "bytes":  100,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.3-RU.zip",
+                        "bytes":  293898169,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.3-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.4-RU.zip",
+                        "bytes":  293902737,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.4-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.5-DE.zip",
+                        "bytes":  291097964,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.5-DE.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.5-EN.zip",
+                        "bytes":  292889299,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.5-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.5-IT.zip",
+                        "bytes":  289370907,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.5-IT.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.5-PT-BR.zip",
+                        "bytes":  292447887,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.5-PT-BR.zip.sha256",
+                        "bytes":  100,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.5-RU.zip",
+                        "bytes":  293903156,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.5-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.6-RU.zip",
+                        "bytes":  304751126,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.6-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.7-RU.zip",
+                        "bytes":  305391680,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.7-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.8b-RU.zip",
+                        "bytes":  305870202,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.8b-RU.zip.sha256",
+                        "bytes":  98,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.8-RU.zip",
+                        "bytes":  306905647,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.8-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.9-before-decoy-RU.zip",
+                        "bytes":  306909090,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.9-before-performance-RU.zip",
+                        "bytes":  306910198,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.9-before-performance-RU.zip.sha256",
+                        "bytes":  116,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.9-before-target-fixes-RU.zip",
+                        "bytes":  306909496,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.9-before-target-fixes-RU.zip.sha256",
+                        "bytes":  117,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.9-RU.zip",
+                        "bytes":  306910198,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.6.9-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.0-vfx1-RU.zip",
+                        "bytes":  314659975,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.0-vfx1-RU.zip.sha256",
+                        "bytes":  102,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.1-local-20261014-194106-RU.zip",
+                        "bytes":  315646076,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.1-local-20261014-194106-RU.zip.sha256",
+                        "bytes":  119,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.1-RU.zip",
+                        "bytes":  314570516,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.1-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.2-RU.zip",
+                        "bytes":  314577640,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.2-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3a-1.32-RU-test1.zip",
+                        "bytes":  816412535,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3a-1.32-RU-test1.zip.sha256",
+                        "bytes":  109,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3a-DE.zip",
+                        "bytes":  312841533,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3a-DE.zip.sha256",
+                        "bytes":  98,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3a-EN.zip",
+                        "bytes":  314632876,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3a-EN.zip.sha256",
+                        "bytes":  98,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3a-IT.zip",
+                        "bytes":  311114478,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3a-IT.zip.sha256",
+                        "bytes":  98,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3a-PT-BR.zip",
+                        "bytes":  314191442,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3a-PT-BR.zip.sha256",
+                        "bytes":  101,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3a-RU.zip",
+                        "bytes":  315646321,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3a-RU.zip.sha256",
+                        "bytes":  98,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3-DE.zip",
+                        "bytes":  312837883,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3-DE.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3-EN.zip",
+                        "bytes":  314629204,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3-IT.zip",
+                        "bytes":  311110854,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3-IT.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3-local-20261014-204847-RU.zip",
+                        "bytes":  315646069,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3-local-20261014-204847-RU.zip.sha256",
+                        "bytes":  119,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3-PT-BR.zip",
+                        "bytes":  314187771,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3-PT-BR.zip.sha256",
+                        "bytes":  100,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3-RU.zip",
+                        "bytes":  315645857,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.3-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.4a-RU.zip",
+                        "bytes":  316504754,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.4a-RU.zip.sha256",
+                        "bytes":  98,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.4-block1-RU.zip",
+                        "bytes":  316316112,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.4-block1-RU.zip.sha256",
+                        "bytes":  104,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.4b-RU.zip",
+                        "bytes":  316504377,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.4b-RU.zip.sha256",
+                        "bytes":  98,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.4-RU.zip",
+                        "bytes":  317315530,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.7.4-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-DE.zip",
+                        "bytes":  811000423,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-DE.zip.sha256",
+                        "bytes":  102,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-EN.zip",
+                        "bytes":  815689039,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-EN.zip.sha256",
+                        "bytes":  102,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-IT.zip",
+                        "bytes":  785194404,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-IT.zip.sha256",
+                        "bytes":  102,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-PT-BR.zip",
+                        "bytes":  820378771,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-PT-BR.zip.sha256",
+                        "bytes":  105,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-RU.zip",
+                        "bytes":  817278670,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-1.32-RU.zip.sha256",
+                        "bytes":  102,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-DE.zip",
+                        "bytes":  313697106,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-DE.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-EN.zip",
+                        "bytes":  315488439,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-EN.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-IT.zip",
+                        "bytes":  311970053,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-IT.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-PT-BR.zip",
+                        "bytes":  315047003,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-PT-BR.zip.sha256",
+                        "bytes":  100,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-RU.zip",
+                        "bytes":  316503544,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.0-RU.zip.sha256",
+                        "bytes":  97,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix10-InlineUIPatch.zip",
+                        "bytes":  258547329,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix10-NativeResourcesPatch.zip",
+                        "bytes":  362747328,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix11-BitmapPatch.zip",
+                        "bytes":  362748744,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix12-SubimagesPatch.zip",
+                        "bytes":  362870147,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix13-HandHudPatch.zip",
+                        "bytes":  362875140,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix14-BattlePatch.zip",
+                        "bytes":  620636368,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix15-VisualPatch.zip",
+                        "bytes":  620642754,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix16-EffectsLeadersPatch.zip",
+                        "bytes":  621509332,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix17-OpacityPatch.zip",
+                        "bytes":  621512466,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix18-EffectsPatch.zip",
+                        "bytes":  621525863,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix3-AllLanguages.zip",
+                        "bytes":  517184949,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix3-AllLanguages.zip.sha256",
+                        "bytes":  117,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix3-LanguageLayout-AllLanguages.zip",
+                        "bytes":  517186129,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix3-LanguageLayout-AllLanguages.zip.sha256",
+                        "bytes":  132,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix4-AllLanguages.zip",
+                        "bytes":  517185953,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix4-AllLanguages.zip.sha256",
+                        "bytes":  117,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix5-AllLanguages.zip",
+                        "bytes":  517185931,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix5-AllLanguages.zip.sha256",
+                        "bytes":  117,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix5-MetadataPatch.zip",
+                        "bytes":  13838,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix5-MetadataPatch.zip.sha256",
+                        "bytes":  118,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix6-AllLanguages.zip",
+                        "bytes":  517192197,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix6-AllLanguages.zip.sha256",
+                        "bytes":  117,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix6-DependencyPatch.zip",
+                        "bytes":  7301,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix6-DependencyPatch.zip.sha256",
+                        "bytes":  120,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix7-AllLanguages.zip",
+                        "bytes":  517198954,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix7-AllLanguages.zip.sha256",
+                        "bytes":  117,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix7-BundleGuidPatch.zip",
+                        "bytes":  258529554,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix7-BundleGuidPatch.zip.sha256",
+                        "bytes":  120,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix8-StockPathsPatch.zip",
+                        "bytes":  258528951,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix8-StockPathsPatch.zip.sha256",
+                        "bytes":  120,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-1.32-fix9-StreamingPatch.zip",
+                        "bytes":  258610789,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-5.0+-LanguageLayout-AllLanguages.zip",
+                        "bytes":  448172340,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-5.0+-LanguageLayout-AllLanguages.zip.sha256",
+                        "bytes":  127,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.1-Nexus-13-Languages.zip",
+                        "bytes":  216277,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.2-ai1-1.32-AllLanguages.zip",
+                        "bytes":  622580692,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.2-ai1-1.32-AllLanguages.zip.sha256",
+                        "bytes":  116,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.2-ai1-5.0+-AllLanguages.zip",
+                        "bytes":  448249322,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.2-ai1-5.0+-AllLanguages.zip.sha256",
+                        "bytes":  116,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.2-Nexus-Texts.zip",
+                        "bytes":  211250,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.2-polish1-1.32-AllLanguages.zip",
+                        "bytes":  622591317,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.2-polish1-1.32-AllLanguages.zip.sha256",
+                        "bytes":  120,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.2-polish1-5.0+-AllLanguages.zip",
+                        "bytes":  448253870,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.2-polish1-5.0+-AllLanguages.zip.sha256",
+                        "bytes":  120,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.2-polish2-1.32-AllLanguages.zip",
+                        "bytes":  622592525,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.2-polish2-1.32-AllLanguages.zip.sha256",
+                        "bytes":  120,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.2-polish2-5.0+-AllLanguages.zip",
+                        "bytes":  448255089,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.2-polish2-5.0+-AllLanguages.zip.sha256",
+                        "bytes":  120,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.8.2-Regression-Pack.zip",
+                        "bytes":  21440,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.9.0-1.32-AllLanguages.zip",
+                        "bytes":  622592471,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.9.0-1.32-AllLanguages.zip.sha256",
+                        "bytes":  112,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.9.0-1.32-LocaleFix-Test.zip",
+                        "bytes":  15555812,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.9.0-1.32-LocaleFix-Test.zip.sha256",
+                        "bytes":  114,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.9.0-1.32-MenuFix-Test.zip",
+                        "bytes":  64318872,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.9.0-1.32-MenuFix-Test.zip.sha256",
+                        "bytes":  112,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.9.0-5.0+-AllLanguages.zip",
+                        "bytes":  448255046,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.9.0-5.0+-AllLanguages.zip.sha256",
+                        "bytes":  112,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.9.0-NativeClipboard-Test.zip",
+                        "bytes":  218938931,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-0.9.0-NativeClipboard-Test.zip.sha256",
+                        "bytes":  115,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-1.32-MinimalMenu-Probe.zip",
+                        "bytes":  8046,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-1.32-MinimalMenu-Probe.zip.sha256",
+                        "bytes":  111,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-1.32-MinimalMenu-Probe2.zip",
+                        "bytes":  8058,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-1.32-MinimalMenu-Probe2.zip.sha256",
+                        "bytes":  112,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-1.32-NativeMenu-Control.zip",
+                        "bytes":  3966,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-1.32-NativeMenu-Control.zip.sha256",
+                        "bytes":  112,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-1.32-NativeMenu-CustomPath-Control.zip",
+                        "bytes":  1304010,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-1.32-NativeMenu-CustomPath-Control.zip.sha256",
+                        "bytes":  123,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-1.32.zip",
+                        "bytes":  92210,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-1.32.zip.sha256",
+                        "bytes":  107,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-5.0+.zip",
+                        "bytes":  19026,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-5.0+.zip.sha256",
+                        "bytes":  107,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-r2-1.32.zip",
+                        "bytes":  92564,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-r2-1.32.zip.sha256",
+                        "bytes":  110,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-r2-5.0+.zip",
+                        "bytes":  19433,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-Cleaner-0.8.2-r2-5.0+.zip.sha256",
+                        "bytes":  110,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-Cleaner-0.9.0-1.32.zip",
+                        "bytes":  92557,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-Cleaner-0.9.0-1.32.zip.sha256",
+                        "bytes":  107,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-Cleaner-0.9.0-5.0+.zip",
+                        "bytes":  19422,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-Cleaner-0.9.0-5.0+.zip.sha256",
+                        "bytes":  107,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-ReduxCompatibility-0.1.0.zip",
+                        "bytes":  14704,
+                        "category":  "historical-release-archives"
+                    },
+                    {
+                        "path":  "BetaGwent/release/GwentBetaClassic-ReduxCompatibility-0.1.0.zip.sha256",
+                        "bytes":  113,
+                        "category":  "historical-release-archives"
+                    }
+                ],
+    "errors":  [
+
+               ],
+    "finishedUtc":  "2026-10-19T06:34:36.1353247Z",
+    "freeBytesAfter":  null
+}

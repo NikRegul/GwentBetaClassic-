@@ -57,6 +57,7 @@ item=ET.SubElement(itemroot,'item',name='betagwent_keg',hold_slot='',equip_slot=
 ET.SubElement(item,'tags').text='BetaGwentKeg,EncumbranceOff,Lootable'
 strings += [('bg_keg_name','Бочка карт Beta Gwent'),('bg_keg_desc','150 крон. До четырёх недостающих бронзовых карт и выбор одной из трёх редких: серебро, золото или лидер. Если бронза исчерпана, выдаётся только редкий выбор за ту же цену. Можно купить несколько бочек сразу. В инвентаре выберите «Использовать», чтобы открыть одну. Редкий выбор сохраняется до подтверждения.')]
 out=WORK/'gameplay/items/betagwent_shop.xml';out.parent.mkdir(parents=True,exist_ok=True);ET.indent(items);ET.ElementTree(items).write(out,encoding='utf8',xml_declaration=True)
+ng_out=WORK/'gameplay/items_plus/betagwent_shop.xml';ng_out.parent.mkdir(parents=True,exist_ok=True);ng_out.write_bytes(out.read_bytes())
 source_hashes={}
 for folder in ['items','items_plus']:
  original=SDK/('gameplay/'+folder+'/def_loot_shops.xml');raw=original.read_bytes();source_hashes[str(original)]=hashlib.sha256(raw).hexdigest()

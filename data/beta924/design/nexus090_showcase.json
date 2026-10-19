@@ -1,0 +1,366 @@
+{
+  "en": {
+    "tagline": "THE WITCHER 3 · GWENT BETA 0.9.24 · VERSION 0.9.0",
+    "headline": "The hunt can wait. One more round.",
+    "intro": "An inn. A familiar face across the table. A hand that might just change everything. **Gwent Beta Classic brings standalone Gwent Beta into The Witcher 3** — with its cards, its rules and the delicious tension of knowing exactly when to pass.",
+    "moment": "Commit to the round, or save your best card? Bait out an answer, or trust your last play? Sometimes the most satisfying victory starts with a round you choose to lose.",
+    "stats": ["479 collectible cards", "21 leaders · 5 factions", "46 opponent archetypes", "13 text languages · 5 voice languages"],
+    "whyTitle": "A whole new reason to stop at the inn",
+    "features": [
+      ["The Beta atmosphere, back at your table", "The board, card frames, fonts, weather and effects bring the Beta's character into every match. Animated leader portraits and familiar voices give your rival a presence before the first card lands."],
+      ["A collection worth building", "Start with five editable starter decks, earn cards through NPC rewards, buy kegs from innkeepers and craft the cards your next idea needs. Extra copies turn into scraps automatically. That next keg might be the beginning of a completely different deck."],
+      ["Your deck. Your way to win.", "Search, filter and refine your list in the deck builder, with eight custom slots alongside the starter decks. Share language-independent BG1 codes; import a deck and see which cards you still need to craft."],
+      ["A familiar world. New rivals.", "Play against NPCs as you travel through the Witcher's world. With 46 opponent deck archetypes and three AI difficulty levels, there is room to learn your first faction and to test a favourite combination. Use mouse and keyboard or a controller."]
+    ],
+    "factionsTitle": "Five factions. Which one feels like you?",
+    "factions": [
+      ["Monsters", "Feed the swarm. Turn consumption, death and the Wild Hunt's frost into a growing threat."],
+      ["Nilfgaard", "Make information your weapon. Spies, reveal and alchemy reward a plan that reaches beyond the current turn."],
+      ["Northern Realms", "Build a formation worth defending. Soldiers, armour and machines make your cards stronger together."],
+      ["Scoia'tael", "Prepare the ambush. Elves, dwarves, swaps and hand boosts turn patient setup into a decisive play."],
+      ["Skellige", "Make every loss count. Discard, resurrection and warriors who thrive amid damage keep the graveyard in your plans."]
+    ],
+    "ctaTitle": "Pull up a chair. Your next deck starts here.",
+    "cta": "Choose the archive for your game, open the usual Gwent deck menu and make the first list your own. Then find someone willing to play. **Just one match…**",
+    "guideTitle": "From download to your first match",
+    "detailsTitle": "More to discover · features, changes and deck sharing",
+    "compatTitle": "Installation details · compatibility and uninstalling",
+    "supportTitle": "Help, feedback and credits"
+  },
+  "ru": {
+    "tagline": "THE WITCHER 3 · GWENT BETA 0.9.24 · ВЕРСИЯ 0.9.0",
+    "headline": "Охота подождёт. Ещё одну партию.",
+    "intro": "Корчма. Знакомое лицо напротив. И рука, с которой всё ещё можно перевернуть. **Gwent Beta Classic возвращает самостоятельный Gwent Beta в мир The Witcher 3** — с его картами, правилами и тем самым напряжением, когда вовремя спасовать важнее, чем набрать ещё очков.",
+    "moment": "Забрать раунд сейчас или приберечь лучшую карту? Выманить ответ или рискнуть последним ходом? Иногда самая красивая победа начинается с раунда, который ты решил отдать.",
+    "stats": ["479 коллекционных карт", "21 лидер · 5 фракций", "46 архетипов соперников", "13 языков текста · 5 озвучек"],
+    "whyTitle": "Новый повод заглянуть в корчму",
+    "features": [
+      ["Та самая бета — за твоим столом", "Поле, рамки карт, шрифты, погода и эффекты возвращают узнаваемый облик беты. Анимированные портреты лидеров и знакомые голоса задают настроение ещё до того, как первая карта коснётся стола."],
+      ["Коллекция, которую хочется собирать", "Начни с пяти готовых колод, меняй их под себя, получай карты за игры с NPC, покупай бочки у корчмарей и создавай недостающее за осколки. Лишние копии распыляются автоматически. Кто знает — следующая бочка может стать началом совсем другой колоды."],
+      ["Твоя колода. Твой путь к победе.", "Ищи, фильтруй и пробуй сочетания в редакторе: помимо стартовых колод есть восемь собственных слотов. Делись кодами BG1 независимо от языка игры, импортируй чужие идеи и сразу смотри, какие карты осталось создать."],
+      ["Знакомый мир. Новые соперники.", "Играй с NPC во время путешествий по миру Ведьмака. 46 архетипов колод соперников и три уровня сложности ИИ дают повод и освоить первую фракцию, и испытать любимую комбинацию. За столом удобно с мышью и клавиатурой или с контроллером."]
+    ],
+    "factionsTitle": "Пять фракций. Какая — твоя?",
+    "factions": [
+      ["Чудовища", "Корми стаю. Поглощение, гибель отрядов и мороз Дикой Охоты превращаются в нарастающую угрозу."],
+      ["Нильфгаард", "Преврати информацию в оружие. Шпионы, раскрытие и алхимия вознаграждают того, кто смотрит дальше текущего хода."],
+      ["Королевства Севера", "Выстрой армию, которую стоит защищать. Солдаты, броня и машины делают карты сильнее вместе."],
+      ["Скоя’таэли", "Подготовь засаду. Эльфы, краснолюды, обмены и усиления в руке превращают терпеливую подготовку в решающий ход."],
+      ["Скеллиге", "Извлеки пользу из каждой потери. Сброс, воскрешение и воины, которым на руку чужие раны: кладбище тоже входит в твой план."]
+    ],
+    "ctaTitle": "Подвинь стул. Здесь начинается твоя следующая колода.",
+    "cta": "Выбери архив для своей версии игры, открой привычное меню колоды гвинта и собери что-нибудь своё. Осталось найти того, кто согласится сыграть. **Всего одну партию…**",
+    "guideTitle": "От скачивания до первой партии",
+    "detailsTitle": "Больше о моде · возможности, изменения и обмен колодами",
+    "compatTitle": "Подробности установки · совместимость и удаление",
+    "supportTitle": "Помощь, отзывы и благодарности"
+  },
+  "de": {
+    "tagline": "THE WITCHER 3 · GWENT BETA 0.9.24 · VERSION 0.9.0",
+    "headline": "Die Jagd kann warten. Noch eine Runde.",
+    "intro": "Ein Gasthaus. Ein vertrautes Gesicht auf der anderen Seite des Tisches. Und eine Hand, die noch alles wenden könnte. **Gwent Beta Classic bringt die eigenständige Gwent-Beta in The Witcher 3** — mit ihren Karten, ihren Regeln und der Spannung, im richtigen Moment zu passen.",
+    "moment": "Die Runde jetzt gewinnen oder die beste Karte aufheben? Eine Antwort herauslocken oder auf den letzten Zug vertrauen? Manchmal beginnt der schönste Sieg mit einer Runde, die man bewusst abgibt.",
+    "stats": ["479 Sammelkarten", "21 Anführer · 5 Fraktionen", "46 gegnerische Deck-Archetypen", "13 Textsprachen · 5 Sprachausgaben"],
+    "whyTitle": "Ein neuer Grund, im Gasthaus einzukehren",
+    "features": [
+      ["Die Atmosphäre der Beta kehrt zurück", "Spielbrett, Kartenrahmen, Schriften, Wetter und Effekte verleihen jeder Partie den Charakter der Beta. Animierte Anführerporträts und vertraute Stimmen stimmen dich schon vor der ersten Karte auf dein Gegenüber ein."],
+      ["Eine Sammlung, die wachsen will", "Beginne mit fünf anpassbaren Startdecks, erspiele Karten bei NSCs, kaufe Fässer bei Gastwirten und stelle fehlende Karten aus Fetzen her. Überzählige Exemplare werden automatisch zerlegt. Vielleicht steckt im nächsten Fass die Idee für ein völlig neues Deck."],
+      ["Dein Deck. Dein Weg zum Sieg.", "Suche, filtere und verfeinere deine Kartenliste im Deckeditor. Neben den Startdecks stehen acht eigene Speicherplätze bereit. Teile sprachunabhängige BG1-Codes, importiere Decks und sieh, welche Karten du noch herstellen musst."],
+      ["Vertraute Welt. Neue Gegner.", "Spiele auf deinen Reisen durch die Welt des Hexers gegen NSCs. 46 gegnerische Deck-Archetypen und drei KI-Schwierigkeitsstufen bieten Raum für die erste Fraktion und die liebste Kombination. Mit Maus und Tastatur oder Controller."]
+    ],
+    "factionsTitle": "Fünf Fraktionen. Welche passt zu dir?",
+    "factions": [
+      ["Monster", "Füttere den Schwarm. Verzehren, Todeseffekte und der Frost der Wilden Jagd lassen die Bedrohung wachsen."],
+      ["Nilfgaard", "Mach Wissen zur Waffe. Spione, Aufdecken und Alchemie belohnen vorausschauende Planung."],
+      ["Nördliche Königreiche", "Errichte eine Formation, die sich zu verteidigen lohnt. Soldaten, Rüstung und Maschinen entfalten gemeinsam ihre Stärke."],
+      ["Scoia'tael", "Bereite den Hinterhalt vor. Elfen, Zwerge, Kartentausch und Verstärkungen auf der Hand machen Geduld zum entscheidenden Zug."],
+      ["Skellige", "Nutze jeden Verlust. Abwerfen, Wiederbelebung und Krieger, die von Schaden profitieren, machen den Friedhof zum Teil deines Plans."]
+    ],
+    "ctaTitle": "Rück den Stuhl heran. Hier beginnt dein nächstes Deck.",
+    "cta": "Wähle das Archiv für deine Spielversion, öffne das gewohnte Gwint-Deckmenü und gestalte dein erstes Deck. Dann fehlt nur noch jemand, der mitspielt. **Nur eine Partie …**",
+    "guideTitle": "Vom Download zur ersten Partie",
+    "detailsTitle": "Mehr entdecken · Funktionen, Änderungen und Deckaustausch",
+    "compatTitle": "Installationsdetails · Kompatibilität und Deinstallation",
+    "supportTitle": "Hilfe, Rückmeldungen und Danksagungen"
+  },
+  "fr": {
+    "tagline": "THE WITCHER 3 · GWENT BETA 0.9.24 · VERSION 0.9.0",
+    "headline": "La chasse peut attendre. Encore une partie.",
+    "intro": "Une auberge. Un visage familier de l’autre côté de la table. Une main qui pourrait tout renverser. **Gwent Beta Classic fait entrer la bêta du Gwent autonome dans The Witcher 3**, avec ses cartes, ses règles et cette tension délicieuse lorsqu’il faut choisir le bon moment pour passer.",
+    "moment": "Remporter la manche ou garder sa meilleure carte ? Provoquer une réponse ou miser sur son dernier coup ? Parfois, les plus belles victoires commencent par une manche que l’on accepte de perdre.",
+    "stats": ["479 cartes à collectionner", "21 chefs · 5 factions", "46 archétypes de decks adverses", "13 langues de texte · 5 doublages"],
+    "whyTitle": "Une nouvelle raison de s’arrêter à l’auberge",
+    "features": [
+      ["L’atmosphère de la bêta retrouve votre table", "Plateau, cadres, polices, météo et effets donnent à chaque partie le caractère de la bêta. Les portraits animés des chefs et leurs voix familières installent l’ambiance avant même la première carte."],
+      ["Une collection que l’on a envie de construire", "Partez de cinq decks de départ modifiables, gagnez des cartes contre les PNJ, achetez des tonneaux aux aubergistes et fabriquez les cartes manquantes avec des fragments. Les exemplaires en trop sont recyclés automatiquement. Le prochain tonneau inspirera peut-être un tout nouveau deck."],
+      ["Votre deck. Votre façon de gagner.", "Recherchez, filtrez et affinez votre liste dans l’éditeur : huit emplacements personnels s’ajoutent aux decks de départ. Partagez des codes BG1 indépendants de la langue, importez un deck et découvrez les cartes qu’il vous reste à fabriquer."],
+      ["Un monde familier. De nouveaux rivaux.", "Défiez les PNJ au fil de vos voyages dans le monde du Sorceleur. Avec 46 archétypes de decks adverses et trois niveaux d’IA, découvrez votre première faction ou éprouvez votre combinaison favorite. À la souris et au clavier ou à la manette."]
+    ],
+    "factionsTitle": "Cinq factions. Laquelle vous ressemble ?",
+    "factions": [
+      ["Monstres", "Nourrissez la horde. La consommation, les effets de mort et le gel de la Chasse Sauvage font grandir la menace."],
+      ["Nilfgaard", "Faites du renseignement une arme. Espions, révélation et alchimie récompensent les plans à long terme."],
+      ["Royaumes du Nord", "Bâtissez une formation à défendre. Soldats, armure et machines révèlent leur force ensemble."],
+      ["Scoia’tael", "Préparez l’embuscade. Elfes, nains, échanges et renforcements en main transforment la patience en coup décisif."],
+      ["Skellige", "Tirez parti de chaque perte. Défausse, résurrection et guerriers profitant des dégâts font du cimetière une ressource."]
+    ],
+    "ctaTitle": "Prenez une chaise. Votre prochain deck commence ici.",
+    "cta": "Choisissez l’archive adaptée à votre jeu, ouvrez le menu habituel des decks de Gwynt et composez votre liste. Il ne reste qu’à trouver un partenaire. **Juste une partie…**",
+    "guideTitle": "Du téléchargement à la première partie",
+    "detailsTitle": "Pour aller plus loin · contenu, nouveautés et partage de decks",
+    "compatTitle": "Détails d’installation · compatibilité et désinstallation",
+    "supportTitle": "Aide, retours et remerciements"
+  },
+  "it": {
+    "tagline": "THE WITCHER 3 · GWENT BETA 0.9.24 · VERSIONE 0.9.0",
+    "headline": "La caccia può aspettare. Ancora una partita.",
+    "intro": "Una locanda. Un volto familiare dall’altra parte del tavolo. Una mano che potrebbe ribaltare tutto. **Gwent Beta Classic porta la beta del Gwent indipendente in The Witcher 3**, con le sue carte, le sue regole e quella tensione speciale quando devi decidere il momento giusto per passare.",
+    "moment": "Vincere il round o conservare la carta migliore? Strappare una risposta all’avversario o fidarsi dell’ultima giocata? A volte la vittoria più bella comincia con un round che scegli di perdere.",
+    "stats": ["479 carte collezionabili", "21 leader · 5 fazioni", "46 archetipi di mazzi avversari", "13 lingue di testo · 5 doppiaggi"],
+    "whyTitle": "Un nuovo motivo per fermarsi alla locanda",
+    "features": [
+      ["L’atmosfera della beta torna al tuo tavolo", "Tabellone, cornici, caratteri, meteo ed effetti restituiscono a ogni partita il carattere della beta. I ritratti animati dei leader e le voci familiari creano l’atmosfera prima ancora della prima carta."],
+      ["Una collezione tutta da costruire", "Parti da cinque mazzi iniziali modificabili, ottieni carte giocando con i PNG, compra barili dai locandieri e crea le carte mancanti con gli scarti. Le copie in eccesso vengono riciclate automaticamente. Nel prossimo barile potrebbe esserci l’idea per un mazzo completamente diverso."],
+      ["Il tuo mazzo. Il tuo modo di vincere.", "Cerca, filtra e perfeziona la lista nell’editor: oltre ai mazzi iniziali hai otto slot personali. Condividi codici BG1 indipendenti dalla lingua, importa un mazzo e scopri quali carte devi ancora creare."],
+      ["Un mondo familiare. Nuovi rivali.", "Sfida i PNG durante i viaggi nel mondo dello Strigo. Con 46 archetipi di mazzi avversari e tre difficoltà dell’IA, puoi imparare la prima fazione o mettere alla prova la tua combinazione preferita. Con mouse e tastiera o controller."]
+    ],
+    "factionsTitle": "Cinque fazioni. Quale ti rappresenta?",
+    "factions": [
+      ["Mostri", "Nutri lo sciame. Consumo, effetti di morte e gelo della Caccia Selvaggia fanno crescere la minaccia."],
+      ["Nilfgaard", "Trasforma le informazioni in un’arma. Spie, rivelazione e alchimia premiano chi guarda oltre il turno attuale."],
+      ["Regni Settentrionali", "Costruisci una formazione da difendere. Soldati, armatura e macchine si rafforzano a vicenda."],
+      ["Scoia’tael", "Prepara l’imboscata. Elfi, nani, scambi e potenziamenti in mano trasformano l’attesa nella giocata decisiva."],
+      ["Skellige", "Sfrutta ogni perdita. Scarto, resurrezione e guerrieri che prosperano tra i danni fanno del cimitero una risorsa."]
+    ],
+    "ctaTitle": "Avvicina la sedia. Il tuo prossimo mazzo comincia qui.",
+    "cta": "Scegli l’archivio per la tua versione del gioco, apri il normale menu del mazzo di Gwent e crea la tua lista. Poi trova qualcuno disposto a giocare. **Solo una partita…**",
+    "guideTitle": "Dal download alla prima partita",
+    "detailsTitle": "Scopri di più · contenuti, novità e condivisione dei mazzi",
+    "compatTitle": "Dettagli di installazione · compatibilità e disinstallazione",
+    "supportTitle": "Aiuto, suggerimenti e ringraziamenti"
+  },
+  "pl": {
+    "tagline": "THE WITCHER 3 · GWENT BETA 0.9.24 · WERSJA 0.9.0",
+    "headline": "Polowanie zaczeka. Jeszcze jedna partyjka.",
+    "intro": "Karczma. Znajoma twarz po drugiej stronie stołu. Ręka, która może jeszcze wszystko odwrócić. **Gwent Beta Classic przenosi betę samodzielnego Gwinta do The Witcher 3** — wraz z kartami, zasadami i tym napięciem, gdy trzeba wybrać właściwy moment na spasowanie.",
+    "moment": "Wygrać rundę teraz czy zachować najlepszą kartę? Sprowokować odpowiedź czy zaufać ostatniemu zagraniu? Czasem najpiękniejsze zwycięstwo zaczyna się od rundy, którą świadomie oddajesz.",
+    "stats": ["479 kart do zebrania", "21 dowódców · 5 frakcji", "46 archetypów talii przeciwników", "13 języków tekstu · 5 wersji głosowych"],
+    "whyTitle": "Nowy powód, by zajrzeć do karczmy",
+    "features": [
+      ["Klimat bety znów przy twoim stole", "Plansza, ramki kart, czcionki, pogoda i efekty przywracają każdej partii charakter bety. Animowane portrety dowódców i znajome głosy budują atmosferę, zanim na stół trafi pierwsza karta."],
+      ["Kolekcja, którą chce się rozwijać", "Zacznij od pięciu edytowalnych talii startowych, zdobywaj karty od postaci niezależnych, kupuj beczki u karczmarzy i twórz brakujące karty ze skrawków. Nadmiarowe kopie są automatycznie niszczone. Może następna beczka podsunie pomysł na zupełnie inną talię?"],
+      ["Twoja talia. Twój sposób na zwycięstwo.", "Wyszukuj, filtruj i dopracowuj zestaw w edytorze. Obok talii startowych masz osiem własnych miejsc. Udostępniaj niezależne od języka kody BG1, importuj talie i sprawdzaj, które karty trzeba jeszcze stworzyć."],
+      ["Znajomy świat. Nowi rywale.", "Graj z postaciami niezależnymi podczas podróży po wiedźmińskim świecie. 46 archetypów talii przeciwników i trzy poziomy trudności SI pozwalają poznać pierwszą frakcję i sprawdzić ulubione połączenie kart. Mysz i klawiatura albo kontroler — wybór należy do ciebie."]
+    ],
+    "factionsTitle": "Pięć frakcji. Która jest twoja?",
+    "factions": [
+      ["Potwory", "Nakarm rój. Pochłanianie, efekty śmierci i mróz Dzikiego Gonu zmieniają się w narastające zagrożenie."],
+      ["Nilfgaard", "Zamień wiedzę w broń. Szpiedzy, odkrywanie i alchemia nagradzają planowanie kilku ruchów naprzód."],
+      ["Królestwa Północy", "Zbuduj szyk, którego warto bronić. Żołnierze, pancerz i maszyny wzmacniają się nawzajem."],
+      ["Scoia’tael", "Przygotuj zasadzkę. Elfy, krasnoludy, wymiany i wzmacnianie kart na ręce przekuwają cierpliwość w decydujące zagranie."],
+      ["Skellige", "Wykorzystaj każdą stratę. Odrzucanie, wskrzeszanie i wojownicy korzystający z obrażeń włączają cmentarz do twojego planu."]
+    ],
+    "ctaTitle": "Przysuń krzesło. Tu zaczyna się twoja następna talia.",
+    "cta": "Wybierz archiwum dla swojej wersji gry, otwórz zwykłe menu talii Gwinta i ułóż własny zestaw. Potem znajdź kogoś chętnego do gry. **Tylko jedna partyjka…**",
+    "guideTitle": "Od pobrania do pierwszej partii",
+    "detailsTitle": "Odkryj więcej · zawartość, zmiany i wymiana talii",
+    "compatTitle": "Szczegóły instalacji · zgodność i odinstalowanie",
+    "supportTitle": "Pomoc, uwagi i podziękowania"
+  },
+  "es": {
+    "tagline": "THE WITCHER 3 · GWENT BETA 0.9.24 · VERSIÓN 0.9.0",
+    "headline": "La caza puede esperar. Una partida más.",
+    "intro": "Una posada. Una cara conocida al otro lado de la mesa. Una mano que aún puede cambiarlo todo. **Gwent Beta Classic lleva la beta del Gwent independiente a The Witcher 3**, con sus cartas, sus reglas y esa tensión tan especial de saber cuándo pasar.",
+    "moment": "¿Ganar la ronda ahora o guardar tu mejor carta? ¿Forzar una respuesta o confiar en tu última jugada? A veces, la victoria más satisfactoria empieza con una ronda que decides perder.",
+    "stats": ["479 cartas coleccionables", "21 líderes · 5 facciones", "46 arquetipos de mazos rivales", "13 idiomas de texto · 5 doblajes"],
+    "whyTitle": "Un nuevo motivo para parar en la posada",
+    "features": [
+      ["La atmósfera de la beta vuelve a tu mesa", "El tablero, los marcos, las fuentes, el clima y los efectos devuelven a cada partida el carácter de la beta. Los retratos animados de los líderes y sus voces conocidas marcan el ambiente antes de la primera carta."],
+      ["Una colección que apetece construir", "Empieza con cinco mazos iniciales modificables, consigue cartas jugando con PNJ, compra barriles a los posaderos y fabrica lo que te falte con retales. Las copias sobrantes se reciclan automáticamente. Quizá el próximo barril inspire un mazo completamente distinto."],
+      ["Tu mazo. Tu forma de ganar.", "Busca, filtra y afina tu lista en el editor: tienes ocho espacios propios además de los mazos iniciales. Comparte códigos BG1 independientes del idioma, importa un mazo y descubre qué cartas te falta fabricar."],
+      ["Un mundo conocido. Nuevos rivales.", "Juega con PNJ mientras recorres el mundo del brujo. Los 46 arquetipos de mazos rivales y tres dificultades de IA te permiten aprender tu primera facción y poner a prueba tu combinación favorita. Con ratón y teclado o mando."]
+    ],
+    "factionsTitle": "Cinco facciones. ¿Cuál es la tuya?",
+    "factions": [
+      ["Monstruos", "Alimenta al enjambre. Consumir, los efectos de muerte y la escarcha de la Cacería Salvaje hacen crecer la amenaza."],
+      ["Nilfgaard", "Convierte la información en un arma. Espías, revelación y alquimia recompensan los planes a largo plazo."],
+      ["Reinos del Norte", "Forma un ejército que merezca la pena proteger. Soldados, armadura y máquinas se hacen más fuertes juntos."],
+      ["Scoia’tael", "Prepara la emboscada. Elfos, enanos, intercambios y mejoras en la mano convierten la paciencia en una jugada decisiva."],
+      ["Skellige", "Saca partido de cada pérdida. Descarte, resurrección y guerreros que aprovechan el daño hacen del cementerio un recurso."]
+    ],
+    "ctaTitle": "Acerca una silla. Tu próximo mazo empieza aquí.",
+    "cta": "Elige el archivo para tu versión del juego, abre el menú habitual de mazos de gwynt y crea tu propia lista. Después, busca a alguien dispuesto a jugar. **Solo una partida…**",
+    "guideTitle": "De la descarga a tu primera partida",
+    "detailsTitle": "Descubre más · contenido, novedades e intercambio de mazos",
+    "compatTitle": "Detalles de instalación · compatibilidad y desinstalación",
+    "supportTitle": "Ayuda, comentarios y agradecimientos"
+  },
+  "es-mx": {
+    "tagline": "THE WITCHER 3 · GWENT BETA 0.9.24 · VERSIÓN 0.9.0",
+    "headline": "La cacería puede esperar. Una partida más.",
+    "intro": "Una posada. Una cara conocida del otro lado de la mesa. Una mano que todavía puede cambiarlo todo. **Gwent Beta Classic trae la beta del Gwent independiente a The Witcher 3**, con sus cartas, sus reglas y esa tensión de elegir el momento exacto para pasar.",
+    "moment": "¿Ganar la ronda ahora o guardar tu mejor carta? ¿Provocar una respuesta o confiar en tu última jugada? A veces, la mejor victoria empieza con una ronda que decides ceder.",
+    "stats": ["479 cartas coleccionables", "21 líderes · 5 facciones", "46 arquetipos de mazos rivales", "13 idiomas de texto · 5 doblajes"],
+    "whyTitle": "Una nueva razón para detenerte en la posada",
+    "features": [
+      ["La atmósfera de la beta regresa a tu mesa", "El tablero, los marcos, las fuentes, el clima y los efectos recuperan el estilo de la beta en cada partida. Los retratos animados de los líderes y sus voces conocidas crean el ambiente desde antes de la primera carta."],
+      ["Una colección que dan ganas de armar", "Empieza con cinco mazos iniciales editables, gana cartas jugando con PNJ, compra barriles en las posadas y fabrica lo que te falte con retazos. Las copias sobrantes se reciclan automáticamente. El siguiente barril podría inspirarte un mazo completamente nuevo."],
+      ["Tu mazo. Tu manera de ganar.", "Busca, filtra y ajusta tu lista en el editor: además de los mazos iniciales, tienes ocho espacios propios. Comparte códigos BG1 sin importar el idioma, importa un mazo y revisa cuáles cartas te falta fabricar."],
+      ["Un mundo conocido. Nuevos rivales.", "Juega con PNJ mientras recorres el mundo del brujo. Con 46 arquetipos de mazos rivales y tres dificultades de IA, puedes aprender tu primera facción o probar tu combinación favorita. Juega con mouse y teclado o con control."]
+    ],
+    "factionsTitle": "Cinco facciones. ¿Cuál va contigo?",
+    "factions": [
+      ["Monstruos", "Alimenta al enjambre. Consumir, los efectos de muerte y la escarcha de la Cacería Salvaje hacen crecer la amenaza."],
+      ["Nilfgaard", "Convierte la información en un arma. Espías, revelación y alquimia premian los planes que van más allá del turno actual."],
+      ["Reinos del Norte", "Organiza una formación que valga la pena proteger. Soldados, armadura y máquinas son más fuertes juntos."],
+      ["Scoia’tael", "Prepara la emboscada. Elfos, enanos, intercambios y mejoras en la mano convierten la paciencia en la jugada decisiva."],
+      ["Skellige", "Aprovecha cada pérdida. Descarte, resurrección y guerreros que sacan partido del daño hacen del cementerio una herramienta."]
+    ],
+    "ctaTitle": "Acerca una silla. Tu próximo mazo empieza aquí.",
+    "cta": "Elige el archivo para tu versión del juego, abre el menú de mazos de Gwent de siempre y arma tu propia lista. Luego encuentra a alguien que quiera jugar. **Solo una partida…**",
+    "guideTitle": "De la descarga a tu primera partida",
+    "detailsTitle": "Descubre más · contenido, novedades e intercambio de mazos",
+    "compatTitle": "Detalles de instalación · compatibilidad y desinstalación",
+    "supportTitle": "Ayuda, comentarios y agradecimientos"
+  },
+  "pt-br": {
+    "tagline": "THE WITCHER 3 · GWENT BETA 0.9.24 · VERSÃO 0.9.0",
+    "headline": "A caçada pode esperar. Só mais uma partida.",
+    "intro": "Uma estalagem. Um rosto conhecido do outro lado da mesa. Uma mão que ainda pode virar o jogo. **Gwent Beta Classic traz a beta do Gwent independente para The Witcher 3**, com suas cartas, suas regras e aquela tensão de escolher a hora certa de passar.",
+    "moment": "Ganhar a rodada agora ou guardar a melhor carta? Forçar uma resposta ou confiar na última jogada? Às vezes, a vitória mais gostosa começa com uma rodada que você decide entregar.",
+    "stats": ["479 cartas colecionáveis", "21 líderes · 5 facções", "46 arquétipos de decks adversários", "13 idiomas de texto · 5 dublagens"],
+    "whyTitle": "Um novo motivo para parar na estalagem",
+    "features": [
+      ["O clima da beta de volta à sua mesa", "Tabuleiro, molduras, fontes, clima e efeitos devolvem a cada partida a identidade da beta. Retratos animados dos líderes e vozes conhecidas criam a atmosfera antes mesmo da primeira carta."],
+      ["Uma coleção que dá vontade de montar", "Comece com cinco decks iniciais editáveis, ganhe cartas enfrentando NPCs, compre barris nas estalagens e crie as cartas que faltam com retalhos. Cópias extras são recicladas automaticamente. Talvez o próximo barril dê a ideia para um deck inteiramente novo."],
+      ["Seu deck. Seu jeito de vencer.", "Busque, filtre e ajuste sua lista no editor: além dos decks iniciais, há oito espaços personalizados. Compartilhe códigos BG1 independentes do idioma, importe um deck e veja quais cartas ainda precisa criar."],
+      ["Um mundo conhecido. Novos rivais.", "Enfrente NPCs enquanto viaja pelo mundo do bruxo. Com 46 arquétipos de decks adversários e três dificuldades de IA, há espaço para aprender sua primeira facção e testar sua combinação favorita. Jogue com mouse e teclado ou controle."]
+    ],
+    "factionsTitle": "Cinco facções. Qual combina com você?",
+    "factions": [
+      ["Monstros", "Alimente o enxame. Consumo, efeitos de morte e a geada da Caçada Selvagem fazem a ameaça crescer."],
+      ["Nilfgaard", "Transforme informação em arma. Espiões, revelação e alquimia recompensam planos que vão além do turno atual."],
+      ["Reinos do Norte", "Monte uma formação que valha a pena defender. Soldados, armadura e máquinas ficam mais fortes juntos."],
+      ["Scoia’tael", "Prepare a emboscada. Elfos, anões, trocas e melhorias na mão transformam paciência em uma jogada decisiva."],
+      ["Skellige", "Aproveite cada perda. Descarte, ressurreição e guerreiros que se beneficiam de dano fazem do cemitério parte do plano."]
+    ],
+    "ctaTitle": "Puxe uma cadeira. Seu próximo deck começa aqui.",
+    "cta": "Escolha o arquivo para sua versão do jogo, abra o menu de decks de Gwent de sempre e monte sua lista. Depois, encontre alguém disposto a jogar. **Só uma partida…**",
+    "guideTitle": "Do download à primeira partida",
+    "detailsTitle": "Descubra mais · conteúdo, novidades e compartilhamento de decks",
+    "compatTitle": "Detalhes de instalação · compatibilidade e desinstalação",
+    "supportTitle": "Ajuda, sugestões e agradecimentos"
+  },
+  "ja": {
+    "tagline": "THE WITCHER 3 · GWENT BETA 0.9.24 · バージョン 0.9.0",
+    "headline": "狩りは後でいい。もう一勝負だけ。",
+    "intro": "宿屋の一角。向かいには見慣れた顔。そして、まだ勝負をひっくり返せるかもしれない手札。**Gwent Beta Classic は、単体版『グウェント』のベータを The Witcher 3 の世界へ届けます。** 当時のカード、ルール、そしてパスのタイミングを見極める、あの緊張感とともに。",
+    "moment": "このラウンドを取りに行くか、切り札を温存するか。相手の一手を誘うか、最後の一枚に賭けるか。最高の勝利は、あえて譲ったラウンドから始まることもあります。",
+    "stats": ["収集可能なカード479枚", "リーダー21人 · 5勢力", "対戦相手のデッキ46系統", "テキスト13言語 · 音声5言語"],
+    "whyTitle": "宿屋に立ち寄る、新しい理由",
+    "features": [
+      ["あのベータの雰囲気を、目の前に", "盤面、カード枠、フォント、天候、エフェクトが、対戦にベータらしさを吹き込みます。動くリーダーポートレートと懐かしい声が、最初の一枚を出す前から勝負を彩ります。"],
+      ["集めたくなるコレクション", "編集可能な5つの初期デッキから始め、NPCとの対戦報酬でカードを獲得。宿屋でタルを買い、足りないカードは紙片で作成できます。余分な複製は自動で紙片に変換。次のタルが、新しいデッキのきっかけになるかもしれません。"],
+      ["自分のデッキで、自分の勝ち筋を", "検索とフィルターで構成を練り上げるデッキ編集機能。初期デッキに加え、8つのカスタム枠を使えます。言語に依存しないBG1コードで共有・インポートし、作成が必要なカードも確認できます。"],
+      ["おなじみの世界で、新たな好敵手と", "ウィッチャーの世界を旅しながらNPCと対戦。46系統の対戦相手デッキと3段階のAI難易度で、初めての勢力を学び、お気に入りのコンボを試しましょう。マウスとキーボード、コントローラーに対応しています。"]
+    ],
+    "factionsTitle": "5つの勢力。あなたはどれを選ぶ？",
+    "factions": [
+      ["モンスター", "群れを育てよう。捕食、死亡時の効果、ワイルドハントの霜で脅威を積み重ねます。"],
+      ["ニルフガード", "情報を武器に。密偵、公開、錬金術で、今のターンの先を読む戦略を。"],
+      ["北方諸国", "守る価値のある陣形を。兵士、アーマー、兵器を組み合わせ、互いの力を引き出します。"],
+      ["スコイア＝テル", "奇襲の準備を。エルフ、ドワーフ、カード交換、手札の強化が、待ちの一手を決め手に変えます。"],
+      ["スケリッジ", "失ったものさえ力に。破棄、復活、ダメージを生かす戦士たちとともに、墓地も戦略に組み込みましょう。"]
+    ],
+    "ctaTitle": "席にどうぞ。次のデッキは、ここから。",
+    "cta": "ゲームのバージョンに合うアーカイブを選び、いつものグウェントのデッキメニューから自分の構成を作りましょう。あとは対戦相手を探すだけ。**ほんの一勝負だけ……。**",
+    "guideTitle": "ダウンロードから最初の対戦まで",
+    "detailsTitle": "もっと詳しく · 機能、更新内容、デッキ共有",
+    "compatTitle": "導入の詳細 · 互換性とアンインストール",
+    "supportTitle": "ヘルプ、フィードバック、クレジット"
+  },
+  "ko": {
+    "tagline": "THE WITCHER 3 · GWENT BETA 0.9.24 · 버전 0.9.0",
+    "headline": "사냥은 잠시 뒤로. 딱 한 판만 더.",
+    "intro": "여관 한구석. 탁자 건너편의 익숙한 얼굴. 그리고 아직 승부를 뒤집을 수 있을 것 같은 손패. **Gwent Beta Classic은 독립 게임 궨트의 베타를 The Witcher 3 속으로 가져옵니다.** 그때의 카드와 규칙, 언제 패스할지 고민하던 짜릿한 순간까지 함께 돌아옵니다.",
+    "moment": "이번 라운드를 가져갈까, 가장 좋은 카드를 아낄까? 상대의 대응을 끌어낼까, 마지막 한 수를 믿을까? 가장 통쾌한 승리는 일부러 내준 라운드에서 시작되기도 합니다.",
+    "stats": ["수집 가능한 카드 479장", "지도자 21명 · 5개 진영", "상대 덱 유형 46가지", "텍스트 13개 언어 · 음성 5개 언어"],
+    "whyTitle": "여관에 들를 새로운 이유",
+    "features": [
+      ["베타의 분위기가 내 탁자 위로", "게임판, 카드 테두리, 글꼴, 날씨와 효과가 매 경기에 베타의 개성을 더합니다. 움직이는 지도자 초상화와 익숙한 목소리가 첫 카드를 내기 전부터 분위기를 만듭니다."],
+      ["하나씩 채워 가고 싶은 컬렉션", "수정 가능한 시작 덱 5개로 출발해 NPC 대전 보상으로 카드를 모으세요. 여관에서 통을 사고, 부족한 카드는 조각으로 제작할 수 있습니다. 여분의 중복 카드는 자동으로 분해됩니다. 다음 통이 전혀 새로운 덱의 시작이 될지도 모릅니다."],
+      ["나만의 덱, 나만의 승리 방식", "덱 편집기의 검색과 필터로 구성을 다듬으세요. 시작 덱 외에 사용자 덱 슬롯 8개가 있습니다. 언어와 무관한 BG1 코드로 덱을 공유하거나 가져오고, 제작해야 할 카드도 확인하세요."],
+      ["익숙한 세계, 새로운 맞수", "위쳐의 세계를 여행하며 NPC와 대결하세요. 상대 덱 유형 46가지와 AI 난이도 3단계로 첫 진영을 익히고 좋아하는 조합을 시험할 수 있습니다. 마우스와 키보드, 컨트롤러를 지원합니다."]
+    ],
+    "factionsTitle": "5개 진영. 당신의 선택은?",
+    "factions": [
+      ["괴물", "무리를 키우세요. 섭취와 죽음 효과, 와일드 헌트의 서리로 위협을 쌓아 올립니다."],
+      ["닐프가드", "정보를 무기로 삼으세요. 첩자, 공개와 연금술은 현재 턴 너머를 내다보는 계획에 보답합니다."],
+      ["북부 왕국", "지킬 가치가 있는 전열을 세우세요. 병사와 방어구, 병기가 함께 더 강해집니다."],
+      ["스코이아텔", "매복을 준비하세요. 엘프와 드워프, 카드 교환과 손패 강화로 기다림을 결정적인 한 수로 바꿉니다."],
+      ["스켈리게", "모든 손실을 활용하세요. 버리기와 부활, 피해를 활용하는 전사들 덕에 무덤도 계획의 일부가 됩니다."]
+    ],
+    "ctaTitle": "의자를 당겨 앉으세요. 다음 덱은 여기서 시작됩니다.",
+    "cta": "게임 버전에 맞는 압축 파일을 받고, 평소의 궨트 덱 메뉴에서 나만의 구성을 만드세요. 이제 함께할 상대만 찾으면 됩니다. **딱 한 판만요…**",
+    "guideTitle": "다운로드부터 첫 경기까지",
+    "detailsTitle": "더 알아보기 · 기능, 변경 사항과 덱 공유",
+    "compatTitle": "설치 세부 정보 · 호환성과 삭제",
+    "supportTitle": "도움말, 의견과 감사의 말"
+  },
+  "zh-cn": {
+    "tagline": "THE WITCHER 3 · GWENT BETA 0.9.24 · 版本 0.9.0",
+    "headline": "狩猎可以等等。再来一局。",
+    "intro": "一家旅店，一张熟悉的面孔坐在对面，一手也许还能逆转局势的牌。**Gwent Beta Classic 将独立版《昆特牌》的公测体验带入 The Witcher 3**：熟悉的卡牌、规则，还有那种思考何时放弃跟牌时的紧张与期待。",
+    "moment": "现在拿下这一小局，还是留住最强的牌？逼出对手的回应，还是相信最后一手？有时，最痛快的胜利，恰恰始于你主动让出的那一局。",
+    "stats": ["479张可收集卡牌", "21位领袖 · 5大阵营", "46种对手牌组类型", "13种文本语言 · 5种配音"],
+    "whyTitle": "又多了一个走进旅店的理由",
+    "features": [
+      ["公测的氛围，回到你的牌桌", "棋盘、卡框、字体、天气与特效，让每场对局重现公测版的独特气质。动态领袖肖像与熟悉的语音，在第一张牌落桌前就已烘托出气氛。"],
+      ["值得慢慢集齐的收藏", "从五套可编辑的初始牌组起步，通过NPC对局奖励收集卡牌，在旅店购买卡桶，用碎片合成缺少的卡。多余的重复卡会自动分解。下一桶，也许就是一套全新牌组的起点。"],
+      ["你的牌组，你的取胜之道", "使用牌组编辑器的搜索与筛选功能打磨构筑。除初始牌组外，还有八个自定义栏位。通过不受语言影响的BG1代码分享或导入牌组，并查看还需要合成哪些卡牌。"],
+      ["熟悉的世界，全新的对手", "在猎魔人的旅途中与NPC切磋牌技。46种对手牌组类型与三个AI难度，让你既能学习第一个阵营，也能检验钟爱的组合。支持鼠标、键盘和手柄。"]
+    ],
+    "factionsTitle": "五大阵营，你会选谁？",
+    "factions": [
+      ["怪兽", "喂养你的虫群。吞噬、死亡效果与狂猎的冰霜，让威胁不断壮大。"],
+      ["尼弗迦德", "把情报变成武器。间谍、揭示与炼金，奖励那些看得更远的布局。"],
+      ["北方领域", "组建值得守护的阵线。士兵、护甲与机械相互配合，让整支军队更强。"],
+      ["松鼠党", "备好埋伏。精灵、矮人、换牌与手牌强化，将耐心化为决定胜负的一手。"],
+      ["史凯利格", "让每次损失都有价值。弃牌、复活与善用伤害的战士，让墓场也成为计划的一部分。"]
+    ],
+    "ctaTitle": "拉把椅子坐下。下一套牌组，从这里开始。",
+    "cta": "选择对应游戏版本的压缩包，打开平常的昆特牌组菜单，组出自己的第一套牌。然后，找个愿意陪你打牌的人。**就一局……**",
+    "guideTitle": "从下载到第一场对局",
+    "detailsTitle": "了解更多 · 功能、更新与牌组分享",
+    "compatTitle": "安装详情 · 兼容性与卸载",
+    "supportTitle": "帮助、反馈与致谢"
+  },
+  "zh-tw": {
+    "tagline": "THE WITCHER 3 · GWENT BETA 0.9.24 · 版本 0.9.0",
+    "headline": "狩獵可以等等。再來一局。",
+    "intro": "一間旅店，一張熟悉的面孔坐在對面，一手也許還能翻轉局勢的牌。**Gwent Beta Classic 將獨立版《昆特牌》的公測體驗帶進 The Witcher 3**：熟悉的卡牌、規則，還有思考何時放棄跟牌時，那份緊張與期待。",
+    "moment": "現在拿下這一小局，還是留住最強的牌？逼出對手的回應，還是相信最後一手？有時，最暢快的勝利，正是從你主動讓出的那一局開始。",
+    "stats": ["479張可收集卡牌", "21位領袖 · 5大陣營", "46種對手牌組類型", "13種文字語言 · 5種配音"],
+    "whyTitle": "又多了一個走進旅店的理由",
+    "features": [
+      ["公測的氛圍，回到你的牌桌", "棋盤、卡框、字型、天氣與特效，讓每場對局重現公測版的獨特風格。動態領袖肖像與熟悉的語音，在第一張牌落桌前就已醞釀好氣氛。"],
+      ["值得慢慢集齊的收藏", "從五套可編輯的初始牌組起步，透過NPC對局獎勵收集卡牌，在旅店購買卡桶，用碎片合成缺少的卡。多餘的重複卡會自動分解。下一桶，也許就是全新牌組的起點。"],
+      ["你的牌組，你的取勝之道", "使用牌組編輯器的搜尋與篩選功能調整構築。除了初始牌組，還有八個自訂欄位。透過不受語言影響的BG1代碼分享或匯入牌組，並查看還需要合成哪些卡牌。"],
+      ["熟悉的世界，全新的對手", "在獵魔士的旅途中與NPC切磋牌技。46種對手牌組類型與三個AI難度，讓你既能學習第一個陣營，也能測試喜愛的組合。支援滑鼠、鍵盤與控制器。"]
+    ],
+    "factionsTitle": "五大陣營，你會選誰？",
+    "factions": [
+      ["怪獸", "餵養你的蟲群。吞噬、死亡效果與狂獵的冰霜，讓威脅不斷壯大。"],
+      ["尼弗迦德", "把情報化為武器。間諜、揭示與鍊金，獎勵那些看得更遠的布局。"],
+      ["北方領域", "組建值得守護的陣線。士兵、護甲與機械相互配合，讓整支軍隊更強。"],
+      ["松鼠黨", "備好埋伏。精靈、矮人、換牌與手牌強化，將耐心化為決定勝負的一手。"],
+      ["史凱利傑", "讓每次損失都有價值。棄牌、復活與善用傷害的戰士，讓墓場也成為計畫的一部分。"]
+    ],
+    "ctaTitle": "拉張椅子坐下。下一套牌組，從這裡開始。",
+    "cta": "選擇對應遊戲版本的壓縮檔，打開平常的昆特牌組選單，組出自己的第一套牌。然後，找個願意陪你打牌的人。**就一局……**",
+    "guideTitle": "從下載到第一場對局",
+    "detailsTitle": "了解更多 · 功能、更新與牌組分享",
+    "compatTitle": "安裝詳情 · 相容性與解除安裝",
+    "supportTitle": "協助、回饋與致謝"
+  }
+}

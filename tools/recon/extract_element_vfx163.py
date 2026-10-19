@@ -27,6 +27,8 @@ WANTED={
  'Ice':['PowerRowIce','PowerSideIce','PowerBoardIce'],
  'Earth':['PowerDirectEarth'], 'Air':['PowerRowAir','AirTokenAttack'],
  'Presentation':['CardLandingEffect','GoldLanding','CardFrostLandingEffect','CardRainLandingEffect','CardMistLandingEffect','SpawnBlink','AmbushEffect','NatureTransform','PromoteSimpleVFX','DemoteParticleSimpleVFX'],
+ 'Status':['ResilienceToken','SpyingToken','RevealToken','CardTimerVFX','ArmorIncrease','ArmorDecrease'],
+ 'Battle080':['RaghNarRoogInitializationEffect','GoldenFrothCardEffect'],
  # Inventory the approved lightning for compatibility, without changing it.
  'Lightning':['PowerDirectLightning','PowerLightningProjectile'],
 }

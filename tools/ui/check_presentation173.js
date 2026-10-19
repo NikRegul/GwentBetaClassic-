@@ -45,7 +45,7 @@ check(engine.includes('if(BetaGwentElementBlend173.additive(int(particle.e.id)))
 check(engine.includes('public static const MAX_UNITS:Number=55;')&&engine.includes('!model.preset.projectile&&model.preset.method<2&&biggest>limit'),'card impacts clamped to ~2.5 card widths');
 check(engine.includes('if(s.name=="ArrowTipShape")continue;'),'no opaque paper tip');
 check(engine.includes('grown:Number=Math.max(.02,Math.min(1,progress*travelPx/full))')&&engine.includes('sprite.x=full*.05-full*grown/2;'),'shot starts at the card centre: trail grows with distance flown');
-check(engine.includes('color.alphaMultiplier=out.a*intensity*')&&board.includes('soft?0.45:1,soft?35:BetaGwentElement164.MAX_UNITS'),'boost: 45% strength, at most 1.6 card widths');
+check(engine.includes('color.alphaMultiplier=out.a*intensity*')&&board.includes('(soft?0.45:1)*strength,soft?35:BetaGwentElement164.MAX_UNITS'),'boost: 45% strength, at most 1.6 card widths');
 // Board details.
 const cards=fn(board,'drawCards'),visual=fn(board,'drawVisualCue');
 check(cards.includes('flash.visible=false;'),'no card wash: the prefab is the flash');

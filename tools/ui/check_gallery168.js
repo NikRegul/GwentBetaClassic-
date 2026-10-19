@@ -9,7 +9,7 @@ vm.runInContext(fn(routing,'prefabs')+`var BetaGwentSpecialVfx={prefabs},BetaGwe
 let checks=0;function check(v,n){assert(v,n);checks++;}
 const entries=c.entries();check(entries.length>270,'gallery includes current card operations and scenario cases');
 check(entries.filter(x=>x.preset).length===0,'default gallery never bypasses the current battle renderer with old raw presets');
-check(c.entries(true).filter(x=>x.preset).length===33,'raw source presets remain available only when explicitly requested internally');
+check(c.entries(true).filter(x=>x.preset).length===Object.keys(recipes.presets).length,'raw source presets remain available only when explicitly requested internally');
 for(const id of [201657,200301,200218,200224,113301,113309,112102,113303,113401])check(entries.some(x=>x.templateId===id),'reported card reachable '+id);
 for(const entry of entries){const scene=c.scene(entry);check(scene.before.length===4&&scene.after.length>=1&&scene.after.length<=4,'bounded scene '+entry.title);check(new Set(scene.before.map(c=>c.id)).size===4,'stable unique identities '+entry.title);check(scene.before!==scene.after&&scene.before[0]!==scene.after[0],'detached before/after '+entry.title);check(scene.after.every(c=>[1,2].includes(c.side)&&Number.isFinite(c.power)&&Number.isFinite(c.index)),'finite public fixture '+entry.title);}
 // Exercise the current damage/boost renderer with real scene deltas and bindings,
@@ -42,4 +42,4 @@ check(native.includes('if(backupPlayer && !effectGallery)')&&native.includes('el
 check(native.includes('if(!configured || !effectGallery || !audio')&&native.includes('audio.SpellLaunch(id,kind-100)'),'preview audio isolated behind gallery gate');
 check(fn(board,'galleryShowScene').includes('controller.focusTag("galleryRepeat")'),'controller returns to Repeat after every sample');
 for(const dir of ['src-BetaGwentBoard','src-GwintGame','src-BetaGwentKeg','src-DeckBuilder'])check(fs.readFileSync('BetaGwent/ui/'+dir+'/BetaGwentEffectGallery168.as','utf8')===source,'gallery mirror '+dir);
-const report={stage:168,checks,samples:entries.length,rawPresetsInDefault:0,sourcePresets:33,actualActionScript:true,nativeGameTested:false};fs.writeFileSync('docs/evidence/gallery168.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+const report={stage:168,checks,samples:entries.length,rawPresetsInDefault:0,sourcePresets:Object.keys(recipes.presets).length,actualActionScript:true,nativeGameTested:false};fs.writeFileSync('docs/evidence/gallery168.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

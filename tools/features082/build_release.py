@@ -156,11 +156,11 @@ def finish(part,mod,report):
     if VERSION=='0.8.2-rc3':
         readme=readme.replace('Новые сообщения обмена пока на русском; прежние 13 языков текста и 5 озвучек сохранены.','Сообщения обмена переведены на 13 языков; пять озвучек сохранены.')
         readme+='\nRC3: переводы обмена, отступы окон, нижняя панель действий, место под состояние колоды, переход с видимого края карточной полки к сохранению с геймпада и обратно. VS переходит от входа к движущемуся портрету; анимация королевы синхронизируется с реальным запуском её звука.\n'
-    if VERSION=='0.8.2':
+    if VERSION=='0.8.2' or VERSION.startswith('0.8.2-polish'):
         for stale in ['README_0.8.2_RC_RU.txt','README_RU.md']:
             p=docs/stale
             if p.exists():p.unlink()
-        public=ROOT/'docs/releases/0.8.2/nexus'
+        public=ROOT/('docs/releases/0.8.2-polish1/nexus' if VERSION.startswith('0.8.2-polish') else 'docs/releases/0.8.2/nexus')
         for lang in ['ru','en']:
             shutil.copy2(public/lang/'description.md',docs/('README_'+lang.upper()+'.md'))
             shutil.copy2(public/lang/'changelog.md',docs/('CHANGELOG_'+lang.upper()+'.md'))

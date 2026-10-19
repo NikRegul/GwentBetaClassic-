@@ -37,7 +37,7 @@ def release_module(stage):
             'stage=143':f'stage={stage}', "'143'":repr(str(stage)),
             'compile-final-ru-v2':'compile',
             # One more AI suite (check_lock_choice144) than the frozen 0.6.7 list.
-            "len(checks['checks'])==51":"len(checks['checks'])=="+str(78 if stage>=181 else 77 if stage>=180 else 76 if stage>=178 else 72 if stage>=172 else 70 if stage>=168 else 66 if stage>=167 else 64 if stage>=165 else 63 if stage>=164 else 62 if stage>=163 else 61 if stage>=160 else 60 if stage>=158 else 57 if stage>=156 else 55 if stage>=155 else 54 if stage>=150 else 52),
+            "len(checks['checks'])==51":"len(checks['checks'])=="+str(81 if stage>=200 else 80 if stage>=191 else 79 if stage>=188 else 78 if stage>=181 else 77 if stage>=180 else 76 if stage>=178 else 72 if stage>=172 else 70 if stage>=168 else 66 if stage>=167 else 64 if stage>=165 else 63 if stage>=164 else 62 if stage>=163 else 61 if stage>=160 else 60 if stage>=158 else 57 if stage>=156 else 55 if stage>=155 else 54 if stage>=150 else 52),
         }.items():source=source.replace(old,new)
     namespace={'__name__':'source_release','__file__':str(ROOT/'tools/build_release143.py')}
     exec(compile(source,'source_release','exec'),namespace)
@@ -119,7 +119,7 @@ def main():
         stage=max([143,*stages])+1
     else:stage=a.stage
     if stage<143 or not a.verify and stage==143:p.error('New builds require a fresh stage greater than 143')
-    if a.gui_limit_mib is None and not a.verify and not a.resume_package and stage>=150:a.gui_limit_mib=65
+    if a.gui_limit_mib is None and not a.verify and not a.resume_package and stage>=150:a.gui_limit_mib=63 if stage>=198 else 65
     base=ROOT/f'BetaGwent/build/stage{stage}'
     archive=ROOT/f'BetaGwent/release/GwentBetaClassic-{version}-RU.zip'
     dependencies()
@@ -171,6 +171,8 @@ def main():
             job('all-card-vfx',['tools/recon/extract_card_vfx163.py'],logs)
             job('all-card-vfx-routing',['tools/ui/build_special_vfx142.py'],logs)
         if stage>=178:job('presentation-prefabs',['tools/recon/extract_element_vfx163.py'],logs)
+        if stage>=191:job('status-curves',['tools/ui/build_status191.py'],logs)
+        if stage>=195:job('battle-curves',['tools/ui/build_battle080.py'],logs)
         if stage>=164:
             job('element-atlases',['tools/ui/build_elements164.py'],logs)
             job('element-audio',['tools/ui/build_element_audio164.py'],logs)
@@ -209,6 +211,9 @@ def main():
                 if stage>=178:additional.extend([('editor073','tools/ui/check_editor178.js'),('presentation073','tools/ui/check_presentation178.js'),('trial-target','tools/ai/check_trial178.js')])
                 if stage>=180:additional.append(('ai-playtest180','tools/ai/check_miruna_aglais_scorch180.js'))
                 if stage>=181:additional.append(('emissary-mulligan181','tools/ai/check_emissary_mulligan181.js'))
+                if stage>=188:additional.append(('ai-gold-playtest188','tools/ai/check_playtest188.js'))
+                if stage>=191:additional.append(('status-armor074','tools/ui/check_status191.js'))
+                if stage>=200:additional.append(('enemy-hand-tracer074b','tools/ui/check_drawbacks200.js'))
                 for label,script in additional:
                     job(label,[script,snapshot],logs,node=True)
                     report['checks'].append(dict(script=script,exitCode=0,sha256=hashlib.sha256((ROOT/script).read_bytes()).hexdigest(),log=str(logs/(label+'.log'))))
@@ -223,6 +228,9 @@ def main():
             report_path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n','utf8')
         if a.reuse_native_menus:reuse_native_menus(a.reuse_native_menus,stage)
         else:job('native-menus',['tools/build_presentation94.py','--stage',stage,'--language','ru'],logs)
+        # Keep a shared release input snapshot so other game targets can rebuild
+        # its UI after active Next-Gen development has moved on.
+        job('freeze-platform-inputs',['tools/freeze_platform_inputs.py','--stage',stage],logs)
         job('native-compile',['tools/recon/run_redkit_compile.py','--out',base/'compile','--patch',patch,'--timeout','300','--terms-already-accepted'],logs)
         prepare_publication(version,stage)
         release['inputs']()

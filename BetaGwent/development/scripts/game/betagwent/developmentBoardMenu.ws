@@ -551,34 +551,82 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if(!configured || !deckDraft || value!=revision)return false;
         code=BetaGwentExportDeckExchange(deckDraft.cards,deckDraft.faction,deckDraft.leader);
         if(code==""){PublishDeckExchange("","Нужна допустимая колода из 25–40 карт.",false);return false;}
+        LogChannel('BetaGwent',"BG1_EXPORT "+code);
         PublishDeckExchange(code,"",false);return true;
     }
-    event OnBetaGwentDeckImport(value : int, code : string, craft : bool)
+    // 0.9.0: missing cards are published as a list for a card grid. Crafting (one card
+    // or all) never imports, and import is refused while anything is missing.
+    private function ExchangeParse(value : int, code : string, out parsed : SBetaGwentDeckExchange) : bool
     {
-        var parsed : SBetaGwentDeckExchange;var player : W3PlayerWitcher;
-        var missing,counts : array<int>;var cost,i : int;var message : string;var d : SBetaGwentDuelDefinition;
+        var player : W3PlayerWitcher;
         if(!configured || !selectingDecks || value!=revision)return false;
         parsed=BetaGwentParseDeckExchange(code);
         if(!parsed.valid){PublishDeckExchange("",parsed.message,false);return false;}
         if(npcMatch && forcedBetaFaction!=0 && parsed.faction!=forcedBetaFaction) {
             PublishDeckExchange("","Для квеста нужна другая фракция.",false);return false;
         }
-        if(!deckDraft && deckLibrary.FirstEmpty()==0){PublishDeckExchange("","Нет свободного слота. Откройте колоду для замены.",false);return false;}
         player=(W3PlayerWitcher)thePlayer;
         if((libraryOnly || npcMatch) && (!player || !player.BetaGwentEnsureCollection())) {
             PublishDeckExchange("","Коллекция недоступна.",false);return false;
         }
-        if(libraryOnly || npcMatch) {
-            cost=player.BetaGwentExchangeMissing(parsed.cards,parsed.leader,missing,counts);
-            if(missing.Size()>0) {
-                message="Недостающие карты ("+cost+" осколков; в наличии "+player.BetaGwentScraps()+"):\n";
-                for(i=0;i<missing.Size();i+=1){d=BetaGwentDuelDefinition(missing[i]);message+=d.title+" × "+counts[i]+"\n";}
-                if(player.BetaGwentKegPending())message+="Сначала завершите выбор бочки.";
-                if(!craft || !player.BetaGwentCraftExchange(parsed.cards,parsed.faction,parsed.leader)) {
-                    PublishDeckExchange("",message,false);return false;
-                }
-            }
+        return true;
+    }
+    private function ExchangeMissing(parsed : SBetaGwentDeckExchange, out missing : array<int>, out counts : array<int>) : int
+    {
+        var player : W3PlayerWitcher;
+        missing.Clear();counts.Clear();
+        player=(W3PlayerWitcher)thePlayer;
+        if(!(libraryOnly || npcMatch) || !player)return 0;
+        return player.BetaGwentExchangeMissing(parsed.cards,parsed.leader,missing,counts);
+    }
+    private function PublishExchangeMissing(parsed : SBetaGwentDeckExchange, message : string)
+    {
+        var reply : CScriptedFlashFunction;var player : W3PlayerWitcher;
+        var missing,counts : array<int>;var cost,i,balance : int;var ids,copies : string;var blocked : bool;
+        cost=ExchangeMissing(parsed,missing,counts);
+        player=(W3PlayerWitcher)thePlayer;
+        if(player){balance=player.BetaGwentScraps();blocked=missing.Size()>0 && player.BetaGwentKegPending();}
+        for(i=0;i<missing.Size();i+=1){if(i>0){ids+=",";copies+=",";}ids+=IntToString(missing[i]);copies+=IntToString(counts[i]);}
+        reply=GetMenuFlash().GetMemberFlashFunction("setDeckExchangeMissing");
+        if(reply)reply.InvokeSelfSixArgs(FlashArgInt(revision),FlashArgString(ids),FlashArgString(copies),FlashArgInt(cost),FlashArgInt(balance),FlashArgBool(blocked));
+        PublishDeckExchange("",message,false);
+    }
+    event OnBetaGwentDeckImportCheck(value : int, code : string)
+    {
+        var parsed : SBetaGwentDeckExchange;
+        if(!ExchangeParse(value,code,parsed))return false;
+        PublishExchangeMissing(parsed,"");return true;
+    }
+    event OnBetaGwentDeckImportCraft(value : int, code : string, id : int)
+    { return ImportCraft(value,code,id); }
+    // id 0 creates every missing copy at once (price and caps checked first).
+    private function ImportCraft(value : int, code : string, id : int) : bool
+    {
+        var parsed : SBetaGwentDeckExchange;var player : W3PlayerWitcher;
+        var missing,counts : array<int>;var crafted : bool;
+        if(!ExchangeParse(value,code,parsed))return false;
+        player=(W3PlayerWitcher)thePlayer;
+        if(!(libraryOnly || npcMatch) || !player){PublishExchangeMissing(parsed,"");return false;}
+        ExchangeMissing(parsed,missing,counts);
+        if(player.BetaGwentKegPending())crafted=false;
+        else if(id==0)crafted=missing.Size()>0 && player.BetaGwentCraftExchange(parsed.cards,parsed.faction,parsed.leader);
+        else if(missing.Contains(id) && player.BetaGwentCraft(id)) {
+            crafted=true;player.BetaGwentUpdateCollectionProgress();player.BetaGwentSyncTournamentAccess();player.BetaGwentBackupProfile();
         }
+        LogChannel('BetaGwent',"IMPORT_CRAFT card="+id+" ok="+crafted+" scraps="+player.BetaGwentScraps());
+        PublishCollection();
+        if(crafted)PublishExchangeMissing(parsed,"");
+        else PublishExchangeMissing(parsed,"Не хватает осколков или карта уже собрана.");
+        return crafted;
+    }
+    event OnBetaGwentDeckImport(value : int, code : string, craft : bool)
+    {
+        var parsed : SBetaGwentDeckExchange;var missing,counts : array<int>;
+        if(craft)return ImportCraft(value,code,0);
+        if(!ExchangeParse(value,code,parsed))return false;
+        if(!deckDraft && deckLibrary.FirstEmpty()==0){PublishDeckExchange("","Нет свободного слота. Откройте колоду для замены.",false);return false;}
+        ExchangeMissing(parsed,missing,counts);
+        if(missing.Size()>0){PublishExchangeMissing(parsed,"Сначала создайте недостающие карты.");return false;}
         if(!deckDraft)deckDraft=deckLibrary.Edit(0);
         if(!deckDraft){PublishDeckExchange("","Нет свободного слота.",false);return false;}
         deckDraft.cards=parsed.cards;deckDraft.faction=parsed.faction;deckDraft.leader=parsed.leader;
@@ -1526,11 +1574,12 @@ exec function bg_shoprefill(target : int)
 }
 exec function bg_help()
 {
-    BetaGwentConsoleMessage("bg_kegs(10) · bg_scraps(1000) · bg_card(132102,1) · bg_find('Имлерих')\nbg_faction('monsters') · bg_leaders() · bg_allcards · bg_status()\nbg_shopcheck() · bg_shoprefill(5) · bg_help()\nФракции: neutral, monsters, nilfgaard, north, scoiatael, skellige. Выдача ресурсов — при закрытых меню; магазин — при открытом магазине.");
+    BetaGwentConsoleMessage("bg_kegs(10) · bg_scraps(1000) · bg_card(132102,1) · bg_find('Имлерих')\nbg_faction('monsters') · bg_leaders() · bg_allcards · bg_status()\nbg_shopcheck() · bg_shoprefill(5) · bg_help()\nbg_clean_preview() · bg_clean_confirm('DELETE_BETA_GWENT')\nФракции: neutral, monsters, nilfgaard, north, scoiatael, skellige. Выдача ресурсов — при закрытых меню; магазин — при открытом магазине.");
 }
 
 function BetaGwentTextLanguage137(value:int):int
 {
+    if(BetaGwentCleanupBlocked())return 1;
     if(FactsQueryLatestValue("bg_text_language_package")!=1002)
     { FactsSet("bg_text_language_package",1002);FactsSet("bg_text_language",1);LogChannel('BetaGwent',"TEXT_LANGUAGE_PACKAGE_DEFAULT package=1002 language=1");return 1; }
     if(value>=1&&value<=13)return value;return 1;

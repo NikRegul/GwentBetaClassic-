@@ -12,7 +12,7 @@ function extract(source,name){
 class Sprite{constructor(){this.graphics=new Proxy({},{get:()=>()=>{}});this.children=[];this.scaleX=this.scaleY=this.alpha=1;this.rotation=0;}addChild(s){s.parent=this;this.children.push(s);return s;}removeChild(s){s.parent=null;this.children=this.children.filter(c=>c!==s);}}
 const c=vm.createContext({console,Math,Number,String,Object,Sprite,int:x=>x|0,GlowFilter:class{}});
 // The elemental engine has its own production-code regression (check_elements164).
-c.elementCueFloor164=()=>0;c.drawElementCue164=()=>null;
+c.elementCueFloor164=()=>0;c.statusBudget191={remaining:600};c.drawElementCue164=()=>null;
 c.drawElement164=(parent,name)=>{assert(name==='BoardEffect_ClearWeather');const sprite=new Sprite();parent.addChild(sprite);c.animations.push({sprite,duration:2100});return true;};
 const bindings=routing.match(/BINDINGS:Object=(\{.*\});/)[1];
 vm.runInContext('var BINDINGS='+bindings+';'+['profile','projectile','tint'].map(n=>extract(routing,n)).join('\n')+'\nvar BetaGwentSpecialVfx={profile,projectile,tint};',c);
@@ -83,12 +83,13 @@ for(const id of [113206,113101,200018])for(const count of [2,3]){
 }
 vm.runInContext(`var BetaGwentWeather107={FROST_SPIKES:1,DROUGHT_SAND:2,RAGH_VEINS:3,FROTH_FOAM:4,NOVA:5};
 function rowGeometry(side,zone){if(![1,2,4].includes(zone))throw Error('invalid weather row');return {x:100,y:side*400+Math.log2(zone)*100,w:800,h:90};}
+function drawRagnarok080(parent){var s=new Sprite();parent.addChild(s);animations.push({sprite:s,duration:2017});}
 `+extract(board,'drawWeatherCast'),c);
 for(const id of [113206,113101,200018,201749,113303]){
  c.reducedMotion=false;c.animations=[];c.bursts=[];c.activeCue={kind:4,templateId:id,side:1,row:id===113303?0:1,weatherCastRows:[{side:1,zone:1},{side:1,zone:2}]};
  const parent=new Sprite();c.drawWeatherCast(parent);
  check(parent.children.length===1,'one entry overlay for the complete weather cast '+id);
- check(c.animations.length===1&&(id===113303?c.animations[0].duration===2100:c.animations[0].duration<=800),'one weather scene per cast; original clear shafts retain their lifetime');
+ check(c.animations.length===1&&(id===113303?c.animations[0].duration===2100:id===113101?c.animations[0].duration===2017:c.animations[0].duration<=800),'one weather scene per cast; original clear shafts and Ragnarok retain their lifetime');
  c.reducedMotion=true;const quiet=new Sprite();c.drawWeatherCast(quiet);check(quiet.children.length===0,'reduced motion retains state without entry animation');
 }
 // Brightness affects alpha only, independently of tempo and arrival time.

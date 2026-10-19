@@ -10,7 +10,7 @@ function extract(name){
 }
 const c=vm.createContext({Math,Number,BetaGwentVisualTimings:{FROST_INTRO:1,FOG_INTRO:1,RAIN_INTRO:1}});
 // The elemental engine has its own production-code regression (check_elements164).
-c.presentationFloor178=()=>0;c.elementCueFloor164=()=>0;c.drawElementCue164=()=>null;
+c.statusFloor191=()=>0;c.presentationFloor178=()=>0;c.elementCueFloor164=()=>0;c.statusBudget191={remaining:600};c.drawElementCue164=()=>null;
 const autoMass=/AUTO_MASS_CONSUME:Boolean=true/.test(source);
 vm.runInContext('var activeCue=null,replayFrames=[],animationTempo=1,visualTimeScale=1,MASS_TICK_MS=70,AUTO_MASS_CONSUME='+autoMass+';'+extract('cueMinimumDuration')+extract('prepareReplayTiming'),c);
 let checks=0;function check(v,n){if(!v)throw Error(n);checks++;console.log('PASS',n);}

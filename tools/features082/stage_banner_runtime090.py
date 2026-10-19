@@ -1,0 +1,8 @@
+"""Stage the banner load/layout repair, preserving the Windows clipboard bridge."""
+import stage_ui_review090 as stage
+stage.SOURCE=stage.ROOT/'BetaGwent/build/release090-final4'
+stage.OUT=stage.ROOT/'BetaGwent/build/release090-final5'
+stage.UI=stage.ROOT/'BetaGwent/build/release090-banner-runtime2'
+stage.NATIVE=stage.ROOT/'BetaGwent/build/clipboard090-r6b'
+stage.BANNERS=stage.ROOT/'BetaGwent/build/banners090-sdk-fix4'
+if __name__=='__main__':stage.main()

@@ -63,7 +63,9 @@ function optionalPosition(mandatory=false){
  check(aglais.Snapshot().locationMask!==8,'mandatory round can still use an empty Aglais body');
 }
 {
- const g=fixture();clearHand(g,2);g.match.playerOne.hasPassed=true;
+ // Isolate the empty ability/body decision from optional-round hand economy.
+ // A fixture with ten opposing cards would now correctly decline a -3+ chase.
+ const g=fixture();clearHand(g,2);clearHand(g,1);g.match.playerOne.hasPassed=true;
  add(g,112101,1,0,1,6);const aglais=add(g,142106,8,0,2,8);
  check(g.OpponentStep()&&alive(aglais),'Aglais body remains a legal winning catch after a pass');
 }

@@ -18,17 +18,24 @@ function position(kind){
  return g;
 }
 function state(g){return JSON.stringify({match:g.match.Snapshot(),live:g.live.map(c=>c.Snapshot()),draws:g.random.DrawCount(),fatal:g.IsFatal(),pending:g.IsPending()});}
+const searchPlay=CBetaGwentDuelSession.prototype.AiSimPlay;let searchPlays=0;
+CBetaGwentDuelSession.prototype.AiSimPlay=function(id){searchPlays++;return searchPlay.call(this,id);};
+function step(g){searchPlays=0;const ready=g.AiPreparationStep();check(searchPlays<=1,'one search play at most per preparation callback');return ready;}
 for(const strength of [1,2,3,4])for(const kind of [0,1,2,3,4,5]){
  Host.strength=strength;const sync=position(kind),staged=position(kind),initial=state(staged);
- let ticks=0;while(!staged.AiPreparationStep()){
+ let ticks=0;while(!step(staged)){
   check(state(staged)===initial,'preparation does not play or consume live RNG '+strength+'/'+kind+'/'+ticks);
-  if(++ticks>40)throw Error('preparation stalled');
+  if(++ticks>200)throw Error('preparation stalled');
  }
  check(staged.AiPreparationIsReady(),'preparation completes '+strength+'/'+kind);
  const original=staged.AiSimClone;let clones=0;staged.AiSimClone=function(){clones++;return original.call(this);};
  for(let i=0;i<staged.aiPreparedIds.length;i++)check(staged.AiExactTempo(staged.FindCard(staged.aiPreparedIds[i]))===staged.aiPreparedValues[i],'prepared exact result reused '+i);
  check(clones===0,'cached exact values do not repeat simulation '+strength+'/'+kind);
- const syncResult=sync.OpponentStep(),stagedResult=staged.OpponentStep();
+ const syncResult=sync.OpponentStep();let stagedResult=staged.OpponentStep();
+ while(!stagedResult&&!staged.AiPreparationIsReady()){
+  while(!step(staged)){if(++ticks>400)throw Error('chase preparation stalled');}
+  stagedResult=staged.OpponentStep();
+ }
  check(syncResult===stagedResult&&state(sync)===state(staged),'cooperative and synchronous decisions agree '+strength+'/'+kind);
  staged.match.turnSequence++;check(!staged.AiPreparationIsReady(),'next turn rejects stale preparation');
  staged.ClearAiPreparation();check(staged.aiPreparedIds.length===0&&!staged.aiPreparationReady,'reset releases search state');

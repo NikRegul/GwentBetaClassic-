@@ -1,0 +1,19 @@
+{
+  "checks": 805,
+  "platforms": {
+    "classic": {
+      "bundleResources": 408,
+      "audioSha256": "ded9e3da374f5ff2376e4a6ac3ea76bd3bd1da19221215dfe217c392c38dc09d",
+      "archive": "D:\\w3mod\\tmp\\Portable Clean Build\\BetaGwent\\build\\20261018T210923Z-7e514121\\archives\\GwentBetaClassic-0.9.0-1.32-AllLanguages.zip",
+      "archiveSha256": "c597ee07a6879e23015d369dce9e502115dde263f20f3eff858cfb3ffde135cb"
+    },
+    "nextgen": {
+      "bundleResources": 372,
+      "audioSha256": "4dde469839db55eafb28eab8b4a571f294de139a6a7991b7839e02ea2635d3e7",
+      "archive": "D:\\w3mod\\tmp\\Portable Clean Build\\BetaGwent\\build\\20261018T210923Z-7e514121\\archives\\GwentBetaClassic-0.9.0-5.0+-AllLanguages.zip",
+      "archiveSha256": "ad2234079611572089fc81a28015eafeb733f71f88a64ae21ec80bf16fe91e58"
+    }
+  },
+  "relocatedRoot": "D:\\w3mod\\tmp\\Portable Clean Build",
+  "gameplayVerified": false
+}

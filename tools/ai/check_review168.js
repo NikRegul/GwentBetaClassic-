@@ -56,6 +56,14 @@ for(const id of [113401,113302]){
  const damaging=g.visualFrames.findIndex(f=>f.kind===2&&targets.some(t=>t.Snapshot().instanceId===f.targetId));
  check(moving.length===3&&moving.every(x=>x.i<damaging),'native movement snapshots precede all Jotunn impact snapshots');
 }
+{
+ const g=fixture(1),kambi=add(g,152104,1,0,1,1),a=add(g,112101,2,0,2,8),b=add(g,112101,4,0,1,8);
+ g.recordVisuals=true;g.visualFrames=[];g.QueueDestroy(kambi);g.FlushDeaths();
+ check(!g.IsFatal()&&!alive(a)&&!alive(b),'Kambi death spawns Hemdall and kills units on both sides');
+ const deaths=g.visualFrames.filter(f=>f.kind===3&&[a.Snapshot().instanceId,b.Snapshot().instanceId].includes(f.targetId));
+ check(deaths.length===2&&deaths.every(f=>f.templateId===152402&&f.sourceId>0),'every swept victim retains Hemdall as the Scorch visual source');
+ check(g.CountLocation(1,4)+g.CountLocation(1,2)+g.CountLocation(1,1)===1,'Hemdall survives his own sweep');
+}
 globalThis.report={stage:168,checks,actualWitcherScript:true,nativeGameTested:false};
 `,context,{filename:'review168.bundle.js',timeout:120000});
 fs.writeFileSync('docs/evidence/review168.json',JSON.stringify(context.report,null,2)+'\n');console.log(JSON.stringify(context.report));

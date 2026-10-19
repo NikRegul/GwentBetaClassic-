@@ -15,7 +15,7 @@ class Bitmap{constructor(data){this.bitmapData=data||{width:1024,height:512};}}
 class Matrix{constructor(...args){this.values=args;}}
 const c=vm.createContext({Math,Object,Number,String,Sprite,Bitmap,Matrix,ColorTransform:class{},int:v=>v|0});
 // The elemental engine has its own production-code regression (check_elements164).
-c.presentationFloor178=()=>0;c.elementCueFloor164=()=>0;c.drawElementCue164=()=>null;
+c.statusFloor191=()=>0;c.presentationFloor178=()=>0;c.elementCueFloor164=()=>0;c.statusBudget191={remaining:600};c.drawElementCue164=()=>null;
 let checks=0;function check(v,label){assert(v,label);checks++;}
 vm.runInContext(`var shared=null,shared2=null;function Atlas(){return new Bitmap();}function Atlas2(){return new Bitmap({width:1024,height:256});}`+extract(art,'additive')+extract(art,'cell')+';var ADDITIVE={0:1,1:1};',c);
 for(let index=0;index<48;index++)for(const size of [[80,100],[240,60],[8,4]]){

@@ -116,6 +116,7 @@ function BetaGwentSyncSkelligeQuestProgress()
 {
     var manager : CWitcherJournalManager;var entries : array<CJournalBase>;
     var objective : CJournalQuestObjective;var questEntry : CJournalQuest;var phase : CJournalQuestPhase;var i,j,k,count,current : int;
+    if(BetaGwentCleanupBlocked())return;
     manager=theGame.GetJournalManager();if(!manager)return;
     count=BetaGwentSkelligeQuestClaims();if(count==0)return;
     // Follow the native quest-menu traversal. Activated roots are quests;
@@ -150,12 +151,14 @@ private var betaGwentQuestSyncPasses : int;
 @addMethod(W3PlayerWitcher)
 public function BetaGwentScheduleQuestSync()
 {
+    if(BetaGwentCleanupPending())return;
     RemoveTimer('BetaGwentQuestSyncTick');betaGwentQuestSyncPasses=3;
     AddTimer('BetaGwentQuestSyncTick',3.0f,false);
 }
 @addMethod(W3PlayerWitcher)
 private timer function BetaGwentQuestSyncTick(deltaTime : float, timerId : int)
 {
+    if(BetaGwentCleanupPending())return;
     BetaGwentSyncSkelligeQuestProgress();betaGwentQuestSyncPasses-=1;
     if(betaGwentQuestSyncPasses>0)AddTimer('BetaGwentQuestSyncTick',3.0f,false);
 }

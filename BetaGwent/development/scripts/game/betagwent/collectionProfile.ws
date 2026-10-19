@@ -98,6 +98,7 @@ private function BetaGwentApplyStarterSet()
 public function BetaGwentEnsureCollection() : bool
 {
     var ids : array<int>; var i,j,k,needed,leader,faction : int; var title : string;var preset : SBetaGwentDuelPreset;var validation : SBetaGwentDeckValidation;
+    if(BetaGwentCleanupPending())return false;
     if(betaGwentCollectionSchema!=0) {
         if(betaGwentCollectionSchema!=1 || betaGwentOwnedIds.Size()!=betaGwentOwnedCopies.Size())return false;
         if(!betaGwentCollectionSeeding) {
@@ -203,6 +204,7 @@ public function BetaGwentWinReward(deck : name, npcId : int, optional actorKey :
 public function BetaGwentRewardActorKey(actor : CEntity) : int
 {
     var i,legacyWins,runtimeId : int;var handle : EntityHandle;
+    if(BetaGwentCleanupPending())return 0;
     if(!actor || betaGwentRewardActors.Size()!=betaGwentRewardActorWins.Size())return 0;
     for(i=0;i<betaGwentRewardActors.Size();i+=1)
         if(EntityHandleGet(betaGwentRewardActors[i])==actor)return i+1;

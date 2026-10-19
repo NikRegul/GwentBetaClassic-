@@ -27,7 +27,7 @@ check(fs.existsSync('docs/evidence/banish160.json'),'extraction evidence');
 // Routing
 const c=vm.createContext({Math,Object,Number,String,Array,int:v=>v|0,cards:[]});
 // The elemental engine has its own production-code regression (check_elements164).
-c.presentationFloor178=()=>0;c.elementCueFloor164=()=>0;c.drawElementCue164=()=>null;
+c.statusFloor191=()=>0;c.presentationFloor178=()=>0;c.elementCueFloor164=()=>0;c.statusBudget191={remaining:600};c.drawElementCue164=()=>null;
 vm.runInContext(extract(board,'banishCueTarget'),c);
 check(c.banishCueTarget({kind:12,target:7,templateId:1},7),'BanishOrdinary target');
 check(!c.banishCueTarget({kind:12,target:7,templateId:201523},7),'Yrden reset is not a banish');
