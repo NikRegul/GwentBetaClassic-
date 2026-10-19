@@ -12,7 +12,7 @@ Version **0.9.0** brings standalone Gwent Beta 0.9.24 into The Witcher 3, with s
 - Explicit profile cleanup with a saved guard against reinitialization after cleanup; incomplete inventory removal produces a single failure result.
 - Corrected Myrgtabrakke and Harald the Cripple hit counts, plus the existing AI, controller, weather, audio and Classic compatibility work.
 
-The offline final9 audit passed 1,426 tactical scenarios, 414 row-choice cases, 46 self-play matches, profile and cleanup fixtures, and 344 isolated native clipboard checks. ZIP hashes and every packaged file were verified. This does not replace a clean-install test in both games. Remaining findings include missing embedded glyphs in some CJK tutorial text, the old standalone Verify default, and an older CleanBuild export; see the [audit](docs/reviews/2026-10-19-final9-audit.md).
+The offline final9 audit passed 1,426 tactical scenarios, 414 row-choice cases, 46 self-play matches, profile and cleanup fixtures, and 344 isolated native clipboard checks. ZIP hashes and every packaged file were verified. This does not replace a clean-install test in both games. Remaining runtime/build findings include missing embedded glyphs in some CJK tutorial text and an older CleanBuild export; the stale standalone Verify launcher has been removed; see the [audit](docs/reviews/2026-10-19-final9-audit.md).
 
 ## Languages and installation
 
@@ -24,6 +24,7 @@ Back up saves and replace the previous folders of this mod. Copy `Mods` into the
 - [Complete Nexus description: 13 languages, BBCode](docs/releases/0.9.0/nexus/NEXUS_DESCRIPTION_0.9.0.bbcode.txt)
 - [Changelog (EN)](docs/releases/0.9.0/nexus/en/changelog.md) / [RU](docs/releases/0.9.0/nexus/ru/changelog.md)
 - [Regression scenarios (RU)](docs/releases/0.8.2/regression/SCENARIOS_RU.md)
+- [First build on a new Windows PC (RU)](docs/BUILD_FIRST_TIME_RU.md)
 - [0.9.0 release hashes](docs/releases/0.9.0/release.json), [build and resource guide (RU)](docs/BUILD_0.9.0_RESOURCE_HANDOFF_RU.md), [audit (RU)](docs/reviews/2026-10-19-final9-audit.md)
 
 ## Source and build scope
@@ -31,6 +32,8 @@ Back up saves and replace the previous folders of this mod. Copy `Mods` into the
 This repository contains source code, generators, tests and documentation. Game clients, original art, fonts, voices, native resource templates, SDKs, private Wwise projects, release ZIPs, memory dumps and saves are excluded. Building requires the configured local Windows/REDkit toolchain and prepared resource snapshots; a clean clone alone is insufficient. See the [local dependency guide](docs/LOCAL_INPUTS_0.6.1.md) and the current build record above. Older stage documents describe their historical versions.
 
 Runtime sources are in `BetaGwent/development/scripts`, shared Next-Gen UI in `BetaGwent/ui/src`, and prepared Classic scripts/UI in `BetaGwent/platforms/classic132`. `BetaGwent/native/clipboard` contains the optional bridge source. `tools/features082` contains the 0.9.0 checks, publication generators and packaging tools. The exact source hashes are recorded in [github090-sources.json](docs/evidence/github090-sources.json). Prepared art, sound and frozen templates remain local build inputs; they are not included in this repository.
+
+Historical publication copies and disposable build reports are available in Git history. See the [repository cleanup record](docs/reviews/2026-10-19-repository-cleanup.md) for removed paths, retained build dependencies and detailed audit results.
 
 ## Contributing
 

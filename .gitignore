@@ -26,3 +26,10 @@ obj/
 *.sav
 .env
 .codex/
+
+# Disposable compiler logs and verbose audit output; summaries remain tracked.
+/tools/**/build/
+/docs/evidence/stage*-board-*.json
+/docs/evidence/stage*-board-*.txt
+/docs/evidence/final9-audit/tactics/report.json
+/docs/evidence/final9-audit/rows/report.json

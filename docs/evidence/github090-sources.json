@@ -13297,8 +13297,8 @@
     },
     {
       "path": "tools/features082/prepare_github090.py",
-      "sha256": "c991a6349621a340a785c18c929ce8e9f3d5020f16a816f4b6a39644664cee2b",
-      "bytes": 5097
+      "sha256": "cf9acd139f7f97bfd63a3861f165e85118651f5f7c6b0e65b9a1811b874a86f2",
+      "bytes": 5112
     },
     {
       "path": "tools/features082/prepare_import090.py",
@@ -15677,48 +15677,48 @@
     },
     {
       "path": "docs/releases/0.9.0/nexus/de/description.bbcode.txt",
-      "sha256": "24e1b92ab820f40fd687c4c7db222fbc92e7d3ab333d4dcd2c80c11fb5d5b12a",
-      "bytes": 16906
+      "sha256": "2c63f67c70df2bd63ed503508d464b0c58b174cc95bd5155245356ceb4b25665",
+      "bytes": 17716
     },
     {
       "path": "docs/releases/0.9.0/nexus/de/description.md",
-      "sha256": "df05446d6290d4459002cad5891c99ccc3cbc9ad8588ecf61ca6b2ddbfad2d05",
-      "bytes": 15450
+      "sha256": "7379b522f6bb3c11bd73482ec77cd54786b226d83694e78e7f05bbbb35fca86b",
+      "bytes": 16260
     },
     {
       "path": "docs/releases/0.9.0/nexus/de/manual.md",
-      "sha256": "37eb58d33db9d66748595f6995909a4a17bf2aaf695c5900b4ef3baf04fd95d1",
-      "bytes": 12683
+      "sha256": "463952bcae3b959e26c91b0f5707d4e5ef5b1599c0f3cda4b65138b8adde0c17",
+      "bytes": 13261
     },
     {
       "path": "docs/releases/0.9.0/nexus/DESCRIPTION_0.9.0.md",
-      "sha256": "0450cc7d18c2f0f888d7b2398fb32fd453859b3f44c8c8b6b05cb3a26f951623",
-      "bytes": 212939
+      "sha256": "b80efa811560bdde6db2a3ef090109b2ca0cbbfd84d49ed0f0e0ffef2f7c221c",
+      "bytes": 223564
     },
     {
       "path": "docs/releases/0.9.0/nexus/en/changelog.bbcode.txt",
-      "sha256": "9389c619aa5d1d6dcb4cd07919352d0dce89e86084d2955ec5665ebbe475f9ac",
-      "bytes": 7888
+      "sha256": "f5b8bb3c14fc71c9c79ac42bcec1b1a0e031e08ddffb2e274f5ee43b63db3cb7",
+      "bytes": 8482
     },
     {
       "path": "docs/releases/0.9.0/nexus/en/changelog.md",
-      "sha256": "a52255acdba698894f41c319928a80a994a5badc0cd69dc357a895e0f4ae19e2",
-      "bytes": 7348
+      "sha256": "ec43c3127568a23ac652fd3c43fe6b9733173f1b22ab280c72c1355fc468d40f",
+      "bytes": 7938
     },
     {
       "path": "docs/releases/0.9.0/nexus/en/description.bbcode.txt",
-      "sha256": "16768ad05d8cadd97e5aba8c31da057f998056241007e7f46db3ceba41f79285",
-      "bytes": 17530
+      "sha256": "699e991ecd35ba70151bc62b89c7458cd6897a6dd6a11e731cbc5cbd57464490",
+      "bytes": 18271
     },
     {
       "path": "docs/releases/0.9.0/nexus/en/description.md",
-      "sha256": "38674da1196de854756635069767d7e53738e566d22064409fe476d7523d8526",
-      "bytes": 16074
+      "sha256": "9ebc3f030adfd1430dfb8df1e2fd3326fd1588d4692bf071d11e29ea692e8d68",
+      "bytes": 16815
     },
     {
       "path": "docs/releases/0.9.0/nexus/en/manual.md",
-      "sha256": "b2f242e0059239552938c4079e3db183f00d63e5eb39873c332581df8426bcea",
-      "bytes": 13519
+      "sha256": "77237c29c50b9466292e84640b8e333e0429129255b726e8c33876053576b455",
+      "bytes": 14018
     },
     {
       "path": "docs/releases/0.9.0/nexus/en/post.bbcode.txt",
@@ -15732,98 +15732,98 @@
     },
     {
       "path": "docs/releases/0.9.0/nexus/es/description.bbcode.txt",
-      "sha256": "c23a720e6b39b905fa045b68df5def9b1a5997505f062a7bf01a3f94b6dc3dcb",
-      "bytes": 16707
+      "sha256": "b6bba3c45f683432ccb8bde4ce462e217258f1c9a24ca99d07ffcf8f0a74c066",
+      "bytes": 17527
     },
     {
       "path": "docs/releases/0.9.0/nexus/es/description.md",
-      "sha256": "0356b42d92890c6e93c5a187e3148a33287256d88d8faad2026f5b3ed82709be",
-      "bytes": 15251
+      "sha256": "55969779d90b6bc48aa2dc6437e6dbf655b20afa7a1b4c50b384afcfe67ccb9b",
+      "bytes": 16071
     },
     {
       "path": "docs/releases/0.9.0/nexus/es/manual.md",
-      "sha256": "bba1d34beb839fdf6645884b4c496c88940da2d2630ac2dd4ee5f8a55b7b101f",
-      "bytes": 12545
+      "sha256": "f83565c9cac54d04ff63bb91a5af0e229e4397f1baeab70872cc3abb5ca3b1a8",
+      "bytes": 13126
     },
     {
       "path": "docs/releases/0.9.0/nexus/es-mx/description.bbcode.txt",
-      "sha256": "423e4d84e2fe7b6b676635da12298f8cf9f536af351c527b98c5d35dd5ba1bb7",
-      "bytes": 16777
+      "sha256": "10d0ab10d79432b3a55ddb882defedb6ffd0023796a062d79cef77f7c1497897",
+      "bytes": 17599
     },
     {
       "path": "docs/releases/0.9.0/nexus/es-mx/description.md",
-      "sha256": "f6992d594a53f00d13f6008ea4a2965235fc2c342a0bc1cf0d25eef424a74a6a",
-      "bytes": 15321
+      "sha256": "8d5bc9d02db3cdbaeb050807fb0ab3a99fc20c01567a7e4c687551d748796179",
+      "bytes": 16143
     },
     {
       "path": "docs/releases/0.9.0/nexus/es-mx/manual.md",
-      "sha256": "df0f30484a6065272377f87456bf70a44cb919aea9ac8f00577aacaa79e21055",
-      "bytes": 12600
+      "sha256": "6128528b92da2ed7399a19ee08c3dc0234db2030f89f57626e9dcbaa84a63c64",
+      "bytes": 13183
     },
     {
       "path": "docs/releases/0.9.0/nexus/fr/description.bbcode.txt",
-      "sha256": "7660f5efece28cf7eaf6a7e1ebd798af0f561e8bfec395ea8fcbda099294e2bc",
-      "bytes": 17608
+      "sha256": "e32c1231e86c1a7b4ca9de0d845e9456c33f0e321cc222d5be7cd25326381b18",
+      "bytes": 18472
     },
     {
       "path": "docs/releases/0.9.0/nexus/fr/description.md",
-      "sha256": "c73cd129a48132b7946e3e1c1d95ccd7be230e3ca0e019b3cf058379f6fb64c4",
-      "bytes": 16152
+      "sha256": "22bb5238402a80906a237ff352354c8f5dad3a80a9ae7fa92611d13220df2902",
+      "bytes": 17016
     },
     {
       "path": "docs/releases/0.9.0/nexus/fr/manual.md",
-      "sha256": "d5c41b4b061bc2ec0f20601147dbc759dc00e66f857a1eb3050a241e123b958e",
-      "bytes": 13271
+      "sha256": "609520712a32d248f4e34b3fb2686cd9fca41842b896316b43302496842d2667",
+      "bytes": 13898
     },
     {
       "path": "docs/releases/0.9.0/nexus/it/description.bbcode.txt",
-      "sha256": "22003cdb394f2c7830b7612346f85e2aa1cf4a50ca18be4f90ecb5d58839a35f",
-      "bytes": 16747
+      "sha256": "fe6a554970938c9a51c0f5ed4d99c2eb08e7a5437dcff09e211b6a25ac36c9bf",
+      "bytes": 17536
     },
     {
       "path": "docs/releases/0.9.0/nexus/it/description.md",
-      "sha256": "04210bdfbb4a9c9d88e615e31859c8e35ea086fd150c90cef9ab6ddcdaed80e9",
-      "bytes": 15291
+      "sha256": "f03a45466e9328465ab97ae1a34b31c1c2cf3400d1863de90822f60f66a5b884",
+      "bytes": 16080
     },
     {
       "path": "docs/releases/0.9.0/nexus/it/manual.md",
-      "sha256": "c454ec1c331656bb691f796b8d131f24e9f9b720819c93cd769b487366529ce9",
-      "bytes": 12519
+      "sha256": "5b6b18520cfabcf2e7d7a2273e909983bad1d026ce2c005823223c614845c268",
+      "bytes": 13068
     },
     {
       "path": "docs/releases/0.9.0/nexus/ja/description.bbcode.txt",
-      "sha256": "ceac98e7dd5034796a60339bcef23480fc82ca49a89a29f892cc4eff9d47c710",
-      "bytes": 19937
+      "sha256": "c74287817db57d6223486fe249471a9dc745ede4957039a0b61e966543dae942",
+      "bytes": 20903
     },
     {
       "path": "docs/releases/0.9.0/nexus/ja/description.md",
-      "sha256": "f375328290c99e4828275abb6f13f0b642da522a0d4522a971ae868911607829",
-      "bytes": 18481
+      "sha256": "139aaea53b81d30d92f3b3e836b70e991a2f20e9b07381fc385a4ad433d2d4f5",
+      "bytes": 19447
     },
     {
       "path": "docs/releases/0.9.0/nexus/ja/manual.md",
-      "sha256": "38bd204fa192a719469e9e056f049b4f7d868e88ec75f38cf10234dd3b231000",
-      "bytes": 15289
+      "sha256": "9250fe8dcf6c2bbd91dacd048613a2ce65d54f5c14b49dc9ff16d4f255893e20",
+      "bytes": 16022
     },
     {
       "path": "docs/releases/0.9.0/nexus/ko/description.bbcode.txt",
-      "sha256": "36bfa8e10b1ca1bae613c1576855d33cc207dc6db15061c3e7371a5be35dc083",
-      "bytes": 18143
+      "sha256": "3792d0fe156ca8a8ff54bfc841d488e0f3e8aaef132d18870a1207df4a674708",
+      "bytes": 18957
     },
     {
       "path": "docs/releases/0.9.0/nexus/ko/description.md",
-      "sha256": "1d212e217a075bee21dda50be67145e415589142e040771d4f7dabf9bfec25f7",
-      "bytes": 16687
+      "sha256": "f38bb24e923535427539cd2f06bc0b830e4d1ae07cfa346123fee603c3148042",
+      "bytes": 17501
     },
     {
       "path": "docs/releases/0.9.0/nexus/ko/manual.md",
-      "sha256": "d910dbaa33f5e1bb1341f50770e73b6b2663bc7b8dc688380a84b1477ac14279",
-      "bytes": 13718
+      "sha256": "4f43297be90721c32c8c5910fe8f5fd0d42e2ab93e4116920e2531fce7a53b1b",
+      "bytes": 14299
     },
     {
       "path": "docs/releases/0.9.0/nexus/NEXUS_DESCRIPTION_0.9.0.bbcode.txt",
-      "sha256": "b976ce0f3c621861ca2ddad5b3c34d89710b26403bde32b2b817b20dd84f5fc9",
-      "bytes": 231985
+      "sha256": "919fda8b221a84caf75c6b8e356d93fc11028f5f7ffc47dc8fb13dff2148fd8e",
+      "bytes": 242616
     },
     {
       "path": "docs/releases/0.9.0/nexus/NEXUS_POST_0.9.0_EN_RU.bbcode.txt",
@@ -15832,18 +15832,18 @@
     },
     {
       "path": "docs/releases/0.9.0/nexus/pl/description.bbcode.txt",
-      "sha256": "093861a66882b3a457a4c45b1caedb9b3c7e4ea9d1cf4e36469bc8baabb10d9f",
-      "bytes": 15993
+      "sha256": "60b38baedb592b90230d5bb4af4056a0f42d2f8fac0764acc544539a5afe7b21",
+      "bytes": 16729
     },
     {
       "path": "docs/releases/0.9.0/nexus/pl/description.md",
-      "sha256": "4a3551da7247f5e86df2ab06a006b3213173486ed396b963bb8102b05ddc8f71",
-      "bytes": 14537
+      "sha256": "aa0b3f441f49d77fabd8a486639083a667dac5ade7cc5732fe03a211b4b9c834",
+      "bytes": 15273
     },
     {
       "path": "docs/releases/0.9.0/nexus/pl/manual.md",
-      "sha256": "e06a128c994dcbb2c5885afbed37947bdf4bf596fb3c27fa92d1c7ba91b31975",
-      "bytes": 11731
+      "sha256": "c41a49103340fe646ef1dac07bee40c307f5dc4dfa1fc98604ada60a24ee1adf",
+      "bytes": 12230
     },
     {
       "path": "docs/releases/0.9.0/nexus/POST_0.9.0_EN_RU.md",
@@ -15852,48 +15852,48 @@
     },
     {
       "path": "docs/releases/0.9.0/nexus/pt-br/description.bbcode.txt",
-      "sha256": "c0192f69c3f0f71326a4523907ee460e448f3d4605067287700369a761779661",
-      "bytes": 16388
+      "sha256": "b31319741b0d36c49f96790a7677790e788cdcdd37a6469e3f4c23820a1eed8a",
+      "bytes": 17150
     },
     {
       "path": "docs/releases/0.9.0/nexus/pt-br/description.md",
-      "sha256": "eb68969ee68e3f1c6dac7d568d705e86913a77bee891fed24eaf2075dc6a8bd3",
-      "bytes": 14932
+      "sha256": "de1a8d5bd58e1de6b4281c66bce4fefef830da1ab21fe32d73cf33390cc97456",
+      "bytes": 15694
     },
     {
       "path": "docs/releases/0.9.0/nexus/pt-br/manual.md",
-      "sha256": "fa7228c98a8a03fbff6a643bcf1e24eb5f605cea9bed3af8b2d3efb429565eb4",
-      "bytes": 12259
+      "sha256": "911ed4aaa7f0ed043b6702484f56586cfeb54eb48d5a535b6602d4bf646d407e",
+      "bytes": 12784
     },
     {
       "path": "docs/releases/0.9.0/nexus/README_RU.md",
-      "sha256": "4e33dc26ab872eb3b69a3d3a1353f8f62af8b66e46b409b22e0c13e90ea6414f",
-      "bytes": 3410
+      "sha256": "b227e37abb5ea93fdfe94dc12eab8bf6ef5697592468ab1cde586041cac2b375",
+      "bytes": 3429
     },
     {
       "path": "docs/releases/0.9.0/nexus/ru/changelog.bbcode.txt",
-      "sha256": "012ec46b8f420db5033a34b05563726d09e1f47ccabcc393ec2b5c67d7639b2f",
-      "bytes": 13767
+      "sha256": "7ef7092e15a14beab1d316e4335fc47db96a17a9f014ca3857e972d789d9119e",
+      "bytes": 14883
     },
     {
       "path": "docs/releases/0.9.0/nexus/ru/changelog.md",
-      "sha256": "ebcaf30a6cd10034be1502e14b90d3479af84d9e3edf09e936e56412506cb5a1",
-      "bytes": 13227
+      "sha256": "ebd92f5b397b59dbbbe371c38d95341dff410014412d40a5802ae5141e161e3c",
+      "bytes": 14339
     },
     {
       "path": "docs/releases/0.9.0/nexus/ru/description.bbcode.txt",
-      "sha256": "ce4159474b2ae09ac9b66ff422ce4ce981accf3a9dce5c887696396b9983c54e",
-      "bytes": 28910
+      "sha256": "7237bd00e56bfa82386cc74323d2f8d28387c1a79112fa62c9a6c9bb3ec74f22",
+      "bytes": 29968
     },
     {
       "path": "docs/releases/0.9.0/nexus/ru/description.md",
-      "sha256": "f42ad612207bd244760055f97d2d272eb6a301c852491abf5f8aba26caa49521",
-      "bytes": 27454
+      "sha256": "24e3d31eb958fbdce4a452bbce5c542ef9ab2db922365730a28180b57ff603c0",
+      "bytes": 28512
     },
     {
       "path": "docs/releases/0.9.0/nexus/ru/manual.md",
-      "sha256": "6b1c3a77cbc467b25fc4f6fe15b61d724eb5f78898d9bef6c1e9417e874db720",
-      "bytes": 22964
+      "sha256": "d1a425e8b61ee944421a85fd2e528b128592d114692efe161899a1f4a1bce84c",
+      "bytes": 23782
     },
     {
       "path": "docs/releases/0.9.0/nexus/ru/post.bbcode.txt",
@@ -15907,8 +15907,8 @@
     },
     {
       "path": "docs/releases/0.9.0/nexus/validation.json",
-      "sha256": "34c15787e133a3bed1e629c3e4268662c0ad0b705daec0d338e9d95d407fd3c2",
-      "bytes": 2060
+      "sha256": "2c5e4a117aa8d3d76646aa83d283f431c6c056b9bccd7ad91de8c226556aeaad",
+      "bytes": 2113
     },
     {
       "path": "docs/releases/0.9.0/nexus/visual-qa.json",
@@ -15917,33 +15917,33 @@
     },
     {
       "path": "docs/releases/0.9.0/nexus/zh-cn/description.bbcode.txt",
-      "sha256": "b30f388bf751cc30c2daec77d766479a264eb46881a80ce191802389c7ef3cc8",
-      "bytes": 14738
+      "sha256": "ad34d1c3bfee44e848ce2ac901ecbb65975ff210a905445c682d4997585bdbdd",
+      "bytes": 15425
     },
     {
       "path": "docs/releases/0.9.0/nexus/zh-cn/description.md",
-      "sha256": "8806da08b3fce2aafcbbcb42d6069661bfca099eb6b115cfb284d669115c7b03",
-      "bytes": 13282
+      "sha256": "125ec7ea6dc4668fa6de99ce73df3e3c1542475bd9139d129a577ed67d4a71ee",
+      "bytes": 13969
     },
     {
       "path": "docs/releases/0.9.0/nexus/zh-cn/manual.md",
-      "sha256": "d76bfd071f8acd99df6317f1bf0cc6804a9db573fed1959764b6ef967b7c5a67",
-      "bytes": 10845
+      "sha256": "3289bdf8afccb284f0fd44c3dae5e68cdaf683c09fa6d1affd568c7675dd2c77",
+      "bytes": 11302
     },
     {
       "path": "docs/releases/0.9.0/nexus/zh-tw/description.bbcode.txt",
-      "sha256": "ead84592d328c3c0b05a7ca4913efd8c147c7685749eb28817ee76c52b3932e2",
-      "bytes": 14747
+      "sha256": "be5f6fc9d639ed5f822610bbf7ffc5c57ce735f090d89b8e4ce1f18f6b02280b",
+      "bytes": 15437
     },
     {
       "path": "docs/releases/0.9.0/nexus/zh-tw/description.md",
-      "sha256": "b67fcd9405387cf31a02c1f69fed5a294ce48fa813ca5e69edb3c2588652bbec",
-      "bytes": 13291
+      "sha256": "9edeacedb346db47ffc49c59fcbde3059f4d66d6b9119a068f7d56bb490bdb93",
+      "bytes": 13981
     },
     {
       "path": "docs/releases/0.9.0/nexus/zh-tw/manual.md",
-      "sha256": "ed3e36c0189a66ff760a66a0ce95d2cb03a419e48b02f65d68401ff677a77511",
-      "bytes": 10851
+      "sha256": "0aea86eea7f22e405864aa58ca4f4ab33843f7ef1b52d5679529353ac064986b",
+      "bytes": 11311
     },
     {
       "path": "docs/releases/0.9.0_CLEANER_RU.md",
@@ -15952,13 +15952,13 @@
     },
     {
       "path": "docs/releases/0.9.0_CLEANUP_EN.md",
-      "sha256": "0317df0bb70df2a6cb58f06ffd05a17165ccf730801561ba8bfed391c6558cfc",
-      "bytes": 1776
+      "sha256": "3308883aa3dcf79d5babaa599c4af22e0ad0257e81422b1d5aa34cbdb86a0cd3",
+      "bytes": 2162
     },
     {
       "path": "docs/releases/0.9.0_CLEANUP_RU.md",
-      "sha256": "d4f4274945975287bf8a795379919e73b5ca795767a32f19f50b3019651ce269",
-      "bytes": 3094
+      "sha256": "8e28557352a51835b814abd2b814594f9affe64d7adb7b0d9829377b1b973bcf",
+      "bytes": 3666
     },
     {
       "path": "docs/reviews/2026-10-18-ai082-post-build.md",
@@ -16047,8 +16047,8 @@
     },
     {
       "path": "docs/reviews/2026-10-19-final9-audit.md",
-      "sha256": "682347182de10c8c8a46194e0a8edbd6e97d291698aca3bebf2673307ff15989",
-      "bytes": 11762
+      "sha256": "26d9cba5dfa95705bd38c6eb7c1419b5591e50be5ee66f9ee1f3d3d0c36b1dce",
+      "bytes": 12316
     },
     {
       "path": "docs/reviews/2026-10-19-save-reset081.md",
@@ -16087,8 +16087,8 @@
     },
     {
       "path": "docs/README.md",
-      "sha256": "49a385790310c83b30da36be6af9d338e13bd9cdeea6d07be39174db9de96d72",
-      "bytes": 4879
+      "sha256": "5070d467dfbaa0fe80cd559edb9e02911ce927adf7c999dee94b80ae927f6f77",
+      "bytes": 2296
     },
     {
       "path": "docs/testing.md",
@@ -16106,54 +16106,9 @@
       "bytes": 19945
     },
     {
-      "path": "Build-0.9.0-Final.cmd",
-      "sha256": "de78ce4f8eb5fee013fae14e2675272dabfb1b96a955e2f29625eb55ee53847b",
-      "bytes": 1822
-    },
-    {
-      "path": "Build-0.9.0-Final2.cmd",
-      "sha256": "fbd2f32640b418349f5cf6832cdb91f527b6c006df79aaa75bfff9cb36d23860",
-      "bytes": 3522
-    },
-    {
-      "path": "Build-0.9.0-Final6.cmd",
-      "sha256": "14a55696c7900372b4dbe4a7244efceb892ec5adcd5c2de1c3880aac7bddc978",
-      "bytes": 2132
-    },
-    {
-      "path": "Build-0.9.0-Final7.cmd",
-      "sha256": "faf3c1324e9cede1094e1ac16ce78372ae573750e2b0650ab90abec5ddc789c5",
-      "bytes": 2739
-    },
-    {
-      "path": "Build-0.9.0-Final8.cmd",
-      "sha256": "86d036dcf02f2d5c7a8a2171bd3c7c14a2a1ee041c92b2fe0ba38f1b5fa8e214",
-      "bytes": 1862
-    },
-    {
       "path": "Build-0.9.0-Final9.cmd",
       "sha256": "1837f15f4d73c3f0086677b9aae709d251fe686a4449a94753c481f2234180e4",
       "bytes": 2389
-    },
-    {
-      "path": "Build-0.9.0-UIReview.cmd",
-      "sha256": "a7e5c2b8ebc76ab9dc7c10af57ef9aa9c75705d7d8ad16aa3a0aab66165646a4",
-      "bytes": 1626
-    },
-    {
-      "path": "Repack-0.9.0-Optional.cmd",
-      "sha256": "3a3320c556f223bfc0d6c15cb6e617fa6aed4b1bffd4575e09472dfb6e35f3cd",
-      "bytes": 444
-    },
-    {
-      "path": "Verify-0.9.0-Final.cmd",
-      "sha256": "eb3d80241c1d3885d8acef318a7f3a98ac7e9ab3a22818017768133e83d9f3d3",
-      "bytes": 86
-    },
-    {
-      "path": "Build-Clipboard-r5.cmd",
-      "sha256": "56c0d08867cdfb188c8626510b6a90f8eccb517bbc58a7b9e882d71c910ea6b1",
-      "bytes": 1133
     },
     {
       "path": "Build-Clipboard-r7.cmd",
@@ -16174,16 +16129,6 @@
       "path": "docs/evidence/final9-audit/selfplay.json",
       "sha256": "f2d117fa9fd70b9ccfe90272c31c847b5c2b345fe7d57ae23a53c9f700bc9b33",
       "bytes": 7452
-    },
-    {
-      "path": "docs/evidence/final9-audit/tactics/report.json",
-      "sha256": "da6db0e1ae0dceb853c076bcbadc742f19a8e4cd9e0d2df81ead51430c491321",
-      "bytes": 16696543
-    },
-    {
-      "path": "docs/evidence/final9-audit/rows/report.json",
-      "sha256": "62b433cb4db64c93172b2259a656cc0e82437adaabf04138b83a06e182f2d77b",
-      "bytes": 1173442
     },
     {
       "path": "docs/evidence/final9-audit/locales.json",
@@ -16214,6 +16159,53 @@
       "path": "docs/releases/0.9.0/release.json",
       "sha256": "fc6a8521252dfce191afe54af4410632ba8c1381c7aade4879480a43e80bb218",
       "bytes": 1499
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 617,
+      "sha256": "ac0d3760a0924d243eb90e67826469f9e1333c5216b2802dc2ddb1a41f6bbd5d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4991,
+      "sha256": "1abbb7f51a86b0557afc15a3e646eaaffad8dd0dd177efda1dabcdeae6287b1e"
+    },
+    {
+      "path": "docs/BUILD_FIRST_TIME_RU.md",
+      "bytes": 14823,
+      "sha256": "2a6bf63ea0657eea050d3aab3d98f9b3cdd2cfe26d91070c83ff95560b32a8d9"
+    },
+    {
+      "path": "docs/evidence/README.md",
+      "bytes": 1360,
+      "sha256": "0feab2a7f69d4362f45e4cc55763d3dd8979817bd927d646896dc71d31a97fe6"
+    },
+    {
+      "path": "docs/evidence/final9-audit/rows/summary.json",
+      "bytes": 2857,
+      "sha256": "2809ec781fb142754b63a57753e97814a539e58496bd1d217f3ef2e9dab28fc1"
+    },
+    {
+      "path": "docs/evidence/final9-audit/tactics/summary.json",
+      "bytes": 978,
+      "sha256": "d62a0b8f064ade04a0ae2a564c287fd75534806e74df0a96e4538ebd2b0501cf"
+    },
+    {
+      "path": "docs/reviews/2026-10-19-repository-cleanup.json",
+      "bytes": 187232,
+      "sha256": "518def96b60c0461038e5df201b39455a4f3a30c692ad0588b7378a4fac69a92"
+    },
+    {
+      "path": "docs/reviews/2026-10-19-repository-cleanup.md",
+      "bytes": 4538,
+      "sha256": "c1436333edbc785bfca98ee24691183dce8414be6970aacbd8e444cde8cc4281"
     }
-  ]
+  ],
+  "repositoryMaintenance": {
+    "baseCommit": "3e18306295b1a437f88c3f3b720442d974517ca3",
+    "removedFiles": 766,
+    "historyRewritten": false,
+    "runtimeSourcesUnchanged": true,
+    "note": "Current file hashes refreshed after publication documentation and repository cleanup; the gameplay audit remains the historical final9 run."
+  }
 }

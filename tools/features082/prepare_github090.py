@@ -56,9 +56,10 @@ def main():
             if p.suffix in {'.md','.json'}:copy(p,p.relative_to(ROOT))
     for rel in ['AGENTS.md','BetaGwent/ui/README.md','BetaGwent/release/0.9.0_CURRENT_RU.md','docs/BUILD_RU.md','docs/BUILD_EN.md','docs/README.md','docs/testing.md','docs/VFX_RENDERING_RULES_RU.md','docs/BUILD_0.9.0_RESOURCE_HANDOFF_RU.md']:
         copy(ROOT/rel,rel)
-    for p in ROOT.glob('*0.9.0*.cmd'):copy(p,p.name)
-    for p in ROOT.glob('Build-Clipboard-*.cmd'):copy(p,p.name)
-    for rel in ['packages.json','rules/manifest.json','selfplay.json','tactics/report.json','rows/report.json','locales.json','clipboard-gate.json','cleaner/cleanup-tests.json','audio/intro-audio-tests.json','trial178.json']:
+    # Export only the launchers matching this final9/r7 source snapshot.
+    for name in ['Build-0.9.0-Final9.cmd', 'Build-Clipboard-r7.cmd']:
+        copy(ROOT/name,name)
+    for rel in ['packages.json','rules/manifest.json','selfplay.json','locales.json','clipboard-gate.json','cleaner/cleanup-tests.json','audio/intro-audio-tests.json','trial178.json']:
         copy(AUDIT/rel,Path('docs/evidence/final9-audit')/rel)
     copy(ROOT/'BetaGwent/release/GwentBetaClassic-0.9.0/release.json','docs/releases/0.9.0/release.json')
     report=dict(version='0.9.0',source='release090-final9',ui='release090-ui9',bridge='r7',sourceOnly=True,assetsIncluded=False,archivesIncluded=False,saveFilesIncluded=False,memoryDumpsIncluded=False,inGameVerified=False,files=list(records.values()))

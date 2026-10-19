@@ -1,8 +1,0 @@
-{
-  "stage": 180,
-  "status": "held_at_user_request",
-  "reason": "User requested another AI correction after the completed build. This archive must not be presented as the final 0.7.3.",
-  "archive": "D:/w3mod/BetaGwent/build/stage180/held-release/GwentBetaClassic-0.7.3-RU.zip",
-  "sha256": "f27a4da9da74762df237ea02b6ac559c26a32e86aaf75db41375292da8980dbf",
-  "nextBuildRequiresFreshSnapshot": true
-}

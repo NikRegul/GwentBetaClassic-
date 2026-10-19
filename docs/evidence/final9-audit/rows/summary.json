@@ -1,0 +1,83 @@
+{
+  "version": "0.8.2",
+  "source": "D:\\w3mod\\BetaGwent\\build\\release090-final9",
+  "fingerprint": "bbff74a024f177159d3d880cd62cf35266d5d941e262e6ef66426a52f6b67250",
+  "runnerSha256": "3865ef58be7be549418053abb5a1b7e5d02051c68f86dfb3aa6cddfafee2673e",
+  "nativeGameTested": false,
+  "notes": [
+    "Explicit rows use real ability handlers; AI still places the source normally.",
+    "Lead is actual resolved material through the first enemy turn start, not a full strategic forecast.",
+    "A synthetic hand probes each unchanged archetype; it does not claim the shipping deck contains every test card."
+  ],
+  "summary": [
+    {
+      "id": "igni",
+      "title": "Игни: 20 против 30",
+      "total": 46,
+      "failed": 0,
+      "errors": 0
+    },
+    {
+      "id": "igni-threshold",
+      "title": "Игни: три слабых ниже порога против одного допустимого",
+      "total": 46,
+      "failed": 0,
+      "errors": 0
+    },
+    {
+      "id": "yrden-enemy",
+      "title": "Ирден: слабые усиления против одного огромного",
+      "total": 46,
+      "failed": 0,
+      "errors": 0
+    },
+    {
+      "id": "yrden-own",
+      "title": "Ирден: восстановить своих вместо исцеления врага",
+      "total": 46,
+      "failed": 0,
+      "errors": 0
+    },
+    {
+      "id": "birna-armour",
+      "title": "Бирна: плотный бронированный ряд против трёх уязвимых",
+      "total": 46,
+      "failed": 0,
+      "errors": 0
+    },
+    {
+      "id": "rot-full",
+      "title": "Разносчик заразы: заполненный ряд против свободного места",
+      "total": 46,
+      "failed": 0,
+      "errors": 0
+    },
+    {
+      "id": "trap-full",
+      "title": "Ловчий: заполненный ряд против свободного места",
+      "total": 46,
+      "failed": 0,
+      "errors": 0
+    },
+    {
+      "id": "nivellen-weather",
+      "title": "Нивеллен: не выводить врага из собственной погоды",
+      "total": 46,
+      "failed": 0,
+      "errors": 0
+    },
+    {
+      "id": "troll-overwrite",
+      "title": "Тролль: перенос не должен стирать полезную погоду",
+      "total": 46,
+      "failed": 0,
+      "errors": 0
+    }
+  ],
+  "total": 414,
+  "passed": 414,
+  "failed": 0,
+  "sourceReportSha256": "62b433cb4db64c93172b2259a656cc0e82437adaabf04138b83a06e182f2d77b",
+  "detailedResultsUrl": "https://github.com/NikRegul/GwentBetaClassic-/blob/3e18306295b1a437f88c3f3b720442d974517ca3/docs/evidence/final9-audit/rows/report.json",
+  "summaryOnly": true
+}

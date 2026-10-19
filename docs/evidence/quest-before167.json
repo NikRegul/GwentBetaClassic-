@@ -1,6 +1,0 @@
-{
-  "beforeFixFailed": true,
-  "assertion": "permanent NPC reward advances the active objective",
-  "productionSourceBackup": "tmp/backup-controller-quest167-20261014-083621",
-  "afterFixChecks": 11
-}
