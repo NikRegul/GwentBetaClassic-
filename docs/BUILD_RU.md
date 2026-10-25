@@ -1,158 +1,63 @@
-> Current release: 0.6.2 / Stage 138. See [the project README](../README.md) and the current build/acceptance guides. The stage notes below are historical.
+# Сборка Gwent Beta Classic
 
-# Как собрать Gwent Beta Classic
+Актуальный публичный номер — **0.9.3**. Пересборка от 25 октября включает исправление стрелки при выборе карты из руки. Готовые файлы локально: `release/0.9.3-rebuilt-20261025`; прежние архивы не перезаписываются.
 
-Сначала прочитайте README и ARCHITECTURE_AI_RU.md. Публикуются авторские
-WitcherScript/ActionScript, генераторы, данные составов и инструкции. Оригинальные
-клиенты игр, depot, изображения, PCM, банки, SDK и Wwise-ключ в Git не входят.
-Готовые пакеты нужны игрокам; исходники — разработчикам.
+## Входы
 
-## Среда
+- Python 3 и Node.js в PATH.
+- Локальные `BetaGwent/build-inputs` и `BetaGwent/toolchains` согласно [BUILD_INPUTS_RU.md](BUILD_INPUTS_RU.md). Игровые ресурсы, SDK, голоса и оригинальные материалы в публичный Git не входят. Одного клонирования Git недостаточно для упаковки игровых архивов.
+- Канонические скрипты: `BetaGwent/scripts` и `BetaGwent/development/scripts`.
+- Каноническое меню: `BetaGwent/ui/src`. Изменения Board повторяются в пяти копиях с UTF-8 BOM и CRLF; шаблон Classic — `tools/features091/BetaGwentBoard_classic093.as`.
+- Профили и составы: `data/beta924/design/beta_ai_profiles093.json`, `data/beta924/ai/validation093`. Старый `drafts/state.json` для сборки не требуется.
 
-Windows, Python 3.13, Java, REDkit 5.0.1044630 с подготовленным depot и принятыми
-человеком условиями Wcc; Apache Royale 0.9.12 и playerglobal 0.9.12 для AS3;
-Scaleform exporter из REDkit. Для изменения звука — Wwise 2023.1.19.8928 с
-подходящей лицензией, UnityPy, vgmstream-r2117 и wwiser. Для атласа — Pillow.
-Python должен работать с UTF-8 (`$env:PYTHONIOENCODING='utf-8'` в PowerShell).
-
-Локальная подтверждённая структура: корень D:\w3mod; REDkit
-D:\GOG Galaxy\Games\The Witcher 3 REDkit; depot D:\w3mod\depot;
-проект GwentB\myproject1. Ряд старых recon/UI-утилит ещё содержит эти абсолютные
-пути: при другой установке поправьте константы ROOT/ORIGINAL/STREAM/EXPORTER
-и пути SDK в board-config.xml. Полностью переносимый setup — отдельная задача.
-
-Базовые ресурсы меню созданы в REDkit и сохранены на диск; утилиты меняют
-содержимое существующего CR2W/redswf и проверяют его структуру. Из одного AS3
-без этих шаблонов нативный ресурс не создаётся. Новый разработчик должен
-подготовить такой же проект или взять resource bootstrap из готового пакета
-через Wcc unbundle. Текущий release-builder использует замороженный проект87
-как шаблон: BetaGwent/build/release87/project/BetaGwent0924. Эта папка не в Git.
-Это реальное требование сборки, а не автоматически загружаемая зависимость.
-
-## Источники
-
-- BetaGwent/scripts/game/betagwent: общие типы, фильтры и правила.
-- BetaGwent/development/scripts/game/betagwent: полноценная игра, ИИ,
-  коллекция, NPC/магазины, редактор и связь с меню. Название development
-  историческое: эти файлы входят в релиз.
-- BetaGwent/ui/src: AS3-поле, редактор, контроллер, описание и каталог.
-- data/beta924/duel: точные ID, эффекты и составы; design: экономика/NPC;
-  ai/rules.json: импортированный отчёт по архетипам.
-- tools: генераторы/сборка; docs: решения и инструкции.
-
-Нужен исходный нормализованный catalog.json строгой 0.9.24. Генераторы проверяют
-его SHA256: 022539802636cb45e92123a630c3788a0674c39b538fa1f69a64761a6b3ddbd3.
-Нельзя молча заменить на актуальный DIY: там другие способности и баланс.
-Исходные Beta definitions/локализация и DIY-арты — локальные внешние входы.
-
-## Последовательность генерации
-
-Из корня репозитория:
+## Команды из корня проекта
 
 ```powershell
-python tools/build_progression.py
-python tools/build_full_catalog.py
-python tools/build_ai_rules.py
-python tools/build_duel_catalog.py
-python tools/build_full_catalog.py
-python tools/build_shop_cards.py
+python -X utf8 tools/recon/check_project_layout.py --hash-inputs
+.\Build-0.9.3.cmd
 ```
 
-Progression создаёт стартовые/квестовые составы и сохраняет хвост ИИ. Затем
-build_ai_rules адаптирует deck_rules.txt и генерирует таблицы ИИ/составы54–93;
-duel_catalog пересобирает определения и весь список составов. Full_catalog
-собирает описания, теги и источники; повтор нужен после смены состава/артов.
-Не редактируйте генерируемые duelCatalog/duelAICatalog/CardText вручную.
-Новые карточные обработчики меняются в соответствующих WS-файлах фракций.
+Обычный запуск создаёт новую папку `BetaGwent/build/release093-<дата>-<время>`. Проверяет замороженные правила, регрессии, реальные партии, соответствие JS/WS, оба нативных компилятора, меню, языки и голоса. Завершает упаковку и независимую сверку SHA-256/CRC. Длительность значительная; логи находятся внутри новой папки сборки.
 
-Перед компиляцией скопируйте общий и development набор в
-BetaGwent/build/board-patch/game/betagwent, затем coreChecks.ws из
-tools/core-check/src. Всего в текущей сборке 60 WS. Тот же набор положите
-в GwentB/myproject1/workspace/scripts/game/betagwent. Разные копии одного
-источника нельзя смешивать при сборке.
+Продолжить конкретную незавершённую сборку можно только явно:
 
 ```powershell
-python tools/recon/run_redkit_compile.py --out BetaGwent/build/board-compile89a --patch BetaGwent/build/board-patch --timeout 120 --terms-already-accepted
-python tools/ui/build_menu_pack.py --apply
+.\Build-0.9.3.cmd --out BetaGwent/build/МОЯ_ПАПКА --resume
 ```
 
-Каждый compile-out должен быть новым: утилита отвергает уже существующий blob.
-Ключ terms применяется только после личного принятия условий Wcc.
-Успех: сообщение Success! Patch scripts blob saved, отсутствие Script Error,
-совпадение хешей входов до/после. Меню собирается как SWF → GFx/DDS → нативный
-redswf. Проверяется реальный ABC, receiver вызова и все44 связи; затем
-устанавливаются три ресурса: practice, DeckBuilder, GwintGame. Папка build
-содержит промежуточные результаты и не публикуется в Git.
+После изменения исходников нужен новый выходной каталог. Готовые релизы и замороженные входы сравнений не изменять. При ошибке сначала читать последний лог; существование ZIP само по себе не означает успешную сборку.
 
-## Звук и языки
+Независимая проверка готового результата:
 
 ```powershell
-python tools/recon/extract_beta_audio.py --decode-voices
-python tools/ui/prepare_audio_import.py --full
-python tools/ui/build_audio_bank.py --console "C:\Audiokinetic\Wwise_2023.1.19.8928\images\Authoring\x64\Release\bin\WwiseConsole.exe" --install
-python tools/prepare_english89.py
-python tools/merge_english89.py
-python tools/localization89.py sources
-python tools/ui/build_english_audio89.py
+python -X utf8 tools/features093/verify093.py BetaGwent/build/МОЯ_ПАПКА --version 0.9.3 --user-release
 ```
 
-Источники звука — локальная Beta, AudioId/CardAudio.xml определяет связи.
-Не подменять Init.bnk. Оригинальные банки версии128 не грузятся в TW3:
-записи извлекаются и собираются новым Wwise в отдельный BetaGwent79.
-Ключ лицензии сохраняется локально и не публикуется. EN использует те же
-event names, но английские PCM и длительности; FX общие по происхождению.
+Файлы для передачи находятся в `release/0.9.3` (если такая папка уже есть — в новом `release/0.9.3-2`, `-3` и т. д.; готовые архивы не затираются): два архива для 1.32 и 5.0+, SHA-256, описания/пост/changelog на 13 языках, отчёты и игровой checklist. Сборщик ничего не устанавливает и не публикует.
 
-english89.json — таблица перевода собственных строк. Канонические тексты,
-имена, теги и glossary берутся из en_us. Indexed.txt — первоначальная партия
-перевода, привязанная к сохранённому translation-index.json; для новых строк
-редактируйте английский JSON напрямую. Не заменяйте буквенные подстроки
-в описаниях: переводятся целые строковые литералы.
+## Что можно удалять
 
-## Упаковка текущей версии
+Временные логи, кэши Python, прерванные выходы и повторные распаковки можно удалять после проверки зависимостей. Не удалять постоянные входы, toolchains, текущий готовый релиз, выбранные базовые снимки сравнений, регрессионные fixtures или результаты незавершённого исследования. Каталог `BetaGwent/publication` — отдельный checkout публичного Git, а не временная папка.
 
-После готового русского UI:
+## Публичный Git
+
+Этот раздел относится к авторскому рабочему каталогу с ресурсами. В обычном клоне GitHub работать с Git напрямую, без export_public_sources.py.
+
+Рабочий каталог содержит локальные игровые ресурсы и имеет отдельную историю. Публичный репозиторий — source-only checkout `BetaGwent/publication` с origin `NikRegul/GwentBetaClassic-`. Не отправлять в него нефильтрованную историю рабочего каталога.
+
+После проверки текущих исходников:
 
 ```powershell
-python tools/build_language_release.py prepare --language ru
-python tools/prepare_en_ui89.py
+python -X utf8 tools/recon/export_public_sources.py
+python -X utf8 tools/recon/export_public_sources.py --apply
 ```
 
-prepare_en_ui89 компилирует английский набор, собирает три EN-меню, замораживает
-EN-проект и восстанавливает RU-ресурсы рабочего проекта. Выполнить после
-RU prepare, поскольку восстановление берётся из его замороженной копии.
-Если шаг уже выполнен, не запускать prepare повторно поверх существующего frozen.
+Первый запуск показывает план; второй синхронизирует допустимые исходники и удаляет устаревшие публичные копии, проверяя содержимое на ключи и крупные ресурсы. Перед коммитом просмотреть diff. Инструмент не делает commit/push. Fetch и последующий обычный fast-forward push выполняются отдельно, без force. Исходные ветки и пользовательские изменения нельзя затирать.
 
-Для каждого языка ru и en по порядку:
+В чистом публичном checkout без игровых ресурсов доступны `python -X utf8 tools/recon/check_project_layout.py --sources-only` и проверки интерфейсных методов Node.js. Полная упаковка требует локальных зависимостей из раздела «Входы».
 
-```powershell
-python tools/build_language_release.py cook --language ru
-python tools/build_language_release.py strings --language ru
-python tools/build_language_release.py audio --language ru
-python tools/build_language_release.py dependencies --language ru
-python tools/build_language_release.py pack --language ru
-python tools/build_language_release.py metadata --language ru
-python tools/build_language_release.py archive --language ru
-```
+Исследованные текстовые спецификации колод находятся в `data/beta924/ai/references`. Исходный PDF стороннего обзора сохранён только локально в `BetaGwent/build-inputs/reference/local-research`; он не нужен для обычной сборки.
 
-Для EN заменить ru на en. Cook обрабатывает 8 нативных ресурсов; XML/CSV
-копируются отдельно. Strings создаёт 396 предметных строк для языковых слотов;
-в каждом фиксированном пакете EN/RU слоты несут выбранный язык. Audio создаёт
-soundspc.cache и проверяет встроенные байты банка. Dependencies строит dep.cache;
-Pack — LZ4HC bundle; Metadata — metadata.store; Archive добавляет правильный
-precompiled.rsblob, документацию, manifest и SHA256, проверяет CRC/хеши файлов.
-Выход: BetaGwent/release/GwentBetaClassic-0.2.0-RU.zip и EN.zip.
+После изменения Board обновлять проверенные SHA в `tools/features091/prepare_ui091.py` только после проверки правки. Быстрый preflight проверит их до нативной компиляции. Пять копий Board, BOM/CRLF и ограничения размеров обязательны.
 
-После изменения версии/compile-dir поправьте VERSION и имена compile в
-build_language_release.py; не смешивайте новый UI со старым blob. Уже
-замороженные входы не перезаписывайте: используйте новый stage-каталог.
-
-## Разумная проверка перед публикацией
-
-Обязательны нативная компиляция и целостность пакета. Для ИИ можно запустить
-tools/core-check/check_ai_rules.py и check_pass_policy.py. Затем одна обычная
-установленная партия, обязательный выбор, управление контроллером, сохранение/
-полная перезагрузка. Сборка не подтверждает прохождение квестов или всех
-комбинаций карт. Исходники не требуют постоянного запуска большого набора тестов.
-
-
-0.2.1 / stage94: see [BUILD_POLISH94.md](BUILD_POLISH94.md), [Russian changes](PRESENTATION94_RU.md) and [English changes](PRESENTATION94_EN.md).
+После изменений сохранений дополнительно запускать `python -X utf8 tools/ai/check_prepared_profiles198.py BetaGwent/build/МОЯ_ПАПКА BetaGwent/build/МОЯ_ПАПКА/profile-native-source-proof-complete.json`. Classic переносит добавленные поля/методы в `game/player/playerWitcher.ws`; проверка одного оставшегося `deckProfile.ws` не подтверждает доставку исправления. Проверки восстановления описаны в [DECK_RECOVERY_198_RU.md](DECK_RECOVERY_198_RU.md).

@@ -5,7 +5,8 @@ import ws2js
 ROOT = Path(__file__).resolve().parents[2]
 CORE = ROOT/'BetaGwent/scripts/game/betagwent'
 DEV = ROOT/'BetaGwent/development/scripts/game/betagwent'
-NAMES = ['duelClone','duelPublicResponseAI','duelAIWorth','duelAICatalog','duelAIResearch','duelAIPass','duelAITuning','duelArchetypeAI','duelCatalog','duelEffectRuntime','duelEvents','duelLiveCard','duelMonsterDuel','duelMonsters','duelNeutral','duelNilf','duelNilfDependencies','duelNorth','duelScoia','duelSession','duelSkellige','duelSpecials','duelVisualFrame','duelWeather','duelWeatherAI','developmentRequestFlow','duelAITraining']
+NAMES = ['duelEndgameAI','duelReplyTreeAI','duelStrategyAI','duelClone','duelPublicResponseAI','duelAIWorth','duelAICatalog','duelAIResearch','duelAIPass','duelAITuning','duelArchetypeAI','duelCatalog','duelEffectRuntime','duelEvents','duelLiveCard','duelMonsterDuel','duelMonsters','duelNeutral','duelNilf','duelNilfDependencies','duelNorth','duelScoia','duelSession','duelSkellige','duelSpecials','duelVisualFrame','duelWeather','duelWeatherAI','developmentRequestFlow','duelAITraining']
+NAMES += ['betaOriginalActions','betaOriginalChoices','betaOriginalController','betaOriginalCore','betaOriginalData','betaOriginalHandlerData','betaOriginalHandlers','betaOriginalPlayMaker','betaOriginalRequestData','betaOriginalSearch']
 def main(out):
     files = sorted(CORE.glob('*.ws')) + [DEV/(n+'.ws') for n in NAMES if (DEV/(n+'.ws')).exists()]
     # deckBuilder: first two blocks only (as the C# host does)

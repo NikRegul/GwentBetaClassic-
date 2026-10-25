@@ -93,7 +93,7 @@ The Witcher 3 на PC. Выберите отдельную сборку для C
 
 [*]При обновлении сначала перенесите прежнюю папку мода Beta Gwent за пределы Mods. Не удаляйте всю папку Mods и не смешивайте файлы разных версий.
 
-[*]Скопируйте Mods из архива в корень игры, рядом с bin и content. По желанию: bin из Optional-CopyButton (кнопка «Копировать»). Для Classic 1.32 также скопируйте входящую в архив папку DLC. Пути: Mods/modBetaGwentClassic132/content и DLC/dlcBetaGwentClassic132Assets для 1.32; Mods/modBetaGwent0924/content для Next-Gen. Заменяйте только прежние папки этого мода, сохраняя остальные моды и DLC.
+[*]Скопируйте Mods из архива в корень игры, рядом с bin и content. По желанию: bin из Optional-CopyButton (кнопка «Копировать»). Для Classic 1.32 также скопируйте входящую в архив папку DLC. Пути: Mods/modBetaGwentClassic132/content и DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items для 1.32; Mods/modBetaGwent0924/content для Next-Gen. Заменяйте только прежние папки этого мода, сохраняя остальные моды и DLC.
 
 [*]Загрузите сохранение. Обычное меню колоды гвинта открывает редактор и выбор текста/озвучки; разговор с играющим NPC запускает партию. Для сохранения настроек штатно сохраните игру.
 [/list]
@@ -174,7 +174,7 @@ bg_shoprefill(5)
 
 Для Classic и Next-Gen нужны разные архивы. Classic занимает около 623 МБ, Next-Gen — 448 МБ; карты и логика ИИ у них одинаковые. У старого загрузчика Classic есть ограничение около 32 МиБ на один асинхронно загружаемый ресурс. Поэтому графика подготовлена в старом формате, с отдельными страницами и дополнительными привязками текстур. Сжатие ZIP не отменяет ограничение движка.
 
-В 1.32 обязательны обе папки: Mods/modBetaGwentClassic132 и DLC/dlcBetaGwentClassic132Assets. DLC содержит графические ресурсы и регистрацию для загрузчика, включая страницы вступлений лидеров. Это техническая часть мода, без нового сюжета; официальные дополнения она не заменяет. На DLC приходится примерно 105 МБ сжатого архива Classic; остальная разница связана с подготовкой ресурсов под старый движок. Для Next-Gen используется Mods/modBetaGwent0924. REDkit, Wwise и инструменты сборки игроку не нужны.
+В 1.32 обязательны обе папки: Mods/modBetaGwentClassic132 и DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items. DLC содержит графические ресурсы и регистрацию для загрузчика, включая страницы вступлений лидеров. Это техническая часть мода, без нового сюжета; официальные дополнения она не заменяет. На DLC приходится примерно 105 МБ сжатого архива Classic; остальная разница связана с подготовкой ресурсов под старый движок. Для Next-Gen используется Mods/modBetaGwent0924. REDkit, Wwise и инструменты сборки игроку не нужны.
 
 
 [size=4][color=#e0b354][b]Совместимость[/b][/color][/size]
@@ -197,7 +197,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 Удаляются коллекция беты, колоды, осколки, бочки, настройки, известные наградные записи, оба банка резервных фактов и предметы betagwent_* из текущего инвентаря игрока. Сохраняемый флаг блокирует повторную выдачу стартовых колод и восстановление профиля даже после перезагрузки с установленным модом. Сохранитесь В НОВЫЙ СЛОТ, выйдите из игры, уберите папки мода (для Classic — также его DLC), обновите затронутые объединения Script Merger, загрузите новый слот и сохранитесь ещё раз. Для отмены загрузите исходную резервную копию. Если часть стопок предметов беты удалить не удалось, вместо успеха будет сообщение INCOMPLETE: выбросьте или продайте их и повторите команду. При удалении мода уберите и файлы Optional-CopyButton, если ставили их: bin\…\plugins\GwentBetaClipboard.asi и dinput8.dll из этого мода (не чужой).
 
-[b]После удаления:[/b] скопируйте папку Mods из папки After-Uninstall архива в каталог игры (Mods/modBetaGwentKeepItems). Она хранит скрытые определения предметов мода, и торговцы, тайник и контейнеры, где ещё лежат карты или бочки беты, не теряют весь инвентарь. Не устанавливайте её вместе с модом.
+[b]После удаления:[/b] скопируйте папку из папки After-Uninstall архива в каталог игры (Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems). Она хранит скрытые определения предметов мода, и торговцы, тайник и контейнеры, где ещё лежат карты или бочки беты, не теряют весь инвентарь. Не устанавливайте её вместе с модом.
 
 Завершённые квесты, достижения и потраченные кроны не откатываются. Команда не обходит выгруженных торговцев, тайник и контейнеры мира: сначала заберите оттуда предметы беты. Для старых наградных фактов может потребоваться приложенный сканер save_fact_index.py и bg_clean_keys('…') после подтверждения очистки. Подробности — BetaGwentDocs/CLEANUP_RU.md. Это очистка профиля, без обещания физического удаления каждой исторической записи произвольного сейва.
 [/spoiler]
@@ -330,7 +330,7 @@ Kartentexte stammen aus der offiziellen Beta-Lokalisierung. Die Oberfläche wurd
 
 [*]Verschiebe beim Update zuerst den bisherigen Beta-Gwent-Modordner aus Mods heraus. Entferne nicht den gesamten Mods-Ordner und mische keine Versionsdateien.
 
-[*]Mods aus dem Archiv ins Spielverzeichnis neben bin und content kopieren. Für Classic 1.32 auch den enthaltenen DLC-Ordner kopieren. Pfade: Mods/modBetaGwentClassic132/content und DLC/dlcBetaGwentClassic132Assets für 1.32; Mods/modBetaGwent0924/content für Next-Gen. Nur die bisherigen Ordner dieser Mod ersetzen; andere Mods und DLC behalten.
+[*]Mods aus dem Archiv ins Spielverzeichnis neben bin und content kopieren. Für Classic 1.32 auch den enthaltenen DLC-Ordner kopieren. Pfade: Mods/modBetaGwentClassic132/content und DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items für 1.32; Mods/modBetaGwent0924/content für Next-Gen. Nur die bisherigen Ordner dieser Mod ersetzen; andere Mods und DLC behalten.
 
 [*]Lade deinen Spielstand. Das normale Gwint-Deckmenü öffnet den Editor und die Sprachauswahl; bei Gwint-NPCs startest du Partien. Speichere regulär, um die Auswahl zu behalten.
 [/list]
@@ -407,7 +407,7 @@ bg_shoprefill(5)
 [spoiler]
 [size=4][color=#e0b354][b]Classic 1.32: Größe und DLC[/b][/color][/size]
 
-Classic benötigt etwa 623 MB, Next-Gen 448 MB bei denselben Karten und Regeln. Das alte Ressourcenformat und die Grenze von etwa 32 MiB pro asynchron geladener Ressource erfordern getrennte Grafikseiten. Für Classic beide Ordner Mods und DLC installieren: DLC/dlcBetaGwentClassic132Assets enthält notwendige Grafik und deren Registrierung, keine neue Handlung. Etwa 105 MB des Downloads entfallen darauf; der Rest des Größenunterschieds entsteht durch die Aufbereitung für die alte Engine.
+Classic benötigt etwa 623 MB, Next-Gen 448 MB bei denselben Karten und Regeln. Das alte Ressourcenformat und die Grenze von etwa 32 MiB pro asynchron geladener Ressource erfordern getrennte Grafikseiten. Für Classic beide Ordner Mods und DLC installieren: DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items enthält notwendige Grafik und deren Registrierung, keine neue Handlung. Etwa 105 MB des Downloads entfallen darauf; der Rest des Größenunterschieds entsteht durch die Aufbereitung für die alte Engine.
 
 
 [size=4][color=#e0b354][b]Kompatibilität[/b][/color][/size]
@@ -430,7 +430,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 Sammlung, Decks, Ressourcen, Einstellungen, bekannte Belohnungen, Sicherungsspiegel und betagwent_*-Gegenstände im Spielerinventar werden gelöscht. Eine gespeicherte Sperre verhindert die Wiederherstellung, auch nach erneutem Laden. In NEUEM Slot speichern, Spiel beenden, Mod samt Classic-DLC entfernen, Script Merger aktualisieren, neuen Slot laden und erneut speichern. Quests, Erfolge und ausgegebene Kronen bleiben. Unbeladene Händler, Lager und Weltbehälter werden nicht durchsucht. Für verwaiste Belohnungsfakten stehen save_fact_index.py und bg_clean_keys('…') nach Bestätigung bereit. Eine vollständige physische Löschung jeder historischen Speicherstelle wird nicht zugesichert. Lassen sich einige Beta-Gegenstände nicht entfernen, erscheint INCOMPLETE statt der Erfolgsmeldung: diese wegwerfen oder verkaufen und den Befehl wiederholen. Beim Deinstallieren auch die Optional-CopyButton-Dateien löschen, falls installiert: bin\…\plugins\GwentBetaClipboard.asi und die dinput8.dll dieses Mods (nicht die eines anderen).
 
-[b]Nach der Deinstallation:[/b] Kopiere den Ordner Mods aus dem Ordner After-Uninstall des Archivs in das Spielverzeichnis (Mods/modBetaGwentKeepItems). Er enthält versteckte Definitionen der Mod-Gegenstände, damit Händler, Truhe und Behälter, die noch Beta-Karten oder Fässer enthalten, nicht ihr gesamtes Inventar verlieren. Nicht zusammen mit der Mod installieren.
+[b]Nach der Deinstallation:[/b] Kopiere den Ordner aus dem Ordner After-Uninstall des Archivs in das Spielverzeichnis (Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems). Er enthält versteckte Definitionen der Mod-Gegenstände, damit Händler, Truhe und Behälter, die noch Beta-Karten oder Fässer enthalten, nicht ihr gesamtes Inventar verlieren. Nicht zusammen mit der Mod installieren.
 [/spoiler]
 
 
@@ -561,7 +561,7 @@ Les textes des cartes proviennent de la traduction officielle de la bêta. L’i
 
 [*]Pour une mise à jour, déplacez d’abord l’ancien dossier Beta Gwent hors de Mods. Ne supprimez pas tout le dossier Mods et ne mélangez pas les versions.
 
-[*]Copiez Mods depuis l’archive dans le dossier du jeu, à côté de bin et content. Pour Classic 1.32, copiez aussi le dossier DLC fourni. Chemins : Mods/modBetaGwentClassic132/content et DLC/dlcBetaGwentClassic132Assets pour 1.32 ; Mods/modBetaGwent0924/content pour Next-Gen. Remplacez uniquement les anciens dossiers de ce mod, en conservant les autres mods et DLC.
+[*]Copiez Mods depuis l’archive dans le dossier du jeu, à côté de bin et content. Pour Classic 1.32, copiez aussi le dossier DLC fourni. Chemins : Mods/modBetaGwentClassic132/content et DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items pour 1.32 ; Mods/modBetaGwent0924/content pour Next-Gen. Remplacez uniquement les anciens dossiers de ce mod, en conservant les autres mods et DLC.
 
 [*]Chargez une sauvegarde. Le menu habituel des decks de Gwynt ouvre l’éditeur et les langues ; parlez à un PNJ joueur pour lancer une partie. Sauvegardez normalement pour conserver vos choix.
 [/list]
@@ -638,7 +638,7 @@ bg_shoprefill(5)
 [spoiler]
 [size=4][color=#e0b354][b]Classic 1.32 : taille et dossier DLC[/b][/color][/size]
 
-Classic occupe environ 623 Mo, Next-Gen 448 Mo, avec les mêmes cartes et règles. L’ancien format et la limite d’environ 32 Mio par ressource chargée de manière asynchrone nécessitent des pages graphiques séparées. Installez Mods et DLC pour Classic. DLC/dlcBetaGwentClassic132Assets contient des graphismes indispensables et leur enregistrement, sans nouvelle histoire. Environ 105 Mo du téléchargement viennent de ce dossier ; le reste de la différence provient de la préparation pour l’ancien moteur.
+Classic occupe environ 623 Mo, Next-Gen 448 Mo, avec les mêmes cartes et règles. L’ancien format et la limite d’environ 32 Mio par ressource chargée de manière asynchrone nécessitent des pages graphiques séparées. Installez Mods et DLC pour Classic. DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items contient des graphismes indispensables et leur enregistrement, sans nouvelle histoire. Environ 105 Mo du téléchargement viennent de ce dossier ; le reste de la différence provient de la préparation pour l’ancien moteur.
 
 
 [size=4][color=#e0b354][b]Compatibilité[/b][/color][/size]
@@ -661,7 +661,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 Collection, decks, ressources, réglages, récompenses connues, miroirs de sauvegarde et objets betagwent_* de l’inventaire du joueur sont effacés. Un indicateur sauvegardé empêche leur restauration, même après rechargement. Sauvegardez dans un NOUVEL emplacement, quittez le jeu, retirez le mod et son DLC Classic, actualisez Script Merger, chargez ce nouvel emplacement et sauvegardez encore. Quêtes, succès et couronnes dépensées restent inchangés. Marchands non chargés, réserve et conteneurs du monde ne sont pas parcourus. Pour les anciens faits de récompense orphelins : save_fact_index.py puis bg_clean_keys('…') après confirmation. L’effacement physique de toute trace historique n’est pas garanti. Si certains objets Beta ne peuvent pas être retirés, le jeu affiche INCOMPLETE au lieu du succès : jetez-les ou vendez-les, puis relancez la commande. À la désinstallation, supprimez aussi les fichiers Optional-CopyButton s’ils sont installés : bin\…\plugins\GwentBetaClipboard.asi et le dinput8.dll de ce mod (pas celui d’un autre).
 
-[b]Après la désinstallation :[/b] copiez le dossier Mods du dossier After-Uninstall de l’archive dans le répertoire du jeu (Mods/modBetaGwentKeepItems). Il conserve des définitions cachées des objets du mod, afin que les marchands, la réserve et les conteneurs qui contiennent encore des cartes ou des barils de la bêta ne perdent pas tout leur inventaire. Ne l’installez pas en même temps que le mod.
+[b]Après la désinstallation :[/b] copiez le dossier du dossier After-Uninstall de l’archive dans le répertoire du jeu (Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems). Il conserve des définitions cachées des objets du mod, afin que les marchands, la réserve et les conteneurs qui contiennent encore des cartes ou des barils de la bêta ne perdent pas tout leur inventaire. Ne l’installez pas en même temps que le mod.
 [/spoiler]
 
 
@@ -792,7 +792,7 @@ I testi delle carte provengono dalla localizzazione ufficiale della beta. L’in
 
 [*]Per aggiornare, sposta prima la vecchia cartella della mod Beta Gwent fuori da Mods. Non eliminare tutta Mods e non mescolare versioni diverse.
 
-[*]Copia Mods dall’archivio nella cartella del gioco, accanto a bin e content. Per Classic 1.32 copia anche la cartella DLC inclusa. Percorsi: Mods/modBetaGwentClassic132/content e DLC/dlcBetaGwentClassic132Assets per 1.32; Mods/modBetaGwent0924/content per Next-Gen. Sostituisci solo le vecchie cartelle di questa mod, conservando gli altri mod e DLC.
+[*]Copia Mods dall’archivio nella cartella del gioco, accanto a bin e content. Per Classic 1.32 copia anche la cartella DLC inclusa. Percorsi: Mods/modBetaGwentClassic132/content e DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items per 1.32; Mods/modBetaGwent0924/content per Next-Gen. Sostituisci solo le vecchie cartelle di questa mod, conservando gli altri mod e DLC.
 
 [*]Carica un salvataggio. Il normale menu dei mazzi di Gwent apre editor e scelta delle lingue; parla con un PNG che gioca per iniziare una partita. Salva normalmente per mantenere le preferenze.
 [/list]
@@ -869,7 +869,7 @@ bg_shoprefill(5)
 [spoiler]
 [size=4][color=#e0b354][b]Classic 1.32: dimensioni e DLC[/b][/color][/size]
 
-Classic occupa circa 623 MB, Next-Gen 448 MB, con le stesse carte e regole. Il vecchio formato e il limite di circa 32 MiB per risorsa caricata in modo asincrono richiedono pagine grafiche separate. In Classic vanno installate entrambe le cartelle Mods e DLC. DLC/dlcBetaGwentClassic132Assets contiene grafica essenziale e la sua registrazione, senza nuova storia. Circa 105 MB del download provengono da questa cartella; il resto della differenza dipende dalla preparazione per il vecchio motore.
+Classic occupa circa 623 MB, Next-Gen 448 MB, con le stesse carte e regole. Il vecchio formato e il limite di circa 32 MiB per risorsa caricata in modo asincrono richiedono pagine grafiche separate. In Classic vanno installate entrambe le cartelle Mods e DLC. DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items contiene grafica essenziale e la sua registrazione, senza nuova storia. Circa 105 MB del download provengono da questa cartella; il resto della differenza dipende dalla preparazione per il vecchio motore.
 
 
 [size=4][color=#e0b354][b]Compatibilità[/b][/color][/size]
@@ -892,7 +892,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 Vengono eliminati collezione, mazzi, risorse, impostazioni, ricompense note, copie di riserva e oggetti betagwent_* nell’inventario del giocatore. Un indicatore salvato impedisce il ripristino anche dopo un nuovo caricamento. Salva in un NUOVO slot, esci, rimuovi il mod e il suo DLC Classic, aggiorna Script Merger, carica lo slot nuovo e salva ancora. Missioni, obiettivi e corone spese rimangono. Mercanti non caricati, deposito e contenitori del mondo non vengono esaminati. Per vecchi fatti di ricompensa orfani: save_fact_index.py e bg_clean_keys('…') dopo la conferma. Non è garantita la cancellazione fisica di ogni traccia storica. Se alcuni oggetti Beta non possono essere rimossi, appare INCOMPLETE invece del successo: gettali o vendili e ripeti il comando. Disinstallando, elimina anche i file di Optional-CopyButton se li hai installati: bin\…\plugins\GwentBetaClipboard.asi e il dinput8.dll di questa mod (non di altre).
 
-[b]Dopo la disinstallazione:[/b] copia la cartella Mods dalla cartella After-Uninstall dell’archivio nella cartella del gioco (Mods/modBetaGwentKeepItems). Conserva definizioni nascoste degli oggetti della mod, così mercanti, deposito e contenitori che contengono ancora carte o barili della beta non perdono l’intero inventario. Non installarla insieme alla mod.
+[b]Dopo la disinstallazione:[/b] copia la cartella dalla cartella After-Uninstall dell’archivio nella cartella del gioco (Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems). Conserva definizioni nascoste degli oggetti della mod, così mercanti, deposito e contenitori che contengono ancora carte o barili della beta non perdono l’intero inventario. Non installarla insieme alla mod.
 [/spoiler]
 
 
@@ -1023,7 +1023,7 @@ Teksty kart pochodzą z oficjalnej lokalizacji bety. Interfejs przetłumaczono z
 
 [*]Przy aktualizacji najpierw przenieś poprzedni folder moda Beta Gwent poza Mods. Nie usuwaj całego Mods ani nie mieszaj plików wersji.
 
-[*]Skopiuj Mods z archiwum do katalogu gry obok bin i content. Dla Classic 1.32 skopiuj też dołączony katalog DLC. Ścieżki: Mods/modBetaGwentClassic132/content i DLC/dlcBetaGwentClassic132Assets dla 1.32; Mods/modBetaGwent0924/content dla Next-Gen. Zastąp tylko poprzednie katalogi tego moda, zachowując inne mody i DLC.
+[*]Skopiuj Mods z archiwum do katalogu gry obok bin i content. Dla Classic 1.32 skopiuj też dołączony katalog DLC. Ścieżki: Mods/modBetaGwentClassic132/content i DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items dla 1.32; Mods/modBetaGwent0924/content dla Next-Gen. Zastąp tylko poprzednie katalogi tego moda, zachowując inne mody i DLC.
 
 [*]Wczytaj zapis. Zwykłe menu talii Gwinta otwiera edytor i wybór języków; rozmowa z grającym NPC rozpoczyna partię. Zapisz grę, aby zachować wybór.
 [/list]
@@ -1100,7 +1100,7 @@ bg_shoprefill(5)
 [spoiler]
 [size=4][color=#e0b354][b]Classic 1.32: rozmiar i DLC[/b][/color][/size]
 
-Classic zajmuje około 623 MB, Next-Gen 448 MB, przy tych samych kartach i zasadach. Starszy format i limit około 32 MiB na asynchronicznie ładowany zasób wymagają osobnych stron grafiki. W Classic należy skopiować Mods oraz DLC. DLC/dlcBetaGwentClassic132Assets zawiera niezbędną grafikę i rejestrację zasobów, bez nowej fabuły. Około 105 MB pobieranego archiwum przypada na ten folder; reszta różnicy wynika z przygotowania zasobów dla starego silnika.
+Classic zajmuje około 623 MB, Next-Gen 448 MB, przy tych samych kartach i zasadach. Starszy format i limit około 32 MiB na asynchronicznie ładowany zasób wymagają osobnych stron grafiki. W Classic należy skopiować Mods oraz DLC. DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items zawiera niezbędną grafikę i rejestrację zasobów, bez nowej fabuły. Około 105 MB pobieranego archiwum przypada na ten folder; reszta różnicy wynika z przygotowania zasobów dla starego silnika.
 
 
 [size=4][color=#e0b354][b]Kompatybilność[/b][/color][/size]
@@ -1123,7 +1123,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 Usuwane są kolekcja, talie, zasoby, ustawienia, znane nagrody, kopie zapasowe i przedmioty betagwent_* z ekwipunku gracza. Zapisana blokada zapobiega odtworzeniu danych także po ponownym wczytaniu. Zapisz w NOWYM slocie, zamknij grę, usuń mod i jego DLC Classic, zaktualizuj Script Merger, wczytaj nowy slot i zapisz ponownie. Zadania, osiągnięcia i wydane korony pozostają. Niewczytani kupcy, schowek i pojemniki świata nie są przeszukiwane. Osierocone fakty nagród mogą wymagać save_fact_index.py i bg_clean_keys('…') po potwierdzeniu. Fizyczne usunięcie wszystkich historycznych śladów nie jest gwarantowane. Jeśli części przedmiotów Beta nie da się usunąć, zamiast sukcesu pojawi się INCOMPLETE: wyrzuć je lub sprzedaj i powtórz polecenie. Przy odinstalowaniu usuń też pliki Optional-CopyButton, jeśli je instalowano: bin\…\plugins\GwentBetaClipboard.asi oraz dinput8.dll z tego moda (nie z innego).
 
-[b]Po odinstalowaniu:[/b] skopiuj folder Mods z folderu After-Uninstall archiwum do katalogu gry (Mods/modBetaGwentKeepItems). Zawiera ukryte definicje przedmiotów moda, dzięki czemu kupcy, skrytka i pojemniki, w których wciąż są karty lub beczki bety, nie tracą całego ekwipunku. Nie instaluj go razem z modem.
+[b]Po odinstalowaniu:[/b] skopiuj folder z folderu After-Uninstall archiwum do katalogu gry (Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems). Zawiera ukryte definicje przedmiotów moda, dzięki czemu kupcy, skrytka i pojemniki, w których wciąż są karty lub beczki bety, nie tracą całego ekwipunku. Nie instaluj go razem z modem.
 [/spoiler]
 
 
@@ -1254,7 +1254,7 @@ Los textos de las cartas proceden de la localización oficial de la beta. La int
 
 [*]Al actualizar, mueve primero la carpeta anterior del mod Beta Gwent fuera de Mods. No elimines toda la carpeta Mods ni mezcles versiones.
 
-[*]Copia Mods del archivo a la carpeta del juego, junto a bin y content. Para Classic 1.32, copia también la carpeta DLC incluida. Rutas: Mods/modBetaGwentClassic132/content y DLC/dlcBetaGwentClassic132Assets para 1.32; Mods/modBetaGwent0924/content para Next-Gen. Sustituye solo las carpetas anteriores de este mod, conservando los demás mods y DLC.
+[*]Copia Mods del archivo a la carpeta del juego, junto a bin y content. Para Classic 1.32, copia también la carpeta DLC incluida. Rutas: Mods/modBetaGwentClassic132/content y DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items para 1.32; Mods/modBetaGwent0924/content para Next-Gen. Sustituye solo las carpetas anteriores de este mod, conservando los demás mods y DLC.
 
 [*]Carga una partida. El menú habitual de mazos de Gwynt abre el editor y los idiomas; habla con un PNJ que juegue para comenzar una partida. Guarda normalmente para conservar tus preferencias.
 [/list]
@@ -1331,7 +1331,7 @@ bg_shoprefill(5)
 [spoiler]
 [size=4][color=#e0b354][b]Classic 1.32: tamaño y DLC[/b][/color][/size]
 
-Classic ocupa unos 623 MB y Next-Gen 448 MB, con las mismas cartas y reglas. El formato antiguo y el límite de unos 32 MiB por recurso cargado de forma asíncrona requieren páginas gráficas separadas. En Classic hay que instalar Mods y DLC. DLC/dlcBetaGwentClassic132Assets contiene gráficos esenciales y su registro, sin contenido narrativo nuevo. Unos 105 MB de la descarga corresponden a esa carpeta; el resto de la diferencia procede de la preparación para el motor antiguo.
+Classic ocupa unos 623 MB y Next-Gen 448 MB, con las mismas cartas y reglas. El formato antiguo y el límite de unos 32 MiB por recurso cargado de forma asíncrona requieren páginas gráficas separadas. En Classic hay que instalar Mods y DLC. DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items contiene gráficos esenciales y su registro, sin contenido narrativo nuevo. Unos 105 MB de la descarga corresponden a esa carpeta; el resto de la diferencia procede de la preparación para el motor antiguo.
 
 
 [size=4][color=#e0b354][b]Compatibilidad[/b][/color][/size]
@@ -1354,7 +1354,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 Se borran colección, mazos, recursos, ajustes, recompensas conocidas, copias de respaldo y objetos betagwent_* del inventario del jugador. Una marca guardada impide restaurarlos incluso al volver a cargar. Guarda en una ranura NUEVA, cierra el juego, retira el mod y su DLC Classic, actualiza Script Merger, carga la nueva ranura y guarda otra vez. Misiones, logros y coronas gastadas permanecen. No se recorren mercaderes sin cargar, el alijo ni contenedores del mundo. Los antiguos hechos de recompensa huérfanos pueden requerir save_fact_index.py y bg_clean_keys('…') después de confirmar. No se garantiza borrar físicamente todo rastro histórico. Si algunos objetos Beta no se pueden quitar, aparece INCOMPLETE en lugar del éxito: tíralos o véndelos y repite el comando. Al desinstalar, borra también los archivos de Optional-CopyButton si los instalaste: bin\…\plugins\GwentBetaClipboard.asi y el dinput8.dll de este mod (no el de otro).
 
-[b]Después de desinstalar:[/b] copia la carpeta Mods de la carpeta After-Uninstall del archivo al directorio del juego (Mods/modBetaGwentKeepItems). Conserva definiciones ocultas de los objetos del mod para que los comerciantes, el alijo y los contenedores que aún tengan cartas o barriles de la beta no pierdan todo su inventario. No la instales junto con el mod.
+[b]Después de desinstalar:[/b] copia la carpeta de la carpeta After-Uninstall del archivo al directorio del juego (Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems). Conserva definiciones ocultas de los objetos del mod para que los comerciantes, el alijo y los contenedores que aún tengan cartas o barriles de la beta no pierdan todo su inventario. No la instales junto con el mod.
 [/spoiler]
 
 
@@ -1485,7 +1485,7 @@ Los textos de las cartas vienen de la localización oficial de la beta. La inter
 
 [*]Para actualizar, mueve primero la carpeta anterior del mod Beta Gwent fuera de Mods. No borres toda la carpeta Mods ni mezcles archivos de versiones distintas.
 
-[*]Copia Mods del archivo a la carpeta del juego, junto a bin y content. Para Classic 1.32, copia también la carpeta DLC incluida. Rutas: Mods/modBetaGwentClassic132/content y DLC/dlcBetaGwentClassic132Assets para 1.32; Mods/modBetaGwent0924/content para Next-Gen. Reemplaza únicamente las carpetas anteriores de este mod y conserva los demás mods y DLC.
+[*]Copia Mods del archivo a la carpeta del juego, junto a bin y content. Para Classic 1.32, copia también la carpeta DLC incluida. Rutas: Mods/modBetaGwentClassic132/content y DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items para 1.32; Mods/modBetaGwent0924/content para Next-Gen. Reemplaza únicamente las carpetas anteriores de este mod y conserva los demás mods y DLC.
 
 [*]Carga tu partida. El menú normal de mazos de Gwent abre el editor y la selección de idiomas; habla con un NPC que juegue para iniciar una partida. Guarda normalmente para conservar tus preferencias.
 [/list]
@@ -1562,7 +1562,7 @@ bg_shoprefill(5)
 [spoiler]
 [size=4][color=#e0b354][b]Classic 1.32: tamaño y DLC[/b][/color][/size]
 
-Classic ocupa unos 623 MB y Next-Gen 448 MB, con las mismas cartas y reglas. El formato antiguo y el límite de unos 32 MiB por recurso cargado de forma asíncrona requieren páginas gráficas separadas. En Classic hay que instalar Mods y DLC. DLC/dlcBetaGwentClassic132Assets contiene gráficos esenciales y su registro, sin contenido narrativo nuevo. Unos 105 MB de la descarga corresponden a esa carpeta; el resto de la diferencia procede de la preparación para el motor antiguo.
+Classic ocupa unos 623 MB y Next-Gen 448 MB, con las mismas cartas y reglas. El formato antiguo y el límite de unos 32 MiB por recurso cargado de forma asíncrona requieren páginas gráficas separadas. En Classic hay que instalar Mods y DLC. DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items contiene gráficos esenciales y su registro, sin contenido narrativo nuevo. Unos 105 MB de la descarga corresponden a esa carpeta; el resto de la diferencia procede de la preparación para el motor antiguo.
 
 
 [size=4][color=#e0b354][b]Compatibilidad[/b][/color][/size]
@@ -1585,7 +1585,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 Se borran colección, mazos, recursos, ajustes, recompensas conocidas, copias de respaldo y objetos betagwent_* del inventario del jugador. Una marca guardada impide restaurarlos incluso al volver a cargar. Guarda en una ranura NUEVA, cierra el juego, retira el mod y su DLC Classic, actualiza Script Merger, carga la nueva ranura y guarda otra vez. Misiones, logros y coronas gastadas permanecen. No se recorren mercaderes sin cargar, el alijo ni contenedores del mundo. Los antiguos hechos de recompensa huérfanos pueden requerir save_fact_index.py y bg_clean_keys('…') después de confirmar. No se garantiza borrar físicamente todo rastro histórico. Si algunos objetos Beta no se pueden quitar, aparece INCOMPLETE en lugar del éxito: tíralos o véndelos y repite el comando. Al desinstalar, borra también los archivos de Optional-CopyButton si los instalaste: bin\…\plugins\GwentBetaClipboard.asi y el dinput8.dll de este mod (no el de otro).
 
-[b]Después de desinstalar:[/b] copia la carpeta Mods de la carpeta After-Uninstall del archivo al directorio del juego (Mods/modBetaGwentKeepItems). Conserva definiciones ocultas de los objetos del mod para que los comerciantes, el alijo y los contenedores que aún tengan cartas o barriles de la beta no pierdan todo su inventario. No la instales junto con el mod.
+[b]Después de desinstalar:[/b] copia la carpeta de la carpeta After-Uninstall del archivo al directorio del juego (Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems). Conserva definiciones ocultas de los objetos del mod para que los comerciantes, el alijo y los contenedores que aún tengan cartas o barriles de la beta no pierdan todo su inventario. No la instales junto con el mod.
 [/spoiler]
 
 
@@ -1716,7 +1716,7 @@ Os textos das cartas vêm da localização oficial da beta. A interface foi trad
 
 [*]Ao atualizar, primeiro mova a pasta antiga do mod Beta Gwent para fora de Mods. Não apague toda a pasta Mods nem misture arquivos de versões diferentes.
 
-[*]Copie Mods do arquivo para a pasta do jogo, ao lado de bin e content. Para Classic 1.32, copie também a pasta DLC incluída. Caminhos: Mods/modBetaGwentClassic132/content e DLC/dlcBetaGwentClassic132Assets para 1.32; Mods/modBetaGwent0924/content para Next-Gen. Substitua apenas as pastas anteriores deste mod, mantendo os outros mods e DLC.
+[*]Copie Mods do arquivo para a pasta do jogo, ao lado de bin e content. Para Classic 1.32, copie também a pasta DLC incluída. Caminhos: Mods/modBetaGwentClassic132/content e DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items para 1.32; Mods/modBetaGwent0924/content para Next-Gen. Substitua apenas as pastas anteriores deste mod, mantendo os outros mods e DLC.
 
 [*]Carregue seu save. O menu normal de baralhos de Gwent abre o editor e os idiomas; converse com um NPC que joga para iniciar uma partida. Salve normalmente para manter suas preferências.
 [/list]
@@ -1793,7 +1793,7 @@ bg_shoprefill(5)
 [spoiler]
 [size=4][color=#e0b354][b]Classic 1.32: tamanho e DLC[/b][/color][/size]
 
-Classic ocupa cerca de 623 MB e Next-Gen 448 MB, com as mesmas cartas e regras. O formato antigo e o limite de cerca de 32 MiB por recurso carregado de forma assíncrona exigem páginas gráficas separadas. No Classic, instale Mods e DLC. DLC/dlcBetaGwentClassic132Assets contém gráficos essenciais e seu registro, sem nova história. Cerca de 105 MB do download vêm dessa pasta; o restante da diferença resulta da preparação para o motor antigo.
+Classic ocupa cerca de 623 MB e Next-Gen 448 MB, com as mesmas cartas e regras. O formato antigo e o limite de cerca de 32 MiB por recurso carregado de forma assíncrona exigem páginas gráficas separadas. No Classic, instale Mods e DLC. DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items contém gráficos essenciais e seu registro, sem nova história. Cerca de 105 MB do download vêm dessa pasta; o restante da diferença resulta da preparação para o motor antigo.
 
 
 [size=4][color=#e0b354][b]Compatibilidade[/b][/color][/size]
@@ -1816,7 +1816,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 São apagados coleção, baralhos, recursos, configurações, recompensas conhecidas, cópias de segurança e itens betagwent_* do inventário do jogador. Uma marca salva impede a restauração mesmo após carregar novamente. Salve em um NOVO espaço, feche o jogo, retire o mod e seu DLC Classic, atualize o Script Merger, carregue o novo espaço e salve outra vez. Missões, conquistas e coroas gastas permanecem. Comerciantes não carregados, baú e recipientes do mundo não são percorridos. Fatos antigos de recompensa órfãos podem exigir save_fact_index.py e bg_clean_keys('…') após a confirmação. Não há garantia de apagar fisicamente todo vestígio histórico. Se alguns itens Beta não puderem ser removidos, aparece INCOMPLETE em vez do sucesso: descarte ou venda esses itens e repita o comando. Ao desinstalar, apague também os arquivos de Optional-CopyButton se os instalou: bin\…\plugins\GwentBetaClipboard.asi e o dinput8.dll deste mod (não o de outro).
 
-[b]Depois de desinstalar:[/b] copie a pasta Mods da pasta After-Uninstall do arquivo para o diretório do jogo (Mods/modBetaGwentKeepItems). Ela mantém definições ocultas dos itens do mod, para que mercadores, o baú e os contêineres que ainda tenham cartas ou barris da beta não percam todo o inventário. Não a instale junto com o mod.
+[b]Depois de desinstalar:[/b] copie a pasta da pasta After-Uninstall do arquivo para o diretório do jogo (Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems). Ela mantém definições ocultas dos itens do mod, para que mercadores, o baú e os contêineres que ainda tenham cartas ou barris da beta não percam todo o inventário. Não a instale junto com o mod.
 [/spoiler]
 
 
@@ -1947,7 +1947,7 @@ PC版The Witcher 3。Classic 1.32用またはNext-Gen用（5.0+表記）の別�
 
 [*]更新時は、古いBeta GwentのMODフォルダーを先にModsの外へ移動します。Mods全体を削除したり、異なるバージョンのファイルを混在させたりしないでください。
 
-[*]アーカイブ内のModsを、binとcontentがあるゲームフォルダーにコピーします。Classic 1.32では同梱のDLCもコピーしてください。パスは1.32がMods/modBetaGwentClassic132/contentとDLC/dlcBetaGwentClassic132Assets、Next-GenがMods/modBetaGwent0924/contentです。このMODの旧フォルダーだけを置き換え、ほかのMODやDLCは残してください。
+[*]アーカイブ内のModsを、binとcontentがあるゲームフォルダーにコピーします。Classic 1.32では同梱のDLCもコピーしてください。パスは1.32がMods/modBetaGwentClassic132/contentとDLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items、Next-GenがMods/modBetaGwent0924/contentです。このMODの旧フォルダーだけを置き換え、ほかのMODやDLCは残してください。
 
 [*]セーブデータをロードします。通常のグウェントのデッキメニューから編集と言語選択ができ、グウェントを遊ぶNPCとの会話から対戦を始められます。設定を残すには通常の方法で保存してください。
 [/list]
@@ -2024,7 +2024,7 @@ bg_shoprefill(5)
 [spoiler]
 [size=4][color=#e0b354][b]Classic 1.32の容量とDLCフォルダー[/b][/color][/size]
 
-同じカードとルールでもClassicは約623 MB、Next-Genは約448 MBです。旧形式と非同期読み込みリソース当たり約32 MiBの制限に対応するため、画像ページを分割しています。ClassicではModsとDLCの両方が必要です。DLC/dlcBetaGwentClassic132Assetsは必須の画像と登録情報で、新しい物語ではありません。ダウンロードの約105 MBがこのフォルダーで、残りの容量差は旧エンジン向けの準備によるものです。
+同じカードとルールでもClassicは約623 MB、Next-Genは約448 MBです。旧形式と非同期読み込みリソース当たり約32 MiBの制限に対応するため、画像ページを分割しています。ClassicではModsとDLCの両方が必要です。DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Itemsは必須の画像と登録情報で、新しい物語ではありません。ダウンロードの約105 MBがこのフォルダーで、残りの容量差は旧エンジン向けの準備によるものです。
 
 
 [size=4][color=#e0b354][b]互換性[/b][/color][/size]
@@ -2047,7 +2047,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 コレクション、デッキ、資源、設定、既知の報酬、予備データとプレイヤー所持品のbetagwent_*を消去します。保存されるフラグが、MODを残して再ロードした場合も復元を防ぎます。新しいスロットに保存して終了し、MODとClassic用DLCを削除してScript Mergerを更新し、そのスロットをロードして再保存してください。クエスト、実績、使用済みクラウンは戻しません。未ロードの商人、保管箱、世界の容器は走査しません。古い孤立した報酬フラグには、確認後にsave_fact_index.pyとbg_clean_keys('…')が必要な場合があります。すべての履歴データの物理的な完全消去は保証しません。 一部のベータアイテムを削除できなかった場合は成功ではなくINCOMPLETEと表示されます。それらを捨てるか売却してから、もう一度コマンドを実行してください。 アンインストール時は、Optional-CopyButtonを導入した場合そのファイル（bin\…\plugins\GwentBetaClipboard.asiとこのModのdinput8.dll。他のModのものは除く）も削除してください。
 
-[b]アンインストール後：[/b] アーカイブのAfter-UninstallフォルダーにあるModsフォルダーをゲームのフォルダーにコピーしてください（Mods/modBetaGwentKeepItems）。Modのアイテムの非表示定義が残るため、ベータのカードやタルが残っている商人、収納箱、コンテナの所持品がすべて失われるのを防ぎます。Modと一緒にはインストールしないでください。
+[b]アンインストール後：[/b] アーカイブのAfter-Uninstallフォルダーにあるフォルダーをゲームのフォルダーにコピーしてください（Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems）。Modのアイテムの非表示定義が残るため、ベータのカードやタルが残っている商人、収納箱、コンテナの所持品がすべて失われるのを防ぎます。Modと一緒にはインストールしないでください。
 [/spoiler]
 
 
@@ -2178,7 +2178,7 @@ PC용 The Witcher 3. Classic 1.32 또는 Next-Gen(5.0+로 표시된 패키지)�
 
 [*]업데이트할 때는 이전 Beta Gwent 모드 폴더를 먼저 Mods 밖으로 옮기세요. Mods 전체를 삭제하거나 다른 버전의 파일을 섞지 마세요.
 
-[*]압축 파일의 Mods를 bin과 content가 있는 게임 폴더에 복사하세요. Classic 1.32는 포함된 DLC 폴더도 복사해야 합니다. 경로는 1.32의 경우 Mods/modBetaGwentClassic132/content와 DLC/dlcBetaGwentClassic132Assets, Next-Gen은 Mods/modBetaGwent0924/content입니다. 이 모드의 이전 폴더만 교체하고 다른 모드와 DLC는 유지하세요.
+[*]압축 파일의 Mods를 bin과 content가 있는 게임 폴더에 복사하세요. Classic 1.32는 포함된 DLC 폴더도 복사해야 합니다. 경로는 1.32의 경우 Mods/modBetaGwentClassic132/content와 DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items, Next-Gen은 Mods/modBetaGwent0924/content입니다. 이 모드의 이전 폴더만 교체하고 다른 모드와 DLC는 유지하세요.
 
 [*]세이브를 불러오세요. 기존 궨트 덱 메뉴에서 편집과 언어 선택을 할 수 있고, 궨트를 하는 NPC와 대화하면 대결을 시작합니다. 설정을 유지하려면 정상적으로 저장하세요.
 [/list]
@@ -2255,7 +2255,7 @@ bg_shoprefill(5)
 [spoiler]
 [size=4][color=#e0b354][b]Classic 1.32 용량과 DLC 폴더[/b][/color][/size]
 
-카드와 규칙은 같지만 Classic은 약 623 MB, Next-Gen은 약 448 MB입니다. 구형 형식과 비동기 로딩 리소스당 약 32 MiB 제한에 맞추어 그래픽 페이지를 나눕니다. Classic에는 Mods와 DLC가 모두 필요합니다. DLC/dlcBetaGwentClassic132Assets에는 필수 그래픽과 등록 정보가 있으며 새 이야기는 없습니다. 다운로드 중 약 105 MB가 이 폴더이며 나머지 차이는 구형 엔진용 리소스 준비에서 생깁니다.
+카드와 규칙은 같지만 Classic은 약 623 MB, Next-Gen은 약 448 MB입니다. 구형 형식과 비동기 로딩 리소스당 약 32 MiB 제한에 맞추어 그래픽 페이지를 나눕니다. Classic에는 Mods와 DLC가 모두 필요합니다. DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items에는 필수 그래픽과 등록 정보가 있으며 새 이야기는 없습니다. 다운로드 중 약 105 MB가 이 폴더이며 나머지 차이는 구형 엔진용 리소스 준비에서 생깁니다.
 
 
 [size=4][color=#e0b354][b]호환성[/b][/color][/size]
@@ -2278,7 +2278,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 수집 목록, 덱, 자원, 설정, 알려진 보상, 백업 데이터와 플레이어 인벤토리의 betagwent_* 아이템을 지웁니다. 저장되는 플래그가 모드 설치 상태에서 다시 불러와도 복원을 막습니다. 새 슬롯에 저장하고 게임을 종료한 다음 모드와 Classic DLC를 제거하고 Script Merger를 갱신하세요. 새 슬롯을 불러와 다시 저장하세요. 퀘스트, 도전 과제, 사용한 크라운은 되돌리지 않습니다. 로드되지 않은 상인, 보관함, 월드 용기는 검색하지 않습니다. 과거의 고아 보상 팩트에는 확인 후 save_fact_index.py와 bg_clean_keys('…')가 필요할 수 있습니다. 모든 역사적 기록의 물리적 완전 삭제를 보장하지 않습니다. 일부 베타 아이템을 제거하지 못하면 성공 대신 INCOMPLETE가 표시됩니다. 해당 아이템을 버리거나 판매한 뒤 명령을 다시 실행하세요. 제거할 때 Optional-CopyButton을 설치했다면 그 파일(bin\…\plugins\GwentBetaClipboard.asi와 이 모드의 dinput8.dll, 다른 모드의 것은 제외)도 삭제하세요.
 
-[b]제거 후:[/b] 압축 파일의 After-Uninstall 폴더에 있는 Mods 폴더를 게임 폴더에 복사하세요(Mods/modBetaGwentKeepItems). 모드 아이템의 숨김 정의가 남아 있어, 베타 카드나 카드통이 남아 있는 상인, 보관함, 상자의 인벤토리 전체가 사라지는 것을 막습니다. 모드와 함께 설치하지 마세요.
+[b]제거 후:[/b] 압축 파일의 After-Uninstall 폴더에 있는 폴더를 게임 폴더에 복사하세요(Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems). 모드 아이템의 숨김 정의가 남아 있어, 베타 카드나 카드통이 남아 있는 상인, 보관함, 상자의 인벤토리 전체가 사라지는 것을 막습니다. 모드와 함께 설치하지 마세요.
 [/spoiler]
 
 
@@ -2409,7 +2409,7 @@ PC 版《巫师 3》。请选择 Classic 1.32 或 Next-Gen（标有 5.0+）对�
 
 [*]更新时，先将旧的 Beta Gwent 模组文件夹移到 Mods 之外。不要删除整个 Mods 文件夹，也不要混用不同版本的文件。
 
-[*]将压缩包中的 Mods 复制到游戏目录，与 bin、content 同级。Classic 1.32 还需复制包内的 DLC 文件夹。路径：1.32 为 Mods/modBetaGwentClassic132/content 和 DLC/dlcBetaGwentClassic132Assets；Next-Gen 为 Mods/modBetaGwent0924/content。只替换本模组的旧文件夹，保留其他模组和 DLC。
+[*]将压缩包中的 Mods 复制到游戏目录，与 bin、content 同级。Classic 1.32 还需复制包内的 DLC 文件夹。路径：1.32 为 Mods/modBetaGwentClassic132/content 和 DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items；Next-Gen 为 Mods/modBetaGwent0924/content。只替换本模组的旧文件夹，保留其他模组和 DLC。
 
 [*]读取存档。原有昆特牌牌组菜单可打开编辑器和语言选择；与会玩昆特牌的 NPC 对话即可开始对局。正常保存游戏以保留设置。
 [/list]
@@ -2486,7 +2486,7 @@ bg_shoprefill(5)
 [spoiler]
 [size=4][color=#e0b354][b]Classic 1.32为何更大且需要DLC文件夹[/b][/color][/size]
 
-卡牌与规则相同，但Classic约623 MB，Next-Gen约448 MB。旧资源格式和每个异步加载资源约32 MiB的限制需要拆分图像页面。Classic必须同时安装Mods与DLC。DLC/dlcBetaGwentClassic132Assets包含必需图像及注册信息，不新增剧情。下载中约105 MB来自此文件夹，其余容量差异来自旧引擎的资源准备。
+卡牌与规则相同，但Classic约623 MB，Next-Gen约448 MB。旧资源格式和每个异步加载资源约32 MiB的限制需要拆分图像页面。Classic必须同时安装Mods与DLC。DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items包含必需图像及注册信息，不新增剧情。下载中约105 MB来自此文件夹，其余容量差异来自旧引擎的资源准备。
 
 
 [size=4][color=#e0b354][b]兼容性[/b][/color][/size]
@@ -2509,7 +2509,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 清除收藏、牌组、资源、设置、已知奖励记录、备份镜像及玩家当前背包中的betagwent_*物品。存档标记会阻止恢复，即使仍装着模组重新读档。保存到新栏位，退出游戏，移除模组及其Classic DLC，更新Script Merger，再读取新栏位并保存一次。任务、成就和已花费克朗不会回退。未加载商人、储物箱及世界容器不会被遍历。旧的孤立奖励事实可能需要在确认后使用save_fact_index.py和bg_clean_keys('…')。不保证物理删除任意存档中的所有历史痕迹。 若部分Beta物品无法移除，将显示INCOMPLETE而不是成功信息：请丢弃或出售这些物品后再次执行命令。 卸载时，若安装过Optional-CopyButton，也请删除其文件：bin\…\plugins\GwentBetaClipboard.asi以及本模组的dinput8.dll（不要删除其他模组的）。
 
-[b]卸载后：[/b] 将压缩包After-Uninstall文件夹中的Mods文件夹复制到游戏目录（Mods/modBetaGwentKeepItems）。它保留模组物品的隐藏定义，避免仍持有测试版卡牌或卡桶的商人、储物箱和容器丢失全部物品。不要与模组同时安装。
+[b]卸载后：[/b] 将压缩包After-Uninstall文件夹中的文件夹复制到游戏目录（Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems）。它保留模组物品的隐藏定义，避免仍持有测试版卡牌或卡桶的商人、储物箱和容器丢失全部物品。不要与模组同时安装。
 [/spoiler]
 
 
@@ -2640,7 +2640,7 @@ PC 版《巫師 3》。請選擇 Classic 1.32 或 Next-Gen（標示 5.0+）對�
 
 [*]更新時，先將舊的 Beta Gwent 模組資料夾移到 Mods 之外。不要刪除整個 Mods 資料夾，也不要混用不同版本的檔案。
 
-[*]將壓縮檔中的 Mods 複製至遊戲目錄，與 bin、content 同層。Classic 1.32 還需複製包內的 DLC 資料夾。路徑：1.32 為 Mods/modBetaGwentClassic132/content 與 DLC/dlcBetaGwentClassic132Assets；Next-Gen 為 Mods/modBetaGwent0924/content。只替換本模組的舊資料夾，保留其他模組與 DLC。
+[*]將壓縮檔中的 Mods 複製至遊戲目錄，與 bin、content 同層。Classic 1.32 還需複製包內的 DLC 資料夾。路徑：1.32 為 Mods/modBetaGwentClassic132/content 與 DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items；Next-Gen 為 Mods/modBetaGwent0924/content。只替換本模組的舊資料夾，保留其他模組與 DLC。
 
 [*]讀取存檔。原有的昆特牌牌組選單可開啟編輯器與語言選擇；與會玩昆特牌的 NPC 對話即可開始對局。正常儲存遊戲以保留設定。
 [/list]
@@ -2717,7 +2717,7 @@ bg_shoprefill(5)
 [spoiler]
 [size=4][color=#e0b354][b]Classic 1.32為何較大且需要DLC資料夾[/b][/color][/size]
 
-卡牌與規則相同，但Classic約623 MB，Next-Gen約448 MB。舊資源格式和每個非同步載入資源約32 MiB的限制需要拆分圖像頁面。Classic必須同時安裝Mods與DLC。DLC/dlcBetaGwentClassic132Assets包含必要圖像與註冊資訊，不新增劇情。下載中約105 MB來自此資料夾，其餘容量差異來自舊引擎的資源準備。
+卡牌與規則相同，但Classic約623 MB，Next-Gen約448 MB。舊資源格式和每個非同步載入資源約32 MiB的限制需要拆分圖像頁面。Classic必須同時安裝Mods與DLC。DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items包含必要圖像與註冊資訊，不新增劇情。下載中約105 MB來自此資料夾，其餘容量差異來自舊引擎的資源準備。
 
 
 [size=4][color=#e0b354][b]相容性[/b][/color][/size]
@@ -2740,7 +2740,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 清除收藏、牌組、資源、設定、已知獎勵紀錄、備份鏡像與玩家目前背包中的betagwent_*物品。存檔標記會阻止復原，即使仍裝著模組重新讀檔。儲存至新欄位，退出遊戲，移除模組及其Classic DLC，更新Script Merger，再讀取新欄位並儲存一次。任務、成就和已花費克朗不會回退。未載入商人、儲物箱與世界容器不會被遍歷。舊的孤立獎勵事實可能需要在確認後使用save_fact_index.py和bg_clean_keys('…')。不保證物理刪除任意存檔中的所有歷史痕跡。 若部分Beta物品無法移除，將顯示INCOMPLETE而非成功訊息：請丟棄或出售這些物品後再次執行指令。 解除安裝時，若安裝過Optional-CopyButton，也請刪除其檔案：bin\…\plugins\GwentBetaClipboard.asi以及本模組的dinput8.dll（勿刪除其他模組的）。
 
-[b]解除安裝後：[/b] 將壓縮檔After-Uninstall資料夾中的Mods資料夾複製到遊戲目錄（Mods/modBetaGwentKeepItems）。它保留模組物品的隱藏定義，避免仍持有測試版卡牌或卡桶的商人、儲物箱與容器遺失全部物品。不要與模組同時安裝。
+[b]解除安裝後：[/b] 將壓縮檔After-Uninstall資料夾中的資料夾複製到遊戲目錄（Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems）。它保留模組物品的隱藏定義，避免仍持有測試版卡牌或卡桶的商人、儲物箱與容器遺失全部物品。不要與模組同時安裝。
 [/spoiler]
 
 
@@ -2872,7 +2872,7 @@ Card texts use the official Beta localization. The mod interface includes AI-ass
 
 [*]When updating, move the previous Beta Gwent mod folder outside Mods first. Do not remove the entire Mods folder or mix files from different versions.
 
-[*]Copy Mods from the archive into the game directory, next to bin and content. Optional: copy bin from Optional-CopyButton (Copy button). For Classic 1.32, also copy the included DLC folder. Paths: Mods/modBetaGwentClassic132/content and DLC/dlcBetaGwentClassic132Assets for 1.32; Mods/modBetaGwent0924/content for Next-Gen. Replace only this mod's previous folders, keeping your other mods and DLC.
+[*]Copy Mods from the archive into the game directory, next to bin and content. Optional: copy bin from Optional-CopyButton (Copy button). For Classic 1.32, also copy the included DLC folder. Paths: Mods/modBetaGwentClassic132/content and DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items for 1.32; Mods/modBetaGwent0924/content for Next-Gen. Replace only this mod's previous folders, keeping your other mods and DLC.
 
 [*]Load your save. Open the normal Gwent deck menu to edit decks and choose text/voices, or talk to a Gwent-playing NPC to start a match. Save normally to retain your preferences.
 [/list]
@@ -2953,7 +2953,7 @@ bg_shoprefill(5)
 
 Download one package for your game version. Classic is about 623 MB, Next-Gen about 448 MB; both have the same cards and AI. Classic uses a different native resource format and an older loader with an approximately 32 MiB limit per asynchronously loaded resource. Its graphics need separate pages and texture bindings; ZIP compression cannot bypass that limit.
 
-Classic must include both Mods/modBetaGwentClassic132 and DLC/dlcBetaGwentClassic132Assets. The DLC folder supplies essential graphics and loader registration, including leader entrance pages; it adds no story content and does not replace either official expansion. About 105 MB of the Classic download belongs to this folder; the remaining size difference comes from resource preparation for the old engine. Next-Gen uses Mods/modBetaGwent0924. Players do not need REDkit, Wwise or build tools.
+Classic must include both Mods/modBetaGwentClassic132 and DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items. The DLC folder supplies essential graphics and loader registration, including leader entrance pages; it adds no story content and does not replace either official expansion. About 105 MB of the Classic download belongs to this folder; the remaining size difference comes from resource preparation for the old engine. Next-Gen uses Mods/modBetaGwent0924. Players do not need REDkit, Wwise or build tools.
 
 
 [size=4][color=#e0b354][b]Compatibility[/b][/color][/size]
@@ -2976,7 +2976,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 This clears the Beta collection, decks, scraps, kegs, settings, known reward ledgers, both backup banks and betagwent_* items in the player's current inventory. A saved uninstall flag prevents starter grants and backup restoration, including after reloading with the mod still installed. Save to a NEW slot, exit the game, remove this mod's folders (including its Classic DLC), rebuild affected Script Merger merges, load the new slot and save again. To cancel, load your original backup. If some Beta item stacks cannot be removed, the game shows INCOMPLETE instead of success: drop or sell them and run the command again. When uninstalling, also delete the Optional-CopyButton files if you installed them: bin\…\plugins\GwentBetaClipboard.asi and the dinput8.dll from this mod (not another mod's).
 
-[b]After uninstalling:[/b] copy the Mods folder from the archive's After-Uninstall folder into the game directory (Mods/modBetaGwentKeepItems). It keeps hidden definitions of the mod's items, so merchants, your stash and containers that still hold Beta cards or kegs don't lose their whole inventory. Do not install it together with the mod.
+[b]After uninstalling:[/b] copy the folder from the archive's After-Uninstall folder into the game directory (Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems). It keeps hidden definitions of the mod's items, so merchants, your stash and containers that still hold Beta cards or kegs don't lose their whole inventory. Do not install it together with the mod.
 
 Completed quests, achievements and spent crowns are not rolled back. The command does not traverse unloaded merchants, stash or world containers; retrieve Beta items first. Orphaned reward facts can require the included read-only save_fact_index.py and bg_clean_keys('…') after confirmation. See BetaGwentDocs/CLEANUP_EN.md. This is profile cleanup, not a certification that every historical byte of an arbitrary save has been erased.
 [/spoiler]

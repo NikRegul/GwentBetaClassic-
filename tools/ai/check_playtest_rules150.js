@@ -49,11 +49,12 @@ for(const template of [113309,112102,112107,113308]){
  check(meals.every(f=>f.templateId===132202),'consume source remains Mourntart');
  check(meals.every(f=>f.targetZone===32&&f.targetPower>0),'consume visuals preserve the original pile and portrait power');
 }
-// Lock-toggle retains unrelated tokens on an ordinary unit.
+// Adding Lock removes the original REMOVED_BY_LOCK statuses. Unlock cannot
+// recreate removed resilience or spying; independent reveal/weather tags stay.
 {
- const g=fixture(),c=add(g,142317,1);c.AddTokens(129);c.ToggleLock();
- check((c.Snapshot().tokenMask&133)===133,'lock does not clear Resilience or Spying');
- c.ToggleLock();check((c.Snapshot().tokenMask&133)===129,'unlock restores only the lock bit');
+ const g=fixture(),c=add(g,142317,1);c.AddTokens(129|16|64);c.ToggleLock();
+ check((c.Snapshot().tokenMask&133)===4&&(c.Snapshot().tokenMask&80)===80,'lock clears Resilience and Spying, retaining independent tokens');
+ c.ToggleLock();check((c.Snapshot().tokenMask&133)===0&&(c.Snapshot().tokenMask&80)===80,'unlock removes only Lock without restoring erased statuses');
 }
 // Crow's damage and death frames carry the actual spell identity for delayed deaths.
 {

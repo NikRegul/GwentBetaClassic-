@@ -1,42 +1,29 @@
 # Gwent Beta Classic
 
-Version **0.9.0** brings standalone Gwent Beta 0.9.24 into The Witcher 3, with separate PC packages for **Classic 1.32** and **Next-Gen 5.0+**. This source snapshot matches **final9**, **ui9** and clipboard bridge **r7**.
+Мод для The Witcher 3: гвинт по правилам беты, коллекция и редактор колод, Hard и «Классическая», поддержка Classic 1.32 и Next-Gen 5.0+.
 
-479 collectible cards, including 21 leaders, all five factions, 46 opponent archetypes, editable starter decks and eight custom deck slots, crafting, kegs, NPC matches and controller support. Ordinary card artwork is static; leader portraits are animated.
+- [Сборка и проверка](docs/BUILD_RU.md)
+- [Улучшение ИИ и испытания](docs/AI_DEVELOPMENT_RU.md)
+- [Постоянные локальные входы](docs/BUILD_INPUTS_RU.md)
+- [Критерии версии 1.0](docs/ROADMAP_1.0_RU.md)
+- [Правила изменения эффектов](docs/VFX_RENDERING_RULES_RU.md)
+- [Текущий статус и история](docs/REPOSITORY_CURRENT_RU.md)
+- [Тексты публичной 0.9.3 на 13 языках](docs/releases/0.9.3-public-20261025)
 
-## New in 0.9.0
+## Структура
 
-- Native Windows clipboard import and export through the optional r7 bridge. Without `Optional-CopyButton/bin`, both exchange buttons are hidden. Preview and explicitly craft missing cards before importing a draft; Save keeps it.
-- Faction and rarity banners, corrected power placement, a larger card inspection view and improved deck previews. Battle previews retain their accepted proportions.
-- Ten tutorial pages in all 13 text languages, including mulligans, rows, neighbours and card statuses.
-- Explicit profile cleanup with a saved guard against reinitialization after cleanup; incomplete inventory removal produces a single failure result.
-- Corrected Myrgtabrakke and Harald the Cripple hit counts, plus the existing AI, controller, weather, audio and Classic compatibility work.
+`BetaGwent/scripts` — базовые WS скрипты; `BetaGwent/development/scripts` — правила и ИИ; `BetaGwent/ui/src` — меню; `data` — постоянные данные и составы; `tools` — сборка, проверки и исследовательские инструменты; `docs` — инструкции и история решений.
 
-The offline final9 audit passed 1,426 tactical scenarios, 414 row-choice cases, 46 self-play matches, profile and cleanup fixtures, and 344 isolated native clipboard checks. ZIP hashes and every packaged file were verified. This does not replace a clean-install test in both games. Remaining runtime/build findings include missing embedded glyphs in some CJK tutorial text and an older CleanBuild export; the stale standalone Verify launcher has been removed; see the [audit](docs/reviews/2026-10-19-final9-audit.md).
+Локальные `BetaGwent/build-inputs` и `BetaGwent/toolchains` содержат необходимые внешние входы. `BetaGwent/build` — выходы сборок и замороженные испытания; `release/0.9.3` — готовые файлы для передачи. Они не входят в публичный Git. `BetaGwent/publication` — отдельный checkout публичного исходного репозитория.
 
-## Languages and installation
+Публичный Git содержит исходники и данные. Оригинальные игровые ресурсы, SDK, шрифты, голоса, Wwise-проекты с ключами, сохранения, dumps и игровые клиенты туда не включаются. Для сборки нужны отдельно подготовленные локальные зависимости. Лицензия собственного кода — GPL-3.0-only, см. [LICENSE](LICENSE) и [ATTRIBUTIONS.md](ATTRIBUTIONS.md).
 
-Each platform package includes 13 text languages and five voice languages (RU, EN, DE, IT, PT-BR). Select text and voices independently in the mod menu; save the game normally to retain your choices. Some older hints use English fallback; some DE/IT keg-troll lines retain the Russian source fallback.
+## Статус
 
-Back up saves and replace the previous folders of this mod. Copy `Mods` into the game directory. Classic also requires the archive's `DLC/dlcBetaGwentClassic132Assets`. Use only the package matching your game branch. Rebuild conflicting script merges after changing mods.
+Последняя упакованная 0.9.3 прошла 90 регрессионных групп, оба нативных компилятора, 92 полные JS/WS партии и независимую проверку архивов. Нативная игровая приёмка остаётся открытой; общий прирост силы последнего кандидата не измерен. Последняя пересборка включает исправление ложной стрелки при выборе из руки (Сванриге и аналогичные запросы), обновлённые меню и проверки управления; прежние ZIP сохранены отдельно.
 
-- [Full description and installation (EN)](docs/releases/0.9.0/nexus/en/description.md) / [RU](docs/releases/0.9.0/nexus/ru/description.md)
-- [Complete Nexus description: 13 languages, BBCode](docs/releases/0.9.0/nexus/NEXUS_DESCRIPTION_0.9.0.bbcode.txt)
-- [Changelog (EN)](docs/releases/0.9.0/nexus/en/changelog.md) / [RU](docs/releases/0.9.0/nexus/ru/changelog.md)
-- [Regression scenarios (RU)](docs/releases/0.8.2/regression/SCENARIOS_RU.md)
-- [First build on a new Windows PC (RU)](docs/BUILD_FIRST_TIME_RU.md)
-- [0.9.0 release hashes](docs/releases/0.9.0/release.json), [build and resource guide (RU)](docs/BUILD_0.9.0_RESOURCE_HANDOFF_RU.md), [audit (RU)](docs/reviews/2026-10-19-final9-audit.md)
+В игре 13 языков текста и 5 озвучки. Hard не видит настоящую скрытую руку/колоду; «Классическая» имеет этот доступ. Не считать результаты режимов симметричным сравнением информационных условий.
 
-## Source and build scope
+## Быстрый старт
 
-This repository contains source code, generators, tests and documentation. Game clients, original art, fonts, voices, native resource templates, SDKs, private Wwise projects, release ZIPs, memory dumps and saves are excluded. Building requires the configured local Windows/REDkit toolchain and prepared resource snapshots; a clean clone alone is insufficient. See the [local dependency guide](docs/LOCAL_INPUTS_0.6.1.md) and the current build record above. Older stage documents describe their historical versions.
-
-Runtime sources are in `BetaGwent/development/scripts`, shared Next-Gen UI in `BetaGwent/ui/src`, and prepared Classic scripts/UI in `BetaGwent/platforms/classic132`. `BetaGwent/native/clipboard` contains the optional bridge source. `tools/features082` contains the 0.9.0 checks, publication generators and packaging tools. The exact source hashes are recorded in [github090-sources.json](docs/evidence/github090-sources.json). Prepared art, sound and frozen templates remain local build inputs; they are not included in this repository.
-
-Historical publication copies and disposable build reports are available in Git history. See the [repository cleanup record](docs/reviews/2026-10-19-repository-cleanup.md) for removed paths, retained build dependencies and detailed audit results.
-
-## Contributing
-
-Report the exact game/mod versions, text/voice settings, input device, involved cards and reproduction steps. For AI reports include the round, crowns, score, hands, public board and expected alternative. Preserve saved profile fields and preset IDs; change generators alongside generated code where applicable.
-
-Original project code is GPL-3.0-only; see [LICENSE](LICENSE) and [ATTRIBUTIONS.md](ATTRIBUTIONS.md). Original game assets belong to their respective owners and are not relicensed under GPL.
+После подготовки зависимостей запустить `Build-0.9.3.cmd`. Каждый запуск использует свежий каталог; продолжение требует явного `--out ... --resume`. Сборка ничего не устанавливает и не публикует.

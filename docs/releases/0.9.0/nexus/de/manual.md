@@ -82,13 +82,13 @@ Jedes Paket enthält RU, EN, DE, IT und PT-BR. Text und Stimmen lassen sich unab
 
 2. Verschiebe beim Update zuerst den bisherigen Beta-Gwent-Modordner aus Mods heraus. Entferne nicht den gesamten Mods-Ordner und mische keine Versionsdateien.
 
-3. Mods aus dem Archiv ins Spielverzeichnis neben bin und content kopieren. Für Classic 1.32 auch den enthaltenen DLC-Ordner kopieren. Pfade: Mods/modBetaGwentClassic132/content und DLC/dlcBetaGwentClassic132Assets für 1.32; Mods/modBetaGwent0924/content für Next-Gen. Nur die bisherigen Ordner dieser Mod ersetzen; andere Mods und DLC behalten.
+3. Mods aus dem Archiv ins Spielverzeichnis neben bin und content kopieren. Für Classic 1.32 auch den enthaltenen DLC-Ordner kopieren. Pfade: Mods/modBetaGwentClassic132/content und DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items für 1.32; Mods/modBetaGwent0924/content für Next-Gen. Nur die bisherigen Ordner dieser Mod ersetzen; andere Mods und DLC behalten.
 
 4. Lade deinen Spielstand. Das normale Gwint-Deckmenü öffnet den Editor und die Sprachauswahl; bei Gwint-NPCs startest du Partien. Speichere regulär, um die Auswahl zu behalten.
 
 ## Classic 1.32: Größe und DLC
 
-Classic benötigt etwa 623 MB, Next-Gen 448 MB bei denselben Karten und Regeln. Das alte Ressourcenformat und die Grenze von etwa 32 MiB pro asynchron geladener Ressource erfordern getrennte Grafikseiten. Für Classic beide Ordner Mods und DLC installieren: DLC/dlcBetaGwentClassic132Assets enthält notwendige Grafik und deren Registrierung, keine neue Handlung. Etwa 105 MB des Downloads entfallen darauf; der Rest des Größenunterschieds entsteht durch die Aufbereitung für die alte Engine.
+Classic benötigt etwa 623 MB, Next-Gen 448 MB bei denselben Karten und Regeln. Das alte Ressourcenformat und die Grenze von etwa 32 MiB pro asynchron geladener Ressource erfordern getrennte Grafikseiten. Für Classic beide Ordner Mods und DLC installieren: DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items enthält notwendige Grafik und deren Registrierung, keine neue Handlung. Etwa 105 MB des Downloads entfallen darauf; der Rest des Größenunterschieds entsteht durch die Aufbereitung für die alte Engine.
 
 ## Voraussetzungen
 
@@ -112,7 +112,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 Sammlung, Decks, Ressourcen, Einstellungen, bekannte Belohnungen, Sicherungsspiegel und betagwent_*-Gegenstände im Spielerinventar werden gelöscht. Eine gespeicherte Sperre verhindert die Wiederherstellung, auch nach erneutem Laden. In NEUEM Slot speichern, Spiel beenden, Mod samt Classic-DLC entfernen, Script Merger aktualisieren, neuen Slot laden und erneut speichern. Quests, Erfolge und ausgegebene Kronen bleiben. Unbeladene Händler, Lager und Weltbehälter werden nicht durchsucht. Für verwaiste Belohnungsfakten stehen save_fact_index.py und bg_clean_keys('…') nach Bestätigung bereit. Eine vollständige physische Löschung jeder historischen Speicherstelle wird nicht zugesichert. Lassen sich einige Beta-Gegenstände nicht entfernen, erscheint INCOMPLETE statt der Erfolgsmeldung: diese wegwerfen oder verkaufen und den Befehl wiederholen. Beim Deinstallieren auch die Optional-CopyButton-Dateien löschen, falls installiert: bin\…\plugins\GwentBetaClipboard.asi und die dinput8.dll dieses Mods (nicht die eines anderen).
 
-**Nach der Deinstallation:** Kopiere den Ordner Mods aus dem Ordner After-Uninstall des Archivs in das Spielverzeichnis (Mods/modBetaGwentKeepItems). Er enthält versteckte Definitionen der Mod-Gegenstände, damit Händler, Truhe und Behälter, die noch Beta-Karten oder Fässer enthalten, nicht ihr gesamtes Inventar verlieren. Nicht zusammen mit der Mod installieren.
+**Nach der Deinstallation:** Kopiere den Ordner aus dem Ordner After-Uninstall des Archivs in das Spielverzeichnis (Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems). Er enthält versteckte Definitionen der Mod-Gegenstände, damit Händler, Truhe und Behälter, die noch Beta-Karten oder Fässer enthalten, nicht ihr gesamtes Inventar verlieren. Nicht zusammen mit der Mod installieren.
 
 ## Bis 1.0
 

@@ -11,7 +11,7 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / 'deck_rules_researched_114.md'
+SOURCE = ROOT / 'data/beta924/ai/references/deck_rules_researched_114.md'
 DEST = ROOT / 'data/beta924/ai/researched115.json'
 
 def normalize(text):

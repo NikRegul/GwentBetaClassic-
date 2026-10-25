@@ -49,7 +49,7 @@ function BetaGwentAITune(index : int) : int
     case 7: return 6;   // Generation 4: follow-up cards checked after each candidate
     case 8: return 5;   // Generation 4: weight of the follow-up uplift (tenths)
     case 9: return 4;   // Generation 4: candidates checked for follow-up uplift
-    case 10: return 3;  // Deck thinning: value of each card a play pulls out of the deck (rounds 1-2)
+    case 10: return 1;  // Modest thinning credit; the pulled unit/ability already contributes its real tempo.
     case 11: return 10; // Weather damage over time: weight of the expected future ticks (tenths)
     case 12: return 10; // Growing finishers (Dol Blathanna Sentry, Bloody Baron): weight of keeping them in hand (tenths)
     case 13: return 5;  // Rounds 1-2: cost of spending a gold card (points)
@@ -124,7 +124,13 @@ function BetaGwentAIRoundDecision(round : int, ownCrowns : int, enemyCrowns : in
     // claim that the hidden hand cannot contain stronger control.
     if(lead>0)
     {
-        if(ownHand>=3 && ownHand>=enemyHand && lead>=26)return 1;
+        // A numerical lead alone is not a safe pass: a public removal can
+        // erase that lead in one reply. Apply the same response envelope to
+        // balanced hands as to a red-coin card deficit.
+        if(ownHand>=3 && ownHand>=enemyHand && lead>=Max(26,margin))return 1;
+        // A large lead can recover a red-coin card deficit by forcing replies.
+        // Requiring an equal hand lets the opponent bleed us indefinitely.
+        if(lead>=Max(BetaGwentAITune(20),margin))return 1;
         if(ownHand>=3 && ownHand>enemyHand && lead>=16 && lead>enemyValue && !enemyLeader)return 1;
         return 0;
     }
@@ -159,7 +165,41 @@ function BetaGwentAIEarlyPass(lead : int, burst : int, leaderBurst : int,
     // a safe two-card tax from just a low observed opening bronze.
     burst = Max(BetaGwentAITune(21), burst);
     needed = (Max(0, lead + 1 - leaderBurst) + burst - 1) / burst;
-    return lead >= BetaGwentAITune(20) && needed >= 2 && enemyHand >= needed && ownHand - (enemyHand - needed) >= 2;
+    return lead >= BetaGwentAITune(20) && needed >= 2 && enemyHand >= needed && ownHand - (enemyHand - needed) >= 0;
+}
+// Public response envelope, not knowledge of the opposing hidden hand.
+function BetaGwentAIReplyCards(lead : int, burst : int, leaderBurst : int) : int
+{
+    burst=Max(BetaGwentAITune(21),burst);
+    return (Max(0,lead+1-Max(0,leaderBurst))+burst-1)/burst;
+}
+// In an optional round, immediate overkill between response thresholds buys
+// no additional card. Keep a small safety margin, and retain future/draw utility.
+function BetaGwentAIPressureDiscount(lead : int, gain : int, burst : int, leaderBurst : int) : int
+{
+    var before,after,useful : int;
+    if(lead<=0 || gain<=0)return 0;
+    burst=Max(BetaGwentAITune(21),burst);
+    before=BetaGwentAIReplyCards(lead,burst,leaderBurst);
+    after=BetaGwentAIReplyCards(lead+gain,burst,leaderBurst);
+    if(after<=before){
+        // No extra opposing card is required. Credit only a small margin
+        // above the existing threshold; raw overkill has no pressure value.
+        useful=Max(0,(before-1)*burst+Max(0,leaderBurst)+3-lead);
+        return Max(0,gain-useful);
+    }
+    useful=Max(0,(after-1)*burst+Max(0,leaderBurst)-lead)+3;
+    return Max(0,gain-useful);
+}
+// Optimistic commitment on the currently evaluated actions. It may miss a
+// combo, so a valuable engine continuation vetoes this optional concession.
+function BetaGwentAIInvestmentPass(round : int, ownCrowns : int, enemyCrowns : int,
+    lead : int, ownHand : int, enemyHand : int, reachable : bool, cards : int,
+    bestTempo : int, bestValue : int) : bool
+{
+    if(round!=1 || ownCrowns!=0 || enemyCrowns!=0 || lead> -14 || ownHand<4 || enemyHand<2)return false;
+    if(!reachable || cards<2 || Max(bestTempo,bestValue)+lead>=0)return false;
+    return ownHand-cards-enemyHand<= -2;
 }
 // Bounded estimate of the actual alternating duel: live power, armor and
 // first strike. No state mutation, random choice or enemy-hand information.

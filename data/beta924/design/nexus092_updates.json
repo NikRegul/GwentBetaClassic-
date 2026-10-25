@@ -1,0 +1,106 @@
+{
+  "en": {
+    "title": "0.9.2 — another reason to play one more round",
+    "ai": "The opponent pays closer attention to the cards it spends: when to concede an expensive chase, how to take an empty round cheaply and which pieces to keep for the final. New tactical search considers different replies and chooses a separate continuation for each. Exact checks of promising cards now also run on easy and medium; small supported public endgames can be searched to completion.",
+    "knowledge": "Maximum difficulty knows your originally declared deck list, but not your real hidden hand or future draw order. Easy and medium do not use the exact starting list. No starting five-point bonus has been added.",
+    "cards": "Panther uses a board targeting arrow and still requires fewer than four units in the target row. Henry var Attre can finish optional selection. Creation pools, related-card previews and several combo decisions have been corrected.",
+    "music": "The original Gwent Beta main menu theme now plays in the deck builder. Matches retain The Witcher 3 music. Classic loading/audio improvements and controller fixes from 0.9.1 are included.",
+    "install": "Install the main mod. modBetaGwentMenuMusic is optional: it adds the Beta theme to the deck builder; without it, the game's normal music continues. Classic 1.32 still needs both included DLC folders. Keep unrelated mods and rebuild affected Script Merger merges when applicable. See the included 0.9.2 changelog for details."
+  },
+  "ru": {
+    "title": "0.9.2 — ещё один повод сыграть ещё одну партию",
+    "ai": "Соперник внимательнее распоряжается рукой: когда уступить дорогую погоню, чем дёшево забрать пустой раунд и что сохранить для финала. Новый тактический поиск рассматривает разные ответы и выбирает продолжение отдельно для каждого. Точная проверка перспективных карт работает также на лёгкой и средней сложности; небольшие поддерживаемые открытые финалы могут рассчитываться до конца.",
+    "knowledge": "На максимальной сложности ИИ знает первоначально объявленный состав вашей колоды, но не настоящую скрытую руку и будущий порядок добора. На лёгкой и средней сложности точный стартовый состав не используется. Стартовые пять очков не добавлены.",
+    "cards": "Пантера выбирает цель стрелкой на поле; в ряду цели по-прежнему должно быть меньше четырёх отрядов. Генрих вар Аттре позволяет закончить необязательный выбор. Исправлены создаваемые карты, связанные подсказки и ряд решений с комбинациями.",
+    "music": "В конструкторе звучит оригинальная тема главного меню Gwent Beta. В матчах сохранена музыка The Witcher 3. Включены исправления загрузки и звука Classic, а также управления геймпадом из 0.9.1.",
+    "install": "Установите основной мод. modBetaGwentMenuMusic необязателен: он добавляет тему Беты в конструктор; без него продолжает звучать обычная музыка игры. Для Classic 1.32 по-прежнему нужны обе папки DLC из архива. Сохраняйте остальные моды и при необходимости пересоберите затронутые слияния Script Merger. Подробности — в changelog 0.9.2 внутри пакета."
+  },
+  "de": {
+    "title": "0.9.2 — ein weiterer Grund für noch eine Runde",
+    "ai": "Der Gegner geht sorgfältiger mit seiner Hand um: Wann sollte er eine teure Aufholjagd aufgeben, wie gewinnt er eine leere Runde günstig und welche Karten braucht er im Finale? Die neue taktische Suche prüft verschiedene Antworten und wählt für jede eine eigene Fortsetzung. Auch auf Leicht und Mittel werden aussichtsreiche Karten exakt simuliert; kleine unterstützte Endspiele mit offenen Informationen können bis zum Ende berechnet werden.",
+    "knowledge": "Auf dem höchsten Schwierigkeitsgrad kennt die KI die zu Beginn angegebene Deckliste, aber weder deine tatsächlich verdeckte Hand noch die künftige Ziehreihenfolge. Leicht und Mittel verwenden die genaue Startliste nicht. Es gibt keinen Startbonus von fünf Punkten.",
+    "cards": "Panther wählt sein Ziel mit einem Pfeil auf dem Spielfeld; die Zielreihe muss weiterhin weniger als vier Einheiten enthalten. Henry var Attre kann die optionale Auswahl beenden. Erzeugte Karten, Vorschauen verknüpfter Karten und mehrere Kombinationsentscheidungen wurden korrigiert.",
+    "music": "Im Deckbauer erklingt das originale Hauptmenüthema von Gwent Beta. In Partien bleibt die Musik aus The Witcher 3 erhalten. Die Lade-, Audio- und Controller-Korrekturen aus 0.9.1 sind enthalten.",
+    "install": "Installiere die Hauptmod. modBetaGwentMenuMusic ist optional: Das Modul ergänzt das Beta-Thema im Deckbauer; ohne dieses Modul läuft die normale Spielmusik weiter. Classic 1.32 benötigt weiterhin beide enthaltenen DLC-Ordner. Behalte andere Mods und erstelle betroffene Script-Merger-Zusammenführungen bei Bedarf neu. Einzelheiten stehen im enthaltenen Changelog zu 0.9.2."
+  },
+  "fr": {
+    "title": "0.9.2 — une raison de plus de jouer une dernière manche",
+    "ai": "L'adversaire gère sa main avec plus d'attention : quand abandonner une remontée trop coûteuse, comment remporter une manche vide à moindre coût et quelles cartes garder pour la finale. La nouvelle recherche tactique étudie plusieurs réponses et choisit une suite propre à chacune. La simulation exacte des cartes prometteuses fonctionne aussi en facile et en normal ; certaines petites fins de partie à informations ouvertes peuvent être calculées jusqu'au bout.",
+    "knowledge": "Au niveau maximal, l'IA connaît la liste du deck annoncée au départ, mais ni votre véritable main cachée ni l'ordre des prochaines pioches. Les niveaux facile et normal n'utilisent pas la liste initiale exacte. Aucun bonus initial de cinq points n'a été ajouté.",
+    "cards": "La Panthère utilise une flèche de ciblage sur le plateau ; la rangée ciblée doit toujours contenir moins de quatre unités. Henry var Attre peut terminer sa sélection facultative. Les cartes créées, les aperçus de cartes liées et plusieurs décisions de combinaison ont été corrigés.",
+    "music": "Le thème original du menu principal de Gwent Beta accompagne désormais le constructeur de decks. Les parties conservent la musique de The Witcher 3. Les corrections de chargement, de son et de manette de la version 0.9.1 sont incluses.",
+    "install": "Installez le mod principal. modBetaGwentMenuMusic est facultatif : il ajoute le thème de la Beta au constructeur de decks ; sans lui, la musique normale du jeu continue. Classic 1.32 nécessite toujours les deux dossiers DLC inclus. Conservez vos autres mods et refaites les fusions Script Merger concernées si nécessaire. Consultez le journal des modifications 0.9.2 inclus."
+  },
+  "it": {
+    "title": "0.9.2 — un motivo in più per un'altra partita",
+    "ai": "L'avversario gestisce la mano con più attenzione: quando rinunciare a una rimonta costosa, come vincere un round vuoto spendendo poco e quali carte conservare per il finale. La nuova ricerca tattica considera risposte diverse e sceglie una continuazione per ciascuna. La simulazione esatta delle carte promettenti funziona anche a difficoltà facile e normale; alcuni piccoli finali con informazioni pubbliche possono essere calcolati fino alla conclusione.",
+    "knowledge": "Alla difficoltà massima l'IA conosce la lista del mazzo dichiarata all'inizio, ma non la tua vera mano nascosta né l'ordine delle pescate future. Facile e normale non usano la lista iniziale esatta. Non è stato aggiunto alcun bonus iniziale di cinque punti.",
+    "cards": "Pantera sceglie il bersaglio con una freccia sul campo; la fila bersaglio deve contenere meno di quattro unità. Henry var Attre può terminare la selezione facoltativa. Corretti le carte create, le anteprime delle carte collegate e diversi comportamenti delle combo.",
+    "music": "Nel costruttore di mazzi si sente il tema originale del menu principale di Gwent Beta. Le partite mantengono la musica di The Witcher 3. Sono incluse le correzioni a caricamento, audio e controller della versione 0.9.1.",
+    "install": "Installa il mod principale. modBetaGwentMenuMusic è facoltativo: aggiunge il tema della Beta al costruttore di mazzi; senza di esso continua la musica normale del gioco. Classic 1.32 richiede comunque le due cartelle DLC incluse. Conserva gli altri mod e ricrea le fusioni interessate con Script Merger, se necessario. I dettagli sono nel changelog 0.9.2 incluso."
+  },
+  "pl": {
+    "title": "0.9.2 — kolejny powód, by zagrać jeszcze jedną partię",
+    "ai": "Przeciwnik uważniej gospodaruje kartami: kiedy zrezygnować z kosztownego odrabiania punktów, czym tanio wygrać pustą rundę i co zachować na finał. Nowe wyszukiwanie taktyczne analizuje różne odpowiedzi i dobiera osobną kontynuację dla każdej. Dokładna symulacja obiecujących kart działa także na łatwym i normalnym poziomie; niewielkie obsługiwane końcówki z jawnymi informacjami można obliczyć do końca.",
+    "knowledge": "Na najwyższym poziomie SI zna początkowo zadeklarowaną listę talii, ale nie twoją rzeczywistą ukrytą rękę ani kolejność przyszłego dobierania. Poziomy łatwy i normalny nie korzystają z dokładnej listy początkowej. Nie dodano premii pięciu punktów na start.",
+    "cards": "Pantera wybiera cel strzałką na planszy; w docelowym rzędzie nadal muszą znajdować się mniej niż cztery jednostki. Henry var Attre pozwala zakończyć opcjonalny wybór. Poprawiono tworzone karty, podgląd powiązanych kart i kilka decyzji dotyczących kombinacji.",
+    "music": "W edytorze talii gra oryginalny motyw menu głównego Gwent Beta. Partie zachowują muzykę z The Witcher 3. Uwzględniono poprawki ładowania, dźwięku i kontrolera z wersji 0.9.1.",
+    "install": "Zainstaluj główny mod. modBetaGwentMenuMusic jest opcjonalny: dodaje motyw Bety do edytora talii; bez niego nadal gra zwykła muzyka gry. Classic 1.32 nadal wymaga obu dołączonych folderów DLC. Zachowaj inne mody i w razie potrzeby ponownie wykonaj odpowiednie scalenia w Script Merger. Szczegóły zawiera dołączona lista zmian 0.9.2."
+  },
+  "es": {
+    "title": "0.9.2 — otra razón para jugar una partida más",
+    "ai": "El rival administra mejor su mano: cuándo abandonar una remontada costosa, cómo ganar una ronda vacía con poco gasto y qué guardar para la final. La nueva búsqueda táctica estudia distintas respuestas y elige una continuación para cada una. La simulación exacta de cartas prometedoras también funciona en fácil y normal; algunos finales pequeños con información pública pueden calcularse hasta el final.",
+    "knowledge": "En la dificultad máxima, la IA conoce la lista del mazo declarada al inicio, pero no tu mano oculta real ni el orden de los próximos robos. Fácil y normal no utilizan la lista inicial exacta. No se ha añadido una bonificación inicial de cinco puntos.",
+    "cards": "Pantera utiliza una flecha de selección en el tablero; la fila objetivo debe seguir teniendo menos de cuatro unidades. Henry var Attre permite terminar la selección opcional. Se han corregido cartas creadas, vistas de cartas relacionadas y varias decisiones de combos.",
+    "music": "El editor de mazos reproduce el tema original del menú principal de Gwent Beta. Las partidas mantienen la música de The Witcher 3. Se incluyen las correcciones de carga, sonido y mando de la versión 0.9.1.",
+    "install": "Instala el mod principal. modBetaGwentMenuMusic es opcional: añade el tema de la Beta al editor de mazos; sin él, continúa la música normal del juego. Classic 1.32 sigue necesitando las dos carpetas DLC incluidas. Conserva los demás mods y vuelve a generar las fusiones afectadas de Script Merger cuando corresponda. Consulta el registro de cambios 0.9.2 incluido."
+  },
+  "es-mx": {
+    "title": "0.9.2 — otra razón para jugar una partida más",
+    "ai": "El oponente administra su mano con más cuidado: cuándo abandonar una remontada costosa, cómo ganar una ronda vacía gastando poco y qué guardar para la final. La nueva búsqueda táctica considera distintas respuestas y elige una continuación para cada una. La simulación exacta de cartas prometedoras también funciona en fácil y normal; algunos finales pequeños con información pública se pueden calcular hasta su conclusión.",
+    "knowledge": "En la dificultad máxima, la IA conoce la lista del mazo declarada al principio, pero no tu mano oculta real ni el orden de los próximos robos. Fácil y normal no usan la lista inicial exacta. No se agregó una bonificación inicial de cinco puntos.",
+    "cards": "Pantera usa una flecha de selección en el tablero; la fila objetivo debe seguir teniendo menos de cuatro unidades. Henry var Attre permite terminar la selección opcional. Se corrigieron cartas creadas, vistas de cartas relacionadas y varias decisiones de combos.",
+    "music": "El editor de mazos reproduce el tema original del menú principal de Gwent Beta. Las partidas conservan la música de The Witcher 3. Se incluyen las correcciones de carga, audio y control de la versión 0.9.1.",
+    "install": "Instala el mod principal. modBetaGwentMenuMusic es opcional: agrega el tema de la Beta al editor de mazos; sin él, sigue la música normal del juego. Classic 1.32 sigue necesitando las dos carpetas DLC incluidas. Conserva los demás mods y vuelve a crear las fusiones afectadas de Script Merger cuando sea necesario. Los detalles están en el registro de cambios 0.9.2 incluido."
+  },
+  "pt-br": {
+    "title": "0.9.2 — mais um motivo para jogar outra partida",
+    "ai": "O adversário administra melhor a própria mão: quando desistir de uma recuperação cara, como vencer uma rodada vazia gastando pouco e o que guardar para a final. A nova busca tática considera respostas diferentes e escolhe uma continuação para cada uma. A simulação exata de cartas promissoras também funciona no fácil e no normal; alguns finais pequenos com informações públicas podem ser calculados até o fim.",
+    "knowledge": "Na dificuldade máxima, a IA conhece a lista do baralho declarada no início, mas não sua mão oculta real nem a ordem das próximas compras. Fácil e normal não usam a lista inicial exata. Nenhum bônus inicial de cinco pontos foi adicionado.",
+    "cards": "Pantera usa uma seta de seleção no tabuleiro; a fileira alvo ainda precisa ter menos de quatro unidades. Henry var Attre permite encerrar a seleção opcional. Foram corrigidas cartas criadas, prévias de cartas relacionadas e várias decisões de combos.",
+    "music": "O construtor de baralhos toca o tema original do menu principal de Gwent Beta. As partidas mantêm a música de The Witcher 3. As correções de carregamento, áudio e controle da versão 0.9.1 estão incluídas.",
+    "install": "Instale o mod principal. modBetaGwentMenuMusic é opcional: adiciona o tema da Beta ao construtor de baralhos; sem ele, a música normal do jogo continua. Classic 1.32 ainda precisa das duas pastas DLC incluídas. Preserve os outros mods e refaça as mesclagens afetadas no Script Merger quando necessário. Consulte o changelog 0.9.2 incluído."
+  },
+  "ja": {
+    "title": "0.9.2 — もう一戦、遊びたくなる更新",
+    "ai": "対戦相手の手札管理を改善しました。追い上げにカードを使いすぎないか、空のラウンドを安く取れるか、最終ラウンドに何を残すかを考慮します。新しい戦術探索では複数の応手を検討し、それぞれに続きの手を選びます。低・中難易度でも有望なカードを正確にシミュレーションし、対応する小規模な公開情報の終盤では決着まで探索できます。",
+    "knowledge": "最高難易度のAIは対戦開始時に宣言されたデッキ構成を把握しますが、実際の非公開手札や今後のドロー順は見ません。低・中難易度では正確な初期デッキ構成を使用しません。開始時の5ポイントボーナスは追加していません。",
+    "cards": "Pantherの対象は盤面の矢印で選択します。対象列のユニット数は引き続き4体未満である必要があります。Henry var Attreの任意選択は途中で終了できます。生成カード、関連カードの表示、一部のコンボ判断も修正しました。",
+    "music": "デッキ構築画面ではGwent Betaのオリジナル・メインメニューテーマが流れます。対戦中の音楽はThe Witcher 3のままです。0.9.1のClassic版ロード・音声修正とコントローラー修正も含まれます。",
+    "install": "メインMODをインストールしてください。modBetaGwentMenuMusicは任意です。デッキ構築画面にBetaのテーマを追加し、導入しない場合は通常のゲーム音楽が流れます。Classic 1.32では引き続き同梱のDLCフォルダー2つが必要です。他のMODは残し、必要に応じてScript Mergerで該当スクリプトを再統合してください。詳細は同梱の0.9.2変更履歴をご覧ください。"
+  },
+  "ko": {
+    "title": "0.9.2 — 한 판 더 즐길 이유",
+    "ai": "상대의 패 관리를 개선했습니다. 무리한 점수 추격을 언제 포기할지, 빈 라운드를 어떻게 적은 비용으로 이길지, 결승 라운드에 어떤 카드를 남길지 고려합니다. 새로운 전술 탐색은 여러 대응을 살펴보고 각각에 맞는 후속 수를 선택합니다. 쉬움과 보통에서도 유망한 카드의 정확한 시뮬레이션을 사용하며, 지원되는 소규모 공개 정보 종반은 끝까지 탐색할 수 있습니다.",
+    "knowledge": "최고 난이도 AI는 경기 시작 때 선언된 덱 목록을 알지만 실제 비공개 패나 이후 드로우 순서는 보지 않습니다. 쉬움과 보통은 정확한 초기 덱 목록을 사용하지 않습니다. 시작 시 5점 보너스는 추가하지 않았습니다.",
+    "cards": "Panther는 보드의 화살표로 대상을 선택하며 대상 열의 유닛은 여전히 4개 미만이어야 합니다. Henry var Attre의 선택은 도중에 끝낼 수 있습니다. 생성 카드, 연관 카드 미리 보기와 일부 콤보 판단도 수정했습니다.",
+    "music": "덱 편집기에서 Gwent Beta의 원래 메인 메뉴 테마가 재생됩니다. 경기 중에는 기존 The Witcher 3 음악을 유지합니다. 0.9.1의 Classic 로딩·음성 수정과 컨트롤러 수정도 포함합니다.",
+    "install": "메인 모드를 설치하세요. modBetaGwentMenuMusic은 선택 사항으로 덱 편집기에 Beta 테마를 추가합니다. 설치하지 않으면 일반 게임 음악이 계속 재생됩니다. Classic 1.32는 여전히 동봉된 DLC 폴더 두 개가 필요합니다. 다른 모드는 유지하고 필요한 경우 Script Merger에서 관련 병합을 다시 만드세요. 자세한 내용은 동봉된 0.9.2 변경 기록을 참고하세요."
+  },
+  "zh-cn": {
+    "title": "0.9.2 — 再来一局的新理由",
+    "ai": "对手会更仔细地管理手牌：何时放弃代价过高的追分、如何用较少资源拿下空场回合，以及为决胜局保留哪些牌。新的战术搜索会考虑不同应对，并分别选择后续行动。简单和普通难度也会精确模拟有潜力的出牌；符合条件的小规模公开信息残局可以搜索到结束。",
+    "knowledge": "最高难度AI知道开局时声明的初始牌组构成，但不会读取真实的隐藏手牌或未来抽牌顺序。简单和普通难度不使用精确的初始牌组列表。没有添加开局5点加成。",
+    "cards": "Panther改用棋盘上的箭头选择目标；目标所在排仍须少于4个单位。Henry var Attre可以提前结束可选选择。生成牌、关联牌预览和部分组合判断也已修正。",
+    "music": "牌组编辑器会播放Gwent Beta原版主菜单主题曲，对局仍保留The Witcher 3的音乐。本版包含0.9.1的Classic加载、音频及手柄修复。",
+    "install": "请安装主模组。modBetaGwentMenuMusic为可选模块，用于在牌组编辑器中播放Beta主题曲；不安装时会继续播放游戏原有音乐。Classic 1.32仍需要附带的两个DLC文件夹。保留其他模组，并在需要时使用Script Merger重新合并受影响的脚本。详情请查看随附的0.9.2更新日志。"
+  },
+  "zh-tw": {
+    "title": "0.9.2 — 再來一局的新理由",
+    "ai": "對手會更仔細地管理手牌：何時放棄代價過高的追分、如何以較少資源拿下空場回合，以及為決勝局保留哪些牌。新的戰術搜尋會考慮不同應對，並分別選擇後續行動。簡單與普通難度也會精確模擬有潛力的出牌；符合條件的小規模公開資訊殘局可以搜尋到結束。",
+    "knowledge": "最高難度AI知道開局時宣告的初始牌組構成，但不會讀取真正的隱藏手牌或未來抽牌順序。簡單與普通難度不使用精確的初始牌組清單。沒有加入開局5點加成。",
+    "cards": "Panther改用棋盤上的箭頭選擇目標；目標所在排仍須少於4個單位。Henry var Attre可以提前結束可選選擇。生成牌、關聯牌預覽及部分組合判斷也已修正。",
+    "music": "牌組編輯器會播放Gwent Beta原版主選單主題曲，對局仍保留The Witcher 3的音樂。本版包含0.9.1的Classic載入、音訊與控制器修正。",
+    "install": "請安裝主模組。modBetaGwentMenuMusic為可選模組，用於在牌組編輯器中播放Beta主題曲；未安裝時會繼續播放遊戲原有音樂。Classic 1.32仍需要附帶的兩個DLC資料夾。保留其他模組，並視需要使用Script Merger重新合併受影響的腳本。詳情請查看隨附的0.9.2更新日誌。"
+  }
+}

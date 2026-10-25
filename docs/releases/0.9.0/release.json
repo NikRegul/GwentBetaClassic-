@@ -3,24 +3,25 @@
   "source": "release090-final9",
   "archives": {
     "GwentBetaClassic-0.9.0-1.32-AllLanguages.zip": {
-      "sha256": "b7ace596e2ac3cc06890373e912b75defce29ef5d9bbc4fd0798cdd018fd8e6a",
-      "bytes": 625178291
+      "sha256": "773e59ca75f031dc3698e4babda3123511dd7e927f2ab705be0de7a09ea71b20",
+      "bytes": 625178363
     },
     "GwentBetaClassic-0.9.0-5.0+-AllLanguages.zip": {
-      "sha256": "8b6b00878790752d81523de171b5f7bfe8cbf1ff659d2a0bebea05da5ea0a06b",
-      "bytes": 449838628
+      "sha256": "9461dbd19c8b44379f56ba2d216d2e5d860c3a337901ecc4db0e08b7e2addc81",
+      "bytes": 449838693
     }
   },
   "texts": {
-    "nexus/NEXUS_DESCRIPTION_0.9.0.bbcode.txt": "b976ce0f3c621861ca2ddad5b3c34d89710b26403bde32b2b817b20dd84f5fc9",
+    "nexus/NEXUS_DESCRIPTION_0.9.0.bbcode.txt": "7c18276014714ba313f4ad6293c6d8f7d3a0beae04055aff54e969bcad8836ad",
     "nexus/NEXUS_POST_0.9.0_EN_RU.bbcode.txt": "39528848b728f8976e3e1d1b2abe5994437f4211c2849a3b1232eec277c8e632",
-    "nexus/DESCRIPTION_0.9.0.md": "0450cc7d18c2f0f888d7b2398fb32fd453859b3f44c8c8b6b05cb3a26f951623",
+    "nexus/DESCRIPTION_0.9.0.md": "64fa92730edad7a031dc36efe9f416e3a47f41f4ce88213d968d52e114e41738",
     "nexus/POST_0.9.0_EN_RU.md": "c8f4ed62e1be75c9c94b82683e8b2169cca751a09b67082dbd64e6beb08e5f43",
-    "nexus/preview.html": "9a11b12e1345c23a9779309ae8a686b55a0ee8f4c0de34425c3fc29928b49f8d",
+    "nexus/preview.html": "c3f386325cc3c82f5b3c148cc5be0574985c30767a02f05cd13d3eb483afbacf",
     "nexus/GwentBetaClassic-header.jpg": "5bd534d43d7b9d3f87035da510d151b1c8ede2019a9373026115c77fcef06e22",
     "nexus/CHANGELOG_0.9.0_EN.md": "a52255acdba698894f41c319928a80a994a5badc0cd69dc357a895e0f4ae19e2",
     "nexus/CHANGELOG_0.9.0_EN.bbcode.txt": "9389c619aa5d1d6dcb4cd07919352d0dce89e86084d2955ec5665ebbe475f9ac",
     "nexus/CHANGELOG_0.9.0_RU.md": "ebcaf30a6cd10034be1502e14b90d3479af84d9e3edf09e936e56412506cb5a1",
     "nexus/CHANGELOG_0.9.0_RU.bbcode.txt": "012ec46b8f420db5033a34b05563726d09e1f47ccabcc393ec2b5c67d7639b2f"
-  }
+  },
+  "documentationRevision": "contract-cta-13-languages"
 }

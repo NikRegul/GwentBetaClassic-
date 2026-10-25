@@ -9,7 +9,9 @@ import hashlib, json, os, shutil, zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
 FINAL = ROOT / 'BetaGwent/build' / os.environ.get('BG_FINAL', 'release090-final9')
-ARCHIVES = FINAL / 'package-candidate/archives-optional'
+# Archives with the After-Uninstall module (package_keepitems090) when present.
+ARCHIVES = FINAL / 'package-candidate/archives-optional-keep'
+if not ARCHIVES.is_dir(): ARCHIVES = FINAL / 'package-candidate/archives-optional'
 NEXUS = ROOT / 'docs/releases/0.9.0/nexus'
 OUT = ROOT / 'BetaGwent/release/GwentBetaClassic-0.9.0'
 R7 = hashlib.sha256((ROOT / 'BetaGwent/build/clipboard090-r7/GwentBetaClipboard.asi').read_bytes()).hexdigest()
@@ -55,6 +57,8 @@ SHA-256 указаны в `.sha256` рядом с архивами и в release
 
 - Установить оба архива начисто и проверить запуск, матч, импорт/экспорт колоды.
 - Optional-CopyButton в архивах содержит мост буфера обмена r7 (быстрый импорт).
+- After-Uninstall в архивах: определения предметов для сохранений после удаления мода
+  (торговцы не теряют ассортимент). Ставится только после удаления мода.
 '''
 
 

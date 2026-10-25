@@ -1,0 +1,19 @@
+{
+  "sheets": 54,
+  "uniqueSheetIds": 53,
+  "duplicateIds": [
+    {
+      "id": "87440b51-48a9-45c0-af85-dc20692d988d",
+      "selected": "Basic_LockTarget",
+      "shadowed": "Infiltrator_ChooseTarget"
+    }
+  ],
+  "associations": 161,
+  "requestTemplates": 304,
+  "requestNodes": 357,
+  "sourceSha256": {
+    "Summations.xml": "a39e54f4fb092698cefc43e9df2ba1524c307d3471e09f30a990997423aaf036",
+    "Abilities.xml": "963f3954f5e12d0785ed69fd5d8cb755aef7d9cc2c4c761d3d83a3dc3136788e"
+  },
+  "note": "Request-node hints only; multiple same-kind stages require explicit shared-engine phase mapping. This is data, not completed policy integration."
+}

@@ -1,5 +1,7 @@
 # Roadmap to 1.0
 
+Current decision, 15 October 2026: finish only the 0.7.4a RU loading fix for Next-Gen, then wait for the user to test deck selection and duel startup and authorize continuation. Do not start 0.8 builds yet. Milestone 0.8.0 will combine the current improvements with the updated 1.32 port; only RU packages for both targets. Work from 0.8 to 1.0 prioritizes AI, translations, bug fixes and stability. The visual scope is sufficient. See [the active stable-release plan](PLAN_STABLE_0.8_RU.md). Older milestones below are historical.
+
 Updated 13 October 2026. Crashes, data loss, blocked actions and match softlocks are fixed immediately regardless of the milestone theme.
 
 [RU 0.6.6](PRESENTATION142_RU.md) is packaged and verified: the first special-effect adaptation, unified weather casts, simultaneous triggered boosts, leader entrances, continuous right-side leader previews, history/target hints, kegs at all innkeepers and combined AI fixes. Research covers 85 special cards; the first effect pass routes 48 cards. Twelve leaders use original one-shot entrance clips and nine retain their animated loops. Fifty regression suites, 70 native scripts, four menus and package verification passed; in-game acceptance remains open. Complete beta visual fidelity and ordinary premium artwork are not included.

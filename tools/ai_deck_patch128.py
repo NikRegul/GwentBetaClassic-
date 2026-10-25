@@ -12,7 +12,14 @@ def apply_patch(root, profiles, presets, full, families):
     variety_path = root / 'data/beta924/ai/deck_variety128.json'
     variety = json.loads(variety_path.read_text(encoding='utf-8'))
     assert variety['schema'] == 1
-    for change in patch['decks'] + variety['decks']:
+    # 0.9.1b author-directed rosters are applied last, over the variety pass.
+    extra_path = root / 'data/beta924/ai/deck_patch091b.json'
+    extra = json.loads(extra_path.read_text(encoding='utf-8')) if extra_path.exists() else dict(schema=1, decks=[])
+    assert extra['schema'] == 1
+    current_path = root / 'data/beta924/ai/deck_patch092.json'
+    current = json.loads(current_path.read_text(encoding='utf-8')) if current_path.exists() else dict(schema=1, decks=[], titles={})
+    assert current['schema'] == 1
+    for change in patch['decks'] + variety['decks'] + extra['decks'] + current['decks']:
         if not change.get('enabled', True):
             continue
         ident = change['presetId']
@@ -31,10 +38,13 @@ def apply_patch(root, profiles, presets, full, families):
         faction = full[leader]['faction']
         counts = Counter(cards)
         tiers = Counter(full[i]['tier'] for i in cards)
-        assert full[leader]['leader'] and len(cards) == (40 if ident == 83 else 25)
+        allowed_sizes = (40,) if ident == 83 else ((25,26) if ident == 93 else (25,))
+        assert full[leader]['leader'] and len(cards) in allowed_sizes
         assert tiers[8] <= 4 and tiers[4] <= 6
         assert all(not full[i]['leader'] and full[i]['faction'] in (1, faction) and n <= (3 if full[i]['tier'] == 2 else 1) for i, n in counts.items())
         preset.update(templateIds=cards, leader=leader, faction=faction)
+        if 'description' in change:
+            preset['description'] = change['description']
         profile.update(templateIds=cards, leader=leader, faction=faction)
         if 'family' in change:
             profile.update(family=change['family'], familyId=families[change['family']], passPolicy=change['passPolicy'])
@@ -43,7 +53,7 @@ def apply_patch(root, profiles, presets, full, families):
             profile['strategy'] = change['strategy']
         profile['notes'].append(change['reason'])
         profile['changes'].append(dict(method='reviewed-deck-patch128', requested=change['reason'], removed=change.get('remove', []), added=change.get('add', [])))
-    titles = dict(patch['titles'], **variety['titles'])
+    titles = dict(patch['titles'], **variety['titles']);titles.update(current.get('titles', {}))
     for profile in profiles:
         title = titles.get(str(profile.get('presetId')))
         if title:

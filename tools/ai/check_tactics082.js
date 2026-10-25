@@ -11,7 +11,11 @@ const filter=opt('--cases','').split(',').filter(Boolean),presetFilter=opt('--pr
 fs.mkdirSync(out,{recursive:true});
 fs.copyFileSync(__filename,path.join(out,'runner.js'));
 const manifest=JSON.parse(fs.readFileSync(path.join(snapshot,'manifest.json'),'utf8'));
-if(!/\/release(?:082|090)-[^/]+$/.test(manifest.source?.replaceAll('\\','/')))throw Error('Use a frozen 0.8.2/0.9.0 release audit snapshot');
+if(manifest.schema===2){
+ for(const [name,digest] of Object.entries(manifest.snapshotFiles)){
+  if(crypto.createHash('sha256').update(fs.readFileSync(path.join(snapshot,name))).digest('hex')!==digest)throw Error('Frozen snapshot changed: '+name);
+ }
+}else if(!/\/release(?:082|090|091)-[^/]+$/.test(manifest.source?.replaceAll('\\','/')))throw Error('Use a frozen release audit snapshot');
 const ctx=vm.createContext({console:{log(){}},settings:{strength,damp}});
 vm.runInContext(['runtime.js','rules.js','harness.js'].map(n=>fs.readFileSync(path.join(snapshot,n),'utf8')).join('\n')+String.raw`
 Host.strength=settings.strength;Host.matchStrength=[settings.strength,settings.strength];Host.tunes=[{},{}];Host.seatIndex=1;Host.random=()=>.37;

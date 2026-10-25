@@ -86,7 +86,7 @@ I testi delle carte provengono dalla localizzazione ufficiale della beta. L’in
 
 2. Per aggiornare, sposta prima la vecchia cartella della mod Beta Gwent fuori da Mods. Non eliminare tutta Mods e non mescolare versioni diverse.
 
-3. Copia Mods dall’archivio nella cartella del gioco, accanto a bin e content. Per Classic 1.32 copia anche la cartella DLC inclusa. Percorsi: Mods/modBetaGwentClassic132/content e DLC/dlcBetaGwentClassic132Assets per 1.32; Mods/modBetaGwent0924/content per Next-Gen. Sostituisci solo le vecchie cartelle di questa mod, conservando gli altri mod e DLC.
+3. Copia Mods dall’archivio nella cartella del gioco, accanto a bin e content. Per Classic 1.32 copia anche la cartella DLC inclusa. Percorsi: Mods/modBetaGwentClassic132/content e DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items per 1.32; Mods/modBetaGwent0924/content per Next-Gen. Sostituisci solo le vecchie cartelle di questa mod, conservando gli altri mod e DLC.
 
 4. Carica un salvataggio. Il normale menu dei mazzi di Gwent apre editor e scelta delle lingue; parla con un PNG che gioca per iniziare una partita. Salva normalmente per mantenere le preferenze.
 
@@ -161,7 +161,7 @@ bg_shoprefill(5)
 
 ## Classic 1.32: dimensioni e DLC
 
-Classic occupa circa 623 MB, Next-Gen 448 MB, con le stesse carte e regole. Il vecchio formato e il limite di circa 32 MiB per risorsa caricata in modo asincrono richiedono pagine grafiche separate. In Classic vanno installate entrambe le cartelle Mods e DLC. DLC/dlcBetaGwentClassic132Assets contiene grafica essenziale e la sua registrazione, senza nuova storia. Circa 105 MB del download provengono da questa cartella; il resto della differenza dipende dalla preparazione per il vecchio motore.
+Classic occupa circa 623 MB, Next-Gen 448 MB, con le stesse carte e regole. Il vecchio formato e il limite di circa 32 MiB per risorsa caricata in modo asincrono richiedono pagine grafiche separate. In Classic vanno installate entrambe le cartelle Mods e DLC. DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items contiene grafica essenziale e la sua registrazione, senza nuova storia. Circa 105 MB del download provengono da questa cartella; il resto della differenza dipende dalla preparazione per il vecchio motore.
 
 
 ## Compatibilità
@@ -184,7 +184,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 Vengono eliminati collezione, mazzi, risorse, impostazioni, ricompense note, copie di riserva e oggetti betagwent_* nell’inventario del giocatore. Un indicatore salvato impedisce il ripristino anche dopo un nuovo caricamento. Salva in un NUOVO slot, esci, rimuovi il mod e il suo DLC Classic, aggiorna Script Merger, carica lo slot nuovo e salva ancora. Missioni, obiettivi e corone spese rimangono. Mercanti non caricati, deposito e contenitori del mondo non vengono esaminati. Per vecchi fatti di ricompensa orfani: save_fact_index.py e bg_clean_keys('…') dopo la conferma. Non è garantita la cancellazione fisica di ogni traccia storica. Se alcuni oggetti Beta non possono essere rimossi, appare INCOMPLETE invece del successo: gettali o vendili e ripeti il comando. Disinstallando, elimina anche i file di Optional-CopyButton se li hai installati: bin\…\plugins\GwentBetaClipboard.asi e il dinput8.dll di questa mod (non di altre).
 
-**Dopo la disinstallazione:** copia la cartella Mods dalla cartella After-Uninstall dell’archivio nella cartella del gioco (Mods/modBetaGwentKeepItems). Conserva definizioni nascoste degli oggetti della mod, così mercanti, deposito e contenitori che contengono ancora carte o barili della beta non perdono l’intero inventario. Non installarla insieme alla mod.
+**Dopo la disinstallazione:** copia la cartella dalla cartella After-Uninstall dell’archivio nella cartella del gioco (Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems). Conserva definizioni nascoste degli oggetti della mod, così mercanti, deposito e contenitori che contengono ancora carte o barili della beta non perdono l’intero inventario. Non installarla insieme alla mod.
 
 
 </details>

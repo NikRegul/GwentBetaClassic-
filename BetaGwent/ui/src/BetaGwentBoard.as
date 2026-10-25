@@ -145,6 +145,7 @@
         private var shelves178:Object={};
         private var shelfCards178:Object={};
         private var deckList178:Sprite;
+        private var deckListTop178:Number=428;
         private function scrollShelf178(pane:String,amount:Number):void
         {
             if(!ready||detailOpen||nameOpen||controllerMenuOpen)return;
@@ -185,16 +186,16 @@
             if(!deckList178||!editingDeck)return;
             while(deckList178.numChildren)deckList178.removeChildAt(0);
             var list:Array=[];for each(var item:Object in editorCards)if(item.copies>0)list.push(item);list.sort(sortEditorCards);
-            var shelf:BetaGwentVirtualShelf178=new BetaGwentVirtualShelf178(list.length,1,40,372,480,deckScroll178);
+            var shelf:BetaGwentVirtualShelf178=new BetaGwentVirtualShelf178(list.length,1,40,372,908-deckListTop178,deckScroll178);
             deckList178.addChild(shelf);shelves178.deck=shelf.layout;shelfCards178.deck=list;deckScroll178=shelf.layout.offset;
             for(var i:int=shelf.layout.first;i<shelf.layout.end;i++){
-                var c:Object=BetaGwentVirtualShelf178.card(list[i],"deck",i,46,428,372,480);c.side=1;
+                var c:Object=BetaGwentVirtualShelf178.card(list[i],"deck",i,46,deckListTop178,372,908-deckListTop178);c.side=1;
                 var row:Sprite=deckSlotRow(shelf.body,c,0,i*40-deckScroll178,372,38);
                 attachInspect(row,c,{description:c.description},372,38);
                 if(ready){attachEditorClick(row,editorAction("OnBetaGwentDeckEditorChange",c.templateId,-1));attachEditorDrag178(row,c,-1,372,38);}
             }
             if(!list.length)betaLabel(deckList178,"Нажмите на карту в коллекции,\nчтобы добавить её в колоду.",6,42,360,18,0xCFC8BA,BetaGwentFonts.BODY,false,"center").height=60;
-            shelfBar178(deckList178,"deck",376,0,480);
+            shelfBar178(deckList178,"deck",376,0,908-deckListTop178);
         }
 
         private var editorDragId178:int=0;
@@ -684,7 +685,7 @@
             var list:Array=shelfCards178[pane];
             if(shelf&&list){for(var i:int=0;i<list.length;i++)if(int(list[i].templateId)==id){index=i;break;}
                 if(index>=0){var row:int=int(index/shelf.columns);var y:Number=row*shelf.rowHeight-shelf.offset+shelf.rowHeight/2;
-                    if(y>=0&&y<=shelf.height)return pane=="deck"?{x:220,y:428+y}:{x:482+18+(index%shelf.columns)*186+86,y:306+y};}}
+                    if(y>=0&&y<=shelf.height)return pane=="deck"?{x:220,y:deckListTop178+y}:{x:482+18+(index%shelf.columns)*186+86,y:306+y};}}
             return pane=="deck"?{x:220,y:660}:{x:960,y:620};
         }
         private function drawEditorFeedback():void
@@ -877,12 +878,13 @@
         private var betaAudioAvailable:Boolean=false;
         private var betaAudioInstalled:Boolean=false;
         private var entryMode:int=0;
-        private var npcDeckLabel:String="";
+        private function opponentName():String
+        {return BetaGwentReleaseText093.opponent(npcDisplayName,BetaGwentTextLanguage.language);}
         private var npcDisplayName:String="";
         private var lastInspectedCard:Object;
         private var forcedFaction:int=0;
         public function setEntryContext(mode:int,opponent:String,forced:int):void
-        { entryMode=mode;var lines:Array=readableText(opponent).split("|BG_DECK|").join("\n").split("\n");npcDisplayName=String(lines[0]||"Соперник");npcDeckLabel=String(lines.length>1?lines[1]:lines[0]);forcedFaction=forced;deckViewSide=1;background.visible=mode!=1; }
+        { entryMode=mode;var lines:Array=readableText(opponent).split("|BG_DECK|").join("\n").split("\n");npcDisplayName=String(lines[0]||"Соперник");forcedFaction=forced;deckViewSide=1;background.visible=mode!=1; }
 
         public function BetaGwentBoard()
         {
@@ -929,11 +931,13 @@
             if(purpose==1&&editingDeck){editorSearch=title.substr(0,64);editorPage=0;render();}
             else if(purpose==2&&browsingCatalog){catalogSearch=title.substr(0,80);catalogPage=0;render();}
         }
+        private function controllerRowSelection():Boolean
+        {var rule:Object=playRules[selected];return rowRequest||canAct()&&selected>0&&rule&&int(rule.kind)==2;}
         private function controllerContext():Object
         {
             if(this.introStart>0||(this.introInputUntil>0&&this.introInputUntil>getTimer()))return {mode:"intro",baseMode:"intro",accept:true,replay:true,pass:false,typing:false,root:introLayer,layers:[],preferred:"control",hint:"A / × — пропустить вступление",hintVisible:true,hintY:1040};
-            var base:String=this.createDeckOpen178?"create":this.effectGallery?"gallery":kegOpen?"keg":browsingCatalog?"catalog":editingDeck?"editor":selectingDecks?"selection":(flags>>4)>0?"result":requestId>0&&requestKind==1?"choice":canPlaceSelected()||canPlacePending()?"placement":rowRequest?"rows":requestId==0&&selected>0&&controllerQuickSpecial(selected)?"battle":requestId>0||selected>0?"target":controllerInspectBoard?"inspect":"battle";
-            if(requestId>0&&requestKind==1&&choiceTableHidden())base="inspect";
+            var base:String=this.createDeckOpen178?"create":this.effectGallery?"gallery":kegOpen?"keg":browsingCatalog?"catalog":editingDeck?"editor":selectingDecks?"selection":(flags>>4)>0?"result":isChoiceTable()?"choice":canPlaceSelected()||canPlacePending()?"placement":controllerRowSelection()?"rows":requestId==0&&selected>0&&controllerQuickSpecial(selected)?"battle":requestId>0||selected>0?"target":controllerInspectBoard?"inspect":"battle";
+            if(isChoiceTable()&&choiceTableHidden())base="inspect";
             var mode:String=nameOpen?"name":detailOpen?(tutorialPage>=0?"tutorial":"detail"):controllerMenuOpen?"actions":pileOpen?"pile":mulliganConfirm?"confirm":base;
             var ps:Boolean=controller&&(controller.device==1||controller.device==6);
             var accept:String=ps?"×":"A",back:String=ps?"○":"B";
@@ -1001,7 +1005,7 @@
                     controllerInspectBoard=false;
                     if(selected==id&&controllerQuickSpecial(id)){submitBoard("OnBetaGwentBoardPlay",[revision,id,1]);return;}
                     selected=selected==id?0:id;keyboardFocusId=selected;focusedRow=0;render();
-                    if(selected>0){if(controllerQuickSpecial(selected))controller.focusKey("battle:hand:card"+selected);else controller.focusTag(canPlaceSelected()?"position":"target");}
+                    if(selected>0){if(controllerQuickSpecial(selected))controller.focusKey("battle:hand:card"+selected);else controller.focusTag(canPlaceSelected()?"position":controllerRowSelection()?"row":"target");}
                     return;
                 }
                 openCardDetail(c,cardDetails[id]);return;
@@ -1111,7 +1115,7 @@
                     {id:"sound",title:soundEnabled?"Звук: вкл":"Звук: выкл",enabled:true,action:toggleSound},
                     {id:"voice",title:voiceEnabled?"Фразы: вкл":"Фразы: выкл",enabled:betaAudioAvailable,action:toggleVoice,reason:betaAudioAvailable?"Голоса карт и лидеров":"Звуковой банк ещё не загружен"},
                     {id:"pause",title:"Пауза ИИ: "+aiPauseName(),enabled:true,action:cycleAiPause},
-                    {id:"difficulty",title:"Сложность ИИ: "+difficultyName(),enabled:true,action:cycleDifficulty},
+                    {id:"difficulty",title:"Сложность ИИ: "+difficultyName(),enabled:!(originalDifficultyInMatch()&&difficultyIndex==4),action:cycleDifficulty,reason:unfairDifficultyText(true)},
                     {id:"sort",title:"Рука: "+handSortName(),enabled:!playing&&dragId==0,action:cycleHandSort,reason:"Сортировка доступна после окончания анимации"},
                     {id:"reverse",title:handSortReverse?"По убыванию":"По возрастанию",enabled:!playing&&dragId==0&&handSortMode!=3,action:reverseHandSort,reason:handSortMode==3?"Порядок добора не имеет обратной сортировки":"Сортировка доступна после окончания анимации"},
                     {id:"language",title:textChoiceLabel(),enabled:true,action:cycleTextLanguage},
@@ -1153,13 +1157,13 @@
                 else presetPage=Math.max(0,Math.min(Math.ceil(deckOptions.length/4)-1,presetPage+direction));
                 render();return;
             }
-            if(requestId>0&&requestKind==1){if(skin==3){controller.focusTag("target",direction);return;}choicePage=Math.max(0,Math.min(Math.ceil(requestCards.length/12)-1,choicePage+direction));render();return;}
+            if(isChoiceTable()){if(skin==3){controller.focusTag("target",direction);return;}choicePage=Math.max(0,Math.min(Math.ceil(requestCards.length/12)-1,choicePage+direction));render();return;}
             if(canPlaceSelected()||canPlacePending()){controller.focusPlacementRow(direction);return;}
-            if(rowRequest||isCaranthirChoice()){controller.focusTag("row",direction);return;}
+            if(controllerRowSelection()||isCaranthirChoice()){controller.focusTag("row",direction);return;}
             controller.focusTag(canPlaceSelected()||canPlacePending()?"position":requestId>0||selected>0?"target":"hand",direction);
         }
         private function controllerScroll(amount:int):void
-        {var node:Object=controller.getFocus();var body:TextField=detailOpen?detailBody:pileOpen?pileDetail:requestKind==1&&skin==3&&node&&node.card&&node.card.stripBody?node.card.stripBody as TextField:browsingCatalog?catalogAbility:inspection;if(body)body.scrollV=Math.max(1,Math.min(body.maxScrollV,body.scrollV+amount));}
+        {var node:Object=controller.getFocus();var body:TextField=detailOpen?detailBody:pileOpen?pileDetail:isChoiceTable()&&skin==3&&node&&node.card&&node.card.stripBody?node.card.stripBody as TextField:browsingCatalog?catalogAbility:inspection;if(body)body.scrollV=Math.max(1,Math.min(body.maxScrollV,body.scrollV+amount));}
         private function controllerCommand(name:String,node:Object=null):void
         {
             if(introStart==0&&this.introInputUntil>0&&this.introInputUntil>getTimer())return;
@@ -1182,7 +1186,7 @@
                 if(name=="back"){send("OnBetaGwentBoardClose",[]);return;}
             }
             if(name=="clickSound"||name=="tickSound"){uiSound(name=="tickSound"?3:1);return;}
-            if(requestId>0&&requestKind==1&&!detailOpen&&!pileOpen&&!mulliganConfirm&&(name=="board"||name=="alternate"||name=="back"&&choiceTableHidden())){toggleChoiceTable();return;}
+            if(isChoiceTable()&&!detailOpen&&!pileOpen&&!mulliganConfirm&&(name=="board"||name=="alternate"||name=="back"&&choiceTableHidden())){toggleChoiceTable();return;}
             if(mulliganConfirm&&["menu","alternate","previous","next","deck","leader","pass","board","ownGrave","enemyGrave"].indexOf(name)>=0)return;
             if(nameOpen&&name!="focus"){
                 if(name=="back")closeNameInput();
@@ -1219,7 +1223,7 @@
                 if(node.row){focusedSide=node.row.side;focusedRow=node.row.zone;keyboardFocusId=0;if(!node.card){hoveredCard=null;hoveredDetail=null;clearBattlePreview();}}
                 if(node.placement)showPlacementGhost(node.placement);else clearPlacementGhost();
                 if(node.card){if(node.card.side==1&&node.card.zone==8)setHandHover(int(node.card.id));else setHandHover(0);hoveredCard=node.card;hoveredDetail=node.detail;if(inspection&&!editingDeck)BetaGwentTextLanguage.assign(inspection,cardReading(node.card,node.detail));showBattleCard(node.card,node.detail);if(pileOpen)showPileCard(node.card);if(browsingCatalog){catalogPicked=node.card;redrawCatalogDetail();}}
-                if(requestKind==1&&skin==3&&node.card)showMulliganCard(node.card,node.detail);
+                if(isChoiceTable()&&skin==3&&node.card)showMulliganCard(node.card,node.detail);
                 if(editingDeck&&node.card)showEditorCard(node.card);
                 if(controller.active&&node.card&&(editingDeck||browsingCatalog))markCollectionSeen(int(node.card.templateId));
                 return;
@@ -1324,7 +1328,7 @@
                 if(key==13||key==32){e.preventDefault();galleryRepeat();return;}
                 if(key==27){e.preventDefault();send("OnBetaGwentBoardClose",[]);return;}
             }
-            if(key==9&&requestId>0&&requestKind==1&&!detailOpen&&!mulliganConfirm){e.preventDefault();e.stopImmediatePropagation();toggleChoiceTable();return;}
+            if(key==9&&isChoiceTable()&&!detailOpen&&!mulliganConfirm){e.preventDefault();e.stopImmediatePropagation();toggleChoiceTable();return;}
             if(key==27){e.preventDefault();e.stopImmediatePropagation();}
             if(introStart>0){skipIntro();return;}
             if(controllerMenuOpen){
@@ -1382,7 +1386,7 @@
                 e.preventDefault();
                 if(pileOpen&&pilePicked)openCardDetail(pilePicked,{description:pilePicked.description});
                 else if(hoveredCard)openCardDetail(hoveredCard,hoveredDetail);
-                else if(requestKind==1&&skin==3){var choiceFocus:Object=findRequestCard(keyboardFocusId);if(choiceFocus)openCardDetail(choiceFocus.displayCard||choiceFocus,choiceFocus.displayDetail||cardDetails[choiceFocus.id]);}
+                else if(isChoiceTable()&&skin==3){var choiceFocus:Object=findRequestCard(keyboardFocusId);if(choiceFocus)openCardDetail(choiceFocus.displayCard||choiceFocus,choiceFocus.displayDetail||cardDetails[choiceFocus.id]);}
                 else {var focusCard:Object=null;for each(var known:Object in cards)if(known.id==(keyboardFocusId!=0?keyboardFocusId:selected))focusCard=known;
                     if(focusCard)openCardDetail(focusCard,cardDetails[focusCard.id]);}
                 return;
@@ -1615,7 +1619,7 @@
             keyboardFocusId=options[index].id;focusedRow=0;
             uiSound(3);
             if(requestId==0)selected=keyboardFocusId;
-            if(requestKind==1)choicePage=skin==3?0:int(index/12);
+            if(isChoiceTable())choicePage=skin==3?0:int(index/12);
             render();
         }
         private function rowEnabled(side:int,zone:int):Boolean
@@ -1983,8 +1987,10 @@
         { return tier==8||tier==1?BetaGwentDeckArt104.DP_GOLD:tier==4?BetaGwentDeckArt104.DP_SILVER:BetaGwentDeckArt104.DP_BRONZE; }
         private function betaPlaque(title:String):void
         {
-            editorSmallButton(content,textChoiceLabel(),56,24,364,42,true,cycleTextLanguage);
-            editorSmallButton(content,voiceChoiceLabel(),56,78,364,42,true,cycleVoiceLanguage);
+            var deckSettings:Boolean=selectingDecks||editingDeck;
+            editorSmallButton(content,textChoiceLabel(),56,deckSettings?18:24,364,deckSettings?30:42,true,cycleTextLanguage);
+            editorSmallButton(content,voiceChoiceLabel(),56,deckSettings?56:78,364,deckSettings?30:42,true,cycleVoiceLanguage);
+            if(deckSettings)editorSmallButton(content,"Сложность ИИ: "+difficultyName(),56,94,364,30,ready,cycleDifficulty);
             paintArt(content,BetaGwentHud104.CHAIN,14,60,650,-6);paintArt(content,BetaGwentHud104.CHAIN,14,60,1256,-6);
             betaNine(content,-1400,690,74,615,30);
             betaLabel(content,title.toUpperCase(),635,46,650,30,0xF2EEE4,BetaGwentFonts.TITLE,true,"center",6).mouseEnabled=false;
@@ -2054,9 +2060,9 @@
         private function drawBetaDeckPicker():void
         {
             paintArt(content,BetaGwentHud104.WOOD_PANEL,415,840,30,135);
-            betaLabel(content,pickerSide==1?"ВАША КОЛОДА":"КОЛОДА СОПЕРНИКА",52,150,371,20,0xF2EEE4,BetaGwentFonts.TITLE,true,"center",3);
+            if(pickerSide==2)betaLabel(content,"КОЛОДА СОПЕРНИКА",52,150,371,20,0xF2EEE4,BetaGwentFonts.TITLE,true,"center",3);
             var savedCount:int=0;for each(var saved:Object in deckOptions)if(saved.id>=1001)savedCount++;
-            var y:Number=190;
+            var y:Number=pickerSide==1?150:190;
             if(pickerSide==1&&savedCount<8){
                 var nd:Sprite=new Sprite();nd.x=46;nd.y=y;content.addChild(nd);
                 paintArt(nd,BetaGwentDeckArt104.DP_NEWDECK,372,62,0,0);paintArt(nd,BetaGwentDeckArt104.DP_NEWDECK_ICON,34,34,18,14);
@@ -2135,7 +2141,7 @@
         private function drawBetaMatchSetup():void
         {
             wideArt(content,BetaGwentDeckArt104.BG_SETUP);
-            betaPlaque(entryMode==2?(npcDeckLabel&&npcDeckLabel.length?npcDeckLabel:"Бой"):entryMode==1?"Колоды":"Тренировка");
+            betaPlaque(entryMode==2?(opponentName()):entryMode==1?"Колоды":"Тренировка");
             var viewed:Object=deckOption(ownPreset);
             if(pickerSide>0)drawBetaDeckPicker();
             else if(viewed)drawBetaDeckList(viewed,1);
@@ -2188,7 +2194,7 @@
             if(entryMode==0){
                 betaLabel(content,"Соперник: "+(second?second.title+" · "+second.leader:"—"),500,912,620,18,0x3A2A16,BetaGwentFonts.BODY);
                 betaWideButton("Сменить",1150,904,200,ready,function():void{pickerSide=pickerSide==2?0:2;presetPage=0;render();});
-            }else if(entryMode==2)betaLabel(content,"Соперник: "+npcDisplayName+" · выход из боя считается поражением",500,912,900,18,0x3A2A16,BetaGwentFonts.BODY);
+            }else if(entryMode==2)betaLabel(content,"Соперник: "+opponentName()+" · выход из боя считается поражением",500,912,900,18,0x3A2A16,BetaGwentFonts.BODY);
             // right: wooden preview panel
             paintArt(content,BetaGwentHud104.WOOD_PANEL,405,822,1477,138);
             paintArt(content,BetaGwentHud104.PREVIEW_SLOT,285,398,1545,177);
@@ -2232,7 +2238,7 @@
             button("Редактировать",1486,44,338,ready&&(viewId>=1001||viewId>=16&&viewId<=20||savedCount<8),openEditorAction(viewId));
             editorSmallButton(content,"Все карты",96,94,226,38,ready,function():void{browsingCatalog=true;catalogPage=0;render();});
             if(entryMode==1&&(pendingKeg||unopenedKegs>0))editorSmallButton(content,pendingKeg?"Продолжить выбор бочки":"Открыть бочку · "+unopenedKegs,96,990,420,48,ready,function():void{send("OnBetaGwentKegOpen",[revision]);});
-            text(content,entryMode==2?"Выберите свою колоду. Состав соперника скрыт: "+npcDeckLabel:entryMode==1?"Выберите сохранённую колоду для просмотра или редактирования.":"Выберите свою колоду и колоду соперника. Состав — ниже.",340,99,1000,20);
+            text(content,entryMode==2?"Выберите свою колоду. Состав соперника скрыт: "+opponentName():entryMode==1?"Выберите сохранённую колоду для просмотра или редактирования.":"Выберите свою колоду и колоду соперника. Состав — ниже.",340,99,1000,20);
             var presetPages:int=Math.max(1,Math.ceil(deckOptions.length/4));presetPage=Math.min(presetPage,presetPages-1);
             if(presetPages>1){
                 text(content,"Колоды "+(presetPage+1)+" / "+presetPages,1390,103,164,18,0xE8D3A6);
@@ -3171,7 +3177,8 @@
                     betaLabel(content,"Сменить лидера",110,384,244,15,0xCFC8BA,BetaGwentFonts.BODY,false,"center");
                 }
             }
-            deckList178=new Sprite();deckList178.x=46;deckList178.y=428;content.addChild(deckList178);
+            deckListTop178=picked&&factionLeaders.length>1?428:378;
+            deckList178=new Sprite();deckList178.x=46;deckList178.y=deckListTop178;content.addChild(deckList178);
             deckList178.addEventListener(MouseEvent.MOUSE_WHEEL,function(e:MouseEvent):void{e.stopPropagation();clearEditorDrag178();scrollShelf178("deck",deckScroll178-e.delta*20);});
             redrawDeckList178();
             // centre: Collection with the filter bar
@@ -3908,14 +3915,23 @@
         { requestedVoiceLanguage=(requestedVoiceLanguage+1)%6;send("OnBetaGwentVoiceLanguage",[requestedVoiceLanguage]); }
 
         public function setAudioStatus(installed:Boolean,available:Boolean,tempo:int=0,reduced:Boolean=false,aiPause:int=0,difficulty:int=0):void
-        { betaAudioInstalled=installed;betaAudioAvailable=available;if(tempo==10||tempo==15||tempo==20){animationTempo=tempo/10;reducedMotion=reduced;}if(aiPause>=1&&aiPause<=4)aiPauseIndex=aiPause;if(difficulty>=1&&difficulty<=3)difficultyIndex=difficulty; }
+        { betaAudioInstalled=installed;betaAudioAvailable=available;if(tempo==10||tempo==15||tempo==20){animationTempo=tempo/10;reducedMotion=reduced;}if(aiPause>=1&&aiPause<=4)aiPauseIndex=aiPause;if(difficulty>=1&&difficulty<=4)difficultyIndex=difficulty; }
         public function setBoardHelp(visible:Boolean):void {BetaGwentUi138.helpLabels=visible;}
-        // Opponent difficulty: 1 easy, 2 normal, 3 hard (saved with the Witcher save).
+        // Opponent difficulty: 1 easy, 2 normal, 3 hard, 4 original Beta with hidden information.
         private var difficultyIndex:int=3;
-        private function difficultyName():String{return difficultyIndex==1?"лёгкая":difficultyIndex==2?"средняя":"высокая";}
+        private function difficultyName():String{return difficultyIndex==1?"лёгкая":difficultyIndex==2?"средняя":difficultyIndex==4?unfairDifficultyText(false):"высокая";}
+        private function originalDifficultyInMatch():Boolean
+        {return round>0&&(flags>>4)==0&&!selectingDecks&&!editingDeck&&!browsingCatalog&&!kegOpen&&!effectGallery;}
+        private function unfairDifficultyText(details:Boolean):String
+        {
+            var labels:Array=["", "Классическая", "Classic", "Klassisch", "Classique", "Classica", "Klasyczny", "Clásica", "Clásica", "Clássica", "クラシック", "클래식", "经典", "經典"];
+            var hints:Array=["", "На классической сложности ИИ беты видит вашу руку и колоду. Выберите сложность до начала партии.", "On Classic difficulty, the Beta AI sees your hand and deck. Select difficulty before starting a match.", "Auf klassischer Schwierigkeit sieht die Beta-KI deine Hand und dein Deck. Vor Partiebeginn auswählen.", "En difficulté classique, l’IA bêta voit votre main et votre deck. À choisir avant la partie.", "A difficoltà classica, la IA beta vede la tua mano e il tuo mazzo. Scegli prima della partita.", "Na klasycznym poziomie SI bety widzi twoją rękę i talię. Wybierz przed rozpoczęciem partii.", "En dificultad clásica, la IA beta ve tu mano y tu mazo. Elígela antes de empezar la partida.", "En dificultad clásica, la IA beta ve tu mano y tu mazo. Elígela antes de empezar la partida.", "Na dificuldade clássica, a IA beta vê sua mão e seu baralho. Escolha antes de começar a partida.", "クラシック難易度では、ベータ版AIはあなたの手札とデッキを見ることができます。対戦開始前に選択してください。", "클래식 난이도에서는 베타 AI가 내 손패와 덱을 볼 수 있습니다. 대전 시작 전에 선택하세요.", "经典难度的测试版AI可以看到你的手牌和牌组。请在对局开始前选择难度。", "經典難度的測試版AI可以看到你的手牌和牌組。請在對局開始前選擇難度。"];
+            var language:int=BetaGwentTextLanguage.language;if(language<1||language>13)language=1;
+            var result:String=String(details?hints[language]:labels[language]);BetaGwentTextLanguage.protect(result);return result;
+        }
         private function cycleDifficulty():void
         {
-            difficultyIndex=difficultyIndex%3+1;
+            if(originalDifficultyInMatch()){if(difficultyIndex==4)return;difficultyIndex=difficultyIndex%3+1;}else difficultyIndex=difficultyIndex%4+1;
             send("OnBetaGwentAudioSettings",[soundEnabled,voiceEnabled,int(animationTempo*10),reducedMotion,aiPauseIndex,difficultyIndex]);
             if(controllerMenuOpen){closeControllerMenu();render();openControllerMenu();}else render();
         }
@@ -4043,12 +4059,19 @@
             var count:int=0;for each(var c:Object in cards)if(c.side==side&&c.zone==zone)count++;
             return count<9;
         }
+        private function directTargetTier091(c:Object,detail:Object,rule:Object):Boolean
+        {
+            // Enemy ambush stubs intentionally publish tier=0 (unknown). An effect
+            // allowing every tier needs no hidden rarity or power to select them.
+            return (int(detail.tier)&int(rule.tiers))!=0
+                ||enemyAmbush(c)&&int(detail.tier)==0&&int(rule.tiers)==15&&int(rule.maximum)==0;
+        }
         private function canDirectTarget(c:Object):Boolean
         {
             var rule:Object=playRules[selected];var detail:Object=cardDetails[c.id];
             return canAct()&&selected!=0&&rule&&rule.kind==1&&detail&&(c.zone&7)!=0
                 &&(rule.side==0||rule.side==c.side)&&(detail.typeMask&rule.types)!=0
-                &&(detail.tier&rule.tiers)!=0&&(int(c.tokens)&rule.ignore)==0
+                &&directTargetTier091(c,detail,rule)&&(int(c.tokens)&rule.ignore)==0
                 &&(rule.maximum==0||c.power<=rule.maximum);
         }
         private function battleDisabledReason(c:Object):String
@@ -4066,7 +4089,7 @@
             if((int(c.zone)&7)==0)return "Выберите отряд на поле";
             if(rule.side!=0&&rule.side!=c.side)return rule.side==1?"Нужен союзный отряд":"Нужен вражеский отряд";
             if(!detail||(detail.typeMask&rule.types)==0)return "Этот тип карты не подходит";
-            if((detail.tier&rule.tiers)==0)return "Редкость карты не подходит для способности";
+            if(!directTargetTier091(c,detail,rule))return "Редкость карты не подходит для способности";
             if((int(c.tokens)&rule.ignore)!=0)return "Защита или статус карты запрещает эту цель";
             if(rule.maximum>0&&c.power>rule.maximum)return "Сила цели выше допустимой: "+rule.maximum;
             return "";
@@ -4277,10 +4300,10 @@
             button(entryMode==2&&(flags>>4)==0?"Сдаться":"Закрыть",1694,skin==3?868:912,150,connected,requestBoardClose,null,(flags>>4)>0?"finish":"control");
             if(skin!=3)text(content,"P — пас · L — лидер · D — колода\nG / H — сброс · ПКМ / X — карта",1532,978,312,17,0xB9B4A9).height=54;
             }
-            if(!playing&&requestId>0 && requestKind==1) drawChoices();
+            if(!playing&&isChoiceTable()) drawChoices();
             updateFocusedInspection();
             if(leaderPreviewCard&&leaderPreview&&battlePreview&&battlePreview.numChildren==0)showBattleCard(leaderPreviewCard,leaderPreviewDetail);
-            if(!playing&&requestId>0&&!(skin==3&&requestKind==1)){
+            if(!playing&&requestId>0&&!(skin==3&&isChoiceTable())){
                 if(skin==3){
                     var prompt:TextField=text(content,requestKind==2&&!rowRequest&&!canPlacePending()?"Нажмите подсвеченную карту, чтобы применить способность.":requestInstruction(),1536,778,332,21,0xF5D77F);
                     prompt.height=58;betaFace(BetaGwentFonts.BODY,prompt,21,0xF5D77F);prompt.mouseEnabled=false;requestPrompt090=prompt;
@@ -4299,7 +4322,7 @@
             // leader rows) or needs a row: the gamepad focus moves to the board once per
             // placement, instead of staying on the nearest pile/menu control.
             var placing:Boolean=!playing&&(canPlaceSelected()||canPlacePending());
-            var boardFocus:String=placing?"position":!playing&&rowRequest&&requestId>0&&!detailOpen&&!pileOpen?"row":"";
+            var boardFocus:String=placing?"position":!playing&&controllerRowSelection()&&!detailOpen&&!pileOpen?"row":"";
             var boardKey:String=boardFocus==""?"":boardFocus+":"+requestId+":"+selected;
             if(boardKey!=boardFocusKey){boardFocusKey=boardKey;if(boardFocus!=""&&controller.active&&!controllerMenuOpen)controller.restoreFocus(boardFocus);}
             finishLeaderRender();
@@ -4483,19 +4506,29 @@
         }
         private function rowCards(side:int,zone:int):Array
         {var result:Array=[];for each(var c:Object in cards)if(c.side==side&&c.zone==zone)result.push(c);return result;}
+        private function aimSourcePose091():Object
+        {
+            if(requestId<=0)return displayedCards[selected];
+            // The request carries its caster. A previous selection or replay cue
+            // may belong to a different unit and must never replace that source.
+            if(requestSourceId>0&&displayedCards[requestSourceId])return displayedCards[requestSourceId];
+            var definition:Object=BetaGwentFullCatalog.find(requestSourceTemplate);
+            if(definition&&definition.leader){var seat:Array=betaLeaderRect(requestPlayer==2?2:1);
+                return {x:seat[0],y:seat[1],width:seat[2],height:seat[3]};}
+            return null;
+        }
         private function updateAimPreview():void
         {
             var c:Object=hoveredCard;
             if(controller.active){var focus:Object=controller.getFocus();c=focus?focus.card:null;}
+            // Aim only at board targets during the human decision. Hand/pile choices
+            // and opponent requests keep their card presentation without an aiming arrow.
             var legal:Boolean=c&&!detailOpen&&!pileOpen&&!playing&&!editingDeck&&!selectingDecks&&!browsingCatalog&&
+                (requestId<=0||requestPlayer==1)&&
                 (canDirectTarget(c)||requestId>0&&requestKind==2&&!rowRequest&&!canPlacePending()&&findRequestCard(c.id)!=null);
-            var target:Object=legal?displayedCards[c.id]:null;
-            var source:Object=displayedCards[selected];
-            if(!source&&requestId>0&&requestSourceId>0&&displayedCards[requestSourceId])source=displayedCards[requestSourceId];
-            if(!source&&activeCue)source=displayedCards[activeCue.source];
-            if(!source&&requestId>0&&aimSourceId>0)source=displayedCards[aimSourceId];
-            if(!source&&requestId>0&&aimSourceId==-1){var seat:Array=betaLeaderRect(1);source={x:seat[0],y:seat[1],width:seat[2],height:seat[3]};}
-            var key:String=target?revision+":"+c.id+":"+selected:"";if(key==aimKey)return;
+            var target:Object=legal&&(int(c.zone)&7)!=0?displayedCards[c.id]:null;
+            var source:Object=aimSourcePose091();
+            var key:String=target?revision+":"+c.id+":"+selected+":"+requestSourceId+":"+requestSourceTemplate:"";if(key==aimKey)return;
             aimKey=key;aimLayer.graphics.clear();if(!target)return;
             var tx:Number=target.x+target.width/2,ty:Number=target.y+target.height/2;
             var sx:Number=source?source.x+source.width/2:960,sy:Number=source?source.y+source.height/2:210;
@@ -4594,7 +4627,6 @@
             var glow:Sprite=betaVisual(-102,w+24,h+28,0x48C6FF);
             if(glow){glow.x=w/2;glow.y=h/2;glow.alpha=0;tile.addChild(glow);}c.stripGlow=glow;
             if(c.hidden)paintCardBack(tile,w,h,int(c.side));
-            else if(c.templateId==113402)paintChoiceArt(tile,c.templateId,w,h);
             else paintBetaFace(tile,c.templateId,w,h,int(c.side));
             if(c.typeMask==4||detail&&detail.typeMask==4)betaPowerField(tile,String(c.power),w,h,powerColor(c));
             var size:Number=Math.max(13,Math.min(20,w*.11));
@@ -4653,7 +4685,7 @@
         {
             controller.registerControl(tile,c.title,function():void{openCardDetail(c,{description:c.description});},c,{description:c.description},"card");
             tile.buttonMode=true;
-            tile.addEventListener(MouseEvent.ROLL_OVER,function(e:MouseEvent):void{showPileCard(c);});
+            tile.addEventListener(MouseEvent.ROLL_OVER,function(e:MouseEvent):void{if(!controller.active)showPileCard(c);});
             tile.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{e.stopPropagation();showPileCard(c);openCardDetail(c,{description:c.description});});
         }
         private function showPileCard(c:Object):void
@@ -4832,7 +4864,7 @@
             paintArt(frame,side==1?BetaGwentHud104.PLAYER_AVATAR:BetaGwentHud104.avatar(int(leaderIds[1]),sideFaction(2)),57,57,0,0);
             var name:String=side==1?"Геральт":String(leaderNames[1]||"Соперник");
             betaLabel(content,name,192,top-3,320,21,side==1?0x3EA9E0:0xD0383A,BetaGwentFonts.TITLE,true,null,1.5);
-            betaLabel(content,side==2?npcDeckLabel:String(leaderNames[side-1]||""),192,top+26,330,17,0xEDE7DA,BetaGwentFonts.BODY);
+            betaLabel(content,side==2?opponentName():String(leaderNames[side-1]||""),192,top+26,330,17,0xEDE7DA,BetaGwentFonts.BODY);
         }
         private function centerBetaNumber(field:TextField,cx:Number,cy:Number,size:Number):void
         {
@@ -4996,9 +5028,10 @@
             var parent:Sprite=previewParent||battlePreview;
             var side:int=int(c.side)||1;
             var big:Boolean=(selectingDecks||editingDeck||browsingCatalog)&&int(c.templateId)>0;
-            var w:Number=big?260:312,h:Number=Math.round(big?260/BETA_LARGE_CARD_ASPECT:312/BETA_CARD_ASPECT);
-            var previewX:Number=big?1580:1477+(405-w)/2;
-            var card:Sprite=new Sprite();card.x=previewX;card.y=572-h;parent.addChild(card);
+            var w:Number=big?240:312,h:Number=Math.round(big?240/BETA_LARGE_CARD_ASPECT:312/BETA_CARD_ASPECT);
+            // Title/ability block keeps the panel position; the large card is centred in the same slot.
+            var previewX:Number=1477+(405-312)/2,cardX:Number=1477+(405-w)/2;
+            var card:Sprite=new Sprite();card.x=cardX;card.y=572-h;parent.addChild(card);
             if(c.templateId>0){
                 var sideFace:Object=paintBetaFace(card,c.templateId,w,h,side,animatePortrait,true,big);
                 var original:Object=BetaGwentCardText.find(c.templateId);
@@ -5007,8 +5040,8 @@
             paintStaticCardState(card,c,w,h);
             card.filters=[new GlowFilter(side==2?0xE0402A:0x3AA8F0,.85,16,16,2,2)];
             if(!reducedMotion&&!(animatePortrait&&leaderPreview&&leaderPreview.cardId==c.templateId)){
-                animations.push({sprite:card,fromX:previewX+24,fromY:card.y,toX:previewX,toY:card.y,curve:"PREVIEW",duration:BetaGwentBetaMotion.duration("PREVIEW"),appear:true});
-                card.x=previewX+24;card.alpha=0;
+                animations.push({sprite:card,fromX:cardX+24,fromY:card.y,toX:cardX,toY:card.y,curve:"PREVIEW",duration:BetaGwentBetaMotion.duration("PREVIEW"),appear:true});
+                card.x=cardX+24;card.alpha=0;
             }
             var entry:Object=BetaGwentFullCatalog.find(c.templateId);
             var faction:int=entry?int(entry.faction):1;
@@ -5184,7 +5217,7 @@
             paintArt(info,side==1?BetaGwentHud104.PLAYER_AVATAR:BetaGwentHud104.avatar(leader,fi),47,47,153,12);
             var name:String=side==1?"Геральт":String(leaderNames[1]||"Соперник");
             betaLabel(info,name,212,6,300,21,side==1?0x3EA9E0:0xD0383A,BetaGwentFonts.TITLE,true,null,1.5);
-            betaLabel(info,side==1?"Ведьмак":npcDeckLabel,212,34,300,18,side==1?0xB9D84A:0xEDE7DA,BetaGwentFonts.BODY);
+            betaLabel(info,side==1?"Ведьмак":opponentName(),212,34,300,18,side==1?0xB9D84A:0xEDE7DA,BetaGwentFonts.BODY);
             info.graphics.lineStyle(2,0x6E6E6E,.9);info.graphics.moveTo(0,95);info.graphics.lineTo(458,95);
             info.graphics.beginFill(0x9A9A9A);info.graphics.moveTo(229,89);info.graphics.lineTo(235,95);info.graphics.lineTo(229,101);info.graphics.lineTo(223,95);info.graphics.endFill();
             introPart(info,top?500:1300,top?900:1700,0,top?-16:16);
@@ -5317,7 +5350,7 @@
             var enabled:Boolean=canInspectPile()&&(zone==32||side==1);
             if(enabled){
                 var action:Function=function():void{inspectPile(side,zone);};
-                controller.registerControl(pile,(zone==32?"Сброс":"Колода")+" · "+(side==1?"Геральт":"Соперник"),action,null,null,"control",null,new Rectangle(0,0,cw,ch));
+                controller.registerControl(pile,(zone==32?"Сброс":"Колода")+" · "+(side==1?"Геральт":"Соперник"),action,null,null,"control",null,new Rectangle(0,0,cw,ch));controller.markPile(pile);
                 pile.buttonMode=true;pile.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{e.stopImmediatePropagation();action();});
             }
         }
@@ -5415,7 +5448,7 @@
         }
         private function attachRow(hit:Sprite,side:int,zone:int,registerRow:Boolean=false):void
         {
-            if(registerRow&&(controllerInspectBoard||requestId>0&&requestKind==1&&choiceTableHidden())){
+            if(registerRow&&(controllerInspectBoard||isChoiceTable()&&choiceTableHidden())){
                 var occupied:Boolean=false;
                 for each(var unit:Object in cards)if(unit.side==side&&unit.zone==zone)occupied=true;
                 if(!occupied){
@@ -5512,6 +5545,63 @@
             // Selection is an instance id, never a visual slot. Keep it while
             // rearranging the display; the authoritative hand is untouched.
             render();if(reopen)openControllerMenu();
+        }
+        // Hand-only legal requests use the full offer browser; board targets stay on the board.
+        private function isCardOffer():Boolean
+        {
+            if(requestId<=0||requestKind!=2||requestPlayer!=1||rowRequest||canPlacePending()||requestCards.length==0)return false;
+            for each(var option:Object in requestCards){
+                var found:Boolean=false;
+                for each(var live:Object in cards)if(live.id==option.id){if(live.zone!=8)return false;found=true;break;}
+                if(!found&&requestSourceTemplate!=162316&&requestSourceTemplate!=200163)return false;
+            }
+            return true;
+        }
+        private function isChoiceTable():Boolean
+        {return requestId>0&&(requestKind==1||isCardOffer());}
+        private function cardOfferLabel(hint:Boolean=false):String
+        {
+            var key:String=choiceCaptionKey(hint);
+            if(!key)key=requestSourceTemplate==162316||requestSourceTemplate==200163?(hint?"revealHint":"reveal"):(hint?"offerHint":"offer");
+            if(key=="offerHint"){var ability:String=sourceAbilityText();if(ability)return ability;}
+            return BetaGwentReleaseText093.label(key,BetaGwentTextLanguage.language);
+        }
+        // Explicit outcome captions: where the chosen card and the remaining cards go.
+        private function choiceCaptionKey(hint:Boolean):String
+        {
+            if(requestId<=0||requestPlayer!=1)return "";
+            var hand:Boolean=isCardOffer();var pile:Boolean=pileChoice&&!hand;var base:String="";var note:String="";
+            switch(requestSourceTemplate){
+                case 162210:if(hand){base="keep";note="keepHint";}break;
+                case 200071:if(hand){base="keep";note="keepGiveHint";}break;
+                case 152214:if(pile){base="drawOne";note="drawDiscardHint";}break;
+                case 122203:case 142203:if(pile){base="drawOne";note="drawReturnHint";}break;
+                case 131102:if(pile){base="playOne";note="playTopHint";}break;
+                case 112211:case 152103:case 152213:if(hand){base="discardHand";note="discardHandHint";}break;
+                case 112212:case 122204:case 142303:case 201638:case 200209:case 200165:case 200048:if(hand){base="swapHand";note="swapHandHint";}break;
+                case 132216:if(hand){base="consumeHand";note="consumeHandHint";}break;
+                case 152106:case 200036:case 200159:if(pile){base="discardDeck";note="discardDeckHint";}break;
+                case 112208:if(hand){base="offer";note="copyBothHint";}break;
+            }
+            return hint?note:base;
+        }
+        private function sourceAbilityText():String
+        {
+            var original:Object=requestSourceTemplate>0?BetaGwentCardText.find(requestSourceTemplate):null;
+            var value:String=original&&original.description?readableText(String(original.description)):"";
+            return value.split("\n").join(" ");
+        }
+        private function choiceHeading(fallback:String):String
+        {
+            var key:String=choiceCaptionKey(false);
+            return key?BetaGwentReleaseText093.label(key,BetaGwentTextLanguage.language):fallback;
+        }
+        private function choiceHint(fallback:String):String
+        {
+            var key:String=choiceCaptionKey(true);
+            if(key)return BetaGwentReleaseText093.label(key,BetaGwentTextLanguage.language);
+            if(pileChoice&&rowMode==14){var ability:String=sourceAbilityText();if(ability)return ability;}
+            return fallback;
         }
         private function isMulliganHand():Boolean
         {return requestId>0&&requestKind==1&&!pileChoice&&!templateChoice&&!handPowerChoice&&!graveyardChoice;}
@@ -6870,7 +6960,7 @@
                 if(art)p.addChild(art);else paintArt(p,templateId,w,h,0,0);
             }else paintArt(p,templateId,w,h,0,0);
             if(motion)attachLeaderMovie(p,templateId,w,h,hover);
-            var entry:Object=BetaGwentFullCatalog.find(templateId);
+            var entry:Object=BetaGwentRelated091.find(templateId);
             var tier:int=entry?int(entry.tier):2;var faction:int=entry?int(entry.faction):1;
             // Beta: neutral cards wear the banner of the deck (owner's leader) faction.
             if((faction&62)==0&&side>0&&leaderIds&&leaderIds.length>=side)faction=cardFaction(int(leaderIds[side-1]));
@@ -6898,7 +6988,7 @@
         private function layoutBigPower090(field:TextField,w:Number,h:Number,color:uint,slot:Array=null):void
         {
             if(!slot)slot=BetaGwentBanners090.slot(1,2);
-            var size:int=Math.max(16,Math.round(h*.115));
+            var size:int=Math.max(16,Math.round(h*(slot.length>2?Number(slot[2]):.16)));
             field.x=w*slot[0]-size;field.y=h*slot[1]-size*.85;field.width=size*2;field.height=size*1.7;
             if(!BetaGwentFonts.apply(field,BetaGwentFonts.NUMBERS,size,color,true,"center")){field.defaultTextFormat=new TextFormat("$NormalFont",size,color,true,null,null,null,null,"center");field.setTextFormat(field.defaultTextFormat);}
             centerBetaNumber(field,w*slot[0],h*slot[1],size);
@@ -7772,13 +7862,22 @@
         private var tutorialReturn:int=-1;
         private var detailBack:Array=[];
         private static var titleIndex:Array=null;
-        // Cards named in a description (created options, summoned companions): longest titles
-        // first, whole words only, at most six.
+        // Original Beta tooltip references include internal tokens and ability choices.
+        private function relatedCard091(id:int):Object
+        { return BetaGwentRelated091.find(id); }
+        // Explicit graph references are independent of language and declined names.
+        // Retain name matching for other descriptive references.
         private function relatedCards(templateId:int,description:String):Array
         {
+            var options:Array=BetaGwentRelated091.ids(templateId);
+            if(options){
+                var choices:Array=[];
+                for each(var id:int in options){var option:Object=relatedCard091(id);if(option)choices.push(option);}
+                return choices;
+            }
             if(!description)return [];
             if(!titleIndex){
-                titleIndex=[];for each(var e:Object in BetaGwentFullCatalog.all())if(e.title&&String(e.title).length>=4)titleIndex.push(e);
+                titleIndex=[];for each(var e:Object in BetaGwentRelated091.all())if(e.title&&String(e.title).length>=4)titleIndex.push(e);
                 titleIndex.sort(function(a:Object,b:Object):int{return String(b.title).length-String(a.title).length;});
             }
             var text:String=description.toLowerCase();var used:Array=[];var found:Array=[];var seen:Object={};
@@ -7802,13 +7901,16 @@
         private function drawRelatedCards(box:Sprite,c:Object,detail:Object,list:Array):void
         {
             betaLabel(box,"Связанные карты · нажмите, чтобы посмотреть",272,716,750,18,0xD7C498,BetaGwentFonts.BODY).height=30;
+            // The largest original public pool has eight cards (Monster Nest).
+            // Fit every option into the same strip instead of hiding cards after six.
+            var step:Number=list.length>6?94:124,w:Number=list.length>6?84:104,h:Number=w*146/104;
             for(var i:int=0;i<list.length;i++){
-                var r:Object=list[i];var tile:Sprite=new Sprite();tile.x=272+i*124;tile.y=750;box.addChild(tile);
-                paintBetaFace(tile,int(r.templateId),104,146,int(c.side)||1);
-                if(int(r.typeMask)==4||r.leader)betaPowerField(tile,String(r.power),104,146,0xFFFFFF);
-                var name:TextField=betaLabel(tile,String(r.title),-8,148,120,13,0xEDE7D8,BetaGwentFonts.BODY,false,"center");name.height=34;name.wordWrap=true;
+                var r:Object=list[i];var tile:Sprite=new Sprite();tile.x=272+i*step;tile.y=750;box.addChild(tile);
+                paintBetaFace(tile,int(r.templateId),w,h,int(c.side)||1);
+                if(int(r.typeMask)==4||r.leader)betaPowerField(tile,String(r.power),w,h,0xFFFFFF);
+                var name:TextField=betaLabel(tile,String(r.title),-8,h+2,w+16,list.length>6?12:13,0xEDE7D8,BetaGwentFonts.BODY,false,"center");name.height=34;name.wordWrap=true;
                 var open:Function=relatedOpener(c,detail,r);
-                attachEditorClick(tile,open);controller.registerControl(tile,String(r.title),open,null,null,"control",null,new Rectangle(0,0,104,146));
+                attachEditorClick(tile,open);controller.registerControl(tile,String(r.title),open,null,null,"control",null,new Rectangle(0,0,w,h));
             }
         }
         private function relatedOpener(c:Object,detail:Object,r:Object):Function
@@ -7938,7 +8040,9 @@
             glow.graphics.drawRect(1,1,(bodyWidth>0?bodyWidth:p.width/p.scaleX)-2,(bodyHeight>0?bodyHeight:p.height/p.scaleY)-2);
             glow.alpha=0;p.addChild(glow);
             p.addEventListener(MouseEvent.ROLL_OVER,function(e:MouseEvent):void{
-                if(dragging||detailOpen)return;
+                // With a gamepad the idle cursor stays put while hand cards slide under it.
+                // Its roll events must not take the hover/preview from the controller focus.
+                if(dragging||detailOpen||controller.active)return;
                 hoveredCard=c;hoveredDetail=detail;lastInspectedCard=c;
                 if(editingDeck||browsingCatalog)markCollectionSeen(int(c.templateId));
                 if(c.side==1&&c.zone==8)setHandHover(int(c.id));
@@ -7952,7 +8056,7 @@
                 hoverPreviewY=Math.min(628,Math.max(90,mouseY-190));
             });
             p.addEventListener(MouseEvent.ROLL_OUT,function(e:MouseEvent):void{
-                uiTween(glow,"alpha",0);if(c.side==1&&c.zone==8)setHandHover(0);hoverCardId=0;hoveredCard=null;hoveredDetail=null;hoverPreviewAt=0;if(!browsingCatalog&&skin==3&&keyboardFocusId==0&&selected==0)clearBattlePreview();updateFocusedInspection();
+                uiTween(glow,"alpha",0);if(controller.active)return;if(c.side==1&&c.zone==8)setHandHover(0);hoverCardId=0;hoveredCard=null;hoveredDetail=null;hoverPreviewAt=0;if(!browsingCatalog&&skin==3&&keyboardFocusId==0&&selected==0)clearBattlePreview();updateFocusedInspection();
                 while(previewLayer.numChildren)previewLayer.removeChildAt(0);
             });
             // Native GFx sends CLICK with MouseEventEx.buttonIdx, as stock
@@ -7965,7 +8069,7 @@
         }
         private function showHoverPreview():void
         {
-            if(battlePreview||!hoveredCard||editingDeck||detailOpen||pileOpen||requestKind==1&&skin==3||dragging||playing||controller.active||canPlaceSelected()||canPlacePending())return;
+            if(battlePreview||!hoveredCard||editingDeck||detailOpen||pileOpen||isChoiceTable()&&skin==3||dragging||playing||controller.active||canPlaceSelected()||canPlacePending())return;
             // Keep the board visible while aiming at units or rows. The right
             // reading pane and explicit full inspection remain available.
             if(requestId>0&&requestKind==2||selected>0&&playRules[selected]&&playRules[selected].kind>0)return;
@@ -8023,11 +8127,7 @@
         }
         private function paintChoiceArt(parent:Sprite,id:int,w:Number,h:Number):void
         {
-            if(id!=113402){paintArt(parent,id,w,h);return;}
-            var back:Sprite=panel(parent,3,3,w,h,0x24404A,.96);
-            back.graphics.lineStyle(2,0xBA9472,.9);back.graphics.drawRoundRect(9,9,w-18,h-18,8,8);
-            text(back,"?",w/2-25,24,70,58,0xE4CA92);
-            var hint:TextField=text(back,"Случайный\nбронзовый отряд",10,90,w-20,14,0xE7D9C0);hint.height=55;
+            paintArt(parent,id,w,h);
         }
         // stage104-mulligan
         // stage118: complete-set browsers share a selected-card reading area.
@@ -8036,7 +8136,7 @@
         private function choiceTableHidden():Boolean { return isMulliganHand()?mulliganHidden:abilityHidden; }
         private function toggleChoiceTable():void
         {
-            if(requestId==0||requestKind!=1||mulliganConfirm||detailOpen||playing)return;
+            if(!isChoiceTable()||mulliganConfirm||detailOpen||playing)return;
             if(isMulliganHand())mulliganHidden=!mulliganHidden;else abilityHidden=!abilityHidden;
             render();
         }
@@ -8128,7 +8228,7 @@
             if(mulliganConfirm)drawBetaConfirm("ОБМЕН КАРТ","Закончить обмен? Можно заменить ещё "+remaining+".",finishMulligan,function():void{mulliganConfirm=false;render();});
         }
         private function attachMulliganReading(tile:Sprite,c:Object,detail:Object):void
-        {tile.addEventListener(MouseEvent.ROLL_OVER,function(e:MouseEvent):void{showMulliganCard(c,detail);});}
+        {tile.addEventListener(MouseEvent.ROLL_OVER,function(e:MouseEvent):void{if(!controller.active)showMulliganCard(c,detail);});}
         // Ability lists use the same complete-set layout and reading area as mulligans.
         // Only presentation objects are enriched; request ids and legal choices stay intact.
         private function drawBetaAbilityChoices():void
@@ -8139,9 +8239,11 @@
                 editorBetaButton(content,"Вернуться к выбору",760,978,400,48,true,toggleChoiceTable);
                 return;
             }
-            var heading:String=templateChoice?(rowMode==13?"Выберите вариант способности":rowMode==7?"Дагон · выберите погоду":"Рассвет · выберите вариант"):pileChoice?(rowMode==14?"Выберите карту для способности":"Выберите карту для розыгрыша"):handPowerChoice?"Выберите отряд в руке":"Поглощение · выберите отряд из сброса";
-            var hint:String=readableText(requestMessage);
+            choiceLayer.graphics.beginFill(0,.72);choiceLayer.graphics.drawRect(-WIDE_PAD,0,1920+2*WIDE_PAD,1080);choiceLayer.graphics.endFill();
+            var heading:String=isCardOffer()?cardOfferLabel():templateChoice?(rowMode==13?"Выберите вариант способности":rowMode==7?"Дагон · выберите погоду":"Рассвет · выберите вариант"):pileChoice?(rowMode==14?"Выберите карту для способности":"Выберите карту для розыгрыша"):handPowerChoice?"Выберите отряд в руке":"Поглощение · выберите отряд из сброса";
+            var hint:String=isCardOffer()?cardOfferLabel(true):readableText(requestMessage);
             if(!hint)hint=templateChoice?(rowMode==13?"Выберите вариант, затем подходящую цель.":rowMode==7?"Выберите погоду, затем ряд соперника.":"Чистое небо: убрать погоду. Сбор: разыграть случайный бронзовый отряд."):pileChoice?"Выберите карту из предложенного списка.":handPowerChoice?"Сила выбранного отряда определит эффект. Отряд останется в руке.":"Выберите отряд из сброса для поглощения.";
+            if(pileChoice&&!isCardOffer()){heading=choiceHeading(heading);hint=choiceHint(hint);}
             hint+=" · Осталось выбрать: "+Math.max(0,requestMax-requestCount);
             stripHeading(choiceLayer,heading,hint);
             choicePage=0;
@@ -8187,7 +8289,7 @@
         private function drawChoices():void
         {
             var choiceOrder:Array=isMulliganHand()?mulliganCardsInPlace():requestCards;
-            if(skin==3&&requestKind==1){if(isMulliganHand())drawBetaMulligan();else drawBetaAbilityChoices();return;}
+            if(skin==3&&isChoiceTable()){if(isMulliganHand())drawBetaMulligan();else drawBetaAbilityChoices();return;}
             content.addChild(choiceLayer);
             // Opaque hit surface stops clicks reaching the board behind choices.
             choiceLayer.graphics.clear();choiceLayer.graphics.beginFill(0,0.30);choiceLayer.graphics.drawRect(-WIDE_PAD,0,1920+2*WIDE_PAD,1080);choiceLayer.graphics.endFill();
@@ -8198,8 +8300,8 @@
                 button("Продолжить",1124,775,290,ready&&requestFinish,requestAction("OnBetaGwentRequestFinish"),choiceLayer);
                 return;
             }
-            text(modal,templateChoice?(rowMode==13?"Выберите вариант способности":rowMode==7?"Дагон · выберите погоду":"Рассвет · выберите вариант"):pileChoice?(rowMode==14?"Выберите карту для способности":"Выберите карту для розыгрыша"):handPowerChoice?"Выберите отряд в руке":graveyardChoice?"Поглощение · выберите отряд из сброса":"Замена карт · осталось "+(requestMax-requestCount),24,16,950,26,0xE9C46A);
-            text(modal,templateChoice?(rowMode==13?"Наведите на вариант, чтобы прочитать действие. После выбора появятся допустимые цели.":rowMode==7?"Создайте Густой туман или Проливной дождь. Затем выберите ряд соперника.":"Чистое небо: очистить погоду. Сбор: разыграть случайный бронзовый отряд из колоды."):pileChoice?(rowMode==14?requestMessage:"Выбранная карта будет разыграна из колоды или сброса. Для отряда затем выберите место в ряду."):handPowerChoice?"Изначальная сила выбранного отряда определит эффект. Отряд останется в руке.":graveyardChoice?"Выберите один бронзовый или серебряный отряд. Его сила усилит Гуля; карта исчезнет из сброса.":"Нажмите карту, чтобы сразу заменить её. Можно сохранить руку и начать раунд раньше.",24,57,950,19);
+            text(modal,isCardOffer()?cardOfferLabel():pileChoice?choiceHeading(rowMode==14?"Выберите карту для способности":"Выберите карту для розыгрыша"):templateChoice?(rowMode==13?"Выберите вариант способности":rowMode==7?"Дагон · выберите погоду":"Рассвет · выберите вариант"):pileChoice?(rowMode==14?"Выберите карту для способности":"Выберите карту для розыгрыша"):handPowerChoice?"Выберите отряд в руке":graveyardChoice?"Поглощение · выберите отряд из сброса":"Замена карт · осталось "+(requestMax-requestCount),24,16,950,26,0xE9C46A);
+            text(modal,isCardOffer()?cardOfferLabel(true):pileChoice?choiceHint(rowMode==14?requestMessage:"Выбранная карта будет разыграна из колоды или сброса. Для отряда затем выберите место в ряду."):templateChoice?(rowMode==13?"Наведите на вариант, чтобы прочитать действие. После выбора появятся допустимые цели.":rowMode==7?"Создайте Густой туман или Проливной дождь. Затем выберите ряд соперника.":"Чистое небо: очистить погоду. Сбор: разыграть случайный бронзовый отряд из колоды."):pileChoice?(rowMode==14?requestMessage:"Выбранная карта будет разыграна из колоды или сброса. Для отряда затем выберите место в ряду."):handPowerChoice?"Изначальная сила выбранного отряда определит эффект. Отряд останется в руке.":graveyardChoice?"Выберите один бронзовый или серебряный отряд. Его сила усилит Гуля; карта исчезнет из сброса.":"Нажмите карту, чтобы сразу заменить её. Можно сохранить руку и начать раунд раньше.",24,57,950,19);
             var pages:int=Math.max(1,Math.ceil(choiceOrder.length/12));
             choicePage=Math.min(choicePage,pages-1);
             for(var i:int=choicePage*12;i<Math.min(choiceOrder.length,(choicePage+1)*12);i++)
@@ -8228,7 +8330,7 @@
                 if(c.selected||keyboardFocusId==c.id){p.graphics.lineStyle(4,keyboardFocusId==c.id?0xF5E6A7:0xE9C46A);p.graphics.drawRect(2,2,136,194);}
                 attachRequestCard(p,c.id);
             }
-            text(modal,templateChoice?(rowMode==13?"Вариант выбирается для этого розыгрыша.":rowMode==7?"Выберите одну карту погоды, затем ряд противника.":"Нажмите вариант; затем выберите свой ряд, если разыгрывается отряд."):pileChoice?(rowMode==14?(requestFinish?"Выберите карту для способности.   ·   Страница ":"Выбор обязателен — укажите карту.   ·   Страница "):(requestFinish?"Выберите карту для розыгрыша.   ·   Страница ":"Розыгрыш обязателен — выберите карту.   ·   Страница "))+(choicePage+1)+" / "+pages:handPowerChoice?"Выберите одну карту.   ·   Страница "+(choicePage+1)+" / "+pages:graveyardChoice?"Можно завершить без поглощения.   ·   Страница "+(choicePage+1)+" / "+pages:"Заменено: "+requestCount+" / "+requestMax+"   ·   Страница "+(choicePage+1)+" / "+pages,24,548,900,18);
+            text(modal,isCardOffer()?cardOfferLabel(true):templateChoice?(rowMode==13?"Вариант выбирается для этого розыгрыша.":rowMode==7?"Выберите одну карту погоды, затем ряд противника.":"Нажмите вариант; затем выберите свой ряд, если разыгрывается отряд."):pileChoice?(rowMode==14?(requestFinish?"Выберите карту для способности.   ·   Страница ":"Выбор обязателен — укажите карту.   ·   Страница "):(requestFinish?"Выберите карту для розыгрыша.   ·   Страница ":"Розыгрыш обязателен — выберите карту.   ·   Страница "))+(choicePage+1)+" / "+pages:handPowerChoice?"Выберите одну карту.   ·   Страница "+(choicePage+1)+" / "+pages:graveyardChoice?"Можно завершить без поглощения.   ·   Страница "+(choicePage+1)+" / "+pages:"Заменено: "+requestCount+" / "+requestMax+"   ·   Страница "+(choicePage+1)+" / "+pages,24,548,900,18);
             button("Назад",474,775,180,ready&&choicePage>0,function():void{choicePage--;render();},choiceLayer);
             button("Вперёд",670,775,180,ready&&choicePage+1<pages,function():void{choicePage++;render();},choiceLayer);
             if(requestFinish&&!templateChoice&&!handPowerChoice)button(isOptionalMultiChoice()?"Завершить выбор":pileChoice?(rowMode==14?"Без выбора":"Без розыгрыша"):graveyardChoice?"Не поглощать":"Начать раунд",1124,775,290,ready&&requestFinish,requestAction("OnBetaGwentRequestFinish"),choiceLayer);

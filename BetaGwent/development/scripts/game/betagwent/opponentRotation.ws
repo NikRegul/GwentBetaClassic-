@@ -4,6 +4,8 @@
 private saved var betaGwentOpponentBag : array<int>;
 @addField(W3PlayerWitcher)
 private saved var betaGwentOpponentRecent : array<int>;
+@addField(W3PlayerWitcher)
+private saved var betaGwentOpponentPoolSize : int;
 
 @addMethod(W3PlayerWitcher)
 public function BetaGwentNextOpponent() : int
@@ -11,6 +13,8 @@ public function BetaGwentNextOpponent() : int
     var pool,seen,eligible : array<int>; var i,j,picked,score,best,faction,leader,family,last : int;
     var valid : bool; var p,q : SBetaGwentDuelPreset;
     BetaGwentAIOrdinaryPresets(pool);valid=true;
+    // Expand an existing save's partially consumed46-deck cycle immediately.
+    if(betaGwentOpponentPoolSize!=pool.Size()){betaGwentOpponentBag.Clear();betaGwentOpponentPoolSize=pool.Size();}
     for(i=0;i<betaGwentOpponentBag.Size();i+=1) {
         picked=betaGwentOpponentBag[i];
         if(!pool.Contains(picked) || seen.Contains(picked))valid=false;

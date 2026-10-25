@@ -86,7 +86,7 @@ Los textos de las cartas vienen de la localización oficial de la beta. La inter
 
 2. Para actualizar, mueve primero la carpeta anterior del mod Beta Gwent fuera de Mods. No borres toda la carpeta Mods ni mezcles archivos de versiones distintas.
 
-3. Copia Mods del archivo a la carpeta del juego, junto a bin y content. Para Classic 1.32, copia también la carpeta DLC incluida. Rutas: Mods/modBetaGwentClassic132/content y DLC/dlcBetaGwentClassic132Assets para 1.32; Mods/modBetaGwent0924/content para Next-Gen. Reemplaza únicamente las carpetas anteriores de este mod y conserva los demás mods y DLC.
+3. Copia Mods del archivo a la carpeta del juego, junto a bin y content. Para Classic 1.32, copia también la carpeta DLC incluida. Rutas: Mods/modBetaGwentClassic132/content y DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items para 1.32; Mods/modBetaGwent0924/content para Next-Gen. Reemplaza únicamente las carpetas anteriores de este mod y conserva los demás mods y DLC.
 
 4. Carga tu partida. El menú normal de mazos de Gwent abre el editor y la selección de idiomas; habla con un NPC que juegue para iniciar una partida. Guarda normalmente para conservar tus preferencias.
 
@@ -161,7 +161,7 @@ bg_shoprefill(5)
 
 ## Classic 1.32: tamaño y DLC
 
-Classic ocupa unos 623 MB y Next-Gen 448 MB, con las mismas cartas y reglas. El formato antiguo y el límite de unos 32 MiB por recurso cargado de forma asíncrona requieren páginas gráficas separadas. En Classic hay que instalar Mods y DLC. DLC/dlcBetaGwentClassic132Assets contiene gráficos esenciales y su registro, sin contenido narrativo nuevo. Unos 105 MB de la descarga corresponden a esa carpeta; el resto de la diferencia procede de la preparación para el motor antiguo.
+Classic ocupa unos 623 MB y Next-Gen 448 MB, con las mismas cartas y reglas. El formato antiguo y el límite de unos 32 MiB por recurso cargado de forma asíncrona requieren páginas gráficas separadas. En Classic hay que instalar Mods y DLC. DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items contiene gráficos esenciales y su registro, sin contenido narrativo nuevo. Unos 105 MB de la descarga corresponden a esa carpeta; el resto de la diferencia procede de la preparación para el motor antiguo.
 
 
 ## Compatibilidad
@@ -184,7 +184,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 Se borran colección, mazos, recursos, ajustes, recompensas conocidas, copias de respaldo y objetos betagwent_* del inventario del jugador. Una marca guardada impide restaurarlos incluso al volver a cargar. Guarda en una ranura NUEVA, cierra el juego, retira el mod y su DLC Classic, actualiza Script Merger, carga la nueva ranura y guarda otra vez. Misiones, logros y coronas gastadas permanecen. No se recorren mercaderes sin cargar, el alijo ni contenedores del mundo. Los antiguos hechos de recompensa huérfanos pueden requerir save_fact_index.py y bg_clean_keys('…') después de confirmar. No se garantiza borrar físicamente todo rastro histórico. Si algunos objetos Beta no se pueden quitar, aparece INCOMPLETE en lugar del éxito: tíralos o véndelos y repite el comando. Al desinstalar, borra también los archivos de Optional-CopyButton si los instalaste: bin\…\plugins\GwentBetaClipboard.asi y el dinput8.dll de este mod (no el de otro).
 
-**Después de desinstalar:** copia la carpeta Mods de la carpeta After-Uninstall del archivo al directorio del juego (Mods/modBetaGwentKeepItems). Conserva definiciones ocultas de los objetos del mod para que los comerciantes, el alijo y los contenedores que aún tengan cartas o barriles de la beta no pierdan todo su inventario. No la instales junto con el mod.
+**Después de desinstalar:** copia la carpeta de la carpeta After-Uninstall del archivo al directorio del juego (Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems). Conserva definiciones ocultas de los objetos del mod para que los comerciantes, el alijo y los contenedores que aún tengan cartas o barriles de la beta no pierdan todo su inventario. No la instales junto con el mod.
 
 
 </details>

@@ -5,7 +5,7 @@
 **Classic 1.32 and Next-Gen**
 Choose one archive for your game version. Each contains all 13 text languages and all five voice languages: EN, RU, DE, IT and PT-BR. Text and voices can be selected independently in the mod menu; Auto follows the game's settings, with English as fallback. Works on Steam Deck as well (tested by the author).
 
-For Next-Gen, replace the previous modBetaGwent0924 folder and copy Mods into the game directory. Optionally copy bin from Optional-CopyButton for the Copy button. For Classic 1.32, install BOTH Mods and DLC. Its DLC/dlcBetaGwentClassic132Assets folder is required for graphics and leader entrances. Classic is larger because the old loader needs a different resource layout; the cards and AI are the same.
+For Next-Gen, replace the previous modBetaGwent0924 folder and copy Mods into the game directory. Optionally copy bin from Optional-CopyButton for the Copy button. For Classic 1.32, install BOTH Mods and DLC. Its DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items folder is required for graphics and leader entrances. Classic is larger because the old loader needs a different resource layout; the cards and AI are the same.
 
 **AI improvements**
 Revised Igni and Yrden choices, Birna's weather forecast, armour breaks and the three Redanian armour abilities. Catch-up after a pass now follows real plays and turn boundaries. The AI can concede round one to preserve resources, but gives survival priority when another lost round would end the match. Automated scenarios cover all 46 opponent deck archetypes; unusual decisions are still worth reporting.

@@ -4,6 +4,7 @@ Requires an isolated runtime tree: its bin and content0/scripts are real copies,
 and content0 script caches must not be links to the installed game's caches.
 """
 import argparse
+from contextlib import contextmanager
 import ctypes
 import hashlib
 import json
@@ -13,8 +14,28 @@ import shutil
 import subprocess
 import struct
 import time
+import sys
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / 'tools'))
+from build_inputs import CLASSIC_RUNTIME
+
+
+@contextmanager
+def without_store_provider(probe, logs, enabled):
+    """Temporarily omit the optional GOG service from the private compile probe."""
+    source = probe / 'bin/ddi/GOG.dll'
+    backup = logs / 'GOG.dll.disabled'
+    if not enabled or not source.exists():
+        yield
+        return
+    if source.is_symlink() or source.stat().st_nlink != 1 or not source.resolve().is_relative_to(probe):
+        raise ValueError('Store provider must be a private probe copy')
+    source.rename(backup)
+    try:
+        yield
+    finally:
+        backup.rename(source)
 
 
 def sha(path):
@@ -93,6 +114,8 @@ def wait_with_debug_output(process, timeout, destination, compiler_feedback=Fals
             elif kind == 1:
                 exception = struct.unpack_from('<I', data, 16)[0]
                 exception_address = struct.unpack_from('<Q', data, 32)[0]
+                first_chance = struct.unpack_from('<I', data, 168)[0]
+                log.write(f'Exception code=0x{exception:08x} address=0x{exception_address:x} firstChance={first_chance}\n');log.flush()
                 if exception == 0x80000003 and breakpoint and exception_address == breakpoint:
                     thread = kernel.OpenThread(0x1F03FF, False, tid)
                     context_storage = ctypes.create_string_buffer(1248)
@@ -128,6 +151,11 @@ def wait_with_debug_output(process, timeout, destination, compiler_feedback=Fals
                     write_memory(breakpoint, b'\xcc')
                 file_handle = struct.unpack_from('<Q', data, 16)[0]
                 if file_handle not in (0, 0xFFFFFFFFFFFFFFFF):
+                    module_path = ctypes.create_unicode_buffer(32768)
+                    kernel.GetFinalPathNameByHandleW.argtypes = [ctypes.c_void_p,ctypes.c_wchar_p,ctypes.c_uint32,ctypes.c_uint32]
+                    if kernel.GetFinalPathNameByHandleW(file_handle,module_path,len(module_path),0):
+                        module_base=struct.unpack_from('<Q',data,40 if kind==3 else 24)[0]
+                        log.write(f'Module base=0x{module_base:x} path={module_path.value}\n');log.flush()
                     kernel.CloseHandle(file_handle)
             kernel.ContinueDebugEvent(pid, tid, status)
     # EXIT_PROCESS_DEBUG_EVENT already supplies the authoritative exit code.
@@ -149,12 +177,13 @@ def main():
     parser.add_argument('--interactive-errors', action='store_true', help='Allow the native compiler error dialog for diagnosis')
     parser.add_argument('--debug-output', action='store_true', help='Capture native diagnostic output from our own child process')
     parser.add_argument('--compiler-feedback', action='store_true', help='Capture the audited 1.32 compiler return value and diagnostic collector')
+    parser.add_argument('--without-store-provider', action='store_true', help='Temporarily omit the private probe GOG service DLL; restore after compilation')
     args = parser.parse_args()
     if not 1 <= args.timeout <= 300:
         parser.error('Timeout must be 1..300 seconds')
     probe = args.probe_root.resolve()
-    if not probe.is_relative_to((ROOT / 'BetaGwent/build').resolve()):
-        parser.error('Probe runtime must be inside BetaGwent/build')
+    if probe != CLASSIC_RUNTIME.resolve() and not probe.is_relative_to((ROOT / 'BetaGwent/build').resolve()):
+        parser.error('Probe runtime must be the permanent Classic toolchain or inside BetaGwent/build')
     if not re.fullmatch(r'[A-Za-z0-9-]+', args.label):
         parser.error('Invalid run label')
     prepared = args.prepared.resolve()
@@ -184,7 +213,7 @@ def main():
             parser.error('Prepared script sources differ from the manifest')
         old_mods=probe/'Mods'
         if old_mods.exists():
-            if old_mods.is_junction() or old_mods.is_symlink() or not old_mods.resolve().is_relative_to((ROOT/'BetaGwent/build').resolve()):
+            if old_mods.is_junction() or old_mods.is_symlink() or old_mods.resolve().parent != probe:
                 parser.error('Probe Mods must be owned by this workspace')
             shutil.move(str(old_mods),str(logs/'before-Mods'))
         shutil.copytree(prepared / 'Mods', probe / 'Mods', dirs_exist_ok=True)
@@ -205,8 +234,13 @@ def main():
         command.append('-verifyscriptsandexit')
     if not args.show_errors:
         command.append('-silentscripts')
+    # The retail compiler can truncate the user log even with a redirected
+    # debug directory. Preserve it before creating the compiler process.
+    user_log = Path.home() / 'Documents/The Witcher 3/scriptslog.txt'
+    if user_log.exists():
+        shutil.copy2(user_log, logs / 'before-user-scriptslog.txt')
     started = time.monotonic()
-    with (logs / 'stdout.txt').open('wb') as stdout, (logs / 'stderr.txt').open('wb') as stderr:
+    with without_store_provider(probe, logs, args.without_store_provider), (logs / 'stdout.txt').open('wb') as stdout, (logs / 'stderr.txt').open('wb') as stderr:
         debug = args.debug_output or args.compiler_feedback
         feedback = None
         process = subprocess.Popen(command, cwd=exe.parent, stdin=subprocess.DEVNULL,
@@ -236,7 +270,7 @@ def main():
     errors = sorted(set(line for line in transcripts.splitlines() if re.search(r'\bError\b|\bFatal\b', line)))
     if feedback:
         errors = feedback['errors']
-    result = dict(command=command, executableSha256=sha(exe), baselineOnly=args.baseline_only,
+    result = dict(command=command, executableSha256=sha(exe), baselineOnly=args.baseline_only, storeProviderDisabled=args.without_store_provider,
                   preparationManifestSha256=sha(prepared / 'preparation.json'),
                   preparedDirectory=str(prepared),
                   exitCode=process.returncode, timedOut=timed_out, elapsedSeconds=round(time.monotonic()-started, 2),

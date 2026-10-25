@@ -81,9 +81,11 @@ stationary(-1);check(c.drops.at(-1)[1]===-1,'stationary release removes');
 beforeDrops=c.drops.length;stationary(1,{stageX:300,stageY:50,stopImmediatePropagation(){}});check(c.drops.length===beforeDrops,'release outside original card cancels click');
 stationary(1,{stageX:40,stageY:50,right:true,stopImmediatePropagation(){}});check(c.drops.length===beforeDrops,'right button never adds');
 c.editorDragRevision178=1;c.editorDragId178=42;c.editorDragging178=false;c.endEditorDrag178({stageX:40,stageY:50});check(c.drops.length===beforeDrops,'stale release never adds');
-check(board.includes('filtered.length,5,240,960,636')&&board.includes('tile.y=int(i/5)*240-editorScroll178'),'collection rows use compact geometry');
+// The accepted 0.9.x toolbar reduces the viewport to 552; row pitch stays 240.
+const geometry=board.match(/new BetaGwentVirtualShelf178\(filtered.length,5,(\d+),(\d+),(\d+),editorScroll178\)/);
+check(geometry&&Number(geometry[1])===240&&Number(geometry[2])===960&&Number(geometry[3])===552&&board.includes('tile.y=int(i/5)*240-editorScroll178'),'collection rows use accepted compact geometry');
 // Production controller requests the next offscreen row; no phantom focus.
-vm.runInContext(`var movementAt=0,dirty=false,invoked=[];function getFocus(){return {card:{shelfPane:'collection',shelfIndex:5},rect:{}};}function candidates(){return [];}function state(){return {mode:'editor',shelves:{collection:{columns:5,count:40,rowHeight:318,offset:0,height:636}}};}function invoke(n,a){invoked.push([n,a]);}`+fn(pad,'navigate'),c);
+vm.runInContext(`var movementAt=0,dirty=false,invoked=[];function getFocus(){return {card:{shelfPane:'collection',shelfIndex:5},rect:{x:500,y:240,width:164,height:216}};}function candidates(){return [];}function state(){return {mode:'editor',shelves:{collection:{columns:5,count:40,rowHeight:240,offset:0,height:552}}};}function invoke(n,a){invoked.push([n,a]);}`+fn(pad,'editorFooter')+'\n'+fn(pad,'navigate'),c);
 c.navigate(40);check(c.invoked.length===1&&c.invoked[0][0]==='shelfSelect'&&c.invoked[0][1].index===10,'D-pad down enters next virtual row');
 for(const dir of ['src','src-BetaGwentBoard','src-GwintGame','src-BetaGwentKeg','src-DeckBuilder'])for(const name of ['BetaGwentBoard.as','BetaGwentVirtualShelf178.as','BetaGwentController.as']){
  const raw=fs.readFileSync('BetaGwent/ui/'+dir+'/'+name);check(raw.equals(fs.readFileSync('BetaGwent/ui/src/'+name))&&raw.subarray(0,3).toString('hex')==='efbbbf'&&!/(?<!\r)\n/.test(raw.toString()),'five mirrors BOM CRLF');

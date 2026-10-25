@@ -1,6 +1,6 @@
 // Appended to the transpiled rules inside one script scope.
-const __Seats = new Set(['ownerId','controllerId','ownerPlayerId','positionPlayerId','playerId','targetPlayerId','startingPlayerId','currentPlayerId','roundStarter','visualSide','savedSourceSide','side','targetSide']);
-const __Pairs = ['aiRoundHand','player','score','crownDelta','preset','leaderTemplate','nilfInitial','nilfSpell','grave','deck','leader','history','beasts'];
+const __Seats = new Set(['ownerId','controllerId','ownerPlayerId','positionPlayerId','playerId','mulliganSide','targetPlayerId','startingPlayerId','currentPlayerId','roundStarter','visualSide','savedSourceSide','side','targetSide']);
+const __Pairs = ['aiRoundHand','aiStartingDeck','player','score','crownDelta','preset','leaderTemplate','nilfInitial','nilfSpell','grave','deck','leader','history','beasts'];
 function __flip(n) { return n === 1 ? 2 : n === 2 ? 1 : n; }
 function __visit(v, seen) {
   if (v === null || typeof v !== 'object') return v;
@@ -14,7 +14,7 @@ function __visit(v, seen) {
     if (k === 'bgCloneRef' || k === 'bgCloneEpoch' || k === 'aiSimCloner') continue;
     const old = v[k];
     if (typeof old === 'number' && __Seats.has(k)) v[k] = __flip(old);
-    else if (k === 'winnerMask' || k === 'matchWinnerMask') v[k] = ((old & 1) << 1) | ((old & 2) >> 1);
+    else if (k === 'winnerMask' || k === 'matchWinnerMask' || k === 'externalPolicyMask') v[k] = ((old & 1) << 1) | ((old & 2) >> 1);
     else v[k] = __visit(old, seen);
   }
   if (v instanceof CBetaGwentDuelWeather) {
@@ -27,11 +27,14 @@ const __mem = new WeakMap();
 function __swap(g) {
   const m = __mem.get(g) || { rev: false, slots: [[0,0,0,0,0,0],[0,0,0,0,0,0]] }; __mem.set(g, m);
   let actor = m.rev ? 0 : 1;
-  m.slots[actor] = [g.aiChaseRound, g.aiChaseInitialHand, g.aiObservedRound, g.aiObservedEnemyScore, g.aiPublicTempo, g.aiChaseSpent];
+  m.slots[actor] = [g.aiChaseRound, g.aiChaseInitialHand, g.aiObservedRound, g.aiObservedEnemyScore, g.aiPublicTempo, g.aiChaseSpent,
+    g.archetypeAI.planRound||0,g.archetypeAI.roundPlan||0,g.archetypeAI.planEnemyInvestment||0,g.archetypeAI.planOwnInvestment||0];
   __visit(g, new Set()); m.rev = !m.rev; actor = m.rev ? 0 : 1;
   const s = m.slots[actor]; g.aiChaseRound = s[0]; g.aiChaseInitialHand = s[1]; g.aiObservedRound = s[2]; g.aiObservedEnemyScore = s[3]; g.aiPublicTempo = Math.max(14, s[4]); g.aiChaseSpent = s[5];
   g.weatherAI.Initialize(g); g.weatherProfile = g.weatherAI.Matches(g.nilfInitialTwo);
   g.archetypeAI.Initialize(g, g.nilfInitialTwo, g.presetTwo, g.leaderTemplateTwo);
+  g.archetypeAI.planRound=s[6]||0;g.archetypeAI.roundPlan=s[7]||0;
+  g.archetypeAI.planEnemyInvestment=s[8]||0;g.archetypeAI.planOwnInvestment=s[9]||0;
   __context(g);
 }
 function __reversed(g) { const m = __mem.get(g); return !!(m && m.rev); }

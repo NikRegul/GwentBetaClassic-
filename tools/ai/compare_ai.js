@@ -12,6 +12,8 @@ const config=read(path.join(out,'run.json')),candidate=path.join(out,'candidate'
 const proof=read(path.join(baseline,'comparison.json')),manifest=read(path.join(candidate,'manifest.json'));
 const pool=manifest.presets,cycles=config.cycles,seed0=config.seed;
 if(!Number.isInteger(cycles)||cycles<1||!Number.isInteger(seed0)||pool.length!==46||new Set(pool).size!==46)throw Error('Invalid experiment');
+const blockStart=config.blockStart??0,blockCount=config.blockCount??pool.length;
+if(!Number.isInteger(blockStart)||!Number.isInteger(blockCount)||blockStart<0||blockCount<1||blockStart+blockCount>pool.length)throw Error('Invalid experiment block slice');
 const catalogue=path.join(candidate,'sources/BetaGwent/development/scripts/game/betagwent/duelCatalog.ws');
 if(sha(catalogue)!==proof.sameDeckCatalogue||sha(path.join(baseline,'rules.js'))!==proof.baselineRules)throw Error('Baseline proof changed');
 for(const name of ['runtime.js','harness.js'])if(sha(path.join(candidate,name))!==sha(path.join(baseline,name)))throw Error('Host adapters differ');
@@ -23,17 +25,22 @@ const reportPath=path.join(out,'report.json');
 if(fs.existsSync(reportPath)&&!resume)throw Error('Use --resume or a new output directory');
 if(resume&&!fs.existsSync(reportPath))throw Error('No checkpoint to resume');
 const report=resume?read(reportPath):{
- schema:2,protocol:'shared current battle mechanics + decks + raw deal + RNG; independent mulligans; both policies/decks/seats',
+ schema:2,protocol:'shared current battle mechanics + decks + raw deal + RNG; independent mulligans; both policies/decks/seats'+(config.randomMatchups?'; shuffled deranged opponent permutations each cycle':''),
  candidate,baseline,candidateLabel:config.candidateLabel,baselineLabel:config.baselineLabel,
  candidateRules:sha(path.join(candidate,'rules.js')),baselineRules:proof.baselineRules,catalogue:proof.sameDeckCatalogue,
- inputs,seed:seed0,cycles,plannedGames:cycles*46*4,completedGames:0,games:[],seconds:0,
+ inputs,seed:seed0,cycles,blockStart,blockCount,plannedGames:cycles*blockCount*4,completedGames:0,games:[],seconds:0,
  sharedBattleMechanics:proof.sharedBattleMechanics,trainedWeightsIncluded:true,sessionPolicyMethods:proof.sessionPolicyMethods
 };
 if(resume&&JSON.stringify(report.inputs)!==JSON.stringify(inputs))throw Error('Frozen experiment files changed; resume refused');
 fs.mkdirSync(path.join(out,'matches'),{recursive:true});fs.mkdirSync(path.join(out,'errors'),{recursive:true});
-function host(dir){const context=vm.createContext({console});
- vm.runInContext(['runtime.js','rules.js','harness.js'].map(n=>fs.readFileSync(path.join(dir,n),'utf8')).join('\n')+'\n'+require(bridgeFile),context);
- context.bridge.setTunes(read(path.join(dir,'tunes.json')));return context.bridge;}
+function host(dir){let bridge;const source=['runtime.js','rules.js','harness.js'].map(n=>fs.readFileSync(path.join(dir,n),'utf8')).join('\n')+'\n'+require(bridgeFile);
+ if(config.fastHost)bridge=new Function(source+'\nreturn globalThis.bridge;')();
+ else {const context=vm.createContext({console});vm.runInContext(source,context);bridge=context.bridge;}
+ bridge.setTunes(read(path.join(dir,'tunes.json')));
+ const strength=dir===candidate?config.candidateStrength:config.baselineStrength;
+ if(strength!==undefined)bridge.setStrength(strength);
+ if(config.simDamp!==undefined)bridge.setSimDamp(config.simDamp);
+ return bridge;}
 const fresh=host(candidate),old=host(baseline),profiles=read(path.join(out,'profiles.json')).profiles;
 let logs=[],decisions=[],rng=seed0>>>0||1;
 function rnd(){rng^=rng<<13;rng>>>=0;rng^=rng>>>17;rng>>>=0;rng^=rng<<5;rng>>>=0;return rng;}
@@ -47,12 +54,16 @@ function play(initial,newSeat,mirrored){let h=fresh,steps=0,lastState=initial;
    if(!s.mulligan&&!s.pending&&!s.waiting&&s.current===1){h.swap();s=h.view();}
    const chooser=s.mulligan?1-s.actor:s.actor,target=chooser===newSeat?fresh:old;
    if(target!==h){target.load(h.dump());h=target;}
-   lastState=h.dump();const before=h.view(),logStart=logs.length;h.step();
-   decisions.push({step:steps,version:target===fresh?'candidate':'baseline',before,after:h.view(),logStart,logEnd:logs.length});
+   lastState=h.dump();const before=h.view(),logStart=logs.length,decisionStart=performance.now();h.step();
+   decisions.push({step:steps,version:target===fresh?'candidate':'baseline',before,after:h.view(),milliseconds:performance.now()-decisionStart,logStart,logEnd:logs.length});
   }throw Error('decision limit');
  }catch(e){return {winner:0,steps,error:String(e.stack||e),lastState};}
 }
-function atomic(name,data){const target=path.join(out,name);fs.writeFileSync(target+'.tmp',data);fs.renameSync(target+'.tmp',target);}
+function atomic(name,data){
+ const target=path.join(out,name);fs.writeFileSync(target+'.tmp',data);
+ for(let attempt=0;;attempt++)try{fs.renameSync(target+'.tmp',target);return;}
+ catch(e){if(!['EPERM','EBUSY','EACCES'].includes(e.code)||attempt>=29)throw e;Atomics.wait(new Int32Array(new SharedArrayBuffer(4)),0,0,25*(attempt+1));}
+}
 const csv=v=>'"'+String(v??'').replace(/"/g,'""')+'"';
 const pct=x=>x==null?'—':(100*x).toFixed(2)+'%';
 function save(){
@@ -93,8 +104,20 @@ function save(){
 }
 const started=Date.now(),priorSeconds=report.seconds;let executed=0,stop=false;
 save();
-for(let cycle=0;cycle<cycles&&!stop;cycle++)for(let i=0;i<pool.length&&!stop;i++){
- const a=pool[i],b=pool[(i+1+(cycle%45))%46],seed=rnd(),block=cycle*46+i;
+for(let cycle=0;cycle<cycles&&!stop;cycle++){
+ let opponents=pool.slice();
+ if(config.randomMatchups){
+  let valid=false;
+  for(let attempt=0;attempt<1000&&!valid;attempt++){
+   opponents=pool.slice();for(let j=opponents.length-1;j>0;j--){const k=rnd()%(j+1);[opponents[j],opponents[k]]=[opponents[k],opponents[j]];}
+   valid=opponents.every((id,j)=>id!==pool[j]);
+  }
+  if(!valid)throw Error('Could not generate random non-self matchups');
+ }
+ for(let i=0;i<pool.length&&!stop;i++){
+ const seed=rnd(); // Draw even for skipped blocks: partitions preserve the full-run deals.
+ if(i<blockStart||i>=blockStart+blockCount)continue;
+ const a=pool[i],b=config.randomMatchups?opponents[i]:pool[(i+1+((cycle+(config.matchupOffset||0))%45))%46],block=cycle*blockCount+i-blockStart;
  const schedule=[[0,false],[1,true],[1,false],[0,true]];
  let initial=null;
  for(let seatGame=0;seatGame<4;seatGame++){
@@ -105,12 +128,20 @@ for(let cycle=0;cycle<cycles&&!stop;cycle++)for(let i=0;i<pool.length&&!stop;i++
   if(initial===null)initial=fresh.initialize(a,b,seed);
   logs=[];const [newSeat,mirror]=schedule[seatGame],r=play(initial,newSeat,mirror);
   const record={id,left:mirror?b:a,right:mirror?a:b,newSeat,mirror,seed,cycle,block,candidateDeck:newSeat===(mirror?1:0)?a:b,...r};
-  const bytes=zlib.gzipSync(JSON.stringify({schema:1,record,initial,decisions,logs}));
-  fs.writeFileSync(path.join(out,'matches',id+'.json.gz'),bytes);
-  if(r.error)fs.writeFileSync(path.join(out,'errors',id+'.json.gz'),bytes);
+  record.policyMetrics={};for(const version of ['candidate','baseline']){
+   const choices=decisions.filter(d=>d.version===version&&!d.before.mulligan&&!d.before.pending&&!d.before.waiting),events={};
+   for(const log of logs)if(log.version===version){const m=/event=([A-Z_]+)/.exec(log.text);if(m)events[m[1]]=(events[m[1]]||0)+1;}
+   record.policyMetrics[version]={decisions:choices.length,milliseconds:choices.reduce((s,d)=>s+d.milliseconds,0),peakMilliseconds:Math.max(0,...choices.map(d=>d.milliseconds)),events};
+  }
+  if(r.error || !config.traceEvery || index%config.traceEvery===0){
+   const bytes=zlib.gzipSync(JSON.stringify({schema:1,record,initial,decisions,logs}));
+   fs.writeFileSync(path.join(out,'matches',id+'.json.gz'),bytes);
+   if(r.error)fs.writeFileSync(path.join(out,'errors',id+'.json.gz'),bytes);
+  }
   delete record.lastState;report.games.push(record);executed++;report.seconds=priorSeconds+(Date.now()-started)/1000;save();
   console.log(`${report.completedGames}/${report.plannedGames}: new ${report.wins}, old ${report.losses}, draws ${report.draws}, errors ${report.errors}`);
  }
+}
 }
 console.log(JSON.stringify({complete:report.complete,wins:report.wins,losses:report.losses,draws:report.draws,errors:report.errors,scoreRate:report.scoreRate,seconds:report.seconds}));
 if(report.errors)process.exitCode=1;

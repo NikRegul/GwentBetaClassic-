@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "baselineVersion": "0.9.3b",
+  "baselineFingerprint": "d9c95ce98f644dc07eed05b16258a6dc5ff1f5488c0c5920497cdb17f23c1c1e",
+  "source": "Exact historical replay and separate0.9.3b replay; both selected games retain historical trace and final-state SHA.",
+  "historicalPlanSha256": "0b77e00347265b84915bb759253f4a15d1445b6510abadecb7dda6ae05945380",
+  "positions": [
+    {
+      "file": "spy-concession093c.json.gz",
+      "sha256": "f6568d42b39077d42489eccc50300a3269b091748d88e8df82a70d24598c9803",
+      "decision": "g10-r1-s044-p1-m0-t12",
+      "privacy": "Full recorded state for offline testing only; production uses anonymized shadows and the tests vary enemy private identities."
+    },
+    {
+      "file": "bran-continuation093c.json.gz",
+      "sha256": "9c6bf7872cc6ad582624416519b470163e7ae54c2e45df6adb2c8c7464c3ac21",
+      "decision": "g10-r0-s055-p2-m0-t13",
+      "privacy": "Full recorded state for offline testing only; production uses anonymized shadows and the tests vary enemy private identities."
+    }
+  ]
+}

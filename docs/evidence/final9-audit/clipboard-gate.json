@@ -1,7 +1,0 @@
-{
-  "checks": 34,
-  "productionAS": true,
-  "nativeCapabilityCached": true,
-  "missingBridgeBlocksBothEntryPoints": true,
-  "inGameVerified": false
-}

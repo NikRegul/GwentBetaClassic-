@@ -1,0 +1,3641 @@
+{
+  "112102": [
+    {
+      "ability": 176,
+      "node": 104,
+      "kind": "locations",
+      "hint": 1,
+      "min": 1,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 115
+      },
+      "rows": {
+        "unmappedSourceVariable": 165
+      }
+    }
+  ],
+  "112104": [
+    {
+      "ability": 232,
+      "node": 19,
+      "kind": "targets",
+      "hint": 37,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "112105": [
+    {
+      "ability": 260,
+      "node": 129,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "112106": [
+    {
+      "ability": 121,
+      "node": 107,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "112108": [
+    {
+      "ability": 155,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "112109": [
+    {
+      "ability": 155,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "112111": [
+    {
+      "ability": 111,
+      "node": 81,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "112201": [
+    {
+      "ability": 103,
+      "node": 18,
+      "kind": "targets",
+      "hint": 37,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "112205": [
+    {
+      "ability": 338,
+      "node": 44,
+      "kind": "targets",
+      "hint": 23,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "112208": [
+    {
+      "ability": 184,
+      "node": 21,
+      "kind": "choices",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "112211": [
+    {
+      "ability": 295,
+      "node": 30,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "112212": [
+    {
+      "ability": 685,
+      "node": 17,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "112214": [
+    {
+      "ability": 163,
+      "node": 36,
+      "kind": "targets",
+      "hint": 39,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "113102": [
+    {
+      "ability": 248,
+      "node": 113,
+      "kind": "choices",
+      "hint": 28,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "113201": [
+    {
+      "ability": 190,
+      "node": 7,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "113202": [
+    {
+      "ability": 78,
+      "node": 7,
+      "kind": "locations",
+      "hint": 1,
+      "min": 0,
+      "max": 1,
+      "players": {
+        "literal": 3
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "113203": [
+    {
+      "ability": 44,
+      "node": 7,
+      "kind": "locations",
+      "hint": 1,
+      "min": 1,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 36
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "113205": [
+    {
+      "ability": 372,
+      "node": 330,
+      "kind": "locations",
+      "hint": 1,
+      "min": 0,
+      "max": 1,
+      "players": {
+        "literal": 3
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "113206": [
+    {
+      "ability": 206,
+      "node": 7,
+      "kind": "locations",
+      "hint": 1,
+      "min": 0,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 22
+      },
+      "rows": {
+        "literal": 3
+      }
+    }
+  ],
+  "113207": [
+    {
+      "ability": 238,
+      "node": 204,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "113208": [
+    {
+      "ability": 171,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "113301": [
+    {
+      "ability": 77,
+      "node": 45,
+      "kind": "targets",
+      "hint": 23,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "113302": [
+    {
+      "ability": 42,
+      "node": 7,
+      "kind": "locations",
+      "hint": 1,
+      "min": 0,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 36
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "113303": [
+    {
+      "ability": 500,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "113305": [
+    {
+      "ability": 39,
+      "node": 7,
+      "kind": "locations",
+      "hint": 1,
+      "min": 1,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 17
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "113306": [
+    {
+      "ability": 76,
+      "node": 45,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "113307": [
+    {
+      "ability": 57,
+      "node": 33,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "113310": [
+    {
+      "ability": 220,
+      "node": 167,
+      "kind": "targets",
+      "hint": 31,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "113311": [
+    {
+      "ability": 251,
+      "node": 215,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "113312": [
+    {
+      "ability": 62,
+      "node": 1,
+      "kind": "locations",
+      "hint": 1,
+      "min": 0,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 44
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "113313": [
+    {
+      "ability": 74,
+      "node": 32,
+      "kind": "targets",
+      "hint": 37,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "113316": [
+    {
+      "ability": 88,
+      "node": 7,
+      "kind": "choices",
+      "hint": 22,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "113319": [
+    {
+      "ability": 146,
+      "node": 25,
+      "kind": "targets",
+      "hint": 32,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "113320": [
+    {
+      "ability": 292,
+      "node": 32,
+      "kind": "templates",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 292,
+      "node": 182,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "122102": [
+    {
+      "ability": 122,
+      "node": 18,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "122103": [
+    {
+      "ability": 93,
+      "node": 38,
+      "kind": "choices",
+      "hint": 24,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "122104": [
+    {
+      "ability": 371,
+      "node": 20,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "122106": [
+    {
+      "ability": 105,
+      "node": 27,
+      "kind": "choices",
+      "hint": 22,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "122108": [
+    {
+      "ability": 174,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "122201": [
+    {
+      "ability": 209,
+      "node": 157,
+      "kind": "choices",
+      "hint": 31,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "122203": [
+    {
+      "ability": 353,
+      "node": 111,
+      "kind": "choices",
+      "hint": 45,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "122204": [
+    {
+      "ability": 631,
+      "node": 566,
+      "kind": "choices",
+      "hint": 49,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "122205": [
+    {
+      "ability": 293,
+      "node": 23,
+      "kind": "choices",
+      "hint": 30,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "122207": [
+    {
+      "ability": 174,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "122211": [
+    {
+      "ability": 161,
+      "node": 14,
+      "kind": "targets",
+      "hint": 32,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "122212": [
+    {
+      "ability": 161,
+      "node": 21,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "122216": [
+    {
+      "ability": 274,
+      "node": 180,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "122301": [
+    {
+      "ability": 507,
+      "node": 111,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "122302": [
+    {
+      "ability": 672,
+      "node": 646,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "122303": [
+    {
+      "ability": 229,
+      "node": 25,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "122307": [
+    {
+      "ability": 551,
+      "node": 362,
+      "kind": "targets",
+      "hint": 41,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "122314": [
+    {
+      "ability": 487,
+      "node": 7,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "122318": [
+    {
+      "ability": 196,
+      "node": 33,
+      "kind": "targets",
+      "hint": 28,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "122403": [
+    {
+      "ability": 183,
+      "node": 59,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "123201": [
+    {
+      "ability": 81,
+      "node": 33,
+      "kind": "choices",
+      "hint": 24,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "131101": [
+    {
+      "ability": 247,
+      "node": 32,
+      "kind": "templates",
+      "hint": 27,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "131102": [
+    {
+      "ability": 287,
+      "node": 17,
+      "kind": "choices",
+      "hint": 26,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132102": [
+    {
+      "ability": 516,
+      "node": 16,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "132104": [
+    {
+      "ability": 129,
+      "node": 60,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132106": [
+    {
+      "ability": 99,
+      "node": 7,
+      "kind": "choices",
+      "hint": 22,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132107": [
+    {
+      "ability": 234,
+      "node": 7,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132203": [
+    {
+      "ability": 194,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132204": [
+    {
+      "ability": 854,
+      "node": 789,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132205": [
+    {
+      "ability": 116,
+      "node": 7,
+      "kind": "targets",
+      "hint": 32,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132211": [
+    {
+      "ability": 161,
+      "node": 17,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132214": [
+    {
+      "ability": 190,
+      "node": 22,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132215": [
+    {
+      "ability": 697,
+      "node": 51,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 697,
+      "node": 615,
+      "kind": "templates",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132216": [
+    {
+      "ability": 197,
+      "node": 21,
+      "kind": "choices",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "132303": [
+    {
+      "ability": 140,
+      "node": 45,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132306": [
+    {
+      "ability": 115,
+      "node": 10,
+      "kind": "choices",
+      "hint": 37,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132309": [
+    {
+      "ability": 560,
+      "node": 16,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132312": [
+    {
+      "ability": 86,
+      "node": 33,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132313": [
+    {
+      "ability": 415,
+      "node": 40,
+      "kind": "targets",
+      "hint": 40,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132314": [
+    {
+      "ability": 720,
+      "node": 63,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132406": [
+    {
+      "ability": 74,
+      "node": 49,
+      "kind": "choices",
+      "hint": 24,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "132409": [
+    {
+      "ability": 534,
+      "node": 16,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "133301": [
+    {
+      "ability": 91,
+      "node": 8,
+      "kind": "targets",
+      "hint": 31,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 91,
+      "node": 29,
+      "kind": "choices",
+      "hint": 37,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "133302": [
+    {
+      "ability": 372,
+      "node": 115,
+      "kind": "templates",
+      "hint": 27,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142101": [
+    {
+      "ability": 174,
+      "node": 57,
+      "kind": "targets",
+      "hint": 23,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "142102": [
+    {
+      "ability": 87,
+      "node": 7,
+      "kind": "choices",
+      "hint": 24,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142103": [
+    {
+      "ability": 182,
+      "node": 36,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "142105": [
+    {
+      "ability": 927,
+      "node": 375,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142106": [
+    {
+      "ability": 125,
+      "node": 7,
+      "kind": "choices",
+      "hint": 22,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142107": [
+    {
+      "ability": 129,
+      "node": 53,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142108": [
+    {
+      "ability": 174,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "142202": [
+    {
+      "ability": 174,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "142203": [
+    {
+      "ability": 501,
+      "node": 17,
+      "kind": "choices",
+      "hint": 45,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142206": [
+    {
+      "ability": 212,
+      "node": 16,
+      "kind": "targets",
+      "hint": 32,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142209": [
+    {
+      "ability": 422,
+      "node": 36,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142301": [
+    {
+      "ability": 108,
+      "node": 25,
+      "kind": "targets",
+      "hint": 31,
+      "min": 1,
+      "max": 2
+    }
+  ],
+  "142302": [
+    {
+      "ability": 236,
+      "node": 7,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142303": [
+    {
+      "ability": 194,
+      "node": 40,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142305": [
+    {
+      "ability": 93,
+      "node": 7,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142308": [
+    {
+      "ability": 197,
+      "node": 50,
+      "kind": "choices",
+      "hint": 26,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142310": [
+    {
+      "ability": 119,
+      "node": 7,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 119,
+      "node": 65,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142311": [
+    {
+      "ability": 756,
+      "node": 375,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142312": [
+    {
+      "ability": 102,
+      "node": 78,
+      "kind": "choices",
+      "hint": 31,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142314": [
+    {
+      "ability": 191,
+      "node": 39,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "142317": [
+    {
+      "ability": 92,
+      "node": 17,
+      "kind": "targets",
+      "hint": 35,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "143201": [
+    {
+      "ability": 86,
+      "node": 35,
+      "kind": "choices",
+      "hint": 24,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "152103": [
+    {
+      "ability": 189,
+      "node": 47,
+      "kind": "choices",
+      "hint": 51,
+      "min": 2,
+      "max": 2
+    }
+  ],
+  "152105": [
+    {
+      "ability": 56,
+      "node": 7,
+      "kind": "locations",
+      "hint": 1,
+      "min": 1,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 17
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "152106": [
+    {
+      "ability": 168,
+      "node": 11,
+      "kind": "choices",
+      "hint": 52,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 168,
+      "node": 48,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "152107": [
+    {
+      "ability": 49,
+      "node": 14,
+      "kind": "targets",
+      "hint": 32,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "152202": [
+    {
+      "ability": 200,
+      "node": 179,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "152203": [
+    {
+      "ability": 180,
+      "node": 58,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "152204": [
+    {
+      "ability": 94,
+      "node": 7,
+      "kind": "targets",
+      "hint": 32,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 94,
+      "node": 65,
+      "kind": "choices",
+      "hint": 53,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "152205": [
+    {
+      "ability": 63,
+      "node": 7,
+      "kind": "choices",
+      "hint": 35,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "152206": [
+    {
+      "ability": 228,
+      "node": 158,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "152207": [
+    {
+      "ability": 149,
+      "node": 7,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "152211": [
+    {
+      "ability": 109,
+      "node": 7,
+      "kind": "choices",
+      "hint": 22,
+      "min": 0,
+      "max": 2
+    }
+  ],
+  "152213": [
+    {
+      "ability": 156,
+      "node": 62,
+      "kind": "choices",
+      "hint": 51,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "152214": [
+    {
+      "ability": 336,
+      "node": 7,
+      "kind": "choices",
+      "hint": 45,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "152304": [
+    {
+      "ability": 219,
+      "node": 145,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "152306": [
+    {
+      "ability": 110,
+      "node": 7,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "152308": [
+    {
+      "ability": 533,
+      "node": 48,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "152310": [
+    {
+      "ability": 126,
+      "node": 7,
+      "kind": "choices",
+      "hint": 22,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "152311": [
+    {
+      "ability": 102,
+      "node": 7,
+      "kind": "targets",
+      "hint": 35,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "152315": [
+    {
+      "ability": 67,
+      "node": 24,
+      "kind": "targets",
+      "hint": 23,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "152317": [
+    {
+      "ability": 205,
+      "node": 52,
+      "kind": "targets",
+      "hint": 36,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "153201": [
+    {
+      "ability": 245,
+      "node": 23,
+      "kind": "choices",
+      "hint": 29,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 245,
+      "node": 88,
+      "kind": "choices",
+      "hint": 30,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "153301": [
+    {
+      "ability": 155,
+      "node": 1,
+      "kind": "locations",
+      "hint": 1,
+      "min": 1,
+      "max": 1,
+      "players": {
+        "literal": 3
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "162101": [
+    {
+      "ability": 582,
+      "node": 545,
+      "kind": "targets",
+      "hint": 1,
+      "min": 2,
+      "max": 2
+    }
+  ],
+  "162102": [
+    {
+      "ability": 217,
+      "node": 36,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "162103": [
+    {
+      "ability": 199,
+      "node": 19,
+      "kind": "choices",
+      "hint": 43,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162104": [
+    {
+      "ability": 91,
+      "node": 7,
+      "kind": "choices",
+      "hint": 22,
+      "min": 0,
+      "max": 2
+    }
+  ],
+  "162105": [
+    {
+      "ability": 610,
+      "node": 14,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 610,
+      "node": 325,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "162106": [
+    {
+      "ability": 253,
+      "node": 31,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162108": [
+    {
+      "ability": 226,
+      "node": 31,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162202": [
+    {
+      "ability": 200,
+      "node": 21,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162204": [
+    {
+      "ability": 180,
+      "node": 17,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162206": [
+    {
+      "ability": 203,
+      "node": 69,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162207": [
+    {
+      "ability": 196,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "162208": [
+    {
+      "ability": 92,
+      "node": 14,
+      "kind": "targets",
+      "hint": 32,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162209": [
+    {
+      "ability": 295,
+      "node": 69,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162210": [
+    {
+      "ability": 357,
+      "node": 32,
+      "kind": "choices",
+      "hint": 45,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162213": [
+    {
+      "ability": 192,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162303": [
+    {
+      "ability": 78,
+      "node": 29,
+      "kind": "targets",
+      "hint": 37,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162304": [
+    {
+      "ability": 92,
+      "node": 7,
+      "kind": "choices",
+      "hint": 22,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162305": [
+    {
+      "ability": 122,
+      "node": 22,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162306": [
+    {
+      "ability": 147,
+      "node": 17,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162308": [
+    {
+      "ability": 701,
+      "node": 180,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 701,
+      "node": 501,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162309": [
+    {
+      "ability": 333,
+      "node": 266,
+      "kind": "targets",
+      "hint": 31,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162310": [
+    {
+      "ability": 288,
+      "node": 36,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162313": [
+    {
+      "ability": 238,
+      "node": 180,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162314": [
+    {
+      "ability": 205,
+      "node": 38,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162315": [
+    {
+      "ability": 97,
+      "node": 64,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "162316": [
+    {
+      "ability": 253,
+      "node": 214,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "163101": [
+    {
+      "ability": 267,
+      "node": 44,
+      "kind": "targets",
+      "hint": 23,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "163201": [
+    {
+      "ability": 570,
+      "node": 18,
+      "kind": "targets",
+      "hint": 55,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 570,
+      "node": 139,
+      "kind": "targets",
+      "hint": 56,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200020": [
+    {
+      "ability": 132,
+      "node": 7,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 132,
+      "node": 50,
+      "kind": "targets",
+      "hint": 31,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200021": [
+    {
+      "ability": 169,
+      "node": 63,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200023": [
+    {
+      "ability": 237,
+      "node": 197,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200026": [
+    {
+      "ability": 566,
+      "node": 362,
+      "kind": "targets",
+      "hint": 41,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200028": [
+    {
+      "ability": 86,
+      "node": 14,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200030": [
+    {
+      "ability": 242,
+      "node": 8,
+      "kind": "locations",
+      "hint": 1,
+      "min": 0,
+      "max": 1,
+      "players": {
+        "literal": 3
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "200031": [
+    {
+      "ability": 158,
+      "node": 7,
+      "kind": "choices",
+      "hint": 44,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 158,
+      "node": 61,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200032": [
+    {
+      "ability": 170,
+      "node": 68,
+      "kind": "choices",
+      "hint": 24,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200036": [
+    {
+      "ability": 100,
+      "node": 7,
+      "kind": "choices",
+      "hint": 54,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200037": [
+    {
+      "ability": 168,
+      "node": 18,
+      "kind": "targets",
+      "hint": 42,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 168,
+      "node": 74,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200048": [
+    {
+      "ability": 331,
+      "node": 52,
+      "kind": "choices",
+      "hint": 49,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 331,
+      "node": 295,
+      "kind": "choices",
+      "hint": 45,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200049": [
+    {
+      "ability": 326,
+      "node": 25,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 326,
+      "node": 188,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200050": [
+    {
+      "ability": 402,
+      "node": 93,
+      "kind": "templates",
+      "hint": 27,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200053": [
+    {
+      "ability": 49,
+      "node": 14,
+      "kind": "targets",
+      "hint": 32,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200055": [
+    {
+      "ability": 136,
+      "node": 8,
+      "kind": "targets",
+      "hint": 37,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200056": [
+    {
+      "ability": 402,
+      "node": 93,
+      "kind": "templates",
+      "hint": 27,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200058": [
+    {
+      "ability": 206,
+      "node": 65,
+      "kind": "templates",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200062": [
+    {
+      "ability": 841,
+      "node": 39,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 2
+    }
+  ],
+  "200067": [
+    {
+      "ability": 552,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 552,
+      "node": 485,
+      "kind": "locations",
+      "hint": 1,
+      "min": 1,
+      "max": 1,
+      "players": {
+        "symbol": "owner",
+        "sourceNode": 495
+      },
+      "rows": {
+        "literal": 7
+      }
+    },
+    {
+      "ability": 552,
+      "node": 520,
+      "kind": "locations",
+      "hint": 1,
+      "min": 1,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 530
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "200071": [
+    {
+      "ability": 297,
+      "node": 80,
+      "kind": "choices",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200073": [
+    {
+      "ability": 76,
+      "node": 53,
+      "kind": "targets",
+      "hint": 23,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200078": [
+    {
+      "ability": 161,
+      "node": 7,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200079": [
+    {
+      "ability": 153,
+      "node": 17,
+      "kind": "choices",
+      "hint": 22,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200083": [
+    {
+      "ability": 156,
+      "node": 29,
+      "kind": "choices",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200087": [
+    {
+      "ability": 402,
+      "node": 93,
+      "kind": "templates",
+      "hint": 27,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200089": [
+    {
+      "ability": 253,
+      "node": 8,
+      "kind": "locations",
+      "hint": 1,
+      "min": 0,
+      "max": 1,
+      "players": {
+        "literal": 3
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "200102": [
+    {
+      "ability": 629,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 629,
+      "node": 464,
+      "kind": "templates",
+      "hint": 27,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 629,
+      "node": 556,
+      "kind": "choices",
+      "hint": 24,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200105": [
+    {
+      "ability": 61,
+      "node": 8,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200118": [
+    {
+      "ability": 221,
+      "node": 180,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200124": [
+    {
+      "ability": 194,
+      "node": 22,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200132": [
+    {
+      "ability": 162,
+      "node": 17,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200138": [
+    {
+      "ability": 90,
+      "node": 33,
+      "kind": "choices",
+      "hint": 22,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200139": [
+    {
+      "ability": 319,
+      "node": 263,
+      "kind": "targets",
+      "hint": 23,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200145": [
+    {
+      "ability": 125,
+      "node": 7,
+      "kind": "choices",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200146": [
+    {
+      "ability": 187,
+      "node": 21,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200147": [
+    {
+      "ability": 109,
+      "node": 21,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200149": [
+    {
+      "ability": 191,
+      "node": 167,
+      "kind": "choices",
+      "hint": 24,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200154": [
+    {
+      "ability": 142,
+      "node": 34,
+      "kind": "choices",
+      "hint": 24,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200158": [
+    {
+      "ability": 178,
+      "node": 32,
+      "kind": "templates",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200159": [
+    {
+      "ability": 240,
+      "node": 24,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 3
+    }
+  ],
+  "200162": [
+    {
+      "ability": 334,
+      "node": 12,
+      "kind": "choices",
+      "hint": 30,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 334,
+      "node": 38,
+      "kind": "targets",
+      "hint": 28,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200163": [
+    {
+      "ability": 62,
+      "node": 8,
+      "kind": "choices",
+      "hint": 43,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200164": [
+    {
+      "ability": 69,
+      "node": 34,
+      "kind": "choices",
+      "hint": 24,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200165": [
+    {
+      "ability": 467,
+      "node": 50,
+      "kind": "choices",
+      "hint": 49,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 467,
+      "node": 95,
+      "kind": "choices",
+      "hint": 45,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200166": [
+    {
+      "ability": 100,
+      "node": 7,
+      "kind": "choices",
+      "hint": 22,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200167": [
+    {
+      "ability": 244,
+      "node": 89,
+      "kind": "choices",
+      "hint": 24,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200169": [
+    {
+      "ability": 92,
+      "node": 14,
+      "kind": "targets",
+      "hint": 32,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200170": [
+    {
+      "ability": 540,
+      "node": 362,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200191": [
+    {
+      "ability": 49,
+      "node": 8,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200198": [
+    {
+      "ability": 131,
+      "node": 8,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200207": [
+    {
+      "ability": 40,
+      "node": 7,
+      "kind": "locations",
+      "hint": 1,
+      "min": 0,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 36
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "200209": [
+    {
+      "ability": 519,
+      "node": 44,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 519,
+      "node": 192,
+      "kind": "choices",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200218": [
+    {
+      "ability": 140,
+      "node": 35,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200220": [
+    {
+      "ability": 93,
+      "node": 38,
+      "kind": "choices",
+      "hint": 24,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200221": [
+    {
+      "ability": 110,
+      "node": 7,
+      "kind": "choices",
+      "hint": 22,
+      "min": 0,
+      "max": 2
+    }
+  ],
+  "200222": [
+    {
+      "ability": 755,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 755,
+      "node": 686,
+      "kind": "choices",
+      "hint": 24,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200223": [
+    {
+      "ability": 354,
+      "node": 32,
+      "kind": "templates",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 354,
+      "node": 182,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200225": [
+    {
+      "ability": 184,
+      "node": 7,
+      "kind": "targets",
+      "hint": 25,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200227": [
+    {
+      "ability": 516,
+      "node": 33,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200228": [
+    {
+      "ability": 42,
+      "node": 7,
+      "kind": "locations",
+      "hint": 1,
+      "min": 0,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 36
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "200233": [
+    {
+      "ability": 236,
+      "node": 211,
+      "kind": "targets",
+      "hint": 38,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200235": [
+    {
+      "ability": 176,
+      "node": 17,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200236": [
+    {
+      "ability": 207,
+      "node": 181,
+      "kind": "targets",
+      "hint": 33,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200237": [
+    {
+      "ability": 101,
+      "node": 38,
+      "kind": "choices",
+      "hint": 24,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200294": [
+    {
+      "ability": 328,
+      "node": 46,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200299": [
+    {
+      "ability": 50,
+      "node": 21,
+      "kind": "targets",
+      "hint": 31,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200300": [
+    {
+      "ability": 190,
+      "node": 39,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200502": [
+    {
+      "ability": 313,
+      "node": 18,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "200518": [
+    {
+      "ability": 179,
+      "node": 42,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200520": [
+    {
+      "ability": 73,
+      "node": 47,
+      "kind": "choices",
+      "hint": 22,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200528": [
+    {
+      "ability": 509,
+      "node": 362,
+      "kind": "targets",
+      "hint": 41,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200534": [
+    {
+      "ability": 235,
+      "node": 40,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200535": [
+    {
+      "ability": 135,
+      "node": 36,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200539": [
+    {
+      "ability": 550,
+      "node": 457,
+      "kind": "choices",
+      "hint": 41,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "200540": [
+    {
+      "ability": 70,
+      "node": 33,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "201523": [
+    {
+      "ability": 63,
+      "node": 26,
+      "kind": "locations",
+      "hint": 1,
+      "min": 1,
+      "max": 1,
+      "players": {
+        "literal": 3
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "201578": [
+    {
+      "ability": 223,
+      "node": 166,
+      "kind": "targets",
+      "hint": 23,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201579": [
+    {
+      "ability": 83,
+      "node": 43,
+      "kind": "choices",
+      "hint": 22,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "201580": [
+    {
+      "ability": 149,
+      "node": 74,
+      "kind": "templates",
+      "hint": 27,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201581": [
+    {
+      "ability": 443,
+      "node": 93,
+      "kind": "templates",
+      "hint": 27,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201582": [
+    {
+      "ability": 443,
+      "node": 93,
+      "kind": "templates",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201583": [
+    {
+      "ability": 438,
+      "node": 93,
+      "kind": "templates",
+      "hint": 27,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201584": [
+    {
+      "ability": 451,
+      "node": 93,
+      "kind": "templates",
+      "hint": 27,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201585": [
+    {
+      "ability": 443,
+      "node": 93,
+      "kind": "templates",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201587": [
+    {
+      "ability": 185,
+      "node": 74,
+      "kind": "templates",
+      "hint": 27,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201589": [
+    {
+      "ability": 181,
+      "node": 74,
+      "kind": "templates",
+      "hint": 27,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201595": [
+    {
+      "ability": 154,
+      "node": 74,
+      "kind": "templates",
+      "hint": 27,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201597": [
+    {
+      "ability": 183,
+      "node": 74,
+      "kind": "templates",
+      "hint": 27,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201598": [
+    {
+      "ability": 485,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 485,
+      "node": 349,
+      "kind": "targets",
+      "hint": 36,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 485,
+      "node": 375,
+      "kind": "choices",
+      "hint": 22,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201599": [
+    {
+      "ability": 125,
+      "node": 15,
+      "kind": "targets",
+      "hint": 23,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201603": [
+    {
+      "ability": 632,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 632,
+      "node": 484,
+      "kind": "targets",
+      "hint": 33,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 632,
+      "node": 599,
+      "kind": "choices",
+      "hint": 24,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201606": [
+    {
+      "ability": 226,
+      "node": 27,
+      "kind": "targets",
+      "hint": 40,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "201609": [
+    {
+      "ability": 879,
+      "node": 500,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201611": [
+    {
+      "ability": 534,
+      "node": 18,
+      "kind": "targets",
+      "hint": 55,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 534,
+      "node": 139,
+      "kind": "targets",
+      "hint": 56,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201612": [
+    {
+      "ability": 752,
+      "node": 613,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 752,
+      "node": 688,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201615": [
+    {
+      "ability": 643,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 643,
+      "node": 464,
+      "kind": "templates",
+      "hint": 27,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 643,
+      "node": 597,
+      "kind": "choices",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201616": [
+    {
+      "ability": 153,
+      "node": 138,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "201618": [
+    {
+      "ability": 141,
+      "node": 18,
+      "kind": "targets",
+      "hint": 48,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201619": [
+    {
+      "ability": 747,
+      "node": 563,
+      "kind": "choices",
+      "hint": 22,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "201621": [
+    {
+      "ability": 583,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 583,
+      "node": 387,
+      "kind": "templates",
+      "hint": 27,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 583,
+      "node": 565,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "201625": [
+    {
+      "ability": 117,
+      "node": 39,
+      "kind": "targets",
+      "hint": 50,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201627": [
+    {
+      "ability": 828,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201628": [
+    {
+      "ability": 88,
+      "node": 59,
+      "kind": "choices",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201630": [
+    {
+      "ability": 102,
+      "node": 73,
+      "kind": "targets",
+      "hint": 23,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "201632": [
+    {
+      "ability": 833,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201633": [
+    {
+      "ability": 129,
+      "node": 48,
+      "kind": "targets",
+      "hint": 23,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201637": [
+    {
+      "ability": 42,
+      "node": 7,
+      "kind": "locations",
+      "hint": 1,
+      "min": 0,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 36
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "201638": [
+    {
+      "ability": 195,
+      "node": 40,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "201639": [
+    {
+      "ability": 152,
+      "node": 24,
+      "kind": "templates",
+      "hint": 27,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201642": [
+    {
+      "ability": 125,
+      "node": 45,
+      "kind": "templates",
+      "hint": 27,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201643": [
+    {
+      "ability": 69,
+      "node": 52,
+      "kind": "targets",
+      "hint": 23,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201644": [
+    {
+      "ability": 183,
+      "node": 16,
+      "kind": "targets",
+      "hint": 36,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201645": [
+    {
+      "ability": 205,
+      "node": 7,
+      "kind": "locations",
+      "hint": 1,
+      "min": 1,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 36
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "201647": [
+    {
+      "ability": 223,
+      "node": 18,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201648": [
+    {
+      "ability": 177,
+      "node": 9,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 177,
+      "node": 87,
+      "kind": "targets",
+      "hint": 33,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 177,
+      "node": 130,
+      "kind": "targets",
+      "hint": 32,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201650": [
+    {
+      "ability": 54,
+      "node": 40,
+      "kind": "choices",
+      "hint": 22,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201653": [
+    {
+      "ability": 437,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 437,
+      "node": 182,
+      "kind": "targets",
+      "hint": 35,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 437,
+      "node": 387,
+      "kind": "templates",
+      "hint": 27,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201656": [
+    {
+      "ability": 95,
+      "node": 8,
+      "kind": "targets",
+      "hint": 23,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 95,
+      "node": 29,
+      "kind": "choices",
+      "hint": 37,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201657": [
+    {
+      "ability": 126,
+      "node": 30,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201661": [
+    {
+      "ability": 191,
+      "node": 73,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201662": [
+    {
+      "ability": 243,
+      "node": 11,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 243,
+      "node": 74,
+      "kind": "targets",
+      "hint": 34,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 243,
+      "node": 156,
+      "kind": "targets",
+      "hint": 33,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201664": [
+    {
+      "ability": 77,
+      "node": 63,
+      "kind": "choices",
+      "hint": 24,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "201676": [
+    {
+      "ability": 77,
+      "node": 58,
+      "kind": "choices",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201680": [
+    {
+      "ability": 206,
+      "node": 122,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 3
+    }
+  ],
+  "201684": [
+    {
+      "ability": 62,
+      "node": 18,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201690": [
+    {
+      "ability": 64,
+      "node": 34,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201691": [
+    {
+      "ability": 51,
+      "node": 9,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201692": [
+    {
+      "ability": 52,
+      "node": 8,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201693": [
+    {
+      "ability": 129,
+      "node": 106,
+      "kind": "locations",
+      "hint": 1,
+      "min": 1,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 126
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "201696": [
+    {
+      "ability": 62,
+      "node": 37,
+      "kind": "choices",
+      "hint": 22,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "201697": [
+    {
+      "ability": 603,
+      "node": 32,
+      "kind": "templates",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 603,
+      "node": 387,
+      "kind": "templates",
+      "hint": 27,
+      "min": 0,
+      "max": 1
+    },
+    {
+      "ability": 603,
+      "node": 551,
+      "kind": "targets",
+      "hint": 33,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "201698": [
+    {
+      "ability": 139,
+      "node": 24,
+      "kind": "choices",
+      "hint": 26,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "201699": [
+    {
+      "ability": 113,
+      "node": 7,
+      "kind": "choices",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "201700": [
+    {
+      "ability": 206,
+      "node": 65,
+      "kind": "locations",
+      "hint": 1,
+      "min": 1,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 125
+      },
+      "rows": {
+        "unmappedSourceVariable": 177
+      }
+    },
+    {
+      "ability": 206,
+      "node": 89,
+      "kind": "locations",
+      "hint": 1,
+      "min": 1,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 180
+      },
+      "rows": {
+        "unmappedSourceVariable": 185
+      }
+    }
+  ],
+  "201701": [
+    {
+      "ability": 182,
+      "node": 40,
+      "kind": "targets",
+      "hint": 40,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201704": [
+    {
+      "ability": 206,
+      "node": 38,
+      "kind": "choices",
+      "hint": 26,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201707": [
+    {
+      "ability": 109,
+      "node": 11,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201708": [
+    {
+      "ability": 50,
+      "node": 8,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201725": [
+    {
+      "ability": 1315,
+      "node": 32,
+      "kind": "templates",
+      "hint": 27,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 1315,
+      "node": 1172,
+      "kind": "choices",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 1315,
+      "node": 1230,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201731": [
+    {
+      "ability": 1551,
+      "node": 32,
+      "kind": "templates",
+      "hint": 27,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 1551,
+      "node": 1017,
+      "kind": "choices",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 1551,
+      "node": 1199,
+      "kind": "targets",
+      "hint": 28,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 1551,
+      "node": 1302,
+      "kind": "targets",
+      "hint": 23,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201737": [
+    {
+      "ability": 1301,
+      "node": 32,
+      "kind": "templates",
+      "hint": 27,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 1301,
+      "node": 1166,
+      "kind": "targets",
+      "hint": 38,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 1301,
+      "node": 1241,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201743": [
+    {
+      "ability": 346,
+      "node": 27,
+      "kind": "targets",
+      "hint": 40,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201744": [
+    {
+      "ability": 74,
+      "node": 8,
+      "kind": "locations",
+      "hint": 1,
+      "min": 0,
+      "max": 1,
+      "players": {
+        "literal": 3
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "201748": [
+    {
+      "ability": 148,
+      "node": 44,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201749": [
+    {
+      "ability": 35,
+      "node": 8,
+      "kind": "locations",
+      "hint": 1,
+      "min": 1,
+      "max": 1,
+      "players": {
+        "symbol": "owner",
+        "sourceNode": 29
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "201753": [
+    {
+      "ability": 194,
+      "node": 8,
+      "kind": "locations",
+      "hint": 1,
+      "min": 1,
+      "max": 1,
+      "players": {
+        "symbol": "owner",
+        "sourceNode": 186
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "201759": [
+    {
+      "ability": 1132,
+      "node": 8,
+      "kind": "templates",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    },
+    {
+      "ability": 1132,
+      "node": 710,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 3
+    },
+    {
+      "ability": 1132,
+      "node": 1110,
+      "kind": "locations",
+      "hint": 1,
+      "min": 1,
+      "max": 1,
+      "players": {
+        "symbol": "opponentOfOwner",
+        "sourceNode": 1121
+      },
+      "rows": {
+        "literal": 7
+      }
+    }
+  ],
+  "201762": [
+    {
+      "ability": 172,
+      "node": 149,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 3
+    }
+  ],
+  "201765": [
+    {
+      "ability": 152,
+      "node": 8,
+      "kind": "targets",
+      "hint": 1,
+      "min": 0,
+      "max": 1
+    }
+  ],
+  "201772": [
+    {
+      "ability": 154,
+      "node": 12,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201773": [
+    {
+      "ability": 119,
+      "node": 69,
+      "kind": "templates",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201776": [
+    {
+      "ability": 146,
+      "node": 98,
+      "kind": "choices",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201777": [
+    {
+      "ability": 72,
+      "node": 46,
+      "kind": "targets",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ],
+  "201780": [
+    {
+      "ability": 91,
+      "node": 35,
+      "kind": "choices",
+      "hint": 1,
+      "min": 1,
+      "max": 1
+    }
+  ]
+}

@@ -12,7 +12,7 @@ def load_nilf(root,catalog,digest):
     return result
 
 def nilf_pools(c):
-    pools={142202:[113312,113401,113301],162207:[113305,113401,200023],162213:[162315,200115,162314],201597:[152304,152312,152313,152315,200144]}
+    pools={142202:[113305,113401,113301],162207:[113302,113401,200009],162213:[162315,200115,162314],201597:[152304,152312,152313,152315,200144]}
     for id in (200050,201580,201583,201589,201585,201653):
         g=next(g for g in c['abilities'] if g['type']=='CardAbility' and g['templateId']==id)
         n=next(n for n in g['nodes'] if n['type']=='GetCardsDefinitionsNode');p={v['tag']:v for v in n['sourceTree']['children']}

@@ -1,0 +1,2800 @@
+{
+  "schema": 1,
+  "validated": true,
+  "scope": "Completed source-profile screening and varied-opponent holdout; explicit finite sample, no globally strongest-profile claim.",
+  "commonFingerprint": "f60c131dcb06ea9092b9ce8d7d5d9c10e0b18a6f7be2d38e4d50a6feea994b8d",
+  "confirmation": {
+    "planSha256": "5777c950b9e980bd1bdc81b99a296b43d5345d4bce0548b17c7f8c9c49782bff",
+    "completed": 1344,
+    "planned": 1344,
+    "complete": true,
+    "inputsUnchanged": true,
+    "out": "D:\\w3mod\\BetaGwent\\build\\beta-profile-confirmation-20261024-01"
+  },
+  "execution": {
+    "planSha256": "5777c950b9e980bd1bdc81b99a296b43d5345d4bce0548b17c7f8c9c49782bff",
+    "runnerSha256": "24d20ca1907e0d2de1ae736c8d9e1df6601c4064cc041db05515062a0b9bed1a",
+    "workers": 4,
+    "frozenInputsVerified": true,
+    "originalCompleted": 1186,
+    "started": "2026-10-24T16:20:06.429Z",
+    "pid": 47952,
+    "ioHelperSha256": "0cbb82a1b59cc63f390aaef739c7ed9e54279a6438349743baf946b3762bae14",
+    "previousExecutions": [
+      {
+        "planSha256": "5777c950b9e980bd1bdc81b99a296b43d5345d4bce0548b17c7f8c9c49782bff",
+        "runnerSha256": "77526aef9514bd603c69b0c3959d6a2a63814d5d81a10333b574773cbed1c4cc",
+        "workers": 4,
+        "frozenInputsVerified": true,
+        "originalCompleted": 484,
+        "started": "2026-10-24T15:56:25.216Z",
+        "pid": 39956
+      }
+    ],
+    "preflightSha256": "fbd541a85064e8fdf05b9cb53e0868f2a0e62f9bfe6274867ba764d945ecd8b7",
+    "note": "Only orchestration parallelized after user authorization; immutable schedule/AI/settings kept. Timed search uses original wall-clock limit. Preflight exact parity is a finite sample."
+  },
+  "equivalenceSha256": "13243504bd7dca1cbdd219e834038b3aea10030b165efcffa9a0a8260c01b10d",
+  "assignments": [
+    {
+      "presetId": 21,
+      "title": "Синие Полоски Роше",
+      "profile": "p_NorthernRealms_Practice",
+      "composition": "deck21",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 22,
+      "title": "Кровавый Барон",
+      "profile": "p_NorthernRealms_Practice",
+      "composition": "deck22",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 23,
+      "title": "Сигизмунд Дийкстра",
+      "profile": "p_NorthernRealms_Practice",
+      "composition": "deck23",
+      "reason": "no-screened-candidate-improved",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 24,
+      "title": "Золтан Хивай",
+      "profile": "ch_fac_nilfgaard_5",
+      "composition": "deck24",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 25,
+      "title": "Ламберт",
+      "profile": "p_Nilfgaard_Practice",
+      "composition": "deck25",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 26,
+      "title": "Талер",
+      "profile": "p_NorthernRealms_Practice",
+      "composition": "deck26",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 27,
+      "title": "Вимме Вивальди",
+      "profile": "ch_fac_nilfgaard_5",
+      "composition": "deck27",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 28,
+      "title": "Торговец скоя’таэлей",
+      "profile": "p_Scoia'tael_Practice",
+      "composition": "deck28",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 29,
+      "title": "Степан",
+      "profile": "p_NorthernRealms_Practice",
+      "composition": "deck29",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 30,
+      "title": "Корчмарь на распутье",
+      "profile": "ch_fac_northern_3",
+      "composition": "deck30",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 31,
+      "title": "Оливер",
+      "profile": "p_Nilfgaard_Practice",
+      "composition": "deck31",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 32,
+      "title": "Лодочник из Рудника",
+      "profile": "p_Monster_Practice",
+      "composition": "deck32",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 33,
+      "title": "Хадко",
+      "profile": "p_Monster_Practice",
+      "composition": "deck33",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 34,
+      "title": "Старый мудрец",
+      "profile": "ch_fac_scoia_6",
+      "composition": "deck34",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 35,
+      "title": "Сьюста",
+      "profile": "p_Scoia'tael_Practice",
+      "composition": "deck35",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 36,
+      "title": "Гремист",
+      "profile": "p_Skellige_Practice",
+      "composition": "deck36",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 37,
+      "title": "Крах ан Крайт",
+      "profile": "p_Skellige_Practice",
+      "composition": "deck37",
+      "reason": "no-screened-candidate-improved",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 38,
+      "title": "Лугос Безумный",
+      "profile": "p_Skellige_Practice",
+      "composition": "deck38",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 39,
+      "title": "Мышовур",
+      "profile": "p_Skellige_Practice",
+      "composition": "deck39",
+      "reason": "no-screened-candidate-improved",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 40,
+      "title": "Маркиза Серенити",
+      "profile": "ch_fac_nilfgaard_3",
+      "composition": "deck40",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 41,
+      "title": "Шани",
+      "profile": "p_NorthernRealms_Practice",
+      "composition": "deck41",
+      "reason": "no-screened-candidate-improved",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 42,
+      "title": "Ольгерд фон Эверек",
+      "profile": "p_NorthernRealms_Practice",
+      "composition": "deck42",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 43,
+      "title": "Борец за права животных",
+      "profile": "ch_fac_monsters_6",
+      "composition": "deck43",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 44,
+      "title": "Низушки на свадьбе",
+      "profile": "p_Monster_Practice",
+      "composition": "deck44",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 45,
+      "title": "Торговец бродячего цирка",
+      "profile": "p_Scoia'tael_Practice",
+      "composition": "deck45",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 46,
+      "title": "Бернард Тулле",
+      "profile": "ch_fac_monsters_3",
+      "composition": "deck46",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 47,
+      "title": "Саша",
+      "profile": "ch_fac_northern_4",
+      "composition": "deck47",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 48,
+      "title": "Финнеас",
+      "profile": "p_Scoia'tael_Practice",
+      "composition": "deck48",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 49,
+      "title": "Граф Тибальт",
+      "profile": "ch_fac_nilfgaard_2",
+      "composition": "deck49",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 50,
+      "title": "Первый соперник турнира в Туссенте",
+      "profile": "p_Monster_Practice",
+      "composition": "deck50",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 51,
+      "title": "Второй соперник турнира в Туссенте",
+      "profile": "ch_fac_skellige_1",
+      "composition": "deck51",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 52,
+      "title": "Финалист турнира в Туссенте",
+      "profile": "p_Skellige_Practice",
+      "composition": "deck52",
+      "reason": "no-screened-candidate-improved",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 53,
+      "title": "Главарь пуристов после турнира в Туссенте",
+      "profile": "Base",
+      "composition": "deck53",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 54,
+      "title": "ИИ · Шпионы",
+      "profile": "ch_fac_northern_4",
+      "composition": "deck47",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 55,
+      "title": "ИИ · Вампиры: иссушение",
+      "profile": "p_Monster_Practice",
+      "composition": "deck55",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 56,
+      "title": "ИИ · Рой главоглазов",
+      "profile": "p_Monster_Practice",
+      "composition": "deck44",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 57,
+      "title": "ИИ · Машины Хенсельта",
+      "profile": "p_NorthernRealms_Practice",
+      "composition": "deck22",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 58,
+      "title": "ИИ · Проклятие Адды",
+      "profile": "p_NorthernRealms_Practice",
+      "composition": "deck58",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 59,
+      "title": "ИИ · Темп Кальвейта",
+      "profile": "p_Nilfgaard_Practice",
+      "composition": "deck59",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 60,
+      "title": "ИИ · Дагон: туман и утопцы",
+      "profile": "ch_fac_scoia_6",
+      "composition": "deck34",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 61,
+      "title": "ИИ · Яйца и поглощение",
+      "profile": "p_Monster_Practice",
+      "composition": "deck61",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 62,
+      "title": "ИИ · Засады и Огонь",
+      "profile": "p_Scoia'tael_Practice",
+      "composition": "deck48",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 63,
+      "title": "ИИ · Алхимия",
+      "profile": "p_Nilfgaard_Practice",
+      "composition": "deck63",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 64,
+      "title": "ИИ · Кровавая луна",
+      "profile": "ch_fac_nilfgaard_6",
+      "composition": "deck64",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 65,
+      "title": "ИИ · Ветераны Тиршаха",
+      "profile": "p_Skellige_Practice",
+      "composition": "deck65",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 66,
+      "title": "ИИ · Краснолюды, эльфы и Огонь",
+      "profile": "p_Scoia'tael_Practice",
+      "composition": "deck28",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 67,
+      "title": "ИИ · Накеры и поглощение",
+      "profile": "p_Monster_Practice",
+      "composition": "deck67",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 68,
+      "title": "ИИ · Мечники ан Крайт",
+      "profile": "p_Skellige_Practice",
+      "composition": "deck68",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 69,
+      "title": "ИИ · Лирийские машины",
+      "profile": "p_NorthernRealms_Practice",
+      "composition": "deck69",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 70,
+      "title": "ИИ · Королевская гвардия",
+      "profile": "p_Skellige_Practice",
+      "composition": "deck39",
+      "reason": "no-screened-candidate-improved",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 71,
+      "title": "ИИ · Темерцы",
+      "profile": "p_NorthernRealms_Practice",
+      "composition": "deck21",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 72,
+      "title": "ИИ · Вскрытие Морврана",
+      "profile": "ch_fac_skellige_1",
+      "composition": "deck51",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 73,
+      "title": "ИИ · Мазь и пехота",
+      "profile": "p_Nilfgaard_Practice",
+      "composition": "deck73",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 74,
+      "title": "ИИ · Завещания",
+      "profile": "p_Monster_Practice",
+      "composition": "deck74",
+      "reason": "no-screened-candidate-improved",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 75,
+      "title": "ИИ · Сброс карт",
+      "profile": "p_Skellige_Practice",
+      "composition": "deck38",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 76,
+      "title": "ИИ · Филавандрель: эльфы и заклинания",
+      "profile": "Base",
+      "composition": "deck53",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 77,
+      "title": "ИИ · Радовид: броня и контроль",
+      "profile": "p_NorthernRealms_Practice",
+      "composition": "deck77",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 78,
+      "title": "ИИ · Ледяные тролли",
+      "profile": "p_Monster_Practice",
+      "composition": "deck33",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 79,
+      "title": "ИИ · Усиление руки Эитнэ",
+      "profile": "ch_fac_nilfgaard_3",
+      "composition": "deck79",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 80,
+      "title": "ИИ · Морозные призраки",
+      "profile": "p_Monster_Practice",
+      "composition": "deck32",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 81,
+      "title": "ИИ · Усиление руки Францески",
+      "profile": "p_Scoia'tael_Practice",
+      "composition": "deck81",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 82,
+      "title": "ИИ · Брувер и Шуп",
+      "profile": "Base",
+      "composition": "deck82",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 83,
+      "title": "ИИ · Сорок карт Фольтеста",
+      "profile": "ch_fac_monsters_3",
+      "composition": "deck83",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 84,
+      "title": "ИИ · Шахтёры и Ксавьер",
+      "profile": "ch_fac_nilfgaard_5",
+      "composition": "deck24",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 85,
+      "title": "ИИ · Великаны и огры",
+      "profile": "ch_fac_skellige_5",
+      "composition": "deck85",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 86,
+      "title": "ИИ · Броня",
+      "profile": "p_NorthernRealms_Practice",
+      "composition": "deck41",
+      "reason": "no-screened-candidate-improved",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 87,
+      "title": "ИИ · Невольничья пехота",
+      "profile": "p_Nilfgaard_Practice",
+      "composition": "deck87",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 88,
+      "title": "ИИ · Усиление руки Нильфгаарда",
+      "profile": "p_Nilfgaard_Practice",
+      "composition": "deck88",
+      "reason": "no-screened-candidate-improved",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 89,
+      "title": "ИИ · Проклятые корабли",
+      "profile": "p_Skellige_Practice",
+      "composition": "deck89",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 90,
+      "title": "ИИ · Усиление руки Брувера",
+      "profile": "p_Scoia'tael_Practice",
+      "composition": "deck90",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 91,
+      "title": "ИИ · Заклинания скоя'таэлей",
+      "profile": "p_Scoia'tael_Practice",
+      "composition": "deck91",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 92,
+      "title": "ИИ · Топорники",
+      "profile": "p_Skellige_Practice",
+      "composition": "deck92",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 93,
+      "title": "ИИ · Дриады: Цири нова",
+      "profile": "Base_Challenges",
+      "composition": "deck93",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 94,
+      "title": "ИИ · Аретуза: рыцари и заклинания",
+      "profile": "ch_fac_nilfgaard_1",
+      "composition": "deck94",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 95,
+      "title": "ИИ · Узурпатор: имперский контроль",
+      "profile": "p_Nilfgaard_Practice",
+      "composition": "deck95",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 96,
+      "title": "ИИ · Крах: раны и мечники",
+      "profile": "p_Skellige_Practice",
+      "composition": "deck96",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 97,
+      "title": "ИИ · Солдаты и рыцари Фольтеста",
+      "profile": "ch_fac_monsters_3",
+      "composition": "deck46",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 98,
+      "title": "ИИ · Харальд: дождь и топорники",
+      "profile": "Base",
+      "composition": "deck98",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 99,
+      "title": "ИИ · Фольтест: усиление колоды",
+      "profile": "p_NorthernRealms_Practice",
+      "composition": "deck23",
+      "reason": "no-screened-candidate-improved",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 100,
+      "title": "ch_fac_monsters_1",
+      "profile": "p_Nilfgaard_Practice",
+      "composition": "deck100",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": [
+        "ch_fac_monsters_1"
+      ]
+    },
+    {
+      "presetId": 101,
+      "title": "ch_fac_monsters_2_player",
+      "profile": "ch_fac_scoia_6",
+      "composition": "deck101",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 102,
+      "title": "ch_fac_monsters_3",
+      "profile": "ch_fac_monsters_3",
+      "composition": "deck102",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": [
+        "ch_fac_monsters_3"
+      ]
+    },
+    {
+      "presetId": 103,
+      "title": "ch_fac_monsters_3_player",
+      "profile": "p_Monster_Practice",
+      "composition": "deck103",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 104,
+      "title": "ch_fac_monsters_4",
+      "profile": "ch_fac_monsters_4",
+      "composition": "deck104",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": [
+        "ch_fac_monsters_4"
+      ]
+    },
+    {
+      "presetId": 105,
+      "title": "ch_fac_monsters_4_player",
+      "profile": "p_Monster_Practice",
+      "composition": "deck105",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 106,
+      "title": "ch_fac_monsters_5_player",
+      "profile": "p_Monster_Practice",
+      "composition": "deck106",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 107,
+      "title": "ch_fac_monsters_6_player",
+      "profile": "ch_fac_nilfgaard_2",
+      "composition": "deck107",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 108,
+      "title": "ch_fac_nilfgaard_1",
+      "profile": "ch_fac_nilfgaard_1",
+      "composition": "deck108",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": [
+        "ch_fac_nilfgaard_1"
+      ]
+    },
+    {
+      "presetId": 109,
+      "title": "ch_fac_nilfgaard_1_player",
+      "profile": "p_Nilfgaard_Practice",
+      "composition": "deck109",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 110,
+      "title": "ch_fac_nilfgaard_2_player",
+      "profile": "ch_fac_monsters_1",
+      "composition": "deck110",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 111,
+      "title": "ch_fac_nilfgaard_3_player",
+      "profile": "p_Nilfgaard_Practice",
+      "composition": "deck111",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 112,
+      "title": "ch_fac_northern_1",
+      "profile": "p_Skellige_Practice",
+      "composition": "deck112",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": [
+        "Base_Challenges"
+      ]
+    },
+    {
+      "presetId": 113,
+      "title": "ch_fac_northern_4",
+      "profile": "ch_fac_northern_4",
+      "composition": "deck113",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": [
+        "ch_fac_northern_4"
+      ]
+    },
+    {
+      "presetId": 114,
+      "title": "ch_fac_northern_6",
+      "profile": "ch_fac_northern_6",
+      "composition": "deck114",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": [
+        "ch_fac_northern_6"
+      ]
+    },
+    {
+      "presetId": 115,
+      "title": "ch_fac_scoia_1_player",
+      "profile": "ch_fac_nilfgaard_5",
+      "composition": "deck115",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 116,
+      "title": "ch_fac_scoia_2",
+      "profile": "ch_fac_nilfgaard_2",
+      "composition": "deck116",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": [
+        "ch_fac_scoia_2"
+      ]
+    },
+    {
+      "presetId": 117,
+      "title": "ch_fac_scoia_2_player",
+      "profile": "p_Scoia'tael_Practice",
+      "composition": "deck117",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 118,
+      "title": "ch_fac_scoia_4_player",
+      "profile": "p_Scoia'tael_Practice",
+      "composition": "deck118",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 119,
+      "title": "ch_fac_scoia_5",
+      "profile": "p_Nilfgaard_Practice",
+      "composition": "deck119",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": [
+        "ch_fac_scoia_5"
+      ]
+    },
+    {
+      "presetId": 120,
+      "title": "ch_fac_scoia_5_player",
+      "profile": "ch_fac_skellige_2",
+      "composition": "deck120",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 121,
+      "title": "ch_fac_scoia_6_player",
+      "profile": "p_Scoia'tael_Practice",
+      "composition": "deck121",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 122,
+      "title": "ch_fac_skellige_1_player",
+      "profile": "p_Skellige_Practice",
+      "composition": "deck122",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": []
+    },
+    {
+      "presetId": 123,
+      "title": "ch_fac_skellige_2",
+      "profile": "ch_fac_skellige_2",
+      "composition": "deck123",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": [
+        "ch_fac_skellige_2"
+      ]
+    },
+    {
+      "presetId": 124,
+      "title": "d_Monsters_Practice_Easy",
+      "profile": "ch_fac_northern_3",
+      "composition": "deck124",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": [
+        "p_Monsters_Practice_Easy"
+      ]
+    },
+    {
+      "presetId": 125,
+      "title": "d_Nilfgaard_Practice",
+      "profile": "ch_fac_monsters_1",
+      "composition": "deck125",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": [
+        "p_Nilfgaard_Practice"
+      ]
+    },
+    {
+      "presetId": 126,
+      "title": "d_Nilfgaard_Practice_Conceal",
+      "profile": "p_Nilfgaard_Practice",
+      "composition": "deck126",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": [
+        "p_Nilfgaard_Practice_Conceal"
+      ]
+    },
+    {
+      "presetId": 127,
+      "title": "d_NorthernRealms_Practice",
+      "profile": "Base",
+      "composition": "deck127",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": [
+        "p_NorthernRealms_Practice"
+      ]
+    },
+    {
+      "presetId": 128,
+      "title": "d_Scoia'tael_Practice_Easy",
+      "profile": "ch_fac_skellige_4",
+      "composition": "deck128",
+      "reason": "varied-holdout",
+      "sourceDeclaredProfiles": [
+        "p_Scoia'tael_Practice_Easy"
+      ]
+    },
+    {
+      "presetId": 129,
+      "title": "d_Skellige_Practice_Easy",
+      "profile": "p_Skellige_Practice",
+      "composition": "deck129",
+      "reason": "authored-source-binding-exact-behaviour-equivalence",
+      "sourceDeclaredProfiles": [
+        "p_Skellige_Practice"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "deck": "deck100",
+      "profile": "ch_fac_northern_4",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": false,
+      "opponents": [
+        73,
+        75
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.125,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Nilfgaard_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck101",
+      "profile": "ch_fac_scoia_6",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        56,
+        87
+      ],
+      "candidateScore": 0.5,
+      "baselineScore": 0.3125,
+      "meanPairedDelta": 0.1875,
+      "mirrorPairDeltas": [
+        0.25,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "selected": "ch_fac_scoia_6",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck102",
+      "profile": "ch_fac_monsters_3",
+      "baseline": "p_NorthernRealms_Practice",
+      "direct": true,
+      "opponents": [
+        69,
+        91
+      ],
+      "candidateScore": 0.5,
+      "baselineScore": 0.5,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        -0.5,
+        1.0,
+        -0.5
+      ],
+      "selected": "ch_fac_monsters_3",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck103",
+      "profile": "ch_fac_monsters_6",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        61,
+        57
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.375,
+      "meanPairedDelta": -0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        -0.5,
+        0.0
+      ],
+      "selected": "p_Monster_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck104",
+      "profile": "ch_fac_monsters_4",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": true,
+      "opponents": [
+        81,
+        63
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.125,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "ch_fac_monsters_4",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck105",
+      "profile": "Eredin_Weather",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        67,
+        76
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.25,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Monster_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck106",
+      "profile": "ch_fac_nilfgaard_2",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        74,
+        86
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.25,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Monster_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck107",
+      "profile": "ch_fac_nilfgaard_2",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        78,
+        93
+      ],
+      "candidateScore": 0.625,
+      "baselineScore": 0.375,
+      "meanPairedDelta": 0.25,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "selected": "ch_fac_nilfgaard_2",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck108",
+      "profile": "ch_fac_nilfgaard_1",
+      "baseline": "p_NorthernRealms_Practice",
+      "direct": true,
+      "opponents": [
+        97,
+        54
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.25,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "ch_fac_nilfgaard_1",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck109",
+      "profile": "ch_fac_monsters_1",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": false,
+      "opponents": [
+        87,
+        58
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.4375,
+      "meanPairedDelta": -0.1875,
+      "mirrorPairDeltas": [
+        -0.5,
+        -0.25,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Nilfgaard_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck110",
+      "profile": "ch_fac_monsters_1",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": false,
+      "opponents": [
+        88,
+        67
+      ],
+      "candidateScore": 0.5,
+      "baselineScore": 0.375,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.5,
+        0.5,
+        0.0,
+        -0.5
+      ],
+      "selected": "ch_fac_monsters_1",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck111",
+      "profile": "ch_fac_monsters_1",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": false,
+      "opponents": [
+        95,
+        76
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.5,
+      "meanPairedDelta": -0.375,
+      "mirrorPairDeltas": [
+        0.0,
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "selected": "p_Nilfgaard_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck112",
+      "profile": "ch_fac_monsters_2",
+      "baseline": "p_Skellige_Practice",
+      "direct": false,
+      "opponents": [
+        65,
+        82
+      ],
+      "candidateScore": 0.0,
+      "baselineScore": 0.125,
+      "meanPairedDelta": -0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        -0.5,
+        0.0
+      ],
+      "selected": "p_Skellige_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck113",
+      "profile": "ch_fac_northern_4",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": true,
+      "opponents": [
+        59,
+        92
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.0,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "selected": "ch_fac_northern_4",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck114",
+      "profile": "ch_fac_northern_6",
+      "baseline": "p_NorthernRealms_Practice",
+      "direct": true,
+      "opponents": [
+        77,
+        62
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.25,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        -0.5,
+        0.5,
+        0.0
+      ],
+      "selected": "ch_fac_northern_6",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck115",
+      "profile": "ch_fac_nilfgaard_5",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        82,
+        69
+      ],
+      "candidateScore": 0.625,
+      "baselineScore": 0.375,
+      "meanPairedDelta": 0.25,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "selected": "ch_fac_nilfgaard_5",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck116",
+      "profile": "ch_fac_nilfgaard_2",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        74,
+        83
+      ],
+      "candidateScore": 0.375,
+      "baselineScore": 0.3125,
+      "meanPairedDelta": 0.0625,
+      "mirrorPairDeltas": [
+        -0.5,
+        0.25,
+        0.5,
+        0.0
+      ],
+      "selected": "ch_fac_nilfgaard_2",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck117",
+      "profile": "ch_fac_skellige_4",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        90,
+        88
+      ],
+      "candidateScore": 0.375,
+      "baselineScore": 0.625,
+      "meanPairedDelta": -0.25,
+      "mirrorPairDeltas": [
+        -0.5,
+        -0.5,
+        0.5,
+        -0.5
+      ],
+      "selected": "p_Scoia'tael_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck118",
+      "profile": "Base",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        91,
+        98
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.125,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Scoia'tael_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck119",
+      "profile": "ch_fac_scoia_5",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": true,
+      "opponents": [
+        95,
+        97
+      ],
+      "candidateScore": 0.0625,
+      "baselineScore": 0.25,
+      "meanPairedDelta": -0.1875,
+      "mirrorPairDeltas": [
+        -0.25,
+        0.0,
+        -0.5,
+        0.0
+      ],
+      "selected": "p_Nilfgaard_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck120",
+      "profile": "ch_fac_skellige_2",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        62,
+        68
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.0625,
+      "meanPairedDelta": 0.1875,
+      "mirrorPairDeltas": [
+        -0.25,
+        0.5,
+        0.0,
+        0.5
+      ],
+      "selected": "ch_fac_skellige_2",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck121",
+      "profile": "ch_fac_skellige_2",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        66,
+        75
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.125,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        -0.5,
+        0.0,
+        0.5
+      ],
+      "selected": "p_Scoia'tael_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck122",
+      "profile": "ch_fac_northern_5",
+      "baseline": "p_Skellige_Practice",
+      "direct": false,
+      "opponents": [
+        70,
+        76
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.375,
+      "meanPairedDelta": -0.25,
+      "mirrorPairDeltas": [
+        -0.5,
+        -0.5,
+        0.5,
+        -0.5
+      ],
+      "selected": "p_Skellige_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck123",
+      "profile": "ch_fac_skellige_2",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": true,
+      "opponents": [
+        79,
+        97
+      ],
+      "candidateScore": 0.375,
+      "baselineScore": 0.25,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "ch_fac_skellige_2",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck124",
+      "profile": "ch_fac_northern_3",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        64,
+        62
+      ],
+      "candidateScore": 0.625,
+      "baselineScore": 0.5,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.5,
+        -0.5,
+        0.0,
+        0.5
+      ],
+      "selected": "ch_fac_northern_3",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck125",
+      "profile": "ch_fac_monsters_1",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": false,
+      "opponents": [
+        87,
+        56
+      ],
+      "candidateScore": 0.625,
+      "baselineScore": 0.5,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.5,
+        0.5,
+        0.0,
+        -0.5
+      ],
+      "selected": "ch_fac_monsters_1",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck126",
+      "profile": "p_Nilfgaard_Practice_Conceal",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": true,
+      "opponents": [
+        88,
+        65
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.5,
+      "meanPairedDelta": -0.25,
+      "mirrorPairDeltas": [
+        -0.5,
+        -0.5,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Nilfgaard_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck127",
+      "profile": "Base",
+      "baseline": "p_NorthernRealms_Practice",
+      "direct": false,
+      "opponents": [
+        94,
+        85
+      ],
+      "candidateScore": 0.75,
+      "baselineScore": 0.625,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "selected": "Base",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck128",
+      "profile": "ch_fac_skellige_4",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        91,
+        96
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.0625,
+      "meanPairedDelta": 0.1875,
+      "mirrorPairDeltas": [
+        0.5,
+        0.25,
+        0.0,
+        0.0
+      ],
+      "selected": "ch_fac_skellige_4",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck21",
+      "profile": "ch_fac_monsters_3",
+      "baseline": "p_NorthernRealms_Practice",
+      "direct": false,
+      "opponents": [
+        77,
+        59
+      ],
+      "candidateScore": 0.5,
+      "baselineScore": 0.5,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        -0.5,
+        0.5
+      ],
+      "selected": "p_NorthernRealms_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck22",
+      "profile": "ch_fac_scoia_3",
+      "baseline": "p_NorthernRealms_Practice",
+      "direct": false,
+      "opponents": [
+        83,
+        66
+      ],
+      "candidateScore": 0.875,
+      "baselineScore": 0.875,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_NorthernRealms_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck24",
+      "profile": "ch_fac_nilfgaard_5",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        90,
+        85
+      ],
+      "candidateScore": 0.75,
+      "baselineScore": 0.375,
+      "meanPairedDelta": 0.375,
+      "mirrorPairDeltas": [
+        1.0,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "selected": "ch_fac_nilfgaard_5",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck25",
+      "profile": "Base",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": false,
+      "opponents": [
+        59,
+        82
+      ],
+      "candidateScore": 0.1875,
+      "baselineScore": 0.1875,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Nilfgaard_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck26",
+      "profile": "ch_fac_monsters_3",
+      "baseline": "p_NorthernRealms_Practice",
+      "direct": false,
+      "opponents": [
+        86,
+        56
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.25,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.5,
+        -0.5
+      ],
+      "selected": "p_NorthernRealms_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck27",
+      "profile": "ch_fac_nilfgaard_5",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        90,
+        64
+      ],
+      "candidateScore": 0.75,
+      "baselineScore": 0.5,
+      "meanPairedDelta": 0.25,
+      "mirrorPairDeltas": [
+        0.0,
+        0.5,
+        0.5,
+        0.0
+      ],
+      "selected": "ch_fac_nilfgaard_5",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck28",
+      "profile": "Base",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        76,
+        72
+      ],
+      "candidateScore": 0.5,
+      "baselineScore": 0.5,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Scoia'tael_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck29",
+      "profile": "Base_Challenges",
+      "baseline": "p_NorthernRealms_Practice",
+      "direct": false,
+      "opponents": [
+        99,
+        82
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.25,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_NorthernRealms_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck30",
+      "profile": "ch_fac_northern_3",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        55,
+        94
+      ],
+      "candidateScore": 0.625,
+      "baselineScore": 0.5,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "selected": "ch_fac_northern_3",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck31",
+      "profile": "Base",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": false,
+      "opponents": [
+        95,
+        86
+      ],
+      "candidateScore": 0.375,
+      "baselineScore": 0.375,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Nilfgaard_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck32",
+      "profile": "ch_fac_nilfgaard_2",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        67,
+        68
+      ],
+      "candidateScore": 0.3125,
+      "baselineScore": 0.375,
+      "meanPairedDelta": -0.0625,
+      "mirrorPairDeltas": [
+        0.75,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Monster_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck33",
+      "profile": "ch_fac_scoia_2",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        74,
+        76
+      ],
+      "candidateScore": 0.0,
+      "baselineScore": 0.125,
+      "meanPairedDelta": -0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        -0.5
+      ],
+      "selected": "p_Monster_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck34",
+      "profile": "ch_fac_scoia_6",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        80,
+        86
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.125,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        -0.5,
+        0.5,
+        0.5
+      ],
+      "selected": "ch_fac_scoia_6",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck35",
+      "profile": "Base",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        82,
+        92
+      ],
+      "candidateScore": 0.3125,
+      "baselineScore": 0.3125,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Scoia'tael_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck36",
+      "profile": "Base",
+      "baseline": "p_Skellige_Practice",
+      "direct": false,
+      "opponents": [
+        89,
+        82
+      ],
+      "candidateScore": 0.75,
+      "baselineScore": 0.75,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Skellige_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck38",
+      "profile": "ch_fac_northern_5",
+      "baseline": "p_Skellige_Practice",
+      "direct": false,
+      "opponents": [
+        89,
+        54
+      ],
+      "candidateScore": 0.0,
+      "baselineScore": 0.0,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Skellige_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck40",
+      "profile": "ch_fac_nilfgaard_3",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        62,
+        89
+      ],
+      "candidateScore": 0.375,
+      "baselineScore": 0.25,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "selected": "ch_fac_nilfgaard_3",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck42",
+      "profile": "Base",
+      "baseline": "p_NorthernRealms_Practice",
+      "direct": false,
+      "opponents": [
+        69,
+        62
+      ],
+      "candidateScore": 0.0,
+      "baselineScore": 0.125,
+      "meanPairedDelta": -0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        -0.5
+      ],
+      "selected": "p_NorthernRealms_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck43",
+      "profile": "ch_fac_monsters_6",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        61,
+        73
+      ],
+      "candidateScore": 0.5,
+      "baselineScore": 0.25,
+      "meanPairedDelta": 0.25,
+      "mirrorPairDeltas": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "selected": "ch_fac_monsters_6",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck44",
+      "profile": "ch_fac_monsters_6",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        85,
+        83
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.125,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Monster_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck45",
+      "profile": "Base_Challenges",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        82,
+        88
+      ],
+      "candidateScore": 0.375,
+      "baselineScore": 0.5,
+      "meanPairedDelta": -0.125,
+      "mirrorPairDeltas": [
+        -0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Scoia'tael_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck46",
+      "profile": "ch_fac_monsters_3",
+      "baseline": "p_NorthernRealms_Practice",
+      "direct": false,
+      "opponents": [
+        58,
+        96
+      ],
+      "candidateScore": 0.8125,
+      "baselineScore": 0.75,
+      "meanPairedDelta": 0.0625,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        -0.25,
+        0.5
+      ],
+      "selected": "ch_fac_monsters_3",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck47",
+      "profile": "ch_fac_northern_4",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": false,
+      "opponents": [
+        88,
+        84
+      ],
+      "candidateScore": 0.5,
+      "baselineScore": 0.1875,
+      "meanPairedDelta": 0.3125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.25,
+        0.5,
+        0.5
+      ],
+      "selected": "ch_fac_northern_4",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck48",
+      "profile": "Base",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        81,
+        68
+      ],
+      "candidateScore": 0.0,
+      "baselineScore": 0.0,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Scoia'tael_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck49",
+      "profile": "ch_fac_nilfgaard_2",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        85,
+        82
+      ],
+      "candidateScore": 0.75,
+      "baselineScore": 0.5,
+      "meanPairedDelta": 0.25,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "selected": "ch_fac_nilfgaard_2",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck50",
+      "profile": "Base",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        55,
+        90
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.125,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        -0.5,
+        0.5
+      ],
+      "selected": "p_Monster_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck51",
+      "profile": "ch_fac_skellige_1",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": false,
+      "opponents": [
+        63,
+        74
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.0,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "selected": "ch_fac_skellige_1",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck53",
+      "profile": "Base",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        93,
+        67
+      ],
+      "candidateScore": 0.75,
+      "baselineScore": 0.625,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "selected": "Base",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck55",
+      "profile": "Base",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        60,
+        89
+      ],
+      "candidateScore": 0.5,
+      "baselineScore": 0.5,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Monster_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck58",
+      "profile": "Base_Challenges",
+      "baseline": "p_NorthernRealms_Practice",
+      "direct": false,
+      "opponents": [
+        83,
+        66
+      ],
+      "candidateScore": 0.0,
+      "baselineScore": 0.25,
+      "meanPairedDelta": -0.25,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        -0.5,
+        -0.5
+      ],
+      "selected": "p_NorthernRealms_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck59",
+      "profile": "ch_fac_scoia_5",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": false,
+      "opponents": [
+        73,
+        94
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.25,
+      "meanPairedDelta": -0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        -0.5,
+        0.0
+      ],
+      "selected": "p_Nilfgaard_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck61",
+      "profile": "Base",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        80,
+        95
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.125,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Monster_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck63",
+      "profile": "Base",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": false,
+      "opponents": [
+        54,
+        82
+      ],
+      "candidateScore": 0.5,
+      "baselineScore": 0.5,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Nilfgaard_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck64",
+      "profile": "ch_fac_nilfgaard_6",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        56,
+        77
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.125,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "selected": "ch_fac_nilfgaard_6",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck65",
+      "profile": "Base",
+      "baseline": "p_Skellige_Practice",
+      "direct": false,
+      "opponents": [
+        75,
+        99
+      ],
+      "candidateScore": 0.8125,
+      "baselineScore": 0.8125,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Skellige_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck67",
+      "profile": "ch_fac_skellige_5",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        64,
+        57
+      ],
+      "candidateScore": 0.0,
+      "baselineScore": 0.25,
+      "meanPairedDelta": -0.25,
+      "mirrorPairDeltas": [
+        -0.5,
+        0.0,
+        0.0,
+        -0.5
+      ],
+      "selected": "p_Monster_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck68",
+      "profile": "ch_fac_monsters_5",
+      "baseline": "p_Skellige_Practice",
+      "direct": false,
+      "opponents": [
+        96,
+        78
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.25,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Skellige_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck69",
+      "profile": "Base",
+      "baseline": "p_NorthernRealms_Practice",
+      "direct": false,
+      "opponents": [
+        94,
+        73
+      ],
+      "candidateScore": 0.5,
+      "baselineScore": 0.5,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_NorthernRealms_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck73",
+      "profile": "Base_Challenges",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": false,
+      "opponents": [
+        72,
+        76
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.125,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Nilfgaard_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck77",
+      "profile": "ch_fac_northern_6",
+      "baseline": "p_NorthernRealms_Practice",
+      "direct": false,
+      "opponents": [
+        86,
+        98
+      ],
+      "candidateScore": 0.5625,
+      "baselineScore": 0.5625,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_NorthernRealms_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck79",
+      "profile": "ch_fac_nilfgaard_3",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        91,
+        69
+      ],
+      "candidateScore": 0.375,
+      "baselineScore": 0.25,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        -0.5,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "selected": "ch_fac_nilfgaard_3",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck81",
+      "profile": "Base",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        62,
+        88
+      ],
+      "candidateScore": 0.375,
+      "baselineScore": 0.375,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Scoia'tael_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck82",
+      "profile": "Base",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        66,
+        98
+      ],
+      "candidateScore": 0.5625,
+      "baselineScore": 0.5,
+      "meanPairedDelta": 0.0625,
+      "mirrorPairDeltas": [
+        0.25,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "Base",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck83",
+      "profile": "ch_fac_monsters_3",
+      "baseline": "p_NorthernRealms_Practice",
+      "direct": false,
+      "opponents": [
+        69,
+        61
+      ],
+      "candidateScore": 0.5,
+      "baselineScore": 0.375,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        -0.5,
+        0.0,
+        0.5,
+        0.5
+      ],
+      "selected": "ch_fac_monsters_3",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck85",
+      "profile": "ch_fac_skellige_5",
+      "baseline": "p_Monster_Practice",
+      "direct": false,
+      "opponents": [
+        64,
+        82
+      ],
+      "candidateScore": 0.5,
+      "baselineScore": 0.375,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.5,
+        0.0
+      ],
+      "selected": "ch_fac_skellige_5",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck87",
+      "profile": "Base",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": false,
+      "opponents": [
+        72,
+        56
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.125,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Nilfgaard_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck89",
+      "profile": "Base",
+      "baseline": "p_Skellige_Practice",
+      "direct": false,
+      "opponents": [
+        96,
+        72
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.25,
+      "meanPairedDelta": -0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        -0.5
+      ],
+      "selected": "p_Skellige_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck90",
+      "profile": "Scoia' Tael Default",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        62,
+        74
+      ],
+      "candidateScore": 0.375,
+      "baselineScore": 0.375,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Scoia'tael_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck91",
+      "profile": "ch_fac_nilfgaard_3",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        66,
+        86
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.125,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Scoia'tael_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck92",
+      "profile": "Base",
+      "baseline": "p_Skellige_Practice",
+      "direct": false,
+      "opponents": [
+        68,
+        97
+      ],
+      "candidateScore": 0.1875,
+      "baselineScore": 0.1875,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Skellige_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck93",
+      "profile": "Base_Challenges",
+      "baseline": "p_Scoia'tael_Practice",
+      "direct": false,
+      "opponents": [
+        79,
+        57
+      ],
+      "candidateScore": 0.25,
+      "baselineScore": 0.125,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.5,
+        -0.5,
+        0.5
+      ],
+      "selected": "Base_Challenges",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck94",
+      "profile": "ch_fac_nilfgaard_1",
+      "baseline": "p_NorthernRealms_Practice",
+      "direct": false,
+      "opponents": [
+        77,
+        66
+      ],
+      "candidateScore": 0.625,
+      "baselineScore": 0.25,
+      "meanPairedDelta": 0.375,
+      "mirrorPairDeltas": [
+        1.0,
+        0.5,
+        0.5,
+        -0.5
+      ],
+      "selected": "ch_fac_nilfgaard_1",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck95",
+      "profile": "Base",
+      "baseline": "p_Nilfgaard_Practice",
+      "direct": false,
+      "opponents": [
+        73,
+        78
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.125,
+      "meanPairedDelta": 0.0,
+      "mirrorPairDeltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "selected": "p_Nilfgaard_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck96",
+      "profile": "ch_fac_monsters_5",
+      "baseline": "p_Skellige_Practice",
+      "direct": false,
+      "opponents": [
+        92,
+        84
+      ],
+      "candidateScore": 0.125,
+      "baselineScore": 0.375,
+      "meanPairedDelta": -0.25,
+      "mirrorPairDeltas": [
+        0.0,
+        -0.5,
+        -0.5,
+        0.0
+      ],
+      "selected": "p_Skellige_Practice",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    },
+    {
+      "deck": "deck98",
+      "profile": "Base",
+      "baseline": "p_Skellige_Practice",
+      "direct": false,
+      "opponents": [
+        65,
+        56
+      ],
+      "candidateScore": 0.375,
+      "baselineScore": 0.25,
+      "meanPairedDelta": 0.125,
+      "mirrorPairDeltas": [
+        0.0,
+        0.5,
+        0.0,
+        0.0
+      ],
+      "selected": "Base",
+      "games": 16,
+      "evidence": "Small fixed holdout; point estimate and individual pair deltas are descriptive, not proof of a globally strongest profile."
+    }
+  ],
+  "pendingShippingChecks": [
+    "Named WS data/handler parity",
+    "Complete WS matches with selected profiles",
+    "Both native compilers and final archive checks"
+  ],
+  "installed": false
+}

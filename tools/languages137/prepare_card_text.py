@@ -11,6 +11,7 @@ import csv, hashlib, io, json, re, sys, zipfile
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'tools'))
 from ws_codegen import localized_plain_text
+from keyword_glossary import keyword_mentioned
 
 SOURCE = ROOT / 'Gwent 0.9.24.3.432/Gwent_Data/StreamingAssets/data_definitions'
 OUT = ROOT / 'BetaGwent/build/languages137/text'
@@ -68,7 +69,7 @@ def build(table):
     cards = {}
     for t in catalog['templates']:
         ident = t['templateId']; text = description(ident)
-        glossary = [d for label, d in keyword_defs.items() if label and re.search(r'(?<!\w)' + re.escape(label) + r'(?!\w)', text, re.I)]
+        glossary = [d for label, d in keyword_defs.items() if keyword_mentioned(label, text)]
         cards[str(ident)] = dict(name=table.get(str(ident) + '_name', ''), description=text,
             flavor=localized_plain_text(table.get(str(ident) + '_fluff', '')), tags=category_text(t), glossary='\n\n'.join(glossary))
     categories = {k: v for k, v in table.items() if k.startswith('card_category_')}

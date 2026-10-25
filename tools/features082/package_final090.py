@@ -8,7 +8,7 @@ Archives: release090-final/package-candidate/archives. Nothing is published.
 """
 from pathlib import Path
 import os
-import argparse, hashlib, json, shutil, sys
+import argparse, hashlib, json, re, shutil, sys
 
 ROOT = Path(__file__).resolve().parents[2]
 FINAL = ROOT / 'BetaGwent/build' / os.environ.get('BG_FINAL', 'release090-final')
@@ -97,9 +97,45 @@ def register_classic_banner_dlc(part, banners):
     return len(names)
 
 
+def to_utf16_xml(name, raw):
+    """Classic 1.32 ships its XML definitions as UTF-16 LE; the mod's REDkit-derived
+    XML (loot tables, Beta items, Redux items) was UTF-8 and left 1.32 shops empty."""
+    if not name.lower().endswith('.xml') or raw.startswith((b'\xff\xfe', b'\xfe\xff')):
+        return raw
+    text = raw.decode('utf-8-sig').replace('\r\n', '\n')
+    if text.startswith('<?xml'):
+        end = text.index('?>')
+        decl = re.sub(r"encoding\s*=\s*(['\"])[^'\"]*\1", 'encoding="UTF-16"', text[:end])
+        if 'encoding=' not in decl: decl += ' encoding="UTF-16"'
+        text = decl + text[end:]
+    out = text.replace('\n', '\r\n').encode('utf-16')  # BOM + little endian
+    assert out.startswith(b'\xff\xfe') and out.decode('utf-16').count('<') == raw.decode('utf-8-sig').count('<')
+    return out
+
+
+def classic_utf16_xml(base):
+    """Wrap the Classic resource pass: every XML payload of the mod bundle becomes UTF-16."""
+    original_main = base.main
+
+    def main():
+        edit = base.edit_other_resource
+        base.edit_other_resource = lambda name, raw: to_utf16_xml(name, edit(name, raw))
+        try:
+            return original_main()
+        finally:
+            base.edit_other_resource = edit
+    base.main = main
+
+
 def redux():
     """Accepted Redux definitions plus the new Beta banner pages (new bundle entries)."""
     files = original_redux()
+    if PLATFORM == 'classic':
+        target = FINAL / 'classic-xml-utf16'
+        for name, path in list(files.items()):
+            if name.lower().endswith('.xml'):
+                out = target / name; out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_bytes(to_utf16_xml(name, Path(path).read_bytes())); files[name] = out
     folder = FINAL / 'banners' / PLATFORM
     if folder.is_dir():
         for path in sorted(folder.rglob('*.redswf')):
@@ -176,6 +212,7 @@ def main():
         sys.path.insert(0, str(ROOT / 'tools/universal'))
         import build_classic_subimages as fragments
         classic_banner_guids(fragments.base)
+        classic_utf16_xml(fragments.base)
     pi.prepare(args.platform)
     getattr(pack, args.platform)()
 

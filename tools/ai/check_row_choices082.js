@@ -6,7 +6,11 @@ const args=process.argv.slice(2),option=(name,fallback)=>args.includes(name)?arg
 const snapshot=path.resolve(option('--snapshot',path.join(base,'rules'))),out=path.resolve(option('--output',path.join(base,'row-choice-audit')));
 fs.mkdirSync(out,{recursive:true});fs.copyFileSync(__filename,path.join(out,'runner.js'));
 const manifest=JSON.parse(fs.readFileSync(path.join(snapshot,'manifest.json'),'utf8'));
-if(!/\/release082-[^/]+$/.test(manifest.source.replaceAll('\\','/')))throw Error('Expected 0.8.2');
+if(manifest.schema===2){
+ for(const [name,digest] of Object.entries(manifest.snapshotFiles)){
+  if(crypto.createHash('sha256').update(fs.readFileSync(path.join(snapshot,name))).digest('hex')!==digest)throw Error('Frozen snapshot changed: '+name);
+ }
+}else if(!/\/release(?:082|090|091)-[^/]+$/.test(manifest.source?.replaceAll('\\','/')))throw Error('Expected frozen release sources');
 const ctx=vm.createContext({console:{log(){}}});
 vm.runInContext(['runtime.js','rules.js','harness.js'].map(n=>fs.readFileSync(path.join(snapshot,n),'utf8')).join('\n')+String.raw`
 Host.strength=4;Host.matchStrength=[4,4];Host.seatIndex=1;Host.random=()=>.37;

@@ -3261,7 +3261,7 @@ function BetaGwentAudioVoiceVariantDurationPart1_Universal_ru(id : int, roll : i
         break;
     case 112211:
         if(roll%100<30)return 4.812f;
-        if(roll%100<65)return 2.643f;
+        if(roll%100<65)return 2.644f;
         if(roll%100<100)return 3.348f;
         break;
     case 112212:
@@ -3359,7 +3359,7 @@ function BetaGwentAudioVoiceVariantDurationPart2_Universal_ru(id : int, roll : i
         break;
     case 122201:
         if(roll%100<15)return 2.954f;
-        if(roll%100<29)return 2.063f;
+        if(roll%100<29)return 2.064f;
         if(roll%100<44)return 4.122f;
         if(roll%100<58)return 1.774f;
         if(roll%100<73)return 1.991f;
@@ -3433,7 +3433,7 @@ function BetaGwentAudioVoiceVariantDurationPart3_Universal_ru(id : int, roll : i
         break;
     case 122213:
         if(roll%100<33)return 1.632f;
-        if(roll%100<66)return 2.865f;
+        if(roll%100<66)return 2.866f;
         if(roll%100<100)return 4.252f;
         break;
     case 122214:
@@ -3679,8 +3679,8 @@ function BetaGwentAudioVoiceVariantDurationPart6_Universal_ru(id : int, roll : i
         break;
     case 142204:
         if(roll%100<33)return 2.829f;
-        if(roll%100<73)return 3.699f;
-        if(roll%100<100)return 3.071f;
+        if(roll%100<73)return 3.698f;
+        if(roll%100<100)return 3.070f;
         break;
     case 142206:
         if(roll%100<33)return 2.306f;
@@ -3796,7 +3796,7 @@ function BetaGwentAudioVoiceVariantDurationPart7_Universal_ru(id : int, roll : i
         break;
     case 142314:
         if(roll%100<33)return 2.230f;
-        if(roll%100<67)return 2.587f;
+        if(roll%100<67)return 2.586f;
         if(roll%100<100)return 2.237f;
         break;
     case 142315:
@@ -4888,7 +4888,7 @@ function BetaGwentAudioVoiceVariantDurationPart20_Universal_ru(id : int, roll : 
         break;
     case 201774:
         if(roll%100<14)return 2.954f;
-        if(roll%100<28)return 2.063f;
+        if(roll%100<28)return 2.064f;
         if(roll%100<42)return 4.122f;
         if(roll%100<58)return 1.774f;
         if(roll%100<72)return 1.991f;
@@ -4897,7 +4897,7 @@ function BetaGwentAudioVoiceVariantDurationPart20_Universal_ru(id : int, roll : 
         break;
     case 201776:
         if(roll%100<16)return 2.954f;
-        if(roll%100<30)return 2.063f;
+        if(roll%100<30)return 2.064f;
         if(roll%100<44)return 4.122f;
         if(roll%100<58)return 1.774f;
         if(roll%100<72)return 1.991f;

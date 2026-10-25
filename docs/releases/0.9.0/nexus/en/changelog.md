@@ -43,6 +43,7 @@
 - Improved backup handling for the collection and decks. This may help with some cases of lost progress; recovery depends on the data available in the backup.
 - Added an After-Uninstall folder with hidden item definitions: after removing the mod, merchants that still stock Beta cards or kegs no longer lose their whole inventory.
 - Classic 1.32: merchants no longer lose their stock with the mod installed. The mod's loot tables and item definitions now use the game's native UTF-16 XML format.
+- Classic 1.32: kegs and Beta shop items have their names, descriptions and keg icon. Item definitions, texts and the icon are in DLC/dlcBetaGwentClassic132Items, because 1.32 loads new item files only from a DLC.
 
 ## AI and interface update
 

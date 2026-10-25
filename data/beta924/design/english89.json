@@ -2799,5 +2799,9 @@
   "Текст RU / EN": "Text RU / EN",
   "Gwent Beta Classic: резервная копия профиля гвинта повреждена и не применена. Начат новый профиль, копия не перезаписывается. Чтобы вернуть прогресс, загрузите сохранение, сделанное с модом.": "Gwent Beta Classic: the Gwent profile backup is damaged and was not applied. A new profile has been started; the backup is not overwritten. To get your progress back, load a save made with the mod installed.",
   "Текст: ": "Text: ",
-  " · место ": " · position "
+  " · место ": " · position ",
+  "Крах: раны и мечники": "Crach: wounds and Greatswords",
+  "ИИ · Крах: раны и мечники": "AI · Crach: wounds and Greatswords",
+  "Аретуза: рыцари и заклинания": "Aretuza: Knights and Spells",
+  "ИИ · Аретуза: рыцари и заклинания": "AI · Aretuza: Knights and Spells"
 }

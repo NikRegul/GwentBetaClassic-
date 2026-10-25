@@ -2,6 +2,7 @@
 from pathlib import Path
 import json,hashlib,re,argparse
 from ws_codegen import localized_plain_text
+from keyword_glossary import keyword_mentioned
 ROOT=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--language',choices=['ru','en'],default='ru')
@@ -77,7 +78,7 @@ texts=[]
 for t in source['templates']:
     ident=t['templateId'];description=original_description(ident)
     glossary=[definition for label,definition in keyword_defs.items()
-              if re.search(r'(?<!\w)'+re.escape(label)+r'(?!\w)',description,re.I)]
+              if keyword_mentioned(label,description)]
     texts.append(dict(templateId=ident,description=description,
         flavor=localized_plain_text(source['localization'][LOCALE].get(str(ident)+'_fluff','')),
         glossary='\n\n'.join(glossary),power=t['fields']['Power'],typeMask=t['fields']['Type']))

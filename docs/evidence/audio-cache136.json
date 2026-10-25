@@ -1,8 +1,0 @@
-{
-  "checks": 8,
-  "actualVerifier": true,
-  "sources": {
-    "tools/verify_release136.py": "16569181a53bde520d85af9fdf442ce3fd5acc2efad21e75641fc200c51dcb64",
-    "tools/recon/check_audio_cache136.py": "31756d4e61af434560981b325516050e4e72eb151b3e98391ef3cb0860366a51"
-  }
-}

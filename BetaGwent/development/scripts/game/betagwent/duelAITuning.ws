@@ -65,6 +65,36 @@ function BetaGwentAIOrdinaryPresets(out ids : array<int>) {
     ids.PushBack(99);
     ids.PushBack(92);
     ids.PushBack(93);
+    ids.PushBack(100);
+    ids.PushBack(101);
+    ids.PushBack(102);
+    ids.PushBack(103);
+    ids.PushBack(104);
+    ids.PushBack(105);
+    ids.PushBack(106);
+    ids.PushBack(107);
+    ids.PushBack(108);
+    ids.PushBack(109);
+    ids.PushBack(110);
+    ids.PushBack(111);
+    ids.PushBack(112);
+    ids.PushBack(113);
+    ids.PushBack(114);
+    ids.PushBack(115);
+    ids.PushBack(116);
+    ids.PushBack(117);
+    ids.PushBack(118);
+    ids.PushBack(119);
+    ids.PushBack(120);
+    ids.PushBack(121);
+    ids.PushBack(122);
+    ids.PushBack(123);
+    ids.PushBack(124);
+    ids.PushBack(125);
+    ids.PushBack(126);
+    ids.PushBack(127);
+    ids.PushBack(128);
+    ids.PushBack(129);
 }
 function BetaGwentAIChooseOrdinaryPreset() : int {
     return BetaGwentChooseDiversePreset();

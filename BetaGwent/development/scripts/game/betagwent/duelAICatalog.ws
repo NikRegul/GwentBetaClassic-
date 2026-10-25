@@ -63,6 +63,9 @@ function BetaGwentAICombos(out pairs : array<SBetaGwentAICombo>) {
     p.setup=132213;p.payoff=200037;p.weight=3;pairs.PushBack(p);
     p.setup=200295;p.payoff=132312;p.weight=2;pairs.PushBack(p);
     p.setup=200295;p.payoff=200037;p.weight=2;pairs.PushBack(p);
+    p.setup=200038;p.payoff=132312;p.weight=3;pairs.PushBack(p);
+    p.setup=200038;p.payoff=200037;p.weight=3;pairs.PushBack(p);
+    p.setup=200038;p.payoff=201606;p.weight=3;pairs.PushBack(p);
     p.setup=200301;p.payoff=132402;p.weight=2;pairs.PushBack(p);
     p.setup=200301;p.payoff=132310;p.weight=2;pairs.PushBack(p);
     p.setup=200301;p.payoff=132309;p.weight=2;pairs.PushBack(p);
@@ -97,6 +100,7 @@ function BetaGwentAIEngine(id : int) : int {
     case 201781: return 4;
     case 132302: return 1;
     case 122306: return 2;
+    case 200038: return 1;
     default: return 0;
     }
 }
@@ -227,7 +231,7 @@ function BetaGwentAIPresetProfile(id : int) : int {
     case 99: return 44;
     case 92: return 45;
     case 93: return 46;
-    default: return 0;
+    default: return BetaGwentAINpcProfile(id);
     }
 }
 function BetaGwentAIProfileLeader(id : int) : int {
@@ -264,7 +268,7 @@ function BetaGwentAIProfileLeader(id : int) : int {
     case 30: return 200165;
     case 31: return 200167;
     case 32: return 200168;
-    case 33: return 200159;
+    case 33: return 200160;
     case 34: return 200167;
     case 35: return 201587;
     case 36: return 200168;
@@ -311,7 +315,7 @@ function BetaGwentAIProfileTitle(id : int) : string {
     case 7: return "Дагон: туман и утопцы";
     case 8: return "Яйца и поглощение";
     case 9: return "Засады и Огонь";
-    case 10: return "Аретуза: магический контроль Фольтеста";
+    case 10: return "Аретуза: рыцари и заклинания";
     case 11: return "Алхимия";
     case 12: return "Узурпатор: имперский контроль";
     case 13: return "Кровавая луна";
@@ -334,7 +338,7 @@ function BetaGwentAIProfileTitle(id : int) : string {
     case 30: return "Усиление руки Францески";
     case 31: return "Брувер и Шуп";
     case 32: return "Сорок карт Фольтеста";
-    case 33: return "Бран: раны и мечники";
+    case 33: return "Крах: раны и мечники";
     case 34: return "Шахтёры и Ксавьер";
     case 35: return "Великаны и огры";
     case 36: return "Броня";
@@ -347,7 +351,7 @@ function BetaGwentAIProfileTitle(id : int) : string {
     case 43: return "Харальд: дождь и топорники";
     case 44: return "Фольтест: усиление колоды";
     case 45: return "Топорники";
-    case 46: return "Дриады";
+    case 46: return "Дриады: Цири нова";
     default: return "Общая стратегия";
     }
 }

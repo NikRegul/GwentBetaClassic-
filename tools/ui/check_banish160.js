@@ -34,7 +34,14 @@ check(!c.banishCueTarget({kind:12,target:7,templateId:201523},7),'Yrden reset is
 check(c.banishCueTarget({kind:4,audioKind:12,target:9},9),'banish sound operation');
 check(c.banishCueTarget({kind:12,target:1,templateId:5,hitTargets:[3,4]},4)&&c.banishCueTarget({kind:12,target:1,templateId:5,deathTargets:[{id:6}]},6),'grouped targets');
 check(!c.banishCueTarget({kind:3,target:7},7)&&!c.banishCueTarget({kind:12,target:7,templateId:5},8)&&!c.banishCueTarget(null,7),'ordinary deaths still go to the graveyard');
-check(/\(int\(previous\.tokens\)&512\)!=0\|\|banishCueTarget\(activeCue,int\(oldId\)\)\)\{\s*drawBanishDeparture/.test(board),'doomed and banished departures use the effect');
+// Execute the current routing condition: it also recognises the authoritative
+// destination when a banish arrives after its cue. A grave move must not banish.
+const route=board.match(/if\((\(int\(previous\.tokens\)&512\)[^\n]+)\)\{\s*drawBanishDeparture/);
+check(route,'actual departure routing exists');
+const routesToBanish=new Function('previous','activeCue','oldId','cardDestinations082','banishCueTarget','int','return '+route[1]);
+const routed=(tokens,cue,dest)=>!!routesToBanish({tokens},cue,9,dest,c.banishCueTarget,v=>v|0);
+check(routed(512,null,{})&&routed(0,{kind:4,audioKind:12,target:9},{})&&routed(0,null,{9:{zone:512}}),'doomed, explicit and delayed banish departures use the effect');
+check(!routed(0,null,{9:{zone:32}})&&!routed(0,{kind:3,target:9},{}),'ordinary grave departures do not use banish');
 const departure=board.indexOf('drawBanishDeparture(previous'),fire=board.indexOf('drawDissolveDeparture(previous');
 check(fire>0&&fire<departure,'Execution/Igni/Epidemic burning keeps priority');
 // Replay floor

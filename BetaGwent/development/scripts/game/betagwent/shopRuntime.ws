@@ -142,8 +142,8 @@ public function BetaGwentShopDiagnostic(target : int, refill : bool) : string
 {
     var inventory : CInventoryComponent;var items : array<SItemUniqueId>;var i,before,after : int;
     var message : string;var merchant : W3MerchantComponent;
-    if(!_shopNpc)return "Откройте магазин продавца.";
-    inventory=_shopNpc.GetInventory();if(!inventory)return "Инвентарь продавца недоступен.";
+    if(!_shopNpc)return BetaGwentConsoleText(19);
+    inventory=_shopNpc.GetInventory();if(!inventory)return BetaGwentConsoleText(23);
     merchant=(W3MerchantComponent)_shopNpc.GetComponentByClassName('W3MerchantComponent');
     before=inventory.GetItemQuantityByName('betagwent_keg');
     message="NG+="+FactsQuerySum("NewGamePlus")+" npc="+_shopNpc.GetGuidHash();
@@ -151,12 +151,12 @@ public function BetaGwentShopDiagnostic(target : int, refill : bool) : string
     message+=" stock="+before+" stocked="+_shopNpc.betaGwentInnkeeperKegsStocked;
     message+=" ngStocked="+_shopNpc.betaGwentNgKegs080+" migrated="+_shopNpc.betaGwentBulkKegStockMigrated;
     if(refill) {
-        if(target<1 || target>99)return "Запас бочек должен быть от 1 до 99.";
-        if(!merchant || merchant.GetMapPinType()!='Innkeeper')return message+" · Пополнение доступно у корчмаря.";
+        if(target<1 || target>99)return BetaGwentConsoleText(24);
+        if(!merchant || merchant.GetMapPinType()!='Innkeeper')return message+BetaGwentConsoleText(25);
         if(before<target)inventory.AddAnItem('betagwent_keg',target-before,true,true);
         after=inventory.GetItemQuantityByName('betagwent_keg');
         message+=" added="+Max(0,after-before)+" total="+after;
-        if(after<target)return message+" · Предмет не создан: проверьте установку DLC с определением бочки.";
+        if(after<target)return message+BetaGwentConsoleText(26);
         _shopNpc.betaGwentInnkeeperKegsStocked=true;_shopNpc.betaGwentNgKegs080=true;
         if(after>=5)_shopNpc.betaGwentBulkKegStockMigrated=true;
         inventory.GetAllItems(items);
@@ -165,7 +165,7 @@ public function BetaGwentShopDiagnostic(target : int, refill : bool) : string
     }
     // Category lookup alone is not proof that AddAnItem can instantiate it.
     // Read-only check reports actual stock; no diagnostic item is put on Geralt.
-    if(inventory.GetItemQuantityByName('betagwent_keg')<1)message+=" · Бочек в запасе нет; создание предмета не проверено.";
-    else message+=" · Предмет бочки присутствует в запасе.";
+    if(inventory.GetItemQuantityByName('betagwent_keg')<1)message+=BetaGwentConsoleText(29);
+    else message+=BetaGwentConsoleText(30);
     return message;
 }

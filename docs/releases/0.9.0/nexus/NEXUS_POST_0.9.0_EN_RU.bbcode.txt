@@ -1,124 +1,41 @@
-[b]Gwent Beta Classic 0.9.0[/b]
+[size=5][b]Gwent Beta Classic 0.9.0[/b][/size]
 
-[b]English[/b]
+[size=4][b]English[/b][/size]
 
 [b]Classic 1.32 and Next-Gen[/b]
-Choose one archive for your game version. Each contains all 13 text languages and all five voice languages: EN, RU, DE, IT and PT-BR. Text and voices can be selected independently in the mod menu; Auto follows the game's settings, with English as fallback. Works on Steam Deck as well (tested by the author).
+One archive per game version, each with all 13 text languages and five voice languages (EN, RU, DE, IT, PT-BR). Text and voices are chosen separately in the mod menu; Auto follows the game, English is the fallback. Also works on Steam Deck.
 
-For Next-Gen, replace the previous modBetaGwent0924 folder and copy Mods into the game directory. Optionally copy bin from Optional-CopyButton for the Copy button. For Classic 1.32, install BOTH Mods and DLC. Its DLC/dlcBetaGwentClassic132Assets folder is required for graphics and leader entrances. Classic is larger because the old loader needs a different resource layout; the cards and AI are the same.
+[b]Install[/b]
+Next-Gen: replace the old modBetaGwent0924 folder and copy Mods into the game directory. Classic 1.32: copy BOTH Mods and DLC. The DLC folders (dlcBetaGwentClassic132Assets, dlcBetaGwentClassic132Items) hold the graphics, leader entrances and item definitions. Optional: copy bin from Optional-CopyButton for the Copy button; without it Import/Export are hidden.
 
-[b]AI improvements[/b]
-Revised Igni and Yrden choices, Birna's weather forecast, armour breaks and the three Redanian armour abilities. Catch-up after a pass now follows real plays and turn boundaries. The AI can concede round one to preserve resources, but gives survival priority when another lost round would end the match. Automated scenarios cover all 46 opponent deck archetypes; unusual decisions are still worth reporting.
+[b]New in 0.9.0[/b]
+BG1 deck codes for import and export; missing cards can be crafted before import. Console commands (help, search, grants, innkeeper keg stock). More reliable collection backup. Better controller navigation and fitting of translated buttons.
 
-Isengrim: Outlaw now compares the actual special-card and Create branches, including when pulled by Royal Decree. The AI rejects Decoy without a legal allied Bronze or Silver target and estimates Create from its random three-card offer, without reading future random choices.
+[b]After Redux[/b]
+203 legacy item definitions are included, so old inventory loads after switching mods. Lost inventory is not restored. Remove modBetaGwentReduxCompat and update Script Merger merges.
 
-[b]Deck sharing and interface[/b]
-Import and Export use BG1 text codes. Missing cards appear as cards you can craft one by one or all at once; import unlocks when nothing is missing. Import creates a draft: save the deck afterward. Added console commands, improved translated buttons, editor spacing and controller navigation, and revised graveyard flights and leader animation timing.
+[b]Uninstall[/b]
+Back up your save, finish Gwent, leave combat and close menus. Run [font=Courier New]bg_clean_confirm('DELETE_BETA_GWENT')[/font], save to a NEW slot, exit and remove the mod folders. Then copy the folder from After-Uninstall into the game directory so merchants keep their stock. Details: BetaGwentDocs/CLEANUP_EN.md.
 
-Copy now puts the BG1 code straight into the Windows clipboard. Optional: copy the bin folder from Optional-CopyButton into the game directory (dinput8.dll and plugins/GwentBetaClipboard.asi beside witcher3.exe); the mod works without it; if another mod already has a dinput8.dll, keep it and load the ASI with that mod's loader. Without these files the Import and Export buttons are hidden.
+[b]Found a problem?[/b]
+Post it here with mod and game versions, languages, other mods and steps. Log: add -debugscripts to the launch options, reproduce, close the game and attach %USERPROFILE%\Documents\The Witcher 3\scriptslog.txt (and the latest .dmp from %LOCALAPPDATA%\CrashDumps after a crash).
 
-[b]Card view and tutorial[/b]
-The full card view now follows Beta: a large card with the original Beta 0.9.24 faction banner, base power in white, readable flavour text and highlighted keywords. Deck screens use the same banner. The tutorial has 10 pages, including mulligan and draws, rows and neighbours, and card statuses. A deck code can also be pasted from the Windows clipboard (Paste or Ctrl+V; requires Optional-CopyButton).
-
-[b]Card fixes[/b]
-Myrgtabrakke now deals 2 damage three times and Harald the Cripple's ability hits ten times, matching the Beta 0.9.24 card data.
-
-[b]Installing after Redux[/b]
-Legacy item definitions are included: 203 missing names are recognized without replacing 197 native definitions, for normal games and NG+. This helps load old inventory after switching mods. It does not recover inventory already lost and saved or convert Redux cards into the Beta collection. Use a backup from before any loss. Remove the obsolete modBetaGwentReduxCompat folder and update Script Merger merges.
-
-[b]Built-in cleanup[/b]
-No separate cleaner mod is needed. Back up your save; finish Gwent, leave combat and close menus. bg_clean_preview() shows instructions. To erase the Beta profile, run:
-
-[code]
-bg_clean_confirm('DELETE_BETA_GWENT')
-[/code]
-
-Save to a NEW slot, exit, remove this mod's folders, update affected script merges, load the new slot and save again. The uninstall flag blocks profile restoration while the mod is still installed. Cleanup does not undo quests, achievements or spent crowns, and does not traverse unloaded merchants or world containers. Read BetaGwentDocs/CLEANUP_EN.md first.
-
-[b]What's next[/b]
-Until 1.0, the focus will be translation corrections, bug fixes and further AI and interface refinement.
-
-[b]Found a problem? Please post it here.[/b]
-Bug reports, logs and translation suggestions are welcome. Include mod and exact game versions, text and voice languages, other mods, involved cards and steps to reproduce. A screenshot and a save from before the issue help.
-
-[b]How to enable the log[/b]
-
-[list=1]
-[*]Add [b]-debugscripts[/b] to the game's launch options. In Steam: Properties → General → Launch Options.
-[*]Start the game and reproduce the issue, then close it.
-[*]Copy the log before another launch overwrites it:
-
-[/list]
-[code]
-%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
-[/code]
-
-[list=1]
-[*]If Windows created a crash dump, attach the latest relevant .dmp from:
-
-[/list]
-[code]
-%LOCALAPPDATA%\CrashDumps
-[/code]
-
-
-[b]Русский[/b]
+[size=4][b]Русский[/b][/size]
 
 [b]Classic 1.32 и Next-Gen[/b]
-Выбирайте один архив под свою версию игры. В каждом — все 13 языков текста и пять озвучек: EN, RU, DE, IT и PT-BR. Текст и голоса выбираются независимо в меню мода; «Авто» следует настройкам игры, при отсутствии языка используется английский. Мод работает и на Steam Deck (проверено автором).
+Один архив на версию игры, в каждом 13 языков текста и пять озвучек (EN, RU, DE, IT, PT-BR). Текст и голоса выбираются отдельно в меню мода; «Авто» следует настройкам игры, иначе английский. Работает и на Steam Deck.
 
-Для Next-Gen замените прежнюю папку modBetaGwent0924 и скопируйте Mods в каталог игры. По желанию скопируйте bin из Optional-CopyButton — для кнопки «Копировать». Для Classic 1.32 нужны ОБЕ папки — Mods и DLC. DLC/dlcBetaGwentClassic132Assets содержит обязательную графику и вступления лидеров. Classic весит больше из-за другого формата ресурсов и ограничений старого загрузчика; карты и ИИ в обеих сборках одинаковые.
+[b]Установка[/b]
+Next-Gen: замените старую папку modBetaGwent0924 и скопируйте Mods в каталог игры. Classic 1.32: скопируйте ОБЕ папки — Mods и DLC. В DLC (dlcBetaGwentClassic132Assets, dlcBetaGwentClassic132Items) — графика, вступления лидеров и определения предметов. По желанию скопируйте bin из Optional-CopyButton для кнопки «Копировать»; без неё импорт и экспорт скрыты.
 
-[b]Улучшения ИИ[/b]
-Переработаны выбор Игни и Ирдена, прогноз погоды Бирны, снятие брони и три реданские способности. Догон после паса учитывает реальные розыгрыши и границы ходов. ИИ может отдать первый раунд ради сохранения ресурсов, но при угрозе поражения в матче важнее выиграть раунд. Автоматические сценарии охватывают все 46 архетипов соперников; о странных решениях по-прежнему стоит сообщать.
+[b]Новое в 0.9.0[/b]
+Коды колод BG1 для импорта и экспорта; недостающие карты можно создать перед импортом. Консольные команды (справка, поиск, выдача, запас бочек у корчмарей). Надёжнее резервная копия коллекции. Улучшены навигация с контроллера и подгонка переведённых кнопок.
 
-Изенгрим: Изгой сравнивает реальную ценность веток особой карты и создания эльфа, в том числе после Королевского указа. ИИ не выбирает Чучело без допустимого союзного бронзового или серебряного отряда. Создание оценивается по случайной тройке предложений, без знания будущего результата генератора.
+[b]После Redux[/b]
+Встроены 203 определения старых предметов: старый инвентарь загружается после смены модов. Потерянный инвентарь не восстанавливается. Удалите modBetaGwentReduxCompat и обновите объединения Script Merger.
 
-[b]Обмен колодами и интерфейс[/b]
-Импорт и экспорт работают с текстовыми кодами BG1. Недостающие карты показываются картами: создайте их по одной или все сразу; импорт откроется, когда ничего не будет недоставать. Импорт создаёт черновик: затем сохраните колоду. Добавлены консольные команды, улучшены подгонка переведённых кнопок, отступы редактора и навигация с контроллера, полёты карт в сброс и синхронизация анимаций лидеров.
+[b]Удаление[/b]
+Сделайте копию сейва, завершите партию, выйдите из боя и закройте меню. Выполните [font=Courier New]bg_clean_confirm('DELETE_BETA_GWENT')[/font], сохранитесь в НОВЫЙ слот, выйдите и удалите папки мода. Затем скопируйте папку из After-Uninstall в каталог игры, чтобы торговцы не потеряли товары. Подробно: BetaGwentDocs/CLEANUP_RU.md.
 
-Кнопка «Копировать» теперь сразу помещает код BG1 в буфер Windows. По желанию скопируйте папку bin из Optional-CopyButton в каталог игры (dinput8.dll и plugins/GwentBetaClipboard.asi рядом с witcher3.exe), мод работает и без неё; если у другого мода уже есть dinput8.dll, оставьте его и загрузите ASI его загрузчиком. Без этих файлов кнопки импорта и экспорта скрыты.
-
-[b]Просмотр карт и обучение[/b]
-Полный просмотр карты теперь как в бете: большая карта с оригинальным знаменем фракции из Beta 0.9.24, базовая сила белым, читаемая цитата и подсветка ключевых слов. Экраны колод используют то же знамя. В обучении 10 страниц, включая муллиган и добор, ряды и соседей, статусы карт. Код колоды можно вставить из буфера Windows («Вставить» или Ctrl+V; нужна папка Optional-CopyButton).
-
-[b]Исправления карт[/b]
-Миргтабракке теперь наносит 2 ед. урона три раза, а способность Харальда Хромого бьёт десять раз — как в данных карт Beta 0.9.24.
-
-[b]Установка после Redux[/b]
-Встроены определения старых предметов: 203 отсутствующих названия распознаются без замены 197 штатных определений, в обычной игре и НГ+. Это помогает загрузить старый инвентарь после смены модов. Уже потерянный и сохранённый инвентарь не восстанавливается, карты Redux не превращаются в коллекцию беты. Используйте сейв до потери данных. Уберите старую папку modBetaGwentReduxCompat и обновите объединения Script Merger.
-
-[b]Встроенная очистка[/b]
-Отдельный мод очистки не нужен. Сделайте резервную копию сейва, завершите партию, выйдите из боя и закройте меню. bg_clean_preview() покажет инструкцию. Для удаления профиля беты выполните:
-
-[code]
-bg_clean_confirm('DELETE_BETA_GWENT')
-[/code]
-
-Сохранитесь В НОВЫЙ СЛОТ, выйдите из игры, удалите папки мода, обновите затронутые объединения скриптов, загрузите новый слот и сохранитесь ещё раз. Флаг очистки блокирует восстановление профиля, пока мод ещё установлен. Квесты, достижения и потраченные кроны не откатываются; выгруженные торговцы и контейнеры мира не обходятся. Сначала прочитайте BetaGwentDocs/CLEANUP_RU.md.
-
-[b]Что дальше[/b]
-До 1.0 основной упор будет на исправления перевода и ошибок, дальнейшую доработку ИИ и интерфейса.
-
-[b]Есть проблема? Пишите сюда.[/b]
-Буду рад отчётам об ошибках, логам и замечаниям по переводу. Укажите версии мода и игры, языки текста и озвучки, другие моды, карты и шаги повторения. Помогут скриншот и сохранение перед ошибкой.
-
-[b]Как включить лог[/b]
-
-[list=1]
-[*]Добавьте [b]-debugscripts[/b] в параметры запуска игры. В Steam: Свойства → Общие → Параметры запуска.
-[*]Запустите игру, повторите ошибку и закройте её.
-[*]Скопируйте лог до следующего запуска: он перезаписывается.
-
-[/list]
-[code]
-%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
-[/code]
-
-[list=1]
-[*]Если Windows создала дамп падения, приложите последний относящийся к ошибке .dmp из:
-
-[/list]
-[code]
-%LOCALAPPDATA%\CrashDumps
-[/code]
+[b]Нашли ошибку?[/b]
+Пишите сюда: версии мода и игры, языки, другие моды и шаги. Лог: добавьте -debugscripts в параметры запуска, повторите ошибку, закройте игру и приложите %USERPROFILE%\Documents\The Witcher 3\scriptslog.txt (после вылета — последний .dmp из %LOCALAPPDATA%\CrashDumps).

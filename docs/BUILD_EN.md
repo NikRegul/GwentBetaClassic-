@@ -1,3 +1,5 @@
+> Current pipeline: `Build_0.9.2.cmd`; see [permanent inputs](BUILD_INPUTS_RU.md). The stage-specific instructions below are historical and do not list current build dependencies.
+
 > Current release: 0.6.2 / Stage 138. See [the project README](../README.md) and the current build/acceptance guides. The stage notes below are historical.
 
 # Building Gwent Beta Classic

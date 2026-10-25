@@ -17,19 +17,23 @@ function RandRange(n){return Math.floor(Host.random()*n);}
 Host.random=()=>.37;
 let checks=0;function check(v,n){if(!v)throw Error(n);checks++;}
 let p=new W3PlayerWitcher(),previous=0;
+let activeOut={v:[]};BetaGwentAIOrdinaryPresets(activeOut);let active=activeOut.v;
+check(active.length===new Set(active).size,'unique active pool');
 for(let cycle=0;cycle<4;cycle++){
  let played=[];
- for(let i=0;i<46;i++){
+ for(let i=0;i<active.length;i++){
   const next=p.BetaGwentNextOpponent();
-  check(next>=54&&next<=99,'active pool');check(!played.includes(next),'no repeat before full cycle');
+  check(active.includes(next),'active pool');check(!played.includes(next),'no repeat before full cycle');
   check(previous!==next,'no cycle-boundary repeat');played.push(next);previous=next;
   if(i===16){const saved=JSON.parse(JSON.stringify(p));p=new W3PlayerWitcher();Object.assign(p,saved);}
  }
- check(new Set(played).size===46,'all 46 per cycle after save/load');
+ check(new Set(played).size===active.length,'all active decks per cycle after save/load');
 }
 // Corrupt or obsolete bags recover to the current pool, never an invalid preset.
 p.betaGwentOpponentBag=[1,1];check(p.BetaGwentNextOpponent()>=54,'obsolete bag recovers');
-console.log(JSON.stringify({stage:123,checks,cycles:4,mockedSaveRoundtrip:true,nativeSaveTested:false}));
+p.betaGwentOpponentBag=[54,55];p.betaGwentOpponentPoolSize=46;
+if(active.length!=46){p.BetaGwentNextOpponent();check(p.betaGwentOpponentBag.length===active.length-1,'expanded pool migrates old valid partial bag');}
+console.log(JSON.stringify({stage:123,checks,pool:active.length,cycles:4,mockedSaveRoundtrip:true,nativeSaveTested:false}));
 '''
 bundle=out/'rotation.js';bundle.write_text(host+'\n(function(){\n'+translated+'\n'+checks+'\n})();',encoding='utf8')
 result=subprocess.run(['node',str(bundle)],cwd=ROOT,capture_output=True,text=True,encoding='utf8')

@@ -1,4 +1,4 @@
-﻿// Concrete consumers of strict Beta 0.9.24 graphs. Revealed is original token64.
+// Concrete consumers of strict Beta 0.9.24 graphs. Revealed is original token64.
 class CBetaGwentNilfReaction extends IScriptable
 {
     // BG_CLONE_FIELDS
@@ -102,7 +102,7 @@ class CBetaGwentDuelNilf extends IScriptable
         if(id==162210)
         {if(s.timerValue==0){game.MonsterComplete(source);return;}game.NorthPile(side,16,ids);while(ids.Size()>2)ids.Erase(ids.Size()-1);source.monsterIds=ids;game.QueueTimer(source,0,1);for(i=0;i<ids.Size();i+=1)game.NilfTake(game.FindCard(ids[i]),side);game.MonsterRequest(source,ids,2,0,1);return;}
         if(id==162211){Top(source,side,6,4,8,1,false);return;}
-        if(id==162302){ids.PushBack(1);ids.PushBack(2);ids.PushBack(4);game.MonsterRequest(source,ids,3,0,1);return;}
+        if(id==162302){game.MonsterCreate(source,162402);return;}
         if(id==162303){Request(source,0,8,6,12,0,1);return;}
         if(id==162304 || id==201780){Request(source,enemy,32,BetaGwentNorthPick(id==162304,2,6),4,BetaGwentNorthPick(id==162304,0,264),BetaGwentNorthPick(id==162304,0,128));return;}
         if(id==162307){Query(enemy,7,15,4,8,4,source,ids);game.MonsterPower(source,source,2*ids.Size());game.MonsterComplete(source);return;}
@@ -265,14 +265,15 @@ class CBetaGwentDuelNilf extends IScriptable
         var cards : array<SBetaGwentDevelopmentCard>;var source,target : CBetaGwentDuelCard;var s,t : SBetaGwentCardSnapshot;var ids,valid : array<int>;var i,j,id,least : int;var m : SBetaGwentMatchSnapshot;
         dependencies.Trigger(kind,cause);game.GetCards(cards);target=game.FindCard(cause.instanceId);if(target)t=target.Snapshot();m=game.NilfMatch();
         if(kind==1)
-        {Query(BetaGwentOpponentId(cause.positionPlayerId),16,15,4,264,0,NULL,ids);for(j=0;j<ids.Size();j+=1)if(game.FindCard(ids[j]).TemplateId()==132407)valid.PushBack(ids[j]);if(valid.Size()>0)game.NorthRandomSummon(game.FindCard(valid[game.RandomIndex(valid.Size())]));}
+        {Query(BetaGwentOpponentId(cause.positionPlayerId),16,15,4,264,0,NULL,ids);for(j=0;j<ids.Size();j+=1)if(game.FindCard(ids[j]).TemplateId()==132407 && !game.NorthSummonPending(game.FindCard(ids[j])))valid.PushBack(ids[j]);if(valid.Size()>0)game.NorthRandomSummon(game.FindCard(valid[game.RandomIndex(valid.Size())]));}
         for(i=0;i<cards.Size();i+=1)
         {
             s=cards[i].card;source=game.FindCard(s.instanceId);id=s.runtimeTemplate.templateId;if(!source || s.isWaitingToDie || (s.tokenMask&12)!=0)continue;
             if(kind==1)
             {
-                if(s.instanceId==cause.instanceId && s.locationMask==8){if(id==162301)game.NilfQueueReaction(source,2,s.positionPlayerId);if(id==162306)game.NilfQueueReaction(source,1,s.positionPlayerId);}
-                if((s.locationMask&7)!=0 && id==162317 && cause.positionPlayerId==s.positionPlayerId)RandomDamage(source,BetaGwentOpponentId(s.positionPlayerId),7,2,1);
+                // Original reveal graphs compare owner with CurrentPlayer before self-reveal.
+                if(s.instanceId==cause.instanceId && s.locationMask==8 && m.currentPlayerId==s.positionPlayerId){if(id==162301)game.NilfQueueReaction(source,2,s.positionPlayerId);if(id==162306)game.NilfQueueReaction(source,1,s.positionPlayerId);}
+                if((s.locationMask&7)!=0 && id==162317 && m.currentPlayerId==s.positionPlayerId)RandomDamage(source,BetaGwentOpponentId(s.positionPlayerId),7,2,1);
             }
             if((s.locationMask&7)==0)continue;
             if(kind==2 && id==162312)game.MonsterPower(source,source,1);

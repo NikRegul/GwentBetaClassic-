@@ -1,0 +1,292 @@
+{
+  "schema": 1,
+  "scope": "Authored thematic variants of the46 researched Beta decks; NPC reward keys unchanged. Strength must be measured, not inferred from rarity.",
+  "assignments": [
+    {
+      "deckName": "Baron",
+      "basePreset": 57,
+      "replacements": [],
+      "theme": "Кровавый Барон: северные осадные машины, солдаты и сам Барон."
+    },
+    {
+      "deckName": "Roche",
+      "basePreset": 71,
+      "replacements": [],
+      "theme": "Вернон Роше: Фольтест, Темерия, Синие Полоски и темерские отряды."
+    },
+    {
+      "deckName": "Dijkstra",
+      "basePreset": 99,
+      "replacements": [],
+      "theme": "Дийкстра: подготовка северной колоды, разведка Талера и собственная карта Дийкстры."
+    },
+    {
+      "deckName": "Zoltan",
+      "basePreset": 84,
+      "replacements": [],
+      "theme": "Золтан: махакамские краснолюды, Ксавьер, Хаттори и Золтан."
+    },
+    {
+      "deckName": "Lambert",
+      "basePreset": 63,
+      "replacements": [
+        [
+          200078,
+          200235
+        ]
+      ],
+      "theme": "Ламберт: ведьмачья алхимия, Весемир и ведьмаки Школы Змеи; нейтральный Ламберт."
+    },
+    {
+      "deckName": "Thaler",
+      "basePreset": 71,
+      "replacements": [
+        [
+          122108,
+          112103
+        ],
+        [
+          122211,
+          122203
+        ]
+      ],
+      "theme": "Талер: темерская разведка, Роше, Дийкстра и шпион Талер."
+    },
+    {
+      "deckName": "VimmeVivaldi",
+      "basePreset": 90,
+      "replacements": [
+        [
+          142106,
+          200080
+        ]
+      ],
+      "theme": "Вимме Вивальди: краснолюдский костяк Брувера, Ксавьер и Золтан."
+    },
+    {
+      "deckName": "ScoiaTrader",
+      "basePreset": 66,
+      "replacements": [],
+      "theme": "Торговец скоя’таэлей: эльфы и краснолюды, Иорвет, Саэсентессис и Аглайиса."
+    },
+    {
+      "deckName": "Stjepan",
+      "basePreset": 94,
+      "replacements": [
+        [
+          122104,
+          112106
+        ]
+      ],
+      "theme": "Степан: северные рыцари и магическая поддержка, Трисс и Кейра."
+    },
+    {
+      "deckName": "CrossroadsInnkeeper",
+      "basePreset": 60,
+      "replacements": [
+        [
+          132103,
+          112108
+        ]
+      ],
+      "theme": "Корчмарь на распутье: веленские утопцы, туман и контроль погоды."
+    },
+    {
+      "deckName": "Olivier",
+      "basePreset": 95,
+      "replacements": [
+        [
+          162102,
+          112112
+        ]
+      ],
+      "theme": "Оливер: имперский контроль, Бонарт, Вильгефорц и Аваллак’х."
+    },
+    {
+      "deckName": "BoatBuilder",
+      "basePreset": 80,
+      "replacements": [],
+      "theme": "Лодочник: веленские чудовища и Дикая Охота с Имлерихом."
+    },
+    {
+      "deckName": "CardProdigy",
+      "basePreset": 78,
+      "replacements": [],
+      "theme": "Хадко: крупные чудовища, ледяные тролли и Ге’эльс."
+    },
+    {
+      "deckName": "Hermit",
+      "basePreset": 60,
+      "replacements": [],
+      "theme": "Старый мудрец: Леший, туман, утопцы и лесные чудовища."
+    },
+    {
+      "deckName": "Sjusta",
+      "basePreset": 81,
+      "replacements": [
+        [
+          201773,
+          142101
+        ]
+      ],
+      "theme": "Сьюста: эльфийская колода Францески, усиление руки и Саэсентессис."
+    },
+    {
+      "deckName": "Gremista",
+      "basePreset": 65,
+      "replacements": [
+        [
+          152205,
+          152206
+        ]
+      ],
+      "theme": "Гремист: островные друиды, воскрешение, Коралл и Гремист."
+    },
+    {
+      "deckName": "Crach",
+      "basePreset": 96,
+      "replacements": [
+        [
+          201776,
+          152101
+        ]
+      ],
+      "theme": "Крах ан Крайт: собственный лидер, Хьялмар, мечники и ранения."
+    },
+    {
+      "deckName": "LugosTheMad",
+      "basePreset": 75,
+      "replacements": [],
+      "theme": "Лугос Безумный: островные воины, сброс и собственная карта Лугоса."
+    },
+    {
+      "deckName": "Mousesack",
+      "basePreset": 70,
+      "replacements": [],
+      "theme": "Мышовур: островные друиды, Керис, королевская гвардия и Мышовур."
+    },
+    {
+      "deckName": "MarkizaSerenity",
+      "basePreset": 79,
+      "replacements": [
+        [
+          201615,
+          142104
+        ]
+      ],
+      "theme": "Маркиза Серенити: эльфы Эитнэ, усиление руки и Мильва."
+    },
+    {
+      "deckName": "Shani",
+      "basePreset": 86,
+      "replacements": [],
+      "theme": "Шани: северные солдаты под бронёй, поддержка и воскрешение Шани."
+    },
+    {
+      "deckName": "Olgierd",
+      "basePreset": 58,
+      "replacements": [
+        [
+          112210,
+          112207
+        ],
+        [
+          122202,
+          132215
+        ]
+      ],
+      "theme": "Ольгерд: проклятые, бессмертие, собственная карта и Гюнтер о’Дим."
+    },
+    {
+      "deckName": "Gambler",
+      "basePreset": 85,
+      "replacements": [
+        [
+          132107,
+          112107
+        ]
+      ],
+      "theme": "Борец за права животных: крупные чудовища, огры и Виллентретенмерт."
+    },
+    {
+      "deckName": "Halflings",
+      "basePreset": 56,
+      "replacements": [],
+      "theme": "Низушки на свадьбе: рой, поглощение и Кейран; состав с полными связками."
+    },
+    {
+      "deckName": "CircusGwentAddict",
+      "basePreset": 82,
+      "replacements": [
+        [
+          142106,
+          200209
+        ]
+      ],
+      "theme": "Торговец цирка: разнообразный состав Брувера, Шуп и Саския."
+    },
+    {
+      "deckName": "NKTournament",
+      "basePreset": 97,
+      "replacements": [],
+      "theme": "Бернард Тулле: северные солдаты, рыцари и Зельткирк."
+    },
+    {
+      "deckName": "NilfTournament",
+      "basePreset": 54,
+      "replacements": [],
+      "theme": "Саша: нильфгаардские шпионы, Кагыр, Раинфарн и дипломатия."
+    },
+    {
+      "deckName": "ScoiaTournament",
+      "basePreset": 62,
+      "replacements": [],
+      "theme": "Финнеас: засады, Изенгрим и Ширру."
+    },
+    {
+      "deckName": "NMLTournament",
+      "basePreset": 80,
+      "replacements": [
+        [
+          131102,
+          132101
+        ]
+      ],
+      "theme": "Граф Тибальт: Дикая Охота, мороз, Карантир и Драуг."
+    },
+    {
+      "deckName": "NMLTournament2",
+      "basePreset": 74,
+      "replacements": [
+        [
+          132107,
+          132101
+        ]
+      ],
+      "theme": "Первый соперник Туссента: Завещания, превращения и Драуг."
+    },
+    {
+      "deckName": "NilfTournament2",
+      "basePreset": 72,
+      "replacements": [],
+      "theme": "Второй соперник Туссента: вскрытие Морврана, Ваттье и мангонели."
+    },
+    {
+      "deckName": "SkelTournament2",
+      "basePreset": 89,
+      "replacements": [
+        [
+          201773,
+          152104
+        ]
+      ],
+      "theme": "Финалист Туссента: проклятые корабли, воскрешение и завершающий Камби."
+    },
+    {
+      "deckName": "ScoiaTournament2",
+      "basePreset": 76,
+      "replacements": [],
+      "theme": "Главарь пуристов: эльфы Филавандреля, заклинания и Аглайиса."
+    }
+  ]
+}

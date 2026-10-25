@@ -86,7 +86,7 @@ Les textes des cartes proviennent de la traduction officielle de la bêta. L’i
 
 2. Pour une mise à jour, déplacez d’abord l’ancien dossier Beta Gwent hors de Mods. Ne supprimez pas tout le dossier Mods et ne mélangez pas les versions.
 
-3. Copiez Mods depuis l’archive dans le dossier du jeu, à côté de bin et content. Pour Classic 1.32, copiez aussi le dossier DLC fourni. Chemins : Mods/modBetaGwentClassic132/content et DLC/dlcBetaGwentClassic132Assets pour 1.32 ; Mods/modBetaGwent0924/content pour Next-Gen. Remplacez uniquement les anciens dossiers de ce mod, en conservant les autres mods et DLC.
+3. Copiez Mods depuis l’archive dans le dossier du jeu, à côté de bin et content. Pour Classic 1.32, copiez aussi le dossier DLC fourni. Chemins : Mods/modBetaGwentClassic132/content et DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items pour 1.32 ; Mods/modBetaGwent0924/content pour Next-Gen. Remplacez uniquement les anciens dossiers de ce mod, en conservant les autres mods et DLC.
 
 4. Chargez une sauvegarde. Le menu habituel des decks de Gwynt ouvre l’éditeur et les langues ; parlez à un PNJ joueur pour lancer une partie. Sauvegardez normalement pour conserver vos choix.
 
@@ -161,7 +161,7 @@ bg_shoprefill(5)
 
 ## Classic 1.32 : taille et dossier DLC
 
-Classic occupe environ 623 Mo, Next-Gen 448 Mo, avec les mêmes cartes et règles. L’ancien format et la limite d’environ 32 Mio par ressource chargée de manière asynchrone nécessitent des pages graphiques séparées. Installez Mods et DLC pour Classic. DLC/dlcBetaGwentClassic132Assets contient des graphismes indispensables et leur enregistrement, sans nouvelle histoire. Environ 105 Mo du téléchargement viennent de ce dossier ; le reste de la différence provient de la préparation pour l’ancien moteur.
+Classic occupe environ 623 Mo, Next-Gen 448 Mo, avec les mêmes cartes et règles. L’ancien format et la limite d’environ 32 Mio par ressource chargée de manière asynchrone nécessitent des pages graphiques séparées. Installez Mods et DLC pour Classic. DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items contient des graphismes indispensables et leur enregistrement, sans nouvelle histoire. Environ 105 Mo du téléchargement viennent de ce dossier ; le reste de la différence provient de la préparation pour l’ancien moteur.
 
 
 ## Compatibilité
@@ -184,7 +184,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 Collection, decks, ressources, réglages, récompenses connues, miroirs de sauvegarde et objets betagwent_* de l’inventaire du joueur sont effacés. Un indicateur sauvegardé empêche leur restauration, même après rechargement. Sauvegardez dans un NOUVEL emplacement, quittez le jeu, retirez le mod et son DLC Classic, actualisez Script Merger, chargez ce nouvel emplacement et sauvegardez encore. Quêtes, succès et couronnes dépensées restent inchangés. Marchands non chargés, réserve et conteneurs du monde ne sont pas parcourus. Pour les anciens faits de récompense orphelins : save_fact_index.py puis bg_clean_keys('…') après confirmation. L’effacement physique de toute trace historique n’est pas garanti. Si certains objets Beta ne peuvent pas être retirés, le jeu affiche INCOMPLETE au lieu du succès : jetez-les ou vendez-les, puis relancez la commande. À la désinstallation, supprimez aussi les fichiers Optional-CopyButton s’ils sont installés : bin\…\plugins\GwentBetaClipboard.asi et le dinput8.dll de ce mod (pas celui d’un autre).
 
-**Après la désinstallation :** copiez le dossier Mods du dossier After-Uninstall de l’archive dans le répertoire du jeu (Mods/modBetaGwentKeepItems). Il conserve des définitions cachées des objets du mod, afin que les marchands, la réserve et les conteneurs qui contiennent encore des cartes ou des barils de la bêta ne perdent pas tout leur inventaire. Ne l’installez pas en même temps que le mod.
+**Après la désinstallation :** copiez le dossier du dossier After-Uninstall de l’archive dans le répertoire du jeu (Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems). Il conserve des définitions cachées des objets du mod, afin que les marchands, la réserve et les conteneurs qui contiennent encore des cartes ou des barils de la bêta ne perdent pas tout leur inventaire. Ne l’installez pas en même temps que le mod.
 
 
 </details>

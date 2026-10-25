@@ -148,6 +148,59 @@ class CBetaGwentCloner extends IScriptable
         if (flipSeats) { dst.crownDeltaTwo = src.crownDeltaOne; } else { dst.crownDeltaTwo = src.crownDeltaTwo; }
         return dst;
     }
+    private function StructSBetaGwentStrategyCard096(src : SBetaGwentStrategyCard096) : SBetaGwentStrategyCard096
+    {
+        var dst : SBetaGwentStrategyCard096;
+        dst = src;
+        dst.id = src.id;
+        dst.templateId = src.templateId;
+        dst.side = Seat(src.side);
+        dst.zone = src.zone;
+        dst.index = src.index;
+        dst.tokens = src.tokens;
+        dst.timerValue = src.timerValue;
+        dst.power = src.power;
+        dst.basePower = src.basePower;
+        dst.armor = src.armor;
+        dst.playable = src.playable;
+        dst.dying = src.dying;
+        return dst;
+    }
+    private function StructSBetaGwentStrategyView096(src : SBetaGwentStrategyView096) : SBetaGwentStrategyView096
+    {
+        var dst : SBetaGwentStrategyView096;
+        dst = src;
+        dst.valid = src.valid;
+        dst.canAct = src.canAct;
+        dst.ownPassed = src.ownPassed;
+        dst.enemyPassed = src.enemyPassed;
+        dst.ownLeader = src.ownLeader;
+        dst.enemyLeader = src.enemyLeader;
+        dst.knowsStartingList = src.knowsStartingList;
+        dst.actor = src.actor;
+        dst.round = src.round;
+        dst.turn = src.turn;
+        dst.winner = src.winner;
+        dst.ownCrowns = src.ownCrowns;
+        dst.enemyCrowns = src.enemyCrowns;
+        dst.ownScore = src.ownScore;
+        dst.enemyScore = src.enemyScore;
+        dst.ownHandCount = src.ownHandCount;
+        dst.enemyHandCount = src.enemyHandCount;
+        dst.ownDeckCount = src.ownDeckCount;
+        dst.enemyDeckCount = src.enemyDeckCount;
+        dst.hiddenEnemyBoard = src.hiddenEnemyBoard;
+        dst.ownHand = src.ownHand;
+        dst.ownBoard = src.ownBoard;
+        dst.ownGrave = src.ownGrave;
+        dst.enemyPublic = src.enemyPublic;
+        dst.enemyRevealedHand = src.enemyRevealedHand;
+        dst.startingList = src.startingList;
+        dst.hazards = src.hazards;
+        dst.dreamRows = src.dreamRows;
+        dst.revision = src.revision;
+        return dst;
+    }
     private function StructSBetaGwentTriggerTicket(src : SBetaGwentTriggerTicket) : SBetaGwentTriggerTicket
     {
         var dst : SBetaGwentTriggerTicket;
@@ -177,30 +230,37 @@ class CBetaGwentCloner extends IScriptable
         var r11 : CBetaGwentAbilityContinuation;
         var r12 : CBetaGwentRequestStore;
         var r13 : CBetaGwentCardRequest;
-        var r14 : CBetaGwentPublicResponseAI;
-        var r15 : CBetaGwentAIChasePlanner;
-        var r16 : CBetaGwentArchetypeAI;
-        var r17 : CBetaGwentDuelPassiveFrame;
-        var r18 : CBetaGwentDuelEvent;
-        var r19 : CBetaGwentDuelEvents;
-        var r20 : CBetaGwentDuelMonsters;
-        var r21 : CBetaGwentDuelNeutral;
-        var r22 : CBetaGwentNilfReaction;
-        var r23 : CBetaGwentDuelNilf;
-        var r24 : CBetaGwentNilfDependencies;
-        var r25 : CBetaGwentDuelNorth;
-        var r26 : CBetaGwentDuelScoia;
-        var r27 : CBetaGwentDuelSession;
-        var r28 : CBetaGwentAISequence188;
-        var r29 : CBetaGwentAIChase188;
-        var r30 : CBetaGwentAIRegain188;
-        var r31 : CBetaGwentAISpy188;
-        var r32 : CBetaGwentDuelSkellige;
-        var r33 : CBetaGwentDuelSpecials;
-        var r34 : CBetaGwentDuelVisualFrame;
-        var r35 : CBetaGwentDuelWeather;
-        var r36 : CBetaGwentWeatherAI;
-        var r37 : CBetaGwentDevelopmentRequestFlow;
+        var r14 : CBetaGwentAIEndNode097;
+        var r15 : CBetaGwentAIEndgame097;
+        var r16 : CBetaGwentAIReplyTree097;
+        var r17 : CBetaGwentStrategyResourceJob096;
+        var r18 : CBetaGwentStrategyObserve096;
+        var r19 : CBetaGwentStrategyHand096;
+        var r20 : CBetaGwentStrategyProbe096;
+        var r21 : CBetaGwentPublicResponseAI;
+        var r22 : CBetaGwentAIChasePlanner;
+        var r23 : CBetaGwentArchetypeAI;
+        var r24 : CBetaGwentDuelPassiveFrame;
+        var r25 : CBetaGwentDuelEvent;
+        var r26 : CBetaGwentDuelEvents;
+        var r27 : CBetaGwentDuelMonsters;
+        var r28 : CBetaGwentDuelNeutral;
+        var r29 : CBetaGwentNilfReaction;
+        var r30 : CBetaGwentDuelNilf;
+        var r31 : CBetaGwentNilfDependencies;
+        var r32 : CBetaGwentDuelNorth;
+        var r33 : CBetaGwentDuelScoia;
+        var r34 : CBetaGwentDuelSession;
+        var r35 : CBetaGwentAISequence188;
+        var r36 : CBetaGwentAIChase188;
+        var r37 : CBetaGwentAIRegain188;
+        var r38 : CBetaGwentAISpy188;
+        var r39 : CBetaGwentDuelSkellige;
+        var r40 : CBetaGwentDuelSpecials;
+        var r41 : CBetaGwentDuelVisualFrame;
+        var r42 : CBetaGwentDuelWeather;
+        var r43 : CBetaGwentWeatherAI;
+        var r44 : CBetaGwentDevelopmentRequestFlow;
         if (!o) return NULL;
         r0 = (CBetaGwentActionContext)o;
         if (r0) { if (r0.bgCloneEpoch == epoch) return r0.bgCloneRef; n = Make(o); r0.bgCloneEpoch = epoch; r0.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
@@ -230,54 +290,68 @@ class CBetaGwentCloner extends IScriptable
         if (r12) { if (r12.bgCloneEpoch == epoch) return r12.bgCloneRef; n = Make(o); r12.bgCloneEpoch = epoch; r12.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
         r13 = (CBetaGwentCardRequest)o;
         if (r13) { if (r13.bgCloneEpoch == epoch) return r13.bgCloneRef; n = Make(o); r13.bgCloneEpoch = epoch; r13.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r14 = (CBetaGwentPublicResponseAI)o;
+        r14 = (CBetaGwentAIEndNode097)o;
         if (r14) { if (r14.bgCloneEpoch == epoch) return r14.bgCloneRef; n = Make(o); r14.bgCloneEpoch = epoch; r14.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r15 = (CBetaGwentAIChasePlanner)o;
+        r15 = (CBetaGwentAIEndgame097)o;
         if (r15) { if (r15.bgCloneEpoch == epoch) return r15.bgCloneRef; n = Make(o); r15.bgCloneEpoch = epoch; r15.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r16 = (CBetaGwentArchetypeAI)o;
+        r16 = (CBetaGwentAIReplyTree097)o;
         if (r16) { if (r16.bgCloneEpoch == epoch) return r16.bgCloneRef; n = Make(o); r16.bgCloneEpoch = epoch; r16.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r17 = (CBetaGwentDuelPassiveFrame)o;
+        r17 = (CBetaGwentStrategyResourceJob096)o;
         if (r17) { if (r17.bgCloneEpoch == epoch) return r17.bgCloneRef; n = Make(o); r17.bgCloneEpoch = epoch; r17.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r18 = (CBetaGwentDuelEvent)o;
+        r18 = (CBetaGwentStrategyObserve096)o;
         if (r18) { if (r18.bgCloneEpoch == epoch) return r18.bgCloneRef; n = Make(o); r18.bgCloneEpoch = epoch; r18.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r19 = (CBetaGwentDuelEvents)o;
+        r19 = (CBetaGwentStrategyHand096)o;
         if (r19) { if (r19.bgCloneEpoch == epoch) return r19.bgCloneRef; n = Make(o); r19.bgCloneEpoch = epoch; r19.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r20 = (CBetaGwentDuelMonsters)o;
+        r20 = (CBetaGwentStrategyProbe096)o;
         if (r20) { if (r20.bgCloneEpoch == epoch) return r20.bgCloneRef; n = Make(o); r20.bgCloneEpoch = epoch; r20.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r21 = (CBetaGwentDuelNeutral)o;
+        r21 = (CBetaGwentPublicResponseAI)o;
         if (r21) { if (r21.bgCloneEpoch == epoch) return r21.bgCloneRef; n = Make(o); r21.bgCloneEpoch = epoch; r21.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r22 = (CBetaGwentNilfReaction)o;
+        r22 = (CBetaGwentAIChasePlanner)o;
         if (r22) { if (r22.bgCloneEpoch == epoch) return r22.bgCloneRef; n = Make(o); r22.bgCloneEpoch = epoch; r22.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r23 = (CBetaGwentDuelNilf)o;
+        r23 = (CBetaGwentArchetypeAI)o;
         if (r23) { if (r23.bgCloneEpoch == epoch) return r23.bgCloneRef; n = Make(o); r23.bgCloneEpoch = epoch; r23.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r24 = (CBetaGwentNilfDependencies)o;
+        r24 = (CBetaGwentDuelPassiveFrame)o;
         if (r24) { if (r24.bgCloneEpoch == epoch) return r24.bgCloneRef; n = Make(o); r24.bgCloneEpoch = epoch; r24.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r25 = (CBetaGwentDuelNorth)o;
+        r25 = (CBetaGwentDuelEvent)o;
         if (r25) { if (r25.bgCloneEpoch == epoch) return r25.bgCloneRef; n = Make(o); r25.bgCloneEpoch = epoch; r25.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r26 = (CBetaGwentDuelScoia)o;
+        r26 = (CBetaGwentDuelEvents)o;
         if (r26) { if (r26.bgCloneEpoch == epoch) return r26.bgCloneRef; n = Make(o); r26.bgCloneEpoch = epoch; r26.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r27 = (CBetaGwentDuelSession)o;
+        r27 = (CBetaGwentDuelMonsters)o;
         if (r27) { if (r27.bgCloneEpoch == epoch) return r27.bgCloneRef; n = Make(o); r27.bgCloneEpoch = epoch; r27.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r28 = (CBetaGwentAISequence188)o;
+        r28 = (CBetaGwentDuelNeutral)o;
         if (r28) { if (r28.bgCloneEpoch == epoch) return r28.bgCloneRef; n = Make(o); r28.bgCloneEpoch = epoch; r28.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r29 = (CBetaGwentAIChase188)o;
+        r29 = (CBetaGwentNilfReaction)o;
         if (r29) { if (r29.bgCloneEpoch == epoch) return r29.bgCloneRef; n = Make(o); r29.bgCloneEpoch = epoch; r29.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r30 = (CBetaGwentAIRegain188)o;
+        r30 = (CBetaGwentDuelNilf)o;
         if (r30) { if (r30.bgCloneEpoch == epoch) return r30.bgCloneRef; n = Make(o); r30.bgCloneEpoch = epoch; r30.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r31 = (CBetaGwentAISpy188)o;
+        r31 = (CBetaGwentNilfDependencies)o;
         if (r31) { if (r31.bgCloneEpoch == epoch) return r31.bgCloneRef; n = Make(o); r31.bgCloneEpoch = epoch; r31.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r32 = (CBetaGwentDuelSkellige)o;
+        r32 = (CBetaGwentDuelNorth)o;
         if (r32) { if (r32.bgCloneEpoch == epoch) return r32.bgCloneRef; n = Make(o); r32.bgCloneEpoch = epoch; r32.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r33 = (CBetaGwentDuelSpecials)o;
+        r33 = (CBetaGwentDuelScoia)o;
         if (r33) { if (r33.bgCloneEpoch == epoch) return r33.bgCloneRef; n = Make(o); r33.bgCloneEpoch = epoch; r33.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r34 = (CBetaGwentDuelVisualFrame)o;
+        r34 = (CBetaGwentDuelSession)o;
         if (r34) { if (r34.bgCloneEpoch == epoch) return r34.bgCloneRef; n = Make(o); r34.bgCloneEpoch = epoch; r34.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r35 = (CBetaGwentDuelWeather)o;
+        r35 = (CBetaGwentAISequence188)o;
         if (r35) { if (r35.bgCloneEpoch == epoch) return r35.bgCloneRef; n = Make(o); r35.bgCloneEpoch = epoch; r35.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r36 = (CBetaGwentWeatherAI)o;
+        r36 = (CBetaGwentAIChase188)o;
         if (r36) { if (r36.bgCloneEpoch == epoch) return r36.bgCloneRef; n = Make(o); r36.bgCloneEpoch = epoch; r36.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
-        r37 = (CBetaGwentDevelopmentRequestFlow)o;
+        r37 = (CBetaGwentAIRegain188)o;
         if (r37) { if (r37.bgCloneEpoch == epoch) return r37.bgCloneRef; n = Make(o); r37.bgCloneEpoch = epoch; r37.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
+        r38 = (CBetaGwentAISpy188)o;
+        if (r38) { if (r38.bgCloneEpoch == epoch) return r38.bgCloneRef; n = Make(o); r38.bgCloneEpoch = epoch; r38.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
+        r39 = (CBetaGwentDuelSkellige)o;
+        if (r39) { if (r39.bgCloneEpoch == epoch) return r39.bgCloneRef; n = Make(o); r39.bgCloneEpoch = epoch; r39.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
+        r40 = (CBetaGwentDuelSpecials)o;
+        if (r40) { if (r40.bgCloneEpoch == epoch) return r40.bgCloneRef; n = Make(o); r40.bgCloneEpoch = epoch; r40.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
+        r41 = (CBetaGwentDuelVisualFrame)o;
+        if (r41) { if (r41.bgCloneEpoch == epoch) return r41.bgCloneRef; n = Make(o); r41.bgCloneEpoch = epoch; r41.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
+        r42 = (CBetaGwentDuelWeather)o;
+        if (r42) { if (r42.bgCloneEpoch == epoch) return r42.bgCloneRef; n = Make(o); r42.bgCloneEpoch = epoch; r42.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
+        r43 = (CBetaGwentWeatherAI)o;
+        if (r43) { if (r43.bgCloneEpoch == epoch) return r43.bgCloneRef; n = Make(o); r43.bgCloneEpoch = epoch; r43.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
+        r44 = (CBetaGwentDevelopmentRequestFlow)o;
+        if (r44) { if (r44.bgCloneEpoch == epoch) return r44.bgCloneRef; n = Make(o); r44.bgCloneEpoch = epoch; r44.bgCloneRef = n; originals.PushBack(o); copies.PushBack(n); return n; }
         return NULL;
     }
     private function Make(o : IScriptable) : IScriptable
@@ -298,7 +372,10 @@ class CBetaGwentCloner extends IScriptable
         if ((CBetaGwentManagerContext)o) return new CBetaGwentManagerContext in this;
         if ((CBetaGwentAIChase188)o) return new CBetaGwentAIChase188 in this;
         if ((CBetaGwentAIChasePlanner)o) return new CBetaGwentAIChasePlanner in this;
+        if ((CBetaGwentAIEndNode097)o) return new CBetaGwentAIEndNode097 in this;
+        if ((CBetaGwentAIEndgame097)o) return new CBetaGwentAIEndgame097 in this;
         if ((CBetaGwentAIRegain188)o) return new CBetaGwentAIRegain188 in this;
+        if ((CBetaGwentAIReplyTree097)o) return new CBetaGwentAIReplyTree097 in this;
         if ((CBetaGwentAISequence188)o) return new CBetaGwentAISequence188 in this;
         if ((CBetaGwentAISpy188)o) return new CBetaGwentAISpy188 in this;
         if ((CBetaGwentAbilityContinuation)o) return new CBetaGwentAbilityContinuation in this;
@@ -330,6 +407,10 @@ class CBetaGwentCloner extends IScriptable
         if ((CBetaGwentRegistryCardReference)o) return new CBetaGwentRegistryCardReference in this;
         if ((CBetaGwentRegistryIdStore)o) return new CBetaGwentRegistryIdStore in this;
         if ((CBetaGwentRequestStore)o) return new CBetaGwentRequestStore in this;
+        if ((CBetaGwentStrategyHand096)o) return new CBetaGwentStrategyHand096 in this;
+        if ((CBetaGwentStrategyObserve096)o) return new CBetaGwentStrategyObserve096 in this;
+        if ((CBetaGwentStrategyProbe096)o) return new CBetaGwentStrategyProbe096 in this;
+        if ((CBetaGwentStrategyResourceJob096)o) return new CBetaGwentStrategyResourceJob096 in this;
         if ((CBetaGwentWeatherAI)o) return new CBetaGwentWeatherAI in this;
         return NULL;
     }
@@ -351,7 +432,10 @@ class CBetaGwentCloner extends IScriptable
         if ((CBetaGwentManagerContext)src) { CopyManagerContext((CBetaGwentManagerContext)src, (CBetaGwentManagerContext)dst); return; }
         if ((CBetaGwentAIChase188)src) { CopyAIChase188((CBetaGwentAIChase188)src, (CBetaGwentAIChase188)dst); return; }
         if ((CBetaGwentAIChasePlanner)src) { CopyAIChasePlanner((CBetaGwentAIChasePlanner)src, (CBetaGwentAIChasePlanner)dst); return; }
+        if ((CBetaGwentAIEndNode097)src) { CopyAIEndNode097((CBetaGwentAIEndNode097)src, (CBetaGwentAIEndNode097)dst); return; }
+        if ((CBetaGwentAIEndgame097)src) { CopyAIEndgame097((CBetaGwentAIEndgame097)src, (CBetaGwentAIEndgame097)dst); return; }
         if ((CBetaGwentAIRegain188)src) { CopyAIRegain188((CBetaGwentAIRegain188)src, (CBetaGwentAIRegain188)dst); return; }
+        if ((CBetaGwentAIReplyTree097)src) { CopyAIReplyTree097((CBetaGwentAIReplyTree097)src, (CBetaGwentAIReplyTree097)dst); return; }
         if ((CBetaGwentAISequence188)src) { CopyAISequence188((CBetaGwentAISequence188)src, (CBetaGwentAISequence188)dst); return; }
         if ((CBetaGwentAISpy188)src) { CopyAISpy188((CBetaGwentAISpy188)src, (CBetaGwentAISpy188)dst); return; }
         if ((CBetaGwentAbilityContinuation)src) { CopyAbilityContinuation((CBetaGwentAbilityContinuation)src, (CBetaGwentAbilityContinuation)dst); return; }
@@ -383,6 +467,10 @@ class CBetaGwentCloner extends IScriptable
         if ((CBetaGwentRegistryCardReference)src) { CopyRegistryCardReference((CBetaGwentRegistryCardReference)src, (CBetaGwentRegistryCardReference)dst); return; }
         if ((CBetaGwentRegistryIdStore)src) { CopyRegistryIdStore((CBetaGwentRegistryIdStore)src, (CBetaGwentRegistryIdStore)dst); return; }
         if ((CBetaGwentRequestStore)src) { CopyRequestStore((CBetaGwentRequestStore)src, (CBetaGwentRequestStore)dst); return; }
+        if ((CBetaGwentStrategyHand096)src) { CopyStrategyHand096((CBetaGwentStrategyHand096)src, (CBetaGwentStrategyHand096)dst); return; }
+        if ((CBetaGwentStrategyObserve096)src) { CopyStrategyObserve096((CBetaGwentStrategyObserve096)src, (CBetaGwentStrategyObserve096)dst); return; }
+        if ((CBetaGwentStrategyProbe096)src) { CopyStrategyProbe096((CBetaGwentStrategyProbe096)src, (CBetaGwentStrategyProbe096)dst); return; }
+        if ((CBetaGwentStrategyResourceJob096)src) { CopyStrategyResourceJob096((CBetaGwentStrategyResourceJob096)src, (CBetaGwentStrategyResourceJob096)dst); return; }
         if ((CBetaGwentWeatherAI)src) { CopyWeatherAI((CBetaGwentWeatherAI)src, (CBetaGwentWeatherAI)dst); return; }
     }
     private function CopyDuelCreatedCardAction(src : CBetaGwentDuelCreatedCardAction, dst : CBetaGwentDuelCreatedCardAction)
@@ -536,6 +624,7 @@ class CBetaGwentCloner extends IScriptable
         dst.createdCopy = src.createdCopy;
         dst.monsterIds = src.monsterIds;
         dst.selectedModeId = src.selectedModeId;
+        dst.aiHypothesis = src.aiHypothesis;
     }
     private function CopyDuelEffectRuntime(src : CBetaGwentDuelEffectRuntime, dst : CBetaGwentDuelEffectRuntime)
     {
@@ -590,6 +679,7 @@ class CBetaGwentCloner extends IScriptable
     }
     private function CopyAIChase188(src : CBetaGwentAIChase188, dst : CBetaGwentAIChase188)
     {
+        var i : int;
         dst.source = (CBetaGwentDuelSession)Obj(src.source);
         dst.position = (CBetaGwentDuelSession)Obj(src.position);
         dst.ordered = src.ordered;
@@ -602,9 +692,45 @@ class CBetaGwentCloner extends IScriptable
         dst.index = src.index;
         dst.followIndex = src.followIndex;
         dst.phase = src.phase;
+        dst.beamPositions = src.beamPositions;
+        for (i = 0; i < dst.beamPositions.Size(); i += 1) dst.beamPositions[i] = (CBetaGwentDuelSession)Obj(dst.beamPositions[i]);
+        dst.beamPlans = src.beamPlans;
+        dst.beamIndex = src.beamIndex;
+        dst.beamWidth = src.beamWidth;
+        dst.thirdLimit = src.thirdLimit;
     }
     private function CopyAIChasePlanner(src : CBetaGwentAIChasePlanner, dst : CBetaGwentAIChasePlanner)
     {
+    }
+    private function CopyAIEndNode097(src : CBetaGwentAIEndNode097, dst : CBetaGwentAIEndNode097)
+    {
+        dst.game = (CBetaGwentDuelSession)Obj(src.game);
+        dst.actions = src.actions;
+        dst.actor = src.actor;
+        dst.index = src.index;
+        dst.best = src.best;
+        dst.bestId = src.bestId;
+        dst.pendingId = src.pendingId;
+        dst.alpha = src.alpha;
+        dst.beta = src.beta;
+        dst.entered = src.entered;
+    }
+    private function CopyAIEndgame097(src : CBetaGwentAIEndgame097, dst : CBetaGwentAIEndgame097)
+    {
+        var i : int;
+        dst.source = (CBetaGwentDuelSession)Obj(src.source);
+        dst.observer = (CBetaGwentStrategyObserve096)Obj(src.observer);
+        dst.before = StructSBetaGwentStrategyView096(src.before);
+        dst.stack = src.stack;
+        for (i = 0; i < dst.stack.Size(); i += 1) dst.stack[i] = (CBetaGwentAIEndNode097)Obj(dst.stack[i]);
+        dst.nodes = src.nodes;
+        dst.limit = src.limit;
+        dst.result = src.result;
+        dst.firstId = src.firstId;
+        dst.finished = src.finished;
+        dst.complete = src.complete;
+        dst.invalidated = src.invalidated;
+        dst.supported = src.supported;
     }
     private function CopyAIRegain188(src : CBetaGwentAIRegain188, dst : CBetaGwentAIRegain188)
     {
@@ -615,6 +741,60 @@ class CBetaGwentCloner extends IScriptable
         dst.indices = src.indices;
         dst.entered = src.entered;
         dst.result = src.result;
+    }
+    private function CopyAIReplyTree097(src : CBetaGwentAIReplyTree097, dst : CBetaGwentAIReplyTree097)
+    {
+        dst.source = (CBetaGwentDuelSession)Obj(src.source);
+        dst.root = (CBetaGwentDuelSession)Obj(src.root);
+        dst.branch = (CBetaGwentDuelSession)Obj(src.branch);
+        dst.passProbe = (CBetaGwentDuelSession)Obj(src.passProbe);
+        dst.model = (CBetaGwentPublicResponseAI)Obj(src.model);
+        dst.observer = (CBetaGwentStrategyObserve096)Obj(src.observer);
+        dst.before = StructSBetaGwentStrategyView096(src.before);
+        dst.ids = src.ids;
+        dst.values = src.values;
+        dst.branchOrder = src.branchOrder;
+        dst.cardId = src.cardId;
+        dst.phase = src.phase;
+        dst.index = src.index;
+        dst.followLimit = src.followLimit;
+        dst.branchBest = src.branchBest;
+        dst.branchRisk = src.branchRisk;
+        dst.branchWeight = src.branchWeight;
+        dst.totalWeight = src.totalWeight;
+        dst.weightedResult = src.weightedResult;
+        dst.worstResult = src.worstResult;
+        dst.passResult = src.passResult;
+        dst.result = src.result;
+        dst.branches = src.branches;
+        dst.follows = src.follows;
+        dst.passBranch = src.passBranch;
+        dst.knownHand = src.knownHand;
+        dst.finished = src.finished;
+        dst.invalidated = src.invalidated;
+        dst.shortRound = src.shortRound;
+        dst.commonBaseline = src.commonBaseline;
+        dst.branchBestId = src.branchBestId;
+        dst.branchTemplate = src.branchTemplate;
+        dst.branchDrawId = src.branchDrawId;
+        dst.settlementId = src.settlementId;
+        dst.settlementDelta = src.settlementDelta;
+        dst.settlementFollow = src.settlementFollow;
+        dst.replyTemplates = src.replyTemplates;
+        dst.continuationIds = src.continuationIds;
+        dst.branchScores = src.branchScores;
+        dst.hypCards = src.hypCards;
+        dst.hypTemplates = src.hypTemplates;
+        dst.hypTimers = src.hypTimers;
+        dst.hypWeights = src.hypWeights;
+        dst.hypCount = src.hypCount;
+        dst.hypIndex = src.hypIndex;
+        dst.hypTotal = src.hypTotal;
+        dst.hypWeighted = src.hypWeighted;
+        dst.hypWorst = src.hypWorst;
+        dst.hypBase = src.hypBase;
+        dst.hypTrap = src.hypTrap;
+        dst.hypBaseReady = src.hypBaseReady;
     }
     private function CopyAISequence188(src : CBetaGwentAISequence188, dst : CBetaGwentAISequence188)
     {
@@ -632,11 +812,16 @@ class CBetaGwentCloner extends IScriptable
         dst.delayCost = src.delayCost;
         dst.result = src.result;
         dst.counterOnly = src.counterOnly;
+        dst.replyTree097 = (CBetaGwentAIReplyTree097)Obj(src.replyTree097);
+        dst.provenEndgame = src.provenEndgame;
+        dst.passWins = src.passWins;
+        dst.lineWins = src.lineWins;
     }
     private function CopyAISpy188(src : CBetaGwentAISpy188, dst : CBetaGwentAISpy188)
     {
         dst.source = (CBetaGwentDuelSession)Obj(src.source);
         dst.position = (CBetaGwentDuelSession)Obj(src.position);
+        dst.passPosition = (CBetaGwentDuelSession)Obj(src.passPosition);
         dst.recovery = (CBetaGwentAIRegain188)Obj(src.recovery);
         dst.oldHand = src.oldHand;
         dst.cardId = src.cardId;
@@ -652,6 +837,7 @@ class CBetaGwentCloner extends IScriptable
         dst.risk = src.risk;
         dst.result = src.result;
         dst.late = src.late;
+        dst.opening = src.opening;
         dst.unsafe = src.unsafe;
     }
     private function CopyAbilityContinuation(src : CBetaGwentAbilityContinuation, dst : CBetaGwentAbilityContinuation)
@@ -696,6 +882,18 @@ class CBetaGwentCloner extends IScriptable
         dst.board = src.board;
         for (i = 0; i < dst.board.Size(); i += 1) dst.board[i] = (CBetaGwentDuelCard)Obj(dst.board[i]);
         dst.situation = StructSBetaGwentMatchSnapshot(src.situation);
+        dst.planRound = src.planRound;
+        dst.roundPlan = src.roundPlan;
+        dst.planEnemyInvestment = src.planEnemyInvestment;
+        dst.planOwnInvestment = src.planOwnInvestment;
+        dst.publicControl = src.publicControl;
+        dst.publicCombo = src.publicCombo;
+        dst.publicBurst = src.publicBurst;
+        dst.publicThreat = src.publicThreat;
+        dst.keyThreat = src.keyThreat;
+        dst.cheapThreat = src.cheapThreat;
+        dst.handReserve = src.handReserve;
+        dst.publicInvestment = src.publicInvestment;
     }
     private function CopyCardRequest(src : CBetaGwentCardRequest, dst : CBetaGwentCardRequest)
     {
@@ -813,6 +1011,8 @@ class CBetaGwentCloner extends IScriptable
         dst.mulliganBudget = src.mulliganBudget;
         dst.mulliganUsed = src.mulliganUsed;
         dst.roundStarter = Seat(src.roundStarter);
+        dst.externalPolicyMask = Winner(src.externalPolicyMask);
+        dst.mulliganSide = Seat(src.mulliganSide);
         dst.blacklistedTemplates = src.blacklistedTemplates;
         dst.reservedCards = src.reservedCards;
         dst.visualFrames.Clear();
@@ -828,6 +1028,8 @@ class CBetaGwentCloner extends IScriptable
         if (flipSeats) { dst.presetTwo = src.presetOne; } else { dst.presetTwo = src.presetTwo; }
         if (flipSeats) { dst.leaderTemplateOne = src.leaderTemplateTwo; } else { dst.leaderTemplateOne = src.leaderTemplateOne; }
         if (flipSeats) { dst.leaderTemplateTwo = src.leaderTemplateOne; } else { dst.leaderTemplateTwo = src.leaderTemplateTwo; }
+        if (flipSeats) dst.aiStartingDeckOne = src.aiStartingDeckTwo; else dst.aiStartingDeckOne = src.aiStartingDeckOne;
+        if (flipSeats) dst.aiStartingDeckTwo = src.aiStartingDeckOne; else dst.aiStartingDeckTwo = src.aiStartingDeckTwo;
         dst.nilfJobs = src.nilfJobs;
         for (i = 0; i < dst.nilfJobs.Size(); i += 1) dst.nilfJobs[i] = (CBetaGwentNilfReaction)Obj(dst.nilfJobs[i]);
         dst.nilfJob = (CBetaGwentNilfReaction)Obj(src.nilfJob);
@@ -852,10 +1054,28 @@ class CBetaGwentCloner extends IScriptable
         if (flipSeats) { dst.aiRoundHandTwo = src.aiRoundHandOne; } else { dst.aiRoundHandTwo = src.aiRoundHandTwo; }
         dst.aiPlacing = src.aiPlacing;
         dst.aiSimulating = src.aiSimulating;
+        dst.aiNeighbourProbeActive = src.aiNeighbourProbeActive;
+        dst.aiSpySlotRevision = src.aiSpySlotRevision;
+        dst.aiSpySlotKeys = src.aiSpySlotKeys;
+        dst.aiSpySlotRows = src.aiSpySlotRows;
+        dst.aiSpySlotIndices = src.aiSpySlotIndices;
+        dst.aiSpySlotGains = src.aiSpySlotGains;
         dst.aiCloneEpoch = src.aiCloneEpoch;
         dst.aiSimCloner = src.aiSimCloner;
         dst.aiSimDamp = src.aiSimDamp;
+        dst.aiOpenInfoBench = src.aiOpenInfoBench;
         dst.aiDecisionSerial = src.aiDecisionSerial;
+        dst.aiStrategyJob096 = NULL;
+        dst.aiEndgameReady097 = src.aiEndgameReady097;
+        dst.aiEndgameComplete097 = src.aiEndgameComplete097;
+        dst.aiEndgameId097 = src.aiEndgameId097;
+        dst.aiEndgameValue097 = src.aiEndgameValue097;
+        dst.aiEndgameNodes097 = src.aiEndgameNodes097;
+        dst.aiEndgameRevision097 = src.aiEndgameRevision097;
+        dst.aiStrategyIds096 = src.aiStrategyIds096;
+        dst.aiStrategyPenalties096 = src.aiStrategyPenalties096;
+        dst.aiStrategyRevision096 = src.aiStrategyRevision096;
+        dst.aiStrategyReady096 = src.aiStrategyReady096;
         dst.aiPreparationIds.Clear();
         dst.aiPreparationSequences.Clear();
         dst.aiPreparationSpies.Clear();
@@ -895,8 +1115,8 @@ class CBetaGwentCloner extends IScriptable
         for (i = 0; i < dst.cards.Size(); i += 1) dst.cards[i] = StructSBetaGwentDevelopmentCard(dst.cards[i]);
         dst.destinationIds = src.destinationIds;
         dst.destinationSides = src.destinationSides;
-        dst.destinationZones = src.destinationZones;
         for (i = 0; i < dst.destinationSides.Size(); i += 1) dst.destinationSides[i] = Seat(src.destinationSides[i]);
+        dst.destinationZones = src.destinationZones;
         dst.weatherTokens = src.weatherTokens;
         dst.weatherDamage = src.weatherDamage;
         if (flipSeats) { dst.scoreOne = src.scoreTwo; } else { dst.scoreOne = src.scoreOne; }
@@ -945,6 +1165,7 @@ class CBetaGwentCloner extends IScriptable
         if (flipSeats) { dst.playerTwo = StructSBetaGwentPlayerState(src.playerOne); } else { dst.playerTwo = StructSBetaGwentPlayerState(src.playerTwo); }
         dst.roundNumber = src.roundNumber;
         dst.turnSequence = src.turnSequence;
+        dst.roundTurnIndex = src.roundTurnIndex;
         dst.startingPlayerId = Seat(src.startingPlayerId);
         dst.currentPlayerId = Seat(src.currentPlayerId);
         dst.roundActive = src.roundActive;
@@ -967,6 +1188,7 @@ class CBetaGwentCloner extends IScriptable
     {
         dst.templates = src.templates;
         dst.weights = src.weights;
+        dst.knownIds = src.knownIds;
         dst.evaluated = src.evaluated;
         dst.rejected = src.rejected;
         dst.eligibleProfiles = src.eligibleProfiles;
@@ -978,6 +1200,14 @@ class CBetaGwentCloner extends IScriptable
         dst.applyPassChance = src.applyPassChance;
         dst.applyBest = (CBetaGwentDuelSession)Obj(src.applyBest);
         dst.applyDone = src.applyDone;
+        dst.keepBranches097 = src.keepBranches097;
+        dst.lastReply097 = (CBetaGwentDuelSession)Obj(src.lastReply097);
+        dst.lastWeight097 = src.lastWeight097;
+        dst.lastExtra097 = src.lastExtra097;
+        dst.lastTemplate097 = src.lastTemplate097;
+        dst.controlChance = src.controlChance;
+        dst.comboChance = src.comboChance;
+        dst.publicBurst = src.publicBurst;
     }
     private function CopyQueuedAction(src : CBetaGwentQueuedAction, dst : CBetaGwentQueuedAction)
     {
@@ -993,6 +1223,10 @@ class CBetaGwentCloner extends IScriptable
         dst.reseedValue = src.reseedValue;
         dst.initialSeed = src.initialSeed;
         dst.draws = src.draws;
+        dst.implementationChecked = src.implementationChecked;
+        dst.engineTapeMode = src.engineTapeMode;
+        dst.engineTape = src.engineTape;
+        dst.engineTapeCursor = src.engineTapeCursor;
     }
     private function CopyRegistryCardReference(src : CBetaGwentRegistryCardReference, dst : CBetaGwentRegistryCardReference)
     {
@@ -1011,6 +1245,50 @@ class CBetaGwentCloner extends IScriptable
         var i : int;
         dst.slots = src.slots;
         for (i = 0; i < dst.slots.Size(); i += 1) dst.slots[i] = StructSBetaGwentPendingRequestSlot(dst.slots[i]);
+    }
+    private function CopyStrategyHand096(src : CBetaGwentStrategyHand096, dst : CBetaGwentStrategyHand096)
+    {
+    }
+    private function CopyStrategyObserve096(src : CBetaGwentStrategyObserve096, dst : CBetaGwentStrategyObserve096)
+    {
+    }
+    private function CopyStrategyProbe096(src : CBetaGwentStrategyProbe096, dst : CBetaGwentStrategyProbe096)
+    {
+        dst.source = (CBetaGwentDuelSession)Obj(src.source);
+        dst.observer = (CBetaGwentStrategyObserve096)Obj(src.observer);
+        dst.evaluator = (CBetaGwentStrategyHand096)Obj(src.evaluator);
+        dst.before = StructSBetaGwentStrategyView096(src.before);
+        dst.initialResources = src.initialResources;
+        dst.actions = src.actions;
+        dst.results = src.results;
+        dst.index = src.index;
+        dst.candidateCount = src.candidateCount;
+        dst.unsupportedCards = src.unsupportedCards;
+        dst.invalidated = src.invalidated;
+        dst.truncated = src.truncated;
+        dst.finished = src.finished;
+    }
+    private function CopyStrategyResourceJob096(src : CBetaGwentStrategyResourceJob096, dst : CBetaGwentStrategyResourceJob096)
+    {
+        dst.source = (CBetaGwentDuelSession)Obj(src.source);
+        dst.position = (CBetaGwentDuelSession)Obj(src.position);
+        dst.observer = (CBetaGwentStrategyObserve096)Obj(src.observer);
+        dst.evaluator = (CBetaGwentStrategyHand096)Obj(src.evaluator);
+        dst.response = (CBetaGwentPublicResponseAI)Obj(src.response);
+        dst.before = StructSBetaGwentStrategyView096(src.before);
+        dst.baseline = src.baseline;
+        dst.ids = src.ids;
+        dst.penalties = src.penalties;
+        dst.replyCounts = src.replyCounts;
+        dst.index = src.index;
+        dst.phase = src.phase;
+        dst.directLoss = src.directLoss;
+        dst.baseLinks = src.baseLinks;
+        dst.samples = src.samples;
+        dst.currentPenalty = src.currentPenalty;
+        dst.sampleIndex = src.sampleIndex;
+        dst.finished = src.finished;
+        dst.invalidated = src.invalidated;
     }
     private function CopyWeatherAI(src : CBetaGwentWeatherAI, dst : CBetaGwentWeatherAI)
     {

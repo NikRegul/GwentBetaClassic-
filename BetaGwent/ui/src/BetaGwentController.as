@@ -245,6 +245,9 @@
                 result.push(owner.globalToLocal(n.sprite.localToGlobal(point)));
             return result;
         }
+        // Graveyard/deck tiles: D-pad left/right reaches them from the edge of the hand or a board row.
+        public function markPile(sprite:DisplayObject):void
+        {for each(var n:Object in nodes)if(n.sprite==sprite){n.pile=true;dirty=true;return;}}
         public function menuControl(sprite:DisplayObject,id:String,row:int,column:int):void
         {
             for each(var n:Object in nodes)if(n.sprite==sprite){
@@ -439,6 +442,18 @@
                     if(other.tag!="card"||(other.rect.x<440)==(origin.x<440))continue;
                     dx=other.rect.x+other.rect.width/2-cx;dy=other.rect.y+other.rect.height/2-cy;
                     cost=Math.abs(dy)*4+Math.abs(dx);
+                    if(cost<score){score=cost;best=other;}
+                }
+            }
+            // Hand and board inspection: past the last card, left/right continues to the
+            // graveyard/deck on that side instead of stopping at the edge.
+            if(!best&&!vertical&&n.tag!="control"&&(mode=="battle"||mode=="inspect")){
+                score=Number.MAX_VALUE;
+                for each(other in allOptions){
+                    if(!other.pile)continue;
+                    dx=other.rect.x+other.rect.width/2-cx;dy=other.rect.y+other.rect.height/2-cy;
+                    forward=dir==37?-dx:dx;if(forward<=4)continue;
+                    cost=forward+Math.abs(dy)*2;
                     if(cost<score){score=cost;best=other;}
                 }
             }

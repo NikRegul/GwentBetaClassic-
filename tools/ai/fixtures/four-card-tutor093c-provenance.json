@@ -1,0 +1,10 @@
+{
+  "kind": "development evidence, not holdout",
+  "source": "BetaGwent\\build\\ai093c-four-card-witness-20261025-01",
+  "sourceReportSha256": "4c9fd33c997231c62f9222251b2ee375941c7ecdc0919eae2cb74c9204526685",
+  "originalGame": "ai093c-development-20261025-02 and -03 / part-00 / game-000059",
+  "seed": 3351343690,
+  "decision": 31,
+  "fixtureSha256": "a3642b24a4251a2543c87fba3cfe6c7d23dfb097b869e494c63f532a2e9df571",
+  "privacy": "Full state only for offline testing; production information limits remain unchanged."
+}

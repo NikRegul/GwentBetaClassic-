@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "promotedAt": "2026-10-24T16:52:08.886946+00:00",
+  "mappingSha256": "8a90c15e3ed45e5fd51453b3e4f24b44ade733f6a707c513b8ee21bff5b8cdd9",
+  "wholeMatchReportSha256": "a4311c042475050594cefb700cd8c756c10fd09e4beb335ec82ea2a371405f19",
+  "wsSources": {
+    "betaOriginalActions.ws": "b93e9d4f2e650686c9412862e2ae29fbc1154f8425f4cab9bdaf174297f3257c",
+    "betaOriginalChoices.ws": "e8e8d70d140310b21e329ad91fd8efcd267ae3c09688d12e7fdd2647f601ea3b",
+    "betaOriginalController.ws": "7ef83631792b0162c15e292cb409522454c9d1c7ebb0ec8f1ea70a356bd43c19",
+    "betaOriginalCore.ws": "fb824a133ba65836f9897a59661b546e9eb4cb453bfa2ba239fa491452be7d4b",
+    "betaOriginalData.ws": "2f62c5a81da6188e35a2708961ae0f407ee3cc5028b7807f72e80f0c6b5a8e61",
+    "betaOriginalHandlerData.ws": "422ffd9329e597be44e7d7e5b5c116056b449925727089bef5262c74b51a39f6",
+    "betaOriginalHandlers.ws": "0d7221e7806708d8c18425f383be50435ecc08c5164b4cb8d7f4cf9cd9c5494a",
+    "betaOriginalPlayMaker.ws": "abc303d0fc67208e383f0a6762f5780d07e7d79ae193a27d47f2056b11f0023f",
+    "betaOriginalRequestData.ws": "549d9bb6a1f01eca14f51bad7504288fdf44a649a2ef04ea8d09ab446f75b944",
+    "betaOriginalSearch.ws": "6216155fa754bc7f422dcdd27ed4b2c9c918185a54536bec9ac7c78a8c884d04"
+  },
+  "boardSourceSha256": "40a9485ab2dbaa67c6838e04145308ac0820e77a03cbdd061178dcb2c0c8671f",
+  "handlerChecks": 403343,
+  "selectedProfiles": 24,
+  "presetBindings": 109,
+  "wholeMatches": 92,
+  "commonRulesManifestSha256": "8a78cec64999ab7b43b7ccb2453b1f753a48d327a11cff1acfe990bd531b9c50",
+  "stageInputs": {
+    "started": "2026-10-24T16:33:57.560763+00:00",
+    "rules": "BetaGwent/build/day092-deck-expansion-20261024-v1",
+    "inputs": {
+      "BetaGwent\\drafts\\day-iteration-20261023\\beta-ws-selected-profiles093\\ws-stage.js": "47a92b6f123819cd88a43180a41fb750c8a2ab115168bc3385e8b8171f34daf2",
+      "BetaGwent\\drafts\\day-iteration-20261023\\beta-ws-selected-profiles093\\ws-stage-manifest.json": "67cb3560b856093af3d20ad751bf2d857afc17da29a10cd2f04525a9b86c24bd",
+      "BetaGwent\\drafts\\day-iteration-20261023\\beta-ws-selected-profiles093\\source-data.json": "d84e322b004ff020ed5d08f61d48ab4db5cf2a13412dd2e7d7d84014a0d921d2",
+      "BetaGwent\\drafts\\day-iteration-20261023\\beta-profile-mapping093-validated.json": "8a90c15e3ed45e5fd51453b3e4f24b44ade733f6a707c513b8ee21bff5b8cdd9",
+      "tools\\ai\\check_beta_ws_games092.cjs": "33121066f111a1573513a81d6331212651eb43bccb94eb6ca78aaea8b5483b20"
+    },
+    "plannedWholeGames": 92,
+    "plannedBindings": 109,
+    "scope": "Selected-profile staged parity; no release build/native game acceptance"
+  },
+  "scope": "Completed selected original profile source/typedWS parity; final integrated regressions and native compilers remain required.",
+  "nativeGameplayVerified": false,
+  "nativeNamingEquivalence": {
+    "scope": "Exact compiled module equality after alpha-renaming sourceProfile to translator-escaped $name; algorithms/data/controller and all other bytes unchanged.",
+    "oldCompiledSha256": "47a92b6f123819cd88a43180a41fb750c8a2ab115168bc3385e8b8171f34daf2",
+    "newCompiledSha256": "600f45d6dcb71e193263583043a3a1fd6178c97f04caa10cccbe70738fa09d80",
+    "normalizedTextSha256": "9cc24b85679d556b8350fe58335d67324c547a6d523f156ec26fc97aeb9e2995",
+    "oldWholeMatchReportSha256": "a4311c042475050594cefb700cd8c756c10fd09e4beb335ec82ea2a371405f19",
+    "wholeMatches": 92,
+    "wholeChecks": 608632,
+    "equivalent": true
+  },
+  "nativeNamingHandlerChecks": 403343,
+  "nativeNamingFixedAt": "2026-10-24T17:13:07.806037+00:00"
+}

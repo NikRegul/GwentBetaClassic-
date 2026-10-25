@@ -10,6 +10,7 @@ class CBetaGwentMatchState extends IScriptable
     public var playerTwo : SBetaGwentPlayerState;
     public var roundNumber : int;
     public var turnSequence : int;
+    public var roundTurnIndex : int;
     public var startingPlayerId : int;
     public var currentPlayerId : int;
     public var roundActive : bool;
@@ -31,6 +32,7 @@ class CBetaGwentMatchState extends IScriptable
         playerTwo.hasMadeInitialMoveForCurrentTurn = false;
         roundNumber = 0;
         turnSequence = 0;
+        roundTurnIndex = 0;
         startingPlayerId = 0;
         currentPlayerId = 0;
         roundActive = false;
@@ -84,6 +86,7 @@ class CBetaGwentMatchState extends IScriptable
 
         // The first starter is supplied by settings/RNG, never guessed here.
         roundNumber += 1;
+        roundTurnIndex = 0;
         startingPlayerId = starterId;
         currentPlayerId = 0;
         playerOne.hasPassed = false;
@@ -111,6 +114,7 @@ class CBetaGwentMatchState extends IScriptable
         // Passed players still receive turn-start boundaries in the original.
         currentPlayerId = playerId;
         turnSequence += 1;
+        roundTurnIndex += 1;
         turnActive = true;
         return BG_StateOK;
     }

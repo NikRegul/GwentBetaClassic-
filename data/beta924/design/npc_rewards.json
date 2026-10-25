@@ -8,7 +8,10 @@
       "goldTemplateId": 122101,
       "goldTitle": "Кровавый Барон",
       "preset": 22,
-      "basePreset": 6
+      "basePreset": 57,
+      "aiRulesProfile": 4,
+      "theme": "Кровавый Барон: северные осадные машины, солдаты и сам Барон.",
+      "replacements": []
     },
     {
       "deckName": "Roche",
@@ -16,7 +19,10 @@
       "goldTemplateId": 122102,
       "goldTitle": "Вернон Роше",
       "preset": 21,
-      "basePreset": 21
+      "basePreset": 71,
+      "aiRulesProfile": 20,
+      "theme": "Вернон Роше: Фольтест, Темерия, Синие Полоски и темерские отряды.",
+      "replacements": []
     },
     {
       "deckName": "Dijkstra",
@@ -24,7 +30,10 @@
       "goldTemplateId": 122105,
       "goldTitle": "Сигизмунд Дийкстра",
       "preset": 23,
-      "basePreset": 6
+      "basePreset": 99,
+      "aiRulesProfile": 44,
+      "theme": "Дийкстра: подготовка северной колоды, разведка Талера и собственная карта Дийкстры.",
+      "replacements": []
     },
     {
       "deckName": "Zoltan",
@@ -32,7 +41,10 @@
       "goldTemplateId": 142105,
       "goldTitle": "Золтан Хивай",
       "preset": 24,
-      "basePreset": 9
+      "basePreset": 84,
+      "aiRulesProfile": 34,
+      "theme": "Золтан: махакамские краснолюды, Ксавьер, Хаттори и Золтан.",
+      "replacements": []
     },
     {
       "deckName": "Lambert",
@@ -40,7 +52,15 @@
       "goldTemplateId": 200235,
       "goldTitle": "Ламберт: мечник",
       "preset": 25,
-      "basePreset": 6
+      "basePreset": 63,
+      "aiRulesProfile": 11,
+      "theme": "Ламберт: ведьмачья алхимия, Весемир и ведьмаки Школы Змеи; нейтральный Ламберт.",
+      "replacements": [
+        [
+          200078,
+          200235
+        ]
+      ]
     },
     {
       "deckName": "Thaler",
@@ -48,7 +68,19 @@
       "goldTemplateId": 112103,
       "goldTitle": "Геральт из Ривии",
       "preset": 26,
-      "basePreset": 8
+      "basePreset": 71,
+      "aiRulesProfile": 20,
+      "theme": "Талер: темерская разведка, Роше, Дийкстра и шпион Талер.",
+      "replacements": [
+        [
+          122108,
+          112103
+        ],
+        [
+          122211,
+          122203
+        ]
+      ]
     },
     {
       "deckName": "VimmeVivaldi",
@@ -56,7 +88,15 @@
       "goldTemplateId": 200080,
       "goldTitle": "Ксавьер Моран",
       "preset": 27,
-      "basePreset": 9
+      "basePreset": 90,
+      "aiRulesProfile": 40,
+      "theme": "Вимме Вивальди: краснолюдский костяк Брувера, Ксавьер и Золтан.",
+      "replacements": [
+        [
+          142106,
+          200080
+        ]
+      ]
     },
     {
       "deckName": "ScoiaTrader",
@@ -64,7 +104,10 @@
       "goldTemplateId": 142103,
       "goldTitle": "Иорвет",
       "preset": 28,
-      "basePreset": 10
+      "basePreset": 66,
+      "aiRulesProfile": 15,
+      "theme": "Торговец скоя’таэлей: эльфы и краснолюды, Иорвет, Саэсентессис и Аглайиса.",
+      "replacements": []
     },
     {
       "deckName": "Stjepan",
@@ -72,7 +115,15 @@
       "goldTemplateId": 112106,
       "goldTitle": "Трисс Меригольд",
       "preset": 29,
-      "basePreset": 8
+      "basePreset": 94,
+      "aiRulesProfile": 10,
+      "theme": "Степан: северные рыцари и магическая поддержка, Трисс и Кейра.",
+      "replacements": [
+        [
+          122104,
+          112106
+        ]
+      ]
     },
     {
       "deckName": "CrossroadsInnkeeper",
@@ -80,7 +131,15 @@
       "goldTemplateId": 112108,
       "goldTitle": "Йеннифэр",
       "preset": 30,
-      "basePreset": 1
+      "basePreset": 60,
+      "aiRulesProfile": 7,
+      "theme": "Корчмарь на распутье: веленские утопцы, туман и контроль погоды.",
+      "replacements": [
+        [
+          132103,
+          112108
+        ]
+      ]
     },
     {
       "deckName": "Olivier",
@@ -88,7 +147,15 @@
       "goldTemplateId": 112112,
       "goldTitle": "Аваллак'х: Знающий",
       "preset": 31,
-      "basePreset": 8
+      "basePreset": 95,
+      "aiRulesProfile": 12,
+      "theme": "Оливер: имперский контроль, Бонарт, Вильгефорц и Аваллак’х.",
+      "replacements": [
+        [
+          162102,
+          112112
+        ]
+      ]
     },
     {
       "deckName": "BoatBuilder",
@@ -96,7 +163,10 @@
       "goldTemplateId": 132102,
       "goldTitle": "Имлерих",
       "preset": 32,
-      "basePreset": 1
+      "basePreset": 80,
+      "aiRulesProfile": 29,
+      "theme": "Лодочник: веленские чудовища и Дикая Охота с Имлерихом.",
+      "replacements": []
     },
     {
       "deckName": "CardProdigy",
@@ -104,7 +174,10 @@
       "goldTemplateId": 131102,
       "goldTitle": "Ге'эльс",
       "preset": 33,
-      "basePreset": 15
+      "basePreset": 78,
+      "aiRulesProfile": 27,
+      "theme": "Хадко: крупные чудовища, ледяные тролли и Ге’эльс.",
+      "replacements": []
     },
     {
       "deckName": "Hermit",
@@ -112,7 +185,10 @@
       "goldTemplateId": 132103,
       "goldTitle": "Леший",
       "preset": 34,
-      "basePreset": 2
+      "basePreset": 60,
+      "aiRulesProfile": 7,
+      "theme": "Старый мудрец: Леший, туман, утопцы и лесные чудовища.",
+      "replacements": []
     },
     {
       "deckName": "Sjusta",
@@ -120,7 +196,15 @@
       "goldTemplateId": 142101,
       "goldTitle": "Саэсентессис",
       "preset": 35,
-      "basePreset": 10
+      "basePreset": 81,
+      "aiRulesProfile": 30,
+      "theme": "Сьюста: эльфийская колода Францески, усиление руки и Саэсентессис.",
+      "replacements": [
+        [
+          201773,
+          142101
+        ]
+      ]
     },
     {
       "deckName": "Gremista",
@@ -128,7 +212,15 @@
       "goldTemplateId": 152107,
       "goldTitle": "Коралл",
       "preset": 36,
-      "basePreset": 12
+      "basePreset": 65,
+      "aiRulesProfile": 14,
+      "theme": "Гремист: островные друиды, воскрешение, Коралл и Гремист.",
+      "replacements": [
+        [
+          152205,
+          152206
+        ]
+      ]
     },
     {
       "deckName": "Crach",
@@ -136,7 +228,15 @@
       "goldTemplateId": 152101,
       "goldTitle": "Хьялмар ан Крайт",
       "preset": 37,
-      "basePreset": 14
+      "basePreset": 96,
+      "aiRulesProfile": 33,
+      "theme": "Крах ан Крайт: собственный лидер, Хьялмар, мечники и ранения.",
+      "replacements": [
+        [
+          201776,
+          152101
+        ]
+      ]
     },
     {
       "deckName": "LugosTheMad",
@@ -144,7 +244,10 @@
       "goldTemplateId": 152106,
       "goldTitle": "Лугос Безумный",
       "preset": 38,
-      "basePreset": 13
+      "basePreset": 75,
+      "aiRulesProfile": 24,
+      "theme": "Лугос Безумный: островные воины, сброс и собственная карта Лугоса.",
+      "replacements": []
     },
     {
       "deckName": "Mousesack",
@@ -152,7 +255,10 @@
       "goldTemplateId": 152103,
       "goldTitle": "Мышовур",
       "preset": 39,
-      "basePreset": 12
+      "basePreset": 70,
+      "aiRulesProfile": 19,
+      "theme": "Мышовур: островные друиды, Керис, королевская гвардия и Мышовур.",
+      "replacements": []
     },
     {
       "deckName": "MarkizaSerenity",
@@ -160,7 +266,15 @@
       "goldTemplateId": 142104,
       "goldTitle": "Мильва",
       "preset": 40,
-      "basePreset": 10
+      "basePreset": 79,
+      "aiRulesProfile": 28,
+      "theme": "Маркиза Серенити: эльфы Эитнэ, усиление руки и Мильва.",
+      "replacements": [
+        [
+          201615,
+          142104
+        ]
+      ]
     },
     {
       "deckName": "Shani",
@@ -168,7 +282,10 @@
       "goldTemplateId": 122106,
       "goldTitle": "Шани",
       "preset": 41,
-      "basePreset": 6
+      "basePreset": 86,
+      "aiRulesProfile": 36,
+      "theme": "Шани: северные солдаты под бронёй, поддержка и воскрешение Шани.",
+      "replacements": []
     },
     {
       "deckName": "Olgierd",
@@ -176,7 +293,19 @@
       "goldTemplateId": 132215,
       "goldTitle": "Гюнтер о'Дим",
       "preset": 42,
-      "basePreset": 1
+      "basePreset": 58,
+      "aiRulesProfile": 5,
+      "theme": "Ольгерд: проклятые, бессмертие, собственная карта и Гюнтер о’Дим.",
+      "replacements": [
+        [
+          112210,
+          112207
+        ],
+        [
+          122202,
+          132215
+        ]
+      ]
     },
     {
       "deckName": "Gambler",
@@ -184,7 +313,15 @@
       "goldTemplateId": 112107,
       "goldTitle": "Виллентретенмерт",
       "preset": 43,
-      "basePreset": 1
+      "basePreset": 85,
+      "aiRulesProfile": 35,
+      "theme": "Борец за права животных: крупные чудовища, огры и Виллентретенмерт.",
+      "replacements": [
+        [
+          132107,
+          112107
+        ]
+      ]
     },
     {
       "deckName": "Halflings",
@@ -192,7 +329,10 @@
       "goldTemplateId": 132107,
       "goldTitle": "Кейран",
       "preset": 44,
-      "basePreset": 1
+      "basePreset": 56,
+      "aiRulesProfile": 3,
+      "theme": "Низушки на свадьбе: рой, поглощение и Кейран; состав с полными связками.",
+      "replacements": []
     },
     {
       "deckName": "CircusGwentAddict",
@@ -200,7 +340,15 @@
       "goldTemplateId": 200209,
       "goldTitle": "Саския",
       "preset": 45,
-      "basePreset": 10
+      "basePreset": 82,
+      "aiRulesProfile": 31,
+      "theme": "Торговец цирка: разнообразный состав Брувера, Шуп и Саския.",
+      "replacements": [
+        [
+          142106,
+          200209
+        ]
+      ]
     },
     {
       "deckName": "NKTournament",
@@ -208,7 +356,10 @@
       "goldTemplateId": 201618,
       "goldTitle": "Зельткирк из Гулеты",
       "preset": 46,
-      "basePreset": 6
+      "basePreset": 97,
+      "aiRulesProfile": 42,
+      "theme": "Бернард Тулле: северные солдаты, рыцари и Зельткирк.",
+      "replacements": []
     },
     {
       "deckName": "NilfTournament",
@@ -216,7 +367,10 @@
       "goldTemplateId": 162104,
       "goldTitle": "Кагыр аэп Кеаллах",
       "preset": 47,
-      "basePreset": 8
+      "basePreset": 54,
+      "aiRulesProfile": 1,
+      "theme": "Саша: нильфгаардские шпионы, Кагыр, Раинфарн и дипломатия.",
+      "replacements": []
     },
     {
       "deckName": "ScoiaTournament",
@@ -224,7 +378,10 @@
       "goldTemplateId": 142102,
       "goldTitle": "Изенгрим",
       "preset": 48,
-      "basePreset": 11
+      "basePreset": 62,
+      "aiRulesProfile": 9,
+      "theme": "Финнеас: засады, Изенгрим и Ширру.",
+      "replacements": []
     },
     {
       "deckName": "NMLTournament",
@@ -232,7 +389,15 @@
       "goldTemplateId": 132104,
       "goldTitle": "Карантир",
       "preset": 49,
-      "basePreset": 15
+      "basePreset": 80,
+      "aiRulesProfile": 29,
+      "theme": "Граф Тибальт: Дикая Охота, мороз, Карантир и Драуг.",
+      "replacements": [
+        [
+          131102,
+          132101
+        ]
+      ]
     },
     {
       "deckName": "NMLTournament2",
@@ -240,7 +405,15 @@
       "goldTemplateId": 132101,
       "goldTitle": "Драуг",
       "preset": 50,
-      "basePreset": 15
+      "basePreset": 74,
+      "aiRulesProfile": 23,
+      "theme": "Первый соперник Туссента: Завещания, превращения и Драуг.",
+      "replacements": [
+        [
+          132107,
+          132101
+        ]
+      ]
     },
     {
       "deckName": "NilfTournament2",
@@ -248,7 +421,10 @@
       "goldTemplateId": 162103,
       "goldTitle": "Ваттье де Ридо",
       "preset": 51,
-      "basePreset": 8
+      "basePreset": 72,
+      "aiRulesProfile": 21,
+      "theme": "Второй соперник Туссента: вскрытие Морврана, Ваттье и мангонели.",
+      "replacements": []
     },
     {
       "deckName": "SkelTournament2",
@@ -256,7 +432,15 @@
       "goldTemplateId": 152104,
       "goldTitle": "Камби",
       "preset": 52,
-      "basePreset": 14
+      "basePreset": 89,
+      "aiRulesProfile": 39,
+      "theme": "Финалист Туссента: проклятые корабли, воскрешение и завершающий Камби.",
+      "replacements": [
+        [
+          201773,
+          152104
+        ]
+      ]
     },
     {
       "deckName": "ScoiaTournament2",
@@ -264,7 +448,10 @@
       "goldTemplateId": 142106,
       "goldTitle": "Аглайиса",
       "preset": 53,
-      "basePreset": 11
+      "basePreset": 76,
+      "aiRulesProfile": 25,
+      "theme": "Главарь пуристов: эльфы Филавандреля, заклинания и Аглайиса.",
+      "replacements": []
     }
   ],
   "ordinaryReward": "One random collectible bronze or silver below its owned-copy cap on the first victory over each actual NPC.",

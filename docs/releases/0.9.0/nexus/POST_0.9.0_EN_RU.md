@@ -5,7 +5,7 @@
 **Classic 1.32 and Next-Gen**
 Choose one archive for your game version. Each contains all 13 text languages and all five voice languages: EN, RU, DE, IT and PT-BR. Text and voices can be selected independently in the mod menu; Auto follows the game's settings, with English as fallback. Works on Steam Deck as well (tested by the author).
 
-For Next-Gen, replace the previous modBetaGwent0924 folder and copy Mods into the game directory. Optionally copy bin from Optional-CopyButton for the Copy button. For Classic 1.32, install BOTH Mods and DLC. Its DLC/dlcBetaGwentClassic132Assets folder is required for graphics and leader entrances. Classic is larger because the old loader needs a different resource layout; the cards and AI are the same.
+For Next-Gen, replace the previous modBetaGwent0924 folder and copy Mods into the game directory. Optionally copy bin from Optional-CopyButton for the Copy button. For Classic 1.32, install BOTH Mods and DLC. Its DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items folder is required for graphics and leader entrances. Classic is larger because the old loader needs a different resource layout; the cards and AI are the same.
 
 **AI improvements**
 Revised Igni and Yrden choices, Birna's weather forecast, armour breaks and the three Redanian armour abilities. Catch-up after a pass now follows real plays and turn boundaries. The AI can concede round one to preserve resources, but gives survival priority when another lost round would end the match. Automated scenarios cover all 46 opponent deck archetypes; unusual decisions are still worth reporting.
@@ -63,7 +63,7 @@ Bug reports, logs and translation suggestions are welcome. Include mod and exact
 **Classic 1.32 и Next-Gen**
 Выбирайте один архив под свою версию игры. В каждом — все 13 языков текста и пять озвучек: EN, RU, DE, IT и PT-BR. Текст и голоса выбираются независимо в меню мода; «Авто» следует настройкам игры, при отсутствии языка используется английский. Мод работает и на Steam Deck (проверено автором).
 
-Для Next-Gen замените прежнюю папку modBetaGwent0924 и скопируйте Mods в каталог игры. По желанию скопируйте bin из Optional-CopyButton — для кнопки «Копировать». Для Classic 1.32 нужны ОБЕ папки — Mods и DLC. DLC/dlcBetaGwentClassic132Assets содержит обязательную графику и вступления лидеров. Classic весит больше из-за другого формата ресурсов и ограничений старого загрузчика; карты и ИИ в обеих сборках одинаковые.
+Для Next-Gen замените прежнюю папку modBetaGwent0924 и скопируйте Mods в каталог игры. По желанию скопируйте bin из Optional-CopyButton — для кнопки «Копировать». Для Classic 1.32 нужны ОБЕ папки — Mods и DLC. DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items содержит обязательную графику и вступления лидеров. Classic весит больше из-за другого формата ресурсов и ограничений старого загрузчика; карты и ИИ в обеих сборках одинаковые.
 
 **Улучшения ИИ**
 Переработаны выбор Игни и Ирдена, прогноз погоды Бирны, снятие брони и три реданские способности. Догон после паса учитывает реальные розыгрыши и границы ходов. ИИ может отдать первый раунд ради сохранения ресурсов, но при угрозе поражения в матче важнее выиграть раунд. Автоматические сценарии охватывают все 46 архетипов соперников; о странных решениях по-прежнему стоит сообщать.

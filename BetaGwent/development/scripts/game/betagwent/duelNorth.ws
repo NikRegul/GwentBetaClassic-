@@ -22,6 +22,11 @@ class CBetaGwentDuelNorth extends IScriptable
     }
     private function Remove(out ids : array<int>, id : int)
     { var i : int; for (i = ids.Size() - 1; i >= 0; i -= 1) if (ids[i] == id) ids.Erase(i); }
+    // Original Black Blood FilterCardCategory: any category16 (Vampire) or40
+    // (Necrophage), mask1099511693312. unitTraits uses a different namespace
+    // and must not select Witchers/Elves instead of these source categories.
+    public function BlackBloodCategory(id : int) : bool
+    { return id==112104 || id==112105 || id==132202 || id==132203 || id==132220 || id==132301 || id==132302 || id==132306 || id==132313 || id==132314 || id==200055 || id==200088 || id==200295 || id==201698; }
     private function Crew(source : CBetaGwentDuelCard) : int
     {
         var ids : array<int>; var s, t : SBetaGwentCardSnapshot; var i, count : int;
@@ -48,7 +53,7 @@ class CBetaGwentDuelNorth extends IScriptable
             }
             if (mode == 125 && t.power.armor <= 0) continue;
             if (mode == 145 && (t.tokenMask & 8) == 0) continue;
-            if (mode == 149) { d = game.FindCard(ids[i]).Definition(); if ((d.unitTraits & 3) == 0) continue; }
+            if (mode == 149 && !BlackBloodCategory(t.runtimeTemplate.templateId)) continue;
             valid.PushBack(ids[i]);
         }
         game.MonsterRequest(source, valid, kind, minimum, 1);

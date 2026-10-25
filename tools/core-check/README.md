@@ -1,3 +1,5 @@
+> Исторический стенд старых этапов. Для актуального ИИ использовать [AI_DEVELOPMENT_RU.md](../../docs/AI_DEVELOPMENT_RU.md) и общий JS/WS-движок. Старые .NET-harness не входят в нынешнюю приёмку.
+
 # Native core checks
 
 > **Текущий статус 2026-10-02:** native28 принят (200 успешных assertions).

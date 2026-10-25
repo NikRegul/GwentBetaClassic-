@@ -112,6 +112,7 @@ public function BetaGwentEnsureCollection() : bool
     }
     if(betaGwentOwnedIds.Size()!=0 || betaGwentOwnedCopies.Size()!=0) return false;
     // Profile fields lost by a save made without the mod: restore from the facts mirror.
+    LogChannel('BetaGwent',"PROFILE_FIELDS_EMPTY cur="+FactsQueryLatestValue("bg_b2_cur")+" gen="+FactsQueryLatestValue("bg_b2_gen")+" hold="+FactsQueryLatestValue("bg_b2_hold")+" legacy="+FactsQueryLatestValue("bg_bk_schema"));
     if(BetaGwentRestoreProfile()){BetaGwentUpdateCollectionProgress();BetaGwentSyncTournamentAccess();return true;}
     betaGwentCollectionSeeding=true;betaGwentCollectionSchema=1;
     BetaGwentApplyStarterSet();

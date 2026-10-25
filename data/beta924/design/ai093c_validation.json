@@ -1,0 +1,283 @@
+{
+  "schema": 1,
+  "version": "0.9.3c",
+  "accepted": true,
+  "acceptedAt": "2026-10-25T08:54:29.903937+00:00",
+  "candidateFingerprint": "48f57bb620aae0c0e117a73803995a7edb71e737402749cda48da9ac81d4a219",
+  "baselineVersion": "0.9.3b",
+  "baselineSnapshot": "D:\\w3mod\\BetaGwent\\build\\release093b-lock-ui-20261025-03\\rules",
+  "baselineFingerprint": "d9c95ce98f644dc07eed05b16258a6dc5ff1f5488c0c5920497cdb17f23c1c1e",
+  "sharedBattleMechanics": true,
+  "hiddenInformationAccessUnchanged": true,
+  "regressionGroups": 85,
+  "targetedChecks": {
+    "check_reply_pass094": 543,
+    "check_exhausted_frontier094": 847,
+    "check_draw_frontier094": 816,
+    "check_chase_budget093a": 930,
+    "check_lock_resilience093b": 293,
+    "check_plans093c": 1767,
+    "check_four_card093c": 2312
+  },
+  "negativeControl": {
+    "path": "D:\\w3mod\\BetaGwent\\build\\ai093c-aa-control-20261025-01\\summary.json",
+    "sha256": "1ae1180780359623b1c5a288d3f6b6fa95dfb64d86c71d67c4d987cf8faa666d",
+    "result": {
+      "complete": true,
+      "passed": true,
+      "kind": "identical-policy-negative-control",
+      "checkedAt": "2026-10-25T08:30:19.856272+00:00",
+      "candidateFingerprint": "48f57bb620aae0c0e117a73803995a7edb71e737402749cda48da9ac81d4a219",
+      "games": 368,
+      "blocks": 92,
+      "scoreRate": 0.5,
+      "errors": 0,
+      "everyMirroredPolicySwapCancels": true,
+      "planSha256": "ff2d1064fb752119ffae22b0c5ca8b9ee8a9c72a660f28bce82f62209bde865c",
+      "records": [
+        {
+          "part": "part-00",
+          "reportSha256": "938e7ae752138641243554d1448e839ad9101bf247d0d2c6bd9a483a80891706"
+        },
+        {
+          "part": "part-01",
+          "reportSha256": "4da89f747f62d0db7acd7f4f5de83e3c031fa5bcb89509c7f807a9d6ee1a5370"
+        },
+        {
+          "part": "part-02",
+          "reportSha256": "fa1eab95a7000d26f9287aa160d129e40ed7ddb6c6d3bdd2ee77b683ea4a3f39"
+        },
+        {
+          "part": "part-03",
+          "reportSha256": "10c3ef2951832edc192eefd58dfa2d032cb4ee023d0358b8a9d6d5515b5df2c6"
+        }
+      ]
+    }
+  },
+  "holdout": {
+    "path": "D:\\w3mod\\BetaGwent\\build\\ai093c-holdout-all-20261025-02",
+    "planSha256": "5444dec98d90505cfc750bccab1261def2a09c7b2928d13b16b6e473acb867e7",
+    "summarySha256": "b880a08399b7b105811691d81bbc3d1803be61b400d0baf06b9834792904975a",
+    "games": 3680,
+    "poolSize": 92,
+    "seed": 2026102593,
+    "cycles": 10,
+    "wins": 1855,
+    "losses": 1753,
+    "draws": 72,
+    "scoreRate": 0.5138586956521739,
+    "lower99": 0.5018461382942926,
+    "upper99": 0.5258712530100552,
+    "clusterLower99": 0.5015018538848962,
+    "clusterUpper99": 0.5262155374194516,
+    "errors": 0,
+    "shards": {
+      "part-00": {
+        "reportSha256": "0c49c0eff99a4882233a6d4159c1a18eb86c6b52cb5694eebc5ca80ed7ecfbf5",
+        "games": 920,
+        "wins": 468,
+        "losses": 430,
+        "draws": 22
+      },
+      "part-01": {
+        "reportSha256": "3fcf20701c381adde42427a561c4d05f7fbb4b9383881f89fffde67f132bbf4e",
+        "games": 920,
+        "wins": 448,
+        "losses": 448,
+        "draws": 24
+      },
+      "part-02": {
+        "reportSha256": "d8925f47727cd6e8b03ce31699688f30fa53fde7520324778b17532f5890544f",
+        "games": 920,
+        "wins": 481,
+        "losses": 431,
+        "draws": 8
+      },
+      "part-03": {
+        "reportSha256": "3ea19213b87975faa0c753f191ec671492f3cc1da65a08033831a2afffc5aba5",
+        "games": 920,
+        "wins": 458,
+        "losses": 444,
+        "draws": 18
+      }
+    }
+  },
+  "sourceFiles": {
+    "BetaGwent/development/scripts/game/betagwent/betaOriginalActions.ws": "b93e9d4f2e650686c9412862e2ae29fbc1154f8425f4cab9bdaf174297f3257c",
+    "BetaGwent/development/scripts/game/betagwent/betaOriginalChoices.ws": "e8e8d70d140310b21e329ad91fd8efcd267ae3c09688d12e7fdd2647f601ea3b",
+    "BetaGwent/development/scripts/game/betagwent/betaOriginalController.ws": "7ef83631792b0162c15e292cb409522454c9d1c7ebb0ec8f1ea70a356bd43c19",
+    "BetaGwent/development/scripts/game/betagwent/betaOriginalCore.ws": "fb824a133ba65836f9897a59661b546e9eb4cb453bfa2ba239fa491452be7d4b",
+    "BetaGwent/development/scripts/game/betagwent/betaOriginalData.ws": "2f62c5a81da6188e35a2708961ae0f407ee3cc5028b7807f72e80f0c6b5a8e61",
+    "BetaGwent/development/scripts/game/betagwent/betaOriginalHandlerData.ws": "422ffd9329e597be44e7d7e5b5c116056b449925727089bef5262c74b51a39f6",
+    "BetaGwent/development/scripts/game/betagwent/betaOriginalHandlers.ws": "0d7221e7806708d8c18425f383be50435ecc08c5164b4cb8d7f4cf9cd9c5494a",
+    "BetaGwent/development/scripts/game/betagwent/betaOriginalPlayMaker.ws": "abc303d0fc67208e383f0a6762f5780d07e7d79ae193a27d47f2056b11f0023f",
+    "BetaGwent/development/scripts/game/betagwent/betaOriginalRequestData.ws": "549d9bb6a1f01eca14f51bad7504288fdf44a649a2ef04ea8d09ab446f75b944",
+    "BetaGwent/development/scripts/game/betagwent/betaOriginalSearch.ws": "6216155fa754bc7f422dcdd27ed4b2c9c918185a54536bec9ac7c78a8c884d04",
+    "BetaGwent/development/scripts/game/betagwent/capabilityProbe.ws": "c54d6e718e918efd92853ac8317b6132ec643a8669a98aa5efb19b3ea2c3a941",
+    "BetaGwent/development/scripts/game/betagwent/collectionProfile.ws": "67609c9704971f77da83fe599d8a1e2dc78b13164d8f9a4f05dc9bdc636637d9",
+    "BetaGwent/development/scripts/game/betagwent/collectionQuest.ws": "faa8823f558c7e2952acf5417f10bc6d08b89a224e0498c20993ef3ee5ebf881",
+    "BetaGwent/development/scripts/game/betagwent/deckBuilder.ws": "fa3470c88312c8e8add7bb0f9e49e4feabd7587be43a97b41659743c6f758123",
+    "BetaGwent/development/scripts/game/betagwent/deckNameInput.ws": "f9e47b422800b4b3605e7a9155849bb0617013431d7d72ba56c9c53880251938",
+    "BetaGwent/development/scripts/game/betagwent/deckProfile.ws": "0e4e5d7999bd5fad30ca3c930969ae0695186ef246877f64119d7c14ffb5263d",
+    "BetaGwent/development/scripts/game/betagwent/developmentActionQueueChecks.ws": "d100c36941a4240ff7e6c601cb67cde615da9c9aca78a736227ac14ffc5045d5",
+    "BetaGwent/development/scripts/game/betagwent/developmentApplyChecks.ws": "082c690c476b66777c3a960f6af3c7552891e513e771cf525eec67e1e1802748",
+    "BetaGwent/development/scripts/game/betagwent/developmentBoardChecks.ws": "2d2ee4844436d0ae5641bc09780f34f13b61c3ac407d9bc423229ab8dd65dd22",
+    "BetaGwent/development/scripts/game/betagwent/developmentBoardMenu.ws": "40a9485ab2dbaa67c6838e04145308ac0820e77a03cbdd061178dcb2c0c8671f",
+    "BetaGwent/development/scripts/game/betagwent/developmentBoardSession.ws": "adfd6fd89462bad200b60621a86501a5e72de2be5e3210541d205987dacb0046",
+    "BetaGwent/development/scripts/game/betagwent/developmentManagerChecks.ws": "2f9d520c4ee6f40c446272aecfdb44fadac3e96c1de345dfcaf664d33f9d6996",
+    "BetaGwent/development/scripts/game/betagwent/developmentOpponentSelection.ws": "048ce199a3f60207c4ac42b77381376ca7328275234a9af1a48d2d3bc97485b9",
+    "BetaGwent/development/scripts/game/betagwent/developmentPowerNumberChecks.ws": "aa0a14c07fc585d0a31ecddb3132628af8e07cdd80cd73cbe1a845e2251ede71",
+    "BetaGwent/development/scripts/game/betagwent/developmentRegistryIdChecks.ws": "eecd6e4f9240b0d4fe2acb6ef9af93763fa5bbf4b4a66a0fd3eede6a8820bc82",
+    "BetaGwent/development/scripts/game/betagwent/developmentRequestChecks.ws": "fc6c54bddc6ce71603581078a78e7ec940eb4b8116e2f0337da467b2e0cba5a1",
+    "BetaGwent/development/scripts/game/betagwent/developmentRequestFlow.ws": "cf03e435c00a1cd0be3b4fbaf33c416e0f41d1323c54f8ee12233d00a1ad2f35",
+    "BetaGwent/development/scripts/game/betagwent/developmentRequestFlowChecks.ws": "6c41c4408f5862a6d72fdfd2717450430908ec6d6a06bf9659dea94c17aaadbb",
+    "BetaGwent/development/scripts/game/betagwent/duelAICatalog.ws": "c6f3c7e78fdd42437f151de64cdbef27dcac2bec7438267983dcb5871c443933",
+    "BetaGwent/development/scripts/game/betagwent/duelAIPass.ws": "c26d37d9b8820e63f0e570afa59b5bb05e98d73646ef1214d08c9e806adcfbb7",
+    "BetaGwent/development/scripts/game/betagwent/duelAIResearch.ws": "4767ca5932f039136fe1d186c931d1d8f1d2ccc3a789eb60d3f1c661a5c2a0d2",
+    "BetaGwent/development/scripts/game/betagwent/duelAITraining.ws": "0f054dfef42ddb17b808383d7402995f7ae1a84766a885587fe1b0c9b40f1b09",
+    "BetaGwent/development/scripts/game/betagwent/duelAITuning.ws": "3351095d1659f2e6464d1abcf4fc7e9977f61aa7ea9c6e14418ff654f9b8235a",
+    "BetaGwent/development/scripts/game/betagwent/duelAIWorth.ws": "a4b488b2f4e929cea443e60216f74194b86268cd2043f42b0036d82947c99a87",
+    "BetaGwent/development/scripts/game/betagwent/duelArchetypeAI.ws": "6dea6936955c9ee03c8b4407f846de4d30a1141d035db2f15b7a7c9a4a0da99e",
+    "BetaGwent/development/scripts/game/betagwent/duelAudio.ws": "b7120694aae9c625efae0c22284aeb556e6d2b406e85419848cbd9f21fd3a62b",
+    "BetaGwent/development/scripts/game/betagwent/duelAudioCatalog.ws": "364425b93615fd630d0fb7730f80820ccc70f1343d83a6251ac1910e902e2472",
+    "BetaGwent/development/scripts/game/betagwent/duelCatalog.ws": "e4ee7fcb9a08df27c17d63582004dbc07ed436cfe51b7ae556bf3a4ee6695e8b",
+    "BetaGwent/development/scripts/game/betagwent/duelClone.ws": "24e3a0adb1ba56001035388e3efdb5757c10ee281525a3d79c9aeb08b6b0df93",
+    "BetaGwent/development/scripts/game/betagwent/duelEffectRuntime.ws": "6f4202b4fb83f0d7b0e7c4cdb1e6fb6790433b663e269b0852e878354a4e8abc",
+    "BetaGwent/development/scripts/game/betagwent/duelEndgameAI.ws": "71679fb2734d6cd579733527f909031d4ee1b340ae42eb6d73c71f2a021f8d5b",
+    "BetaGwent/development/scripts/game/betagwent/duelEvents.ws": "396f5a0c246f8ffc70ed57316911689f1c12dea2efe3e066b2e9344388c31eee",
+    "BetaGwent/development/scripts/game/betagwent/duelLiveCard.ws": "a59288942647c67718e0cb182802b43e296b75ad0e0825229a2c95a6a10257bc",
+    "BetaGwent/development/scripts/game/betagwent/duelMonsterDuel.ws": "0f43f095d0967ccca1ecce5d6e85b350a0b8e2eedff2b5dfd7f1a36d428ad245",
+    "BetaGwent/development/scripts/game/betagwent/duelMonsters.ws": "11983ddd74bac279af172dabcb517523307a9fd6b7073ce1e8d0926a69bcaecd",
+    "BetaGwent/development/scripts/game/betagwent/duelNeutral.ws": "140882157982abe5bb58acd3b45f068113d1db33fd3b52a7e635e7beb7d2fcbe",
+    "BetaGwent/development/scripts/game/betagwent/duelNilf.ws": "3943e88256a4b0a2ec073161fb1a3e25054ae2b67c066fe0732328dc172fc93c",
+    "BetaGwent/development/scripts/game/betagwent/duelNilfDependencies.ws": "d3ab54e78132cb298202c818c7c8361cefb12ee33386d513c0265c61ed9a3464",
+    "BetaGwent/development/scripts/game/betagwent/duelNorth.ws": "72703765f49cdfd23750726a750ba4b4689430c2e2a13f6e72e2fd258949e6fa",
+    "BetaGwent/development/scripts/game/betagwent/duelPublicResponseAI.ws": "ec7018621ad6ce61e74c90bb31282f305bd625f156c4daea44d8e5e7b219faeb",
+    "BetaGwent/development/scripts/game/betagwent/duelReplyTreeAI.ws": "716b0560b7e23a3f0907bd311f2d4f6f1c7f600cf13821974dea138a6004bb94",
+    "BetaGwent/development/scripts/game/betagwent/duelScoia.ws": "2888f4388b1f0741efbf678a7ec7906582de683a1e1fdb9c74180447bae3b7ef",
+    "BetaGwent/development/scripts/game/betagwent/duelSession.ws": "23c008def9db1e00b8ef2fd6e8aa7f93e697808b4f791d27e330ff33944a1b60",
+    "BetaGwent/development/scripts/game/betagwent/duelSkellige.ws": "3f7c3ecc4b21b77de50c610bda2d82b30a8abfda1685b0d0c92acb581dacba03",
+    "BetaGwent/development/scripts/game/betagwent/duelSpecials.ws": "792aa279e8f9f7986e53d239d586f9ec95e78332739d9de14ac82bb03d4ef3ef",
+    "BetaGwent/development/scripts/game/betagwent/duelStrategyAI.ws": "8113e0254079f2af57d9f64dce17b9a3eb92ad5024ecc3777364a1a400e53c2b",
+    "BetaGwent/development/scripts/game/betagwent/duelVisualFrame.ws": "be4e7ed084171e8015a4528034ca12d63183fd6de257da0bdb67e3dde9a8e66e",
+    "BetaGwent/development/scripts/game/betagwent/duelWeather.ws": "0e891102c86c80098a2ac4aeb2bee1c81555b330263ba2a71a0b43fb399b5de9",
+    "BetaGwent/development/scripts/game/betagwent/duelWeatherAI.ws": "f0011a38f57dd84014bce4acd2efb1d6bbfa839dbbf7661bf707ec8e5535326e",
+    "BetaGwent/development/scripts/game/betagwent/kegProfile.ws": "47e0eeb56ad562a60d04a4a66bae9102e5cd7d8aa201ce0e32927ed4bf3b70e8",
+    "BetaGwent/development/scripts/game/betagwent/nativeGwentEntry.ws": "b5fef7b90dead32f53b12b3f0333551d7d681ba170b1cca9960efe9b8651b900",
+    "BetaGwent/development/scripts/game/betagwent/opponentRotation.ws": "1bc6d59da06ab68c0a5fd5a404ea2a668469f44509a8b209c26751fbdd033490",
+    "BetaGwent/development/scripts/game/betagwent/profileBackup.ws": "0b7484eb8a3e4c47a255b40c4cae615d295d8266dd9eed7eff2dd5a18f70006d",
+    "BetaGwent/development/scripts/game/betagwent/profileCleanup090.ws": "fe8a223120bbf6c04e6817bb3c6829d068d5da015591920f01e96028de58fdef",
+    "BetaGwent/development/scripts/game/betagwent/progressionCatalog.ws": "4533bd172b1f2d58d4bf4d05644619167f1d403d5ebfafcb0f65950815a46e6b",
+    "BetaGwent/development/scripts/game/betagwent/scrapsProfile.ws": "61f20284f0f53964cd75f76ed7ef7f7ab409d7893cad21c5799fe9e0cb5522d7",
+    "BetaGwent/development/scripts/game/betagwent/shopCatalog.ws": "4985f2a00bc781c11648d3e2e1a674369876ffcb1db8fd77d5caf5a946ed211b",
+    "BetaGwent/development/scripts/game/betagwent/shopRuntime.ws": "16925665f05e2e11e65c17c807edfe1bd0b33426be69b8e8f4c753d7dfc95155",
+    "BetaGwent/development/scripts/game/betagwent/tournamentAccess.ws": "50532fac476d770e46b49efb2ed5cdb98f8acefffe61b886352193f4b09a1d0a",
+    "BetaGwent/development/scripts/game/betagwent/universalLanguages.ws": "7f8763740a2653b64ce0b01be938a9c0d51459d1c91bb60e59a3d94b536e5008",
+    "BetaGwent/scripts/game/betagwent/actionApply.ws": "c6110c4237e0b808d3a73ba47b35078db8220ef867d5001e6dd95876e2da270c",
+    "BetaGwent/scripts/game/betagwent/actionManager.ws": "ab323bded956dad192b69cc7061147e6de492bae186f2acd9d51618ecae917fd",
+    "BetaGwent/scripts/game/betagwent/actionQueue.ws": "6de4e3bcbd0a6a0502969a0d12ef72e8c44f77e4cf24d35afa45b2209ea249f1",
+    "BetaGwent/scripts/game/betagwent/cardRules.ws": "cb93998164d5fa677790ec61443c321852e01b93a3cb1b87a76e7c03f55c283b",
+    "BetaGwent/scripts/game/betagwent/matchState.ws": "3e60c98d73db1a06dbb9e476e0ea4cb10ff1fb2c5a81ed9367b99a539a96e272",
+    "BetaGwent/scripts/game/betagwent/powerNumbers.ws": "00ef013595d75eef4fd2b5d4ad02399db791a8189db1afa7140d3d6545f4644d",
+    "BetaGwent/scripts/game/betagwent/randomGenerator.ws": "3c7058fda10ff9f44383fefebc1877934b5700e36507513eafbc1ff999205037",
+    "BetaGwent/scripts/game/betagwent/registryIds.ws": "6ddaf2f675d2749db8bab26e6bcd38043e8c0a9b18353cacc7c891bd2a61176e",
+    "BetaGwent/scripts/game/betagwent/requestContinuation.ws": "c4b5309d184578f4350608d61b2813fb3dcafcf37860cb7dc5e54bbd291b25cd",
+    "BetaGwent/scripts/game/betagwent/requestState.ws": "88fb47bfaa6241c7814ecdffdc930334943288aad9e28398f40ecf30478d05c8",
+    "BetaGwent/scripts/game/betagwent/roundRules.ws": "b566298e28b056eb49848b0394f838aa940bdfd117461721e01c4a767f35a911",
+    "BetaGwent/scripts/game/betagwent/triggerOrder.ws": "de4ef595023d6b8118f55aecd1406e420aff7f2615a5bb391f49a2f856d134e8",
+    "BetaGwent/scripts/game/betagwent/turnRules.ws": "7be034484a8b21b9aaba486bbb4b0e690a0efc0b5774eaca7d26939ecf82fe03",
+    "BetaGwent/scripts/game/betagwent/types.ws": "84b6f44b07bd56dfd3f4ccda964c55250b69fe6ea72a0c693770aeb0b6bb5de3",
+    "tools/ai/build_js.py": "4f03e7fa56418c0fc5baee85bfc37ccd3360dc0249fc1bac5da7dfa7efc0aa0b",
+    "tools/ai/gen_clone.py": "7bfa79d442f650d00ad29834ee657b2201de3b7371326c1a77f02ee5d75b9105",
+    "tools/ai/jshost/ab.js": "503fe2dd95508b8d692ffb5686f68a80b055a9edb63c02b1673d4054b78037da",
+    "tools/ai/jshost/contract.js": "8ac384e6a7918dc91bca0aab421b426a7fb3e0d41709a79dfc9e18394ad9eb7c",
+    "tools/ai/jshost/diag.js": "b245b52fda64dbbc24b22f8c7fcf692e0e5fb827a4c2c82629eb61949b16f7a3",
+    "tools/ai/jshost/esterr.js": "280027c5018b34e11f411a071d1f1c1249aac811820847563e1c0bf6b365801f",
+    "tools/ai/jshost/harness.js": "291169d642ca12b8143e1260e28a5ee49cbed2dcae08bc5bdd081e297539f590",
+    "tools/ai/jshost/replay.js": "a91879f94ccad2757143a7b118aba98615435188eef9a2eb426492623be91bcf",
+    "tools/ai/jshost/rounds.js": "3deb34059df7924023371786d560d8c0cd127812eef1acaf2dcb42a10e3810dc",
+    "tools/ai/jshost/run.js": "a4eb0b822646c5ca310970a8cb5811ee73b3b219390e011199c512ef20c6bb03",
+    "tools/ai/jshost/runtime.js": "66af9aed19fc95f2b65049ca3851df47ecf1e35bf9901e5f04faef0a2a17dfbb",
+    "tools/ai/jshost/selfplay.js": "c907b642464c1c188ebd5b1c4b5bd20e01187d1dc0104df148b124e973f8ff95",
+    "tools/ai/jshost/train.js": "d962566093d0f8d340d2c18217e647fd5d46a972155e5d549d107886d5498726",
+    "tools/ai/jshost/worth.js": "22220cb09ce0a100a300ac48c0821efd7dbe0ba2fb02df841e381294de89ca7b",
+    "tools/ai/snapshot.py": "81e153eec57ed402852a7f6055feb7c6da14fdf0f90310c3de24ab0fc1daf890",
+    "tools/ai/ws2js.py": "9a841a616ad1111421ee41eac794523dfc5a999d517f8fab56c66aa89d5aacef"
+  },
+  "policySourceAudit": {
+    "candidateFingerprint": "48f57bb620aae0c0e117a73803995a7edb71e737402749cda48da9ac81d4a219",
+    "baselineFingerprint": "d9c95ce98f644dc07eed05b16258a6dc5ff1f5488c0c5920497cdb17f23c1c1e",
+    "changedInputs": [
+      "BetaGwent/development/scripts/game/betagwent/duelSession.ws"
+    ],
+    "changedPolicyMethods": [
+      "CBetaGwentDuelSession.AiPreparationStep",
+      "CBetaGwentDuelSession.AiSpyConcessionWindow",
+      "CBetaGwentDuelSession.AiCounterRisk",
+      "CBetaGwentDuelSession.AiLeaderSequencePlanning",
+      "CBetaGwentDuelSession.AiCriticalShortReply",
+      "CBetaGwentDuelSession.OpponentStep",
+      "CBetaGwentAISpy188.Step"
+    ],
+    "classDeclarationsUnchanged": true,
+    "cardMechanicsUnchanged": true
+  },
+  "qualitativeWitness": {
+    "result": {
+      "candidateFingerprint": "48f57bb620aae0c0e117a73803995a7edb71e737402749cda48da9ac81d4a219",
+      "baselineFingerprint": "d9c95ce98f644dc07eed05b16258a6dc5ff1f5488c0c5920497cdb17f23c1c1e",
+      "kind": "real-development-witness-not-strength-trial",
+      "records": [
+        {
+          "policy": "baseline",
+          "selected": "AI_REASON schema=1 decision=27 event=SELECT action=card card=37 template=200048 gain=10 reason=best_evaluation_or_reachable_chase evaluationWinner=90 chase=false",
+          "after": {
+            "score": [
+              32,
+              21
+            ],
+            "hand": [
+              3,
+              3
+            ]
+          },
+          "result": {
+            "winner": 1,
+            "score": [
+              38,
+              37
+            ]
+          }
+        },
+        {
+          "policy": "candidate",
+          "selected": "AI_REASON schema=1 decision=27 event=SELECT action=card card=47 template=113310 gain=10 reason=best_evaluation_or_reachable_chase evaluationWinner=-40 chase=false",
+          "after": {
+            "score": [
+              32,
+              21
+            ],
+            "hand": [
+              3,
+              3
+            ]
+          },
+          "result": {
+            "winner": 2,
+            "score": [
+              46,
+              50
+            ]
+          }
+        }
+      ]
+    },
+    "reportSha256": "ab5030cd1aca265fe39999aab134b006e609cdb00600cf065d1df574f5c1f9e7",
+    "toolSha256": "29af67365916b8fb0a2c7f43d62fe31316505f79a8053c18a5bbf5966b3da5cf",
+    "fixtureSha256": "a3642b24a4251a2543c87fba3cfe6c7d23dfb097b869e494c63f532a2e9df571"
+  },
+  "limits": "Finite paired stand comparison against0.9.3b on92 compositions. No claim of globally strongest AI or retail gameplay acceptance.",
+  "nativeGameplayVerified": false,
+  "installed": false,
+  "published": false
+}

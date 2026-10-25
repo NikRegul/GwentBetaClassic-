@@ -16035,7 +16035,7 @@ struct SBetaGwentDuelPreset
     var id, leaderTemplateId, unitCount, specialCount, goldCount, silverCount : int;
     var title, description : string;
 }
-function BetaGwentDuelPresetCount() : int { return 99; }
+function BetaGwentDuelPresetCount() : int { return 129; }
 
 function BetaGwentDuelPreset(id : int) : SBetaGwentDuelPreset
 {
@@ -16048,7 +16048,9 @@ function BetaGwentDuelPreset(id : int) : SBetaGwentDuelPreset
     if(id >= 61 && id <= 72)return BetaGwentDuelPresetDetails5(id);
     if(id >= 73 && id <= 84)return BetaGwentDuelPresetDetails6(id);
     if(id >= 85 && id <= 96)return BetaGwentDuelPresetDetails7(id);
-    if(id >= 97 && id <= 99)return BetaGwentDuelPresetDetails8(id);
+    if(id >= 97 && id <= 108)return BetaGwentDuelPresetDetails8(id);
+    if(id >= 109 && id <= 120)return BetaGwentDuelPresetDetails9(id);
+    if(id >= 121 && id <= 129)return BetaGwentDuelPresetDetails10(id);
     return value;
 }
 
@@ -16187,25 +16189,25 @@ function BetaGwentDuelPresetDetails1(id : int) : SBetaGwentDuelPreset
         break;
     case 21:
         value.id = 21; value.leaderTemplateId = 200168;
-        value.title = "Синие Полоски Роше"; value.description = "Фиксированная колода Вернона Роше. Синие Полоски, разведчики и темерские отряды.";
-        value.unitCount = 25; value.specialCount = 0;
+        value.title = "Синие Полоски Роше"; value.description = "Вернон Роше: Фольтест, Темерия, Синие Полоски и темерские отряды.";
+        value.unitCount = 23; value.specialCount = 2;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 22:
-        value.id = 22; value.leaderTemplateId = 200168;
-        value.title = "Кровавый Барон"; value.description = "Команда, броня и машины. Фольтест, Роше, Кейра и Зельткирк.";
-        value.unitCount = 25; value.specialCount = 0;
-        value.goldCount = 4; value.silverCount = 5;
+        value.id = 22; value.leaderTemplateId = 200170;
+        value.title = "Кровавый Барон"; value.description = "Кровавый Барон: северные осадные машины, солдаты и сам Барон.";
+        value.unitCount = 20; value.specialCount = 5;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 23:
         value.id = 23; value.leaderTemplateId = 200168;
-        value.title = "Сигизмунд Дийкстра"; value.description = "Команда, броня и машины. Фольтест, Роше, Кейра и Зельткирк.";
-        value.unitCount = 25; value.specialCount = 0;
-        value.goldCount = 4; value.silverCount = 5;
+        value.title = "Сигизмунд Дийкстра"; value.description = "Дийкстра: подготовка северной колоды, разведка Талера и собственная карта Дийкстры.";
+        value.unitCount = 23; value.specialCount = 2;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 24:
         value.id = 24; value.leaderTemplateId = 200167;
-        value.title = "Золтан Хивай"; value.description = "Стартовая сборка по строгой Beta0.9.24; точный исторический состав не утверждается.";
+        value.title = "Золтан Хивай"; value.description = "Золтан: махакамские краснолюды, Ксавьер, Хаттори и Золтан.";
         value.unitCount = 24; value.specialCount = 1;
         value.goldCount = 4; value.silverCount = 6;
         break;
@@ -16219,75 +16221,75 @@ function BetaGwentDuelPresetDetails2(id : int) : SBetaGwentDuelPreset
     var value : SBetaGwentDuelPreset;
     switch(id) {
     case 25:
-        value.id = 25; value.leaderTemplateId = 200168;
-        value.title = "Ламберт"; value.description = "Команда, броня и машины. Фольтест, Роше, Кейра и Зельткирк.";
-        value.unitCount = 25; value.specialCount = 0;
-        value.goldCount = 4; value.silverCount = 5;
+        value.id = 25; value.leaderTemplateId = 200164;
+        value.title = "Ламберт"; value.description = "Ламберт: ведьмачья алхимия, Весемир и ведьмаки Школы Змеи; нейтральный Ламберт.";
+        value.unitCount = 11; value.specialCount = 14;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 26:
-        value.id = 26; value.leaderTemplateId = 200162;
-        value.title = "Талер"; value.description = "Шпионы, бойцы Импера и последовательный розыгрыш из колоды.";
-        value.unitCount = 25; value.specialCount = 0;
+        value.id = 26; value.leaderTemplateId = 200168;
+        value.title = "Талер"; value.description = "Талер: темерская разведка, Роше, Дийкстра и шпион Талер.";
+        value.unitCount = 23; value.specialCount = 2;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 27:
         value.id = 27; value.leaderTemplateId = 200167;
-        value.title = "Вимме Вивальди"; value.description = "Стартовая сборка по строгой Beta0.9.24; точный исторический состав не утверждается.";
-        value.unitCount = 24; value.specialCount = 1;
+        value.title = "Вимме Вивальди"; value.description = "Вимме Вивальди: краснолюдский костяк Брувера, Ксавьер и Золтан.";
+        value.unitCount = 23; value.specialCount = 2;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 28:
-        value.id = 28; value.leaderTemplateId = 200165;
-        value.title = "Торговец скоя’таэлей"; value.description = "Стартовая сборка по строгой Beta0.9.24; точный исторический состав не утверждается.";
-        value.unitCount = 24; value.specialCount = 1;
+        value.id = 28; value.leaderTemplateId = 200166;
+        value.title = "Торговец скоя’таэлей"; value.description = "Торговец скоя’таэлей: эльфы и краснолюды, Иорвет, Саэсентессис и Аглайиса.";
+        value.unitCount = 19; value.specialCount = 6;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 29:
-        value.id = 29; value.leaderTemplateId = 200162;
-        value.title = "Степан"; value.description = "Шпионы, бойцы Импера и последовательный розыгрыш из колоды.";
-        value.unitCount = 25; value.specialCount = 0;
+        value.id = 29; value.leaderTemplateId = 200168;
+        value.title = "Степан"; value.description = "Степан: северные рыцари и магическая поддержка, Трисс и Кейра.";
+        value.unitCount = 17; value.specialCount = 8;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 30:
-        value.id = 30; value.leaderTemplateId = 200055;
-        value.title = "Корчмарь на распутье"; value.description = "Поглощение, Завещания и погода. Разные связки и ответы на действия соперника.";
+        value.id = 30; value.leaderTemplateId = 200158;
+        value.title = "Корчмарь на распутье"; value.description = "Корчмарь на распутье: веленские утопцы, туман и контроль погоды.";
         value.unitCount = 19; value.specialCount = 6;
-        value.goldCount = 3; value.silverCount = 2;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 31:
-        value.id = 31; value.leaderTemplateId = 200162;
-        value.title = "Оливер"; value.description = "Шпионы, бойцы Импера и последовательный розыгрыш из колоды.";
-        value.unitCount = 25; value.specialCount = 0;
+        value.id = 31; value.leaderTemplateId = 201580;
+        value.title = "Оливер"; value.description = "Оливер: имперский контроль, Бонарт, Вильгефорц и Аваллак’х.";
+        value.unitCount = 22; value.specialCount = 3;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 32:
-        value.id = 32; value.leaderTemplateId = 200055;
-        value.title = "Лодочник из Рудника"; value.description = "Поглощение, Завещания и погода. Разные связки и ответы на действия соперника.";
-        value.unitCount = 19; value.specialCount = 6;
-        value.goldCount = 3; value.silverCount = 2;
+        value.id = 32; value.leaderTemplateId = 131101;
+        value.title = "Лодочник из Рудника"; value.description = "Лодочник: веленские чудовища и Дикая Охота с Имлерихом.";
+        value.unitCount = 21; value.specialCount = 4;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 33:
-        value.id = 33; value.leaderTemplateId = 131101;
-        value.title = "Хадко"; value.description = "Состав пользователя для строгой Beta 0.9.24: Драккары, Мороз через Гончих, Всадники и контроль. Отдельный профиль ИИ.";
-        value.unitCount = 22; value.specialCount = 3;
+        value.id = 33; value.leaderTemplateId = 201587;
+        value.title = "Хадко"; value.description = "Хадко: крупные чудовища, ледяные тролли и Ге’эльс.";
+        value.unitCount = 21; value.specialCount = 4;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 34:
         value.id = 34; value.leaderTemplateId = 200158;
-        value.title = "Старый мудрец"; value.description = "Гончие выводят Мороз, Всадники усиливают его урон. Воины наносят урон и получают бонус под Морозом.";
-        value.unitCount = 16; value.specialCount = 9;
-        value.goldCount = 2; value.silverCount = 3;
+        value.title = "Старый мудрец"; value.description = "Старый мудрец: Леший, туман, утопцы и лесные чудовища.";
+        value.unitCount = 19; value.specialCount = 6;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 35:
         value.id = 35; value.leaderTemplateId = 200165;
-        value.title = "Сьюста"; value.description = "Стартовая сборка по строгой Beta0.9.24; точный исторический состав не утверждается.";
-        value.unitCount = 24; value.specialCount = 1;
+        value.title = "Сьюста"; value.description = "Сьюста: эльфийская колода Францески, усиление руки и Саэсентессис.";
+        value.unitCount = 21; value.specialCount = 4;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 36:
         value.id = 36; value.leaderTemplateId = 201597;
-        value.title = "Гремист"; value.description = "Стартовая сборка по строгой Beta 0.9.24; точный исторический состав не утверждается.";
-        value.unitCount = 24; value.specialCount = 1;
+        value.title = "Гремист"; value.description = "Гремист: островные друиды, воскрешение, Коралл и Гремист.";
+        value.unitCount = 20; value.specialCount = 5;
         value.goldCount = 4; value.silverCount = 6;
         break;
         default: break;
@@ -16301,74 +16303,74 @@ function BetaGwentDuelPresetDetails3(id : int) : SBetaGwentDuelPreset
     switch(id) {
     case 37:
         value.id = 37; value.leaderTemplateId = 200160;
-        value.title = "Крах ан Крайт"; value.description = "Стартовая сборка по строгой Beta 0.9.24; точный исторический состав не утверждается.";
-        value.unitCount = 25; value.specialCount = 0;
+        value.title = "Крах ан Крайт"; value.description = "Крах ан Крайт: собственный лидер, Хьялмар, мечники и ранения.";
+        value.unitCount = 24; value.specialCount = 1;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 38:
         value.id = 38; value.leaderTemplateId = 200159;
-        value.title = "Лугос Безумный"; value.description = "Стартовая сборка по строгой Beta 0.9.24; точный исторический состав не утверждается.";
-        value.unitCount = 25; value.specialCount = 0;
+        value.title = "Лугос Безумный"; value.description = "Лугос Безумный: островные воины, сброс и собственная карта Лугоса.";
+        value.unitCount = 24; value.specialCount = 1;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 39:
-        value.id = 39; value.leaderTemplateId = 201597;
-        value.title = "Мышовур"; value.description = "Стартовая сборка по строгой Beta 0.9.24; точный исторический состав не утверждается.";
-        value.unitCount = 24; value.specialCount = 1;
+        value.id = 39; value.leaderTemplateId = 200159;
+        value.title = "Мышовур"; value.description = "Мышовур: островные друиды, Керис, королевская гвардия и Мышовур.";
+        value.unitCount = 23; value.specialCount = 2;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 40:
-        value.id = 40; value.leaderTemplateId = 200165;
-        value.title = "Маркиза Серенити"; value.description = "Стартовая сборка по строгой Beta0.9.24; точный исторический состав не утверждается.";
-        value.unitCount = 24; value.specialCount = 1;
+        value.id = 40; value.leaderTemplateId = 200166;
+        value.title = "Маркиза Серенити"; value.description = "Маркиза Серенити: эльфы Эитнэ, усиление руки и Мильва.";
+        value.unitCount = 18; value.specialCount = 7;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 41:
         value.id = 41; value.leaderTemplateId = 200168;
-        value.title = "Шани"; value.description = "Команда, броня и машины. Фольтест, Роше, Кейра и Зельткирк.";
-        value.unitCount = 25; value.specialCount = 0;
-        value.goldCount = 4; value.silverCount = 5;
+        value.title = "Шани"; value.description = "Шани: северные солдаты под бронёй, поддержка и воскрешение Шани.";
+        value.unitCount = 18; value.specialCount = 7;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 42:
-        value.id = 42; value.leaderTemplateId = 200055;
-        value.title = "Ольгерд фон Эверек"; value.description = "Поглощение, Завещания и погода. Разные связки и ответы на действия соперника.";
-        value.unitCount = 19; value.specialCount = 6;
-        value.goldCount = 3; value.silverCount = 2;
+        value.id = 42; value.leaderTemplateId = 201595;
+        value.title = "Ольгерд фон Эверек"; value.description = "Ольгерд: проклятые, бессмертие, собственная карта и Гюнтер о’Дим.";
+        value.unitCount = 21; value.specialCount = 4;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 43:
-        value.id = 43; value.leaderTemplateId = 200055;
-        value.title = "Борец за права животных"; value.description = "Поглощение, Завещания и погода. Разные связки и ответы на действия соперника.";
-        value.unitCount = 19; value.specialCount = 6;
-        value.goldCount = 3; value.silverCount = 2;
+        value.id = 43; value.leaderTemplateId = 201587;
+        value.title = "Борец за права животных"; value.description = "Борец за права животных: крупные чудовища, огры и Виллентретенмерт.";
+        value.unitCount = 20; value.specialCount = 5;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 44:
-        value.id = 44; value.leaderTemplateId = 200055;
-        value.title = "Низушки на свадьбе"; value.description = "Поглощение, Завещания и погода. Разные связки и ответы на действия соперника.";
-        value.unitCount = 19; value.specialCount = 6;
-        value.goldCount = 3; value.silverCount = 2;
+        value.id = 44; value.leaderTemplateId = 201743;
+        value.title = "Низушки на свадьбе"; value.description = "Низушки на свадьбе: рой, поглощение и Кейран; состав с полными связками.";
+        value.unitCount = 23; value.specialCount = 2;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 45:
-        value.id = 45; value.leaderTemplateId = 200165;
-        value.title = "Торговец бродячего цирка"; value.description = "Стартовая сборка по строгой Beta0.9.24; точный исторический состав не утверждается.";
-        value.unitCount = 24; value.specialCount = 1;
+        value.id = 45; value.leaderTemplateId = 200167;
+        value.title = "Торговец бродячего цирка"; value.description = "Торговец цирка: разнообразный состав Брувера, Шуп и Саския.";
+        value.unitCount = 20; value.specialCount = 5;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 46:
         value.id = 46; value.leaderTemplateId = 200168;
-        value.title = "Бернард Тулле"; value.description = "Команда, броня и машины. Фольтест, Роше, Кейра и Зельткирк.";
-        value.unitCount = 25; value.specialCount = 0;
-        value.goldCount = 4; value.silverCount = 5;
+        value.title = "Бернард Тулле"; value.description = "Бернард Тулле: северные солдаты, рыцари и Зельткирк.";
+        value.unitCount = 23; value.specialCount = 2;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 47:
-        value.id = 47; value.leaderTemplateId = 200162;
-        value.title = "Саша"; value.description = "Шпионы, бойцы Импера и последовательный розыгрыш из колоды.";
+        value.id = 47; value.leaderTemplateId = 200164;
+        value.title = "Саша"; value.description = "Саша: нильфгаардские шпионы, Кагыр, Раинфарн и дипломатия.";
         value.unitCount = 25; value.specialCount = 0;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 48:
         value.id = 48; value.leaderTemplateId = 200166;
-        value.title = "Финнеас"; value.description = "Стартовая сборка по строгой Beta0.9.24; точный исторический состав не утверждается.";
-        value.unitCount = 18; value.specialCount = 7;
+        value.title = "Финнеас"; value.description = "Финнеас: засады, Изенгрим и Ширру.";
+        value.unitCount = 22; value.specialCount = 3;
         value.goldCount = 4; value.silverCount = 6;
         break;
         default: break;
@@ -16382,32 +16384,32 @@ function BetaGwentDuelPresetDetails4(id : int) : SBetaGwentDuelPreset
     switch(id) {
     case 49:
         value.id = 49; value.leaderTemplateId = 131101;
-        value.title = "Граф Тибальт"; value.description = "Состав пользователя для строгой Beta 0.9.24: Драккары, Мороз через Гончих, Всадники и контроль. Отдельный профиль ИИ.";
-        value.unitCount = 22; value.specialCount = 3;
+        value.title = "Граф Тибальт"; value.description = "Граф Тибальт: Дикая Охота, мороз, Карантир и Драуг.";
+        value.unitCount = 21; value.specialCount = 4;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 50:
-        value.id = 50; value.leaderTemplateId = 131101;
-        value.title = "Первый соперник турнира в Туссенте"; value.description = "Состав пользователя для строгой Beta 0.9.24: Драккары, Мороз через Гончих, Всадники и контроль. Отдельный профиль ИИ.";
-        value.unitCount = 22; value.specialCount = 3;
+        value.id = 50; value.leaderTemplateId = 201587;
+        value.title = "Первый соперник турнира в Туссенте"; value.description = "Первый соперник Туссента: Завещания, превращения и Драуг.";
+        value.unitCount = 24; value.specialCount = 1;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 51:
-        value.id = 51; value.leaderTemplateId = 200162;
-        value.title = "Второй соперник турнира в Туссенте"; value.description = "Шпионы, бойцы Импера и последовательный розыгрыш из колоды.";
-        value.unitCount = 25; value.specialCount = 0;
+        value.id = 51; value.leaderTemplateId = 200163;
+        value.title = "Второй соперник турнира в Туссенте"; value.description = "Второй соперник Туссента: вскрытие Морврана, Ваттье и мангонели.";
+        value.unitCount = 22; value.specialCount = 3;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 52:
-        value.id = 52; value.leaderTemplateId = 200160;
-        value.title = "Финалист турнира в Туссенте"; value.description = "Стартовая сборка по строгой Beta 0.9.24; точный исторический состав не утверждается.";
-        value.unitCount = 25; value.specialCount = 0;
+        value.id = 52; value.leaderTemplateId = 200159;
+        value.title = "Финалист турнира в Туссенте"; value.description = "Финалист Туссента: проклятые корабли, воскрешение и завершающий Камби.";
+        value.unitCount = 24; value.specialCount = 1;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 53:
-        value.id = 53; value.leaderTemplateId = 200166;
-        value.title = "Главарь пуристов после турнира в Туссенте"; value.description = "Стартовая сборка по строгой Beta0.9.24; точный исторический состав не утверждается.";
-        value.unitCount = 18; value.specialCount = 7;
+        value.id = 53; value.leaderTemplateId = 201589;
+        value.title = "Главарь пуристов после турнира в Туссенте"; value.description = "Главарь пуристов: эльфы Филавандреля, заклинания и Аглайиса.";
+        value.unitCount = 23; value.specialCount = 2;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 54:
@@ -16425,7 +16427,7 @@ function BetaGwentDuelPresetDetails4(id : int) : SBetaGwentDuelPreset
     case 56:
         value.id = 56; value.leaderTemplateId = 201743;
         value.title = "ИИ · Рой главоглазов"; value.description = "Исследованный состав Beta 0.9.24; swarm";
-        value.unitCount = 17; value.specialCount = 8;
+        value.unitCount = 23; value.specialCount = 2;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 57:
@@ -16437,7 +16439,7 @@ function BetaGwentDuelPresetDetails4(id : int) : SBetaGwentDuelPreset
     case 58:
         value.id = 58; value.leaderTemplateId = 201595;
         value.title = "ИИ · Проклятие Адды"; value.description = "Исследованный состав Beta 0.9.24; cursed";
-        value.unitCount = 20; value.specialCount = 5;
+        value.unitCount = 21; value.specialCount = 4;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 59:
@@ -16551,7 +16553,7 @@ function BetaGwentDuelPresetDetails6(id : int) : SBetaGwentDuelPreset
     case 74:
         value.id = 74; value.leaderTemplateId = 201587;
         value.title = "ИИ · Завещания"; value.description = "Исследованный состав Beta 0.9.24; deathwish";
-        value.unitCount = 23; value.specialCount = 2;
+        value.unitCount = 24; value.specialCount = 1;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 75:
@@ -16638,8 +16640,8 @@ function BetaGwentDuelPresetDetails7(id : int) : SBetaGwentDuelPreset
     case 87:
         value.id = 87; value.leaderTemplateId = 200164;
         value.title = "ИИ · Невольничья пехота"; value.description = "Исследованный состав Beta 0.9.24; soldiers";
-        value.unitCount = 21; value.specialCount = 4;
-        value.goldCount = 3; value.silverCount = 6;
+        value.unitCount = 22; value.specialCount = 3;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 88:
         value.id = 88; value.leaderTemplateId = 200162;
@@ -16650,13 +16652,13 @@ function BetaGwentDuelPresetDetails7(id : int) : SBetaGwentDuelPreset
     case 89:
         value.id = 89; value.leaderTemplateId = 200159;
         value.title = "ИИ · Проклятые корабли"; value.description = "Исследованный состав Beta 0.9.24; greatswords";
-        value.unitCount = 23; value.specialCount = 2;
-        value.goldCount = 3; value.silverCount = 6;
+        value.unitCount = 24; value.specialCount = 1;
+        value.goldCount = 4; value.silverCount = 6;
         break;
     case 90:
         value.id = 90; value.leaderTemplateId = 200167;
         value.title = "ИИ · Усиление руки Брувера"; value.description = "Исследованный состав Beta 0.9.24; handbuff";
-        value.unitCount = 19; value.specialCount = 6;
+        value.unitCount = 23; value.specialCount = 2;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 91:
@@ -16673,25 +16675,25 @@ function BetaGwentDuelPresetDetails7(id : int) : SBetaGwentDuelPreset
         break;
     case 93:
         value.id = 93; value.leaderTemplateId = 200166;
-        value.title = "ИИ · Дриады"; value.description = "Исследованный состав Beta 0.9.24; dryads";
-        value.unitCount = 21; value.specialCount = 4;
+        value.title = "ИИ · Дриады: Цири нова"; value.description = "Засады и заклятия Эитнэ, по 2 копии бронзы под Цири: нова (22)";
+        value.unitCount = 22; value.specialCount = 4;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 94:
         value.id = 94; value.leaderTemplateId = 200168;
-        value.title = "ИИ · Аретуза: магический контроль Фольтеста"; value.description = "Исследованный состав Beta 0.9.24; machines";
+        value.title = "ИИ · Аретуза: рыцари и заклинания"; value.description = "Исследованный состав Beta 0.9.24; machines";
         value.unitCount = 17; value.specialCount = 8;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 95:
         value.id = 95; value.leaderTemplateId = 201580;
         value.title = "ИИ · Узурпатор: имперский контроль"; value.description = "Исследованный состав Beta 0.9.24; soldiers";
-        value.unitCount = 21; value.specialCount = 4;
+        value.unitCount = 22; value.specialCount = 3;
         value.goldCount = 4; value.silverCount = 6;
         break;
     case 96:
-        value.id = 96; value.leaderTemplateId = 200159;
-        value.title = "ИИ · Бран: раны и мечники"; value.description = "Исследованный состав Beta 0.9.24; greatswords";
+        value.id = 96; value.leaderTemplateId = 200160;
+        value.title = "ИИ · Крах: раны и мечники"; value.description = "Исследованный состав Beta 0.9.24; greatswords";
         value.unitCount = 24; value.specialCount = 1;
         value.goldCount = 4; value.silverCount = 6;
         break;
@@ -16721,6 +16723,204 @@ function BetaGwentDuelPresetDetails8(id : int) : SBetaGwentDuelPreset
         value.title = "ИИ · Фольтест: усиление колоды"; value.description = "Исследованный состав Beta 0.9.24; temerians";
         value.unitCount = 23; value.specialCount = 2;
         value.goldCount = 4; value.silverCount = 6;
+        break;
+    case 100:
+        value.id = 100; value.leaderTemplateId = 200164;
+        value.title = "ch_fac_monsters_1"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_monsters_1.";
+        value.unitCount = 25; value.specialCount = 0;
+        value.goldCount = 2; value.silverCount = 3;
+        break;
+    case 101:
+        value.id = 101; value.leaderTemplateId = 201743;
+        value.title = "ch_fac_monsters_2_player"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_monsters_2_player.";
+        value.unitCount = 19; value.specialCount = 6;
+        value.goldCount = 4; value.silverCount = 6;
+        break;
+    case 102:
+        value.id = 102; value.leaderTemplateId = 200168;
+        value.title = "ch_fac_monsters_3"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_monsters_3.";
+        value.unitCount = 19; value.specialCount = 6;
+        value.goldCount = 2; value.silverCount = 3;
+        break;
+    case 103:
+        value.id = 103; value.leaderTemplateId = 201743;
+        value.title = "ch_fac_monsters_3_player"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_monsters_3_player.";
+        value.unitCount = 19; value.specialCount = 6;
+        value.goldCount = 4; value.silverCount = 4;
+        break;
+    case 104:
+        value.id = 104; value.leaderTemplateId = 200165;
+        value.title = "ch_fac_monsters_4"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_monsters_4.";
+        value.unitCount = 25; value.specialCount = 0;
+        value.goldCount = 2; value.silverCount = 3;
+        break;
+    case 105:
+        value.id = 105; value.leaderTemplateId = 131101;
+        value.title = "ch_fac_monsters_4_player"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_monsters_4_player.";
+        value.unitCount = 16; value.specialCount = 9;
+        value.goldCount = 3; value.silverCount = 4;
+        break;
+    case 106:
+        value.id = 106; value.leaderTemplateId = 131101;
+        value.title = "ch_fac_monsters_5_player"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_monsters_5_player.";
+        value.unitCount = 16; value.specialCount = 9;
+        value.goldCount = 3; value.silverCount = 6;
+        break;
+    case 107:
+        value.id = 107; value.leaderTemplateId = 131101;
+        value.title = "ch_fac_monsters_6_player"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_monsters_6_player.";
+        value.unitCount = 18; value.specialCount = 7;
+        value.goldCount = 3; value.silverCount = 6;
+        break;
+    case 108:
+        value.id = 108; value.leaderTemplateId = 200169;
+        value.title = "ch_fac_nilfgaard_1"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_nilfgaard_1.";
+        value.unitCount = 19; value.specialCount = 6;
+        value.goldCount = 1; value.silverCount = 3;
+        break;
+        default: break;
+    }
+    return value;
+}
+
+function BetaGwentDuelPresetDetails9(id : int) : SBetaGwentDuelPreset
+{
+    var value : SBetaGwentDuelPreset;
+    switch(id) {
+    case 109:
+        value.id = 109; value.leaderTemplateId = 200162;
+        value.title = "ch_fac_nilfgaard_1_player"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_nilfgaard_1_player.";
+        value.unitCount = 20; value.specialCount = 5;
+        value.goldCount = 4; value.silverCount = 4;
+        break;
+    case 110:
+        value.id = 110; value.leaderTemplateId = 200162;
+        value.title = "ch_fac_nilfgaard_2_player"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_nilfgaard_2_player.";
+        value.unitCount = 23; value.specialCount = 2;
+        value.goldCount = 3; value.silverCount = 3;
+        break;
+    case 111:
+        value.id = 111; value.leaderTemplateId = 200162;
+        value.title = "ch_fac_nilfgaard_3_player"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_nilfgaard_3_player.";
+        value.unitCount = 23; value.specialCount = 2;
+        value.goldCount = 4; value.silverCount = 5;
+        break;
+    case 112:
+        value.id = 112; value.leaderTemplateId = 200161;
+        value.title = "ch_fac_northern_1"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_northern_1.";
+        value.unitCount = 22; value.specialCount = 3;
+        value.goldCount = 2; value.silverCount = 3;
+        break;
+    case 113:
+        value.id = 113; value.leaderTemplateId = 200164;
+        value.title = "ch_fac_northern_4"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_northern_4.";
+        value.unitCount = 25; value.specialCount = 0;
+        value.goldCount = 2; value.silverCount = 3;
+        break;
+    case 114:
+        value.id = 114; value.leaderTemplateId = 200169;
+        value.title = "ch_fac_northern_6"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_northern_6.";
+        value.unitCount = 22; value.specialCount = 3;
+        value.goldCount = 2; value.silverCount = 3;
+        break;
+    case 115:
+        value.id = 115; value.leaderTemplateId = 200166;
+        value.title = "ch_fac_scoia_1_player"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_scoia_1_player.";
+        value.unitCount = 18; value.specialCount = 8;
+        value.goldCount = 4; value.silverCount = 6;
+        break;
+    case 116:
+        value.id = 116; value.leaderTemplateId = 131101;
+        value.title = "ch_fac_scoia_2"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_scoia_2.";
+        value.unitCount = 17; value.specialCount = 8;
+        value.goldCount = 2; value.silverCount = 3;
+        break;
+    case 117:
+        value.id = 117; value.leaderTemplateId = 200166;
+        value.title = "ch_fac_scoia_2_player"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_scoia_2_player.";
+        value.unitCount = 16; value.specialCount = 11;
+        value.goldCount = 4; value.silverCount = 6;
+        break;
+    case 118:
+        value.id = 118; value.leaderTemplateId = 200165;
+        value.title = "ch_fac_scoia_4_player"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_scoia_4_player.";
+        value.unitCount = 12; value.specialCount = 13;
+        value.goldCount = 3; value.silverCount = 3;
+        break;
+    case 119:
+        value.id = 119; value.leaderTemplateId = 200163;
+        value.title = "ch_fac_scoia_5"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_scoia_5.";
+        value.unitCount = 20; value.specialCount = 5;
+        value.goldCount = 2; value.silverCount = 3;
+        break;
+    case 120:
+        value.id = 120; value.leaderTemplateId = 200165;
+        value.title = "ch_fac_scoia_5_player"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_scoia_5_player.";
+        value.unitCount = 14; value.specialCount = 11;
+        value.goldCount = 4; value.silverCount = 1;
+        break;
+        default: break;
+    }
+    return value;
+}
+
+function BetaGwentDuelPresetDetails10(id : int) : SBetaGwentDuelPreset
+{
+    var value : SBetaGwentDuelPreset;
+    switch(id) {
+    case 121:
+        value.id = 121; value.leaderTemplateId = 200165;
+        value.title = "ch_fac_scoia_6_player"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_scoia_6_player.";
+        value.unitCount = 15; value.specialCount = 10;
+        value.goldCount = 3; value.silverCount = 2;
+        break;
+    case 122:
+        value.id = 122; value.leaderTemplateId = 200161;
+        value.title = "ch_fac_skellige_1_player"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_skellige_1_player.";
+        value.unitCount = 21; value.specialCount = 4;
+        value.goldCount = 4; value.silverCount = 6;
+        break;
+    case 123:
+        value.id = 123; value.leaderTemplateId = 200166;
+        value.title = "ch_fac_skellige_2"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: ch_fac_skellige_2.";
+        value.unitCount = 14; value.specialCount = 11;
+        value.goldCount = 2; value.silverCount = 3;
+        break;
+    case 124:
+        value.id = 124; value.leaderTemplateId = 200158;
+        value.title = "d_Monsters_Practice_Easy"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: d_Monsters_Practice_Easy.";
+        value.unitCount = 21; value.specialCount = 4;
+        value.goldCount = 3; value.silverCount = 6;
+        break;
+    case 125:
+        value.id = 125; value.leaderTemplateId = 200164;
+        value.title = "d_Nilfgaard_Practice"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: d_Nilfgaard_Practice.";
+        value.unitCount = 20; value.specialCount = 5;
+        value.goldCount = 4; value.silverCount = 6;
+        break;
+    case 126:
+        value.id = 126; value.leaderTemplateId = 200163;
+        value.title = "d_Nilfgaard_Practice_Conceal"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: d_Nilfgaard_Practice_Conceal.";
+        value.unitCount = 23; value.specialCount = 2;
+        value.goldCount = 4; value.silverCount = 6;
+        break;
+    case 127:
+        value.id = 127; value.leaderTemplateId = 201595;
+        value.title = "d_NorthernRealms_Practice"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: d_NorthernRealms_Practice.";
+        value.unitCount = 23; value.specialCount = 2;
+        value.goldCount = 4; value.silverCount = 6;
+        break;
+    case 128:
+        value.id = 128; value.leaderTemplateId = 200167;
+        value.title = "d_Scoia'tael_Practice_Easy"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: d_Scoia'tael_Practice_Easy.";
+        value.unitCount = 12; value.specialCount = 13;
+        value.goldCount = 4; value.silverCount = 5;
+        break;
+    case 129:
+        value.id = 129; value.leaderTemplateId = 200161;
+        value.title = "d_Skellige_Practice_Easy"; value.description = "Подлинный состав Beta 0.9.24.3.432. Исходное имя: d_Skellige_Practice_Easy.";
+        value.unitCount = 19; value.specialCount = 6;
+        value.goldCount = 3; value.silverCount = 5;
         break;
         default: break;
     }
@@ -16829,6 +17029,36 @@ function BetaGwentDuelPresetDeck(id : int, out ids : array<int>) : bool
     if(id == 97) { BetaGwentDuelPresetCards97(ids); return true; }
     if(id == 98) { BetaGwentDuelPresetCards98(ids); return true; }
     if(id == 99) { BetaGwentDuelPresetCards99(ids); return true; }
+    if(id == 100) { BetaGwentDuelPresetCards100(ids); return true; }
+    if(id == 101) { BetaGwentDuelPresetCards101(ids); return true; }
+    if(id == 102) { BetaGwentDuelPresetCards102(ids); return true; }
+    if(id == 103) { BetaGwentDuelPresetCards103(ids); return true; }
+    if(id == 104) { BetaGwentDuelPresetCards104(ids); return true; }
+    if(id == 105) { BetaGwentDuelPresetCards105(ids); return true; }
+    if(id == 106) { BetaGwentDuelPresetCards106(ids); return true; }
+    if(id == 107) { BetaGwentDuelPresetCards107(ids); return true; }
+    if(id == 108) { BetaGwentDuelPresetCards108(ids); return true; }
+    if(id == 109) { BetaGwentDuelPresetCards109(ids); return true; }
+    if(id == 110) { BetaGwentDuelPresetCards110(ids); return true; }
+    if(id == 111) { BetaGwentDuelPresetCards111(ids); return true; }
+    if(id == 112) { BetaGwentDuelPresetCards112(ids); return true; }
+    if(id == 113) { BetaGwentDuelPresetCards113(ids); return true; }
+    if(id == 114) { BetaGwentDuelPresetCards114(ids); return true; }
+    if(id == 115) { BetaGwentDuelPresetCards115(ids); return true; }
+    if(id == 116) { BetaGwentDuelPresetCards116(ids); return true; }
+    if(id == 117) { BetaGwentDuelPresetCards117(ids); return true; }
+    if(id == 118) { BetaGwentDuelPresetCards118(ids); return true; }
+    if(id == 119) { BetaGwentDuelPresetCards119(ids); return true; }
+    if(id == 120) { BetaGwentDuelPresetCards120(ids); return true; }
+    if(id == 121) { BetaGwentDuelPresetCards121(ids); return true; }
+    if(id == 122) { BetaGwentDuelPresetCards122(ids); return true; }
+    if(id == 123) { BetaGwentDuelPresetCards123(ids); return true; }
+    if(id == 124) { BetaGwentDuelPresetCards124(ids); return true; }
+    if(id == 125) { BetaGwentDuelPresetCards125(ids); return true; }
+    if(id == 126) { BetaGwentDuelPresetCards126(ids); return true; }
+    if(id == 127) { BetaGwentDuelPresetCards127(ids); return true; }
+    if(id == 128) { BetaGwentDuelPresetCards128(ids); return true; }
+    if(id == 129) { BetaGwentDuelPresetCards129(ids); return true; }
     return false;
 }
 
@@ -17414,959 +17644,959 @@ function BetaGwentDuelPresetCards20(out ids : array<int>)
 
 function BetaGwentDuelPresetCards21(out ids : array<int>)
 {
+    ids.PushBack(201618);
+    ids.PushBack(122108);
+    ids.PushBack(122105);
     ids.PushBack(122102);
-    ids.PushBack(201777);
-    ids.PushBack(122103);
-    ids.PushBack(112106);
     ids.PushBack(122211);
-    ids.PushBack(122212);
+    ids.PushBack(122207);
+    ids.PushBack(113208);
     ids.PushBack(122208);
-    ids.PushBack(122209);
-    ids.PushBack(201748);
-    ids.PushBack(112201);
-    ids.PushBack(122301);
-    ids.PushBack(122301);
-    ids.PushBack(122301);
-    ids.PushBack(122308);
-    ids.PushBack(122308);
-    ids.PushBack(122308);
+    ids.PushBack(123201);
+    ids.PushBack(200019);
+    ids.PushBack(201622);
+    ids.PushBack(201622);
+    ids.PushBack(123301);
+    ids.PushBack(123301);
+    ids.PushBack(123301);
     ids.PushBack(122310);
     ids.PushBack(122310);
     ids.PushBack(122310);
+    ids.PushBack(122316);
+    ids.PushBack(122316);
+    ids.PushBack(122316);
     ids.PushBack(122311);
     ids.PushBack(122311);
     ids.PushBack(122311);
-    ids.PushBack(122307);
-    ids.PushBack(122307);
     ids.PushBack(122307);
 }
 
 function BetaGwentDuelPresetCards22(out ids : array<int>)
 {
-    ids.PushBack(122201);
-    ids.PushBack(122108);
-    ids.PushBack(201618);
-    ids.PushBack(122212);
-    ids.PushBack(122211);
-    ids.PushBack(122208);
-    ids.PushBack(122209);
-    ids.PushBack(201748);
-    ids.PushBack(122302);
-    ids.PushBack(122302);
-    ids.PushBack(122302);
-    ids.PushBack(122303);
-    ids.PushBack(122303);
-    ids.PushBack(122303);
-    ids.PushBack(122309);
-    ids.PushBack(122309);
-    ids.PushBack(122309);
-    ids.PushBack(122314);
-    ids.PushBack(122314);
-    ids.PushBack(122314);
-    ids.PushBack(123301);
-    ids.PushBack(123301);
-    ids.PushBack(122307);
     ids.PushBack(122101);
-    ids.PushBack(201628);
+    ids.PushBack(201618);
+    ids.PushBack(122103);
+    ids.PushBack(122106);
+    ids.PushBack(122203);
+    ids.PushBack(200529);
+    ids.PushBack(201748);
+    ids.PushBack(123201);
+    ids.PushBack(200019);
+    ids.PushBack(113309);
+    ids.PushBack(122214);
+    ids.PushBack(122302);
+    ids.PushBack(122302);
+    ids.PushBack(200049);
+    ids.PushBack(200049);
+    ids.PushBack(200049);
+    ids.PushBack(122318);
+    ids.PushBack(122318);
+    ids.PushBack(122318);
+    ids.PushBack(122301);
+    ids.PushBack(122301);
+    ids.PushBack(122301);
+    ids.PushBack(122307);
+    ids.PushBack(201704);
+    ids.PushBack(201659);
 }
 
 function BetaGwentDuelPresetCards23(out ids : array<int>)
 {
     ids.PushBack(122201);
+    ids.PushBack(122102);
     ids.PushBack(122108);
-    ids.PushBack(201618);
-    ids.PushBack(122212);
-    ids.PushBack(122211);
-    ids.PushBack(122208);
-    ids.PushBack(122209);
-    ids.PushBack(201748);
-    ids.PushBack(122302);
-    ids.PushBack(122302);
-    ids.PushBack(122302);
-    ids.PushBack(122303);
-    ids.PushBack(122303);
-    ids.PushBack(122303);
-    ids.PushBack(122309);
-    ids.PushBack(122309);
-    ids.PushBack(122309);
-    ids.PushBack(122314);
-    ids.PushBack(122314);
-    ids.PushBack(122314);
-    ids.PushBack(123301);
-    ids.PushBack(123301);
-    ids.PushBack(122307);
     ids.PushBack(122105);
-    ids.PushBack(201628);
+    ids.PushBack(122212);
+    ids.PushBack(122208);
+    ids.PushBack(122211);
+    ids.PushBack(123201);
+    ids.PushBack(200019);
+    ids.PushBack(122203);
+    ids.PushBack(122310);
+    ids.PushBack(122310);
+    ids.PushBack(122310);
+    ids.PushBack(122311);
+    ids.PushBack(122311);
+    ids.PushBack(122311);
+    ids.PushBack(122316);
+    ids.PushBack(122316);
+    ids.PushBack(122316);
+    ids.PushBack(123301);
+    ids.PushBack(123301);
+    ids.PushBack(123301);
+    ids.PushBack(201622);
+    ids.PushBack(201622);
+    ids.PushBack(201622);
 }
 
 function BetaGwentDuelPresetCards24(out ids : array<int>)
 {
-    ids.PushBack(142105);
     ids.PushBack(200080);
-    ids.PushBack(142104);
-    ids.PushBack(142101);
+    ids.PushBack(200532);
+    ids.PushBack(142105);
+    ids.PushBack(112109);
     ids.PushBack(142201);
-    ids.PushBack(142207);
     ids.PushBack(142213);
-    ids.PushBack(142212);
-    ids.PushBack(201653);
-    ids.PushBack(142203);
-    ids.PushBack(142306);
-    ids.PushBack(142306);
-    ids.PushBack(142306);
+    ids.PushBack(201696);
+    ids.PushBack(200520);
+    ids.PushBack(142207);
+    ids.PushBack(113201);
+    ids.PushBack(142311);
+    ids.PushBack(142311);
+    ids.PushBack(142311);
+    ids.PushBack(142317);
+    ids.PushBack(142317);
+    ids.PushBack(142317);
+    ids.PushBack(142305);
+    ids.PushBack(142305);
+    ids.PushBack(142305);
+    ids.PushBack(201559);
+    ids.PushBack(201559);
+    ids.PushBack(201559);
     ids.PushBack(200293);
     ids.PushBack(200293);
-    ids.PushBack(142305);
-    ids.PushBack(142305);
-    ids.PushBack(142305);
-    ids.PushBack(200135);
-    ids.PushBack(200135);
-    ids.PushBack(200135);
-    ids.PushBack(201559);
-    ids.PushBack(201559);
-    ids.PushBack(201559);
-    ids.PushBack(142308);
+    ids.PushBack(200293);
 }
 
 function BetaGwentDuelPresetCards25(out ids : array<int>)
 {
-    ids.PushBack(122201);
-    ids.PushBack(122108);
-    ids.PushBack(201618);
-    ids.PushBack(122212);
-    ids.PushBack(122211);
-    ids.PushBack(122208);
-    ids.PushBack(122209);
-    ids.PushBack(201748);
-    ids.PushBack(122302);
-    ids.PushBack(122302);
-    ids.PushBack(122302);
-    ids.PushBack(122303);
-    ids.PushBack(122303);
-    ids.PushBack(122303);
-    ids.PushBack(122309);
-    ids.PushBack(122309);
-    ids.PushBack(122309);
-    ids.PushBack(122314);
-    ids.PushBack(122314);
-    ids.PushBack(122314);
-    ids.PushBack(123301);
-    ids.PushBack(123301);
-    ids.PushBack(122307);
+    ids.PushBack(200237);
     ids.PushBack(200235);
-    ids.PushBack(201628);
+    ids.PushBack(201601);
+    ids.PushBack(200154);
+    ids.PushBack(162210);
+    ids.PushBack(162202);
+    ids.PushBack(201583);
+    ids.PushBack(113209);
+    ids.PushBack(200223);
+    ids.PushBack(113102);
+    ids.PushBack(200124);
+    ids.PushBack(200124);
+    ids.PushBack(200124);
+    ids.PushBack(122403);
+    ids.PushBack(122403);
+    ids.PushBack(122403);
+    ids.PushBack(201619);
+    ids.PushBack(201619);
+    ids.PushBack(201619);
+    ids.PushBack(200224);
+    ids.PushBack(200224);
+    ids.PushBack(200224);
+    ids.PushBack(113311);
+    ids.PushBack(113311);
+    ids.PushBack(113311);
 }
 
 function BetaGwentDuelPresetCards26(out ids : array<int>)
 {
-    ids.PushBack(162102);
-    ids.PushBack(200032);
-    ids.PushBack(201780);
-    ids.PushBack(162210);
-    ids.PushBack(162211);
-    ids.PushBack(162213);
-    ids.PushBack(162205);
-    ids.PushBack(162206);
-    ids.PushBack(162204);
-    ids.PushBack(162308);
-    ids.PushBack(162308);
-    ids.PushBack(162308);
-    ids.PushBack(162307);
-    ids.PushBack(162307);
-    ids.PushBack(162307);
-    ids.PushBack(162314);
-    ids.PushBack(162314);
-    ids.PushBack(162314);
-    ids.PushBack(162315);
-    ids.PushBack(162315);
-    ids.PushBack(162315);
-    ids.PushBack(201617);
-    ids.PushBack(201617);
+    ids.PushBack(201618);
     ids.PushBack(112103);
-    ids.PushBack(162304);
+    ids.PushBack(122105);
+    ids.PushBack(122102);
+    ids.PushBack(122203);
+    ids.PushBack(122207);
+    ids.PushBack(113208);
+    ids.PushBack(122208);
+    ids.PushBack(123201);
+    ids.PushBack(200019);
+    ids.PushBack(201622);
+    ids.PushBack(201622);
+    ids.PushBack(123301);
+    ids.PushBack(123301);
+    ids.PushBack(123301);
+    ids.PushBack(122310);
+    ids.PushBack(122310);
+    ids.PushBack(122310);
+    ids.PushBack(122316);
+    ids.PushBack(122316);
+    ids.PushBack(122316);
+    ids.PushBack(122311);
+    ids.PushBack(122311);
+    ids.PushBack(122311);
+    ids.PushBack(122307);
 }
 
 function BetaGwentDuelPresetCards27(out ids : array<int>)
 {
-    ids.PushBack(142105);
+    ids.PushBack(142103);
     ids.PushBack(200080);
-    ids.PushBack(142104);
     ids.PushBack(142101);
-    ids.PushBack(142201);
-    ids.PushBack(142207);
-    ids.PushBack(142213);
-    ids.PushBack(142212);
-    ids.PushBack(201653);
+    ids.PushBack(142105);
     ids.PushBack(142203);
-    ids.PushBack(142306);
-    ids.PushBack(142306);
-    ids.PushBack(142306);
-    ids.PushBack(200293);
-    ids.PushBack(200293);
+    ids.PushBack(142201);
+    ids.PushBack(142213);
+    ids.PushBack(142207);
+    ids.PushBack(201653);
+    ids.PushBack(113201);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
+    ids.PushBack(142401);
+    ids.PushBack(142401);
+    ids.PushBack(142311);
+    ids.PushBack(142311);
+    ids.PushBack(142311);
+    ids.PushBack(200042);
+    ids.PushBack(200042);
+    ids.PushBack(142317);
+    ids.PushBack(142317);
     ids.PushBack(142305);
     ids.PushBack(142305);
     ids.PushBack(142305);
-    ids.PushBack(200135);
-    ids.PushBack(200135);
-    ids.PushBack(200135);
-    ids.PushBack(201559);
-    ids.PushBack(201559);
-    ids.PushBack(201559);
-    ids.PushBack(200039);
 }
 
 function BetaGwentDuelPresetCards28(out ids : array<int>)
 {
-    ids.PushBack(200209);
-    ids.PushBack(142103);
-    ids.PushBack(201611);
     ids.PushBack(142101);
-    ids.PushBack(142214);
-    ids.PushBack(142211);
+    ids.PushBack(142106);
+    ids.PushBack(142103);
+    ids.PushBack(201615);
     ids.PushBack(142203);
-    ids.PushBack(142202);
-    ids.PushBack(201585);
-    ids.PushBack(142206);
-    ids.PushBack(142303);
-    ids.PushBack(142303);
-    ids.PushBack(142303);
-    ids.PushBack(142313);
-    ids.PushBack(142313);
-    ids.PushBack(142309);
-    ids.PushBack(142309);
-    ids.PushBack(142309);
+    ids.PushBack(142211);
+    ids.PushBack(200520);
+    ids.PushBack(142207);
+    ids.PushBack(113309);
+    ids.PushBack(113201);
+    ids.PushBack(142310);
+    ids.PushBack(142310);
+    ids.PushBack(142310);
     ids.PushBack(201636);
     ids.PushBack(201636);
     ids.PushBack(201636);
-    ids.PushBack(201638);
-    ids.PushBack(201638);
-    ids.PushBack(201638);
-    ids.PushBack(142316);
+    ids.PushBack(142305);
+    ids.PushBack(142305);
+    ids.PushBack(200293);
+    ids.PushBack(142308);
+    ids.PushBack(142308);
+    ids.PushBack(201704);
+    ids.PushBack(201704);
+    ids.PushBack(201704);
+    ids.PushBack(113319);
 }
 
 function BetaGwentDuelPresetCards29(out ids : array<int>)
 {
-    ids.PushBack(162102);
-    ids.PushBack(200032);
-    ids.PushBack(201780);
-    ids.PushBack(162210);
-    ids.PushBack(162211);
-    ids.PushBack(162213);
-    ids.PushBack(162205);
-    ids.PushBack(162206);
-    ids.PushBack(162204);
-    ids.PushBack(162308);
-    ids.PushBack(162308);
-    ids.PushBack(162308);
-    ids.PushBack(162307);
-    ids.PushBack(162307);
-    ids.PushBack(162307);
-    ids.PushBack(162314);
-    ids.PushBack(162314);
-    ids.PushBack(162314);
-    ids.PushBack(162315);
-    ids.PushBack(162315);
-    ids.PushBack(162315);
-    ids.PushBack(201617);
-    ids.PushBack(201617);
+    ids.PushBack(122108);
+    ids.PushBack(201773);
     ids.PushBack(112106);
-    ids.PushBack(162304);
+    ids.PushBack(201618);
+    ids.PushBack(122211);
+    ids.PushBack(122207);
+    ids.PushBack(113208);
+    ids.PushBack(122203);
+    ids.PushBack(200019);
+    ids.PushBack(201622);
+    ids.PushBack(201622);
+    ids.PushBack(201628);
+    ids.PushBack(201628);
+    ids.PushBack(201628);
+    ids.PushBack(113310);
+    ids.PushBack(113310);
+    ids.PushBack(113301);
+    ids.PushBack(113301);
+    ids.PushBack(122308);
+    ids.PushBack(113102);
+    ids.PushBack(200048);
+    ids.PushBack(200048);
+    ids.PushBack(201622);
+    ids.PushBack(113310);
+    ids.PushBack(113303);
 }
 
 function BetaGwentDuelPresetCards30(out ids : array<int>)
 {
-    ids.PushBack(132303);
-    ids.PushBack(132309);
-    ids.PushBack(112103);
-    ids.PushBack(112106);
-    ids.PushBack(200053);
-    ids.PushBack(132302);
-    ids.PushBack(200295);
-    ids.PushBack(132205);
-    ids.PushBack(132402);
-    ids.PushBack(132213);
-    ids.PushBack(113302);
-    ids.PushBack(132313);
-    ids.PushBack(132307);
-    ids.PushBack(132306);
-    ids.PushBack(113305);
-    ids.PushBack(132305);
-    ids.PushBack(132217);
-    ids.PushBack(132217);
-    ids.PushBack(132308);
-    ids.PushBack(113312);
-    ids.PushBack(113319);
-    ids.PushBack(132305);
-    ids.PushBack(113303);
     ids.PushBack(112108);
+    ids.PushBack(200220);
+    ids.PushBack(112102);
+    ids.PushBack(201773);
+    ids.PushBack(132203);
+    ids.PushBack(132210);
+    ids.PushBack(201657);
+    ids.PushBack(113209);
+    ids.PushBack(113203);
+    ids.PushBack(200218);
     ids.PushBack(132301);
+    ids.PushBack(132301);
+    ids.PushBack(132301);
+    ids.PushBack(132302);
+    ids.PushBack(132302);
+    ids.PushBack(132302);
+    ids.PushBack(132314);
+    ids.PushBack(132314);
+    ids.PushBack(132314);
+    ids.PushBack(132303);
+    ids.PushBack(132303);
+    ids.PushBack(132303);
+    ids.PushBack(113305);
+    ids.PushBack(113305);
+    ids.PushBack(113305);
 }
 
 function BetaGwentDuelPresetCards31(out ids : array<int>)
 {
-    ids.PushBack(162102);
-    ids.PushBack(200032);
-    ids.PushBack(201780);
-    ids.PushBack(162210);
-    ids.PushBack(162211);
-    ids.PushBack(162213);
-    ids.PushBack(162205);
-    ids.PushBack(162206);
-    ids.PushBack(162204);
-    ids.PushBack(162308);
-    ids.PushBack(162308);
-    ids.PushBack(162308);
-    ids.PushBack(162307);
-    ids.PushBack(162307);
-    ids.PushBack(162307);
-    ids.PushBack(162314);
-    ids.PushBack(162314);
-    ids.PushBack(162314);
-    ids.PushBack(162315);
-    ids.PushBack(162315);
-    ids.PushBack(162315);
-    ids.PushBack(201617);
-    ids.PushBack(201617);
     ids.PushBack(112112);
-    ids.PushBack(162304);
+    ids.PushBack(200031);
+    ids.PushBack(162105);
+    ids.PushBack(201773);
+    ids.PushBack(200050);
+    ids.PushBack(162209);
+    ids.PushBack(162204);
+    ids.PushBack(113309);
+    ids.PushBack(162206);
+    ids.PushBack(162401);
+    ids.PushBack(162308);
+    ids.PushBack(162308);
+    ids.PushBack(162308);
+    ids.PushBack(162314);
+    ids.PushBack(162314);
+    ids.PushBack(201661);
+    ids.PushBack(201661);
+    ids.PushBack(201661);
+    ids.PushBack(201617);
+    ids.PushBack(201617);
+    ids.PushBack(113301);
+    ids.PushBack(113301);
+    ids.PushBack(200296);
+    ids.PushBack(200296);
+    ids.PushBack(200296);
 }
 
 function BetaGwentDuelPresetCards32(out ids : array<int>)
 {
-    ids.PushBack(132303);
-    ids.PushBack(132309);
-    ids.PushBack(112103);
-    ids.PushBack(112106);
-    ids.PushBack(200053);
-    ids.PushBack(132302);
-    ids.PushBack(200295);
-    ids.PushBack(132205);
-    ids.PushBack(132402);
-    ids.PushBack(132213);
-    ids.PushBack(113302);
-    ids.PushBack(132313);
-    ids.PushBack(132307);
-    ids.PushBack(132306);
-    ids.PushBack(113305);
-    ids.PushBack(132305);
-    ids.PushBack(132217);
-    ids.PushBack(132217);
-    ids.PushBack(132308);
-    ids.PushBack(113312);
-    ids.PushBack(113319);
-    ids.PushBack(132305);
-    ids.PushBack(113303);
     ids.PushBack(132102);
-    ids.PushBack(132301);
+    ids.PushBack(132104);
+    ids.PushBack(131102);
+    ids.PushBack(201776);
+    ids.PushBack(132204);
+    ids.PushBack(200218);
+    ids.PushBack(132214);
+    ids.PushBack(132205);
+    ids.PushBack(112210);
+    ids.PushBack(113206);
+    ids.PushBack(113302);
+    ids.PushBack(113302);
+    ids.PushBack(113302);
+    ids.PushBack(132402);
+    ids.PushBack(132402);
+    ids.PushBack(132402);
+    ids.PushBack(132310);
+    ids.PushBack(132310);
+    ids.PushBack(132310);
+    ids.PushBack(132309);
+    ids.PushBack(132309);
+    ids.PushBack(132309);
+    ids.PushBack(200026);
+    ids.PushBack(200301);
+    ids.PushBack(200301);
 }
 
 function BetaGwentDuelPresetCards33(out ids : array<int>)
 {
-    ids.PushBack(113302);
-    ids.PushBack(113302);
-    ids.PushBack(113302);
-    ids.PushBack(132402);
-    ids.PushBack(132402);
-    ids.PushBack(132402);
-    ids.PushBack(200301);
-    ids.PushBack(200301);
-    ids.PushBack(200301);
-    ids.PushBack(132310);
-    ids.PushBack(132310);
-    ids.PushBack(132310);
-    ids.PushBack(132309);
-    ids.PushBack(132309);
-    ids.PushBack(132102);
+    ids.PushBack(132218);
     ids.PushBack(132104);
-    ids.PushBack(112102);
     ids.PushBack(131102);
+    ids.PushBack(132102);
     ids.PushBack(132204);
+    ids.PushBack(200052);
     ids.PushBack(200218);
     ids.PushBack(132205);
     ids.PushBack(201698);
-    ids.PushBack(112215);
-    ids.PushBack(132214);
-    ids.PushBack(132304);
+    ids.PushBack(113206);
+    ids.PushBack(132212);
+    ids.PushBack(132212);
+    ids.PushBack(200502);
+    ids.PushBack(200502);
+    ids.PushBack(200502);
+    ids.PushBack(132314);
+    ids.PushBack(132314);
+    ids.PushBack(132310);
+    ids.PushBack(132310);
+    ids.PushBack(132310);
+    ids.PushBack(113311);
+    ids.PushBack(132309);
+    ids.PushBack(113302);
+    ids.PushBack(113302);
+    ids.PushBack(132402);
 }
 
 function BetaGwentDuelPresetCards34(out ids : array<int>)
 {
-    ids.PushBack(112106);
-    ids.PushBack(132205);
-    ids.PushBack(200053);
-    ids.PushBack(132209);
-    ids.PushBack(132309);
-    ids.PushBack(132309);
-    ids.PushBack(132309);
-    ids.PushBack(132402);
-    ids.PushBack(132402);
-    ids.PushBack(113302);
-    ids.PushBack(113302);
-    ids.PushBack(113302);
-    ids.PushBack(132302);
-    ids.PushBack(132302);
-    ids.PushBack(132302);
-    ids.PushBack(113305);
-    ids.PushBack(113305);
-    ids.PushBack(132307);
-    ids.PushBack(132307);
-    ids.PushBack(132303);
-    ids.PushBack(113303);
-    ids.PushBack(113319);
-    ids.PushBack(113312);
     ids.PushBack(132103);
+    ids.PushBack(200220);
+    ids.PushBack(112102);
+    ids.PushBack(201773);
+    ids.PushBack(132203);
+    ids.PushBack(132210);
+    ids.PushBack(201657);
+    ids.PushBack(113209);
+    ids.PushBack(113203);
+    ids.PushBack(200218);
     ids.PushBack(132301);
+    ids.PushBack(132301);
+    ids.PushBack(132301);
+    ids.PushBack(132302);
+    ids.PushBack(132302);
+    ids.PushBack(132302);
+    ids.PushBack(132314);
+    ids.PushBack(132314);
+    ids.PushBack(132314);
+    ids.PushBack(132303);
+    ids.PushBack(132303);
+    ids.PushBack(132303);
+    ids.PushBack(113305);
+    ids.PushBack(113305);
+    ids.PushBack(113305);
 }
 
 function BetaGwentDuelPresetCards35(out ids : array<int>)
 {
-    ids.PushBack(200209);
-    ids.PushBack(142103);
-    ids.PushBack(201611);
+    ids.PushBack(142106);
     ids.PushBack(142101);
-    ids.PushBack(142214);
-    ids.PushBack(142211);
+    ids.PushBack(201776);
+    ids.PushBack(142107);
     ids.PushBack(142203);
-    ids.PushBack(142202);
-    ids.PushBack(201585);
     ids.PushBack(142206);
-    ids.PushBack(142303);
-    ids.PushBack(142303);
-    ids.PushBack(142303);
-    ids.PushBack(142313);
-    ids.PushBack(142313);
-    ids.PushBack(142309);
-    ids.PushBack(142309);
-    ids.PushBack(142309);
+    ids.PushBack(142211);
+    ids.PushBack(112210);
+    ids.PushBack(142202);
+    ids.PushBack(113201);
+    ids.PushBack(142401);
+    ids.PushBack(142401);
+    ids.PushBack(142401);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
     ids.PushBack(201636);
-    ids.PushBack(201636);
-    ids.PushBack(201636);
-    ids.PushBack(201638);
-    ids.PushBack(201638);
-    ids.PushBack(201638);
-    ids.PushBack(201559);
+    ids.PushBack(200535);
+    ids.PushBack(200535);
+    ids.PushBack(200535);
+    ids.PushBack(142308);
+    ids.PushBack(142308);
+    ids.PushBack(201704);
+    ids.PushBack(201704);
+    ids.PushBack(113301);
 }
 
 function BetaGwentDuelPresetCards36(out ids : array<int>)
 {
-    ids.PushBack(200177);
-    ids.PushBack(201778);
-    ids.PushBack(200028);
+    ids.PushBack(152105);
+    ids.PushBack(201773);
+    ids.PushBack(112105);
+    ids.PushBack(152101);
+    ids.PushBack(112210);
     ids.PushBack(152211);
-    ids.PushBack(152205);
-    ids.PushBack(152207);
+    ids.PushBack(113209);
+    ids.PushBack(113201);
     ids.PushBack(153201);
-    ids.PushBack(201644);
-    ids.PushBack(152209);
+    ids.PushBack(152206);
+    ids.PushBack(200046);
+    ids.PushBack(200046);
+    ids.PushBack(200046);
+    ids.PushBack(152304);
+    ids.PushBack(152304);
+    ids.PushBack(152304);
+    ids.PushBack(200528);
+    ids.PushBack(200528);
+    ids.PushBack(200144);
+    ids.PushBack(200144);
+    ids.PushBack(200144);
     ids.PushBack(152310);
     ids.PushBack(152310);
-    ids.PushBack(200145);
-    ids.PushBack(200145);
-    ids.PushBack(200145);
-    ids.PushBack(152318);
-    ids.PushBack(152318);
-    ids.PushBack(152318);
-    ids.PushBack(152317);
-    ids.PushBack(152317);
-    ids.PushBack(152317);
-    ids.PushBack(200528);
-    ids.PushBack(200528);
-    ids.PushBack(200528);
-    ids.PushBack(152107);
-    ids.PushBack(152306);
+    ids.PushBack(201704);
+    ids.PushBack(201704);
 }
 
 function BetaGwentDuelPresetCards37(out ids : array<int>)
 {
+    ids.PushBack(200102);
     ids.PushBack(152109);
-    ids.PushBack(152107);
-    ids.PushBack(200028);
     ids.PushBack(152101);
-    ids.PushBack(152203);
-    ids.PushBack(152202);
-    ids.PushBack(201646);
-    ids.PushBack(201644);
-    ids.PushBack(152207);
-    ids.PushBack(152204);
-    ids.PushBack(152301);
-    ids.PushBack(152301);
-    ids.PushBack(152301);
+    ids.PushBack(152107);
+    ids.PushBack(152214);
+    ids.PushBack(152209);
+    ids.PushBack(200212);
+    ids.PushBack(152211);
+    ids.PushBack(153201);
+    ids.PushBack(152206);
     ids.PushBack(200040);
     ids.PushBack(200040);
     ids.PushBack(200040);
     ids.PushBack(152309);
     ids.PushBack(152309);
+    ids.PushBack(152309);
+    ids.PushBack(152302);
+    ids.PushBack(152302);
+    ids.PushBack(152302);
+    ids.PushBack(200145);
+    ids.PushBack(200145);
+    ids.PushBack(200145);
     ids.PushBack(152311);
     ids.PushBack(152311);
     ids.PushBack(152311);
-    ids.PushBack(200105);
-    ids.PushBack(200105);
-    ids.PushBack(200105);
-    ids.PushBack(152314);
 }
 
 function BetaGwentDuelPresetCards38(out ids : array<int>)
 {
     ids.PushBack(152103);
     ids.PushBack(152106);
-    ids.PushBack(200103);
-    ids.PushBack(200104);
-    ids.PushBack(152213);
+    ids.PushBack(152107);
+    ids.PushBack(200226);
     ids.PushBack(152214);
+    ids.PushBack(112207);
     ids.PushBack(152209);
-    ids.PushBack(200043);
-    ids.PushBack(152205);
-    ids.PushBack(152208);
+    ids.PushBack(152207);
+    ids.PushBack(152206);
+    ids.PushBack(152211);
     ids.PushBack(152305);
     ids.PushBack(152305);
     ids.PushBack(152305);
+    ids.PushBack(200036);
+    ids.PushBack(200036);
+    ids.PushBack(200036);
+    ids.PushBack(152303);
+    ids.PushBack(152303);
+    ids.PushBack(152303);
     ids.PushBack(152316);
     ids.PushBack(152316);
+    ids.PushBack(152316);
     ids.PushBack(152314);
     ids.PushBack(152314);
     ids.PushBack(152314);
-    ids.PushBack(200036);
-    ids.PushBack(200036);
-    ids.PushBack(200036);
-    ids.PushBack(152303);
-    ids.PushBack(152303);
-    ids.PushBack(152303);
-    ids.PushBack(152307);
 }
 
 function BetaGwentDuelPresetCards39(out ids : array<int>)
 {
-    ids.PushBack(200177);
-    ids.PushBack(201778);
-    ids.PushBack(200028);
-    ids.PushBack(152211);
-    ids.PushBack(152205);
-    ids.PushBack(152207);
-    ids.PushBack(153201);
-    ids.PushBack(201644);
-    ids.PushBack(152209);
-    ids.PushBack(152310);
-    ids.PushBack(152310);
-    ids.PushBack(200145);
-    ids.PushBack(200145);
-    ids.PushBack(200145);
-    ids.PushBack(152318);
-    ids.PushBack(152318);
-    ids.PushBack(152318);
-    ids.PushBack(152317);
-    ids.PushBack(152317);
-    ids.PushBack(152317);
-    ids.PushBack(200528);
-    ids.PushBack(200528);
-    ids.PushBack(200528);
     ids.PushBack(152103);
-    ids.PushBack(152306);
+    ids.PushBack(200177);
+    ids.PushBack(152106);
+    ids.PushBack(152107);
+    ids.PushBack(152213);
+    ids.PushBack(152209);
+    ids.PushBack(152203);
+    ids.PushBack(152211);
+    ids.PushBack(113209);
+    ids.PushBack(113201);
+    ids.PushBack(200036);
+    ids.PushBack(200036);
+    ids.PushBack(200036);
+    ids.PushBack(152316);
+    ids.PushBack(152316);
+    ids.PushBack(152307);
+    ids.PushBack(152307);
+    ids.PushBack(152307);
+    ids.PushBack(152310);
+    ids.PushBack(152303);
+    ids.PushBack(152303);
+    ids.PushBack(152303);
+    ids.PushBack(152305);
+    ids.PushBack(152305);
+    ids.PushBack(152305);
 }
 
 function BetaGwentDuelPresetCards40(out ids : array<int>)
 {
     ids.PushBack(142103);
-    ids.PushBack(201611);
-    ids.PushBack(142101);
-    ids.PushBack(142214);
-    ids.PushBack(142211);
-    ids.PushBack(142203);
-    ids.PushBack(142202);
-    ids.PushBack(201585);
-    ids.PushBack(142206);
-    ids.PushBack(142303);
-    ids.PushBack(142303);
-    ids.PushBack(142303);
-    ids.PushBack(142313);
-    ids.PushBack(142313);
-    ids.PushBack(142309);
-    ids.PushBack(142309);
-    ids.PushBack(142309);
-    ids.PushBack(201636);
-    ids.PushBack(201636);
-    ids.PushBack(201636);
-    ids.PushBack(201638);
-    ids.PushBack(201638);
-    ids.PushBack(201638);
+    ids.PushBack(142106);
     ids.PushBack(142104);
-    ids.PushBack(142316);
+    ids.PushBack(200154);
+    ids.PushBack(142203);
+    ids.PushBack(142211);
+    ids.PushBack(142202);
+    ids.PushBack(113201);
+    ids.PushBack(200019);
+    ids.PushBack(200053);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
+    ids.PushBack(200136);
+    ids.PushBack(200136);
+    ids.PushBack(200136);
+    ids.PushBack(200535);
+    ids.PushBack(200535);
+    ids.PushBack(200535);
+    ids.PushBack(142308);
+    ids.PushBack(142308);
+    ids.PushBack(142308);
+    ids.PushBack(201704);
+    ids.PushBack(201704);
+    ids.PushBack(201704);
 }
 
 function BetaGwentDuelPresetCards41(out ids : array<int>)
 {
-    ids.PushBack(122201);
-    ids.PushBack(122108);
     ids.PushBack(201618);
-    ids.PushBack(122212);
+    ids.PushBack(122103);
+    ids.PushBack(122106);
+    ids.PushBack(122105);
+    ids.PushBack(122209);
     ids.PushBack(122211);
     ids.PushBack(122208);
-    ids.PushBack(122209);
-    ids.PushBack(201748);
-    ids.PushBack(122302);
-    ids.PushBack(122302);
-    ids.PushBack(122302);
-    ids.PushBack(122303);
-    ids.PushBack(122303);
-    ids.PushBack(122303);
-    ids.PushBack(122309);
-    ids.PushBack(122309);
-    ids.PushBack(122309);
-    ids.PushBack(122314);
+    ids.PushBack(200019);
+    ids.PushBack(123201);
+    ids.PushBack(113209);
+    ids.PushBack(201622);
+    ids.PushBack(201622);
     ids.PushBack(122314);
     ids.PushBack(122314);
     ids.PushBack(123301);
     ids.PushBack(123301);
-    ids.PushBack(122307);
-    ids.PushBack(122106);
+    ids.PushBack(123301);
     ids.PushBack(201628);
+    ids.PushBack(201628);
+    ids.PushBack(122307);
+    ids.PushBack(113311);
+    ids.PushBack(113311);
+    ids.PushBack(201704);
+    ids.PushBack(201704);
+    ids.PushBack(122302);
 }
 
 function BetaGwentDuelPresetCards42(out ids : array<int>)
 {
-    ids.PushBack(132303);
-    ids.PushBack(132309);
-    ids.PushBack(112103);
-    ids.PushBack(112106);
-    ids.PushBack(200053);
-    ids.PushBack(132302);
-    ids.PushBack(200295);
-    ids.PushBack(132205);
-    ids.PushBack(132402);
-    ids.PushBack(132213);
-    ids.PushBack(113302);
-    ids.PushBack(132313);
-    ids.PushBack(132307);
-    ids.PushBack(132306);
-    ids.PushBack(113305);
-    ids.PushBack(132305);
-    ids.PushBack(132217);
-    ids.PushBack(132217);
-    ids.PushBack(132308);
-    ids.PushBack(113312);
-    ids.PushBack(113319);
-    ids.PushBack(132305);
-    ids.PushBack(113303);
+    ids.PushBack(201618);
+    ids.PushBack(122103);
     ids.PushBack(132215);
-    ids.PushBack(132301);
+    ids.PushBack(122102);
+    ids.PushBack(112207);
+    ids.PushBack(122206);
+    ids.PushBack(122211);
+    ids.PushBack(122207);
+    ids.PushBack(200019);
+    ids.PushBack(201650);
+    ids.PushBack(201624);
+    ids.PushBack(201624);
+    ids.PushBack(201625);
+    ids.PushBack(201625);
+    ids.PushBack(201630);
+    ids.PushBack(201630);
+    ids.PushBack(201630);
+    ids.PushBack(201628);
+    ids.PushBack(201628);
+    ids.PushBack(201628);
+    ids.PushBack(122307);
+    ids.PushBack(201633);
+    ids.PushBack(201633);
+    ids.PushBack(201633);
+    ids.PushBack(201624);
 }
 
 function BetaGwentDuelPresetCards43(out ids : array<int>)
 {
-    ids.PushBack(132303);
-    ids.PushBack(132309);
-    ids.PushBack(112103);
-    ids.PushBack(112106);
-    ids.PushBack(200053);
-    ids.PushBack(132302);
-    ids.PushBack(200295);
-    ids.PushBack(132205);
-    ids.PushBack(132402);
-    ids.PushBack(132213);
-    ids.PushBack(113302);
-    ids.PushBack(132313);
-    ids.PushBack(132307);
-    ids.PushBack(132306);
-    ids.PushBack(113305);
-    ids.PushBack(132305);
-    ids.PushBack(132217);
-    ids.PushBack(132217);
-    ids.PushBack(132308);
-    ids.PushBack(113312);
-    ids.PushBack(113319);
-    ids.PushBack(132305);
-    ids.PushBack(113303);
+    ids.PushBack(132218);
+    ids.PushBack(200220);
+    ids.PushBack(200154);
     ids.PushBack(112107);
-    ids.PushBack(132301);
+    ids.PushBack(132216);
+    ids.PushBack(132205);
+    ids.PushBack(200223);
+    ids.PushBack(133302);
+    ids.PushBack(132212);
+    ids.PushBack(112405);
+    ids.PushBack(200037);
+    ids.PushBack(200037);
+    ids.PushBack(200037);
+    ids.PushBack(132211);
+    ids.PushBack(200502);
+    ids.PushBack(200502);
+    ids.PushBack(132306);
+    ids.PushBack(132306);
+    ids.PushBack(132305);
+    ids.PushBack(132305);
+    ids.PushBack(132305);
+    ids.PushBack(201704);
+    ids.PushBack(201704);
+    ids.PushBack(200218);
+    ids.PushBack(200052);
 }
 
 function BetaGwentDuelPresetCards44(out ids : array<int>)
 {
-    ids.PushBack(132303);
-    ids.PushBack(132309);
+    ids.PushBack(132108);
+    ids.PushBack(201776);
+    ids.PushBack(122107);
     ids.PushBack(132107);
-    ids.PushBack(112103);
-    ids.PushBack(112106);
-    ids.PushBack(200053);
-    ids.PushBack(132302);
-    ids.PushBack(200295);
-    ids.PushBack(132205);
-    ids.PushBack(132402);
-    ids.PushBack(132213);
-    ids.PushBack(113302);
-    ids.PushBack(132313);
-    ids.PushBack(132307);
-    ids.PushBack(132306);
-    ids.PushBack(113305);
+    ids.PushBack(112207);
+    ids.PushBack(113209);
+    ids.PushBack(132204);
+    ids.PushBack(133302);
+    ids.PushBack(200091);
+    ids.PushBack(132202);
     ids.PushBack(132305);
-    ids.PushBack(132217);
-    ids.PushBack(132217);
+    ids.PushBack(132305);
+    ids.PushBack(132305);
+    ids.PushBack(132201);
+    ids.PushBack(132201);
+    ids.PushBack(132201);
     ids.PushBack(132308);
-    ids.PushBack(113312);
-    ids.PushBack(113319);
-    ids.PushBack(132305);
-    ids.PushBack(113303);
-    ids.PushBack(132301);
+    ids.PushBack(132308);
+    ids.PushBack(132308);
+    ids.PushBack(132304);
+    ids.PushBack(132304);
+    ids.PushBack(132304);
+    ids.PushBack(200539);
+    ids.PushBack(200539);
+    ids.PushBack(200539);
 }
 
 function BetaGwentDuelPresetCards45(out ids : array<int>)
 {
     ids.PushBack(200209);
-    ids.PushBack(142103);
-    ids.PushBack(201611);
-    ids.PushBack(142101);
-    ids.PushBack(142214);
-    ids.PushBack(142211);
+    ids.PushBack(142102);
+    ids.PushBack(142108);
+    ids.PushBack(201627);
     ids.PushBack(142203);
+    ids.PushBack(142204);
     ids.PushBack(142202);
-    ids.PushBack(201585);
-    ids.PushBack(142206);
-    ids.PushBack(142303);
-    ids.PushBack(142303);
-    ids.PushBack(142303);
-    ids.PushBack(142313);
-    ids.PushBack(142313);
-    ids.PushBack(142309);
-    ids.PushBack(142309);
-    ids.PushBack(142309);
+    ids.PushBack(200520);
+    ids.PushBack(142207);
+    ids.PushBack(113309);
+    ids.PushBack(142307);
+    ids.PushBack(142401);
+    ids.PushBack(142302);
+    ids.PushBack(142311);
+    ids.PushBack(142310);
+    ids.PushBack(142305);
     ids.PushBack(201636);
-    ids.PushBack(201636);
-    ids.PushBack(201636);
-    ids.PushBack(201638);
-    ids.PushBack(201638);
-    ids.PushBack(201638);
     ids.PushBack(142317);
+    ids.PushBack(200139);
+    ids.PushBack(142304);
+    ids.PushBack(200138);
+    ids.PushBack(142308);
+    ids.PushBack(113301);
+    ids.PushBack(153301);
+    ids.PushBack(201704);
 }
 
 function BetaGwentDuelPresetCards46(out ids : array<int>)
 {
     ids.PushBack(122102);
-    ids.PushBack(122201);
-    ids.PushBack(122108);
     ids.PushBack(201618);
-    ids.PushBack(122212);
-    ids.PushBack(122211);
+    ids.PushBack(122108);
+    ids.PushBack(122105);
     ids.PushBack(122208);
+    ids.PushBack(122211);
+    ids.PushBack(122207);
+    ids.PushBack(123201);
+    ids.PushBack(200019);
+    ids.PushBack(201622);
+    ids.PushBack(201622);
+    ids.PushBack(201622);
+    ids.PushBack(122316);
+    ids.PushBack(122316);
+    ids.PushBack(122316);
+    ids.PushBack(122310);
+    ids.PushBack(122310);
+    ids.PushBack(122310);
+    ids.PushBack(122311);
+    ids.PushBack(122311);
+    ids.PushBack(122311);
+    ids.PushBack(123301);
+    ids.PushBack(123301);
+    ids.PushBack(123301);
     ids.PushBack(122209);
-    ids.PushBack(201748);
-    ids.PushBack(122302);
-    ids.PushBack(122302);
-    ids.PushBack(122302);
-    ids.PushBack(122303);
-    ids.PushBack(122303);
-    ids.PushBack(122303);
-    ids.PushBack(122309);
-    ids.PushBack(122309);
-    ids.PushBack(122309);
-    ids.PushBack(122314);
-    ids.PushBack(122314);
-    ids.PushBack(122314);
-    ids.PushBack(123301);
-    ids.PushBack(123301);
-    ids.PushBack(122307);
-    ids.PushBack(201628);
 }
 
 function BetaGwentDuelPresetCards47(out ids : array<int>)
 {
-    ids.PushBack(162102);
+    ids.PushBack(112105);
     ids.PushBack(200032);
-    ids.PushBack(201780);
+    ids.PushBack(162104);
+    ids.PushBack(112112);
     ids.PushBack(162210);
+    ids.PushBack(162202);
+    ids.PushBack(162212);
     ids.PushBack(162211);
     ids.PushBack(162213);
     ids.PushBack(162205);
-    ids.PushBack(162206);
-    ids.PushBack(162204);
-    ids.PushBack(162308);
-    ids.PushBack(162308);
-    ids.PushBack(162308);
+    ids.PushBack(162302);
     ids.PushBack(162307);
     ids.PushBack(162307);
     ids.PushBack(162307);
+    ids.PushBack(162308);
+    ids.PushBack(162308);
+    ids.PushBack(162308);
+    ids.PushBack(162315);
     ids.PushBack(162314);
     ids.PushBack(162314);
     ids.PushBack(162314);
-    ids.PushBack(162315);
-    ids.PushBack(162315);
-    ids.PushBack(162315);
-    ids.PushBack(201617);
-    ids.PushBack(201617);
-    ids.PushBack(162104);
+    ids.PushBack(200115);
+    ids.PushBack(162304);
+    ids.PushBack(162304);
     ids.PushBack(162304);
 }
 
 function BetaGwentDuelPresetCards48(out ids : array<int>)
 {
-    ids.PushBack(142107);
     ids.PushBack(142102);
-    ids.PushBack(201779);
-    ids.PushBack(201615);
-    ids.PushBack(142204);
-    ids.PushBack(142208);
-    ids.PushBack(142210);
-    ids.PushBack(142202);
+    ids.PushBack(112102);
+    ids.PushBack(142108);
+    ids.PushBack(200154);
     ids.PushBack(142203);
-    ids.PushBack(201653);
-    ids.PushBack(142316);
-    ids.PushBack(142316);
-    ids.PushBack(142316);
-    ids.PushBack(142308);
-    ids.PushBack(142308);
-    ids.PushBack(200138);
-    ids.PushBack(200138);
-    ids.PushBack(200138);
-    ids.PushBack(113301);
-    ids.PushBack(113301);
-    ids.PushBack(113301);
-    ids.PushBack(113305);
-    ids.PushBack(113305);
-    ids.PushBack(113305);
-    ids.PushBack(200293);
+    ids.PushBack(142211);
+    ids.PushBack(112210);
+    ids.PushBack(142202);
+    ids.PushBack(200223);
+    ids.PushBack(113201);
+    ids.PushBack(142307);
+    ids.PushBack(142307);
+    ids.PushBack(142307);
+    ids.PushBack(142302);
+    ids.PushBack(142302);
+    ids.PushBack(142302);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
+    ids.PushBack(142315);
+    ids.PushBack(142310);
+    ids.PushBack(142310);
+    ids.PushBack(142310);
+    ids.PushBack(201636);
+    ids.PushBack(201636);
 }
 
 function BetaGwentDuelPresetCards49(out ids : array<int>)
 {
-    ids.PushBack(113302);
-    ids.PushBack(113302);
-    ids.PushBack(113302);
-    ids.PushBack(132402);
-    ids.PushBack(132402);
-    ids.PushBack(132402);
-    ids.PushBack(200301);
-    ids.PushBack(200301);
-    ids.PushBack(200301);
-    ids.PushBack(132310);
-    ids.PushBack(132310);
-    ids.PushBack(132310);
-    ids.PushBack(132309);
-    ids.PushBack(132309);
     ids.PushBack(132102);
     ids.PushBack(132104);
-    ids.PushBack(112102);
-    ids.PushBack(131102);
+    ids.PushBack(132101);
+    ids.PushBack(201776);
     ids.PushBack(132204);
     ids.PushBack(200218);
-    ids.PushBack(132205);
-    ids.PushBack(201698);
-    ids.PushBack(112215);
     ids.PushBack(132214);
-    ids.PushBack(132301);
+    ids.PushBack(132205);
+    ids.PushBack(112210);
+    ids.PushBack(113206);
+    ids.PushBack(113302);
+    ids.PushBack(113302);
+    ids.PushBack(113302);
+    ids.PushBack(132402);
+    ids.PushBack(132402);
+    ids.PushBack(132402);
+    ids.PushBack(132310);
+    ids.PushBack(132310);
+    ids.PushBack(132310);
+    ids.PushBack(132309);
+    ids.PushBack(132309);
+    ids.PushBack(132309);
+    ids.PushBack(200026);
+    ids.PushBack(200301);
+    ids.PushBack(200301);
 }
 
 function BetaGwentDuelPresetCards50(out ids : array<int>)
 {
-    ids.PushBack(113302);
-    ids.PushBack(113302);
-    ids.PushBack(113302);
-    ids.PushBack(132402);
-    ids.PushBack(132402);
-    ids.PushBack(132402);
-    ids.PushBack(200301);
-    ids.PushBack(200301);
-    ids.PushBack(200301);
-    ids.PushBack(132310);
-    ids.PushBack(132310);
-    ids.PushBack(132310);
-    ids.PushBack(132309);
-    ids.PushBack(132309);
-    ids.PushBack(132104);
-    ids.PushBack(112102);
-    ids.PushBack(131102);
-    ids.PushBack(132204);
-    ids.PushBack(200218);
-    ids.PushBack(132205);
-    ids.PushBack(201698);
-    ids.PushBack(112215);
-    ids.PushBack(132214);
     ids.PushBack(132101);
-    ids.PushBack(132304);
+    ids.PushBack(200221);
+    ids.PushBack(200220);
+    ids.PushBack(112102);
+    ids.PushBack(200534);
+    ids.PushBack(132406);
+    ids.PushBack(201657);
+    ids.PushBack(132205);
+    ids.PushBack(132209);
+    ids.PushBack(201698);
+    ids.PushBack(200038);
+    ids.PushBack(200038);
+    ids.PushBack(200038);
+    ids.PushBack(132213);
+    ids.PushBack(132213);
+    ids.PushBack(132213);
+    ids.PushBack(200295);
+    ids.PushBack(200295);
+    ids.PushBack(132312);
+    ids.PushBack(132312);
+    ids.PushBack(200037);
+    ids.PushBack(200037);
+    ids.PushBack(201606);
+    ids.PushBack(201606);
+    ids.PushBack(201606);
 }
 
 function BetaGwentDuelPresetCards51(out ids : array<int>)
 {
-    ids.PushBack(162102);
-    ids.PushBack(200032);
-    ids.PushBack(201780);
-    ids.PushBack(162210);
-    ids.PushBack(162211);
-    ids.PushBack(162213);
-    ids.PushBack(162205);
-    ids.PushBack(162206);
-    ids.PushBack(162204);
-    ids.PushBack(162308);
-    ids.PushBack(162308);
-    ids.PushBack(162308);
-    ids.PushBack(162307);
-    ids.PushBack(162307);
-    ids.PushBack(162307);
-    ids.PushBack(162314);
-    ids.PushBack(162314);
-    ids.PushBack(162314);
-    ids.PushBack(162315);
-    ids.PushBack(162315);
-    ids.PushBack(162315);
-    ids.PushBack(201617);
-    ids.PushBack(201617);
     ids.PushBack(162103);
-    ids.PushBack(162304);
+    ids.PushBack(201601);
+    ids.PushBack(201776);
+    ids.PushBack(112112);
+    ids.PushBack(162210);
+    ids.PushBack(200227);
+    ids.PushBack(201664);
+    ids.PushBack(113309);
+    ids.PushBack(113102);
+    ids.PushBack(113209);
+    ids.PushBack(162316);
+    ids.PushBack(162316);
+    ids.PushBack(162316);
+    ids.PushBack(162317);
+    ids.PushBack(162317);
+    ids.PushBack(162317);
+    ids.PushBack(162306);
+    ids.PushBack(162306);
+    ids.PushBack(162306);
+    ids.PushBack(162301);
+    ids.PushBack(162301);
+    ids.PushBack(162301);
+    ids.PushBack(132407);
+    ids.PushBack(132407);
+    ids.PushBack(132407);
 }
 
 function BetaGwentDuelPresetCards52(out ids : array<int>)
 {
-    ids.PushBack(152107);
-    ids.PushBack(200028);
-    ids.PushBack(152101);
-    ids.PushBack(152203);
-    ids.PushBack(152202);
-    ids.PushBack(201646);
-    ids.PushBack(201644);
-    ids.PushBack(152207);
-    ids.PushBack(152204);
-    ids.PushBack(152301);
-    ids.PushBack(152301);
-    ids.PushBack(152301);
-    ids.PushBack(200040);
-    ids.PushBack(200040);
-    ids.PushBack(200040);
-    ids.PushBack(152309);
-    ids.PushBack(152309);
-    ids.PushBack(152311);
-    ids.PushBack(152311);
-    ids.PushBack(152311);
-    ids.PushBack(200105);
-    ids.PushBack(200105);
-    ids.PushBack(200105);
     ids.PushBack(152104);
-    ids.PushBack(152314);
+    ids.PushBack(200177);
+    ids.PushBack(200102);
+    ids.PushBack(152201);
+    ids.PushBack(152214);
+    ids.PushBack(152209);
+    ids.PushBack(200212);
+    ids.PushBack(152206);
+    ids.PushBack(152211);
+    ids.PushBack(152311);
+    ids.PushBack(152311);
+    ids.PushBack(152311);
+    ids.PushBack(152302);
+    ids.PushBack(152302);
+    ids.PushBack(152302);
+    ids.PushBack(152309);
+    ids.PushBack(152309);
+    ids.PushBack(152309);
+    ids.PushBack(152306);
+    ids.PushBack(152306);
+    ids.PushBack(200145);
+    ids.PushBack(200145);
+    ids.PushBack(200145);
+    ids.PushBack(201704);
+    ids.PushBack(152106);
 }
 
 function BetaGwentDuelPresetCards53(out ids : array<int>)
 {
-    ids.PushBack(142102);
-    ids.PushBack(201779);
-    ids.PushBack(201615);
+    ids.PushBack(142101);
+    ids.PushBack(142103);
+    ids.PushBack(142106);
+    ids.PushBack(201773);
+    ids.PushBack(142202);
+    ids.PushBack(142212);
     ids.PushBack(142204);
     ids.PushBack(142208);
-    ids.PushBack(142210);
-    ids.PushBack(142202);
-    ids.PushBack(142203);
-    ids.PushBack(201653);
-    ids.PushBack(142316);
-    ids.PushBack(142316);
-    ids.PushBack(142316);
-    ids.PushBack(142308);
-    ids.PushBack(142308);
-    ids.PushBack(200138);
-    ids.PushBack(200138);
-    ids.PushBack(200138);
-    ids.PushBack(113301);
-    ids.PushBack(113301);
-    ids.PushBack(113301);
-    ids.PushBack(113305);
-    ids.PushBack(113305);
-    ids.PushBack(113305);
-    ids.PushBack(142106);
-    ids.PushBack(200293);
+    ids.PushBack(143201);
+    ids.PushBack(113209);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
+    ids.PushBack(200535);
+    ids.PushBack(200535);
+    ids.PushBack(200535);
+    ids.PushBack(201636);
+    ids.PushBack(201636);
+    ids.PushBack(201636);
+    ids.PushBack(142312);
+    ids.PushBack(142312);
+    ids.PushBack(142312);
+    ids.PushBack(142310);
+    ids.PushBack(142310);
+    ids.PushBack(142310);
 }
 
 function BetaGwentDuelPresetCards54(out ids : array<int>)
@@ -18429,31 +18659,31 @@ function BetaGwentDuelPresetCards55(out ids : array<int>)
 
 function BetaGwentDuelPresetCards56(out ids : array<int>)
 {
-    ids.PushBack(112108);
-    ids.PushBack(201773);
-    ids.PushBack(200220);
-    ids.PushBack(200154);
-    ids.PushBack(201660);
-    ids.PushBack(112210);
-    ids.PushBack(113207);
-    ids.PushBack(133302);
+    ids.PushBack(132108);
+    ids.PushBack(201776);
+    ids.PushBack(122107);
+    ids.PushBack(132107);
+    ids.PushBack(112207);
     ids.PushBack(113209);
-    ids.PushBack(113201);
+    ids.PushBack(132204);
+    ids.PushBack(133302);
+    ids.PushBack(200091);
+    ids.PushBack(132202);
+    ids.PushBack(132305);
+    ids.PushBack(132305);
+    ids.PushBack(132305);
     ids.PushBack(132201);
     ids.PushBack(132201);
     ids.PushBack(132201);
-    ids.PushBack(201701);
-    ids.PushBack(132304);
-    ids.PushBack(132304);
-    ids.PushBack(132304);
-    ids.PushBack(200023);
-    ids.PushBack(200023);
-    ids.PushBack(200023);
-    ids.PushBack(201606);
-    ids.PushBack(201606);
-    ids.PushBack(201606);
     ids.PushBack(132308);
     ids.PushBack(132308);
+    ids.PushBack(132308);
+    ids.PushBack(132304);
+    ids.PushBack(132304);
+    ids.PushBack(132304);
+    ids.PushBack(200539);
+    ids.PushBack(200539);
+    ids.PushBack(200539);
 }
 
 function BetaGwentDuelPresetCards57(out ids : array<int>)
@@ -18496,10 +18726,9 @@ function BetaGwentDuelPresetCards58(out ids : array<int>)
     ids.PushBack(122211);
     ids.PushBack(122207);
     ids.PushBack(200019);
-    ids.PushBack(123201);
-    ids.PushBack(122314);
-    ids.PushBack(122314);
-    ids.PushBack(201625);
+    ids.PushBack(201650);
+    ids.PushBack(201624);
+    ids.PushBack(201624);
     ids.PushBack(201625);
     ids.PushBack(201625);
     ids.PushBack(201630);
@@ -18512,6 +18741,7 @@ function BetaGwentDuelPresetCards58(out ids : array<int>)
     ids.PushBack(201633);
     ids.PushBack(201633);
     ids.PushBack(201633);
+    ids.PushBack(201624);
 }
 
 function BetaGwentDuelPresetCards59(out ids : array<int>)
@@ -18952,30 +19182,30 @@ function BetaGwentDuelPresetCards73(out ids : array<int>)
 function BetaGwentDuelPresetCards74(out ids : array<int>)
 {
     ids.PushBack(132107);
-    ids.PushBack(112103);
-    ids.PushBack(112106);
-    ids.PushBack(200534);
-    ids.PushBack(132205);
-    ids.PushBack(200053);
-    ids.PushBack(132209);
-    ids.PushBack(132217);
-    ids.PushBack(132217);
-    ids.PushBack(132312);
-    ids.PushBack(132213);
-    ids.PushBack(132305);
-    ids.PushBack(132305);
-    ids.PushBack(132305);
-    ids.PushBack(132308);
-    ids.PushBack(132308);
-    ids.PushBack(132308);
-    ids.PushBack(132306);
-    ids.PushBack(132306);
-    ids.PushBack(132306);
-    ids.PushBack(200295);
-    ids.PushBack(113303);
     ids.PushBack(200221);
-    ids.PushBack(112210);
+    ids.PushBack(200220);
+    ids.PushBack(112102);
+    ids.PushBack(200534);
+    ids.PushBack(132406);
+    ids.PushBack(201657);
+    ids.PushBack(132205);
+    ids.PushBack(132209);
     ids.PushBack(201698);
+    ids.PushBack(200038);
+    ids.PushBack(200038);
+    ids.PushBack(200038);
+    ids.PushBack(132213);
+    ids.PushBack(132213);
+    ids.PushBack(132213);
+    ids.PushBack(200295);
+    ids.PushBack(200295);
+    ids.PushBack(132312);
+    ids.PushBack(132312);
+    ids.PushBack(200037);
+    ids.PushBack(200037);
+    ids.PushBack(201606);
+    ids.PushBack(201606);
+    ids.PushBack(201606);
 }
 
 function BetaGwentDuelPresetCards75(out ids : array<int>)
@@ -19367,7 +19597,7 @@ function BetaGwentDuelPresetCards87(out ids : array<int>)
     ids.PushBack(162304);
     ids.PushBack(201704);
     ids.PushBack(201704);
-    ids.PushBack(201704);
+    ids.PushBack(162107);
 }
 
 function BetaGwentDuelPresetCards88(out ids : array<int>)
@@ -19425,36 +19655,36 @@ function BetaGwentDuelPresetCards89(out ids : array<int>)
     ids.PushBack(200145);
     ids.PushBack(200145);
     ids.PushBack(201704);
-    ids.PushBack(201704);
+    ids.PushBack(152106);
 }
 
 function BetaGwentDuelPresetCards90(out ids : array<int>)
 {
-    ids.PushBack(142106);
     ids.PushBack(142103);
-    ids.PushBack(142107);
-    ids.PushBack(200154);
+    ids.PushBack(142106);
+    ids.PushBack(142101);
+    ids.PushBack(142105);
     ids.PushBack(142203);
-    ids.PushBack(142212);
-    ids.PushBack(142211);
-    ids.PushBack(112210);
+    ids.PushBack(142201);
+    ids.PushBack(142213);
     ids.PushBack(142207);
+    ids.PushBack(201653);
     ids.PushBack(113201);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
     ids.PushBack(142401);
     ids.PushBack(142401);
-    ids.PushBack(142205);
-    ids.PushBack(142205);
-    ids.PushBack(142205);
-    ids.PushBack(200535);
-    ids.PushBack(200535);
-    ids.PushBack(200535);
-    ids.PushBack(142308);
-    ids.PushBack(142308);
-    ids.PushBack(142308);
-    ids.PushBack(201704);
-    ids.PushBack(201704);
-    ids.PushBack(201704);
-    ids.PushBack(113301);
+    ids.PushBack(142311);
+    ids.PushBack(142311);
+    ids.PushBack(142311);
+    ids.PushBack(200042);
+    ids.PushBack(200042);
+    ids.PushBack(142317);
+    ids.PushBack(142317);
+    ids.PushBack(142305);
+    ids.PushBack(142305);
+    ids.PushBack(142305);
 }
 
 function BetaGwentDuelPresetCards91(out ids : array<int>)
@@ -19517,60 +19747,61 @@ function BetaGwentDuelPresetCards92(out ids : array<int>)
 
 function BetaGwentDuelPresetCards93(out ids : array<int>)
 {
+    ids.PushBack(201626);
     ids.PushBack(142102);
-    ids.PushBack(142106);
-    ids.PushBack(142107);
     ids.PushBack(201779);
+    ids.PushBack(142107);
     ids.PushBack(200523);
     ids.PushBack(200520);
     ids.PushBack(142209);
     ids.PushBack(142204);
     ids.PushBack(142208);
     ids.PushBack(142210);
+    ids.PushBack(142307);
+    ids.PushBack(142307);
+    ids.PushBack(142316);
+    ids.PushBack(142316);
+    ids.PushBack(142308);
+    ids.PushBack(142308);
     ids.PushBack(142301);
-    ids.PushBack(201753);
-    ids.PushBack(142303);
-    ids.PushBack(142316);
-    ids.PushBack(142316);
-    ids.PushBack(142316);
-    ids.PushBack(142308);
-    ids.PushBack(142308);
-    ids.PushBack(142308);
-    ids.PushBack(142317);
-    ids.PushBack(142317);
-    ids.PushBack(142317);
+    ids.PushBack(142301);
+    ids.PushBack(200139);
+    ids.PushBack(200139);
+    ids.PushBack(142310);
+    ids.PushBack(142310);
     ids.PushBack(113301);
     ids.PushBack(113301);
-    ids.PushBack(113301);
+    ids.PushBack(113310);
+    ids.PushBack(113310);
 }
 
 function BetaGwentDuelPresetCards94(out ids : array<int>)
 {
     ids.PushBack(122108);
     ids.PushBack(201773);
-    ids.PushBack(122103);
+    ids.PushBack(122104);
     ids.PushBack(201618);
     ids.PushBack(122211);
     ids.PushBack(122207);
     ids.PushBack(113208);
     ids.PushBack(122203);
     ids.PushBack(200019);
-    ids.PushBack(200033);
-    ids.PushBack(200033);
-    ids.PushBack(200033);
+    ids.PushBack(201622);
+    ids.PushBack(201622);
     ids.PushBack(201628);
     ids.PushBack(201628);
     ids.PushBack(201628);
-    ids.PushBack(113302);
-    ids.PushBack(113302);
-    ids.PushBack(113302);
+    ids.PushBack(113310);
+    ids.PushBack(113310);
     ids.PushBack(113301);
     ids.PushBack(113301);
-    ids.PushBack(113301);
-    ids.PushBack(122308);
-    ids.PushBack(122308);
     ids.PushBack(122308);
     ids.PushBack(113102);
+    ids.PushBack(200048);
+    ids.PushBack(200048);
+    ids.PushBack(201622);
+    ids.PushBack(113310);
+    ids.PushBack(113303);
 }
 
 function BetaGwentDuelPresetCards95(out ids : array<int>)
@@ -19584,11 +19815,10 @@ function BetaGwentDuelPresetCards95(out ids : array<int>)
     ids.PushBack(162204);
     ids.PushBack(113309);
     ids.PushBack(162206);
-    ids.PushBack(162202);
+    ids.PushBack(162401);
     ids.PushBack(162308);
     ids.PushBack(162308);
     ids.PushBack(162308);
-    ids.PushBack(162314);
     ids.PushBack(162314);
     ids.PushBack(162314);
     ids.PushBack(201661);
@@ -19596,17 +19826,18 @@ function BetaGwentDuelPresetCards95(out ids : array<int>)
     ids.PushBack(201661);
     ids.PushBack(201617);
     ids.PushBack(201617);
-    ids.PushBack(201617);
     ids.PushBack(113301);
     ids.PushBack(113301);
-    ids.PushBack(113301);
+    ids.PushBack(200296);
+    ids.PushBack(200296);
+    ids.PushBack(200296);
 }
 
 function BetaGwentDuelPresetCards96(out ids : array<int>)
 {
     ids.PushBack(200102);
-    ids.PushBack(201773);
-    ids.PushBack(200177);
+    ids.PushBack(152109);
+    ids.PushBack(201776);
     ids.PushBack(152107);
     ids.PushBack(152214);
     ids.PushBack(152209);
@@ -19718,6 +19949,952 @@ function BetaGwentDuelPresetCards99(out ids : array<int>)
     ids.PushBack(201622);
 }
 
+function BetaGwentDuelPresetCards100(out ids : array<int>)
+{
+    ids.PushBack(162311);
+    ids.PushBack(162311);
+    ids.PushBack(162313);
+    ids.PushBack(162305);
+    ids.PushBack(162307);
+    ids.PushBack(162307);
+    ids.PushBack(162314);
+    ids.PushBack(162314);
+    ids.PushBack(162301);
+    ids.PushBack(200032);
+    ids.PushBack(162313);
+    ids.PushBack(162305);
+    ids.PushBack(162314);
+    ids.PushBack(162305);
+    ids.PushBack(201617);
+    ids.PushBack(162307);
+    ids.PushBack(112110);
+    ids.PushBack(162201);
+    ids.PushBack(162313);
+    ids.PushBack(162203);
+    ids.PushBack(162210);
+    ids.PushBack(162311);
+    ids.PushBack(162318);
+    ids.PushBack(162318);
+    ids.PushBack(162318);
+}
+
+function BetaGwentDuelPresetCards101(out ids : array<int>)
+{
+    ids.PushBack(132201);
+    ids.PushBack(132306);
+    ids.PushBack(112405);
+    ids.PushBack(132302);
+    ids.PushBack(132302);
+    ids.PushBack(200008);
+    ids.PushBack(113208);
+    ids.PushBack(132103);
+    ids.PushBack(112106);
+    ids.PushBack(113305);
+    ids.PushBack(132302);
+    ids.PushBack(112103);
+    ids.PushBack(132210);
+    ids.PushBack(112405);
+    ids.PushBack(132303);
+    ids.PushBack(132304);
+    ids.PushBack(132304);
+    ids.PushBack(132304);
+    ids.PushBack(200154);
+    ids.PushBack(113207);
+    ids.PushBack(112201);
+    ids.PushBack(112210);
+    ids.PushBack(113306);
+    ids.PushBack(113303);
+    ids.PushBack(112405);
+}
+
+function BetaGwentDuelPresetCards102(out ids : array<int>)
+{
+    ids.PushBack(122310);
+    ids.PushBack(122311);
+    ids.PushBack(122311);
+    ids.PushBack(122316);
+    ids.PushBack(200540);
+    ids.PushBack(200299);
+    ids.PushBack(113207);
+    ids.PushBack(112210);
+    ids.PushBack(122204);
+    ids.PushBack(122102);
+    ids.PushBack(200540);
+    ids.PushBack(200299);
+    ids.PushBack(200299);
+    ids.PushBack(200540);
+    ids.PushBack(122311);
+    ids.PushBack(113301);
+    ids.PushBack(122316);
+    ids.PushBack(122316);
+    ids.PushBack(122310);
+    ids.PushBack(122310);
+    ids.PushBack(113301);
+    ids.PushBack(113301);
+    ids.PushBack(112106);
+    ids.PushBack(201704);
+    ids.PushBack(201704);
+}
+
+function BetaGwentDuelPresetCards103(out ids : array<int>)
+{
+    ids.PushBack(112405);
+    ids.PushBack(112405);
+    ids.PushBack(132201);
+    ids.PushBack(132305);
+    ids.PushBack(200008);
+    ids.PushBack(113306);
+    ids.PushBack(132210);
+    ids.PushBack(132306);
+    ids.PushBack(112103);
+    ids.PushBack(132103);
+    ids.PushBack(132302);
+    ids.PushBack(112405);
+    ids.PushBack(113305);
+    ids.PushBack(132304);
+    ids.PushBack(132302);
+    ids.PushBack(132304);
+    ids.PushBack(132304);
+    ids.PushBack(112106);
+    ids.PushBack(200154);
+    ids.PushBack(113207);
+    ids.PushBack(132305);
+    ids.PushBack(132305);
+    ids.PushBack(113208);
+    ids.PushBack(201704);
+    ids.PushBack(132302);
+}
+
+function BetaGwentDuelPresetCards104(out ids : array<int>)
+{
+    ids.PushBack(201559);
+    ids.PushBack(201559);
+    ids.PushBack(142305);
+    ids.PushBack(142305);
+    ids.PushBack(142306);
+    ids.PushBack(142306);
+    ids.PushBack(142317);
+    ids.PushBack(142317);
+    ids.PushBack(142401);
+    ids.PushBack(142102);
+    ids.PushBack(201636);
+    ids.PushBack(142313);
+    ids.PushBack(142305);
+    ids.PushBack(142317);
+    ids.PushBack(142313);
+    ids.PushBack(142401);
+    ids.PushBack(200080);
+    ids.PushBack(142204);
+    ids.PushBack(142214);
+    ids.PushBack(142203);
+    ids.PushBack(201559);
+    ids.PushBack(142313);
+    ids.PushBack(201636);
+    ids.PushBack(201636);
+    ids.PushBack(142306);
+}
+
+function BetaGwentDuelPresetCards105(out ids : array<int>)
+{
+    ids.PushBack(113302);
+    ids.PushBack(113302);
+    ids.PushBack(132304);
+    ids.PushBack(112405);
+    ids.PushBack(132310);
+    ids.PushBack(132310);
+    ids.PushBack(113207);
+    ids.PushBack(132210);
+    ids.PushBack(132303);
+    ids.PushBack(112106);
+    ids.PushBack(112405);
+    ids.PushBack(200301);
+    ids.PushBack(112103);
+    ids.PushBack(132303);
+    ids.PushBack(200008);
+    ids.PushBack(113306);
+    ids.PushBack(132304);
+    ids.PushBack(132304);
+    ids.PushBack(200154);
+    ids.PushBack(112210);
+    ids.PushBack(113302);
+    ids.PushBack(200008);
+    ids.PushBack(201704);
+    ids.PushBack(132302);
+    ids.PushBack(132302);
+}
+
+function BetaGwentDuelPresetCards106(out ids : array<int>)
+{
+    ids.PushBack(132304);
+    ids.PushBack(132402);
+    ids.PushBack(132402);
+    ids.PushBack(112405);
+    ids.PushBack(132310);
+    ids.PushBack(132210);
+    ids.PushBack(200301);
+    ids.PushBack(113208);
+    ids.PushBack(112201);
+    ids.PushBack(112103);
+    ids.PushBack(113207);
+    ids.PushBack(112405);
+    ids.PushBack(112106);
+    ids.PushBack(132304);
+    ids.PushBack(132304);
+    ids.PushBack(113302);
+    ids.PushBack(113302);
+    ids.PushBack(113302);
+    ids.PushBack(200154);
+    ids.PushBack(112210);
+    ids.PushBack(132209);
+    ids.PushBack(200008);
+    ids.PushBack(200008);
+    ids.PushBack(201704);
+    ids.PushBack(201704);
+}
+
+function BetaGwentDuelPresetCards107(out ids : array<int>)
+{
+    ids.PushBack(132309);
+    ids.PushBack(132304);
+    ids.PushBack(132309);
+    ids.PushBack(112405);
+    ids.PushBack(132402);
+    ids.PushBack(132402);
+    ids.PushBack(132210);
+    ids.PushBack(112201);
+    ids.PushBack(132310);
+    ids.PushBack(200301);
+    ids.PushBack(113208);
+    ids.PushBack(112103);
+    ids.PushBack(112106);
+    ids.PushBack(112405);
+    ids.PushBack(112405);
+    ids.PushBack(113303);
+    ids.PushBack(132304);
+    ids.PushBack(132304);
+    ids.PushBack(200154);
+    ids.PushBack(113207);
+    ids.PushBack(112210);
+    ids.PushBack(113306);
+    ids.PushBack(113302);
+    ids.PushBack(113302);
+    ids.PushBack(113302);
+}
+
+function BetaGwentDuelPresetCards108(out ids : array<int>)
+{
+    ids.PushBack(122317);
+    ids.PushBack(122317);
+    ids.PushBack(122308);
+    ids.PushBack(122308);
+    ids.PushBack(122314);
+    ids.PushBack(122307);
+    ids.PushBack(122203);
+    ids.PushBack(113301);
+    ids.PushBack(122308);
+    ids.PushBack(122314);
+    ids.PushBack(200171);
+    ids.PushBack(122307);
+    ids.PushBack(122307);
+    ids.PushBack(113301);
+    ids.PushBack(122314);
+    ids.PushBack(123301);
+    ids.PushBack(122104);
+    ids.PushBack(122209);
+    ids.PushBack(122317);
+    ids.PushBack(113207);
+    ids.PushBack(200171);
+    ids.PushBack(200171);
+    ids.PushBack(113310);
+    ids.PushBack(113310);
+    ids.PushBack(113310);
+}
+
+function BetaGwentDuelPresetCards109(out ids : array<int>)
+{
+    ids.PushBack(162314);
+    ids.PushBack(112201);
+    ids.PushBack(162305);
+    ids.PushBack(162315);
+    ids.PushBack(162305);
+    ids.PushBack(162307);
+    ids.PushBack(200118);
+    ids.PushBack(200118);
+    ids.PushBack(162307);
+    ids.PushBack(112103);
+    ids.PushBack(200032);
+    ids.PushBack(162107);
+    ids.PushBack(162314);
+    ids.PushBack(162314);
+    ids.PushBack(113207);
+    ids.PushBack(112210);
+    ids.PushBack(200154);
+    ids.PushBack(162305);
+    ids.PushBack(162211);
+    ids.PushBack(162313);
+    ids.PushBack(162315);
+    ids.PushBack(162315);
+    ids.PushBack(200008);
+    ids.PushBack(200008);
+    ids.PushBack(200008);
+}
+
+function BetaGwentDuelPresetCards110(out ids : array<int>)
+{
+    ids.PushBack(162314);
+    ids.PushBack(162315);
+    ids.PushBack(113303);
+    ids.PushBack(162311);
+    ids.PushBack(162310);
+    ids.PushBack(200118);
+    ids.PushBack(162211);
+    ids.PushBack(162310);
+    ids.PushBack(200032);
+    ids.PushBack(112103);
+    ids.PushBack(162310);
+    ids.PushBack(200118);
+    ids.PushBack(162102);
+    ids.PushBack(162314);
+    ids.PushBack(162314);
+    ids.PushBack(200118);
+    ids.PushBack(162311);
+    ids.PushBack(162311);
+    ids.PushBack(162307);
+    ids.PushBack(162307);
+    ids.PushBack(162307);
+    ids.PushBack(112210);
+    ids.PushBack(113306);
+    ids.PushBack(162315);
+    ids.PushBack(162315);
+}
+
+function BetaGwentDuelPresetCards111(out ids : array<int>)
+{
+    ids.PushBack(162314);
+    ids.PushBack(162314);
+    ids.PushBack(162311);
+    ids.PushBack(162310);
+    ids.PushBack(113309);
+    ids.PushBack(200118);
+    ids.PushBack(200118);
+    ids.PushBack(162102);
+    ids.PushBack(200032);
+    ids.PushBack(112103);
+    ids.PushBack(162307);
+    ids.PushBack(162211);
+    ids.PushBack(162107);
+    ids.PushBack(162315);
+    ids.PushBack(162315);
+    ids.PushBack(200118);
+    ids.PushBack(162307);
+    ids.PushBack(162307);
+    ids.PushBack(162311);
+    ids.PushBack(162311);
+    ids.PushBack(112210);
+    ids.PushBack(113306);
+    ids.PushBack(162314);
+    ids.PushBack(162210);
+    ids.PushBack(162310);
+}
+
+function BetaGwentDuelPresetCards112(out ids : array<int>)
+{
+    ids.PushBack(152318);
+    ids.PushBack(152318);
+    ids.PushBack(152305);
+    ids.PushBack(152305);
+    ids.PushBack(152312);
+    ids.PushBack(152312);
+    ids.PushBack(200009);
+    ids.PushBack(152315);
+    ids.PushBack(152315);
+    ids.PushBack(112101);
+    ids.PushBack(152310);
+    ids.PushBack(152316);
+    ids.PushBack(112202);
+    ids.PushBack(152316);
+    ids.PushBack(152315);
+    ids.PushBack(152312);
+    ids.PushBack(152101);
+    ids.PushBack(112204);
+    ids.PushBack(113207);
+    ids.PushBack(152316);
+    ids.PushBack(152305);
+    ids.PushBack(152318);
+    ids.PushBack(152310);
+    ids.PushBack(152310);
+    ids.PushBack(200009);
+}
+
+function BetaGwentDuelPresetCards113(out ids : array<int>)
+{
+    ids.PushBack(162311);
+    ids.PushBack(162311);
+    ids.PushBack(162313);
+    ids.PushBack(162305);
+    ids.PushBack(162307);
+    ids.PushBack(162307);
+    ids.PushBack(162314);
+    ids.PushBack(162314);
+    ids.PushBack(162301);
+    ids.PushBack(200032);
+    ids.PushBack(162313);
+    ids.PushBack(162305);
+    ids.PushBack(162301);
+    ids.PushBack(162305);
+    ids.PushBack(162301);
+    ids.PushBack(162307);
+    ids.PushBack(112110);
+    ids.PushBack(162201);
+    ids.PushBack(162313);
+    ids.PushBack(162203);
+    ids.PushBack(162210);
+    ids.PushBack(162311);
+    ids.PushBack(162318);
+    ids.PushBack(162318);
+    ids.PushBack(162318);
+}
+
+function BetaGwentDuelPresetCards114(out ids : array<int>)
+{
+    ids.PushBack(122317);
+    ids.PushBack(122317);
+    ids.PushBack(123301);
+    ids.PushBack(123301);
+    ids.PushBack(122308);
+    ids.PushBack(122308);
+    ids.PushBack(122314);
+    ids.PushBack(122307);
+    ids.PushBack(122203);
+    ids.PushBack(122105);
+    ids.PushBack(122308);
+    ids.PushBack(122314);
+    ids.PushBack(200171);
+    ids.PushBack(122307);
+    ids.PushBack(122307);
+    ids.PushBack(113301);
+    ids.PushBack(113301);
+    ids.PushBack(122314);
+    ids.PushBack(123301);
+    ids.PushBack(122104);
+    ids.PushBack(122209);
+    ids.PushBack(122317);
+    ids.PushBack(113207);
+    ids.PushBack(200171);
+    ids.PushBack(200171);
+}
+
+function BetaGwentDuelPresetCards115(out ids : array<int>)
+{
+    ids.PushBack(201559);
+    ids.PushBack(142317);
+    ids.PushBack(142317);
+    ids.PushBack(142306);
+    ids.PushBack(142306);
+    ids.PushBack(142305);
+    ids.PushBack(201704);
+    ids.PushBack(113320);
+    ids.PushBack(113320);
+    ids.PushBack(142213);
+    ids.PushBack(200080);
+    ids.PushBack(142201);
+    ids.PushBack(112103);
+    ids.PushBack(112106);
+    ids.PushBack(142306);
+    ids.PushBack(142317);
+    ids.PushBack(142305);
+    ids.PushBack(201559);
+    ids.PushBack(201559);
+    ids.PushBack(200154);
+    ids.PushBack(113207);
+    ids.PushBack(112201);
+    ids.PushBack(112210);
+    ids.PushBack(113306);
+    ids.PushBack(113303);
+    ids.PushBack(201704);
+}
+
+function BetaGwentDuelPresetCards116(out ids : array<int>)
+{
+    ids.PushBack(132402);
+    ids.PushBack(132402);
+    ids.PushBack(113302);
+    ids.PushBack(132309);
+    ids.PushBack(132309);
+    ids.PushBack(200301);
+    ids.PushBack(132212);
+    ids.PushBack(132212);
+    ids.PushBack(132214);
+    ids.PushBack(132102);
+    ids.PushBack(132402);
+    ids.PushBack(132309);
+    ids.PushBack(200301);
+    ids.PushBack(132210);
+    ids.PushBack(200301);
+    ids.PushBack(113301);
+    ids.PushBack(132104);
+    ids.PushBack(132204);
+    ids.PushBack(113302);
+    ids.PushBack(113302);
+    ids.PushBack(132212);
+    ids.PushBack(201704);
+    ids.PushBack(201704);
+    ids.PushBack(113301);
+    ids.PushBack(113301);
+}
+
+function BetaGwentDuelPresetCards117(out ids : array<int>)
+{
+    ids.PushBack(142306);
+    ids.PushBack(142306);
+    ids.PushBack(201559);
+    ids.PushBack(142317);
+    ids.PushBack(113303);
+    ids.PushBack(113320);
+    ids.PushBack(142201);
+    ids.PushBack(200223);
+    ids.PushBack(142305);
+    ids.PushBack(142213);
+    ids.PushBack(113307);
+    ids.PushBack(200080);
+    ids.PushBack(112103);
+    ids.PushBack(142306);
+    ids.PushBack(142317);
+    ids.PushBack(142317);
+    ids.PushBack(201559);
+    ids.PushBack(201559);
+    ids.PushBack(200154);
+    ids.PushBack(113207);
+    ids.PushBack(112210);
+    ids.PushBack(112106);
+    ids.PushBack(113306);
+    ids.PushBack(113310);
+    ids.PushBack(113310);
+    ids.PushBack(201704);
+    ids.PushBack(201704);
+}
+
+function BetaGwentDuelPresetCards118(out ids : array<int>)
+{
+    ids.PushBack(142312);
+    ids.PushBack(142312);
+    ids.PushBack(142316);
+    ids.PushBack(200535);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
+    ids.PushBack(113301);
+    ids.PushBack(200535);
+    ids.PushBack(113207);
+    ids.PushBack(143201);
+    ids.PushBack(142310);
+    ids.PushBack(113306);
+    ids.PushBack(112106);
+    ids.PushBack(113310);
+    ids.PushBack(113310);
+    ids.PushBack(113310);
+    ids.PushBack(142316);
+    ids.PushBack(142316);
+    ids.PushBack(112103);
+    ids.PushBack(200154);
+    ids.PushBack(113303);
+    ids.PushBack(201704);
+    ids.PushBack(113301);
+    ids.PushBack(113301);
+    ids.PushBack(200009);
+}
+
+function BetaGwentDuelPresetCards119(out ids : array<int>)
+{
+    ids.PushBack(162311);
+    ids.PushBack(162311);
+    ids.PushBack(162303);
+    ids.PushBack(162301);
+    ids.PushBack(162317);
+    ids.PushBack(162318);
+    ids.PushBack(162210);
+    ids.PushBack(162201);
+    ids.PushBack(162203);
+    ids.PushBack(162108);
+    ids.PushBack(162301);
+    ids.PushBack(162318);
+    ids.PushBack(162303);
+    ids.PushBack(162303);
+    ids.PushBack(162317);
+    ids.PushBack(113301);
+    ids.PushBack(162317);
+    ids.PushBack(162103);
+    ids.PushBack(162318);
+    ids.PushBack(162301);
+    ids.PushBack(162311);
+    ids.PushBack(201704);
+    ids.PushBack(201704);
+    ids.PushBack(113301);
+    ids.PushBack(113301);
+}
+
+function BetaGwentDuelPresetCards120(out ids : array<int>)
+{
+    ids.PushBack(142312);
+    ids.PushBack(142312);
+    ids.PushBack(200535);
+    ids.PushBack(200535);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
+    ids.PushBack(113301);
+    ids.PushBack(142103);
+    ids.PushBack(143201);
+    ids.PushBack(200136);
+    ids.PushBack(200136);
+    ids.PushBack(142316);
+    ids.PushBack(112106);
+    ids.PushBack(113310);
+    ids.PushBack(113310);
+    ids.PushBack(113310);
+    ids.PushBack(201704);
+    ids.PushBack(142316);
+    ids.PushBack(142316);
+    ids.PushBack(112103);
+    ids.PushBack(200154);
+    ids.PushBack(113303);
+    ids.PushBack(113301);
+    ids.PushBack(113301);
+    ids.PushBack(200008);
+}
+
+function BetaGwentDuelPresetCards121(out ids : array<int>)
+{
+    ids.PushBack(142312);
+    ids.PushBack(142312);
+    ids.PushBack(200535);
+    ids.PushBack(200535);
+    ids.PushBack(142205);
+    ids.PushBack(142205);
+    ids.PushBack(113301);
+    ids.PushBack(142103);
+    ids.PushBack(143201);
+    ids.PushBack(200136);
+    ids.PushBack(200136);
+    ids.PushBack(142316);
+    ids.PushBack(112106);
+    ids.PushBack(113310);
+    ids.PushBack(113310);
+    ids.PushBack(113310);
+    ids.PushBack(142316);
+    ids.PushBack(142316);
+    ids.PushBack(112103);
+    ids.PushBack(142211);
+    ids.PushBack(113303);
+    ids.PushBack(201704);
+    ids.PushBack(113301);
+    ids.PushBack(200008);
+    ids.PushBack(113301);
+}
+
+function BetaGwentDuelPresetCards122(out ids : array<int>)
+{
+    ids.PushBack(152303);
+    ids.PushBack(152303);
+    ids.PushBack(152303);
+    ids.PushBack(152310);
+    ids.PushBack(152318);
+    ids.PushBack(113313);
+    ids.PushBack(113306);
+    ids.PushBack(152208);
+    ids.PushBack(152101);
+    ids.PushBack(112103);
+    ids.PushBack(112106);
+    ids.PushBack(152304);
+    ids.PushBack(152304);
+    ids.PushBack(152310);
+    ids.PushBack(112201);
+    ids.PushBack(113207);
+    ids.PushBack(152318);
+    ids.PushBack(152318);
+    ids.PushBack(200154);
+    ids.PushBack(112210);
+    ids.PushBack(152207);
+    ids.PushBack(113303);
+    ids.PushBack(152304);
+    ids.PushBack(113313);
+    ids.PushBack(113313);
+}
+
+function BetaGwentDuelPresetCards123(out ids : array<int>)
+{
+    ids.PushBack(200039);
+    ids.PushBack(200039);
+    ids.PushBack(142308);
+    ids.PushBack(142308);
+    ids.PushBack(200138);
+    ids.PushBack(113310);
+    ids.PushBack(200136);
+    ids.PushBack(201704);
+    ids.PushBack(113209);
+    ids.PushBack(142101);
+    ids.PushBack(200039);
+    ids.PushBack(113310);
+    ids.PushBack(200136);
+    ids.PushBack(200519);
+    ids.PushBack(200519);
+    ids.PushBack(113306);
+    ids.PushBack(200138);
+    ids.PushBack(200138);
+    ids.PushBack(142308);
+    ids.PushBack(113207);
+    ids.PushBack(142103);
+    ids.PushBack(200136);
+    ids.PushBack(113303);
+    ids.PushBack(113303);
+    ids.PushBack(113310);
+}
+
+function BetaGwentDuelPresetCards124(out ids : array<int>)
+{
+    ids.PushBack(131102);
+    ids.PushBack(132106);
+    ids.PushBack(132107);
+    ids.PushBack(113315);
+    ids.PushBack(201657);
+    ids.PushBack(132206);
+    ids.PushBack(132208);
+    ids.PushBack(132210);
+    ids.PushBack(132207);
+    ids.PushBack(113305);
+    ids.PushBack(113305);
+    ids.PushBack(132304);
+    ids.PushBack(132304);
+    ids.PushBack(132304);
+    ids.PushBack(132301);
+    ids.PushBack(132301);
+    ids.PushBack(132301);
+    ids.PushBack(132313);
+    ids.PushBack(132313);
+    ids.PushBack(132313);
+    ids.PushBack(201701);
+    ids.PushBack(201701);
+    ids.PushBack(112405);
+    ids.PushBack(112405);
+    ids.PushBack(112405);
+}
+
+function BetaGwentDuelPresetCards125(out ids : array<int>)
+{
+    ids.PushBack(112101);
+    ids.PushBack(162104);
+    ids.PushBack(112102);
+    ids.PushBack(200032);
+    ids.PushBack(163201);
+    ids.PushBack(113306);
+    ids.PushBack(162213);
+    ids.PushBack(112210);
+    ids.PushBack(162208);
+    ids.PushBack(162211);
+    ids.PushBack(113310);
+    ids.PushBack(113310);
+    ids.PushBack(113310);
+    ids.PushBack(162304);
+    ids.PushBack(162314);
+    ids.PushBack(162314);
+    ids.PushBack(162314);
+    ids.PushBack(162315);
+    ids.PushBack(162315);
+    ids.PushBack(162307);
+    ids.PushBack(162307);
+    ids.PushBack(162304);
+    ids.PushBack(200118);
+    ids.PushBack(200118);
+    ids.PushBack(200118);
+}
+
+function BetaGwentDuelPresetCards126(out ids : array<int>)
+{
+    ids.PushBack(162103);
+    ids.PushBack(162107);
+    ids.PushBack(200031);
+    ids.PushBack(201603);
+    ids.PushBack(200041);
+    ids.PushBack(200227);
+    ids.PushBack(201664);
+    ids.PushBack(113201);
+    ids.PushBack(201616);
+    ids.PushBack(201616);
+    ids.PushBack(201616);
+    ids.PushBack(162316);
+    ids.PushBack(162316);
+    ids.PushBack(162316);
+    ids.PushBack(162306);
+    ids.PushBack(162306);
+    ids.PushBack(162306);
+    ids.PushBack(162301);
+    ids.PushBack(162301);
+    ids.PushBack(162301);
+    ids.PushBack(162317);
+    ids.PushBack(162317);
+    ids.PushBack(162317);
+    ids.PushBack(201635);
+    ids.PushBack(162203);
+}
+
+function BetaGwentDuelPresetCards127(out ids : array<int>)
+{
+    ids.PushBack(201620);
+    ids.PushBack(201618);
+    ids.PushBack(122202);
+    ids.PushBack(122103);
+    ids.PushBack(200019);
+    ids.PushBack(201639);
+    ids.PushBack(201650);
+    ids.PushBack(200529);
+    ids.PushBack(122401);
+    ids.PushBack(122402);
+    ids.PushBack(201630);
+    ids.PushBack(201630);
+    ids.PushBack(201630);
+    ids.PushBack(201625);
+    ids.PushBack(201625);
+    ids.PushBack(201625);
+    ids.PushBack(200299);
+    ids.PushBack(200299);
+    ids.PushBack(200299);
+    ids.PushBack(122307);
+    ids.PushBack(122307);
+    ids.PushBack(122307);
+    ids.PushBack(201622);
+    ids.PushBack(201622);
+    ids.PushBack(201622);
+}
+
+function BetaGwentDuelPresetCards128(out ids : array<int>)
+{
+    ids.PushBack(113316);
+    ids.PushBack(200154);
+    ids.PushBack(112102);
+    ids.PushBack(112103);
+    ids.PushBack(113201);
+    ids.PushBack(113207);
+    ids.PushBack(113309);
+    ids.PushBack(200019);
+    ids.PushBack(142213);
+    ids.PushBack(113303);
+    ids.PushBack(113303);
+    ids.PushBack(113303);
+    ids.PushBack(113311);
+    ids.PushBack(113311);
+    ids.PushBack(113311);
+    ids.PushBack(201559);
+    ids.PushBack(201559);
+    ids.PushBack(201559);
+    ids.PushBack(142306);
+    ids.PushBack(142306);
+    ids.PushBack(142306);
+    ids.PushBack(142317);
+    ids.PushBack(142317);
+    ids.PushBack(142317);
+    ids.PushBack(113310);
+}
+
+function BetaGwentDuelPresetCards129(out ids : array<int>)
+{
+    ids.PushBack(152107);
+    ids.PushBack(152103);
+    ids.PushBack(112103);
+    ids.PushBack(201623);
+    ids.PushBack(152202);
+    ids.PushBack(152208);
+    ids.PushBack(152201);
+    ids.PushBack(152214);
+    ids.PushBack(152318);
+    ids.PushBack(152318);
+    ids.PushBack(152318);
+    ids.PushBack(152210);
+    ids.PushBack(152210);
+    ids.PushBack(152315);
+    ids.PushBack(152315);
+    ids.PushBack(152315);
+    ids.PushBack(113204);
+    ids.PushBack(113204);
+    ids.PushBack(152301);
+    ids.PushBack(152301);
+    ids.PushBack(152301);
+    ids.PushBack(201704);
+    ids.PushBack(201704);
+    ids.PushBack(113303);
+    ids.PushBack(113303);
+}
+
+function BetaGwentOriginalBetaDeckName(id : int) : string {
+    switch(id) {
+    case 100: return "ch_fac_monsters_1";
+    case 101: return "ch_fac_monsters_2_player";
+    case 102: return "ch_fac_monsters_3";
+    case 103: return "ch_fac_monsters_3_player";
+    case 104: return "ch_fac_monsters_4";
+    case 105: return "ch_fac_monsters_4_player";
+    case 106: return "ch_fac_monsters_5_player";
+    case 107: return "ch_fac_monsters_6_player";
+    case 108: return "ch_fac_nilfgaard_1";
+    case 109: return "ch_fac_nilfgaard_1_player";
+    case 110: return "ch_fac_nilfgaard_2_player";
+    case 111: return "ch_fac_nilfgaard_3_player";
+    case 112: return "ch_fac_northern_1";
+    case 113: return "ch_fac_northern_4";
+    case 114: return "ch_fac_northern_6";
+    case 115: return "ch_fac_scoia_1_player";
+    case 116: return "ch_fac_scoia_2";
+    case 117: return "ch_fac_scoia_2_player";
+    case 118: return "ch_fac_scoia_4_player";
+    case 119: return "ch_fac_scoia_5";
+    case 120: return "ch_fac_scoia_5_player";
+    case 121: return "ch_fac_scoia_6_player";
+    case 122: return "ch_fac_skellige_1_player";
+    case 123: return "ch_fac_skellige_2";
+    case 124: return "d_Monsters_Practice_Easy";
+    case 125: return "d_Nilfgaard_Practice";
+    case 126: return "d_Nilfgaard_Practice_Conceal";
+    case 127: return "d_NorthernRealms_Practice";
+    case 128: return "d_Scoia'tael_Practice_Easy";
+    case 129: return "d_Skellige_Practice_Easy";
+    default: return "";
+    }
+}
+function BetaGwentAINpcProfile(id : int) : int {
+    switch(id) {
+    case 21: return 20;
+    case 22: return 4;
+    case 23: return 44;
+    case 24: return 34;
+    case 25: return 11;
+    case 26: return 20;
+    case 27: return 40;
+    case 28: return 15;
+    case 29: return 10;
+    case 30: return 7;
+    case 31: return 12;
+    case 32: return 29;
+    case 33: return 27;
+    case 34: return 7;
+    case 35: return 30;
+    case 36: return 14;
+    case 37: return 33;
+    case 38: return 24;
+    case 39: return 19;
+    case 40: return 28;
+    case 41: return 36;
+    case 42: return 5;
+    case 43: return 35;
+    case 44: return 3;
+    case 45: return 31;
+    case 46: return 42;
+    case 47: return 1;
+    case 48: return 9;
+    case 49: return 29;
+    case 50: return 23;
+    case 51: return 21;
+    case 52: return 39;
+    case 53: return 25;
+    default: return 0;
+    }
+}
 function BetaGwentDuelIsLeader(id : int) : bool { return id == 131101 || id == 200055 || id == 200158 || id == 200159 || id == 200160 || id == 200161 || id == 200162 || id == 200163 || id == 200164 || id == 200165 || id == 200166 || id == 200167 || id == 200168 || id == 200169 || id == 200170 || id == 201580 || id == 201587 || id == 201589 || id == 201595 || id == 201597 || id == 201743; }
 function BetaGwentDuelLeaders(out ids : array<int>) { ids.Clear(); ids.PushBack(131101); ids.PushBack(200055); ids.PushBack(200158); ids.PushBack(200159); ids.PushBack(200160); ids.PushBack(200161); ids.PushBack(200162); ids.PushBack(200163); ids.PushBack(200164); ids.PushBack(200165); ids.PushBack(200166); ids.PushBack(200167); ids.PushBack(200168); ids.PushBack(200169); ids.PushBack(200170); ids.PushBack(201580); ids.PushBack(201587); ids.PushBack(201589); ids.PushBack(201595); ids.PushBack(201597); ids.PushBack(201743); }
 
@@ -22592,16 +23769,16 @@ function BetaGwentNilfPool(id : int, out ids : array<int>)
 
 function BetaGwentNilfPool142202(out ids : array<int>)
 {
-    ids.PushBack(113312);
+    ids.PushBack(113305);
     ids.PushBack(113401);
     ids.PushBack(113301);
 }
 
 function BetaGwentNilfPool162207(out ids : array<int>)
 {
-    ids.PushBack(113305);
+    ids.PushBack(113302);
     ids.PushBack(113401);
-    ids.PushBack(200023);
+    ids.PushBack(200009);
 }
 
 function BetaGwentNilfPool162213(out ids : array<int>)
@@ -57075,6 +58252,7 @@ function BetaGwentDuelOptionalChoiceLimit(id : int) : int
     case 200159: return 3;
     case 200163: return 4;
     case 200209: return 2;
+    case 200227: return -1;
         default: break;
     }
     return 0;

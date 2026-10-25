@@ -87,7 +87,12 @@ def main():
 
 # Build 7 card fixes (Myrgtabrakke, Harald) checked against Beta 0.9.24 graphs.
 CARD_FIXES = {'game/betagwent/duelNeutral.ws', 'game/betagwent/duelNilf.ws'}
-ALLOWED = {CLEANER, 'game/betagwent/developmentBoardMenu.ws'} | CARD_FIXES
+# Build 11: recoverable profile backup (@addMethod W3PlayerWitcher, lowered into playerWitcher.ws on Classic).
+PROFILE_FIXES = {'game/betagwent/profileBackup.ws', 'game/betagwent/collectionProfile.ws'}
+# Build 12: console/notification texts in 13 languages (shop diagnostics lowered into the inventory menu on Classic).
+TEXT_FIXES = {'game/betagwent/developmentBoardMenu.ws', 'game/betagwent/shopRuntime.ws', 'game/betagwent/profileBackup.ws'}
+SOURCE_FIXES = CARD_FIXES | PROFILE_FIXES | TEXT_FIXES
+ALLOWED = {CLEANER, 'game/betagwent/developmentBoardMenu.ws'} | SOURCE_FIXES
 
 
 def prepare_scripts_phase(out, scripts_from, scripts_only):
@@ -123,11 +128,25 @@ def prepare_scripts_phase(out, scripts_from, scripts_only):
     diff = sorted(k for k in set(prep['outputScripts']) | set(old['outputScripts'])
                   if prep['outputScripts'].get(k) != old['outputScripts'].get(k))
     # Classic lowers @addMethod bodies into the vanilla class file.
-    assert diff and set(diff) <= {'game/betagwent/profileCleanup090.ws', 'game/player/playerWitcher.ws', 'game/betagwent/developmentBoardMenu.ws'} | CARD_FIXES, diff
-    for name in [d for d in diff if not d.endswith('developmentBoardMenu.ws') and d not in CARD_FIXES]:
+    # Lowered vanilla class files may change only through lines of the patched sources (checked below).
+    assert diff and all(d in SOURCE_FIXES or d == CLEANER or not d.startswith('game/betagwent/') for d in diff), diff
+    for name in [d for d in diff if not d.endswith('developmentBoardMenu.ws') and d not in SOURCE_FIXES]:
         fresh = (out / 'classic-prepared-final/Mods/modBetaGwentClassic132/content/scripts' / name).read_text('utf-16')
         frozen = (INTEGRATED / 'classic-prepared-final/Mods/modBetaGwentClassic132/content/scripts' / name).read_text('utf-16')
-        assert fresh.replace('\r\n', '\n').replace(NEW, OLD) == frozen.replace('\r\n', '\n'), 'unexpected Classic change in ' + name
+        fresh_text = fresh.replace('\r\n', '\n').replace(NEW, OLD); frozen_text = frozen.replace('\r\n', '\n')
+        patched = [f for f in SOURCE_FIXES if f in changed]
+        if name != CLEANER and patched:
+            # Lowered profile methods changed: every differing line must come from the patched / original sources.
+            import difflib
+            new_lines = {l.strip() for f in patched for l in (out / 'scripts' / f).read_text('utf-8-sig').splitlines()}
+            old_lines = {l.strip() for f in patched for l in (INTEGRATED / 'scripts' / f).read_text('utf-8-sig').splitlines()}
+            for line in difflib.ndiff(frozen_text.splitlines(), fresh_text.splitlines()):
+                if line.startswith('+ '): assert line[2:].strip() in new_lines, 'unexpected Classic line: ' + line[:160]
+                elif line.startswith('- '): assert line[2:].strip() in old_lines, 'unexpected Classic removal: ' + line[:160]
+            if name == 'game/player/playerWitcher.ws':
+                assert 'PROFILE_BACKUP_HOLD_CLEARED' in fresh_text and 'PROFILE_BACKUP_HELD' not in fresh_text
+        else:
+            assert fresh_text == frozen_text, 'unexpected Classic change in ' + name
     (out / 'classic-prepared-diff.json').write_text(json.dumps(diff), 'utf8')
     return changed
 

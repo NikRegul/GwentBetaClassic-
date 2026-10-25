@@ -1,0 +1,3326 @@
+{
+  "112101": {
+    "abilities": [
+      381
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112102": {
+    "abilities": [
+      176
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112104": {
+    "abilities": [
+      232
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112105": {
+    "abilities": [
+      260
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112106": {
+    "abilities": [
+      121
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112107": {
+    "abilities": [
+      161
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112108": {
+    "abilities": [
+      155
+    ],
+    "hasPlayCardsNode": true
+  },
+  "112109": {
+    "abilities": [
+      155
+    ],
+    "hasPlayCardsNode": true
+  },
+  "112110": {
+    "abilities": [
+      214
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112111": {
+    "abilities": [
+      111
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112112": {
+    "abilities": [
+      189
+    ],
+    "hasPlayCardsNode": true
+  },
+  "112113": {
+    "abilities": [
+      151
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112201": {
+    "abilities": [
+      103
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112202": {
+    "abilities": [
+      178
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112203": {
+    "abilities": [
+      178
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112204": {
+    "abilities": [
+      178
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112205": {
+    "abilities": [
+      338
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112206": {
+    "abilities": [
+      353
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112207": {
+    "abilities": [
+      430
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112208": {
+    "abilities": [
+      184
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112209": {
+    "abilities": [
+      481
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112210": {
+    "abilities": [
+      177
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112211": {
+    "abilities": [
+      295
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112212": {
+    "abilities": [
+      685
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112213": {
+    "abilities": [
+      547
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112214": {
+    "abilities": [
+      163
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112215": {
+    "abilities": [
+      171
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112401": {
+    "abilities": [
+      98
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112402": {
+    "abilities": [
+      75
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112403": {
+    "abilities": [
+      177
+    ],
+    "hasPlayCardsNode": false
+  },
+  "112404": {
+    "abilities": [
+      238
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113101": {
+    "abilities": [
+      48
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113102": {
+    "abilities": [
+      248
+    ],
+    "hasPlayCardsNode": true
+  },
+  "113201": {
+    "abilities": [
+      190
+    ],
+    "hasPlayCardsNode": true
+  },
+  "113202": {
+    "abilities": [
+      78
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113203": {
+    "abilities": [
+      44
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113204": {
+    "abilities": [
+      249
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113205": {
+    "abilities": [
+      372
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113206": {
+    "abilities": [
+      206
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113207": {
+    "abilities": [
+      238
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113208": {
+    "abilities": [
+      171
+    ],
+    "hasPlayCardsNode": true
+  },
+  "113209": {
+    "abilities": [
+      117
+    ],
+    "hasPlayCardsNode": true
+  },
+  "113301": {
+    "abilities": [
+      77
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113302": {
+    "abilities": [
+      42
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113303": {
+    "abilities": [
+      500
+    ],
+    "hasPlayCardsNode": true
+  },
+  "113305": {
+    "abilities": [
+      39
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113306": {
+    "abilities": [
+      76
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113307": {
+    "abilities": [
+      57
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113308": {
+    "abilities": [
+      135
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113309": {
+    "abilities": [
+      135
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113310": {
+    "abilities": [
+      220
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113311": {
+    "abilities": [
+      251
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113312": {
+    "abilities": [
+      62
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113313": {
+    "abilities": [
+      74
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113315": {
+    "abilities": [
+      722
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113316": {
+    "abilities": [
+      88
+    ],
+    "hasPlayCardsNode": true
+  },
+  "113319": {
+    "abilities": [
+      146
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113320": {
+    "abilities": [
+      292
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113401": {
+    "abilities": [
+      494
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113403": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "113404": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122101": {
+    "abilities": [
+      430
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122102": {
+    "abilities": [
+      122
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122103": {
+    "abilities": [
+      93
+    ],
+    "hasPlayCardsNode": true
+  },
+  "122104": {
+    "abilities": [
+      371
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122105": {
+    "abilities": [
+      409
+    ],
+    "hasPlayCardsNode": true
+  },
+  "122106": {
+    "abilities": [
+      105
+    ],
+    "hasPlayCardsNode": true
+  },
+  "122107": {
+    "abilities": [
+      227
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122108": {
+    "abilities": [
+      174
+    ],
+    "hasPlayCardsNode": true
+  },
+  "122201": {
+    "abilities": [
+      209
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122202": {
+    "abilities": [
+      70
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122203": {
+    "abilities": [
+      353
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122204": {
+    "abilities": [
+      631
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122205": {
+    "abilities": [
+      293
+    ],
+    "hasPlayCardsNode": true
+  },
+  "122206": {
+    "abilities": [
+      131
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122207": {
+    "abilities": [
+      174
+    ],
+    "hasPlayCardsNode": true
+  },
+  "122208": {
+    "abilities": [
+      76
+    ],
+    "hasPlayCardsNode": true
+  },
+  "122209": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122210": {
+    "abilities": [
+      266
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122211": {
+    "abilities": [
+      161
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122212": {
+    "abilities": [
+      161
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122213": {
+    "abilities": [
+      266
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122214": {
+    "abilities": [
+      230
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122216": {
+    "abilities": [
+      274
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122301": {
+    "abilities": [
+      507
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122302": {
+    "abilities": [
+      672
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122303": {
+    "abilities": [
+      229
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122304": {
+    "abilities": [
+      646
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122306": {
+    "abilities": [
+      399
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122307": {
+    "abilities": [
+      551
+    ],
+    "hasPlayCardsNode": true
+  },
+  "122308": {
+    "abilities": [
+      116
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122309": {
+    "abilities": [
+      333
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122310": {
+    "abilities": [
+      167
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122311": {
+    "abilities": [
+      756
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122312": {
+    "abilities": [
+      158
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122313": {
+    "abilities": [
+      312
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122314": {
+    "abilities": [
+      487
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122315": {
+    "abilities": [
+      115
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122316": {
+    "abilities": [
+      190
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122317": {
+    "abilities": [
+      204
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122318": {
+    "abilities": [
+      196
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122401": {
+    "abilities": [
+      45
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122402": {
+    "abilities": [
+      45
+    ],
+    "hasPlayCardsNode": false
+  },
+  "122403": {
+    "abilities": [
+      183
+    ],
+    "hasPlayCardsNode": true
+  },
+  "123201": {
+    "abilities": [
+      81
+    ],
+    "hasPlayCardsNode": true
+  },
+  "123301": {
+    "abilities": [
+      175
+    ],
+    "hasPlayCardsNode": false
+  },
+  "131101": {
+    "abilities": [
+      247
+    ],
+    "hasPlayCardsNode": true
+  },
+  "131102": {
+    "abilities": [
+      287
+    ],
+    "hasPlayCardsNode": true
+  },
+  "132101": {
+    "abilities": [
+      456
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132102": {
+    "abilities": [
+      516
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132103": {
+    "abilities": [
+      206
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132104": {
+    "abilities": [
+      129
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132105": {
+    "abilities": [
+      87
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132106": {
+    "abilities": [
+      99
+    ],
+    "hasPlayCardsNode": true
+  },
+  "132107": {
+    "abilities": [
+      234
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132108": {
+    "abilities": [
+      286
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132201": {
+    "abilities": [
+      464
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132202": {
+    "abilities": [
+      128
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132203": {
+    "abilities": [
+      194
+    ],
+    "hasPlayCardsNode": true
+  },
+  "132204": {
+    "abilities": [
+      854
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132205": {
+    "abilities": [
+      116
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132206": {
+    "abilities": [
+      191
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132207": {
+    "abilities": [
+      188
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132208": {
+    "abilities": [
+      188
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132210": {
+    "abilities": [
+      316
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132211": {
+    "abilities": [
+      161
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132212": {
+    "abilities": [
+      221
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132213": {
+    "abilities": [
+      309
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132214": {
+    "abilities": [
+      190
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132215": {
+    "abilities": [
+      697
+    ],
+    "hasPlayCardsNode": true
+  },
+  "132216": {
+    "abilities": [
+      197
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132217": {
+    "abilities": [
+      194
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132218": {
+    "abilities": [
+      54
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132220": {
+    "abilities": [
+      90
+    ],
+    "hasPlayCardsNode": true
+  },
+  "132301": {
+    "abilities": [
+      303
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132302": {
+    "abilities": [
+      231
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132303": {
+    "abilities": [
+      140
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132304": {
+    "abilities": [
+      196
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132305": {
+    "abilities": [
+      378
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132306": {
+    "abilities": [
+      115
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132307": {
+    "abilities": [
+      263
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132308": {
+    "abilities": [
+      410
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132309": {
+    "abilities": [
+      560
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132310": {
+    "abilities": [
+      3
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132312": {
+    "abilities": [
+      86
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132313": {
+    "abilities": [
+      415
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132314": {
+    "abilities": [
+      720
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132315": {
+    "abilities": [
+      228
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132316": {
+    "abilities": [
+      510
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132402": {
+    "abilities": [
+      113
+    ],
+    "hasPlayCardsNode": true
+  },
+  "132404": {
+    "abilities": [
+      130
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132406": {
+    "abilities": [
+      74
+    ],
+    "hasPlayCardsNode": true
+  },
+  "132407": {
+    "abilities": [
+      244
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132408": {
+    "abilities": [
+      109
+    ],
+    "hasPlayCardsNode": false
+  },
+  "132409": {
+    "abilities": [
+      534
+    ],
+    "hasPlayCardsNode": false
+  },
+  "133301": {
+    "abilities": [
+      91
+    ],
+    "hasPlayCardsNode": false
+  },
+  "133302": {
+    "abilities": [
+      372
+    ],
+    "hasPlayCardsNode": true
+  },
+  "142101": {
+    "abilities": [
+      174
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142102": {
+    "abilities": [
+      87
+    ],
+    "hasPlayCardsNode": true
+  },
+  "142103": {
+    "abilities": [
+      182
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142104": {
+    "abilities": [
+      397
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142105": {
+    "abilities": [
+      927
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142106": {
+    "abilities": [
+      125
+    ],
+    "hasPlayCardsNode": true
+  },
+  "142107": {
+    "abilities": [
+      129
+    ],
+    "hasPlayCardsNode": true
+  },
+  "142108": {
+    "abilities": [
+      174
+    ],
+    "hasPlayCardsNode": true
+  },
+  "142201": {
+    "abilities": [
+      62
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142202": {
+    "abilities": [
+      174
+    ],
+    "hasPlayCardsNode": true
+  },
+  "142203": {
+    "abilities": [
+      501
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142204": {
+    "abilities": [
+      75
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142205": {
+    "abilities": [
+      207
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142206": {
+    "abilities": [
+      212
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142207": {
+    "abilities": [
+      170
+    ],
+    "hasPlayCardsNode": true
+  },
+  "142208": {
+    "abilities": [
+      232
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142209": {
+    "abilities": [
+      422
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142210": {
+    "abilities": [
+      230
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142211": {
+    "abilities": [
+      158
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142212": {
+    "abilities": [
+      1444
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142213": {
+    "abilities": [
+      162
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142214": {
+    "abilities": [
+      150
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142301": {
+    "abilities": [
+      108
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142302": {
+    "abilities": [
+      236
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142303": {
+    "abilities": [
+      194
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142304": {
+    "abilities": [
+      167
+    ],
+    "hasPlayCardsNode": true
+  },
+  "142305": {
+    "abilities": [
+      93
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142307": {
+    "abilities": [
+      102
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142308": {
+    "abilities": [
+      197
+    ],
+    "hasPlayCardsNode": true
+  },
+  "142309": {
+    "abilities": [
+      158
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142310": {
+    "abilities": [
+      119
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142311": {
+    "abilities": [
+      756
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142312": {
+    "abilities": [
+      102
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142313": {
+    "abilities": [
+      244
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142314": {
+    "abilities": [
+      191
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142315": {
+    "abilities": [
+      187
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142316": {
+    "abilities": [
+      226
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142317": {
+    "abilities": [
+      92
+    ],
+    "hasPlayCardsNode": false
+  },
+  "142401": {
+    "abilities": [
+      167
+    ],
+    "hasPlayCardsNode": false
+  },
+  "143201": {
+    "abilities": [
+      86
+    ],
+    "hasPlayCardsNode": true
+  },
+  "143301": {
+    "abilities": [
+      553
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152101": {
+    "abilities": [
+      213
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152103": {
+    "abilities": [
+      189
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152104": {
+    "abilities": [
+      105
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152105": {
+    "abilities": [
+      56
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152106": {
+    "abilities": [
+      168
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152107": {
+    "abilities": [
+      49
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152109": {
+    "abilities": [
+      249
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152201": {
+    "abilities": [
+      67
+    ],
+    "hasPlayCardsNode": true
+  },
+  "152202": {
+    "abilities": [
+      200
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152203": {
+    "abilities": [
+      180
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152204": {
+    "abilities": [
+      94
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152205": {
+    "abilities": [
+      63
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152206": {
+    "abilities": [
+      228
+    ],
+    "hasPlayCardsNode": true
+  },
+  "152207": {
+    "abilities": [
+      149
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152208": {
+    "abilities": [
+      44
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152209": {
+    "abilities": [
+      342
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152210": {
+    "abilities": [
+      203
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152211": {
+    "abilities": [
+      109
+    ],
+    "hasPlayCardsNode": true
+  },
+  "152213": {
+    "abilities": [
+      156
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152214": {
+    "abilities": [
+      336
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152301": {
+    "abilities": [
+      75
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152302": {
+    "abilities": [
+      531
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152303": {
+    "abilities": [
+      40
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152304": {
+    "abilities": [
+      219
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152305": {
+    "abilities": [
+      80
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152306": {
+    "abilities": [
+      110
+    ],
+    "hasPlayCardsNode": true
+  },
+  "152307": {
+    "abilities": [
+      141
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152308": {
+    "abilities": [
+      533
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152309": {
+    "abilities": [
+      126
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152310": {
+    "abilities": [
+      126
+    ],
+    "hasPlayCardsNode": true
+  },
+  "152311": {
+    "abilities": [
+      102
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152312": {
+    "abilities": [
+      199
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152313": {
+    "abilities": [
+      176
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152314": {
+    "abilities": [
+      288
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152315": {
+    "abilities": [
+      67
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152316": {
+    "abilities": [
+      273
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152317": {
+    "abilities": [
+      205
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152318": {
+    "abilities": [
+      190
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152401": {
+    "abilities": [
+      88
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152402": {
+    "abilities": [
+      167
+    ],
+    "hasPlayCardsNode": false
+  },
+  "152403": {
+    "abilities": [
+      228
+    ],
+    "hasPlayCardsNode": false
+  },
+  "153201": {
+    "abilities": [
+      245
+    ],
+    "hasPlayCardsNode": true
+  },
+  "153301": {
+    "abilities": [
+      155
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162101": {
+    "abilities": [
+      582
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162102": {
+    "abilities": [
+      217
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162103": {
+    "abilities": [
+      199
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162104": {
+    "abilities": [
+      91
+    ],
+    "hasPlayCardsNode": true
+  },
+  "162105": {
+    "abilities": [
+      610
+    ],
+    "hasPlayCardsNode": true
+  },
+  "162106": {
+    "abilities": [
+      253
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162107": {
+    "abilities": [
+      107
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162108": {
+    "abilities": [
+      226
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162201": {
+    "abilities": [
+      138
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162202": {
+    "abilities": [
+      200
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162203": {
+    "abilities": [
+      166
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162204": {
+    "abilities": [
+      180
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162205": {
+    "abilities": [
+      399
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162206": {
+    "abilities": [
+      203
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162207": {
+    "abilities": [
+      196
+    ],
+    "hasPlayCardsNode": true
+  },
+  "162208": {
+    "abilities": [
+      92
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162209": {
+    "abilities": [
+      295
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162210": {
+    "abilities": [
+      357
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162211": {
+    "abilities": [
+      97
+    ],
+    "hasPlayCardsNode": true
+  },
+  "162212": {
+    "abilities": [
+      387
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162213": {
+    "abilities": [
+      192
+    ],
+    "hasPlayCardsNode": true
+  },
+  "162301": {
+    "abilities": [
+      205
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162302": {
+    "abilities": [
+      154
+    ],
+    "hasPlayCardsNode": true
+  },
+  "162303": {
+    "abilities": [
+      78
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162304": {
+    "abilities": [
+      92
+    ],
+    "hasPlayCardsNode": true
+  },
+  "162305": {
+    "abilities": [
+      122
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162306": {
+    "abilities": [
+      147
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162307": {
+    "abilities": [
+      291
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162308": {
+    "abilities": [
+      701
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162309": {
+    "abilities": [
+      333
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162310": {
+    "abilities": [
+      288
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162311": {
+    "abilities": [
+      190
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162312": {
+    "abilities": [
+      128
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162313": {
+    "abilities": [
+      238
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162314": {
+    "abilities": [
+      205
+    ],
+    "hasPlayCardsNode": true
+  },
+  "162315": {
+    "abilities": [
+      97
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162316": {
+    "abilities": [
+      253
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162317": {
+    "abilities": [
+      183
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162318": {
+    "abilities": [
+      217
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162401": {
+    "abilities": [
+      130
+    ],
+    "hasPlayCardsNode": false
+  },
+  "162402": {
+    "abilities": [
+      508
+    ],
+    "hasPlayCardsNode": false
+  },
+  "163101": {
+    "abilities": [
+      267
+    ],
+    "hasPlayCardsNode": false
+  },
+  "163201": {
+    "abilities": [
+      570
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200008": {
+    "abilities": [
+      176
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200009": {
+    "abilities": [
+      230
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200018": {
+    "abilities": [
+      28
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200019": {
+    "abilities": [
+      118
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200020": {
+    "abilities": [
+      132
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200021": {
+    "abilities": [
+      169
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200022": {
+    "abilities": [
+      643
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200023": {
+    "abilities": [
+      237
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200026": {
+    "abilities": [
+      566
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200028": {
+    "abilities": [
+      86
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200030": {
+    "abilities": [
+      242
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200031": {
+    "abilities": [
+      158
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200032": {
+    "abilities": [
+      170
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200033": {
+    "abilities": [
+      54
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200036": {
+    "abilities": [
+      100
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200037": {
+    "abilities": [
+      168
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200038": {
+    "abilities": [
+      693
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200039": {
+    "abilities": [
+      66
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200040": {
+    "abilities": [
+      257
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200041": {
+    "abilities": [
+      92
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200042": {
+    "abilities": [
+      543
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200043": {
+    "abilities": [
+      111
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200044": {
+    "abilities": [
+      168
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200046": {
+    "abilities": [
+      143
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200048": {
+    "abilities": [
+      331
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200049": {
+    "abilities": [
+      326
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200050": {
+    "abilities": [
+      402
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200052": {
+    "abilities": [
+      302
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200053": {
+    "abilities": [
+      49
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200055": {
+    "abilities": [
+      136
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200056": {
+    "abilities": [
+      402
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200058": {
+    "abilities": [
+      206
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200062": {
+    "abilities": [
+      841
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200067": {
+    "abilities": [
+      552
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200071": {
+    "abilities": [
+      297
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200073": {
+    "abilities": [
+      76
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200078": {
+    "abilities": [
+      161
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200079": {
+    "abilities": [
+      153
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200080": {
+    "abilities": [
+      290
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200081": {
+    "abilities": [
+      324
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200083": {
+    "abilities": [
+      156
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200087": {
+    "abilities": [
+      402
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200088": {
+    "abilities": [
+      123
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200089": {
+    "abilities": [
+      253
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200091": {
+    "abilities": [
+      434
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200098": {
+    "abilities": [
+      397
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200102": {
+    "abilities": [
+      629
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200103": {
+    "abilities": [
+      199
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200104": {
+    "abilities": [
+      200
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200105": {
+    "abilities": [
+      61
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200112": {
+    "abilities": [
+      113
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200114": {
+    "abilities": [
+      286
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200115": {
+    "abilities": [
+      748
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200118": {
+    "abilities": [
+      221
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200124": {
+    "abilities": [
+      194
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200132": {
+    "abilities": [
+      162
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200135": {
+    "abilities": [
+      325
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200136": {
+    "abilities": [
+      324
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200138": {
+    "abilities": [
+      90
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200139": {
+    "abilities": [
+      319
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200144": {
+    "abilities": [
+      73
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200145": {
+    "abilities": [
+      125
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200146": {
+    "abilities": [
+      187
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200147": {
+    "abilities": [
+      109
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200149": {
+    "abilities": [
+      191
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200154": {
+    "abilities": [
+      142
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200158": {
+    "abilities": [
+      178
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200159": {
+    "abilities": [
+      240
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200160": {
+    "abilities": [
+      244
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200161": {
+    "abilities": [
+      322
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200162": {
+    "abilities": [
+      334
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200163": {
+    "abilities": [
+      62
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200164": {
+    "abilities": [
+      69
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200165": {
+    "abilities": [
+      467
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200166": {
+    "abilities": [
+      100
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200167": {
+    "abilities": [
+      244
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200168": {
+    "abilities": [
+      71
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200169": {
+    "abilities": [
+      92
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200170": {
+    "abilities": [
+      540
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200171": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200174": {
+    "abilities": [
+      132
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200175": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200176": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200177": {
+    "abilities": [
+      511
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200181": {
+    "abilities": [
+      59
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200191": {
+    "abilities": [
+      49
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200192": {
+    "abilities": [
+      57
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200194": {
+    "abilities": [
+      44
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200198": {
+    "abilities": [
+      131
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200201": {
+    "abilities": [
+      102
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200207": {
+    "abilities": [
+      40
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200209": {
+    "abilities": [
+      519
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200212": {
+    "abilities": [
+      79
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200218": {
+    "abilities": [
+      140
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200220": {
+    "abilities": [
+      93
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200221": {
+    "abilities": [
+      110
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200222": {
+    "abilities": [
+      755
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200223": {
+    "abilities": [
+      354
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200224": {
+    "abilities": [
+      296
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200225": {
+    "abilities": [
+      184
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200226": {
+    "abilities": [
+      309
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200227": {
+    "abilities": [
+      516
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200228": {
+    "abilities": [
+      42
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200233": {
+    "abilities": [
+      236
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200234": {
+    "abilities": [
+      260
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200235": {
+    "abilities": [
+      176
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200236": {
+    "abilities": [
+      207
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200237": {
+    "abilities": [
+      101
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200293": {
+    "abilities": [
+      133
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200294": {
+    "abilities": [
+      328
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200295": {
+    "abilities": [
+      445
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200296": {
+    "abilities": [
+      188
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200299": {
+    "abilities": [
+      50
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200300": {
+    "abilities": [
+      190
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200301": {
+    "abilities": [
+      1211
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200502": {
+    "abilities": [
+      313
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200518": {
+    "abilities": [
+      179
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200519": {
+    "abilities": [
+      103
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200520": {
+    "abilities": [
+      73
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200523": {
+    "abilities": [
+      61
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200528": {
+    "abilities": [
+      509
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200529": {
+    "abilities": [
+      194
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200530": {
+    "abilities": [
+      122
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200532": {
+    "abilities": [
+      263
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200534": {
+    "abilities": [
+      235
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200535": {
+    "abilities": [
+      135
+    ],
+    "hasPlayCardsNode": false
+  },
+  "200539": {
+    "abilities": [
+      550
+    ],
+    "hasPlayCardsNode": true
+  },
+  "200540": {
+    "abilities": [
+      70
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201523": {
+    "abilities": [
+      63
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201559": {
+    "abilities": [
+      190
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201562": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201563": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201572": {
+    "abilities": [
+      201
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201573": {
+    "abilities": [
+      48
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201574": {
+    "abilities": [
+      445
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201578": {
+    "abilities": [
+      223
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201579": {
+    "abilities": [
+      83
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201580": {
+    "abilities": [
+      149
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201581": {
+    "abilities": [
+      443
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201582": {
+    "abilities": [
+      443
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201583": {
+    "abilities": [
+      438
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201584": {
+    "abilities": [
+      451
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201585": {
+    "abilities": [
+      443
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201587": {
+    "abilities": [
+      185
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201589": {
+    "abilities": [
+      181
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201595": {
+    "abilities": [
+      154
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201597": {
+    "abilities": [
+      183
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201598": {
+    "abilities": [
+      485
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201599": {
+    "abilities": [
+      125
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201600": {
+    "abilities": [
+      272
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201601": {
+    "abilities": [
+      404
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201603": {
+    "abilities": [
+      632
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201606": {
+    "abilities": [
+      226
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201609": {
+    "abilities": [
+      879
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201610": {
+    "abilities": [
+      483
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201611": {
+    "abilities": [
+      534
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201612": {
+    "abilities": [
+      752
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201613": {
+    "abilities": [
+      148
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201615": {
+    "abilities": [
+      643
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201616": {
+    "abilities": [
+      153
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201617": {
+    "abilities": [
+      200
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201618": {
+    "abilities": [
+      141
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201619": {
+    "abilities": [
+      747
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201620": {
+    "abilities": [
+      328
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201621": {
+    "abilities": [
+      583
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201622": {
+    "abilities": [
+      130
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201623": {
+    "abilities": [
+      222
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201624": {
+    "abilities": [
+      268
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201625": {
+    "abilities": [
+      117
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201626": {
+    "abilities": [
+      407
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201627": {
+    "abilities": [
+      828
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201628": {
+    "abilities": [
+      88
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201630": {
+    "abilities": [
+      102
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201631": {
+    "abilities": [
+      237
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201632": {
+    "abilities": [
+      833
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201633": {
+    "abilities": [
+      129
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201634": {
+    "abilities": [
+      76
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201635": {
+    "abilities": [
+      219
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201636": {
+    "abilities": [
+      62
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201637": {
+    "abilities": [
+      42
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201638": {
+    "abilities": [
+      195
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201639": {
+    "abilities": [
+      152
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201642": {
+    "abilities": [
+      125
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201643": {
+    "abilities": [
+      69
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201644": {
+    "abilities": [
+      183
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201645": {
+    "abilities": [
+      205
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201646": {
+    "abilities": [
+      247
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201647": {
+    "abilities": [
+      223
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201648": {
+    "abilities": [
+      177
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201650": {
+    "abilities": [
+      54
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201653": {
+    "abilities": [
+      437
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201656": {
+    "abilities": [
+      95
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201657": {
+    "abilities": [
+      126
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201659": {
+    "abilities": [
+      194
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201660": {
+    "abilities": [
+      72
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201661": {
+    "abilities": [
+      191
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201662": {
+    "abilities": [
+      243
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201664": {
+    "abilities": [
+      77
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201666": {
+    "abilities": [
+      3
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201667": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201668": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201669": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201670": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201671": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201673": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201676": {
+    "abilities": [
+      77
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201679": {
+    "abilities": [
+      53
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201680": {
+    "abilities": [
+      206
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201682": {
+    "abilities": [
+      71
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201684": {
+    "abilities": [
+      62
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201686": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201687": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201689": {
+    "abilities": [
+      65
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201690": {
+    "abilities": [
+      64
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201691": {
+    "abilities": [
+      51
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201692": {
+    "abilities": [
+      52
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201693": {
+    "abilities": [
+      129
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201694": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201696": {
+    "abilities": [
+      62
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201697": {
+    "abilities": [
+      603
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201698": {
+    "abilities": [
+      139
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201699": {
+    "abilities": [
+      113
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201700": {
+    "abilities": [
+      206
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201701": {
+    "abilities": [
+      182
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201702": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201703": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201704": {
+    "abilities": [
+      206
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201705": {
+    "abilities": [
+      4
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201706": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201707": {
+    "abilities": [
+      109
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201708": {
+    "abilities": [
+      50
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201709": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201710": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201712": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201713": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201725": {
+    "abilities": [
+      1315
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201729": {
+    "abilities": [
+      3
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201731": {
+    "abilities": [
+      1551
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201732": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201733": {
+    "abilities": [
+      3
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201734": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201735": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201737": {
+    "abilities": [
+      1301
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201738": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201742": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201743": {
+    "abilities": [
+      346
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201744": {
+    "abilities": [
+      74
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201745": {
+    "abilities": [
+      69
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201746": {
+    "abilities": [
+      3
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201747": {
+    "abilities": [
+      3
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201748": {
+    "abilities": [
+      148
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201749": {
+    "abilities": [
+      35
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201751": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201753": {
+    "abilities": [
+      194
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201759": {
+    "abilities": [
+      1132
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201762": {
+    "abilities": [
+      172
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201763": {
+    "abilities": [
+      190
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201765": {
+    "abilities": [
+      152
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201767": {
+    "abilities": [
+      79
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201770": {
+    "abilities": [
+      2
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201772": {
+    "abilities": [
+      154
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201773": {
+    "abilities": [
+      119
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201774": {
+    "abilities": [
+      72
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201776": {
+    "abilities": [
+      146
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201777": {
+    "abilities": [
+      72
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201778": {
+    "abilities": [
+      158
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201779": {
+    "abilities": [
+      112
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201780": {
+    "abilities": [
+      91
+    ],
+    "hasPlayCardsNode": true
+  },
+  "201781": {
+    "abilities": [
+      229
+    ],
+    "hasPlayCardsNode": false
+  },
+  "201817": {
+    "abilities": [
+      395
+    ],
+    "hasPlayCardsNode": false
+  }
+}

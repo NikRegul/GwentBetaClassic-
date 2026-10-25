@@ -6,7 +6,7 @@ import pdfplumber
 from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[2]
-SOURCE = ROOT / 'Gwent-09-2025-Tierlist 6.0.pdf'
+SOURCE = ROOT / 'BetaGwent/build-inputs/reference/local-research/Gwent-09-2025-Tierlist 6.0.pdf'
 OUT = ROOT / 'docs/evidence'
 OUT.mkdir(parents=True, exist_ok=True)
 NAMES = {

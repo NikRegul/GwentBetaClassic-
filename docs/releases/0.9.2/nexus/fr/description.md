@@ -1,0 +1,242 @@
+# Gwent Beta Classic
+
+> THE WITCHER 3 · GWENT BETA 0.9.24 · VERSION 0.9.2
+
+## La chasse peut attendre. Encore une partie.
+
+Une auberge. Un visage familier de l’autre côté de la table. Une main qui pourrait tout renverser. **Gwent Beta Classic fait entrer la bêta du Gwent autonome dans The Witcher 3**, avec ses cartes, ses règles et cette tension délicieuse lorsqu’il faut choisir le bon moment pour passer.
+
+Remporter la manche ou garder sa meilleure carte ? Provoquer une réponse ou miser sur son dernier coup ? Parfois, les plus belles victoires commencent par une manche que l’on accepte de perdre.
+
+- **479 cartes à collectionner**
+- **21 chefs · 5 factions**
+- **46 archétypes de decks adverses**
+- **13 langues de texte · 5 doublages**
+
+## 0.9.2 — une raison de plus de jouer une dernière manche
+
+L'adversaire gère sa main avec plus d'attention : quand abandonner une remontée trop coûteuse, comment remporter une manche vide à moindre coût et quelles cartes garder pour la finale. La nouvelle recherche tactique étudie plusieurs réponses et choisit une suite propre à chacune. La simulation exacte des cartes prometteuses fonctionne aussi en facile et en normal ; certaines petites fins de partie à informations ouvertes peuvent être calculées jusqu'au bout.
+
+Au niveau maximal, l'IA connaît la liste du deck annoncée au départ, mais ni votre véritable main cachée ni l'ordre des prochaines pioches. Les niveaux facile et normal n'utilisent pas la liste initiale exacte. Aucun bonus initial de cinq points n'a été ajouté.
+
+La Panthère utilise une flèche de ciblage sur le plateau ; la rangée ciblée doit toujours contenir moins de quatre unités. Henry var Attre peut terminer sa sélection facultative. Les cartes créées, les aperçus de cartes liées et plusieurs décisions de combinaison ont été corrigés.
+
+Le thème original du menu principal de Gwent Beta accompagne désormais le constructeur de decks. Les parties conservent la musique de The Witcher 3. Les corrections de chargement, de son et de manette de la version 0.9.1 sont incluses.
+
+Installez le mod principal. modBetaGwentMenuMusic est facultatif : il ajoute le thème de la Beta au constructeur de decks ; sans lui, la musique normale du jeu continue. Classic 1.32 nécessite toujours les deux dossiers DLC inclus. Conservez vos autres mods et refaites les fusions Script Merger concernées si nécessaire. Consultez le journal des modifications 0.9.2 inclus.
+
+## Une nouvelle raison de s’arrêter à l’auberge
+
+### L’atmosphère de la bêta retrouve votre table
+
+Plateau, cadres, polices, météo et effets donnent à chaque partie le caractère de la bêta. Les portraits animés des chefs et leurs voix familières installent l’ambiance avant même la première carte.
+
+### Une collection que l’on a envie de construire
+
+Partez de cinq decks de départ modifiables, gagnez des cartes contre les PNJ, achetez des tonneaux aux aubergistes et fabriquez les cartes manquantes avec des fragments. Les exemplaires en trop sont recyclés automatiquement. Le prochain tonneau inspirera peut-être un tout nouveau deck.
+
+### Votre deck. Votre façon de gagner.
+
+Recherchez, filtrez et affinez votre liste dans l’éditeur : huit emplacements personnels s’ajoutent aux decks de départ. Partagez des codes BG1 indépendants de la langue, importez un deck et découvrez les cartes qu’il vous reste à fabriquer.
+
+### Un monde familier. De nouveaux rivaux.
+
+Défiez les PNJ au fil de vos voyages dans le monde du Sorceleur. Avec 46 archétypes de decks adverses et trois niveaux d’IA, découvrez votre première faction ou éprouvez votre combinaison favorite. À la souris et au clavier ou à la manette.
+
+## Cinq factions. Laquelle vous ressemble ?
+
+### Monstres
+
+Nourrissez la horde. La consommation, les effets de mort et le gel de la Chasse Sauvage font grandir la menace.
+
+### Nilfgaard
+
+Faites du renseignement une arme. Espions, révélation et alchimie récompensent les plans à long terme.
+
+### Royaumes du Nord
+
+Bâtissez une formation à défendre. Soldats, armure et machines révèlent leur force ensemble.
+
+### Scoia’tael
+
+Préparez l’embuscade. Elfes, nains, échanges et renforcements en main transforment la patience en coup décisif.
+
+### Skellige
+
+Tirez parti de chaque perte. Défausse, résurrection et guerriers profitant des dégâts font du cimetière une ressource.
+
+## Le contrat peut attendre. Votre prochain deck commence ici.
+
+Choisissez l’archive adaptée à votre jeu, ouvrez le menu habituel des decks de Gwynt et composez votre liste. Il ne reste qu’à trouver un partenaire. **Juste une partie…**
+
+## Du téléchargement à la première partie
+
+## Langues
+
+Texte : anglais, russe, allemand, français, italien, polonais, espagnol (Espagne), espagnol (Amérique latine), portugais (Brésil), japonais, coréen, chinois simplifié et chinois traditionnel. Changez-la à tout moment avec le bouton de langue du texte en haut à gauche des menus des decks et de la collection, ou dans les paramètres de combat ; le choix est enregistré.
+
+Chaque paquet comprend les voix RU, EN, DE, IT et PT-BR. Choisissez séparément texte et voix avec deux boutons voisins dans le menu des decks/de la collection du mod, ou dans les paramètres de combat. Changer de voix ne demande aucune réinstallation. Automatique suit séparément les langues actuelles du texte et des voix du jeu ; si une langue manque, l’anglais est utilisé. Sauvegardez normalement après le choix : les préférences appartiennent à cette sauvegarde et restent après mise à jour des fichiers. L’ancien choix manuel du texte est conservé. Certaines répliques du troll des tonneaux en DE/IT gardent leur remplacement russe d’origine. Les noms natifs des objets suivent la langue du jeu ; certaines notifications hors de l’interface restent RU/EN.
+
+
+## Configuration requise
+
+The Witcher 3 sur PC. Choisissez la version distincte pour Classic 1.32 ou Next-Gen (paquet nommé 5.0+). REDkit, Wwise et un installateur EXE ne sont pas nécessaires pour jouer.
+
+
+## Important
+
+Sauvegardez vos parties avant l'installation et avant chaque mise à jour. Le mod est en développement actif : utilisez une sauvegarde séparée pour vos premières parties.
+
+Les textes des cartes proviennent de la traduction officielle de la bêta. L’interface a été traduite avec l’aide de l’IA et peut contenir des erreurs. Les messages d’échange de decks existent dans les 13 langues ; certaines anciennes aides utilisent encore l’anglais par défaut. Vos propositions de correction sont les bienvenues.
+
+**Steam Deck :** le mod fonctionne sur Steam Deck (testé par l’auteur).
+
+
+## Installation
+
+1. Fermez le jeu et sauvegardez vos parties. Téléchargez le paquet pour 1.32 ou Next-Gen (5.0+). N’installez qu’une version de Beta Gwent.
+
+2. Pour une mise à jour, déplacez d’abord l’ancien dossier Beta Gwent hors de Mods. Ne supprimez pas tout le dossier Mods et ne mélangez pas les versions.
+
+3. Copiez Mods depuis l’archive dans le dossier du jeu, à côté de bin et content. Pour Classic 1.32, copiez aussi le dossier DLC fourni. Chemins : Mods/modBetaGwentClassic132/content et DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items pour 1.32 ; Mods/modBetaGwent0924/content pour Next-Gen. Remplacez uniquement les anciens dossiers de ce mod, en conservant les autres mods et DLC.
+
+4. Chargez une sauvegarde. Le menu habituel des decks de Gwynt ouvre l’éditeur et les langues ; parlez à un PNJ joueur pour lancer une partie. Sauvegardez normalement pour conserver vos choix.
+
+
+<details>
+<summary>Pour aller plus loin · contenu, nouveautés et partage de decks</summary>
+
+## Fonctionnalités
+
+- 479 cartes à collectionner, dont 21 chefs, pour les cinq factions
+- Plateau, interface, polices, cadres de cartes, météo et effets de la bêta ; chefs animés
+- Éditeur de decks : cinq decks de départ modifiables et huit emplacements personnels, filtres et recherche
+- Adversaires avec 46 archétypes de decks de la bêta et trois niveaux de difficulté de l'IA
+- Tonneaux à 200 couronnes chez tous les aubergistes, ouverts comme dans la bêta
+- Fragments : fabriquez des cartes pour 30 / 80 / 200 / 800 selon la rareté ; les exemplaires en trop sont recyclés automatiquement
+- Tutoriel, mulligan, consultation des cimetières et du deck, fiche détaillée des cartes
+- Souris, clavier et manette
+
+
+## Nouveautés de la 0.9.0
+
+- Exporter affiche un code BG1.
+- Commandes de console pour les ressources, la recherche de cartes, les collections de faction et le stock de barils des aubergistes.
+- Les cartes envoyées au cimetière s’envolent vers leur véritable cimetière ; les cartes spéciales font de même après leur résolution. Les effets de bannissement et de dissolution sont conservés.
+- Des définitions d’anciens objets Redux sont intégrées pour éviter la perte d’inventaire ou du corps au chargement après migration. Elles ne restaurent pas un inventaire déjà perdu puis sauvegardé.
+- Espacements des menus, état du deck et boutons réorganisés ; la manette permet de passer des cartes visibles à Enregistrer, puis de revenir aux cartes.
+- Les portraits des chefs restent animés après leur entrée sur l’écran VS. L’entrée de la reine des Arachas commence avec sa réplique. Classic 1.32 comprend les corrections du gel et des effets d’attaque.
+- Vue complète des cartes façon bêta : grande carte avec la bannière de faction originale de la bêta 0.9.24 (factions, cartes neutres et chefs), puissance de base, citation lisible, mots-clés mis en évidence et navigation ←/→.
+- Collez un code de deck depuis le presse-papiers Windows dans l'écran d'import (bouton Coller ou Ctrl+V ; nécessite Optional-CopyButton).
+- Tutoriel étendu à 10 pages : mulligan et pioche, rangées et voisins, états des cartes.
+- Cartes corrigées comme dans la bêta : Myrgtabrakke inflige 2 dégâts trois fois, la capacité de Harald l'Estropié frappe dix fois.
+- Amélioration de la gestion des sauvegardes de la collection et des decks. Cela peut aider dans certains cas de perte de progression ; la restauration dépend des données disponibles dans la copie de sauvegarde.
+
+
+## IA et interface
+
+L’évaluation d’Igni, d’Yrden, de la météo de Birna et des capacités d’armure du chevalier, de l’élite et de l’écuyer rédaniens a été améliorée. Après un passe, le calcul suit les actions et les changements de tour réels ; le dernier passe ne donne aucun effet supplémentaire. Au premier round, perdre une carte peut être acceptable, deux demandent une évaluation et trois sont évitées lors d’une poursuite facultative. Éviter de perdre le match reste prioritaire. Les boutons traduits et les espacements ont été revus.
+
+Isengrim : Hors-la-loi compare les branches carte spéciale et création, même après Décret royal. L’IA écarte Leurre sans cible alliée Bronze ou Argent valide et estime la création à partir des trois propositions aléatoires, sans connaître les prochains tirages.
+
+
+## Partager des decks
+
+Exporter affiche un code BG1 indépendant de la langue. Copier le place directement dans le presse-papiers Windows ; collez-le n’importe où avec Ctrl+V. Il faut pour cela le dossier facultatif Optional-CopyButton : copiez son dossier bin dans le répertoire du jeu (dinput8.dll et plugins/GwentBetaClipboard.asi à côté de witcher3.exe). Le mod fonctionne aussi sans lui. Si un autre mod a déjà son propre dinput8.dll, gardez-le et chargez GwentBetaClipboard.asi avec son chargeur ASI. Sans ces fichiers, les boutons Importer et Exporter sont masqués. Importer accepte le code BG1 complet dans le champ de texte.
+
+Les cartes manquantes, chef compris, sont affichées avec le coût total en fragments. Leur fabrication demande une confirmation distincte et assez de fragments. L’importation crée un brouillon : enregistrez ensuite le deck. Depuis la liste, un emplacement personnalisé libre est utilisé sans écraser les autres. L’entraînement utilise la collection illimitée existante.
+
+
+## Commandes de console
+
+bg_help() affiche l’aide et bg_status() la collection, les barils et les fragments. bg_find('Imlerith') recherche noms et identifiants ; bg_card(132102,1) donne une carte, bg_faction('monsters') une faction. bg_leaders() / bg_allcards() complètent les chefs ou la collection jusqu’aux limites normales. bg_kegs(10) et bg_scraps(1000) ajoutent des ressources. Les ajouts nécessitent une sauvegarde chargée, hors menus et parties ; sauvegardez normalement ensuite. Dans la boutique ouverte d’un aubergiste, bg_shopcheck() vérifie les barils et bg_shoprefill(5) porte le stock à cinq au lieu d’en ajouter cinq à chaque appel. La console du jeu doit déjà être activée.
+
+```text
+bg_help()
+bg_status()
+bg_find('Imlerith')
+bg_card(132102,1)
+bg_faction('monsters')
+bg_leaders()
+bg_allcards()
+bg_kegs(10)
+bg_scraps(1000)
+bg_shopcheck()
+bg_shoprefill(5)
+```
+
+
+</details>
+
+<details>
+<summary>Détails d’installation · compatibilité et désinstallation</summary>
+
+## Classic 1.32 : taille et dossier DLC
+
+Classic occupe environ 947 Mo, Next-Gen 454 Mo, avec les mêmes cartes et règles. L’ancien format et la limite d’environ 32 Mio par ressource chargée de manière asynchrone nécessitent des pages graphiques séparées. Installez Mods et DLC pour Classic. DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items contient des graphismes indispensables et leur enregistrement, sans nouvelle histoire. Environ 105 Mo du téléchargement viennent de ce dossier ; le reste de la différence provient de la préparation pour l’ancien moteur.
+
+
+## Compatibilité
+
+Les définitions d’anciens objets Redux sont intégrées pour charger les sauvegardes ; retirez l’ancien dossier modBetaGwentReduxCompat. Pour migrer depuis Redux, partez d’une copie antérieure à la perte de l’inventaire ou du corps : les données perdues ne sont pas récupérées. Les cartes Redux ne sont pas converties en collection Beta, et la compatibilité avec toutes les fonctions de Redux/Redo Expansion n’est pas garantie. Les autres refontes du Gwynt et modifications de ses menus, échanges ou récompenses peuvent entrer en conflit. Refaites les fusions de scripts conflictuels avec Script Merger après avoir changé les mods.
+
+
+## Redux
+
+Sur 400 anciens noms d’objets vérifiés, 197 conservent leurs définitions natives et 203 reçoivent des définitions inertes, en partie normale et NG+. Ces objets sont cachés, sans poids ni valeur. Un inventaire déjà perdu n’est pas restauré. À la désinstallation, les objets Redux restants nécessitent de nouveau leur fournisseur de définitions d’origine.
+
+
+## Nettoyage intégré avant désinstallation
+
+Aucun mod de nettoyage séparé. Sauvegardez vos fichiers, terminez la partie et quittez combats et menus. bg_clean_preview() affiche seulement l’aide. Avec le mod principal encore installé, confirmez :
+
+```text
+bg_clean_confirm('DELETE_BETA_GWENT')
+```
+
+Collection, decks, ressources, réglages, récompenses connues, miroirs de sauvegarde et objets betagwent_* de l’inventaire du joueur sont effacés. Un indicateur sauvegardé empêche leur restauration, même après rechargement. Sauvegardez dans un NOUVEL emplacement, quittez le jeu, retirez le mod et son DLC Classic, actualisez Script Merger, chargez ce nouvel emplacement et sauvegardez encore. Quêtes, succès et couronnes dépensées restent inchangés. Marchands non chargés, réserve et conteneurs du monde ne sont pas parcourus. Pour les anciens faits de récompense orphelins : save_fact_index.py puis bg_clean_keys('…') après confirmation. L’effacement physique de toute trace historique n’est pas garanti. Si certains objets Beta ne peuvent pas être retirés, le jeu affiche INCOMPLETE au lieu du succès : jetez-les ou vendez-les, puis relancez la commande. À la désinstallation, supprimez aussi les fichiers Optional-CopyButton s’ils sont installés : bin\…\plugins\GwentBetaClipboard.asi et le dinput8.dll de ce mod (pas celui d’un autre).
+
+**Après la désinstallation :** copiez le dossier du dossier After-Uninstall de l’archive dans le répertoire du jeu (Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems). Il conserve des définitions cachées des objets du mod, afin que les marchands, la réserve et les conteneurs qui contiennent encore des cartes ou des barils de la bêta ne perdent pas tout leur inventaire. Ne l’installez pas en même temps que le mod.
+
+
+</details>
+
+<details>
+<summary>Aide, retours et remerciements</summary>
+
+## Vers la 1.0
+
+Jusqu’à la 1.0, priorité aux traductions, aux corrections de bugs et aux améliorations de l’IA et de l’interface. Les tests automatiques ne remplacent pas les vérifications en jeu ni un véritable cycle sauvegarde/chargement après nettoyage.
+
+
+## Signaler un bug
+
+Un problème ? Indiquez les versions du mod et du jeu, les langues choisies pour texte et voix (y compris Automatique), Nouvelle partie + ou non, les autres mods, les cartes/chefs et les étapes de reproduction. Une capture et une sauvegarde avant le problème sont utiles. Pour une traduction, précisez langue et écran et proposez une meilleure formulation.
+
+### Activer le journal
+
+1. Ajoutez -debugscripts après le guillemet fermant de la cible d’un raccourci vers witcher3.exe. Steam : Propriétés → Général → Options de lancement. Pour GOG, utilisez un raccourci direct vers witcher3.exe.
+
+2. Lancez le jeu, reproduisez le problème puis fermez-le. Copiez immédiatement scriptslog.txt : le lancement suivant l’écrase. S’il ne contient qu’un en-tête, signalez-le ; une configuration supplémentaire peut être nécessaire.
+
+3. Si Windows a créé un fichier de crash, joignez aussi le dernier .dmp correspondant.
+
+```text
+%USERPROFILE%\Documents\The Witcher 3\scriptslog.txt
+```
+
+```text
+%LOCALAPPDATA%\CrashDumps
+```
+
+
+## Remerciements
+
+Merci à CD Projekt pour The Witcher et Gwent, à LegacyGwent DIY pour les ressources des cartes et du plateau, à la communauté Beta Gwent pour la préservation des archives et les idées d'archétypes, et à tous ceux qui testent le mod et envoient des rapports détaillés.
+
+Projet de fan non officiel. Le code original du mod est sous licence GPL-3.0-only ; les contenus originaux du jeu appartiennent à leurs propriétaires.
+
+[GitHub — Gwent Beta Classic](https://github.com/NikRegul/GwentBetaClassic-)
+
+
+</details>

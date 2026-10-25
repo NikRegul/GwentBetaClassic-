@@ -127,6 +127,11 @@ class CBetaGwentDeckNameInput extends IScriptable
     if Path(source).name == 'nativeGwentEntry.ws':
         text = replace_once(text, 'function SetEnemyDeck(deckName : name)', 'function SetEnemyDeckByName(deckName : name)')
     if Path(source).name == 'developmentBoardMenu.ws':
+        # Classic cannot open our separately registered practice menu at runtime.
+        # DeckBuilder is a working stock entry; betaPracticeRequested selects practice.
+        if 'exec function bgboard_open(' in text:
+            text = replace_once(text, "nativePlayer=thePlayer;nativePlayer.betaPracticeRequested=true;\n    theGame.RequestMenu('BetaGwentBoard');",
+                                "nativePlayer=thePlayer;nativePlayer.betaPracticeRequested=true;\n    theGame.RequestMenu('DeckBuilder');")
         text = replace_once(text, 'EMS_End_PlayerLost | EMS_End_PlayerForfeited', 'EMS_End_PlayerLost')
         text = replace_once(text, 'class CR4BetaGwentBoardMenu extends CR4Menu\n{',
                             'class CR4BetaGwentBoardMenu extends CR4Menu\n{\n    private var classicEndNotified : bool;')

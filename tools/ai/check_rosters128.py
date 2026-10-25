@@ -12,13 +12,17 @@ research=read('data/beta924/ai/researched115.json')['profiles']
 full={c['templateId']:c for c in read('data/beta924/planning/full_catalog.json')['cards']}
 patch=read('data/beta924/ai/deck_patch128.json')
 variety=read('data/beta924/ai/deck_variety128.json')
+current=read('data/beta924/ai/deck_patch092.json')
 by_id={p['id']:p for p in presets};active=[p for p in rules['profiles'] if p['active']]
-assert len(active)==46 and set(by_id)==set(range(1,100))
+from deck_expansion092 import imported_presets
+imports=imported_presets()
+assert len(active)==46 and set(by_id)==set(range(1,100+len(imports)))
+assert all(by_id[p['id']]['templateIds']==p['templateIds'] for p in imports)
 for p in active:
     assert by_id[p['presetId']]['templateIds']==p['templateIds']
     assert by_id[p['presetId']]['leader']==p['leader']
     counts=Counter(p['templateIds']);tiers=Counter(full[i]['tier'] for i in p['templateIds'])
-    assert len(p['templateIds'])==(40 if p['presetId']==83 else 25)
+    assert len(p['templateIds'])==(40 if p['presetId']==83 else (26 if p['presetId']==93 else 25))
     assert tiers[8]<=4 and tiers[4]<=6 and full[p['leader']]['leader']
     assert all(not full[i]['leader'] and full[i]['faction'] in (1,p['faction']) and n<=(3 if full[i]['tier']==2 else 1) for i,n in counts.items())
     assert not any(c.isascii() and c.isalpha() for c in p['title']),p['title']
@@ -32,8 +36,11 @@ for change in variety['decks']:
     overlap=max(sum((counts&Counter(p['templateIds'])).values()) for p in active if p['presetId']!=change['presetId'])
     assert overlap<=18,(change['presetId'],overlap)
 for change in patch['decks']:
-    if change.get('enabled',True) is False and change['presetId'] not in {v['presetId'] for v in variety['decks'] if v.get('enabled',True)}:
+    if change.get('enabled',True) is False and change['presetId'] not in {v['presetId'] for v in variety['decks']+current['decks'] if v.get('enabled',True)}:
         assert Counter(by_id[change['presetId']]['templateIds'])==Counter(change['expectedTemplateIds']),('disabled revision must keep the original roster',change['presetId'])
+for change in current['decks']:
+    if change.get('enabled',True):
+        assert by_id[change['presetId']]['templateIds']==change['templateIds'],('current roster override survives generation',change['presetId'])
 for ident in (74,85):
     tiers=Counter(full[i]['tier'] for i in by_id[ident]['templateIds'])
     assert tiers[8]==4 and tiers[4]==6,(ident,tiers)
@@ -53,6 +60,6 @@ wrong_presets=copy.deepcopy(source_presets)
 try:apply_patch(ROOT,wrong_profiles,wrong_presets,full,rules['families'])
 except AssertionError:pass
 else:raise AssertionError('Changed input must require explicit review')
-report=dict(activeProfiles=46,legalPresets=99,protectedPlayerPresets=53,eredin80Preserved=True,retainedFringillaDraigSabrina=True,newLeaders=4,sourceGuardVerified=True,nativeGameTested=False)
+report=dict(activeProfiles=46,legalPresets=len(presets),originalBetaImports=len(imports),protectedPlayerPresets=53,eredin80Preserved=True,retainedFringillaDraigSabrina=True,newLeaders=4,sourceGuardVerified=True,nativeGameTested=False)
 (ROOT/'docs/evidence/rosters128.json').write_text(json.dumps(report,indent=2)+'\n','utf-8')
 print(json.dumps(report))

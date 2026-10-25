@@ -85,10 +85,10 @@ configs = [
 families = {name:i+1 for i,name in enumerate(dict.fromkeys(name for name,_ in configs if name!='skip'))}
 path = ROOT/'data/beta924/duel/presets.json'
 document = read(path)
-base = [p for p in document['presets'] if not p.get('aiRulesProfile')]
+base = [p for p in document['presets'] if not p.get('aiRulesProfile') and not p.get('originalBetaAsset')]
 assert len(base)==53, 'Original starter/NPC identities must remain stable'
 base_by_id = {p['id']:p for p in base}
-raw = (ROOT/'deck_rules.txt').read_bytes()
+raw = (ROOT/'data/beta924/ai/references/deck_rules.txt').read_bytes()
 blocks = re.split(r'(?m)^\s*Архетип:\s*',raw.decode('utf-8-sig'))[1:]
 assert len(blocks)==len(configs)
 profiles=[]
@@ -183,7 +183,7 @@ assert research['sourceSha256'] == hashlib.sha256((ROOT/research['source']).read
 beta_titles = {
     10: 'Аретуза: магический контроль Фольтеста',
     12: 'Солдаты Эмгыра',
-    33: 'Бран: раны и мечники',
+    33: 'Крах: раны и мечники',
     42: 'Солдаты и рыцари Фольтеста',
     43: 'Харальд: дождь и топорники',
     44: 'Фольтест: усиление колоды',
@@ -218,6 +218,8 @@ from ai_deck_patch128 import apply_patch as apply_reviewed_decks
 reviewed_patch = apply_reviewed_decks(ROOT, profiles, base, full, families)
 base.sort(key=lambda p:p['id'])
 assert [p['id'] for p in base] == list(range(1,100))
+from deck_expansion092 import imported_presets
+base.extend(imported_presets())
 
 # Explicit legal combo dependencies shared by all decks, including named NPC variants.
 combo_names = [
@@ -239,6 +241,8 @@ combo_names = [
  ('Nekker',['Forktail','Vran Warrior','Kayran'],3),('Arachas Behemoth',['Forktail','Vran Warrior','Kayran'],3),
  ('Celaeno Harpy',['Vran Warrior','Forktail','Cyclops'],3),
  ("D'ao",['Griffin','Cyclops'],3),('Rotfiend',['Griffin','Cyclops'],2),
+ # 0.9.1b: Archespore pings every turn and deals 4 on death; activators follow it.
+ ('Archespore',['Griffin','Cyclops','Forktail'],3),
  ('Wild Hunt Drakkar',['Wild Hunt Hound','Wild Hunt Rider','Wild Hunt Warrior','Wild Hunt Navigator'],2),
  # These spies can prepare a weak left neighbour, but Fringilla's runtime
  # evaluates any ordered pair by its actual power, irrespective of template.
@@ -253,7 +257,7 @@ engines={card(n):w for n,w in [
  ('Hawker Smuggler',1),('Farseer',2),('Yarpen Zigrin',1),('An Craite Greatsword',2),
  ('Dimun Light Longship',2),('An Craite Longship',2),('Tuirseach Axeman',2),('Savage Bear',1),
  ('Derran',1),('Nekker',1),('Arachas Behemoth',2),('Vran Warrior',2),('Wild Hunt Drakkar',1),
- ('Imlerith: Sabbath',4),('Ancient Foglet',1),('Reaver Hunter',2)]}
+ ('Imlerith: Sabbath',4),('Ancient Foglet',1),('Reaver Hunter',2),('Archespore',1)]}
 finishers=[card(n) for n in ['Geralt: Igni','Scorch','Schirrú','Sigismund Dijkstra','Mourntart','Old Speartip','Saesenthessis','Coral','Regis: Higher Vampire','Cerys an Craite']]
 resurrectors=[card(n) for n in ['Priestess of Freya','Sigrdrifa','Restore','Dimun Corsair','Vicovaro Medic','Ointment','Paulie Dahlberg','Éibhear Hattori']]
 document['presets']=base
@@ -277,7 +281,7 @@ table('BetaGwentAIFinisher',[(i,'true') for i in finishers],'bool','false')
 table('BetaGwentAIResurrector',[(i,'true') for i in resurrectors],'bool','false')
 active=[p for p in profiles if p['active']]
 table('BetaGwentAIProfileFamily',[(p['id'],p['familyId']) for p in active])
-table('BetaGwentAIPresetProfile',[(p['presetId'],p['id']) for p in active])
+table('BetaGwentAIPresetProfile',[(p['presetId'],p['id']) for p in active],default='BetaGwentAINpcProfile(id)')
 table('BetaGwentAIProfileLeader',[(p['id'],p['leader']) for p in active])
 table('BetaGwentAIProfileLongRound',[(p['id'],'true') for p in active if p['passPolicy']=='L'],'bool','false')
 lines+=['function BetaGwentAIProfileTitle(id : int) : string {','    switch(id) {']

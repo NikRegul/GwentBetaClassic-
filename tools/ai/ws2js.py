@@ -368,6 +368,10 @@ class Emitter:
 
     def fn_ctx(s, f, cls):
         s.cls = cls; s.locals = {}; s.outs = set(); s.tmp = 0; s.tmpmax = 0
+        # The direct Beta AI uses float-valued scores and strict tie ordering.
+        # Preserve WS float32 at each operation in that named module. Existing
+        # battle/policy translations keep their established numeric contract.
+        s.float32 = bool((cls and cls.startswith('CBetaOriginal')) or f.name.startswith('BetaOriginal'))
         for p in f.params:
             s.locals[p.name] = s.p.norm(p.type)
             if p.out: s.outs.add(p.name)
@@ -448,6 +452,12 @@ class Emitter:
 
     # ---- expressions
     def ex(s, e):
+        code = s.ex_raw(e)
+        if getattr(s, 'float32', False) and e.kind in ('lit', 'cast', 'un', 'bin', 'cond', 'call') and s.typeof(e) == 'float':
+            return f'Math.fround({code})'
+        return code
+
+    def ex_raw(s, e):
         k = e.kind
         if k == 'lit': return e.v
         if k == 'paren': return '(' + s.ex(e.e) + ')'
@@ -490,6 +500,10 @@ class Emitter:
 
     def assign(s, e):
         L = s.ex(e.left); tl = s.typeof(e.left)
+        if getattr(s, 'float32', False) and tl == 'float':
+            R = s.ex(e.right)
+            if e.op == '=': return f'{L}=Math.fround({R})'
+            return f'{L}=Math.fround({L}{e.op[0]}{R})'
         if e.op == '=':
             return f'{L}={s.copy_if(s.ex(e.right), e.right, tl if tl is not None else s.typeof(e.right))}'
         op = e.op[0]; R = s.ex(e.right); tr = s.typeof(e.right)

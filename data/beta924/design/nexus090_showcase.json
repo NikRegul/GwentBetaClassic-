@@ -20,7 +20,7 @@
       ["Scoia'tael", "Prepare the ambush. Elves, dwarves, swaps and hand boosts turn patient setup into a decisive play."],
       ["Skellige", "Make every loss count. Discard, resurrection and warriors who thrive amid damage keep the graveyard in your plans."]
     ],
-    "ctaTitle": "Pull up a chair. Your next deck starts here.",
+    "ctaTitle": "The contract can wait. Your next deck starts here.",
     "cta": "Choose the archive for your game, open the usual Gwent deck menu and make the first list your own. Then find someone willing to play. **Just one match…**",
     "guideTitle": "From download to your first match",
     "detailsTitle": "More to discover · features, changes and deck sharing",
@@ -48,7 +48,7 @@
       ["Скоя’таэли", "Подготовь засаду. Эльфы, краснолюды, обмены и усиления в руке превращают терпеливую подготовку в решающий ход."],
       ["Скеллиге", "Извлеки пользу из каждой потери. Сброс, воскрешение и воины, которым на руку чужие раны: кладбище тоже входит в твой план."]
     ],
-    "ctaTitle": "Подвинь стул. Здесь начинается твоя следующая колода.",
+    "ctaTitle": "Заказ подождёт. Здесь начинается твоя следующая колода.",
     "cta": "Выбери архив для своей версии игры, открой привычное меню колоды гвинта и собери что-нибудь своё. Осталось найти того, кто согласится сыграть. **Всего одну партию…**",
     "guideTitle": "От скачивания до первой партии",
     "detailsTitle": "Больше о моде · возможности, изменения и обмен колодами",
@@ -76,7 +76,7 @@
       ["Scoia'tael", "Bereite den Hinterhalt vor. Elfen, Zwerge, Kartentausch und Verstärkungen auf der Hand machen Geduld zum entscheidenden Zug."],
       ["Skellige", "Nutze jeden Verlust. Abwerfen, Wiederbelebung und Krieger, die von Schaden profitieren, machen den Friedhof zum Teil deines Plans."]
     ],
-    "ctaTitle": "Rück den Stuhl heran. Hier beginnt dein nächstes Deck.",
+    "ctaTitle": "Der Auftrag kann warten. Hier beginnt dein nächstes Deck.",
     "cta": "Wähle das Archiv für deine Spielversion, öffne das gewohnte Gwint-Deckmenü und gestalte dein erstes Deck. Dann fehlt nur noch jemand, der mitspielt. **Nur eine Partie …**",
     "guideTitle": "Vom Download zur ersten Partie",
     "detailsTitle": "Mehr entdecken · Funktionen, Änderungen und Deckaustausch",
@@ -104,7 +104,7 @@
       ["Scoia’tael", "Préparez l’embuscade. Elfes, nains, échanges et renforcements en main transforment la patience en coup décisif."],
       ["Skellige", "Tirez parti de chaque perte. Défausse, résurrection et guerriers profitant des dégâts font du cimetière une ressource."]
     ],
-    "ctaTitle": "Prenez une chaise. Votre prochain deck commence ici.",
+    "ctaTitle": "Le contrat peut attendre. Votre prochain deck commence ici.",
     "cta": "Choisissez l’archive adaptée à votre jeu, ouvrez le menu habituel des decks de Gwynt et composez votre liste. Il ne reste qu’à trouver un partenaire. **Juste une partie…**",
     "guideTitle": "Du téléchargement à la première partie",
     "detailsTitle": "Pour aller plus loin · contenu, nouveautés et partage de decks",
@@ -132,7 +132,7 @@
       ["Scoia’tael", "Prepara l’imboscata. Elfi, nani, scambi e potenziamenti in mano trasformano l’attesa nella giocata decisiva."],
       ["Skellige", "Sfrutta ogni perdita. Scarto, resurrezione e guerrieri che prosperano tra i danni fanno del cimitero una risorsa."]
     ],
-    "ctaTitle": "Avvicina la sedia. Il tuo prossimo mazzo comincia qui.",
+    "ctaTitle": "Il contratto può aspettare. Il tuo prossimo mazzo comincia qui.",
     "cta": "Scegli l’archivio per la tua versione del gioco, apri il normale menu del mazzo di Gwent e crea la tua lista. Poi trova qualcuno disposto a giocare. **Solo una partita…**",
     "guideTitle": "Dal download alla prima partita",
     "detailsTitle": "Scopri di più · contenuti, novità e condivisione dei mazzi",
@@ -160,7 +160,7 @@
       ["Scoia’tael", "Przygotuj zasadzkę. Elfy, krasnoludy, wymiany i wzmacnianie kart na ręce przekuwają cierpliwość w decydujące zagranie."],
       ["Skellige", "Wykorzystaj każdą stratę. Odrzucanie, wskrzeszanie i wojownicy korzystający z obrażeń włączają cmentarz do twojego planu."]
     ],
-    "ctaTitle": "Przysuń krzesło. Tu zaczyna się twoja następna talia.",
+    "ctaTitle": "Zlecenie może poczekać. Tu zaczyna się twoja następna talia.",
     "cta": "Wybierz archiwum dla swojej wersji gry, otwórz zwykłe menu talii Gwinta i ułóż własny zestaw. Potem znajdź kogoś chętnego do gry. **Tylko jedna partyjka…**",
     "guideTitle": "Od pobrania do pierwszej partii",
     "detailsTitle": "Odkryj więcej · zawartość, zmiany i wymiana talii",
@@ -188,7 +188,7 @@
       ["Scoia’tael", "Prepara la emboscada. Elfos, enanos, intercambios y mejoras en la mano convierten la paciencia en una jugada decisiva."],
       ["Skellige", "Saca partido de cada pérdida. Descarte, resurrección y guerreros que aprovechan el daño hacen del cementerio un recurso."]
     ],
-    "ctaTitle": "Acerca una silla. Tu próximo mazo empieza aquí.",
+    "ctaTitle": "El contrato puede esperar. Tu próximo mazo empieza aquí.",
     "cta": "Elige el archivo para tu versión del juego, abre el menú habitual de mazos de gwynt y crea tu propia lista. Después, busca a alguien dispuesto a jugar. **Solo una partida…**",
     "guideTitle": "De la descarga a tu primera partida",
     "detailsTitle": "Descubre más · contenido, novedades e intercambio de mazos",
@@ -216,7 +216,7 @@
       ["Scoia’tael", "Prepara la emboscada. Elfos, enanos, intercambios y mejoras en la mano convierten la paciencia en la jugada decisiva."],
       ["Skellige", "Aprovecha cada pérdida. Descarte, resurrección y guerreros que sacan partido del daño hacen del cementerio una herramienta."]
     ],
-    "ctaTitle": "Acerca una silla. Tu próximo mazo empieza aquí.",
+    "ctaTitle": "El contrato puede esperar. Tu próximo mazo empieza aquí.",
     "cta": "Elige el archivo para tu versión del juego, abre el menú de mazos de Gwent de siempre y arma tu propia lista. Luego encuentra a alguien que quiera jugar. **Solo una partida…**",
     "guideTitle": "De la descarga a tu primera partida",
     "detailsTitle": "Descubre más · contenido, novedades e intercambio de mazos",
@@ -244,7 +244,7 @@
       ["Scoia’tael", "Prepare a emboscada. Elfos, anões, trocas e melhorias na mão transformam paciência em uma jogada decisiva."],
       ["Skellige", "Aproveite cada perda. Descarte, ressurreição e guerreiros que se beneficiam de dano fazem do cemitério parte do plano."]
     ],
-    "ctaTitle": "Puxe uma cadeira. Seu próximo deck começa aqui.",
+    "ctaTitle": "O contrato pode esperar. Seu próximo deck começa aqui.",
     "cta": "Escolha o arquivo para sua versão do jogo, abra o menu de decks de Gwent de sempre e monte sua lista. Depois, encontre alguém disposto a jogar. **Só uma partida…**",
     "guideTitle": "Do download à primeira partida",
     "detailsTitle": "Descubra mais · conteúdo, novidades e compartilhamento de decks",
@@ -272,7 +272,7 @@
       ["スコイア＝テル", "奇襲の準備を。エルフ、ドワーフ、カード交換、手札の強化が、待ちの一手を決め手に変えます。"],
       ["スケリッジ", "失ったものさえ力に。破棄、復活、ダメージを生かす戦士たちとともに、墓地も戦略に組み込みましょう。"]
     ],
-    "ctaTitle": "席にどうぞ。次のデッキは、ここから。",
+    "ctaTitle": "依頼は後回し。次のデッキは、ここから。",
     "cta": "ゲームのバージョンに合うアーカイブを選び、いつものグウェントのデッキメニューから自分の構成を作りましょう。あとは対戦相手を探すだけ。**ほんの一勝負だけ……。**",
     "guideTitle": "ダウンロードから最初の対戦まで",
     "detailsTitle": "もっと詳しく · 機能、更新内容、デッキ共有",
@@ -300,7 +300,7 @@
       ["스코이아텔", "매복을 준비하세요. 엘프와 드워프, 카드 교환과 손패 강화로 기다림을 결정적인 한 수로 바꿉니다."],
       ["스켈리게", "모든 손실을 활용하세요. 버리기와 부활, 피해를 활용하는 전사들 덕에 무덤도 계획의 일부가 됩니다."]
     ],
-    "ctaTitle": "의자를 당겨 앉으세요. 다음 덱은 여기서 시작됩니다.",
+    "ctaTitle": "의뢰는 잠시 미뤄두세요. 다음 덱은 여기서 시작됩니다.",
     "cta": "게임 버전에 맞는 압축 파일을 받고, 평소의 궨트 덱 메뉴에서 나만의 구성을 만드세요. 이제 함께할 상대만 찾으면 됩니다. **딱 한 판만요…**",
     "guideTitle": "다운로드부터 첫 경기까지",
     "detailsTitle": "더 알아보기 · 기능, 변경 사항과 덱 공유",
@@ -328,7 +328,7 @@
       ["松鼠党", "备好埋伏。精灵、矮人、换牌与手牌强化，将耐心化为决定胜负的一手。"],
       ["史凯利格", "让每次损失都有价值。弃牌、复活与善用伤害的战士，让墓场也成为计划的一部分。"]
     ],
-    "ctaTitle": "拉把椅子坐下。下一套牌组，从这里开始。",
+    "ctaTitle": "委托先放一放。下一套牌组，从这里开始。",
     "cta": "选择对应游戏版本的压缩包，打开平常的昆特牌组菜单，组出自己的第一套牌。然后，找个愿意陪你打牌的人。**就一局……**",
     "guideTitle": "从下载到第一场对局",
     "detailsTitle": "了解更多 · 功能、更新与牌组分享",
@@ -356,7 +356,7 @@
       ["松鼠黨", "備好埋伏。精靈、矮人、換牌與手牌強化，將耐心化為決定勝負的一手。"],
       ["史凱利傑", "讓每次損失都有價值。棄牌、復活與善用傷害的戰士，讓墓場也成為計畫的一部分。"]
     ],
-    "ctaTitle": "拉張椅子坐下。下一套牌組，從這裡開始。",
+    "ctaTitle": "委託先放一放。下一套牌組，從這裡開始。",
     "cta": "選擇對應遊戲版本的壓縮檔，打開平常的昆特牌組選單，組出自己的第一套牌。然後，找個願意陪你打牌的人。**就一局……**",
     "guideTitle": "從下載到第一場對局",
     "detailsTitle": "了解更多 · 功能、更新與牌組分享",

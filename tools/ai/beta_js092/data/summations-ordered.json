@@ -1,0 +1,2442 @@
+[
+  {
+    "id": "d85b51eb-4d53-42bf-82ed-707f2bf9609a",
+    "name": "Accurrsed_Knight_Practice",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 3.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 2.2,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 201630,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 2.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "SortOrder": "Lowest",
+          "MinRange": 0,
+          "MaxRange": 100,
+          "NumCards": "Min"
+        }
+      }
+    ]
+  },
+  {
+    "id": "0c571702-ec87-477d-ba7d-7a9873223a16",
+    "name": "AdrenalineRush_HighValuePropagate",
+    "entries": [
+      {
+        "handler": "PowerRange",
+        "weight": 0.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 10.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": "NotGold",
+          "PowerLevel": "Highest",
+          "MinRange": 12,
+          "MaxRange": 0,
+          "NumCards": "Min"
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 6.7,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": "NotGold",
+          "PowerLevel": "Highest",
+          "MinRange": 0,
+          "MaxRange": 0,
+          "NumCards": "Min"
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 0.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 12.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": "NotGold",
+          "PowerLevel": "Highest",
+          "MinRange": 15,
+          "MaxRange": 0,
+          "NumCards": "Min"
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 0.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 15.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": "NotGold",
+          "PowerLevel": "Highest",
+          "MinRange": 18,
+          "MaxRange": 0,
+          "NumCards": "Min"
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 0.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 20.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": "NotGold",
+          "PowerLevel": "Highest",
+          "MinRange": 20,
+          "MaxRange": 0,
+          "NumCards": "Min"
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 2.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": "NotGold",
+          "PowerLevel": "Highest",
+          "MinRange": 0,
+          "MaxRange": 0,
+          "NumCards": "Min"
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": -25.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TagsTokenType": "Resilience",
+          "Negate": false
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": -25.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "TagsTokenType": "Resilience",
+          "Negate": true
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": 6.7,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "TagsTokenType": "Resilience",
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "f403679a-7e91-47c2-803f-5cf2efcf42d4",
+    "name": "AI_TEST_TARGETS",
+    "entries": [
+      {
+        "handler": "PowerRange",
+        "weight": 1.0,
+        "rounds": "All",
+        "scoring": "MinNumberFromRequest",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": 15,
+          "SortOrder": "Highest",
+          "MinRange": 0,
+          "MaxRange": 0,
+          "NumCards": "Max"
+        }
+      }
+    ]
+  },
+  {
+    "id": "f9b5bc2c-033c-47a1-aa26-e700d111263c",
+    "name": "AlbaSpearmen_SP_Fake_Lyrians",
+    "entries": []
+  },
+  {
+    "id": "cc5af7c3-6bf9-4c3c-9651-4042c36ee7c2",
+    "name": "Alchemist_Practice_Conceal",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 4.7,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 2.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 162306,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": 4.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 200041,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": 3.7,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 162301,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Location",
+        "weight": 2.7,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "Location": 8,
+          "LocationAction": "IsAtLocation",
+          "CardGroup": 15
+        }
+      }
+    ]
+  },
+  {
+    "id": "05f80a43-b1e6-40ff-9c1c-9cf8d38eaa34",
+    "name": "Basic_DamageTarget",
+    "entries": [
+      {
+        "handler": "Semantic",
+        "weight": 7.1,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 4.1,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "SemanticTagId": 47,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 7.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 4.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "SemanticTagId": 12,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": 6.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 2.5,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "TagsTokenType": 1,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 4.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 2.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "SemanticTagId": 14,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 3.3,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "SortOrder": "Highest",
+          "MinRange": 1,
+          "MaxRange": 100,
+          "NumCards": "Min"
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": -18.7,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -8.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "TagsTokenType": 1,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": -2.7,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -3.5,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "TagsTokenType": 4,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "87440b51-48a9-45c0-af85-dc20692d988d",
+    "name": "Basic_LockTarget",
+    "entries": [
+      {
+        "handler": "Semantic",
+        "weight": 7.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 4.5,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "SemanticTagId": 46,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 6.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 4.3,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "SemanticTagId": 47,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 4.4,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 4.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "SemanticTagId": 13,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 4.3,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 3.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "SemanticTagId": 12,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 4.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 2.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "SemanticTagId": 21,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 1.8,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 1.5,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "SemanticTagId": 14,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 1.7,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 1.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "SemanticTagId": 18,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Location",
+        "weight": 2.4,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "Location": 7,
+          "LocationAction": "IsAtLocation",
+          "CardGroup": 15
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": -25.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "TagsTokenType": 1,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": -1.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -2.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "TagsTokenType": 128,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": -25.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -4.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": 15,
+          "TagsTokenType": 4,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "00079cf7-f846-4e6e-99eb-a4513796e652",
+    "name": "BlackInfantryArbalest_SP_Fake_Lyrians",
+    "entries": [
+      {
+        "handler": "HasTagsToken",
+        "weight": -5.0,
+        "rounds": "One",
+        "scoring": "Linear",
+        "propagate": -3.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": 15,
+          "TagsTokenType": 128,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 2.0,
+        "rounds": "NotOne",
+        "scoring": "Linear",
+        "propagate": 2.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "SortOrder": "Highest",
+          "MinRange": 0,
+          "MaxRange": 5
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 3.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 3.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": 15,
+          "SemanticTagId": 61,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 2.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 2.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": 15,
+          "SemanticTagId": 60,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "0dba0a77-cc44-4dc8-80af-74b06fa794f8",
+    "name": "BlackInfantryArbalest_SP_MeetShoop",
+    "entries": [
+      {
+        "handler": "OccurrenceRange",
+        "weight": 6.1,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 15.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "SortOrder": "Highest",
+          "Destination": "Board",
+          "TemplateId": 200275,
+          "MinRange": 1,
+          "MaxRange": 2
+        }
+      }
+    ]
+  },
+  {
+    "id": "2926d999-8f57-4ca8-89c7-ce5cd9efb629",
+    "name": "Bran_discard_CHL",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 6.3,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 200261,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": 6.8,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 200256,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": 6.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 200257,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "f902d748-51b8-409d-8c59-f895cc5f9af0",
+    "name": "BrokvarArcher_SelfDamage",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 8.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 3.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 152301,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 5.8,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "NotGold",
+          "PowerLevel": "Lowest",
+          "MinRange": 1,
+          "MaxRange": 1,
+          "NumCards": "Max"
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 2.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "MinRange": 0,
+          "MaxRange": 0,
+          "NumCards": "Max"
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": -10.8,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TagsTokenType": "Resilience",
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "46049514-4183-452b-a924-1bd60a455ea2",
+    "name": "Buff_BasicS",
+    "entries": [
+      {
+        "handler": "HasTagsToken",
+        "weight": 9.1,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 4.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "TagsTokenType": 1,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 4.4,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "SortOrder": "Highest",
+          "MinRange": 0,
+          "MaxRange": 0,
+          "NumCards": "Min"
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 6.1,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "SemanticTagId": 12,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 4.1,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "SemanticTagId": 14,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": -20.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -13.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 162212,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "2702bf10-a671-4d85-b7aa-546802038d38",
+    "name": "CastleGhoul_Consume",
+    "entries": [
+      {
+        "handler": "Semantic",
+        "weight": 8.1,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 39.8,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": "Any",
+          "SemanticTagId": "Peasant",
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": -8.3,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -31.2,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": "Any",
+          "SemanticTagId": "Invalid",
+          "Negate": true
+        }
+      }
+    ]
+  },
+  {
+    "id": "b179ceea-729f-4265-ad63-b9b970a7147f",
+    "name": "Ciprian_Pick",
+    "entries": [
+      {
+        "handler": "PowerRange",
+        "weight": 10.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "MinRange": 4,
+          "MaxRange": 4,
+          "NumCards": "Max"
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 3.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "MinRange": 0,
+          "MaxRange": 0,
+          "NumCards": "Max"
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": 9.4,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "TagsTokenType": "Immune",
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 7.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": "Any",
+          "SemanticTagId": "DANGER",
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "9ff95cb7-4922-4d86-89fc-af2753f34338",
+    "name": "CombatEngineer",
+    "entries": [
+      {
+        "handler": "PowerRange",
+        "weight": 2.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": "NotGold",
+          "PowerLevel": "Highest",
+          "MinRange": 0,
+          "MaxRange": 0,
+          "NumCards": "Min"
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 8.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": "NotGold",
+          "PowerLevel": "Highest",
+          "MinRange": 0,
+          "MaxRange": 0,
+          "NumCards": "Min"
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": 8.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 3.5,
+        "settings": {
+          "PlayerType": "Opposite",
+          "TagsTokenType": "Resilience",
+          "Negate": false
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": -25.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -15.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TagsTokenType": "Resilience",
+          "Negate": false
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": -25.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -15.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "TagsTokenType": "Resilience",
+          "Negate": true
+        }
+      }
+    ]
+  },
+  {
+    "id": "3f973ba6-e82a-4349-9a40-544e067b34b9",
+    "name": "CombatEngineer_SP_Fake_Lyrians",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 5.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 13.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 201355,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": -8.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -8.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": 15,
+          "TagsTokenType": 1,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "UnitOrEvent",
+        "weight": 2.0,
+        "rounds": "NotOne",
+        "scoring": "Linear",
+        "propagate": 2.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "UnitOrEvent": 14
+        }
+      },
+      {
+        "handler": "Health",
+        "weight": 3.0,
+        "rounds": "NotOne",
+        "scoring": "Linear",
+        "propagate": 1.0,
+        "settings": {
+          "PlayerType": "Same",
+          "Health": 1,
+          "CardGroup": 15
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 2.0,
+        "rounds": "NotOne",
+        "scoring": "Linear",
+        "propagate": 1.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "SortOrder": "Highest",
+          "MinRange": 0,
+          "MaxRange": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": "e2425c5e-abad-4951-a296-058df48013f7",
+    "name": "CombatEngineer_SP_MeetShoop",
+    "entries": [
+      {
+        "handler": "HasTagsToken",
+        "weight": -7.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -7.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": 15,
+          "TagsTokenType": 1,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 3.0,
+        "rounds": "One",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "SortOrder": "Highest",
+          "MinRange": 0,
+          "MaxRange": 80
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 2.0,
+        "rounds": "NotOne",
+        "scoring": "Linear",
+        "propagate": 1.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "SortOrder": "Highest",
+          "MinRange": 0,
+          "MaxRange": 80
+        }
+      }
+    ]
+  },
+  {
+    "id": "fbb09aae-b8df-4f8c-85b5-ed1d33a5f63b",
+    "name": "Consume_Basic",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 7.7,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 132305,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 8.8,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "MinRange": 0,
+          "MaxRange": 0,
+          "NumCards": "Max"
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": -15.9,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 132313,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": 13.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 10.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 162212,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": -15.6,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -9.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 132201,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "f99d8700-4e31-4073-b3f9-a80c452b316c",
+    "name": "Djenge_Midwinter_Holiday_03",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 4.9,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 28.1,
+        "settings": {
+          "PlayerType": "Opposite",
+          "TemplateId": 201761,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "63ac71a8-31d4-4ccc-af85-7b5e5728e26e",
+    "name": "Ekimmara_SP_RegularBattleAedirn",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 2.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 1.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 201787,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": 1.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 1.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 201330,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "3c32da98-ffa4-4ea0-8e3b-54b69864b1ba",
+    "name": "GasconsBombThrowersSP_Gamescom",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 3.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 12.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "TemplateId": 200268,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": 2.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 12.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "TemplateId": 200271,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "670fc9c5-efe2-440d-916b-1af56c792fa4",
+    "name": "GasconsSlingersEnemySP_Gamescom",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 5.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 13.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "TemplateId": 200270,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Location",
+        "weight": -5.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -8.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "Location": "Siege",
+          "LocationAction": "IsAtLocation",
+          "CardGroup": "NotGold"
+        }
+      }
+    ]
+  },
+  {
+    "id": "3887e752-3616-4f38-b5d5-3258b3a6adc0",
+    "name": "Harald_Damage2",
+    "entries": [
+      {
+        "handler": "PowerRange",
+        "weight": 5.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "NotGold",
+          "PowerLevel": "Highest",
+          "MinRange": 0,
+          "MaxRange": 2,
+          "NumCards": "Max"
+        }
+      }
+    ]
+  },
+  {
+    "id": "a370cd2a-cdea-4ba2-9c15-7400d8e19f89",
+    "name": "Harald_Damage3",
+    "entries": [
+      {
+        "handler": "PowerRange",
+        "weight": 5.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "MinRange": 0,
+          "MaxRange": 3,
+          "NumCards": "Max"
+        }
+      }
+    ]
+  },
+  {
+    "id": "524046b7-6f96-4b61-b2e0-466ac6befd04",
+    "name": "Harald_Damage4",
+    "entries": [
+      {
+        "handler": "PowerRange",
+        "weight": 5.7,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "NotGold",
+          "PowerLevel": "Highest",
+          "MinRange": 0,
+          "MaxRange": 4,
+          "NumCards": "Max"
+        }
+      }
+    ]
+  },
+  {
+    "id": "0ae7a938-a938-4f14-8621-34f32f01e525",
+    "name": "Harald_Damage5",
+    "entries": [
+      {
+        "handler": "PowerRange",
+        "weight": 5.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 2.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "NotGold",
+          "PowerLevel": "Highest",
+          "MinRange": 0,
+          "MaxRange": 5,
+          "NumCards": "Max"
+        }
+      },
+      {
+        "handler": "Location",
+        "weight": 2.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "Location": "Board",
+          "LocationAction": "IsAtLocation",
+          "CardGroup": "NotGold"
+        }
+      }
+    ]
+  },
+  {
+    "id": "5faa3d38-f33b-4d9f-a8f8-471e3ef8240b",
+    "name": "holiday_03_01_Boulder",
+    "entries": [
+      {
+        "handler": "Location",
+        "weight": 10.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 3.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "Location": 2,
+          "LocationAction": "IsAtLocation",
+          "CardGroup": 15
+        }
+      },
+      {
+        "handler": "Location",
+        "weight": 5.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -2.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "Location": 1,
+          "LocationAction": "IsAtLocation",
+          "CardGroup": 15
+        }
+      }
+    ]
+  },
+  {
+    "id": "368e3ad7-b8bd-4b5f-87ea-8a0c3c5b9bc7",
+    "name": "ImperaBrigade_SP",
+    "entries": [
+      {
+        "handler": "RowWithNumberOfUnits",
+        "weight": -5.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -5.0,
+        "settings": {
+          "SortOrder": "Highest",
+          "CardGroup": 15,
+          "PlayerType": "Both"
+        }
+      },
+      {
+        "handler": "Wedge",
+        "weight": 2.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 2.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": 15,
+          "WedgeType": "InBetween",
+          "TemplateId": 0,
+          "SemanticTagId": 1,
+          "SortOrder": "Highest",
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "4b11cf85-b4fb-4457-96ed-200a6c849913",
+    "name": "ImperaEnforcers_SP",
+    "entries": [
+      {
+        "handler": "Wedge",
+        "weight": 3.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 3.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "WedgeType": "InBetween",
+          "TemplateId": 0,
+          "SemanticTagId": 1,
+          "SortOrder": "Highest",
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "87440b51-48a9-45c0-af85-dc20692d988d",
+    "name": "Infiltrator_ChooseTarget",
+    "entries": [
+      {
+        "handler": "Semantic",
+        "weight": 4.4,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 1.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "SemanticTagId": 13,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 4.3,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 1.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "SemanticTagId": 12,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Location",
+        "weight": 2.4,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "Location": 7,
+          "LocationAction": "IsAtLocation",
+          "CardGroup": 15
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": 3.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "TagsTokenType": 1,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": -4.8,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "TagsTokenType": 1,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": 3.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "TagsTokenType": 1,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 0.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 1.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "SemanticTagId": 14,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "2ba0b687-91f9-4fc4-a497-c1dc3af5fa39",
+    "name": "KaedweniSergeant_Boost",
+    "entries": [
+      {
+        "handler": "Location",
+        "weight": -25.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "Location": "Board",
+          "LocationAction": "IsAtLocation",
+          "CardGroup": "Any"
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 4.6,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": "Any",
+          "SemanticTagId": "DANGER",
+          "Negate": false
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": 6.3,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TagsTokenType": "Resilience",
+          "Negate": false
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 2.4,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "MinRange": 0,
+          "MaxRange": 0,
+          "NumCards": "Max"
+        }
+      }
+    ]
+  },
+  {
+    "id": "995e6698-7cab-461f-96cf-a8d7fc1e1f50",
+    "name": "KingBran_NotPirates",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": -5.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 152305,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": -5.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 152310,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": -5.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 152211,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": 5.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 200177,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": 5.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 152307,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "c955c1b4-842e-49d2-945a-e3cac957adfa",
+    "name": "MasterOfDisguise_Practice",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 4.7,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 7.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 162306,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "HasTagsToken",
+        "weight": -9.6,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -3.5,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "TagsTokenType": 64,
+          "Negate": true
+        }
+      }
+    ]
+  },
+  {
+    "id": "2755de05-f1ed-4186-afb1-dd12c7afa01b",
+    "name": "Morvan_FireScorpion",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 8.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 162306,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "Location",
+        "weight": 6.3,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "Location": "Any",
+          "LocationAction": "IsAtLocation",
+          "CardGroup": "Any"
+        }
+      }
+    ]
+  },
+  {
+    "id": "15c1efab-1b9f-4ced-a68b-ad67bc23dbf1",
+    "name": "NaturesGift_AvoidWeather",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": -9.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 113302,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": -9.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 113305,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": -9.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 113312,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": -9.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 113208,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": -9.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 113202,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": -9.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 113203,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": -9.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 113206,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "9f4f6efb-1b8a-44e5-a2c9-e81311b0a03b",
+    "name": "NauzicaaBrigade_SP_MeetShoop",
+    "entries": [
+      {
+        "handler": "PowerRange",
+        "weight": 1.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 4.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "SortOrder": "Highest",
+          "MinRange": 0,
+          "MaxRange": 6
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": 3.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 5.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 200275,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "13e0ac26-3303-4ef8-a40e-1df1d0c9cce4",
+    "name": "NekkerWarrior_CopyNekkers",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 6.9,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 132305,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "OccurrenceRange",
+        "weight": 3.6,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "Destination": "MatchSource",
+          "MinRange": 0,
+          "MaxRange": 0
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": 6.1,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 132301,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "7d44c75d-0f6e-4edd-b822-ea738e68565e",
+    "name": "Paulie_Resurrect_Practice",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 4.1,
+        "rounds": "NotThree",
+        "scoring": "Linear",
+        "propagate": 2.5,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 142306,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": 3.4,
+        "rounds": "Three",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 142311,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": 3.4,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 142317,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "3407f146-19fc-43bf-ad5a-55eb8fce430d",
+    "name": "PlayCard_Test",
+    "entries": [
+      {
+        "handler": "Summation",
+        "weight": 0.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 3.0,
+        "settings": {
+          "SummationName": "None"
+        }
+      }
+    ]
+  },
+  {
+    "id": "df0d07b4-643a-4ea3-a121-261e502317e7",
+    "name": "regis_katakan_choice",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 20.7,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "TemplateId": 200517,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 18.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "NotGold",
+          "PowerLevel": "Highest",
+          "MinRange": 1,
+          "MaxRange": 3,
+          "NumCards": "Min"
+        }
+      }
+    ]
+  },
+  {
+    "id": "f65b7b52-6bc6-4f94-8a7d-43c94c14ed0c",
+    "name": "RottenMangonel_StrongestLowCeiling",
+    "entries": []
+  },
+  {
+    "id": "6ac6b0e8-f2cb-4d40-9486-baaec374ef6b",
+    "name": "Shieldsmith_Buff",
+    "entries": [
+      {
+        "handler": "Semantic",
+        "weight": 8.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": "Any",
+          "SemanticTagId": "BUFF_ME_BASEVALUE",
+          "Negate": false
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 3.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": "Any",
+          "PowerLevel": "Lowest",
+          "MinRange": 0,
+          "MaxRange": 0,
+          "NumCards": "Max"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fa174dc5-6c56-4266-b401-1bab643c4d80",
+    "name": "Shieldsmith_targets_CHL",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 4.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 200242,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": 5.4,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 5.6,
+        "settings": {
+          "PlayerType": "Same",
+          "TemplateId": 200256,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "f847cac8-5d93-4828-a95c-d1e16ab2aba0",
+    "name": "sp_tut0001_ruehin",
+    "entries": [
+      {
+        "handler": "UnitOrEvent",
+        "weight": 3.9,
+        "rounds": "None",
+        "scoring": "Linear",
+        "propagate": 77.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": "NotGold",
+          "UnitOrEvent": "Any"
+        }
+      }
+    ]
+  },
+  {
+    "id": "29933629-7751-4684-aaea-bb986192fe9b",
+    "name": "Summation 49204630",
+    "entries": []
+  },
+  {
+    "id": "2085025f-84b9-419a-9a36-7c23eada9a24",
+    "name": "Swallow_SP_FakeLyrians",
+    "entries": [
+      {
+        "handler": "Location",
+        "weight": 3.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "Location": 7,
+          "LocationAction": "CanGotoLocation",
+          "CardGroup": 15
+        }
+      },
+      {
+        "handler": "Location",
+        "weight": -5.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -5.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "Location": 7,
+          "LocationAction": "CanGotoLocation",
+          "CardGroup": 15
+        }
+      }
+    ]
+  },
+  {
+    "id": "5618e549-b59c-4269-b708-fdbdc9955da9",
+    "name": "SwallowPotion_SP_MeetShop",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": -10.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": -10.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 200275,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "UnitOrEvent",
+        "weight": 3.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Same",
+          "CardGroup": 15,
+          "UnitOrEvent": 4
+        }
+      }
+    ]
+  },
+  {
+    "id": "cfcce524-3a6c-4d6b-93be-7bba26ea4ea8",
+    "name": "Sweers_Summation",
+    "entries": [
+      {
+        "handler": "Semantic",
+        "weight": 2.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "Any",
+          "SemanticTagId": "DANGER",
+          "Negate": false
+        }
+      },
+      {
+        "handler": "OccurrenceRange",
+        "weight": -9.6,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "Destination": "Deck",
+          "MinRange": 0,
+          "MaxRange": 0
+        }
+      },
+      {
+        "handler": "TemplateId",
+        "weight": 2.5,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 132305,
+          "Negate": false
+        }
+      },
+      {
+        "handler": "OccurrenceRange",
+        "weight": 1.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "Destination": "Deck",
+          "MinRange": 1,
+          "MaxRange": 1
+        }
+      },
+      {
+        "handler": "OccurrenceRange",
+        "weight": 2.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "Destination": "Deck",
+          "MinRange": 2,
+          "MaxRange": 2
+        }
+      },
+      {
+        "handler": "OccurrenceRange",
+        "weight": 3.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "Destination": "Deck",
+          "MinRange": 3,
+          "MaxRange": 3
+        }
+      },
+      {
+        "handler": "OccurrenceRange",
+        "weight": 4.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "Destination": "Deck",
+          "MinRange": 4,
+          "MaxRange": 4
+        }
+      },
+      {
+        "handler": "OccurrenceRange",
+        "weight": 5.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "Destination": "Deck",
+          "MinRange": 5,
+          "MaxRange": 5
+        }
+      },
+      {
+        "handler": "OccurrenceRange",
+        "weight": 6.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "Destination": "Deck",
+          "MinRange": 6,
+          "MaxRange": 6
+        }
+      },
+      {
+        "handler": "OccurrenceRange",
+        "weight": 7.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "Destination": "Deck",
+          "MinRange": 7,
+          "MaxRange": 7
+        }
+      },
+      {
+        "handler": "OccurrenceRange",
+        "weight": 8.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "Destination": "Deck",
+          "MinRange": 8,
+          "MaxRange": 8
+        }
+      },
+      {
+        "handler": "OccurrenceRange",
+        "weight": 9.0,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "Destination": "Deck",
+          "MinRange": 9,
+          "MaxRange": 9
+        }
+      }
+    ]
+  },
+  {
+    "id": "6dac5adc-2dac-4138-8904-8171cf9fa85f",
+    "name": "TEST_PlayCardSummation",
+    "entries": [
+      {
+        "handler": "Wedge",
+        "weight": 6.2,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 3.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": 15,
+          "WedgeType": "InBetween",
+          "TemplateId": 0,
+          "SemanticTagId": 1,
+          "SortOrder": "Highest",
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "fa8b4d1f-4d7b-4eb0-9355-05c872ff2681",
+    "name": "VampireForm_Summation",
+    "entries": [
+      {
+        "handler": "PowerRange",
+        "weight": 5.8,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "MinRange": 0,
+          "MaxRange": 0,
+          "NumCards": "Max"
+        }
+      },
+      {
+        "handler": "Semantic",
+        "weight": 3.9,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 4.0,
+        "settings": {
+          "PlayerType": "Opposite",
+          "CardGroup": "Any",
+          "SemanticTagId": "DANGER",
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "b4f1ce39-01d0-4ef8-b5f7-a36f6920e362",
+    "name": "WarmBeer_PreferMahakamAle",
+    "entries": [
+      {
+        "handler": "TemplateId",
+        "weight": 5.6,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 35.6,
+        "settings": {
+          "PlayerType": "Both",
+          "TemplateId": 200448,
+          "Negate": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "3c98396e-f920-424e-ba98-8a0a58c641ff",
+    "name": "WildHuntWarrior_Damage",
+    "entries": [
+      {
+        "handler": "Summation",
+        "weight": 6.4,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "SummationName": "Basic_DamageTarget",
+          "NumCards": "Max"
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 10.1,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "MinRange": 0,
+          "MaxRange": 3,
+          "NumCards": "Max"
+        }
+      }
+    ]
+  },
+  {
+    "id": "25f85716-5130-4b51-a10c-060f43a32da8",
+    "name": "Wyvern_Damage",
+    "entries": [
+      {
+        "handler": "Summation",
+        "weight": 6.8,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "SummationName": "Basic_DamageTarget",
+          "NumCards": "Max"
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 9.9,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "MinRange": 2,
+          "MaxRange": 2,
+          "NumCards": "Max"
+        }
+      }
+    ]
+  },
+  {
+    "id": "02a70ce5-c283-4b2d-a687-2f3420ef909d",
+    "name": "Wyvern_HighDamage",
+    "entries": [
+      {
+        "handler": "Summation",
+        "weight": 6.8,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "SummationName": "Basic_DamageTarget",
+          "NumCards": "Max"
+        }
+      },
+      {
+        "handler": "PowerRange",
+        "weight": 9.9,
+        "rounds": "All",
+        "scoring": "Linear",
+        "propagate": 0.0,
+        "settings": {
+          "PlayerType": "Both",
+          "CardGroup": "Any",
+          "PowerLevel": "Highest",
+          "MinRange": 4,
+          "MaxRange": 4,
+          "NumCards": "Max"
+        }
+      }
+    ]
+  }
+]

@@ -82,6 +82,25 @@ class CBetaGwentDuelAudio extends IScriptable
     private var nextEffect, nextClick, voiceUntil : float;
     private var introVoices : bool;
     private var musicDucked : bool;
+    private var editorMusicWanted, editorMusicPlaying, editorMusicRequested, ownsEditorMusicBank : bool;
+    public function SetEditorMusic(active : bool)
+    {
+        editorMusicWanted=active;
+        if(!active){
+            if(editorMusicPlaying){theSound.SoundEvent("bg_menu_music_stop");theSound.SoundEvent("music_resume");editorMusicPlaying=false;}
+            if(ownsEditorMusicBank){theSound.SoundUnloadBank("betagwentmenu.bnk");ownsEditorMusicBank=false;}
+            editorMusicRequested=false;return;
+        }
+        if(!editorMusicRequested){
+            editorMusicRequested=true;
+            if(!theSound.SoundIsBankLoaded("betagwentmenu.bnk")){ownsEditorMusicBank=true;theSound.SoundLoadBank("betagwentmenu.bnk",true);}
+        }
+        if(!editorMusicPlaying && theSound.SoundIsBankLoaded("betagwentmenu.bnk")){
+            // Pause existing native music before posting the separate editor voice.
+            // Resume it only when this instance actually acquired playback.
+            theSound.SoundEvent("music_pause");theSound.SoundEvent("bg_menu_music_play");editorMusicPlaying=true;
+        }
+    }
     private var queuedVoices : array<int>;
     private var queuedAt : array<float>;
     private var introEnemyTemplate,introPlayerTemplate : int;
@@ -284,6 +303,7 @@ class CBetaGwentDuelAudio extends IScriptable
     public function Tick()
     {
         var id, voiceRoll : int; var now : float; var eventName : string;
+        if(editorMusicWanted)SetEditorMusic(true);
         now = Now();
         if (!BetaReady())
         {
@@ -361,6 +381,7 @@ class CBetaGwentDuelAudio extends IScriptable
     }
     public function Close()
     {
+        SetEditorMusic(false);
         Cancel();
         if (ownsBank) { theSound.SoundUnloadBank("betagwent79.bnk"); ownsBank = false; }
     }

@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 from collections import Counter
+from deck_expansion092 import imported_presets, apply_npc_decks
 import xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
 catalog=json.loads((ROOT/'data/beta924/normalized/catalog.json').read_text(encoding='utf8'))
@@ -88,6 +89,8 @@ for key,name,gold,preset in assignments:
 assert len({r['goldTemplateId'] for r in records})==len(records)
 assert all(p['id']==54+i for i,p in enumerate(ai_presets)), 'Regenerate AI rules after changing NPC identities'
 document['presets'].extend(ai_presets)
+apply_npc_decks(document, cards, records)
+document['presets'].extend(imported_presets())
 path.write_text(json.dumps(document,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 target=ROOT/'data/beta924/design/npc_rewards.json'
 target.write_text(json.dumps(dict(stage=83,source=str(native_path),assignments=records,

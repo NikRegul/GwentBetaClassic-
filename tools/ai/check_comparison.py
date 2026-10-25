@@ -27,6 +27,14 @@ class ComparisonChecks(unittest.TestCase):
         self.assertEqual(set(spans),{'OpponentStep','Damage'})
         a,b=spans['OpponentStep'];self.assertTrue(text[a:b].endswith('/* { */ }'))
 
+    def test_cooperative_policy_is_old_but_battle_rules_are_current(self):
+        current='class C { public function Damage() { NewDamage(); } public function OpponentStep() {} } class CBetaGwentAISequence188 { public function Step() { NewSearch(); } }'
+        old=current.replace('NewDamage','OldDamage').replace('NewSearch','OldSearch')
+        merged,_=graft_policy(current,old)
+        self.assertIn('NewDamage()',merged)
+        self.assertIn('OldSearch()',merged)
+        self.assertNotIn('NewSearch()',merged)
+
     def test_missing_old_helper_is_imported(self):
         current='class C { public function OpponentStep() { } }'
         old='class C { public function OpponentStep() { AiRetired(); } private function AiRetired() {} }'

@@ -1,4 +1,4 @@
-"""Build a closed DEV duel card table from the strict 0.9.24 catalogue."""
+﻿"""Build a closed DEV duel card table from the strict 0.9.24 catalogue."""
 import hashlib
 import json
 import re
@@ -13,6 +13,7 @@ from duel_nilf import load_nilf, render_nilf
 from duel_scoia import load_scoia, render_scoia
 from duel_skellige import load_skellige, render_skellige
 from duel_neutral import load_neutral, render_neutral
+from deck_expansion092 import render_helpers
 
 ROOT = Path(__file__).resolve().parents[1]
 path = ROOT / 'data/beta924/normalized/catalog.json'
@@ -510,6 +511,7 @@ lines += ['    return false;', '}', '']
 for preset in presets:
     lines += [f'function BetaGwentDuelPresetCards{preset["id"]}(out ids : array<int>)', '{']
     lines += [f'    ids.PushBack({id});' for id in preset['templateIds']]+['}', '']
+lines += render_helpers(presets)
 leader_ids=sorted(id for id in effects if cards[id]['fields']['Tier']==1 and cards[id]['attributes']['Availability']=='1')
 lines += [
     'function BetaGwentDuelIsLeader(id : int) : bool { return '+ ' || '.join(f'id == {id}' for id in leader_ids)+'; }',
@@ -553,6 +555,8 @@ for record in records:
     tooltip = re.sub(r'<[^>]+>', '', c['localization']['en_us'].get(f'{id}_tooltip', ''))
     if re.search(r'\bup to \{MaxTargets\}', tooltip, re.I):
         optional_choices[id] = record['originalVariables']['MaxTargets']
+    elif re.search(r'\bany number of\b', tooltip, re.I) and id == 200227:
+        optional_choices[id] = -1
 lines += ['', 'function BetaGwentDuelOptionalChoiceLimit(id : int) : int', '{', '    switch (id)', '    {']
 lines += [f'    case {id}: return {maximum};' for id, maximum in sorted(optional_choices.items())]
 lines += ['    }', '    return 0;', '}']

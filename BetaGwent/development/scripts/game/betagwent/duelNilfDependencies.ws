@@ -1,4 +1,4 @@
-﻿// Creation closure: abilities reached through leaders created by Usurper.
+// Creation closure: abilities reached through leaders created by Usurper.
 class CBetaGwentNilfDependencies extends IScriptable
 {
     // BG_CLONE_FIELDS
@@ -19,7 +19,7 @@ class CBetaGwentNilfDependencies extends IScriptable
         id=source.TemplateId();side=game.NorthActingSide(source);enemy=BetaGwentOpponentId(side);s=source.Snapshot();
         source.monsterStage=0;source.monsterRemaining=1;source.monsterStored=0;source.monsterIds.Clear();
         if(id==142201){Query(side,31,15,4,8192+16,source,ids);for(i=0;i<ids.Size();i+=1)game.MonsterOperation(source,game.FindCard(ids[i]),12,1,31);}
-        else if(id==142202){ids.PushBack(113312);ids.PushBack(113401);ids.PushBack(113301);game.MonsterRequest(source,ids,1,1,1);return;}
+        else if(id==142202){ids.PushBack(113305);ids.PushBack(113401);ids.PushBack(113301);game.MonsterRequest(source,ids,1,1,1);return;}
         else if(id==142204 || id==142208 || id==142205 || id==142211 || id==142213 || id==142214 || id==142306 || id==142313 || id==142315 || id==200039 || id==200042 || id==200136){game.MonsterComplete(source);return;}
         else if(id==142210 || id==142307){game.QueueTimer(source,2,2);}
         else if(id==142206 || id==142302 || id==142311 || id==142310){Request(source,0,7,15,4,0);return;}
@@ -29,7 +29,7 @@ class CBetaGwentNilfDependencies extends IScriptable
         else if(id==142212)
         {Query(side,s.locationMask,15,4,16,source,ids);for(i=0;i<ids.Size();i+=1){rows.Clear();for(j=1;j<=4;j*=2)if(j!=s.locationMask && game.CountLocation(side,j)<9)rows.PushBack(j);if(rows.Size()>0){game.QueueRelocation(game.FindCard(ids[i]),side,rows[game.RandomIndex(rows.Size())],false);game.FlushDeaths();count+=1;}}game.MonsterPower(source,source,count);}
         else if(id==142303 || id==201638){Query(side,16,14,14,0,NULL,ids);if(ids.Size()>0){Request(source,side,8,15,14,0);return;}}
-        else if(id==142304){ids.PushBack(1);ids.PushBack(2);ids.PushBack(4);game.MonsterRequest(source,ids,3,0,1);return;}
+        else if(id==142304){game.MonsterCreate(source,143301);return;}
         else if(id==142308){nilf.DepTop(source,side,2,10,0,2,true);return;}
         else if(id==142309){Query(side,7,15,4,16384,source,ids);for(i=0;i<ids.Size();i+=1)game.MonsterPower(source,game.FindCard(ids[i]),1);}
         else if(id==142312){Request(source,side,8,14,4,0);return;}
@@ -39,7 +39,7 @@ class CBetaGwentNilfDependencies extends IScriptable
         else if(id==200030){for(j=1;j<=4;j*=2){Query(enemy,j,15,4,0,source,ids);if(ids.Size()==0)continue;count=0;for(i=0;i<ids.Size();i+=1){t=game.FindCard(ids[i]).Snapshot();count=Max(count,t.locationIndex);}for(i=0;i<ids.Size();i+=1){t=game.FindCard(ids[i]).Snapshot();if(t.locationIndex==0 || t.locationIndex==count)game.MonsterPower(source,game.FindCard(ids[i]),-6);}}}
         else if(id==200135){for(j=1;j<=4;j*=2)nilf.DepRandomDamage(source,enemy,j,3,1);}
         else if(id==200138){Request(source,side,32,2,10,65536);return;}
-        else if(id==200139){Query(enemy,7,15,4,0,source,ids);for(i=0;i<ids.Size();i+=1){t=game.FindCard(ids[i]).Snapshot();if(game.CountLocation(enemy,t.locationMask)<4)valid.PushBack(ids[i]);}game.MonsterRequest(source,valid,2,0,1);return;}
+        else if(id==200139){Query(enemy,7,15,4,0,source,ids);for(i=0;i<ids.Size();i+=1){t=game.FindCard(ids[i]).Snapshot();if(game.CountLocation(enemy,t.locationMask)<4)valid.PushBack(ids[i]);}game.MonsterRequest(source,valid,0,0,1);return;}
         else if(id==200293){game.AgitatorPool(side,valid);if(valid.Size()>0){game.MonsterCreate(source,valid[game.RandomIndex(valid.Size())]);return;}}
         else if(id==200520 || id==201696){Query(side,32,BetaGwentNorthPick(id==200520,6,2),4,BetaGwentNorthPick(id==201696,8192,0),source,ids);for(i=0;i<ids.Size();i+=1){t=game.FindCard(ids[i]).Snapshot();if((id==200520 && t.runtimeTemplate.factionMask==16 && t.power.currentPower<=s.power.currentPower) || (id==201696 && !BetaGwentNilfSupport(t.runtimeTemplate.templateId)))valid.PushBack(ids[i]);}game.MonsterRequest(source,valid,2,0,1);return;}
         else if(id==201636){t=s;t.locationIndex+=1;game.QueueSpawn(t,id,1);}

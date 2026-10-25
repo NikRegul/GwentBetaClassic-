@@ -82,13 +82,13 @@ bg_shoprefill(5)
 
 2. 更新時は、古いBeta GwentのMODフォルダーを先にModsの外へ移動します。Mods全体を削除したり、異なるバージョンのファイルを混在させたりしないでください。
 
-3. アーカイブ内のModsを、binとcontentがあるゲームフォルダーにコピーします。Classic 1.32では同梱のDLCもコピーしてください。パスは1.32がMods/modBetaGwentClassic132/contentとDLC/dlcBetaGwentClassic132Assets、Next-GenがMods/modBetaGwent0924/contentです。このMODの旧フォルダーだけを置き換え、ほかのMODやDLCは残してください。
+3. アーカイブ内のModsを、binとcontentがあるゲームフォルダーにコピーします。Classic 1.32では同梱のDLCもコピーしてください。パスは1.32がMods/modBetaGwentClassic132/contentとDLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items、Next-GenがMods/modBetaGwent0924/contentです。このMODの旧フォルダーだけを置き換え、ほかのMODやDLCは残してください。
 
 4. セーブデータをロードします。通常のグウェントのデッキメニューから編集と言語選択ができ、グウェントを遊ぶNPCとの会話から対戦を始められます。設定を残すには通常の方法で保存してください。
 
 ## Classic 1.32の容量とDLCフォルダー
 
-同じカードとルールでもClassicは約623 MB、Next-Genは約448 MBです。旧形式と非同期読み込みリソース当たり約32 MiBの制限に対応するため、画像ページを分割しています。ClassicではModsとDLCの両方が必要です。DLC/dlcBetaGwentClassic132Assetsは必須の画像と登録情報で、新しい物語ではありません。ダウンロードの約105 MBがこのフォルダーで、残りの容量差は旧エンジン向けの準備によるものです。
+同じカードとルールでもClassicは約623 MB、Next-Genは約448 MBです。旧形式と非同期読み込みリソース当たり約32 MiBの制限に対応するため、画像ページを分割しています。ClassicではModsとDLCの両方が必要です。DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Itemsは必須の画像と登録情報で、新しい物語ではありません。ダウンロードの約105 MBがこのフォルダーで、残りの容量差は旧エンジン向けの準備によるものです。
 
 ## 動作環境
 
@@ -112,7 +112,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 コレクション、デッキ、資源、設定、既知の報酬、予備データとプレイヤー所持品のbetagwent_*を消去します。保存されるフラグが、MODを残して再ロードした場合も復元を防ぎます。新しいスロットに保存して終了し、MODとClassic用DLCを削除してScript Mergerを更新し、そのスロットをロードして再保存してください。クエスト、実績、使用済みクラウンは戻しません。未ロードの商人、保管箱、世界の容器は走査しません。古い孤立した報酬フラグには、確認後にsave_fact_index.pyとbg_clean_keys('…')が必要な場合があります。すべての履歴データの物理的な完全消去は保証しません。 一部のベータアイテムを削除できなかった場合は成功ではなくINCOMPLETEと表示されます。それらを捨てるか売却してから、もう一度コマンドを実行してください。 アンインストール時は、Optional-CopyButtonを導入した場合そのファイル（bin\…\plugins\GwentBetaClipboard.asiとこのModのdinput8.dll。他のModのものは除く）も削除してください。
 
-**アンインストール後：** アーカイブのAfter-UninstallフォルダーにあるModsフォルダーをゲームのフォルダーにコピーしてください（Mods/modBetaGwentKeepItems）。Modのアイテムの非表示定義が残るため、ベータのカードやタルが残っている商人、収納箱、コンテナの所持品がすべて失われるのを防ぎます。Modと一緒にはインストールしないでください。
+**アンインストール後：** アーカイブのAfter-Uninstallフォルダーにあるフォルダーをゲームのフォルダーにコピーしてください（Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems）。Modのアイテムの非表示定義が残るため、ベータのカードやタルが残っている商人、収納箱、コンテナの所持品がすべて失われるのを防ぎます。Modと一緒にはインストールしないでください。
 
 ## 1.0に向けて
 

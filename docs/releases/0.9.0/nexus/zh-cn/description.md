@@ -86,7 +86,7 @@ PC 版《巫师 3》。请选择 Classic 1.32 或 Next-Gen（标有 5.0+）对�
 
 2. 更新时，先将旧的 Beta Gwent 模组文件夹移到 Mods 之外。不要删除整个 Mods 文件夹，也不要混用不同版本的文件。
 
-3. 将压缩包中的 Mods 复制到游戏目录，与 bin、content 同级。Classic 1.32 还需复制包内的 DLC 文件夹。路径：1.32 为 Mods/modBetaGwentClassic132/content 和 DLC/dlcBetaGwentClassic132Assets；Next-Gen 为 Mods/modBetaGwent0924/content。只替换本模组的旧文件夹，保留其他模组和 DLC。
+3. 将压缩包中的 Mods 复制到游戏目录，与 bin、content 同级。Classic 1.32 还需复制包内的 DLC 文件夹。路径：1.32 为 Mods/modBetaGwentClassic132/content 和 DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items；Next-Gen 为 Mods/modBetaGwent0924/content。只替换本模组的旧文件夹，保留其他模组和 DLC。
 
 4. 读取存档。原有昆特牌牌组菜单可打开编辑器和语言选择；与会玩昆特牌的 NPC 对话即可开始对局。正常保存游戏以保留设置。
 
@@ -161,7 +161,7 @@ bg_shoprefill(5)
 
 ## Classic 1.32为何更大且需要DLC文件夹
 
-卡牌与规则相同，但Classic约623 MB，Next-Gen约448 MB。旧资源格式和每个异步加载资源约32 MiB的限制需要拆分图像页面。Classic必须同时安装Mods与DLC。DLC/dlcBetaGwentClassic132Assets包含必需图像及注册信息，不新增剧情。下载中约105 MB来自此文件夹，其余容量差异来自旧引擎的资源准备。
+卡牌与规则相同，但Classic约623 MB，Next-Gen约448 MB。旧资源格式和每个异步加载资源约32 MiB的限制需要拆分图像页面。Classic必须同时安装Mods与DLC。DLC/dlcBetaGwentClassic132Assets + DLC/dlcBetaGwentClassic132Items包含必需图像及注册信息，不新增剧情。下载中约105 MB来自此文件夹，其余容量差异来自旧引擎的资源准备。
 
 
 ## 兼容性
@@ -184,7 +184,7 @@ bg_clean_confirm('DELETE_BETA_GWENT')
 
 清除收藏、牌组、资源、设置、已知奖励记录、备份镜像及玩家当前背包中的betagwent_*物品。存档标记会阻止恢复，即使仍装着模组重新读档。保存到新栏位，退出游戏，移除模组及其Classic DLC，更新Script Merger，再读取新栏位并保存一次。任务、成就和已花费克朗不会回退。未加载商人、储物箱及世界容器不会被遍历。旧的孤立奖励事实可能需要在确认后使用save_fact_index.py和bg_clean_keys('…')。不保证物理删除任意存档中的所有历史痕迹。 若部分Beta物品无法移除，将显示INCOMPLETE而不是成功信息：请丢弃或出售这些物品后再次执行命令。 卸载时，若安装过Optional-CopyButton，也请删除其文件：bin\…\plugins\GwentBetaClipboard.asi以及本模组的dinput8.dll（不要删除其他模组的）。
 
-**卸载后：** 将压缩包After-Uninstall文件夹中的Mods文件夹复制到游戏目录（Mods/modBetaGwentKeepItems）。它保留模组物品的隐藏定义，避免仍持有测试版卡牌或卡桶的商人、储物箱和容器丢失全部物品。不要与模组同时安装。
+**卸载后：** 将压缩包After-Uninstall文件夹中的文件夹复制到游戏目录（Next-Gen: Mods/modBetaGwentKeepItems; 1.32: DLC/dlcBetaGwentClassic132KeepItems）。它保留模组物品的隐藏定义，避免仍持有测试版卡牌或卡桶的商人、储物箱和容器丢失全部物品。不要与模组同时安装。
 
 
 </details>

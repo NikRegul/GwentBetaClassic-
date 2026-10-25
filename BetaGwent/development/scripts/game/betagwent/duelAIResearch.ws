@@ -19,9 +19,10 @@ function BetaGwentAIResearchKeep(profile : int, card : int) : int {
     case 3:
         switch(card) {
         case 132201: return 2;
-        case 132304: return 1;
-        case 132308: return 1;
-        case 201606: return 1;
+        case 132308: return 2;
+        case 132305: return 1;
+        case 132304: return 0;
+        case 200539: return 0;
         default: return -1;
         }
     case 4:
@@ -34,8 +35,11 @@ function BetaGwentAIResearchKeep(profile : int, card : int) : int {
         }
     case 5:
         switch(card) {
-        case 201630: return 1;
-        case 201628: return 1;
+        case 201630: return 2;
+        case 201628: return 2;
+        case 201625: return 2;
+        case 201633: return 1;
+        case 201624: return 1;
         default: return -1;
         }
     case 6:
@@ -150,9 +154,10 @@ function BetaGwentAIResearchKeep(profile : int, card : int) : int {
         }
     case 23:
         switch(card) {
-        case 132217: return 1;
-        case 132308: return 1;
+        case 200038: return 2;
+        case 132213: return 2;
         case 132312: return 1;
+        case 200037: return 1;
         default: return -1;
         }
     case 24:
@@ -257,7 +262,8 @@ function BetaGwentAIResearchKeep(profile : int, card : int) : int {
     case 40:
         switch(card) {
         case 142205: return 2;
-        case 200535: return 1;
+        case 142311: return 1;
+        case 142305: return 1;
         default: return -1;
         }
     case 41:
@@ -301,6 +307,7 @@ function BetaGwentAIResearchKeep(profile : int, card : int) : int {
     case 46:
         switch(card) {
         case 142209: return 1;
+        case 142307: return 1;
         default: return -1;
         }
     default: return -1;
@@ -321,8 +328,8 @@ function BetaGwentAIResearchOpening(profile : int, card : int) : int {
         }
     case 3:
         switch(card) {
-        case 201660: return 6;
         case 132201: return 6;
+        case 122107: return 5;
         default: return 0;
         }
     case 4:
@@ -333,6 +340,7 @@ function BetaGwentAIResearchOpening(profile : int, card : int) : int {
     case 5:
         switch(card) {
         case 201628: return 3;
+        case 201624: return 4;
         default: return 0;
         }
     case 6:
@@ -388,7 +396,8 @@ function BetaGwentAIResearchOpening(profile : int, card : int) : int {
         }
     case 23:
         switch(card) {
-        case 132217: return 4;
+        case 200038: return 5;
+        case 132213: return 3;
         default: return 0;
         }
     case 24:
@@ -440,6 +449,7 @@ function BetaGwentAIResearchOpening(profile : int, card : int) : int {
     case 40:
         switch(card) {
         case 142205: return 6;
+        case 142201: return 6;
         default: return 0;
         }
     case 42:
@@ -462,6 +472,11 @@ function BetaGwentAIResearchOpening(profile : int, card : int) : int {
         switch(card) {
         case 152312: return 6;
         case 201646: return 5;
+        default: return 0;
+        }
+    case 46:
+        switch(card) {
+        case 142307: return 4;
         default: return 0;
         }
     default: return 0;

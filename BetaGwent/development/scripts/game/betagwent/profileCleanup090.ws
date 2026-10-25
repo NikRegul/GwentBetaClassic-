@@ -131,6 +131,13 @@ public function BetaGwentCleanProfile090()
     betaGwentDeckFactions.Clear();
     betaGwentDeckLengths.Clear();
     betaGwentDeckCards.Clear();
+    betaGwentDeckRecoverySchema=0;
+    betaGwentDeckRecoveryOriginalSchema=0;
+    betaGwentDeckRecoveryNames.Clear();
+    betaGwentDeckRecoveryLeaders.Clear();
+    betaGwentDeckRecoveryFactions.Clear();
+    betaGwentDeckRecoveryLengths.Clear();
+    betaGwentDeckRecoveryCards.Clear();
     betaGwentPreferredDeck=0;
     betaGwentStarterDeckSchema=0;
     betaGwentStarterDeckNames.Clear();

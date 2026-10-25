@@ -43,6 +43,19 @@ def methods(source):
     return result
 
 def graft_policy(current, old):
+    # Cooperative search jobs contain policy in Step/Initialize rather than
+    # Ai-prefixed methods. Keep the old jobs, too, or the baseline silently
+    # benefits from a new search strategy.
+    jobs={'CBetaGwentAISequence188','CBetaGwentAIChase188',
+          'CBetaGwentAIRegain188','CBetaGwentAISpy188'}
+    old_blocks={ws2js.head_name(b)[1]:old[b[0].pos:b[-1].pos+1]
+                for b in ws2js.split_blocks(old) if ws2js.head_name(b)[1] in jobs}
+    replacements=[]
+    for block in ws2js.split_blocks(current):
+        name=ws2js.head_name(block)[1]
+        if name in old_blocks:
+            replacements.append((block[0].pos,block[-1].pos+1,old_blocks[name]))
+    for start,end,text in sorted(replacements,reverse=True):current=current[:start]+text+current[end:]
     new_methods=methods(current);old_methods=methods(old);replacements=[];copied=[]
     for name,(start,end) in new_methods.items():
         if (name.startswith('Ai') or name in POLICY_HELPERS) and name in old_methods:

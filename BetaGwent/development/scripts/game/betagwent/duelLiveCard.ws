@@ -61,10 +61,26 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
     }
     // Search copies carry anonymous priors for hidden opposing identities.
     // Revealed hand cards and all public board/grave cards remain exact.
+    // 094b: a search copy may replace a face-down enemy placeholder with ONE
+    // publicly possible ambush. Later search clones keep that hypothesis.
+    public var aiHypothesis : bool;
+    public function AiAssumeAmbush(templateId : int, assumedTimer : int)
+    {
+        var s : SBetaGwentCardSnapshot;
+        if(!game || !game.aiSimulating || templateId<=0)return;s=Snapshot();
+        if(s.positionPlayerId!=1 || (s.locationMask&7)==0 || (s.tokenMask&8)==0)return;
+        definition=BetaGwentDuelDefinition(templateId);
+        cardState.originTemplateId=templateId;cardState.runtimeTemplate=definition.header;
+        cardState.runtimeTierMask=definition.header.tierMask;cardState.tokenMask=8;
+        cardState.timerValue=definition.initialTimer;if(assumedTimer>0)cardState.timerValue=assumedTimer;
+        nilfCounter=0;selectedModeId=0;
+        cardState.power.basePower=definition.header.power;cardState.power.currentPower=definition.header.power;cardState.power.armor=definition.header.armor;
+        power.initialized=false;power.InitFromFields(cardState.power);aiHypothesis=true;
+    }
     public function HideUnknownFromAi()
     {
         var s : SBetaGwentCardSnapshot;var hiddenBoard : bool;
-        if(!game || !game.aiSimulating)return;s=Snapshot();if(s.positionPlayerId!=1)return;
+        if(!game || !game.aiSimulating || aiHypothesis || game.aiOpenInfoBench)return;s=Snapshot();if(s.positionPlayerId!=1)return;
         hiddenBoard=(s.locationMask&7)!=0 && (s.tokenMask&8)!=0;
         if(!hiddenBoard && !((s.locationMask==8 || s.locationMask==16) && (s.tokenMask&64)==0))return;
         definition=BetaGwentDuelDefinition(112101);definition.effect=0;definition.header.power=6;definition.header.armor=0;
@@ -121,7 +137,9 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
         var old : int;
         old = cardState.tokenMask;
         if ((old & 4) != 0) cardState.tokenMask = old - 4;
-        else { if ((old & 8) != 0) RevealAmbush(); cardState.tokenMask = cardState.tokenMask | 4; }
+        // Original ChangeTokensAction.Toggle emits Add(Lock), which removes
+        // Resilience, Ambush and Disloyal. Unlock only removes the lock bit.
+        else { if ((old & 8) != 0) RevealAmbush(); cardState.tokenMask = (cardState.tokenMask | 4) & -138; }
         game.RecordLockVisual(this, old); return true;
     }
     public function ResetCurrentPower() : bool

@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "purpose": "Direct JavaScript AI port for later WitcherScript implementation",
+  "source": "Gwent 0.9.24.3.432\\Gwent_Data\\StreamingAssets\\data_definitions",
+  "sourceXmlSha256": {
+    "Templates.xml": "33c487dc6069c531adef05c8e43144186cd447884dffb6aec1ec667e84be6e68",
+    "Personalities.xml": "b48f650184f60f364dec99aa25186e6beb7f698c5915f5a919d8b94610b10991"
+  },
+  "templates": 698,
+  "profiles": 229,
+  "runtimeDependencies": [
+    "JavaScript"
+  ],
+  "basePath": {
+    "TreeSearchType": "AlphaBeta",
+    "EvaluatorType": "MiniMax",
+    "MulliganPickerType": "SemanticPreference",
+    "CardPickerType": "BestCardForPersonality",
+    "DepthOfChecking": 1,
+    "MaxTimeAllowed": 3
+  },
+  "fullAiPortComplete": false
+}

@@ -194,6 +194,30 @@ class CBetaGwentDuelEffectRuntime extends CBetaGwentActionSink
         { failed = true; return false; }
         return true;
     }
+    private function QueuedDeckMoves(actions : CBetaGwentActionQueue, side : int, row : int, cardId : int) : int
+    {
+        var i,count : int;var action : CBetaGwentDuelMoveAction;var s : SBetaGwentCardSnapshot;
+        if(!actions)return 0;
+        for(i=0;i<actions.Count();i+=1){action=(CBetaGwentDuelMoveAction)actions.At(i);
+            if(!action || !action.card || !action.IsValid())continue;s=action.card.Snapshot();
+            if(side!=0 && action.destination.positionPlayerId!=side)continue;
+            if(row!=0 && action.destination.locationMask!=row)continue;
+            if(cardId!=0 && s.instanceId!=cardId)continue;
+            count+=1;
+        }
+        return count;
+    }
+    // Reserve identities and row slots until queued summons are applied. Two
+    // sequential reveal requests must not schedule the same golem twice.
+    public function PendingDeckMoves(side : int, row : int, optional cardId : int) : int
+    {
+        var i,count : int;
+        count=QueuedDeckMoves(queue,side,row,cardId);
+        for(i=0;i<frames.Size();i+=1)count+=QueuedDeckMoves(frames[i].actions,side,row,cardId);
+        if(buildingFrame && !frames.Contains(buildingFrame))count+=QueuedDeckMoves(buildingFrame.actions,side,row,cardId);
+        if(dispatchingFrame && dispatchingFrame!=buildingFrame && !frames.Contains(dispatchingFrame))count+=QueuedDeckMoves(dispatchingFrame.actions,side,row,cardId);
+        return count;
+    }
     public function BeforeConsume(source : CBetaGwentDuelCard, target : CBetaGwentDuelCard)
     { game.BeforeConsume(source, target); }
     public function BanishConsumed(source : CBetaGwentDuelCard, target : CBetaGwentDuelCard) : bool
