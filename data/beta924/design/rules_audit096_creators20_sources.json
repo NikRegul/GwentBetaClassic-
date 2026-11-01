@@ -1,0 +1,895 @@
+{
+  "schema": 1,
+  "scope": 20,
+  "independentExpectationsBeforeHandlers": true,
+  "allBranchesComplete": false,
+  "records": [
+    {
+      "id": 200050,
+      "graphs": [
+        {
+          "nid": 402,
+          "sha256": "12b06a886f294b1873639209e4195b712d5d8804b7aa1b4a58226594abe79cd8"
+        }
+      ],
+      "filter": {
+        "faction": 4,
+        "tier": 2,
+        "type": 4,
+        "category": "67108864",
+        "exclude": []
+      },
+      "pool": [
+        162301,
+        162303,
+        162305,
+        162307,
+        162308,
+        162310,
+        162311,
+        162312,
+        162318,
+        200044,
+        200294,
+        200296,
+        200518,
+        201609,
+        201610,
+        201616,
+        201617,
+        201661
+      ],
+      "randomThree": true,
+      "expected": "Played: capture BaseSet/Normal definitions with explicit filters; remove listed self/spy definitions before full shuffle, offer first up to3 without replacement; one selected definition is spawned then played. Full pool shuffle N-1 RNG. Exact native dictionary order and all child abilities deferred. Inlaid Sword201642 strengthens spawned BASE3 before child play."
+    },
+    {
+      "id": 200056,
+      "graphs": [
+        {
+          "nid": 402,
+          "sha256": "f14680f5add17a2b22d4711a61cc2ac47ba88b2e365d5c27ba4137c6ed0c8960"
+        }
+      ],
+      "filter": {
+        "faction": 0,
+        "tier": 6,
+        "type": 2,
+        "category": "1048576",
+        "exclude": []
+      },
+      "pool": [
+        113102,
+        113202,
+        113204,
+        113209,
+        113301,
+        113308,
+        113309,
+        113315,
+        143201,
+        153201,
+        200020,
+        200022,
+        200053,
+        201634
+      ],
+      "randomThree": true,
+      "expected": "Played: capture BaseSet/Normal definitions with explicit filters; remove listed self/spy definitions before full shuffle, offer first up to3 without replacement; one selected definition is spawned then played. Full pool shuffle N-1 RNG. Exact native dictionary order and all child abilities deferred. Inlaid Sword201642 strengthens spawned BASE3 before child play."
+    },
+    {
+      "id": 200058,
+      "graphs": [
+        {
+          "nid": 206,
+          "sha256": "36a5eda153b4525b139b9a92aa6f74217516c076ae400ea1c3be7295b3101b42"
+        }
+      ],
+      "filter": {
+        "faction": 0,
+        "tier": 8,
+        "type": 4,
+        "category": "0",
+        "exclude": []
+      },
+      "pool": [
+        112101,
+        112102,
+        112103,
+        112104,
+        112105,
+        112106,
+        112107,
+        112108,
+        112109,
+        112110,
+        112111,
+        112112,
+        112113,
+        122101,
+        122102,
+        122103,
+        122104,
+        122105,
+        122106,
+        122107,
+        122108,
+        122201,
+        122202,
+        131102,
+        132101,
+        132102,
+        132103,
+        132104,
+        132105,
+        132106,
+        132107,
+        132108,
+        132215,
+        132218,
+        132408,
+        142101,
+        142102,
+        142103,
+        142104,
+        142105,
+        142106,
+        142107,
+        142108,
+        152101,
+        152103,
+        152104,
+        152105,
+        152106,
+        152107,
+        152109,
+        162101,
+        162102,
+        162103,
+        162104,
+        162105,
+        162106,
+        162107,
+        162108,
+        200028,
+        200031,
+        200032,
+        200056,
+        200062,
+        200071,
+        200080,
+        200102,
+        200103,
+        200104,
+        200177,
+        200209,
+        200220,
+        200221,
+        200222,
+        200235,
+        200236,
+        200237,
+        200532,
+        201523,
+        201579,
+        201601,
+        201603,
+        201611,
+        201613,
+        201615,
+        201618,
+        201620,
+        201621,
+        201626,
+        201772,
+        201773,
+        201774,
+        201776,
+        201777,
+        201778,
+        201779,
+        201780,
+        201781,
+        201817
+      ],
+      "randomThree": true,
+      "expected": "Played: capture BaseSet/Normal definitions with explicit filters; remove listed self/spy definitions before full shuffle, offer first up to3 without replacement; one selected definition is spawned then played. Full pool shuffle N-1 RNG. Exact native dictionary order and all child abilities deferred. Inlaid Sword201642 strengthens spawned BASE3 before child play."
+    },
+    {
+      "id": 200087,
+      "graphs": [
+        {
+          "nid": 402,
+          "sha256": "3d1c99b17d1efc7497ffcc3a1b69357925a725cc360d6136e1cc09d8a9cb0ff1"
+        }
+      ],
+      "filter": {
+        "faction": 0,
+        "tier": 6,
+        "type": 4,
+        "category": "281474976714752",
+        "exclude": []
+      },
+      "pool": [
+        112205,
+        112206,
+        112209,
+        112210,
+        132209,
+        132217,
+        132303,
+        132307,
+        132308,
+        132312,
+        132315,
+        132409,
+        152209,
+        152210,
+        200098,
+        200112,
+        200114,
+        200139,
+        200233,
+        200539,
+        201599,
+        201600,
+        201606,
+        201623
+      ],
+      "randomThree": true,
+      "expected": "Played: capture BaseSet/Normal definitions with explicit filters; remove listed self/spy definitions before full shuffle, offer first up to3 without replacement; one selected definition is spawned then played. Full pool shuffle N-1 RNG. Exact native dictionary order and all child abilities deferred. Inlaid Sword201642 strengthens spawned BASE3 before child play."
+    },
+    {
+      "id": 201589,
+      "graphs": [
+        {
+          "nid": 181,
+          "sha256": "dadd1362a16ae364559067c7f98857d390923894e0459e86697efb9aeb06bfcf"
+        }
+      ],
+      "filter": {
+        "faction": 17,
+        "tier": 4,
+        "type": 2,
+        "category": "0",
+        "exclude": []
+      },
+      "pool": [
+        113102,
+        113201,
+        113202,
+        113203,
+        113205,
+        113206,
+        113207,
+        113209,
+        113306,
+        113309,
+        113315,
+        143201,
+        200019,
+        200020,
+        200022,
+        200053,
+        200223,
+        200228,
+        200530,
+        201585,
+        201634,
+        201635,
+        201637,
+        201639,
+        201653,
+        201697
+      ],
+      "randomThree": true,
+      "expected": "Played: capture BaseSet/Normal definitions with explicit filters; remove listed self/spy definitions before full shuffle, offer first up to3 without replacement; one selected definition is spawned then played. Full pool shuffle N-1 RNG. Exact native dictionary order and all child abilities deferred. Inlaid Sword201642 strengthens spawned BASE3 before child play."
+    },
+    {
+      "id": 201642,
+      "graphs": [
+        {
+          "nid": 125,
+          "sha256": "8fadc928028219c093d99dad25abc2af1362f6a69448fcafd6f6d4f195a74490"
+        }
+      ],
+      "filter": {
+        "faction": 32,
+        "tier": 6,
+        "type": 4,
+        "category": "67108864",
+        "exclude": []
+      },
+      "pool": [
+        152201,
+        152203,
+        152208,
+        152301,
+        152302,
+        152303,
+        152304,
+        152305,
+        152307,
+        152312,
+        152313,
+        152315,
+        152316,
+        152318,
+        200036,
+        200040,
+        200144,
+        200146,
+        200149,
+        201578
+      ],
+      "randomThree": true,
+      "expected": "Played: capture BaseSet/Normal definitions with explicit filters; remove listed self/spy definitions before full shuffle, offer first up to3 without replacement; one selected definition is spawned then played. Full pool shuffle N-1 RNG. Exact native dictionary order and all child abilities deferred. Inlaid Sword201642 strengthens spawned BASE3 before child play."
+    },
+    {
+      "id": 201581,
+      "graphs": [
+        {
+          "nid": 443,
+          "sha256": "2e33b1ff9a8eba58b8bd281b0f206ae77b31ea8fcb1239232caece7be7b00a94"
+        }
+      ],
+      "filter": {
+        "faction": 32,
+        "tier": 6,
+        "type": 14,
+        "category": "0",
+        "exclude": [
+          201581,
+          152214
+        ]
+      },
+      "pool": [
+        113313,
+        152201,
+        152202,
+        152203,
+        152204,
+        152205,
+        152206,
+        152207,
+        152208,
+        152209,
+        152210,
+        152211,
+        152213,
+        152301,
+        152302,
+        152303,
+        152304,
+        152305,
+        152306,
+        152307,
+        152308,
+        152309,
+        152310,
+        152311,
+        152312,
+        152313,
+        152314,
+        152315,
+        152316,
+        152317,
+        152318,
+        153201,
+        200036,
+        200040,
+        200043,
+        200046,
+        200081,
+        200105,
+        200144,
+        200145,
+        200146,
+        200147,
+        200149,
+        200212,
+        200300,
+        200528,
+        201578,
+        201598,
+        201623,
+        201642,
+        201644,
+        201646
+      ],
+      "randomThree": true,
+      "expected": "Played: capture BaseSet/Normal definitions with explicit filters; remove listed self/spy definitions before full shuffle, offer first up to3 without replacement; one selected definition is spawned then played. Full pool shuffle N-1 RNG. Exact native dictionary order and all child abilities deferred. Inlaid Sword201642 strengthens spawned BASE3 before child play."
+    },
+    {
+      "id": 201582,
+      "graphs": [
+        {
+          "nid": 443,
+          "sha256": "4e6a3ec83fe30aeb990267586c8453bfbb4fe8e8c57a2a102f4173d3822a09c4"
+        }
+      ],
+      "filter": {
+        "faction": 8,
+        "tier": 6,
+        "type": 14,
+        "category": "0",
+        "exclude": [
+          201582,
+          122203
+        ]
+      },
+      "pool": [
+        122204,
+        122205,
+        122206,
+        122207,
+        122208,
+        122209,
+        122210,
+        122211,
+        122212,
+        122213,
+        122214,
+        122301,
+        122302,
+        122303,
+        122304,
+        122306,
+        122307,
+        122308,
+        122309,
+        122310,
+        122311,
+        122312,
+        122313,
+        122314,
+        122315,
+        122316,
+        122317,
+        122318,
+        122401,
+        122402,
+        123201,
+        123301,
+        200033,
+        200048,
+        200049,
+        200088,
+        200098,
+        200132,
+        200171,
+        200299,
+        200529,
+        200540,
+        201622,
+        201624,
+        201625,
+        201628,
+        201630,
+        201633,
+        201648,
+        201650,
+        201659,
+        201748
+      ],
+      "randomThree": true,
+      "expected": "Played: capture BaseSet/Normal definitions with explicit filters; remove listed self/spy definitions before full shuffle, offer first up to3 without replacement; one selected definition is spawned then played. Full pool shuffle N-1 RNG. Exact native dictionary order and all child abilities deferred. Inlaid Sword201642 strengthens spawned BASE3 before child play."
+    },
+    {
+      "id": 201583,
+      "graphs": [
+        {
+          "nid": 438,
+          "sha256": "caf7dffb01c895d6c948e5f366a0538782b47b876b21d87651ec0fb3ef894625"
+        }
+      ],
+      "filter": {
+        "faction": 4,
+        "tier": 6,
+        "type": 14,
+        "category": "0",
+        "exclude": [
+          201583,
+          162210
+        ]
+      },
+      "pool": [
+        122403,
+        132407,
+        162201,
+        162202,
+        162203,
+        162204,
+        162205,
+        162206,
+        162207,
+        162208,
+        162209,
+        162211,
+        162212,
+        162213,
+        162301,
+        162302,
+        162303,
+        162304,
+        162305,
+        162306,
+        162307,
+        162308,
+        162309,
+        162310,
+        162311,
+        162312,
+        162313,
+        162314,
+        162315,
+        162316,
+        162317,
+        162318,
+        162401,
+        163201,
+        200041,
+        200044,
+        200050,
+        200115,
+        200118,
+        200124,
+        200227,
+        200294,
+        200296,
+        200518,
+        201609,
+        201610,
+        201612,
+        201616,
+        201617,
+        201619,
+        201661,
+        201662,
+        201664,
+        201699
+      ],
+      "randomThree": true,
+      "expected": "Played: capture BaseSet/Normal definitions with explicit filters; remove listed self/spy definitions before full shuffle, offer first up to3 without replacement; one selected definition is spawned then played. Full pool shuffle N-1 RNG. Exact native dictionary order and all child abilities deferred. Inlaid Sword201642 strengthens spawned BASE3 before child play."
+    },
+    {
+      "id": 201584,
+      "graphs": [
+        {
+          "nid": 451,
+          "sha256": "fec160fc8fb040d112aa930d57ac598641e9775973174137d4d3cac5c3a1f126"
+        }
+      ],
+      "filter": {
+        "faction": 2,
+        "tier": 6,
+        "type": 14,
+        "category": "0",
+        "exclude": [
+          201584,
+          132204
+        ]
+      },
+      "pool": [
+        112405,
+        132201,
+        132202,
+        132203,
+        132205,
+        132206,
+        132207,
+        132208,
+        132209,
+        132210,
+        132211,
+        132212,
+        132213,
+        132214,
+        132216,
+        132217,
+        132220,
+        132301,
+        132302,
+        132303,
+        132304,
+        132305,
+        132306,
+        132307,
+        132308,
+        132309,
+        132310,
+        132312,
+        132313,
+        132314,
+        132315,
+        132402,
+        132406,
+        132409,
+        133302,
+        200026,
+        200037,
+        200038,
+        200052,
+        200067,
+        200073,
+        200112,
+        200114,
+        200218,
+        200233,
+        200295,
+        200301,
+        200502,
+        200534,
+        200539,
+        201599,
+        201600,
+        201606,
+        201657,
+        201660,
+        201698,
+        201700,
+        201701
+      ],
+      "randomThree": true,
+      "expected": "Played: capture BaseSet/Normal definitions with explicit filters; remove listed self/spy definitions before full shuffle, offer first up to3 without replacement; one selected definition is spawned then played. Full pool shuffle N-1 RNG. Exact native dictionary order and all child abilities deferred. Inlaid Sword201642 strengthens spawned BASE3 before child play."
+    },
+    {
+      "id": 201585,
+      "graphs": [
+        {
+          "nid": 443,
+          "sha256": "b8081f51594bef44ed7e406448eebfeca5838f8673c8a4859d3c9f7c51ea21ed"
+        }
+      ],
+      "filter": {
+        "faction": 16,
+        "tier": 6,
+        "type": 14,
+        "category": "0",
+        "exclude": [
+          201585,
+          142203
+        ]
+      },
+      "pool": [
+        142201,
+        142202,
+        142204,
+        142205,
+        142206,
+        142207,
+        142208,
+        142209,
+        142210,
+        142211,
+        142212,
+        142213,
+        142214,
+        142301,
+        142302,
+        142303,
+        142304,
+        142305,
+        142306,
+        142307,
+        142308,
+        142309,
+        142310,
+        142311,
+        142312,
+        142313,
+        142314,
+        142315,
+        142316,
+        142317,
+        142401,
+        143201,
+        200030,
+        200039,
+        200042,
+        200135,
+        200136,
+        200138,
+        200139,
+        200228,
+        200293,
+        200520,
+        200535,
+        201559,
+        201636,
+        201638,
+        201643,
+        201645,
+        201653,
+        201676,
+        201696
+      ],
+      "randomThree": true,
+      "expected": "Played: capture BaseSet/Normal definitions with explicit filters; remove listed self/spy definitions before full shuffle, offer first up to3 without replacement; one selected definition is spawned then played. Full pool shuffle N-1 RNG. Exact native dictionary order and all child abilities deferred. Inlaid Sword201642 strengthens spawned BASE3 before child play."
+    },
+    {
+      "id": 201587,
+      "graphs": [
+        {
+          "nid": 185,
+          "sha256": "2f3a369e6a9e47387414ed07945ca3cce78bda9c52d9ebe712e159533e4e73cd"
+        }
+      ],
+      "filter": {
+        "faction": 3,
+        "tier": 6,
+        "type": 14,
+        "category": "9007199254740992",
+        "exclude": []
+      },
+      "pool": [
+        113306,
+        113307,
+        113308,
+        113320,
+        133302,
+        153301,
+        200021,
+        200023,
+        200223,
+        200224,
+        201657,
+        201744
+      ],
+      "randomThree": true,
+      "expected": "Played: capture BaseSet/Normal definitions with explicit filters; remove listed self/spy definitions before full shuffle, offer first up to3 without replacement; one selected definition is spawned then played. Full pool shuffle N-1 RNG. Exact native dictionary order and all child abilities deferred. Inlaid Sword201642 strengthens spawned BASE3 before child play."
+    },
+    {
+      "id": 201595,
+      "graphs": [
+        {
+          "nid": 154,
+          "sha256": "9941f9579f2d740e2f49d9c039437d7bf3357f3ca2b7f7bb5d6d2bf2362ac329"
+        }
+      ],
+      "filter": {
+        "faction": 9,
+        "tier": 6,
+        "type": 12,
+        "category": "33554432",
+        "exclude": []
+      },
+      "pool": [
+        112207,
+        112215,
+        122401,
+        122402,
+        200089,
+        200098,
+        201624,
+        201625,
+        201628,
+        201630,
+        201650
+      ],
+      "randomThree": true,
+      "expected": "Played: capture BaseSet/Normal definitions with explicit filters; remove listed self/spy definitions before full shuffle, offer first up to3 without replacement; one selected definition is spawned then played. Full pool shuffle N-1 RNG. Exact native dictionary order and all child abilities deferred. Inlaid Sword201642 strengthens spawned BASE3 before child play."
+    },
+    {
+      "id": 112108,
+      "graphs": [
+        {
+          "nid": 155,
+          "sha256": "f18878cea454771a69119ba1fb1ed7f83fc0fbd6655f546f1b241c77c5388ddf"
+        }
+      ],
+      "pool": [
+        112401,
+        112402
+      ],
+      "randomThree": false,
+      "expected": "Played: exact fixed definition list in recorded source order; choose1 then spawn selected instance and play it. No shuffle RNG. Each child ability has separate obligations; main branch tests assert source list and actual selected creation."
+    },
+    {
+      "id": 112109,
+      "graphs": [
+        {
+          "nid": 155,
+          "sha256": "c568b6ddbffd0c013f368b9627f329a821db6568456476bdb3570e278b33c031"
+        }
+      ],
+      "pool": [
+        112403,
+        112404
+      ],
+      "randomThree": false,
+      "expected": "Played: exact fixed definition list in recorded source order; choose1 then spawn selected instance and play it. No shuffle RNG. Each child ability has separate obligations; main branch tests assert source list and actual selected creation."
+    },
+    {
+      "id": 113208,
+      "graphs": [
+        {
+          "nid": 171,
+          "sha256": "6cec9f842e83e72e060158e2401d1d77002cac4137106608cfe8e50cf38124ee"
+        }
+      ],
+      "pool": [
+        113302,
+        113305,
+        113301
+      ],
+      "randomThree": false,
+      "expected": "Played: exact fixed definition list in recorded source order; choose1 then spawn selected instance and play it. No shuffle RNG. Each child ability has separate obligations; main branch tests assert source list and actual selected creation."
+    },
+    {
+      "id": 122108,
+      "graphs": [
+        {
+          "nid": 174,
+          "sha256": "d0ccc7f623508aeaba468b74cfefffdf6d1831fcedfb89006bf5da2468934ef1"
+        }
+      ],
+      "pool": [
+        113301,
+        113311,
+        200023
+      ],
+      "randomThree": false,
+      "expected": "Played: exact fixed definition list in recorded source order; choose1 then spawn selected instance and play it. No shuffle RNG. Each child ability has separate obligations; main branch tests assert source list and actual selected creation."
+    },
+    {
+      "id": 122207,
+      "graphs": [
+        {
+          "nid": 174,
+          "sha256": "150a505d551a478097d648a66196c2ca9ae2b99f1d66bf22fcf34a24f1eca7c7"
+        }
+      ],
+      "pool": [
+        113312,
+        113301,
+        113401
+      ],
+      "randomThree": false,
+      "expected": "Played: exact fixed definition list in recorded source order; choose1 then spawn selected instance and play it. No shuffle RNG. Each child ability has separate obligations; main branch tests assert source list and actual selected creation."
+    },
+    {
+      "id": 132203,
+      "graphs": [
+        {
+          "nid": 194,
+          "sha256": "7897fcbb7f2ccb5d0a1bf1ede9e32fafc11398009a426089649a76d42418c0ba"
+        }
+      ],
+      "pool": [
+        113401,
+        200023,
+        113312
+      ],
+      "randomThree": false,
+      "expected": "Played: exact fixed definition list in recorded source order; choose1 then spawn selected instance and play it. No shuffle RNG. Each child ability has separate obligations; main branch tests assert source list and actual selected creation."
+    },
+    {
+      "id": 142202,
+      "graphs": [
+        {
+          "nid": 174,
+          "sha256": "fb3ef2ee7529ff0dabdb1e3181d455f36eddc1255d5ec9e1a9d742e553469d97"
+        }
+      ],
+      "pool": [
+        113301,
+        113305,
+        113401
+      ],
+      "randomThree": false,
+      "expected": "Played: exact fixed definition list in recorded source order; choose1 then spawn selected instance and play it. No shuffle RNG. Each child ability has separate obligations; main branch tests assert source list and actual selected creation."
+    }
+  ],
+  "commonClasses": {
+    "GetCardsDefinitionsNode": "cff7b85fd3ac4dcba39e5351e06c93583d7043a4b38dd7a3f9ea7ac06080086f",
+    "AGetDefinitionsNode": "bb5b57254be7aa6c8b7e54e82192d09b1a0760bc590f3370fc4723af8454d9a7",
+    "CardDefinitionHelper": "56fd0eaae1ff87bace0921cca13551ac960e10a0d4aa60bf11cde9b33d418094",
+    "EAvailability": "0abe3707cd778afa8019bfb0121f60ae3ee4d4c2f4668acb35d6b48a2bb41693",
+    "ECategoryCompareMethod": "ebc14912aa8a99b996c7c2504ad456b4776156ae191c05e098f34856f38a5ea6",
+    "SpawnCardNode": "0985f5c06d7dd103e23c8dc252d10b4cd863d17fd1ddbe71ac388ec30ff8cf65",
+    "RequestTemplateChoiceNode": "f7abfcae0040ff1e205344a6250e11a57b90c8dfa38b19227eef635f440a3e98",
+    "AListGetRangeNode": "19da29b5764fc05ba7123b4b3c33e86fa7b1b5c5755625cb1d6c4a0fbfc7993e",
+    "CardDefinitionListGetRangeNode": "fa8763a61a2c2ef2f9ab6e04bae95f45ae1429f2e1aed45ca0a91da5d105280a",
+    "PlayCardsNode": "f574ebcad534b08f786d96c41891f1ba036448848feb2ee1853e8e749046ad53"
+  }
+}

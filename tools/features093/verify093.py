@@ -9,9 +9,27 @@ from build_inputs import CLASSIC_RUNTIME
 def sha(p):
     with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 
+def verify_current_targeted_plans(targeted,plans):
+    # Preparation asserts twice per cooperative callback; the number of callbacks
+    # legitimately changes with the audited rules. Check fixed semantic coverage.
+    fixed={'check_reply_pass094':543,'check_exhausted_frontier094':847,
+           'check_draw_frontier094':816,'check_chase_budget093a':930,
+           'check_lock_resilience093b':293,'check_four_card093c':2312}
+    assert {k:v for k,v in targeted.items() if k!='check_plans093c'}==fixed
+    assert targeted['check_plans093c']==plans['checks'] and plans['checks']>=118
+    assert not plans['failures'] and plans['actualHistoricalFixtures'] and plans['actualWitcherScript']
+    assert plans['peakPlays']==1 and len(plans['cases'])==14
+    spies=[r for r in plans['cases'] if r['kind']=='historical-spy']
+    leaders=[r for r in plans['cases'] if r['kind']=='historical-leader']
+    assert len(spies)==12 and {(r['strength'],r['damp'],r['staged']) for r in spies}=={
+        (s,d,t) for s in [3,4] for d in [0,40,70] for t in [False,True]}
+    assert all(r['played'] and r['hand']==4 for r in spies)
+    assert len(leaders)==2 and {r['staged'] for r in leaders}=={False,True}
+    assert all(r['after']>r['before'] and any('event=LEADER_SEQUENCE' in s for s in r['sequence']) for r in leaders)
+
 def main():
-    p=argparse.ArgumentParser();p.add_argument('build',type=Path);p.add_argument('--version',choices=['0.9.3','0.9.3a','0.9.3b','0.9.3c'],default='0.9.3');p.add_argument('--user-release',action='store_true');a=p.parse_args();out=a.build.resolve();version=a.version
-    if a.user_release:assert version=='0.9.3'
+    p=argparse.ArgumentParser();p.add_argument('build',type=Path);p.add_argument('--version',choices=['0.9.3','0.9.3a','0.9.3b','0.9.3c','0.9.4','0.9.4a','0.9.5'],default='0.9.3');p.add_argument('--user-release',action='store_true');a=p.parse_args();out=a.build.resolve();version=a.version
+    if a.user_release:assert version in ('0.9.3','0.9.4','0.9.4a','0.9.5')
     destination=out/'archive-verification.json';assert not destination.exists(),'Do not overwrite a previous verification'
     release=json.loads((out/'release.json').read_text('utf8'));assert release['version']==version and len(release['archives'])==2
     ordinary_ai=None
@@ -20,7 +38,13 @@ def main():
         for name,digest in snapshot['snapshotFiles'].items():assert sha(out/'rules'/name)==digest,'Modified snapshot '+name
         regressions=json.loads((out/'regressions/summary.json').read_text('utf8'))
         expected_groups=json.loads((out/'user-release-checks.json').read_text('utf8'))['regressionGroups'] if a.user_release else {'0.9.3a':82,'0.9.3b':83,'0.9.3c':85}[version]
-        if a.user_release:assert expected_groups in [87,90,92,93,94]
+        if a.user_release:
+            if version in ('0.9.4','0.9.4a','0.9.5'):
+                sys.path.insert(0,str(ROOT/'tools/ai'))
+                from validate091 import NAMES as regression_names
+                assert expected_groups==len(regression_names)
+                assert {r['name'] for r in regressions}==set(regression_names)
+            else:assert expected_groups in [87,90,92,93,94]
         assert len(regressions)==len({r['name'] for r in regressions})==expected_groups and all(r['exitCode']==0 for r in regressions)
         required=['check_reply_pass094','check_exhausted_frontier094','check_draw_frontier094','check_chase_budget093a']
         if version in ('0.9.3b','0.9.3c') or a.user_release:required.append('check_lock_resilience093b')
@@ -32,7 +56,9 @@ def main():
             assert data['fingerprint']==snapshot['fingerprint'] and not data['failures']
             if name!='check_lock_resilience093b':assert data.get('peakActions',data.get('peakPlays'))==1
             targeted[name]=data['checks']
-        assert sum(targeted.values())==(7508 if a.user_release else {'0.9.3a':3136,'0.9.3b':3429,'0.9.3c':7508}[version])
+        if a.user_release and version in ('0.9.4','0.9.4a','0.9.5'):
+            verify_current_targeted_plans(targeted,json.loads((out/'regressions/check_plans093c.json').read_text('utf8')))
+        else:assert sum(targeted.values())==(7508 if a.user_release else {'0.9.3a':3136,'0.9.3b':3429,'0.9.3c':7508}[version])
         tactics=json.loads((out/'tactics-all/report.json').read_text('utf8'))
         rows=json.loads((out/'rows-all/report.json').read_text('utf8'))
         varied=json.loads((out/'varied/summary.json').read_text('utf8'))
@@ -61,6 +87,12 @@ def main():
                     data=json.loads((out/'regressions'/(name+'.json')).read_text('utf8'))
                     assert data['checks']==count and data['actualWitcherScript'],name
                     targeted[name]=count
+            if version in ('0.9.4','0.9.4a','0.9.5'):
+                data=json.loads((out/'regressions/check_short_spy094c.json').read_text('utf8'))
+                assert data['fingerprint']==snapshot['fingerprint'] and data['checks']>0 and not data['failures']
+                assert data['actualHistoricalFixtures'] and data['actualWitcherScript'] and data['peakPlays']<=1
+                assert not data['nativeGameplayVerified']
+                targeted['check_short_spy094c']=data['checks']
             evidence=json.loads((out/'user-release-checks.json').read_text('utf8'))
             assert evidence['complete'] and evidence['fingerprint']==snapshot['fingerprint'] and evidence['errors']==0
             assert evidence['newStrengthComparisonConducted']==False
@@ -83,7 +115,7 @@ def main():
             assert audio['checks']==309036 and audio['templates']==539
             voices=audio['actualClassicBankCoverage']
             assert len(voices)==5 and all(v['missing']==0 and v['voiceEventsChecked']==881 for v in voices)
-            assert json.loads((out/'user-ui-check.json').read_text('utf8'))['checks']==7107
+            assert json.loads((out/'user-ui-check.json').read_text('utf8'))['checks']==(7120 if version in ('0.9.4a','0.9.5') else 7107)  # 0.9.4a: 13 locked-leader captions
             captions=json.loads((out/'choice-captions.json').read_text('utf8'))
             assert captions['checks']==2498 and len(captions['records'])==2 and len(captions['captioned'])==21
             fates=json.loads((out/'choice-fates.json').read_text('utf8'))
@@ -145,6 +177,16 @@ def main():
     assert expected['actualHandVisible'] and expected['actualDeckVisible'] and not expected['globallyStrongestProfileEstablished']
     mapping_path=out/'unfair-checks/profile-mapping.json';assert sha(mapping_path)==expected['mappingSha256']==gate['profileMappingSha256']
     mapping=json.loads(mapping_path.read_text('utf8'));assert mapping['validated'] and len(mapping['assignments'])==109
+    source_proof=out/'unfair-checks/profile-source-proof.json'
+    assert sha(source_proof)==gate['profileSourceProofSha256']
+    sys.path.insert(0,str(ROOT/'tools/ai'))
+    from profile_provenance094 import amendments
+    reviewed_changes=amendments(out,json.loads(source_proof.read_text('utf8')))
+    if reviewed_changes:
+        amendment=out/'unfair-checks/profile-source-amendments.json'
+        assert sha(amendment)==gate['profileSourceAmendmentsSha256']==expected['sourceAmendmentsSha256']
+        amendment_data=json.loads(amendment.read_text('utf8'))
+        assert amendment_data['historicalProofSha256']==sha(source_proof) and amendment_data['changes']==reviewed_changes
     nextgen=json.loads((out/'compile-nextgen-final/result.json').read_text('utf8'))
     assert nextgen['exitCode']==0 and nextgen['completedByOutput'] and nextgen['patchSourcesUnchangedDuringCompile']
     blob=out/'compile-nextgen-final/compiled/blob.rsblob';assert sha(blob)==nextgen['artifacts'][0]['sha256']
@@ -156,6 +198,12 @@ def main():
     assert menus and max(menus)<65*1024**2
     board_sources=[(ROOT/'BetaGwent/ui'/directory/'BetaGwentBoard.as').read_bytes() for directory in ['src','src-BetaGwentBoard','src-GwintGame','src-DeckBuilder','src-BetaGwentKeg']]
     assert all(raw==board_sources[0] and raw.startswith(b'\xef\xbb\xbf') and b'\n' not in raw.replace(b'\r\n',b'') for raw in board_sources)
+    ui095_inputs=None
+    if version=='0.9.5' and a.user_release:
+        sys.path.insert(0,str(ROOT/'tools/features095'))
+        from ui_release095 import reports as ui095_reports,validate_frozen
+        ui095_reports(out,Path(json.loads((out/'ui-selection.json').read_text('utf8'))['source']))
+        ui095_inputs=validate_frozen(out)
     records=[]
     accepted_hard=None
     if version=='0.9.3c':
@@ -186,6 +234,8 @@ def main():
             assert all(not PurePosixPath(n).is_absolute() and '..' not in PurePosixPath(n).parts and '\\' not in n for n in names)
             manifest_name=f'manifest-{version}.json';manifest=json.loads(z.read(manifest_name));assert manifest['version']==version
             assert manifest['originalBetaAI']==expected
+            if reviewed_changes:
+                assert hashlib.sha256(z.read(f'BetaGwentDocs/AI_Source_Amendments_{version}.json')).hexdigest()==expected['sourceAmendmentsSha256']
             if accepted_hard:
                 assert manifest['hardAI']==release['hardAI']
                 validation=z.read(f'BetaGwentDocs/AI_Validation_{version}.json')
@@ -201,17 +251,23 @@ def main():
                 checked_bytes+=size
             raw=z.read(f'BetaGwentDocs/AI_Profile_Mapping_{version}.json');assert hashlib.sha256(raw).hexdigest()==expected['mappingSha256']
             if a.user_release:
-                assert hashlib.sha256(z.read('BetaGwentDocs/UserFixes_0.9.3.json')).hexdigest()==sha(out/'user-release-checks.json')
+                assert hashlib.sha256(z.read(f'BetaGwentDocs/UserFixes_{version}.json')).hexdigest()==sha(out/'user-release-checks.json')
+                if ui095_inputs:
+                    assert manifest['uiReleaseInputsSha256']==sha(out/'ui-release-inputs.json')
+                    assert json.loads(z.read('BetaGwentDocs/UI_Inputs_0.9.5.json'))==ui095_inputs
+                    platform='nextgen' if '5.0+' in file.name else 'classic'
+                    mod='modBetaGwent0924' if platform=='nextgen' else 'modBetaGwentClassic132'
+                    assert declared['Mods/'+mod+'/content/soundspc.cache']['sha256']==ui095_inputs['audio'][platform]['cacheSha256'],'Wrong UI audio delivered'
                 for code in ['RU','EN','DE','FR','IT','PL','ES','ES_MX','PT_BR','JA','KO','ZH_CN','ZH_TW']:
                     for kind in ['DESCRIPTION','POST','CHANGELOG']:
-                        name=f'0.9.3_{kind}_{code}.md';assert hashlib.sha256(z.read('BetaGwentDocs/'+name)).hexdigest()==manifest['releaseNotes'][name]
+                        name=f'{version}_{kind}_{code}.md';assert hashlib.sha256(z.read('BetaGwentDocs/'+name)).hexdigest()==manifest['releaseNotes'][name]
             assert json.loads(raw)==mapping
             parity=z.read(f'BetaGwentDocs/AI_Profile_Parity_{version}.json');assert hashlib.sha256(parity).hexdigest()==gate['profileParitySha256']
             build_info=json.loads(z.read('BetaGwentDocs/BuildInfo.json'));assert build_info['originalBetaAI']==expected
             if accepted_hard:assert build_info['hardAI']==release['hardAI']
             if '5.0+' in file.name:assert hashlib.sha256(z.read('Mods/modBetaGwent0924/content/precompiled.rsblob')).hexdigest()==sha(blob)
             records.append(dict(path=str(file),sha256=archive['sha256'],files=len(names),bytes=archive['bytes'],allDeclaredFilesSha256AndCrcPassed=True,uncompressedBytesChecked=checked_bytes,selectedProfileMetadataPassed=True))
-    report=dict(version=version,checkedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),archives=records,originalBetaAI=expected,
+    report=dict(version=version,checkedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),validatorSha256=sha(Path(__file__)),archives=records,originalBetaAI=expected,
                 classicCompilerPassed=True,nextgenCompilerPassed=True,maxMenuBytes=max(menus),fiveIdenticalBomCrlfCopies=True,installed=False,published=False,nativeGameplayVerified=False)
     if ordinary_ai:report['ordinaryAI']=ordinary_ai
     if accepted_hard:report['hardAI']=release['hardAI']

@@ -13,6 +13,11 @@ from install_native_hd93 import symbols, tag
 from build_classic_streaming_fix import metadata as classic_metadata
 import build_release
 from classic_soundbanks091 import fix_bundle
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+from editor_vfx094 import extend_resource
+import window_art098
+# Menus that open the deck editor receive the 0.9.4a editor frame rows.
+EDITOR_FX_ENTRIES=('DeckBuilder','BetaGwentBoard')
 
 def sha(p):
     with Path(p).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
@@ -99,9 +104,17 @@ def main():
             entry=m['entry'];path=paths[entry];old=next(x for x in old_menus if x['entry']==entry)
             assert sha(Path(old['path']))==old['sha256']
             swf=Path(m['path']).with_suffix('.swf');assert sha(swf)==m['sourceSha256']
-            raw=resource_patch(original[path],Path(old['path']),swf)
+            raw=resource_patch(original[path],Path(old['path']),swf);editor=None
+            window_art=None
+            if entry!='BetaGwentKeg':
+                window_data=json.loads((a.ui/key/'ui/window_art098.json').read_text('utf8'))
+                raw,window_art=window_art098.patch_resource(raw,window_data,(a.ui/key/'ui/assets/windows098/blocks.bin').read_bytes(),key=='classic')
+            if entry in EDITOR_FX_ENTRIES:
+                spec=json.loads((a.ui/key/'ui/editor_vfx094.json').read_text('utf8'))
+                blocks=(a.ui/key/'ui/assets/editor094/append-bc3.bin').read_bytes()
+                raw,editor=extend_resource(raw,spec,blocks,key=='classic')
             assert len(raw)<(32 if key=='classic' else 65)*1024**2
-            replacements[path]=raw;reports.append(dict(path=path,bytes=len(raw),nativeTextureChunksPreserved=True,imageDefinitionsPreserved=True))
+            replacements[path]=raw;reports.append(dict(path=path,bytes=len(raw),nativeTextureChunksPreserved=True,imageDefinitionsPreserved=True,editorFx094=editor,windowArt098=window_art))
         dest=folder/'blob0.bundle';files,positions,toc_size,preserved=repack(bundle,replacements,dest)
         if key=='classic':
             dest.write_bytes(fix_bundle(dest.read_bytes()));meta=classic_metadata(metadata,dest,{})

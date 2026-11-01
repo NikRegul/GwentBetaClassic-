@@ -13,6 +13,13 @@ class CBetaGwentCloner extends IScriptable
         while (head < originals.Size()) { CopyAny(originals[head], copies[head]); head += 1; }
         return result;
     }
+    public function RestoreSession(source : CBetaGwentDuelSession, destination : CBetaGwentDuelSession, stamp : int)
+    {
+        epoch = stamp; head = 0; flipSeats = false; originals.Clear(); copies.Clear();
+        source.bgCloneEpoch = epoch; source.bgCloneRef = destination;
+        originals.PushBack(source); copies.PushBack(destination);
+        while (head < originals.Size()) { CopyAny(originals[head], copies[head]); head += 1; }
+    }
     private function Seat(value : int) : int
     { if (!flipSeats) return value; if (value == 1) return 2; if (value == 2) return 1; return value; }
     private function Winner(value : int) : int
@@ -538,6 +545,7 @@ class CBetaGwentCloner extends IScriptable
         dst.card = (CBetaGwentDuelCard)Obj(src.card);
         dst.side = Seat(src.side);
         dst.row = src.row;
+        dst.requestedIndex = src.requestedIndex;
         dst.resetHand = src.resetHand;
     }
     private function CopyDuelSpawnAction(src : CBetaGwentDuelSpawnAction, dst : CBetaGwentDuelSpawnAction)
@@ -617,12 +625,18 @@ class CBetaGwentCloner extends IScriptable
         dst.monsterStored = src.monsterStored;
         dst.monsterOnce = src.monsterOnce;
         dst.playFromLocation = src.playFromLocation;
+        dst.playFromTokens = src.playFromTokens;
         dst.lastActiveRow = src.lastActiveRow;
+        dst.pendingArrival = StructSBetaGwentCardSnapshot(src.pendingArrival);
+        dst.hasPendingArrival = src.hasPendingArrival;
         dst.northernCrew = src.northernCrew;
         dst.nilfCounter = src.nilfCounter;
         dst.neutralChoice = src.neutralChoice;
+        dst.ambushPlayedId = src.ambushPlayedId;
+        dst.nilfTurnArmed = src.nilfTurnArmed;
         dst.createdCopy = src.createdCopy;
         dst.monsterIds = src.monsterIds;
+        dst.choiceDeck = src.choiceDeck;
         dst.selectedModeId = src.selectedModeId;
         dst.aiHypothesis = src.aiHypothesis;
     }
@@ -955,6 +969,10 @@ class CBetaGwentCloner extends IScriptable
     {
         dst.game = (CBetaGwentDuelSession)Obj(src.game);
         dst.dependencies = (CBetaGwentNilfDependencies)Obj(src.dependencies);
+        dst.turnPlayedIds = src.turnPlayedIds;
+        dst.turnPlayedDestinations = src.turnPlayedDestinations;
+        dst.historyTurn = src.historyTurn;
+        dst.historyRound = src.historyRound;
     }
     private function CopyDuelNorth(src : CBetaGwentDuelNorth, dst : CBetaGwentDuelNorth)
     {
@@ -977,6 +995,7 @@ class CBetaGwentCloner extends IScriptable
         var i : int;
         dst.events = (CBetaGwentDuelEvents)Obj(src.events);
         dst.drainingDeaths = src.drainingDeaths;
+        dst.completingOuterPlay = src.completingOuterPlay;
         dst.effects = (CBetaGwentDuelEffectRuntime)Obj(src.effects);
         dst.playStack = src.playStack;
         for (i = 0; i < dst.playStack.Size(); i += 1) dst.playStack[i] = (CBetaGwentDuelCard)Obj(dst.playStack[i]);
@@ -987,9 +1006,20 @@ class CBetaGwentCloner extends IScriptable
         dst.dying = src.dying;
         for (i = 0; i < dst.dying.Size(); i += 1) dst.dying[i] = (CBetaGwentDuelCard)Obj(dst.dying[i]);
         dst.pendingConsumeVisuals = src.pendingConsumeVisuals;
+        dst.consumeBatchIds = src.consumeBatchIds;
+        dst.consumeBatchFired = src.consumeBatchFired;
         dst.message = src.message;
         dst.waiting = src.waiting;
         dst.fatal = src.fatal;
+        dst.deferredPlay099 = src.deferredPlay099;
+        dst.probingPlay099 = src.probingPlay099;
+        dst.probeAction099 = src.probeAction099;
+        dst.cancelPlayState098 = NULL;
+        dst.cancelPlayWatch098 = src.cancelPlayWatch098;
+        dst.pendingTargetRequest098 = src.pendingTargetRequest098;
+        dst.cancelPlayNested098 = src.cancelPlayNested098;
+        dst.cancelPlaySource098 = src.cancelPlaySource098;
+        dst.cancelPlaySide098 = src.cancelPlaySide098;
         dst.pendingCard = (CBetaGwentDuelCard)Obj(src.pendingCard);
         dst.pendingLeader = (CBetaGwentDuelCard)Obj(src.pendingLeader);
         dst.pendingRally = (CBetaGwentDuelCard)Obj(src.pendingRally);
@@ -1034,6 +1064,7 @@ class CBetaGwentCloner extends IScriptable
         for (i = 0; i < dst.nilfJobs.Size(); i += 1) dst.nilfJobs[i] = (CBetaGwentNilfReaction)Obj(dst.nilfJobs[i]);
         dst.nilfJob = (CBetaGwentNilfReaction)Obj(src.nilfJob);
         dst.nilfEndingTurn = src.nilfEndingTurn;
+        dst.nilfBeforeTurnEndPending = src.nilfBeforeTurnEndPending;
         dst.mulliganReactions = src.mulliganReactions;
         if (flipSeats) dst.nilfInitialOne = src.nilfInitialTwo; else dst.nilfInitialOne = src.nilfInitialOne;
         if (flipSeats) dst.nilfInitialTwo = src.nilfInitialOne; else dst.nilfInitialTwo = src.nilfInitialTwo;
@@ -1099,8 +1130,8 @@ class CBetaGwentCloner extends IScriptable
     private function CopyDuelSkellige(src : CBetaGwentDuelSkellige, dst : CBetaGwentDuelSkellige)
     {
         dst.game = (CBetaGwentDuelSession)Obj(src.game);
-        if (flipSeats) { dst.beastsOne = src.beastsTwo; } else { dst.beastsOne = src.beastsOne; }
-        if (flipSeats) { dst.beastsTwo = src.beastsOne; } else { dst.beastsTwo = src.beastsTwo; }
+        if (flipSeats) dst.playedOne = src.playedTwo; else dst.playedOne = src.playedOne;
+        if (flipSeats) dst.playedTwo = src.playedOne; else dst.playedTwo = src.playedTwo;
     }
     private function CopyDuelSpecials(src : CBetaGwentDuelSpecials, dst : CBetaGwentDuelSpecials)
     {
@@ -1142,6 +1173,7 @@ class CBetaGwentCloner extends IScriptable
         dst.targetSide = Seat(src.targetSide);
         dst.targetZone = src.targetZone;
         dst.audioKind = src.audioKind;
+        dst.armorBroken099 = src.armorBroken099;
         dst.attackId = src.attackId;
         dst.attackCount = src.attackCount;
     }

@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "sourceRefinements": {
+    "schema": 1,
+    "beforeHandlerInspection": true,
+    "findings": [
+      {
+        "templateId": 200055,
+        "source": "IntMultiplyNode.Calculate uses Math.Ceiling; distinct from CardPower.MultiplyValue floor. Half power here is ceil, not floor."
+      },
+      {
+        "templateId": 200020,
+        "source": "CardData.OnCardMoved Grave->Void removes Lock but does not reset power."
+      },
+      {
+        "templateId": 201620,
+        "source": "AListVar.Add permits duplicate locations. Card.Kill marks waiting; ActionManager.Update waits for no AbilityManager instances before KillWaitingToDie, so CURRENT remains active row during this graph."
+      },
+      {
+        "templateId": 200235,
+        "source": "FilterCardListNode.Execute ignores unconnected Filters entries by checking ValueSource!=null."
+      }
+    ]
+  },
+  "fixtureCorrections": {
+    "schema": 1,
+    "beforeEngineFixes": true,
+    "corrections": [
+      "Adda non-Monster fixture uses Northern122310, not Monster132209.",
+      "PlayFromPile fixtures use recognized postBoost0 parents113316/201704; direct From branches remain narrower than full tutor proof.",
+      "Alchemy fixture is selected from exact static category8589934592;113301 was not Alchemy.",
+      "Fringilla is a spy: left/right fixtures belong to actual placement side (opponent of actor).",
+      "Nithral hand fixture must be Tier14, not the first matching Wild Hunt leader Tier1.",
+      "Trial of Grasses Witcher fixture is selected from static category2147483648;112106 did not match.",
+      "An armor check after killing a1-power drain target allows normal grave reset."
+    ],
+    "sourceClarifications": [
+      "ExecutionStack.Push moves Position before deploy, but BoardManager.AfterMoved and CardData.OnCardMoved occur on pop. Thus reveal64 present on original hand source still influences Fat Helga deploy, then is removed after completion.",
+      "The162208 request defect is Egan, not Alchemist162316; previous textual labels were corrected."
+    ]
+  },
+  "coverageLimits": [
+    "Initial-deck Kind/Availability filters and all external reactions remain open; no full ability claim.",
+    "3358 initial conditions and124 baseline failures are separate from the expanded C negative fixture and500 successful JS/typed-WS request conditions."
+  ]
+}

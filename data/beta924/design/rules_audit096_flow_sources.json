@@ -1,0 +1,606 @@
+{
+ "schema": 1,
+ "scope": "scope198 flow family",
+ "independentExpectationsBeforeHandlers": true,
+ "allBranchesComplete": false,
+ "csharp": [
+  {
+   "n": "DrawCardsNode",
+   "sha256": "c4daaefc9d920ac622ee76011a88e44c3d0dc4edc4d91567e62d7458bb8176a1"
+  },
+  {
+   "n": "DrawAction",
+   "sha256": "2678bdb3d2b1cce866c297bf84dfa2bf4c72c19df795f74fcc820ec039235c2b"
+  },
+  {
+   "n": "MoveCardsNode",
+   "sha256": "5a398443c8d8fd494494b09291e9f3488374e70beaf3d561182b66cf997362fd"
+  },
+  {
+   "n": "IntBranchNode",
+   "sha256": "26177a41dd59d86985e51516009f25ab3043fb47bfc10390cad28a715b3191e7"
+  },
+  {
+   "n": "IntGetRandomNode",
+   "sha256": "40a4df82d1b31d3118cb1b34bc09324c66351ae1b10d438520c847ef6094cd28"
+  },
+  {
+   "n": "CardListGetElementNode",
+   "sha256": "f1a1af136797c3b78316d036b81352afd51d3eeb2678d4dc1f861dd5e340115c"
+  },
+  {
+   "n": "GetCardPlayerIdNode",
+   "sha256": "64664c53ff727a7602fffef757d65af0871e5ca553f7c9cf91a7cbc5a9f6fbfc"
+  },
+  {
+   "n": "CardListLengthNode",
+   "sha256": "5b19eb46a6bf987957ff2f06a3be33d71dc327e6b3b85bf77fac34170e30c054"
+  },
+  {
+   "n": "FilterCardTypeNode",
+   "sha256": "c40d0a20ee2517253d831ffea1941c626f70fc9d80ebab024f8e5a3ec0df1f30"
+  },
+  {
+   "n": "RequestCardChoiceNode",
+   "sha256": "7fddbaa13542f484baafcf3c0aa68784e1b0ed3b13f7f48f6dbdeecbec3f2ac4"
+  },
+  {
+   "n": "AListShuffleNode",
+   "sha256": "ce4cf1318bac18494eab147272c699aed9b91f701273746fdd23c9e179113a1e"
+  },
+  {
+   "n": "ListExt",
+   "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+  },
+  {
+   "n": "Location",
+   "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+  },
+  {
+   "n": "ChangePowerNode",
+   "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+  },
+  {
+   "n": "GetCardDefinitionNode",
+   "sha256": "f8c875bfcf5103d6503e71a575adbce50ae8cfe42b30e9ed69d625dfeabb5868"
+  },
+  {
+   "n": "RequestCardTargetsNode",
+   "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+  },
+  {
+   "n": "ARequestTargetsAction",
+   "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+  },
+  {
+   "n": "AGetDataNode",
+   "sha256": "311c9bec4b6cab3b9f1c7cc5c5c2b876df64c322eca13ca889e3cd0091eb85a4"
+  },
+  {
+   "n": "AListGetElementNode",
+   "sha256": "a347510431090525cda509f9b74f7b7efd7ad7c5d723afe614c4a92745ca4f31"
+  },
+  {
+   "n": "SpawnCardNode",
+   "sha256": "0985f5c06d7dd103e23c8dc252d10b4cd863d17fd1ddbe71ac388ec30ff8cf65"
+  },
+  {
+   "n": "SpawnCardsAction",
+   "sha256": "51059270c87121daab15dc282c65d05ca4d0ab5c1bf095d3fdf095e0b6ab56c1"
+  },
+  {
+   "n": "AGetRandomPositionNode",
+   "sha256": "d49ff4ef9d40f4aac58b6e4bfe110dcc2613126ddf0d90702eb91193dfdbea72"
+  },
+  {
+   "n": "AListForeachNode",
+   "sha256": "4d8d2b6c4258f607beab78a146c5b01cc6f6f3d6458a4e9eb870ce48a4a116a8"
+  },
+  {
+   "n": "AListAddNode",
+   "sha256": "7e5f7d33b28cb9e70c45a0025fd9a81c7fdc6128b33af1946d531fd0df580e23"
+  },
+  {
+   "n": "AListBranchNode",
+   "sha256": "f6479b529c11184daa7f47d8d5df2bdcd4ec87ff9daf9e6c6a9d6a723c376026"
+  },
+  {
+   "n": "DestroyCardsNode",
+   "sha256": "2a00acdf445daeff528e4c884e80d8d01b21e5178e2d52d3009a4b9ed467a135"
+  },
+  {
+   "n": "RequestTemplateChoiceNode",
+   "sha256": "f7abfcae0040ff1e205344a6250e11a57b90c8dfa38b19227eef635f440a3e98"
+  },
+  {
+   "n": "IntCompareNode",
+   "sha256": "fdc29bbd8c96df60b7f886541fa5e2e8a65fec74535340c014f41ea386af4b07"
+  },
+  {
+   "n": "BranchNode",
+   "sha256": "ae7b8349653187181c2ef768c8ae14e2a823763ba0563c87bf089449539199f9"
+  },
+  {
+   "n": "GetTemplateIdNode",
+   "sha256": "d2bfe2134974bcb2f2a34b6875a3e2a5bd659e72da53a4c76493fa2960cd520b"
+  },
+  {
+   "n": "AGetDefinitionsNode",
+   "sha256": "bb5b57254be7aa6c8b7e54e82192d09b1a0760bc590f3370fc4723af8454d9a7"
+  },
+  {
+   "n": "CardDefinitionHelper",
+   "sha256": "56fd0eaae1ff87bace0921cca13551ac960e10a0d4aa60bf11cde9b33d418094"
+  },
+  {
+   "n": "AGetDeckDefinitions",
+   "sha256": "97daeaae94d9bad88ba6d864c6aa9d27a030b3a4b4e652aea71be5046dd8addc"
+  },
+  {
+   "n": "GetInitialDeckDefinitions",
+   "sha256": "5b140e84a9a9171c984955fa6448e8636afb934be51d6e1ed40037feb5f014a6"
+  }
+ ],
+ "records": [
+  {
+   "id": 112112,
+   "graphs": [
+    {
+     "nid": 189,
+     "sha256": "2d75f8c071fae5ca87d6b06d575d8c1af5e6a75ea8db1f4d26c402a877fcc5ba"
+    }
+   ],
+   "expected": "Opponent initial deck Silver/Gold units unique minus 112112, GetRandom Next(count) -> spawn own PlayStack, play."
+  },
+  {
+   "id": 112208,
+   "graphs": [
+    {
+     "nid": 184,
+     "sha256": "bedd55139a5fbe92f8cf7ca5365210a13f008e497292fc94667a45d23fa95dc5"
+    }
+   ],
+   "expected": "Played: branch/int branch, choice, spawns at positions, timer."
+  },
+  {
+   "id": 122205,
+   "graphs": [
+    {
+     "nid": 293,
+     "sha256": "6543e95314aa022ede38c9d509e40b09b059a39f55c0fcd4306aac6f98246a3e"
+    }
+   ],
+   "expected": "Played: choose and play (BeforeTurnEnd deferred)."
+  },
+  {
+   "id": 122307,
+   "graphs": [
+    {
+     "nid": 551,
+     "sha256": "89c65612da265cedda52d00a21fef074316550b71da9da6adedbefeca8628048"
+    }
+   ],
+   "expected": "Played: own board Bronze units (Ignore264) except own template that have a deck copy; target 0..1 (targets => Min=Max) -> PlayCards a random deck copy (Next(count))."
+  },
+  {
+   "id": 131102,
+   "graphs": [
+    {
+     "nid": 287,
+     "sha256": "723694f45be91d4f629a463c6b24882d77e8bfab16052acfd0365420141987dd"
+    }
+   ],
+   "expected": "Played: two random elements (enemy hand? / deck?) added to a list, choice, remove, play chosen, branch -> move other."
+  },
+  {
+   "id": 132204,
+   "graphs": [
+    {
+     "nid": 854,
+     "sha256": "240e5aca9a035a7f001fbfc3a6091cb6150c74151d03a3abb88991061664d821"
+    }
+   ],
+   "expected": "Played: if deck nonempty draw, target, move, timer."
+  },
+  {
+   "id": 132211,
+   "graphs": [
+    {
+     "nid": 161,
+     "sha256": "9a12b9c808a7ec45857164fb5f64268f3cad28932d55795084d5c1fe687dd917"
+    }
+   ],
+   "expected": "Played: target own Bronze unit on board (Ignore 264), Min=Max=1 when any; spawn Counter=2 copies of its definition into own deck index -3 (bottom)."
+  },
+  {
+   "id": 142107,
+   "graphs": [
+    {
+     "nid": 129,
+     "sha256": "bc0131d4ba305699c0200792f0b92e8e07bbada73c77220ca278950019b5bafa"
+    }
+   ],
+   "expected": "Played: own deck Bronze special with category bits (2^56|2^54?), shuffle, choose 0..1; PlayCards it, then spawn a copy of its definition (SpawnType0) and PlayCards the copy."
+  },
+  {
+   "id": 152103,
+   "graphs": [
+    {
+     "nid": 189,
+     "sha256": "246e87bcba16ea10cdc5dafbe1c300bbf0217f8fce117e6e27eb51b554e91077"
+    }
+   ],
+   "expected": "Played: Draw 2 from own deck top, then choose exactly 2 hand cards (Ignore Ambush8) and MoveCards to own graveyard."
+  },
+  {
+   "id": 152213,
+   "graphs": [
+    {
+     "nid": 156,
+     "sha256": "297dd52bd971d15e94ed5406d29517a232a9c55eac2048dcc827fbceaea2793d"
+    }
+   ],
+   "expected": "Played: if own deck has Event|Unit Bronze-Gold cards: Draw 1, choose 1 hand Event|Unit -> own graveyard; else nothing."
+  },
+  {
+   "id": 152305,
+   "graphs": [
+    {
+     "nid": 80,
+     "sha256": "12860b3dfdbabe71e82b749db270aa7629939a19549c60c089df1369cad5f228"
+    }
+   ],
+   "expected": "Played: all own deck copies of 152305 MoveCards to own graveyard (no request)."
+  },
+  {
+   "id": 152308,
+   "graphs": [
+    {
+     "nid": 533,
+     "sha256": "60d5c390e247a6a2790f54e95ec27ea6c427749c7272b5d859e73870a65ca56b"
+    }
+   ],
+   "expected": "Played: target with category branches -> filtered boosts."
+  },
+  {
+   "id": 162106,
+   "graphs": [
+    {
+     "nid": 253,
+     "sha256": "0e4c868a4c9c341dbacf30f28a4be97a86cd58e7b6fa4703cc1dc291de336dfd"
+    }
+   ],
+   "expected": "Played: shuffle own deck, choose 0..1 -> own deck index0; if Unit and not opponent-placement, boost CURRENT+5."
+  },
+  {
+   "id": 162206,
+   "graphs": [
+    {
+     "nid": 203,
+     "sha256": "1a6d9191932c66c1401b106d6eaec104d5df2d1fa63ec5ddb45ca5316a640329"
+    }
+   ],
+   "expected": "Played: list append, target, filter, move."
+  },
+  {
+   "id": 200026,
+   "graphs": [
+    {
+     "nid": 566,
+     "sha256": "774d399d3e90aef88381b46a66ca308b476ac66a23dc69ab6c72abcbd8605ca9"
+    }
+   ],
+   "expected": "Played: own board Bronze units (Ignore264) category 1024 except 200026 with a deck copy; target -> random deck copy played."
+  },
+  {
+   "id": 200036,
+   "graphs": [
+    {
+     "nid": 100,
+     "sha256": "3df31db4cbf7f598e2b6282720c3733a4321d16ea5d55a6c593e1b407be96278"
+    }
+   ],
+   "expected": "Played: own deck Bronze Event|Unit without Ambush, SetVar+Shuffle, choose 0..1 -> own graveyard."
+  },
+  {
+   "id": 200062,
+   "graphs": [
+    {
+     "nid": 841,
+     "sha256": "52b1f92351bf27f07fc82fc0775d0ad8daabeec8dd5fb684270af21fc919e7ae"
+    }
+   ],
+   "expected": "Mode choice over definition foreach with power-level branches."
+  },
+  {
+   "id": 200079,
+   "graphs": [
+    {
+     "nid": 153,
+     "sha256": "3e721c119ea828a7adf18802aeccff275140574b5d67346d2e22d5320e6611e1"
+    }
+   ],
+   "expected": "Played: choose 0..1 Gold unit from opponent graveyard (revealed); spawn a copy into own PlayStack, PlayCards, then boost CURRENT+2 on the copy."
+  },
+  {
+   "id": 200102,
+   "graphs": [
+    {
+     "nid": 629,
+     "sha256": "c3cfc5913fc63465c3dd53405465d553eace33f1617150d68f448f06fa8e5ba4"
+    }
+   ],
+   "expected": "Mode choice: one branch shuffles opponent initial-deck definitions minus list, range3, choice -> spawn/play; other -> choose from filtered cards and play."
+  },
+  {
+   "id": 200146,
+   "graphs": [
+    {
+     "nid": 187,
+     "sha256": "7b25a0e1319eefb6e91cfed7c7f96cec7876da8a72b1c83ab43f0684bf6b5eb1"
+    }
+   ],
+   "expected": "Played: choose 0..1 Bronze unit of own graveyard; move it to that card player's deck at IntGetRandom(0, deckSize+1)."
+  },
+  {
+   "id": 200159,
+   "graphs": [
+    {
+     "nid": 240,
+     "sha256": "b3f02355762de7dff143b792af90ab744d57b3338d7f13032ccb58f01ef49859"
+    }
+   ],
+   "expected": "Played: shuffle own deck (tiers14), choose 0..3 -> own graveyard, then strengthen BASE+1 each chosen."
+  },
+  {
+   "id": 200162,
+   "graphs": [
+    {
+     "nid": 334,
+     "sha256": "592b79ddfca9510fcfe46db19bb2eca337b5caa17685eb1abcb01c5c9d751ba4"
+    }
+   ],
+   "expected": "Played: choose and play (AfterMoved/BeforeTurnEnd deferred)."
+  },
+  {
+   "id": 200165,
+   "graphs": [
+    {
+     "nid": 467,
+     "sha256": "ae48a8dbe06e8acaf0d252d4c163be54c0f0d1d8ca298986569c9aac901e35c3"
+    }
+   ],
+   "expected": "Played: hand choice -> deck swap (move), shuffle, choice, draw, boost."
+  },
+  {
+   "id": 200167,
+   "graphs": [
+    {
+     "nid": 244,
+     "sha256": "0630e2793593aac4a05e5729fcf5a7e11d21ff6053f01fa21de076f83ad71778"
+    }
+   ],
+   "expected": "Played: filtered lists appended, shuffle, choice, play."
+  },
+  {
+   "id": 200170,
+   "graphs": [
+    {
+     "nid": 540,
+     "sha256": "65e39c79287308530b444f3c2a200fd286b6028ba47b207bb7b9af722329e140"
+    }
+   ],
+   "expected": "Played: own board Bronze units (Ignore256) with category bits (2199157473280) that have a copy (Unit|UnitEvent Bronze) in own deck; target 1 (Min=Max=1) -> PlayCards ALL own deck Bronze Unit copies of that definition."
+  },
+  {
+   "id": 200209,
+   "graphs": [
+    {
+     "nid": 519,
+     "sha256": "50ec339bbaae7582a7c0f49d57951780aa73434373138f6135f8e36ff619a961"
+    }
+   ],
+   "expected": "Played: hand discard choice count -> shuffle deck, choose replacements, draw."
+  },
+  {
+   "id": 200222,
+   "graphs": [
+    {
+     "nid": 755,
+     "sha256": "5a71e7e1ac5dfb5ba7c1810f9042d8ef286f2782d651d4d3de78e9485adb0e37"
+    }
+   ],
+   "expected": "Mode choice: shuffle/choose/play + boost, or filtered boost."
+  },
+  {
+   "id": 200293,
+   "graphs": [
+    {
+     "nid": 133,
+     "sha256": "ab21cad6be1245aa3789a2e450e57186cc6ca0098c7a67cea589fbe8be6231d2"
+    }
+   ],
+   "expected": "Played: own deck Bronze Unit|UnitEvent with category 2^47 and template != owner; GetRandom Next(count); spawn a copy (definition) to own PlayStack and PlayCards it (original stays in deck)."
+  },
+  {
+   "id": 200528,
+   "graphs": [
+    {
+     "nid": 509,
+     "sha256": "e280daf6568f4dc324dc348e4c425f1282c2ddc030fd9e6e420e5d55979406e7"
+    }
+   ],
+   "expected": "Played: own board units (Ignore Ambush8) category 2199090364416 with a deck copy; target (Min=Max) -> 1 damage to it -> random deck copy played."
+  },
+  {
+   "id": 200539,
+   "graphs": [
+    {
+     "nid": 550,
+     "sha256": "b3e13d7094c4b6cbc6bb99e70360da76931f13bcf7bdc276fca1192b13a28097"
+    }
+   ],
+   "expected": "Played: own graveyard units (Ignore Ambush8) except 200539 with a deck copy; choose 0..1 -> banish it (RemovalType1) -> random deck copy played."
+  },
+  {
+   "id": 201580,
+   "graphs": [
+    {
+     "nid": 149,
+     "sha256": "6f1b921fb36b64be6c166da1c05584f7f6ddfe67cfbed61f024dd1e3730e5c49"
+    }
+   ],
+   "expected": "GetCardsDefinitions Leader Kind1 BaseSet minus 201580, shuffle, range3, choice -> spawn to opponent PlayStack, boost2, PlayCards."
+  },
+  {
+   "id": 201603,
+   "graphs": [
+    {
+     "nid": 632,
+     "sha256": "b3917f7480850af527338b2ba17881a043f38ac67f287bafe37c4d36501229d3"
+    }
+   ],
+   "expected": "Mode choice: shuffle/choose/play, or target+destroy+boost."
+  },
+  {
+   "id": 201610,
+   "graphs": [
+    {
+     "nid": 483,
+     "sha256": "02e0d32ba596c239dbe2baba6179b98a3fba8963182a221211ebb0ce3d3f162b"
+    }
+   ],
+   "expected": "Played: spawns at three positions with token/category changes."
+  },
+  {
+   "id": 201615,
+   "graphs": [
+    {
+     "nid": 643,
+     "sha256": "59206fe784ff5db3346b40baa835d2707338578b7183ae7e54455e87df5bf7c1"
+    }
+   ],
+   "expected": "Mode choice: spawn one of 3 shuffled definitions (minus self) or choose and play."
+  },
+  {
+   "id": 201621,
+   "graphs": [
+    {
+     "nid": 583,
+     "sha256": "0e0989377629fe2606e925d774a97e3983de85bb6d40af1da68e1a70a1a278a6"
+    }
+   ],
+   "expected": "Mode choice: one branch plays a chosen filtered card; other spawns one of 3 shuffled GetCardsDefinitions."
+  },
+  {
+   "id": 201627,
+   "graphs": [
+    {
+     "nid": 828,
+     "sha256": "71fe020dfcd47662bded88b7c8bc0d141964d1c18712f9e191fd7077584b6e04"
+    }
+   ],
+   "expected": "HasNCopiesOfDefinitions condition -> template choice -> spawn/play branches."
+  },
+  {
+   "id": 201631,
+   "graphs": [
+    {
+     "nid": 237,
+     "sha256": "081f96bf36ed3b346bd4852e73d8288a8b8b9402c8cdbed0a52002ced2aa14ab"
+    }
+   ],
+   "expected": "GetCardsDefinitions Bronze units of the own leader faction, GetRandom -> spawn own PlayStack, play."
+  },
+  {
+   "id": 201632,
+   "graphs": [
+    {
+     "nid": 833,
+     "sha256": "f9f1133d372b4a40b34510c70f02c4f4b05e0fcacd855eb3255940f37e7d835d"
+    }
+   ],
+   "expected": "Mode choice with foreach boosts/random play."
+  },
+  {
+   "id": 201633,
+   "graphs": [
+    {
+     "nid": 129,
+     "sha256": "9b73d12f270bfedc635719cf6c363fe65689fdb140c2a97e6d3fe4bf7619b66a"
+    }
+   ],
+   "expected": "Played: target any unit both sides (Ignore 264) mandatory; damage 5 (armor first); then spawn 201758 at a random available own row (Next(non-full rows))."
+  },
+  {
+   "id": 201639,
+   "graphs": [
+    {
+     "nid": 152,
+     "sha256": "2320041e08d389b65a64d1cb76e4214e7f1c85b1e7e1c653a23a3511c56fce2f"
+    }
+   ],
+   "expected": "Opponent initial deck Bronze/Silver units unique minus spy list, shuffle, range3, choice -> spawn own PlayStack, boost2, play."
+  },
+  {
+   "id": 201653,
+   "graphs": [
+    {
+     "nid": 437,
+     "sha256": "2b61b6aec9a584316bacf9919cad00a85e4e3a8b25e255cd1887219cda5e7cb0"
+    }
+   ],
+   "expected": "Mode choice: target + power change, or spawn from shuffled definitions."
+  },
+  {
+   "id": 201697,
+   "graphs": [
+    {
+     "nid": 603,
+     "sha256": "b2e60f0e9d740c43318ba81da85936c16c6526e1ffcea51946c7c2e0f0fa4b86"
+    }
+   ],
+   "expected": "Mode choice [201721,201722]: 201721 -> GetCardsDefinitions Bronze Unit|UnitEvent category 2^40|2^16 shuffle, range3, template choice Min0 -> spawn/play + boost2; 201722 -> target own/enemy? board unit with that category (Ignore264, Min=Max) -> destroy."
+  },
+  {
+   "id": 201725,
+   "graphs": [
+    {
+     "nid": 1315,
+     "sha256": "f46f04b9d1c235f96f8388d9d08efc0034b6ada24a1f07e9e5f71b36334d42b8"
+    }
+   ],
+   "expected": "Lavk: shuffle definitions, range, template choice, per-mode branches."
+  },
+  {
+   "id": 201731,
+   "graphs": [
+    {
+     "nid": 1551,
+     "sha256": "7c7fd007c2370f08500d8df5ccc35dfbddd7d542bf5eebc89534a9f435de1f3f"
+    }
+   ],
+   "expected": "Lavk: shuffle definitions, range, template choice, per-mode branches."
+  },
+  {
+   "id": 201773,
+   "graphs": [
+    {
+     "nid": 119,
+     "sha256": "d762498df3b8ad5cfad604b841f7d75571866f7aa55fbeaa914ff24aecbd74ec"
+    }
+   ],
+   "expected": "Own initial deck Bronze specials unique, shuffle, range3, choice Min1 -> spawn (SpawnType2) own PlayStack, play."
+  },
+  {
+   "id": 201776,
+   "graphs": [
+    {
+     "nid": 146,
+     "sha256": "47664b61a4249ef70bd4ad3a1acbc24b26106b71ae22689e3374783af4d8a54c"
+    }
+   ],
+   "expected": "Played: Draw 1 own deck top (ValidCards=whole deck, non-random), then RequestCardChoice Min1 from own hand (types14 tiers14) and PlayCards it."
+  }
+ ]
+}

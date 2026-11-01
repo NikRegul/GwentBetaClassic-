@@ -1,4 +1,4 @@
-﻿// Concrete pinned Beta 0.9.24 Monster graphs; display choices never become played cards.
+// Concrete pinned Beta 0.9.24 Monster graphs; display choices never become played cards.
 class CBetaGwentDuelMonsters extends IScriptable
 {
     // BG_CLONE_FIELDS
@@ -23,11 +23,11 @@ class CBetaGwentDuelMonsters extends IScriptable
                 || s.isWaitingToDie || (s.tokenMask & ignore) != 0 || (traits != 0 && (d.unitTraits & traits) == 0)) continue;
             ids.PushBack(s.instanceId);
         }
-    }
+    game.PhysicalOrder096(ids);}
     private function EnemyRandom(source : CBetaGwentDuelCard, amount : int)
     {
         var ids : array<int>; var s : SBetaGwentCardSnapshot;
-        s = source.Snapshot(); Query(BetaGwentOpponentId(s.positionPlayerId), 7, 15, 8, 0, ids);
+        s = source.Snapshot(); if(source.TemplateId()==132404)nilf.SourceCards(BetaGwentOpponentId(s.positionPlayerId),7,15,4,8,0,source,ids);else Query(BetaGwentOpponentId(s.positionPlayerId), 7, 15, 8, 0, ids);
         if (ids.Size() > 0) game.MonsterPower(source, game.FindCard(ids[game.RandomIndex(ids.Size())]), -amount);
     }
     private function Strengthen(source : CBetaGwentDuelCard, traits : int, amount : int, locations : int, ignore : int)
@@ -56,7 +56,7 @@ class CBetaGwentDuelMonsters extends IScriptable
                 && !game.CanConsume(source, game.FindCard(ids[i]))) continue;
             if (d.specialMode == 22 && source.monsterStage == 0 && t.instanceId == s.instanceId) continue;
             if ((d.specialMode == 16 || d.specialMode == 17 || d.specialMode == 18 || d.specialMode == 32) && t.locationMask == s.locationMask) continue;
-            if((d.specialMode==16 || d.specialMode==17 || d.specialMode==18 || d.specialMode==32) && game.CountLocation(t.positionPlayerId,s.locationMask)>=9)continue;
+            if(d.specialMode==32 && game.CountLocation(t.positionPlayerId,s.locationMask)>=9)continue;
             if (d.specialMode == 23 || d.specialMode == 24)
             {
                 if (t.runtimeTemplate.templateId == 200026 && d.specialMode == 23) continue;
@@ -112,7 +112,7 @@ class CBetaGwentDuelMonsters extends IScriptable
         if (d.specialMode == 15) { DeployPassive(source); game.MonsterComplete(source); return; }
         if (d.specialMode == 19)
         {
-            Query(s.positionPlayerId, 32, 6, 0, 0, ids, 12);
+            Query(s.positionPlayerId, 32, 6, 0, 0, ids, 12); game.BeginConsumeBatch(ids);
             for (i = 0; i < ids.Size(); i += 1) game.QueueConsume(source, game.FindCard(ids[i]));
             game.MonsterPower(source, source, ids.Size() * d.amount); game.MonsterComplete(source); return;
         }
@@ -160,7 +160,7 @@ class CBetaGwentDuelMonsters extends IScriptable
         if (d.specialMode == 18)
         {
             if (id != 0) source.monsterIds.PushBack(id);
-            if (id != 0 && source.monsterIds.Size() < Min(d.specialCount,Max(0,9-game.CountLocation(BetaGwentOpponentId(s.positionPlayerId),s.locationMask)))) { RequestTargets(source); return; }
+            if (id != 0 && source.monsterIds.Size() < d.specialCount) { RequestTargets(source); return; }
             CommitJotunn(source); return;
         }
         if (d.specialMode == 16 || d.specialMode == 17 || d.specialMode == 32)
@@ -169,7 +169,13 @@ class CBetaGwentDuelMonsters extends IScriptable
             {
                 t = target.Snapshot(); game.QueueRelocation(target, t.positionPlayerId, s.locationMask, false);
                 if (d.specialMode == 17)
-                { amount = d.amount; if (game.MonsterIsHazard(game.WeatherToken(t.positionPlayerId, s.locationMask))) amount = d.conditionalDamage; game.MonsterPower(source, target, -amount); }
+                {
+                    // MoveCards.FlowOut always runs, even when capacity skips
+                    // the move. Drowner reads the selected card's ACTUAL row.
+                    if(!game.FlushEffects())return;t=target.Snapshot();
+                    amount = d.amount; if (game.MonsterIsHazard(game.WeatherToken(t.positionPlayerId, t.locationMask))) amount = d.conditionalDamage;
+                    game.MonsterPower(source, target, -amount);
+                }
             }
             if (d.specialMode == 16) game.MonsterWeather(BetaGwentOpponentId(s.positionPlayerId), s.locationMask, 1);
             if (d.specialMode == 32) game.QueueTimer(source, 0, 1);
@@ -178,7 +184,7 @@ class CBetaGwentDuelMonsters extends IScriptable
         if (d.specialMode == 11)
         {
             if (target)
-            { t = target.Snapshot(); if (game.QueueConsume(source, target)) { game.MonsterPower(source, source, t.power.currentPower); game.FlushDeaths(); } }
+            { t = target.Snapshot(); if (game.QueueConsume(source, target)) { game.MonsterPower(source, source, t.power.currentPower); game.FlushEffects(); } }
             source.monsterRemaining -= 1; s = source.Snapshot();
             if (target && source.monsterRemaining > 0 && (s.locationMask & 7) != 0 && !s.isWaitingToDie) { RequestTargets(source); return; }
             game.MonsterComplete(source); return;
@@ -240,8 +246,10 @@ class CBetaGwentDuelMonsters extends IScriptable
     }
     private function PlayDeckCopy(source : CBetaGwentDuelCard, templateId : int)
     {
-        var ids, valid : array<int>; var i : int; var s, t : SBetaGwentCardSnapshot;
-        s = source.Snapshot(); Query(s.positionPlayerId, 16, 14, 0, 0, ids, 14);
+        var ids, valid : array<int>; var i : int; var s, t : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition;
+        s = source.Snapshot(); d = source.Definition();
+        // Modes 23/24 (Wild Hunt rider, Slyzard): Beta GetCards(Deck, Unit, Bronze); mode 26 (Siren): Deck specials, tiers14.
+        if (d.specialMode == 26) Query(s.positionPlayerId, 16, 14, 0, 0, ids, 14); else Query(s.positionPlayerId, 16, 2, 0, 0, ids, 4);
         for (i = 0; i < ids.Size(); i += 1) { t = game.FindCard(ids[i]).Snapshot(); if (t.runtimeTemplate.templateId == templateId) valid.PushBack(ids[i]); }
         if (valid.Size() == 0) { game.MonsterComplete(source); return; }
         game.MonsterPlayExisting(source, game.FindCard(valid[game.RandomIndex(valid.Size())]));
@@ -258,12 +266,11 @@ class CBetaGwentDuelMonsters extends IScriptable
         if (child)
         {
             t = child.Snapshot();
-            if (d.header.templateId == 133302) game.MonsterPower(source, child, d.amount);
             if (d.specialMode == 27) game.MonsterOperation(source, child, 12, d.conditionalDamage, 7);
         }
         if (d.specialMode == 29)
         {
-            for (i = source.monsterIds.Size() - 1; i >= 0; i -= 1) game.MonsterTopDeck(game.FindCard(source.monsterIds[i]));
+            for (i = 0; i < source.monsterIds.Size(); i += 1) game.MonsterTopDeck(game.FindCard(source.monsterIds[i]));
             source.monsterIds.Clear();
         }
         return false;
@@ -275,7 +282,9 @@ class CBetaGwentDuelMonsters extends IScriptable
         for (i = 0; i < ids.Size(); i += 1)
         {
             source = game.FindCard(ids[i]); s = source.Snapshot();
-            if (source.TemplateId() != 200534 || source.monsterOnce <= 0) continue;
+            // Its own AfterPlayed precedes Played graph92, which arms this counter.
+            // A prepared target request has already run that graph up to its request.
+            if (source == child || source.TemplateId() != 200534 || source.monsterOnce <= 0) continue;
             // Graph92 consumes its counter on the first AfterPlayed, before comparing the stored child.
             source.monsterOnce = 0;
             if (source.monsterStored == t.instanceId && (t.locationMask & 7) != 0 && !t.isWaitingToDie)
@@ -316,9 +325,11 @@ class CBetaGwentDuelMonsters extends IScriptable
     }
     private function MoonContact(source : CBetaGwentDuelCard)
     {
-        var s, pos : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition;
-        s = source.Snapshot(); d = source.Definition();
-        if ((s.locationMask & 7) == 0 || game.WeatherToken(s.positionPlayerId, s.locationMask) != 256) return;
+        var s, pos : SBetaGwentCardSnapshot;var m : SBetaGwentMatchSnapshot; var d : SBetaGwentDuelDefinition;
+        s = source.Snapshot(); d = source.Definition();m=game.NilfMatch();
+        if ((s.locationMask & 7) == 0) return;
+        if (d.header.templateId == 201600) { if(game.WeatherToken(m.currentPlayerId,s.locationMask)!=256)return; }
+        else if(game.WeatherToken(s.positionPlayerId,s.locationMask)!=256)return;
         if (d.header.templateId == 201600 && s.timerValue > 0)
         { game.MonsterPower(source, source, d.amount); game.QueueTimer(source, 0, 1); }
         if (d.header.templateId == 200114)
@@ -340,17 +351,19 @@ class CBetaGwentDuelMonsters extends IScriptable
         for (side = 1; side <= 2; side += 1) for (row = 1; row <= 4; row *= 2)
             if (game.WeatherToken(side, row) == 1) { source.monsterOnce = 0; game.MonsterPower(source, source, d.amount); return; }
     }
+    public function FrostArrival(source : CBetaGwentDuelCard)
+    {var s : SBetaGwentCardSnapshot;if(!source || source.TemplateId()!=132212 || (source.playFromLocation&248)==0)return;s=source.Snapshot();if((s.locationMask&7)!=0 && (s.tokenMask&12)==0 && !s.isWaitingToDie && s.power.currentPower>0)FrostContact(source);}
     public function ScoiaBeforePlayed(card : CBetaGwentDuelCard) : bool {return scoia.BeforePlayed(card);}
-    public function ScoiaHistory(card : CBetaGwentDuelCard) {scoia.History(card);skellige.History(card);}
+    public function ScoiaHistory(card : CBetaGwentDuelCard) {scoia.History(card);skellige.History(card);nilf.RecordPlayed(card);}
     public function AddedPowerChanged(card : CBetaGwentDuelCard, old : SBetaGwentCardSnapshot, current : SBetaGwentCardSnapshot){skellige.PowerChanged(card,old,current);}
-    public function NilfTrigger(kind : int, cause : SBetaGwentCardSnapshot) { nilf.Trigger(kind,cause);skellige.Trigger(kind,cause);neutral.Trigger(kind,cause); }
+    public function NilfTrigger(kind : int, cause : SBetaGwentCardSnapshot, optional playedArrival : bool, optional moveReason : int) { nilf.Trigger(kind,cause,playedArrival);skellige.Trigger(kind,cause,moveReason);neutral.Trigger(kind,cause,playedArrival); }
     public function NilfReaction(source : CBetaGwentDuelCard, kind : int) { nilf.Reaction(source,kind); }
     public function Event(item : CBetaGwentDuelEvent)
     {
         var source, target : CBetaGwentDuelCard; var s, t, pos : SBetaGwentCardSnapshot;
-        var d, td : SBetaGwentDuelDefinition; var ids, valid, rows : array<int>; var i, highest, kind, row : int;
+        var d, td : SBetaGwentDuelDefinition; var ids, valid, rows, deck : array<int>; var i, highest, kind, row : int;var m : SBetaGwentMatchSnapshot;
         if (item.kind == 11) { north.Event(item); return; }
-        source = game.FindCard(item.source.instanceId); if (!source) return; s = source.Snapshot(); d = source.Definition(); kind = item.rowToken;
+        source = game.FindCard(item.source.instanceId); if (!source) return; s = source.Snapshot(); d = source.Definition(); kind = item.rowToken;m=game.NilfMatch();
         if (s.isWaitingToDie || (s.tokenMask & 12) != 0 || s.power.currentPower <= 0) return;
         if (kind != 8 && (s.locationMask & 7) == 0 && !((d.header.templateId == 132301 || d.header.templateId == 132315) && s.locationMask == 16)) return;
         if (kind == 1)
@@ -406,8 +419,10 @@ class CBetaGwentDuelMonsters extends IScriptable
             }
             if (d.header.templateId == 132315 && item.cause.positionPlayerId == s.positionPlayerId && (item.cause.locationMask & 7) != 0 && t.locationMask == 32 && (td.unitTraits & 32) != 0)
             {
-                Query(s.positionPlayerId, 16, 14, 0, 0, ids);
-                for (i = 0; i < ids.Size(); i += 1) { t = game.FindCard(ids[i]).Snapshot(); if (t.runtimeTemplate.templateId == 132315) valid.PushBack(ids[i]); }
+                if (m.currentPlayerId != s.positionPlayerId) return;
+                Query(s.positionPlayerId, 16, 15, 264, 0, ids);
+                game.NorthPile(s.positionPlayerId,16,deck);
+                for (i = 0; i < deck.Size(); i += 1) if (ids.Contains(deck[i]) && game.FindCard(deck[i]).TemplateId() == 132315) valid.PushBack(deck[i]);
                 if (valid.Size() > 0) { pos = item.cause; game.MonsterSummon(pos, game.FindCard(valid[game.RandomIndex(valid.Size())])); }
             }
         }

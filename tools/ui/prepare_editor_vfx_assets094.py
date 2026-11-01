@@ -1,0 +1,104 @@
+"""Pack baked editor frames below the unchanged elemental atlas; no apply/install.
+
+0.9.4a: every frame layer is cropped to its exact non-zero texels (2-texel
+border, 4-aligned for BC3) at the bake resolution, so the effect is shown at
+about 2x upscale on a deck-editor card instead of the prototype's 6x. The
+cropped placement is stored in Unity units relative to the prefab origin.
+"""
+from pathlib import Path
+import argparse,hashlib,io,json,sys
+import numpy as np
+from PIL import Image
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'tools'))
+from build_inputs import UI_BASELINE
+BASE=UI_BASELINE/'nextgen/ui/assets/elements164/Elements.png'
+BASE_SHA='1151f64c650891daa135bb48893ba190ea427eaed800a2142c13f5956914390d'
+ATLAS_W,BASE_H,MAX_EXTRA=2048,3136,320  # MAX_EXTRA: reviewed 1.32 menu budget
+PRESETS=['UIDBCardAdd','UIDBCardRemove']
+# Beta card face in Unity units (BetaGwentBoard BETA_CARD_ASPECT 17.64/21.46).
+CARD_UNITS=[17.64,21.46]
+
+def crop(image,kind):
+    a=np.array(image)
+    mask=a[:,:,3]>0 if kind=='normal' else a[:,:,:3].max(axis=2)>0
+    if not mask.any():return None
+    ys,xs=np.where(mask);h,w=mask.shape
+    x0=max(0,(xs.min()-2)//4*4);y0=max(0,(ys.min()-2)//4*4)
+    x1=min(w,-(-(xs.max()+3)//4)*4);y1=min(h,-(-(ys.max()+3)//4)*4)
+    outside=mask.copy();outside[y0:y1,x0:x1]=False;assert not outside.any(),'crop must be lossless'
+    return x0,y0,image.crop((x0,y0,x1,y1))
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--bake',type=Path,required=True);p.add_argument('--out',type=Path,required=True);a=p.parse_args()
+    out=a.out.resolve();assert out.is_relative_to(ROOT/'BetaGwent/build') and not out.exists()
+    report=json.loads((a.bake/'report.json').read_text('utf8'));assert report['complete'] and report['sourceShaderInstructionsEvaluated']
+    texels=float(report.get('texelsPerUnit',1.6));fw,fh=report['frameSize'];ex,ey=report['extent']
+    assert abs(fw-ex*texels)<1e-6 and abs(fh-ey*texels)<1e-6
+    original=BASE.read_bytes();assert hashlib.sha256(original).hexdigest()==BASE_SHA
+    base=Image.open(io.BytesIO(original)).convert('RGBA');assert base.size==(ATLAS_W,BASE_H)
+    pieces=[];unique={};frames={}
+    for name in PRESETS:
+        frames[name]=[]
+        for index in range(report['fps']):
+            pair=[]
+            for kind in ['normal','add']:
+                image=Image.open(a.bake/name/('%s-%02d.png'%(kind,index))).convert('RGBA')
+                found=crop(image,kind)
+                if not found:pair.append(-1);continue
+                x0,y0,piece=found
+                if kind=='add':piece.putalpha(255)  # additive light: RGB only
+                key=(kind,piece.size,hashlib.sha256(piece.tobytes()).hexdigest())
+                if key not in unique:unique[key]=len(pieces);pieces.append(piece)
+                pair.append([unique[key],round(-ex/2+x0/texels,4),round(y0/texels-ey/2,4)])
+            frames[name].append(pair)
+    # Shelf packing, tallest first; every rectangle is 4-aligned for BC3.
+    order=sorted(range(len(pieces)),key=lambda i:(-pieces[i].size[1],-pieces[i].size[0],i))
+    rects=[None]*len(pieces);x=0;y=BASE_H;row=0
+    for i in order:
+        w,h=pieces[i].size
+        if x+w>ATLAS_W:x=0;y+=row;row=0
+        rects[i]=[x,y,w,h];x+=w;row=max(row,h)
+    used=y+row-BASE_H;extra=-(-used//16)*16
+    assert extra<=MAX_EXTRA,('Frame atlas exceeds reviewed menu budget',extra)
+    atlas=Image.new('RGBA',(ATLAS_W,BASE_H+extra));atlas.paste(base)
+    for piece,(rx,ry,rw,rh) in zip(pieces,rects):assert rx%4==0 and ry%4==0 and rw%4==0 and rh%4==0;atlas.paste(piece,(rx,ry))
+    assert atlas.crop((0,0,ATLAS_W,BASE_H)).tobytes()==base.tobytes()
+    out.mkdir();atlas.save(out/'Elements.png')
+    # Bounded stripes avoid the Pillow BCN encoder's large-output buffer limit.
+    blocks=[]
+    for top in range(BASE_H,BASE_H+extra,16):
+        encoded=io.BytesIO();atlas.crop((0,top,ATLAS_W,top+16)).save(encoded,format='DDS',pixel_format='DXT5')
+        dds=encoded.getvalue();assert dds[84:88]==b'DXT5' and len(dds)==128+ATLAS_W*16
+        blocks.append(dds[128:])
+    tail=b''.join(blocks);assert len(tail)==ATLAS_W*extra
+    (out/'append-bc3.bin').write_bytes(tail)
+    data=dict(schema=2,baseAtlasSha256=BASE_SHA,baseSize=[ATLAS_W,BASE_H],size=[ATLAS_W,BASE_H+extra],
+              extendedAtlasSha256=hashlib.sha256((out/'Elements.png').read_bytes()).hexdigest(),
+              appendedBlocksSha256=hashlib.sha256(tail).hexdigest(),sourceSha256=report['sourceSha256'],
+              originalPixelsUnchanged=True,rects=rects,frames=frames,fps=report['fps'],seconds=1,extent=report['extent'],
+              texelsPerUnit=texels,cardUnits=CARD_UNITS,losslessCrop=True,
+              nativeGameTested=False,sourceLimitations=report['limitations'])
+    (out/'editor_vfx094.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n','utf8')
+    js=lambda v:json.dumps(v,separators=(',',':'))
+    code='''package {
+ // Generated by tools/ui/prepare_editor_vfx_assets094.py from the baked Beta
+ // deckbuilder_base prefabs UIDBCardAdd / UIDBCardRemove. Do not edit.
+ // Frame layer: -1 or [rect, left, top] in Unity units from the prefab
+ // origin (y down); rect size in units is texels / TEXELS.
+ public class BetaGwentEditorFxData094 {
+ public static const RECTS:Array=RECT_DATA;
+ private static const ADD:Array=ADD_DATA;
+ private static const REMOVE:Array=REMOVE_DATA;
+ public static function frame(adding:Boolean,index:int):Array {return (adding?ADD:REMOVE)[Math.max(0,Math.min(FRAMES-1,index))];}
+ public static const FRAMES:int=FRAME_COUNT;
+ public static const MS:Number=1000;
+ public static const TEXELS:Number=TEXEL_VALUE;
+ public static const CARD_X:Number=CARD_X_VALUE;
+ public static const CARD_Y:Number=CARD_Y_VALUE;
+} }
+'''.replace('RECT_DATA',js(rects)).replace('ADD_DATA',js(frames['UIDBCardAdd'])).replace('REMOVE_DATA',js(frames['UIDBCardRemove'])).replace('FRAME_COUNT',str(report['fps'])).replace('TEXEL_VALUE',repr(texels)).replace('CARD_X_VALUE',repr(CARD_UNITS[0])).replace('CARD_Y_VALUE',repr(CARD_UNITS[1]))
+    (out/'BetaGwentEditorFxData094.as').write_bytes(b'\xef\xbb\xbf'+code.replace('\n','\r\n').encode('utf8'))
+    print(json.dumps(dict(output=str(out),rects=len(rects),extraRows=extra,appendedBytes=len(tail),texelsPerUnit=texels,previousPixelsUnchanged=True)))
+
+if __name__=='__main__':main()

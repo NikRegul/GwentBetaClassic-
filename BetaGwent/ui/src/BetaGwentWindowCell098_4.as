@@ -1,0 +1,1 @@
+﻿package { import mx.core.BitmapAsset; public class BetaGwentWindowCell098_4 extends BitmapAsset { public function BetaGwentWindowCell098_4(){super();}}}

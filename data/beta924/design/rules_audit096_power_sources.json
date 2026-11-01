@@ -1,0 +1,3157 @@
+{
+  "schema": 1,
+  "betaTarget": "0.9.24.3.432",
+  "createdBeforeNewBlockImplementationReview": true,
+  "records": [
+    {
+      "templateId": 112106,
+      "independentExpected": "Active unit any side/tier Ignore264, mandatory one if any valid target. Five CURRENT damage, armor-aware. Executing owner excluded; dead/in-stack/NotTargetable/Ambush candidates excluded.",
+      "graphs": [
+        {
+          "nid": 121,
+          "sha256": "005179464b0c174a09a1711161798f69a8b073d0054f29c82a95829746c2438a",
+          "nodes": [
+            {
+              "id": 21,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 49,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 63,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 80,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 103,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 107,
+              "type": "RequestCardTargetsNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardTargetsNode.cs",
+          "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+        }
+      ]
+    },
+    {
+      "templateId": 112214,
+      "independentExpected": "Active Unit/UnitEvent any side/tier Ignore264, one target. REMOVE4 BASE power IgnoreArmor=true. Changed permanent power is clamped at negative new base; current power retains offset from original base subtraction, no armor consumption.",
+      "graphs": [
+        {
+          "nid": 163,
+          "sha256": "0820584f433537b8f24707912723e3790a748cd152f91a0ad176b032f9fb8d5a",
+          "nodes": [
+            {
+              "id": 21,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 36,
+              "type": "RequestCardTargetsNode"
+            },
+            {
+              "id": 49,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 63,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 80,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 116,
+              "type": "GetAbilityOwnerCardNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardTargetsNode.cs",
+          "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+        }
+      ]
+    },
+    {
+      "templateId": 112401,
+      "independentExpected": "Capture all active units on BOTH sides, all tiers Ignore8; remove owner; add2 CURRENT power to all captured targets. NotTargetable permitted, hidden excluded, no RNG.",
+      "graphs": [
+        {
+          "nid": 98,
+          "sha256": "d08a3ea17532d82f7d49104b0a18ad76dc550ea1b90854e91711b40026d148e6",
+          "nodes": [
+            {
+              "id": 13,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 23,
+              "type": "CardListRemoveNode"
+            },
+            {
+              "id": 29,
+              "type": "SetVarNode"
+            },
+            {
+              "id": 37,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 41,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 54,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 86,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 95,
+              "type": "GetVarNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardListRemoveNode.cs",
+          "sha256": "e4b4b6a3a8de8119c526677ce12b870b1d861117cdc6629b7bee6de6cd241413"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/SetVarNode.cs",
+          "sha256": "9a7d7fefcf38384d1fce2c9266b2c24b084301f7dad21d570d0bb9e57ed02f3d"
+        }
+      ]
+    },
+    {
+      "templateId": 112402,
+      "independentExpected": "Capture all active units on BOTH sides, all tiers Ignore8; remove owner; remove2 CURRENT power armor-aware on all captured targets. NotTargetable permitted, hidden excluded, no RNG.",
+      "graphs": [
+        {
+          "nid": 75,
+          "sha256": "ef27e2da7d2d624432c2eff25156d6d91b05a61837cd9d918f24058b083233d1",
+          "nodes": [
+            {
+              "id": 13,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 23,
+              "type": "CardListRemoveNode"
+            },
+            {
+              "id": 29,
+              "type": "SetVarNode"
+            },
+            {
+              "id": 37,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 41,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 54,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 63,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 72,
+              "type": "GetVarNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardListRemoveNode.cs",
+          "sha256": "e4b4b6a3a8de8119c526677ce12b870b1d861117cdc6629b7bee6de6cd241413"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/SetVarNode.cs",
+          "sha256": "9a7d7fefcf38384d1fce2c9266b2c24b084301f7dad21d570d0bb9e57ed02f3d"
+        }
+      ]
+    },
+    {
+      "templateId": 112403,
+      "independentExpected": "GetCardsInShape mask111104 pivot4,1 at owner position => four own-row neighbours offsets -2,-1,+1,+2. Add2 CURRENT, all tiers, immune allowed, actual hidden ambush excluded. Source and all other rows excluded. No target/RNG.",
+      "graphs": [
+        {
+          "nid": 177,
+          "sha256": "a50770dd742856916f970f1310e2513680a218792f954e9cb61486f6f3a590f3",
+          "nodes": [
+            {
+              "id": 48,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 50,
+              "type": "GetCardPositionNode"
+            },
+            {
+              "id": 113,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 156,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 162,
+              "type": "GetCardsInShapeNode"
+            },
+            {
+              "id": 169,
+              "type": "PlayedTrigger"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardPositionNode.cs",
+          "sha256": "0417674bb039209fc589bffa39a0b926a466829d892fce7bad1806da7d9284a3"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsInShapeNode.cs",
+          "sha256": "b478910a44da58d7ce48641e1a0a809d9b2f253acbc89f10b1ef41c5fb534dc2"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        }
+      ]
+    },
+    {
+      "templateId": 112404,
+      "independentExpected": "Same mask111104 four neighbour shape; remove2 CURRENT, armor-aware. Source excluded. NotTargetable permitted as secondary shape, actual hidden ambush excluded. No RNG.",
+      "graphs": [
+        {
+          "nid": 238,
+          "sha256": "bcb917606bfc79b36374881a7675c37b1376377fd34433f1c03063d87994b503",
+          "nodes": [
+            {
+              "id": 48,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 50,
+              "type": "GetCardPositionNode"
+            },
+            {
+              "id": 113,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 156,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 222,
+              "type": "GetCardsInShapeNode"
+            },
+            {
+              "id": 230,
+              "type": "PlayedTrigger"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardPositionNode.cs",
+          "sha256": "0417674bb039209fc589bffa39a0b926a466829d892fce7bad1806da7d9284a3"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsInShapeNode.cs",
+          "sha256": "b478910a44da58d7ce48641e1a0a809d9b2f253acbc89f10b1ef41c5fb534dc2"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        }
+      ]
+    },
+    {
+      "templateId": 113202,
+      "independentExpected": "Choose one row of either side, then current units Tier6 Bronze/Silver Ignore8 in that exact row. Multiply CURRENT by50%, floor, IgnoreArmor=true preserving armor. Gold/Leader/hidden/other rows excluded, immune allowed as secondary targets.",
+      "graphs": [
+        {
+          "nid": 78,
+          "sha256": "f8dd9f67bd24c31e227f9671831e9c896b39363700c2d488eba925f2d6cea7f4",
+          "nodes": [
+            {
+              "id": 1,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 7,
+              "type": "RequestLocationTargetsNode"
+            },
+            {
+              "id": 19,
+              "type": "LocationListGetElementNode"
+            },
+            {
+              "id": 24,
+              "type": "BreakLocationNode"
+            },
+            {
+              "id": 28,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 54,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 66,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 71,
+              "type": "GetVarNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BreakLocationNode.cs",
+          "sha256": "199073fd38b14d9672c18befb611d9c0189835b6b5624321c3b82776aed4a972"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/LocationListGetElementNode.cs",
+          "sha256": "fb7ddf72e7142e94b9f46ee269f91305e48cb499e83a861576b32b3e67a2c9e8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestLocationTargetsNode.cs",
+          "sha256": "2da297b2ddc81ce26ffa5768fc07265196507c6c4e43fe91c15655cf0e9db1ed"
+        }
+      ]
+    },
+    {
+      "templateId": 113204,
+      "independentExpected": "Enemy active units all tiers Ignore8, remove1 CURRENT with armor. NotTargetable allowed; own side excluded. No RNG.",
+      "graphs": [
+        {
+          "nid": 249,
+          "sha256": "7c5d1a2df8a0a34f29b9a98c5f3eeff63750e68cbdf194ce5635270cd036d99a",
+          "nodes": [
+            {
+              "id": 1,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 7,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 14,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 31,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 187,
+              "type": "GetOwnerOpponentPlayerIdNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetOwnerOpponentPlayerIdNode.cs",
+          "sha256": "f66d24a2f5ee6873a31d456816b86f13d6d5055acc410c6f9ca61c64dc3a5e80"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        }
+      ]
+    },
+    {
+      "templateId": 113207,
+      "independentExpected": "Mandatory one active unit any side/tier Ignore264 as pivot. TargetsInShape mask127488 includes offsets -2,-1,0,+1,+2; filter Tokens8 Negate=true; add3 CURRENT to every eligible neighbour incl NotTargetable secondary targets. Whole boost action, no RNG.",
+      "graphs": [
+        {
+          "nid": 238,
+          "sha256": "20030a694f60ac0a1e65bcd8868de0efb7c888091b36c7f0b9cf48f13ba937e5",
+          "nodes": [
+            {
+              "id": 34,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 98,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 149,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 179,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 189,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 204,
+              "type": "RequestCardTargetsNode"
+            },
+            {
+              "id": 219,
+              "type": "FilterCardListNode"
+            },
+            {
+              "id": 231,
+              "type": "FilterCardTokensNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardListNode.cs",
+          "sha256": "7f16d84603b2da9fa2fb04f742b578dc972fe7e31d45c315334c2dd6cb8e0fe0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardTokensNode.cs",
+          "sha256": "1ce8215340a6605170aed7159c57d333e76a020ee339e80ce7a7bebf22fb055a"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardTargetsNode.cs",
+          "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+        }
+      ]
+    },
+    {
+      "templateId": 113301,
+      "independentExpected": "Mandatory one active unit any side/tier Ignore264. Remove9 CURRENT power, armor-aware; owner excluded while executing. No RNG.",
+      "graphs": [
+        {
+          "nid": 77,
+          "sha256": "e522799b39e96e6b65cc63e183684d09077f7df555d9b9f373bcc3098f011859",
+          "nodes": [
+            {
+              "id": 1,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 7,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 31,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 45,
+              "type": "RequestCardTargetsNode"
+            },
+            {
+              "id": 61,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 71,
+              "type": "GetVarNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardTargetsNode.cs",
+          "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+        }
+      ]
+    },
+    {
+      "templateId": 113306,
+      "independentExpected": "One active unit any side/tier Ignore264; Min0 becomes mandatory Max1 via ARequestTargetsAction. Remove13 CURRENT, armor-aware. No RNG.",
+      "graphs": [
+        {
+          "nid": 76,
+          "sha256": "2b55d83e8918fed2dc6c2f3f25ee70898725a99d8cd77c960004906329e6b510",
+          "nodes": [
+            {
+              "id": 1,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 7,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 31,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 45,
+              "type": "RequestCardTargetsNode"
+            },
+            {
+              "id": 61,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 71,
+              "type": "GetVarNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardTargetsNode.cs",
+          "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+        }
+      ]
+    },
+    {
+      "templateId": 113310,
+      "independentExpected": "Mandatory one active unit any side/tier Ignore264. Add10 CURRENT, base/permanent/armor/tokens unchanged. No RNG.",
+      "graphs": [
+        {
+          "nid": 220,
+          "sha256": "37261fdfd9fd9e2a484e4f79dcc1f678de71fff7349dca04d5d3ffb5267498ba",
+          "nodes": [
+            {
+              "id": 34,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 98,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 149,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 167,
+              "type": "RequestCardTargetsNode"
+            },
+            {
+              "id": 179,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 189,
+              "type": "GetVarNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardTargetsNode.cs",
+          "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+        }
+      ]
+    },
+    {
+      "templateId": 113311,
+      "independentExpected": "Mandatory one active Event/Unit any side/tier Ignore264 as pivot. Shape57344 offsets -1,0,+1, then exclude token8. Add3 CURRENT to ALL shape targets before Add2 Armor to ALL same shape targets. Secondary immune allowed. No RNG.",
+      "graphs": [
+        {
+          "nid": 251,
+          "sha256": "48d3d59111c99db90ff54ddbaa8ae1b0ad681596c410267279e43a44cdc989fb",
+          "nodes": [
+            {
+              "id": 34,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 98,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 149,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 179,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 189,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 192,
+              "type": "ChangeArmorNode"
+            },
+            {
+              "id": 208,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 215,
+              "type": "RequestCardTargetsNode"
+            },
+            {
+              "id": 233,
+              "type": "FilterCardListNode"
+            },
+            {
+              "id": 246,
+              "type": "FilterCardTokensNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangeArmorNode.cs",
+          "sha256": "4cb7d170297e1ab6a8459836612554662df724b93ea73e4c51bf1337b30231ed"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardListNode.cs",
+          "sha256": "7f16d84603b2da9fa2fb04f742b578dc972fe7e31d45c315334c2dd6cb8e0fe0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardTokensNode.cs",
+          "sha256": "1ce8215340a6605170aed7159c57d333e76a020ee339e80ce7a7bebf22fb055a"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardTargetsNode.cs",
+          "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+        }
+      ]
+    },
+    {
+      "templateId": 113313,
+      "independentExpected": "One owner-side active unit any tier Ignore264; executing owner excluded. Multiply CURRENT by150%, floor, armor unchanged because delta positive. No RNG. Owner is special card, current physical side determines owner query.",
+      "graphs": [
+        {
+          "nid": 74,
+          "sha256": "3a2bc97733e1d3034f69eb43462a0307fdbf378d33c58153766bf4a9bf4f9c0c",
+          "nodes": [
+            {
+              "id": 1,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 20,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 27,
+              "type": "GetOwnerPlayerIdNode"
+            },
+            {
+              "id": 32,
+              "type": "RequestCardTargetsNode"
+            },
+            {
+              "id": 45,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 50,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 61,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 66,
+              "type": "GetAbilityOwnerCardNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetOwnerPlayerIdNode.cs",
+          "sha256": "ec178e8803a04ea8361e0c256effa748f7bcd3fac36068b14bab404fe0779d27"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardTargetsNode.cs",
+          "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+        }
+      ]
+    },
+    {
+      "templateId": 122202,
+      "independentExpected": "Capture own active units all tiers Ignore8 excluding execution-stack owner, shuffle entire list N-1 RNG, take first5, add3 CURRENT simultaneously. Includes NotTargetable. N0/1 has zero shuffle RNG. Physical row/index candidate order before shuffle.",
+      "graphs": [
+        {
+          "nid": 70,
+          "sha256": "4494afa7cbcd5ecac6e142f9374506b89e16058d2467dd411c64324699879dbe",
+          "nodes": [
+            {
+              "id": 1,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 8,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 21,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 28,
+              "type": "GetOwnerPlayerIdNode"
+            },
+            {
+              "id": 33,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 38,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 41,
+              "type": "SetVarNode"
+            },
+            {
+              "id": 48,
+              "type": "CardListShuffleNode"
+            },
+            {
+              "id": 53,
+              "type": "CardListGetRangeNode"
+            },
+            {
+              "id": 61,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 65,
+              "type": "GetVarNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardListGetRangeNode.cs",
+          "sha256": "e35fd73245074a21ab5886589fc573645d61e3c624cedd1295f749660d6c1922"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardListShuffleNode.cs",
+          "sha256": "17915cf3c7783cd3c498b9352ba41862b70e8eec8fafcf617d5273f77cf2fe0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetOwnerPlayerIdNode.cs",
+          "sha256": "ec178e8803a04ea8361e0c256effa748f7bcd3fac36068b14bab404fe0779d27"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/SetVarNode.cs",
+          "sha256": "9a7d7fefcf38384d1fce2c9266b2c24b084301f7dad21d570d0bb9e57ed02f3d"
+        }
+      ]
+    },
+    {
+      "templateId": 122312,
+      "independentExpected": "Own active units all tiers Ignore8 filtered category word67108864 (Soldier), add1 CURRENT. Executing owner excluded. Immune permitted. Non-Soldier/other side/hidden excluded. No RNG.",
+      "graphs": [
+        {
+          "nid": 158,
+          "sha256": "aa1742e911231082d77ab30dcd41e0fed9d0152905412768fe8ab379d8168481",
+          "nodes": [
+            {
+              "id": 39,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 46,
+              "type": "GetOwnerPlayerIdNode"
+            },
+            {
+              "id": 49,
+              "type": "FilterCardListNode"
+            },
+            {
+              "id": 58,
+              "type": "FilterCardCategoryNode"
+            },
+            {
+              "id": 65,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 79,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 82,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 85,
+              "type": "PlayedTrigger"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardListNode.cs",
+          "sha256": "7f16d84603b2da9fa2fb04f742b578dc972fe7e31d45c315334c2dd6cb8e0fe0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetOwnerPlayerIdNode.cs",
+          "sha256": "ec178e8803a04ea8361e0c256effa748f7bcd3fac36068b14bab404fe0779d27"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        }
+      ]
+    },
+    {
+      "templateId": 142201,
+      "independentExpected": "Own Active/Hand/Deck Unit/UnitEvent all tiers Ignore8 filtered Dwarf mask140737488355328. Add1 BASE power, IgnoreArmor=false but positive delta preserves armor. Owner excluded while executing. Grave/opponent/non-Dwarf/hidden excluded. Current/permanent offset semantics preserved.",
+      "graphs": [
+        {
+          "nid": 62,
+          "sha256": "c074274a9946f65e22b0a29e4785c64ec5f3d07f1b6fbe459c3bf6996ccccc05",
+          "nodes": [
+            {
+              "id": 1,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 7,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 14,
+              "type": "GetOwnerPlayerIdNode"
+            },
+            {
+              "id": 27,
+              "type": "FilterCardCategoryNode"
+            },
+            {
+              "id": 32,
+              "type": "FilterCardListNode"
+            },
+            {
+              "id": 43,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 58,
+              "type": "GetVarNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardListNode.cs",
+          "sha256": "7f16d84603b2da9fa2fb04f742b578dc972fe7e31d45c315334c2dd6cb8e0fe0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetOwnerPlayerIdNode.cs",
+          "sha256": "ec178e8803a04ea8361e0c256effa748f7bcd3fac36068b14bab404fe0779d27"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        }
+      ]
+    },
+    {
+      "templateId": 142301,
+      "independentExpected": "Own active units all tiers Ignore264; mandatory exactly min(2,pool) distinct targets, collected before one Add3 CURRENT action. No effect until final selection, no repeated instance, no RNG.",
+      "graphs": [
+        {
+          "nid": 108,
+          "sha256": "3f1a4ee02f54ce67ac777cd369a74a5a49450e4f3f0d127f8c5789a4acea8d30",
+          "nodes": [
+            {
+              "id": 13,
+              "type": "GetOwnerPlayerIdNode"
+            },
+            {
+              "id": 17,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 25,
+              "type": "RequestCardTargetsNode"
+            },
+            {
+              "id": 52,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 64,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 71,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 95,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 98,
+              "type": "PlayedTrigger"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetOwnerPlayerIdNode.cs",
+          "sha256": "ec178e8803a04ea8361e0c256effa748f7bcd3fac36068b14bab404fe0779d27"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardTargetsNode.cs",
+          "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+        }
+      ]
+    },
+    {
+      "templateId": 142310,
+      "independentExpected": "First request any-side active unit all tiers Ignore264 remove3 CURRENT armor-aware. Then a fresh second request using current pool remove1 CURRENT armor-aware; SAME surviving instance may be chosen twice. Dead first target excluded; request2 runs after first damage/reactions. No RNG.",
+      "graphs": [
+        {
+          "nid": 119,
+          "sha256": "16b65ef39db1c6a38f787d33ef485d1844de2ff65c3e32eb3f2a0d644a2cf11e",
+          "nodes": [
+            {
+              "id": 1,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 7,
+              "type": "RequestCardTargetsNode"
+            },
+            {
+              "id": 19,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 39,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 52,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 62,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 65,
+              "type": "RequestCardTargetsNode"
+            },
+            {
+              "id": 80,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 92,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 102,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 109,
+              "type": "GetVarNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardTargetsNode.cs",
+          "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+        }
+      ]
+    },
+    {
+      "templateId": 142312,
+      "independentExpected": "Optional choice0..1 OWN HAND Unit Bronze/Silver/Gold Ignore0, including revealed/immune; Add3 CURRENT. No draw, move, reveal, base/armor/timer reset. Empty/decline does nothing. No RNG.",
+      "graphs": [
+        {
+          "nid": 102,
+          "sha256": "4d4c43ae3212cb2ca27c475d20e80577073400272f8a56b514c701674522df15",
+          "nodes": [
+            {
+              "id": 13,
+              "type": "GetOwnerPlayerIdNode"
+            },
+            {
+              "id": 17,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 35,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 47,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 52,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 78,
+              "type": "RequestCardChoiceNode"
+            },
+            {
+              "id": 89,
+              "type": "PlayedTrigger"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetOwnerPlayerIdNode.cs",
+          "sha256": "ec178e8803a04ea8361e0c256effa748f7bcd3fac36068b14bab404fe0779d27"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoiceNode.cs",
+          "sha256": "7fddbaa13542f484baafcf3c0aa68784e1b0ed3b13f7f48f6dbdeecbec3f2ac4"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        }
+      ]
+    },
+    {
+      "templateId": 142317,
+      "independentExpected": "One own active unit any tier Ignore264; add7 CURRENT. Owner excluded while executing; another same-template instance remains valid. No RNG.",
+      "graphs": [
+        {
+          "nid": 92,
+          "sha256": "4273d9c8c7d2572c07e6c91a26190ce46938a43b2625d91dc8772cb3244f9cf5",
+          "nodes": [
+            {
+              "id": 1,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 7,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 14,
+              "type": "GetOwnerPlayerIdNode"
+            },
+            {
+              "id": 17,
+              "type": "RequestCardTargetsNode"
+            },
+            {
+              "id": 31,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 52,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 78,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 85,
+              "type": "GetVarNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetOwnerPlayerIdNode.cs",
+          "sha256": "ec178e8803a04ea8361e0c256effa748f7bcd3fac36068b14bab404fe0779d27"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardTargetsNode.cs",
+          "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+        }
+      ]
+    },
+    {
+      "templateId": 162313,
+      "independentExpected": "One own active unit any tier Ignore264; add5 CURRENT. Owner excluded; altered base/permanent/armor retained. No RNG.",
+      "graphs": [
+        {
+          "nid": 238,
+          "sha256": "a797ecab813a55742b1e760abda06955b50391a4e54e906d0bdac0c6fcf80d3e",
+          "nodes": [
+            {
+              "id": 1,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 180,
+              "type": "RequestCardTargetsNode"
+            },
+            {
+              "id": 199,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 215,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 230,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 235,
+              "type": "GetOwnerPlayerIdNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetOwnerPlayerIdNode.cs",
+          "sha256": "ec178e8803a04ea8361e0c256effa748f7bcd3fac36068b14bab404fe0779d27"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardTargetsNode.cs",
+          "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+        }
+      ]
+    },
+    {
+      "templateId": 162315,
+      "independentExpected": "One active unit of owner OPPONENT current physical side, any tier Ignore264, add12 CURRENT. As spy the source lands opposite acting side, so the acting side units are eligible. No RNG.",
+      "graphs": [
+        {
+          "nid": 97,
+          "sha256": "83c34efdedcd5689aa28de0f776262a2d3b528571bd94fc24fcacdb05cc6ff23",
+          "nodes": [
+            {
+              "id": 1,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 16,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 46,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 61,
+              "type": "GetVarNode"
+            },
+            {
+              "id": 64,
+              "type": "RequestCardTargetsNode"
+            },
+            {
+              "id": 85,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 94,
+              "type": "GetOwnerOpponentPlayerIdNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetOwnerOpponentPlayerIdNode.cs",
+          "sha256": "f66d24a2f5ee6873a31d456816b86f13d6d5055acc410c6f9ca61c64dc3a5e80"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardTargetsNode.cs",
+          "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+        }
+      ]
+    },
+    {
+      "templateId": 200299,
+      "independentExpected": "One own active unit all tiers Ignore264; add6 CURRENT. Owner excluded, other same-template instance allowed. No RNG.",
+      "graphs": [
+        {
+          "nid": 50,
+          "sha256": "e7d7ec6bc4603c9d72160e25ce2abda3a283fd5e29878b1d36568cfe86790e08",
+          "nodes": [
+            {
+              "id": 1,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 8,
+              "type": "GetOwnerPlayerIdNode"
+            },
+            {
+              "id": 10,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 21,
+              "type": "RequestCardTargetsNode"
+            },
+            {
+              "id": 31,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 42,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 46,
+              "type": "GetVarNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetOwnerPlayerIdNode.cs",
+          "sha256": "ec178e8803a04ea8361e0c256effa748f7bcd3fac36068b14bab404fe0779d27"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardTargetsNode.cs",
+          "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+        }
+      ]
+    },
+    {
+      "templateId": 200540,
+      "independentExpected": "One enemy active unit all tiers Ignore264, remove4 CURRENT armor-aware, all other power fields retained. No RNG.",
+      "graphs": [
+        {
+          "nid": 70,
+          "sha256": "60f8456ae2c83f3a5b315ddd3a10575080f74ed4ee0827f4ee7d563425cf7912",
+          "nodes": [
+            {
+              "id": 1,
+              "type": "PlayedTrigger"
+            },
+            {
+              "id": 12,
+              "type": "GetCardsNode"
+            },
+            {
+              "id": 19,
+              "type": "GetOwnerOpponentPlayerIdNode"
+            },
+            {
+              "id": 22,
+              "type": "ChangePowerNode"
+            },
+            {
+              "id": 33,
+              "type": "RequestCardTargetsNode"
+            },
+            {
+              "id": 46,
+              "type": "GetAbilityOwnerCardNode"
+            },
+            {
+              "id": 50,
+              "type": "GetVarNode"
+            }
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/AChangeCardsAction.cs",
+          "sha256": "b3ab190016d08dbd0021d5df2bd33125f868e5e48e0541c2e8815320b2b986c0"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ARequestTargetsAction.cs",
+          "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ATargetCardsNode.cs",
+          "sha256": "208f1895973ed0007b6c00436ded534ba21dabb3ec11740ee07239c941874a20"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BitArray.cs",
+          "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardManager.cs",
+          "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/BoardSide.cs",
+          "sha256": "16b50236f06c59f8fb4ea3a9546ad13fa24914742f49cf370e7421975ab6473c"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Card.cs",
+          "sha256": "4d2ac04f4732306a75e7b3188dc5efad91e1b52373569595063a93e93a261360"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPower.cs",
+          "sha256": "07257bcbf1df51feffe7221a61a1b3a75fbd500778a67eb1b69f30da9f61b6d8"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/CardPowerAttack.cs",
+          "sha256": "de73e9eac4759198cc7a60d492d2874357516bda128e6130f392e4ff23f66426"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerAction.cs",
+          "sha256": "6bbbdfc8fcf7e84f0616db5b925fd63e7ac6fceacbc70d8adfd409c2e04e2b7e"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ChangePowerNode.cs",
+          "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/FilterCardCategoryNode.cs",
+          "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetAbilityOwnerCardNode.cs",
+          "sha256": "859b4f2e61fc7a393188d4070c3ab17007dd7ae92cbc1a4e53a5aa2957e33f0d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetCardsNode.cs",
+          "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetOwnerOpponentPlayerIdNode.cs",
+          "sha256": "f66d24a2f5ee6873a31d456816b86f13d6d5055acc410c6f9ca61c64dc3a5e80"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/GetVarNode.cs",
+          "sha256": "c77c97123657168c6c4ddec10efa86b00d0a6ef0f94edc9a48b95c34580c3b19"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/ListExt.cs",
+          "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/Location.cs",
+          "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/PlayedTrigger.cs",
+          "sha256": "e30ad66287b9f2f8f922b324a11a6de08d6ff837ee94e422515cb8433460a8f6"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardChoicesAction.cs",
+          "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+        },
+        {
+          "file": "BetaGwent/build-inputs/reference/beta-original-csharp/GwentGameplay/RequestCardTargetsNode.cs",
+          "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+        }
+      ]
+    }
+  ]
+}

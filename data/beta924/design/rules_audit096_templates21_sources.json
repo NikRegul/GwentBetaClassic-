@@ -1,0 +1,4687 @@
+{
+  "schema": 1,
+  "independentExpectationsBeforeHandlers": true,
+  "scope": 21,
+  "records": [
+    {
+      "id": 112103,
+      "template": {
+        "art": {
+          "ArtId": "1121030",
+          "AudioId": "1005",
+          "PremiumState": "0",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "1",
+          "DebugName": "Geralt",
+          "Id": "112103",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "2147483648",
+            "high32": 0,
+            "low32": 2147483648
+          },
+          {
+            "decimal": "1024",
+            "high32": 0,
+            "low32": 1024
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 1,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 15,
+          "Rarity": 8,
+          "Tier": 8,
+          "Tokens": 0,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 8,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "1",
+            "DebugName": "Geralt",
+            "Id": "112103",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "8"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "1121030",
+                "AudioId": "1005",
+                "PremiumState": "0",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "8"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "15"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "2147483648"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "1024"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 112103
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 112405,
+      "template": {
+        "art": {
+          "ArtId": "1124050",
+          "AudioId": "1563",
+          "PremiumState": "0",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "1",
+          "DebugName": "Fiend",
+          "Id": "112405",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "128",
+            "high32": 0,
+            "low32": 128
+          },
+          {
+            "decimal": "1024",
+            "high32": 0,
+            "low32": 1024
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 2,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 11,
+          "Rarity": 1,
+          "Tier": 2,
+          "Tokens": 0,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 38,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "1",
+            "DebugName": "Fiend",
+            "Id": "112405",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "1124050",
+                "AudioId": "1563",
+                "PremiumState": "0",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "11"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "128"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "1024"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 112405
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 122209,
+      "template": {
+        "art": {
+          "ArtId": "1222090",
+          "AudioId": "1091",
+          "PremiumState": "0",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "1",
+          "DebugName": "Trololo",
+          "Id": "122209",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "2097216",
+            "high32": 0,
+            "low32": 2097216
+          },
+          {
+            "decimal": "1024",
+            "high32": 0,
+            "low32": 1024
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 9,
+          "FactionId": 8,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 11,
+          "Rarity": 4,
+          "Tier": 4,
+          "Tokens": 0,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 87,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "1",
+            "DebugName": "Trololo",
+            "Id": "122209",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "1222090",
+                "AudioId": "1091",
+                "PremiumState": "0",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "8"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "11"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "9"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "2097216"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "1024"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 122209
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 132209,
+      "template": {
+        "art": {
+          "ArtId": "1322090",
+          "AudioId": "1218",
+          "PremiumState": "0",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "1",
+          "DebugName": "Imperial Manticore",
+          "Id": "132209",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "4096",
+            "high32": 0,
+            "low32": 4096
+          },
+          {
+            "decimal": "1024",
+            "high32": 0,
+            "low32": 1024
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 2,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 13,
+          "Rarity": 4,
+          "Tier": 4,
+          "Tokens": 0,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 134,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "1",
+            "DebugName": "Imperial Manticore",
+            "Id": "132209",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "1322090",
+                "AudioId": "1218",
+                "PremiumState": "0",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "13"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "4096"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "1024"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 132209
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 132310,
+      "template": {
+        "art": {
+          "ArtId": "1323101",
+          "AudioId": "1220",
+          "PremiumState": "0",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "1",
+          "DebugName": "Wild Hunt Rider",
+          "Id": "132310",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "67109888",
+            "high32": 0,
+            "low32": 67109888
+          },
+          {
+            "decimal": "1024",
+            "high32": 0,
+            "low32": 1024
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 2,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 10,
+          "Rarity": 1,
+          "Tier": 2,
+          "Tokens": 0,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "16384",
+            "high32": 0,
+            "low32": 16384
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 154,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "1",
+            "DebugName": "Wild Hunt Rider",
+            "Id": "132310",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "1323101",
+                "AudioId": "1220",
+                "PremiumState": "0",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "10"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "67109888"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "1024"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "16384"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 132310
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 132403,
+      "template": {
+        "art": {
+          "ArtId": "1324030",
+          "AudioId": "1042",
+          "PremiumState": "0",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "0",
+          "DebugName": "Wolf",
+          "Id": "132403",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "288230376151715840",
+            "high32": 67108864,
+            "low32": 4096
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 2,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 1,
+          "Rarity": 1,
+          "Tier": 2,
+          "Tokens": 512,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 161,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "0",
+            "DebugName": "Wolf",
+            "Id": "132403",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "1324030",
+                "AudioId": "1042",
+                "PremiumState": "0",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "512"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "288230376151715840"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 132403
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 132405,
+      "template": {
+        "art": {
+          "ArtId": "1324050",
+          "AudioId": "1158",
+          "PremiumState": "0",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "0",
+          "DebugName": "Lesser D'ao",
+          "Id": "132405",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "288230376151711748",
+            "high32": 67108864,
+            "low32": 4
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 2,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 4,
+          "Rarity": 1,
+          "Tier": 2,
+          "Tokens": 512,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 163,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "0",
+            "DebugName": "Lesser D'ao",
+            "Id": "132405",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "1324050",
+                "AudioId": "1158",
+                "PremiumState": "0",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "512"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "288230376151711748"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 132405
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 142306,
+      "template": {
+        "art": {
+          "ArtId": "1423060",
+          "AudioId": "1123",
+          "PremiumState": "0",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "1",
+          "DebugName": "Mahakam Defender",
+          "Id": "142306",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "140737555464192",
+            "high32": 32768,
+            "low32": 67108864
+          },
+          {
+            "decimal": "1024",
+            "high32": 0,
+            "low32": 1024
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 16,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 6,
+          "Rarity": 2,
+          "Tier": 2,
+          "Tokens": 1,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "4160",
+            "high32": 0,
+            "low32": 4160
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 197,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "1",
+            "DebugName": "Mahakam Defender",
+            "Id": "142306",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "1423060",
+                "AudioId": "1123",
+                "PremiumState": "0",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "16"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "6"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "140737555464192"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "1024"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "4160"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 142306
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 152405,
+      "template": {
+        "art": {
+          "ArtId": "1524050",
+          "AudioId": "1196",
+          "PremiumState": "0",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "0",
+          "DebugName": "Raging Bear",
+          "Id": "152405",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "4328525824",
+            "high32": 1,
+            "low32": 33558528
+          },
+          {
+            "decimal": "1024",
+            "high32": 0,
+            "low32": 1024
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 32,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 12,
+          "Rarity": 2,
+          "Tier": 2,
+          "Tokens": 0,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 253,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "0",
+            "DebugName": "Raging Bear",
+            "Id": "152405",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "1524050",
+                "AudioId": "1196",
+                "PremiumState": "0",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "32"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "12"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "4328525824"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "1024"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 152405
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 152406,
+      "template": {
+        "art": {
+          "ArtId": "1524060",
+          "AudioId": "1197",
+          "PremiumState": "0",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "0",
+          "DebugName": "Bear",
+          "Id": "152406",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "33558528",
+            "high32": 0,
+            "low32": 33558528
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 1,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 11,
+          "Rarity": 2,
+          "Tier": 2,
+          "Tokens": 0,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 254,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "0",
+            "DebugName": "Bear",
+            "Id": "152406",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "1524060",
+                "AudioId": "1197",
+                "PremiumState": "0",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "11"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "33558528"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 152406
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 200171,
+      "template": {
+        "art": {
+          "ArtId": "2001710",
+          "AudioId": "1200",
+          "PremiumState": "0",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "1",
+          "DebugName": "Tridam Infantryman",
+          "Id": "200171",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "67108864",
+            "high32": 0,
+            "low32": 67108864
+          },
+          {
+            "decimal": "1024",
+            "high32": 0,
+            "low32": 1024
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 4,
+          "FactionId": 8,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 10,
+          "Rarity": 1,
+          "Tier": 2,
+          "Tokens": 0,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 380,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "1",
+            "DebugName": "Tridam Infantryman",
+            "Id": "200171",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "2001710",
+                "AudioId": "1200",
+                "PremiumState": "0",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "8"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "10"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "67108864"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "1024"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 200171
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 200219,
+      "template": {
+        "art": {
+          "ArtId": "1624010",
+          "AudioId": "1309",
+          "PremiumState": "0",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "0",
+          "DebugName": "Lesser Guardian",
+          "Id": "200219",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "288230376151711748",
+            "high32": 67108864,
+            "low32": 4
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 4,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 6,
+          "Rarity": 2,
+          "Tier": 2,
+          "Tokens": 512,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 404,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "0",
+            "DebugName": "Lesser Guardian",
+            "Id": "200219",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "1624010",
+                "AudioId": "1309",
+                "PremiumState": "0",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "512"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "6"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "288230376151711748"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 200219
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 200307,
+      "template": {
+        "art": {
+          "ArtId": "2000530",
+          "AudioId": "1381",
+          "PremiumState": "0",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "0",
+          "DebugName": "Jade Figurine",
+          "Id": "200307",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "288230376151711744",
+            "high32": 67108864,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 1,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 2,
+          "Rarity": 4,
+          "Tier": 4,
+          "Tokens": 512,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 432,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "0",
+            "DebugName": "Jade Figurine",
+            "Id": "200307",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "2000530",
+                "AudioId": "1381",
+                "PremiumState": "0",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "512"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "288230376151711744"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 200307
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 200308,
+      "template": {
+        "art": {
+          "ArtId": "2003080",
+          "AudioId": "1383",
+          "PremiumState": "1",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "0",
+          "DebugName": "Harpy Hatchling",
+          "Id": "200308",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "288230376151715840",
+            "high32": 67108864,
+            "low32": 4096
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 2,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 1,
+          "Rarity": 1,
+          "Tier": 2,
+          "Tokens": 512,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 433,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "0",
+            "DebugName": "Harpy Hatchling",
+            "Id": "200308",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "2003080",
+                "AudioId": "1383",
+                "PremiumState": "1",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "512"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "288230376151715840"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 200308
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 200320,
+      "template": {
+        "art": {
+          "ArtId": "2003200",
+          "AudioId": "1011",
+          "PremiumState": "0",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "0",
+          "DebugName": "Chort",
+          "Id": "200320",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "288230376151711872",
+            "high32": 67108864,
+            "low32": 128
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 1,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 14,
+          "Rarity": 1,
+          "Tier": 2,
+          "Tokens": 512,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 435,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "0",
+            "DebugName": "Chort",
+            "Id": "200320",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "2003200",
+                "AudioId": "1011",
+                "PremiumState": "0",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "512"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "14"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "288230376151711872"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 200320
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 200457,
+      "template": {
+        "art": {
+          "ArtId": "2004570",
+          "AudioId": "1396",
+          "PremiumState": "1",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "0",
+          "DebugName": "Draugir: Monster",
+          "Id": "200457",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "288230376185266176",
+            "high32": 67108864,
+            "low32": 33554432
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 2,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 1,
+          "Rarity": 1,
+          "Tier": 2,
+          "Tokens": 512,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 438,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "0",
+            "DebugName": "Draugir: Monster",
+            "Id": "200457",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "2004570",
+                "AudioId": "1396",
+                "PremiumState": "1",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "512"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "288230376185266176"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 200457
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 201576,
+      "template": {
+        "art": {
+          "ArtId": "2005170",
+          "AudioId": "1432",
+          "PremiumState": "1",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "0",
+          "DebugName": "Cow",
+          "Id": "201576",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "288230376151715840",
+            "high32": 67108864,
+            "low32": 4096
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 1,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 1,
+          "Rarity": 1,
+          "Tier": 2,
+          "Tokens": 512,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 532,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "0",
+            "DebugName": "Cow",
+            "Id": "201576",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "2005170",
+                "AudioId": "1432",
+                "PremiumState": "1",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "512"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "288230376151715840"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 201576
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 201677,
+      "template": {
+        "art": {
+          "ArtId": "2016770",
+          "AudioId": "1505",
+          "PremiumState": "0",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "0",
+          "DebugName": "Peasant",
+          "Id": "201677",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "288230376151711744",
+            "high32": 67108864,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 1,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 3,
+          "Rarity": 1,
+          "Tier": 2,
+          "Tokens": 512,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 605,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "0",
+            "DebugName": "Peasant",
+            "Id": "201677",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "2016770",
+                "AudioId": "1505",
+                "PremiumState": "0",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "512"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "3"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "288230376151711744"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 201677
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    },
+    {
+      "id": 201758,
+      "template": {
+        "art": {
+          "ArtId": "2004570",
+          "AudioId": "1396",
+          "PremiumState": "1",
+          "SharedArtId": "0",
+          "Type": "CardArtDefinition"
+        },
+        "attributes": {
+          "Availability": "0",
+          "DebugName": "Draugir: Northern",
+          "Id": "201758",
+          "Type": "CardTemplate"
+        },
+        "categoryWords": [
+          {
+            "decimal": "288230376185266176",
+            "high32": 67108864,
+            "low32": 33554432
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "fields": {
+          "Armor": 0,
+          "FactionId": 8,
+          "InitialTimer": -1,
+          "Kind": 1,
+          "LinkedTemplateId": 0,
+          "LinkedTemplateOrder": 0,
+          "Power": 5,
+          "Rarity": 1,
+          "Tier": 2,
+          "Tokens": 512,
+          "Type": 4
+        },
+        "placement": {
+          "OpponentSide": "0",
+          "PlayerSide": "7",
+          "Type": "CardPlacement"
+        },
+        "resetInInactive": true,
+        "semanticTagWords": [
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          },
+          {
+            "decimal": "0",
+            "high32": 0,
+            "low32": 0
+          }
+        ],
+        "sourceIndex": 678,
+        "sourceTree": {
+          "attributes": {
+            "Availability": "0",
+            "DebugName": "Draugir: Northern",
+            "Id": "201758",
+            "Type": "CardTemplate"
+          },
+          "children": [
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Rarity",
+              "text": "1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Kind",
+              "text": "1"
+            },
+            {
+              "attributes": {
+                "ArtId": "2004570",
+                "AudioId": "1396",
+                "PremiumState": "1",
+                "SharedArtId": "0",
+                "Type": "CardArtDefinition"
+              },
+              "children": [],
+              "tag": "ArtDefinition",
+              "text": ""
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateId",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "LinkedTemplateOrder",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "FactionId",
+              "text": "8"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tier",
+              "text": "2"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Type",
+              "text": "4"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Tokens",
+              "text": "512"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Power",
+              "text": "5"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "Armor",
+              "text": "0"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "InitialTimer",
+              "text": "-1"
+            },
+            {
+              "attributes": {},
+              "children": [],
+              "tag": "ResetInInactive",
+              "text": "True"
+            },
+            {
+              "attributes": {
+                "OpponentSide": "0",
+                "PlayerSide": "7",
+                "Type": "CardPlacement"
+              },
+              "children": [],
+              "tag": "Placement",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardCategory"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "288230376185266176"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "Categories",
+              "text": ""
+            },
+            {
+              "attributes": {
+                "Type": "CardSemanticTag"
+              },
+              "children": [
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e0",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e1",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "V": "0"
+                  },
+                  "children": [],
+                  "tag": "e2",
+                  "text": ""
+                }
+              ],
+              "tag": "SemanticTags",
+              "text": ""
+            }
+          ],
+          "tag": "Template",
+          "text": ""
+        },
+        "templateId": 201758
+      },
+      "expected": "No executable card ability nodes in supported Beta catalog. Compare source power, armor, timer, tokens, tier/faction/type and normal hand deploy; no invented deploy changes in empty position. Tooltip variables alone do not execute actions. Shared global token/weather/carry effects and exit branches deferred."
+    }
+  ],
+  "rallyIds": [
+    113303,
+    113402
+  ],
+  "rallyGraphSha256": "3994a8b15b9b763cb091e68c46569cc2c2a82015ec7b48bf6ea58bc09098c941",
+  "rallyExpected": "113303 real FirstLight choice113402: same source graph false branch CardListBranch on own DeckUnitBronze list, RANDOM1 singleton consumes1, Play existing exact selected instance; no spawn/draw. Empty pool no RNG/no action. Other tiers/specials excluded.113402 no independent card graph: mode bound to113303Graph500. ClearSkies branch2687 and boost2 deferred."
+}

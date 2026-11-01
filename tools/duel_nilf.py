@@ -1,6 +1,27 @@
 """Strict 0.9.24 Nilfgaard graphs and complete creation dependencies."""
 import json,re
 
+def render_shared_categories(c, implemented):
+    # Corpse Venom is the only consumer. Graph243/node144 removes Exclude
+    # BEFORE HasAny at node137; removed categories must not spread poison.
+    graph=next(g for g in c['abilities'] if g['templateId']==201662)
+    node=next(n for n in graph['nodes'] if n['nodeId']==144)
+    field=next(v for v in node['sourceTree']['children'] if v['tag']=='Exclude')
+    excluded=[int(v['attributes']['V']) for v in field['children'][0]['children']]
+    templates={t['templateId']:t for t in c['templates']}
+    groups={}
+    for a in sorted(implemented):
+        masks=[int(x['decimal']) & ~(excluded[i] if i < len(excluded) else 0) for i,x in enumerate(templates[a]['categoryWords'])]
+        matching=tuple(b for b in sorted(implemented) if any(mask & int(word['decimal']) for mask,word in zip(masks,templates[b]['categoryWords'])))
+        if matching:groups.setdefault(matching,[]).append(a)
+    lines=['','function BetaGwentNilfSharedCategory(a : int, b : int) : bool','{']
+    for ordinal,(matching,ids) in enumerate(groups.items()):
+        lines.append('    if ('+' || '.join('a == '+str(i) for i in ids)+f') return BetaGwentNilfShared{ordinal}(b);')
+    lines+=['    return false;','}']
+    for ordinal,(matching,ids) in enumerate(groups.items()):
+        lines+=['',f'function BetaGwentNilfShared{ordinal}(id : int) : bool','{','    switch (id)','    {']+[f'    case {id}: return true;' for id in matching]+['    }','    return false;','}']
+    return lines
+
 def load_nilf(root,catalog,digest):
     doc=json.loads((root/'data/beta924/duel/nilfgaard.json').read_text(encoding='utf-8'))
     if doc['catalogSha256']!=digest:raise RuntimeError('Nilfgaard source changed')
@@ -12,7 +33,7 @@ def load_nilf(root,catalog,digest):
     return result
 
 def nilf_pools(c):
-    pools={142202:[113305,113401,113301],162207:[113302,113401,200009],162213:[162315,200115,162314],201597:[152304,152312,152313,152315,200144]}
+    pools={142202:[113301,113305,113401],162207:[113302,113401,200009],162213:[162315,200115,162314],201597:[152304,152312,152313,152315,200144]}
     for id in (200050,201580,201583,201589,201585,201653):
         g=next(g for g in c['abilities'] if g['type']=='CardAbility' and g['templateId']==id)
         n=next(n for n in g['nodes'] if n['type']=='GetCardsDefinitionsNode');p={v['tag']:v for v in n['sourceTree']['children']}
@@ -35,19 +56,7 @@ def render_nilf(c,recipes,implemented,root):
     for id in pools:lines.append(f'    if (id == {id}) BetaGwentNilfPool{id}(ids);')
     lines+=['}']
     for id,ids in pools.items():lines+=['',f'function BetaGwentNilfPool{id}(out ids : array<int>)','{']+[f'    ids.PushBack({v});' for v in ids]+['}']
-    lines+=['','function BetaGwentNilfSharedCategory(a : int, b : int) : bool','{']
-    # Compare original words in Python; emitted switches avoid unsupported 64-bit bitsets.
-    templates={t['templateId']:t for t in c['templates']}
-    groups={}
-    for a in implemented:
-        masks=[int(x['decimal']) for x in templates[a]['categoryWords']]
-        match=tuple(b for b in implemented if any(a&int(b['decimal']) for a,b in zip(masks,templates[b]['categoryWords'])))
-        if match:groups.setdefault(match,[]).append(a)
-    for ordinal,(matching,ids) in enumerate(groups.items()):
-        lines.append('    if ('+' || '.join('a == '+str(i) for i in ids)+f') return BetaGwentNilfShared{ordinal}(b);')
-    lines+=['    return false;','}']
-    for ordinal,(matching,ids) in enumerate(groups.items()):
-        lines+=['',f'function BetaGwentNilfShared{ordinal}(id : int) : bool','{','    switch (id)','    {']+[f'    case {id}: return true;' for id in matching]+['    }','    return false;','}']
+    lines+=render_shared_categories(c,implemented)
     for name,mask in [('Dwarf',[140737488355328,0,0]),('Spell',[1048576,0,0]),('Agent',[0,2048,0]),('Elf',[549755813888,0,0]),('Dryad',[137438953472,0,0]),('Support',[8796093022208,0,0])]:
         ids=[t['templateId'] for t in c['templates'] if any(int(t['categoryWords'][i]['decimal'])&v for i,v in enumerate(mask))]
         lines+=['',f'function BetaGwentNilf{name}(id : int) : bool','{','    return '+' || '.join(f'id == {id}' for id in ids)+';','}']

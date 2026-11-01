@@ -557,7 +557,6 @@ class CBetaGwentArchetypeAI extends IScriptable
         if(id==112210 || id==142211 || id==132407)return 30*BetaGwentAITune(32)/100;
         // Cursed: Tormented Mages tutor the Flails, so a Flail in hand is a wasted tutor target.
         if(profile==5 && id==201633 && Count(hand,201628,false)>=Max(1,ZoneCopies(16,201633)))return 20*BetaGwentAITune(32)/100;
-        if((profile==30 || profile==40) && id==113301 && Count(hand,142107,false)>0 && ZoneCopies(16,113301)==0)return 28;
         if(profile==11 && d.header.tierMask==2 && BetaGwentNorthernCategory(id,11) && Count(hand,122403,false)>0)return 25;
         if(id==200539 && (game.CountLocation(2,32)==0 || game.CountLocation(2,16)==0))return 18;
         if(id==162104 && situation.roundNumber==1 && game.CountLocation(2,16)<3)return 16;
@@ -618,6 +617,41 @@ class CBetaGwentArchetypeAI extends IScriptable
         if(profile==39 && d.header.templateId==152309 && ZoneCopies(32,152309)==0
             && Count(hand,200145,false)>0)return 55;
         return -d.header.power-Reserve(d)*4-BetaGwentAIEngine(d.header.templateId)*3;
+    }
+    public function BranDiscardValue101(target : CBetaGwentDuelCard) : int
+    {
+        var cards,deck : array<CBetaGwentDuelCard>;var i,revivals : int;var s,t : SBetaGwentCardSnapshot;var m : SBetaGwentMatchSnapshot;
+        s=target.Snapshot();
+        if(s.runtimeTemplate.templateId!=200177 && s.runtimeTemplate.templateId!=152307)return DiscardValue(target);
+        m=game.Snapshot();game.GetZoneCards(2,8,cards);game.GetZoneCards(2,16,deck);for(i=0;i<deck.Size();i+=1)cards.PushBack(deck[i]);
+        for(i=0;i<cards.Size();i+=1){
+            if(cards[i]==target)continue;
+            t=cards[i].Snapshot();if(t.locationMask==16 && m.roundNumber>=3)continue;
+            if(BetaGwentAIResurrector(cards[i].TemplateId()) || cards[i].TemplateId()==152307)revivals+=1;
+        }
+        if(revivals==0)return -s.power.currentPower;
+        return DiscardValue(target);
+    }
+    // Only Bran's change in this estimate is banked, never catch-up tempo.
+    // A grave target is credited once (the best legal known resurrection),
+    // rather than once per medic. Future deck medics are discounted and only
+    // count while another round can still draw them. Cerys needs real revivals.
+    public function BranBankedSetup101() : int
+    {
+        var cards,deck : array<CBetaGwentDuelCard>;var i,best,revivals,weight,value,cerys,remainingTicks : int;
+        var s : SBetaGwentCardSnapshot;var d : SBetaGwentDuelDefinition;var m : SBetaGwentMatchSnapshot;
+        m=game.Snapshot();game.GetZoneCards(2,8,cards);game.GetZoneCards(2,16,deck);for(i=0;i<deck.Size();i+=1)cards.PushBack(deck[i]);
+        for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();
+            if(s.isWaitingToDie || !BetaGwentAIResurrector(cards[i].TemplateId()))continue;
+            weight=2;if(s.locationMask==16){if(m.roundNumber>=3)continue;weight=1;}
+            d=cards[i].Definition();value=PileGain(d,true);best=Max(best,value*weight/2);revivals+=weight;
+        }
+        game.GetZoneCards(2,32,cards);
+        for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();
+            if(s.runtimeTemplate.templateId!=200177 || s.isWaitingToDie || (s.tokenMask&4)!=0 || s.timerValue<=0)continue;
+            remainingTicks=Max(1,s.timerValue);cerys=Max(cerys,s.power.currentPower*Min(remainingTicks*2,revivals)/(remainingTicks*2));
+        }
+        return best+cerys;
     }
     // Setup leaders earn their value before draws and resurrection plays are spent.
     private function BranSetupPriority() : int

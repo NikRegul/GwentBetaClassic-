@@ -1,0 +1,122 @@
+{
+ "schema": 1,
+ "scope": "scope198 template choices",
+ "independentExpectationsBeforeHandlers": true,
+ "allBranchesComplete": false,
+ "csharp": [
+  {
+   "n": "RequestTemplateChoiceNode",
+   "sha256": "f7abfcae0040ff1e205344a6250e11a57b90c8dfa38b19227eef635f440a3e98"
+  },
+  {
+   "n": "ARequestChoiceNode",
+   "sha256": "07324ce529c90b8e669d20b4d7b28dd39936af4f74c9fef3b2bc55507d38d9c6"
+  },
+  {
+   "n": "RequestCardChoicesAction",
+   "sha256": "f349ead318b7e41e3d476dafaf75b2d451637ec97340241fb3d07808d6d72fa5"
+  },
+  {
+   "n": "CardDefinitionListGetElementNode",
+   "sha256": "68c6d0cc91e32fddcd60c6a359e532381ac9c4adb15fcc663e54446a9edb4191"
+  },
+  {
+   "n": "SpawnCardNode",
+   "sha256": "0985f5c06d7dd103e23c8dc252d10b4cd863d17fd1ddbe71ac388ec30ff8cf65"
+  },
+  {
+   "n": "PlayCardsNode",
+   "sha256": "f574ebcad534b08f786d96c41891f1ba036448848feb2ee1853e8e749046ad53"
+  },
+  {
+   "n": "AGetDefinitionsNode",
+   "sha256": "bb5b57254be7aa6c8b7e54e82192d09b1a0760bc590f3370fc4723af8454d9a7"
+  },
+  {
+   "n": "CardDefinitionHelper",
+   "sha256": "56fd0eaae1ff87bace0921cca13551ac960e10a0d4aa60bf11cde9b33d418094"
+  }
+ ],
+ "records": [
+  {
+   "id": 131101,
+   "graphs": [
+    {
+     "nid": 247,
+     "sha256": "8bfb694975aaa7632a74c40fa9dfdabe72a89675e46ebb29ca11cee15471ab03"
+    }
+   ],
+   "expected": "GetCardsDefinitions Tier2 Type4 Kind1 BaseSet Category1024 HasAny = [132309,132310,132402,200026,200301]; Min0 Max1 -> spawn/play."
+  },
+  {
+   "id": 133302,
+   "graphs": [
+    {
+     "nid": 372,
+     "sha256": "e14f3857d9b831f6d1e7bb2ab8a6227853154226a318caea9446ed54ecba902e"
+    }
+   ],
+   "expected": "RequestTemplateChoice 8 monsters Min0 Max1 -> spawn/play -> ChangePower Add CURRENT 1 on spawned."
+  },
+  {
+   "id": 142108,
+   "graphs": [
+    {
+     "nid": 174,
+     "sha256": "9cb7ebd12add975625d4c95651826a83789fb706dc4806dd156fa5706c48f0ae"
+    }
+   ],
+   "expected": "RequestTemplateChoice [113309,113308] Min1 Max1 -> spawn own PlayStack -> PlayCards."
+  },
+  {
+   "id": 152206,
+   "graphs": [
+    {
+     "nid": 228,
+     "sha256": "d9197524f5987cfec9cbcd57ddc7df3c0b128c313bcf1577d6d608e9aa558c86"
+    }
+   ],
+   "expected": "RequestTemplateChoice [113312,200021,113401] Min1 -> spawn/play."
+  },
+  {
+   "id": 162207,
+   "graphs": [
+    {
+     "nid": 196,
+     "sha256": "c23269630b982c27a96886141450d633845d57c422d3cbf11b60360583093026"
+    }
+   ],
+   "expected": "RequestTemplateChoice [113302,113401,200009] Min1 -> spawn/play."
+  },
+  {
+   "id": 162213,
+   "graphs": [
+    {
+     "nid": 192,
+     "sha256": "7f73e888760bf22e987d03e288d596f4ec4dd8ac1dbce4ac3404a2eebc958bbc"
+    }
+   ],
+   "expected": "RequestTemplateChoice [162315,200115,162314] Min0 Max1; empty selection -> GetElement unknown -> no spawn."
+  },
+  {
+   "id": 200158,
+   "graphs": [
+    {
+     "nid": 178,
+     "sha256": "258f697f24cbc25cb2ce05f42a5a1fa95d9fce47d9870832ab5f8d026950df36"
+    }
+   ],
+   "expected": "RequestTemplateChoice [113305,113312] Min=MaxTargets1 -> spawn/play."
+  },
+  {
+   "id": 201597,
+   "graphs": [
+    {
+     "nid": 183,
+     "sha256": "d47bb506583d08eaf73444febc65f7f4648a37deeba26b79f207ce49d3a35156"
+    }
+   ],
+   "expected": "RequestTemplateChoice [152304,152312,152313,152315,200144] Min1 -> spawn/play."
+  }
+ ]
+}

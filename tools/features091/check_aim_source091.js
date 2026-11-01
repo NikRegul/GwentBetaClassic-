@@ -11,6 +11,7 @@ for(const platform of ['classic','nextgen']){
   return source.slice(start,end).replace(/:(Object|int|Array|String|Boolean|void|Sprite|Number|TextField)\b/g,'');}
  const caster={x:11,y:22,width:80,height:120},wrong={x:999,y:111,width:80,height:120};
  const c=vm.createContext({requestId:32,requestSourceId:25,requestSourceTemplate:113301,requestPlayer:1,selected:4,
+  skin:3,pileOpen:false,isChoiceTable:()=>true,
   displayedCards:{25:caster,4:wrong},activeCue:{source:4},aimSourceId:4,
   BetaGwentFullCatalog:{find(id){return {leader:id===201743};}},betaLeaderRect(side){return [side*100,50,80,120];}});
  vm.runInContext(extract('aimSourcePose091'),c);
@@ -23,7 +24,7 @@ for(const platform of ['classic','nextgen']){
  const painted=[],faces=[],backs=[];
  function Sprite(){this.addChild=()=>{};}
  Object.assign(c,{paintArt(p,id){painted.push(id);},paintBetaFace(p,id){faces.push(id);},paintCardBack(){backs.push(true);},Sprite,
-  betaVisual(){return null;},text(){return {};},betaFace(){},paintStaticCardState(){},attachInspect(){},int:n=>n|0,
+  betaVisual(){return null;},text(){return {};},betaFace(){},paintStaticCardState(){},attachInspect(){},int:n=>n|0,DropShadowFilter:function(){},
   BetaGwentFonts:{TITLE:'title'}});
  vm.runInContext(extract('paintChoiceArt')+'\n'+extract('compactOverviewCard'),c);
  c.paintChoiceArt({},113402,200,282);check(painted.pop()===113402,'Rally choice renders its own embedded illustration');

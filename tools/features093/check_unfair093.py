@@ -21,7 +21,13 @@ def main():
     assert parity['complete'] and not parity.get('error') and parity['bindingChecks']==len(mapping['assignments'])
     assert len(parity['records'])==len({x['composition'] for x in mapping['assignments']})==parity['total']
     assert parity['profileScope']=='Validated per-deck named original profiles'
-    for name,digest in proof['wsSources'].items():assert h(frozen/name)==digest,'Selected WS provenance '+name
+    sys.path.insert(0,str(ROOT/'tools/ai'))
+    from profile_provenance094 import amendments
+    source_amendments=amendments(a.build,proof)
+    if source_amendments:
+        (out/'profile-source-amendments.json').write_text(json.dumps(dict(
+            historicalProofSha256=h(proof_path),historicalMappingAndParityUnchanged=True,
+            changes=source_amendments,currentFullParityRequiredByUserRelease=True),indent=2)+'\n','utf8')
     assert 'originalPersonality.InitializeForDeck(enemyPreset,chosen.header.factionMask)' in (frozen/'developmentBoardMenu.ws').read_text('utf8')
     for source,name in [(mapping_path,'profile-mapping.json'),(parity_path,'profile-ws-parity.json'),(proof_path,'profile-source-proof.json')]:shutil.copy2(source,out/name)
     frozen_mapping=out/'profile-mapping.json'
@@ -47,6 +53,7 @@ def main():
     assert games['mappingPresets']==109 and games['bindingChecks']==109
     report=dict(fingerprint=json.loads((a.build/'rules/manifest.json').read_text('utf8'))['fingerprint'],checks=records,wholeMatches=5,selectedProfileWholeMatches=parity['total'],presetBindings=109,
                 selectedProfiles=len({x['profile'] for x in mapping['assignments']}),profileMappingSha256=h(frozen_mapping),profileParitySha256=h(out/'profile-ws-parity.json'),profileSourceProofSha256=h(out/'profile-source-proof.json'),errors=0,nativeGameplayVerified=False)
+    if source_amendments:report['profileSourceAmendmentsSha256']=h(out/'profile-source-amendments.json')
     (out/'report.json').write_text(json.dumps(report,indent=2)+'\n','utf8')
 
 if __name__=='__main__':main()

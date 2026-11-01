@@ -100,7 +100,13 @@ const late=rebuild(P8);late.aiSimDamp=70;
 check(late.Score(2)===79&&late.Score(1)===58&&late.CountLocation(2,8)===3&&late.CountLocation(1,8)===4,'late first-round native score and hand sizes reconstructed');
 check(late.LeaderAvailable(2)&&!late.LeaderAvailable(1),'only our once-per-match leader remains');
 check(late.OpponentStep()&&!late.IsFatal(),'late first-round decision completes');
-check(!late.Snapshot().playerTwo.hasPassed,'an unused leader alone does not authorize a first-round pass');
+// Isolate the original regression's cause. A public +21 lead may now justify
+// an economic pass under the revised policy; owning an unused leader must not
+// be the reason it passes. Compare the same public position without that leader.
+const lateNoLeader=rebuild(P8);lateNoLeader.aiSimDamp=70;
+lateNoLeader.Leader(2).Move(2,512,0);
+check(lateNoLeader.OpponentStep()&&!lateNoLeader.IsFatal(),'leader-free control decision completes');
+check(late.Snapshot().playerTwo.hasPassed===lateNoLeader.Snapshot().playerTwo.hasPassed,'an unused leader alone does not authorize a first-round pass');
 globalThis.report={checks,openings,addaOpenings,addaNonInterveningCombo:{early:comboEarly,late:comboLate},logged:P.logged,now:{kind,template,line},alternatives,latePass:{ownHand:late.CountLocation(2,8),leaderPreserved:Boolean(late.LeaderAvailable(2))},rebuiltPublicPosition:true,actualWitcherScript:true,nativeGameTested:false};
 `,context,{filename:'native-adda-armor092.bundle.js',timeout:180000});
 if(process.argv[3])fs.writeFileSync(process.argv[3],JSON.stringify(context.report,null,2)+'\n');

@@ -9,7 +9,7 @@ python tools/check_work140.py
 ./tools/Build-0.6.4.ps1 -Language ru
 ```
 
-Для окружения без Python в PATH передайте `-Python` с полным путём к интерпретатору. В текущем рабочем окружении используется `C:/Users/NikR/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe`.
+Для окружения без Python в PATH передайте `-Python` с полным путём к интерпретатору. В текущем рабочем окружении используется `C:/Users/<user>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe`.
 
 Сборку можно выполнять по шагам: `-Step scripts`, `menus`, `package`, `verify`. Уже выпущенный ZIP не перезаписывается. Повторная проверка готового пакета:
 

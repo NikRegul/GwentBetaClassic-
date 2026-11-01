@@ -37,9 +37,21 @@ for(const file of ['BetaGwent/ui/src/BetaGwentBoard.as','tools/features091/BetaG
  editorBetaButton:(parent,title,x,y,w,h,enabled,callback)=>buttons.push({title,callback}),betaLabel:()=>({}),
  isOptionalMultiChoice:()=>false,Math,int:Math.trunc});
  for(const name of ['isCardOffer','isChoiceTable','isMulliganHand','choiceTableHidden','toggleChoiceTable','cardOfferLabel','choiceCaptionKey','sourceAbilityText','choiceHeading','choiceHint','drawBetaAbilityChoices'])vm.runInContext(extract(source,name),ctx);
+ ctx.battleChoiceChrome095=ctx.stripHeading;ctx.choicePage=0;
+ ctx.controller={active:false};ctx.choiceScrollRequest=0;ctx.choiceScroll097=0;ctx.choiceFocused097=-1;ctx.choiceGrid097=null;
+ for(const m of source.matchAll(/\b(CHOICE_[A-Z0-9_]+):(?:Number|int)=(-?[\d.]+)/g))ctx[m[1]]=+m[2];
+ vm.runInContext(extract(source,'betaChoiceGrid097'),ctx);
+ ctx.pickerSurface098=()=>new Sprite();ctx.pickerShades098=()=>{};ctx.betaChoiceScroll097=()=>{};ctx.cancelPickerDrag098=()=>{};
+
+ // 0.9.7 choice screens hang their title on the chained plank (betaPlankChrome097) and paint
+ // no subtitle; the helpers the shipped draw path calls were unknown to this 093 harness.
+ ctx.betaPlankChrome097=(parent,title)=>headings.push({heading:title});
+ ctx.betaWideButtonIn097=(parent,title,x,y,w,enabled,callback,pad)=>buttons.push({title,callback});
+ ctx.emptyChoiceSlot097=()=>{};ctx.paintCardBack=()=>{};
+ ctx.overviewLayout=(n,w,h,cols,cardW,gap)=>({cols:5,w:cardW,h:h/2,captionH:20,stepY:h/2+40});
  check(ctx.isCardOffer()&&!ctx.isMulliganHand(),'Cantarella offer is not mulligan');
  ctx.drawBetaAbilityChoices();check(headings[0].heading==='Keep one card','specific keep choice heading');
- check(headings[0].hint.includes('bottom of your deck'),'return destination explained');
+ check(ctx.cardOfferLabel(true).includes('bottom of your deck'),'return destination caption produced by the shipped offer method');
  check(sent.join(',')==='21,22','only two offered instance IDs rendered, no arbitrary hand card');
  ctx.toggleChoiceTable();check(ctx.abilityHidden&&ctx.choiceTableHidden(),'table inspection hides offer');
  ctx.toggleChoiceTable();check(!ctx.abilityHidden,'offer can be reopened');
@@ -52,9 +64,9 @@ for(const file of ['BetaGwent/ui/src/BetaGwentBoard.as','tools/features091/BetaG
  check(!source.includes('npcDeckLabel'),'all opponent labels use identity');
  check(source.includes('side==2?opponentName()')&&source.includes('side==1?"Ведьмак":opponentName()'),'battle HUD and intro use same NPC name');
  check(!source.includes('pickerSide==1?"ВАША КОЛОДА"'),'misplaced picker title removed');
- check(source.includes('deckListTop178=picked&&factionLeaders.length>1?428:378'),'unused leader controls gap collapses');
+ check(!extract(source,'drawBetaDeckEditor').includes('leaderLocked')&&!extract(source,'drawDeckEditor').includes('leaderLocked')&&source.includes('deckListTop178=338;'),'leader stays inspectable; six-column beta menu list follows it without the removed caption');
  check(source.includes('908-deckListTop178')&&source.includes('y:deckListTop178+y'),'scroll height and controller coordinates follow collapsed list');
- check(source.includes('if(!playing&&isChoiceTable()) drawChoices();')&&source.includes('isChoiceTable()?"choice"'),'render and controller both enter offer mode');
+ check(source.includes('if((!playing||skin==3&&isMulliganHand())&&isChoiceTable()) drawChoices();')&&source.includes('isChoiceTable()?"choice"'),'render and controller both enter offer mode, beta keeping the exchange window open');
  records.push({file,offeredIds:sent.slice(),hiddenCardsProtected:true});
 }
 const report={checks,records,languages:13,nativeGameplayVerified:false,scope:'Actual AS methods; native compilation/menu packaging and retail input acceptance remain separate'};

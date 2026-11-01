@@ -44,7 +44,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File D:\w3mod\tools\Build-Stage11
 
 После правки интерфейса сначала выполните `-Step menus`. Если менялись и интерфейс, и скрипты, запускайте полную сборку. Частичная упаковка использует последнее успешное `-Step scripts`; несовпадение его исходников с текущими блокирует упаковку.
 
-Для явного выбора компиляции одного языка есть `-Compiled D:\w3mod\BetaGwent\build\board-compile113ru-final` — путь к папке с `result.json`, а не к одному blob. Для повторного извлечения видео Лавка: `-KegVideo "C:\Users\NikR\Videos\Captures\Gwent 2026-10-08 00-12-24.mp4"`.
+Для явного выбора компиляции одного языка есть `-Compiled D:\w3mod\BetaGwent\build\board-compile113ru-final` — путь к папке с `result.json`, а не к одному blob. Для повторного извлечения видео Лавка: `-KegVideo "C:\Users\<user>\Videos\Captures\Gwent 2026-10-08 00-12-24.mp4"`.
 
 ## Зависимости
 

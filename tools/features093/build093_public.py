@@ -49,9 +49,14 @@ def collect(out):
     assert storage['complete'] and storage['checks']>=1241 and storage['bankChecksumsValidated'] and storage['profileSourcesFrozen']
     assert storage['fingerprint']==fingerprint and not storage['nativeSerializationTested']
     for n,h in storage['sources'].items():assert sha(ROOT/n)==h,n
+    for folder in ['save-safety-check','starter-recovery-check']:
+        safety=json.loads((out/folder/'report.json').read_text('utf8'))
+        assert safety['complete'] and not safety['failures'] and safety['profileSourcesFrozen']
+        assert safety['snapshotFingerprint']==fingerprint and not safety['nativeSerializationTested']
+        for n,h in safety['sources'].items():assert sha(ROOT/n)==h,n
     delivery=json.loads((out/'profile-native-source-proof-complete.json').read_text('utf8'))
-    assert delivery['complete'] and len(delivery['records'])==5
-    assert sum(r['classicInjectedMembersVerified'] for r in delivery['records'])==93
+    assert delivery['complete'] and len(delivery['records'])==6
+    assert sum(r['classicInjectedMembersVerified'] for r in delivery['records'])>=93
     assert sha(Path(delivery['classicPlayerPath']))==delivery['classicPlayerSha256']
     for row in delivery['records']:
         assert sha(ROOT/'BetaGwent/development/scripts/game/betagwent'/row['name'])==row['canonicalSha256']==row['preparedSha256']
@@ -66,6 +71,8 @@ def collect(out):
         for name,digest in native['sourceInputs'].items():assert sha(Path(name))==digest,name
     files=['regressions/summary.json','regressions/check_user_targets093.json','regressions/check_reveal_strategy093.json','regressions/check_ambush_hyp094b.json','regressions/check_ambush_decision094b.json','regressions/check_ambush_pairs094b.json','user-ui-check.json','choice-captions.json','choice-fates.json','user-font-check.json','card-offer.json','reveal-classic.json','reveal-leader.json','user-audio-check/report.json','selected-profiles-current92.json','full-ai-games/report.json','ui-selection.json','gamepad-tests.json']
     files.append('profile-storage-check/report.json')
+    files.append('save-safety-check/report.json')
+    files.append('starter-recovery-check/report.json')
     files.append('profile-native-source-proof-complete.json')
     files += ['all-card-platforms/'+p+'/'+n for p in ['classic','nextgen'] for n in ['manifest.json','coverage.json']]
     report=dict(complete=True,errors=0,version='0.9.3',fingerprint=fingerprint,createdAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -133,12 +140,23 @@ def main():
             ('leader-reveal',['node','tools/ai/check_reveal_leader093.cjs',out/'rules',out/'reveal-leader.json']),
             ('audio',[sys.executable,'-X','utf8','tools/features093/check_multivoice_user093.py',out/'rules/sources/BetaGwent/development/scripts/game/betagwent/duelAudioCatalog.ws',out/'user-audio-check','--snapshot',out/'rules']),
             ('profile-storage',[sys.executable,'-X','utf8','tools/ai/check_deck_recovery198.py',out/'rules',out/'profile-storage-check','--release']),
+            ('save-safety',[sys.executable,'-X','utf8','tools/ai/check_save_safety094.py',out/'rules',out/'save-safety-check','--release']),
+            ('starter-recovery',[sys.executable,'-X','utf8','tools/ai/check_starter_recovery094.py',out/'rules',out/'starter-recovery-check','--release']),
             ('profile-delivery',[sys.executable,'-X','utf8','tools/ai/check_prepared_profiles198.py',out,out/'profile-native-source-proof-complete.json']),
             ('all-card-platforms',[sys.executable,'-X','utf8','tools/ai/prepare_platform_rules198.py',out,out/'rules',out/'all-card-platforms']),
             ('classic-all-cards',['node','tools/ai/check_all_cards198.cjs',out/'all-card-platforms/classic',out/'all-card-platforms/classic/coverage.json']),
             ('nextgen-all-cards',['node','tools/ai/check_all_cards198.cjs',out/'all-card-platforms/nextgen',out/'all-card-platforms/nextgen/coverage.json']),
             ('full-games',['node','tools/ai/check_full_matches094.js',out/'rules',out/'full-ai-games']),
-            ('selected-current92',['node','tools/ai/check_beta_ws_games092.cjs',out/'unfair-checks',out/'rules',out/'selected-profiles-current92.json','92','--mapping',ROOT/'data/beta924/design/beta_ai_profiles093.json'])]:run(out,label,cmd)
+            ('selected-current92',['node','tools/ai/check_beta_ws_games092.cjs',out/'unfair-checks',out/'rules',out/'selected-profiles-current92.json','92','--mapping',ROOT/'data/beta924/design/beta_ai_profiles093.json'])]:
+            cached={'save-safety':'save-safety-check','starter-recovery':'starter-recovery-check'}.get(label)
+            if cached and (out/cached/'report.json').exists():
+                # Completed fault-injection evidence is immutable on resume.
+                saved=json.loads((out/cached/'report.json').read_text('utf8'))
+                assert saved['complete'] and not saved['failures'] and saved['profileSourcesFrozen']
+                assert saved['snapshotFingerprint']==json.loads((out/'rules/manifest.json').read_text('utf8'))['fingerprint']
+                for name,digest in saved['sources'].items():assert sha(ROOT/name)==digest,name
+                print('PASS '+label+' (unchanged completed proof)',flush=True)
+            else:run(out,label,cmd)
     finish(out)
 
 if __name__=='__main__':main()

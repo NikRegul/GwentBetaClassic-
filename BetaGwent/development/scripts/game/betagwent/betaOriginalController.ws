@@ -1,6 +1,6 @@
 ﻿// Source chosen-branch replay. Handlers, policy RNG and new search branches
 // are forbidden here. Live round/mulligan boundaries stop speculative replay.
-struct SBetaOriginalLiveStep { var finished, failed : bool; var mutations, callbacks : int; var phase : string; }
+struct SBetaOriginalLiveStep { var finished, failed, waiting : bool; var mutations, callbacks : int; var phase : string; }
 class CBetaOriginalReplay extends IScriptable {
     public var game : CBetaGwentDuelSession;public var tree : CBetaOriginalGameTree;
     public var choices : CBetaOriginalChoiceHandlers;public var node : CBetaOriginalNode;
@@ -23,6 +23,8 @@ class CBetaOriginalReplay extends IScriptable {
         if(!node.started){node.started=true;tree.PerformInitial(node);}
         else if(node.awaitingInitialPlacement)tree.PlaceInitialLeader(node);
         else if(game.IsPending() && !game.mulligan) {
+            // The other seat's reaction (Standard Bearer) is answered by that seat.
+            if(!node.activeChoice && game.RequestDecisionSide()!=node.executingPlayerId){result.waiting=true;result.callbacks=callbacks;return result;}
             if(!node.activeChoice && node.choiceCursor>=node.choiceRecords.Size()){Fail("Selected original node lacks a live request record");result.failed=true;return result;}
             choices.Request(node);
         } else{Fail("Original replay continuation outside action");result.failed=true;return result;}
@@ -35,6 +37,26 @@ class CBetaOriginalReplay extends IScriptable {
             if(!failed)finished=true;
         }
         result.finished=finished;result.failed=failed;return result;
+    }
+}
+// Answers one live reactive request owned by a seat while the OTHER seat acts
+// (Standard Bearer 200294). Direct source handler decision; no search or replay.
+class CBetaOriginalReaction extends IScriptable {
+    public var choices : CBetaOriginalChoiceHandlers;public var node : CBetaOriginalNode;
+    public var failed : bool;public var error : string;
+    public function Fail(message : string){failed=true;error=message;}
+    // One engine mutation per call. Returns false when nothing is owed by side.
+    public function Step(runtime : CBetaOriginalRuntime, p : CBetaOriginalPersonality, game : CBetaGwentDuelSession, side : int) : bool {
+        if(failed)return false;
+        if(game.mulligan || game.IsFatal() || !game.IsPending() || game.RequestDecisionSide()!=side){node=NULL;return false;}
+        if(!node || node.game!=game) {
+            choices=new CBetaOriginalChoiceHandlers in this;choices.runtime=runtime;choices.p=p;choices.directDecision=true;choices.BeginSimulation(NULL,game);
+            node=new CBetaOriginalNode in this;node.Initialize();node.game=game;node.executingPlayerId=side;
+        }
+        choices.Request(node);if(choices.failed){Fail(choices.error);return false;}
+        if(game.IsFatal()){Fail("Fatal during original reaction: "+game.GetMessage());return false;}
+        if(!node.activeChoice && (!game.IsPending() || game.RequestDecisionSide()!=side))node=NULL;
+        return true;
     }
 }
 class CBetaOriginalTurnController extends IScriptable {

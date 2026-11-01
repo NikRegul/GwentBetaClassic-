@@ -19,6 +19,11 @@ def menu_music_cache(out,platform):
     record=json.loads(manifest.read_text('utf8'))['platforms']['classic' if platform=='1.32' else 'nextgen']
     cache=Path(record['cache']);assert sha(cache)==record['cacheSha256'],'Editor music cache changed'
     return cache
+def nextgen_compile_pending(out):
+    # A stalled native compile is an environment fault, not a source fault, so --resume
+    # must be able to retry it. A run that reported compiler success is never replayed.
+    record=out/'compile-nextgen-final/result.json'
+    return not record.exists() or json.loads(record.read_text('utf8'))['exitCode']!=0
 def run(args,log):
     log.parent.mkdir(parents=True,exist_ok=True)
     with log.open('w',encoding='utf8') as output:
@@ -34,6 +39,7 @@ def checked_run(out,name,args):
         scripts=[p if p.is_file() else p.with_suffix('.cjs') for p in scripts]
         paths=[ROOT/'tools/ai/validate091.py',ROOT/'tools/ai/comparison_inputs.py',ROOT/'data/beta924/normalized/catalog.json']+scripts
         paths+=[ROOT/'tools/ai/reconstruct_user_positions093.cjs']+list((ROOT/'tools/ai/fixtures/user093').glob('*.json'))
+        paths+=sorted((ROOT/'tools/ai/fixtures/pass-carry094a').glob('*'))
     elif name=='varied':paths=[ROOT/'tools/features091/varied091.py',ROOT/'tools/ai/check_varied_tactics091.js',ROOT/'tools/ai/check_consume_self.js',ROOT/'tools/ai/comparison_inputs.py']
     else:paths=[ROOT/str(args[1])]
     tools={p.relative_to(ROOT).as_posix():sha(p) for p in paths}
@@ -61,7 +67,11 @@ def verify_archive(path):
 
 def package(out,classic_audio=None):
     selected_profiles=None;profile_docs={}
-    if VERSION in ('0.9.3','0.9.3a','0.9.3b','0.9.3c'):
+    if VERSION=='0.9.5':
+        sys.path.insert(0,str(ROOT/'tools/features095'))
+        from ui_release095 import validate_frozen
+        validate_frozen(out)
+    if VERSION in ('0.9.3','0.9.3a','0.9.3b','0.9.3c','0.9.4','0.9.4a','0.9.5'):
         checks=out/'unfair-checks';gate=json.loads((checks/'report.json').read_text('utf8'))
         mapping_path=checks/'profile-mapping.json';parity_path=checks/'profile-ws-parity.json'
         assert sha(mapping_path)==gate['profileMappingSha256'] and sha(parity_path)==gate['profileParitySha256']
@@ -71,6 +81,11 @@ def package(out,classic_audio=None):
                                actualHandVisible=True,actualDeckVisible=True,globallyStrongestProfileEstablished=False)
         profile_docs={f'BetaGwentDocs/AI_Profile_Mapping_{VERSION}.json':mapping_path.read_bytes(),
                       f'BetaGwentDocs/AI_Profile_Parity_{VERSION}.json':parity_path.read_bytes()}
+        if gate.get('profileSourceAmendmentsSha256'):
+            amendment=checks/'profile-source-amendments.json'
+            assert sha(amendment)==gate['profileSourceAmendmentsSha256']
+            selected_profiles['sourceAmendmentsSha256']=sha(amendment)
+            profile_docs[f'BetaGwentDocs/AI_Source_Amendments_{VERSION}.json']=amendment.read_bytes()
     hard_ai=None
     if VERSION=='0.9.3c':
         accepted_path=ROOT/'data/beta924/design/ai093c_validation.json'
@@ -85,8 +100,11 @@ def package(out,classic_audio=None):
     if notes_dir!=ROOT/'docs/releases':
         user_proof=out/'user-release-checks.json';user_gate=json.loads(user_proof.read_text('utf8'))
         assert user_gate['complete'] and user_gate['errors']==0 and user_gate['fingerprint']==json.loads((out/'rules/manifest.json').read_text('utf8'))['fingerprint']
-        profile_docs['BetaGwentDocs/UserFixes_0.9.3.json']=user_proof.read_bytes()
+        profile_docs[f'BetaGwentDocs/UserFixes_{VERSION}.json']=user_proof.read_bytes()
         profile_docs['BetaGwentDocs/PUBLICATION_INDEX.md']=(notes_dir/'README.md').read_bytes()
+    if VERSION=='0.9.5':
+        profile_docs['BetaGwentDocs/UI_Inputs_0.9.5.json']=(out/'ui-release-inputs.json').read_bytes()
+        profile_docs['BetaGwentDocs/UI_WINDOWS_RU.md']=(ROOT/'docs/BETA_UI_WINDOWS_095_RU.md').read_bytes()
     note_names=['0.9.1_AI_RU.md','0.9.1_AI_EN.md','0.9.1_FIXES_RU.md','0.9.1_CHANGELOG_RU.md','0.9.1_CHANGELOG_EN.md','0.9.1_POST_EN_RU.md'] if notes_dir==ROOT/'docs/releases' else []
     if VERSION!='0.9.1':note_names+=[f'{VERSION}_CHANGELOG_RU.md',f'{VERSION}_CHANGELOG_EN.md']
     # Keep the release's Nexus description/post alongside its changelog.
@@ -97,6 +115,8 @@ def package(out,classic_audio=None):
     assert ui_manifest.is_file(),'Build the gamepad menu patch before packaging: build_ui091.py'
     ui=json.loads(ui_manifest.read_text('utf8'))
     classic_audio=classic_audio or out/'classic-audio'
+    if VERSION=='0.9.5':
+        assert classic_audio.resolve()==(ROOT/validate_frozen(out)['audio']['classic']['directory']).resolve(),'Wrong Classic UI sound cache selected'
     audio_manifest=json.loads((classic_audio/'manifest.json').read_text('utf8'))
     assert sha(classic_audio/'soundspc.cache')==audio_manifest['cache']['sha256']
     freeze=json.loads((out/'source-freeze.json').read_text('utf8'))
@@ -127,6 +147,7 @@ def package(out,classic_audio=None):
                 assert prior['aiSourceFingerprint']==json.loads((out/'rules/manifest.json').read_text('utf8'))['fingerprint']
                 assert prior.get('releaseNotes')==release_notes,'Release notes changed: create fresh archives'
                 assert prior.get('uiPatchManifestSha256')==sha(ui_manifest),'UI patch changed: create fresh archives'
+                if VERSION=='0.9.5':assert prior.get('uiReleaseInputsSha256')==sha(out/'ui-release-inputs.json'),'UI/audio inputs changed: create fresh archives'
                 if platform=='1.32':assert prior.get('classicAudioManifestSha256')==sha(classic_audio/'manifest.json'),'Classic audio changed: create fresh archives'
                 assert prior.get('menuMusicCacheSha256')==(sha(menu_cache) if menu_cache else None),'Editor music changed: create fresh archives'
                 if selected_profiles:assert prior.get('originalBetaAI')==selected_profiles,'Selected profiles changed: create fresh archives'
@@ -146,6 +167,9 @@ def package(out,classic_audio=None):
             patch[f'Mods/{mod}/content/soundspc.cache']=(classic_audio/'soundspc.cache').read_bytes()
         else:
             patch[f'Mods/{mod}/content/precompiled.rsblob']=(out/'compile-nextgen-final/compiled/blob.rsblob').read_bytes()
+            # 0.9.6 Beta UI sounds: the patched Next-Gen cache replaces the 0.9.0 one when present.
+            sys.path.insert(0,str(ROOT/'tools'));from build_inputs import NEXTGEN_AUDIO
+            if (NEXTGEN_AUDIO/'soundspc.cache').exists():patch[f'Mods/{mod}/content/soundspc.cache']=(NEXTGEN_AUDIO/'soundspc.cache').read_bytes()
         for name in note_names:patch['BetaGwentDocs/'+name]=(notes_dir/name).read_bytes()
         for lang in ['RU','EN']:
             patch[f'BetaGwentDocs/CHANGELOG_{lang}.md']=(notes_dir/f'{VERSION}_CHANGELOG_{lang}.md').read_bytes()
@@ -182,6 +206,7 @@ def package(out,classic_audio=None):
                             maximumDifficultyKnowsStartingList=True,releaseNotes=release_notes,
                             gamepadHandPreviewFix=True,gamepadPileNavigationFix=True,uiPatchManifestSha256=sha(ui_manifest),
                             classicSoundbankList='vanilla-1.32' if platform=='1.32' else 'unchanged')
+            if VERSION=='0.9.5':manifest['uiReleaseInputsSha256']=sha(out/'ui-release-inputs.json')
             manifest['classicAudioBanks']='per-language-on-demand' if platform=='1.32' else 'unchanged'
             if menu_cache:manifest['menuMusicCacheSha256']=sha(menu_cache)
             if platform=='1.32':manifest['classicAudioManifestSha256']=sha(classic_audio/'manifest.json')
@@ -232,18 +257,17 @@ def main():
         if (out/'scripts/game/betagwent'/(name+'.ws')).exists():
             assert sha(out/'scripts/game/betagwent'/(name+'.ws'))==sha(out/'rules/sources/BetaGwent/development/scripts/game/betagwent'/(name+'.ws')),'Snapshot/compile mismatch: '+name
     if a.native_first:
-        if not (out/'compile-nextgen-final/result.json').exists():
+        if nextgen_compile_pending(out):
             run([sys.executable,'-X','utf8','tools/features082/compile_nextgen_final090.py','--input',out],logs/'compile-nextgen.log')
-        else:assert json.loads((out/'compile-nextgen-final/result.json').read_text('utf8'))['exitCode']==0
         if not (out/'classic-compile.json').exists() and not (RUNTIME/'runs'/out.name/'result.json').exists():
             run([sys.executable,'-X','utf8','tools/classic132/native_compile.py','--probe-root',RUNTIME,'--prepared',out/'classic-prepared-final','--label',out.name,'--compiler-feedback','--without-store-provider','--timeout','180'],logs/'compile-classic.log')
     checked_run(out,'regressions',[sys.executable,'-X','utf8','tools/ai/validate091.py',out/'rules',out/'regressions'])
     checked_run(out,'tactics-all',['node','tools/ai/check_tactics082.js','--snapshot',out/'rules','--output',out/'tactics-all'])
     checked_run(out,'rows-all',['node','tools/ai/check_row_choices082.js','--snapshot',out/'rules','--output',out/'rows-all'])
     checked_run(out,'varied',[sys.executable,'tools/features091/varied091.py',out/'rules',out/'varied'])
-    if VERSION in ('0.9.3','0.9.3a','0.9.3b','0.9.3c') and not (out/'unfair-checks/report.json').exists():
+    if VERSION in ('0.9.3','0.9.3a','0.9.3b','0.9.3c','0.9.4','0.9.4a','0.9.5') and not (out/'unfair-checks/report.json').exists():
         run([sys.executable,'-X','utf8','tools/features093/check_unfair093.py',out],logs/'unfair-mode.log')
-    if not (out/'compile-nextgen-final/result.json').exists():
+    if nextgen_compile_pending(out):
         run([sys.executable,'-X','utf8','tools/features082/compile_nextgen_final090.py','--input',out],logs/'compile-nextgen.log')
     if not (out/'classic-compile.json').exists() and not (RUNTIME/'runs'/out.name/'result.json').exists():
         run([sys.executable,'-X','utf8','tools/classic132/native_compile.py','--probe-root',RUNTIME,'--prepared',out/'classic-prepared-final','--label',out.name,'--compiler-feedback','--without-store-provider','--timeout','180'],logs/'compile-classic.log')
@@ -261,6 +285,32 @@ def main():
         run([sys.executable,'-X','utf8','tools/features091/build_ui091.py','--ui',ui_source,'--out',out/'ui-patch'],logs/'ui-patch.log')
     run(['node','tools/features091/check_gamepad091.js',ui_source,out/'gamepad-tests.json'],logs/'gamepad.log')
     run(['node','tools/features091/check_aim_source091.js',ui_source],logs/'aim-source.log')
+    for key in ['classic','nextgen']:
+        run(['node','tools/ui/check_editor_layout094a.cjs',ui_source/key/'ui/src/BetaGwentBoard.as',
+             out/('editor-layout-'+key+'.json')],logs/('editor-layout-'+key+'.log'))
+        run(['node','tools/ui/check_controller_aim094.cjs',ui_source/key/'ui/src/BetaGwentBoard.as',
+             out/('controller-aim-'+key+'.json')],logs/('controller-aim-'+key+'.log'))
+        run(['node','tools/ui/check_editor_leader_lock094.cjs',ui_source/key/'ui/src/BetaGwentBoard.as',
+             out/'scripts/game/betagwent/developmentBoardMenu.ws',out/('editor-leader-lock-'+key+'.json')],
+            logs/('editor-leader-lock-'+key+'.log'))
+        run(['node','tools/ui/check_editor_fx094.cjs',ui_source/key/'ui/src/BetaGwentBoard.as',ui_source/key/'ui/editor_vfx094.json',
+             out/('editor-fx-'+key+'.json')],logs/('editor-fx-'+key+'.log'))
+        run(['node','tools/ui/check_editor_valid095.cjs',ui_source/key/'ui/src',out/('editor-valid-'+key+'.json')],logs/('editor-valid-'+key+'.log'))
+        run(['node','tools/ui/check_editor_slot096.cjs',ui_source/key/'ui/src/BetaGwentBoard.as',ui_source/key/'ui/editor_vfx094.json',
+             out/('editor-slot-'+key+'.json')],logs/('editor-slot-'+key+'.log'))
+        run(['node','tools/ui/check_pad_legend096.cjs',ui_source/key/'ui/src/BetaGwentBoard.as',out/('pad-legend-'+key+'.json')],logs/('pad-legend-'+key+'.log'))
+        run(['node','tools/ui/check_preview_keywords095.cjs',ui_source/key/'ui/src/BetaGwentBoard.as',out/('preview-keywords-'+key+'.json')],logs/('preview-keywords-'+key+'.log'))
+        run(['node','tools/ui/check_battle_cleanup095.cjs',ui_source/key/'ui/src/BetaGwentBoard.as',out/('battle-cleanup-'+key+'.json')],logs/('battle-cleanup-'+key+'.log'))
+        run(['node','tools/ui/check_windows095.cjs',ui_source/key/'ui/src/BetaGwentBoard.as',out/('windows-'+key+'.json')],logs/('windows-'+key+'.log'))
+        run(['node','tools/ui/check_target_cancel098.cjs',ui_source/key/'ui/src/BetaGwentBoard.as',out/('target-cancel-'+key+'.json')],logs/('target-cancel-'+key+'.log'))
+        run(['node','tools/ui/check_feedback099.cjs',ui_source/key/'ui/src/BetaGwentBoard.as',out/('feedback099-'+key+'.json')],logs/('feedback099-'+key+'.log'))
+        run(['node','tools/ui/check_presentation100.cjs',ui_source/key/'ui/src/BetaGwentBoard.as',out/('presentation100-'+key+'.json')],logs/('presentation100-'+key+'.log'))
+        run(['node','tools/ui/check_side_keywords102.cjs',ui_source/key/'ui/src/BetaGwentBoard.as',out/('side-keywords-'+key+'.json')],logs/('side-keywords-'+key+'.log'))
+        run(['node','tools/ui/check_pass_coin096.cjs',ui_source/key/'ui/src',out/('pass-coin-'+key+'.json')],logs/('pass-coin-'+key+'.log'))
+    if VERSION=='0.9.5':
+        run(['node','tools/ui/check_window_audio095.cjs',out/'scripts/game/betagwent/duelAudio.ws',out/'window-audio-check.json'],logs/'window-audio.log')
+        run(['node','tools/ui/check_outcome_faction098.cjs',out/'outcome-faction-check.json'],logs/'outcome-faction.log')
+        run([sys.executable,'-X','utf8','tools/ui/check_picker_native098.py','--ui',ui_source,'--patch',out/'ui-patch','--out',out/'picker-native-proof099.json'],logs/'picker-native-proof099.log')
     classic_audio=a.classic_audio.resolve() if a.classic_audio else out/'classic-audio'
     if not (classic_audio/'manifest.json').exists():
         run([sys.executable,'-X','utf8','tools/features091/split_classic_audio091.py','--out',classic_audio],logs/'classic-audio-split.log')

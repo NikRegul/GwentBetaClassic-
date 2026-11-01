@@ -11,6 +11,7 @@ if(finalize){
  if(!benchmark.complete||benchmark.records.length!==8||benchmark.records.some(r=>r.result.status!=='complete'))throw Error('Complete benchmark required');
  if(base.grids!==grids||base.workers!==workers)throw Error('Prepared settings changed');
  for(const [name,digest]of Object.entries(base.codeFiles))if(sha(path.join(out,'frozen',name))!==digest)throw Error('Prepared code changed '+name);
+ if(base.diagnosticsProofSha256&&sha(path.join(out,'diagnostics-proof.json'))!==base.diagnosticsProofSha256)throw Error('Diagnostic observer proof changed');
  if(sha(path.join(out,'entrants.json'))!==base.rosterSha256||sha(path.join(base.current,'manifest.json'))!==base.commonManifestSha256)throw Error('Prepared data changed');
  const entrants=read(path.join(out,'entrants.json')),rosters=[];
  function random(seed){let counter=0;return n=>{const ceiling=Math.floor(4294967296/n)*n;for(;;){const x=crypto.createHash('sha256').update(seed+':'+counter++).digest().readUInt32LE(0);if(x<ceiling)return x%n;}};}
@@ -30,7 +31,11 @@ if(finalize){
 }
 if(fs.existsSync(path.join(out,'preflight-config.json')))throw Error('Already prepared');
 const release=read(path.join(build,'release.json')),verification=read(path.join(build,'archive-verification.json'));
-if(release.version!=='0.9.3'||verification.version!=='0.9.3'||!verification.classicCompilerPassed||!verification.nextgenCompilerPassed)throw Error('Verified final093 build required');
+if(!['0.9.3','0.9.4','0.9.4a'].includes(release.version)||verification.version!==release.version||!verification.classicCompilerPassed||!verification.nextgenCompilerPassed)throw Error('Verified shipping build required');
+if(release.version!=='0.9.3'){
+ const ready=read(path.join(build,'release-readiness.json'));
+ if(ready.version!==release.version||ready.status!=='ready'||!ready.classicCompilerPassed||!ready.nextgenCompilerPassed||ready.sourceFingerprint!==read(path.join(build,'rules/manifest.json')).fingerprint)throw Error('Completed release readiness required');
+}
 for(const archive of release.archives)if(sha(archive.path)!==archive.sha256)throw Error('Release archive changed');
 const rules=path.join(build,'rules'),manifest=read(path.join(rules,'manifest.json')),mappingPath=path.join(build,'unfair-checks/profile-mapping.json'),mapping=read(mappingPath);
 if(!mapping.validated||sha(mappingPath)!==release.originalBetaAI.mappingSha256)throw Error('Shipping mapping changed');
@@ -51,9 +56,13 @@ fs.mkdirSync(out,{recursive:true});const codeFiles={};
 function copy(p){const rel=path.relative(root,p).replaceAll('\\','/'),dest=path.join(out,'frozen',rel);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(p,dest);codeFiles[rel]=sha(dest);}
 function walk(p){for(const e of fs.readdirSync(p,{withFileTypes:true})){const x=path.join(p,e.name);if(e.isDirectory())walk(x);else copy(x);}}
 walk(path.join(root,'tools/ai/beta_js092'));
-for(const n of ['comparison_bridge119.js','versioned_match092.js','variant_decks092.js','profile_trial_io093.cjs','run_classic093_knockout.cjs','prepare_classic093_knockout.cjs','launch_classic093_knockout.py','Start-Classic093Tournament.ps1'])copy(path.join(root,'tools/ai',n));
+for(const n of ['comparison_bridge119.js','versioned_match092.js','variant_decks092.js','profile_trial_io093.cjs','classic_diagnostics094.cjs','check_classic_diagnostics094.cjs','run_classic093_knockout.cjs','prepare_classic093_knockout.cjs','launch_classic093_knockout.py','Start-Classic093Tournament.ps1'])copy(path.join(root,'tools/ai',n));
 fs.copyFileSync(mappingPath,path.join(out,'profile-mapping.json'));
+copy(path.join(root,'tools/ai/fixtures/classic-partial-search094-01.json.gz'));
+require('child_process').execFileSync('node',[path.join(root,'tools/ai/check_classic_diagnostics094.cjs'),rules,path.join(out,'diagnostics-proof.json')],{windowsHide:true,encoding:'utf8'});
+const observerProof=read(path.join(out,'diagnostics-proof.json'));
+if(!observerProof.complete||observerProof.checks<18||observerProof.observerSha256!==codeFiles['tools/ai/classic_diagnostics094.cjs']||observerProof.controllerSha256!==codeFiles['tools/ai/beta_js092/controller.cjs']||observerProof.fixtureSha256!==codeFiles['tools/ai/fixtures/classic-partial-search094-01.json.gz']||observerProof.manifestSha256!==sha(path.join(rules,'manifest.json')))throw Error('Observer equivalence proof required');
 fs.writeFileSync(path.join(out,'entrants.json'),JSON.stringify(entrants,null,2)+'\n',{flag:'wx'});
-const masterSeed=crypto.randomInt(1,4294967295-64*8*128*8),base={schema:1,build,current:rules,commonFingerprint:manifest.fingerprint,commonManifestSha256:sha(path.join(rules,'manifest.json')),codeFiles,rosterSha256:sha(path.join(out,'entrants.json')),mappingSha256:sha(mappingPath),grids,workers,masterSeed};
+const masterSeed=crypto.randomInt(1,4294967295-64*8*128*8),base={schema:1,build,current:rules,commonFingerprint:manifest.fingerprint,commonManifestSha256:sha(path.join(rules,'manifest.json')),codeFiles,rosterSha256:sha(path.join(out,'entrants.json')),mappingSha256:sha(mappingPath),grids,workers,masterSeed,diagnostics:'classic-force-callback-v1; error positions before live replay or at exception; no policy/RNG/clock changes',diagnosticsProofSha256:sha(path.join(out,'diagnostics-proof.json'))};
 fs.writeFileSync(path.join(out,'preflight-config.json'),JSON.stringify(base,null,2)+'\n',{flag:'wx'});
 console.log(JSON.stringify({prepared:true,entrants:entrants.length,uniqueCompositions:groups.size,grids,workers,masterSeed}));

@@ -1,8 +1,8 @@
 ﻿// Cleanup is explicit. This saved latch survives a reload before uninstall.
 @addField(W3PlayerWitcher)
-private saved var betaGwentCleanupPending090 : bool;
+private var betaGwentCleanupPending090 : bool;
 @addMethod(W3PlayerWitcher)
-public function BetaGwentCleanupPending() : bool { return betaGwentCleanupPending090; }
+public function BetaGwentCleanupPending() : bool { BetaGwentStoreLoad(); return betaGwentCleanupPending090; }
 function BetaGwentCleanupBlocked() : bool
 {
     var player : W3PlayerWitcher;
@@ -35,6 +35,8 @@ function BetaGwentCleanOwnedKey(key : string) : bool
     if(key=="bg_bk_schema")return true;
     if(key=="bg_bk_scraps")return true;
     if(key=="bg_hide_help")return true;
+    if(key=="bg_show_chains")return true;
+    if(key=="bg_show_help")return true;
     if(key=="bg_language_preferences_initialized")return true;
     if(key=="bg_static_leaders")return true;
     if(key=="bg_text_language")return true;
@@ -50,6 +52,9 @@ function BetaGwentCleanKey(key : string)
     // All entry points share this namespace boundary, including imported lists.
     if(!BetaGwentCleanOwnedKey(key))return;
     if(FactsDoesExist(key))FactsRemove(key);
+    // 0.9.4 banks split wide values into extra 15-bit parts.
+    if(FactsDoesExist(key+"_m"))FactsRemove(key+"_m");
+    if(FactsDoesExist(key+"_x"))FactsRemove(key+"_x");
 }
 exec function bg_clean_preview()
 {
@@ -72,6 +77,7 @@ exec function bg_clean_keys(keys : string)
 public function BetaGwentCleanProfile090()
 {
     var bank,i,slot,count,quantity,failed : int;var p,d,itemName : string;var actor : CActor;var inventory : CInventoryComponent;var items : array<SItemUniqueId>;
+    if (!BetaGwentStoreReady()) return;
     betaGwentCleanupPending090=true;
     RemoveTimer('BetaGwentQuestSyncTick');betaGwentQuestSyncPasses=0;
     betaGwentCollectionTrackingReady=false;betaGwentTrackedCollectionSize=0;
@@ -101,6 +107,8 @@ public function BetaGwentCleanProfile090()
     BetaGwentCleanKey("bg_bk_schema");
     BetaGwentCleanKey("bg_bk_scraps");
     BetaGwentCleanKey("bg_hide_help");
+    BetaGwentCleanKey("bg_show_chains");
+    BetaGwentCleanKey("bg_show_help");
     BetaGwentCleanKey("bg_language_preferences_initialized");
     BetaGwentCleanKey("bg_static_leaders");
     BetaGwentCleanKey("bg_text_language");
@@ -113,6 +121,10 @@ public function BetaGwentCleanProfile090()
     betaGwentCollectionSchema=0;
     betaGwentOwnedIds.Clear();
     betaGwentOwnedCopies.Clear();
+    betaGwentCollectionRecoverySchema=0;
+    betaGwentCollectionRecoveryOriginalSchema=0;
+    betaGwentCollectionRecoveryIds.Clear();
+    betaGwentCollectionRecoveryCopies.Clear();
     betaGwentProgressionSeed=0;
     betaGwentRewardedNpcs.Clear();
     betaGwentRewardActors.Clear();
@@ -145,6 +157,13 @@ public function BetaGwentCleanProfile090()
     betaGwentStarterDeckFactions.Clear();
     betaGwentStarterDeckLengths.Clear();
     betaGwentStarterDeckCards.Clear();
+    betaGwentStarterDeckRecoverySchema=0;
+    betaGwentStarterDeckRecoveryOriginalSchema=0;
+    betaGwentStarterDeckRecoveryNames.Clear();
+    betaGwentStarterDeckRecoveryLeaders.Clear();
+    betaGwentStarterDeckRecoveryFactions.Clear();
+    betaGwentStarterDeckRecoveryLengths.Clear();
+    betaGwentStarterDeckRecoveryCards.Clear();
     betaGwentKegAutomatic.Clear();
     betaGwentKegOffers.Clear();
     betaGwentKegAutomaticScraps.Clear();
@@ -152,6 +171,9 @@ public function BetaGwentCleanProfile090()
     betaGwentOpponentBag.Clear();
     betaGwentOpponentRecent.Clear();
     betaGwentScraps=0;
+    betaGwentStoreRecoverySchema=0;betaGwentStoreRecoveryData.Clear();betaGwentStoreRecoveryText.Clear();
+    // Keep only the cleanup latch in the store; the profile itself is now empty.
+    BetaGwentStoreCommit();
     inventory=GetInventory();if(inventory){inventory.GetAllItems(items);for(i=0;i<items.Size();i+=1){itemName=NameToString(inventory.GetItemName(items[i]));if(StrLeft(itemName,10)=="betagwent_"){quantity=inventory.GetItemQuantity(items[i]);if(quantity>0 && !inventory.RemoveItem(items[i],quantity))failed+=1;}}}
     if(failed>0)
     {

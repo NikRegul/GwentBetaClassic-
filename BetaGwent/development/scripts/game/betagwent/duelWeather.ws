@@ -23,8 +23,8 @@ class CBetaGwentDuelWeather extends IScriptable
     { var index : int; index = Slot(side, row); if (index < 0) return 0; return hazards[index]; }
     public function ApplyHazard(side : int, row : int, token : int) : bool
     {
-        var index, previous : int; index = Slot(side, row);
-        if (index < 0 || (token != 1 && token != 2 && token != 4 && token != 16 && token != 32 && token != 64 && token != 128 && token != 256 && token != 512 && token != 1024 && token != 2048)) return false;
+        var index, previous : int; game.CommitCancelablePlay098(); index = Slot(side, row);
+        if (index < 0 || token <= 0 || (token & 8191) != token) return false;
         previous = hazards[index]; hazards[index] = token;
         game.RecordRowVisual(side, row, "Эффект наложен на ряд");
         // Add token fires AfterChangedLocationToken: contact hazards hit existing cards too.
@@ -51,14 +51,16 @@ class CBetaGwentDuelWeather extends IScriptable
     }
     public function ClearRow(side : int, row : int)
     {
-        var index, previous : int; index = Slot(side, row); if (index < 0) return;
+        var index, previous : int; game.CommitCancelablePlay098(); index = Slot(side, row); if (index < 0) return;
         previous = hazards[index]; hazards[index] = 0;
         if (previous != 0) game.RecordRowVisual(side, row, "Архигрифон: свой ряд очищен");
         BetaGwentLog("DUEL_ROW_CLEAR side=" + side + " row=" + row + " previous=" + previous);
     }
+    public function RemoveTokens(side : int, row : int, mask : int)
+    { var index : int;game.CommitCancelablePlay098(); index=Slot(side,row);if(index>=0)hazards[index]=hazards[index]&(~mask); }
     public function RemoveBoons(side : int, row : int)
     {
-        var index, token : int; index = Slot(side, row); if (index < 0) return;
+        var index, token : int; game.CommitCancelablePlay098(); index = Slot(side, row); if (index < 0) return;
         token = hazards[index]; if ((token & 384) == 0) return;
         hazards[index] = token - (token & 384); game.RecordRowVisual(side, row, "Благо снято");
         BetaGwentLog("DUEL_BOON_REMOVE side=" + side + " row=" + row + " previous=" + token);

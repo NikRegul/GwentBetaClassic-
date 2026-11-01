@@ -24,7 +24,18 @@ for(const zone of [1,2,4,8,16,32])for(const enemy of [false,true]){
 {
  const g=fixture(1),source=add(g,162206,1,0,1),field=add(g,142305,2,0,2),hand=add(g,142305,8,3,2);hand.cardState.tokenMask|=64;
  g.MonsterRequest(source,[field.cardState.instanceId,hand.cardState.instanceId],2,1,1);
- check(!g.IsPileChoice()&&g.pendingIds.length===2,'mixed board/revealed hand uses direct selection without dropping a target');
+ // The arrow reaches board rows and this side's own hand fan only: the flash view draws
+ // the opponent's hand as backs along the top edge, so a revealed enemy-hand card cannot
+ // be clicked there. The mixed request therefore keeps every legal target and stays in the
+ // candidate panel, which is the branch the user reported as unselectable.
+ check(g.IsPileChoice()&&g.pendingIds.length===2,'mixed board/revealed enemy hand keeps every target in the candidate list');
+ check(g.GetRequestSnapshot().kind===1,'the mixed request is published to the UI as choices');
+}
+{
+ const g=fixture(1),source=add(g,162206,1,0,1),field=add(g,142305,2,0,2),own=add(g,142305,8,3,1);own.cardState.tokenMask|=64;
+ g.MonsterRequest(source,[field.cardState.instanceId,own.cardState.instanceId],2,1,1);
+ check(!g.IsPileChoice()&&g.pendingIds.length===2,'board plus own revealed hand still uses the direct arrow');
+ check(g.GetRequestSnapshot().kind===2,'that request stays a target request');
 }
 globalThis.report={checks,actualWitcherScript:true,nativeGameTested:false};
 `,context,{filename:'visible-targets.bundle.js',timeout:180000});

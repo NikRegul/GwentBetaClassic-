@@ -1,0 +1,410 @@
+{
+ "schema": 1,
+ "scope": "scope198 individual branches",
+ "independentExpectationsBeforeHandlers": true,
+ "allBranchesComplete": false,
+ "csharp": [
+  {
+   "n": "RequestCardTargetsNode",
+   "sha256": "ebdcf16f99948e6aca07ce9650ecfd7c3a2e1d081a709927f3f97c5083a2771b"
+  },
+  {
+   "n": "ARequestTargetsAction",
+   "sha256": "6ce2cf24616307ede3a464dce0d004a89bcb6aafe1371e87789276b416f334d6"
+  },
+  {
+   "n": "ChangeTokensNode",
+   "sha256": "4c1d86bf8701a0d977322d9e8088dddc0f1dac3a0f5db1fe890cb40a1882a3cf"
+  },
+  {
+   "n": "ETokenOp",
+   "sha256": "8189fd90a23282f555c23d082a0e7dab3173f76d313232db43269b7117bc58f4"
+  },
+  {
+   "n": "MoveCardsNode",
+   "sha256": "5a398443c8d8fd494494b09291e9f3488374e70beaf3d561182b66cf997362fd"
+  },
+  {
+   "n": "RequestLocationTargetsNode",
+   "sha256": "2da297b2ddc81ce26ffa5768fc07265196507c6c4e43fe91c15655cf0e9db1ed"
+  },
+  {
+   "n": "SpawnCardNode",
+   "sha256": "0985f5c06d7dd103e23c8dc252d10b4cd863d17fd1ddbe71ac388ec30ff8cf65"
+  },
+  {
+   "n": "DestroyCardsNode",
+   "sha256": "2a00acdf445daeff528e4c884e80d8d01b21e5178e2d52d3009a4b9ed467a135"
+  },
+  {
+   "n": "KillWaitingToDieNode",
+   "sha256": "b813e89c27d9228581440a924c7383a275794bbe996af8bff5f588fd521ab778"
+  },
+  {
+   "n": "CardListBranchNode",
+   "sha256": "88afca56ae78c3eccfe2aa7bfae00d56a394afee35a89f93ed3a1a1c7ab9699e"
+  },
+  {
+   "n": "PlayerGetScoreNode",
+   "sha256": "e3c9d933e1bc7b244800088586868a9f08466e9880339db3bfcaa687a1a27640"
+  },
+  {
+   "n": "IntBranchNode",
+   "sha256": "26177a41dd59d86985e51516009f25ab3043fb47bfc10390cad28a715b3191e7"
+  },
+  {
+   "n": "ChangePowerNode",
+   "sha256": "23f2fc561538de4773ece4d295174b33a1eefabe4eded3ea1b5fab4954e803b7"
+  },
+  {
+   "n": "GetCardsNode",
+   "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+  },
+  {
+   "n": "GetLocationsNode",
+   "sha256": "32f13481418b39abf129c3981405263a1244b83eb6bf5a3c3394a18c2f1e4b08"
+  },
+  {
+   "n": "GetLocationCardsNode",
+   "sha256": null
+  },
+  {
+   "n": "SummonCardsNode",
+   "sha256": "95b0d9722cd4347894732242c25b45b8c63bdd3ea498b98c70153013027903e6"
+  },
+  {
+   "n": "GetMatchingPlacedOnBoardCards",
+   "sha256": "88a2051c7ce9ab8891dae8fb312a422d2bfa1cf696812e3350060e8ada763ada"
+  },
+  {
+   "n": "AGetMatchingHistoryCardsNode",
+   "sha256": "a5afeaa200d15bd645bed719c7a43fa01a4a4bfd49a8645d05f5266b1e0929ad"
+  },
+  {
+   "n": "BattleHistory",
+   "sha256": "745cc7f81e713d1a1e03609ad3e18fa21d3a10527bd6efcaa58e550f987bec5f"
+  },
+  {
+   "n": "FilterCardTokensNode",
+   "sha256": "1ce8215340a6605170aed7159c57d333e76a020ee339e80ce7a7bebf22fb055a"
+  },
+  {
+   "n": "PopCardsFromStackNode",
+   "sha256": "28cbdda375ad37e6c7a4ff70c65794a5a10fd6df9ad4d1a57a844ff762b79cd5"
+  },
+  {
+   "n": "FilterCardFactionNode",
+   "sha256": "82b093bad4c84955cd1cb5f1398ffeae1f8aebbdc63799ed6a6ab2fee6fb599c"
+  },
+  {
+   "n": "LocationIdNegateNode",
+   "sha256": "8d70c77171facc95fbd607835570bf18ff77737df1e175c02c27163e5dadf779"
+  },
+  {
+   "n": "FilterCardPlayerIdNode",
+   "sha256": "fd1836678baac7ced6b21d1e1987631c696ac96f4f03277e76300292452b7ad0"
+  },
+  {
+   "n": "ChangeCategoriesNode",
+   "sha256": "e027de2e8e286df4f13b33e48e8fd09ca69137a070928a48c2f7b51e5d789ccd"
+  },
+  {
+   "n": "ECardPowerOp",
+   "sha256": "8db6885396c33d840a727b5ddc1fca7d1080ccf1c6d4d2c211c459b1a3fdfee8"
+  },
+  {
+   "n": "BeforeTurnTrigger",
+   "sha256": "e0ad92961184dcd31b4ac67cbfb01f67ada2d2db3459c187a54598913d03a96a"
+  },
+  {
+   "n": "AfterPassedTrigger",
+   "sha256": "615cc304a5fbc101e755694b98f40b803dd7e697d08649f54936004f12b9ce7d"
+  },
+  {
+   "n": "TimerTriggered",
+   "sha256": "bb4df3e70ad1fb8ccf7d83abf46700de369ef7e8c9065007cfcc25a197b67611"
+  },
+  {
+   "n": "ChangeCardTimerNode",
+   "sha256": "38c9655dca15729a8d7960314867be45a6126b96c9a7508824682c2c8262e6f9"
+  },
+  {
+   "n": "ETimerOperation",
+   "sha256": "5ee18f79c94315c6e13f93c212f469fa738842943c74c24ee82ac4a132ea6e59"
+  },
+  {
+   "n": "GetCardTimerNode",
+   "sha256": "b606e7a9ad58198cf3fd48fe6834feba23f979c14ef75395ce0bdf5974351370"
+  },
+  {
+   "n": "GetCardIndexNode",
+   "sha256": "5b5b00416d4a11e12b7d3c0e9145bcaf6e5aa89c2bfcb040f2939ac570432048"
+  },
+  {
+   "n": "GetAbilityOwnerCardListNode",
+   "sha256": "4074f153d23bccc039fc157b58d62d674b4ead0952dc42209e8debbd7830abb4"
+  },
+  {
+   "n": "TimerChanged",
+   "sha256": "8d1cd6fc85bc3b45f5a4742981ba6cea8c744357764997fdccb0306119bd69c7"
+  },
+  {
+   "n": "CardTimer",
+   "sha256": "382649c3a7e9a64ed7e076150b726c5a00930607b25da4e7d9e9524b5d93e013"
+  },
+  {
+   "n": "BeforeDestroyedTrigger",
+   "sha256": "e4f89fe808d1188754da6ef488fbf476d78a6c7341eb8b16ab6d40aae3342f68"
+  },
+  {
+   "n": "AfterBanishedTrigger",
+   "sha256": "3a947a779a2b7a2939a202c40a12a4c51bde46f1a43614012a11aacd1640e659"
+  },
+  {
+   "n": "AfterDestroyedTrigger",
+   "sha256": "f3ff97c7ad918841dd847bcbdd2524e75914bc5192efcfd51f572a2693606c56"
+  },
+  {
+   "n": "AfterSpawnedTrigger",
+   "sha256": "d991fd4d38d16be3aa758ec944a54864fa7754eef90f0cedd6281cd4be38601d"
+  },
+  {
+   "n": "AfterMovedTrigger",
+   "sha256": "bcb5c69fd16adb206c3ff943ad62f7a75df7744101b038b9e9d83305d5dbc954"
+  },
+  {
+   "n": "CardListContainsElementNode",
+   "sha256": "b861218de4baf8df117cb216288d23cf95a2e1b50983ec38e1e40c8c4e7802ca"
+  },
+  {
+   "n": "AfterPlayedTrigger",
+   "sha256": "f9dfe743058b22c4d6a2b4107951da801e7ed491baf91796f375ba0d65184ed2"
+  },
+  {
+   "n": "AfterChangedLocationTokenTrigger",
+   "sha256": "ba820a43d256b192763b4fd29c4a87642528140e054eae37aae4796771336622"
+  },
+  {
+   "n": "LocationListBranchNode",
+   "sha256": "7e4d706847af6d506bd2feba8fb12575449bf04bc6ca3fae44fc16f4324f4e76"
+  },
+  {
+   "n": "PlayerIdCompareNode",
+   "sha256": "9bac7ece912216ad712541b6ccac580d21cbada8ce0a0ee3aa9e90d1a2577bf9"
+  },
+  {
+   "n": "GetCurrentPlayerIdNode",
+   "sha256": "b9dc18b27a3cea6b24f9f44a4d894938b61f60e780fac23191ff11978004b8b1"
+  },
+  {
+   "n": "BeforeTurnEndTrigger",
+   "sha256": "caa58d309d89a41cc75b6d730db41d837360e2e3fc37fc04191bb9f3241ee945"
+  },
+  {
+   "n": "EMoveReason",
+   "sha256": "e158af8dc54075f453dd941dac86616c0f4a5fd5275e011e5df639b953430af3"
+  }
+ ],
+ "records": [
+  {
+   "id": 113201,
+   "graphs": [
+    {
+     "nid": 190,
+     "sha256": "b229245d7478750f959da3681acd61dfbf52b571d417d6bb647c91db9b12a686"
+    }
+   ],
+   "expected": "Played: target own Bronze/Silver unit (Ignore 1288) Min=Max=1; MoveCards to own hand index0; PopCardsFromStack; boost CURRENT+3; PlayCards it (placement). No target -> nothing (open: mod refuses to play Decoy without targets)."
+  },
+  {
+   "id": 122102,
+   "graphs": [
+    {
+     "nid": 122,
+     "sha256": "c0dc48c17da422af5cb2c66bfb6718c05608476350c8e3e06f83fd6bc960297a"
+    }
+   ],
+   "expected": "Played: target enemy unit (Ignore264), damage 7 (armor first). AfterSpawned-in-deck branch deferred."
+  },
+  {
+   "id": 132108,
+   "graphs": [
+    {
+     "nid": 286,
+     "sha256": "710226872299e3df70feb898fa9c28eb9f94e411335bc8435218e762b04cf892"
+    }
+   ],
+   "expected": "Played: timer Set 2; BeforeTurn(owner): if timer>0 Remove 1; TimerTriggered: opponent units in her location id, HighestLevel, random -> own side, own location end."
+  },
+  {
+   "id": 132201,
+   "graphs": [
+    {
+     "nid": 464,
+     "sha256": "a04e66d48115e05f9bae5f6dbdf6b495ade27feae633154be0a36e5a86a0cc00"
+    }
+   ],
+   "expected": "Played: timer Set 4 (no change from template, no trigger). AfterDestroyed/AfterBanished Consume by an attacker of the owner's player: timer Remove1; TimerChanged (old,new>=0) and own power!=0: spawn 200174 at random own row."
+  },
+  {
+   "id": 132316,
+   "graphs": [
+    {
+     "nid": 510,
+     "sha256": "ac811dd5a3ea075a3a0557c52a5ae93b353ddf1de4bfa28fe6d6d5ce90179433"
+    }
+   ],
+   "expected": "Killed: spawn 200308 at random available own row. BeforeDestroyed/AfterBanished by Consume: attacker boost CURRENT 4 (reset at BeforeTurnEnd)."
+  },
+  {
+   "id": 142105,
+   "graphs": [
+    {
+     "nid": 927,
+     "sha256": "ed35b099c3e9f24a2465ff5d1528e7c314e6c29dec11caf6a83c726c1d01da63"
+    }
+   ],
+   "expected": "Played: RequestCardTargets up to 3 (Min=Max=min(3,n)) units both sides in Active minus own location (Ignore264); allies -> own location end + strengthen BASE 2; enemies -> opponent same location end + 2 damage."
+  },
+  {
+   "id": 152204,
+   "graphs": [
+    {
+     "nid": 94,
+     "sha256": "9416ca0b48b59b0558234c161725e01aee1ccbf0a9d47287edcb0cc2de9101c9"
+    }
+   ],
+   "expected": "Played: target any-side unit (Ignore256), Min=Max=1; Toggle Lock4; then RequestCardChoice 0..1 enemy graveyard Bronze unit (revealed) -> MoveCards to OWN graveyard."
+  },
+  {
+   "id": 152307,
+   "graphs": [
+    {
+     "nid": 141,
+     "sha256": "5ae7b77b205f136c7db60f8764f43acbacc368d29759cd13fd7ab9c53afb0b6c"
+    }
+   ],
+   "expected": "Played: free=8-count(cards already in its To location; the executing owner is not yet counted, so 8 = capacity 9 minus itself); summon up to free 152307 copies from own graveyard (Bronze unit) to its row."
+  },
+  {
+   "id": 153201,
+   "graphs": [
+    {
+     "nid": 245,
+     "sha256": "c4364c65f102bf7581ac6379af078f6ddb4a7879bb671c6e2c6d364aea9c5a53"
+    }
+   ],
+   "expected": "Played: own graveyard Faction32 Unit|UnitEvent Bronze/Silver, Min1 -> own hand index0, Pop, ChangePower Set BASE 8, Doomed512, category; then RequestCardChoice Min=Max=1 own hand tiers14 -> PlayCards."
+  },
+  {
+   "id": 162212,
+   "graphs": [
+    {
+     "nid": 387,
+     "sha256": "9e6ae2567e01bced59a3c0583bb644644bd1f23647ab84661c6c8ea77eefcbd5"
+    }
+   ],
+   "expected": "BeforeTurn(position player)+Disloyal: boost1; AfterPassed(position player)+Disloyal: move to opponent same location/index; Killed: random LowestLevel unit of that player in its From location destroyed."
+  },
+  {
+   "id": 200021,
+   "graphs": [
+    {
+     "nid": 169,
+     "sha256": "4b1ad24eab3f920190372e3b305f3be71ae01a42e9e3d538b75dc3d35ccec97c"
+    }
+   ],
+   "expected": "Played: target own unit (Ignore264) mandatory; if selected destroy, KillWaitingToDie, spawn 152406 to own PlayStack and PlayCards; no target -> nothing."
+  },
+  {
+   "id": 200022,
+   "graphs": [
+    {
+     "nid": 643,
+     "sha256": "80b3a894b42fae5bf0c780ab9fda2cc4b5c69f2dd0cfb76845fe02a00ec7df5a"
+    }
+   ],
+   "expected": "Played: BattleHistory placed-on-board cards newest-first (all players/rounds), filter Unit, Bronze|Silver, without Ambush token, without category 2048; spawn a copy of the first into own PlayStack and play it."
+  },
+  {
+   "id": 200038,
+   "graphs": [
+    {
+     "nid": 693,
+     "sha256": "18705e2efd6f020ae8d2645ead7c9334c75ec001561b169dcacb019bc0916f53"
+    }
+   ],
+   "expected": "BeforeTurn(owner): MoveCards self to random non-full own row other than current (end), random enemy unit Ignore8 1 dmg; Killed: random enemy unit 4 dmg."
+  },
+  {
+   "id": 200114,
+   "graphs": [
+    {
+     "nid": 286,
+     "sha256": "ccc8f97334e8b830536689fde2a49f704f63298850e073bda56c3d4ab3c38055"
+    }
+   ],
+   "expected": "Played / AfterChangedLocationToken(Add Moonlight256 on own row with its location) / AfterMoved into that location: if its location has Moonlight -> spawn 132403 left and right."
+  },
+  {
+   "id": 200174,
+   "graphs": [
+    {
+     "nid": 132,
+     "sha256": "7c22909ae12b526bcf17fe11ead893a6b0dd8407b5a16edc5e80aabf8dce6ab1"
+    }
+   ],
+   "expected": "AfterSpawned self / AfterMoved self (own inactive -> own active): summon all own-deck 132304 to its row."
+  },
+  {
+   "id": 200226,
+   "graphs": [
+    {
+     "nid": 309,
+     "sha256": "9cd60ed51f0b11e87ac40be13cc7ce0c6739c5739a1d7357c140dd3867ea61e5"
+    }
+   ],
+   "expected": "Played: if own timer==0: random LowestLevel own unit +6, then random HighestLevel enemy -6 (FlowFail of the first still damages). In graveyard: AfterMoved sets timer 3; own BeforeTurnEnd Remove1; TimerTriggered PlayCards itself."
+  },
+  {
+   "id": 201624,
+   "graphs": [
+    {
+     "nid": 268,
+     "sha256": "374d76bc75a138e461c110441972f9f476b314ab9673f368da8bff2cdf4c27ef"
+    }
+   ],
+   "expected": "Played: timer Set 1. AfterPlayed: timer>0 and current player==owner, played card own with category 2^20|2^54 -> timer Remove1. TimerTriggered: spawn 201624 at its location end (-3), Doomed512, category."
+  },
+  {
+   "id": 201635,
+   "graphs": [
+    {
+     "nid": 219,
+     "sha256": "062b5af8bffea047d60b2fdc2295ddf0986d2355b4fe8afc34488d3990fa7cb6"
+    }
+   ],
+   "expected": "Played: IntBranch(own score, enemy score): Bigger/Equal -> spawn+play 113306, Smaller -> spawn+play 132209."
+  },
+  {
+   "id": 201753,
+   "graphs": [
+    {
+     "nid": 194,
+     "sha256": "7eba88f780a2ed184774fec4bab76515aa3ae031caa3267e9eaf4ea6b38d6c79"
+    }
+   ],
+   "expected": "Played: RequestLocationTargets own Active row; spawn 3x201677 at index -3 (capacity)."
+  },
+  {
+   "id": 201778,
+   "graphs": [
+    {
+     "nid": 158,
+     "sha256": "cf3b088a851e11e89d8a371eb2a273713fa152f9c599d97f67801fbd4b3511dd"
+    }
+   ],
+   "expected": "AfterMoved other own cards Hand|Deck -> Graveyard (Played|Moved): Unit without Doomed, current player == owner, own timer>0 -> PlayCards first timer of them, timer Remove count."
+  }
+ ]
+}

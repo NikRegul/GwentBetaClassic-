@@ -12,10 +12,12 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--candidate',type=Path,required=True);p.add_argument('--baseline',type=Path,required=True)
     p.add_argument('--out',type=Path,required=True);p.add_argument('--seed',type=int,required=True);p.add_argument('--cycles',type=int,required=True)
     p.add_argument('--workers',type=int,default=4);p.add_argument('--kind',choices=['development','holdout'],required=True)
+    p.add_argument('--roster',type=Path,default=ROOT/'BetaGwent/build/classic093-knockout-20261024-01/entrants.json')
+    p.add_argument('--candidate-label',default='0.9.3c candidate');p.add_argument('--baseline-label',default='0.9.3b')
     a=p.parse_args();assert 1<=a.workers<=4 and 1<=a.cycles<=16
     out=a.out.resolve();assert out.is_relative_to(ROOT/'BetaGwent/build') and not out.exists()
     candidate=a.candidate.resolve();baseline=a.baseline.resolve();manifest=validate_snapshot(candidate)
-    roster=ROOT/'BetaGwent/build/classic093-knockout-20261024-01/entrants.json'
+    roster=a.roster.resolve()
     entrants=[e for e in json.loads(roster.read_text('utf8')) if e['group']=='hard'];pool=sorted(e['presetId'] for e in entrants)
     assert len(pool)==len(set(pool))==92
     sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
@@ -31,7 +33,7 @@ def main():
         shutil.copytree(candidate,folder/'candidate');shutil.copytree(baseline,folder/'baseline')
         for name in ['compare_all093c.js','comparison_bridge119.js','replay119.js']:shutil.copy2(ROOT/'tools/ai'/name,folder/name)
         atomic(folder/'profiles.json',profiles)
-        atomic(folder/'run.json',dict(pool=pool,cycles=a.cycles,seed=a.seed,candidateLabel='0.9.3c candidate',baselineLabel='0.9.3b',
+        atomic(folder/'run.json',dict(pool=pool,cycles=a.cycles,seed=a.seed,candidateLabel=a.candidate_label,baselineLabel=a.baseline_label,
                                     randomMatchups=True,candidateStrength=4,baselineStrength=4,blockStart=start,blockCount=count,
                                     maximumKnowsStartingList=True,traceEvery=4,fastHost=True,simDamp=40))
         jobs.append(dict(folder=folder,blockStart=start,blockCount=count))

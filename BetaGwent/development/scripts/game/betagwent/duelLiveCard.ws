@@ -10,6 +10,7 @@ class CBetaGwentDuelPower extends CBetaGwentPowerNumbers
     {
         var oldPower, oldArmor : int;
         if (!card) return false;
+        card.game.CommitCancelablePlay098();
         oldPower = GetCurrentPower(); oldArmor = GetCurrentArmor();
         power = Max(0, power); armor = Max(0, armor);
         if (oldPower == power && oldArmor == armor) return true;
@@ -30,14 +31,20 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
     public var deathCue : SBetaGwentDuelCueContext;
     public var playedChild : CBetaGwentDuelCard;
     public var monsterStage, monsterRemaining, monsterStored, monsterOnce : int;
-    public var playFromLocation, lastActiveRow : int;
+    public var playFromLocation, playFromTokens, lastActiveRow : int;
+    // Beta ExecutionStack pop: a played unit's AfterMoved waits for its play to finish.
+    public var pendingArrival : SBetaGwentCardSnapshot; public var hasPendingArrival : bool;
     public var northernCrew : bool;
     public var nilfCounter,neutralChoice : int;
+    public var ambushPlayedId : int;
+    public var nilfTurnArmed : bool;
     public var createdCopy : bool;
         public function NeutralReset(){cardState.tokenMask=cardState.tokenMask&-134;nilfCounter=0;ResetCurrentPower();}
 
     public function SetNilfCounter(value : int) {nilfCounter=value;}
     public var monsterIds : array<int>;
+    // Graph list captured before an optional choice/move; cloned with the card.
+    public var choiceDeck : array<int>;
     public var selectedModeId : int;
     public function ResetModeChoice() { selectedModeId = 0; }
     public function SelectMode(choice : int) : bool
@@ -50,6 +57,8 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
     public function Setup(owner : CBetaGwentDuelSession, id : int, templateId : int, side : int, zone : int, index : int)
     {
         definition = BetaGwentDuelDefinition(templateId); game = owner; monsterOnce = 1;
+        if(templateId==112207)monsterOnce=0; // Original persistent Killed starts false.
+        ambushPlayedId=0;nilfTurnArmed=false;
         cardState.instanceId = id; cardState.originTemplateId = templateId; cardState.runtimeTemplate = definition.header;
         cardState.runtimeTierMask = definition.header.tierMask;
         cardState.tokenMask = definition.tokens; cardState.timerValue = definition.initialTimer;
@@ -101,7 +110,7 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
     public function RevealAmbush()
     {
         var previous : SBetaGwentDuelCueContext;
-        if((cardState.tokenMask&8)==0)return;
+        game.CommitCancelablePlay098(); if((cardState.tokenMask&8)==0)return;
         cardState.tokenMask-=8;
         previous=game.GetVisualSource();
         game.SetVisualSource(cardState.instanceId,definition.header.templateId,cardState.positionPlayerId,cardState.locationMask);
@@ -110,32 +119,57 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
         BetaGwentLog("DUEL_AMBUSH_REVEALED card="+cardState.instanceId+" template="+definition.header.templateId);
     }
     public function SetRevealed(value : bool)
-    {if(value)cardState.tokenMask=cardState.tokenMask|64;else if((cardState.tokenMask&64)!=0)cardState.tokenMask-=64;}
-    public function AddLock() {var old : int;old=cardState.tokenMask;cardState.tokenMask=(cardState.tokenMask|4)&-138;nilfCounter=0;game.RecordLockVisual(this,old);}
-    public function ToggleSpying() {if((cardState.tokenMask&128)!=0)cardState.tokenMask-=128;else cardState.tokenMask+=128;}
-    public function AddTokens(tokens : int) { cardState.tokenMask = cardState.tokenMask | tokens; }
+    {game.CommitCancelablePlay098(); if(value)cardState.tokenMask=cardState.tokenMask|64;else if((cardState.tokenMask&64)!=0)cardState.tokenMask-=64;}
+    public function AddLock() {var old : int;game.CommitCancelablePlay098(); old=cardState.tokenMask;cardState.tokenMask=(cardState.tokenMask|4)&-138;if(TemplateId()!=162308)nilfCounter=0;game.RecordLockVisual(this,old);}
+    public function ToggleSpying() {game.CommitCancelablePlay098(); if((cardState.tokenMask&128)!=0)cardState.tokenMask-=128;else cardState.tokenMask+=128;}
+    public function AddTokens(tokens : int) { game.CommitCancelablePlay098(); cardState.tokenMask = cardState.tokenMask | tokens; }
+    // Location.UpdateIndexes changes positions without invoking OnMoved.
+    public function SetLocationIndex(index : int) { cardState.locationIndex=index; }
     public function Move(side : int, zone : int, index : int)
     {
+        var oldZone, oldSide, oldIndex : int;var active, nextActive, doomedExit : bool;
+        game.CommitCancelablePlay098(); oldZone=cardState.locationMask;oldSide=cardState.positionPlayerId;oldIndex=cardState.locationIndex;
         // Original CardData.HandleDoomedTag: every move to Graveyard removes
         // a Doomed card. Death processing is not the only way to enter a grave.
         if (zone == 32 && (cardState.tokenMask & 512) != 0)
         {
+            doomedExit=true;
             zone = 512; index = 0; cardState.canBePlayed = false; cardState.isWaitingToDie = false;
             BetaGwentLog("DUEL_DOOMED_REMOVED card=" + cardState.instanceId + " grave=false");
         }
-        // Lock belongs to this instance, including after resurrection. Only an
-        // explicit unlock or transformation removes it.
+        // CardData.OnWillMove removes Lock on inactive -> active. OnCardMoved
+        // also removes Lock when leaving Graveyard and RevealedOnHand when
+        // leaving Hand. Row-to-row movement retains these independent states.
+        active=(oldZone&7)!=0;nextActive=(zone&7)!=0;
+        if(!active && nextActive)cardState.tokenMask=cardState.tokenMask&-5;
+        if(oldZone==32 && zone!=32)cardState.tokenMask=cardState.tokenMask&-5;
+        if(oldZone==8 && zone!=8)cardState.tokenMask=cardState.tokenMask&-65;
         if ((cardState.locationMask & 7) != 0 && (zone & 7) != 0 && side != cardState.positionPlayerId)
         { if ((cardState.tokenMask & 128) != 0) cardState.tokenMask -= 128; else cardState.tokenMask += 128; }
+        // Olgierd's AfterMoved(Graveyard -> Ignore) clears its Killed latch.
+        if(cardState.locationMask==32 && (zone&767)!=0 && definition.header.templateId==112207 &&
+            (zone!=cardState.locationMask || side!=cardState.positionPlayerId || index!=cardState.locationIndex))monsterOnce=0;
         cardState.controllerId = side;
         cardState.positionPlayerId = side; cardState.locationMask = zone; cardState.locationIndex = index;
+        if(!doomedExit && (oldZone!=zone || oldSide!=side || oldIndex!=index))
+        {
+            if(!active && nextActive)cardState.tokenMask=cardState.tokenMask|(definition.tokens&9);
+            else if(active && !nextActive || zone==32)
+            {
+                // CardPower.Reset preserves instance base/permanent strength.
+                // Inactive -> inactive Hand/Deck moves do NOT enter this reset.
+                if(zone==32)ResetInGraveyard();
+                else if(zone==8 || zone==16)ResetInHand();
+                else power.SetCurrentPair(power.GetCurrentPower(),definition.header.armor);
+            }
+        }
     }
     // Lock exposes an ambush without executing its reveal ability. Morenn's
-    // card-play reaction has already resolved before the deploy target choice.
+    // arrival reaction occurs after deploy, so locking her can suppress it.
     public function ToggleLock() : bool
     {
         var old : int;
-        old = cardState.tokenMask;
+        game.CommitCancelablePlay098(); old = cardState.tokenMask;
         if ((old & 4) != 0) cardState.tokenMask = old - 4;
         // Original ChangeTokensAction.Toggle emits Add(Lock), which removes
         // Resilience, Ambush and Disloyal. Unlock only removes the lock bit.
@@ -146,7 +180,7 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
     { return power.SetPower(power.GetBasePower() + power.GetPermanentPower()); }
     public function ToggleResilience() : bool
     {
-        if ((cardState.tokenMask & 1) != 0) cardState.tokenMask -= 1; else cardState.tokenMask += 1;
+        game.CommitCancelablePlay098(); if ((cardState.tokenMask & 1) != 0) cardState.tokenMask -= 1; else cardState.tokenMask += 1;
         game.RecordResilienceVisual(this); return true;
     }
     public function MultiplyCurrentPower(multiplier : int) : bool
@@ -159,7 +193,7 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
     public function TransformFigurine(templateId : int) : bool
     {
         var next : SBetaGwentDuelDefinition; var old, oldTokens : int;
-        if ((templateId != 200307 && templateId != 200457 && templateId != 201625 && templateId != 152405) || cardState.isWaitingToDie || ((cardState.locationMask & 7) == 0 && !(templateId == 200457 && cardState.locationMask == 32))) return false;
+        game.CommitCancelablePlay098(); if ((templateId != 200307 && templateId != 200457 && templateId != 201625 && templateId != 152405) || cardState.isWaitingToDie || ((cardState.locationMask & 7) == 0 && !(templateId == 200457 && cardState.locationMask == 32))) return false;
         // Original SetDefinition returns without reset when the definition is unchanged.
         if (definition.header.templateId == templateId) return true;
         next = BetaGwentDuelDefinition(templateId); if (next.header.templateId == 0) return false;
@@ -172,10 +206,19 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
         game.TokensRemoved(this, oldTokens & 8);
         game.RecordTransformVisual(this, old); return true;
     }
+    public function ResetTemplateState() : bool
+    {
+        var oldTokens : int;
+        game.CommitCancelablePlay098(); // ResetCards(255) is distinct from SetDefinition with the same template.
+        oldTokens=cardState.tokenMask;cardState.runtimeTierMask=definition.header.tierMask;
+        cardState.tokenMask=definition.tokens&1792;cardState.timerValue=definition.initialTimer;
+        if(!power.ResetTemplatePower(definition.header.power,definition.header.armor))return false;
+        game.TokensRemoved(this,oldTokens&8);return true;
+    }
     public function ChangeTimer(value : int, operation : int) : bool
     {
         var old, next : int;
-        if (operation < 0 || operation > 2) return false;
+        game.CommitCancelablePlay098(); if (operation < 0 || operation > 2) return false;
         old = cardState.timerValue; next = value;
         if (operation == 0) { if (old <= 0) return true; next = Max(0, old - value); }
         else if (operation == 1) { if (old < 0) return true; next = old + value; }
@@ -191,7 +234,7 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
     { return definition.header.typeMask == 4 && ((cardState.locationMask & 7) != 0 || cardState.isInExecutionStack); }
     public function Kill()
     {
-        if (cardState.isWaitingToDie || destroying) return;
+        game.CommitCancelablePlay098(); if (cardState.isWaitingToDie || destroying) return;
         destroying = true;
         if (definition.header.typeMask == 4 && power.GetCurrentPower() > 0) power.SetPower(0);
         destroying = false;
@@ -204,6 +247,10 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
         if (!destroying) game.RecordPowerVisual(this, oldPower, oldArmor);
         if (oldArmor > 0 && power.GetCurrentArmor() == 0 && power.GetCurrentPower() > 0 && (cardState.locationMask & 7) != 0) game.NorthArmorBroken(this);
         if (power.GetCurrentPower() <= 0 && CanDie()) Kill();
+        // Original CardPower also banishes zero-base inactive cards through an
+        // action; CanDie() alone covers only active cards and the play stack.
+        if(power.GetCurrentPower()==0 && power.GetBasePower()+power.GetPermanentPower()<=0 && (cardState.locationMask&248)!=0)
+            game.QueueZeroStrengthBanish(this);
     }
     public function ChangePower(delta : int, ignoreArmor : bool) : bool
     {
@@ -216,18 +263,15 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
     }
     public function ResetInHand()
     {
-        // Active->Hand resets temporary power/tokens without a Killed event.
+        game.CommitCancelablePlay098(); // Active->Hand resets temporary power/tokens without a Killed event.
         cardState.tokenMask = cardState.tokenMask & 1792;
         if (BetaGwentDuelResetInInactive(cardState.runtimeTemplate.templateId)) cardState.timerValue = definition.initialTimer;
         power.SetCurrentPair(power.GetBasePower() + power.GetPermanentPower(), definition.header.armor);
     }
     public function ResetInDeck()
     {
-        // Shuffling preserves this instance's current strength, including weakening.
-        // Clear the same transient tags/timer/armor as the previous inactive reset.
-        cardState.tokenMask = cardState.tokenMask & 1792;
-        if (BetaGwentDuelResetInInactive(cardState.runtimeTemplate.templateId)) cardState.timerValue = definition.initialTimer;
-        power.SetCurrentPair(power.GetCurrentPower(), definition.header.armor);
+        game.CommitCancelablePlay098(); // Same active-exit reset as Hand. Move owns the source-zone guard.
+        ResetInHand();
     }
     public function ChangeBasePower(delta : int, ignoreArmor : bool) : bool
     {
@@ -238,7 +282,7 @@ class CBetaGwentDuelCard extends CBetaGwentRegistryCardReference
     }
     public function ResetInGraveyard()
     {
-        // Restore numbers after leaving the row; deathwish retains a separate FromPosition snapshot.
+        game.CommitCancelablePlay098(); // Restore numbers after leaving the row; deathwish retains a separate FromPosition snapshot.
         // Inactive grave reset preserves Lock and template-persistent bits1792.
         cardState.tokenMask = cardState.tokenMask & 1796;
         if (BetaGwentDuelResetInInactive(cardState.runtimeTemplate.templateId)) cardState.timerValue = definition.initialTimer;

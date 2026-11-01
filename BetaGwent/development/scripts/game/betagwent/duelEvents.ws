@@ -98,9 +98,47 @@ class CBetaGwentDuelEvents extends IScriptable
         var d : SBetaGwentDuelDefinition; var item : CBetaGwentDuelEvent; var batch : array<CBetaGwentDuelEvent>;
         d = BetaGwentDuelDefinition(s.runtimeTemplate.templateId);
         // AbilityManager.OnCardTimerTriggered checks presence of graph and Lock; no passive sort.
-        if (d.timerPeriod == 0 || d.header.templateId == 132108 || (s.tokenMask & 4) != 0) return;
-        item = new CBetaGwentDuelEvent in this; item.kind = 7; item.source = s;
+        if ((s.tokenMask & 4) != 0) return;
+        if (d.header.templateId!=112107 && d.header.templateId!=162402 && d.header.templateId!=143301 && d.header.templateId!=112206 && d.header.templateId!=200177 && d.header.templateId!=142307 && (d.timerPeriod == 0 || d.header.templateId == 132108)) return;
+        item = new CBetaGwentDuelEvent in this; item.kind = 7;if(d.header.templateId==112107 || d.header.templateId==162402 || d.header.templateId==143301 || d.header.templateId==112206 || d.header.templateId==200177 || d.header.templateId==142307)item.kind=12;item.source = s;
         batch.PushBack(item); PrependBatch(batch);
+    }
+    public function CardTokensAdded(targets : array<int>, token : int)
+    {
+        var cards : array<SBetaGwentDevelopmentCard>;var batch : array<CBetaGwentDuelEvent>;
+        var tickets : array<SBetaGwentTriggerTicket>;var ticket : SBetaGwentTriggerTicket;var item : CBetaGwentDuelEvent;
+        var s,t : SBetaGwentCardSnapshot;var m : SBetaGwentMatchSnapshot;var i,j,id,index : int;var valid : array<int>;
+        if(targets.Size()==0)return;game.GetCards(cards);m=game.NilfMatch();
+        for(i=0;i<cards.Size();i+=1)
+        {
+            s=cards[i].card;id=s.runtimeTemplate.templateId;
+            if(s.isWaitingToDie || s.power.currentPower<=0 || (s.tokenMask&4)!=0 || (s.locationMask&7)!=0 && (s.tokenMask&8)!=0)continue;
+            valid.Clear();
+            if(token==64 && ((id==132407 && s.locationMask==16) || ((id==162301 || id==162306) && s.locationMask==8) || (id==162317 && (s.locationMask&7)!=0)))
+            {
+                for(j=0;j<targets.Size();j+=1){t=game.FindCard(targets[j]).Snapshot();
+                    if(id==132407 && t.positionPlayerId!=s.positionPlayerId || (id==162301 || id==162306) && t.instanceId==s.instanceId || id==162317)valid.PushBack(t.instanceId);}
+            }
+            if(token==128 && (id==162307 || id==162308) && (s.locationMask&7)!=0)
+                for(j=0;j<targets.Size();j+=1){t=game.FindCard(targets[j]).Snapshot();if(t.positionPlayerId!=s.positionPlayerId)valid.PushBack(t.instanceId);}
+            if(valid.Size()==0)continue;
+            ticket.instanceId=s.instanceId;ticket.ownerPresent=true;ticket.priority=0;if(id==132407)ticket.priority=5;
+            ticket.locationMask=s.locationMask;ticket.ownerPlayerId=s.positionPlayerId;ticket.ownerIndex=s.locationIndex;
+            index=BetaGwentTriggerInsertionIndex(tickets,ticket,m.currentPlayerId);
+            if(index<0){game.FailAbility("Неизвестный порядок событий жетонов.");return;}
+            item=new CBetaGwentDuelEvent in this;item.kind=13;item.source=s;item.rowToken=token;item.rowTargets=valid;
+            tickets.Insert(index,ticket);batch.Insert(index,item);
+        }
+        PrependBatch(batch);
+    }
+    public function AbortTokenSiblings(item : CBetaGwentDuelEvent)
+    {
+        var i : int;
+        // Original AbortForAbility shares StartTrigger and TriggerInfo, and is
+        // applied only after a completed instance actually added an action.
+        for(i=pending.Size()-1;i>=0;i-=1)
+            if(pending[i].batchSerial==item.batchSerial && pending[i].kind==13 && pending[i].source.runtimeTemplate.templateId==item.source.runtimeTemplate.templateId)
+                pending.Erase(i);
     }
     public function BeforeConsume(attacker : SBetaGwentCardSnapshot, target : SBetaGwentCardSnapshot)
     {
@@ -125,7 +163,7 @@ class CBetaGwentDuelEvents extends IScriptable
             card = game.FindCard(s.instanceId); if (card) card.StoreConsumeAttacker(0);
         }
     }
-    public function AfterConsume(attacker : SBetaGwentCardSnapshot, target : SBetaGwentCardSnapshot, optional banished : bool)
+    public function AfterConsume(attacker : SBetaGwentCardSnapshot, target : SBetaGwentCardSnapshot, optional banished : bool, optional batchRepeat : bool)
     {
         var cards : array<SBetaGwentDevelopmentCard>; var batch : array<CBetaGwentDuelEvent>;
         var tickets : array<SBetaGwentTriggerTicket>; var ticket : SBetaGwentTriggerTicket;
@@ -138,7 +176,7 @@ class CBetaGwentDuelEvents extends IScriptable
             s = cards[i].card; d = BetaGwentDuelDefinition(s.runtimeTemplate.templateId);
             // APassiveTrigger: location, IsAlive, Lock and IsAmbushing; graph compares current players.
             eggBanish = banished && d.banishedConsumeAttackerBoost > 0 && s.locationMask == 512 && s.instanceId == target.instanceId;
-            if (!eggBanish && (d.consumePassiveBoost == 0 || (d.consumePassiveEvents & eventMask) == 0
+            if (!eggBanish && (batchRepeat || d.consumePassiveBoost == 0 || (d.consumePassiveEvents & eventMask) == 0
                 || (s.locationMask & d.consumePassiveLocations) == 0 || s.positionPlayerId != attacker.positionPlayerId)) continue;
             if (s.isWaitingToDie || s.power.currentPower <= 0 || (s.tokenMask & 12) != 0) continue;
             ticket.instanceId = s.instanceId; ticket.ownerPresent = true; ticket.priority = d.consumePassivePriority;
@@ -196,7 +234,7 @@ class CBetaGwentDuelEvents extends IScriptable
     {
         return game.FlushEffects();
     }
-    public function MonsterTrigger(kind : int, cause : SBetaGwentCardSnapshot)
+    public function MonsterTrigger(kind : int, cause : SBetaGwentCardSnapshot, optional playedArrival : bool)
     {
         var cards : array<SBetaGwentDevelopmentCard>; var s : SBetaGwentCardSnapshot;
         var d : SBetaGwentDuelDefinition; var batch : array<CBetaGwentDuelEvent>; var item : CBetaGwentDuelEvent;
@@ -210,6 +248,7 @@ class CBetaGwentDuelEvents extends IScriptable
             else if (kind == 4) eligible = id == 200301 || id == 132212 || id == 132315 || id == 201600 || id == 200114 || id == 200174;
             else if (kind == 6) eligible = id == 132201;
             if (!eligible || s.isWaitingToDie || s.power.currentPower <= 0 || (s.tokenMask & 12) != 0) continue;
+            if(kind==4 && playedArrival && id==132212 && s.instanceId==cause.instanceId)continue;
             if (id == 132301 || id == 132315)
             {
                 if (s.locationMask != 16) continue;

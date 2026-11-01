@@ -1,6 +1,6 @@
 'use strict';
 // Real common-engine actions: typed WS request wiring vs the direct JS port.
-const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const cp=require('node:child_process');for(const k of ['spawn','spawnSync','exec','execSync','execFile','execFileSync','fork'])cp[k]=()=>{throw Error('Native process forbidden');};
 const {personality}=require('./beta_js092/profiles.cjs');
 const {BetaGameTree}=require('./beta_js092/actions.cjs');
@@ -8,6 +8,9 @@ const {BetaChoiceHandlers}=require('./beta_js092/choices.cjs');
 const {BetaMiniMaxEvaluator}=require('./beta_js092/core.cjs');
 const {stateFromSession}=require('./beta_js092/session.cjs');
 const stage=path.resolve(process.argv[2]),rules=path.resolve(process.argv[3]);
+const manifest=JSON.parse(fs.readFileSync(path.join(rules,'manifest.json'),'utf8'));
+const verifySnapshot=()=>{for(const [name,digest]of Object.entries(manifest.snapshotFiles))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(rules,name))).digest('hex'),digest,'Frozen action-parity input '+name);};
+verifySnapshot();
 const commonSource=['runtime.js','rules.js','harness.js'].map(n=>fs.readFileSync(path.join(rules,n),'utf8')).join('\n');
 const source=commonSource+(commonSource.includes('class CBetaOriginalNode ')?'':'\n'+fs.readFileSync(path.join(stage,'ws-stage.js'),'utf8'));
 const runtime=new Function(source+String.raw`
@@ -24,7 +27,7 @@ const names={2:'p_Monster_Practice',4:'p_Nilfgaard_Practice',8:'p_NorthernRealms
 const root=path.resolve(__dirname,'../..'),decks=JSON.parse(fs.readFileSync(path.join(root,'data/beta924/ai/validation093/final092-rosters.json'),'utf8')).decks;
 const out=path.resolve(process.argv[4]);assert(!fs.existsSync(out),'Fresh output required');
 let checks=0,actions=0,callbacks=0,peakActions=0;
-const report={scope:'Typed WS real actions/request phases vs direct JS; no full live WS controller game yet',records:[],complete:false,nativeCompiled:false};
+const report={fingerprint:manifest.fingerprint,scope:'Typed WS real actions/request phases vs direct JS; full-controller games are checked separately',records:[],complete:false,nativeCompiled:false};
 const save=()=>fs.writeFileSync(out,JSON.stringify({...report,checks,actions,callbacks,peakActions},null,2)+'\n');
 function eq(a,b,n){assert.deepEqual(JSON.parse(JSON.stringify(a)),JSON.parse(JSON.stringify(b)),n);checks++;}
 function score(a,b,n){assert(Math.abs(a-b)<.00005,n+': '+a+' != '+b);checks++;}

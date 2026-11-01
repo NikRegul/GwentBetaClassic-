@@ -1,10 +1,16 @@
-// Closed Beta-card preview with seeded shuffle and mulligan. General scheduler is separate.
+﻿// Closed Beta-card preview with seeded shuffle and mulligan. General scheduler is separate.
 class CBetaGwentDuelSession extends IScriptable
 {
     // BG_CLONE_FIELDS
     public var bgCloneEpoch : int; public var bgCloneRef : IScriptable;
     public var events : CBetaGwentDuelEvents;
     public var drainingDeaths : bool;
+    // Beta ActionManager.Update kills waiting-to-die cards only when no ability
+    // instance remains: inside a play (playStack) deaths wait for its completion.
+    public var completingOuterPlay : bool;
+    // KillWaitingToDieNode (Vilgefortz 162105, Bloodcurdling Roar 200021) kills mid-ability.
+    public function KillWaitingToDieNow() { if (!FlushEffects()) return; completingOuterPlay = true; DrainDeaths(); completingOuterPlay = false; }
+    public function UnitDied(s : SBetaGwentCardSnapshot) : bool { return (s.locationMask & 7) == 0 || s.isWaitingToDie; }
     public var effects : CBetaGwentDuelEffectRuntime;
     public var playStack : array<CBetaGwentDuelCard>;
     public var match : CBetaGwentMatchState;
@@ -12,8 +18,112 @@ class CBetaGwentDuelSession extends IScriptable
     public var live : array<CBetaGwentDuelCard>;
     public var dying : array<CBetaGwentDuelCard>;
     public var pendingConsumeVisuals : array<int>;
+    // One CardBanishAttackAction (Mourntart grave consume) fires ONE AfterBanished
+    // trigger for its whole target list: consume passives react once per batch.
+    public var consumeBatchIds : array<int>; public var consumeBatchFired : bool;
     public var message : string;
     public var waiting, fatal : bool;
+    // A tentative manual play may be returned until its first gameplay action.
+    // Beta: RequestCardTargetsAction.CanCancel / AbilityInstance.HasAddedActions.
+    public var deferredPlay099, probingPlay099, probeAction099 : bool;
+    public var cancelPlayState098 : CBetaGwentDuelSession;
+    public function TentativeSource099() : int
+    { if(deferredPlay099)return cancelPlaySource098;return 0; }
+    private function ShouldDeferPlay099(card : CBetaGwentDuelCard, side : int, row : int, index : int, kind : int) : bool
+    {
+        var g : CBetaGwentDuelSession; var cloner : CBetaGwentCloner;var st : SBetaGwentCardSnapshot;
+        if(probingPlay099 || deferredPlay099 || aiSimulating || !IsManualDecisionSide(side) || !card)return false;
+        st=card.Snapshot();aiCloneEpoch+=1;cloner=new CBetaGwentCloner in this;g=cloner.CloneSession(this,aiCloneEpoch);
+        g.probingPlay099=true;g.probeAction099=false;g.cancelPlayWatch098=false;g.recordVisuals=false;
+        if(kind==1)g.PlayAtIndex099(side,st.instanceId,row,index);
+        else if(kind==2)g.PlaceLeader099(g.FindCard(st.instanceId),side,row,index);
+        else if(g.playStack.Size()>0)g.PlayFromPile099(g.playStack[g.playStack.Size()-1],g.FindCard(st.instanceId),row,index);
+        return !g.fatal && !g.probeAction099 && g.IsPending() && g.PendingSourceId()==st.instanceId;
+    }
+    private function ConfirmForDecision099(kind : int, a : int, b : int, c : int) : bool
+    {
+        var g : CBetaGwentDuelSession;var cloner : CBetaGwentCloner;
+        if(!deferredPlay099 || probingPlay099)return true;
+        aiCloneEpoch+=1;cloner=new CBetaGwentCloner in this;g=cloner.CloneSession(this,aiCloneEpoch);
+        g.probingPlay099=true;g.probeAction099=false;g.recordVisuals=false;
+        if(kind==1)g.SelectTarget099(a,b);
+        else if(kind==2)g.SelectRow099(a,b,c);
+        else if(kind==3)g.SelectTemplateChoice099(a,b);
+        else if(kind==4)g.FinishTarget099(a);
+        else if(kind==5)g.SelectPlacementBefore099(a,b);
+        else if(kind==6)g.SelectFirstLight099(a,b);
+        if(!g.probeAction099)return true;
+        return ConfirmDeferredPlay099();
+    }
+    private function ConfirmDeferredPlay099() : bool
+    {
+        var card : CBetaGwentDuelCard;var st : SBetaGwentCardSnapshot;var d : SBetaGwentDuelDefinition;
+        if(!deferredPlay099)return true;
+        card=FindCard(cancelPlaySource098);if(!card)return false;st=card.Snapshot();d=card.Definition();
+        deferredPlay099=false;cancelPlayWatch098=false;cancelPlayState098=NULL;cancelPlaySource098=0;
+        SetVisualSource(st.instanceId,d.header.templateId,st.positionPlayerId,st.locationMask);
+        RecordVisual(1,st.instanceId,d.title,480);
+        if(st.runtimeTemplate.typeMask==4)weather.Contact(card);
+        BetaGwentLog("DUEL_PLAY_CONFIRM card="+st.instanceId+" template="+d.header.templateId);
+        return RunPlayedTriggers099(card);
+    }
+    private function RunPlayedTriggers099(card : CBetaGwentDuelCard) : bool
+    {
+        var st : SBetaGwentCardSnapshot;var cancelled : bool;
+        FlushDeaths();if(fatal)return false;st=card.Snapshot();
+        if(st.runtimeTemplate.typeMask==4 && ((st.locationMask&7)==0 || st.isWaitingToDie)){CompletePlay(card);return false;}
+        cancelled=monsters.ScoiaBeforePlayed(card);monsters.ScoiaHistory(card);
+        weather.AfterPlayed(card);monsters.AfterPlayed(card);events.NorthTrigger(5,card.Snapshot());monsters.NilfTrigger(4,card.Snapshot());FlushDeaths();
+        if(fatal)return false;st=card.Snapshot();
+        if(cancelled || st.runtimeTemplate.typeMask==4 && ((st.locationMask&7)==0 || st.isWaitingToDie)){CompletePlay(card);return false;}
+        return true;
+    }
+    public var cancelPlayWatch098, pendingTargetRequest098, cancelPlayNested098 : bool;
+    public var cancelPlaySource098, cancelPlaySide098 : int;
+    private function BeginCancelablePlay098(card : CBetaGwentDuelCard, side : int, optional nested : bool)
+    {
+        var cloner : CBetaGwentCloner; var s : SBetaGwentCardSnapshot;var deferred : bool;
+        cancelPlayState098=NULL;cancelPlayWatch098=false;cancelPlaySource098=0;
+        if(!card)return;
+        s=card.Snapshot();cancelPlaySource098=s.instanceId;cancelPlaySide098=side;cancelPlayNested098=nested;
+        if(probingPlay099)return;
+        if(aiSimulating || !IsManualDecisionSide(side))return;
+        aiCloneEpoch+=1;cloner=new CBetaGwentCloner in this;
+        deferred=deferredPlay099;deferredPlay099=false;
+        cancelPlayState098=cloner.CloneSession(this,aiCloneEpoch);deferredPlay099=deferred;
+        s=card.Snapshot();cancelPlaySource098=s.instanceId;cancelPlaySide098=side;cancelPlayNested098=nested;
+    }
+    public function CommitCancelablePlay098()
+    {
+        if(!cancelPlayWatch098)return;
+        if(probingPlay099){probeAction099=true;return;}
+        if(deferredPlay099){FailAbility("Команда неподтверждённого розыгрыша.");return;}
+        cancelPlayWatch098=false;cancelPlayState098=NULL;cancelPlaySource098=0;
+    }
+    public function CanCancelTargetRequest098() : bool
+    {
+        if(fatal || waiting || !cancelPlayWatch098 || !cancelPlayState098 || !pendingCard)return false;
+        return !mulligan && !pendingChoice && !pendingPileChoice && !pendingHandPower && !pendingRally
+            && pendingTargetRequest098 && (!cancelPlayNested098 || !pendingRow)
+            && playStack.Size()==cancelPlayState098.playStack.Size()+1 && pendingCard==playStack[playStack.Size()-1]
+            && PendingSourceId()==cancelPlaySource098 && RequestDecisionSide()==cancelPlaySide098;
+    }
+    public function CancelTargetRequest098(id : int, side : int) : bool
+    {
+        var rollbackState : CBetaGwentDuelSession; var stream : CBetaGwentRandomGenerator;
+        var cloner : CBetaGwentCloner; var serial,next,source : int; var nested : bool;
+        if(id!=requestId || side!=cancelPlaySide098 || !CanCancelTargetRequest098())return false;
+        nested=cancelPlayNested098;rollbackState=cancelPlayState098;stream=random;serial=aiCloneEpoch+1;next=requestId+1;source=cancelPlaySource098;
+        cloner=new CBetaGwentCloner in this;cloner.RestoreSession(rollbackState,this,serial);
+        // Original rollback returns the card, not the random generator. Never reroll a consumed stream.
+        random=stream;aiCloneEpoch=serial;requestId=next;
+        cancelPlayWatch098=false;cancelPlayState098=NULL;cancelPlaySource098=0;
+        ClearAiPreparation();message="Розыгрыш отменён. Можно выбрать другую карту.";
+        if(nested){pendingCard=playStack[playStack.Size()-1];pendingRally=FindCard(source);pendingChoice=false;pendingPileChoice=false;pendingRow=false;pendingHandPower=false;pendingIds.Clear();
+            message="Выберите новое место для разыгрываемой карты.";}
+        SetVisualSource(0,0,0,0);
+        BetaGwentLog("DUEL_TARGET_CANCEL card="+source+" request="+id+" player="+side);return true;
+    }
     public var pendingCard : CBetaGwentDuelCard;
     public var pendingLeader : CBetaGwentDuelCard;
     public var pendingRally : CBetaGwentDuelCard;
@@ -48,6 +158,7 @@ class CBetaGwentDuelSession extends IScriptable
     public var nilfJobs : array<CBetaGwentNilfReaction>;
     public var nilfJob : CBetaGwentNilfReaction;
     public var nilfEndingTurn : bool;
+    public var nilfBeforeTurnEndPending : bool;
     public var mulliganReactions : bool;
     public var nilfInitialOne, nilfInitialTwo : array<int>;
     public var nilfSpellOne, nilfSpellTwo, nilfLastMovedUnit : int;
@@ -298,15 +409,20 @@ class CBetaGwentDuelSession extends IScriptable
             // passed opponent gets no further weather ticks. Keep a filler
             // only if the resolved turn or an own pending timer can pay for it.
             if(m.playerOne.hasPassed && AiWeatherCardToken(d)>0 && exact<=0 && AiOwnTimerGain(CountLocation(2,8))<=0)continue;
+            if(d.header.typeMask==2 && (d.effect==2 || d.effect==28) && exact<0
+                && AiOwnTimerGain(CountLocation(2,8))<=0 && !AiEnemyBoostFollowup(live[i]))continue;
             value=AiCardTempo(live[i],true,anchor,risk);if(value>maximum){maximum=value;best=s.instanceId;}}
         return best;
     }
     private function AiExplainPlacement(card : CBetaGwentDuelCard, chosen : int, anchor : int)
     {
-        var d : SBetaGwentDuelDefinition; var side,row : int;var s : SBetaGwentCardSnapshot;
+        var d : SBetaGwentDuelDefinition; var side,row,dispersal : int;var s : SBetaGwentCardSnapshot;
         if(aiSimulating || !card)return;d=card.Definition();s=card.Snapshot();side=2;
         if(BetaGwentDuelSpying(d.header.templateId))side=1;
-        for(row=1;row<=4;row*=2)AiExplain("ROW", "card="+s.instanceId+" side="+side+" row="+row+" occupied="+CountLocation(side,row)+" weather="+weather.Token(side,row)+" placementCost="+AiRowPlacementCost(side,row,d)+" selected="+(row==chosen)+" anchor="+anchor+" reason=weather_capacity_adjacency_and_deploy");
+        for(row=1;row<=4;row*=2){
+            dispersal=0;if(d.effect==34 && d.specialMode==410)dispersal=AiRowDispersalValue(side,row);
+            AiExplain("ROW", "card="+s.instanceId+" side="+side+" row="+row+" occupied="+CountLocation(side,row)+" weather="+weather.Token(side,row)+" placementCost="+AiRowPlacementCost(side,row,d)+" dispersalGain="+dispersal+" selected="+(row==chosen)+" anchor="+anchor+" reason=weather_capacity_adjacency_and_deploy");
+        }
     }
 
     public function InitializeFixture()
@@ -343,14 +459,14 @@ class CBetaGwentDuelSession extends IScriptable
         }
         aiDecisionSerial=0;ClearAiPreparation();
         aiChaseRound=0;aiChaseInitialHand=0;aiChaseSpent=0;
-        nilfInitialOne=ownCards;nilfInitialTwo=enemyCards;nilfJobs.Clear();nilfJob=NULL;nilfEndingTurn=false;mulliganReactions=false;
+        nilfInitialOne=ownCards;nilfInitialTwo=enemyCards;nilfJobs.Clear();nilfJob=NULL;nilfEndingTurn=false;nilfBeforeTurnEndPending=false;mulliganReactions=false;
         nilfSpellOne=0;nilfSpellTwo=0;nilfLastMovedUnit=0;
         presetOne = ownPreset; presetTwo = enemyPreset;
         weatherAI=new CBetaGwentWeatherAI in this;weatherAI.Initialize(this);weatherProfile=weatherAI.Matches(enemyCards);
         archetypeAI=new CBetaGwentArchetypeAI in this;archetypeAI.Initialize(this,enemyCards,enemyPreset,enemyLeader);
         BetaGwentLog("DUEL_AI_ARCHETYPE id="+archetypeAI.ProfileId()+" title="+archetypeAI.Title()+" policy=rules88");
         BetaGwentLog("DUEL_AI_PROFILE weather="+weatherProfile+" enemyPreset="+enemyPreset+" privatePlayerCardsRead=false");
-        recordVisuals = false; visualFrames.Clear(); visualOverflow = false; pendingConsumeVisuals.Clear();
+        recordVisuals = false; visualFrames.Clear(); visualOverflow = false; pendingConsumeVisuals.Clear(); consumeBatchIds.Clear(); consumeBatchFired = false;
         SetVisualSource(0, 0, 0, 0);
         match = new CBetaGwentMatchState in this; match.Initialize();
         registry = new CBetaGwentDuelRegistry in this; registry.Initialize();
@@ -430,7 +546,7 @@ class CBetaGwentDuelSession extends IScriptable
         for (i = 0; i < live.Size(); i += 1)
         {
             v.card = live[i].Snapshot(); side = v.card.positionPlayerId;
-            if ((v.card.locationMask & 7) != 0 && (v.card.tokenMask & 8) == 0)
+            if (v.card.instanceId!=TentativeSource099() && (v.card.locationMask & 7) != 0 && (v.card.tokenMask & 8) == 0)
             { if (side == 1) frame.scoreOne += v.card.power.currentPower; if (side == 2) frame.scoreTwo += v.card.power.currentPower; }
             // Public destinations only: never expose hidden hand/deck identities.
             if (v.card.locationMask == 32 || v.card.locationMask == 512)
@@ -460,7 +576,7 @@ class CBetaGwentDuelSession extends IScriptable
     public function RecordVisual(kind : int, targetId : int, caption : string, duration : int, optional audioType : int)
     {
         var frame, merged : CBetaGwentDuelVisualFrame; var target : CBetaGwentDuelCard; var t : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition;
-        if (!recordVisuals || visualOverflow) return;
+        if (!recordVisuals || visualOverflow || deferredPlay099 && kind==1 && targetId==cancelPlaySource098) return;
         if(kind==18){
             target=registry.Find(targetId);
             if(target){t=target.Snapshot();d=target.Definition();
@@ -477,7 +593,7 @@ class CBetaGwentDuelSession extends IScriptable
                 frame = VisualSnapshot(); frame.kind = merged.kind; frame.targetId = merged.targetId; frame.audioKind = merged.audioKind;
                 frame.sourceId = merged.sourceId; frame.templateId = merged.templateId; frame.side = merged.side; frame.row = merged.row;
                 frame.targetTemplateId = merged.targetTemplateId; frame.targetPower = merged.targetPower; frame.targetSide = merged.targetSide; frame.targetZone = merged.targetZone;
-                frame.attackId = merged.attackId; frame.attackCount = merged.attackCount;
+                frame.attackId = merged.attackId; frame.attackCount = merged.attackCount; frame.armorBroken099=merged.armorBroken099;
                 if(!visualAttackTargets.Contains(targetId)){visualAttackTargets.PushBack(targetId);frame.attackCount+=1;} frame.duration = Max(merged.duration, duration);
                 d = BetaGwentDuelDefinition(merged.templateId);
                 if (d.header.templateId != 0) frame.status = d.title + ": целей " + frame.attackCount; else frame.status = merged.status;
@@ -511,6 +627,7 @@ class CBetaGwentDuelSession extends IScriptable
             + ", броня " + oldArmor + " → " + s.power.armor, 260);
         if (visualFrames.Size() > 0 && !visualOverflow)
         {
+            if(oldArmor>0 && s.power.armor==0)visualFrames[visualFrames.Size()-1].armorBroken099=true;
             if (s.power.currentPower < oldPower) visualFrames[visualFrames.Size()-1].audioKind = 20;
             else if (s.power.currentPower > oldPower) visualFrames[visualFrames.Size()-1].audioKind = 21;
             else if (s.power.armor < oldArmor) visualFrames[visualFrames.Size()-1].audioKind = 22;
@@ -573,7 +690,7 @@ class CBetaGwentDuelSession extends IScriptable
     {
         var d : SBetaGwentDuelDefinition;
         if (!pendingRow || !pendingCard) return 0; d = pendingCard.Definition();
-        if (d.effect == 34) { if(d.header.templateId==201523)return 1;if(d.header.templateId==200532)return 8; if (d.specialMode == 148) return 1; return 9; }
+        if (d.effect == 34) { if(d.header.templateId==201523 || d.header.templateId==200030)return 1;if(d.header.templateId==200532)return 8; if (d.specialMode == 148) return 1; return 9; }
         if (d.effect != 28) return 0;
         if (d.specialRowMask == 3) return 10;
         if (d.targetSide == 1) return 8; if (d.targetSide == 2) return 9; return 1;
@@ -621,17 +738,77 @@ class CBetaGwentDuelSession extends IScriptable
     { var s : SBetaGwentCardSnapshot; s = card.Snapshot(); if (BetaGwentDuelSpying(card.TemplateId()) && (s.locationMask & 7) != 0) return BetaGwentOpponentId(s.positionPlayerId); return s.positionPlayerId; }
     public function NorthPile(side : int, zone : int, out ids : array<int>)
     { var cards : array<CBetaGwentDuelCard>; var i : int; var s : SBetaGwentCardSnapshot; ids.Clear(); LocationCards(side, zone, cards); for (i=0;i<cards.Size();i+=1) { s=cards[i].Snapshot();ids.PushBack(s.instanceId); } }
-    public function NorthMoveInactive(card : CBetaGwentDuelCard, side : int, zone : int, reset : bool)
+    // GetLocationCards / LocationListGetCards preserve row indexes and skip
+    // execution-stack owners. These movement graphs then negate Ambush only.
+    public function VisibleRowEffectIds(side : int, row : int, out ids : array<int>)
     {
-        var cards : array<CBetaGwentDuelCard>; var old, t : SBetaGwentCardSnapshot; var i, index : int;
+        var cards : array<CBetaGwentDuelCard>;var s : SBetaGwentCardSnapshot;var i : int;
+        ids.Clear();LocationCards(side,row,cards);
+        for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();
+            if(!s.isWaitingToDie && (s.tokenMask&8)==0 && !IsPlayAncestor(cards[i]))ids.PushBack(s.instanceId);
+        }
+    }
+    public function DeckInsertionSlots(side : int, tier : int, ignore : int) : int
+    {
+        var cards : array<CBetaGwentDuelCard>;var s : SBetaGwentCardSnapshot;var i, count : int;
+        LocationCards(side,16,cards);
+        // Graphs use GetCards -> Length -> +1, not Location.NumCards.
+        for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();if(!s.isWaitingToDie && !IsPlayAncestor(cards[i]) && (s.runtimeTierMask&tier)!=0 && (s.runtimeTemplate.typeMask&14)!=0 && (s.tokenMask&ignore)==0)count+=1;}
+        return count+1;
+    }
+    public function NorthMoveInactive(card : CBetaGwentDuelCard, side : int, zone : int, reset : bool, optional deckSlots : int)
+    {
+        var s : SBetaGwentCardSnapshot;var count, index : int;
+        if(!card)return;s=card.Snapshot();count=CountLocation(side,zone);
+        if(s.positionPlayerId==side && s.locationMask==zone)count-=1;
+        index=count;if(zone==16){if(deckSlots<=0)deckSlots=count+1;index=RandomIndex(deckSlots);}
+        MoveInactiveToIndex(card,side,zone,index);
+    }
+    // MoveCards: exact destination, no draw/played event or template Spying
+    // redirection. The original card instance and inactive state are retained.
+    public function MoveInactiveToIndex(card : CBetaGwentDuelCard, side : int, zone : int, index : int)
+    {
+        var cards : array<CBetaGwentDuelCard>; var old, t : SBetaGwentCardSnapshot; var i : int;
         if (!card) return; old = card.Snapshot();
-        if (old.locationMask == zone && old.positionPlayerId == side) card.Move(side,128,0);
-        Reindex(old.positionPlayerId,old.locationMask); LocationCards(side,zone,cards); index=cards.Size();
-        if(zone==16) index=RandomIndex(cards.Size()+1);
-        for(i=0;i<cards.Size();i+=1){t=cards[i].Snapshot();if(t.locationIndex>=index)cards[i].Move(side,zone,t.locationIndex+1);}
-        card.Move(side,zone,index);card.SetPlayable(zone==8);if(reset){if(zone==16)card.ResetInDeck();else card.ResetInHand();}Reindex(old.positionPlayerId,old.locationMask);
+        // Wardancer graph244 is BeforeMoved, on this exact hand instance.
+        // If no row is available, the original hand->deck move still completes.
+        if(zone==16 && old.locationMask==8 && old.positionPlayerId==side && card.TemplateId()==142313 && (old.tokenMask&12)==0 && old.power.currentPower>0)
+            if(RandomPositionMove(card,side,true))return;
+        LocationCards(side,zone,cards);
+        if(old.locationMask==zone && old.positionPlayerId==side)
+        {
+            // Remove the moving instance from the ordering calculation only.
+            // An intermediate Move(Limbo) would wrongly clear hand visibility.
+            for(i=cards.Size()-1;i>=0;i-=1)if(cards[i]==card)cards.Erase(i);
+            for(i=0;i<cards.Size();i+=1){t=cards[i].Snapshot();if(t.locationIndex>old.locationIndex)cards[i].SetLocationIndex(t.locationIndex-1);}
+        }
+        if(index<0)index=cards.Size();index=Min(Max(0,index),cards.Size());
+        if((zone&7)!=0 && cards.Size()>=9)return;
+        for(i=0;i<cards.Size();i+=1){t=cards[i].Snapshot();if(t.locationIndex>=index)cards[i].SetLocationIndex(t.locationIndex+1);}
+        // CardData transitions are centralized in Move, independently of this
+        // legacy caller flag. Grave->Deck must retain inactive power/armor.
+        card.Move(side,zone,index);card.SetPlayable(zone==8);Reindex(old.positionPlayerId,old.locationMask);Reindex(side,zone);
+        if((zone&7)!=0)weather.Contact(card);
         MonsterMoved(old);
         RecordVisual(14,old.instanceId,"Карта перемещена",380);
+    }
+    public function RandomPositionMove(card : CBetaGwentDuelCard, side : int, lastIndex : bool) : bool
+    {
+        var rows : array<int>;var row, index : int;
+        if(!card)return false;
+        for(row=1;row<=4;row*=2)if(CountLocation(side,row)<9)rows.PushBack(row);
+        if(rows.Size()==0)return false;row=rows[RandomIndex(rows.Size())];index=CountLocation(side,row);
+        if(!lastIndex)index=RandomIndex(index+1);
+        MoveInactiveToIndex(card,side,row,index);return true;
+    }
+    public function DrawCaptured(side : int, ids : array<int>, count : int, randomChoice : bool)
+    {
+        var cards, valid : array<CBetaGwentDuelCard>;var s : SBetaGwentCardSnapshot;var i, index : int;
+        LocationCards(side,16,cards);
+        // DrawCardsNode filters current deck order by the captured ID set.
+        for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();if(ids.Contains(s.instanceId) && !s.isWaitingToDie && !IsPlayAncestor(cards[i]))valid.PushBack(cards[i]);}
+        count=Min(Max(0,count),valid.Size());
+        for(i=0;i<count;i+=1){index=0;if(randomChoice)index=RandomIndex(valid.Size());NilfTake(valid[index],side);valid.Erase(index);}
     }
     public function NorthSwap(source : CBetaGwentDuelCard, target : CBetaGwentDuelCard)
     {
@@ -651,13 +828,13 @@ class CBetaGwentDuelSession extends IScriptable
     {var s : SBetaGwentCardSnapshot;if(!card)return false;s=card.Snapshot();return effects.PendingDeckMoves(0,0,s.instanceId)>0;}
     public function NorthClearRow(side : int, row : int){weather.ClearRow(side,row);}
     public function NorthClearHazard(side : int, row : int)
-    { if(MonsterIsHazard(weather.Token(side,row)))weather.ClearRow(side,row); }
+    { weather.RemoveTokens(side,row,3711); }
     public function NorthDeathRow(id : int) : int
     { var card : CBetaGwentDuelCard;card=FindCard(id);if(card)return card.lastActiveRow;return 0; }
     public function NorthRepeatPlay(source : CBetaGwentDuelCard, target : CBetaGwentDuelCard)
-    { var s : SBetaGwentCardSnapshot;var i : int;if(playStack.Size()>=16){FailAbility("Слишком глубокая повторная способность.");return;}for(i=0;i<playStack.Size();i+=1)if(playStack[i]==target){MonsterComplete(source);return;}source.StorePlayedChild(target);s=target.Snapshot();target.playFromLocation=s.locationMask;target.ResetModeChoice();playStack.PushBack(target);ResolvePlayed(target,s.positionPlayerId); }
+    { var s : SBetaGwentCardSnapshot;var i : int;if(playStack.Size()>=16){FailAbility("Слишком глубокая повторная способность.");return;}for(i=0;i<playStack.Size();i+=1)if(playStack[i]==target){MonsterComplete(source);return;}source.StorePlayedChild(target);s=target.Snapshot();target.playFromLocation=s.locationMask;target.playFromTokens=s.tokenMask;target.ResetModeChoice();playStack.PushBack(target);ResolvePlayed(target,s.positionPlayerId); }
     public function NorthPhantom(source : CBetaGwentDuelCard)
-    { var before, i : int;var pos : SBetaGwentCardSnapshot;pos=source.Snapshot();pos.locationIndex+=1;before=live.Size();QueueSpawn(pos,201624,1);if(!FlushEffects())return;for(i=before;i<live.Size();i+=1)if(live[i].TemplateId()==201624)live[i].AddTokens(512); }
+    { var before, i : int;var pos : SBetaGwentCardSnapshot;pos=source.Snapshot();pos.locationIndex=CountLocation(pos.positionPlayerId,pos.locationMask);before=live.Size();QueueSpawn(pos,201624,1);if(!FlushEffects())return;for(i=before;i<live.Size();i+=1)if(live[i].TemplateId()==201624)live[i].AddTokens(512); }
     public function NorthResurrect(source : CBetaGwentDuelCard, power : int, row : int, index : int, resetBase : bool)
     {
         var s : SBetaGwentCardSnapshot;var rows : array<int>;var r : int;s=source.Snapshot();if(s.locationMask!=32)return;
@@ -681,26 +858,42 @@ class CBetaGwentDuelSession extends IScriptable
     { if(events)events.NorthTrigger(6,card.Snapshot()); }
 
     public function NilfMatch() : SBetaGwentMatchSnapshot { return match.Snapshot(); }
+    public function NilfBothPassed096() : bool {var s : SBetaGwentMatchSnapshot;s=match.Snapshot();return s.playerOne.hasPassed && s.playerTwo.hasPassed;}
     public function NilfTruce() : bool { var s : SBetaGwentMatchSnapshot;s=match.Snapshot();return !s.playerOne.hasPassed && !s.playerTwo.hasPassed; }
     public function NilfAlchemy(side : int) : int
     {var ids : array<int>;var i,count : int;ids=nilfInitialOne;if(side==2)ids=nilfInitialTwo;for(i=0;i<ids.Size();i+=1)if(BetaGwentNorthernCategory(ids[i],11))count+=1;return count;}
     public function NeutralInitial(side : int, out ids : array<int>){ids=nilfInitialOne;if(side==2)ids=nilfInitialTwo;}
+    public function PhysicalOrder096(out ids : array<int>)
+    {var i,j,k : int;var a,b : SBetaGwentCardSnapshot;var c : CBetaGwentDuelCard;
+     for(i=1;i<ids.Size();i+=1){k=ids[i];c=registry.Find(k);if(!c)continue;a=c.Snapshot();j=i-1;
+      while(j>=0){c=registry.Find(ids[j]);if(!c)break;b=c.Snapshot();if(b.positionPlayerId<a.positionPlayerId || (b.positionPlayerId==a.positionPlayerId && (b.locationMask<a.locationMask || (b.locationMask==a.locationMask && b.locationIndex<=a.locationIndex))))break;ids[j+1]=ids[j];j-=1;}
+      ids[j+1]=k;}}
+    public function LeaderZoneFaction096(side : int) : int
+    {var i,best,index : int;var s : SBetaGwentCardSnapshot;var d : SBetaGwentDuelDefinition;best=-1;index=2147483647;
+     for(i=0;i<live.Size();i+=1){s=live[i].Snapshot();if(s.positionPlayerId==side && s.locationMask==64 && !s.isInExecutionStack && !s.isWaitingToDie && s.locationIndex<index){index=s.locationIndex;best=i;}}
+     if(best<0)return 0;d=live[best].Definition();return d.header.factionMask;}
     public function NeutralFaction(side : int) : int{var c : CBetaGwentDuelCard;var d : SBetaGwentDuelDefinition;c=Leader(side);if(c){d=c.Definition();return d.header.factionMask;}return 0;}
-    public function NeutralCopy(side : int, templateId : int, zone : int)
-    {var id : int;var child : CBetaGwentDuelCard;var d : SBetaGwentDuelDefinition;d=BetaGwentDuelDefinition(templateId);if(d.header.templateId==0 || !registry.Allocate(id)){FailAbility("Не удалось создать базовую копию.");return;}child=new CBetaGwentDuelCard in this;child.Setup(this,id,templateId,side,zone,CountLocation(side,zone));child.createdCopy=true;child.SetPlayable(zone==8);if(!registry.Put(id,child)){FailAbility("ID базовой копии занят.");return;}live.PushBack(child);RecordVisual(16,id,"Создана базовая копия",400);}
+    public function NeutralCopy(side : int, templateId : int, zone : int, optional first : bool)
+    {var id, index, i : int;var child : CBetaGwentDuelCard;var s : SBetaGwentCardSnapshot;var d : SBetaGwentDuelDefinition;d=BetaGwentDuelDefinition(templateId);if(d.header.templateId==0 || !registry.Allocate(id)){FailAbility("Не удалось создать базовую копию.");return;}
+     index=CountLocation(side,zone);if(first){index=0;for(i=0;i<live.Size();i+=1){s=live[i].Snapshot();if(s.positionPlayerId==side && s.locationMask==zone)live[i].SetLocationIndex(s.locationIndex+1);}}
+     child=new CBetaGwentDuelCard in this;child.Setup(this,id,templateId,side,zone,index);child.createdCopy=true;child.SetPlayable(zone==8);if(!registry.Put(id,child)){FailAbility("ID базовой копии занят.");return;}live.PushBack(child);RecordVisual(16,id,"Создана базовая копия",400);}
     public function NeutralReset(card : CBetaGwentDuelCard){var s : SBetaGwentCardSnapshot;if(!card)return;card.NeutralReset();s=card.Snapshot();RecordVisual(12,s.instanceId,"Отряд восстановлен",400);}
     // Presentation only: Geralt: Yrden's board sign on the chosen row (Beta [201525]PowerBoardPhysical).
     public function YrdenVisual(side : int, row : int){var oldSide, oldRow : int;oldSide=visualSide;oldRow=visualRow;visualSide=side;visualRow=row;RecordVisual(12,0,"Ирден",400);visualSide=oldSide;visualRow=oldRow;}
     public function NeutralDrain(source : CBetaGwentDuelCard, target : CBetaGwentDuelCard, amount : int){var old : SBetaGwentCardSnapshot;old=target.Snapshot();target.ChangePower(-amount,true);NilfPowerChanged(source,target,old,target.Snapshot(),1);MonsterDamaged(source,target);}
     public function NilfInitialPool(side : int, out ids : array<int>)
     {var deck : array<int>;var d : SBetaGwentDuelDefinition;var i : int;ids.Clear();deck=nilfInitialOne;if(side==2)deck=nilfInitialTwo;for(i=0;i<deck.Size();i+=1){d=BetaGwentDuelDefinition(deck[i]);if(d.header.typeMask==4 && (d.header.tierMask&6)!=0 && deck[i]!=162210 && deck[i]!=132204 && deck[i]!=122203 && deck[i]!=142203 && deck[i]!=152214 && !ids.Contains(deck[i]))ids.PushBack(deck[i]);}}
-    // Dwarven Agitator: bronze dwarves from the deck the side started with, not what is left in it.
+    // Dwarven Agitator: Beta GetCards(owner, Deck) reads the CURRENT deck (Bronze Unit|UnitEvent dwarves, not 200293).
+    // The result holds template ids in physical deck order; a random element is copied.
     public function AgitatorPool(side : int, out ids : array<int>)
-    {var deck : array<int>;var d : SBetaGwentDuelDefinition;var i : int;ids.Clear();deck=nilfInitialOne;if(side==2)deck=nilfInitialTwo;for(i=0;i<deck.Size();i+=1){if(deck[i]==200293 || !BetaGwentNilfDwarf(deck[i]))continue;d=BetaGwentDuelDefinition(deck[i]);if((d.header.typeMask&12)!=0 && (d.header.tierMask&2)!=0)ids.PushBack(deck[i]);}}
+    {var deck : array<int>;var s : SBetaGwentCardSnapshot;var i : int;var card : CBetaGwentDuelCard;ids.Clear();LocationIds096(side,16,deck);for(i=0;i<deck.Size();i+=1){card=registry.Find(deck[i]);if(!card)continue;s=card.Snapshot();if(s.isWaitingToDie || s.isInExecutionStack || s.runtimeTemplate.templateId==200293 || !BetaGwentNilfDwarf(s.runtimeTemplate.templateId))continue;if((s.runtimeTemplate.typeMask&12)!=0 && (s.runtimeTierMask&2)!=0)ids.PushBack(s.runtimeTemplate.templateId);}}
+    private function LocationIds096(side : int, zone : int, out ids : array<int>)
+    {var cards : array<CBetaGwentDuelCard>;var s : SBetaGwentCardSnapshot;var i : int;ids.Clear();LocationCards(side,zone,cards);for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();ids.PushBack(s.instanceId);}}
     public function NilfLastSpell(side : int) : int {if(side==1)return nilfSpellOne;return nilfSpellTwo;}
     public function NilfLastUnit() : int {return nilfLastMovedUnit;}
     public function NilfSwapped(card : CBetaGwentDuelCard) {monsters.NilfTrigger(10,card.Snapshot());}
-    public function NilfSpyingAdded(cause : SBetaGwentCardSnapshot) {monsters.NilfTrigger(11,cause);}
+    public function WasPlayedThisTurn(card : CBetaGwentDuelCard) : bool {return monsters.nilf.WasPlayedThisTurn(card);}
+    public function NilfSpyingAdded(cause : SBetaGwentCardSnapshot) {var ids : array<int>;ids.PushBack(cause.instanceId);events.CardTokensAdded(ids,128);}
     public function NilfPowerChanged(source : CBetaGwentDuelCard, target : CBetaGwentDuelCard, old : SBetaGwentCardSnapshot, current : SBetaGwentCardSnapshot, operation : int)
     {
         var cards : array<SBetaGwentDevelopmentCard>;var i : int;var s : SBetaGwentCardSnapshot;var m : SBetaGwentMatchSnapshot;
@@ -713,13 +906,25 @@ class CBetaGwentDuelSession extends IScriptable
     public function NilfReactionKind() : int {if(nilfJob)return nilfJob.kind;return 0;}
     private function NilfDecisionSide() : int {var m : SBetaGwentMatchSnapshot;if(nilfJob)return nilfJob.side;m=match.Snapshot();return m.currentPlayerId;}
     public function NilfReveal(card : CBetaGwentDuelCard, reveal : bool)
-    {var s : SBetaGwentCardSnapshot;if(!card)return;s=card.Snapshot();if(s.locationMask!=8 || ((s.tokenMask&64)!=0)==reveal)return;card.SetRevealed(reveal);RecordVisual(8,s.instanceId,BetaGwentNilfText(reveal),400);if(reveal)monsters.NilfTrigger(1,s);BetaGwentLog("DUEL_REVEAL card="+s.instanceId+" side="+s.positionPlayerId+" revealed="+reveal);}
+    {var ids : array<int>;var s : SBetaGwentCardSnapshot;if(!card)return;s=card.Snapshot();if(s.locationMask!=8 || ((s.tokenMask&64)!=0)==reveal)return;ids.PushBack(s.instanceId);NilfRevealCards(ids,reveal);}
+    public function NilfRevealCards(ids : array<int>, reveal : bool)
+    {
+        var i : int;var card : CBetaGwentDuelCard;var s : SBetaGwentCardSnapshot;var changed : array<int>;
+        // One ChangeTokensAction applies its complete target list before any
+        // AfterChangedCardToken trigger; choice picks are collected beforehand.
+        for(i=0;i<ids.Size();i+=1){card=FindCard(ids[i]);if(!card)continue;s=card.Snapshot();
+            if(s.isWaitingToDie || s.runtimeTemplate.typeMask==4 && s.power.currentPower<=0)continue;
+            if(!reveal && (s.tokenMask&64)==0)continue;
+            card.SetRevealed(reveal);changed.PushBack(s.instanceId);RecordVisual(8,s.instanceId,BetaGwentNilfText(reveal),400);
+            BetaGwentLog("DUEL_REVEAL card="+s.instanceId+" side="+s.positionPlayerId+" revealed="+reveal);}
+        if(reveal)events.CardTokensAdded(changed,64);
+    }
     public function NilfTake(card : CBetaGwentDuelCard, side : int)
     {var s : SBetaGwentCardSnapshot;if(!card)return;s=card.Snapshot();NorthMoveInactive(card,side,8,false);monsters.NilfTrigger(2,card.Snapshot());RecordVisual(14,s.instanceId,"Взята карта",400);}
     public function NilfDraw(side : int, tier : int, reveal : bool)
     {var ids : array<int>;var i : int;var s : SBetaGwentCardSnapshot;NorthPile(side,16,ids);for(i=0;i<ids.Size();i+=1){s=FindCard(ids[i]).Snapshot();if((s.runtimeTierMask&tier)==0)continue;NilfTake(FindCard(ids[i]),side);if(reveal)NilfReveal(FindCard(ids[i]),true);return;}}
     public function NilfBottom(card : CBetaGwentDuelCard)
-    {var s : SBetaGwentCardSnapshot;if(!card)return;s=card.Snapshot();card.Move(s.positionPlayerId,128,0);Reindex(s.positionPlayerId,s.locationMask);card.Move(s.positionPlayerId,16,CountLocation(s.positionPlayerId,16));card.SetPlayable(false);card.ResetInDeck();RecordVisual(14,s.instanceId,"Карта в низ колоды",350);}
+    {var s : SBetaGwentCardSnapshot;if(!card)return;s=card.Snapshot();card.Move(s.positionPlayerId,128,0);Reindex(s.positionPlayerId,s.locationMask);card.Move(s.positionPlayerId,16,CountLocation(s.positionPlayerId,16));card.SetPlayable(false);RecordVisual(14,s.instanceId,"Карта в низ колоды",350);}
     public function NilfDiscard(card : CBetaGwentDuelCard)
     {var s : SBetaGwentCardSnapshot;s=card.Snapshot();NorthMoveInactive(card,s.positionPlayerId,32,false);BetaGwentLog("DUEL_DISCARD card="+s.instanceId);}
     public function NilfBanish(card : CBetaGwentDuelCard)
@@ -742,7 +947,7 @@ class CBetaGwentDuelSession extends IScriptable
                 rows.Clear();for(row=1;row<=4;row*=2)if(CountLocation(s.positionPlayerId,row)<9)rows.PushBack(row);
                 if(rows.Size()>0)
                 {
-                    row=rows[random.NextBounded(rows.Size())];card.playFromLocation=s.locationMask;
+                    row=rows[random.NextBounded(rows.Size())];card.playFromLocation=s.locationMask;card.playFromTokens=s.tokenMask;
                     InsertUnit(card,s.positionPlayerId,row,-3);Reindex(s.positionPlayerId,s.locationMask);card.SetPlayable(false);
                 }
                 if(nilfJob.kind==2)MonsterDraw(s.positionPlayerId,false);
@@ -756,7 +961,7 @@ class CBetaGwentDuelSession extends IScriptable
                     pendingCard=card;pendingRally=card;pendingRow=false;pendingChoice=false;pendingPileChoice=false;pendingIds.Clear();requestId+=1;
                     message="Выберите место отряда, разыгрываемого реакцией.";return true;
                 }
-                row=BestOwnRow(s.positionPlayerId);if(row==0)continue;card.playFromLocation=s.locationMask;InsertUnit(card,s.positionPlayerId,row,-3);Reindex(s.positionPlayerId,s.locationMask);card.SetPlayable(false);StartPlayResolution(card,s.positionPlayerId);return true;
+                row=BestOwnRow(s.positionPlayerId);if(row==0)continue;card.playFromLocation=s.locationMask;card.playFromTokens=s.tokenMask;InsertUnit(card,s.positionPlayerId,row,-3);Reindex(s.positionPlayerId,s.locationMask);card.SetPlayable(false);StartPlayResolution(card,s.positionPlayerId);return true;
             }
             playStack.PushBack(card);SetVisualSource(s.instanceId,s.runtimeTemplate.templateId,s.positionPlayerId,s.locationMask);monsters.NilfReaction(card,nilfJob.kind);return true;
         }
@@ -772,7 +977,7 @@ class CBetaGwentDuelSession extends IScriptable
         if(source.TemplateId()==200144)return id==152406;
         if(source.TemplateId()==200293){AgitatorPool(NorthActingSide(source),ids);if(ids.Contains(id))return true;}if(source.TemplateId()==200102){NilfInitialPool(BetaGwentOpponentId(NorthActingSide(source)),ids);return ids.Contains(id);}if(source.TemplateId()==201639){NilfInitialPool(BetaGwentOpponentId(NorthActingSide(source)),ids);return ids.Contains(id);}return false;}
     public function MonsterCreationAllowed(source : CBetaGwentDuelCard, templateId : int) : bool
-    { if(!source)return false; if(source.TemplateId()==162302)return templateId==162402;if(source.TemplateId()==142304)return templateId==143301; return BetaGwentMonsterSpawnAllowed(source.TemplateId(),templateId) || NilfDynamicSpawnAllowed(source,templateId); }
+    { if(!source)return false; if(source.TemplateId()==162302)return templateId==162402;if(source.TemplateId()==152201)return templateId==152403;if(source.TemplateId()==142304)return templateId==143301; return BetaGwentMonsterSpawnAllowed(source.TemplateId(),templateId) || NilfDynamicSpawnAllowed(source,templateId); }
     public function MonsterCreate(card : CBetaGwentDuelCard, templateId : int) { BeginCreatedPlay(card, templateId); }
     public function MonsterPower(source : CBetaGwentDuelCard, card : CBetaGwentDuelCard, amount : int)
     { if (card && !effects.Enqueue(card, 1, amount, false, source)) FailAbility("Не удалось поставить способность Чудовищ в очередь."); }
@@ -780,10 +985,26 @@ class CBetaGwentDuelSession extends IScriptable
     { if (card && !effects.Enqueue(card, operation, amount, false, source, locations)) FailAbility("Не удалось изменить изначальную силу."); }
     // Only the initial selection is optional. Follow-up choices (e.g. Saskia's
     // replacement cards) must still resolve the number already committed.
+    private function BetaGwentSourceOptionalPick096(id : int) : bool
+    { return id==113102 || id==122103 || id==122106 || id==122205 || id==122403 || id==123201 || id==131102 || id==132106 || id==132406 || id==142102 || id==142106 || id==142107 || id==142308 || id==143201 || id==152211 || id==152306 || id==162104 || id==162106 || id==162304 || id==200032 || id==200036 || id==200138 || id==200146 || id==200149 || id==200154 || id==200159 || id==200162 || id==200165 || id==200220 || id==200221 || id==200237 || id==200520 || id==200539 || id==201579 || id==201664 || id==201696 || id==201699; }
+    // Offers which execute PlayCards/creation cannot finish empty while available.
+    public function RequiresOfferedPlay100(source : CBetaGwentDuelCard, kind : int) : bool
+    {
+        var id : int;if(!source || (kind!=1 && kind!=2))return false;id=source.TemplateId();
+        if(BetaGwentDuelPlayChoice(id))return true;
+        return kind==1 && (id==131101 || id==133302 || id==162213);
+    }
     private function OptionalChoiceLimit(source : CBetaGwentDuelCard) : int
     {
         var limit, i : int;var s : SBetaGwentCardSnapshot;
         if (!source || source.monsterStage != 0) return 0;
+        if(source.TemplateId()==200048 || source.TemplateId()==201638)return 1;
+        if(source.TemplateId()==200031)return 1;
+        if(source.TemplateId()==142312)return 1;
+        if(source.TemplateId()==162316 || source.TemplateId()==201616)return 2;
+        if(source.TemplateId()==152205)return 2;
+        if(source.TemplateId()==122201)return 3;
+        if(source.TemplateId()==201698 || source.TemplateId()==142203)return 1;
         limit=BetaGwentDuelOptionalChoiceLimit(source.TemplateId());
         if(limit>=0)return limit;
         // Any number, including zero; keep the total stable as picks conceal.
@@ -856,15 +1077,20 @@ class CBetaGwentDuelSession extends IScriptable
     {
         var s, t : SBetaGwentCardSnapshot; var d, option, picked : SBetaGwentDuelDefinition;
         var m : SBetaGwentMatchSnapshot; var i, best, value, score, rowSide, bestSide, candidateSide : int; var card : CBetaGwentDuelCard;var visibleTargets : bool;
+        var simIds, simValues : array<int>;
         if (fatal || !source) return; s = source.Snapshot(); d = source.Definition(); m = match.Snapshot();
+        pendingTargetRequest098=kind==0 || kind==3;
         if (kind == 0) for (i=ids.Size()-1;i>=0;i-=1) if (!CanDeployTarget(source,registry.Find(ids[i]))) ids.Erase(i);
         // Mixed-zone abilities (Sweers, Serrit, Vrihedd Brigade, ...) use the
         // board/visible-hand arrow when every legal target is already visible.
         // Preserve the original candidate pool; tutors and private piles keep their picker.
+        // The arrow reaches board rows and this side's own hand fan only: the flash
+        // view draws the opponent's hand as backs along the top edge, so a revealed
+        // enemy-hand card cannot be clicked there and must stay in the candidate list.
         if(kind==2 && IsManualDecisionSide(NilfDecisionSide()) && ids.Size()>0 && !BetaGwentDuelPlayChoice(d.header.templateId)){
             visibleTargets=true;
             for(i=0;i<ids.Size();i+=1){card=registry.Find(ids[i]);if(!card){visibleTargets=false;break;}t=card.Snapshot();
-                if((t.locationMask&7)==0 && !(t.locationMask==8 && (t.positionPlayerId==NorthActingSide(source) || (t.tokenMask&64)!=0))){visibleTargets=false;break;}}
+                if((t.locationMask&7)==0 && !(t.locationMask==8 && t.positionPlayerId==NorthActingSide(source))){visibleTargets=false;break;}}
             if(visibleTargets)kind=0;
         }
         pendingCard = source; pendingIds = ids; pendingChoice = kind == 1; pendingRow = kind == 3; pendingPileChoice = kind == 2;
@@ -872,29 +1098,36 @@ class CBetaGwentDuelSession extends IScriptable
         // A play-from-pile choice must resolve when at least one legal card exists.
         // Empty pools still take the normal no-card branch below.
         if (kind == 2 && BetaGwentDuelPlayChoice(d.header.templateId) && ids.Size() > 0) monsterMinimum = Max(1, monsterMinimum);
-        if (d.specialMode == 18) { t=source.Snapshot(); monsterMaximum = Min(d.specialCount,Max(0,9-CountLocation(BetaGwentOpponentId(t.positionPlayerId),t.locationMask))); }
+        // Jotunn requests up to three targets independently of MoveCards capacity.
+        // The node moves only the available prefix; damage still targets ALL picks.
+        if (d.specialMode == 18) monsterMaximum = d.specialCount;
         // Beta deploy abilities are mandatory whenever a legal target exists.
         if (ids.Size() > 0 && kind != 3 && d.specialMode != 18 && OptionalChoiceLimit(source) == 0) monsterMinimum = Max(1, monsterMinimum);
         if (OptionalChoiceLimit(source) > 0 && kind != 1 && kind != 3)
         { monsterMinimum = 0; monsterMaximum = OptionalChoiceLimit(source); }
+        // Beta RequestCardChoice MinChoices=0: the first pile choice may finish empty.
+        if ((kind == 2 || kind == 0) && source.monsterStage == 0 && BetaGwentSourceOptionalPick096(d.header.templateId)) monsterMinimum = 0;
+        if (kind == 2 && source.monsterStage == 1 && d.header.templateId == 152204) monsterMinimum = 0;
+        if ((kind == 1 || kind == 2) && source.monsterStage != 0 && d.header.templateId == 200102) monsterMinimum = 0;
+        if ((kind == 1 || kind == 2) && source.monsterStage != 0 && (d.header.templateId == 200102 || d.header.templateId == 201621 || d.header.templateId == 201697)) monsterMinimum = 0;
+        if (kind == 2 && source.monsterStage == 1 && d.header.templateId == 152204) monsterMinimum = 0;
+        // Beta RequestTemplateChoice MinChoices=0: the empty choice spawns nothing.
+        if (kind == 1 && source.monsterStage == 0 && (d.header.templateId == 131101 || d.header.templateId == 133302 || d.header.templateId == 162213)) monsterMinimum = 0;
+        // Apply the client play obligation AFTER optional graph-literal overrides.
+        if(ids.Size()>0 && RequiresOfferedPlay100(source,kind))monsterMinimum=Max(1,monsterMinimum);
         message = d.title + ": выберите подсвеченную цель.";
         if (kind == 1) message = d.title + ": выберите создаваемую карту или вариант способности.";
         if (kind == 2) message = d.title + ": выберите карту из предложенного списка.";
         if (kind == 3) message = d.title + ": выберите ряд соперника.";
         if (kind == 0) message = d.title + ": выберите подсвеченный отряд для способности.\n" + d.description;
         if (d.header.templateId == 200124) message = d.title + ": укажите отряд, которому нужно нанести урон.\n" + d.description;
-        if (kind == 2 && BetaGwentDuelPlayChoice(d.header.templateId) && ids.Size() > 0) message = d.title + ": обязательно выберите карту для розыгрыша. Отряд затем нужно разместить в ряду.";
+        if (kind == 2 && BetaGwentDuelPlayChoice(d.header.templateId) && ids.Size() > 0 && monsterMinimum > 0) message = d.title + ": обязательно выберите карту для розыгрыша. Отряд затем нужно разместить в ряду.";
+        if (kind == 2 && monsterMinimum == 0 && ids.Size() > 0 && BetaGwentSourceOptionalPick096(d.header.templateId)) message = d.title + ": выберите карту из предложенного списка или завершите выбор без карты.";
         if (d.specialMode == 18) message += " Выбрано " + source.monsterIds.Size() + " / " + d.specialCount + ". Можно завершить выбор.";
         if (OptionalChoiceLimit(source) > 0) message += " Выбрано " + source.monsterIds.Size() + " / " + monsterMaximum + ". Можно завершить выбор.";
         BetaGwentLog("DUEL_ABILITY_CHOICE source=" + d.header.templateId + " kind=" + kind + " candidates=" + ids.Size());
         if (ids.Size() == 0)
         {
-            if (d.header.templateId == 201780 && IsManualDecisionSide(NilfDecisionSide()))
-            {
-                monsterMinimum = 0;
-                message = d.title + ": в сбросе противника нет подходящего бронзового или серебряного солдата. Нажмите «Продолжить».";
-                return;
-            }
             s = source.Snapshot(); RecordVisual(18, s.instanceId, d.title + ": нет целей", 620, 8);
             monsters.Select(source, 0); return;
         }
@@ -922,6 +1155,16 @@ class CBetaGwentDuelSession extends IScriptable
                 if(kind==2 && BetaGwentDuelPlayChoice(source.TemplateId()) && !HasRequiredPlayTargetForSide(card.Definition(),NilfDecisionSide()))
                 {AiExplain("TARGET_REJECT","source="+source.TemplateId()+" target="+ids[i]+" reason=no_legal_child_play_target");continue;}
                 value = AiAbilityChoiceValue(source,card,kind);
+            if(kind==2 && source.TemplateId()==200165){
+                // Stage zero returns a card; stage one receives it. Generic
+                // positive spell/choice bonuses must not reward discarding it.
+                value=AiExchangeCardValue096(card,NilfDecisionSide());
+                if(source.monsterStage==0)value=-value;
+                else if(t.runtimeTemplate.typeMask==4){if(BetaGwentDuelSpying(card.TemplateId()))value-=3;else value+=3;}
+                AiExplain("TARGET_OPTION","source="+source.TemplateId()+" request="+requestId+" kind="+kind+" target="+ids[i]+" value="+value+" reason=exchange_hand_opportunity");
+                if(value>score){score=value;best=ids[i];}
+                continue;
+            }
                 if (kind == 0 && t.positionPlayerId == s.positionPlayerId && (d.specialMode == 11 || d.specialMode == 22)) value = -value;
                 // A special is preferred only when it does something: an empty deck
                 // tutor (Reinforcement with no unit left) is worth nothing.
@@ -939,7 +1182,8 @@ class CBetaGwentDuelSession extends IScriptable
             if(kind==0 && card && (source.TemplateId()==200170 || source.TemplateId()==122307 || source.TemplateId()==200026))value=archetypeAI.CopyValue(source.TemplateId()==200170,card,true);
             if(kind==1)value+=archetypeAI.ChoiceBonus(option);
             else if(kind==2 && card && !AiRevealingChoice(source) && !(t.locationMask==8 && t.positionPlayerId!=2 && (t.tokenMask&64)==0)){
-                if(archetypeAI.IsDiscard(source))value=archetypeAI.DiscardValue(card);
+                if(source.TemplateId()==200159)value=archetypeAI.BranDiscardValue101(card);
+                else if(archetypeAI.IsDiscard(source))value=archetypeAI.DiscardValue(card);
                 else value+=archetypeAI.ChoiceBonus(card.Definition());
             }
             // Calveit chooses only among the three actual revealed deck cards.
@@ -947,18 +1191,31 @@ class CBetaGwentDuelSession extends IScriptable
             if(kind==2 && source.TemplateId()==200164 && card)value=AiCardTempo(card,m.playerOne.hasPassed,BestVranAnchor(2),AiPublicClearRisk());
             AiExplain("TARGET_OPTION", "source="+source.TemplateId()+" request="+requestId+" kind="+kind+" target="+ids[i]+" value="+value);
             if (value > score) { score = value; best = ids[i]; }
+            if(kind==0){simIds.PushBack(ids[i]);simValues.PushBack(value);}
         }
         // Generation 3: pick card targets by playing each option on a cloned session.
-        if (kind == 0 && source.TemplateId()!=162206 && BetaGwentAIStrength() >= 3 && !aiSimulating && ids.Size() > 1 && ids.Size() <= 14)
+        // More than 14 targets: simulate the 14 best by the static score instead of
+        // trusting the static score alone (log 01.11: Tuirseach Archer, 16 targets).
+        if(kind==0)AiTopSimChoices102(simIds,simValues,14);
+        if (kind == 0 && source.TemplateId()!=162206 && BetaGwentAIStrength() >= 3 && !aiSimulating && simIds.Size() > 1)
         {
-            value = AiSimChoice(source, ids, best);
+            value = AiSimChoice(source, simIds, best);
             if (value != 0) best = value;
         }
         if(best==0){AiExplain("TARGET_FINISH","source="+source.TemplateId()+" reason=no_legal_child_play");monsters.Select(source,0);return;}
-        if (OptionalChoiceLimit(source) > 0 && score <= 0)
+        if (monsterMinimum==0 && OptionalChoiceLimit(source) > 0 && score <= 0)
         { AiExplain("TARGET_FINISH", "source="+source.TemplateId()+" request="+requestId+" reason=no_positive_optional_choice"); monsters.Select(source, 0); return; }
         AiExplain("TARGET_SELECT", "source="+source.TemplateId()+" request="+requestId+" kind="+kind+" target="+best+" reason=highest_choice_value_with_exact_target_simulation");
         if (kind == 3) monsters.Row(source, bestSide, best); else monsters.Select(source, best);
+    }
+    // Keep the `limit` candidates with the highest static score (stable order).
+    private function AiTopSimChoices102(out ids : array<int>, out values : array<int>, limit : int)
+    {
+        var i, worst : int;
+        while(ids.Size()>limit){
+            worst=0;for(i=1;i<ids.Size();i+=1)if(values[i]<values[worst])worst=i;
+            ids.Erase(worst);values.Erase(worst);
+        }
     }
     private function AiSimChoice(source : CBetaGwentDuelCard, ids : array<int>, preferred : int) : int
     {
@@ -983,7 +1240,7 @@ class CBetaGwentDuelSession extends IScriptable
     public function MonsterPlayExisting(source : CBetaGwentDuelCard, child : CBetaGwentDuelCard)
     {
         var s : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition; var m : SBetaGwentMatchSnapshot; var row : int;
-        if (!source) return;
+        CommitCancelablePlay098(); if (!source) return;
         // A queued reaction may invalidate a chosen pile card before its play.
         // Resolve that graph without submitting an impossible child action.
         if (!ExistingChildAvailable(source,child))
@@ -1045,9 +1302,9 @@ class CBetaGwentDuelSession extends IScriptable
     }
     public function MonsterDuel(source : CBetaGwentDuelCard, target : CBetaGwentDuelCard, heal : int, armor : int)
     { if (!effects.EnqueueMonsterDuel(source, target, false, heal, armor)) FailAbility("Не удалось начать дуэль отрядов."); }
-    public function MonsterMoved(old : SBetaGwentCardSnapshot)
-    { var moved : SBetaGwentCardSnapshot;if (events && monsters) { events.MonsterTrigger(4, old); events.NorthTrigger(4, old); monsters.NilfTrigger(3,old);
-        if(FindCard(old.instanceId)){moved=FindCard(old.instanceId).Snapshot();if((moved.locationMask&7)==0 && moved.runtimeTemplate.templateId==162308)FindCard(moved.instanceId).SetNilfCounter(0);if((moved.locationMask&7)!=0 && moved.runtimeTemplate.typeMask==4 && (moved.runtimeTierMask&6)!=0 && !BetaGwentNilfAgent(moved.runtimeTemplate.templateId))nilfLastMovedUnit=moved.runtimeTemplate.templateId;} } }
+    public function MonsterMoved(old : SBetaGwentCardSnapshot, optional playedArrival : bool, optional moveReason : int)
+    { var moved : SBetaGwentCardSnapshot;var card : CBetaGwentDuelCard;if(moveReason==0){moveReason=2;if(playedArrival)moveReason=1;if(old.isWaitingToDie)moveReason=4;}if (events && monsters) { events.MonsterTrigger(4, old,playedArrival); events.NorthTrigger(4, old); monsters.NilfTrigger(3,old,playedArrival,moveReason);
+        card=FindCard(old.instanceId);if(card){moved=card.Snapshot();if((old.locationMask&7)!=0 && (moved.locationMask&248)!=0 && moved.runtimeTemplate.templateId==162308)card.nilfTurnArmed=false;if((moved.locationMask&7)!=0 && moved.runtimeTemplate.typeMask==4 && (moved.runtimeTierMask&6)!=0 && !BetaGwentNilfAgent(moved.runtimeTemplate.templateId))nilfLastMovedUnit=moved.runtimeTemplate.templateId;} } }
     public function MonsterWeather(side : int, row : int, token : int) { weather.ApplyHazard(side, row, token); }
     public function MonsterWeatherChanged(side : int, row : int, oldToken : int, token : int)
     {
@@ -1055,7 +1312,7 @@ class CBetaGwentDuelSession extends IScriptable
         if (!events || !monsters || oldToken == token || token == 0) return;
         cause.positionPlayerId = side; cause.locationMask = row; cause.timerValue = token; events.MonsterTrigger(3, cause);
     }
-    public function MonsterIsHazard(token : int) : bool { return token != 0 && (token & 384) == 0; }
+    public function MonsterIsHazard(token : int) : bool { return (token & 7807) != 0; }
     public function MonsterMoveWeather(side : int, fromRow : int, toRow : int)
     { var token : int; token = weather.Token(side, fromRow); weather.ClearRow(side, fromRow); if (MonsterIsHazard(token)) weather.ApplyHazard(side, toRow, token); }
     public function MonsterDamaged(source : CBetaGwentDuelCard, target : CBetaGwentDuelCard)
@@ -1086,6 +1343,22 @@ class CBetaGwentDuelSession extends IScriptable
     }
     public function TimerExpired(card : CBetaGwentDuelCard)
     { if (card && !fatal) events.TimerExpired(card.Snapshot()); }
+    private function ResolveSourceTimer096(source : CBetaGwentDuelCard) : bool
+    {
+        var s,t : SBetaGwentCardSnapshot;var ids : array<int>;var i,best,templateId : int;
+        s=source.Snapshot();templateId=s.runtimeTemplate.templateId;
+        if(templateId!=112107 && templateId!=162402 && templateId!=143301)return false;
+        if(templateId==112107)monsters.nilf.SourceCards(0,7,15,4,8,0,source,ids);
+        else monsters.nilf.SourceCards(s.positionPlayerId,s.locationMask,15,12,8,0,source,ids);
+        for(i=ids.Size()-1;i>=0;i-=1)if(ids[i]==s.instanceId)ids.Erase(i);
+        best=2147483647;if(templateId==112107)best=-1;
+        for(i=0;i<ids.Size();i+=1){t=FindCard(ids[i]).Snapshot();if(templateId==112107)best=Max(best,t.power.currentPower);else best=Min(best,t.power.currentPower);}
+        for(i=0;i<ids.Size();i+=1){t=FindCard(ids[i]).Snapshot();
+            if(templateId==143301)MonsterPower(source,FindCard(ids[i]),-2);
+            else if(t.power.currentPower==best)QueueDestroy(FindCard(ids[i]),source);}
+        if(templateId!=112107)MonsterOperation(source,source,14,0,s.locationMask);
+        return true;
+    }
     private function BeforeTurnWithEvents(side : int)
     {
         // Vran priority0 is before weather -5/-10/-15. More general merged trigger scheduling is pending.
@@ -1151,6 +1424,8 @@ class CBetaGwentDuelSession extends IScriptable
     { if (!effects.Enqueue(target, 11, value, true, source)) FailAbility("Не удалось поставить установку силы в очередь."); }
     public function QueueResetPower(source : CBetaGwentDuelCard, target : CBetaGwentDuelCard)
     { if (!effects.Enqueue(target, 9, 0, true, source)) FailAbility("Не удалось поставить сброс силы в очередь."); }
+    public function QueueZeroStrengthBanish(target : CBetaGwentDuelCard)
+    { if (!effects.Enqueue(target,21,0,true,NULL)) FailAbility("Не удалось удалить карту с нулевой базовой силой."); }
     public function QueueResilienceToggle(source : CBetaGwentDuelCard, target : CBetaGwentDuelCard)
     { if (!effects.Enqueue(target, 10, 1, false, source)) FailAbility("Не удалось поставить Стойкость в очередь."); }
     public function RecordResilienceVisual(card : CBetaGwentDuelCard)
@@ -1178,7 +1453,7 @@ class CBetaGwentDuelSession extends IScriptable
         var s : SBetaGwentCardSnapshot; var operation : int;
         if (!CanConsume(source, target))
         { BetaGwentLog("DUEL_CONSUME_REJECT reason=self_or_missing_target"); return false; }
-        s = target.Snapshot(); operation = 4; if (s.locationMask == 32 || s.locationMask == 8) operation = 5;
+        s = target.Snapshot(); operation = 4; if (s.locationMask == 32) operation = 5;
         if (!effects.Enqueue(target, operation, 0, false, source))
         { FailAbility("Не удалось поставить поглощение в очередь."); return false; }
         return true;
@@ -1210,10 +1485,15 @@ class CBetaGwentDuelSession extends IScriptable
             + " template=" + d.header.templateId + " from=" + t.locationMask + " to=512 removalType=1 deathwish=false");
         return true;
     }
+    public function BeginConsumeBatch(ids : array<int>)
+    { var i : int; consumeBatchIds.Clear(); consumeBatchFired = false; for (i = 0; i < ids.Size(); i += 1) consumeBatchIds.PushBack(ids[i]); }
     public function AfterConsume(source : CBetaGwentDuelCard, target : CBetaGwentDuelCard, optional banished : bool) : bool
     {
+        var t : SBetaGwentCardSnapshot; var passives : bool;
         if (fatal || !source || !target) return false;
-        events.AfterConsume(source.Snapshot(), target.Snapshot(), banished); events.MonsterTrigger(6, source.Snapshot()); return events.Flush();
+        t = target.Snapshot(); passives = true;
+        if (consumeBatchIds.Contains(t.instanceId)) { consumeBatchIds.Remove(t.instanceId); passives = !consumeBatchFired; consumeBatchFired = true; }
+        events.AfterConsume(source.Snapshot(), t, banished, !passives); if (passives) events.MonsterTrigger(6, source.Snapshot()); return events.Flush();
     }
     public function BanishOrdinary(source : CBetaGwentDuelCard, target : CBetaGwentDuelCard) : bool
     {
@@ -1371,9 +1651,50 @@ class CBetaGwentDuelSession extends IScriptable
     public function WeatherDamage(side : int, row : int) : int { return weather.Damage(side, row); }
     // Expected cost of putting a unit with this definition into the row (AI generation 2).
     // Positive = bad. Hazards tick once per own turn for the rest of the round; boons pay.
+    // Points this very body is expected to lose to the weather already sitting on that
+    // row before the round ends. Frost and its variant eat the cheapest body in the row,
+    // Fog and its variant the strongest, so a neighbour that already draws those hits
+    // spares this one; a body alone on a weathered row pays for every remaining turn.
+    public function AiHazardBodyRisk(side : int, row : int, power : int, armor : int, ticks : int) : int
+    {
+        var token, hazard, i, tick, body, picked, extreme, absorbed, damage : int;
+        var cards : array<CBetaGwentDuelCard>; var s : SBetaGwentCardSnapshot;
+        var powers, armors : array<int>;
+        if (ticks <= 0 || power <= 0) return 0;
+        token = weather.Token(side, row); hazard = weather.Hazard(side, row);
+        if (hazard <= 0) return 0;
+        // Armour is a finite pool, not a fresh shield on every weather tick.
+        if (token != 1 && token != 16 && token != 2 && token != 32)
+            return Min(power, Max(0, hazard * ticks - armor));
+        GetZoneCards(side, row, cards);
+        for (i = 0; i < cards.Size(); i += 1)
+        {
+            s = cards[i].Snapshot();
+            if (s.isWaitingToDie || (s.tokenMask & 8) != 0 || s.power.currentPower <= 0) continue;
+            powers.PushBack(s.power.currentPower); armors.PushBack(s.power.armor);
+        }
+        body = powers.Size(); powers.PushBack(power); armors.PushBack(Max(0, armor));
+        for (tick = 0; tick < ticks && powers[body] > 0; tick += 1)
+        {
+            // Conservatively charge ties to this body without consuming game RNG.
+            picked = body; extreme = powers[body];
+            for (i = 0; i < powers.Size(); i += 1)
+            {
+                if (powers[i] <= 0) continue;
+                if (((token == 1 || token == 16) && powers[i] < extreme)
+                    || ((token == 2 || token == 32) && powers[i] > extreme))
+                { picked = i; extreme = powers[i]; }
+            }
+            absorbed = Min(armors[picked], hazard); armors[picked] -= absorbed;
+            damage = hazard - absorbed; powers[picked] = Max(0, powers[picked] - damage);
+        }
+        return power - powers[body];
+    }
+    // Expected cost of putting a unit with this definition into the row (AI generation 2).
+    // Positive = bad. Hazards tick once per own turn for the rest of the round; boons pay.
     public function AiRowPlacementCost(side : int, row : int, d : SBetaGwentDuelDefinition) : int
     {
-        var m : SBetaGwentMatchSnapshot; var turns, hazard, boon, token, count, enemy : int;
+        var m : SBetaGwentMatchSnapshot; var turns, hazard, boon, token, count, enemy, risk : int;
         if (BetaGwentAIStrength() < 2) return weather.Damage(side, row) * 3 + CountLocation(side, row) * 2;
         m = match.Snapshot(); enemy = BetaGwentOpponentId(side); count = CountLocation(side, row);
         turns = CountLocation(side, 8);
@@ -1384,7 +1705,15 @@ class CBetaGwentDuelSession extends IScriptable
         if(d.effect==15 && boon>0)return count+boon*turns;
         if (token == 512 || token == 2048 || token == 1024) return hazard * 3 + count;
         if (token == 256 && (d.unitTraits & 288) == 0) boon = 0;
-        if (hazard > 0) return hazard * turns + 4 + count;
+        // Ranking rows by their weather alone pushed fresh bodies into empty weathered
+        // rows, where the very next hits land on them. The body's own risk is priced in
+        // so a row that already shelters a cheaper (Frost) or stronger (Fog) neighbour
+        // wins, and a lone body on a weathered row becomes the last choice.
+        if (hazard > 0)
+        {
+            risk = AiHazardBodyRisk(side, row, d.header.power, d.header.armor, turns);
+            return hazard * turns + 4 + count + risk * 8;
+        }
         if (boon > 0) return count - boon * turns * Min(2, count + 1) / (count + 1);
         return count;
     }
@@ -1454,7 +1783,7 @@ class CBetaGwentDuelSession extends IScriptable
             while (j < ordered.Size()) { other = ordered[j].Snapshot(); if (other.locationIndex > s.locationIndex) break; j += 1; }
             ordered.Insert(j, live[i]);
         }
-        for (i = 0; i < ordered.Size(); i += 1) ordered[i].Move(side, zone, i);
+        for (i = 0; i < ordered.Size(); i += 1) ordered[i].SetLocationIndex(i);
     }
     private function LocationCards(side : int, zone : int, out ordered : array<CBetaGwentDuelCard>)
     {
@@ -1474,7 +1803,7 @@ class CBetaGwentDuelSession extends IScriptable
         LocationCards(side, 16, ordered);
         for (i = 0; i < ordered.Size() && i < amount; i += 1)
         {
-            ordered[i].Move(side, 8, CountLocation(side, 8)); ordered[i].SetPlayable(true); monsters.NilfTrigger(2,ordered[i].Snapshot());
+            drawn=ordered[i].Snapshot();ordered[i].Move(side, 8, CountLocation(side, 8)); ordered[i].SetPlayable(true);MonsterMoved(drawn,false,2); monsters.NilfTrigger(2,ordered[i].Snapshot());
             if (side == 1) { drawn = ordered[i].Snapshot(); RecordVisual(14, drawn.instanceId, "Вы добрали карту", 400); }
             else RecordVisual(14, 0, "Соперник добрал карту", 300);
         }
@@ -1485,12 +1814,13 @@ class CBetaGwentDuelSession extends IScriptable
         var hand, deck : array<CBetaGwentDuelCard>; var blacklist, reserved : array<int>;
         var outgoing, incoming : CBetaGwentDuelCard; var s, t : SBetaGwentCardSnapshot;
         var d : SBetaGwentDuelDefinition; var i, j, pass, used, index, outgoingId, priority, maximum : int;
+        var tutorA, tutorB, tutorV : array<int>;
         while (used < budget && !fatal)
         {
             outgoing = NULL; incoming = NULL; LocationCards(2, 8, hand);
             archetypeAI.Refresh();maximum=0;
             for(i=0;i<hand.Size();i+=1){s=hand[i].Snapshot();if(reserved.Contains(s.instanceId))continue;
-                priority=Max(archetypeAI.Mulligan(hand[i]),AiTutorMulliganPriority(hand[i]));AiExplain("MULLIGAN_OPTION", "card="+s.instanceId+" template="+s.runtimeTemplate.templateId+" replacePriority="+priority+" reason=archetype_duplicates_and_legal_tutor_pool");if(priority>maximum){maximum=priority;outgoing=hand[i];}}
+                priority=Max(AiTutorReturnMulliganPriority102(hand[i],hand,tutorA,tutorB,tutorV),Max(AiSpecialTutorMulliganPriority(hand[i]),Max(archetypeAI.Mulligan(hand[i]),AiTutorMulliganPriority(hand[i]))));AiExplain("MULLIGAN_OPTION", "card="+s.instanceId+" template="+s.runtimeTemplate.templateId+" replacePriority="+priority+" reason=archetype_duplicates_and_legal_tutor_pool");if(priority>maximum){maximum=priority;outgoing=hand[i];}}
             if(weatherProfile && !outgoing)for(i=0;i<hand.Size();i+=1){t=hand[i].Snapshot();if(hand[i].TemplateId()==113302 && !reserved.Contains(t.instanceId)){outgoing=hand[i];break;}}
             for (i = 0; i < hand.Size() && !outgoing; i += 1)
             {
@@ -1517,10 +1847,7 @@ class CBetaGwentDuelSession extends IScriptable
             if (!incoming) break; t = incoming.Snapshot(); reserved.PushBack(t.instanceId);
             index = random.NextBounded(deck.Size());
             incoming.Move(2, 8, s.locationIndex); incoming.SetPlayable(true);MonsterMoved(t);
-            outgoing.Move(2, 256, 0); Reindex(2, 16); LocationCards(2, 16, deck);
-            for (i = 0; i < deck.Size(); i += 1)
-            { t = deck[i].Snapshot(); if (t.locationIndex >= index) deck[i].Move(2, 16, t.locationIndex + 1); }
-            outgoing.Move(2, 16, index); Reindex(2, 16);MonsterMoved(s);NilfSwapped(outgoing); used += 1;
+            MoveInactiveToIndex(outgoing,2,16,index);NilfSwapped(outgoing); used += 1;
             // Diagnostic stays server-side: no hidden replacement identity in the UI.
             BetaGwentLog("DUEL_AI_MULLIGAN outgoing=" + outgoingId + " used=" + used + " weather="+weatherProfile+" profile="+archetypeAI.ProfileId()+" priority="+maximum+" policy=rules88");
         }
@@ -1561,6 +1888,114 @@ class CBetaGwentDuelSession extends IScriptable
         for(i=0;i<values.Size();i+=1)for(j=i+1;j<values.Size();j+=1){total+=Max(values[i],values[j]);count+=1;}
         return value+total/count;
     }
+    // Restore the legal special pool before replacing its empty consumer.
+    // Ithlinne consumes one spell/boon/hazard (then creates its second play);
+    // Mercenaries each consume a separate bronze special. Hand identities and
+    // our own unordered deck only; no profile-specific card-name exception.
+    // 1 Nov: a hand card that a held deck tutor can play belongs in the deck while
+    // that tutor's own pool is short (two cards per held tutor: one to play, one
+    // for a choice). Log 01.11: two Tormented Mages kept Alzur's Thunder in hand
+    // with too few spells left for them. Eligibility comes from the live rules on
+    // a search clone, never from a hand-kept filter table.
+    private function AiTutorReturnMulliganPriority102(card : CBetaGwentDuelCard, hand : array<CBetaGwentDuelCard>,
+        out tutorA : array<int>, out tutorB : array<int>, out tutorV : array<int>) : int
+    {
+        var deck : array<CBetaGwentDuelCard>; var s,t : SBetaGwentCardSnapshot; var i,j,tutors,pool : int;
+        s=card.Snapshot();if(s.positionPlayerId!=2 || s.locationMask!=8 || s.isWaitingToDie)return 0;
+        LocationCards(2,16,deck);
+        for(i=0;i<hand.Size();i+=1){
+            if(hand[i]==card)continue;t=hand[i].Snapshot();
+            if(!t.canBePlayed || !AiDeckTutor102(t.runtimeTemplate.templateId))continue;
+            tutors=0;for(j=0;j<hand.Size();j+=1)if(hand[j]!=card && hand[j].TemplateId()==t.runtimeTemplate.templateId)tutors+=1;
+            // Pool first, stopping at the demand: each probe is a full search clone,
+            // and an ample pool needs no hand probes at all.
+            pool=0;for(j=0;j<deck.Size() && pool<2*tutors;j+=1)if(AiTutorTakes102(hand[i],deck[j],tutorA,tutorB,tutorV))pool+=1;
+            if(pool>=2*tutors)continue;
+            if(!AiTutorTakes102(hand[i],card,tutorA,tutorB,tutorV))continue;
+            AiExplain("MULLIGAN_TUTOR_TARGET","card="+s.instanceId+" template="+s.runtimeTemplate.templateId+" tutor="+t.runtimeTemplate.templateId
+                +" tutors="+tutors+" deckPool="+pool+" reason=held_deck_tutor_can_play_this_card");
+            return 33;
+        }
+        return 0;
+    }
+    // Template-level cache: a search clone per tutor/target pair, own cards only.
+    private function AiTutorTakes102(tutor : CBetaGwentDuelCard, target : CBetaGwentDuelCard,
+        out tutorA : array<int>, out tutorB : array<int>, out tutorV : array<int>) : bool
+    {
+        var g : CBetaGwentDuelSession; var i,a,b,taken : int; var s,t : SBetaGwentCardSnapshot;
+        if(!tutor || !target || tutor==target)return false;
+        a=tutor.TemplateId();b=target.TemplateId();
+        for(i=0;i<tutorA.Size();i+=1)if(tutorA[i]==a && tutorB[i]==b)return tutorV[i]==1;
+        // Bound the round-start pause: at most 48 search clones per mulligan (the
+        // logged two-mage hand needs 27). Unprobed pairs count as not eligible.
+        if(tutorA.Size()>=48)return false;
+        s=tutor.Snapshot();t=target.Snapshot();
+        BetaGwentAISimEnter();g=AiSimClone();
+        if(g && g.AiTutorProbe102(s.instanceId,t.instanceId))taken=1;
+        BetaGwentAISimLeave();
+        tutorA.PushBack(a);tutorB.PushBack(b);tutorV.PushBack(taken);
+        return taken==1;
+    }
+    // Search clone only: the own deck holds just the target, the tutor is played
+    // by the internal policy. Taken = the target left the deck for the board,
+    // the play stack or the graveyard.
+    public function AiTutorProbe102(tutorId : int, targetId : int) : bool
+    {
+        var cards : array<CBetaGwentDuelCard>; var tutor,target : CBetaGwentDuelCard;
+        var s : SBetaGwentCardSnapshot; var i,row : int; var played : bool;
+        if(!aiSimulating)return false;
+        tutor=registry.Find(tutorId);target=registry.Find(targetId);
+        if(!tutor || !target || tutor==target)return false;
+        LocationCards(2,16,cards);
+        for(i=0;i<cards.Size();i+=1)if(cards[i]!=target)cards[i].Move(2,512,0);
+        s=target.Snapshot();if(s.locationMask!=16)target.Move(2,16,0);
+        Reindex(2,16);Reindex(2,8);tutor.SetPlayable(true);
+        mulligan=false;waiting=false;pendingCard=NULL;pendingLeader=NULL;externalPolicyMask=0;
+        match.currentPlayerId=2;match.roundActive=true;match.turnActive=true;
+        row=1;
+        while(row<=4 && !played){if(Play(2,tutorId,row))played=true;row*=2;}
+        if(!played || fatal)return false;
+        FlushDeaths();if(fatal)return false;
+        s=target.Snapshot();
+        return (s.locationMask&295)!=0;
+    }
+    // Deck tutors whose pool a mulligan return can refill. Board copies,
+    // top-of-deck, opponent-deck, hand-swap (Ban Ard) and graveyard-consume effects are excluded:
+    // a card shuffled to a random deck index does not reliably feed them.
+    private function AiDeckTutor102(templateId : int) : bool
+    {
+        switch(templateId){
+        case 113303: case 113402: case 132402: case 200154: case 113209: case 200019: case 113102:
+        case 201704: case 143201: case 123201: case 201699: case 201632: case 132406: case 200220:
+        case 200112: case 200222: case 131102: case 122103: case 200033: case 201621:
+        case 201628: case 122403: case 162314: case 200032: case 201603: case 201617: case 201664:
+        case 200160: case 200167: case 142207: case 142307: case 142308: case 201676: case 142102:
+        case 142107: case 201615: case 152306: case 200081: case 200102: case 200149: case 200212:
+        case 200237: case 201768: return true;
+        }
+        return false;
+    }
+
+    private function AiSpecialTutorMulliganPriority(card : CBetaGwentDuelCard) : int
+    {
+        var s,t : SBetaGwentCardSnapshot;var i,ithlinne,mercenary,spells,specials : int;
+        s=card.Snapshot();
+        if(s.positionPlayerId!=2 || s.locationMask!=8 || s.isWaitingToDie
+            || s.runtimeTemplate.typeMask!=2 || (s.runtimeTierMask&2)==0)return 0;
+        for(i=0;i<live.Size();i+=1){t=live[i].Snapshot();
+            if(t.positionPlayerId!=2 || t.isWaitingToDie)continue;
+            if(t.locationMask==8 && t.canBePlayed){
+                if(t.runtimeTemplate.templateId==142107)ithlinne+=1;
+                if(t.runtimeTemplate.templateId==142308)mercenary+=1;
+            }
+            if(t.locationMask==16 && t.runtimeTemplate.typeMask==2 && (t.runtimeTierMask&2)!=0){
+                specials+=1;if(BetaGwentScoiaIthlinne(t.runtimeTemplate.templateId))spells+=1;
+            }
+        }
+        if(ithlinne>spells && BetaGwentScoiaIthlinne(s.runtimeTemplate.templateId))return 34;
+        if(mercenary>0 && specials<ithlinne+mercenary)return 32;
+        return 0;
+    }
     private function AiCardKeepValue(card : CBetaGwentDuelCard) : int
     {
         var d : SBetaGwentDuelDefinition;var kept : SBetaGwentCardSnapshot; var value,targets : int;var excluded : array<int>;
@@ -1589,7 +2024,8 @@ class CBetaGwentDuelSession extends IScriptable
         natalis=d.effect==34 && d.specialMode==103 && d.header.templateId!=200033;
         if(d.effect!=29){
             d.pileLocation=16;d.targetTypes=14;d.targetTiers=15;d.targetIgnore=0;
-            if(d.header.templateId==142308){d.targetTypes=10;d.targetTiers=2;}
+            if(d.header.templateId==142107){d.targetTypes=2;d.targetTiers=2;}
+            else if(d.header.templateId==142308){d.targetTypes=10;d.targetTiers=2;}
             else if(d.header.templateId==162314){d.targetTypes=4;d.targetTiers=2;}
             else if(d.header.templateId==201617){d.targetTypes=12;d.targetTiers=2;}
             else if(d.header.templateId==142207){d.targetTypes=4;d.targetTiers=6;}
@@ -1603,6 +2039,7 @@ class CBetaGwentDuelSession extends IScriptable
                 || (s.tokenMask&d.targetIgnore)!=0 || (d.consumeMaximum>0 && s.power.currentPower>d.consumeMaximum))continue;
             if((d.header.templateId==162314 || d.header.templateId==201617) && !AiMulliganTutorCandidate(d.header.templateId,s))continue;
             if(d.pileTraitMask!=0 && (td.unitTraits&d.pileTraitMask)==0)continue;
+            if(d.header.templateId==142107 && !BetaGwentScoiaIthlinne(td.header.templateId))continue;
             if(d.header.templateId==142207 && !BetaGwentNilfDwarf(td.header.templateId))continue;
             if(d.header.templateId==201676 && !BetaGwentNorthernCategory(td.header.templateId,12))continue;
             if(natalis && (!BetaGwentNorthernCategory(td.header.templateId,8) || AiPileCandidateValue(cards[i],2,false,1)<=0))continue;
@@ -1709,11 +2146,7 @@ class CBetaGwentDuelSession extends IScriptable
         // RNG bound uses deck count BEFORE removing incoming (original Mulligan).
         deckIndex = random.NextBounded(ordered.Size());
         incoming.Move(mulliganSide, 8, s.locationIndex); incoming.SetPlayable(true);MonsterMoved(t);
-        outgoing.Move(mulliganSide, 256, 0); Reindex(mulliganSide, 16);
-        LocationCards(mulliganSide, 16, ordered);
-        for (i = 0; i < ordered.Size(); i += 1)
-        { t = ordered[i].Snapshot(); if (t.locationIndex >= deckIndex) ordered[i].Move(mulliganSide, 16, t.locationIndex + 1); }
-        outgoing.Move(mulliganSide, 16, deckIndex); Reindex(mulliganSide, 16);MonsterMoved(s);NilfSwapped(outgoing); mulliganUsed += 1;
+        MoveInactiveToIndex(outgoing,mulliganSide,16,deckIndex);NilfSwapped(outgoing); mulliganUsed += 1;
         BetaGwentLog("DUEL_MULLIGAN_SWAP request=" + requestId + " outgoing=" + item
             + " incoming=" + incomingId + " index=" + deckIndex + " used=" + mulliganUsed + " draws=" + random.DrawCount());
         RefreshMulligan();
@@ -1831,10 +2264,10 @@ class CBetaGwentDuelSession extends IScriptable
         var anchor : CBetaGwentDuelCard;
         anchor = registry.Find(anchorId); if (!anchor) return false; a = anchor.Snapshot();
         return a.positionPlayerId == side && (a.locationMask & 7) != 0 && a.runtimeTemplate.typeMask == 4
-            && !a.isWaitingToDie && a.power.currentPower > 0 && a.locationIndex >= 0
+            && (a.isWaitingToDie || a.power.currentPower > 0) && a.locationIndex >= 0
             && CanInsertUnit(side, a.locationMask, a.locationIndex);
     }
-    private function InsertUnit(card : CBetaGwentDuelCard, side : int, row : int, requestedIndex : int) : bool
+    private function InsertUnit(card : CBetaGwentDuelCard, side : int, row : int, requestedIndex : int, optional playedArrival : bool) : bool
     {
         var s, other : SBetaGwentCardSnapshot; var i, index : int;
         if (!card) return false;
@@ -1847,9 +2280,11 @@ class CBetaGwentDuelSession extends IScriptable
         {
             other = live[i].Snapshot();
             if (other.positionPlayerId == side && other.locationMask == row && other.locationIndex >= index)
-                live[i].Move(side, row, other.locationIndex + 1);
+                live[i].SetLocationIndex(other.locationIndex + 1);
         }
-        card.Move(side, row, index); weather.Contact(card); MonsterMoved(s); return true;
+        card.Move(side, row, index); if(!deferredPlay099 && !probingPlay099)weather.Contact(card);
+        if (playedArrival) { card.pendingArrival = s; card.hasPendingArrival = true; } else MonsterMoved(s,playedArrival);
+        return true;
     }
     public function PlayBefore(side : int, instanceId : int, anchorId : int) : bool
     {
@@ -1864,6 +2299,11 @@ class CBetaGwentDuelSession extends IScriptable
     }
     private function PlayAtIndex(side : int, instanceId : int, row : int, requestedIndex : int) : bool
     {
+        if(ShouldDeferPlay099(FindCard(instanceId),side,row,requestedIndex,1))deferredPlay099=true;
+        return PlayAtIndex099(side,instanceId,row,requestedIndex);
+    }
+    private function PlayAtIndex099(side : int, instanceId : int, row : int, requestedIndex : int) : bool
+    {
         var card : CBetaGwentDuelCard; var s : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition;
         var index, placementSide : int;
         if (!CanAct(side) || (row != 1 && row != 2 && row != 4)) return false;
@@ -1873,12 +2313,13 @@ class CBetaGwentDuelSession extends IScriptable
         placementSide = MonsterPlaySide(card, side); index = CountLocation(placementSide, row);
         if (requestedIndex != -3) index = requestedIndex;
         if (d.header.typeMask == 4 && !CanInsertUnit(placementSide, row, index)) return false;
+        BeginCancelablePlay098(card,side);
         if (!Require(match.ClaimInitialMove(side))) return false;
         RecordChaseHandPlay(side);
-        card.playFromLocation = s.locationMask; card.SetPlayable(false);
+        card.playFromLocation = s.locationMask; card.playFromTokens=s.tokenMask; card.SetPlayable(false);
         if (d.header.typeMask == 4)
         {
-            if (!InsertUnit(card, side, row, index)) { FailAbility("Не удалось разместить отряд."); return false; }
+            if (!InsertUnit(card, side, row, index,true)) { FailAbility("Не удалось разместить отряд."); return false; }
         }
         else card.Move(side, 256, 0);
         Reindex(side, 8); message = d.title;
@@ -1922,14 +2363,20 @@ class CBetaGwentDuelSession extends IScriptable
     }
     private function PlaceLeader(card : CBetaGwentDuelCard, side : int, row : int, requestedIndex : int) : bool
     {
+        if(ShouldDeferPlay099(card,side,row,requestedIndex,2))deferredPlay099=true;
+        return PlaceLeader099(card,side,row,requestedIndex);
+    }
+    private function PlaceLeader099(card : CBetaGwentDuelCard, side : int, row : int, requestedIndex : int) : bool
+    {
         var s : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition;
         if (!card || !CanInsertUnit(MonsterPlaySide(card,side), row, requestedIndex)) return false;
         s = card.Snapshot();
         if (s.positionPlayerId != side || s.locationMask != 64 || !s.canBePlayed) return false;
+        BeginCancelablePlay098(card,side);
         if (!Require(match.ClaimInitialMove(side))) return false;
         card.playFromLocation=64;
         // InsertUnit accepts the acting side and applies opposing-only placement once.
-        if (!InsertUnit(card, side, row, requestedIndex)) { FailAbility("Не удалось разместить лидера."); return false; }
+        if (!InsertUnit(card, side, row, requestedIndex,true)) { FailAbility("Не удалось разместить лидера."); return false; }
         card.SetPlayable(false);
         s = card.Snapshot(); d = card.Definition(); SetVisualSource(s.instanceId, d.header.templateId, side, row);
         RecordVisual(1, s.instanceId, d.title + ": лидер выходит на поле", 480);
@@ -1942,25 +2389,24 @@ class CBetaGwentDuelSession extends IScriptable
         if (playStack.Size() >= 16) { FailAbility("Превышена глубина вложенного розыгрыша."); return; }
         card.ResetModeChoice(); s = card.Snapshot(); playStack.PushBack(card);
         BetaGwentLog("DUEL_PLAY_PUSH depth=" + playStack.Size() + " card=" + s.instanceId);
-        // Contact passives resolve on the actual move, before the played graph.
-        FlushDeaths(); if (fatal) return; s = card.Snapshot();
-        if (s.runtimeTemplate.typeMask == 4 && ((s.locationMask & 7) == 0 || s.isWaitingToDie)) { CompletePlay(card); return; }
-        // BeforePlayed cancels the Played graph; AfterPlayed reactions still fire.
-        cancelled=monsters.ScoiaBeforePlayed(card);monsters.ScoiaHistory(card);
-        // PlayCardAction.AfterApplyTriggers emits AfterPlayed independently of mode/target requests.
-        weather.AfterPlayed(card); monsters.AfterPlayed(card); events.NorthTrigger(5, card.Snapshot()); monsters.NilfTrigger(4,card.Snapshot()); FlushDeaths(); if (fatal) return;
-        s = card.Snapshot();
-        if (s.runtimeTemplate.typeMask == 4 && ((s.locationMask & 7) == 0 || s.isWaitingToDie)) { CompletePlay(card); return; }
-        if(cancelled){CompletePlay(card);return;}
+        if(!deferredPlay099 && !probingPlay099 && !RunPlayedTriggers099(card))return;
+        if((cancelPlayState098 || probingPlay099) && cancelPlaySource098==s.instanceId)cancelPlayWatch098=true;
         ResolvePlayed(card, side);
     }
     private function PlayFromPile(parentCard : CBetaGwentDuelCard, card : CBetaGwentDuelCard, row : int, requestedIndex : int)
     {
+        CommitCancelablePlay098();
+        if(card && card.definition.header.typeMask==4 && ShouldDeferPlay099(card,NorthActingSide(parentCard),row,requestedIndex,3))deferredPlay099=true;
+        PlayFromPile099(parentCard,card,row,requestedIndex);
+    }
+    private function PlayFromPile099(parentCard : CBetaGwentDuelCard, card : CBetaGwentDuelCard, row : int, requestedIndex : int)
+    {
         var s, p : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition; var i : int;
         if (fatal || !parentCard || !card || playStack.Size() == 0) return;
         if (playStack[playStack.Size() - 1] != parentCard) { FailAbility("Нарушен порядок вложенного розыгрыша."); return; }
+        CommitCancelablePlay098();
         s = card.Snapshot(); p = parentCard.Snapshot(); d = card.Definition();
-        if(!HasRequiredPlayTarget(card)){BetaGwentLog("DUEL_NESTED_SKIP template=113201 reason=no_legal_decoy_target");CompletePlay(parentCard);return;}
+        if(!HasRequiredPlayTarget(card))BetaGwentLog("DUEL_NESTED_DECOY_NO_TARGET template=113201 resolves_to_graveyard");
         if ((s.locationMask != 16 && s.locationMask != 32 && s.locationMask != 128 && s.locationMask != 8) || s.positionPlayerId != NorthActingSide(parentCard))
         { FailAbility("Карта вложенного розыгрыша отсутствует в своей колоде или сбросе."); return; }
         for (i = 0; i < playStack.Size(); i += 1)
@@ -1968,13 +2414,14 @@ class CBetaGwentDuelSession extends IScriptable
         if (d.header.typeMask == 4 && !CanInsertUnit(MonsterPlaySide(card, s.positionPlayerId), row, requestedIndex))
         { FailAbility("Нет места для вложенного отряда."); return; }
         pendingCard = NULL; pendingRally = NULL; pendingChoice = false; pendingRow = false; pendingPileChoice = false; pendingIds.Clear();
+        if(d.header.typeMask==4)BeginCancelablePlay098(card,NorthActingSide(parentCard),true);
         d = parentCard.Definition(); if (d.effect == 29 || d.effect == 34) parentCard.StorePlayedChild(card); d = card.Definition();
-        card.playFromLocation = s.locationMask; card.SetPlayable(false);
+        card.playFromLocation = s.locationMask; card.playFromTokens=s.tokenMask; card.SetPlayable(false);
         // Emhyr spends a hand card inside his leader action. A tutor from deck
         // or grave does not; Dandelion's draw/play is already one hand action.
         if(s.locationMask==8 && parentCard.TemplateId()==200162)RecordChaseHandPlay(s.positionPlayerId);
         if (d.header.typeMask == 4)
-        { if (!InsertUnit(card, s.positionPlayerId, row, requestedIndex)) { FailAbility("Не удалось разместить вложенный отряд."); return; } }
+        { if (!InsertUnit(card, s.positionPlayerId, row, requestedIndex,true)) { FailAbility("Не удалось разместить вложенный отряд."); return; } }
         else card.Move(s.positionPlayerId, 256, 0);
         Reindex(s.positionPlayerId, s.locationMask); SetVisualSource(s.instanceId, d.header.templateId, s.positionPlayerId, row);
         if (s.locationMask == 32) RecordVisual(1, s.instanceId, "Из сброса → " + d.title, 480);
@@ -1993,6 +2440,7 @@ class CBetaGwentDuelSession extends IScriptable
         for(i=0;i<playStack.Size();i+=1)if(playStack[i]==card)return true;
         return false;
     }
+    public function IsExecutingCard(card : CBetaGwentDuelCard) : bool { return IsPlayAncestor(card); }
     private function ExistingChildAvailable(source : CBetaGwentDuelCard, child : CBetaGwentDuelCard) : bool
     {
         var s : SBetaGwentCardSnapshot;
@@ -2078,7 +2526,7 @@ class CBetaGwentDuelSession extends IScriptable
     private function BeginCreatedPlay(source : CBetaGwentDuelCard, templateId : int)
     {
         var id : int; var child : CBetaGwentDuelCard; var s : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition; var row : int; var m : SBetaGwentMatchSnapshot;
-        s = source.Snapshot();
+        CommitCancelablePlay098(); s = source.Snapshot();
         // A unit creator can leave the board while its first child resolves.
         // Finish the remaining graph rather than preparing an invalid creation.
         if(s.runtimeTemplate.typeMask==4 && ((s.locationMask&7)==0 || s.isWaitingToDie))
@@ -2086,6 +2534,10 @@ class CBetaGwentDuelSession extends IScriptable
         if (!registry.Allocate(id) || !effects.EnqueueCreatedCard(source, templateId, id) || !FlushEffects())
         { FailAbility("Не удалось создать карту для розыгрыша."); return; }
         child = registry.Find(id); if (!child) { FailAbility("Созданная карта не найдена."); return; }
+        // PlayCards only queues the child. Graph372 boosts its spawned instance
+        // while still in PlayStack, before placement and the child's Played graph.
+        if(source.TemplateId()==133302)
+        { d=source.Definition();MonsterOperation(source,child,1,d.amount,128);if(!FlushEffects())return; }
         d = child.Definition(); pendingIds.Clear(); pendingChoice = false; pendingRow = false; pendingCard = source;
         if (d.header.typeMask != 4) { PlayFromPile(source, child, 0, -3); return; }
         s = child.Snapshot(); row = RequestedPlacementRow(child, s.positionPlayerId);
@@ -2098,7 +2550,8 @@ class CBetaGwentDuelSession extends IScriptable
     {
         var d : SBetaGwentDuelDefinition; var s, t : SBetaGwentCardSnapshot; var rows : array<int>; var row, side, i : int;
         d = source.Definition(); s = source.Snapshot(); side = s.positionPlayerId;
-        if (!target) { CompletePlay(source); return; } t = target.Snapshot();
+        if (!target && d.specialMode != 27) { CompletePlay(source); return; }
+        if(target)t = target.Snapshot();
         if (d.specialMode == 31 || d.specialMode == 32)
         {
             if (d.specialMode == 31 || (d.powerMultiplier != 0 && t.power.currentPower < t.power.basePower + t.power.permanentPower)) QueueResetPower(source, target);
@@ -2114,10 +2567,10 @@ class CBetaGwentDuelSession extends IScriptable
             CompletePlay(source); return;
         }
         if (d.specialMode == 25)
-        { QueueDestroy(target); if (!FlushEffects()) return; DrainDeaths(); if (!fatal) BeginCreatedPlay(source, d.playTemplateId); return; }
+        { QueueDestroy(target); if (!FlushEffects()) return; KillWaitingToDieNow(); if (!fatal) BeginCreatedPlay(source, d.playTemplateId); return; }
         if (d.specialMode == 27)
         {
-            QueuePower(target, -d.amount, false); if (!FlushEffects()) return;
+            if(target){QueuePower(target, -d.amount, false); if (!FlushEffects()) return;}
             for (row = 1; row <= 4; row *= 2) if (CountLocation(side, row) < 9) rows.PushBack(row);
             if (rows.Size() > 0)
             { row = rows[random.NextBounded(rows.Size())]; s.locationMask = row; s.locationIndex = CountLocation(side, row);
@@ -2148,16 +2601,22 @@ class CBetaGwentDuelSession extends IScriptable
     }
     public function QueueRelocation(card : CBetaGwentDuelCard, side : int, row : int, resetHand : bool)
     { if (!effects.EnqueueRelocation(card, side, row, resetHand)) FailAbility("Не удалось поставить перемещение в очередь."); }
+    public function QueueRelocationAt(card : CBetaGwentDuelCard, side : int, row : int, index : int)
+    { if (!effects.EnqueueRelocationAt(card, side, row, false, index)) FailAbility("Не удалось поставить перемещение в очередь."); }
     public function ApplyRelocation(card : CBetaGwentDuelCard, side : int, row : int, resetHand : bool) : bool
+    { return ApplyRelocationAt(card,side,row,resetHand,-3); }
+    public function ApplyRelocationAt(card : CBetaGwentDuelCard, side : int, row : int, resetHand : bool, requestedIndex : int) : bool
     {
-        var s : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition; var index : int;
+        var s, other : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition; var index, i : int;
         if (!card) return false; s = card.Snapshot(); d = card.Definition();
         if ((s.locationMask & 7) == 0 || s.isWaitingToDie || (side != 1 && side != 2)) return true;
         if (row != 8 && CountLocation(side, row) >= 9) return true;
         index = CountLocation(side, row);
+        if(requestedIndex>=0)index=Min(requestedIndex,index);
+        for(i=0;i<live.Size();i+=1){other=live[i].Snapshot();if(live[i]!=card && other.positionPlayerId==side && other.locationMask==row && other.locationIndex>=index)live[i].SetLocationIndex(other.locationIndex+1);}
         card.Move(side, row, index); Reindex(s.positionPlayerId, s.locationMask);
         weather.Contact(card); MonsterMoved(s);
-        if (resetHand) { card.ResetInHand(); card.SetPlayable(false); }
+        if (resetHand) card.SetPlayable(false);
         RecordVisual(8, s.instanceId, "Перемещён: " + d.title, 450);
         BetaGwentLog("DUEL_RELOCATE card=" + s.instanceId + " oldSide=" + s.positionPlayerId + " oldRow=" + s.locationMask + " side=" + side + " row=" + row + " replay=" + resetHand);
         return true;
@@ -2245,15 +2704,17 @@ class CBetaGwentDuelSession extends IScriptable
         if (cardDefinition.effect == 28 && cardDefinition.specialRequest == 0)
         { specials.Auto(card); message = cardDefinition.title + ": эффект применён."; CompletePlay(card); return; }
         if (cardDefinition.effect == 0) { CompletePlay(card); return; }
+        if(cardDefinition.effect==6 && CountLocation(side,8)==0){CompletePlay(card);return;}
         if (cardDefinition.effect == 5) { Epidemic(); CompletePlay(card); return; }
         if (cardDefinition.effect == 14) { ResolveDeckSpecial(card); return; }
         if (cardDefinition.effect == 15)
         {
-            s = card.Snapshot(); weather.ClearRow(side, s.locationMask);
+            s = card.Snapshot(); weather.RemoveTokens(side,s.locationMask,3711);
             message = cardDefinition.title + ": свой ряд очищен."; CompletePlay(card); return;
         }
         if (cardDefinition.effect < 1 || cardDefinition.effect > 32 || cardDefinition.effect == 10 || cardDefinition.effect == 11)
         { FailAbility("Неизвестная способность разыгранной карты."); return; }
+        pendingTargetRequest098=true;
         specialHitsLeft = cardDefinition.specialCount; pendingHandPower = false; pendingPileChoice = false; handPowerTarget = 0;
         pendingCard = card; pendingIds.Clear(); pendingRow = cardDefinition.effect == 4 || cardDefinition.weatherToken != 0 || (cardDefinition.effect == 28 && cardDefinition.specialRequest == 2); requestId += 1;
         if (cardDefinition.effect == 9)
@@ -2318,12 +2779,13 @@ class CBetaGwentDuelSession extends IScriptable
     private function CompletePlay(card : CBetaGwentDuelCard)
     {
         var s : SBetaGwentCardSnapshot; var parentCard, child : CBetaGwentDuelCard; var d : SBetaGwentDuelDefinition;
+        CommitCancelablePlay098();
         if (fatal || !card || !FlushEffects()) return;
         if (playStack.Size() == 0 || playStack[playStack.Size() - 1] != card)
         { FailAbility("Нарушен порядок завершения розыгрыша."); return; }
         pendingCard = NULL; pendingIds.Clear(); pendingRow = false;
         pendingRally = NULL; pendingChoice = false; pendingHandPower = false; pendingPileChoice = false; handPowerTarget = 0; specialHitsLeft = 0;
-        DrainDeaths(); if (fatal) return; s = card.Snapshot();
+        if (fatal) return; s = card.Snapshot();
         if (s.runtimeTemplate.typeMask == 2 && !(nilfJob && nilfJob.source==card && nilfJob.kind!=8))
         {
             if((s.tokenMask&512)!=0)card.Move(s.positionPlayerId,512,0);
@@ -2334,6 +2796,12 @@ class CBetaGwentDuelSession extends IScriptable
             }
         }
         playStack.Erase(playStack.Size() - 1);
+        // Pop: the played unit's AfterMoved (From = its origin), then deaths once no play remains.
+        if (card.hasPendingArrival) { card.hasPendingArrival = false; MonsterMoved(card.pendingArrival, true); }
+        FlushDeaths(); if (fatal) return;
+        // Original played-card AfterMoved occurs when its execution stack entry
+        // is popped. Morenn's stored-instance graph waits until this point.
+        if(!(nilfJob && nilfJob.source==card && nilfJob.kind!=8)){monsters.nilf.PlayCompleted(card);monsters.nilf.dependencies.PlayCompleted(card);monsters.FrostArrival(card);FlushDeaths();if(fatal)return;}
         if(nilfJob && nilfJob.source==card && playStack.Size()==0)
         {if(nilfJob.kind==2)MonsterDraw(nilfJob.side,false);nilfJob=NULL;if(NilfNextReaction())return;effects.Report();SetVisualSource(0,0,0,0);FinishTurn();return;}
         if(card.TemplateId()!=201601 && s.runtimeTemplate.typeMask==2 && (s.runtimeTierMask&6)!=0 && BetaGwentNilfSpell(s.runtimeTemplate.templateId))
@@ -2386,6 +2854,13 @@ class CBetaGwentDuelSession extends IScriptable
             // still-required count so an external policy can choose that set.
             if(pendingCard.TemplateId()==200209 && pendingCard.monsterStage==1)
             { s.limits.minimum=pendingCard.monsterRemaining;s.limits.maximum=pendingCard.monsterRemaining; }
+            // ARequestTargetsAction clamps MaxTargets to the available set and
+            // assigns that same value to MinTargets. The UI still drains one
+            // selection at a time, but policies must see the whole required set.
+            if(pendingCard.TemplateId()==162208 || pendingCard.TemplateId()==200169)
+            { s.limits.maximum=Min(2,pendingIds.Size()+s.selectedCount);s.limits.minimum=s.limits.maximum; }
+            if(pendingCard.TemplateId()==122201 || pendingCard.TemplateId()==152205)
+                s.limits.maximum=Min(s.limits.maximum,pendingIds.Size()+s.selectedCount);
             return s;
         }
         if (pendingChoice)
@@ -2429,11 +2904,21 @@ class CBetaGwentDuelSession extends IScriptable
     }
     public function SelectTarget(id : int, item : int) : bool
     {
+        if(!ConfirmForDecision099(1,id,item,0))return !fatal;
+        return SelectTarget099(id,item);
+    }
+    public function SelectTarget099(id : int, item : int) : bool
+    {
         if (!IsPending() || mulligan || pendingChoice || pendingRally || pendingLeader || pendingRow || id != requestId || !BetaGwentRequestContains(pendingIds, item)) return false;
         if (pendingCard.IsMonsterAbility()) monsters.Select(pendingCard, item);
         else if (pendingPileChoice) SelectPileCard(item); else ApplyCardTarget(item); return !fatal;
     }
     public function FinishTarget(id : int) : bool
+    {
+        if(!ConfirmForDecision099(4,id,0,0))return !fatal;
+        return FinishTarget099(id);
+    }
+    public function FinishTarget099(id : int) : bool
     {
         var s : SBetaGwentRequestSnapshot; var d : SBetaGwentDuelDefinition;
         if (pendingLeader && id == requestId && !fatal)
@@ -2458,6 +2943,11 @@ class CBetaGwentDuelSession extends IScriptable
         ApplyCardTarget(0); return !fatal;
     }
     public function SelectPlacementBefore(id : int, anchorId : int) : bool
+    {
+        if(!ConfirmForDecision099(5,id,anchorId,0))return !fatal;
+        return SelectPlacementBefore099(id,anchorId);
+    }
+    public function SelectPlacementBefore099(id : int, anchorId : int) : bool
     {
         var card : CBetaGwentDuelCard; var a, s : SBetaGwentCardSnapshot;
         var m : SBetaGwentMatchSnapshot;
@@ -2512,6 +3002,11 @@ class CBetaGwentDuelSession extends IScriptable
     }
     public function SelectRow(id : int, side : int, row : int) : bool
     {
+        if(!ConfirmForDecision099(2,id,side,row))return !fatal;
+        return SelectRow099(id,side,row);
+    }
+    public function SelectRow099(id : int, side : int, row : int) : bool
+    {
         var card : CBetaGwentDuelCard; var cardState : SBetaGwentCardSnapshot;
         var d : SBetaGwentDuelDefinition; var actor : int;
         if (!CanSelectRow(id,side,row)) return false;
@@ -2527,7 +3022,7 @@ class CBetaGwentDuelSession extends IScriptable
     private function ApplyCardTarget(id : int)
     {
         var source, target : CBetaGwentDuelCard; var cardDefinition, targetDefinition : SBetaGwentDuelDefinition;
-        var s, t : SBetaGwentCardSnapshot; var amount, i, offset : int;
+        var s, t : SBetaGwentCardSnapshot; var amount, i, offset : int;var shape : array<int>;var cards : array<CBetaGwentDuelCard>;
         source = pendingCard; if (!source) return;
         cardDefinition = source.Definition(); s = source.Snapshot(); target = registry.Find(id);
         if (target && !CanDeployTarget(source, target)) { CompletePlay(source); return; }
@@ -2551,7 +3046,7 @@ class CBetaGwentDuelSession extends IScriptable
             if (cardDefinition.effect == 28) specials.Target(source, target);
             else if (cardDefinition.effect == 1) QueuePower(target, -cardDefinition.amount, false);
             else if (cardDefinition.effect == 31)
-            { if (!effects.Enqueue(target, 12, -cardDefinition.amount, false, source)) FailAbility("Не удалось ослабить изначальную силу."); }
+            { if (!effects.Enqueue(target, 12, -cardDefinition.amount, true, source)) FailAbility("Не удалось ослабить изначальную силу."); }
             else if (cardDefinition.effect == 32) QueueMultiplyPower(source, target, cardDefinition.powerMultiplier);
             else if (cardDefinition.effect == 27)
             {
@@ -2577,7 +3072,7 @@ class CBetaGwentDuelSession extends IScriptable
             else if (cardDefinition.effect == 6) QueuePower(target, -CountLocation(s.positionPlayerId, 8), false);
             else if (cardDefinition.effect == 7)
             {
-                amount = t.power.currentPower / 2;
+                amount = (t.power.currentPower + 1) / 2;
                 QueuePower(target, -amount, true); QueuePower(source, amount, true);
             }
             else if (cardDefinition.effect == 22)
@@ -2630,12 +3125,20 @@ class CBetaGwentDuelSession extends IScriptable
             else if (cardDefinition.effect == 3)
             {
                 // Shape mask57344, pivot4: selected unit and immediate neighbours.
-                for (i = 0; i < live.Size(); i += 1)
+                // The source query filters Ambush only, never the execution stack: the
+                // unit that pushed this spell into play (Keira, Detmold) sits inside the
+                // window and is boosted like any other neighbour.
+                GetZoneCards(t.positionPlayerId,t.locationMask,cards);
+                for (i = 0; i < cards.Size(); i += 1)
                 {
-                    s = live[i].Snapshot(); offset = s.locationIndex - t.locationIndex;
-                    if (s.positionPlayerId != t.positionPlayerId || s.locationMask != t.locationMask || offset < -1 || offset > 1) continue;
-                    QueuePower(live[i], cardDefinition.amount, false); QueueArmor(live[i], cardDefinition.addedArmor);
+                    s = cards[i].Snapshot(); offset = s.locationIndex - t.locationIndex;
+                    if (offset < -1 || offset > 1 || (s.tokenMask&8)!=0 || s.isWaitingToDie) continue;
+                    shape.PushBack(s.instanceId);
                 }
+                // ChangePower(SelectedShape) completes for the whole list before
+                // the graph's distinct ChangeArmor(SelectedShape) action.
+                for(i=0;i<shape.Size();i+=1)QueuePower(registry.Find(shape[i]),cardDefinition.amount,false);
+                for(i=0;i<shape.Size();i+=1)QueueArmor(registry.Find(shape[i]),cardDefinition.addedArmor,source);
             }
             targetDefinition = target.Definition();
             message = cardDefinition.title + " → " + targetDefinition.title;
@@ -2709,17 +3212,24 @@ class CBetaGwentDuelSession extends IScriptable
         RecordRowVisual(side, row, cardDefinition.title + ": удар по ряду");
         for (i = 0; i < live.Size(); i += 1)
         {
-            s = live[i].Snapshot(); if (s.positionPlayerId == side && s.locationMask == row && s.runtimeTemplate.typeMask == 4)
+            s = live[i].Snapshot(); if (s.positionPlayerId == side && s.locationMask == row && s.runtimeTemplate.typeMask == 4 && (s.tokenMask&8)==0 && !s.isWaitingToDie && !IsExecutingCard(live[i]))
                 QueuePower(live[i], -cardDefinition.amount, false);
         }
         message = cardDefinition.title + ": ряд получил " + cardDefinition.amount + " урона."; CompletePlay(source);
     }
     public function SelectFirstLight(id : int, choice : int) : bool
+    { if(!ConfirmForDecision099(6,id,choice,0))return !fatal;return SelectFirstLight099(id,choice); }
+    public function SelectFirstLight099(id : int, choice : int) : bool
     {
         if (fatal || !IsFirstLightChoice() || id != requestId || !BetaGwentRequestContains(pendingIds, choice)) return false;
         ResolveFirstLight(choice); return !fatal;
     }
     public function SelectTemplateChoice(id : int, choice : int) : bool
+    {
+        if(!ConfirmForDecision099(3,id,choice,0))return !fatal;
+        return SelectTemplateChoice099(id,choice);
+    }
+    public function SelectTemplateChoice099(id : int, choice : int) : bool
     {
         if (fatal || !pendingChoice || id != requestId || !BetaGwentRequestContains(pendingIds, choice)) return false;
         if (pendingCard.IsMonsterAbility()) monsters.Select(pendingCard, choice);
@@ -2868,7 +3378,7 @@ class CBetaGwentDuelSession extends IScriptable
         if (IsReactionPlacement())
         {
             pendingCard=NULL;pendingRally=NULL;pendingIds.Clear();
-            card.playFromLocation=s.locationMask;
+            card.playFromLocation=s.locationMask;card.playFromTokens=s.tokenMask;
             if(!InsertUnit(card,side,row,requestedIndex)){FailAbility("Нет места для отряда реакции.");return;}
             Reindex(s.positionPlayerId,s.locationMask);card.SetPlayable(false);StartPlayResolution(card,side);return;
         }
@@ -2995,7 +3505,7 @@ class CBetaGwentDuelSession extends IScriptable
         var cards : array<CBetaGwentDuelCard>;var l,r : SBetaGwentCardSnapshot;
         var row,i,value,maximum,horizon : int;
         if(d.header.templateId!=152309 && d.header.templateId!=152109)return false;
-        maximum=-2147483647;horizon=Min(3,AiHorizon(side));
+        maximum=-2147483647;horizon=Max(1,Min(3,AiHorizon(side)));
         for(row=1;row<=4;row*=2){
             LocationCards(side,row,cards);if(cards.Size()>=9)continue;
             for(i=0;i<=cards.Size();i+=1){
@@ -3092,22 +3602,64 @@ class CBetaGwentDuelSession extends IScriptable
         for(i=0;i<live.Size();i+=1){n=live[i].Snapshot();if(n.positionPlayerId==t.positionPlayerId && n.locationMask==t.locationMask && n.locationIndex==t.locationIndex+1)return n.instanceId;}
         return 0; // Last victim: insert at the end of its row.
     }
+    public function AiHaraldRow099(side : int, row : int, optional counterPass : bool) : int
+    {
+        var g : CBetaGwentDuelSession;var card : CBetaGwentDuelCard;var before : int;var m : SBetaGwentMatchSnapshot;
+        g=AiSimClone();if(!g)return -2147483647;card=g.Leader(side);if(!card)return -2147483647;
+        before=g.Score(side)-g.Score(BetaGwentOpponentId(side));
+        if(!g.PlaceLeader(card,side,row,-3) || g.fatal || g.IsPending())return -2147483647;
+        // With no hand, the opponent can pass instead of paying a card to reply.
+        // Resolve that legal response: the next BeforeTurn includes Frost and timers.
+        m=g.Snapshot();
+        if(counterPass && m.roundActive && m.currentPlayerId==BetaGwentOpponentId(side))
+            if(!g.Pass(BetaGwentOpponentId(side)) || g.fatal || g.IsPending())return -2147483647;
+        return g.Score(side)-g.Score(BetaGwentOpponentId(side))-before;
+    }
+    private function AiHaraldCatch099() : int
+    {
+        var row,gain,lead : int;var unknown : bool;
+        lead=Score(2)-Score(1);
+        for(row=1;row<=4;row*=2){
+            if(CountLocation(2,row)>=9)continue;
+            gain=AiHaraldRow099(2,row,true);
+            if(gain==-2147483647)unknown=true;
+            else if(lead+gain>=0)return 1;
+        }
+        if(unknown)return -1;return 0;
+    }
     private function BestCardRow(side : int, d : SBetaGwentDuelDefinition) : int
     {
-        var row,preferred,actualSide,value,best : int;
+        var row,preferred,actualSide,value,best,gain : int;
         if(AiVranFoodSlot(side,d,preferred,best))return preferred;
+        // Preserve the selected row even when the best ship slot is an append.
+        if(AiShipSlot(side,d,preferred,value))return preferred;
         // Harald's ten shots hit the OPPOSING row where he is placed.
         // Empty-row spreading must not send the whole volley into an empty lane.
         if(d.header.templateId==200161){
             best=-2147483647;
             for(row=1;row<=4;row*=2){
                 if(CountLocation(side,row)>=9)continue;
-                value=AiRowVolleyValue(side,row,10)-AiRowPlacementCost(side,row,d);
+                value=AiRowVolleyValue(side,row,10)*10-AiRowPlacementCost(side,row,d);
+                if(side==2 && !aiSimulating && BetaGwentAIStrength()>=2){gain=AiHaraldRow099(side,row,CountLocation(side,8)==0);if(gain==-2147483647)continue;value=gain*100-AiRowPlacementCost(side,row,d);}
                 if(value>best){best=value;preferred=row;}
             }
             return preferred;
         }
         if(d.header.templateId==132108)return AiBestMirunaRow(side,d);
+        // This deploy disperses its own row and gains one point per moved unit.
+        // Ordinary spreading must not prefer an empty row and discard the deploy.
+        if(d.effect==34 && d.specialMode==410){
+            best=-2147483647;
+            for(row=1;row<=4;row*=2){
+                if(CountLocation(side,row)>=9)continue;
+                value=AiRowDispersalValue(side,row)-AiRowPlacementCost(side,row,d);
+                // The source row is dispersed: remove only its pre-deploy crowding cost.
+                if(BetaGwentAIStrength()<2)value+=CountLocation(side,row)*2;
+                else value+=CountLocation(side,row);
+                if(value>best){best=value;preferred=row;}
+            }
+            return preferred;
+        }
         // Woodland's wolves always enter melee; his own row chooses the Fog.
         // Evaluate that Fog even when a deck profile supplies ordinary row AI.
         if (d.header.templateId == 132103) {
@@ -3132,6 +3684,19 @@ class CBetaGwentDuelSession extends IScriptable
             if(AiRowPlacementCost(actualSide,row,d)<AiRowPlacementCost(actualSide,preferred,d))preferred=row;
         }
         return preferred;
+    }
+    // Public row units that this deploy can actually disperse into free slots.
+    public function AiRowDispersalValue(side : int, row : int) : int
+    {
+        var i,destination,capacity,units : int;var s : SBetaGwentCardSnapshot;
+        for(destination=1;destination<=4;destination*=2)
+            if(destination!=row)capacity+=Max(0,9-CountLocation(side,destination));
+        if(capacity==0)return 0;
+        for(i=0;i<live.Size();i+=1){s=live[i].Snapshot();
+            if(s.positionPlayerId==side && s.locationMask==row && !s.isWaitingToDie
+                && (s.runtimeTierMask&15)!=0 && (s.runtimeTemplate.typeMask&4)!=0)units+=1;
+        }
+        return Min(units,capacity);
     }
     // Public material estimate for a fixed volley, not damage to EVERY unit.
     public function AiRowVolleyValue(side : int, row : int, shots : int) : int
@@ -3752,6 +4317,8 @@ class CBetaGwentDuelSession extends IScriptable
         if (item.kind == 8 || item.kind == 9) { weather.ResolveRowAbility(item); return; }
         sourceCard = registry.Find(item.source.instanceId); if (!sourceCard) { FailAbility("Источник события не найден."); return; }
         d = sourceCard.Definition(); s = sourceCard.Snapshot();
+        if(item.kind==12){if(ResolveSourceTimer096(sourceCard))return;if(d.header.templateId==200177)monsters.skellige.TimerTriggered(sourceCard);else if(d.header.templateId==142307)monsters.nilf.dependencies.TimerTriggered(sourceCard);else monsters.neutral.TimerTriggered(sourceCard);return;}
+        if(item.kind==13){monsters.nilf.TokenEvent(item);return;}
         if (item.kind == 10 || item.kind == 11) { monsters.Event(item); return; }
         if (item.kind == 2 && d.header.templateId == 200038) { monsters.Deathwish(sourceCard, item.source); return; }
         if (item.kind == 1)
@@ -3874,7 +4441,9 @@ class CBetaGwentDuelSession extends IScriptable
     {
         var batch : array<CBetaGwentDuelCard>; var fromPositions, killedPositions : array<SBetaGwentCardSnapshot>;
         var i, wave : int; var s : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition; var consumed : bool;
-        if (drainingDeaths || fatal) return; drainingDeaths = true;
+        if (drainingDeaths || fatal) return;
+        if (playStack.Size() > 0 && !completingOuterPlay && !suppressAbilities) return;
+        drainingDeaths = true;
         while (dying.Size() > 0 && !fatal && wave < 64)
         {
             batch.Clear(); fromPositions.Clear(); killedPositions.Clear();
@@ -3895,7 +4464,7 @@ class CBetaGwentDuelSession extends IScriptable
                     BetaGwentLog("DUEL_BANISH_WEAKENED card=" + s.instanceId + " removalType=0 killed=false");
                     continue;
                 }
-                batch[i].lastActiveRow = s.locationMask; killedPositions.PushBack(s);
+                batch[i].lastActiveRow = s.locationMask;if((s.locationMask&7)!=0)killedPositions.PushBack(s);
                 if ((s.tokenMask & 512) != 0)
                 {
                     // Void512, not SpawningPool128. Keep a non-reusable visual tombstone.
@@ -3912,7 +4481,7 @@ class CBetaGwentDuelSession extends IScriptable
                 batch[i].SetWaiting(false); BetaGwentLog("DUEL_DEATH card=" + s.instanceId + " wave=" + wave);
             }
             if (!suppressAbilities)
-            { for (i = 0; i < killedPositions.Size(); i += 1) { MonsterMoved(killedPositions[i]); events.NorthTrigger(7, killedPositions[i]); monsters.NilfTrigger(9,killedPositions[i]); } events.Killed(killedPositions); events.Flush(); }
+            { for (i = 0; i < killedPositions.Size(); i += 1) { MonsterMoved(killedPositions[i],false,4); events.NorthTrigger(7, killedPositions[i]); monsters.NilfTrigger(9,killedPositions[i]); } events.Killed(killedPositions); events.Flush(); }
             // Effect callbacks may have marked another batch, including another Rotfiend.
             wave += 1;
         }
@@ -3923,7 +4492,12 @@ class CBetaGwentDuelSession extends IScriptable
     {
         var s : SBetaGwentMatchSnapshot;var cause : SBetaGwentCardSnapshot; s = match.Snapshot();
         if(nilfEndingTurn){nilfEndingTurn=false;mulliganReactions=false;return Require(match.ApplyTurnEnded());}
-        events.BeforeTurnEnd(s.currentPlayerId);
+        if(!nilfBeforeTurnEndPending)
+        {
+            events.BeforeTurnEnd(s.currentPlayerId);monsters.nilf.BeforeTurnEnd(s.currentPlayerId);FlushDeaths();if(fatal)return false;
+            if(nilfJobs.Size()>0){nilfBeforeTurnEndPending=true;if(NilfNextReaction())return false;}
+        }
+        nilfBeforeTurnEndPending=false;
         // Original TurnEndGameState does not emit AfterTurn when both players passed.
         if (!BetaGwentAllPlayersPassed(s.playerOne, s.playerTwo))
         { cause.positionPlayerId=s.currentPlayerId;monsters.NilfTrigger(6,cause);NorthTurn(2, s.currentPlayerId); events.AfterTurn(s.currentPlayerId); if (!events.Flush()) return false; DrainDeaths(); }
@@ -4060,6 +4634,44 @@ class CBetaGwentDuelSession extends IScriptable
         }
         return 0;
     }
+    // Log 01.11 (seed 500585876, round three): Morvudd halved an 8-power
+    // Brigade while Tibor (10 + 15) was still in the opponent's known list;
+    // keeping it wins the round in rollouts, spending it loses by one.
+    // A halving answer is kept when a target the opponent may still hold
+    // (public starting list minus seen copies, AiEnemyMayHold) is worth more
+    // than the best current one, the opponent can still act and we have
+    // another card to play. Scale matches the empty-board damage reserve.
+    private function AiAnswerReserve102(card : CBetaGwentDuelCard) : int
+    {
+        var d,t : SBetaGwentDuelDefinition; var s,u : SBetaGwentCardSnapshot; var m : SBetaGwentMatchSnapshot;
+        var i,now,future,value,body,others : int; var seen : array<int>;
+        d=card.Definition();s=card.Snapshot();
+        if(d.effect!=18 || s.locationMask!=8)return 0;
+        m=match.Snapshot();if(m.playerOne.hasPassed || CountLocation(1,8)==0)return 0;
+        for(i=0;i<live.Size();i+=1){u=live[i].Snapshot();
+            if(u.positionPlayerId==2 && u.locationMask==8 && u.instanceId!=s.instanceId && u.canBePlayed)others+=1;
+            if(u.positionPlayerId==1 && (u.locationMask&7)!=0 && !u.isWaitingToDie && (u.tokenMask&256)==0){
+                value=u.power.currentPower-FloorF((float)u.power.currentPower*0.5f)+LockToggleValue(u,2);
+                if(value>now)now=value;}}
+        if(others==0)return 0;
+        for(i=0;i<aiStartingDeckOne.Size();i+=1){
+            if(seen.Contains(aiStartingDeckOne[i]))continue;seen.PushBack(aiStartingDeckOne[i]);
+            t=BetaGwentDuelDefinition(aiStartingDeckOne[i]);
+            if(t.header.typeMask!=4 || BetaGwentDuelSpying(t.header.templateId) || !AiEnemyMayHold(t.header.templateId))continue;
+            body=AiProjectedBody102(t);value=body-FloorF((float)body*0.5f);
+            if(value>future)future=value;}
+        if(future<=now+1)return 0;
+        AiExplain("ANSWER_RESERVE","card="+s.instanceId+" template="+d.header.templateId+" now="+now+" future="+future+" reason=bigger_public_target_may_follow");
+        return Max(12,future*3);
+    }
+    // Deployed body of a possible enemy unit: printed power, or its own
+    // unconditional deploy boost (Tibor's truce +15, Goliath +7).
+    private function AiProjectedBody102(t : SBetaGwentDuelDefinition) : int
+    {
+        if(t.header.templateId==162107 || t.header.templateId==200052)return t.header.power+t.amount;
+        return t.header.power;
+    }
+
     private function AiTimingReserve(card : CBetaGwentDuelCard, gain : int) : int
     {
         var d : SBetaGwentDuelDefinition;var s,t : SBetaGwentCardSnapshot;var useful,i : int;var m : SBetaGwentMatchSnapshot;
@@ -4086,6 +4698,8 @@ class CBetaGwentDuelSession extends IScriptable
             }
             return Max(12,AiAbilityDamage(card,NULL)*3);
         }
+        // Answers (halve+lock) are kept for a bigger publicly possible target.
+        useful=AiAnswerReserve102(card);if(useful>0)return useful;
         // A reactive gold's body alone is not a reason to spend its ability.
         if(d.effect==34 && (d.specialMode==137 || d.specialMode==114 || d.specialMode==125 || d.specialMode==132)){
             m=match.Snapshot();if(d.header.tierMask==2 && m.playerOne.hasPassed)return 0;
@@ -4410,7 +5024,10 @@ class CBetaGwentDuelSession extends IScriptable
         var m : SBetaGwentMatchSnapshot;var i,hand : int;var s : SBetaGwentCardSnapshot;
         m=match.Snapshot();hand=CountLocation(2,8);
         if(aiSimulating || m.roundNumber!=1 || m.playerOne.crowns!=0 || m.playerTwo.crowns!=0
-            || m.playerOne.hasPassed || hand<4 || hand<CountLocation(1,8) || aiRoundHandTwo-hand<3 || Score(2)>Score(1))return false;
+            || m.playerOne.hasPassed || hand<1 || aiRoundHandTwo-hand<3 || Score(2)>Score(1))return false;
+        // With one/two cards and an existing card deficit, convert a usable
+        // drawing spy before conceding; do not demand an optional catch.
+        if((hand<4 || hand<CountLocation(1,8)) && !(hand<=2 && hand<CountLocation(1,8)))return false;
         for(i=0;i<live.Size();i+=1){s=live[i].Snapshot();
             if(s.positionPlayerId==1 && (s.locationMask&7)!=0 && (s.tokenMask&8)!=0)return false;}
         return true;
@@ -4619,6 +5236,7 @@ class CBetaGwentDuelSession extends IScriptable
             if(!immediate && s.runtimeTemplate.templateId==122308)value-=2;
         }
         if(!immediate)value-=AiRegenerationLoss(s,side,amount);
+        value+=AiDamageTransformGain102(s,side,amount);
         if(s.positionPlayerId==side || s.power.currentPower>Max(0,amount-s.power.armor))return value;
         d=BetaGwentDuelDefinition(s.runtimeTemplate.templateId);
         if(!immediate)value+=AiEngineValue(s,side);
@@ -4628,6 +5246,20 @@ class CBetaGwentDuelSession extends IScriptable
             if(d.deathwishDamage>0)deathwish+=Max(0,RowEffectValue(s.positionPlayerId,side,s.locationMask,d.deathwishDamage));
         }
         return value-deathwish;
+    }
+    // A Raging Berserker that survives damage becomes a Raging Bear. Log 01.11:
+    // the static target score (more than 14 targets, no exact simulation) saw
+    // only the lost point. Own transform is a gain, an enemy one a loss.
+    private function AiDamageTransformGain102(s : SBetaGwentCardSnapshot, side : int, amount : int) : int
+    {
+        var damage,gain : int;var bear : SBetaGwentDuelDefinition;
+        if(s.runtimeTemplate.templateId!=152301 || (s.tokenMask&4)!=0 || (s.locationMask&7)==0)return 0;
+        damage=Max(0,amount-s.power.armor);
+        if(damage==0 || damage>=s.power.currentPower)return 0;
+        bear=BetaGwentDuelDefinition(152405);
+        gain=bear.header.power-(s.power.currentPower-damage);
+        if(s.positionPlayerId!=side)gain=-gain;
+        return gain;
     }
     private function AiRegenerationLoss(s : SBetaGwentCardSnapshot, side : int, amount : int) : int
     {
@@ -4703,6 +5335,8 @@ class CBetaGwentDuelSession extends IScriptable
         if(id==162305){if(target){t=target.Snapshot();if((t.tokenMask&128)!=0)return 6;}return 3;}
         if(id==152304)return 3;
         if(id==152203)return 1;
+        // Tuirseach Archer: 1 damage to each of three units on either side.
+        if(id==152315)return 1;
         if(id==200124)return NilfAlchemy(NorthActingSide(source));
         return 0;
     }
@@ -4778,6 +5412,50 @@ class CBetaGwentDuelSession extends IScriptable
         if(AiDrawSpy(d.header.templateId) && t.timerValue==0)return value;
         return value+AiManagedDeployValue(d,side)+archetypeAI.PublicDeployGain(d)+AiDrawUtility(d,side);
     }
+    // A chosen exchange changes hand quality, not just the boosted card's power.
+    // This estimate reads our cards and public targets only; no extra search play
+    // is performed inside a choice or a cooperative preparation callback.
+    public function AiExchangeCardValue096(card : CBetaGwentDuelCard, side : int) : int
+    {
+        if(!card)return 0;
+        if(side==2)return AiCardTempo(card,false,BestVranAnchor(side),AiPublicClearRisk());
+        return AiPileCandidateValue(card,side,false,0);
+    }
+    private function AiExchangeHandValue096(side : int) : int
+    {
+        var cards : array<CBetaGwentDuelCard>;var i,total : int;
+        GetZoneCards(side,8,cards);
+        for(i=0;i<cards.Size();i+=1)total+=AiExchangeCardValue096(cards[i],side);
+        return total;
+    }
+    // Slyzard consumes a grave instance but plays a RANDOM matching deck
+    // instance. Its grave power and the first deck position are neither the
+    // result nor the expectation. Read only our own unordered eligible pool.
+    private function AiSlyzardCopyValue096(source : CBetaGwentDuelCard, target : CBetaGwentDuelCard, side : int) : int
+    {
+        var cards : array<CBetaGwentDuelCard>;var s,t : SBetaGwentCardSnapshot;
+        var d : SBetaGwentDuelDefinition;var i,total,count,value,lowest,highest : int;var immediate : bool;
+        t=target.Snapshot();if(side!=2)return AiPublicSummonEstimate(target.TemplateId());
+        immediate=AiHorizon(side)==0;lowest=2147483647;highest=-2147483647;
+        GetZoneCards(side,16,cards);
+        for(i=0;i<cards.Size();i+=1){s=cards[i].Snapshot();
+            if(s.runtimeTemplate.templateId!=target.TemplateId() || (s.runtimeTierMask&14)==0
+                || (s.runtimeTemplate.typeMask&14)==0 || s.isWaitingToDie)continue;
+            d=cards[i].Definition();value=AiPileCandidateValue(cards[i],side,immediate,0);
+            // A targetless deploy still places this body. It is not a failed
+            // choice of a different instance that we can silently discard.
+            if(value<=-1000000)value=s.power.currentPower;
+            // The grave consume resolves BEFORE the copy is played. Count
+            // its actual unlocked deck boost (e.g. Nekker), without granting
+            // the grave copy's reset base power to the incoming instance.
+            if((s.tokenMask&12)==0 && s.power.currentPower>0 && (d.consumePassiveLocations&16)!=0
+                && (d.consumePassiveEvents&2)!=0)value+=d.consumePassiveBoost;
+            total+=value;count+=1;lowest=Min(lowest,value);highest=Max(highest,value);
+        }
+        if(count==0)return -1000000;
+        AiExplain("COPY_POOL","source="+source.TemplateId()+" target="+t.instanceId+" template="+target.TemplateId()+" copies="+count+" mean="+(total/count)+" minimum="+lowest+" maximum="+highest+" reason=unordered_own_deck_instances");
+        return total/count;
+    }
     private function AiAbilityChoiceValue(source : CBetaGwentDuelCard, target : CBetaGwentDuelCard, kind : int) : int
     {
         var s,t : SBetaGwentCardSnapshot;var d,td : SBetaGwentDuelDefinition;
@@ -4787,6 +5465,16 @@ class CBetaGwentDuelSession extends IScriptable
         if(t.locationMask==8 && t.positionPlayerId!=side && (t.tokenMask&64)==0)return 0;
         d=source.Definition();td=target.Definition();id=source.TemplateId();value=t.power.currentPower;
         if(id==162206)return AiSweersTargetValue(target);
+        // Ozzrel captures the chosen instance's current power and banishes it: neither
+        // side ever plays that card again, so the card's own deploy value (a Detmold
+        // tutor is worth far more played) must not outbid the points that decide the
+        // round. Only a bounded denial of a live enemy engine is added, and only while
+        // the enemy can still act.
+        if(id==201698){
+            value=t.power.currentPower;
+            if(t.positionPlayerId!=side && AiWeatherTicks(side)>0)value+=Min(4,AiEngineValue(t,side)+2);
+            return value;
+        }
         // Ability-graph boosters need the same public reset/Menno protection
         // as direct boost spells. A constant tie used to pick the first spy.
         if(kind==0 && (id==162313 || id==162315))return TargetValue(t,side,2,AiAbilityBoost(source))+AiEngineValue(t,side);
@@ -4822,8 +5510,8 @@ class CBetaGwentDuelSession extends IScriptable
         if(kind==2){
             // Bran discards cards: choose cards that return themselves first,
             // then low-utility bronze, preserving gold and expensive tutors.
-            if(id==200159){if(t.runtimeTemplate.templateId==152209 || t.runtimeTemplate.templateId==152316)return 100;
-                return -value-AiReserveCost(td)*4;}
+            if(id==200159)return archetypeAI.BranDiscardValue101(target);
+            if(d.effect==34 && d.specialMode==24)return AiSlyzardCopyValue096(source,target,side);
             if(td.effect==29)return AiPileCandidateValue(target,side,AiHorizon(side)==0,0);
             if(side==2 && BetaGwentDuelPlayChoice(id))return AiCardTempo(target,AiHorizon(side)==0,BestVranAnchor(side),AiPublicClearRisk());
             if(BetaGwentDuelSpying(t.runtimeTemplate.templateId))value=-value+12;
@@ -4853,6 +5541,13 @@ class CBetaGwentDuelSession extends IScriptable
         // Northern targeted damage and repeat shots.
         if(d.specialMode==102 || d.specialMode==117 || d.specialMode==118 || d.specialMode==143 || d.specialMode==144)
             return AiDamageChoice(t,side,d.amount);
+        // Reset (Cockatrice, Witch Hunter): the change back to base power, signed
+        // by side. The raw target power used to prefer the strongest enemy.
+        if(d.effect==34 && (d.specialMode==8 || d.specialMode==132)){
+            value=t.power.basePower+t.power.permanentPower-t.power.currentPower;
+            if(t.positionPlayerId!=side)value=-value;
+            return value;
+        }
         if(d.specialMode==114 || id==162204){
             value=t.power.basePower+t.power.permanentPower-t.power.currentPower;
             if(t.positionPlayerId!=side)value=-value;
@@ -5305,6 +6000,14 @@ class CBetaGwentDuelSession extends IScriptable
         // The profile supplies a complete estimate only for its own supported
         // weather/Hunt cards. Ordinary removal, armour and tutors keep theirs.
         if(weatherProfile && weatherAI.Handles(d))value=weatherAI.Gain(d,s.power.currentPower,false,s.locationMask==8,immediate);
+        // Row cost only ranks rows against each other; nothing priced the body itself.
+        // On a weathered row this unit eats those hits before it can score, so its
+        // forecast shrinks by exactly the points the weather will take from it.
+        if(!immediate && d.header.typeMask==4 && (weather.Hazard(2,1)>0 || weather.Hazard(2,2)>0 || weather.Hazard(2,4)>0))
+        {
+            row=BestCardRow(2,d);
+            if(row!=0)value-=AiHazardBodyRisk(2,row,s.power.currentPower,s.power.armor,AiWeatherTicks(2)/10);
+        }
         return value;
     }
     // Exact immediate tempo of playing this card now (row as chosen by BestCardRow).
@@ -5359,12 +6062,14 @@ class CBetaGwentDuelSession extends IScriptable
     public function AiSimPlay(id : int) : int
     {
         var card : CBetaGwentDuelCard; var s : SBetaGwentCardSnapshot; var d : SBetaGwentDuelDefinition;
-        var before, banked, row, anchor, deck, pulled : int; var ok : bool; var m : SBetaGwentMatchSnapshot;
+        var before, banked, row, anchor, deck, pulled, exchangeBefore, discardBefore : int; var ok : bool; var m : SBetaGwentMatchSnapshot;
         aiLastStrategicValue = 0;
         // Callers must not have to repair private caches between actions.
         archetypeAI.Refresh();
         card = FindCard(id); if (!card) return -2147483647;
         s = card.Snapshot(); d = card.Definition(); before = AiProjectedLead(); banked = AiSimBanked(s.instanceId)+AiResilientCarry(); deck = CountLocation(2, 16);
+        if(d.header.templateId==200165)exchangeBefore=AiExchangeHandValue096(2);
+        if(d.header.templateId==200159)discardBefore=archetypeAI.BranBankedSetup101();
         if (s.locationMask == 64) ok = UseLeader(2);
         else
         {
@@ -5384,6 +6089,10 @@ class CBetaGwentDuelSession extends IScriptable
             pulled = pulled * BetaGwentAITune(10);
         } else pulled = 0;
         aiLastStrategicValue = AiSimBanked(s.instanceId) + AiResilientCarry() - banked + pulled;
+        // The hand estimate already contains the received +3: do not count
+        // that boost twice. Keep this separate from immediate catch-up tempo.
+        if(d.header.templateId==200165)aiLastStrategicValue=AiExchangeHandValue096(2)-exchangeBefore+pulled;
+        if(d.header.templateId==200159)aiLastStrategicValue+=archetypeAI.BranBankedSetup101()-discardBefore;
         return AiProjectedLead() - before;
     }
     // Value side 2 banked outside the score: boosts on units in hand (full) and deck
@@ -5925,6 +6634,97 @@ class CBetaGwentDuelSession extends IScriptable
         for(i=0;i<aiStrategyIds096.Size();i+=1)if(aiStrategyIds096[i]==id)return aiStrategyPenalties096[i];
         return 0;
     }
+    public function AiNextRound094a() : SBetaGwentAINextRound094a
+    {
+        var result : SBetaGwentAINextRound094a;var g : CBetaGwentDuelSession;
+        var m : SBetaGwentMatchSnapshot;var i : int;var s : SBetaGwentCardSnapshot;
+        m=match.Snapshot();if(aiSimulating || m.roundNumber>=3 || !CanAct(2) || IsPending())return result;
+        // Unknown traps can change pass reactions or cleanup. Do not pretend
+        // their sanitized placeholder is a known next-round board.
+        for(i=0;i<live.Size();i+=1){s=live[i].Snapshot();
+            if(s.positionPlayerId==1 && (s.locationMask&7)!=0 && (s.tokenMask&8)!=0)return result;}
+        BetaGwentAISimEnter();g=AiSimClone();
+        if(g && g.Pass(2) && !g.IsFatal()){
+            result.lead=g.Score(2)-g.Score(1);m=g.Snapshot();
+            if(!g.IsWaitingRound() && m.matchWinnerMask==0 && !m.playerOne.hasPassed)g.Pass(1);
+            m=g.Snapshot();result.winner=m.matchWinnerMask;
+            if(m.matchWinnerMask!=0)result.valid=true;
+            else if(g.IsWaitingRound() && g.BeginNextRound(true) && !g.IsFatal() && !g.IsPending()){
+                m=g.Snapshot();result.valid=true;result.ownScore=g.Score(2);result.enemyScore=g.Score(1);result.starter=m.startingPlayerId;
+            }
+        }
+        BetaGwentAISimLeave();return result;
+    }
+    private function AiPassOpportunity094a(publicBurst : int) : int
+    {
+        var m : SBetaGwentMatchSnapshot;var next : SBetaGwentAINextRound094a;
+        var ownHand,enemyHand,ownSpent,enemySpent,i,average,cost,row,weatherCost,enemyWeather : int;var s : SBetaGwentCardSnapshot;
+        m=match.Snapshot();ownHand=CountLocation(2,8);enemyHand=CountLocation(1,8);
+        if(aiSimulating || BetaGwentAIStrength()<4 || m.roundNumber!=1 || m.playerOne.crowns!=0 || m.playerTwo.crowns!=0
+            || m.playerOne.hasPassed || ownHand<1 || ownHand>enemyHand)return 0;
+        for(i=0;i<live.Size();i+=1){s=live[i].Snapshot();
+            if(s.positionPlayerId==2 && s.locationMask==8 && s.canBePlayed && AiDrawingSpy(live[i]))return 0;
+            // Count real public investment on both sides, including spies by
+            // their owner. A short synthetic/opening hand is not a long round.
+            if((s.locationMask&39)==0 || (s.tokenMask&8)!=0 || live[i].createdCopy)continue;
+            if(s.ownerId==2)ownSpent+=1;else if(s.ownerId==1)enemySpent+=1;
+        }
+        if(ownSpent<3 || enemySpent<3)return 0;
+        next=AiNextRound094a();if(!next.valid || next.winner!=0 || next.lead<=0)return 0;
+        average=BetaGwentAICardValue(Score(2),ownSpent);
+        cost=Max(0,enemyHand-ownHand)*average;
+        // In a developed round a balanced hand also has a next-card price.
+        // Estimate two further turns of the visible harmful rows, including
+        // armour and public weather reactions. This is a bounded risk cost,
+        // not score already earned or knowledge of a future opposing action.
+        // A beneficial row never offsets damage that continues in other rows.
+        for(row=1;row<=4;row*=2){
+            weatherCost+=Max(0,weather.ForecastTokenLoss(2,row,WeatherToken(2,row),10));
+            enemyWeather+=Max(0,weather.ForecastTokenLoss(1,row,WeatherToken(1,row),10));
+        }
+        weatherCost=Max(0,weatherCost-enemyWeather)*Min(2,ownHand);
+        if(weatherCost>0){
+            // Deck summons and a leader are public bodies, not extra cards
+            // spent from hand. Do not let thinning make a hand card look cheap.
+            average=BetaGwentAICardValue(Score(2),Max(3,Min(ownSpent,aiRoundHandTwo-ownHand)));
+            cost=(Max(0,enemyHand-ownHand)+1)*average+weatherCost;
+        }
+        // A losing opening board makes a dry pass insufficient. Charge at
+        // least one ordinary response, without guessing a future hand/draw.
+        if(next.enemyScore>next.ownScore)cost+=average;
+        AiExplain("ROUND_TRANSITION","lead="+next.lead+" publicBurst="+publicBurst+" opportunity="+cost+" weatherCost="+weatherCost+" nextOwn="+next.ownScore+" nextEnemy="+next.enemyScore+" nextStarter="+next.starter+" ownHand="+ownHand+" enemyHand="+enemyHand+" reason=public_card_budget_and_conditional_cleanup");
+        return cost;
+    }
+    private function AiOptionalBleedPass094a() : bool
+    {
+        var m : SBetaGwentMatchSnapshot;var ownHand,enemyHand,i : int;var s : SBetaGwentCardSnapshot;
+        m=match.Snapshot();ownHand=CountLocation(2,8);enemyHand=CountLocation(1,8);
+        if(aiSimulating || BetaGwentAIStrength()<4 || m.roundNumber!=2 || m.playerOne.crowns!=0 || m.playerTwo.crowns!=1
+            || m.playerOne.hasPassed || ownHand<1 || ownHand>3 || enemyHand-ownHand<2
+            || aiRoundHandTwo!=ownHand || Score(2)>=Score(1))return false;
+        for(i=0;i<live.Size();i+=1){s=live[i].Snapshot();
+            if(s.positionPlayerId==2 && s.locationMask==8 && s.canBePlayed && AiDrawingSpy(live[i]))return false;}
+        if(AiPublicPassLead(true)>=0)return false;
+        AiExplain("ROUND_TRANSITION","ownScore="+Score(2)+" enemyScore="+Score(1)+" ownHand="+ownHand+" enemyHand="+enemyHand+" reason=carryover_blocks_dry_pass_preserve_final_initiative");
+        return AiExplainedPass("optional_bleed_preserve_initiative");
+    }
+    // A negative boost may set up removal/reset, a tutor into one, or a
+    // leader ability. Do not infer that payoff from the mere presence of a
+    // two-point empty tutor. Unknown nontrivial own abilities stay eligible;
+    // this conservative filter is not a forced-loss proof or a hidden reply.
+    private function AiEnemyBoostFollowup(card : CBetaGwentDuelCard) : bool
+    {
+        var i : int;var s : SBetaGwentCardSnapshot;var d : SBetaGwentDuelDefinition;
+        for(i=0;i<live.Size();i+=1){s=live[i].Snapshot();
+            if(live[i]==card || s.positionPlayerId!=2 || s.isWaitingToDie)continue;
+            d=live[i].Definition();
+            if((s.locationMask&7)!=0 && (s.tokenMask&4)==0 && (s.timerValue>0 || BetaGwentAIEngine(d.header.templateId)>0))return true;
+            if(!s.canBePlayed || s.locationMask!=8 && s.locationMask!=64)continue;
+            if(d.effect==0 || d.effect==2 || d.effect==3 || AiTutorTargetCount(live[i])==0)continue;
+            return true;
+        }
+        return false;
+    }
     public function OpponentStep() : bool
     {
         var i, best, value, maximum, row, effectValue, vranAnchor, reserve, bestReserve, deficit, catchBest, catchCost, cost, bestGain, bestUtility, tempo, clearRisk : int;
@@ -5935,7 +6735,7 @@ class CBetaGwentDuelSession extends IScriptable
         var ownHand, enemyHand, spent, reason, burst, leaderBurst, highest, burn, total, biggest, lane, resourceRound, passTempo, leaderBanked : int;
         var earlyState : SBetaGwentCardSnapshot; var bestTempoAll, bestValueAll, bestHandNet, roundDecision, exact, j, leaderExact, leaderSequence, leaderEvaluation : int; var handNetSeen : bool;
         var simIds, simOrder, sequenceIds, exactIds, exactValues, exactStrategic, upliftIds, upliftValues : array<int>;
-        var leaderPlay,drawSpy,spyUnsafe,bestSpyRecovery,shortPlanning : bool;var spyDraw,spyRisk,spyTempo,spyActivation,pressureDiscount,passLead : int;var possibleScorch,possibleIgni,possibleSchirru : bool;
+        var leaderPlay,drawSpy,spyUnsafe,bestSpyRecovery,shortPlanning : bool;var spyDraw,spyRisk,spyTempo,spyActivation,pressureDiscount,passLead,passOpportunity : int;var possibleScorch,possibleIgni,possibleSchirru : bool;
         if (IsExternalPolicy(2) || !CanAct(2)) return false; m = match.Snapshot();archetypeAI.Refresh();AiEnsureStrategy096();
         aiDecisionSerial+=1;AiExplain("BEGIN", "round="+m.roundNumber+" profile="+archetypeAI.ProfileId()+" preset="+presetTwo+" ownScore="+Score(2)+" enemyScore="+Score(1)+" ownHand="+CountLocation(2,8)+" enemyHand="+CountLocation(1,8)+" ownCrowns="+m.playerTwo.crowns+" enemyCrowns="+m.playerOne.crowns+" enemyPassed="+m.playerOne.hasPassed+" leader="+LeaderAvailable(2)+" seed="+random.InitialSeed()+" draws="+random.DrawCount());
         AiLogPosition();
@@ -6056,6 +6856,13 @@ class CBetaGwentDuelSession extends IScriptable
             }
             if(d.header.templateId==162212){value=Max(value,AiFalseCiriReturn(s));tempo=Max(tempo,AiFalseCiriReturn(s));}
             if(AiWeatherCardToken(d)>0 && value<=0){AiExplain("REJECT","card="+s.instanceId+" template="+d.header.templateId+" reason=weather_has_no_marginal_value");continue;}
+            // A compulsory round does not make an uncompensated enemy boost
+            // useful. Keep real setup (e.g. a profitable Scorch continuation)
+            // and public timer gains; negative ordering alone must never force
+            // gifting points instead of developing our board or passing.
+            if(d.header.typeMask==2 && d.effect==2 && tempo<0 && value+AiOwnTimerGain(ownHand)<0 && !AiEnemyBoostFollowup(live[i])){
+                AiExplain("REJECT","card="+s.instanceId+" template="+d.header.templateId+" tempo="+tempo+" utility="+value+" reason=enemy_boost_without_profitable_continuation");continue;
+            }
             reserve = AiReserveCost(d)+AiTimingReserve(live[i],value);
             cost=AiStrategyPenalty096(s.instanceId);reserve+=cost;
             if(cost>0)AiExplain("STRATEGY_RESOURCE","card="+s.instanceId+" penalty="+cost+" reason=remaining_combo_after_actual_play_and_public_reply");
@@ -6154,7 +6961,7 @@ class CBetaGwentDuelSession extends IScriptable
             // Foltest banks hand/deck boosts for later rounds immediately.
             // Do not reserve that already retained value as if it vanished
             // with this round's board; delaying risks losing unboosted units.
-            if(d.header.templateId==200168 && leaderExact!=-2147483647)cost=Max(0,cost-Max(0,leaderBanked));
+            if((d.header.templateId==200168 || d.header.templateId==200165 || d.header.templateId==200159) && leaderExact!=-2147483647)cost=Max(0,cost-Max(0,leaderBanked));
             reserve=cost+AiTimingReserve(leaderCard,value);
             if(resourceRound<3 && value<=s.power.currentPower+2 && archetypeAI.LeaderPriority(d)<=0 && ownHand>0)reserve+=BetaGwentAITune(28);
             leaderEvaluation=value*10-reserve*10+archetypeAI.LeaderPriority(d)*10+AiDecayUrgency(d,value,ownHand)*10+BetaGwentAITrainingBias(presetTwo,d,m.roundNumber,ownHand,Score(2)-Score(1),m.playerOne.hasPassed,value,value,reserve,archetypeAI.LeaderPriority(d));
@@ -6172,6 +6979,7 @@ class CBetaGwentDuelSession extends IScriptable
                 actions.PushBack(action);
             }
         }
+        if(!bestSpyRecovery && AiOptionalBleedPass094a())return true;
         if(BetaGwentAIStrength()>=2 && !m.playerOne.hasPassed){
             if(BetaGwentAIStrength()>=4 && m.roundNumber==1 && m.playerOne.crowns==0 && passLead<= -14 && ownHand>=4 && !bestSpyRecovery){
                 planner=new CBetaGwentAIChasePlanner in this;plan=planner.Plan(actions,1-passLead);
@@ -6202,9 +7010,12 @@ class CBetaGwentDuelSession extends IScriptable
                 BetaGwentLog("DUEL_AI_PASS reason=concede_round_keep_finishers deficit="+deficit+" best="+bestTempoAll+" held="+AiHeldFinishers()+" ownHand="+ownHand+" enemyHand="+enemyHand);
                 return AiExplainedPass("concede_round_keep_finishers");
             }
+            passOpportunity=AiPassOpportunity094a(burst);
             roundDecision=BetaGwentAIRoundDecision(m.roundNumber,m.playerTwo.crowns,m.playerOne.crowns,AiPublicPassLead(),ownHand,enemyHand,
-                bestTempoAll,burst,LeaderAvailable(1),archetypeAI.LongRound(),archetypeAI.LiveEngines(),bestValueAll);
+                bestTempoAll,burst,LeaderAvailable(1),archetypeAI.LongRound(),archetypeAI.LiveEngines(),bestValueAll,passOpportunity);
             if(roundDecision!=0 && !bestSpyRecovery){BetaGwentLog("DUEL_AI_PASS reason=researched_economy"+roundDecision+" profile="+archetypeAI.ProfileId()+" actualBest="+bestTempoAll);return AiExplainedPass("researched_round_economy");}
+            if(leaderPlay && leaderTemplateTwo==200161 && ownHand==0 && m.roundNumber<3 && m.playerOne.crowns==0
+                && AiPublicPassLead(true)<0 && AiHaraldCatch099()==0)return AiExplainedPass("harald_no_followup_cannot_catch_preserve_leader");
             if(leaderPlay){AiExplain("SELECT", "action=leader reason=useful_ability_and_best_evaluation template="+leaderTemplateTwo);BetaGwentLog("DUEL_AI_LEADER reason=researched_useful profile="+archetypeAI.ProfileId());return UseLeader(2);}
         }
         if(m.playerOne.hasPassed)
@@ -6253,10 +7064,12 @@ class CBetaGwentDuelSession extends IScriptable
             exact=AiExactTempo(registry.Find(best));
             // A timer (e.g. Miruna) may take points after either action. Compare
             // against a resolved pass, not a frozen board before the turn ends.
-            passTempo=AiPublicPassLead(true)-(Score(2)-Score(1));
+            passTempo=AiPublicPassLead(true)-(Score(2)-Score(1));d=registry.Find(best).Definition();
             // Never when the pass itself concedes the match: losing points
             // still keeps a draw or a later answer alive, a pass does not.
-            if(m.playerOne.crowns>0 && AiPublicPassLead(true)<=0)
+            if(m.playerOne.crowns>0 && AiPublicPassLead(true)<=0
+                && !(d.header.typeMask==2 && (d.effect==2 || d.effect==28)
+                    && exact<0 && !AiEnemyBoostFollowup(registry.Find(best))))
                 BetaGwentLog("DUEL_AI_KEEP reason=pass_concedes_match best="+best+" net="+bestHandNet+" lead="+AiPublicPassLead(true));
             // A pass also forfeits our own pending timers that would fire on later turns.
             else if(exact==-2147483647 || exact+AiOwnTimerGain(ownHand)<passTempo && bestHandNet+AiOwnTimerGain(ownHand)<passTempo){
@@ -6300,9 +7113,10 @@ class CBetaGwentDuelSession extends IScriptable
             if (!OpponentStep()) return; budget += 1;
         }
     }
-    public function BeginNextRound() : bool
+    public function BeginNextRound(optional forecastBoardOnly : bool) : bool
     {
         var history : array<SBetaGwentRoundResult>; var s,roundCause : SBetaGwentCardSnapshot; var m : SBetaGwentMatchSnapshot; var i, starter : int;
+        if(forecastBoardOnly && !aiSimulating)return false;
         if (!waiting || fatal || IsPending()) return false; match.GetRoundResults(history);
         if (history.Size() == 0) return false;
         for (i = 0; i < live.Size(); i += 1)
@@ -6324,6 +7138,8 @@ class CBetaGwentDuelSession extends IScriptable
         SetVisualSource(0, 0, 0, 0); RecordVisual(17, 0, "Следующий раунд · Стойкие отряды остаются", 850);
         if (!Require(match.ApplyRoundStarted(starter))) return false; m = match.Snapshot();monsters.NilfTrigger(15,roundCause);FlushDeaths();
         for (i = 0; i < live.Size(); i += 1) if (live[i].TemplateId() == 112207) live[i].monsterOnce = 0;
+        // Forecast the public opening board without drawing or mulligan AI.
+        if(forecastBoardOnly){waiting=false;return !fatal;}
         if (m.roundNumber == 2) { Draw(1, 2); Draw(2, 2); }
         else { Draw(1, 1); Draw(2, 1); }
         waiting = false; BeginMulligan(starter, 1);

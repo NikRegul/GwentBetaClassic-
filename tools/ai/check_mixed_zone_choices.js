@@ -25,6 +25,14 @@ for(const strength of [2,3,4]){
   check(!g.IsFatal()&&!g.IsPending(),'Brigade request completes');
  }
  {
+  const g=fixture(),source=add(g,201698,1,0,2),cyclops=add(g,200037,32,0,2,11),tutor=add(g,122207,32,1,1,4);
+  check(g.AiAbilityChoiceValue(source,cyclops,2)>g.AiAbilityChoiceValue(source,tutor,2),'Ozzrel values the captured body above the tutor it never plays '+strength);
+  g.playStack.PushBack(source);check(g.match.ClaimInitialMove(2)===0,'actual Ozzrel ability has a live action');
+  g.MonsterRequest(source,[cyclops.cardState.instanceId,tutor.cardState.instanceId],2,1,1);
+  check(source.Snapshot().power.currentPower===16&&cyclops.Snapshot().locationMask===512&&tutor.Snapshot().locationMask===32,'actual Ozzrel eats the eleven point Cyclops, not the four point Detmold');
+  check(!g.IsFatal()&&!g.IsPending(),'Ozzrel request completes');
+ }
+ {
   const g=fixture(),source=add(g,162209,1,0,2),held=add(g,112101,8,4,1,20);held.cardState.tokenMask|=64;
   check(g.AiAbilityChoiceValue(source,held,2)>0,'Serrit can weaken a strong revealed ordinary unit');
   g.match.playerOne.hasPassed=true;

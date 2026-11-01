@@ -10,7 +10,11 @@ for(const enemies of [0,1,2]){
  const es=[];for(let i=0;i<enemies;i++)es.push(add(g,112101,1,i,1,6));
  const squire=add(g,123301,1,0,2);const plain=add(g,112101,1,1,2,4);add(g,200169,64,0,2);
  check(g.UseLeader(2),'Radovid used');let n=0;while(g.IsPending()&&n++<6)__pending(g);
- check((squire.Snapshot().tokenMask&4)===0,'Radovid never locks our own Redanian Squire engine ('+enemies+' enemies)');
+ // Source graph92 plus ARequestTargetsAction.ApplyImpl requires exactly the
+ // clamped two targets and Location.GetCards excludes the executing leader.
+ // With no enemies these two friendlies are the entire mandatory pool.
+ if(enemies===0)check((squire.Snapshot().tokenMask&4)!==0&&(plain.Snapshot().tokenMask&4)!==0,'mandatory two friendly targets when no alternatives');
+ else check((squire.Snapshot().tokenMask&4)===0,'Radovid preserves Squire when two better legal targets exist ('+enemies+' enemies)');
  if(enemies===2)check(es.every(e=>(e.Snapshot().tokenMask&4)!==0),'both enemy units locked and damaged');
 }
 globalThis.report={checks};

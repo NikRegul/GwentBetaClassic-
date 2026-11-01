@@ -15,6 +15,21 @@
     "zh_tw"
   ],
   "text": {
+    "leaderLocked": [
+      "Лидер выбирается при создании колоды.",
+      "Choose the leader when creating a deck.",
+      "Wählt den Anführer beim Erstellen eines Decks.",
+      "Choisissez le chef à la création du jeu.",
+      "Scegli il leader quando crei il mazzo.",
+      "Wybierz dowódcę podczas tworzenia talii.",
+      "Elige al líder al crear la baraja.",
+      "Elige al líder al crear el mazo.",
+      "Escolha o líder ao criar o baralho.",
+      "リーダーはデッキ作成時に選択します。",
+      "리더는 덱을 만들 때 선택합니다.",
+      "领袖只能在创建牌组时选择。",
+      "領袖只能在建立牌組時選擇。"
+    ],
     "offer": [
       "Выберите карту",
       "Choose a card",

@@ -9,6 +9,7 @@ private var betaGwentTrackedCollectionSize : int;
 public function BetaGwentCollectionCount(faction : int) : int
 {
     var i,count : int;var seen : array<int>;var d : SBetaGwentDuelDefinition;
+    BetaGwentStoreLoad();
     if(betaGwentCollectionSchema!=1 || betaGwentOwnedIds.Size()!=betaGwentOwnedCopies.Size())return 0;
     for(i=0;i<betaGwentOwnedIds.Size();i+=1) {
         if(betaGwentOwnedCopies[i]<1 || seen.Contains(betaGwentOwnedIds[i]) || BetaGwentCollectionCap(betaGwentOwnedIds[i])==0)continue;

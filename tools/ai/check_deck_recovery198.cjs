@@ -2,6 +2,7 @@
 const facts=new Map(),logs=[];let writes=0,failAt=-1,thePlayer=null,checks=0;
 function FactsSet(k,v){if(++writes===failAt)throw Error('simulated interruption');facts.set(k,v);}
 function FactsRemove(k){facts.delete(k);}
+function FactsDoesExist(k){return facts.has(k);}
 function FactsQueryLatestValue(k){return facts.get(k)||0;}
 function LogChannel(c,m){logs.push(m);}
 function StrLen(v){return v.length;}

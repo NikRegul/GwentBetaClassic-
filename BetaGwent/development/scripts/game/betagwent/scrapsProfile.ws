@@ -3,7 +3,7 @@
 // Prices from the Beta price list: craft 30/80/200/800, mill 10/20/50/200.
 // Copies above the deck limit are milled automatically when received.
 @addField(W3PlayerWitcher)
-private saved var betaGwentScraps : int;
+private var betaGwentScraps : int;
 
 function BetaGwentRareBronze(id : int) : bool
 {
@@ -30,11 +30,13 @@ function BetaGwentMillValue(id : int) : int
     return 10;
 }
 @addMethod(W3PlayerWitcher)
-public function BetaGwentScraps() : int { if (betaGwentScraps < 0) return 0; return betaGwentScraps; }
+public function BetaGwentScraps() : int { BetaGwentStoreLoad(); if (betaGwentScraps < 0) return 0; return betaGwentScraps; }
 @addMethod(W3PlayerWitcher)
 public function BetaGwentAddScraps(amount : int)
 {
+    if (!BetaGwentStoreReady()) return;
     betaGwentScraps = Max(0, betaGwentScraps + amount);
+    BetaGwentStoreCommit();
     LogChannel('BetaGwent', "SCRAPS change=" + amount + " total=" + betaGwentScraps);
 }
 // A received card: added to the collection, or milled when the copy limit is already reached.
@@ -43,6 +45,7 @@ public function BetaGwentAddScraps(amount : int)
 public function BetaGwentReceive(id : int) : int
 {
     var value : int;
+    if (!BetaGwentStoreReady()) return 0;
     if (BetaGwentGrant(id)) return 0;
     if (BetaGwentCollectionCap(id) == 0) return 0;
     value = BetaGwentMillValue(id); BetaGwentAddScraps(value);
@@ -73,6 +76,7 @@ public function BetaGwentCanCraft(id : int) : bool
 public function BetaGwentCraft(id : int) : bool
 {
     var cost : int;
+    if (!BetaGwentStoreReady()) return false;
     if (!BetaGwentCanCraft(id)) return false;
     cost = BetaGwentCraftCost(id);
     if (!BetaGwentGrant(id)) return false;
@@ -91,6 +95,7 @@ public function BetaGwentCanMill(id : int) : bool
 public function BetaGwentMill(id : int) : bool
 {
     var i, value : int;
+    if (!BetaGwentStoreReady()) return false;
     if (!BetaGwentCanMill(id)) return false;
     for (i = 0; i < betaGwentOwnedIds.Size(); i += 1) if (betaGwentOwnedIds[i] == id)
     {

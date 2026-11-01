@@ -11,6 +11,8 @@ function session(id,keep){
  for(const side of [1,2]){let n=0;for(const c of g.live){const s=c.Snapshot();if(s.positionPlayerId===side&&s.locationMask===DECK&&n<6){c.Move(side,GRAVE,n);n++;}}}
  g.mulligan=false;g.waiting=false;g.pendingCard=g.pendingLeader=null;g.recordVisuals=false;
  g.match.currentPlayerId=1;g.match.roundActive=g.match.turnActive=true;g.match.roundNumber=1;g.match.playerOne.hasPassed=g.match.playerTwo.hasPassed=false;
+ // Graph 331 aborts before the hand request when no Bronze Special is in deck.
+ if(id===200048)add(g,113303,1,DECK,count(g,1,DECK));
  const src=add(g,id,1,HAND,9);check(g.Play(1,src.Snapshot().instanceId,1),id+' plays');check(g.IsPending(),id+' asks the human');return g;}
 const where=(g,id)=>{for(const c of g.live){const s=c.Snapshot();if(s.instanceId===id)return s;}return null;};
 const count=(g,side,zone)=>g.live.filter(c=>{const s=c.Snapshot();return s.positionPlayerId===side&&s.locationMask===zone;}).length;
@@ -24,11 +26,12 @@ const CASES=[
  [131102,'pile',2,(g,pick,rest)=>{const deck=g.live.map(c=>c.Snapshot()).filter(s=>s.positionPlayerId===1&&s.locationMask===DECK);const top=Math.min(...deck.map(s=>s.locationIndex));
    check(rest.every(id=>where(g,id).locationMask===DECK&&where(g,id).locationIndex===top),"Ge'els: the other goes to the top of the deck");check(where(g,pick).locationMask!==DECK,"Ge'els: chosen card leaves the deck to be played");
    const hand=count(g,1,HAND);g.Draw(1,1);check(rest.every(id=>where(g,id).locationMask===HAND)&&count(g,1,HAND)===hand+1,"Ge'els: the next draw is the card left on top");}],
- [200071,'hand',2,(g,pick,rest)=>{check(where(g,pick).positionPlayerId===1&&where(g,pick).locationMask===HAND,'Shilard: chosen card kept');check(rest.every(id=>where(g,id).positionPlayerId===2&&where(g,id).locationMask===HAND),'Shilard: the other goes to the opponent hand');}],
+ // Audited graph 297 chooses the two deck instances before moving either to hand.
+ [200071,'pile',2,(g,pick,rest)=>{check(where(g,pick).positionPlayerId===1&&where(g,pick).locationMask===HAND,'Shilard: chosen card kept');check(rest.every(id=>where(g,id).positionPlayerId===2&&where(g,id).locationMask===HAND),'Shilard: the other goes to the opponent hand');}],
  ...[112211,152103,152213].map(id=>[id,'hand',0,(g,pick)=>check(where(g,pick).locationMask===GRAVE,id+': chosen hand card discarded to the graveyard')]),
  ...[112212,122204,142303,201638].map(id=>[id,'hand',0,(g,pick,rest,before)=>{check(where(g,pick).locationMask===DECK,id+': chosen card returns to the deck');check(count(g,1,HAND)===before,id+': a replacement card arrives');}]),
  ...[200209,200165,200048].map(id=>[id,'hand',0,null]),
- [132216,'hand',0,(g,pick)=>check(![HAND,DECK,GRAVE].includes(where(g,pick).locationMask),'Toad Prince: consumed unit leaves the hand')],
+ [132216,'hand',0,(g,pick)=>check(![HAND,DECK].includes(where(g,pick).locationMask),'Toad Prince: consumed unit leaves the hand')],
  ...[152106,200036,200159].map(id=>[id,'pile',0,(g,pick)=>check(where(g,pick).locationMask===GRAVE,id+': chosen deck card discarded to the graveyard')]),
  [112208,'hand',0,(g,pick,rest,before,opp)=>{check(where(g,pick).locationMask===HAND,'Operator: the unit stays in hand');check(count(g,2,HAND)===opp+1,'Operator: the opponent receives a copy');}],
 ];

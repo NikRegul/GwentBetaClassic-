@@ -1,0 +1,97 @@
+{
+  "kind": "stable-position-reconstructed-from-exact-frozen-prefix",
+  "historicalSearchBudgetRecovered": false,
+  "independentExpectation": "A stopped search must apply the existing strategic rules to completed OK nodes only; unseen/incomplete/error/pruned states must not abort the strategy. A complete non-detrimental play must remain available under DontPassUnlessAllPlayActionsAreDetrimental. Preserve completed-tree behavior and genuine invalid-state diagnostics.",
+  "records": [
+    {
+      "file": "classic-partial-search094-01.json.gz",
+      "sha256": "f1ab09f261e8bd358efc67672174c33087000d6ceb9c45a341f44d68078b8b88",
+      "prefixProof": {
+        "view": {
+          "sourceGame": "g00-r0-s001-p2-m0",
+          "traceIndex": 31,
+          "side": 1,
+          "profile": "p_Nilfgaard_Practice",
+          "score": [
+            34,
+            95
+          ],
+          "round": 3,
+          "hands": [
+            2,
+            0
+          ],
+          "leaders": [
+            false,
+            false
+          ]
+        },
+        "sourceFingerprint": "7caab244df58d8bcf207593ba29965f7cf940d887145f7a3d645f857d0f311c6",
+        "prefixTraceMatches": true,
+        "turns": 31,
+        "observedHistoricalTurn": {
+          "side": 1,
+          "round": 3,
+          "policy": "beta",
+          "profile": "p_Nilfgaard_Practice",
+          "template": 0,
+          "finishReason": "stopped",
+          "completedDepth": -1,
+          "score": [
+            34,
+            95
+          ]
+        },
+        "historicalErrors": [
+          "PlayMaker cannot read incomplete node"
+        ],
+        "limitations": "Historical per-turn callback budget/tree were not recorded. Reconstruct the stable game position, then reproduce partial searches with explicit deterministic callback cutoffs."
+      }
+    },
+    {
+      "file": "classic-partial-search094-02.json.gz",
+      "sha256": "34207dcc6e1c77ec5513d1b3660e244f2537009325bfe171bfd57933c543fb2a",
+      "prefixProof": {
+        "view": {
+          "sourceGame": "g00-r0-s034-p3-m0",
+          "traceIndex": 23,
+          "side": 2,
+          "profile": "p_Nilfgaard_Practice",
+          "score": [
+            44,
+            68
+          ],
+          "round": 3,
+          "hands": [
+            4,
+            5
+          ],
+          "leaders": [
+            true,
+            false
+          ]
+        },
+        "sourceFingerprint": "7caab244df58d8bcf207593ba29965f7cf940d887145f7a3d645f857d0f311c6",
+        "prefixTraceMatches": true,
+        "turns": 23,
+        "observedHistoricalTurn": {
+          "side": 2,
+          "round": 3,
+          "policy": "beta",
+          "profile": "p_Nilfgaard_Practice",
+          "template": 0,
+          "finishReason": "stopped",
+          "completedDepth": -1,
+          "score": [
+            44,
+            68
+          ]
+        },
+        "historicalErrors": [
+          "PlayMaker cannot read incomplete node"
+        ],
+        "limitations": "Historical per-turn callback budget/tree were not recorded. Reconstruct the stable game position, then reproduce partial searches with explicit deterministic callback cutoffs."
+      }
+    }
+  ]
+}

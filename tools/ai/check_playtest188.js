@@ -23,7 +23,9 @@ for(const passed of [false,true]){
  check(g.AiDamageChoice(undvik.Snapshot(),2,5)===5,'Hjalmar in the graveyard gets no boost');
  hjalmar.Move(2,2,0);
  g.pendingIds=[];const hunter=add(g,152304,8,4,2);check(g.Play(2,hunter.Snapshot().instanceId,4),'hunter resolves');
- check(undvik.Snapshot().locationMask===512&&hjalmar.Snapshot().power.currentPower===16,'chosen lethal hit actually resolves the expected ten-point boost (doomed token vanishes)');
+ // CardData.OnCardMoved resets the wounded Hjalmar on entering Graveyard;
+ // the subsequent return retains his instance base. The deathwish then adds 10.
+ check(undvik.Snapshot().locationMask===512&&hjalmar.Snapshot().power.currentPower===hjalmar.Snapshot().power.basePower+hjalmar.Snapshot().power.permanentPower+10,'chosen lethal hit adds ten to the grave-reset Hjalmar (doomed token vanishes)');
 }
 function moon(){
  const g=fixture();clearHand(g,2);g.aiSimDamp=0;g.match.playerOne.hasPassed=true;

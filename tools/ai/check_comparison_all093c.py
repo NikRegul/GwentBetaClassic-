@@ -7,11 +7,13 @@ from comparison_inputs import validate_snapshot
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('candidate',type=Path);p.add_argument('out',type=Path);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('candidate',type=Path);p.add_argument('out',type=Path)
+    p.add_argument('--seed',type=int,default=2026102544)
+    p.add_argument('--roster',type=Path,default=ROOT/'BetaGwent/build/classic093-knockout-20261024-01/entrants.json');a=p.parse_args()
     candidate=a.candidate.resolve();out=a.out.resolve();assert not out.exists() and out.is_relative_to(ROOT/'BetaGwent/build')
     m=validate_snapshot(candidate);sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
-    roster=ROOT/'BetaGwent/build/classic093-knockout-20261024-01/entrants.json';entrants=[e for e in json.loads(roster.read_text('utf8')) if e['group']=='hard'];pool=sorted(e['presetId'] for e in entrants);assert len(set(pool))==92
-    out.mkdir();plan=dict(kind='identical-policy-negative-control',candidateFingerprint=m['fingerprint'],seed=2026102544,pool=pool,workers=4,games=368,
+    roster=a.roster.resolve();entrants=[e for e in json.loads(roster.read_text('utf8')) if e['group']=='hard'];pool=sorted(e['presetId'] for e in entrants);assert len(set(pool))==92
+    out.mkdir();plan=dict(kind='identical-policy-negative-control',candidateFingerprint=m['fingerprint'],seed=a.seed,pool=pool,workers=4,games=368,
                          runnerSha256=sha(ROOT/'tools/ai/compare_all093c.js'),rosterSha256=sha(roster))
     (out/'plan.json').write_text(json.dumps(plan,indent=2)+'\n','utf8');jobs=[]
     for i in range(4):

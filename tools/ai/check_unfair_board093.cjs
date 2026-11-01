@@ -36,6 +36,18 @@ let mulligans=0;
 while(board.duel.mulligan&&board.duel.RequestDecisionSide()===2){runtime.clock(.016);board.ResumeOriginalOpponent();assert(!board.originalFailure);assert(++mulligans<8);}
 eq(board.duel.RequestDecisionSide(),1,'Human receives own mulligan after Beta finishes');runtime.clear();board.Publish(board.duel.GetMessage(),true);
 assert(calls.pushRequestCard.length>0);checks++;eq(calls.setRequestHeader.at(-1).args[2],1,'Only human request projected');
+// Beta keeps the mulligan window open while the replacement card flies into the hand, so
+// every frame of that replay must republish the open human request instead of clearing it.
+const exchangeRequest=board.duel.requestId,exchangedCard=board.duel.pendingIds[0];
+assert(board.duel.SelectMulligan(exchangeRequest,exchangedCard),'Engine accepts the human mulligan exchange');checks++;
+assert(board.duel.mulligan&&board.duel.requestId===exchangeRequest,'The request stays open after one exchange');checks++;
+runtime.clear();board.Publish(board.duel.GetMessage(),true);
+const replayFrames=calls.beginVisualBatch.at(-1).args[0]-1;
+assert(replayFrames>0,'A mulligan exchange produces a replacement replay');checks++;
+eq(calls.setRequestHeader.length,replayFrames+1,'The batch publishes replay frames plus one authoritative frame');
+eq(calls.setRequestHeader.slice(0,replayFrames).map(c=>c.args[1]),new Array(replayFrames).fill(exchangeRequest),'Every replay frame republishes the open mulligan request');
+eq(calls.pushRequestCard.filter(c=>c.args[0]===exchangedCard).length,replayFrames,'Carried candidates cover the replay; the authoritative frame drops the exchanged card');
+runtime.clear();
 assert(board.duel.FinishMulligan(board.duel.requestId));
 let humanPasses=0,callbacks=0,searchCallbacks=0;
 while(!board.duel.Snapshot().matchWinnerMask){

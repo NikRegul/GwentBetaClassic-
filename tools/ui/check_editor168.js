@@ -17,13 +17,13 @@ function extract(source,name,native=false){
 let checks=0;const check=(v,label)=>{assert(v,label);checks++;};
 const c=vm.createContext({Math,String,Number,Object,Array,int:n=>n|0});
 vm.runInContext(`var editingDeck=true,ready=true,revision=10,editorState={slot:1,faction:2,leader:11,total:3},editorName='Test',editorBaseline=null;
-var editorNewOnly=false,editorScroll178=0,deckScroll178=0,editorFeedbackOrigin178=null;function editorFeedbackPoint178(){return {x:0,y:0};}
+var editorNewOnly=false,editorNeutralOnly=false,editorUnownedOnly=false,editorScroll178=0,deckScroll178=0,editorFeedbackOrigin178=null;function editorFeedbackPoint178(){return {x:0,y:0};}
 var editorPosition=0,editorStrength=0,editorSearch='x',editorTier=8,editorType=4,editorOwnedOnly=true,editorFactionOnly=true,editorPage=4;
 var editorCards=[],editorById={},editorUndo=[],editorPending=null,editorUndoPending=false,editorFlight=null;
 var BetaGwentUi138={filters:{}},definitions={},BetaGwentFullCatalog={find(id){return definitions[id];}},events=[],renders=0;
 function render(){renders++;}function send(name,args){events.push([name,args]);}function closeControllerMenu(){controllerMenuOpen=false;editorExitPrompt=false;}
 var controllerMenuOpen=false,editorExitPrompt=false,editorExitNextKeg=false,controllerMenuLayer={},WIDE_PAD=0,buttons=[];
-function panel(){}function betaFrame(){return {};}function text(){return {};}function editorSmallButton(parent,title,x,y,w,h,enabled,action){buttons.push({title,action});}
+function panel(){}function betaFrame(){return {};}function popupWindow095(){return {};}function uiSound(){}function text(){return {};}function editorSmallButton(parent,title,x,y,w,h,enabled,action){buttons.push({title,action});}
 var controller={focusTag(tag){this.focused=tag;}};
 `+['editorSignature','requestEditorExit','leaveEditor','editorExtraFilter','editorPositionMatches','sortEditorCards','sortEditorCollection','rememberEditorFilters','restoreEditorFilters','editorCounts','settleEditorUndo','undoEditorChange','editorAction'].map(n=>extract(as,n)).join('\n'),c);
 const card=(id,power=5,tier=2)=>({templateId:id,copies:1,power,tier,typeMask:4,title:'same',canAdd:true});
@@ -41,7 +41,7 @@ c.editorPosition=5;check(c.editorPositionMatches({typeMask:2})&&!c.editorPositio
 c.editorStrength=1;check(c.sortEditorCollection(card(1,3,8),card(2,10,2))<0,'weak-first power precedes rarity');
 c.editorStrength=2;check(c.sortEditorCollection(card(1,3,8),card(2,10,2))>0,'strong-first power precedes rarity');
 check(c.sortEditorCollection(card(1),card(2))<0,'ties have deterministic template ordering');
-c.rememberEditorFilters();c.editorPosition=0;c.editorStrength=0;c.restoreEditorFilters(2);check(c.editorPosition===5&&c.editorStrength===2,'per-faction filter memory includes new fields');
+c.rememberEditorFilters();c.editorPosition=0;c.editorStrength=0;c.restoreEditorFilters(2);check(c.editorPosition===0&&c.editorStrength===2,'per-faction filter memory keeps strength; removed position filter is never restored');
 c.editorExtraFilter(0)();check(c.editorPage===0&&c.editorPosition===0&&c.editorStrength===0&&!c.editorOwnedOnly&&!c.editorFactionOnly&&c.editorSearch===''&&c.editorTier===0&&c.editorType===0,'reset restores every collection filter');
 c.editorCards=[card(1),card(2)];c.editorById={1:c.editorCards[0],2:c.editorCards[1]};c.editorUndo=[];c.ready=true;
 c.editorAction('OnBetaGwentDeckEditorClear')();c.editorCards.forEach(x=>x.copies=0);c.settleEditorUndo();

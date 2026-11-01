@@ -30,7 +30,7 @@ for(const platform of testedPlatforms){
    paintArt(parent,id,w,h,x=0,y=0){const a=new Sprite();Object.assign(a,{id,width:w,height:h,x,y});parent.addChild(a);},attachLeaderMovie(){},cardFaction(){return 8;},
    BetaGwentBanners090:{slot(f,t){return native.slot(f,t);},paint(...args){return native.paint(...args);},get lastError(){return native.lastError;}},text(parent,text,x,y,width,size,color){const f={text,x,y,width,fontSize:size,color,scaleX:1};parent.addChild(f);return f;},
    centerBetaNumber(field,x,y,size){field.centerX=x;field.centerY=y;field.fontSize=size;},powerColor(){return 0x7df07d;},paintStaticCardState(){throw Error('side face complete');}});
-  vm.runInContext(['betaBannerRect','paintBetaFace','betaPowerField','layoutBigPower090','betaBigPowerField','drawBetaSidePreview'].map(n=>fn(source,n)).join('\n'),c);
+  vm.runInContext(['betaBannerRect','paintBetaFace','betaPowerField','layoutBigPower090','betaBigPowerField',...(source.includes('function betaSidePreviewPlacement(')?['betaSidePreviewPlacement']:[]),'drawBetaSidePreview'].map(n=>fn(source,n)).join('\n'),c);
   return {c,native,loaders,setMode(value){mode=value;}};
  }
  for(const faction of [1,2,4,8,16,32])for(const tier of [1,2,4,8]){
@@ -88,4 +88,6 @@ for(const platform of testedPlatforms){
  }
 }
 const report={checks,testedPlatforms,preparedPlatformsAvailable,actualAS:true,asyncStates:['pending','complete','error','security','empty','throw','limit','sync','retired'],battlePreviewRestored:true,tolerantComplete:true,failureReason:true,inGameVerified:false};
-fs.writeFileSync(path.join(base,'detail-power-tests.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report));
+const outputIndex=process.argv.indexOf('--output'),reportPath=outputIndex<0?path.join(base,'detail-power-tests.json'):path.resolve(process.argv[outputIndex+1]);
+if(outputIndex>=0)assert(!fs.existsSync(reportPath),'Use a new report path');
+fs.writeFileSync(reportPath,JSON.stringify(report,null,2));console.log(JSON.stringify(report));

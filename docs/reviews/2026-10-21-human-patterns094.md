@@ -2,7 +2,7 @@
 
 ## Что прочитано
 
-Скопирован доступный журнал `C:/Users/NikR/Documents/The Witcher 3/scriptslog.txt` в `BetaGwent/build/ai-human094-20261021/reported-games.log`. SHA-256: `6f95c492eb668f8d79e36f62253ed118d0fcb59816a859e93330bb1c5809c15d`. Оригинал не изменялся.
+Скопирован доступный журнал `C:/Users/<user>/Documents/The Witcher 3/scriptslog.txt` в `BetaGwent/build/ai-human094-20261021/reported-games.log`. SHA-256: `6f95c492eb668f8d79e36f62253ed118d0fcb59816a859e93330bb1c5809c15d`. Оригинал не изменялся.
 
 В журнале девять стартов и восемь завершённых партий, все восемь выиграл пользователь. Эти партии сыграны до 0.9.1e. Последовательности действий, названия карт, пасы и показанный счёт извлекает `tools/ai/analyze_human094.py`; подробный результат находится в `human-analysis/HUMAN_GAMES_RU.md` и `human-games.json` внутри каталога испытания.
 

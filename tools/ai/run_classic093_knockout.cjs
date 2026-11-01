@@ -7,12 +7,16 @@ const mix=n=>{n=Math.imul(n^(n>>>16),0x7feb352d);n=Math.imul(n^(n>>>15),0x846ca6
 const seedFor=(p,g,r,s,pair)=>mix(p.masterSeed+(((g*8+r)*128+s)*8+pair));
 function atomic(file,value){fs.writeFileSync(file+'.tmp',JSON.stringify(value,null,2)+'\n');renameWithRetry(file+'.tmp',file);}
 function validateInputs(out,p){
+ if(p.diagnosticsProofSha256&&sha(path.join(out,'diagnostics-proof.json'))!==p.diagnosticsProofSha256)throw Error('Frozen diagnostic observer proof changed');
  for(const [n,h]of Object.entries(p.codeFiles))if(sha(path.join(out,'frozen',n))!==h)throw Error('Frozen code changed '+n);
  if(sha(path.join(out,'entrants.json'))!==p.rosterSha256||sha(path.join(out,'profile-mapping.json'))!==p.mappingSha256||sha(path.join(p.current,'manifest.json'))!==p.commonManifestSha256)throw Error('Frozen inputs changed');
 }
 if(!isMainThread){
  const {out,plan,planSha256}=workerData;
- const {playMatch}=require(path.join(out,'frozen/tools/ai/beta_js092/matches.cjs'));
+ const {playMatch:sourcePlayMatch}=require(path.join(out,'frozen/tools/ai/beta_js092/matches.cjs'));
+ const {BetaTurnController}=require(path.join(out,'frozen/tools/ai/beta_js092/controller.cjs'));
+ const diagnostics=require(path.join(out,'frozen/tools/ai/classic_diagnostics094.cjs')).createRecorder(BetaTurnController);
+ const playMatch=(...args)=>diagnostics.play(sourcePlayMatch,...args);
  const entrants=new Map(read(path.join(out,'entrants.json')).map(e=>[e.key,e]));
  parentPort.on('message',job=>{
   try{

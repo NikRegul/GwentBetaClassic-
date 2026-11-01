@@ -14,7 +14,8 @@ CORE = ROOT / 'BetaGwent/scripts/game/betagwent'
 DEV = ROOT / 'BetaGwent/development/scripts/game/betagwent'
 OUT = DEV / 'duelClone.ws'
 MARK = '// BG_CLONE_FIELDS'
-SKIP_FIELDS = {('CBetaGwentDuelSession', 'visualFrames'), ('CBetaGwentDuelSession', 'aiStrategyJob096')}
+SKIP_FIELDS = {('CBetaGwentDuelSession', 'visualFrames'), ('CBetaGwentDuelSession', 'aiStrategyJob096'),
+               ('CBetaGwentDuelSession', 'cancelPlayState098')}
 SEATS = {'ownerId', 'controllerId', 'ownerPlayerId', 'positionPlayerId', 'playerId', 'mulliganSide',
          'targetPlayerId', 'startingPlayerId', 'currentPlayerId', 'roundStarter',
          'visualSide', 'savedSourceSide', 'side', 'targetSide'}
@@ -99,6 +100,13 @@ def gen(prog):
     L.append('        while (head < originals.Size()) { CopyAny(originals[head], copies[head]); head += 1; }')
     L.append('        return result;')
     L.append('    }')
+    L += ['    public function RestoreSession(source : CBetaGwentDuelSession, destination : CBetaGwentDuelSession, stamp : int)',
+          '    {',
+          '        epoch = stamp; head = 0; flipSeats = false; originals.Clear(); copies.Clear();',
+          '        source.bgCloneEpoch = epoch; source.bgCloneRef = destination;',
+          '        originals.PushBack(source); copies.PushBack(destination);',
+          '        while (head < originals.Size()) { CopyAny(originals[head], copies[head]); head += 1; }',
+          '    }']
     L += ['    private function Seat(value : int) : int',
           '    { if (!flipSeats) return value; if (value == 1) return 2; if (value == 2) return 1; return value; }',
           '    private function Winner(value : int) : int',

@@ -1,0 +1,289 @@
+{
+  "schema": 1,
+  "baseAtlasSha256": "96633e441415889d8c26112021aa900e275153ac3d9881b5551651ecca341f24",
+  "atlasSha256": "ebab9e2131d5e32738d0fa83a9d276377d6a855f5df54f000afec7924af5c22c",
+  "blocksSha256": "7429e18a2dd07688830eb780fa6cbd2776b9a6e209e0fa90d2664cdaf765f890",
+  "size": [
+    1024,
+    1288
+  ],
+  "rects": [
+    [
+      4,
+      248,
+      176,
+      160
+    ],
+    [
+      820,
+      436,
+      176,
+      160
+    ],
+    [
+      520,
+      1080,
+      320,
+      44
+    ],
+    [
+      856,
+      184,
+      64,
+      80
+    ],
+    [
+      928,
+      184,
+      48,
+      48
+    ],
+    [
+      1000,
+      4,
+      20,
+      48
+    ],
+    [
+      1000,
+      60,
+      20,
+      12
+    ],
+    [
+      1000,
+      80,
+      20,
+      48
+    ],
+    [
+      1000,
+      136,
+      12,
+      256
+    ]
+  ],
+  "names": [
+    "MAP_LEFT",
+    "MAP_RIGHT",
+    "TITLE",
+    "SLOT",
+    "CROWN",
+    "ROD_TOP",
+    "ROD_MIDDLE",
+    "ROD_BOTTOM",
+    "DIVIDER"
+  ],
+  "sources": {
+    "vs_ranked_play_season_left": {
+      "bundle": "gamebackgrounds",
+      "bundleSha256": "9a0c331b373b1fec895822b741a2568b04a59dbebc3a27212ad04db36e9486e7",
+      "spritePathId": -4065354778119111937,
+      "border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      }
+    },
+    "vs_ranked_play_season_right": {
+      "bundle": "gamebackgrounds",
+      "bundleSha256": "9a0c331b373b1fec895822b741a2568b04a59dbebc3a27212ad04db36e9486e7",
+      "spritePathId": 263159412314384392,
+      "border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      }
+    },
+    "Banner_Default": {
+      "bundle": "banners",
+      "bundleSha256": "c76c15c899b7ec53fe9a747c8debf55fdc7863066a96b215b1dc40cd880f4d34",
+      "spritePathId": 5746674458230435138,
+      "border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      }
+    },
+    "default_icon_crown": {
+      "bundle": "cardpicker",
+      "bundleSha256": "286f35041469a1f19e1c5cde45aba3a88f5301e3011cc436f603fdff2ddf3534",
+      "spritePathId": -609103801934199609,
+      "border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      }
+    },
+    "paper_slot": {
+      "bundle": "cardpicker",
+      "bundleSha256": "286f35041469a1f19e1c5cde45aba3a88f5301e3011cc436f603fdff2ddf3534",
+      "spritePathId": 5131913755963390495,
+      "border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      }
+    },
+    "divider_metal_vertical": {
+      "bundle": "shared",
+      "bundleSha256": "67b0c6bf75b3cfe11eaf927ba529ee80d8bd4fab48a1141569a2fb754d0287e0",
+      "spritePathId": -3174186443566368267,
+      "border": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+      }
+    },
+    "scrollbar_handle": {
+      "bundle": "shared",
+      "bundleSha256": "67b0c6bf75b3cfe11eaf927ba529ee80d8bd4fab48a1141569a2fb754d0287e0",
+      "spritePathId": 541539777960745170,
+      "border": {
+        "x": 0.0,
+        "y": 109.0,
+        "z": 0.0,
+        "w": 115.0
+      }
+    }
+  },
+  "textureBytesAdded": 0,
+  "existingCellsPreserved": true,
+  "nativeRects": [
+    [
+      4,
+      248,
+      176,
+      160
+    ],
+    [
+      820,
+      436,
+      176,
+      160
+    ],
+    [
+      520,
+      1080,
+      320,
+      44
+    ],
+    [
+      856,
+      184,
+      64,
+      80
+    ],
+    [
+      928,
+      184,
+      48,
+      48
+    ],
+    [
+      1000,
+      4,
+      20,
+      48
+    ],
+    [
+      1000,
+      60,
+      20,
+      12
+    ],
+    [
+      1000,
+      80,
+      20,
+      48
+    ],
+    [
+      1000,
+      136,
+      12,
+      256
+    ],
+    [
+      333,
+      0,
+      16,
+      16
+    ],
+    [
+      349,
+      0,
+      480,
+      16
+    ],
+    [
+      829,
+      0,
+      16,
+      16
+    ],
+    [
+      333,
+      16,
+      16,
+      396
+    ],
+    [
+      349,
+      16,
+      480,
+      396
+    ],
+    [
+      829,
+      16,
+      16,
+      396
+    ],
+    [
+      333,
+      412,
+      16,
+      16
+    ],
+    [
+      349,
+      412,
+      480,
+      16
+    ],
+    [
+      829,
+      412,
+      16,
+      16
+    ]
+  ],
+  "paperRects": [
+    [
+      0,
+      1178,
+      687,
+      48
+    ],
+    [
+      0,
+      1226,
+      687,
+      287
+    ],
+    [
+      0,
+      1513,
+      687,
+      48
+    ]
+  ],
+  "transparentRgbBleed099": true
+}

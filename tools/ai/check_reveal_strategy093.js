@@ -26,7 +26,9 @@ for(const strength of [2,3,4])for(const damp of [0,40,70]){
 {
  const g=setup(4,70),alchemist=add(g,162316,8,0,2),own=add(g,162301,8,1,2);
  check(g.Play(2,alchemist.Snapshot().instanceId,1)&&!g.IsFatal()&&!g.IsPending(),'own-only legal reveal completes');
- check((own.Snapshot().tokenMask&64)!==0,'own-only reveal is not prohibited');
+ // Revealing Daerlan causes its actual Hand->Board reaction. CardData removes
+ // RevealedOnHand on leaving Hand; that bit must not linger on the board.
+ check((own.Snapshot().locationMask&7)!==0&&(own.Snapshot().tokenMask&64)===0,'own-only reveal summons Daerlan and clears its hand-only revealed token');
 }
 // Opposing unrevealed identities and powers cannot choose which back to reveal.
 {

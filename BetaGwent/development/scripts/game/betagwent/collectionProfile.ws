@@ -1,30 +1,38 @@
 ﻿// Save-backed Beta ownership. The original game collection and eight deck slots
 // stay separate. Unknown schemas are preserved, never silently reinitialized.
 @addField(W3PlayerWitcher)
-private saved var betaGwentCollectionSchema : int;
+private var betaGwentCollectionSchema : int;
 @addField(W3PlayerWitcher)
-private saved var betaGwentOwnedIds : array<int>;
+private var betaGwentOwnedIds : array<int>;
 @addField(W3PlayerWitcher)
-private saved var betaGwentOwnedCopies : array<int>;
+private var betaGwentOwnedCopies : array<int>;
+// Keep the first damaged known profile before attempting a verified recovery.
 @addField(W3PlayerWitcher)
-private saved var betaGwentProgressionSeed : int;
+private var betaGwentCollectionRecoverySchema : int;
 @addField(W3PlayerWitcher)
-private saved var betaGwentRewardedNpcs : array<int>;
+private var betaGwentCollectionRecoveryOriginalSchema : int;
 @addField(W3PlayerWitcher)
-private saved var betaGwentRewardActors : array<EntityHandle>;
+private var betaGwentCollectionRecoveryIds : array<int>;
 @addField(W3PlayerWitcher)
-private saved var betaGwentRewardActorWins : array<int>;
+private var betaGwentCollectionRecoveryCopies : array<int>;
 @addField(W3PlayerWitcher)
-private saved var betaGwentRewardedQuests : array<name>;
+private var betaGwentProgressionSeed : int;
 @addField(W3PlayerWitcher)
-private saved var betaGwentStarterSetRevision : int;
+private var betaGwentRewardedNpcs : array<int>;
+@addField(W3PlayerWitcher)
+private var betaGwentRewardActorWins : array<int>;
+// 0.9.6: the card of the last match reward (0: scraps only), for the result panel.
+@addField(W3PlayerWitcher)
+public var betaGwentLastRewardCard : int;
+@addField(W3PlayerWitcher)
+private var betaGwentStarterSetRevision : int;
 @addField(W3PlayerWitcher)
 private var betaGwentCollectionSeeding : bool;
 // Independent additive save extension: ownership schema 1 remains unchanged.
 @addField(W3PlayerWitcher)
-private saved var betaGwentNewCardsSchema : int;
+private var betaGwentNewCardsSchema : int;
 @addField(W3PlayerWitcher)
-private saved var betaGwentNewCardIds : array<int>;
+private var betaGwentNewCardIds : array<int>;
 
 @addMethod(W3PlayerWitcher)
 private function BetaGwentEnsureNewCards()
@@ -34,7 +42,7 @@ private function BetaGwentEnsureNewCards()
 }
 @addMethod(W3PlayerWitcher)
 public function BetaGwentCardIsNew(id : int) : bool
-{ return betaGwentNewCardsSchema==1 && betaGwentNewCardIds.Contains(id) && BetaGwentOwned(id)>0; }
+{ BetaGwentStoreLoad(); return betaGwentNewCardsSchema==1 && betaGwentNewCardIds.Contains(id) && BetaGwentOwned(id)>0; }
 @addMethod(W3PlayerWitcher)
 private function BetaGwentMarkNewCard(id : int)
 {
@@ -45,9 +53,10 @@ private function BetaGwentMarkNewCard(id : int)
 public function BetaGwentCardSeen(id : int) : bool
 {
     var at : int;
+    if (!BetaGwentStoreReady()) return false;
     if(betaGwentNewCardsSchema!=1 || BetaGwentOwned(id)<1)return false;
     at=betaGwentNewCardIds.FindFirst(id);if(at<0)return false;
-    betaGwentNewCardIds.Erase(at);return true;
+    betaGwentNewCardIds.Erase(at);BetaGwentStoreCommit();return true;
 }
 
 function BetaGwentCollectionCap(id : int) : int
@@ -61,6 +70,7 @@ function BetaGwentCollectionCap(id : int) : int
 public function BetaGwentOwned(id : int) : int
 {
     var i : int;
+    BetaGwentStoreLoad();
     if(betaGwentCollectionSchema!=1 || betaGwentOwnedIds.Size()!=betaGwentOwnedCopies.Size()) return 0;
     for(i=0;i<betaGwentOwnedIds.Size();i+=1) if(betaGwentOwnedIds[i]==id) return betaGwentOwnedCopies[i];
     return 0;
@@ -69,6 +79,7 @@ public function BetaGwentOwned(id : int) : int
 public function BetaGwentGrant(id : int) : bool
 {
     var i, cap : int;
+    if (!BetaGwentStoreReady()) return false;
     cap=BetaGwentCollectionCap(id);
     if(betaGwentCollectionSchema!=1 || betaGwentOwnedIds.Size()!=betaGwentOwnedCopies.Size() || cap==0) return false;
     for(i=0;i<betaGwentOwnedIds.Size();i+=1) if(betaGwentOwnedIds[i]==id) {
@@ -79,6 +90,41 @@ public function BetaGwentGrant(id : int) : bool
     if(!betaGwentCollectionSeeding)BetaGwentUpdateCollectionProgress();return true;
 }
 // Additive starter migration: never removes cards, saved deck slots or reward claims.
+@addMethod(W3PlayerWitcher)
+private function BetaGwentCollectionEntriesValid() : bool
+{
+    var seen : array<int>; var i : int;
+    if (betaGwentOwnedIds.Size() == 0 || betaGwentOwnedIds.Size() != betaGwentOwnedCopies.Size()) return false;
+    for (i = 0; i < betaGwentOwnedIds.Size(); i += 1)
+    {
+        if (BetaGwentCollectionCap(betaGwentOwnedIds[i]) <= 0 || betaGwentOwnedCopies[i] <= 0 || seen.Contains(betaGwentOwnedIds[i])) return false;
+        seen.PushBack(betaGwentOwnedIds[i]);
+    }
+    return true;
+}
+@addMethod(W3PlayerWitcher)
+private function BetaGwentRecoverCollectionProfile() : bool
+{
+    var ids, copies : array<int>; var schema, bank, generation : int;
+    if (BetaGwentCleanupPending() || (betaGwentCollectionSchema != 0 && betaGwentCollectionSchema != 1)) return false;
+    if (betaGwentCollectionRecoverySchema == 0)
+    {
+        betaGwentCollectionRecoveryOriginalSchema = betaGwentCollectionSchema;
+        betaGwentCollectionRecoveryIds = betaGwentOwnedIds; betaGwentCollectionRecoveryCopies = betaGwentOwnedCopies;
+        betaGwentCollectionRecoverySchema = 1;
+    }
+    // Only the schema field is missing: preserve all surviving valid ownership.
+    if (BetaGwentCollectionEntriesValid()) { betaGwentCollectionSchema = 1; return true; }
+    bank = BetaGwentSelectBackupBank(generation);
+    if (bank == 0)
+    { LogChannel('BetaGwent', "COLLECTION_REPAIR_REJECT reason=noVerifiedBank"); return false; }
+    schema = betaGwentCollectionSchema; ids = betaGwentOwnedIds; copies = betaGwentOwnedCopies;
+    betaGwentCollectionSchema = 0; betaGwentOwnedIds.Clear(); betaGwentOwnedCopies.Clear();
+    if (BetaGwentRestoreBank(bank))
+    { LogChannel('BetaGwent', "COLLECTION_PROFILE_REPAIRED bank=" + bank + " quarantined=1"); return true; }
+    betaGwentCollectionSchema = schema; betaGwentOwnedIds = ids; betaGwentOwnedCopies = copies;
+    return false;
+}
 @addMethod(W3PlayerWitcher)
 private function BetaGwentApplyStarterSet()
 {
@@ -98,22 +144,30 @@ private function BetaGwentApplyStarterSet()
 public function BetaGwentEnsureCollection() : bool
 {
     var ids : array<int>; var i,j,k,needed,leader,faction : int; var title : string;var preset : SBetaGwentDuelPreset;var validation : SBetaGwentDeckValidation;
+    if(!betaGwentStoreLoaded)BetaGwentStoreLoad();
+    if(betaGwentStoreReadOnly)return false;
+    if(!betaGwentStoreWritable && !betaGwentStoreRecovering && !BetaGwentStoreRecoverProfile())return false;
     if(BetaGwentCleanupPending())return false;
     if(betaGwentCollectionSchema!=0) {
-        if(betaGwentCollectionSchema!=1 || betaGwentOwnedIds.Size()!=betaGwentOwnedCopies.Size())return false;
+        if(betaGwentCollectionSchema!=1)return false;
+        if(!BetaGwentCollectionEntriesValid() && !BetaGwentRecoverCollectionProfile())return false;
         if(!betaGwentCollectionSeeding) {
             BetaGwentEnsureNewCards();
             // Paid offers retain their reservation until the player chooses.
             if(betaGwentStarterSetRevision<BetaGwentStarterRevision() && !BetaGwentKegPending()) {
-                betaGwentCollectionSeeding=true;BetaGwentApplyStarterSet();betaGwentCollectionSeeding=false;
+                betaGwentCollectionSeeding=true;BetaGwentApplyStarterSet();betaGwentCollectionSeeding=false;BetaGwentStoreCommit();
             }
             BetaGwentUpdateCollectionProgress();BetaGwentSyncTournamentAccess();
+            if(betaGwentStore.Size()==0)BetaGwentStoreCommit();
         }return true;
     }
-    if(betaGwentOwnedIds.Size()!=0 || betaGwentOwnedCopies.Size()!=0) return false;
+    if(betaGwentOwnedIds.Size()!=0 || betaGwentOwnedCopies.Size()!=0) {
+        if(!BetaGwentRecoverCollectionProfile())return false;
+        BetaGwentEnsureNewCards();BetaGwentUpdateCollectionProgress();BetaGwentSyncTournamentAccess();BetaGwentStoreCommit();return true;
+    }
     // Profile fields lost by a save made without the mod: restore from the facts mirror.
     LogChannel('BetaGwent',"PROFILE_FIELDS_EMPTY cur="+FactsQueryLatestValue("bg_b2_cur")+" gen="+FactsQueryLatestValue("bg_b2_gen")+" hold="+FactsQueryLatestValue("bg_b2_hold")+" legacy="+FactsQueryLatestValue("bg_bk_schema"));
-    if(BetaGwentRestoreProfile()){BetaGwentUpdateCollectionProgress();BetaGwentSyncTournamentAccess();return true;}
+    if(BetaGwentRestoreProfile()){BetaGwentUpdateCollectionProgress();BetaGwentSyncTournamentAccess();BetaGwentStoreCommit();return true;}
     betaGwentCollectionSeeding=true;betaGwentCollectionSchema=1;
     BetaGwentApplyStarterSet();
     // One-time migration of valid saved DEV decks, preserving existing work.
@@ -126,7 +180,7 @@ public function BetaGwentEnsureCollection() : bool
         }
     }
     betaGwentCollectionSeeding=false;BetaGwentEnsureNewCards();BetaGwentUpdateCollectionProgress();BetaGwentSyncTournamentAccess();
-    LogChannel('BetaGwent',"COLLECTION_INITIALIZED schema=1 starters=5 distinct="+betaGwentOwnedIds.Size());return true;
+    LogChannel('BetaGwent',"COLLECTION_INITIALIZED schema=1 starters=5 distinct="+betaGwentOwnedIds.Size());BetaGwentStoreCommit();return true;
 }
 @addMethod(W3PlayerWitcher)
 public function BetaGwentOwnsDeck(ids : array<int>, leader : int) : bool
@@ -152,7 +206,15 @@ private function BetaGwentProgressionPick(maximum : int) : int
 @addMethod(W3PlayerWitcher)
 public function BetaGwentWinReward(deck : name, npcId : int, optional actorKey : int) : string
 {
+    var text : string;
+    // 0.9.4: every reward outcome reaches the save-backed store.
+    text = BetaGwentWinRewardCore(deck, npcId, actorKey); BetaGwentStoreCommit(); return text;
+}
+@addMethod(W3PlayerWitcher)
+private function BetaGwentWinRewardCore(deck : name, npcId : int, actorKey : int) : string
+{
     var ids,pool : array<int>;var i,id,gold,rewarded,scraps : int;var d : SBetaGwentDuelDefinition;
+    betaGwentLastRewardCard=0;
     if(!BetaGwentEnsureCollection())return "Коллекция недоступна: неизвестная схема сохранения.";
     gold=BetaGwentQuestGold(deck);
     if(gold!=0) {
@@ -162,7 +224,7 @@ public function BetaGwentWinReward(deck : name, npcId : int, optional actorKey :
             if(!betaGwentRewardedQuests.Contains(deck))betaGwentRewardedQuests.PushBack(deck);
             BetaGwentAddScraps(50);return "Победа: +50 осколков (всего "+BetaGwentScraps()+").";}
         betaGwentRewardedQuests.PushBack(deck);BetaGwentMirrorQuestReward(deck);
-        d=BetaGwentDuelDefinition(gold);
+        d=BetaGwentDuelDefinition(gold);betaGwentLastRewardCard=gold;
         if(BetaGwentGrant(gold)) {
             LogChannel('BetaGwent',"COLLECTION_REWARD quest="+deck+" card="+gold);
             return "Новая золотая карта: "+d.title;
@@ -190,7 +252,7 @@ public function BetaGwentWinReward(deck : name, npcId : int, optional actorKey :
         if(d.header.tierMask==2 || d.header.tierMask==4)pool.PushBack(ids[i]);
     }
     if(pool.Size()==0)return "Награда недоступна.";
-    id=pool[BetaGwentProgressionPick(pool.Size())];scraps=BetaGwentReceive(id);
+    id=pool[BetaGwentProgressionPick(pool.Size())];betaGwentLastRewardCard=id;scraps=BetaGwentReceive(id);
     betaGwentRewardedNpcs.PushBack(npcId);
     betaGwentRewardActorWins[actorKey-1]=Min(4,rewarded+1);BetaGwentMirrorNpcWins(npcId,betaGwentRewardActorWins[actorKey-1]);
     LogChannel('BetaGwent',"COLLECTION_REWARD_COUNTER actorKey="+actorKey+" runtimeId="+npcId+" wins="+betaGwentRewardActorWins[actorKey-1]);
@@ -205,6 +267,7 @@ public function BetaGwentWinReward(deck : name, npcId : int, optional actorKey :
 public function BetaGwentRewardActorKey(actor : CEntity) : int
 {
     var i,legacyWins,runtimeId : int;var handle : EntityHandle;
+    if (!BetaGwentStoreReady()) return 0;
     if(BetaGwentCleanupPending())return 0;
     if(!actor || betaGwentRewardActors.Size()!=betaGwentRewardActorWins.Size())return 0;
     for(i=0;i<betaGwentRewardActors.Size();i+=1)
@@ -218,6 +281,7 @@ public function BetaGwentRewardActorKey(actor : CEntity) : int
     legacyWins=Max(legacyWins,BetaGwentMirroredNpcWins(runtimeId));
     EntityHandleSet(handle,actor);betaGwentRewardActors.PushBack(handle);
     betaGwentRewardActorWins.PushBack(Min(4,legacyWins));
+    BetaGwentStoreCommit();
     LogChannel('BetaGwent',"COLLECTION_REWARD_ACTOR key="+betaGwentRewardActors.Size()+" runtimeId="+runtimeId+" migratedWins="+Min(4,legacyWins));
     return betaGwentRewardActors.Size();
 }

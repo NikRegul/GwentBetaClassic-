@@ -3,7 +3,7 @@
 const fs=require('fs'),path=require('path');
 const {createRuntime}=require('./beta_js092/session.cjs');
 const fixtureRoot=path.resolve(__dirname,'fixtures/user093');
-function rebuild(runtime,p){
+function rebuild(runtime,p,options={}){
  const g=runtime.newSession(),preset=Number(p.head.presetTwo);
  if(!g.InitializeWithPresets(21,preset))throw Error('Fixture initialisation');
  const Registry=g.registry.constructor;g.registry=new Registry();g.registry.Initialize();g.live.Clear();g.dying.Clear();g.playStack.Clear();
@@ -22,7 +22,9 @@ function rebuild(runtime,p){
  m.playerOne.crowns=crowns[0];m.playerTwo.crowns=crowns[1];m.playerOne.hasPassed=Boolean(passed[0]);m.playerTwo.hasPassed=Boolean(passed[1]);
  g.presetOne=Number(p.head.presetOne);g.presetTwo=preset;g.aiSimDamp=p.damp;
  g.aiStartingDeckOne.Clear();for(const t of p.head.known.split(',').filter(Boolean).map(Number))g.aiStartingDeckOne.PushBack(t);
- if(p.head.weather.split(',').filter(Boolean).some(Number))throw Error('Weather needs explicit reconstruction');
+ const weather=p.head.weather.split(',').filter(Boolean).map(Number);
+ if(weather.some(Number)&&!options.weather)throw Error('Weather needs explicit reconstruction');
+ if(options.weather){if(weather.length!==6||weather.some(x=>!Number.isInteger(x)||x<0||x>8191))throw Error('Invalid logged row tokens');g.weather.hazards=weather;}
  if(g.Score(1)!==Number(p.begin.enemyScore)||g.Score(2)!==Number(p.begin.ownScore))throw Error('Rebuilt scores differ from the user log');
  return g;
 }

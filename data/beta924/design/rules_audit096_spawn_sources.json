@@ -1,0 +1,252 @@
+{
+ "schema": 1,
+ "scope": "scope198 spawn family",
+ "independentExpectationsBeforeHandlers": true,
+ "allBranchesComplete": false,
+ "csharp": [
+  {
+   "n": "SpawnCardNode",
+   "sha256": "0985f5c06d7dd103e23c8dc252d10b4cd863d17fd1ddbe71ac388ec30ff8cf65"
+  },
+  {
+   "n": "SpawnCardsAction",
+   "sha256": "51059270c87121daab15dc282c65d05ca4d0ab5c1bf095d3fdf095e0b6ab56c1"
+  },
+  {
+   "n": "Location",
+   "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+  },
+  {
+   "n": "GetCardPositionOnLeftNode",
+   "sha256": "d51e85850ac6d97a75e5caa9c396a21808485507da67ad855d07ee9e13f8d67b"
+  },
+  {
+   "n": "GetCardPositionOnRightNode",
+   "sha256": "f09d29a56c22ef09b809e2cb4dc9ade0d1626b111d4a04c270ca64ad658287e4"
+  },
+  {
+   "n": "AGetRandomPositionNode",
+   "sha256": "d49ff4ef9d40f4aac58b6e4bfe110dcc2613126ddf0d90702eb91193dfdbea72"
+  },
+  {
+   "n": "GetRandomLastAvailablePositionNode",
+   "sha256": "57780ade1e82073fa01c2cdb7b7442f66c1da82450e5d455685306f958742fc3"
+  },
+  {
+   "n": "GetLastAvailableIndexNode",
+   "sha256": "6029833dfe23b2a8cbafc10ab88d80056a3706248ae9ccaf8c99bf866652acca"
+  },
+  {
+   "n": "MakeCardPositionNode",
+   "sha256": "928fcfc16fa78c7a71720b7f9c59560fe2a02a71000fd7546cbb6edf2e0d27c3"
+  },
+  {
+   "n": "BreakCardPositionNode",
+   "sha256": "f971a00781c0c7018acd2d53c624e6a8ab7fea131d8854c85c79b51d72d91022"
+  },
+  {
+   "n": "GetCardPositionNode",
+   "sha256": "0417674bb039209fc589bffa39a0b926a466829d892fce7bad1806da7d9284a3"
+  },
+  {
+   "n": "KilledTrigger",
+   "sha256": "b27697342bb3327045ac471b096701e142c9fb1b5791ef85c7f8ef6ad27a915c"
+  },
+  {
+   "n": "ChangeTokensNode",
+   "sha256": "4c1d86bf8701a0d977322d9e8088dddc0f1dac3a0f5db1fe890cb40a1882a3cf"
+  },
+  {
+   "n": "ChangeLocationTokensNode",
+   "sha256": "aebea8c219b24c168e6f2d802868f46964f3a7188e4d25aac125efbbb3fa9982"
+  },
+  {
+   "n": "PlayCardsNode",
+   "sha256": "f574ebcad534b08f786d96c41891f1ba036448848feb2ee1853e8e749046ad53"
+  },
+  {
+   "n": "GetOwnerLocationNode",
+   "sha256": "9ebb7e51ba7e4009d47962d9976fc6572ff62a277d267d08b565239d41ddd0e5"
+  },
+  {
+   "n": "CardPosition",
+   "sha256": "19048a64a5a61d8025494785ddad8af12c24593e41c4d1aef28ac2b869496041"
+  },
+  {
+   "n": "BoardManager",
+   "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+  }
+ ],
+ "records": [
+  {
+   "id": 112209,
+   "graphs": [
+    {
+     "nid": 481,
+     "sha256": "85ffe10927a4e399d4310d9ddb8247a7a028f6bca52dbf2cd8dbd48e63a7f6b1"
+    }
+   ],
+   "expected": "Killed: spawn 200320 at GetRandomLastAvailablePosition(owner position player, Active): RNG Next(non-full rows), index -3."
+  },
+  {
+   "id": 132103,
+   "graphs": [
+    {
+     "nid": 206,
+     "sha256": "4c40f0923b71307ba196d843392202f909e04ab510347ff65ed278ee1f65d5e7"
+    }
+   ],
+   "expected": "Played: 3x132403 at own Melee index -3; ChangeLocationTokens Set fog2 on opponent location with the played card location id."
+  },
+  {
+   "id": 132210,
+   "graphs": [
+    {
+     "nid": 316,
+     "sha256": "847e7a0bef99577d0b11895e78d0541fc0a4db0526204dc42b01650e608cee45"
+    }
+   ],
+   "expected": "Played: BreakCardPosition(PlayedTrigger.To), IntPlus index+1, spawn 3x132404 to the right."
+  },
+  {
+   "id": 132213,
+   "graphs": [
+    {
+     "nid": 309,
+     "sha256": "00f510735fbdee4b6858eec779b5498bc7655f3cabc415af9daa082781e6742b"
+    }
+   ],
+   "expected": "Killed: Forced -> Current position, else From position; spawn 2x132405 at that player/location index -3."
+  },
+  {
+   "id": 132217,
+   "graphs": [
+    {
+     "nid": 194,
+     "sha256": "59884872fd05d02eaba30be2f02b317b0e455a8e75ffd2c8a0620bf4e2e6a265"
+    }
+   ],
+   "expected": "Played: SpawnCard 132316 x Counter2 at GetCardPositionOnLeft(played) = owner index; both left of owner; full row drops requests."
+  },
+  {
+   "id": 132220,
+   "graphs": [
+    {
+     "nid": 90,
+     "sha256": "a66ee142e398b35b8f5e5c751ef7f57ea495a485db715f5a08d258717124f46d"
+    }
+   ],
+   "expected": "Played: spawn 200067 to own PlayStack (SpawningPool) then PlayCards -> player places/resolves."
+  },
+  {
+   "id": 142304,
+   "graphs": [
+    {
+     "nid": 167,
+     "sha256": "b7b528af7e7752cc8a16fb177186bcb8ac40bb495b6524bfbc4e16e5d4b30195"
+    }
+   ],
+   "expected": "Played: spawn 143301 to own PlayStack then PlayCards."
+  },
+  {
+   "id": 152101,
+   "graphs": [
+    {
+     "nid": 213,
+     "sha256": "f3387fbd8e6e9980533fb4bf961c6f7f375af0dd3e0e3a7d9da9bc08e9789ede"
+    }
+   ],
+   "expected": "Played: 152401 at opponent side, owner location, index -3 (end), ChangeTokens Add Disloyal128."
+  },
+  {
+   "id": 152104,
+   "graphs": [
+    {
+     "nid": 105,
+     "sha256": "fbd2a9523f3d2f2226faff6f7cf1c8650d218a45ceb92d388616ca220d19ac95"
+    }
+   ],
+   "expected": "Killed: spawn 152402 at GetRandomLastAvailablePosition(owner position player, Active)."
+  },
+  {
+   "id": 152201,
+   "graphs": [
+    {
+     "nid": 67,
+     "sha256": "e9efdf1700e47ff62a80907eff83184734161090c6f461525fad99c22777f6eb"
+    }
+   ],
+   "expected": "Played: spawn 152403 to own PlayStack then PlayCards (template placement decides side; player chooses row)."
+  },
+  {
+   "id": 162302,
+   "graphs": [
+    {
+     "nid": 154,
+     "sha256": "3f026a87e49d11af8ac21a2c0814acac1de7292712366595fdb057f7d963da86"
+    }
+   ],
+   "expected": "Played: spawn 162402 to own PlayStack then PlayCards (placement by the spawned template)."
+  },
+  {
+   "id": 162401,
+   "graphs": [
+    {
+     "nid": 130,
+     "sha256": "d5a965c3831a439ae9de3d06ca2840d0027d34d4d2403f8e90e45a9f1bb7f507"
+    }
+   ],
+   "expected": "Played: 200219 spawned into opponent Deck index0 (top), Count MaxTargets=1."
+  },
+  {
+   "id": 200043,
+   "graphs": [
+    {
+     "nid": 111,
+     "sha256": "49eca6e141789c64f28fa8e1994ef4f123ecca3d2ac3d0f9b4258da262eec8bb"
+    }
+   ],
+   "expected": "Played: 201573 left, 201574 right, then 201572 on opponent side, owner Location, owner current Index (evaluated after the left spawn), ChangeTokens Add Disloyal128."
+  },
+  {
+   "id": 200144,
+   "graphs": [
+    {
+     "nid": 73,
+     "sha256": "693b2cf6cbed49f748d348616759d71f55d7c6f0b383622d5440221a40739e3e"
+    }
+   ],
+   "expected": "Played: spawn 152406 to own PlayStack then PlayCards."
+  },
+  {
+   "id": 200523,
+   "graphs": [
+    {
+     "nid": 61,
+     "sha256": "5bbe8fa989c20eacd65e406e6857311a4a59cf5543aadb58df6c3f3cf5aaf426"
+    }
+   ],
+   "expected": "Played: 2x201576 at owner index+1 (right), then 2x201576 at owner index (left)."
+  },
+  {
+   "id": 201572,
+   "graphs": [
+    {
+     "nid": 201,
+     "sha256": "b5fa4d47d7efb1fdc97ebb9fcdd690eae308b81e66199d688b8830d6af5b88f3"
+    }
+   ],
+   "expected": "Killed: if opponent-of-position == current player, spawn 152406 at random available row of that opponent."
+  },
+  {
+   "id": 201636,
+   "graphs": [
+    {
+     "nid": 62,
+     "sha256": "81dbfeb11b3c890afbbdac99f67950c2feff96c66d100be51bc7e646991ba7bd"
+    }
+   ],
+   "expected": "Played: one copy of 201636 at owner index+1; ChangeTokens Add Doomed512 and ChangeCategories Add on the spawned copy."
+  }
+ ]
+}

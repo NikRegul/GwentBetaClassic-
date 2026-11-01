@@ -40,11 +40,24 @@ for(const file of ['BetaGwent/ui/src/BetaGwentBoard.as','tools/features091/BetaG
   ctx.requestCards=[{id:21,revealed:true,templateId:112405,title:'A'},{id:22,revealed:true,templateId:113310,title:'B'}];
   if(mode==='hand'){ctx.requestKind=2;ctx.pileChoice=false;ctx.rowMode=0;ctx.cards=[{id:21,zone:8,side:1},{id:22,zone:8,side:1}];}
   else{ctx.requestKind=1;ctx.pileChoice=true;ctx.rowMode=mode==='play'?12:14;ctx.cards=[];}}
+ ctx.battleChoiceChrome095=ctx.stripHeading;ctx.choicePage=0;
+ ctx.controller={active:false};ctx.choiceScrollRequest=0;ctx.choiceScroll097=0;ctx.choiceFocused097=-1;ctx.choiceGrid097=null;
+ for(const m of source.matchAll(/\b(CHOICE_[A-Z0-9_]+):(?:Number|int)=(-?[\d.]+)/g))ctx[m[1]]=+m[2];
+ vm.runInContext(extract(source,'betaChoiceGrid097'),ctx);
+ ctx.pickerSurface098=()=>new Sprite();ctx.pickerShades098=()=>{};ctx.betaChoiceScroll097=()=>{};ctx.cancelPickerDrag098=()=>{};
+
+ // 0.9.7 hangs the title on the chained plank (betaPlankChrome097) and paints no subtitle, so the
+ // outcome note is asserted through the same shipped calls drawBetaAbilityChoices makes for the shape.
+ ctx.betaPlankChrome097=(parent,title)=>headings.push({heading:title});
+ ctx.betaWideButtonIn097=()=>{};ctx.emptyChoiceSlot097=()=>{};ctx.paintCardBack=()=>{};
+ ctx.overviewLayout=(n,w,h,cols,cardW,gap)=>({cols:5,w:cardW,h:h/2,captionH:20,stepY:h/2+40});
+ const betaHint=()=>{let h=ctx.isCardOffer()?ctx.cardOfferLabel(true):ctx.readableText(ctx.requestMessage);
+  if(ctx.pileChoice&&!ctx.isCardOffer())h=ctx.choiceHint(h);return h;};
  const draw=()=>{headings.length=0;ctx.drawBetaAbilityChoices();return headings[0];};
  for(let lang=1;lang<=13;lang++){ctx.BetaGwentTextLanguage.language=lang;
   for(const [t,mode,h,n] of CASES){setMode(t,mode);const shown=draw();
    check(shown&&shown.heading===TEXT[h][lang-1],'Beta modal heading '+t+'/'+lang);
-   check(shown.hint.startsWith(TEXT[n][lang-1]),'Beta modal outcome hint '+t+'/'+lang);
+   check(betaHint().startsWith(TEXT[n][lang-1]),'Beta request shape resolves the outcome note '+t+'/'+lang);
    check(ctx.choiceHeading('x')===(mode==='hand'?'x':TEXT[h][lang-1])||mode==='hand','classic modal heading '+t+'/'+lang);
    if(mode!=='hand')check(ctx.choiceHint('x')===TEXT[n][lang-1],'classic modal hint '+t+'/'+lang);
    else check(ctx.cardOfferLabel(false)===TEXT[h][lang-1]&&ctx.cardOfferLabel(true)===TEXT[n][lang-1],'offer browser caption '+t+'/'+lang);}
@@ -52,12 +65,12 @@ for(const file of ['BetaGwent/ui/src/BetaGwentBoard.as','tools/features091/BetaG
  ctx.BetaGwentTextLanguage.language=1;
  setMode(152214,'hand');check(ctx.choiceCaptionKey(true)==='','Udalryk caption is never shown for a different request shape');
  setMode(200071,'pile');check(ctx.choiceCaptionKey(true)==='','Shilard caption only for its hand offer');
- setMode(122201,'pile');check(draw().hint.startsWith(ABILITY[122201]),'uncaptioned deck choice shows the card ability');
- setMode(142312,'hand');check(draw().hint.startsWith(ABILITY[142312]),'uncaptioned hand offer shows the card ability');
+ setMode(122201,'pile');draw();check(betaHint().startsWith(ABILITY[122201]),'uncaptioned deck choice draw resolves the card ability');
+ setMode(142312,'hand');draw();check(betaHint().startsWith(ABILITY[142312]),'uncaptioned hand offer draw resolves the card ability');
  setMode(201776,'play');check(ctx.choiceHint('fallback')==='fallback','play choice without caption keeps its play explanation');
  setMode(162316,'hand');check(ctx.cardOfferLabel(false)===TEXT.reveal[0],'reveal heading kept');
  ctx.requestPlayer=2;setMode(152214,'pile');check(ctx.choiceCaptionKey(false)==='','opponent decisions get no player caption');ctx.requestPlayer=1;
- check(source.includes('if(pileChoice&&!isCardOffer()){heading=choiceHeading(heading);hint=choiceHint(hint);}'),'Beta skin uses captions');
+ check(source.includes('if(pileChoice&&!isCardOffer())heading=choiceHeading(heading);'),'Beta skin uses captions');
  check(source.includes('text(modal,isCardOffer()?cardOfferLabel():pileChoice?choiceHeading(')&&source.includes('text(modal,isCardOffer()?cardOfferLabel(true):pileChoice?choiceHint('),'classic skin uses captions');
  records.push({file,cases:CASES.length,languages:13});
 }

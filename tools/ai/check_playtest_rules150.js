@@ -5,7 +5,8 @@ const fixture=fs.readFileSync(path.join(__dirname,'check_consume_self.js'),'utf8
 vm.runInContext(['runtime.js','rules.js','harness.js'].map(f=>fs.readFileSync(path.join(snapshot,f),'utf8')).join('\n')+'\nHost.strength=4;'+fixture+String.raw`
 // Chosen deploy pools exclude the acting instance, including same-template copies.
 for(const template of [142317,200299,112214,152304,152203,152317,200147]){
- const g=fixture(1),other=add(g,template,1,0,1),source=add(g,template,8,4,1);
+ // Flaminica graph109 negates the played row; a same-template copy is legal in ANOTHER row.
+ const g=fixture(1),other=add(g,template,template===200147?2:1,0,1),source=add(g,template,8,4,1);
  check(g.Play(1,source.cardState.instanceId,1),'deploy '+template);
  check(!g.pendingIds.includes(source.cardState.instanceId),'no self target '+template);
  check(g.pendingIds.includes(other.cardState.instanceId),'another copy remains legal '+template);
@@ -25,7 +26,9 @@ for(const template of [142204,142208,201779]){
   check(trap.Snapshot().power.currentPower===Math.floor(initial/2),'Morvudd halves revealed target '+template);
   check(morvudd.Snapshot().power.currentPower===before,'no reveal attack during lock '+template);
  }
- if(template===142208)check(before===5,'Morenn attacks before the deploy choice');
+ // Graph232 records AfterPlayed and fires only on final AfterMoved. Locking
+ // Morenn during deploy removes her Ambush first, so she cannot attack later.
+ if(template===142208)check(before===12,'Morenn waits until after deploy instead of attacking before its target choice');
  check(!g.IsFatal(),'ambush resolves safely '+template);
 }
 // Destroy retains normal death rules but emits no damage-to-zero presentation.
@@ -118,7 +121,11 @@ for(const spec of [{id:132314,power:30,armor:10,kill:true},{id:142317,power:7,ar
 {
  const g=fixture(1),target=add(g,132314,2,0,2),creator=add(g,200058,8,4,1);
  check(g.Play(1,creator.cardState.instanceId,1),'Triss creates a card');
- g.monsters.neutral.Select(creator,201772);
+ // Pin one legal generated gold offer; this fixture tests nested Professional,
+ // not the random three-card offer generator (covered by the source pool audit).
+ check(g.pendingChoice&&g.MonsterCreationAllowed(creator,201772),'Professional is a legal generated gold');
+ g.pendingIds=[201772];
+ check(g.SelectTemplateChoice(g.requestId,201772),'Triss choice uses the public confirmation boundary');
  check(!!g.pendingRally&&g.pendingRally.TemplateId()===201772,'created Professional awaits placement');
  g.PlaceRally(1,1,-3);
  check(g.SelectTarget(g.requestId,target.cardState.instanceId),'created Professional targets Drowner');

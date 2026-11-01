@@ -22,6 +22,8 @@ class BetaActionReplay {
   if(!n.started){n.started=true;this.tree.performInitial(n);}
   else if(n.awaitingInitialPlacement)this.tree.placeInitialLeader(n);
   else if(g.IsPending()&&!g.mulligan){
+   // The other seat's reaction (Standard Bearer) is answered by that seat.
+   if(!n.activeChoice&&g.RequestDecisionSide()!==n.executingPlayerId)return {finished:false,mutations:0,waiting:true,callbacks:this.callbacks};
    if(!n.activeChoice&&n.choiceCursor>=n.choiceRecords.length)throw Error('Selected source node lacks live request record');
    this.choices.request(n);
   }else throw Error('Live replay continuation requested outside action');

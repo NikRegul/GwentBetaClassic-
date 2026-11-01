@@ -5,8 +5,13 @@ import argparse, difflib, hashlib, json, shutil, sys
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'tools'))
 from build_inputs import UI_BASELINE
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+import editor_vfx094
+sys.path.insert(0,str(ROOT/'tools/ui'))
+import window_art098
 COPIES=['src','src-BetaGwentBoard','src-GwintGame','src-DeckBuilder','src-BetaGwentKeg']
-NAMES=['BetaGwentBoard.as','BetaGwentController.as','BetaGwentCardText.as','BetaGwentRelated091.as','BetaGwentBanners090.as','BetaGwentReleaseText093.as']
+NAMES=['BetaGwentBoard.as','BetaGwentController.as','BetaGwentCardText.as','BetaGwentRelated091.as','BetaGwentBanners090.as','BetaGwentReleaseText093.as',
+       'BetaGwentElementArt164.as','BetaGwentEditorFx094.as','BetaGwentEditorFxData094.as','BetaGwentEditorValid095.as','BetaGwentEditorValidData095.as','BetaGwentEditorChrome096.as','BetaGwentEditorSlot096.as','BetaGwentEditorSlotData096.as','BetaGwentPassCoin096.as','BetaGwentUiText096.as','BetaGwentTextLanguage.as','BetaGwentWindowArt098.as']
 
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 
@@ -38,10 +43,10 @@ def main():
                 # and current UI; preserve Classic languageButton implementation.
                 assert sha(source/'ui/src'/name)=='635f40a29b99122eec42226dc660b408ace05e42a7ffadb12bdbe8df7f0d94c2', 'Classic UI baseline changed'
                 assert sha(before/name)=='55d098620f500e3a61f229fc04b76d13ddd1fd9a601a7efea6c9b51a007d70d3', 'NextGen UI baseline changed'
-                assert sha(current/name)=='f2e2f454ae4c66c0ac7cc1698cbddd2e90bc52c3c1fcfeed97c143a9fbc4c01c', 'Updated UI source changed'
+                assert sha(current/name)=='96c78c18779f2446402f0ccebd1179072c246923659e8a68b197d0e5a344b253', 'Updated UI source changed'
                 overlay=Path(__file__).with_name('BetaGwentBoard_classic093.as')
                 assert overlay.is_file(), 'Missing reviewed Classic board UI overlay'
-                assert sha(overlay)=='2988a25c8e7ba5e407b58c565eae0a159bba02b45c2a4c5b232adcfe274f0097', 'Classic UI overlay changed'
+                assert sha(overlay)=='00cd653fc2f691990c4b8677361798c6fd9fe9c44dcd2a784c4079f27fa9ae5b', 'Classic UI overlay changed'
                 text=overlay.read_text('utf-8-sig')
             else:
                 for old,new in changes[name]:
@@ -51,6 +56,11 @@ def main():
             for folder in COPIES:(target/'ui'/folder/name).write_bytes(raw)
             assert len({sha(target/'ui'/c/name) for c in COPIES})==1
             assert b'\n' not in raw.replace(b'\r\n',b'')
+        # 0.9.4a: Beta deck-editor add/remove frames (extended Elements atlas;
+        # Classic also gets native DefineSubImage cell classes).
+        vfx=editor_vfx094.prepare(target/'ui',platform,source)
+        assert vfx,'Missing reviewed editor effect atlas (data/beta924/design/editor_vfx094.json)'
+        window_art098.prepare(target/'ui',platform,source)
         manifest=json.loads((source/'ui-inputs.json').read_text('utf8'))
         manifest['sources']={f.name:sha(f) for f in (target/'ui/src').glob('*.as')}
         (target/'ui-inputs.json').write_text(json.dumps(manifest,indent=2),'utf8')

@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse, concurrent.futures, json, subprocess, time
 
 ROOT = Path(__file__).resolve().parents[2]
-NAMES = '''check_consume_self check_no_targets127 check_deck_combos128 check_feedback092 check_round_economy093 check_reply_pass094 check_exhausted_frontier094 check_draw_frontier094 check_chase_budget093a check_plans093c check_four_card093c check_human_patterns094
+NAMES = '''check_answer_reserve102 check_targets102 check_tutor_mulligan102 check_archer102 check_feedback101 check_special_tutors101 check_offered_play100 check_play_confirm099 check_harald099 check_target_cancel098 check_consume_batch097 check_bearer097 check_hazard_victims097 check_ozzrel_body097 audit_edges096 audit_creators20096 audit_templates21096 audit_lists096 audit_spawn096 audit_tchoice096 audit_flow096 audit_misc096 audit_batch100a096 audit_batch100b096 audit_batch100c096 audit_batch100d096 audit_batch100e096 audit_batch80a096 audit_batch80b096 audit_batch80c096 audit_batch80d096 audit_batch80_requests096 audit_reaction_edges096 audit_reaction_pools096 audit_whole_requests096 audit_power_targets096 audit_power_groups096 audit_reveal_tokens096 audit_token_events096 audit_ambush096 audit_hand_events095 audit_choice_moves095 audit_summon_events095 check_slyzard_deck096 check_exchange_pass096 audit_return_filters095 audit_inactive_moves095 audit_category_tables095 audit_corpse_venom095 audit_charm_random095 audit_movement095 audit_move_targets095 audit_move_order095 audit_olgierd095 audit_definition_pools095 audit_history_gaunter095 audit_base_strength095 audit_transform095 check_inactive_zero095 check_mork_order095 check_ciri_dash_round095 check_xavier095 check_catalog_source095 check_olaf095 check_whale094a check_consume_self check_no_targets127 check_deck_combos128 check_feedback092 check_round_economy093 check_pass_carry094a check_pass_carry_hidden094a check_reply_pass094 check_exhausted_frontier094 check_draw_frontier094 check_chase_budget093a check_plans093c check_short_spy094c check_classic_partial094 check_sheldon_row094 check_ship_append094a check_four_card093c check_human_patterns094
 check_policy133 check_hidden_information133 check_armor_restore165 check_quality095 check_swarm_playtest092 check_log_spy_pass_20261023 check_log_spy_opening_20261023
 check_miruna_aglais_scorch180 check_emissary_mulligan181 check_playtest188
 check_playtest_rules150 check_lock_resilience093b check_lock_choice144 check_chase139 check_spy138
@@ -23,6 +23,12 @@ def main():
     from comparison_inputs import validate_snapshot
     validate_snapshot(args.snapshot)
     args.output.mkdir(parents=True, exist_ok=True)
+    # A resumed build replays a failed step inside the same incomplete output directory, and
+    # most checks here insist on a fresh report path. Drop only this suite's own outputs.
+    for name in NAMES:
+        for suffix in ('.json', '.log'):
+            stale = args.output / (name + suffix)
+            if stale.is_file(): stale.unlink()
     def run(name):
         start = time.monotonic()
         script=ROOT/'tools/ai'/(name+'.js')

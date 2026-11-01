@@ -1,0 +1,2256 @@
+{
+ "schema": 1,
+ "scope": "scope198 list family primary chains",
+ "independentExpectationsBeforeHandlers": true,
+ "allBranchesComplete": false,
+ "evaluator": {
+  "file": "tools/ai/beta_list_eval096.cjs",
+  "sha256": "c9a79226e6fb62e41a3f8f4eaeafb91c4971c859534de1f1bc33826d276f050c"
+ },
+ "csharp": [
+  {
+   "n": "GetCardsNode",
+   "sha256": "ce64b3c0c479a52bdb6968d63ddf5a2f318682d3a61429dddfe21b205e79ccde"
+  },
+  {
+   "n": "BoardManager",
+   "sha256": "2e524e6fbdfe78ce932597ff51c222836970dfaa35c4ca422e862cd1fdcb0989"
+  },
+  {
+   "n": "Location",
+   "sha256": "54d14c862d4576b400eaacaaa540756d697176cece4f20b4cd2dafec3be5a08d"
+  },
+  {
+   "n": "FilterCardListNode",
+   "sha256": "7f16d84603b2da9fa2fb04f742b578dc972fe7e31d45c315334c2dd6cb8e0fe0"
+  },
+  {
+   "n": "FilterCardCategoryNode",
+   "sha256": "7fc242f267fd5a2dd80d10badf6f9170cf650f57a3792e6d8ce6666b35ae7a5f"
+  },
+  {
+   "n": "BitArray",
+   "sha256": "22af61e5c228e8b7e2189c19462d76f045fd45a2981024b77dac9e26cafaf993"
+  },
+  {
+   "n": "AFilterNode",
+   "sha256": "618a72ba7c51b6e5dc8f8e2f818f2c0295d6fdbbcf71a5587b540f6e065d2f49"
+  },
+  {
+   "n": "FilterDefinitionNode",
+   "sha256": "b7e5771d46fb4405c5273de2bf5246175b764851f30da07153879445dd8b085a"
+  },
+  {
+   "n": "FilterPowerLevelNode",
+   "sha256": "11fea32473e656682a4dda2fe10b75b6db427ef82b91fedd36e297fe1456bae2"
+  },
+  {
+   "n": "AListShuffleNode",
+   "sha256": "ce4cf1318bac18494eab147272c699aed9b91f701273746fdd23c9e179113a1e"
+  },
+  {
+   "n": "ListExt",
+   "sha256": "2589f9e2e1c1b9bdbc1fe0adb18111e656429d89889d523a80dbfd01f70727ac"
+  },
+  {
+   "n": "AListGetRangeNode",
+   "sha256": "19da29b5764fc05ba7123b4b3c33e86fa7b1b5c5755625cb1d6c4a0fbfc7993e"
+  },
+  {
+   "n": "AListGetRandomElementNode",
+   "sha256": "77bc790b8d6452fc65c9b11d957e0cdb58a55b2692ff64fca1f6b37f70fd83ce"
+  },
+  {
+   "n": "RequestCardChoiceNode",
+   "sha256": "7fddbaa13542f484baafcf3c0aa68784e1b0ed3b13f7f48f6dbdeecbec3f2ac4"
+  },
+  {
+   "n": "ARequestChoiceNode",
+   "sha256": "07324ce529c90b8e669d20b4d7b28dd39936af4f74c9fef3b2bc55507d38d9c6"
+  },
+  {
+   "n": "PlayCardsNode",
+   "sha256": "f574ebcad534b08f786d96c41891f1ba036448848feb2ee1853e8e749046ad53"
+  },
+  {
+   "n": "SummonCardsNode",
+   "sha256": "95b0d9722cd4347894732242c25b45b8c63bdd3ea498b98c70153013027903e6"
+  },
+  {
+   "n": "EnumExtensions",
+   "sha256": "6c423522f3823303bc093fd93fe044d08e329df76a57a73f2ea8e5fca9a035dc"
+  }
+ ],
+ "records": [
+  {
+   "id": 113316,
+   "graph": {
+    "nid": 88,
+    "sha256": "32121441968b7c7cb1428249563b8775d9c7e7086061f02211e78bd843ee17aa"
+   },
+   "chain": [
+    "Played!>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 32,
+    "types": 4,
+    "tiers": 8,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    112101,
+    112113,
+    132101,
+    142102,
+    152107,
+    200032,
+    200222,
+    201618
+   ],
+   "staticPassCount": 98,
+   "post": false,
+   "expected": "Played: Played!>RequestCardChoice>PlayCards. GetCards own/32 types4 tiers8 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 132106,
+   "graph": {
+    "nid": 99,
+    "sha256": "a4bcfc4992d9de86e6bafd5587461c7177acabc636d1ddc87ed07d9e7a1fe156"
+   },
+   "chain": [
+    "Played!>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "enemy",
+    "location": 32,
+    "types": 4,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    112201,
+    122304,
+    132220,
+    142302,
+    152305,
+    162308,
+    200089,
+    200520
+   ],
+   "staticPassCount": 276,
+   "post": false,
+   "expected": "Played: Played!>RequestCardChoice>PlayCards. GetCards enemy/32 types4 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 162304,
+   "graph": {
+    "nid": 92,
+    "sha256": "c82d517e49873194de2a4a0ea93f47b0a2391a20e2c6dd1f33f25e8d455ac91e"
+   },
+   "chain": [
+    "Played!>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "enemy",
+    "location": 32,
+    "types": 4,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    112405,
+    122403,
+    132315,
+    142316,
+    152317,
+    200026,
+    200135,
+    200518
+   ],
+   "staticPassCount": 165,
+   "post": false,
+   "expected": "Played: Played!>RequestCardChoice>PlayCards. GetCards enemy/32 types4 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200166,
+   "graph": {
+    "nid": 100,
+    "sha256": "de1ea3c269746a4c360bf3d1f89385e10f92505b205e9a25e88d8cb540bdc797"
+   },
+   "chain": [
+    "Played!>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 32,
+    "types": 2,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    113102,
+    113301,
+    113311,
+    153201,
+    200023,
+    201582,
+    201635,
+    201656
+   ],
+   "staticPassCount": 73,
+   "post": false,
+   "expected": "Played: Played!>RequestCardChoice>PlayCards. GetCards own/32 types2 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 122105,
+   "graph": {
+    "nid": 409,
+    "sha256": "6ee758729c359961a37976816a0e222e78ec52aca6aa04c35a6df07bb10a1d2a"
+   },
+   "chain": [
+    "Played!>CardListGetRange>PlayCards"
+   ],
+   "source": {
+    "player": "enemy",
+    "location": 16,
+    "types": 14,
+    "tiers": 14,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    112101,
+    112102
+   ],
+   "staticPassCount": 2,
+   "post": false,
+   "expected": "Played: Played!>CardListGetRange>PlayCards. GetCards enemy/16 types14 tiers14 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 162104,
+   "graph": {
+    "nid": 91,
+    "sha256": "1cd5175dff1e6a314d67bdd857e723a5fc9d2d1c26fa9fb3fd70472dedf8f3cc"
+   },
+   "chain": [
+    "Played!>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 32,
+    "types": 4,
+    "tiers": 1,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    131101,
+    200158,
+    200160,
+    200162,
+    200164,
+    200166,
+    200168,
+    200170
+   ],
+   "staticPassCount": 21,
+   "post": false,
+   "expected": "Played: Played!>RequestCardChoice>PlayCards. GetCards own/32 types4 tiers1 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200149,
+   "graph": {
+    "nid": 191,
+    "sha256": "56fc4930c1aa8fc4e307dcc3fe795d78f4d50ddda48504cd37f399441968d906"
+   },
+   "chain": [
+    "Played!>FilterCardList>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 14,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "18014398509481984",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    113310,
+    113311,
+    113319,
+    133301,
+    200008,
+    200009,
+    201598,
+    201619
+   ],
+   "staticPassCount": 12,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>RequestCardChoice>PlayCards. GetCards own/16 types14 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 201579,
+   "graph": {
+    "nid": 83,
+    "sha256": "6f332a0b54c70c9638e693dcb039085d331e459d4807e5fbd251dc841e54015d"
+   },
+   "chain": [
+    "Played!>FilterCardList>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 32,
+    "types": 6,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "281474976710656",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    112205,
+    112206,
+    132303,
+    132308,
+    200233,
+    200539,
+    201606
+   ],
+   "staticPassCount": 7,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>RequestCardChoice>PlayCards. GetCards own/32 types6 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 201650,
+   "graph": {
+    "nid": 54,
+    "sha256": "af768166984438edd2b33de860dce05363d9fad3154dd6fc88288357c5a8d713"
+   },
+   "chain": [
+    "Played!>FilterCardList>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 32,
+    "types": 4,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "33554432",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    152210,
+    152301,
+    152302,
+    200038,
+    200114,
+    201599,
+    201600,
+    201624
+   ],
+   "staticPassCount": 11,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>RequestCardChoice>PlayCards. GetCards own/32 types4 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 201664,
+   "graph": {
+    "nid": 77,
+    "sha256": "14a162a5a030063597a3c97afa0814dbadf641ff5ded654eb1d590115802faa2"
+   },
+   "chain": [
+    "Played!>FilterCardList>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "2199023255552",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    122301,
+    122302,
+    122303,
+    122304,
+    122315,
+    152309,
+    152314,
+    162302
+   ],
+   "staticPassCount": 14,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>RequestCardChoice>PlayCards. GetCards own/16 types4 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 201780,
+   "graph": {
+    "nid": 91,
+    "sha256": "7f37537bf9ff78b610734fce196e58dde3671039a48abc5cb363f3d8f5a5b6f6"
+   },
+   "chain": [
+    "Played!>FilterCardList>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "enemy",
+    "location": 32,
+    "types": 4,
+    "tiers": 6,
+    "ignore": 264
+   },
+   "categoryFiltersPositive": [
+    [
+     "67108864",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    122204,
+    123301,
+    142305,
+    142317,
+    152307,
+    162308,
+    200132,
+    200529
+   ],
+   "staticPassCount": 84,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>RequestCardChoice>PlayCards. GetCards enemy/32 types4 tiers6 ignore264; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 122401,
+   "graph": {
+    "nid": 45,
+    "sha256": "5e834206f0b8a8275614335a2b42293c22267aaea8d526d2b2a2ac8e227918e2"
+   },
+   "chain": [
+    "Played!>FilterCardList>SummonCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 15,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [
+    122402
+   ],
+   "minZero": false,
+   "candidates": [
+    122402
+   ],
+   "staticPassCount": 1,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SummonCards. GetCards own/16 types4 tiers15 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 122402,
+   "graph": {
+    "nid": 45,
+    "sha256": "af8dedb42715d6aef4c6e6725b8e56cabe940429bf086c828d462f20967f2d56"
+   },
+   "chain": [
+    "Played!>FilterCardList>SummonCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 15,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [
+    122401
+   ],
+   "minZero": false,
+   "candidates": [
+    122401
+   ],
+   "staticPassCount": 1,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SummonCards. GetCards own/16 types4 tiers15 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200033,
+   "graph": {
+    "nid": 54,
+    "sha256": "4da642b179478afce2632e93564668a9480800c62fc7c4edb27dbffe30d75129"
+   },
+   "chain": [
+    "Played!>FilterCardList>CardListGetRandomElement>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 2,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "36028797018963968",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    113302,
+    113305,
+    113312,
+    200067
+   ],
+   "staticPassCount": 4,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>CardListGetRandomElement>PlayCards. GetCards own/16 types2 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200044,
+   "graph": {
+    "nid": 168,
+    "sha256": "d14b620d66a82c0501b43dc39580fd7e472e9596f12adcf36542f485a38c130e"
+   },
+   "chain": [
+    "Played!>FilterCardList>CardListGetRandomElement>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 14,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "18014398509481984",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    113310,
+    113311,
+    113319,
+    133301,
+    200008,
+    200009,
+    201598,
+    201619
+   ],
+   "staticPassCount": 12,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>CardListGetRandomElement>PlayCards. GetCards own/16 types14 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200081,
+   "graph": {
+    "nid": 324,
+    "sha256": "79f577ba9c4a927a7ed9a0a39a9fd40c51b7b9c497876bfa14962ce54aa2b488"
+   },
+   "chain": [
+    "Played!>FilterCardList>CardListGetRandomElement>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 2,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "45035996273704960",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    113302,
+    113305,
+    113307,
+    113308,
+    113312,
+    113320,
+    153301,
+    200021
+   ],
+   "staticPassCount": 12,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>CardListGetRandomElement>PlayCards. GetCards own/16 types2 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200212,
+   "graph": {
+    "nid": 79,
+    "sha256": "cc71bf19a0541f7ed895167fa7a9424ff4646387582b2dd051256664a1c2bc49"
+   },
+   "chain": [
+    "Played!>FilterCardList>CardListGetRandomElement>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 12,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "33554432",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    112207,
+    122402,
+    152210,
+    152302,
+    200073,
+    200114,
+    201600,
+    201628
+   ],
+   "staticPassCount": 26,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>CardListGetRandomElement>PlayCards. GetCards own/16 types12 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 143201,
+   "graph": {
+    "nid": 86,
+    "sha256": "956de22e4a67b14c5d73ea2d37f51580034efbfe279b3e1e68ffcf428d3c05f3"
+   },
+   "chain": [
+    "Played!>SetVar>CardListShuffle>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 2,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    113201,
+    113302,
+    113312,
+    153301,
+    200053,
+    201583,
+    201637,
+    201657
+   ],
+   "staticPassCount": 73,
+   "post": false,
+   "expected": "Played: Played!>SetVar>CardListShuffle>RequestCardChoice>PlayCards. GetCards own/16 types2 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 152211,
+   "graph": {
+    "nid": 109,
+    "sha256": "40fcd093bb5948a070a55c85f8dc5c86549b5317a0f53a6b0ebeca2c4bbb26af"
+   },
+   "chain": [
+    "Played!>FilterCardList>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 32,
+    "types": 4,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "17628164784392",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    113313,
+    152208,
+    152305,
+    152310,
+    152315,
+    200040,
+    200144,
+    200212
+   ],
+   "staticPassCount": 41,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>RequestCardChoice>PlayCards. GetCards own/32 types4 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 152310,
+   "graph": {
+    "nid": 126,
+    "sha256": "434000490f3fd5a0504a61d1ef6337e457a5345e0235ffaf4a6b045df01c62f5"
+   },
+   "chain": [
+    "Played!>FilterCardList>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 32,
+    "types": 4,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "67108864",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    122306,
+    132308,
+    142308,
+    152301,
+    152316,
+    162312,
+    200144,
+    200540
+   ],
+   "staticPassCount": 74,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>RequestCardChoice>PlayCards. GetCards own/32 types4 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200145,
+   "graph": {
+    "nid": 125,
+    "sha256": "d75a952e77708ff5678715d60b82bb6289e6f3fc044060445712a538af1a2259"
+   },
+   "chain": [
+    "Played!>FilterCardList>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 32,
+    "types": 4,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "2199023255552",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    122301,
+    122302,
+    122303,
+    122304,
+    122315,
+    152309,
+    152314,
+    162302
+   ],
+   "staticPassCount": 14,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>RequestCardChoice>PlayCards. GetCards own/32 types4 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 201696,
+   "graph": {
+    "nid": 62,
+    "sha256": "aae42e074462e67427bb5edffda581d14a3543dedad1a9101d100550a2dcb324"
+   },
+   "chain": [
+    "Played!>FilterCardList>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 32,
+    "types": 4,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "140737488355328",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    142305,
+    142306,
+    142311,
+    142317,
+    200042,
+    200135,
+    201559
+   ],
+   "staticPassCount": 7,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>RequestCardChoice>PlayCards. GetCards own/32 types4 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 122316,
+   "graph": {
+    "nid": 190,
+    "sha256": "b218454ea0cc8f94b5bdde3c433268ccf2ed0e63ce1203851bad63625f5b350a"
+   },
+   "chain": [
+    "Played!>FilterCardList>SummonCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 14,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [
+    122316
+   ],
+   "minZero": false,
+   "candidates": [
+    122316
+   ],
+   "staticPassCount": 1,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SummonCards. GetCards own/16 types4 tiers14 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 132206,
+   "graph": {
+    "nid": 191,
+    "sha256": "ed45195ef6ad058e79f9334a550d92293f5d08ce047c929832f7ab54325074bf"
+   },
+   "chain": [
+    "Played!>FilterCardList>SummonCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 14,
+    "ignore": 264
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [
+    132207,
+    132208
+   ],
+   "minZero": false,
+   "candidates": [
+    132207,
+    132208
+   ],
+   "staticPassCount": 2,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SummonCards. GetCards own/16 types4 tiers14 ignore264; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 132304,
+   "graph": {
+    "nid": 196,
+    "sha256": "a3fe760f5c0c68981976f304f65a498f59c5c27aee317c0f1cb330654b44d0de"
+   },
+   "chain": [
+    "Played!>FilterCardList>SummonCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 14,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [
+    132304
+   ],
+   "minZero": false,
+   "candidates": [
+    132304
+   ],
+   "staticPassCount": 1,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SummonCards. GetCards own/16 types4 tiers14 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 152318,
+   "graph": {
+    "nid": 190,
+    "sha256": "cd2e30a8230da05b6304f12f026d5ff7cc5c5f359ae7f73251457e170fc0b0d9"
+   },
+   "chain": [
+    "Played!>FilterCardList>SummonCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 15,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [
+    152318
+   ],
+   "minZero": false,
+   "candidates": [
+    152318
+   ],
+   "staticPassCount": 1,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SummonCards. GetCards own/16 types4 tiers15 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 162311,
+   "graph": {
+    "nid": 190,
+    "sha256": "df9a78572f8f97e70de2592ba318e742f8a6ee43f9656e57d45fc7e45a61dcc0"
+   },
+   "chain": [
+    "Played!>FilterCardList>SummonCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 14,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [
+    162311
+   ],
+   "minZero": false,
+   "candidates": [
+    162311
+   ],
+   "staticPassCount": 1,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SummonCards. GetCards own/16 types4 tiers14 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200164,
+   "graph": {
+    "nid": 69,
+    "sha256": "731db8ed5d1be4cacba7d279b77a47b94021068586dbd99c6d2a5d9fe9a11737"
+   },
+   "chain": [
+    "Played!>CardListGetRange>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 14,
+    "tiers": 15,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    112101,
+    112102,
+    112103
+   ],
+   "staticPassCount": 3,
+   "post": false,
+   "expected": "Played: Played!>CardListGetRange>RequestCardChoice>PlayCards. GetCards own/16 types14 tiers15 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200221,
+   "graph": {
+    "nid": 110,
+    "sha256": "678565abdc2b0b42e7944f41a7a2917e0501ae1abe8837246c6179af336c0082"
+   },
+   "chain": [
+    "Played!>FilterCardList>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 32,
+    "types": 4,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    132213,
+    132305,
+    200038,
+    200295
+   ],
+   "staticPassCount": 4,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>RequestCardChoice>PlayCards. GetCards own/32 types4 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 201559,
+   "graph": {
+    "nid": 190,
+    "sha256": "fa80f648e744c4bc02023c5eaca4e3b9467e66d64c0dc043d40efe15b94435f9"
+   },
+   "chain": [
+    "Played!>FilterCardList>SummonCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 14,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [
+    201559
+   ],
+   "minZero": false,
+   "candidates": [
+    201559
+   ],
+   "staticPassCount": 1,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SummonCards. GetCards own/16 types4 tiers14 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 201676,
+   "graph": {
+    "nid": 77,
+    "sha256": "2b518f5557fa611610a820218f1804d668cddc20c2ba3f29a51852e1a0c98afd"
+   },
+   "chain": [
+    "Played!>FilterCardList>CardListShuffle>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 14,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "18014398509481984",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    113310,
+    133301,
+    200228,
+    201583,
+    201598,
+    201637,
+    201645,
+    201656
+   ],
+   "staticPassCount": 24,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>CardListShuffle>RequestCardChoice>PlayCards. GetCards own/16 types14 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 132402,
+   "graph": {
+    "nid": 113,
+    "sha256": "0325f2e3a47f3b26dc2ac05458610257fc07a944bd0e1350b866e2523f4ea564"
+   },
+   "chain": [
+    "Played!>FilterCardList>CardListGetRandomElement>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 2,
+    "tiers": 14,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [
+    113302
+   ],
+   "minZero": false,
+   "candidates": [
+    113302
+   ],
+   "staticPassCount": 1,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>CardListGetRandomElement>PlayCards. GetCards own/16 types2 tiers14 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200112,
+   "graph": {
+    "nid": 113,
+    "sha256": "bcd1af4e9688a43667fc52998bd06faffcf8b5f92fbb0cc09e2fc138eb47afb1"
+   },
+   "chain": [
+    "Played!>FilterCardList>CardListGetRandomElement>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 2,
+    "tiers": 14,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [
+    200067
+   ],
+   "minZero": false,
+   "candidates": [
+    200067
+   ],
+   "staticPassCount": 1,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>CardListGetRandomElement>PlayCards. GetCards own/16 types2 tiers14 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 201619,
+   "graph": {
+    "nid": 747,
+    "sha256": "ebcdd5010c33cd05c010c48cebb0bcfc24443850bd5f6810abf982b838ed65c9"
+   },
+   "chain": [
+    "Played!>FilterCardList>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 32,
+    "types": 4,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    112405,
+    122403,
+    132315,
+    142316,
+    152317,
+    200026,
+    200135,
+    200518
+   ],
+   "staticPassCount": 165,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>RequestCardChoice>PlayCards. GetCards own/32 types4 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200520,
+   "graph": {
+    "nid": 73,
+    "sha256": "03007c16cf16592975dd8cdf2f8bd30d48fd0d53ca134d210403a057185b03a2"
+   },
+   "chain": [
+    "Played!>FilterCardList>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 32,
+    "types": 4,
+    "tiers": 6,
+    "ignore": 256
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    142201,
+    142206,
+    142211,
+    142302,
+    142307,
+    142312,
+    142317,
+    200135
+   ],
+   "staticPassCount": 47,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>RequestCardChoice>PlayCards. GetCards own/32 types4 tiers6 ignore256; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 113102,
+   "graph": {
+    "nid": 248,
+    "sha256": "d5dc24aaba891b95317ace2b1f4ba7b05b3d589dede1c49f98f16c137000fe84"
+   },
+   "chain": [
+    "Played!>SetVar>CardListShuffle>CardListGetRange>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 6,
+    "tiers": 14,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    112102,
+    112103
+   ],
+   "staticPassCount": 2,
+   "post": false,
+   "expected": "Played: Played!>SetVar>CardListShuffle>CardListGetRange>RequestCardChoice>PlayCards. GetCards own/16 types6 tiers14 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 132406,
+   "graph": {
+    "nid": 74,
+    "sha256": "c73ec80a02e3c302d9917ae16a6f2caa5c134d1d059b7d89d52a4ae9f2718eb4"
+   },
+   "chain": [
+    "Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    132213,
+    132305,
+    200038,
+    200295
+   ],
+   "staticPassCount": 4,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards. GetCards own/16 types4 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 142308,
+   "graph": {
+    "nid": 197,
+    "sha256": "942b376f3c58fbeb7d2e6d1c1bf12ac69ba756edbb05cfb666ec8b3d93c2c756"
+   },
+   "chain": [
+    "Played!>SetVar>CardListShuffle>CardListGetRange>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 10,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    113301,
+    113302
+   ],
+   "staticPassCount": 2,
+   "post": false,
+   "expected": "Played: Played!>SetVar>CardListShuffle>CardListGetRange>RequestCardChoice>PlayCards. GetCards own/16 types10 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 162314,
+   "graph": {
+    "nid": 205,
+    "sha256": "679db4f5e725535a4df55d614134e769369604c2a705e1c98ed6cee3e2438080"
+   },
+   "chain": [
+    "Played!>SetVar>CardListShuffle>CardListGetRange>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "enemy",
+    "location": 16,
+    "types": 4,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    113313,
+    122214
+   ],
+   "staticPassCount": 2,
+   "post": false,
+   "expected": "Played: Played!>SetVar>CardListShuffle>CardListGetRange>RequestCardChoice>PlayCards. GetCards enemy/16 types4 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200032,
+   "graph": {
+    "nid": 170,
+    "sha256": "a0abc5183aaf46bced8fde185ec631d5094cacc3880c3fa26018d56ec589686e"
+   },
+   "chain": [
+    "Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    112215,
+    122203,
+    122206,
+    132204,
+    142203,
+    152214,
+    162205,
+    162210
+   ],
+   "staticPassCount": 13,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards. GetCards own/16 types4 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 122103,
+   "graph": {
+    "nid": 93,
+    "sha256": "ebb6589f8a7f8c6c1c963a91653e5aea9d4cc74524eca9fba027ed04f0138bec"
+   },
+   "chain": [
+    "Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 14,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "2048",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    113201,
+    113207,
+    113303,
+    123201,
+    163201,
+    200019,
+    201635,
+    201639
+   ],
+   "staticPassCount": 12,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards. GetCards own/16 types14 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 123201,
+   "graph": {
+    "nid": 81,
+    "sha256": "dffcffdd921bbd49671a81298a39686c91c3d2e6603f28311876a22f04c79c7e"
+   },
+   "chain": [
+    "Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "1136895090229248",
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    112213,
+    122314,
+    142301,
+    152203,
+    152312,
+    162309,
+    200135,
+    200529
+   ],
+   "staticPassCount": 152,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards. GetCards own/16 types4 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200220,
+   "graph": {
+    "nid": 93,
+    "sha256": "0dcabb671eaab46c34f8236e60fa9408974a85a5f55196b5ee7cfbe5d7efe0b5"
+   },
+   "chain": [
+    "Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 14,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "9007199254740992",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    113306,
+    113307,
+    113308,
+    113320,
+    133302,
+    153301,
+    200021,
+    200023
+   ],
+   "staticPassCount": 12,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards. GetCards own/16 types14 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200237,
+   "graph": {
+    "nid": 101,
+    "sha256": "319dbc947fe84fe0dd3b99076aa5f8b57cf079807f98202669f6b4c61d455810"
+   },
+   "chain": [
+    "Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 2,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "8589934592",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    113205,
+    113311,
+    113320,
+    200009,
+    200224,
+    200530,
+    201582,
+    201584
+   ],
+   "staticPassCount": 20,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards. GetCards own/16 types2 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 201617,
+   "graph": {
+    "nid": 200,
+    "sha256": "2f22497f7cdf19e64930837190ffcca7168d88aaf71630e3546195ab75be2233"
+   },
+   "chain": [
+    "Played!>FilterCardList>CardListGetRandomElement>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 12,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "67108864",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    122306,
+    132308,
+    142308,
+    152301,
+    152316,
+    162312,
+    200144,
+    200540
+   ],
+   "staticPassCount": 73,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>CardListGetRandomElement>PlayCards. GetCards own/16 types12 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 142102,
+   "graph": {
+    "nid": 87,
+    "sha256": "c400745a9bed502d29db7df9d77caf5d92a41f358e69965c701b361311271fe9"
+   },
+   "chain": [
+    "Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 12,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    142204,
+    142208,
+    142210,
+    142307
+   ],
+   "staticPassCount": 4,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards. GetCards own/16 types12 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 201704,
+   "graph": {
+    "nid": 206,
+    "sha256": "0816852498ec5983f92a530dd46c89b09b7f807341327a280bfabf8b0020795f"
+   },
+   "chain": [
+    "Played!>SetVar>CardListShuffle>CardListGetRange>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    113313,
+    122214
+   ],
+   "staticPassCount": 2,
+   "post": false,
+   "expected": "Played: Played!>SetVar>CardListShuffle>CardListGetRange>RequestCardChoice>PlayCards. GetCards own/16 types4 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 112202,
+   "graph": {
+    "nid": 178,
+    "sha256": "74a52fe68a05ca3ec5ca93d4aee6d2cb86ea3399f067a503e23544bda5d57a20"
+   },
+   "chain": [
+    "Played!>FilterCardList>SummonCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 15,
+    "ignore": 264
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [
+    112203,
+    112204
+   ],
+   "minZero": false,
+   "candidates": [
+    112203,
+    112204
+   ],
+   "staticPassCount": 2,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SummonCards. GetCards own/16 types4 tiers15 ignore264; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 112203,
+   "graph": {
+    "nid": 178,
+    "sha256": "539eef20a1d779ac06d216733576f9dcc32cb1ba1929c5ba4ea743ae3a8f7e01"
+   },
+   "chain": [
+    "Played!>FilterCardList>SummonCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 14,
+    "ignore": 264
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [
+    112202,
+    112204
+   ],
+   "minZero": false,
+   "candidates": [
+    112202,
+    112204
+   ],
+   "staticPassCount": 2,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SummonCards. GetCards own/16 types4 tiers14 ignore264; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 112204,
+   "graph": {
+    "nid": 178,
+    "sha256": "1e3cc083d7502ab0ac7bf1bf7596add28e767e728cfff5966955ca4a1ea42e8b"
+   },
+   "chain": [
+    "Played!>FilterCardList>SummonCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 14,
+    "ignore": 264
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [
+    112203,
+    112202
+   ],
+   "minZero": false,
+   "candidates": [
+    112202,
+    112203
+   ],
+   "staticPassCount": 2,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SummonCards. GetCards own/16 types4 tiers14 ignore264; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 132207,
+   "graph": {
+    "nid": 188,
+    "sha256": "5863e651dd1f2e7d83c745b87b81fb4d72955b7c671420e1deebfc6e2df41344"
+   },
+   "chain": [
+    "Played!>FilterCardList>SummonCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 14,
+    "ignore": 8
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [
+    132206,
+    132208
+   ],
+   "minZero": false,
+   "candidates": [
+    132206,
+    132208
+   ],
+   "staticPassCount": 2,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SummonCards. GetCards own/16 types4 tiers14 ignore8; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 132208,
+   "graph": {
+    "nid": 188,
+    "sha256": "18bf384effdf4bc3633b73daa39df2061a1ea1ba56917b585f3a2d498701d17c"
+   },
+   "chain": [
+    "Played!>FilterCardList>SummonCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 14,
+    "ignore": 264
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [
+    132206,
+    132207
+   ],
+   "minZero": false,
+   "candidates": [
+    132206,
+    132207
+   ],
+   "staticPassCount": 2,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SummonCards. GetCards own/16 types4 tiers14 ignore264; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 122403,
+   "graph": {
+    "nid": 183,
+    "sha256": "4b6df41dba63dde6452e63b02232f78b2b369d0fc58161094c6aaf0aae57ba8e"
+   },
+   "chain": [
+    "Played!>FilterCardList>SetVar>CardListShuffle>CardListGetRange>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 14,
+    "tiers": 2,
+    "ignore": 8
+   },
+   "categoryFiltersPositive": [
+    [
+     "8589934592",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    113310,
+    113311,
+    113319,
+    113320,
+    200008,
+    200009,
+    200224,
+    200519
+   ],
+   "staticPassCount": 9,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SetVar>CardListShuffle>CardListGetRange>RequestCardChoice>PlayCards. GetCards own/16 types14 tiers2 ignore8; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 201628,
+   "graph": {
+    "nid": 88,
+    "sha256": "045101aed64c123ea4f1fe1a70a25f513bcb1c21f3bb5d782c8f140f0bb10dc6"
+   },
+   "chain": [
+    "Played!>FilterCardList>SetVar>CardListShuffle>CardListGetRange>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 2,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "18014398510530560",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    113204,
+    113301,
+    113308,
+    113310,
+    113311,
+    113319,
+    133301,
+    200008
+   ],
+   "staticPassCount": 15,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SetVar>CardListShuffle>CardListGetRange>RequestCardChoice>PlayCards. GetCards own/16 types2 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 152306,
+   "graph": {
+    "nid": 110,
+    "sha256": "0fa47542d58eb8bfbefbce47856ec203c2bd2c0b0b5440508d2c9ebe9c4214fe"
+   },
+   "chain": [
+    "Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 12,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "1073741824",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    152305,
+    152309,
+    200105,
+    200145,
+    200146
+   ],
+   "staticPassCount": 5,
+   "post": false,
+   "expected": "Played: Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards. GetCards own/16 types12 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 142106,
+   "graph": {
+    "nid": 125,
+    "sha256": "dda46ac1f6f0b22a46db280d478739d4d115d12a8d60e2fe511912fc3ea030e3"
+   },
+   "chain": [
+    "Played!>RequestCardChoice>ChangeTokens>PlayCards"
+   ],
+   "source": {
+    "player": "enemy",
+    "location": 32,
+    "types": 2,
+    "tiers": 6,
+    "ignore": 264
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    113102,
+    113301,
+    113311,
+    153201,
+    200023,
+    201582,
+    201635,
+    201656
+   ],
+   "staticPassCount": 73,
+   "post": true,
+   "expected": "Played: Played!>RequestCardChoice>ChangeTokens>PlayCards. GetCards enemy/32 types2 tiers6 ignore264; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 113209,
+   "graph": {
+    "nid": 117,
+    "sha256": "a3781042a0a50068125c58f129c1fe956d964fffeaf2ac30f250c2c13db4105e"
+   },
+   "chain": [
+    "Played!>FilterPowerLevel>CardListGetRandomElement>PlayCards>ChangePower"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    201748
+   ],
+   "staticPassCount": 1,
+   "post": true,
+   "expected": "Played: Played!>FilterPowerLevel>CardListGetRandomElement>PlayCards>ChangePower. GetCards own/16 types4 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 122106,
+   "graph": {
+    "nid": 105,
+    "sha256": "42405b973d84c14f6e4464c3cbc2384de854b31864ec12e6bd7c352cd141bf57"
+   },
+   "chain": [
+    "Played!>FilterCardList>RequestCardChoice>ChangeArmor>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 32,
+    "types": 4,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    112405,
+    122209,
+    132209,
+    132310,
+    142306,
+    200171
+   ],
+   "staticPassCount": 6,
+   "post": true,
+   "expected": "Played: Played!>FilterCardList>RequestCardChoice>ChangeArmor>PlayCards. GetCards own/32 types4 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200019,
+   "graph": {
+    "nid": 118,
+    "sha256": "b3079469a5c04dd1bd0e16b2a660efeb762c2d1af6fa25039648d8d2e5cc869f"
+   },
+   "chain": [
+    "Played!>FilterPowerLevel>CardListGetRandomElement>PlayCards>ChangePower"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    112201
+   ],
+   "staticPassCount": 1,
+   "post": true,
+   "expected": "Played: Played!>FilterPowerLevel>CardListGetRandomElement>PlayCards>ChangePower. GetCards own/16 types4 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200154,
+   "graph": {
+    "nid": 142,
+    "sha256": "c226e9afa76bc186c0ec12cecbbe283807fc28b2fef04d9a70518bca74b2c4d5"
+   },
+   "chain": [
+    "Played!>SetVar>CardListShuffle>RequestCardChoice>PlayCards>ChangePower"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 12,
+    "tiers": 8,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    112103
+   ],
+   "staticPassCount": 1,
+   "post": true,
+   "expected": "Played: Played!>SetVar>CardListShuffle>RequestCardChoice>PlayCards>ChangePower. GetCards own/16 types12 tiers8 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200138,
+   "graph": {
+    "nid": 90,
+    "sha256": "4f5f7833b5c61f5d7d6d023a47df4c520076dce152df3b87e70464513916ad10"
+   },
+   "chain": [
+    "Played!>FilterCardList>RequestCardChoice>ChangeTokens>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 32,
+    "types": 10,
+    "tiers": 2,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "8590983168",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    113204,
+    113301,
+    113308,
+    113310,
+    113311,
+    113319,
+    113320,
+    200008
+   ],
+   "staticPassCount": 12,
+   "post": true,
+   "expected": "Played: Played!>FilterCardList>RequestCardChoice>ChangeTokens>PlayCards. GetCards own/32 types10 tiers2 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 122208,
+   "graph": {
+    "nid": 76,
+    "sha256": "dee59c7959897079cd2ba2da1368d39c744435c081f5e3d11496c547ace164db"
+   },
+   "chain": [
+    "Played!>FilterCardList>CardListGetRange>ChangeArmor>PlayCards"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    112405,
+    122209,
+    132209,
+    132310,
+    142306,
+    200171
+   ],
+   "staticPassCount": 6,
+   "post": true,
+   "expected": "Played: Played!>FilterCardList>CardListGetRange>ChangeArmor>PlayCards. GetCards own/16 types4 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 142207,
+   "graph": {
+    "nid": 170,
+    "sha256": "a6888bf031b9f1171688da8f20d7c9dee5e2dc4ee3b24633b19041b46a70ea2f"
+   },
+   "chain": [
+    "Played!>FilterCardList>CardListGetRandomElement>PlayCards>ChangePower"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 12,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "140737488355328",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    142306
+   ],
+   "staticPassCount": 1,
+   "post": true,
+   "expected": "Played: Played!>FilterCardList>CardListGetRandomElement>PlayCards>ChangePower. GetCards own/16 types12 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 162211,
+   "graph": {
+    "nid": 97,
+    "sha256": "265b4a517be157a47b0cb4ef50af885cc758820a425cf18285804d49ad62805d"
+   },
+   "chain": [
+    "Played!>FilterCardList>CardListGetRange>PlayCards>ChangePower"
+   ],
+   "source": {
+    "player": "enemy",
+    "location": 16,
+    "types": 4,
+    "tiers": 6,
+    "ignore": 8
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    112405,
+    122209,
+    132209,
+    132310,
+    142306,
+    200171
+   ],
+   "staticPassCount": 6,
+   "post": true,
+   "expected": "Played: Played!>FilterCardList>CardListGetRange>PlayCards>ChangePower. GetCards enemy/16 types4 tiers6 ignore8; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 200160,
+   "graph": {
+    "nid": 244,
+    "sha256": "8751f666bf2331641ed0914c3169b25a1e45f79d1d69cdbb908f67a729b27216"
+   },
+   "chain": [
+    "Played!>FilterCardList>FilterPowerLevel>CardListGetRandomElement>PlayCards>ChangePower"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 4,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [],
+   "definitionFilters": [],
+   "minZero": false,
+   "candidates": [
+    112405,
+    122209,
+    132209,
+    132310,
+    142306,
+    200171
+   ],
+   "staticPassCount": 6,
+   "post": true,
+   "expected": "Played: Played!>FilterCardList>FilterPowerLevel>CardListGetRandomElement>PlayCards>ChangePower. GetCards own/16 types4 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  },
+  {
+   "id": 201699,
+   "graph": {
+    "nid": 113,
+    "sha256": "bbc6907727114c311ff6ae9e0790fe074cbfa0f11a64ee8bd44d76bc5d78930e"
+   },
+   "chain": [
+    "Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards>ChangePower"
+   ],
+   "source": {
+    "player": "own",
+    "location": 16,
+    "types": 12,
+    "tiers": 6,
+    "ignore": 0
+   },
+   "categoryFiltersPositive": [
+    [
+     "1125899906842624",
+     "0",
+     "0"
+    ]
+   ],
+   "definitionFilters": [],
+   "minZero": true,
+   "candidates": [
+    122208,
+    132214,
+    142204,
+    142211,
+    142303,
+    152207,
+    152306,
+    162206
+   ],
+   "staticPassCount": 22,
+   "post": true,
+   "expected": "Played: Played!>FilterCardList>SetVar>CardListShuffle>RequestCardChoice>PlayCards>ChangePower. GetCards own/16 types12 tiers6 ignore0; filters, shuffle (Fisher-Yates N-1 Next(k+1)), range, GetRandom Next(count), RequestCardChoice min/max/empty-skip, PlayCards/SummonCards evaluated by beta_list_eval096 from the pre-ability snapshot."
+  }
+ ]
+}

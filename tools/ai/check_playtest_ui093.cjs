@@ -7,7 +7,7 @@ function extract(name){const at=source.indexOf('function '+name+'(');assert(at>=
  for(;depth;end++){if(source[end]==='{')depth++;if(source[end]==='}')depth--;}
  return source.slice(at,end).replace(/:\s*(?:Boolean|String|void|int|Array|Number|Object|Function|Sprite)\b/g,'')
  .replace(/for each\(var (\w+) in (\w+)\)/g,'for(const $1 of $2)');}
-const focus=[],submitted=[],buttons=[];
+const focus=[],submitted=[],buttons=[],banners=[];
 const c=vm.createContext({selected:0,revision:17,keyboardFocusId:0,focusedRow:0,controllerInspectBoard:false,
  ready:true,playing:false,detailOpen:false,pileOpen:false,effectGallery:false,editingDeck:false,selectingDecks:false,
  current:1,flags:0,requestId:0,requestKind:0,rowRequest:false,requestPlayer:1,rowMode:0,
@@ -18,7 +18,7 @@ const c=vm.createContext({selected:0,revision:17,keyboardFocusId:0,focusedRow:0,
  placementSide:()=>1,isCaranthirChoice:()=>false,content:{},voiceChoiceLabel:()=> 'Озвучка: RU',textChoiceLabel:()=> 'Текст: RU',
  difficultyName:()=> 'Классическая',cycleTextLanguage(){},cycleVoiceLanguage(){},cycleDifficulty(){},
  editorSmallButton:(parent,title,x,y,w,h,enabled,callback)=>buttons.push({title,x,y,w,h,enabled,callback}),
- paintArt(){},betaNine(){},betaLabel:()=>({}),BetaGwentHud104:{CHAIN:1},BetaGwentFonts:{TITLE:1}});
+ paintArt(){},betaNine(){},drawTitleBanner096:(title,fi,rename)=>banners.push({title,fi,rename}),betaLabel:()=>({}),BetaGwentHud104:{CHAIN:1},BetaGwentFonts:{TITLE:1}});
 for(const name of ['canAct','controllerRowSelection','controllerQuickSpecial','controllerCardAction','canPlayRow','canSelectRow','rowEnabled','halfCastSide','chooseRow','controllerRowAction','betaPlaque'])vm.runInContext(extract(name),c);
 c.controllerCardAction(71);eq(c.selected,71,'White Frost selected from hand');eq(focus.at(-1),'row','Controller moves directly to rows');
 eq(c.controllerRowSelection(),true,'Direct row spell has row context');
@@ -33,7 +33,7 @@ c.rowRequest=false;c.requestId=0;c.selected=0;eq(Boolean(c.controllerRowSelectio
 c.playRules[71]={kind:1,side:2};c.selected=71;eq(Boolean(c.controllerRowSelection()),false,'Unit target remains card context');
 c.selectingDecks=true;c.betaPlaque('Бой');eq(buttons.length,3,'Language, voice and difficulty before battle');
 eq(buttons[2].title,'Сложность ИИ: Классическая','Chosen difficulty visible');eq(buttons[2].callback,c.cycleDifficulty,'Same saved setting callback');
-eq(buttons[2].x,buttons[1].x,'Difficulty next to language controls');assert(buttons[2].y>=buttons[1].y+buttons[1].h&&buttons[2].y+buttons[2].h<=129);checks++;
+eq(banners.at(-1),{title:'Бой',fi:-1,rename:null},'Title banner receives the plaque title');eq(buttons[2].x,buttons[1].x,'Difficulty next to language controls');assert(buttons[2].y>=buttons[1].y+buttons[1].h&&buttons[2].y+buttons[2].h<=129);checks++;
 c.selectingDecks=false;c.editingDeck=true;buttons.length=0;c.betaPlaque('Редактор');eq(buttons.length,3,'Difficulty is also available in the deck editor');
 eq(buttons[2].callback,c.cycleDifficulty,'Editor uses the same saved difficulty');
 c.editingDeck=false;buttons.length=0;c.betaPlaque('Коллекция');eq(buttons.length,2,'Unrelated collection header preserved');

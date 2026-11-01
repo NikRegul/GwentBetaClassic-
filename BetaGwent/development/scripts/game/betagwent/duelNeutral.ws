@@ -1,4 +1,4 @@
-﻿// Explicit consumers for every remaining neutral graph; generated choices are views only.
+// Explicit consumers for every remaining neutral graph; generated choices are views only.
 class CBetaGwentDuelNeutral extends IScriptable
 {
     // BG_CLONE_FIELDS
@@ -7,7 +7,12 @@ class CBetaGwentDuelNeutral extends IScriptable
     public function Initialize(owner : CBetaGwentDuelSession){game=owner;}
     private function Side(source : CBetaGwentDuelCard) : int{return game.NorthActingSide(source);}
     private function Query(side : int, zone : int, tier : int, types : int, ignore : int, out ids : array<int>)
-    {var cards : array<SBetaGwentDevelopmentCard>;var s : SBetaGwentCardSnapshot;var i : int;ids.Clear();game.GetCards(cards);for(i=0;i<cards.Size();i+=1){s=cards[i].card;if((side==0 || s.positionPlayerId==side) && (s.locationMask&zone)!=0 && (s.runtimeTierMask&tier)!=0 && (s.runtimeTemplate.typeMask&types)!=0 && (s.tokenMask&ignore)==0 && !s.isWaitingToDie)ids.PushBack(s.instanceId);}}
+    {var cards : array<SBetaGwentDevelopmentCard>;var s : SBetaGwentCardSnapshot;var i : int;ids.Clear();game.GetCards(cards);for(i=0;i<cards.Size();i+=1){s=cards[i].card;if((side==0 || s.positionPlayerId==side) && (s.locationMask&zone)!=0 && (s.runtimeTierMask&tier)!=0 && (s.runtimeTemplate.typeMask&types)!=0 && (s.tokenMask&ignore)==0 && !s.isWaitingToDie)ids.PushBack(s.instanceId);}PhysicalOrder096(ids);}
+    private function PhysicalOrder096(out ids : array<int>)
+    {var i,j,k : int;var a,b : SBetaGwentCardSnapshot;
+     for(i=1;i<ids.Size();i+=1){k=ids[i];a=game.FindCard(k).Snapshot();j=i-1;
+      while(j>=0){b=game.FindCard(ids[j]).Snapshot();if(b.positionPlayerId<a.positionPlayerId || (b.positionPlayerId==a.positionPlayerId && (b.locationMask<a.locationMask || (b.locationMask==a.locationMask && b.locationIndex<=a.locationIndex))))break;ids[j+1]=ids[j];j-=1;}
+      ids[j+1]=k;}}
     private function Request(source : CBetaGwentDuelCard, side : int, zone : int, tier : int, types : int, minimum : int)
     {var ids : array<int>;var i : int;Query(side,zone,tier,types,BetaGwentNorthPick((zone&7)!=0,264,0),ids);for(i=ids.Size()-1;i>=0;i-=1)if(source.monsterIds.Contains(ids[i]))ids.Erase(i);game.MonsterRequest(source,ids,BetaGwentNorthPick((zone&7)!=0,0,2),minimum,1);}
     private function Extremes(source : CBetaGwentDuelCard, side : int, row : int, strongest : bool, operation : int, amount : int, excluded : int)
@@ -16,6 +21,10 @@ class CBetaGwentDuelNeutral extends IScriptable
     {var ids,valid : array<int>;var t : SBetaGwentCardSnapshot;var i,best : int;Query(side,7,15,4,8,ids);best=BetaGwentNorthPick(strongest,-1,2147483647);for(i=0;i<ids.Size();i+=1){t=game.FindCard(ids[i]).Snapshot();if(strongest)best=Max(best,t.power.currentPower);else best=Min(best,t.power.currentPower);}for(i=0;i<ids.Size();i+=1){t=game.FindCard(ids[i]).Snapshot();if(t.power.currentPower==best)valid.PushBack(ids[i]);}if(valid.Size()>0)game.MonsterPower(source,game.FindCard(valid[game.RandomIndex(valid.Size())]),amount);}
     private function RandomHit(source : CBetaGwentDuelCard, side : int, amount : int)
     {var ids : array<int>;Query(side,7,15,4,8,ids);if(ids.Size()>0)game.MonsterPower(source,game.FindCard(ids[game.RandomIndex(ids.Size())]),-amount);}
+    private function AardRequest(source : CBetaGwentDuelCard)
+    {var ids : array<int>;var maximum : int;game.monsters.nilf.SourceCards(BetaGwentOpponentId(Side(source)),7,15,4,264,0,source,ids);maximum=Min(source.monsterRemaining,ids.Size());game.MonsterRequest(source,ids,0,maximum,maximum);}
+    private function CommitAard(source : CBetaGwentDuelCard)
+    {var i,enemy : int;var target : CBetaGwentDuelCard;var t : SBetaGwentCardSnapshot;enemy=BetaGwentOpponentId(Side(source));for(i=0;i<source.monsterIds.Size();i+=1)game.MonsterPower(source,game.FindCard(source.monsterIds[i]),-3);game.FlushEffects();for(i=0;i<source.monsterIds.Size();i+=1){target=game.FindCard(source.monsterIds[i]);t=target.Snapshot();if(t.power.currentPower>0 && (t.locationMask==1 || t.locationMask==2))game.QueueRelocation(target,enemy,t.locationMask*2,false);}game.MonsterComplete(source);}
     private function Choices(source : CBetaGwentDuelCard, randomThree : bool)
     {var ids : array<int>;BetaGwentNeutralPool(source.TemplateId(),ids);if(randomThree){game.ShuffleIds(ids);while(ids.Size()>3)ids.Erase(ids.Size()-1);}game.MonsterRequest(source,ids,1,1,1);}
     private function AdventureChoices(source : CBetaGwentDuelCard)
@@ -26,38 +35,43 @@ class CBetaGwentDuelNeutral extends IScriptable
     {var ids,other : array<int>;var i : int;Initial(source,1,2,2,ids);Initial(source,2,2,2,other);for(i=0;i<other.Size();i+=1)if(!ids.Contains(other[i]))ids.PushBack(other[i]);game.ShuffleIds(ids);while(ids.Size()>3)ids.Erase(ids.Size()-1);game.MonsterRequest(source,ids,1,1,1);}
     public function Played(source : CBetaGwentDuelCard)
     {
-        var id,side,enemy,i,j,count,power : int;var ids,valid,other : array<int>;var s,t,pos : SBetaGwentCardSnapshot;var d : SBetaGwentDuelDefinition;var target : CBetaGwentDuelCard;
+        var id,side,enemy,i,j,count,power,tiers : int;var ids,valid,other : array<int>;var s,t,pos : SBetaGwentCardSnapshot;var d : SBetaGwentDuelDefinition;var target : CBetaGwentDuelCard;
         id=source.TemplateId();side=Side(source);enemy=BetaGwentOpponentId(side);s=source.Snapshot();source.monsterStage=0;source.monsterIds.Clear();source.monsterRemaining=1;
         BetaGwentLog("DUEL_NEUTRAL_PLAY template="+id+" side="+side);
         if(id==112101 || id==112107)source.monsterStage=0;
-        else if(id==112102 || id==201523){ids.PushBack(1);ids.PushBack(2);ids.PushBack(4);game.MonsterRequest(source,ids,3,1,1);return;}
+        else if(id==112206){if(s.timerValue>0)game.QueueTimer(source,2,BetaGwentNorthPick(source.monsterOnce>0,4,0));}
+        else if(id==112102 || id==201523){for(i=1;i<=4;i*=2){power=0;Query(enemy,i,15,12,8,valid);for(j=0;j<valid.Size();j+=1){t=game.FindCard(valid[j]).Snapshot();if(!game.IsExecutingCard(game.FindCard(valid[j])))power+=t.power.currentPower;}if(id==201523 || power>=25)ids.PushBack(i);}game.MonsterRequest(source,ids,3,1,1);return;}
         else if(id==200532)game.MonsterWeather(side,s.locationMask,128);
         else if(id==112104){Request(source,0,7,15,4,0);return;}
-        else if(id==200226){if(s.timerValue==0){ExtremeOne(source,enemy,true,-6);ExtremeOne(source,side,false,6);}}
+        else if(id==200226){if(s.timerValue==0){ExtremeOne(source,side,false,6);ExtremeOne(source,enemy,true,-6);}}
         else if(id==112105){Query(enemy,16,2,4,0,ids);game.ShuffleIds(ids);while(ids.Size()>3)ids.Erase(ids.Size()-1);game.MonsterRequest(source,ids,2,0,1);return;}
         else if(id==112108 || id==112109 || id==113208){Choices(source,false);return;}
-        else if(id==112111 || id==112205){source.monsterRemaining=3;Request(source,enemy,7,15,4,BetaGwentNorthPick(id==112205,1,0));return;}
-        else if(id==112112){Initial(source,enemy,12,4,ids);if(ids.Size()>0){source.monsterStored=ids[game.RandomIndex(ids.Size())];game.MonsterCreate(source,source.monsterStored);return;}}
+        else if(id==112111){source.monsterRemaining=3;AardRequest(source);return;}
+        else if(id==112205){source.monsterRemaining=3;Request(source,enemy,7,15,4,1);return;}
+        else if(id==112112){Initial(source,enemy,12,4,ids);ids.Remove(112112);if(ids.Size()>0){source.monsterStored=ids[game.RandomIndex(ids.Size())];game.MonsterCreate(source,source.monsterStored);return;}}
         else if(id==112201 || id==200235 || id==201772){Request(source,enemy,7,15,4,BetaGwentNorthPick(id==112201,0,1));return;}
         else if(id==112202 || id==112203 || id==112204){for(i=112202;i<=112204;i+=1)if(i!=id)game.NorthSummonCopies(source,i);}
         else if(id==112208){if(s.timerValue>0 && game.NilfTruce()){Request(source,side,8,2,4,0);return;}}
-        else if(id==112211 || id==112212){Request(source,side,8,14,14,0);return;}
+        else if(id==112211){Request(source,side,8,14,6,0);return;}
+        else if(id==112212){source.choiceDeck.Clear();Query(side,16,14,14,0,source.choiceDeck);if(source.choiceDeck.Size()>0){
+            for(i=0;i<source.choiceDeck.Size();i+=1){t=game.FindCard(source.choiceDeck[i]).Snapshot();tiers=tiers|t.runtimeTierMask;}
+            Query(side,8,tiers,14,0,ids);game.MonsterRequest(source,ids,2,0,1);return;}}
         else if(id==112213){power=Min(Max(0,game.Score(enemy)-game.Score(side)),Max(0,15-s.power.basePower));game.MonsterOperation(source,source,12,power,7);}
-        else if(id==132105){if(game.NilfTruce()){game.NilfDraw(side,14,false);game.NilfDraw(side,14,false);game.NilfDraw(enemy,14,false);game.NilfDraw(enemy,14,false);}}
+        else if(id==132105){if(game.NilfTruce()){game.NilfDraw(1,14,false);game.NilfDraw(1,14,false);game.NilfDraw(2,14,false);game.NilfDraw(2,14,false);}}
         else if(id==132215){ids.PushBack(200176);ids.PushBack(201770);ids.PushBack(200175);game.MonsterRequest(source,ids,1,1,1);return;}
         else if(id==200056 || id==200058 || id==200087){Choices(source,true);return;}
         else if(id==200062){source.monsterRemaining=2;AguaraChoices(source);return;}
         else if(id==200079){Query(enemy,32,8,4,0,ids);source.monsterIds=ids;game.MonsterRequest(source,ids,2,0,1);return;}
-        else if(id==200083){Request(source,side,16,14,14,1);return;}
-        else if(id==200091){if(game.NilfTruce()){for(i=1;i<=2;i+=1){Query(i,16,14,4,0,ids);if(ids.Size()>0){target=game.FindCard(ids[0]);game.NilfTake(target,i);game.MonsterOperation(source,target,11,1,8);}}}}
+        else if(id==200083){Query(side,16,14,14,0,ids);game.ShuffleIds(ids);game.MonsterRequest(source,ids,2,1,1);return;}
+        else if(id==200091){Query(side,16,14,4,0,ids);if(game.NilfTruce() && ids.Size()>0){target=game.FindCard(ids[0]);game.NilfTake(target,side);game.MonsterOperation(source,target,11,1,8);Query(enemy,16,14,4,0,ids);if(ids.Size()>0){target=game.FindCard(ids[0]);game.NilfTake(target,enemy);game.MonsterOperation(source,target,11,1,8);}}}
         else if(id==200236){Query(enemy,7,6,4,264,ids);for(i=ids.Size()-1;i>=0;i-=1){t=game.FindCard(ids[i]).Snapshot();if(t.power.currentPower>t.power.basePower+t.power.permanentPower)ids.Erase(i);}game.MonsterRequest(source,ids,0,0,1);return;}
-        else if(id==200237){Query(side,16,6,14,0,ids);for(i=ids.Size()-1;i>=0;i-=1)if(!BetaGwentNorthernCategory(game.FindCard(ids[i]).TemplateId(),11))ids.Erase(i);game.MonsterRequest(source,ids,2,1,1);return;}
+        else if(id==200237){Query(side,16,6,14,0,ids);for(i=ids.Size()-1;i>=0;i-=1)if(!BetaGwentNorthernCategory(game.FindCard(ids[i]).TemplateId(),11))ids.Erase(i);if(ids.Size()>0)game.ShuffleIds(ids);game.MonsterRequest(source,ids,2,0,1);return;}
         else if(id==200523){pos=s;pos.locationIndex=s.locationIndex;game.QueueSpawn(pos,201576,2);pos.locationIndex=s.locationIndex+3;game.QueueSpawn(pos,201576,2);}
         else if(id==201579){Query(side,32,6,4,0,ids);for(i=ids.Size()-1;i>=0;i-=1)if(!BetaGwentNeutralDraconid(game.FindCard(ids[i]).TemplateId()))ids.Erase(i);game.MonsterRequest(source,ids,2,1,1);return;}
         else if(id==201613){Query(side,8,14,14,0,ids);for(i=0;i<ids.Size();i+=1)game.NilfBanish(game.FindCard(ids[i]));for(i=0;i<ids.Size();i+=1)game.NilfDraw(side,14,false);}
-        else if(id==201626){game.NeutralInitial(side,ids);count=1;for(i=0;i<ids.Size();i+=1){d=BetaGwentDuelDefinition(ids[i]);if(d.header.tierMask!=2)continue;power=0;for(j=0;j<ids.Size();j+=1)if(ids[i]==ids[j])power+=1;if(power!=2){count=0;break;}}if(count==1)game.MonsterOperation(source,source,19,22,7);}
+        else if(id==201626){game.NeutralInitial(side,ids);count=0;for(i=0;i<ids.Size();i+=1){d=BetaGwentDuelDefinition(ids[i]);if(d.header.tierMask!=2)continue;count=1;power=0;for(j=0;j<ids.Size();j+=1)if(ids[i]==ids[j])power+=1;if(power!=2){count=0;break;}}if(count==1)game.MonsterOperation(source,source,19,22,7);}
         else if(id==201627){game.NeutralInitial(side,ids);for(i=0;i<ids.Size();i+=1)for(j=i+1;j<ids.Size();j+=1)if(ids[i]==ids[j]){game.MonsterComplete(source);return;}Choices(source,false);return;}
-        else if(id==201631){BetaGwentNeutralPool(id,ids);power=game.NeutralFaction(side);for(i=ids.Size()-1;i>=0;i-=1){d=BetaGwentDuelDefinition(ids[i]);if(d.header.factionMask!=power)ids.Erase(i);}if(ids.Size()>0){source.monsterStored=ids[game.RandomIndex(ids.Size())];game.MonsterCreate(source,source.monsterStored);return;}}
+        else if(id==201631){BetaGwentNeutralPool(id,ids);power=game.LeaderZoneFaction096(side);for(i=ids.Size()-1;i>=0;i-=1){d=BetaGwentDuelDefinition(ids[i]);if(power!=0 && (d.header.factionMask&power)==0)ids.Erase(i);}if(ids.Size()>0){source.monsterStored=ids[game.RandomIndex(ids.Size())];game.MonsterCreate(source,source.monsterStored);return;}}
         else if(id==201773){TrissChoices(source);return;}
         else if(id==201774){game.NeutralInitial(side,ids);for(i=0;i<ids.Size();i+=1)if(BetaGwentNeutralDandelionFamily(ids[i]))count+=1;game.MonsterPower(source,source,count*3);}
         else if(id==201776){game.NilfDraw(side,14,false);Request(source,side,8,14,14,1);return;}
@@ -81,20 +95,23 @@ class CBetaGwentDuelNeutral extends IScriptable
     {
         var id,side,enemy,i,power,tier : int;var target : CBetaGwentDuelCard;var s,t : SBetaGwentCardSnapshot;var ids,other : array<int>;var d : SBetaGwentDuelDefinition;
         id=source.TemplateId();side=Side(source);enemy=BetaGwentOpponentId(side);s=source.Snapshot();target=game.FindCard(selected);
+        if(id==112111){if(selected>0){source.monsterIds.PushBack(selected);source.monsterRemaining-=1;if(source.monsterRemaining>0){AardRequest(source);return;}}CommitAard(source);return;}
         if(id==112108 || id==112109 || id==113208 || id==200056 || id==200058 || id==200087 || id==201627 || id==201773){if(selected>0){source.monsterStored=selected;game.MonsterCreate(source,selected);}else game.MonsterComplete(source);return;}
         if(id==201725 || id==201731 || id==201737){if(source.monsterStage==0){source.neutralChoice=selected;Adventure(source,selected);return;}AdventureTarget(source,target);return;}
         if(id==132215){if(source.monsterStage==0){source.monsterStored=selected;source.monsterStage=1;BetaGwentNeutralPool(id,ids);if(ids.Size()>0){source.neutralChoice=ids[game.RandomIndex(ids.Size())];ids.Clear();ids.PushBack(source.neutralChoice);game.MonsterRequest(source,ids,1,0,1);return;}}else{d=BetaGwentDuelDefinition(source.neutralChoice);if((source.monsterStored==200176 && d.header.power<6) || (source.monsterStored==201770 && d.header.power==6) || (source.monsterStored==200175 && d.header.power>6)){game.MonsterCreate(source,source.neutralChoice);return;}}game.MonsterComplete(source);return;}
         if(id==200062){Aguara(source,selected);return;}
-        if(!target){game.MonsterComplete(source);return;}t=target.Snapshot();
+        if(!target){if(id==112212 && source.choiceDeck.Size()>0)game.RandomIndex(source.choiceDeck.Size()+1);game.MonsterComplete(source);return;}t=target.Snapshot();
         if(id==112104){power=Max(0,t.power.currentPower-t.power.basePower);game.NeutralDrain(source,target,power);game.MonsterPower(source,source,power);}
         else if(id==112105){game.NilfBanish(target);game.MonsterPower(source,source,t.power.basePower);}
         else if(id==112111 || id==112205){game.MonsterPower(source,target,-BetaGwentNorthPick(id==112111,3,2));if(id==112111){source.monsterIds.PushBack(selected);if(t.locationMask==1 || t.locationMask==2)game.QueueRelocation(target,enemy,t.locationMask*2,false);}source.monsterRemaining-=1;game.FlushDeaths();if(source.monsterRemaining>0){Request(source,enemy,7,15,4,BetaGwentNorthPick(id==112205,1,0));return;}}
         else if(id==112201)game.MonsterOperation(source,source,11,t.power.currentPower,7);
         else if(id==112208){game.NeutralCopy(side,t.runtimeTemplate.templateId,8);game.NeutralCopy(enemy,t.runtimeTemplate.templateId,8);game.QueueTimer(source,0,1);}
-        else if(id==112211){Initial(source,enemy,t.runtimeTierMask,14,ids);if(ids.Size()>0){game.NilfDiscard(target);game.NeutralCopy(side,ids[game.RandomIndex(ids.Size())],8);}}
-        else if(id==112212){Query(side,16,t.runtimeTierMask,14,0,ids);for(i=ids.Size()-1;i>=0;i-=1)if(game.FindCard(ids[i]).TemplateId()==t.runtimeTemplate.templateId)ids.Erase(i);if(ids.Size()>0){game.NorthExchange(target,game.FindCard(ids[game.RandomIndex(ids.Size())]));}}
+        else if(id==112211){game.MoveInactiveToIndex(target,side,32,0);Initial(source,enemy,t.runtimeTierMask,14,ids);if(ids.Size()>0)game.NeutralCopy(side,ids[game.RandomIndex(ids.Size())],8,true);}
+        else if(id==112212){game.MoveInactiveToIndex(target,side,16,game.RandomIndex(source.choiceDeck.Size()+1));
+            for(i=0;i<source.choiceDeck.Size();i+=1){target=game.FindCard(source.choiceDeck[i]);if(!target)continue;s=target.Snapshot();if(s.positionPlayerId==side && s.locationMask==16 && !s.isWaitingToDie && !game.IsExecutingCard(target) && (s.runtimeTierMask&t.runtimeTierMask)!=0)ids.PushBack(s.instanceId);}
+            if(ids.Size()>0){selected=ids[game.RandomIndex(ids.Size())];ids.Clear();ids.PushBack(selected);game.DrawCaptured(side,ids,1,true);}}
         else if(id==200079){source.monsterStored=t.runtimeTemplate.templateId;game.MonsterCreate(source,t.runtimeTemplate.templateId);return;}
-        else if(id==200083){game.NilfTake(target,side);Query(side,8,14,14,0,ids);if(ids.Size()>0)game.NilfDiscard(game.FindCard(ids[game.RandomIndex(ids.Size())]));}
+        else if(id==200083){ids.PushBack(t.instanceId);game.DrawCaptured(side,ids,1,false);game.FlushDeaths();Query(side,8,14,14,0,ids);if(ids.Size()>0)game.MoveInactiveToIndex(game.FindCard(ids[game.RandomIndex(ids.Size())]),side,32,0);}
         else if(id==200235){Query(enemy,7,15,4,8,ids);for(i=0;i<ids.Size();i+=1)if(game.FindCard(ids[i]).TemplateId()==t.runtimeTemplate.templateId)game.MonsterPower(source,game.FindCard(ids[i]),-4);}
         else if(id==201772){if((t.runtimeTemplate.factionMask&2)!=0)game.QueueDestroy(target);else game.MonsterPower(source,target,-4);}
         else if(id==200236)game.QueueDestroy(target);
@@ -108,7 +125,8 @@ class CBetaGwentDuelNeutral extends IScriptable
         if(choice==201726)game.NilfDraw(side,14,false);
         else if(choice==201727){Query(enemy,7,15,4,8,ids);if(ids.Size()>0){t=game.FindCard(ids[game.RandomIndex(ids.Size())]).Snapshot();game.QueueRelocation(game.FindCard(t.instanceId),side,t.locationMask,false);}}
         else if(choice==201728){hazards.PushBack(1);hazards.PushBack(2);hazards.PushBack(4);hazards.PushBack(16);hazards.PushBack(32);hazards.PushBack(64);hazards.PushBack(512);hazards.PushBack(1024);hazards.PushBack(2048);for(row=1;row<=4;row*=2)game.MonsterWeather(enemy,row,hazards[game.RandomIndex(hazards.Size())]);}
-        else if(choice==201729 || choice==201732 || choice==201740){Request(source,enemy,7,15,4,1);return;}
+        else if(choice==201732){Request(source,0,7,15,4,1);return;}
+        else if(choice==201729 || choice==201740){Request(source,enemy,7,15,4,1);return;}
         else if(choice==201730 || choice==201736){Request(source,side,16,6,BetaGwentNorthPick(choice==201730,2,4),1);return;}
         else if(choice==201733){for(i=0;i<8;i+=1){RandomHit(source,enemy,2);game.FlushDeaths();}}
         else if(choice==201734){Request(source,side,7,6,4,1);return;}
@@ -140,20 +158,33 @@ class CBetaGwentDuelNeutral extends IScriptable
      else {Query(BetaGwentOpponentId(Side(source)),row,15,4,8,ids);for(i=0;i<ids.Size();i+=1){s=game.FindCard(ids[i]).Snapshot();power+=s.power.currentPower;}if(power>=25)Extremes(source,BetaGwentOpponentId(Side(source)),row,true,3,0,0);}
      game.MonsterComplete(source);
     }
-    public function Trigger(kind : int, cause : SBetaGwentCardSnapshot)
+    public function Trigger(kind : int, cause : SBetaGwentCardSnapshot, optional playedArrival : bool)
     {
         var cards : array<SBetaGwentDevelopmentCard>;var source,target : CBetaGwentDuelCard;var s,t,pos : SBetaGwentCardSnapshot;var ids : array<int>;var m : SBetaGwentMatchSnapshot;var i,j,id,enemy,row,power : int;
         game.GetCards(cards);target=game.FindCard(cause.instanceId);if(target)t=target.Snapshot();m=game.NilfMatch();
+        // Ciri's AfterRound priority15 precedes the priority0 round abilities.
+        // Its graph reads live scores, not AfterRound.WinnerPlayerId.
+        if(kind==14)for(i=0;i<cards.Size();i+=1){s=cards[i].card;if(s.runtimeTemplate.templateId==112101 && (s.locationMask&7)!=0 && (s.tokenMask&12)==0 && !s.isWaitingToDie && s.power.currentPower>0 && game.Score(s.positionPlayerId)<game.Score(BetaGwentOpponentId(s.positionPlayerId)))game.MoveInactiveToIndex(game.FindCard(s.instanceId),s.positionPlayerId,8,0);}
         for(i=0;i<cards.Size();i+=1){s=cards[i].card;source=game.FindCard(s.instanceId);id=s.runtimeTemplate.templateId;if(!source || (s.tokenMask&4)!=0 || s.isWaitingToDie)continue;enemy=BetaGwentOpponentId(s.positionPlayerId);
          if(kind==3 && cause.instanceId==s.instanceId && id==112110 && s.locationMask==32){game.MonsterOperation(source,source,12,3,32);game.FlushEffects();game.NorthMoveInactive(source,s.positionPlayerId,16,true);}
          if(kind==9 && cause.instanceId==s.instanceId && id==112209){pos=cause;pos.locationIndex=-3;game.QueueRandomRowSpawn(pos,200320,1);}
-         if(kind==4 && id==112210 && s.locationMask==16 && target && t.positionPlayerId==s.positionPlayerId && game.NorthActingSide(target)==s.positionPlayerId && t.runtimeTemplate.typeMask==4 && t.runtimeTierMask==8 && target.playFromLocation==8)game.NorthRandomSummon(source);
+         if(kind==3 && !playedArrival && id==112210 && s.locationMask==16 && target && cause.positionPlayerId==s.positionPlayerId && cause.locationMask==8 && (t.locationMask&7)!=0 && (t.tokenMask&8)==0 && t.runtimeTierMask==8)game.RandomPositionMove(source,s.positionPlayerId,true);
+         if(kind==4 && id==112210 && s.locationMask==16 && target && game.NorthActingSide(target)==s.positionPlayerId && (t.locationMask&7)!=0 && (t.tokenMask&8)==0 && t.runtimeTemplate.typeMask==4 && t.runtimeTierMask==8 && target.playFromLocation==8)game.RandomPositionMove(source,s.positionPlayerId,true);
          if(kind==6 && id==200226 && s.locationMask==32 && cause.positionPlayerId==s.positionPlayerId && s.timerValue>0){source.ChangeTimer(1,0);s=source.Snapshot();if(s.timerValue==0)game.NilfQueueReaction(source,8,s.positionPlayerId);}
          if((s.locationMask&7)==0 || (s.tokenMask&8)!=0)continue;
-         if(kind==14 && id==112110){game.MonsterOperation(source,source,12,3,7);game.FlushEffects();game.NorthMoveInactive(source,s.positionPlayerId,16,true);}
-         if(kind==14 && id==112101 && cause.timerValue==enemy)game.NorthMoveInactive(source,s.positionPlayerId,8,true);
-         if(kind==6 && cause.positionPlayerId==s.positionPlayerId){if(id==112113)Extremes(source,enemy,7,true,1,-1,0);if(id==122107)Extremes(source,s.positionPlayerId,7,false,1,1,0);if(id==201817 && s.power.currentPower==s.power.basePower && s.timerValue==1){game.QueueTimer(source,0,1);Query(enemy,7,15,4,8,ids);game.ShuffleIds(ids);for(j=0;j<ids.Size() && j<3;j+=1)game.MonsterPower(source,game.FindCard(ids[j]),-7);}}
-         if(kind==5 && cause.positionPlayerId==s.positionPlayerId && s.timerValue>0 && (id==112107 || id==112206)){source.ChangeTimer(1,0);s=source.Snapshot();if(s.timerValue==0){if(id==112107)Extremes(source,0,7,true,3,0,s.instanceId);else{Query(enemy,7,15,4,8,ids);for(j=0;j<ids.Size();j+=1)game.MonsterPower(source,game.FindCard(ids[j]),-1);game.NorthMoveInactive(source,s.positionPlayerId,8,true);game.QueueTimer(source,2,-1);}}}
+         if(kind==14 && id==112110 && (s.tokenMask&1)==0){game.MonsterOperation(source,source,12,3,7);game.FlushEffects();game.NorthMoveInactive(source,s.positionPlayerId,16,true);}
+         if(kind==6 && cause.positionPlayerId==s.positionPlayerId){if(id==112113)Extremes(source,enemy,7,true,1,-1,0);if(id==122107)Extremes(source,s.positionPlayerId,7,false,1,1,s.instanceId);if(id==201817 && s.power.currentPower==s.power.basePower && s.timerValue==1){game.QueueTimer(source,0,1);Query(enemy,7,15,4,8,ids);game.ShuffleIds(ids);for(j=0;j<ids.Size() && j<3;j+=1)game.MonsterPower(source,game.FindCard(ids[j]),-7);}}
+         if(kind==5 && cause.positionPlayerId==s.positionPlayerId && s.timerValue>0 && (id==112107 || id==112206)){source.ChangeTimer(1,0);s=source.Snapshot();}
         }
+    }
+    public function TimerTriggered(source : CBetaGwentDuelCard)
+    {
+        var s : SBetaGwentCardSnapshot;var ids : array<int>;var i : int;
+        if(!source || source.TemplateId()!=112206)return;s=source.Snapshot();
+        // Ocvist persistent Counter has only two reachable values: initial4
+        // and SetVar334=0. monsterOnce stores the unspent/spent distinction.
+        source.monsterOnce=0;Query(BetaGwentOpponentId(s.positionPlayerId),7,15,4,8,ids);
+        for(i=0;i<ids.Size();i+=1)game.MonsterPower(source,game.FindCard(ids[i]),-1);
+        game.MoveInactiveToIndex(source,s.positionPlayerId,8,0);
     }
 }

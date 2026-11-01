@@ -1,0 +1,21 @@
+{
+  "sourceLogSha256": "46ea72e2d54f9d8d383559618c879f2497f6b806b2920d78b2e0e62c452bbbec",
+  "match": 3,
+  "seed": 594205856,
+  "loggedObservablesVerified": true,
+  "historicalRuntimeVerified": false,
+  "records": [
+    {
+      "decision": 7,
+      "sha256": "35d551338173ff96845aa33f30feb1ad9a312f7ffe019b53e644b58a8bb2289f"
+    },
+    {
+      "decision": 8,
+      "sha256": "b6f8d3e8a77f0a85635143d4b23f1ca93e25ace44242cc59a4c4c6360a56c38c"
+    },
+    {
+      "decision": 10,
+      "sha256": "967ca44e1707079b4b0335b81b225694d0cfddff0258b78e15c44745efb3a649"
+    }
+  ]
+}

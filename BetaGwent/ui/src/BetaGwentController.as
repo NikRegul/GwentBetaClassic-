@@ -98,6 +98,9 @@
             }
             surface=null;nodes=[];focus=null;pressed={};axis=0;
         }
+        // Pad Y pass hold, 0..1 (650 ms), or -1; drives the Beta coin effect.
+        public function passHoldProgress():Number
+        {return active&&yStarted>0&&yCanPass&&!yCommitted?Math.min(1,(getTimer()-yStarted)/650):-1;}
         public function configure(kind:int,enabled:Boolean,swapped:Boolean):void
         {device=kind;swap=swapped;setActive(enabled,false);dirty=true;}
         public function foreignInput(code:int,value:String):void
@@ -254,6 +257,11 @@
                 n.key="menu:"+id;n.menuRow=row;n.menuColumn=column;dirty=true;return;
             }
         }
+        public function focusPicker(index:int):void
+        {
+            var mode:String=state().mode;
+            for each(var node:Object in candidates())if(node.scope==mode&&node.card&&node.card.pickerIndex098==index){select(node);return;}
+        }
         public function focusKey(key:String):void
         {getFocus();for each(var n:Object in candidates())if(n.key==key){select(n);return;}}
         private function menuNeighbor(options:Array,current:Object,dir:int):Object
@@ -362,6 +370,9 @@
             var n:Object=getFocus();if(!n)return;
             var options:Array=candidates();var allOptions:Array=options.concat();var origin:Rectangle=n.rect;
             var mode:String=state().mode;
+            if((mode=="choice"||mode=="pile")&&n.card&&n.card.pickerIndex098!=null){
+                invoke("pickerMove",{index:int(n.card.pickerIndex098),direction:dir});dirty=true;return;
+            }
             if(mode=="editor"&&dir==38&&n.tag=="control"&&origin.y>=984){
                 var returnCard:Object=null,returnScore:Number=Number.MAX_VALUE;
                 for each(var visible:Object in allOptions)if(visible.tag=="card"){

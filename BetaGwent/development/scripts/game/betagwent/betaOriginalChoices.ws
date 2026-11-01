@@ -4,7 +4,7 @@ class CBetaOriginalHandlerCache extends IScriptable { public var association : i
 class CBetaOriginalChoiceHandlers extends IScriptable {
     public var runtime : CBetaOriginalRuntime;public var p : CBetaOriginalPersonality;public var tree : CBetaOriginalGameTree;
     public var simulatorRandom : CBetaGwentRandomGenerator;public var cache : array<CBetaOriginalHandlerCache>;
-    public var defaultHandler : CBetaOriginalHandler;public var failed, replayOnly : bool;public var error : string;
+    public var defaultHandler : CBetaOriginalHandler;public var failed, replayOnly, directDecision : bool;public var error : string;
     public function Fail(message : string){failed=true;error=message;}
     public function BeginSimulation(owner : CBetaOriginalGameTree, game : CBetaGwentDuelSession) {
         var clone : CBetaGwentDuelSession;tree=owner;clone=runtime.CloneSession(game);simulatorRandom=clone.random;
@@ -119,7 +119,7 @@ class CBetaOriginalChoiceHandlers extends IScriptable {
             else{card=game.FindCard(game.pendingIds[i]);if(!card){Fail("Pending original instance absent");return request;}item=BetaOriginalCardItem(game,card);}
             request.items.PushBack(item);
         }
-        wholeSet=((source==200159 || source==162103 || source==200163 || source==162316 || source==200227 || source==201616 || source==122204 || source==200209) && request.kind=="choices") || (source==200218 && request.kind=="targets");
+        wholeSet=((source==200159 || source==162103 || source==200163 || source==162316 || source==200227 || source==201616 || source==122204 || source==200209 || source==122201 || source==152205) && request.kind=="choices") || ((source==200218 || source==162208 || source==200169 || source==152315 || source==112111 || source==152203) && request.kind=="targets");
         if(info.limits.maximum>1 && !(wholeSet && info.selectedCount==0)){Fail("Original whole-choice sequencing not mapped");return request;}
         request.minimum=info.limits.minimum;request.maximum=info.limits.maximum;return request;
     }
@@ -139,13 +139,35 @@ class CBetaOriginalChoiceHandlers extends IScriptable {
         sibling.choiceRecords.PushBack(record);sibling.handlerScore=node.handlerScore;sibling.mulliganChoices=node.mulliganChoices;node.parentNode.children.PushBack(sibling);
         for(i=0;i<node.parentNode.baseGroups.Size();i+=1)if(node.parentNode.baseGroups[i].cardId==node.cardId){node.parentNode.baseGroups[i].nodes.PushBack(sibling);break;}
     }
+    // A reactive request owned by the seat that is NOT executing (Standard Bearer
+    // 200294: the other seat moves the saved Soldier). The simulated reply uses the
+    // reacting seat's own handler perspective. It is not an executing-player
+    // decision: no record, branch or propagated score, and it is never replayed
+    // live, where the reacting seat answers for itself (CBetaOriginalReaction/UI).
+    private function OpposingReaction(node : CBetaOriginalNode, request : SBetaOriginalRequest, ctx : CBetaOriginalHandlerContext) {
+        var game : CBetaGwentDuelSession;var h : CBetaOriginalHandler;var result : SBetaOriginalDecision;var kind : int;var ok : bool;
+        game=node.game;
+        if(replayOnly){Fail("Live replay cannot answer the other seat's reaction");return;}
+        if(node.activeChoice || request.maximum>1 || request.kind=="play"){Fail("Opposing reactive multi/placement decision not mapped: "+request.source);return;}
+        ctx.actor=request.actor;
+        if(request.kind=="forced")result.chosen=request.items;
+        else {
+            kind=3;if(request.kind=="locations")kind=4;else if(request.kind=="targets")kind=2;
+            h=Handler(Association(kind,request.source,request.sourceHint));if(failed)return;result=h.Decision(ctx,request);if(ctx.failed){Fail(ctx.error);return;}
+        }
+        if(result.chosen.Size()==0)ok=game.FinishTarget(game.requestId);
+        else if(request.kind=="locations")ok=game.SelectRow(game.requestId,result.chosen[0].side,result.chosen[0].row);
+        else if(request.kind=="templates")ok=game.SelectTemplateChoice(game.requestId,result.chosen[0].templateId);
+        else ok=game.SelectTarget(game.requestId,result.chosen[0].id);
+        if(!ok)Fail("Common engine rejected opposing reactive choice: "+request.source+"/"+request.kind+"/"+game.GetMessage());
+    }
     public function Request(node : CBetaOriginalNode) {
         var game : CBetaGwentDuelSession;var request : SBetaOriginalRequest;var ctx : CBetaOriginalHandlerContext;
         var record : CBetaOriginalChoiceRecord;var h : CBetaOriginalHandler;var result : SBetaOriginalDecision;
         var branches, branch : array<SBetaOriginalItem>;var i, kind, anchor : int;var ok : bool;var location : SBetaOriginalLocation;
         if(node.activeChoice){ContinueChoice(node);return;}
         game=node.game;request=Describe(node);if(failed)return;ctx=Context(node);
-        if(request.actor!=node.executingPlayerId){Fail("Opposing original reactive decision ownership not mapped");return;}
+        if(request.actor!=node.executingPlayerId){OpposingReaction(node,request,ctx);return;}
         kind=3;if(request.kind=="play")kind=1;else if(request.kind=="locations")kind=4;else if(request.kind=="targets")kind=2;
         if(node.choiceCursor<node.choiceRecords.Size()) {
             record=node.choiceRecords[node.choiceCursor];
@@ -160,7 +182,7 @@ class CBetaOriginalChoiceHandlers extends IScriptable {
             if(request.kind=="play") {
                 branches.Clear();if(h.CanBranchPlacement() && result.filteredValid)for(i=1;i<result.filtered.Size();i+=1)branches.PushBack(result.filtered[i]);
             }
-            for(i=0;i<branches.Size();i+=1){branch.Clear();branch.PushBack(branches[i]);Fork(node,MakeRecord(request,branch,result.sourceFallback));}
+            if(!directDecision)for(i=0;i<branches.Size();i+=1){branch.Clear();branch.PushBack(branches[i]);Fork(node,MakeRecord(request,branch,result.sourceFallback));}
             record=MakeRecord(request,result.chosen,result.sourceFallback);node.choiceRecords.PushBack(record);node.handlerScore+=result.propagated;
         }
         node.choiceCursor+=1;

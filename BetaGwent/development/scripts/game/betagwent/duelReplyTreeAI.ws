@@ -79,9 +79,17 @@ class CBetaGwentAIReplyTree097 extends IScriptable
     // This scans only our hand and the anonymized public branch; it adds no plays.
     private function OrderContinuations()
     {
-        var i,j,gain,anchor,clearRisk : int;
+        var i,j,gain,anchor,clearRisk : int;var held : array<CBetaGwentDuelCard>;
         var scores : array<int>;var card : CBetaGwentDuelCard;var s : SBetaGwentCardSnapshot;
         branchOrder.Clear();anchor=branch.BestVranAnchor(2);clearRisk=branch.AiPublicClearRisk();
+        // Tutors/exchanges/draws can add a different instance to our hand.
+        // Compare its continuation with the best original hand opportunity,
+        // rather than crediting its entire play as free setup uplift.
+        branch.GetZoneCards(2,8,held);
+        for(i=0;i<held.Size();i+=1){s=held[i].Snapshot();
+            if(!s.canBePlayed || ids.Contains(s.instanceId))continue;
+            ids.PushBack(s.instanceId);values.PushBack(commonBaseline);
+        }
         for(i=0;i<ids.Size();i+=1){
             card=branch.FindCard(ids[i]);if(!card || values[i]==-2147483647)continue;
             s=card.Snapshot();if(s.positionPlayerId!=2 || s.locationMask!=8 || !s.canBePlayed)continue;

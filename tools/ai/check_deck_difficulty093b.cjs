@@ -24,7 +24,7 @@ for(const [platform,file] of [['nextgen','BetaGwent/ui/src/BetaGwentBoard.as'],[
   cycleTextLanguage(){},cycleVoiceLanguage(){},cycleDifficulty:()=>changes++,
   editorSmallButton:(parent,title,x,y,w,h,enabled,callback)=>buttons.push({title,x,y,w,h,enabled,callback}),
   languageButton:(title,x,y,w,callback)=>buttons.push({title,x,y,w,h:30,enabled:true,callback}),
-  paintArt:(parent,id,w,h,x=0,y=0)=>{if(id==='panel')panels.push({x,y,w,h});},wideArt(){},betaNine(){},betaLabel:()=>({}),
+  paintArt:(parent,id,w,h,x=0,y=0)=>{if(id==='panel')panels.push({x,y,w,h});},wideArt(){},betaNine(){},drawTitleBanner096(){},editorName:'Колода',openNameInput(){},drawResources096(){},requestEditorExit(){},pendingKeg:false,unopenedKegs:0,betaLabel:()=>({}),
   deckOption:()=>({leaderId:200168}),cardFaction:()=>2,editorFactionIndex:()=>0,
   BetaGwentHud104:{CHAIN:1,WOOD_PANEL:'panel'},BetaGwentDeckArt104:{BG_SETUP:1,BG_BUILDER:2,stats:()=>3},BetaGwentFonts:{TITLE:1}});
  vm.runInContext(extract(source,'betaPlaque'),ctx);

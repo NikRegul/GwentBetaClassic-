@@ -4,7 +4,7 @@ Usage: python -X utf8 tools/features093/collect_release093.py <build-folder> [--
 Accepts only a finished build: release-readiness.json + archive-verification.json + matching SHA-256.
 """
 from pathlib import Path
-import argparse,hashlib,json,shutil
+import argparse,hashlib,json,shutil,subprocess,sys
 ROOT=Path(__file__).resolve().parents[2]
 NOTES=ROOT/'docs/releases/0.9.3-public-20261025'
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
@@ -58,6 +58,8 @@ def main(argv=None):
     for z in zips:shutil.copy2(z,dest/'archives'/z.name);shutil.copy2(z.with_suffix('.zip.sha256'),dest/'archives'/(z.name+'.sha256'))
     for doc in sorted(NOTES.glob('0.9.3_*.md'))+[NOTES/'README.md']:shutil.copy2(doc,dest/'nexus'/doc.name)
     if (NOTES/'BBCode/manifest.json').is_file():shutil.copytree(NOTES/'BBCode',dest/'nexus/BBCode')
+    subprocess.run([sys.executable,'-X','utf8',str(ROOT/'tools/features093/prepare_full_nexus093.py'),
+                    '--out',str(dest/'nexus/full'),'--collect-to',str(dest/'nexus')],cwd=ROOT,check=True)
     for name in ['release-readiness.json','archive-verification.json','user-release-checks.json','choice-captions.json','choice-fates.json','user-ui-check.json','card-offer.json','full-ai-games/report.json',
                  'regressions/check_special_target_mode197.json','regressions/check_kayran_miruna197.json','regressions/check_cyclops_swordsman197.json','regressions/check_stored_damage198.json','stored-damage-witness198.json']:
         src=out/name
@@ -70,7 +72,7 @@ def main(argv=None):
     (dest/'CHECKLIST_RU.md').write_text(CHECKLIST,'utf8')
     lines=['# Gwent Beta Classic 0.9.3 — файлы релиза','',f'Сборка: `{out}`','','## Архивы','']
     for z in zips:lines.append(f'- `archives/{z.name}` — {z.stat().st_size} байт, SHA-256 `{sha(z)}`')
-    lines+=['','## Тексты для Nexus (13 языков)','','`nexus/`: описание (`0.9.3_DESCRIPTION_*`), пост (`0.9.3_POST_*`) и changelog от 0.9.1 (`0.9.3_CHANGELOG_*`). Сначала английский, затем русский.','',
+    lines+=['','## Тексты для Nexus (13 языков)','','Полное описание в прежнем оформлении: `nexus/NEXUS_DESCRIPTION_0.9.3.bbcode.txt`. Общий пост EN/RU до5000символов: `nexus/NEXUS_POST_0.9.3_EN_RU.bbcode.txt`. Предпросмотр и полные языковые версии — в `nexus/full/`. Changelog от0.9.1 — `nexus/0.9.3_CHANGELOG_*`.','',
       '## Отчёты','','`reports/`: готовность, независимая проверка архивов (SHA/CRC/manifest) и проверки подписей выбора карт.','',
       '## Перед публикацией','','Пройдите `CHECKLIST_RU.md` в игре на обеих версиях. Ничего не установлено и не опубликовано автоматически.','']
     (dest/'README_RU.md').write_text('\n'.join(lines),'utf8')

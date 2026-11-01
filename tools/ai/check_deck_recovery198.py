@@ -18,9 +18,9 @@ def main():
     args = parser.parse_args()
     out = args.out.resolve(); out.mkdir(parents=True, exist_ok=True)
     source = args.source.resolve() if args.source else ROOT/'BetaGwent/development/scripts/game/betagwent'
-    names = ['deckProfile.ws','profileBackup.ws','collectionProfile.ws','deckBuilder.ws','profileCleanup090.ws']
+    names = ['aaProfileStore.ws','deckProfile.ws','profileBackup.ws','collectionProfile.ws','deckBuilder.ws','profileCleanup090.ws']
     frozen = args.snapshot/'sources/BetaGwent/development/scripts/game/betagwent'
-    profile_frozen = all((source/n).read_bytes() == (frozen/n).read_bytes() for n in names)
+    profile_frozen = all((frozen/n).exists() and (source/n).read_bytes() == (frozen/n).read_bytes() for n in names)
     if args.release:
         assert profile_frozen, 'Storage checks must use the exact frozen release profile sources'
     collection = (source/'collectionProfile.ws').read_text('utf-8-sig')
@@ -29,13 +29,17 @@ def main():
     backup = (source/'profileBackup.ws').read_text('utf-8-sig')
     first_field = re.search(r'^@addField', backup, re.M).start()
     structs, backup = backup[:first_field], backup[first_field:]
-    profile = collection+(source/'deckProfile.ws').read_text('utf-8-sig')+backup
+    # 0.9.4 store; its CR4Game save hook is native-only and is left out here.
+    store = (source/'aaProfileStore.ws').read_text('utf-8-sig').split('// Catch-all:',1)[0]
+    profile = store+collection+(source/'deckProfile.ws').read_text('utf-8-sig')+backup
     profile = re.sub(r'@add(?:Field|Method)\(W3PlayerWitcher\)\s*', '', profile).replace('private saved var', 'private var')
     wrapper = out/'profile.ws'
     wrapper.write_text('struct EntityHandle { var stableId : string; }\n'+structs+'\n'+cap+'\nclass W3PlayerWitcher extends IScriptable {\n'+profile+'''
  private var betaGwentScraps, betaGwentKegsUnopened : int;
  private var betaGwentKegAutomatic, betaGwentKegOffers, betaGwentKegAutomaticScraps : array<int>;
  private var betaGwentOpponentBag, betaGwentOpponentRecent : array<int>;
+ private var betaGwentOpponentPoolSize : int;
+ private var betaGwentCleanupPending090 : bool;
  public function BetaGwentCleanupPending() : bool { return false; }
  public function BetaGwentUpdateCollectionProgress() {}
  public function BetaGwentSyncTournamentAccess() {}
@@ -70,7 +74,8 @@ console.log('REPORT198 '+S({complete:true,checks,negativeControl:true,observedEm
     report['profileSourcesFrozen'] = profile_frozen
     report['fingerprint'] = json.loads((args.snapshot/'manifest.json').read_text('utf8'))['fingerprint']
     cleanup=(source/'profileCleanup090.ws').read_text('utf-8-sig')
-    recovery_fields=re.findall(r'private saved var (betaGwentDeckRecovery\w*)\s*:',(source/'deckProfile.ws').read_text('utf-8-sig'))
+    recovery_fields=re.findall(r'private(?: saved)? var (betaGwent(?:Deck|StarterDeck|Collection|Store)Recovery\w*)\s*:',
+                               (source/'deckProfile.ws').read_text('utf-8-sig')+collection+store)
     for field in recovery_fields:assert re.search(r'\b'+field+r'\s*(?:=\s*0|\.Clear\(\))',cleanup),field
     report['explicitUninstallClearsRecoveryFields']=len(recovery_fields)
     report['sources']={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in [source/n for n in names]+[Path(__file__).resolve(),Path(__file__).with_suffix('.cjs').resolve()]}

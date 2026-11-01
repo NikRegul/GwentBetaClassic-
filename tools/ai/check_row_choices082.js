@@ -43,7 +43,8 @@ function position(preset,spec,forced){
   if(kind!==3||source.TemplateId()!==spec.card)return original.call(this,source,ids,kind,min,max);
   if(!forced)return original.call(this,source,ids,kind,min,max);
   const choice=spec.multi?forced[step++]:forced;
-  if(!choice||!ids.includes(choice[1]))throw Error('Illegal authored row');
+  if(!choice)throw Error('Illegal authored row');
+  if(!ids.includes(choice[1])){const e=Error('Row not offered: '+choice[1]);e.notOffered=true;throw e;}
   selected.push(choice);this.monsters.Row(source,choice[0],choice[1]);
  };
  const before=g.Score(2)-g.Score(1);Host.log=s=>logs.push(s);let ok;
@@ -55,10 +56,13 @@ function position(preset,spec,forced){
   weather:[1,2,4].map(r=>g.WeatherToken(1,r)),logs:logs.filter(s=>/event=(TARGET_OPTION|TARGET_SELECT)|DUEL_WEATHER_TICK/.test(s))};
 }
 globalThis.rowAudit={specifications,run(preset,id){
- const spec=specifications.find(s=>s.id===id),actual=position(preset,spec,null),alternatives=spec.options.map(choice=>position(preset,spec,choice));
+ const spec=specifications.find(s=>s.id===id),actual=position(preset,spec,null),skipped=[];
+ // Rules may legally withhold rows (Igni: only enemy rows with >=25 power); compare against offered rows only.
+ const alternatives=spec.options.map(choice=>{try{return position(preset,spec,choice);}catch(e){if(e&&e.notOffered){skipped.push(choice);return null;}throw e;}}).filter(Boolean);
+ if(!alternatives.length)throw Error('No offered alternative rows');
  const value=o=>spec.metric==='created'?o.created:o.gain;
  const best=Math.max(...alternatives.map(value));
- return {preset,id,title:spec.title,card:spec.card,metric:spec.metric,pass:value(actual)>=best,actual,best,alternatives};
+ return {preset,id,title:spec.title,card:spec.card,metric:spec.metric,pass:value(actual)>=best,actual,best,alternatives,skipped};
 }};
 `,ctx,{timeout:30000});
 const report={version:'0.8.2',source:manifest.source,fingerprint:manifest.fingerprint,runnerSha256:crypto.createHash('sha256').update(fs.readFileSync(__filename)).digest('hex'),

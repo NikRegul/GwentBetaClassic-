@@ -118,7 +118,7 @@ class CBetaOriginalPlayMaker extends IScriptable {
         var chosen, node : CBetaOriginalNode;var card : CBetaGwentDuelCard;var i, value, current : int;var t : SBetaOriginalTemplate;
         value=2147483647;
         for(i=0;i<root.children.Size();i+=1) {
-            node=root.children[i];if(node.cardId==0 || !node.hasState)continue;
+            node=root.children[i];if(node.status!=1 || !node.hasState || node.cardId==0)continue;
             card=node.game.FindCard(node.cardId);if(!card)continue;t=BetaOriginalTemplate(card.TemplateId());
             if(!t.semanticTags.Contains(6))continue;current=OriginalDiff(node);
             if(current>=diff && current<value){chosen=node;value=current;}
@@ -159,7 +159,7 @@ class CBetaOriginalPlayMaker extends IScriptable {
         if(strategy=="DontPassUnlessAllPlayActionsAreDetrimental") {
             highest=(-2147483647-1);
             for(i=0;i<root.children.Size();i+=1) {
-                node=root.children[i];if(node.cardId==0)continue;value=OriginalDiff(node);if(failed)return;
+                node=root.children[i];if(node.status!=1 || !node.hasState || node.cardId==0)continue;value=OriginalDiff(node);if(failed)return;
                 if(value>=diff){if(node!=best){SetBest(node);best=node;}Implement("PlayBestCard");return;}
                 if(value>highest){highest=value;chosen=node;}
             }

@@ -5,12 +5,13 @@ const {createRuntime}=require('./beta_js092/session.cjs');
 const [replays,snapshot,output]=process.argv.slice(2),out=path.resolve(output);
 if(fs.existsSync(out))throw Error('Use a fresh counterfactual folder');fs.mkdirSync(out,{recursive:true});
 const saved=JSON.parse(fs.readFileSync(path.join(replays,'replays.json'),'utf8')),runtime=createRuntime(snapshot),plan=[];
+const allDecisions=process.argv.includes('--all-decisions');
 for(const game of saved.records){
- const candidates=game.decisions.filter(d=>!d.passed&&!d.enemyPassed&&d.hand[1]<=4);
- const selected=[candidates[0],candidates[candidates.length-2],candidates[candidates.length-1]].filter(Boolean);
+ const candidates=game.decisions.filter(d=>!d.passed&&!d.enemyPassed&&(allDecisions||d.hand[1]<=4));
+ const selected=allDecisions?candidates:[candidates[0],candidates[candidates.length-2],candidates[candidates.length-1]].filter(Boolean);
  const seen=new Set();for(const d of selected){if(seen.has(d.file))continue;seen.add(d.file);plan.push({game:game.game,key:game.selected.key,file:d.file,round:d.round,score:d.score,hand:d.hand});}
 }
-fs.writeFileSync(path.join(out,'plan.json'),JSON.stringify({kind:'postmortem-full-state-development-only',snapshot:path.resolve(snapshot),positions:plan},null,2)+'\n');
+fs.writeFileSync(path.join(out,'plan.json'),JSON.stringify({kind:'postmortem-full-state-development-only',snapshot:path.resolve(snapshot),allDecisions,positions:plan},null,2)+'\n');
 const report={records:[],complete:false};
 function load(f){return runtime.deserialize(JSON.parse(JSON.stringify(f.state)));}
 function view(g){const m=g.Snapshot();return {winner:m.matchWinnerMask,crowns:[m.playerOne.crowns,m.playerTwo.crowns],score:[g.Score(1),g.Score(2)]};}

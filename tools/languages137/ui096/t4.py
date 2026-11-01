@@ -1,0 +1,3 @@
+T={
+"Разместите отряд: ряд противника или отряд для вставки перед ним":("Place the unit: an enemy row or a unit to insert it before","Einheit platzieren: eine gegnerische Reihe oder eine Einheit, vor der sie eingefügt wird","Placez l'unité : une rangée adverse ou une unité devant laquelle l'insérer","Posiziona l'unità: una fila nemica o un'unità davanti alla quale inserirla","Umieść jednostkę: rząd przeciwnika lub jednostka, przed którą ją wstawić","Coloca la unidad: una fila rival o una unidad delante de la cual insertarla","Posicione a unidade: uma fileira inimiga ou uma unidade para inseri-la antes dela","ユニットを配置：相手の列、または前に入れるユニット","유닛 배치: 상대 열 또는 앞에 넣을 유닛","放置单位：对方的排，或要插入其前方的单位","放置單位：對方的排，或要插入其前方的單位"),
+}

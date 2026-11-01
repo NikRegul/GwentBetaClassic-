@@ -24,10 +24,14 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     private var originalRuntime : CBetaOriginalRuntime;
     private var originalPersonality : CBetaOriginalPersonality;
     private var originalController : CBetaOriginalTurnController;
+    private var originalReaction : CBetaOriginalReaction;
     private var originalStartedAt : float;
     private var requestFlow : CBetaGwentDevelopmentRequestFlow;
     private var setRequestHeader : CScriptedFlashFunction;
     private var setRequestSource : CScriptedFlashFunction;
+    private var setRequestCancel098 : CScriptedFlashFunction;
+    private var setTentativePlay099 : CScriptedFlashFunction;
+    private var cancelPlayHistory098 : CScriptedFlashFunction;
     private var pushRequestCard : CScriptedFlashFunction;
     private var revision : int;
     private var configured : bool;
@@ -56,6 +60,9 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     private var effectGallery : bool;
     private var startEffectGallery : CScriptedFlashFunction;
     private var publishedTemplates : array<int>;
+    private var publishedRequestId, publishedRequestPlayer, publishedRequestKind, publishedRequestMinimum, publishedRequestMaximum, publishedRequestSelected : int;
+    private var publishedRequestFinish : bool;
+    private var publishedRequestViews : array<SBetaGwentDevelopmentRequestCard>;
     private var setCollectionNew : CScriptedFlashFunction;
     private var selectionPublished : bool;
     private var deckOptionCount : int;
@@ -83,7 +90,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     private var forcedBetaFaction : int;
     private var deckNameInput : CBetaGwentDeckNameInput;
     private var setEditorName : CScriptedFlashFunction;
-    private var setOwnedCopies, setRewardMessage : CScriptedFlashFunction;
+    private var setOwnedCopies, setRewardMessage, setRewardCard, setOutcomeProgress : CScriptedFlashFunction;
     private var rewardGranted : bool;
     private var beginKegOpening, pushKegCard, finishKegOpening : CScriptedFlashFunction;
     private var setControllerDevice, setControllerInput : CScriptedFlashFunction;
@@ -97,6 +104,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         var entryMode : int;var pendingBefore, requestedBefore : bool;var kegInit : CBetaGwentKegMenuData;
         var manager : CR4GwintManager; var npcPreset : SBetaGwentDuelPreset; var nativePlayer : CR4Player; var entryDefinition : SBetaGwentDuelDefinition;
         if (configured) return false;
+        presentationPlayer=(W3PlayerWitcher)thePlayer;
+        if(presentationPlayer)presentationPlayer.BetaGwentStoreLoad();
         LogChannel('BetaGwent', "MENU_CONFIG_BEGIN menu="+GetMenuName());
         setHeader = GetMenuFlash().GetMemberFlashFunction("setBoardHeader");
         setControllerDevice = GetMenuFlash().GetMemberFlashFunction("setControllerDevice");
@@ -108,6 +117,9 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         finishState = GetMenuFlash().GetMemberFlashFunction("finishBoardState");
         setRequestHeader = GetMenuFlash().GetMemberFlashFunction("setRequestHeader");
         setRequestSource = GetMenuFlash().GetMemberFlashFunction("setRequestSource");
+        setRequestCancel098 = GetMenuFlash().GetMemberFlashFunction("setRequestCancel098");
+        setTentativePlay099 = GetMenuFlash().GetMemberFlashFunction("setTentativePlay099");
+        cancelPlayHistory098 = GetMenuFlash().GetMemberFlashFunction("cancelPlayHistory098");
         pushRequestCard = GetMenuFlash().GetMemberFlashFunction("pushRequestCard");
         setDetails = GetMenuFlash().GetMemberFlashFunction("setBoardDetails");
         pushDetails = GetMenuFlash().GetMemberFlashFunction("pushCardDetails");
@@ -192,6 +204,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         configured = true;
         setOwnedCopies=GetMenuFlash().GetMemberFlashFunction("setOwnedCopies");
         setRewardMessage=GetMenuFlash().GetMemberFlashFunction("setRewardMessage");
+        setRewardCard=GetMenuFlash().GetMemberFlashFunction("setRewardCard");
+        setOutcomeProgress=GetMenuFlash().GetMemberFlashFunction("setOutcomeProgress");
         beginKegOpening=GetMenuFlash().GetMemberFlashFunction("beginKegOpening");
         finishKegChoice=GetMenuFlash().GetMemberFlashFunction("finishKegChoice");
         pushKegCard=GetMenuFlash().GetMemberFlashFunction("pushKegCard");
@@ -204,7 +218,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if(presentationPlayer){presentationTempo=presentationPlayer.BetaGwentAnimationTempo();presentationReduced=presentationPlayer.BetaGwentReducedEffects();presentationAiPause=presentationPlayer.BetaGwentAiPause();presentationDifficulty=presentationPlayer.BetaGwentDifficulty();}
         if (setAudioStatus) setAudioStatus.InvokeSelfSixArgs(FlashArgBool(BetaGwentAudioBankInstalled()), FlashArgBool(audio.IsBankReady()),FlashArgInt(presentationTempo),FlashArgBool(presentationReduced),FlashArgInt(presentationAiPause),FlashArgInt(presentationDifficulty));
         if(setLeaderMotion)setLeaderMotion.InvokeSelfOneArg(FlashArgBool(FactsQueryLatestValue("bg_static_leaders")==0));
-        if(setBoardHelp)setBoardHelp.InvokeSelfOneArg(FlashArgBool(FactsQueryLatestValue("bg_hide_help")==0));
+        // 0.9.6: move captions and chain captions are off by default (opt-in facts).
+        if(setBoardHelp)setBoardHelp.InvokeSelfTwoArgs(FlashArgBool(FactsQueryLatestValue("bg_show_help")==1),FlashArgInt(BetaGwentNorthPick(FactsQueryLatestValue("bg_show_chains")==1,1,0)));
         // The tutorial is offered once before the first game; the flag lives in facts, so it survives saves made without the mod.
         BetaGwentInitializeLanguages();
         PublishLanguageSettings();
@@ -344,6 +359,13 @@ class CR4BetaGwentBoardMenu extends CR4Menu
             if(!picker.Step(duel)){StopOriginalOpponent("Original live mulligan rejected");return;}
             deferredOpponent=OriginalNeedsStep();opponentPreparationBusy=false;Publish(duel.GetMessage(),true);return;
         }
+        if(!originalController && !duel.mulligan && duel.IsPending() && duel.RequestDecisionSide()==2 && duel.match.currentPlayerId!=2) {
+            // Original AI reaction during the player's action (Standard Bearer).
+            if(!originalReaction)originalReaction=new CBetaOriginalReaction in this;
+            originalReaction.Step(originalRuntime,originalPersonality,duel,2);
+            if(originalReaction.failed){StopOriginalOpponent(originalReaction.error);return;}
+            deferredOpponent=OriginalNeedsStep();opponentPreparationBusy=false;Publish(duel.GetMessage(),true);return;
+        }
         now=theGame.GetEngineTimeAsSeconds();if(audio)now=audio.CurrentTime();
         if(!originalController) {
             originalStartedAt=now;originalController=new CBetaOriginalTurnController in this;
@@ -479,7 +501,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     }
     private function AwardMatchReward()
     {
-        var result : SBetaGwentMatchSnapshot;var player : W3PlayerWitcher;var manager : CR4GwintManager;var earnedText : string;
+        var result : SBetaGwentMatchSnapshot;var player : W3PlayerWitcher;var manager : CR4GwintManager;var earnedText : string;var scrapsBefore, ownedBefore : int;
         if(!npcMatch || rewardGranted || selectingDecks)return;
         result=session.Snapshot();
         manager=theGame.GetGwintManager();if(manager.testMatch)return;
@@ -489,11 +511,28 @@ class CR4BetaGwentBoardMenu extends CR4Menu
             if(!player.BetaGwentEnsureCollection())return;
             rewardGranted=true;player.BetaGwentAddScraps(5);
             PublishCollection();if(setRewardMessage)setRewardMessage.InvokeSelfOneArg(FlashArgString("Поражение: +5 осколков (всего "+player.BetaGwentScraps()+")."));
+            if(setRewardCard)setRewardCard.InvokeSelfThreeArgs(FlashArgInt(0),FlashArgInt(5),FlashArgInt(player.BetaGwentScraps()));
+            PublishOutcomeProgress(player,player.BetaGwentCollectionCount(0),0);
             return;
         }
         if(result.matchWinnerMask!=1)return;
-        rewardGranted=true;earnedText=player.BetaGwentWinReward(manager.betaEnemyDeckName,manager.betaMatchNpcId,manager.betaMatchRewardActorKey);
+        rewardGranted=true;scrapsBefore=player.BetaGwentScraps();ownedBefore=player.BetaGwentCollectionCount(0);earnedText=player.BetaGwentWinReward(manager.betaEnemyDeckName,manager.betaMatchNpcId,manager.betaMatchRewardActorKey);
         PublishCollection();if(setRewardMessage)setRewardMessage.InvokeSelfOneArg(FlashArgString(earnedText));
+        // 0.9.6 result panel: the won card in detail and the scraps actually gained.
+        if(setRewardCard)setRewardCard.InvokeSelfThreeArgs(FlashArgInt(player.betaGwentLastRewardCard),FlashArgInt(Max(0,player.BetaGwentScraps()-scrapsBefore)),FlashArgInt(player.BetaGwentScraps()));
+        PublishOutcomeProgress(player,ownedBefore,player.betaGwentLastRewardCard);
+    }
+    // 0.9.7 outcome carousel: collection progress bars (before the reward -> now).
+    // The faction bar follows the card actually won: the reward pool spans every
+    // faction, so the played deck's faction can gain nothing at all.
+    // faction 0 has no flash label, which makes the bar render pass skip it.
+    private function PublishOutcomeProgress(player : W3PlayerWitcher, ownedBefore : int, rewardCard : int)
+    {
+        var d : SBetaGwentDuelDefinition; var faction : int;
+        if(!setOutcomeProgress || !player)return;
+        if(rewardCard!=0) { d=BetaGwentDuelDefinition(rewardCard); faction=d.header.factionMask; }
+        setOutcomeProgress.InvokeSelfSixArgs(FlashArgInt(ownedBefore),FlashArgInt(player.BetaGwentCollectionCount(0)),FlashArgInt(BetaGwentCollectionTotal(0)),
+            FlashArgInt(faction),FlashArgInt(player.BetaGwentCollectionCount(faction)),FlashArgInt(BetaGwentCollectionTotal(faction)));
     }
     private function PublishDeckCards(option : int, ids : array<int>)
     {
@@ -634,6 +673,9 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if(!configured || !selectingDecks || value!=revision)return false;
         parsed=BetaGwentParseDeckExchange(code);
         if(!parsed.valid){PublishDeckExchange("",parsed.message,false);return false;}
+        if(deckDraft && (parsed.leader!=deckDraft.leader || parsed.faction!=deckDraft.faction)) {
+            PublishDeckExchange("","Лидер выбирается при создании колоды.",false);return false;
+        }
         if(npcMatch && forcedBetaFaction!=0 && parsed.faction!=forcedBetaFaction) {
             PublishDeckExchange("","Для квеста нужна другая фракция.",false);return false;
         }
@@ -736,28 +778,10 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     }
     event OnBetaGwentDeckEditorLeader(value : int, id : int)
     {
-        var d : SBetaGwentDuelDefinition; var i : int;
         if (!configured || !deckDraft || value != revision) return false;
-        LogChannel('BetaGwent',"DECK_EDITOR_LEADER_REQUEST revision="+value+" leader="+id);
-        if (!BetaGwentDuelIsLeader(id)) {
-            LogChannel('BetaGwent',"DECK_EDITOR_LEADER_REJECT reason=notLeader leader="+id);
-            PublishDeckEditor("Выберите доступного лидера.");return false;
-        }
-        if(deckDraft.limitedCollection && ((W3PlayerWitcher)thePlayer).BetaGwentOwned(id)<1) {
-            LogChannel('BetaGwent',"DECK_EDITOR_LEADER_REJECT reason=unowned leader="+id);
-            PublishDeckEditor("Этот лидер ещё не получен. Источник указан в каталоге.");return false;
-        }
-        d = BetaGwentDuelDefinition(id);
-        if(npcMatch && forcedBetaFaction!=0 && d.header.factionMask!=forcedBetaFaction) {
-            PublishDeckEditor("Для квеста нужна другая фракция.");return false;
-        }
-        if (d.header.factionMask != deckDraft.faction)
-        {
-            deckDraft.faction = d.header.factionMask;
-            for (i = deckDraft.cards.Size() - 1; i >= 0; i -= 1)
-            { d = BetaGwentDuelDefinition(deckDraft.cards[i]); if (d.header.factionMask != 1 && d.header.factionMask != deckDraft.faction) deckDraft.cards.Erase(i); }
-        }
-        deckClearHistory.Clear();deckDraft.leader = id; PublishDeckEditor(""); return true;
+        // Retain the old event only to reject delayed UI commands and resync.
+        LogChannel('BetaGwent',"DECK_EDITOR_LEADER_REJECT reason=fixedAtCreation leader="+id);
+        PublishDeckEditor(""); return false;
     }
     event OnBetaGwentDeckRename(value : int, title : string)
     {
@@ -920,7 +944,7 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         requestFlow.Close(); visualBusy = false; deferredOpponent = false;
         if (!deckLibrary.Resolve(ownPreset, ownCards, leader) || !deckLibrary.ResolveOpponent(enemyPreset, enemyCards, leader)) return false;
         if(npcMatch && !((W3PlayerWitcher)thePlayer).BetaGwentOwnsDeck(ownCards,ownLeader))return false;
-        originalOpponent=BetaGwentDifficultyLevel()==4;originalFailure=false;originalController=NULL;
+        originalOpponent=BetaGwentDifficultyLevel()==4;originalFailure=false;originalController=NULL;originalReaction=NULL;
         duel.externalPolicyMask=0;
         if(originalOpponent) {
             originalRuntime=new CBetaOriginalRuntime in this;originalPersonality=new CBetaOriginalPersonality in this;
@@ -946,6 +970,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         if (publishedTemplates.Contains(id)) return;
         d = BetaGwentDuelDefinition(id); side = d.targetSide; if (d.weatherToken != 0) side = 2;
         if(duel.DirectSpecialKind(d)==3 && side!=2)side=1;
+        // Ragnarok/Korath Heat set a hazard on every ENEMY row: cast onto the enemy half.
+        if(duel.DirectSpecialKind(d)==3 && d.effect==28 && d.specialMode==14)side=2;
         pushTemplateDetails.InvokeSelfFourArgs(FlashArgInt(id), FlashArgString(d.description), FlashArgInt(d.header.tierMask), FlashArgInt(d.header.typeMask));
         pushTemplateRules.InvokeSelfNineArgs(FlashArgInt(id), FlashArgInt(duel.DirectSpecialKind(d)), FlashArgInt(side),
             FlashArgInt(d.targetTypes), FlashArgInt(d.targetTiers), FlashArgInt(d.targetIgnore), FlashArgInt(d.consumeMaximum), FlashArgInt(d.specialRowMask), FlashArgString(duel.ActionPreviewGeometry(d)));
@@ -960,6 +986,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         var requestSnapshot : SBetaGwentRequestSnapshot;
         var requestCards : array<SBetaGwentDevelopmentRequestCard>;
         var requestView : SBetaGwentDevelopmentRequestCard;
+        var headerId, headerPlayer, headerKind, headerMinimum, headerMaximum, headerSelected : int;
+        var headerFinish : bool;
         var flags : int;
         var i, side, row, weatherIndex, j : int;
         var cardDefinition : SBetaGwentDuelDefinition;
@@ -1029,12 +1057,33 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         {
             if (duel.IsPending() && !OriginalPrivateRequest()) requestSnapshot = duel.GetRequestSnapshot();
             else requestSnapshot = requestFlow.Snapshot();
+            headerId = requestSnapshot.requestId; headerPlayer = requestSnapshot.playerId;
+            headerKind = (int)requestSnapshot.kind;
+            headerMinimum = requestSnapshot.limits.minimum; headerMaximum = requestSnapshot.limits.maximum;
+            headerSelected = requestSnapshot.selectedCount;
+            headerFinish = !OriginalPrivateRequest() && (duel.IsPending() && headerMinimum == 0
+                || !duel.IsPending() && requestFlow.CanFinish());
+            publishedRequestId = headerId; publishedRequestPlayer = headerPlayer; publishedRequestKind = headerKind;
+            publishedRequestMinimum = headerMinimum; publishedRequestMaximum = headerMaximum;
+            publishedRequestSelected = headerSelected; publishedRequestFinish = headerFinish;
         }
-        setRequestHeader.InvokeSelfNineArgs(FlashArgInt(revision), FlashArgInt(requestSnapshot.requestId),
-            FlashArgInt(requestSnapshot.playerId), FlashArgInt((int)requestSnapshot.kind),
-            FlashArgInt(requestSnapshot.limits.minimum), FlashArgInt(requestSnapshot.limits.maximum),
-            FlashArgInt(requestSnapshot.selectedCount), FlashArgBool(!OriginalPrivateRequest() && !intermediate && (duel.IsPending() && requestSnapshot.limits.minimum == 0
-                || !duel.IsPending() && requestFlow.CanFinish())), FlashArgString(frame.status));
+        // Visual replay frames carry presentation only, so they used to publish an empty
+        // request and the Beta mulligan window collapsed while the replacement card flew
+        // into the hand. Replay the last authoritative request header for the human's own
+        // mulligan until the batch's final frame replaces it. Private opponent replays,
+        // including the original Beta mulligan, keep exposing nothing.
+        else if (!OriginalPrivateRequest() && duel.mulligan)
+        {
+            headerId = publishedRequestId; headerPlayer = publishedRequestPlayer; headerKind = publishedRequestKind;
+            headerMinimum = publishedRequestMinimum; headerMaximum = publishedRequestMaximum;
+            headerSelected = publishedRequestSelected; headerFinish = publishedRequestFinish;
+        }
+        if(setTentativePlay099)setTentativePlay099.InvokeSelfTwoArgs(FlashArgInt(revision),FlashArgInt(duel.TentativeSource099()));
+        if(setRequestCancel098)setRequestCancel098.InvokeSelfTwoArgs(FlashArgInt(revision),FlashArgBool(!intermediate && !OriginalPrivateRequest() && duel.CanCancelTargetRequest098()));
+        setRequestHeader.InvokeSelfNineArgs(FlashArgInt(revision), FlashArgInt(headerId),
+            FlashArgInt(headerPlayer), FlashArgInt(headerKind),
+            FlashArgInt(headerMinimum), FlashArgInt(headerMaximum),
+            FlashArgInt(headerSelected), FlashArgBool(headerFinish), FlashArgString(frame.status));
         if (setRequestSource && !OriginalPrivateRequest()) {
             cardDefinition=BetaGwentDuelDefinition(0);
             if(duel.FindCard(duel.PendingSourceId()))cardDefinition=duel.FindCard(duel.PendingSourceId()).Definition();
@@ -1045,7 +1094,10 @@ class CR4BetaGwentBoardMenu extends CR4Menu
         {
             if (duel.IsPending() && !OriginalPrivateRequest()) duel.GetRequestViews(requestCards);
             else requestFlow.GetViews(requestCards);
+            publishedRequestViews = requestCards;
         }
+        // The cached header only means anything together with its candidate list.
+        else if (headerId > 0) requestCards = publishedRequestViews;
         for (i = 0; i < requestCards.Size(); i += 1)
         {
             requestView = requestCards[i];
@@ -1189,7 +1241,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
             if (frame.kind == 2 && frame.sourceId == 0 && frame.row > 0 && token != 0 && (kind == 20 || kind == 22)) kind = 33;
             landing=BetaGwentDuelDefinition(landingTemplate);
             goldLanding=landing.header.typeMask==4 && landing.header.tierMask==8 && !BetaGwentAudioIsLeader(landingTemplate);
-            audio.Cue(kind, id, frame.flags, frame.scoreOne, frame.scoreTwo, token, targetTokens, goldLanding); return true;
+            audio.Cue(kind, id, frame.flags, frame.scoreOne, frame.scoreTwo, token, targetTokens, goldLanding);
+            if(frame.armorBroken099)audio.ArmorBreak099();return true;
         }
         return false;
     }
@@ -1215,6 +1268,8 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     { if (audio) audio.Keg(kind); }
     event OnBetaGwentAudioUi(kind : int)
     { if (!configured || !audio) return false; audio.Ui(kind); return true; }
+    event OnBetaGwentAudioPassHold(holdPhase : int)
+    { if (!configured || !audio) return false; audio.PassHold(holdPhase); return true; }
     event OnBetaGwentUIError(detail : string)
     { LogChannel('BetaGwent', "UI_ERROR " + detail); }
     event OnBetaGwentPerf(eventName : string, ms : int)
@@ -1252,6 +1307,17 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     }
     event OnBetaGwentTutorialSeen()
     { FactsSet("bg_tutorial_seen", 1); LogChannel('BetaGwent', "TUTORIAL_OFFERED"); }
+    // A dedicated two-argument event avoids optional trailing preference arguments
+    // on the native GFx event boundary. Audio status ticks publish this same state.
+    event OnBetaGwentPresentation100(tempo : int, reduced : bool)
+    {
+        var player : W3PlayerWitcher;var persisted : bool;
+        if(!configured || (tempo!=10 && tempo!=15 && tempo!=20))return false;
+        presentationTempo=tempo;presentationReduced=reduced;player=(W3PlayerWitcher)thePlayer;
+        if(player)persisted=player.BetaGwentSetPresentation(tempo,reduced);
+        LogChannel('BetaGwent',"PRESENTATION_SETTINGS tempo="+tempo+" reduced="+reduced+" persisted="+persisted);
+        return persisted;
+    }
     event OnBetaGwentAudioSettings(effects : bool, voices : bool, optional tempo : int, optional reduced : bool, optional aiPause : int, optional difficulty : int)
     { var player : W3PlayerWitcher;if (configured && audio) audio.Configure(effects, voices);player=(W3PlayerWitcher)thePlayer;if(player && (tempo==10 || tempo==15 || tempo==20)){presentationTempo=tempo;presentationReduced=reduced;player.BetaGwentSetPresentation(tempo,reduced);}
       if(player && aiPause>=1 && aiPause<=4){presentationAiPause=aiPause;player.BetaGwentSetAiPause(aiPause);}
@@ -1259,7 +1325,9 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     event OnBetaGwentLeaderMotion(dynamic : bool)
     { if(!configured)return false;if(dynamic)FactsSet("bg_static_leaders",0);else FactsSet("bg_static_leaders",1);return true; }
     event OnBetaGwentBoardHelp(visible : bool)
-    { if(!configured)return false;if(visible)FactsSet("bg_hide_help",0);else FactsSet("bg_hide_help",1);return true; }
+    { if(!configured)return false;if(visible)FactsSet("bg_show_help",1);else FactsSet("bg_show_help",0);return true; }
+    event OnBetaGwentBoardChains(visible : bool)
+    { if(!configured)return false;if(visible)FactsSet("bg_show_chains",1);else FactsSet("bg_show_chains",0);return true; }
     event OnBetaGwentAudioCancel()
     {
         audioRevisions.Clear(); audioFrames.Clear();
@@ -1430,8 +1498,14 @@ class CR4BetaGwentBoardMenu extends CR4Menu
     }
     event OnBetaGwentRequestAbort(value : int, requestId : int, playerId : int, kind : int)
     {
+        var sourceId : int;
         if (!AcceptRevision(value)) return false;
-        if (duel.IsPending()) { Publish("Сыгранная карта ожидает цель. Для новой партии нажмите Заново."); return false; }
+        if (duel.IsPending()) {
+            sourceId=duel.PendingSourceId();
+            if(playerId!=1 || requestId!=publishedRequestId || kind!=publishedRequestKind || !duel.CancelTargetRequest098(requestId,playerId))return false;
+
+            Publish(session.GetMessage());return true;
+        }
         if (requestFlow.Abort(requestId, playerId, kind)) Publish(requestFlow.GetMessage());
         else { LogChannel('BetaGwent', "REQUEST_FLOW_REJECT abort id=" + requestId); Publish("Действие запроса отклонено; снимок обновлён."); }
     }

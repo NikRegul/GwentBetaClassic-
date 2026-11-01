@@ -42,7 +42,7 @@ python .\tools\recon\audit_sources.py
 & .\tools\recon\inspect_beta_assembly.ps1
 & .\tools\recon\inspect_beta_defaults.ps1
 python .\tools\recon\inspect_redkit.py
-& 'C:\Users\NikR\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' .\tools\recon\inspect_tierlist.py
+& 'C:\Users\<user>\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' .\tools\recon\inspect_tierlist.py
 ```
 
 Для DLL используется уже имеющаяся MelonLoader/Mono.Cecil.dll. Для PDF используется bundled Python pypdf/pdfplumber. Источники не модифицируются. Два audit JSON с regex/art-derived candidates не заменяют компиляцию C# или проверенный mapping.

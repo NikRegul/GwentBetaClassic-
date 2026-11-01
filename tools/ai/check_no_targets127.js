@@ -10,6 +10,8 @@ for(const side of [1,2]){
  check(g.visualFrames.filter(f=>f.kind===18).length===1,'one no-target cue for empty damage '+side);
 }
 {const g=fixture(1),c=add(g,122204,8,4,1);g.recordVisuals=true;g.visualFrames=[];
+ // A real swap needs a deck replacement, not just a card in hand.
+ add(g,112405,16,0,1);
  check(g.Play(1,c.cardState.instanceId,2)&&g.IsPending(),'optional ability offers a legal target');
  check(g.FinishTarget(g.requestId),'player can decline optional ability');
  check(g.visualFrames.every(f=>f.kind!==18),'voluntary skip is not reported as missing targets');}

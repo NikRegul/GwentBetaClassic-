@@ -31,7 +31,15 @@ def main():
                 if timestamps and time.time()-max(timestamps)>1800:raise RuntimeError('Build output stale for30min; inspect before retry')
                 save();time.sleep(15)
             status['status']='verifying-final-build';save()
-            if not (a.build/'archive-verification.json').exists():run('independent-build-verification',[sys.executable,'-X','utf8','tools/features093/verify093.py',a.build])
+            version=json.loads((a.build/'release.json').read_text('utf8'))['version']
+            if not (a.build/'archive-verification.json').exists():
+                check=[sys.executable,'-X','utf8','tools/features093/verify093.py',a.build,'--version',version]
+                if version in ('0.9.4','0.9.4a'):check+=['--user-release']
+                run('independent-build-verification',check)
+            if version!='0.9.3':
+                while not (a.build/'release-readiness.json').exists():
+                    if (a.build/'build-failed.json').exists():raise RuntimeError('Build failed before readiness')
+                    save();time.sleep(5)
             if not (a.out/'preflight-config.json').exists():run('prepare-inputs',['node','tools/ai/prepare_classic093_knockout.cjs',a.build,a.out,a.grids,a.workers])
             runner=a.out/'frozen/tools/ai/run_classic093_knockout.cjs'
             status['status']='benchmarking-before-plan-freeze';save()

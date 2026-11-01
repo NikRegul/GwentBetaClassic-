@@ -14,11 +14,11 @@ class CBetaGwentDuelScoia extends IScriptable
         for(i=0;i<cards.Size();i+=1)
         {s=cards[i].card;if((side!=0 && s.positionPlayerId!=side) || (s.locationMask&zone)==0 || (s.runtimeTierMask&tier)==0 || (s.runtimeTemplate.typeMask&types)==0 || (s.tokenMask&ignore)!=0 || s.isWaitingToDie)continue;
          if(source && source.monsterIds.Contains(s.instanceId))continue;ids.PushBack(s.instanceId);}
-    }
+    game.PhysicalOrder096(ids);}
     private function Request(source : CBetaGwentDuelCard, side : int, zone : int, tier : int, types : int, minimum : int)
     {var ids : array<int>;Query(side,zone,tier,types,BetaGwentNorthPick((zone&7)!=0,264,0),source,ids);game.MonsterRequest(source,ids,BetaGwentNorthPick((zone&7)!=0,0,2),minimum,1);}
     public function History(card : CBetaGwentDuelCard)
-    {var s : SBetaGwentCardSnapshot;var side : int;s=card.Snapshot();if(s.runtimeTemplate.typeMask!=4 || !BetaGwentNilfDwarf(s.runtimeTemplate.templateId))return;side=Side(card);if(side==1)historyOne.PushBack(s.instanceId);else historyTwo.PushBack(s.instanceId);}
+    {var s : SBetaGwentCardSnapshot;var m : SBetaGwentMatchSnapshot;s=card.Snapshot();m=game.NilfMatch();if(m.currentPlayerId==1)historyOne.PushBack(s.instanceId);else historyTwo.PushBack(s.instanceId);}
     public function BeforePlayed(card : CBetaGwentDuelCard) : bool
     {
         var cards : array<SBetaGwentDevelopmentCard>;var s,t : SBetaGwentCardSnapshot;var ambush : CBetaGwentDuelCard;var i,side : int;var cancelled : bool;
@@ -42,25 +42,25 @@ class CBetaGwentDuelScoia extends IScriptable
      game.MonsterRequest(source,valid,0,1,1);}
     public function Played(source : CBetaGwentDuelCard)
     {
-        var id,side,enemy,i,damage,power : int;var s,t : SBetaGwentCardSnapshot;var ids,valid,history : array<int>;
+        var id,side,enemy,i,damage,power : int;var s,t : SBetaGwentCardSnapshot;var original : SBetaOriginalTemplate;var ids,valid,history : array<int>;
         id=source.TemplateId();side=Side(source);enemy=BetaGwentOpponentId(side);s=source.Snapshot();source.monsterStage=0;source.monsterIds.Clear();source.monsterRemaining=1;
         BetaGwentLog("DUEL_SCOIA_PLAY template="+id+" side="+side);
         if(id==142101)
         {Query(side,7,15,12,8,NULL,ids);for(i=0;i<ids.Size();i+=1){t=game.FindCard(ids[i]).Snapshot();if(BetaGwentNilfDwarf(t.runtimeTemplate.templateId))power+=1;if(BetaGwentNilfElf(t.runtimeTemplate.templateId))damage+=1;}
          if(power>0)game.MonsterPower(source,source,power);source.monsterStored=damage;if(damage>0){Request(source,enemy,7,15,4,1);return;}}
         else if(id==142102)
-        {Query(side,16,6,12,0,NULL,ids);for(i=0;i<ids.Size();i+=1){t=game.FindCard(ids[i]).Snapshot();if((t.tokenMask&8)!=0)valid.PushBack(ids[i]);}game.MonsterRequest(source,valid,2,0,1);return;}
+        {Query(side,16,6,12,0,NULL,ids);for(i=0;i<ids.Size();i+=1){t=game.FindCard(ids[i]).Snapshot();original=BetaOriginalTemplate(t.runtimeTemplate.templateId);if((original.tokens&8)!=0)valid.PushBack(ids[i]);}if(valid.Size()>0)game.ShuffleIds(valid);game.MonsterRequest(source,valid,2,0,1);return;}
         else if(id==142103){Request(source,enemy,7,15,4,1);return;}
         else if(id==142104){Milva(source,enemy);Milva(source,side);}
         else if(id==142105){source.monsterRemaining=3;ZoltanTargets(source);return;}
         else if(id==142106){Request(source,enemy,32,6,2,0);return;}
         else if(id==142107)
-        {Query(side,16,2,2,0,NULL,ids);for(i=0;i<ids.Size();i+=1)if(BetaGwentScoiaIthlinne(game.FindCard(ids[i]).TemplateId()))valid.PushBack(ids[i]);game.MonsterRequest(source,valid,2,0,1);return;}
+        {Query(side,16,2,2,0,NULL,ids);for(i=0;i<ids.Size();i+=1)if(BetaGwentScoiaIthlinne(game.FindCard(ids[i]).TemplateId()))valid.PushBack(ids[i]);if(valid.Size()>0)game.ShuffleIds(valid);game.MonsterRequest(source,valid,2,0,1);return;}
         else if(id==142108){BetaGwentScoiaPool(id,ids);game.MonsterRequest(source,ids,1,1,1);return;}
         else if(id==142203)
         {if(s.timerValue!=1){game.MonsterComplete(source);return;}Query(side,16,14,4,0,NULL,ids);if(ids.Size()>0)valid.PushBack(ids[game.RandomIndex(ids.Size())]);Query(side,16,14,2,0,NULL,ids);if(ids.Size()>0)valid.PushBack(ids[game.RandomIndex(ids.Size())]);game.MonsterRequest(source,valid,2,0,1);return;}
         else if(id==200080)
-        {if(side==1)history=historyOne;else history=historyTwo;for(i=history.Size()-1;i>=0;i-=1)if(history[i]!=s.instanceId){t=game.FindCard(history[i]).Snapshot();if(BetaGwentNilfDwarf(t.runtimeTemplate.templateId)){game.MonsterPower(source,source,t.power.basePower);break;}}}
+        {if(side==1)history=historyOne;else history=historyTwo;for(i=history.Size()-1;i>=0;i-=1)if(history[i]!=s.instanceId){t=game.FindCard(history[i]).Snapshot();if(BetaGwentNilfDwarf(t.runtimeTemplate.templateId)){game.MonsterPower(source,source,t.runtimeTemplate.power);break;}}}
         else if(id==200209)
         {Query(side,16,2,14,0,NULL,ids);source.monsterRemaining=Min(2,ids.Size());if(source.monsterRemaining>0){Request(source,side,8,15,14,0);return;}}
         else if(id==201611){DuelTargets(source);return;}
@@ -114,7 +114,7 @@ class CBetaGwentDuelScoia extends IScriptable
         if(id==142107){source.monsterStored=t.runtimeTemplate.templateId;source.monsterStage=1;game.MonsterPlayExisting(source,target);return;}
         if(id==142101)game.MonsterPower(source,target,-source.monsterStored);
         else if(id==142103)
-        {game.MonsterPower(source,target,-8);game.FlushDeaths();u=target.Snapshot();if((u.locationMask&7)==0){Query(side,8,14,4,0,NULL,ids);for(i=0;i<ids.Size();i+=1)if(BetaGwentNilfElf(game.FindCard(ids[i]).TemplateId()))game.MonsterOperation(source,game.FindCard(ids[i]),1,1,8);}}
+        {game.MonsterPower(source,target,-8);game.FlushDeaths();u=target.Snapshot();if(game.UnitDied(u)){Query(side,8,14,4,0,NULL,ids);for(i=0;i<ids.Size();i+=1)if(BetaGwentNilfElf(game.FindCard(ids[i]).TemplateId()))game.MonsterOperation(source,game.FindCard(ids[i]),1,1,8);}}
         else if(id==142105){source.monsterIds.PushBack(selected);source.monsterRemaining-=1;if(source.monsterRemaining>0){ZoltanTargets(source);return;}FinishZoltan(source);return;}
         else if(id==142203){game.NilfTake(target,side);game.QueueTimer(source,0,1);}
         else if(id==200209)

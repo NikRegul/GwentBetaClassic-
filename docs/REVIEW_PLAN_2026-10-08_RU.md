@@ -20,7 +20,7 @@
 
 ### 1. Ошибки изображений на экране бочек — подтверждено логом
 
-В `C:\Users\NikR\Documents\The Witcher 3\scriptslog.txt` от 08.10:
+В `C:\Users\<user>\Documents\The Witcher 3\scriptslog.txt` от 08.10:
 редактор загружает `decoded=43 failed=0`, после перехода в BetaGwentKeg появляется `decoded=13 failed=30` и `BOARD_ARTWORK_FAILURE -3707: TypeError: Error #1009`.
 При этом покупка, выдача четырёх карт, выбор пятой и возврат в редактор проходят.
 

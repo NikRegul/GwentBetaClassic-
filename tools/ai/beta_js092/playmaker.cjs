@@ -92,7 +92,7 @@ class BetaPlayMaker {
  lowTempo(){
   let chosen=null,value=2147483647;
   for(const n of this.root.children){
-   if(isPass(n)||!n.state)continue;
+   if(n.status!==Status.OK||!n.state||isPass(n))continue;
    const card=n.state.cards.find(c=>c.id===n.decision.cardId);
    if(!card?.semanticTags.includes(6))continue;
    const diff=this.originalDiff(n);if(diff>=this.diff&&diff<value){chosen=n;value=diff;}
@@ -121,7 +121,7 @@ class BetaPlayMaker {
   if(strategy==='DontPassUnlessAllPlayActionsAreDetrimental'){
    let highest=-2147483648,chosen=null;
    for(const n of this.root.children){
-    if(isPass(n))continue;const diff=this.originalDiff(n);
+    if(n.status!==Status.OK||!n.state||isPass(n))continue;const diff=this.originalDiff(n);
     if(diff>=this.diff){if(n!==this.best){this.setBest(n);this.best=n;}this.implement('PlayBestCard');return;}
     if(diff>highest){highest=diff;chosen=n;}
    }

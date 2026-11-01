@@ -9,7 +9,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File D:\w3mod\tools\Build-Stage11
 Для одного языка укажите `-Language ru` или `-Language en`. Для повторного извлечения кадров Лавка добавьте:
 
 ```powershell
--KegVideo "C:\Users\NikR\Videos\Captures\Gwent 2026-10-08 00-12-24.mp4"
+-KegVideo "C:\Users\<user>\Videos\Captures\Gwent 2026-10-08 00-12-24.mp4"
 ```
 
 Нужны установленный REDkit 5.01 с depot `D:\w3mod\depot`, созданный проект `D:\w3mod\GwentB\myproject1`, Python с Pillow, numpy и av, Node.js, Apache Royale и Flex из `tools\vendor`, Microsoft JDK 11 и Wwise 2023.1 с лицензией. Лицензию Wcc принимает пользователь заранее. Лицензионный ключ Wwise в архив и Git не включается.

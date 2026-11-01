@@ -11,6 +11,12 @@ import argparse, hashlib, json, re, shutil
 def fields(text):
     return dict(re.findall(r'(\w+)=([^\s]+)', text))
 
+CARD_FIELDS=['id','template','side','owner','zone','index','power','base','armor','tokens','timer','tier','playable']
+
+def decode_card(token):
+    if not re.fullmatch(r'-?\d+(?::-?\d+){12}',token):return None
+    return dict(zip(CARD_FIELDS,map(int,token.split(':'))))
+
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -29,9 +35,8 @@ def main():
         if '[BetaGwent] AI_POSITION ' in line and decision is not None:decision['position']=fields(line)
         if '[BetaGwent] AI_POSITION_CARDS ' in line and decision is not None:
             for token in line.split():
-                if not re.fullmatch(r'-?\d+(?::-?\d+){12}',token):continue
-                names=['id','template','owner','side','zone','index','power','base','armor','tokens','timer','tier','playable']
-                decision['cards'].append(dict(zip(names,map(int,token.split(':')))))
+                card=decode_card(token)
+                if card is not None:decision['cards'].append(card)
         if '[BetaGwent] AI_REASON ' in line and decision is not None:decision['events'].append(dict(line=line_no,**fields(line)))
         if '[BetaGwent] NATIVE_GWENT_RESULT ' in line:game['result']=dict(line=line_no,**fields(line))
     targets=[];incomplete=[]

@@ -1,0 +1,17 @@
+{
+  "sourceLogSha256": "f1d5e080dc67ba2593c14bf20258f352bc1159b2b6bbf3a768e580f30ad70640",
+  "seed": 318566780,
+  "sourceGame": 9,
+  "sourceDecision": 15,
+  "all17LoggedPositionsVerified": true,
+  "historicalRuntimeVerified": false,
+  "fixtureSha256": "c2eafa44d52d6745ee9feb5e0ad0318c22a8fd7d7ce969e1a684ed69da48c628",
+  "originalFinalScore": [
+    110,
+    110
+  ],
+  "forcedLegalNekkerObservedScore": [
+    113,
+    110
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "sourceLogSha256": "7dcc2f230fb2d03b052447a0a15a73258f8b7a8609064fb98b2031c7dec2d97e",
+  "replayReportSha256": "2c3f48f0ebfc11d58475b44fb68d1a5c51188a076f3101270d9ba248d5f735e4",
+  "sourceSnapshotManifestSha256": "0149a8ed023e7fceba1fb005189d384a702e55b36eb03fec6c303c487dc09c26",
+  "loggedObservablesVerified": true,
+  "historicalRuntimeVerified": false,
+  "files": {
+    "decision-9.json.gz": "f706e3dc7a18de5192f271c5081acaf4838cca8e4d436ac8f8b336085f519389",
+    "decision-10.json.gz": "daa667bf67d10b46b76f96953c0f7b56043bf561f8e8c178af5e389d1cc5c7ac",
+    "decision-12.json.gz": "ac098424ec09826cdbf32c079c460ae08582046f7816f7ba705da847116837a7"
+  }
+}

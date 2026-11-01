@@ -1,6 +1,6 @@
 """Read real OpenType cmaps; check new UI strings against shipped font subsets."""
 from pathlib import Path
-import argparse,hashlib,json,struct
+import argparse,hashlib,json,struct,re
 ROOT=Path(__file__).resolve().parents[2]
 
 def points(path):
@@ -27,15 +27,20 @@ def points(path):
 def main():
     p=argparse.ArgumentParser();p.add_argument('out',type=Path);a=p.parse_args()
     data=json.loads((ROOT/'data/beta924/design/release093_ui.json').read_text('utf8'));records=[]
+    ui_text=(ROOT/'BetaGwent/ui/src/BetaGwentUiText096.as').read_text('utf-8-sig')
+    ui_maps=json.loads(re.search(r'BY:Array=(.*);',ui_text)[1])
     for i,code in enumerate(data['languages']):
         chars={ord(c) for row in [*data['text'].values(),*data['opponents'].values()] for c in row[i] if not c.isspace()}
+        ui_keys=['Итоги партии','Награды','Бронзовая','Серебряная','Золотая']
+        extra=ui_keys if i==0 else [ui_maps[i-1][key]for key in ui_keys]
+        chars.update(ord(c)for text in extra for c in text+text.upper() if not c.isspace())
         directory=ROOT/'BetaGwent/build-inputs/authoring/languages137/fonts/prepared'/code
         faces=json.loads((directory/'plan.json').read_text('utf8'))['faces']
         for role,face in faces.items():
             font=directory/face['file'];missing=chars-points(font)
             assert not missing,(code,role,''.join(map(chr,sorted(missing))))
             records.append(dict(language=code,face=role,font=font.name,sha256=hashlib.sha256(font.read_bytes()).hexdigest(),characters=len(chars),missing=0))
-    report=dict(languages=13,complete=True,records=records,scope='Actual permanent shipped OpenType font subsets; new offer labels and opponent names only, not a native-game screenshot check.')
+    report=dict(languages=13,complete=True,records=records,scope='Actual shipped OpenType subsets: offer/NPC labels plus results/rewards and preserved rarity labels including uppercase; excludes legacy prose and sprite/vector glyphs; no native-game screenshot claim.')
     a.out.write_text(json.dumps(report,indent=2)+'\n','utf8');print('PASS all13languages,',len(records),'real font faces')
 
 if __name__=='__main__':main()

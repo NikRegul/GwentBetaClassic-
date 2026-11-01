@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const cp=require('node:child_process');for(const k of ['spawn','spawnSync','exec','execSync','execFile','execFileSync','fork'])cp[k]=()=>{throw Error('Native process forbidden');};
 const {personality}=require('./beta_js092/profiles.cjs'),{BetaTurnController}=require('./beta_js092/controller.cjs');
-const {stepMulligan}=require('./beta_js092/mulligan.cjs');
+const {stepMulligan}=require('./beta_js092/mulligan.cjs'),{BetaReaction}=require('./beta_js092/choices.cjs');
 const stage=path.resolve(process.argv[2]),rules=path.resolve(process.argv[3]),out=path.resolve(process.argv[4]);assert(!fs.existsSync(out),'Fresh output required');
 const sha=file=>crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const manifestFile=path.join(rules,'manifest.json'),frozenManifest=JSON.parse(fs.readFileSync(manifestFile,'utf8'));
@@ -22,6 +22,8 @@ const make=new Function('seed','useDeckMapping',source+String.raw`
  cloneSession:g=>new CBetaGwentCloner().CloneSession(g,++stamp),serialize:g=>pack(g,true),
  profile:(f,preset)=>{let p=new CBetaOriginalPersonality();if(!(useDeckMapping?p.InitializeForDeck(preset,f):p.Initialize(f)))throw Error('profile '+preset);return p;},
  mulligan:(g,p)=>{let m=new CBetaOriginalMulligan();m.personality=p;return m.Step(g);},
+ reaction:()=>new CBetaOriginalReaction(),
+ reactionStep:(r,g,p,side)=>{const ok=r.Step(rt,p,g,side);if(r.failed)throw Error(r.error);return ok;},
  controller:(g,p)=>{let c=new CBetaOriginalTurnController();if(!c.Start(g,rt,p))throw Error(c.error);return c;}};`);
 const names={2:'p_Monster_Practice',4:'p_Nilfgaard_Practice',8:'p_NorthernRealms_Practice',16:"p_Scoia'tael_Practice",32:'p_Skellige_Practice'};
 const root=path.resolve(__dirname,'../..'),ours=JSON.parse(fs.readFileSync(path.join(root,'data/beta924/ai/validation093/final092-rosters.json'),'utf8')).decks;
@@ -76,7 +78,18 @@ try{
      }
      eq(report.lastChosen.typed,report.lastChosen.source,'Source chosen branch before live replay');
     }
-    eq([s.finished,s.mutations,s.phase],[r.finished,r.mutations,r.phase],'Same cooperative controller step');assert(s.mutations<=1);
+    eq([s.finished,s.mutations,s.phase,!!s.waiting],[r.finished,r.mutations,r.phase,!!r.waiting],'Same cooperative controller step');assert(s.mutations<=1);
+    if(r.waiting){
+     // The other seat's reactive request (Standard Bearer) during this action.
+     const other=3-side,jr=new BetaReaction(runtime,personality(expectedProfile(decks[other]))),wr=runtime.reaction(),wp=runtime.profile(decks[other].faction,decks[other].presetId);
+     let answered=0;
+     while(a.IsPending()&&!a.mulligan&&a.RequestDecisionSide()===other){
+      assert(++answered<1000,'Reaction step limit');
+      const x=jr.step(a,other),y=runtime.reactionStep(wr,b,wp,other);eq(y,x,'Same other-seat reaction step');assert(x,'Reaction made progress');
+      eq(runtime.serialize(b),runtime.serialize(a),'Same state after other-seat reaction');
+     }
+     report.reactions=(report.reactions||0)+1;
+    }
     report.peakActionsPerCallback=Math.max(report.peakActionsPerCallback,s.mutations);callbacks++;assert(++count<100000,'Controller callback limit');
     if(count%100===0){report.current={index:i,turns,side,phase:s.phase,count,elapsed};save();}}
    eq(ws.finished,true,'Typed controller completed');

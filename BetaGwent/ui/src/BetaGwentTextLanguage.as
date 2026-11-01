@@ -43,6 +43,7 @@
         {
             initialize();
             data=BetaGwentUiText142.extend(value,data);
+            data=BetaGwentUiText096.extend(value,data);
             data=BetaGwentExchangeText082.extend(value,data);
             for(var old:int=1;old<=13;old++){maps[old]={};groups[old]={};}
             maps[value]=data;caches=[];cacheCount=0;
@@ -100,17 +101,17 @@
             update(field,fields[field]);
         }
         // Refit after asynchronous font/dictionary loading as well as initial drawing.
-        public static function fitButton(field:TextField,size:Number,minimum:Number,height:Number,originY:Number=0,padding:Number=4):void
+        public static function fitButton(field:TextField,size:Number,minimum:Number,height:Number,originY:Number=0,padding:Number=4,align:String="center"):void
         {
             if(!fields[field])track(field);
-            fields[field].buttonFit={size:size,minimum:minimum,height:height,originY:originY,padding:padding};
+            fields[field].buttonFit={size:size,minimum:minimum,height:height,originY:originY,padding:padding,align:align};
             layoutButton(field,fields[field]);
         }
         private static function layoutButton(field:TextField,state:Object):void
         {
             var spec:Object=state.buttonFit;if(!spec)return;
             var f:TextFormat=field.getTextFormat();var size:Number=spec.size;
-            f.letterSpacing=0;f.size=size;f.align="center";field.multiline=false;field.wordWrap=false;
+            f.letterSpacing=0;f.size=size;f.align=spec.align||"center";field.multiline=false;field.wordWrap=false;
             field.defaultTextFormat=f;field.setTextFormat(f);
             while(field.textWidth>field.width-4&&size>spec.minimum){size=Math.max(Number(spec.minimum),size-1);f.size=size;field.defaultTextFormat=f;field.setTextFormat(f);}
             if(field.textWidth>field.width-4){

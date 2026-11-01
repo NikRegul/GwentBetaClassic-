@@ -34,11 +34,12 @@ class CBetaGwentDuelEffectAction extends CBetaGwentManagedAction
     public function Setup(owner : CBetaGwentDuelEffectRuntime, card : CBetaGwentDuelCard,
         kind : int, value : int, bypassArmor : bool, context : CBetaGwentActionContext, optional source : CBetaGwentDuelCard, optional locations : int) : bool
     {
-        allowedLocations = 7; if (locations == 31 && kind == 1 && value > 0) allowedLocations = 31;
+        allowedLocations = 7;if(kind==4)allowedLocations=15; if (locations == 31 && kind == 1 && value > 0) allowedLocations = 31;
         if (kind == 12 && value > 0 && (locations == 31 || locations == 32 || locations == 543)) allowedLocations = locations;
         if (kind == 8 && value == 200457) allowedLocations = 32;
         if (kind == 2 && locations == 32) allowedLocations = 32;
         if((kind==1 || kind==11) && (locations==8 || locations==15))allowedLocations=locations;
+        if(kind==1 && value>0 && locations==128)allowedLocations=128;
         if(kind==19 && (locations==7 || locations==8 || locations==32))allowedLocations=locations;
         if ((kind == 15 || kind == 18) && locations == 16) allowedLocations = 16;
         runtime = owner; attacker = source; target = card; operation = kind; amount = value; ignoreArmor = bypassArmor;
@@ -47,12 +48,13 @@ class CBetaGwentDuelEffectAction extends CBetaGwentManagedAction
     public function IsValid() : bool
     {
         var s : SBetaGwentCardSnapshot;
-        if (!target || !runtime || operation < 1 || operation > 19) return false;
+        if (!target || !runtime || operation < 1 || operation > 21) return false;
         if (operation == 4 || operation == 5)
         { if (!runtime.game.CanConsume(attacker, target)) return false; s = attacker.Snapshot(); if ((s.locationMask & 7) == 0 || s.isWaitingToDie) return false; }
         s = target.Snapshot();
         if (operation == 5) return (s.locationMask == 32 || s.locationMask == 8) && !s.isWaitingToDie;
         if (operation == 14) return (s.locationMask & 7) != 0 && (bool)attacker;
+        if(operation==21)return (s.locationMask&248)!=0 && s.power.currentPower==0 && s.power.basePower+s.power.permanentPower<=0;
         return (s.locationMask & allowedLocations) != 0 && !s.isWaitingToDie;
     }
     protected function BeforeApplyImpl()
@@ -88,6 +90,8 @@ class CBetaGwentDuelEffectAction extends CBetaGwentManagedAction
         else if (operation == 16) target.Power().SetCurrentPair(old.power.currentPower, 0);
         else if (operation == 18) target.ResetCurrentPower();
         else if(operation==19)target.Power().SetBasePower(amount);
+        else if(operation==20){if(!target.ResetTemplateState())return false;}
+        else if(operation==21){runtime.game.NilfBanish(target);target.SetPlayable(false);}
         else return false;
         next = target.Snapshot();
         runtime.NilfPowerChanged(attacker,target,old,next,operation);
@@ -139,7 +143,7 @@ class CBetaGwentDuelEffectRuntime extends CBetaGwentActionSink
     public function Enqueue(card : CBetaGwentDuelCard, kind : int, value : int, bypassArmor : bool, optional source : CBetaGwentDuelCard, optional locations : int) : bool
     {
         var action : CBetaGwentDuelEffectAction; var key, targetId : int; var targetState : SBetaGwentCardSnapshot;
-        if (failed || !card || kind < 1 || kind > 19) return false;
+        if (failed || !card || kind < 1 || kind > 21) return false;
         targetState = card.Snapshot(); targetId = targetState.instanceId;
         action = new CBetaGwentDuelEffectAction in this;
         key = kind * 2; if (value < 0) key += 1;
@@ -153,10 +157,13 @@ class CBetaGwentDuelEffectRuntime extends CBetaGwentActionSink
         return true;
     }
     public function EnqueueRelocation(card : CBetaGwentDuelCard, side : int, row : int, resetHand : bool) : bool
+    { return EnqueueRelocationAt(card,side,row,resetHand,-3); }
+    public function EnqueueRelocationAt(card : CBetaGwentDuelCard, side : int, row : int, resetHand : bool, index : int) : bool
     {
         var action : CBetaGwentDuelRelocateAction;
         if (failed || !card) return false;
         action = new CBetaGwentDuelRelocateAction in this;
+        action.requestedIndex=index;
         if (!action.Setup(this, game, card, side, row, resetHand, context) || !PushPrepared(action)) { failed = true; return false; }
         return true;
     }
@@ -230,6 +237,7 @@ class CBetaGwentDuelEffectRuntime extends CBetaGwentActionSink
     { game.RecordConsume(source, target); }
     private function PushPrepared(action : CBetaGwentManagedAction) : bool
     {
+        game.CommitCancelablePlay098();
         if (buildingFrame) return buildingFrame.actions.Push(action, false);
         if (dispatchingFrame) return dispatchingFrame.actions.Push(action, false);
         return queue.Push(action, false);
@@ -412,7 +420,7 @@ class CBetaGwentDuelTimerAction extends CBetaGwentManagedAction
 class CBetaGwentDuelRelocateAction extends CBetaGwentManagedAction
 {
     public var runtime : CBetaGwentDuelEffectRuntime; public var game : CBetaGwentDuelSession;
-    public var card : CBetaGwentDuelCard; public var side, row : int; public var resetHand : bool;
+    public var card : CBetaGwentDuelCard; public var side, row, requestedIndex : int; public var resetHand : bool;
     public function Setup(owner : CBetaGwentDuelEffectRuntime, session : CBetaGwentDuelSession,
         target : CBetaGwentDuelCard, destinationSide : int, destinationRow : int, handReset : bool, context : CBetaGwentActionContext) : bool
     { runtime = owner; game = session; card = target; side = destinationSide; row = destinationRow; resetHand = handReset; SetStateChanging(true); return Prepare(context); }
@@ -420,6 +428,6 @@ class CBetaGwentDuelRelocateAction extends CBetaGwentManagedAction
     { return (bool)game && (bool)card && (side == 1 || side == 2) && (row == 1 || row == 2 || row == 4 || row == 8); }
     protected function BeforeApplyImpl() { runtime.RecordBefore(); }
     protected function ApplyImpl() : bool
-    { if (!game.ApplyRelocation(card, side, row, resetHand)) return false; runtime.RecordApplied(); return true; }
+    { if (!game.ApplyRelocationAt(card, side, row, resetHand, requestedIndex)) return false; runtime.RecordApplied(); return true; }
     protected function AfterApplyImpl() : bool { runtime.RecordAfter(); return true; }
 }

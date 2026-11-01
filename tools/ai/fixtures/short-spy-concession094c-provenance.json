@@ -1,0 +1,23 @@
+{
+  "kind": "exact-replay-development-fixture",
+  "tournament": "D:\\w3mod\\BetaGwent\\build\\ai-improvement-20261026\\tournament-01",
+  "planSha256": "c50c1c155a98027071b806c41a42d6733f0df088b1457f89b7c2319aa378c2af",
+  "runtime": "Single WS to JS battle engine; exact replay validated before extraction",
+  "independentExpectation": "In a developed optional first round while behind and short of cards, a usable drawing spy may convert itself before concession; inability to retake this optional round must not alone reject it. Preserve the hand, use only public opponent information, and retain mandatory-round/fresh-opening/trap guards.",
+  "records": [
+    {
+      "file": "short-spy-concession094c-t16.json.gz",
+      "sha256": "dc54523f4618dc5aefa5188ba5e81948b4bfba5445caa53756390f90d41ec594",
+      "source": "BetaGwent\\build\\ai-improvement-20261026\\hard-replays-01\\g00-r7-s000-p2-m0-t16.json.gz",
+      "sourceGame": "g00-r7-s000-p2-m0",
+      "turn": 16
+    },
+    {
+      "file": "short-spy-concession094c-t18.json.gz",
+      "sha256": "9114b8b2d7f6582349a136ed590db56c1bf9bf28a3f149ac14353a0719afb615",
+      "source": "BetaGwent\\build\\ai-improvement-20261026\\hard-replays-01\\g00-r7-s000-p2-m0-t18.json.gz",
+      "sourceGame": "g00-r7-s000-p2-m0",
+      "turn": 18
+    }
+  ]
+}

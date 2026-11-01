@@ -80,6 +80,8 @@ class CBetaGwentDuelAudio extends IScriptable
     private var bankReported, bankPendingReported : bool;
     private var bankRequestedAt : float;
     private var nextEffect, nextClick, voiceUntil : float;
+    private var nextBetaUiClick : float;
+    private var lastBetaUiKind : int;
     private var introVoices : bool;
     private var musicDucked : bool;
     private var editorMusicWanted, editorMusicPlaying, editorMusicRequested, ownsEditorMusicBank : bool;
@@ -154,7 +156,17 @@ class CBetaGwentDuelAudio extends IScriptable
         var now : float; var eventName : string;
         if (!enabled) return;
         // A confirmed replacement can arrive in the same tick as its click.
-        now = Now(); if (kind != 5 && now < nextClick) return;
+        now = Now(); if (kind < 6 && kind != 5 && now < nextClick) return;
+        // 0.9.6 Beta interface sounds (stage096 bank import); silent until the bank has them.
+        if (kind >= 6)
+        {
+            // The controller/mouse generic click precedes the screen callback.
+            // Do not let it swallow the original window cue in the same tick.
+            if (!BetaReady() || (kind == lastBetaUiKind && now < nextBetaUiClick)) return;
+            eventName = BetaGwentAudioUi096(kind); if (eventName == "") return;
+            lastBetaUiKind = kind; nextBetaUiClick = now + 0.05f;
+            theSound.SoundEvent(eventName); return;
+        }
         if (BetaReady()) eventName = BetaGwentAudioUi(kind);
         if (eventName == "") switch (kind)
         {
@@ -167,6 +179,19 @@ class CBetaGwentDuelAudio extends IScriptable
         }
         nextClick = now + 0.08f; theSound.SoundEvent(eventName);
     }
+    // CoinTurnIndicatorSoundHandler: StartPassing on hold, PassingConfirmed
+    // (plays the confirmation and stops StartPassing) or a plain stop on release.
+    public function PassHold(holdPhase : int)
+    {
+        var eventName : string;
+        if (!enabled || !BetaReady()) return;
+        if (holdPhase == 1) eventName = "bg79_fx_2977021572";
+        else if (holdPhase == 2) eventName = "bg79_fx_3893297074";
+        else eventName = "bg79_fx_2977021572_stop";
+        theSound.SoundEvent(eventName);
+    }
+    public function ArmorBreak099()
+    { if(!enabled)return;if(BetaReady())theSound.SoundEvent("bg79_fx_2876994866");else theSound.SoundEvent("gui_gwint_gem_destruction"); }
     public function SpellLaunch(templateId : int, kind : int)
     {
         var eventName : string;
@@ -385,4 +410,34 @@ class CBetaGwentDuelAudio extends IScriptable
         Cancel();
         if (ownsBank) { theSound.SoundUnloadBank("betagwent79.bnk"); ownsBank = false; }
     }
+}
+
+// Beta UI sound events used by the 0.9.6 interface (UIDBPanelSoundHandler,
+// ToggleButtonSoundHandler, UICardPreviewSoundHandler).
+function BetaGwentAudioUi096(kind : int) : string
+{
+    switch (kind)
+    {
+        case 6: return "bg79_fx_1805474783";
+        case 7: return "bg79_fx_1162805390";
+        case 8: return "bg79_fx_2697229902";
+        case 9: return "bg79_fx_2287604773";
+        case 10: return "bg79_fx_3246879123";
+        case 11: return "bg79_fx_1692730444";
+        case 12: return "bg79_fx_726369276";
+        case 13: return "bg79_fx_3093941543";
+        case 14: return "bg79_fx_1126876212";
+        case 15: return "bg79_fx_347636528";
+        case 16: return "bg79_fx_2518508117";
+        case 17: return "bg79_fx_3223397756";
+        case 18: return "bg79_fx_186293181";
+        case 19: return "bg79_fx_3623975022";
+        case 20: return "bg79_fx_2909756106";
+        case 21: return "bg79_fx_3558782073";
+        case 22: return "bg79_fx_310403972";
+        case 23: return "bg79_fx_331755273";
+        case 24: return "bg79_fx_827469296";
+        default: break;
+    }
+    return "";
 }

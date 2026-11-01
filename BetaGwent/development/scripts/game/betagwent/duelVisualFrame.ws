@@ -19,6 +19,7 @@ class CBetaGwentDuelVisualFrame extends IScriptable
     public var kind, sourceId, targetId, side, row, templateId, duration : int;
     public var targetTemplateId, targetPower, targetSide, targetZone : int;
     public var audioKind : int;
+    public var armorBroken099 : bool;
     // Original Beta ACardAttack grouping: one attack, attackCount targets (presentation only).
     public var attackId, attackCount : int;
 }

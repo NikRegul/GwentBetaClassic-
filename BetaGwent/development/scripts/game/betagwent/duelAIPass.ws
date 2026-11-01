@@ -103,7 +103,7 @@ function BetaGwentAICardValue(points : int, played : int) : int
 // the round to keep cards; 3 = dry pass with the round lead in crowns.
 function BetaGwentAIRoundDecision(round : int, ownCrowns : int, enemyCrowns : int, lead : int,
     ownHand : int, enemyHand : int, bestTempo : int, enemyValue : int, enemyLeader : bool,
-    optional longRound : bool, optional liveEngines : int, optional bestValue : int) : int
+    optional longRound : bool, optional liveEngines : int, optional bestValue : int, optional passOpportunity : int) : int
 {
     var margin, threshold : int;
     if(ownHand==0)return 0;
@@ -127,10 +127,10 @@ function BetaGwentAIRoundDecision(round : int, ownCrowns : int, enemyCrowns : in
         // A numerical lead alone is not a safe pass: a public removal can
         // erase that lead in one reply. Apply the same response envelope to
         // balanced hands as to a red-coin card deficit.
-        if(ownHand>=3 && ownHand>=enemyHand && lead>=Max(26,margin))return 1;
-        // A large lead can recover a red-coin card deficit by forcing replies.
-        // Requiring an equal hand lets the opponent bleed us indefinitely.
-        if(lead>=Max(BetaGwentAITune(20),margin))return 1;
+        // Optional-round risk is compared with the public cost of spending
+        // another card and answering next-round carryover. No fixed 26-point
+        // floor: a pass can accept a contested round to preserve resources.
+        if(lead>=Max(1,margin-Max(0,passOpportunity)))return 1;
         if(ownHand>=3 && ownHand>enemyHand && lead>=16 && lead>enemyValue && !enemyLeader)return 1;
         return 0;
     }
@@ -200,6 +200,14 @@ function BetaGwentAIInvestmentPass(round : int, ownCrowns : int, enemyCrowns : i
     if(round!=1 || ownCrowns!=0 || enemyCrowns!=0 || lead> -14 || ownHand<4 || enemyHand<2)return false;
     if(!reachable || cards<2 || Max(bestTempo,bestValue)+lead>=0)return false;
     return ownHand-cards-enemyHand<= -2;
+}
+
+// Conditional on both players ending this round now. Not a prediction of a
+// hidden reply, future draw or mulligan. Board cleanup uses the real rules.
+struct SBetaGwentAINextRound094a
+{
+    var valid : bool;
+    var lead, ownScore, enemyScore, starter, winner : int;
 }
 // Bounded estimate of the actual alternating duel: live power, armor and
 // first strike. No state mutation, random choice or enemy-hand information.

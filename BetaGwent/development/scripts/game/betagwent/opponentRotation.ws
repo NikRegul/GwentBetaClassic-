@@ -1,17 +1,18 @@
 ﻿// A complete, save-backed rotation. Every active archetype appears once per cycle.
 // Prefer different factions, leaders and families without weighting away rare decks.
 @addField(W3PlayerWitcher)
-private saved var betaGwentOpponentBag : array<int>;
+private var betaGwentOpponentBag : array<int>;
 @addField(W3PlayerWitcher)
-private saved var betaGwentOpponentRecent : array<int>;
+private var betaGwentOpponentRecent : array<int>;
 @addField(W3PlayerWitcher)
-private saved var betaGwentOpponentPoolSize : int;
+private var betaGwentOpponentPoolSize : int;
 
 @addMethod(W3PlayerWitcher)
 public function BetaGwentNextOpponent() : int
 {
     var pool,seen,eligible : array<int>; var i,j,picked,score,best,faction,leader,family,last : int;
     var valid : bool; var p,q : SBetaGwentDuelPreset;
+    if (!BetaGwentStoreReady()) return 54;
     BetaGwentAIOrdinaryPresets(pool);valid=true;
     // Expand an existing save's partially consumed46-deck cycle immediately.
     if(betaGwentOpponentPoolSize!=pool.Size()){betaGwentOpponentBag.Clear();betaGwentOpponentPoolSize=pool.Size();}
@@ -41,6 +42,7 @@ public function BetaGwentNextOpponent() : int
     i=eligible[RandRange(eligible.Size())];picked=betaGwentOpponentBag[i];betaGwentOpponentBag.Erase(i);
     betaGwentOpponentRecent.PushBack(picked);
     while(betaGwentOpponentRecent.Size()>3)betaGwentOpponentRecent.Erase(0);
+    BetaGwentStoreCommit();
     LogChannel('BetaGwent',"DUEL_AI_POOL preset="+picked+" remaining="+betaGwentOpponentBag.Size()+" pool="+pool.Size()+" policy=saved_rotation123");
     return picked;
 }

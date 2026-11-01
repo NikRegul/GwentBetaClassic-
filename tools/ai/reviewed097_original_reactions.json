@@ -1,0 +1,34 @@
+{
+ "betaOriginalChoices.ws": [
+  [
+   "    public var defaultHandler : CBetaOriginalHandler;public var failed, replayOnly, directDecision : bool;public var error : string;\r\n    public function Fail(message : string){failed=true;error=message;}",
+   "    public var defaultHandler : CBetaOriginalHandler;public var failed, replayOnly : bool;public var error : string;\r\n    public function Fail(message : string){failed=true;error=message;}"
+  ],
+  [
+   "    // A reactive request owned by the seat that is NOT executing (Standard Bearer\r\n    // 200294: the other seat moves the saved Soldier). The simulated reply uses the\r\n    // reacting seat's own handler perspective. It is not an executing-player\r\n    // decision: no record, branch or propagated score, and it is never replayed\r\n    // live, where the reacting seat answers for itself (CBetaOriginalReaction/UI).\r\n    private function OpposingReaction(node : CBetaOriginalNode, request : SBetaOriginalRequest, ctx : CBetaOriginalHandlerContext) {\r\n        var game : CBetaGwentDuelSession;var h : CBetaOriginalHandler;var result : SBetaOriginalDecision;var kind : int;var ok : bool;\r\n        game=node.game;\r\n        if(replayOnly){Fail(\"Live replay cannot answer the other seat's reaction\");return;}\r\n        if(node.activeChoice || request.maximum>1 || request.kind==\"play\"){Fail(\"Opposing reactive multi/placement decision not mapped: \"+request.source);return;}\r\n        ctx.actor=request.actor;\r\n        if(request.kind==\"forced\")result.chosen=request.items;\r\n        else {\r\n            kind=3;if(request.kind==\"locations\")kind=4;else if(request.kind==\"targets\")kind=2;\r\n            h=Handler(Association(kind,request.source,request.sourceHint));if(failed)return;result=h.Decision(ctx,request);if(ctx.failed){Fail(ctx.error);return;}\r\n        }\r\n        if(result.chosen.Size()==0)ok=game.FinishTarget(game.requestId);\r\n        else if(request.kind==\"locations\")ok=game.SelectRow(game.requestId,result.chosen[0].side,result.chosen[0].row);\r\n        else if(request.kind==\"templates\")ok=game.SelectTemplateChoice(game.requestId,result.chosen[0].templateId);\r\n        else ok=game.SelectTarget(game.requestId,result.chosen[0].id);\r\n        if(!ok)Fail(\"Common engine rejected opposing reactive choice: \"+request.source+\"/\"+request.kind+\"/\"+game.GetMessage());\r\n    }\r\n    public function Request(node : CBetaOriginalNode) {",
+   "    public function Request(node : CBetaOriginalNode) {"
+  ],
+  [
+   "        if(request.actor!=node.executingPlayerId){OpposingReaction(node,request,ctx);return;}\r\n        kind=3;if(request.kind==\"play\")kind=1;else if(request.kind==\"locations\")kind=4;else if(request.kind==\"targets\")kind=2;",
+   "        if(request.actor!=node.executingPlayerId){Fail(\"Opposing original reactive decision ownership not mapped\");return;}\r\n        kind=3;if(request.kind==\"play\")kind=1;else if(request.kind==\"locations\")kind=4;else if(request.kind==\"targets\")kind=2;"
+  ],
+  [
+   "            if(!directDecision)for(i=0;i<branches.Size();i+=1){branch.Clear();branch.PushBack(branches[i]);Fork(node,MakeRecord(request,branch,result.sourceFallback));}\r\n            record=MakeRecord(request,result.chosen,result.sourceFallback);node.choiceRecords.PushBack(record);node.handlerScore+=result.propagated;",
+   "            for(i=0;i<branches.Size();i+=1){branch.Clear();branch.PushBack(branches[i]);Fork(node,MakeRecord(request,branch,result.sourceFallback));}\r\n            record=MakeRecord(request,result.chosen,result.sourceFallback);node.choiceRecords.PushBack(record);node.handlerScore+=result.propagated;"
+  ]
+ ],
+ "betaOriginalController.ws": [
+  [
+   "struct SBetaOriginalLiveStep { var finished, failed, waiting : bool; var mutations, callbacks : int; var phase : string; }\r\nclass CBetaOriginalReplay extends IScriptable {",
+   "struct SBetaOriginalLiveStep { var finished, failed : bool; var mutations, callbacks : int; var phase : string; }\r\nclass CBetaOriginalReplay extends IScriptable {"
+  ],
+  [
+   "            // The other seat's reaction (Standard Bearer) is answered by that seat.\r\n            if(!node.activeChoice && game.RequestDecisionSide()!=node.executingPlayerId){result.waiting=true;result.callbacks=callbacks;return result;}\r\n            if(!node.activeChoice && node.choiceCursor>=node.choiceRecords.Size()){Fail(\"Selected original node lacks a live request record\");result.failed=true;return result;}",
+   "            if(!node.activeChoice && node.choiceCursor>=node.choiceRecords.Size()){Fail(\"Selected original node lacks a live request record\");result.failed=true;return result;}"
+  ],
+  [
+   "    }\r\n}\r\n// Answers one live reactive request owned by a seat while the OTHER seat acts\r\n// (Standard Bearer 200294). Direct source handler decision; no search or replay.\r\nclass CBetaOriginalReaction extends IScriptable {\r\n    public var choices : CBetaOriginalChoiceHandlers;public var node : CBetaOriginalNode;\r\n    public var failed : bool;public var error : string;\r\n    public function Fail(message : string){failed=true;error=message;}\r\n    // One engine mutation per call. Returns false when nothing is owed by side.\r\n    public function Step(runtime : CBetaOriginalRuntime, p : CBetaOriginalPersonality, game : CBetaGwentDuelSession, side : int) : bool {\r\n        if(failed)return false;\r\n        if(game.mulligan || game.IsFatal() || !game.IsPending() || game.RequestDecisionSide()!=side){node=NULL;return false;}\r\n        if(!node || node.game!=game) {\r\n            choices=new CBetaOriginalChoiceHandlers in this;choices.runtime=runtime;choices.p=p;choices.directDecision=true;choices.BeginSimulation(NULL,game);\r\n            node=new CBetaOriginalNode in this;node.Initialize();node.game=game;node.executingPlayerId=side;\r\n        }\r\n        choices.Request(node);if(choices.failed){Fail(choices.error);return false;}\r\n        if(game.IsFatal()){Fail(\"Fatal during original reaction: \"+game.GetMessage());return false;}\r\n        if(!node.activeChoice && (!game.IsPending() || game.RequestDecisionSide()!=side))node=NULL;\r\n        return true;\r\n    }",
+   "    }"
+  ]
+ ]
+}

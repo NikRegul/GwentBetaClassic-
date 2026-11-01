@@ -36,10 +36,13 @@ class BuildChecks(unittest.TestCase):
             nextgen.write_bytes(b'changed fixture')
             with self.assertRaises(AssertionError):build.menu_music_cache(root,'5.0+')
 
-    def compiler_run(self,success):
+    def compiler_run(self,success,extra=(),previous_failure=False,check=lambda inp:None):
         with tempfile.TemporaryDirectory(dir=ROOT/'tmp',prefix='compiler091-') as t:
             root=Path(t);inp=root/'candidate';(inp/'scripts').mkdir(parents=True)
             (inp/'scripts/card.ws').write_text('class Card {}','utf8')
+            if previous_failure:
+                stale=inp/'compile-nextgen-final';(stale/'compiled').mkdir(parents=True)
+                (stale/'result.json').write_text(json.dumps(dict(exitCode=1)),encoding='utf8')
             exe=root/'redkit/bin/x64_RedKit/wcc_lite.exe';exe.parent.mkdir(parents=True);exe.write_bytes(b'not executed')
             class Process:
                 returncode=None
@@ -52,9 +55,10 @@ class BuildChecks(unittest.TestCase):
                     (inp/'compile-nextgen-final/compiled/blob.rsblob').write_bytes(b'fresh compiled blob')
                 return Process()
             ticks=iter(range(1000))
-            with patch.object(sys,'argv',['compiler','--input',str(inp),'--redkit',str(root/'redkit'),'--timeout','3']),patch.object(compiler.subprocess,'Popen',start),patch.object(compiler.time,'monotonic',lambda:next(ticks)),patch.object(compiler.time,'sleep',lambda _:None):
+            with patch.object(sys,'argv',['compiler','--input',str(inp),'--redkit',str(root/'redkit'),'--timeout','3',*extra]),patch.object(compiler.subprocess,'Popen',start),patch.object(compiler.time,'monotonic',lambda:next(ticks)),patch.object(compiler.time,'sleep',lambda _:None):
                 with self.assertRaises(SystemExit) as result:compiler.main()
             record=json.loads((inp/'compile-nextgen-final/result.json').read_text('utf8'))
+            check(inp)
             return result.exception.code,record
     def test_verified_success_has_bounded_shutdown(self):
         code,r=self.compiler_run(True)
@@ -63,6 +67,24 @@ class BuildChecks(unittest.TestCase):
     def test_timeout_without_compiler_success_is_failure(self):
         code,r=self.compiler_run(False)
         self.assertEqual(code,1);self.assertTrue(r['timedOut']);self.assertFalse(r['completedByOutput'])
+    def test_stalled_run_fails_before_the_total_timeout(self):
+        code,r=self.compiler_run(False,extra=['--stall','5','--timeout','60'])
+        self.assertEqual(code,1);self.assertTrue(r['stalledWithoutOutput']);self.assertFalse(r['timedOut'])
+        self.assertIn('lastLogLines',r)
+    def test_failed_attempt_is_kept_aside_and_retried(self):
+        def check(inp):
+            archived=list(inp.glob('compile-nextgen-final.failed-*'));self.assertEqual(len(archived),1)
+            self.assertEqual(json.loads((archived[0]/'result.json').read_text('utf8'))['exitCode'],1)
+        code,r=self.compiler_run(True,previous_failure=True,check=check)
+        self.assertEqual(code,0);self.assertTrue(r['completedByOutput'])
+    def test_resume_retries_only_a_failed_native_compile(self):
+        with tempfile.TemporaryDirectory(dir=ROOT/'tmp',prefix='resume091-') as t:
+            out=Path(t);record=out/'compile-nextgen-final/result.json';record.parent.mkdir()
+            self.assertTrue(build.nextgen_compile_pending(out))
+            record.write_text(json.dumps(dict(exitCode=1)),encoding='utf8')
+            self.assertTrue(build.nextgen_compile_pending(out))
+            record.write_text(json.dumps(dict(exitCode=0)),encoding='utf8')
+            self.assertFalse(build.nextgen_compile_pending(out))
     def test_corrupt_manifest_is_rejected(self):
         with tempfile.TemporaryDirectory(dir=ROOT/'tmp',prefix='package091-') as t:
             p=Path(t)/'candidate.zip'

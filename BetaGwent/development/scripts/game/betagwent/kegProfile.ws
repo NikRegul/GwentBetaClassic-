@@ -7,26 +7,28 @@
 // another keg or rerolls the paid choice. Legacy paid openings remain valid.
 class CBetaGwentKegMenuData extends IScriptable {}
 @addField(W3PlayerWitcher)
-private saved var betaGwentKegAutomatic : array<int>;
+private var betaGwentKegAutomatic : array<int>;
 @addField(W3PlayerWitcher)
-private saved var betaGwentKegOffers : array<int>;
+private var betaGwentKegOffers : array<int>;
 @addField(W3PlayerWitcher)
-private saved var betaGwentKegAutomaticScraps : array<int>;
+private var betaGwentKegAutomaticScraps : array<int>;
 
 @addField(W3PlayerWitcher)
-private saved var betaGwentKegsUnopened : int;
+private var betaGwentKegsUnopened : int;
 
 @addMethod(W3PlayerWitcher)
-public function BetaGwentKegPending() : bool { return betaGwentKegOffers.Size()>0; }
+public function BetaGwentKegPending() : bool { BetaGwentStoreLoad(); return betaGwentKegOffers.Size()>0; }
 @addMethod(W3PlayerWitcher)
 public function BetaGwentKegCount() : int { BetaGwentMigrateInventoryKegs(); return betaGwentKegsUnopened; }
 @addMethod(W3PlayerWitcher)
 public function BetaGwentAddKegs(count : int) {
-    if(BetaGwentCleanupPending())return; if(count>0)betaGwentKegsUnopened+=count; }
+    if (!BetaGwentStoreReady()) return;
+    if(BetaGwentCleanupPending())return; if(count>0){betaGwentKegsUnopened+=count;BetaGwentStoreCommit();} }
 @addMethod(W3PlayerWitcher)
 public function BetaGwentMigrateInventoryKegs()
 {
     var items : array<SItemUniqueId>;var i,quantity,moved : int;
+    if (!BetaGwentStoreReady()) return;
     if(BetaGwentCleanupPending())return;
     if(!inv)return;
     quantity=inv.GetItemQuantityByName('betagwent_keg');if(quantity<=0)return;
@@ -35,20 +37,22 @@ public function BetaGwentMigrateInventoryKegs()
         quantity=inv.GetItemQuantity(items[i]);
         if(quantity>0 && inv.RemoveItem(items[i],quantity)){betaGwentKegsUnopened+=quantity;moved+=quantity;}
     }
-    if(moved>0)LogChannel('BetaGwent',"KEG_INVENTORY_MIGRATED kegs="+moved+" unopened="+betaGwentKegsUnopened);
+    if(moved>0){LogChannel('BetaGwent',"KEG_INVENTORY_MIGRATED kegs="+moved+" unopened="+betaGwentKegsUnopened);BetaGwentStoreCommit();}
 }
 @wrapMethod(W3PlayerWitcher)
 function OnSpawned(spawnData : SEntitySpawnData)
 {
     wrappedMethod(spawnData);
+    BetaGwentStoreLoad();
     BetaGwentMigrateInventoryKegs();
 }
 @addMethod(W3PlayerWitcher)
 public function BetaGwentKegContents(out ordinary : array<int>, out offers : array<int>)
-{ ordinary=betaGwentKegAutomatic;offers=betaGwentKegOffers; }
+{ BetaGwentStoreLoad(); ordinary=betaGwentKegAutomatic;offers=betaGwentKegOffers; }
 @addMethod(W3PlayerWitcher)
 public function BetaGwentKegReceivedScraps(index : int) : int
 {
+    BetaGwentStoreLoad();
     // Older paid openings did not record per-card results; do not invent them.
     if(index<0 || index>=betaGwentKegAutomaticScraps.Size())return -1;
     return betaGwentKegAutomaticScraps[index];
@@ -104,13 +108,16 @@ public function BetaGwentOpenKeg() : bool
     betaGwentKegAutomatic=automatic;betaGwentKegOffers=offers;
     betaGwentKegAutomaticScraps.Clear();
     for(i=0;i<automatic.Size();i+=1){id=BetaGwentReceive(automatic[i]);betaGwentKegAutomaticScraps.PushBack(id);scraps+=id;}
+    BetaGwentStoreCommit();
     LogChannel('BetaGwent',"KEG_OPENED consumed=1 ordinary="+automatic.Size()+" offers="+offers.Size()+" offerRarity="+rarity+" duplicateScraps="+scraps);return true;
 }
 @addMethod(W3PlayerWitcher)
 public function BetaGwentChooseKeg(id : int) : bool
 {
+    // Never consume a paid choice if its collection cannot accept the award.
+    if(!BetaGwentEnsureCollection() || BetaGwentCollectionCap(id)<=0)return false;
     if(!betaGwentKegOffers.Contains(id))return false;
     BetaGwentReceive(id);
     betaGwentKegOffers.Clear();betaGwentKegAutomatic.Clear();betaGwentKegAutomaticScraps.Clear();
-    LogChannel('BetaGwent',"KEG_CHOSEN card="+id);return true;
+    BetaGwentStoreCommit();LogChannel('BetaGwent',"KEG_CHOSEN card="+id);return true;
 }

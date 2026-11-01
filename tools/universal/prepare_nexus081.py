@@ -5,7 +5,7 @@ import re
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[2]
-SOURCE=Path('C:/Users/NikR/Documents/Codex/2026-10-15/new-chat/outputs/release-texts')
+SOURCE=Path.home()/'Documents/Codex/2026-10-15/new-chat/outputs/release-texts'
 OUT=ROOT/'docs/releases/0.8.1/nexus'
 ORDER=['en','ru','de','fr','it','pl','es','es-mx','pt-br','ja','ko','zh-cn','zh-tw']
 STATUS={

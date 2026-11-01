@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "beforeBehavioralTests": true,
+  "amendments": [
+    {
+      "field": "scope",
+      "correction": "25 obligations of 12 (not 13) already partially reviewed cards."
+    },
+    {
+      "templateId": 132305,
+      "obligation": "banished-consume",
+      "correction": "Clean AfterBanished Consume fixture uses a victim initially in Hand or Grave and operation5; Doomed removal after active Kill belongs to AfterDestroyed, not an invented AfterBanished event."
+    },
+    {
+      "templateId": 132407,
+      "obligation": "shared-trigger",
+      "clarification": "AbortForAbility occurs after HasAddedActions. A full-board MoveCards with Position.None adds no action, so later sibling may still consume candidate RNG. A successful move aborts later siblings for the whole batched trigger, not separately for each target."
+    }
+  ]
+}

@@ -29,7 +29,7 @@ for(const platform of ['classic','nextgen']){
   BetaGwentFullCatalog:{all:()=>cards,find:id=>cards.find(v=>v.templateId===id)},BetaGwentCardText:{find:id=>texts[id]},int:n=>n|0});
  vm.runInContext(['find','ids','all'].map(n=>extract(n,relatedSource)).join('\n')+'\nvar BetaGwentRelated091={find,ids,all};',c);
  vm.runInContext('var titleIndex=null,detailBack=[],opened=null;function openCardDetail(c,d,back){opened={c,d,back};}\n'+extract('relatedCard091')+'\n'+extract('relatedCards')+'\n'+extract('relatedOpener')+'\n'+extract('drawRelatedCards')+'\nArray.prototype.sortOn=function(key){return this.sort((a,b)=>a[key]-b[key]);};',c);
- for(const [id,options] of [[142202,[113305,113401,113301]],[162207,[113302,113401,200009]]]){
+ for(const [id,options] of [[142202,[113301,113305,113401]],[162207,[113302,113401,200009]]]){
   for(const description of [texts[id].description,'Spawn Clear Skies or a spell.','']){
    const result=c.relatedCards(id,description);
    check(JSON.stringify(result.map(v=>v.templateId))===JSON.stringify(options),'all real options independent of language/declension '+id);
@@ -63,7 +63,7 @@ for(const platform of ['classic','nextgen']){
   check(painted.length===ids.length&&controls.length===ids.length,'every related card is drawn and focusable '+id);
   for(const p of painted){
    check(slots[p.id]&&slots[p.id][3]>0&&slots[p.id][4]>0,'related card has an existing atlas illustration '+p.id);
-   check(p.tile.x>=272&&p.tile.x+p.w<=1022&&p.tile.y+p.h+36<=971,'related art/name fits full-view strip '+id+'/'+p.id);
+   check(p.tile.x>=130&&p.tile.x+p.w<=850&&p.tile.y+p.h+36<=971,'related art/name fits beside the card and tooltip column '+id+'/'+p.id);
    p.tile.click();check(c.opened.c.templateId===p.id&&c.opened.c.description===texts[p.id].description,'every related tile opens its real rules '+p.id);
    edgeCount++;
   }

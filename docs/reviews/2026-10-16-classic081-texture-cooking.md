@@ -2,7 +2,7 @@
 
 Пользователь подтвердил работоспособность последнего menu-fix2 на 5.0+.
 На 1.32 тот же кандидат оставляет мир на паузе без появления редактора.
-Сохранённый лог соседнего чата: `C:/Users/NikR/Documents/Codex/2026-10-15/new-chat/work/classic-diagnostics/scriptslog-classic-after-menu-fix2.txt`.
+Сохранённый лог соседнего чата: `C:/Users/<user>/Documents/Codex/2026-10-15/new-chat/work/classic-diagnostics/scriptslog-classic-after-menu-fix2.txt`.
 Отсутствие MENU_CONFIG_BEGIN само по себе не устанавливает причину: это только
 наблюдение о точке остановки. Игровую проверку нового пакета выполняет пользователь.
 

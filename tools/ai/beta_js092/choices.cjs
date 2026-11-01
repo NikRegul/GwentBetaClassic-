@@ -122,7 +122,7 @@ class BetaChoiceHandlers {
   // Bran's source graph requests its entire 0..3 set ONCE. The common engine
   // exposes one SelectTarget call per card, refreshing requestId in between.
   // Keep one recorded source decision and drain it cooperatively below.
-  const wholeSet=([200159,162103,200163,162316,200227,201616,122204,200209].includes(source)&&kind==='choices')||(source===200218&&kind==='targets');
+  const wholeSet=([200159,162103,200163,162316,200227,201616,122204,200209,122201,152205].includes(source)&&kind==='choices')||([200218,162208,200169,152315,112111,152203].includes(source)&&kind==='targets');
   if(r.limits.maximum>1&&!(wholeSet&&r.selectedCount===0))
    throw new UnportedBetaHandler('Multiple selection sequencing not mapped yet: '+source);
   return {kind,source,hint,min:r.limits.minimum,max:r.limits.maximum,actor,items};
@@ -135,10 +135,27 @@ class BetaChoiceHandlers {
   node.parent.children.push(sibling);
   const group=node.parent.childBaseCards.find(x=>x.cardId===node.decision?.cardId);if(group)group.nodes.push(sibling);
  }
+ // A reactive request owned by the seat that is NOT executing (Standard Bearer
+ // 200294). Mirrors CBetaOriginalChoiceHandlers.OpposingReaction: the reacting
+ // seat's handler perspective; no record, branch or propagated score; never
+ // replayed live, where the reacting seat answers for itself (BetaReaction).
+ opposingReaction(node,r,ctx){
+  const g=node.game;
+  if(node.activeChoice||r.max>1||r.kind==='play')throw new UnportedBetaHandler('Opposing reactive multi/placement decision not mapped: '+r.source);
+  ctx.actor=r.actor;
+  const type=r.kind==='locations'?'LocationTargetsAssociations':r.kind==='targets'?'CardTargetsAssociations':'CardChoicesAssociations';
+  const chosen=r.kind==='forced'?r.items:decision(this.handler(type,r.source,r.hint),ctx,r).chosen;
+  let ok;
+  if(!chosen.length)ok=g.FinishTarget(g.requestId);
+  else if(r.kind==='locations')ok=g.SelectRow(g.requestId,chosen[0].side,chosen[0].row);
+  else if(r.kind==='templates')ok=g.SelectTemplateChoice(g.requestId,chosen[0].templateId);
+  else ok=g.SelectTarget(g.requestId,chosen[0].id);
+  if(!ok)throw new UnportedBetaHandler('Common engine rejected opposing reactive choice: '+r.source+'/'+r.kind+'/'+g.GetMessage());
+ }
  request(node){
   if(node.activeChoice){this.continueChoice(node);return;}
   const g=node.game,r=this.describe(node),ctx=this.context(node);
-  if(r.actor!==node.executingPlayerId)throw new UnportedBetaHandler('Opposing reactive decision ownership not mapped: '+r.source);
+  if(r.actor!==node.executingPlayerId){this.opposingReaction(node,r,ctx);return;}
   const type=r.kind==='play'?'PlayCardAssociations':r.kind==='locations'?'LocationTargetsAssociations':r.kind==='targets'?'CardTargetsAssociations':'CardChoicesAssociations';
   let record=node.choiceRecords[node.choiceCursor];
   if(record){
@@ -151,7 +168,7 @@ class BetaChoiceHandlers {
     if(h.canBranchPlacement())result.branches=(result.filtered||[]).slice(1).map(x=>[x]);
    }
    const make=chosen=>({kind:r.kind,source:r.source,hint:r.hint,chosen:chosen.map(x=>({...x})),sourceFallback:result.sourceFallback});
-   for(const branch of result.branches)this.fork(node,make(branch));
+   if(!this.directDecision)for(const branch of result.branches)this.fork(node,make(branch));
    record=make(result.chosen);node.choiceRecords.push(record);node.handlerScore=F(node.handlerScore+result.propagated);
   }
   node.choiceCursor++;
@@ -186,4 +203,20 @@ class BetaChoiceHandlers {
  }
  hooks(){return {beginSimulation:(t,g)=>this.beginSimulation(t,g),playCard:x=>this.playCard(x),request:n=>this.request(n)};}
 }
-module.exports={BetaChoiceHandlers,fromTemplate,stagedHint};
+// Live answer of one reactive request owned by `side` while the OTHER seat acts.
+// Mirrors CBetaOriginalReaction: one engine mutation per step, direct handler.
+class BetaReaction {
+ constructor(runtime,personality){this.runtime=runtime;this.personality=personality;this.node=null;}
+ step(game,side){
+  if(game.mulligan||game.IsFatal()||!game.IsPending()||game.RequestDecisionSide()!==side){this.node=null;return false;}
+  if(!this.node||this.node.game!==game){
+   this.choices=new BetaChoiceHandlers(this.runtime,this.personality);this.choices.directDecision=true;this.choices.beginSimulation(null,game);
+   this.node={game,decision:null,executingPlayerId:side,choiceCursor:0,choiceRecords:[],handlerScore:0,locationChoices:[],activeChoice:null};
+  }
+  this.choices.request(this.node);
+  if(game.IsFatal())throw Error('Fatal during source reaction: '+game.GetMessage());
+  if(!this.node.activeChoice&&(!game.IsPending()||game.RequestDecisionSide()!==side))this.node=null;
+  return true;
+ }
+}
+module.exports={BetaChoiceHandlers,BetaReaction,fromTemplate,stagedHint};

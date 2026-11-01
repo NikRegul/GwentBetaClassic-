@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "source": "User game log copied to BetaGwent/build/ai-sheldon094-20261026-01/log-evidence",
+  "sourceSha256": "2995856b02707f2fc9b5d891f02f9d5dea7b18a780826133685c1df4957f1294",
+  "game": 5,
+  "seed": 664034741,
+  "decision": 11,
+  "decisionLine": 7598,
+  "rowDecisionLines": [7611,7612,7613],
+  "template": 142212,
+  "sourceInstance": 40,
+  "sourcePower": 10,
+  "ownRows": {"1":2,"2":2,"4":1},
+  "weather": [0,0,0,0,0,0],
+  "chosenRow": 4,
+  "actualMovedInstance": 52,
+  "actualPowerAfterDeploy": 11,
+  "publicEquivalentFixture": "check_sheldon_row094.cjs reconstructs the logged own board and compares all rows by real Play",
+  "historicalFullStateReplay": false,
+  "limitation": "The log does not contain the complete effect queue and RNG state. The reconstructed test is not an exact replay of the historical runtime."
+}

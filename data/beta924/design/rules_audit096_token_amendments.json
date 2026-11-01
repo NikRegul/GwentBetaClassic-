@@ -1,0 +1,8 @@
+{
+  "phase": "before behavioral test and engine changes; corrections from deeper C# reads",
+  "records": [
+    {"scope":"RequestCardTargetsNode users", "expected":"ARequestTargetsAction.ApplyImpl overwrites MinTargets=clamped MaxTargets; a card-target request requires exactly min(MaxTargets, valid count), even when graph MinTargets=0. RequestCardChoiceNode differs: its min0 is retained. This affects Egan/Radovid and other board targets. Do not infer optionality from MinTargets alone.", "classes":["ARequestTargetsAction","RequestCardTargetsAction","RequestCardChoicesAction"]},
+    {"templateId":142204, "expected":"Shape111104 has normal bits12,13,15,16: only four own-row neighbours offsets -2,-1,+1,+2, excluding owner and other Ambush units. The row flag bit9 produces index=-3 CardPositions in extracted BoardManager; Location.GetCard rejects negative indexes, so it contributes no card. Do not boost owner. Weather immunity16 is allowed. This source anomaly is recorded; no claim about a live server."},
+    {"templateId":142307, "expected":"AbilityManager.OnCardTimerTriggered checks graph presence and Lock only; no IsAlive, zone, or IsAmbushing passive gate."}
+  ]
+}
